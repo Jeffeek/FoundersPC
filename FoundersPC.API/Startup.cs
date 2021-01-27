@@ -15,7 +15,7 @@ using Autofac.Extensions.DependencyInjection;
 
 namespace FoundersPC.API
 {
-    public class Startup
+    public sealed class Startup
     {
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
