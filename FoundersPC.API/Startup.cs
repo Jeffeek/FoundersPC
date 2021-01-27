@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac.Extensions.DependencyInjection;
+using FoundersPC.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API
 {
@@ -27,7 +29,9 @@ namespace FoundersPC.API
 	        services.AddControllers();
 
 	        var connection = Configuration.GetConnectionString("FoundercPC.connectionString");
-	        //services.AddDbContext<>()
+	        services.AddDbContext<FoundersPCDbContext>(
+	                                                   options => options.UseSqlServer(connection,
+		                                                   b => b.MigrationsAssembly("FoundersPC.Services")));
             
             
             services.AddSwaggerGen(c =>

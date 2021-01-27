@@ -1,59 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Services.Models
 {
 	[Index(nameof(Id))]
-    public class PowerSupply
+    public class RAM
     {
 	    [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Id")]
         public int Id { get; set; }
 
-        [Column("Power")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Power { get; set; }
+        [Column("MemoryType")]
+        [MinLength(5)]
+        [MaxLength(6)]
+        public string MemoryType { get; set; }
 
-        [Column("ProducerId")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("ProducerId")]
         public int ProducerId { get; set; }
 
         [ForeignKey(nameof(ProducerId))]
         public Producer Producer { get; set; }
 
-        [MinLength(1)]
-        [MaxLength(10)]
-        [Column("MotherboardPowering")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string MotherboardPowering { get; set; }
+        [Column("Volume")]
+        public int Volume { get; set; }
 
-        [Column("IsModular")]
-        public bool IsModular { get; set; }
-
-        [Column("CPU4PIN")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public bool CPU4PIN { get; set; }
+        [Column("Frequency")]
+        public int Frequency { get; set; }
 
-        [Column("CPU8PIN")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public bool CPU8PIN { get; set; }
+        [Column("CASLatency")]
+        [MinLength(3)]
+        [MaxLength(5)]
+        public string CASLatency { get; set; }
 
-        [Column("FanDiameter")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int FanDiameter { get; set; }
+        [Column("Timings")]
+        [MinLength(5)]
+        [MaxLength(8)]
+        public string Timings { get; set; }
 
-        [Column("Certificate80PLUS")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public bool Certificate80PLUS { get; set; }
+        [Column("Voltage")]
+        public double Voltage { get; set; }
 
-        [Column("PFC")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public bool PFC { get; set; }
+        [Column("XMP")]
+        public bool XMP { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("AMP")]
+        public bool AMP { get; set; }
     }
 }

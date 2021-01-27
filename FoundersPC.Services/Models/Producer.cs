@@ -1,16 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Services.Models
 {
-    public class Producer
+	[Index(nameof(Id))]
+	public class Producer
     {
 	    [Key]
 	    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-	    [MinLength(1)]
-	    [MaxLength(10)]
 	    [Column("Id")]
 	    public int Id { get; set; }
 	    
@@ -47,16 +47,14 @@ namespace FoundersPC.Services.Models
 		[Column("FoundationDate")]
 		public DateTime? FoundationDate { get; set; }
 
-	    public Producer(string shortName, string fullName, string country, string website, DateTime? foundationDate)
-	    {
-		    ShortName = shortName;
-		    FullName = fullName;
-		    Country = country;
-		    Website = website;
-		    FoundationDate = foundationDate;
-	    }
-	    
-	    /// <inheritdoc />
-	    public override string ToString() => $"{nameof(Id)}: {Id}, {nameof(ShortName)}: {ShortName}, {nameof(FullName)}: {FullName}, {nameof(Country)}: {Country}, {nameof(Website)}: {Website}, {nameof(FoundationDate)}: {FoundationDate}";
+		public ICollection<GPU> GPUs { get; set; }
+		public ICollection<RAM> RAMs { get; set; }
+		public ICollection<PowerSupply> PowerSupplies { get; set; }
+		public ICollection<Motherboard> Motherboards { get; set; }
+		public ICollection<SSD> SSDs { get; set; }
+		public ICollection<HDD> HDDs { get; set; }
+
+		/// <inheritdoc />
+		public override string ToString() => $"{nameof(Id)}: {Id}, {nameof(ShortName)}: {ShortName}, {nameof(FullName)}: {FullName}, {nameof(Country)}: {Country}, {nameof(Website)}: {Website}, {nameof(FoundationDate)}: {FoundationDate}";
     }
 }
