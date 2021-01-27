@@ -13,7 +13,8 @@ namespace FoundersPC.Services
 		    Database.EnsureCreated();
 	    }
 
-		public DbSet<ChipProducer> ChipProducers { get; set; }
+
+	    public DbSet<ChipProducer> ChipProducers { get; set; }
 		public DbSet<CPU> CPUs { get; set; }
 		public DbSet<CrystalSerial> CrystalSerials { get; set; }
 		public DbSet<GPU> GPUs { get; set; }
