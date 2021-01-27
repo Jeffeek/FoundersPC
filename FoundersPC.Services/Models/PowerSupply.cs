@@ -1,31 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Services.Models
 {
 	[Index(nameof(Id))]
-    public class PowerSupply
+    public class PowerSupply : EquipmentEntityBase
     {
-	    [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("Id")]
-        public int Id { get; set; }
-
-        [Column("Power")]
+	    [Column("Power")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Power { get; set; }
 
-        [Column("ProducerId")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProducerId { get; set; }
-
-        [ForeignKey(nameof(ProducerId))]
-        public Producer Producer { get; set; }
+	    [Column("Efficiency")]
+	    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Efficiency { get; set; }
 
         [MinLength(1)]
         [MaxLength(10)]

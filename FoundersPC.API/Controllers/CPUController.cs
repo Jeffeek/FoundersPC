@@ -17,13 +17,13 @@ namespace FoundersPC.API.Controllers
 	    }
 
 	    [HttpGet]
-	    public ActionResult<IEnumerable<CPU>> Get() => Ok(_cpuRepository.GetAll());
+	    public ActionResult<IEnumerable<CPU>> Get() => Ok(_cpuRepository.GetAllAsync());
 
 	    [HttpGet("{id}")]
 	    public ActionResult<CPU> Get(int? id)
 	    {
 		    if (id.HasValue)
-			    return Ok(_cpuRepository.Get(id.Value));
+			    return Ok(_cpuRepository.GetAsync(id.Value));
 
 			return NotFound();
 	    }

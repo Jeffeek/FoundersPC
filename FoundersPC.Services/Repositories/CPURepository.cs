@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 using FoundersPC.Services.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,35 +13,28 @@ namespace FoundersPC.Services.Repositories
 
 	    public CPURepository(DbContext context) => _context = context;
 
-	    public IEnumerable<CPU> GetAll()
-	    {
-			_context.Set<ChipProducer>().Load();
-			_context.Set<CrystalSerial>().Load();
-			_context.Set<CPU>().Load();
-		    return _context.Set<CPU>().ToList();
-	    }
+	    public async Task<IEnumerable<CPU>> GetAllAsync() => await _context.Set<CPU>().ToListAsync();
 
 	    #region Implementation of IRepository<CPU>
 
-	    /// <inheritdoc />
-	    public CPU Get(int? id) => throw new NotImplementedException();
+	    public async Task<CPU> GetAsync(int? id)
+	    {
+		    if (!id.HasValue) return null;
+		    var cpu = await _context.FindAsync<CPU>(id);
+		    return cpu;
+	    }
 
-	    /// <inheritdoc />
-
-	    /// <inheritdoc />
-	    public void Add(CPU entity)
+	    public async Task AddAsync(CPU entity)
 	    {
 		    throw new NotImplementedException();
 	    }
 
-	    /// <inheritdoc />
-	    public void Remove(CPU entity)
+	    public async Task RemoveAsync(CPU entity)
 	    {
 		    throw new NotImplementedException();
 	    }
 
-	    /// <inheritdoc />
-	    public void Update(CPU entity)
+	    public async Task UpdateAsync(CPU entity)
 	    {
 		    throw new NotImplementedException();
 	    }

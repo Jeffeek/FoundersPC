@@ -1,28 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Services.Models
 {
 	[Index(nameof(Id))]
-    public class Motherboard
+    public class Motherboard : EquipmentEntityBase
     {
-	    [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("Id")]
-        public int Id { get; set; }
-
-        [DatabaseGenerated((DatabaseGeneratedOption.None))]
-        [Column("ProducerId")]
-        public int ProducerId { get; set; }
-
-        [ForeignKey(nameof(ProducerId))]
-        public Producer Producer { get; set; }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+	    [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DataType(DataType.Text)]
         [MaxLength(10)]
         [MinLength(3)]
@@ -70,5 +55,12 @@ namespace FoundersPC.Services.Models
         [DatabaseGenerated((DatabaseGeneratedOption.None))]
         [Column("M2SlotsCount")]
         public int M2SlotsCount { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("PCIExpressVersion")]
+        [DataType(DataType.Text)]
+        [MinLength(3)]
+        [MaxLength(12)]
+        public string PCIExpressVersion { get; set; }
     }
 }

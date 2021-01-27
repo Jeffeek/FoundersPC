@@ -28,8 +28,9 @@ namespace FoundersPC.API
 
 
 	        services.AddScoped<ICPURepository, CPURepository>();
+	        services.AddScoped<IProducersRepository, ProducersRepository>();
 
-	        services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(c =>
 	                               {
 		                               c.SwaggerDoc("v1", new OpenApiInfo { Title = "FoundersPC.API", Version = "v1" });
 	                               });

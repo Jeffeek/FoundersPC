@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FoundersPC.Services.Repositories
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-	    TEntity Get(int? id);
-	    IEnumerable<TEntity> GetAll();
-	    void Add(TEntity entity);
-	    void Remove(TEntity entity);
-	    void Update(TEntity entity);
+	    Task<TEntity> GetAsync(int? id);
+	    Task<IEnumerable<TEntity>> GetAllAsync();
+	    Task AddAsync(TEntity entity);
+	    Task RemoveAsync(TEntity entity);
+	    Task UpdateAsync(TEntity entity);
     }
 }

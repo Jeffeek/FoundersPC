@@ -8,20 +8,6 @@ namespace FoundersPC.Services.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ChipProducers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Country = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ChipProducers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Producers",
                 columns: table => new
                 {
@@ -30,6 +16,7 @@ namespace FoundersPC.Services.Migrations
                     ShortName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Country = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Website = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     FoundationDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -38,22 +25,27 @@ namespace FoundersPC.Services.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CrystalSerials",
+                name: "Cases",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    ChipProducerId = table.Column<int>(type: "int", nullable: false),
-                    MicroArchitecture = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
+                    Type = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: true),
+                    MaxMotherboardSize = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Material = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    WindowMaterial = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    TransparentWindow = table.Column<bool>(type: "bit", nullable: false),
+                    Color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProducerId = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CrystalSerials", x => x.Id);
+                    table.PrimaryKey("PK_Cases", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CrystalSerials_ChipProducers_ChipProducerId",
-                        column: x => x.ChipProducerId,
-                        principalTable: "ChipProducers",
+                        name: "FK_Cases_Producers_ProducerId",
+                        column: x => x.ProducerId,
+                        principalTable: "Producers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -68,9 +60,10 @@ namespace FoundersPC.Services.Migrations
                     BufferSize = table.Column<int>(type: "int", nullable: false),
                     Noise = table.Column<int>(type: "int", nullable: false),
                     ProducerId = table.Column<int>(type: "int", nullable: false),
-                    Volume = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Factor = table.Column<double>(type: "float", nullable: false),
-                    Interface = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true)
+                    Interface = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Volume = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -89,7 +82,6 @@ namespace FoundersPC.Services.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProducerId = table.Column<int>(type: "int", nullable: false),
                     Socket = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     Factor = table.Column<double>(type: "float", nullable: false),
                     RAMSupport = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: true),
@@ -99,7 +91,10 @@ namespace FoundersPC.Services.Migrations
                     AudioSupport = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     WiFiSupport = table.Column<bool>(type: "bit", nullable: false),
                     PS2Support = table.Column<bool>(type: "bit", nullable: false),
-                    M2SlotsCount = table.Column<int>(type: "int", nullable: false)
+                    M2SlotsCount = table.Column<int>(type: "int", nullable: false),
+                    PCIExpressVersion = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: true),
+                    ProducerId = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -119,14 +114,16 @@ namespace FoundersPC.Services.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Power = table.Column<int>(type: "int", nullable: false),
-                    ProducerId = table.Column<int>(type: "int", nullable: false),
+                    Efficiency = table.Column<int>(type: "int", nullable: false),
                     MotherboardPowering = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     IsModular = table.Column<bool>(type: "bit", nullable: false),
                     CPU4PIN = table.Column<bool>(type: "bit", nullable: false),
                     CPU8PIN = table.Column<bool>(type: "bit", nullable: false),
                     FanDiameter = table.Column<int>(type: "int", nullable: false),
                     Certificate80PLUS = table.Column<bool>(type: "bit", nullable: false),
-                    PFC = table.Column<bool>(type: "bit", nullable: false)
+                    PFC = table.Column<bool>(type: "bit", nullable: false),
+                    ProducerId = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -140,26 +137,57 @@ namespace FoundersPC.Services.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RAMs",
+                name: "Processors",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MemoryType = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: true),
+                    TechProcess = table.Column<int>(type: "int", nullable: false),
+                    Lineup = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    TDP = table.Column<int>(type: "int", nullable: false),
+                    MaxRamSpeed = table.Column<int>(type: "int", nullable: false),
+                    Socket = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Cores = table.Column<int>(type: "int", nullable: false),
+                    Frequency = table.Column<int>(type: "int", nullable: false),
+                    TurboBoostFrequency = table.Column<int>(type: "int", nullable: false),
+                    L3Cache = table.Column<int>(type: "int", nullable: false),
+                    IntegratedGraphics = table.Column<bool>(type: "bit", nullable: false),
                     ProducerId = table.Column<int>(type: "int", nullable: false),
-                    Volume = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Processors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Processors_Producers_ProducerId",
+                        column: x => x.ProducerId,
+                        principalTable: "Producers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RandomAccessMemory",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MemoryType = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     Frequency = table.Column<int>(type: "int", nullable: false),
                     CASLatency = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: true),
                     Timings = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: true),
                     Voltage = table.Column<double>(type: "float", nullable: false),
                     XMP = table.Column<bool>(type: "bit", nullable: false),
-                    AMP = table.Column<bool>(type: "bit", nullable: false)
+                    ECC = table.Column<bool>(type: "bit", nullable: false),
+                    PCIndex = table.Column<int>(type: "int", nullable: false),
+                    ProducerId = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RAMs", x => x.Id);
+                    table.PrimaryKey("PK_RandomAccessMemory", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RAMs_Producers_ProducerId",
+                        name: "FK_RandomAccessMemory_Producers_ProducerId",
                         column: x => x.ProducerId,
                         principalTable: "Producers",
                         principalColumn: "Id",
@@ -173,21 +201,17 @@ namespace FoundersPC.Services.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MicroScheme = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    ChipProducerId = table.Column<int>(type: "int", nullable: false),
+                    SequentialRead = table.Column<int>(type: "int", nullable: false),
+                    SequentialRecording = table.Column<int>(type: "int", nullable: false),
                     ProducerId = table.Column<int>(type: "int", nullable: false),
-                    Volume = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Factor = table.Column<double>(type: "float", nullable: false),
-                    Interface = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true)
+                    Interface = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Volume = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SolidStateDrives", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SolidStateDrives_ChipProducers_ChipProducerId",
-                        column: x => x.ChipProducerId,
-                        principalTable: "ChipProducers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SolidStateDrives_Producers_ProducerId",
                         column: x => x.ProducerId,
@@ -197,48 +221,17 @@ namespace FoundersPC.Services.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CPUs",
+                name: "VideoCards",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TechProcess = table.Column<int>(type: "int", nullable: false),
-                    Series = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    MaxRamSpeed = table.Column<int>(type: "int", nullable: false),
-                    CrystalSerialId = table.Column<int>(type: "int", nullable: false),
-                    Socket = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
-                    Cores = table.Column<int>(type: "int", nullable: false),
-                    Frequency = table.Column<int>(type: "int", nullable: false),
-                    TurboBoostFrequency = table.Column<int>(type: "int", nullable: false),
-                    L3Cache = table.Column<int>(type: "int", nullable: false),
-                    IntegratedGraphics = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CPUs", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CPUs_CrystalSerials_CrystalSerialId",
-                        column: x => x.CrystalSerialId,
-                        principalTable: "CrystalSerials",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "GPUs",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CrystalSerialId = table.Column<int>(type: "int", nullable: false),
+                    VideoMemoryType = table.Column<string>(type: "nvarchar(7)", maxLength: 7, nullable: true),
+                    VideoMemoryFrequency = table.Column<int>(type: "int", maxLength: 5, nullable: false),
+                    VideoMemoryBusWidth = table.Column<int>(type: "int", maxLength: 4, nullable: false),
                     Interface = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
-                    ProducerId = table.Column<int>(type: "int", nullable: false),
                     GraphicsProcessor = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Frequency = table.Column<int>(type: "int", maxLength: 5, nullable: false),
-                    VRAM = table.Column<int>(type: "int", nullable: false),
-                    VRAMType = table.Column<string>(type: "nvarchar(7)", maxLength: 7, nullable: true),
-                    VRAMFrequency = table.Column<int>(type: "int", maxLength: 5, nullable: false),
-                    VRAMBusWidth = table.Column<int>(type: "int", maxLength: 4, nullable: false),
                     DirectX = table.Column<int>(type: "int", maxLength: 3, nullable: false),
                     SLI_Crossfire = table.Column<bool>(type: "bit", nullable: false),
                     AdditionalPower = table.Column<int>(type: "int", nullable: false),
@@ -246,19 +239,15 @@ namespace FoundersPC.Services.Migrations
                     VGA = table.Column<int>(type: "int", nullable: false),
                     DVI = table.Column<int>(type: "int", nullable: false),
                     HDMI = table.Column<int>(type: "int", nullable: false),
-                    DisplayPort = table.Column<int>(type: "int", nullable: false)
+                    DisplayPort = table.Column<int>(type: "int", nullable: false),
+                    ProducerId = table.Column<int>(type: "int", nullable: false),
+                    MarketLaunch = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GPUs", x => x.Id);
+                    table.PrimaryKey("PK_VideoCards", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_GPUs_CrystalSerials_CrystalSerialId",
-                        column: x => x.CrystalSerialId,
-                        principalTable: "CrystalSerials",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_GPUs_Producers_ProducerId",
+                        name: "FK_VideoCards_Producers_ProducerId",
                         column: x => x.ProducerId,
                         principalTable: "Producers",
                         principalColumn: "Id",
@@ -266,43 +255,13 @@ namespace FoundersPC.Services.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ChipProducers_Id",
-                table: "ChipProducers",
+                name: "IX_Cases_Id",
+                table: "Cases",
                 column: "Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CPUs_CrystalSerialId",
-                table: "CPUs",
-                column: "CrystalSerialId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CPUs_Id",
-                table: "CPUs",
-                column: "Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CrystalSerials_ChipProducerId",
-                table: "CrystalSerials",
-                column: "ChipProducerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CrystalSerials_Id",
-                table: "CrystalSerials",
-                column: "Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_GPUs_CrystalSerialId",
-                table: "GPUs",
-                column: "CrystalSerialId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_GPUs_Id",
-                table: "GPUs",
-                column: "Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_GPUs_ProducerId",
-                table: "GPUs",
+                name: "IX_Cases_ProducerId",
+                table: "Cases",
                 column: "ProducerId");
 
             migrationBuilder.CreateIndex(
@@ -336,24 +295,29 @@ namespace FoundersPC.Services.Migrations
                 column: "ProducerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Processors_Id",
+                table: "Processors",
+                column: "Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Processors_ProducerId",
+                table: "Processors",
+                column: "ProducerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Producers_Id",
                 table: "Producers",
                 column: "Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RAMs_Id",
-                table: "RAMs",
+                name: "IX_RandomAccessMemory_Id",
+                table: "RandomAccessMemory",
                 column: "Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RAMs_ProducerId",
-                table: "RAMs",
+                name: "IX_RandomAccessMemory_ProducerId",
+                table: "RandomAccessMemory",
                 column: "ProducerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SolidStateDrives_ChipProducerId",
-                table: "SolidStateDrives",
-                column: "ChipProducerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SolidStateDrives_Id",
@@ -364,15 +328,22 @@ namespace FoundersPC.Services.Migrations
                 name: "IX_SolidStateDrives_ProducerId",
                 table: "SolidStateDrives",
                 column: "ProducerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VideoCards_Id",
+                table: "VideoCards",
+                column: "Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VideoCards_ProducerId",
+                table: "VideoCards",
+                column: "ProducerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CPUs");
-
-            migrationBuilder.DropTable(
-                name: "GPUs");
+                name: "Cases");
 
             migrationBuilder.DropTable(
                 name: "HardDrives");
@@ -384,19 +355,19 @@ namespace FoundersPC.Services.Migrations
                 name: "PowerSupplies");
 
             migrationBuilder.DropTable(
-                name: "RAMs");
+                name: "Processors");
+
+            migrationBuilder.DropTable(
+                name: "RandomAccessMemory");
 
             migrationBuilder.DropTable(
                 name: "SolidStateDrives");
 
             migrationBuilder.DropTable(
-                name: "CrystalSerials");
+                name: "VideoCards");
 
             migrationBuilder.DropTable(
                 name: "Producers");
-
-            migrationBuilder.DropTable(
-                name: "ChipProducers");
         }
     }
 }
