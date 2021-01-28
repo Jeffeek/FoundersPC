@@ -1,44 +1,46 @@
-﻿using System;
+﻿#region Using derectives
+
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.Services.Models;
 using Microsoft.EntityFrameworkCore;
 
+#endregion
+
 namespace FoundersPC.Services.Repositories
 {
-    public class CPURepository : ICPURepository
-    {
-	    private DbContext _context;
+	public class CPURepository : RepositoryBase<CPU>, ICPURepository
+	{
+		/// <inheritdoc />
+		public CPURepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-	    public CPURepository(DbContext context) => _context = context;
+		#region Implementation of ICPURepository
 
-	    public async Task<IEnumerable<CPU>> GetAllAsync() => await _context.Set<CPU>().ToListAsync();
+		/// <inheritdoc />
+		public async Task<IEnumerable<CPU>> GetAllCPUAsync() => await GetAll().Include(x => x.Producer).ToListAsync();
 
-	    #region Implementation of IRepository<CPU>
+		/// <inheritdoc />
+		public async Task<CPU> GetCPUByIdAsync(int cpuId) =>
+			await FindBy(cpu => cpu.Id == cpuId).Include(x => x.Producer).FirstOrDefaultAsync();
 
-	    public async Task<CPU> GetAsync(int? id)
-	    {
-		    if (!id.HasValue) return null;
-		    var cpu = await _context.FindAsync<CPU>(id);
-		    return cpu;
-	    }
+		/// <inheritdoc />
+		public void CreateCPU(CPU cpu)
+		{
+			Create(cpu);
+		}
 
-	    public async Task AddAsync(CPU entity)
-	    {
-		    throw new NotImplementedException();
-	    }
+		/// <inheritdoc />
+		public void UpdateCPU(CPU cpu)
+		{
+			Update(cpu);
+		}
 
-	    public async Task RemoveAsync(CPU entity)
-	    {
-		    throw new NotImplementedException();
-	    }
+		/// <inheritdoc />
+		public void DeleteCPU(CPU cpu)
+		{
+			Delete(cpu);
+		}
 
-	    public async Task UpdateAsync(CPU entity)
-	    {
-		    throw new NotImplementedException();
-	    }
-
-	    #endregion
-    }
+		#endregion
+	}
 }

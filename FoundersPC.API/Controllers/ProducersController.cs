@@ -1,34 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using derectives
+
 using System.Threading.Tasks;
-using FoundersPC.Services.Models;
+using FoundersPC.Core.Requests;
+using FoundersPC.Core.Requests.Producers;
 using FoundersPC.Services.Repositories;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.API.Controllers
 {
 	[ApiController]
 	[Route("api/producers")]
 	public class ProducersController : ControllerBase
-    {
-	    private readonly IProducersRepository _producersRepository;
+	{
+		private readonly IProducerRequest _request;
 
-	    public ProducersController(IProducersRepository producersRepository)
-	    {
-		    _producersRepository = producersRepository;
-	    }
+		public ProducersController(IProducerRequest request) => _request = request;
 
-	    [HttpGet]
-	    public async Task<ActionResult<IEnumerable<Producer>>> Get() => Ok(await _producersRepository.GetAllAsync());
+		[HttpGet]
+		public async Task<ActionResult> Get() => Ok(await _request.GetAllProducersAsync());
 
-	    [HttpGet("{id}")]
-	    public async Task<ActionResult<Producer>> Get(int? id)
-	    {
-		    if (id.HasValue)
-			    return Ok(await _producersRepository.GetAsync(id.Value));
+        [HttpGet("{id}")]
+        public async Task<ActionResult> Get(int? id)
+        {
+            if (id.HasValue)
+                return Ok(await _request.GetProducerByIdAsync(id.Value));
 
-		    return NotFound();
-	    }
-	}
+            return NotFound();
+        }
+    }
 }

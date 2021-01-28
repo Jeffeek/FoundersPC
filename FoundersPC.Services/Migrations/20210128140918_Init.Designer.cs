@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoundersPC.Services.Migrations
 {
     [DbContext(typeof(FoundersPCDbContext))]
-    [Migration("20210127200958_Init")]
+    [Migration("20210128140918_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,11 +45,6 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnType("int")
                         .HasColumnName("L3Cache");
 
-                    b.Property<string>("Lineup")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("Lineup");
-
                     b.Property<DateTime?>("MarketLaunch")
                         .HasColumnType("datetime2")
                         .HasColumnName("MarketLaunch");
@@ -58,22 +53,29 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnType("int")
                         .HasColumnName("MaxRamSpeed");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("Name");
+
+                    b.Property<int>("ProcessorLineupId")
+                        .HasColumnType("int")
+                        .HasColumnName("ProcessorLineupId");
+
                     b.Property<int>("ProducerId")
                         .HasColumnType("int")
                         .HasColumnName("ProducerId");
 
                     b.Property<string>("Socket")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
                         .HasColumnName("Socket");
 
                     b.Property<int>("TDP")
                         .HasColumnType("int")
                         .HasColumnName("TDP");
-
-                    b.Property<int>("TechProcess")
-                        .HasColumnType("int")
-                        .HasColumnName("TechProcess");
 
                     b.Property<int>("TurboBoostFrequency")
                         .HasColumnType("int")
@@ -82,6 +84,8 @@ namespace FoundersPC.Services.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("Id");
+
+                    b.HasIndex("ProcessorLineupId");
 
                     b.HasIndex("ProducerId");
 
@@ -97,6 +101,7 @@ namespace FoundersPC.Services.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Color")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("Color");
@@ -106,11 +111,13 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("MarketLaunch");
 
                     b.Property<string>("Material")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("Material");
 
                     b.Property<string>("MaxMotherboardSize")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("MaxMotherboardSize");
@@ -124,11 +131,13 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("TransparentWindow");
 
                     b.Property<string>("Type")
+                        .IsRequired()
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)")
                         .HasColumnName("Type");
 
                     b.Property<string>("WindowMaterial")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("WindowMaterial");
@@ -173,6 +182,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("Frequency");
 
                     b.Property<string>("GraphicsProcessor")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("GraphicsProcessor");
@@ -182,6 +192,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("HDMI");
 
                     b.Property<string>("Interface")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("Interface");
@@ -213,6 +224,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("VideoMemoryFrequency");
 
                     b.Property<string>("VideoMemoryType")
+                        .IsRequired()
                         .HasMaxLength(7)
                         .HasColumnType("nvarchar(7)")
                         .HasColumnName("VideoMemoryType");
@@ -400,6 +412,7 @@ namespace FoundersPC.Services.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("AudioSupport")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("AudioSupport");
@@ -417,6 +430,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("MarketLaunch");
 
                     b.Property<string>("PCIExpressVersion")
+                        .IsRequired()
                         .HasMaxLength(12)
                         .HasColumnType("nvarchar(12)")
                         .HasColumnName("PCIExpressVersion");
@@ -430,6 +444,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("ProducerId");
 
                     b.Property<string>("RAMMode")
+                        .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("nvarchar(2)")
                         .HasColumnName("RAMMode");
@@ -439,6 +454,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("RAMSlots");
 
                     b.Property<string>("RAMSupport")
+                        .IsRequired()
                         .HasMaxLength(6)
                         .HasColumnType("nvarchar(6)")
                         .HasColumnName("RAMSupport");
@@ -448,6 +464,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("SLI_Crossfire");
 
                     b.Property<string>("Socket")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)")
                         .HasColumnName("Socket");
@@ -502,6 +519,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("MarketLaunch");
 
                     b.Property<string>("MotherboardPowering")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)")
                         .HasColumnName("MotherboardPowering");
@@ -527,6 +545,45 @@ namespace FoundersPC.Services.Migrations
                     b.ToTable("PowerSupplies");
                 });
 
+            modelBuilder.Entity("FoundersPC.Services.Models.ProcessorLineup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("FamilyCodename")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("FamilyCodename");
+
+                    b.Property<DateTime?>("MarketLaunch")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("MarketLaunch");
+
+                    b.Property<string>("MicroArchitecture")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("MicroArchitecture");
+
+                    b.Property<string>("Serial")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("Serial");
+
+                    b.Property<int>("TechProcess")
+                        .HasColumnType("int")
+                        .HasColumnName("TechProcess");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProcessorLineup");
+                });
+
             modelBuilder.Entity("FoundersPC.Services.Models.Producer", b =>
                 {
                     b.Property<int>("Id")
@@ -545,6 +602,7 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("FoundationDate");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("FullName");
@@ -555,8 +613,8 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("ShortName");
 
                     b.Property<string>("Website")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
                         .HasColumnName("Website");
 
                     b.HasKey("Id");
@@ -568,11 +626,19 @@ namespace FoundersPC.Services.Migrations
 
             modelBuilder.Entity("FoundersPC.Services.Models.CPU", b =>
                 {
-                    b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
+                    b.HasOne("FoundersPC.Services.Models.ProcessorLineup", "ProcessorLineup")
                         .WithMany()
+                        .HasForeignKey("ProcessorLineupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
+                        .WithMany("Processors")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ProcessorLineup");
 
                     b.Navigation("Producer");
                 });
@@ -580,7 +646,7 @@ namespace FoundersPC.Services.Migrations
             modelBuilder.Entity("FoundersPC.Services.Models.Case", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
-                        .WithMany()
+                        .WithMany("Cases")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -591,7 +657,7 @@ namespace FoundersPC.Services.Migrations
             modelBuilder.Entity("FoundersPC.Services.Models.GPU", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
-                        .WithMany()
+                        .WithMany("VideoCards")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -602,7 +668,7 @@ namespace FoundersPC.Services.Migrations
             modelBuilder.Entity("FoundersPC.Services.Models.Memory.HDD", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
-                        .WithMany()
+                        .WithMany("HardDrives")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -613,7 +679,7 @@ namespace FoundersPC.Services.Migrations
             modelBuilder.Entity("FoundersPC.Services.Models.Memory.RAM", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
-                        .WithMany()
+                        .WithMany("RandomAccessMemory")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -624,7 +690,7 @@ namespace FoundersPC.Services.Migrations
             modelBuilder.Entity("FoundersPC.Services.Models.Memory.SSD", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
-                        .WithMany()
+                        .WithMany("SolidStateDrive")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -635,7 +701,7 @@ namespace FoundersPC.Services.Migrations
             modelBuilder.Entity("FoundersPC.Services.Models.Motherboard", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
-                        .WithMany()
+                        .WithMany("Motherboards")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -646,12 +712,31 @@ namespace FoundersPC.Services.Migrations
             modelBuilder.Entity("FoundersPC.Services.Models.PowerSupply", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Producer", "Producer")
-                        .WithMany()
+                        .WithMany("PowerSupplies")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Producer");
+                });
+
+            modelBuilder.Entity("FoundersPC.Services.Models.Producer", b =>
+                {
+                    b.Navigation("Cases");
+
+                    b.Navigation("HardDrives");
+
+                    b.Navigation("Motherboards");
+
+                    b.Navigation("PowerSupplies");
+
+                    b.Navigation("Processors");
+
+                    b.Navigation("RandomAccessMemory");
+
+                    b.Navigation("SolidStateDrive");
+
+                    b.Navigation("VideoCards");
                 });
 #pragma warning restore 612, 618
         }

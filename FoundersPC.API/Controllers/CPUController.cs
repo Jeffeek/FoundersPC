@@ -1,31 +1,32 @@
-﻿using System.Collections.Generic;
-using FoundersPC.Services.Models;
+﻿#region Using derectives
+
+using System.Threading.Tasks;
+using FoundersPC.Core.Requests.Processors;
 using FoundersPC.Services.Repositories;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.API.Controllers
 {
 	[ApiController]
 	[Route("api/cpu")]
-    public class CPUController : ControllerBase
+	public class CPUController : ControllerBase
 	{
-		private ICPURepository _cpuRepository;
+		private readonly ICPURequest _request;
 
-	    public CPUController(ICPURepository cpuRepository)
-	    {
-		    _cpuRepository = cpuRepository;
-	    }
+		public CPUController(ICPURequest request) => _request = request;
 
-	    [HttpGet]
-	    public ActionResult<IEnumerable<CPU>> Get() => Ok(_cpuRepository.GetAllAsync());
+		[HttpGet]
+		public async Task<ActionResult> Get() => Ok(await _request.GetAllProducersAsync());
 
-	    [HttpGet("{id}")]
-	    public ActionResult<CPU> Get(int? id)
-	    {
-		    if (id.HasValue)
-			    return Ok(_cpuRepository.GetAsync(id.Value));
+		[HttpGet("{id}")]
+		public async Task<ActionResult> Get(int? id)
+		{
+			if (id.HasValue)
+				return Ok(await _request.GetAllProducersAsync());
 
 			return NotFound();
-	    }
+		}
 	}
 }

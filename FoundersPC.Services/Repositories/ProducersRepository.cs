@@ -1,48 +1,46 @@
-﻿using System;
+﻿#region Using derectives
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FoundersPC.Services.Models;
 using Microsoft.EntityFrameworkCore;
 
+#endregion
+
 namespace FoundersPC.Services.Repositories
 {
-    public class ProducersRepository : IProducersRepository
-    {
-	    private readonly DbContext _context;
+	public class ProducersRepository : RepositoryBase<Producer>, IProducersRepository
+	{
+		/// <inheritdoc />
+		public ProducersRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-	    #region Implementation of IRepository<Producer>
+		#region Implementation of IProducersRepository
 
-	    public ProducersRepository(DbContext context)
-	    {
-		    _context = context;
-	    }
+		/// <inheritdoc />
+		public async Task<IEnumerable<Producer>> GetAllProducersAsync() => await GetAll().ToListAsync();
 
-	    public async Task<Producer> GetAsync(int? id)
-        {
-	        if (!id.HasValue) return null;
-	        var producer = await _context.FindAsync<Producer>(id);
-	        return producer;
+		/// <inheritdoc />
+		public async Task<Producer> GetProducerByIdAsync(int producerId) =>
+			await FindBy(producer => producer.Id == producerId).FirstOrDefaultAsync();
+
+		/// <inheritdoc />
+		public void CreateProducer(Producer producer)
+		{
+			Create(producer);
 		}
 
-	    public async Task<IEnumerable<Producer>> GetAllAsync() => await _context.Set<Producer>().ToListAsync();
+		/// <inheritdoc />
+		public void UpdateProducer(Producer producer)
+		{
+			Update(producer);
+		}
 
-	    public Task AddAsync(Producer entity)
-	    {
-		    throw new NotImplementedException();
-	    }
+		/// <inheritdoc />
+		public void DeleteProducer(Producer producer)
+		{
+			Delete(producer);
+		}
 
-	    public Task RemoveAsync(Producer entity)
-	    {
-		    throw new NotImplementedException();
-	    }
-
-	    public Task UpdateAsync(Producer entity)
-	    {
-		    throw new NotImplementedException();
-	    }
-
-	    #endregion
-    }
+		#endregion
+	}
 }
