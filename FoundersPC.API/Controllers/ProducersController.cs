@@ -1,9 +1,7 @@
 ﻿#region Using derectives
 
 using System.Threading.Tasks;
-using FoundersPC.Core.Requests;
 using FoundersPC.Core.Requests.Producers;
-using FoundersPC.Services.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion

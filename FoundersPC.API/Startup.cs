@@ -2,7 +2,6 @@
 
 using AutoMapper;
 using FoundersPC.API.Utils;
-using FoundersPC.Core.Requests;
 using FoundersPC.Core.Requests.Producers;
 using FoundersPC.Services;
 using FoundersPC.Services.Repositories;

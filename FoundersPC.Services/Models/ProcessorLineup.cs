@@ -17,7 +17,7 @@ namespace FoundersPC.Services.Models
 	    [DataType(DataType.Date)]
 	    public DateTime? MarketLaunch { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+	    [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DataType(DataType.Text)]
         [MaxLength(20)]
         [MinLength(3)]

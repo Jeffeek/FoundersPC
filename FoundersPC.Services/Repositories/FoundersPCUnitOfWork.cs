@@ -13,6 +13,7 @@ namespace FoundersPC.Services.Repositories
 
 		public FoundersPCUnitOfWork(DbContext context)
 		{
+			_context = context;
 			ProcessorsRepository = new CPURepository(context);
 			ProducersRepository = new ProducersRepository(context);
 		}

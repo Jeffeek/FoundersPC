@@ -1,4 +1,5 @@
 ﻿using System;
+using FoundersPC.Services.Models;
 
 namespace FoundersPC.Services.DTO
 {
@@ -11,6 +12,10 @@ namespace FoundersPC.Services.DTO
 	    public ProducerDto Producer { get; set; }
 
 	    public DateTime? MarketLaunch { get; set; }
+
+	    public ProcessorLineup ProcessorLineup { get; set; }
+
+	    public string Name { get; set; }
 
 		public int TechProcess { get; set; }
 
