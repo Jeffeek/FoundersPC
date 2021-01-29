@@ -4,14 +4,16 @@ using FoundersPC.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoundersPC.Services.Migrations
 {
     [DbContext(typeof(FoundersPCDbContext))]
-    partial class FoundersPCDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210129191450_InitCPULineUps")]
+    partial class InitCPULineUps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,6 +66,12 @@ namespace FoundersPC.Services.Migrations
                     b.Property<int>("ProducerId")
                         .HasColumnType("int")
                         .HasColumnName("ProducerId");
+
+                    b.Property<string>("Socket")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
+                        .HasColumnName("Socket");
 
                     b.Property<int>("TDP")
                         .HasColumnType("int")
@@ -572,12 +580,6 @@ namespace FoundersPC.Services.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Serial");
-
-                    b.Property<string>("Socket")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)")
-                        .HasColumnName("Socket");
 
                     b.Property<int>("TechProcess")
                         .HasColumnType("int")
