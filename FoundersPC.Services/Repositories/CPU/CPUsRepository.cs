@@ -37,7 +37,6 @@ namespace FoundersPC.Services.Repositories.CPU
 		/// <inheritdoc />
 		public async Task DeleteCPU(Models.Hardware.CPU cpu) => await Task.Run(() => Delete(cpu));
 		
-
 		#endregion
 	}
 }

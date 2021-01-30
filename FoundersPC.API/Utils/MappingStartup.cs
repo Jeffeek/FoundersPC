@@ -18,6 +18,8 @@ namespace FoundersPC.API.Utils
 
 			CreateMap<CPUReadDto, CPU>();
 			CreateMap<CPU, CPUReadDto>();
+			CreateMap<CPUInsertDto, CPU>();
+			CreateMap<CPU, CPUInsertDto>();
 
 			CreateMap<ProcessorLineupReadDto, ProcessorLineup>();
 			CreateMap<ProcessorLineup, ProcessorLineupReadDto>();

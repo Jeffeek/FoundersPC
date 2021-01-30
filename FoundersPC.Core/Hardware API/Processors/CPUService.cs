@@ -28,19 +28,21 @@ namespace FoundersPC.Core.Hardware_API.Processors
 		public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) => _mapper.Map<CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetCPUByIdAsync(cpuId));
 
 		/// <inheritdoc />
-		public void CreateCPU(CPUReadDto cpu)
+		public async Task<bool> CreateCPU(CPUInsertDto cpu)
+		{
+			var mappedCpu = _mapper.Map<CPUInsertDto, CPU>(cpu);
+			await _unitOfWork.ProcessorsRepository.CreateCPU(mappedCpu);
+			return await _unitOfWork.SaveChangesAsync();
+		}
+
+		/// <inheritdoc />
+		public Task<bool> UpdateCPU(CPUUpdateDto cpu)
 		{
 			throw new NotImplementedException();
 		}
 
 		/// <inheritdoc />
-		public void UpdateCPU(CPUReadDto cpu)
-		{
-			throw new NotImplementedException();
-		}
-
-		/// <inheritdoc />
-		public void DeleteCPU(CPUReadDto cpu)
+		public Task<bool> DeleteCPU(int id)
 		{
 			throw new NotImplementedException();
 		}

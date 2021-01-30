@@ -1,5 +1,6 @@
 ﻿#region Using derectives
 
+using System;
 using System.Threading.Tasks;
 using FoundersPC.Services.Repositories.CPU;
 using FoundersPC.Services.Repositories.ProcessorLineup;
@@ -41,8 +42,21 @@ namespace FoundersPC.Services.Repositories.UoW
 		public IProcessorLineupsRepository ProcessorLineupsRepository { get; }
 
         /// <inheritdoc />
-		public async Task<bool> SaveChangesAsync() => await _context.SaveChangesAsync() >= 0;
+		public async Task<bool> SaveChangesAsync()
+        {
+	        var result = false;
+	        try
+	        {
+		        result = await _context.SaveChangesAsync() >= 0;
+			}
+	        catch
+	        {
+		        return false;
+	        }
 
-		#endregion
+	        return result;
+        }
+
+        #endregion
 	}
 }
