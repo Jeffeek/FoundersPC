@@ -19,7 +19,7 @@ namespace FoundersPC.Core.Hardware_API.Producers
 		    _mapper = mapper;
 	    }
 
-	    public IEnumerable<ProducerReadDto> GetAll() => _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(_unitOfWork.ProducersRepository.GetAll());
+	    public IEnumerable<ProducerReadDto> GetAllProducers() => _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(_unitOfWork.ProducersRepository.GetAll());
 
 	    /// <inheritdoc />
 	    public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() => _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWork.ProducersRepository.GetAllProducersAsync());

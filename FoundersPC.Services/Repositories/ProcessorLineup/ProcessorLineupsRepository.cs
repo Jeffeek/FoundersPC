@@ -14,7 +14,7 @@ namespace FoundersPC.Services.Repositories.ProcessorLineup
 		/// <inheritdoc />
 		public ProcessorLineupsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-		#region Implementation of IProducersRepository
+		#region Implementation of IProcessorLineupsRepository
 
 		/// <inheritdoc />
 		public async Task<IEnumerable<Models.Hardware.ProcessorLineup>> GetAllProcessorLineupAsync() => await GetAll().ToListAsync();

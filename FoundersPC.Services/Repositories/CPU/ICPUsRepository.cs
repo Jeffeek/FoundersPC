@@ -10,7 +10,7 @@ namespace FoundersPC.Services.Repositories.CPU
 {
 	public interface ICPUsRepository : IRepository<Models.Hardware.CPU>
 	{
-		Task<IEnumerable<Models.Hardware.CPU>> GetAllCPUAsync();
+		Task<IEnumerable<Models.Hardware.CPU>> GetAllCPUsAsync();
 		Task<Models.Hardware.CPU> GetCPUByIdAsync(int cpuId);
 		Task CreateCPU(Models.Hardware.CPU cpu);
 		Task UpdateCPU(Models.Hardware.CPU cpu);

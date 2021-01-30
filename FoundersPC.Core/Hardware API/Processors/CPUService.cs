@@ -19,28 +19,28 @@ namespace FoundersPC.Core.Hardware_API.Processors
 			_mapper = mapper;
 		}
 
-		public IEnumerable<CPUReadDto> GetAll() => _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(_unitOfWork.ProcessorsRepository.GetAll());
+		public IEnumerable<CPUReadDto> GetAllCPUs() => _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(_unitOfWork.ProcessorsRepository.GetAll());
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<CPUReadDto>> GetAllProducersAsync() => _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork.ProcessorsRepository.GetAllCPUAsync());
+		public async Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync() => _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork.ProcessorsRepository.GetAllCPUsAsync());
 
 		/// <inheritdoc />
-		public async Task<CPUReadDto> GetProducerByIdAsync(int producerId) => _mapper.Map<CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetCPUByIdAsync(producerId));
+		public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) => _mapper.Map<CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetCPUByIdAsync(cpuId));
 
 		/// <inheritdoc />
-		public void CreateProducer(CPUReadDto producer)
+		public void CreateCPU(CPUReadDto cpu)
 		{
 			throw new NotImplementedException();
 		}
 
 		/// <inheritdoc />
-		public void UpdateProducer(CPUReadDto producer)
+		public void UpdateCPU(CPUReadDto cpu)
 		{
 			throw new NotImplementedException();
 		}
 
 		/// <inheritdoc />
-		public void DeleteProducer(CPUReadDto producer)
+		public void DeleteCPU(CPUReadDto cpu)
 		{
 			throw new NotImplementedException();
 		}

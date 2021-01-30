@@ -6,11 +6,11 @@ namespace FoundersPC.Core.Hardware_API.Processors
 {
     public interface ICPUService
     {
-	    Task<IEnumerable<CPUReadDto>> GetAllProducersAsync();
-	    Task<CPUReadDto> GetProducerByIdAsync(int producerId);
-	    IEnumerable<CPUReadDto> GetAll();
-	    void CreateProducer(CPUReadDto producer);
-	    void UpdateProducer(CPUReadDto producer);
-	    void DeleteProducer(CPUReadDto producer);
+	    Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync();
+	    Task<CPUReadDto> GetCPUByIdAsync(int cpuId);
+	    IEnumerable<CPUReadDto> GetAllCPUs();
+	    void CreateCPU(CPUReadDto cpu);
+	    void UpdateCPU(CPUReadDto cpu);
+	    void DeleteCPU(CPUReadDto cpu);
 	}
 }

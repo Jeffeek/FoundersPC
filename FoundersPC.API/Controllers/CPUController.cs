@@ -17,13 +17,13 @@ namespace FoundersPC.API.Controllers
 		public CPUController(ICPUService request) => _cpuService = request;
 
 		[HttpGet]
-		public async Task<ActionResult> Get() => Ok(await _cpuService.GetAllProducersAsync());
+		public async Task<ActionResult> Get() => Ok(await _cpuService.GetAllCPUsAsync());
 
 		[HttpGet("{id}")]
 		public async Task<ActionResult> Get(int? id)
 		{
 			if (!id.HasValue) return BadRequest();
-			var cpu = await _cpuService.GetProducerByIdAsync(id.Value);
+			var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
 			if (cpu == null) return NotFound();
 			return Ok(cpu);
 		}

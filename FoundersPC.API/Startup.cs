@@ -32,13 +32,16 @@ namespace FoundersPC.API
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers()
-			        .AddNewtonsoftJson(setup => setup.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver()); ;
+			        .AddNewtonsoftJson(setup => setup.SerializerSettings.ContractResolver =
+				                                    new CamelCasePropertyNamesContractResolver());
+
 
 			var connection = Configuration.GetConnectionString("FoundercPC.connectionString");
 			services.AddDbContext<DbContext, FoundersPCDbContext>(
 			                                                      options => options.UseSqlServer(connection,
 				                                                      builder =>
-					                                                      builder.MigrationsAssembly("FoundersPC.Services")));
+					                                                      builder
+						                                                      .MigrationsAssembly("FoundersPC.Services")));
 
 
 			services.AddAutoMapper(typeof(MappingStartup));
@@ -48,7 +51,7 @@ namespace FoundersPC.API
 			services.AddScoped<IProcessorLineupsRepository, ProcessorLineupsRepository>();
 
 			services.AddScoped<IUnitOfWork, FoundersPCUnitOfWork>();
-			
+
 			services.AddScoped<IProducerService, ProducersService>();
 			services.AddScoped<ICPUService, CPUService>();
 
@@ -57,7 +60,7 @@ namespace FoundersPC.API
 			                       {
 				                       options.SwaggerDoc("v1", new OpenApiInfo
 				                                                {
-					                                                Title = "FoundersPC.API", 
+					                                                Title = "FoundersPC.API",
 					                                                Version = "v1"
 				                                                });
 			                       });

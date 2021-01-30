@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using FoundersPC.Services.Models.Hardware;
 
 namespace FoundersPC.Services.DTO
 {

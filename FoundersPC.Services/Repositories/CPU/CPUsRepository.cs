@@ -14,19 +14,19 @@ namespace FoundersPC.Services.Repositories.CPU
 		/// <inheritdoc />
 		public CPUsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-		#region Implementation of ICPURepository
+		#region Implementation of ICPUsRepository
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<Models.Hardware.CPU>> GetAllCPUAsync() => await GetAll()
-			.Include(x => x.Producer)
-			.Include(x => x.ProcessorLineup)
+		public async Task<IEnumerable<Models.Hardware.CPU>> GetAllCPUsAsync() => await GetAll()
+			.Include(cpu => cpu.Producer)
+			.Include(cpu => cpu.ProcessorLineup)
 			.ToListAsync();
 
 		/// <inheritdoc />
 		public async Task<Models.Hardware.CPU> GetCPUByIdAsync(int cpuId) =>
 			await FindBy(cpu => cpu.Id == cpuId)
-			      .Include(x => x.Producer)
-			      .Include(x => x.ProcessorLineup).FirstOrDefaultAsync();
+			      .Include(cpu => cpu.Producer)
+			      .Include(cpu => cpu.ProcessorLineup).FirstOrDefaultAsync();
 
 		/// <inheritdoc />
 		public async Task CreateCPU(Models.Hardware.CPU cpu) => await Task.Run(() => Create(cpu));
