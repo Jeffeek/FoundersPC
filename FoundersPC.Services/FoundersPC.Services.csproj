@@ -16,8 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\Case Dto%27s\" />
-    <Folder Include="DTO\VideoCards Dto%27s\" />
     <Folder Include="DTO\Motherboard Dto%27s\" />
     <Folder Include="DTO\PowerSupply Dto%27s\" />
   </ItemGroup>
