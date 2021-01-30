@@ -1,7 +1,9 @@
 ﻿#region Using derectives
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Core.Hardware_API.Producers;
+using FoundersPC.Services.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
@@ -17,10 +19,10 @@ namespace FoundersPC.API.Controllers
 		public ProducersController(IProducerService service) => _producerService = service;
 
 		[HttpGet]
-		public async Task<ActionResult> Get() => Ok(await _producerService.GetAllProducersAsync());
+		public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get() => Ok(await _producerService.GetAllProducersAsync());
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> Get(int? id)
+        public async Task<ActionResult<ProducerReadDto>> Get(int? id)
         {
             if (!id.HasValue) return BadRequest();
             var producer = await _producerService.GetProducerByIdAsync(id.Value);

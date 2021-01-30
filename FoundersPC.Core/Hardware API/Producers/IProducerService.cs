@@ -9,8 +9,8 @@ namespace FoundersPC.Core.Hardware_API.Producers
 	    Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync();
 	    Task<ProducerReadDto> GetProducerByIdAsync(int producerId);
 	    IEnumerable<ProducerReadDto> GetAllProducers();
-	    void CreateProducer(ProducerReadDto producerRead);
-	    void UpdateProducer(ProducerReadDto producerRead);
-	    void DeleteProducer(ProducerReadDto producerRead);
+	    Task<bool> CreateProducer(ProducerInsertDto producerRead);
+	    Task<bool> UpdateProducer(int id, ProducerUpdateDto producerRead);
+	    Task<bool> DeleteProducer(int id);
 	}
 }

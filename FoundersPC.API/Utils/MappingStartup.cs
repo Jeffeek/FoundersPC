@@ -13,40 +13,205 @@ namespace FoundersPC.API.Utils
 	{
 		public MappingStartup()
 		{
-			CreateMap<ProducerReadDto, Producer>();
+			#region Producer Mapping
+
 			CreateMap<Producer, ProducerReadDto>();
+			CreateMap<Producer, ProducerInsertDto>();
+			CreateMap<Producer, ProducerUpdateDto>();
 
-			CreateMap<CPU, CPUReadDto>();
-			CreateMap<CPU, CPUUpdateDto>();
-			CreateMap<CPU, CPUInsertDto>();
-			CreateMap<CPUReadDto, CPU>();
-			CreateMap<CPUReadDto, CPUUpdateDto>();
-			CreateMap<CPUInsertDto, CPU>();
-			CreateMap<CPUUpdateDto, CPU>();
+			CreateMap<ProducerReadDto, Producer>();
+			CreateMap<ProducerReadDto, ProducerUpdateDto>();
+			CreateMap<ProducerReadDto, ProducerInsertDto>();
 
-			CreateMap<ProcessorLineupReadDto, ProcessorLineup>();
-			CreateMap<ProcessorLineup, ProcessorLineupReadDto>();
+			CreateMap<ProducerUpdateDto, Producer>();
+			CreateMap<ProducerUpdateDto, ProducerReadDto>();
+			CreateMap<ProducerUpdateDto, ProducerInsertDto>();
+
+			CreateMap<ProducerInsertDto, Producer>();
+			CreateMap<ProducerInsertDto, ProducerReadDto>();
+			CreateMap<ProducerInsertDto, ProducerUpdateDto>();
+
+			#endregion
+
+			#region Case Mapping
+
+			CreateMap<Case, CaseReadDto>();
+			CreateMap<Case, CaseInsertDto>();
+			CreateMap<Case, CaseUpdateDto>();
 
 			CreateMap<CaseReadDto, Case>();
-			CreateMap<Case, CaseReadDto>();
+			CreateMap<CaseReadDto, CaseUpdateDto>();
+			CreateMap<CaseReadDto, CaseInsertDto>();
 
-			CreateMap<HDDReadDto, HDD>();
-			CreateMap<HDD, HDDReadDto>();
+			CreateMap<CaseUpdateDto, Case>();
+			CreateMap<CaseUpdateDto, CaseReadDto>();
+			CreateMap<CaseUpdateDto, CaseInsertDto>();
 
-			CreateMap<SSDReadDto, SSD>();
-			CreateMap<SSD, SSDReadDto>();
+			CreateMap<CaseInsertDto, Case>();
+			CreateMap<CaseInsertDto, CaseReadDto>();
+			CreateMap<CaseInsertDto, CaseUpdateDto>();
 
-			CreateMap<MotherboardReadDto, Motherboard>();
-			CreateMap<Motherboard, MotherboardReadDto>();
+			#endregion
 
-			CreateMap<PowerSupplyReadDto, PowerSupply>();
-			CreateMap<PowerSupply, PowerSupplyReadDto>();
+			#region GPU Mapping
 
-			CreateMap<RAMReadDto, RAM>();
-			CreateMap<RAM, RAMReadDto>();
+			CreateMap<GPU, GPUReadDto>();
+			CreateMap<GPU, GPUInsertDto>();
+			CreateMap<GPU, GPUUpdateDto>();
 
 			CreateMap<GPUReadDto, GPU>();
-			CreateMap<GPU, GPUReadDto>();
+			CreateMap<GPUReadDto, GPUUpdateDto>();
+			CreateMap<GPUReadDto, GPUInsertDto>();
+
+			CreateMap<GPUUpdateDto, GPU>();
+			CreateMap<GPUUpdateDto, GPUReadDto>();
+			CreateMap<GPUUpdateDto, GPUInsertDto>();
+
+			CreateMap<GPUInsertDto, GPU>();
+			CreateMap<GPUInsertDto, GPUReadDto>();
+			CreateMap<GPUInsertDto, GPUUpdateDto>();
+
+			#endregion
+
+			#region HDD Mapping
+
+			CreateMap<HDD, HDDReadDto>();
+			CreateMap<HDD, HDDInsertDto>();
+			CreateMap<HDD, HDDUpdateDto>();
+
+			CreateMap<HDDReadDto, HDD>();
+			CreateMap<HDDReadDto, HDDUpdateDto>();
+			CreateMap<HDDReadDto, HDDInsertDto>();
+
+			CreateMap<HDDUpdateDto, HDD>();
+			CreateMap<HDDUpdateDto, HDDReadDto>();
+			CreateMap<HDDUpdateDto, HDDInsertDto>();
+
+			CreateMap<HDDInsertDto, HDD>();
+			CreateMap<HDDInsertDto, HDDReadDto>();
+			CreateMap<HDDInsertDto, HDDUpdateDto>();
+
+			#endregion
+
+			#region Motherboard Mapping
+
+			CreateMap<Motherboard, MotherboardReadDto>();
+			CreateMap<Motherboard, MotherboardInsertDto>();
+			CreateMap<Motherboard, MotherboardUpdateDto>();
+
+			CreateMap<MotherboardReadDto, Motherboard>();
+			CreateMap<MotherboardReadDto, MotherboardUpdateDto>();
+			CreateMap<MotherboardReadDto, MotherboardInsertDto>();
+
+			CreateMap<MotherboardUpdateDto, Motherboard>();
+			CreateMap<MotherboardUpdateDto, MotherboardReadDto>();
+			CreateMap<MotherboardUpdateDto, MotherboardInsertDto>();
+
+			CreateMap<MotherboardInsertDto, Motherboard>();
+			CreateMap<MotherboardInsertDto, MotherboardReadDto>();
+			CreateMap<MotherboardInsertDto, MotherboardUpdateDto>();
+
+			#endregion
+
+			#region PowerSupply Mapping
+
+			CreateMap<PowerSupply, PowerSupplyReadDto>();
+			CreateMap<PowerSupply, PowerSupplyInsertDto>();
+			CreateMap<PowerSupply, PowerSupplyUpdateDto>();
+
+			CreateMap<PowerSupplyReadDto, PowerSupply>();
+			CreateMap<PowerSupplyReadDto, PowerSupplyUpdateDto>();
+			CreateMap<PowerSupplyReadDto, PowerSupplyInsertDto>();
+
+			CreateMap<PowerSupplyUpdateDto, PowerSupply>();
+			CreateMap<PowerSupplyUpdateDto, PowerSupplyReadDto>();
+			CreateMap<PowerSupplyUpdateDto, PowerSupplyInsertDto>();
+
+			CreateMap<PowerSupplyInsertDto, PowerSupply>();
+			CreateMap<PowerSupplyInsertDto, PowerSupplyReadDto>();
+			CreateMap<PowerSupplyInsertDto, PowerSupplyUpdateDto>();
+
+			#endregion
+
+			#region CPU Mapping
+
+			CreateMap<CPU, CPUReadDto>();
+			CreateMap<CPU, CPUInsertDto>();
+			CreateMap<CPU, CPUUpdateDto>();
+
+			CreateMap<CPUReadDto, CPU>();
+			CreateMap<CPUReadDto, CPUUpdateDto>();
+			CreateMap<CPUReadDto, CPUInsertDto>();
+
+			CreateMap<CPUUpdateDto, CPU>();
+			CreateMap<CPUUpdateDto, CPUReadDto>();
+			CreateMap<CPUUpdateDto, CPUInsertDto>();
+
+			CreateMap<CPUInsertDto, CPU>();
+			CreateMap<CPUInsertDto, CPUReadDto>();
+			CreateMap<CPUInsertDto, CPUUpdateDto>();
+
+			#endregion
+
+			#region RAM Mapping
+
+			CreateMap<RAM, RAMReadDto>();
+			CreateMap<RAM, RAMInsertDto>();
+			CreateMap<RAM, RAMUpdateDto>();
+
+			CreateMap<RAMReadDto, RAM>();
+			CreateMap<RAMReadDto, RAMUpdateDto>();
+			CreateMap<RAMReadDto, RAMInsertDto>();
+
+			CreateMap<RAMUpdateDto, RAM>();
+			CreateMap<RAMUpdateDto, RAMReadDto>();
+			CreateMap<RAMUpdateDto, RAMInsertDto>();
+
+			CreateMap<RAMInsertDto, RAM>();
+			CreateMap<RAMInsertDto, RAMReadDto>();
+			CreateMap<RAMInsertDto, RAMUpdateDto>();
+
+			#endregion
+
+			#region SSD Mapping
+
+			CreateMap<SSD, SSDReadDto>();
+			CreateMap<SSD, SSDInsertDto>();
+			CreateMap<SSD, SSDUpdateDto>();
+
+			CreateMap<SSDReadDto, SSD>();
+			CreateMap<SSDReadDto, SSDUpdateDto>();
+			CreateMap<SSDReadDto, SSDInsertDto>();
+
+			CreateMap<SSDUpdateDto, SSD>();
+			CreateMap<SSDUpdateDto, SSDReadDto>();
+			CreateMap<SSDUpdateDto, SSDInsertDto>();
+
+			CreateMap<SSDInsertDto, SSD>();
+			CreateMap<SSDInsertDto, SSDReadDto>();
+			CreateMap<SSDInsertDto, SSDUpdateDto>();
+
+			#endregion
+
+			#region ProcessorLineup Mapping
+
+			CreateMap<ProcessorLineup, ProcessorLineupReadDto>();
+			CreateMap<ProcessorLineup, ProcessorLineupInsertDto>();
+			CreateMap<ProcessorLineup, ProcessorLineupUpdateDto>();
+
+			CreateMap<ProcessorLineupReadDto, ProcessorLineup>();
+			CreateMap<ProcessorLineupReadDto, ProcessorLineupUpdateDto>();
+			CreateMap<ProcessorLineupReadDto, ProcessorLineupInsertDto>();
+
+			CreateMap<ProcessorLineupUpdateDto, ProcessorLineup>();
+			CreateMap<ProcessorLineupUpdateDto, ProcessorLineupReadDto>();
+			CreateMap<ProcessorLineupUpdateDto, ProcessorLineupInsertDto>();
+
+			CreateMap<ProcessorLineupInsertDto, ProcessorLineup>();
+			CreateMap<ProcessorLineupInsertDto, ProcessorLineupReadDto>();
+			CreateMap<ProcessorLineupInsertDto, ProcessorLineupUpdateDto>();
+
+			#endregion
 		}
 	}
 }

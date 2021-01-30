@@ -45,16 +45,8 @@ namespace FoundersPC.API
 
 
 			services.AddAutoMapper(typeof(MappingStartup));
-
-			services.AddScoped<ICPUsRepository, CPUsRepository>();
-			services.AddScoped<IProducersRepository, ProducersRepository>();
-			services.AddScoped<IProcessorLineupsRepository, ProcessorLineupsRepository>();
-
-			services.AddScoped<IUnitOfWork, FoundersPCUnitOfWork>();
-
-			services.AddScoped<IProducerService, ProducersService>();
-			services.AddScoped<ICPUService, CPUService>();
-
+			services.AddHardwareServices();
+			services.AddRepositories();
 
 			services.AddSwaggerGen(options =>
 			                       {

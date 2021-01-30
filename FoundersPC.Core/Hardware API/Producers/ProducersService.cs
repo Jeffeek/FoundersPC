@@ -28,21 +28,29 @@ namespace FoundersPC.Core.Hardware_API.Producers
 		public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) => _mapper.Map<Producer, ProducerReadDto>(await _unitOfWork.ProducersRepository.GetProducerByIdAsync(producerId));
 
 		/// <inheritdoc />
-	    public void CreateProducer(ProducerReadDto producerRead)
+	    public async Task<bool> CreateProducer(ProducerInsertDto producer)
 	    {
-		    throw new NotImplementedException();
-	    }
+			var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
+			await _unitOfWork.ProducersRepository.CreateProducer(mappedProducer);
+			return await _unitOfWork.SaveChangesAsync();
+		}
 
 	    /// <inheritdoc />
-	    public void UpdateProducer(ProducerReadDto producerRead)
+	    public async Task<bool> UpdateProducer(int id, ProducerUpdateDto producer)
 	    {
-		    throw new NotImplementedException();
-	    }
+			var bdEntity = await _unitOfWork.ProducersRepository.GetProducerByIdAsync(id);
+			if (bdEntity == null) return false;
+			_mapper.Map(producer, bdEntity);
+			await _unitOfWork.ProducersRepository.UpdateProducer(bdEntity);
+			return await _unitOfWork.SaveChangesAsync();
+		}
 
 	    /// <inheritdoc />
-	    public void DeleteProducer(ProducerReadDto producerRead)
+	    public async Task<bool> DeleteProducer(int id)
 	    {
-		    throw new NotImplementedException();
-	    }
+			var producerToDelete = await _unitOfWork.ProducersRepository.GetProducerByIdAsync(id);
+			await _unitOfWork.ProducersRepository.DeleteProducer(producerToDelete);
+			return await _unitOfWork.SaveChangesAsync();
+		}
     }
 }
