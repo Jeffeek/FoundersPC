@@ -36,15 +36,21 @@ namespace FoundersPC.Core.Hardware_API.Processors
 		}
 
 		/// <inheritdoc />
-		public Task<bool> UpdateCPU(CPUUpdateDto cpu)
+		public async Task<bool> UpdateCPU(int id, CPUUpdateDto cpu)
 		{
-			throw new NotImplementedException();
+			var bdEntity = await _unitOfWork.ProcessorsRepository.GetCPUByIdAsync(id);
+			if (bdEntity == null) return false;
+			_mapper.Map(cpu, bdEntity);
+			await _unitOfWork.ProcessorsRepository.UpdateCPU(bdEntity);
+			return await _unitOfWork.SaveChangesAsync();
 		}
 
 		/// <inheritdoc />
-		public Task<bool> DeleteCPU(int id)
+		public async Task<bool> DeleteCPU(int id)
 		{
-			throw new NotImplementedException();
+			var cpuToDelete = await _unitOfWork.ProcessorsRepository.GetCPUByIdAsync(id);
+			await _unitOfWork.ProcessorsRepository.DeleteCPU(cpuToDelete);
+			return await _unitOfWork.SaveChangesAsync();
 		}
 	}
 }

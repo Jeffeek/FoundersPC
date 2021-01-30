@@ -18,9 +18,9 @@ namespace FoundersPC.Services.Repositories.CPU
 
 		/// <inheritdoc />
 		public async Task<IEnumerable<Models.Hardware.CPU>> GetAllCPUsAsync() => await GetAll()
-			.Include(cpu => cpu.Producer)
-			.Include(cpu => cpu.ProcessorLineup)
-			.ToListAsync();
+			                                                                  .Include(cpu => cpu.Producer)
+			                                                                  .Include(cpu => cpu.ProcessorLineup)
+			                                                                  .ToListAsync();
 
 		/// <inheritdoc />
 		public async Task<Models.Hardware.CPU> GetCPUByIdAsync(int cpuId) =>

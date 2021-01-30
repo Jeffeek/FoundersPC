@@ -10,7 +10,7 @@ namespace FoundersPC.Core.Hardware_API.Processors
 	    Task<CPUReadDto> GetCPUByIdAsync(int cpuId);
 	    IEnumerable<CPUReadDto> GetAllCPUs();
 	    Task<bool> CreateCPU(CPUInsertDto cpu);
-	    Task<bool> UpdateCPU(CPUUpdateDto cpu);
+	    Task<bool> UpdateCPU(int id, CPUUpdateDto cpu);
 	    Task<bool> DeleteCPU(int id);
 	}
 }
