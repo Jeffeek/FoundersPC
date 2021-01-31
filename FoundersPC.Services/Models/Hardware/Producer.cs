@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.Services.Models.Hardware.Memory;
+using FoundersPC.Services.Models.Hardware.Processor;
+using FoundersPC.Services.Models.Hardware.VideoCard;
 using Microsoft.EntityFrameworkCore;
 
 #endregion

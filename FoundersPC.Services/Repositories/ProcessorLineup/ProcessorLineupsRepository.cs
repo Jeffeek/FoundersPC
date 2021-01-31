@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Services.Repositories.ProcessorLineup
 {
-	public class ProcessorLineupsRepository : RepositoryBase<Models.Hardware.ProcessorLineup>, IProcessorLineupsRepository
+	public class ProcessorLineupsRepository : RepositoryBase<Models.Hardware.Processor.ProcessorCore>, IProcessorLineupsRepository
 	{
 		/// <inheritdoc />
 		public ProcessorLineupsRepository(DbContext repositoryContext) : base(repositoryContext) { }
@@ -17,20 +17,20 @@ namespace FoundersPC.Services.Repositories.ProcessorLineup
 		#region Implementation of IProcessorLineupsRepository
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<Models.Hardware.ProcessorLineup>> GetAllProcessorLineupAsync() => await GetAll().ToListAsync();
+		public async Task<IEnumerable<Models.Hardware.Processor.ProcessorCore>> GetAllProcessorLineupAsync() => await GetAll().ToListAsync();
 
 		/// <inheritdoc />
-		public async Task<Models.Hardware.ProcessorLineup> GetProcessorLineupByIdAsync(int processorLineupId) =>
+		public async Task<Models.Hardware.Processor.ProcessorCore> GetProcessorLineupByIdAsync(int processorLineupId) =>
 			await FindBy(processorLineup => processorLineup.Id == processorLineupId).FirstOrDefaultAsync();
 
 		/// <inheritdoc />
-		public async Task CreateProcessorLineup(Models.Hardware.ProcessorLineup processorLineup) => await Task.Run(() => Create(processorLineup));
+		public async Task CreateProcessorLineup(Models.Hardware.Processor.ProcessorCore processorLineup) => await Task.Run(() => Create(processorLineup));
 		
 		/// <inheritdoc />
-		public async Task UpdateProcessorLineup(Models.Hardware.ProcessorLineup processorLineup) => await Task.Run(() => Update(processorLineup));
+		public async Task UpdateProcessorLineup(Models.Hardware.Processor.ProcessorCore processorLineup) => await Task.Run(() => Update(processorLineup));
 
 		/// <inheritdoc />
-		public async Task DeleteProcessorLineup(Models.Hardware.ProcessorLineup processorLineup) => await Task.Run(() => Delete(processorLineup));
+		public async Task DeleteProcessorLineup(Models.Hardware.Processor.ProcessorCore processorLineup) => await Task.Run(() => Delete(processorLineup));
 
 		#endregion
 	}

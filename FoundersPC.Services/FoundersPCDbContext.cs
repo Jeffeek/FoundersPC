@@ -2,6 +2,8 @@
 
 using FoundersPC.Services.Models.Hardware;
 using FoundersPC.Services.Models.Hardware.Memory;
+using FoundersPC.Services.Models.Hardware.Processor;
+using FoundersPC.Services.Models.Hardware.VideoCard;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -16,7 +18,8 @@ namespace FoundersPC.Services
 		}
 
 		public DbSet<CPU> Processors { get; set; }
-		public DbSet<ProcessorLineup> ProcessorLineups { get; set; }
+		public DbSet<ProcessorCore> ProcessorCores { get; set; }
+		public DbSet<VideoCardCore> VideoCardCores { get; set; }
 		public DbSet<GPU> VideoCards { get; set; }
 		public DbSet<HDD> HardDrives { get; set; }
 		public DbSet<SSD> SolidStateDrives { get; set; }

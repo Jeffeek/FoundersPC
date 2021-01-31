@@ -4,6 +4,8 @@ using AutoMapper;
 using FoundersPC.Services.DTO;
 using FoundersPC.Services.Models.Hardware;
 using FoundersPC.Services.Models.Hardware.Memory;
+using FoundersPC.Services.Models.Hardware.Processor;
+using FoundersPC.Services.Models.Hardware.VideoCard;
 
 #endregion
 
@@ -193,23 +195,43 @@ namespace FoundersPC.API.Utils
 
 			#endregion
 
-			#region ProcessorLineup Mapping
+			#region ProcessorCore Mapping
 
-			CreateMap<ProcessorLineup, ProcessorLineupReadDto>();
-			CreateMap<ProcessorLineup, ProcessorLineupInsertDto>();
-			CreateMap<ProcessorLineup, ProcessorLineupUpdateDto>();
+			CreateMap<ProcessorCore, ProcessorCoreReadDto>();
+			CreateMap<ProcessorCore, ProcessorCoreInsertDto>();
+			CreateMap<ProcessorCore, ProcessorCoreUpdateDto>();
 
-			CreateMap<ProcessorLineupReadDto, ProcessorLineup>();
-			CreateMap<ProcessorLineupReadDto, ProcessorLineupUpdateDto>();
-			CreateMap<ProcessorLineupReadDto, ProcessorLineupInsertDto>();
+			CreateMap<ProcessorCoreReadDto, ProcessorCore>();
+			CreateMap<ProcessorCoreReadDto, ProcessorCoreUpdateDto>();
+			CreateMap<ProcessorCoreReadDto, ProcessorCoreInsertDto>();
 
-			CreateMap<ProcessorLineupUpdateDto, ProcessorLineup>();
-			CreateMap<ProcessorLineupUpdateDto, ProcessorLineupReadDto>();
-			CreateMap<ProcessorLineupUpdateDto, ProcessorLineupInsertDto>();
+			CreateMap<ProcessorCoreUpdateDto, ProcessorCore>();
+			CreateMap<ProcessorCoreUpdateDto, ProcessorCoreReadDto>();
+			CreateMap<ProcessorCoreUpdateDto, ProcessorCoreInsertDto>();
 
-			CreateMap<ProcessorLineupInsertDto, ProcessorLineup>();
-			CreateMap<ProcessorLineupInsertDto, ProcessorLineupReadDto>();
-			CreateMap<ProcessorLineupInsertDto, ProcessorLineupUpdateDto>();
+			CreateMap<ProcessorCoreInsertDto, ProcessorCore>();
+			CreateMap<ProcessorCoreInsertDto, ProcessorCoreReadDto>();
+			CreateMap<ProcessorCoreInsertDto, ProcessorCoreUpdateDto>();
+
+			#endregion
+
+			#region ProcessorCore Mapping
+
+			CreateMap<VideoCardCore, VideoCardCoreReadDto>();
+			CreateMap<VideoCardCore, VideoCardCoreInsertDto>();
+			CreateMap<VideoCardCore, VideoCardCoreUpdateDto>();
+
+			CreateMap<VideoCardCoreReadDto, VideoCardCore>();
+			CreateMap<VideoCardCoreReadDto, VideoCardCoreUpdateDto>();
+			CreateMap<VideoCardCoreReadDto, VideoCardCoreInsertDto>();
+
+			CreateMap<VideoCardCoreUpdateDto, VideoCardCore>();
+			CreateMap<VideoCardCoreUpdateDto, VideoCardCoreReadDto>();
+			CreateMap<VideoCardCoreUpdateDto, VideoCardCoreInsertDto>();
+
+			CreateMap<VideoCardCoreInsertDto, VideoCardCore>();
+			CreateMap<VideoCardCoreInsertDto, VideoCardCoreReadDto>();
+			CreateMap<VideoCardCoreInsertDto, VideoCardCoreUpdateDto>();
 
 			#endregion
 		}

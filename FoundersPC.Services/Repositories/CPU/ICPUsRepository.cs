@@ -8,12 +8,12 @@ using FoundersPC.Services.Repositories.Base;
 
 namespace FoundersPC.Services.Repositories.CPU
 {
-	public interface ICPUsRepository : IRepository<Models.Hardware.CPU>
+	public interface ICPUsRepository : IRepository<Models.Hardware.Processor.CPU>
 	{
-		Task<IEnumerable<Models.Hardware.CPU>> GetAllCPUsAsync();
-		Task<Models.Hardware.CPU> GetCPUByIdAsync(int cpuId);
-		Task CreateCPU(Models.Hardware.CPU cpu);
-		Task UpdateCPU(Models.Hardware.CPU cpu);
-		Task DeleteCPU(Models.Hardware.CPU cpu);
+		Task<IEnumerable<Models.Hardware.Processor.CPU>> GetAllCPUsAsync();
+		Task<Models.Hardware.Processor.CPU> GetCPUByIdAsync(int cpuId);
+		Task CreateCPU(Models.Hardware.Processor.CPU cpu);
+		Task UpdateCPU(Models.Hardware.Processor.CPU cpu);
+		Task DeleteCPU(Models.Hardware.Processor.CPU cpu);
 	}
 }

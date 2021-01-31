@@ -4,20 +4,91 @@ using FoundersPC.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoundersPC.Services.Migrations
 {
     [DbContext(typeof(FoundersPCDbContext))]
-    partial class FoundersPCDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210131122840_CpuThreads")]
+    partial class CpuThreads
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
+
+            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.CPU", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Cores")
+                        .HasColumnType("int")
+                        .HasColumnName("Cores");
+
+                    b.Property<int>("Frequency")
+                        .HasColumnType("int")
+                        .HasColumnName("Frequency");
+
+                    b.Property<bool>("IntegratedGraphics")
+                        .HasColumnType("bit")
+                        .HasColumnName("IntegratedGraphics");
+
+                    b.Property<int>("L3Cache")
+                        .HasColumnType("int")
+                        .HasColumnName("L3Cache");
+
+                    b.Property<DateTime?>("MarketLaunch")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("MarketLaunch");
+
+                    b.Property<int>("MaxRamSpeed")
+                        .HasColumnType("int")
+                        .HasColumnName("MaxRamSpeed");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("Name");
+
+                    b.Property<int>("ProcessorLineupId")
+                        .HasColumnType("int")
+                        .HasColumnName("ProcessorLineupId");
+
+                    b.Property<int>("ProducerId")
+                        .HasColumnType("int")
+                        .HasColumnName("ProducerId");
+
+                    b.Property<int>("TDP")
+                        .HasColumnType("int")
+                        .HasColumnName("TDP");
+
+                    b.Property<int>("Threads")
+                        .HasColumnType("int")
+                        .HasColumnName("Threads");
+
+                    b.Property<int>("TurboBoostFrequency")
+                        .HasColumnType("int")
+                        .HasColumnName("TurboBoostFrequency");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id");
+
+                    b.HasIndex("ProcessorLineupId");
+
+                    b.HasIndex("ProducerId");
+
+                    b.ToTable("Processors");
+                });
 
             modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Case", b =>
                 {
@@ -76,6 +147,97 @@ namespace FoundersPC.Services.Migrations
                     b.HasIndex("ProducerId");
 
                     b.ToTable("Cases");
+                });
+
+            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.GPU", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("AdditionalPower")
+                        .HasColumnType("int")
+                        .HasColumnName("AdditionalPower");
+
+                    b.Property<int>("DVI")
+                        .HasColumnType("int")
+                        .HasColumnName("DVI");
+
+                    b.Property<int>("DirectX")
+                        .HasMaxLength(3)
+                        .HasColumnType("int")
+                        .HasColumnName("DirectX");
+
+                    b.Property<int>("DisplayPort")
+                        .HasColumnType("int")
+                        .HasColumnName("DisplayPort");
+
+                    b.Property<int>("Frequency")
+                        .HasMaxLength(5)
+                        .HasColumnType("int")
+                        .HasColumnName("Frequency");
+
+                    b.Property<string>("GraphicsProcessor")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("GraphicsProcessor");
+
+                    b.Property<int>("HDMI")
+                        .HasColumnType("int")
+                        .HasColumnName("HDMI");
+
+                    b.Property<string>("Interface")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("Interface");
+
+                    b.Property<DateTime?>("MarketLaunch")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("MarketLaunch");
+
+                    b.Property<int>("ProducerId")
+                        .HasColumnType("int")
+                        .HasColumnName("ProducerId");
+
+                    b.Property<bool>("SLIOrCrossfire")
+                        .HasColumnType("bit")
+                        .HasColumnName("SLI_Crossfire");
+
+                    b.Property<int>("VGA")
+                        .HasColumnType("int")
+                        .HasColumnName("VGA");
+
+                    b.Property<int>("VideoMemoryBusWidth")
+                        .HasMaxLength(4)
+                        .HasColumnType("int")
+                        .HasColumnName("VideoMemoryBusWidth");
+
+                    b.Property<int>("VideoMemoryFrequency")
+                        .HasMaxLength(5)
+                        .HasColumnType("int")
+                        .HasColumnName("VideoMemoryFrequency");
+
+                    b.Property<string>("VideoMemoryType")
+                        .IsRequired()
+                        .HasMaxLength(7)
+                        .HasColumnType("nvarchar(7)")
+                        .HasColumnName("VideoMemoryType");
+
+                    b.Property<int>("Width")
+                        .HasColumnType("int")
+                        .HasColumnName("Width");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id");
+
+                    b.HasIndex("ProducerId");
+
+                    b.ToTable("VideoCards");
                 });
 
             modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Memory.HDD", b =>
@@ -387,7 +549,7 @@ namespace FoundersPC.Services.Migrations
                     b.ToTable("PowerSupplies");
                 });
 
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Processor.CPU", b =>
+            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.ProcessorLineup", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -395,90 +557,15 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnName("Id")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Cores")
-                        .HasColumnType("int")
-                        .HasColumnName("Cores");
-
-                    b.Property<int>("Frequency")
-                        .HasColumnType("int")
-                        .HasColumnName("Frequency");
-
-                    b.Property<bool>("IntegratedGraphics")
-                        .HasColumnType("bit")
-                        .HasColumnName("IntegratedGraphics");
-
-                    b.Property<int>("L3Cache")
-                        .HasColumnType("int")
-                        .HasColumnName("L3Cache");
-
-                    b.Property<DateTime?>("MarketLaunch")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("MarketLaunch");
-
-                    b.Property<int>("MaxRamSpeed")
-                        .HasColumnType("int")
-                        .HasColumnName("MaxRamSpeed");
-
-                    b.Property<string>("Name")
+                    b.Property<string>("FamilyCodename")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("Name");
-
-                    b.Property<int>("ProcessorCoreId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProcessorCoreId");
-
-                    b.Property<int>("ProducerId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProducerId");
-
-                    b.Property<int>("TDP")
-                        .HasColumnType("int")
-                        .HasColumnName("TDP");
-
-                    b.Property<int>("Threads")
-                        .HasColumnType("int")
-                        .HasColumnName("Threads");
-
-                    b.Property<int>("TurboBoostFrequency")
-                        .HasColumnType("int")
-                        .HasColumnName("TurboBoostFrequency");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Id");
-
-                    b.HasIndex("ProcessorCoreId");
-
-                    b.HasIndex("ProducerId");
-
-                    b.ToTable("Processors");
-                });
-
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Processor.ProcessorCore", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("L1Cache")
-                        .HasColumnType("int")
-                        .HasColumnName("L1Cache");
-
-                    b.Property<int>("L2Cache")
-                        .HasColumnType("int")
-                        .HasColumnName("L2Cache");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("FamilyCodename");
 
                     b.Property<DateTime?>("MarketLaunch")
                         .HasColumnType("datetime2")
                         .HasColumnName("MarketLaunch");
-
-                    b.Property<int>("MaxL3Cache")
-                        .HasColumnType("int")
-                        .HasColumnName("MaxL3Cache");
 
                     b.Property<string>("MicroArchitecture")
                         .IsRequired()
@@ -486,25 +573,25 @@ namespace FoundersPC.Services.Migrations
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("MicroArchitecture");
 
+                    b.Property<string>("Serial")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("Serial");
+
                     b.Property<string>("Socket")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
                         .HasColumnName("Socket");
 
                     b.Property<int>("TechProcess")
                         .HasColumnType("int")
                         .HasColumnName("TechProcess");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Title");
-
                     b.HasKey("Id");
 
-                    b.ToTable("ProcessorCores");
+                    b.ToTable("ProcessorLineups");
                 });
 
             modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Producer", b =>
@@ -547,139 +634,40 @@ namespace FoundersPC.Services.Migrations
                     b.ToTable("Producers");
                 });
 
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.VideoCard.GPU", b =>
+            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.CPU", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id")
-                        .UseIdentityColumn();
+                    b.HasOne("FoundersPC.Services.Models.Hardware.ProcessorLineup", "ProcessorLineup")
+                        .WithMany("Processors")
+                        .HasForeignKey("ProcessorLineupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("AdditionalPower")
-                        .HasColumnType("int")
-                        .HasColumnName("AdditionalPower");
+                    b.HasOne("FoundersPC.Services.Models.Hardware.Producer", "Producer")
+                        .WithMany("Processors")
+                        .HasForeignKey("ProducerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("DVI")
-                        .HasColumnType("int")
-                        .HasColumnName("DVI");
+                    b.Navigation("ProcessorLineup");
 
-                    b.Property<int>("DisplayPort")
-                        .HasColumnType("int")
-                        .HasColumnName("DisplayPort");
-
-                    b.Property<int>("GraphicsProcessorId")
-                        .HasMaxLength(20)
-                        .HasColumnType("int")
-                        .HasColumnName("GraphicsProcessorId");
-
-                    b.Property<int>("HDMI")
-                        .HasColumnType("int")
-                        .HasColumnName("HDMI");
-
-                    b.Property<DateTime?>("MarketLaunch")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("MarketLaunch");
-
-                    b.Property<int>("ProducerId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProducerId");
-
-                    b.Property<int>("VGA")
-                        .HasColumnType("int")
-                        .HasColumnName("VGA");
-
-                    b.Property<int>("VideoMemoryBusWidth")
-                        .HasMaxLength(4)
-                        .HasColumnType("int")
-                        .HasColumnName("VideoMemoryBusWidth");
-
-                    b.Property<int>("VideoMemoryFrequency")
-                        .HasMaxLength(5)
-                        .HasColumnType("int")
-                        .HasColumnName("VideoMemoryFrequency");
-
-                    b.Property<string>("VideoMemoryType")
-                        .IsRequired()
-                        .HasMaxLength(7)
-                        .HasColumnType("nvarchar(7)")
-                        .HasColumnName("VideoMemoryType");
-
-                    b.Property<int>("VideoMemoryVolume")
-                        .HasColumnType("int")
-                        .HasColumnName("VideoMemoryVolume");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GraphicsProcessorId");
-
-                    b.HasIndex("Id");
-
-                    b.HasIndex("ProducerId");
-
-                    b.ToTable("VideoCards");
-                });
-
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.VideoCard.VideoCardCore", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("ArchitectureTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ArchitectureTitle");
-
-                    b.Property<int>("DirectX")
-                        .HasMaxLength(3)
-                        .HasColumnType("int")
-                        .HasColumnName("DirectX_Version");
-
-                    b.Property<int>("Frequency")
-                        .HasMaxLength(5)
-                        .HasColumnType("int")
-                        .HasColumnName("Frequency");
-
-                    b.Property<string>("Interface")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("Interface");
-
-                    b.Property<string>("MaxResolution")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("MaxResolution");
-
-                    b.Property<int>("MonitorsSupport")
-                        .HasColumnType("int")
-                        .HasColumnName("MonitorsSupport");
-
-                    b.Property<bool>("SLIOrCrossfire")
-                        .HasColumnType("bit")
-                        .HasColumnName("SLI_Crossfire");
-
-                    b.Property<int>("TechProcess")
-                        .HasColumnType("int")
-                        .HasColumnName("TechProcess");
-
-                    b.Property<string>("Title")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("Title");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("VideoCardCores");
+                    b.Navigation("Producer");
                 });
 
             modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Case", b =>
                 {
                     b.HasOne("FoundersPC.Services.Models.Hardware.Producer", "Producer")
                         .WithMany("Cases")
+                        .HasForeignKey("ProducerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Producer");
+                });
+
+            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.GPU", b =>
+                {
+                    b.HasOne("FoundersPC.Services.Models.Hardware.Producer", "Producer")
+                        .WithMany("VideoCards")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -742,45 +730,7 @@ namespace FoundersPC.Services.Migrations
                     b.Navigation("Producer");
                 });
 
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Processor.CPU", b =>
-                {
-                    b.HasOne("FoundersPC.Services.Models.Hardware.Processor.ProcessorCore", "Core")
-                        .WithMany("Processors")
-                        .HasForeignKey("ProcessorCoreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FoundersPC.Services.Models.Hardware.Producer", "Producer")
-                        .WithMany("Processors")
-                        .HasForeignKey("ProducerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Core");
-
-                    b.Navigation("Producer");
-                });
-
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.VideoCard.GPU", b =>
-                {
-                    b.HasOne("FoundersPC.Services.Models.Hardware.VideoCard.VideoCardCore", "Core")
-                        .WithMany("VideoCards")
-                        .HasForeignKey("GraphicsProcessorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FoundersPC.Services.Models.Hardware.Producer", "Producer")
-                        .WithMany("VideoCards")
-                        .HasForeignKey("ProducerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Core");
-
-                    b.Navigation("Producer");
-                });
-
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.Processor.ProcessorCore", b =>
+            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.ProcessorLineup", b =>
                 {
                     b.Navigation("Processors");
                 });
@@ -801,11 +751,6 @@ namespace FoundersPC.Services.Migrations
 
                     b.Navigation("SolidStateDrive");
 
-                    b.Navigation("VideoCards");
-                });
-
-            modelBuilder.Entity("FoundersPC.Services.Models.Hardware.VideoCard.VideoCardCore", b =>
-                {
                     b.Navigation("VideoCards");
                 });
 #pragma warning restore 612, 618

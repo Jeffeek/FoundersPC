@@ -5,6 +5,7 @@ namespace FoundersPC.Services.DTO
 {
     public class CPUInsertDto
     {
+	    [Required]
 	    public int ProducerId { get; set; }
 
 	    [DataType(DataType.Date)]
@@ -13,7 +14,8 @@ namespace FoundersPC.Services.DTO
 	    [Required]
 	    public int TDP { get; set; }
 
-	    public int ProcessorLineupId { get; set; }
+	    [Required]
+	    public int ProcessorCoreId { get; set; }
 
 	    [DataType(DataType.Text)]
 	    [MaxLength(20)]
@@ -26,6 +28,9 @@ namespace FoundersPC.Services.DTO
 
 	    [Required]
 	    public int Cores { get; set; }
+
+	    [Required]
+	    public int Threads { get; set; }
 
 	    [Required]
 	    public int Frequency { get; set; }

@@ -1,42 +1,33 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace FoundersPC.Services.DTO
 {
-    public class CPUUpdateDto
+    public class CPUReadDto
     {
-		public int ProducerId { get; set; }
+		public int Id { get; set; }
 
-		[DataType(DataType.Date)]
+		public ProducerReadDto Producer { get; set; }
+
 		public DateTime? MarketLaunch { get; set; }
 
-		[Required]
 		public int TDP { get; set; }
 
-		public int ProcessorLineupId { get; set; }
+		public ProcessorCoreReadDto Core { get; set; }
 
-		[DataType(DataType.Text)]
-		[MaxLength(20)]
-		[MinLength(3)]
-		[Required]
 		public string Name { get; set; }
 
-		[Required]
 		public int MaxRamSpeed { get; set; }
 
-		[Required]
 		public int Cores { get; set; }
 
-		[Required]
+		public int Threads { get; set; }
+
 		public int Frequency { get; set; }
 
-		[Required]
 		public int TurboBoostFrequency { get; set; }
 
-		[Required]
 		public int L3Cache { get; set; }
 
-		[Required]
 		public bool IntegratedGraphics { get; set; }
 	}
 }

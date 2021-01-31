@@ -6,11 +6,18 @@ using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace FoundersPC.Services.Models.Hardware
+namespace FoundersPC.Services.Models.Hardware.VideoCard
 {
 	[Index(nameof(Id))]
 	public class GPU : EquipmentEntityBase
 	{
+		#region Memory
+
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("VideoMemoryVolume")]
+		[Required]
+		public int VideoMemoryVolume { get; set; }
+
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("VideoMemoryType")]
 		[MinLength(4)]
@@ -32,50 +39,25 @@ namespace FoundersPC.Services.Models.Hardware
 		[Required]
 		public int VideoMemoryBusWidth { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("Interface")]
-		[MinLength(5)]
-		[MaxLength(30)]
-		[DataType(DataType.Text)]
-		[Required]
-		public string Interface { get; set; }
+		#endregion
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("GraphicsProcessor")]
+		[Column("GraphicsProcessorId")]
 		[MinLength(3)]
 		[MaxLength(20)]
 		[DataType(DataType.Text)]
 		[Required]
-		public string GraphicsProcessor { get; set; }
+		public int GraphicsProcessorId { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("Frequency")]
-		[MinLength(3)]
-		[MaxLength(5)]
-		[Required]
-		public int Frequency { get; set; }
-
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("DirectX")]
-		[MinLength(1)]
-		[MaxLength(3)]
-		[Required]
-		public int DirectX { get; set; }
-
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("SLI_Crossfire")]
-		[Required]
-		public bool SLIOrCrossfire { get; set; }
+		[ForeignKey(nameof(GraphicsProcessorId))]
+		public VideoCardCore Core { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("AdditionalPower")]
 		[Required]
 		public int AdditionalPower { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("Width")]
-		[Required]
-		public int Width { get; set; }
+		#region Output
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("VGA")]
@@ -96,5 +78,7 @@ namespace FoundersPC.Services.Models.Hardware
 		[Column("DisplayPort")]
 		[Required]
 		public int DisplayPort { get; set; }
+
+		#endregion
 	}
 }

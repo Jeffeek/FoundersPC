@@ -2,13 +2,7 @@
 
 using AutoMapper;
 using FoundersPC.API.Utils;
-using FoundersPC.Core.Hardware_API.Processors;
-using FoundersPC.Core.Hardware_API.Producers;
 using FoundersPC.Services;
-using FoundersPC.Services.Repositories.CPU;
-using FoundersPC.Services.Repositories.ProcessorLineup;
-using FoundersPC.Services.Repositories.Producer;
-using FoundersPC.Services.Repositories.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

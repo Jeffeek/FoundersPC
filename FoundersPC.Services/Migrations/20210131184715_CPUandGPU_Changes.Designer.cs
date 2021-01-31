@@ -4,14 +4,16 @@ using FoundersPC.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoundersPC.Services.Migrations
 {
     [DbContext(typeof(FoundersPCDbContext))]
-    partial class FoundersPCDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210131184715_CPUandGPU_Changes")]
+    partial class CPUandGPU_Changes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -500,7 +502,7 @@ namespace FoundersPC.Services.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Title");
+                        .HasColumnName("Core");
 
                     b.HasKey("Id");
 

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Services.DTO;
-using FoundersPC.Services.Models.Hardware;
+using FoundersPC.Services.Models.Hardware.Processor;
 using FoundersPC.Services.Repositories.UoW;
 
 namespace FoundersPC.Core.Hardware_API.Processors

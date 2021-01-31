@@ -8,12 +8,12 @@ using FoundersPC.Services.Repositories.Base;
 
 namespace FoundersPC.Services.Repositories.GPU
 {
-	public interface IGPUsRepository : IRepository<Models.Hardware.GPU>
+	public interface IGPUsRepository : IRepository<Models.Hardware.VideoCard.GPU>
 	{
-		Task<IEnumerable<Models.Hardware.GPU>> GetAllGPUsAsync();
-		Task<Models.Hardware.GPU> GetGPUByIdAsync(int gpuId);
-		Task CreateGPU(Models.Hardware.GPU gpu);
-		Task UpdateGPU(Models.Hardware.GPU gpu);
-		Task DeleteGPU(Models.Hardware.GPU gpu);
+		Task<IEnumerable<Models.Hardware.VideoCard.GPU>> GetAllGPUsAsync();
+		Task<Models.Hardware.VideoCard.GPU> GetGPUByIdAsync(int gpuId);
+		Task CreateGPU(Models.Hardware.VideoCard.GPU gpu);
+		Task UpdateGPU(Models.Hardware.VideoCard.GPU gpu);
+		Task DeleteGPU(Models.Hardware.VideoCard.GPU gpu);
 	}
 }

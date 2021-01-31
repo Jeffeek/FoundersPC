@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace FoundersPC.Services.Models.Hardware
+namespace FoundersPC.Services.Models.Hardware.Processor
 {
 	[Index(nameof(Id))]
 	public class CPU : EquipmentEntityBase
@@ -17,12 +17,12 @@ namespace FoundersPC.Services.Models.Hardware
 		public int TDP { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("ProcessorLineupId")]
+		[Column("ProcessorCoreId")]
 		[Required]
-		public int ProcessorLineupId { get; set; }
+		public int ProcessorCoreId { get; set; }
 
-		[ForeignKey(nameof(ProcessorLineupId))]
-		public ProcessorLineup ProcessorLineup { get; set; }
+		[ForeignKey(nameof(ProcessorCoreId))]
+		public ProcessorCore Core { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[DataType(DataType.Text)]
@@ -41,6 +41,11 @@ namespace FoundersPC.Services.Models.Hardware
 		[Column("Cores")]
 		[Required]
 		public int Cores { get; set; }
+
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("Threads")]
+		[Required]
+		public int Threads { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("Frequency")]
