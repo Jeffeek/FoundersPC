@@ -38,7 +38,13 @@ namespace FoundersPC.Services.DTO
 	    [Required]
 	    public int TurboBoostFrequency { get; set; }
 
-	    [Required]
+		[Required]
+	    public int L1Cache { get; set; }
+
+		[Required]
+	    public int L2Cache { get; set; }
+
+		[Required]
 	    public int L3Cache { get; set; }
 
 	    [Required]

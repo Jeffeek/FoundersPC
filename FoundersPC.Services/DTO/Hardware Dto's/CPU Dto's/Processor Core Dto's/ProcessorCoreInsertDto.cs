@@ -12,12 +12,10 @@ namespace FoundersPC.Services.DTO
 
 	    public int TechProcess { get; set; }
 
-	    public int L1Cache { get; set; }
+		public int L2CachePerCore { get; set; }
 
-	    public int L2Cache { get; set; }
+		public int L3CachePerCore { get; set; }
 
-	    public int MaxL3Cache { get; set; }
-
-	    public string Socket { get; set; }
+		public string Socket { get; set; }
 	}
 }

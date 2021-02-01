@@ -24,7 +24,11 @@ namespace FoundersPC.Services.DTO
 
 	    public int TurboBoostFrequency { get; set; }
 
-	    public int L3Cache { get; set; }
+	    public int L1Cache { get; set; }
+
+	    public int L2Cache { get; set; }
+
+		public int L3Cache { get; set; }
 
 	    public bool IntegratedGraphics { get; set; }
 	}

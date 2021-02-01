@@ -39,18 +39,12 @@ namespace FoundersPC.Services.Models.Hardware.Processor
         public int TechProcess { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column("L1Cache")]
-        [Required]
-        public int L1Cache { get; set; }
+        [Column("L2CachePerCore")]
+        public int L2CachePerCore { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column("L2Cache")]
-        [Required]
-        public int L2Cache { get; set; }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column("MaxL3Cache")]
-        public int MaxL3Cache { get; set; }
+        [Column("L3CachePerCore")]
+        public int L3CachePerCore { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DataType(DataType.Text)]
