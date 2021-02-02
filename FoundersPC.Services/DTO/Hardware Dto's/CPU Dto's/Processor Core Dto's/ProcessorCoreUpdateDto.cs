@@ -10,8 +10,6 @@ namespace FoundersPC.Services.DTO
 
 	    public string MicroArchitecture { get; set; }
 
-	    public int TechProcess { get; set; }
-
 	    public int L2CachePerCore { get; set; }
 
 		public int L3CachePerCore { get; set; }

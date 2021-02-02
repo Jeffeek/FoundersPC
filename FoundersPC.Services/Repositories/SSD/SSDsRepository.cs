@@ -17,12 +17,12 @@ namespace FoundersPC.Services.Repositories.SSD
 		#region Implementation of ISSDsRepository
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<Models.Hardware.Memory.SSD>> GetAllCPUAsync() => await GetAll()
+		public async Task<IEnumerable<Models.Hardware.Memory.SSD>> GetAllSSDsAsync() => await GetAll()
 			.Include(x => x.Producer)
 			.ToListAsync();
 
 		/// <inheritdoc />
-		public async Task<Models.Hardware.Memory.SSD> GetCPUByIdAsync(int cpuId) =>
+		public async Task<Models.Hardware.Memory.SSD> GetSSDByIdAsync(int cpuId) =>
 			await FindBy(cpu => cpu.Id == cpuId)
 			      .Include(x => x.Producer)
 			      .FirstOrDefaultAsync();

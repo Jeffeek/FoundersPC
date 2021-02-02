@@ -58,6 +58,11 @@ namespace FoundersPC.Services.Models.Hardware.Processor
 		public int TurboBoostFrequency { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("TechProcess")]
+		[Required]
+		public int TechProcess { get; set; }
+
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("L1Cache")]
 		[Required]
 		public int L1Cache { get; set; }

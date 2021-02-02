@@ -1,5 +1,5 @@
 ﻿using FoundersPC.Services.Repositories.CPU;
-using FoundersPC.Services.Repositories.ProcessorLineup;
+using FoundersPC.Services.Repositories.ProcessorCores;
 using FoundersPC.Services.Repositories.Producer;
 using FoundersPC.Services.Repositories.UoW;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +12,7 @@ namespace FoundersPC.API.Utils
 		{
 			services.AddScoped<ICPUsRepository, CPUsRepository>();
 			services.AddScoped<IProducersRepository, ProducersRepository>();
-			services.AddScoped<IProcessorLineupsRepository, ProcessorLineupsRepository>();
+			services.AddScoped<IProcessorCoresRepository, ProcessorCoresRepository>();
 			services.AddScoped<IUnitOfWork, FoundersPCUnitOfWork>();
 			return services;
 		}

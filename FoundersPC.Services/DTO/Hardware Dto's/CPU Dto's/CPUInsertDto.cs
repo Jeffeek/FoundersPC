@@ -27,6 +27,9 @@ namespace FoundersPC.Services.DTO
 	    public int MaxRamSpeed { get; set; }
 
 	    [Required]
+	    public int TechProcess { get; set; }
+
+		[Required]
 	    public int Cores { get; set; }
 
 	    [Required]

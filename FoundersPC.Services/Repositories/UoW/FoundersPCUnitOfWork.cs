@@ -2,7 +2,7 @@
 
 using System.Threading.Tasks;
 using FoundersPC.Services.Repositories.CPU;
-using FoundersPC.Services.Repositories.ProcessorLineup;
+using FoundersPC.Services.Repositories.ProcessorCores;
 using FoundersPC.Services.Repositories.Producer;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +17,7 @@ namespace FoundersPC.Services.Repositories.UoW
 		public FoundersPCUnitOfWork(DbContext context,
 		                            ICPUsRepository cpuRepository,
 		                            IProducersRepository producersRepository,
-		                            IProcessorLineupsRepository processorLineupsRepository)
+		                            IProcessorCoresRepository processorLineupsRepository)
 		{
 			_context = context;
 			ProcessorsRepository = cpuRepository;
@@ -38,7 +38,7 @@ namespace FoundersPC.Services.Repositories.UoW
 		public IProducersRepository ProducersRepository { get; }
 
 		/// <inheritdoc />
-		public IProcessorLineupsRepository ProcessorLineupsRepository { get; }
+		public IProcessorCoresRepository ProcessorLineupsRepository { get; }
 
         /// <inheritdoc />
 		public async Task<bool> SaveChangesAsync()

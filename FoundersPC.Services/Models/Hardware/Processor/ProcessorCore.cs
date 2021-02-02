@@ -34,11 +34,6 @@ namespace FoundersPC.Services.Models.Hardware.Processor
         public string MicroArchitecture { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column("TechProcess")]
-        [Required]
-        public int TechProcess { get; set; }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("L2CachePerCore")]
         public int L2CachePerCore { get; set; }
 

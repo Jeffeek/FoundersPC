@@ -14,6 +14,8 @@ namespace FoundersPC.Services.DTO
 
 		public ProcessorCoreReadDto Core { get; set; }
 
+		public int TechProcess { get; set; }
+
 		public string Name { get; set; }
 
 		public int MaxRamSpeed { get; set; }
