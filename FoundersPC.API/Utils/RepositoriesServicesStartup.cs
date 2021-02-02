@@ -1,7 +1,6 @@
-﻿using FoundersPC.Services.Repositories.CPU;
-using FoundersPC.Services.Repositories.ProcessorCores;
-using FoundersPC.Services.Repositories.Producer;
-using FoundersPC.Services.Repositories.UoW;
+﻿using FoundersPC.Application.Interfaces.Repositories;
+using FoundersPC.Infrastructure.Repositories;
+using FoundersPC.Infrastructure.UoW;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.API.Utils
@@ -10,10 +9,14 @@ namespace FoundersPC.API.Utils
 	{
 		public static IServiceCollection AddRepositories(this IServiceCollection services)
 		{
-			services.AddScoped<ICPUsRepository, CPUsRepository>();
-			services.AddScoped<IProducersRepository, ProducersRepository>();
-			services.AddScoped<IProcessorCoresRepository, ProcessorCoresRepository>();
-			services.AddScoped<IUnitOfWork, FoundersPCUnitOfWork>();
+			services.AddScoped<IProducersRepositoryAsync, ProducersRepository>();
+			
+			services.AddScoped<ICPUsRepositoryAsync, CPUsRepository>();
+			services.AddScoped<IProcessorCoresRepositoryAsync, ProcessorCoresRepository>();
+
+			//TODO: добавить DI для других репозиториев
+
+			services.AddScoped<IUnitOfWorkAsync, FoundersPCUnitOfWork>();
 			return services;
 		}
 	}

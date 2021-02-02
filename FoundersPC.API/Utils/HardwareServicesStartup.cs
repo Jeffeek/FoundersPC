@@ -1,5 +1,5 @@
-﻿using FoundersPC.Core.Hardware_API.Processors;
-using FoundersPC.Core.Hardware_API.Producers;
+﻿using FoundersPC.Application.Interfaces;
+using FoundersPC.Services.Hardware_Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.API.Utils

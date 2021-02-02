@@ -1,11 +1,11 @@
 ﻿#region Using derectives
 
 using AutoMapper;
-using FoundersPC.Services.DTO;
-using FoundersPC.Services.Models.Hardware;
-using FoundersPC.Services.Models.Hardware.Memory;
-using FoundersPC.Services.Models.Hardware.Processor;
-using FoundersPC.Services.Models.Hardware.VideoCard;
+using FoundersPC.Application;
+using FoundersPC.Domain.Entities.Hardware;
+using FoundersPC.Domain.Entities.Hardware.Memory;
+using FoundersPC.Domain.Entities.Hardware.Processor;
+using FoundersPC.Domain.Entities.Hardware.VideoCard;
 
 #endregion
 
@@ -215,7 +215,7 @@ namespace FoundersPC.API.Utils
 
 			#endregion
 
-			#region ProcessorCore Mapping
+			#region VideoCardCore Mapping
 
 			CreateMap<VideoCardCore, VideoCardCoreReadDto>();
 			CreateMap<VideoCardCore, VideoCardCoreInsertDto>();

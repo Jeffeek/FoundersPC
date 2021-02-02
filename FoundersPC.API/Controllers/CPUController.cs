@@ -3,8 +3,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.Core.Hardware_API.Processors;
-using FoundersPC.Services.DTO;
+using FoundersPC.Application;
+using FoundersPC.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion

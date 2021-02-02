@@ -2,8 +2,8 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.Core.Hardware_API.Producers;
-using FoundersPC.Services.DTO;
+using FoundersPC.Application;
+using FoundersPC.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
