@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoundersPC.Domain.Entities.Hardware.Processor
 {
-	public class ProcessorCore
+	public class ProcessorCore : IEquatable<ProcessorCore>
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("Id")]
@@ -54,5 +54,35 @@ namespace FoundersPC.Domain.Entities.Hardware.Processor
 		public string Socket { get; set; }
 
 		public ICollection<CPU> Processors { get; set; }
+
+		#region Equality members
+
+		/// <inheritdoc />
+		public bool Equals(ProcessorCore other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
+			return Nullable.Equals(MarketLaunch, other.MarketLaunch) &&
+			       Title == other.Title &&
+			       MicroArchitecture == other.MicroArchitecture &&
+			       L2CachePerCore == other.L2CachePerCore &&
+			       L3CachePerCore == other.L3CachePerCore &&
+			       Socket == other.Socket;
+		}
+
+		/// <inheritdoc />
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != GetType()) return false;
+			return Equals((ProcessorCore)obj);
+		}
+
+		/// <inheritdoc />
+		public override int GetHashCode() =>
+			HashCode.Combine(MarketLaunch, Title, MicroArchitecture, L2CachePerCore, L3CachePerCore, Socket);
+
+		#endregion
 	}
 }

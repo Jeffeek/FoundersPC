@@ -10,6 +10,8 @@ namespace FoundersPC.Application
 	{
 		public int Id { get; set; }
 
+		public string Title { get; set; }
+
 		public ProducerReadDto Producer { get; set; }
 
 		public DateTime? MarketLaunch { get; set; }

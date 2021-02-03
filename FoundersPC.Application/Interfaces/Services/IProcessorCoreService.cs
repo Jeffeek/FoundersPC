@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿#region Using derectives
+
+using System.Collections.Generic;
 using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Application.Interfaces.Services
 {

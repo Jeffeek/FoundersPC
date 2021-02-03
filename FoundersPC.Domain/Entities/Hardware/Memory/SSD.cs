@@ -1,5 +1,6 @@
 ﻿#region Using derectives
 
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoundersPC.Domain.Entities.Hardware.Memory
 {
-	public class SSD : DriveBase
+	public class SSD : DriveBase, IEquatable<SSD>
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("MicroScheme")]
@@ -25,5 +26,34 @@ namespace FoundersPC.Domain.Entities.Hardware.Memory
 		[Column("SequentialRecording")]
 		[Required]
 		public int SequentialRecording { get; set; }
+
+		#region Equality members
+
+		/// <inheritdoc />
+		public bool Equals(SSD other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
+			return MicroScheme == other.MicroScheme &&
+			       SequentialRead == other.SequentialRead &&
+			       SequentialRecording == other.SequentialRecording &&
+			       Volume == other.Volume &&
+			       Factor.Equals(other.Factor) &&
+			       Interface == other.Interface;
+		}
+
+		/// <inheritdoc />
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != GetType()) return false;
+			return Equals((SSD)obj);
+		}
+
+		/// <inheritdoc />
+		public override int GetHashCode() => HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
+
+		#endregion
 	}
 }

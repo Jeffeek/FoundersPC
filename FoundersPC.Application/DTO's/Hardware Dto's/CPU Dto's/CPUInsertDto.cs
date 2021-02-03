@@ -21,11 +21,16 @@ namespace FoundersPC.Application
 		[Required]
 		public int ProcessorCoreId { get; set; }
 
+		[MaxLength(15)]
+		[MinLength(3)]
+		[Required]
+		public string Series { get; set; }
+
 		[DataType(DataType.Text)]
 		[MaxLength(20)]
 		[MinLength(3)]
 		[Required]
-		public string Name { get; set; }
+		public string Title { get; set; }
 
 		[Required]
 		public int MaxRamSpeed { get; set; }

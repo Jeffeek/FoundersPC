@@ -1,5 +1,6 @@
 ﻿#region Using derectives
 
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.Domain.Entities.Hardware
 {
 	[Index(nameof(Id))]
-	public class Case : EquipmentEntityBase
+	public class Case : EquipmentEntityBase, IEquatable<Case>
 	{
 		[Column("Type")]
 		[MinLength(40)]
@@ -55,5 +56,35 @@ namespace FoundersPC.Domain.Entities.Hardware
 		[DataType(DataType.Text)]
 		[Required]
 		public string Color { get; set; }
+
+		#region Equality members
+
+		/// <inheritdoc />
+		public bool Equals(Case other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
+			return Type == other.Type &&
+			       MaxMotherboardSize == other.MaxMotherboardSize &&
+			       Material == other.Material &&
+			       WindowMaterial == other.WindowMaterial &&
+			       TransparentWindow == other.TransparentWindow &&
+			       Color == other.Color;
+		}
+
+		/// <inheritdoc />
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != GetType()) return false;
+			return Equals((Case)obj);
+		}
+
+		/// <inheritdoc />
+		public override int GetHashCode() =>
+			HashCode.Combine(Type, MaxMotherboardSize, Material, WindowMaterial, TransparentWindow, Color);
+
+		#endregion
 	}
 }

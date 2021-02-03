@@ -20,7 +20,9 @@ namespace FoundersPC.Application
 
 		public int TechProcess { get; set; }
 
-		public string Name { get; set; }
+		public string Series { get; set; }
+
+		public string Title { get; set; }
 
 		public int MaxRamSpeed { get; set; }
 

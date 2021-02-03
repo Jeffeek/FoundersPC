@@ -1,6 +1,10 @@
-﻿using AutoMapper;
+﻿#region Using derectives
+
+using AutoMapper;
 using FoundersPC.Application.Mappings;
 using Microsoft.Extensions.DependencyInjection;
+
+#endregion
 
 namespace FoundersPC.Application
 {

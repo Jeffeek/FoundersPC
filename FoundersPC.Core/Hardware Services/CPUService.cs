@@ -7,6 +7,7 @@ using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services;
 using FoundersPC.Domain.Entities.Hardware.Processor;
 using FoundersPC.Infrastructure.UoW;
+using Microsoft.EntityFrameworkCore;
 
 #endregion
 
@@ -36,6 +37,12 @@ namespace FoundersPC.Services.Hardware_Services
 		public async Task<bool> CreateCPU(CPUInsertDto cpu)
 		{
 			var mappedCpu = _mapper.Map<CPUInsertDto, CPU>(cpu);
+			if (
+				await (await _unitOfWork.ProcessorsRepository
+				                        .GetAllAsync())
+					.AnyAsync(x => x.Equals(mappedCpu)))
+				return false;
+
 			await _unitOfWork.ProcessorsRepository.AddAsync(mappedCpu);
 			return await _unitOfWork.SaveChangesAsync();
 		}

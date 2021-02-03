@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿#region Using derectives
+
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,7 +22,8 @@ namespace FoundersPC.API.Controllers
 
 		// GET: api/<ProcessorCoresController>
 		[HttpGet]
-		public async Task<ActionResult<IEnumerable<ProcessorCoreReadDto>>> Get() => Ok(await _service.GetAllProcessorCoresAsync());
+		public async Task<ActionResult<IEnumerable<ProcessorCoreReadDto>>> Get() =>
+			Ok(await _service.GetAllProcessorCoresAsync());
 
 		//// GET api/<ProcessorCoresController>/5
 		//[HttpGet("{id}")]

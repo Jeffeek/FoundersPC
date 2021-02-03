@@ -16,7 +16,7 @@ namespace FoundersPC.Infrastructure
 	{
 		public static void AddRepositories(this IServiceCollection services)
 		{
-			services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
+			//services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
 			services.AddScoped<IProducersRepositoryAsync, ProducersRepository>();
 			services.AddScoped<ICPUsRepositoryAsync, CPUsRepository>();
 			services.AddScoped<IProcessorCoresRepositoryAsync, ProcessorCoresRepository>();
@@ -35,13 +35,16 @@ namespace FoundersPC.Infrastructure
 			services.AddScoped<IUnitOfWorkAsync, FoundersPCUnitOfWork>();
 		}
 
-		public static void AddFoundersPCHardwareContext(this IServiceCollection services, IConfiguration configuration) => services.AddDbContext<DbContext, FoundersPCDbContext>(options =>
-			options.UseSqlServer(
-			                     configuration
-				                     .GetConnectionString("FoundercPC.connectionString"),
-			                     b =>
-				                     b.MigrationsAssembly(typeof(
-						                                          FoundersPCDbContext).Assembly
-					                                          .FullName)));
+		public static void
+			AddFoundersPCHardwareContext(this IServiceCollection services, IConfiguration configuration) =>
+			services.AddDbContext<DbContext, FoundersPCDbContext>(options =>
+				                                                      options.UseSqlServer(
+				                                                       configuration
+					                                                       .GetConnectionString("FoundercPC.connectionString"),
+				                                                       b =>
+					                                                       b.MigrationsAssembly(typeof(
+							                                                       FoundersPCDbContext)
+						                                                       .Assembly
+						                                                       .FullName)));
 	}
 }

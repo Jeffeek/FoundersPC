@@ -1,19 +1,14 @@
 #region Using derectives
 
-using AutoMapper;
 using FoundersPC.Application;
-using FoundersPC.Application.Mappings;
 using FoundersPC.Infrastructure;
-using FoundersPC.Infrastructure.Contexts;
 using FoundersPC.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Newtonsoft.Json.Serialization;
 
 #endregion
 
@@ -21,15 +16,14 @@ namespace FoundersPC.API
 {
 	public sealed class Startup
 	{
-		public IConfiguration Configuration { get; }
-
 		public Startup(IConfiguration configuration) => Configuration = configuration;
+		public IConfiguration Configuration { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			        //.AddNewtonsoftJson(setup => setup.SerializerSettings.ContractResolver =
-				       //                             new CamelCasePropertyNamesContractResolver());
+			//.AddNewtonsoftJson(setup => setup.SerializerSettings.ContractResolver =
+			//                             new CamelCasePropertyNamesContractResolver());
 
 			services.AddControllers();
 			services.AddRepositories();

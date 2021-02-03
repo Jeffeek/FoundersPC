@@ -1,5 +1,6 @@
 ﻿#region Using derectives
 
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -9,8 +10,15 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 {
 	[Index(nameof(Id))]
-	public class GPU : EquipmentEntityBase
+	public class GPU : EquipmentEntityBase, IEquatable<GPU>
 	{
+		[DataType(DataType.Text)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[MinLength(5)]
+		[MaxLength(100)]
+		[Required]
+		public string Title { get; set; }
+
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("GraphicsProcessorId")]
 		[MinLength(3)]
@@ -78,6 +86,54 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		[Column("DisplayPort")]
 		[Required]
 		public int DisplayPort { get; set; }
+
+		#endregion
+
+		#region Equality members
+
+		/// <inheritdoc />
+		public bool Equals(GPU other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
+			return GraphicsProcessorId == other.GraphicsProcessorId &&
+			       AdditionalPower == other.AdditionalPower &&
+			       VideoMemoryVolume == other.VideoMemoryVolume &&
+			       VideoMemoryType == other.VideoMemoryType &&
+			       VideoMemoryFrequency == other.VideoMemoryFrequency &&
+			       VideoMemoryBusWidth == other.VideoMemoryBusWidth &&
+			       VGA == other.VGA &&
+			       DVI == other.DVI &&
+			       HDMI == other.HDMI &&
+			       DisplayPort == other.DisplayPort;
+		}
+
+		/// <inheritdoc />
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != GetType()) return false;
+			return Equals((GPU)obj);
+		}
+
+		/// <inheritdoc />
+		public override int GetHashCode()
+		{
+			var hashCode = new HashCode();
+			hashCode.Add(GraphicsProcessorId);
+			hashCode.Add(Core);
+			hashCode.Add(AdditionalPower);
+			hashCode.Add(VideoMemoryVolume);
+			hashCode.Add(VideoMemoryType);
+			hashCode.Add(VideoMemoryFrequency);
+			hashCode.Add(VideoMemoryBusWidth);
+			hashCode.Add(VGA);
+			hashCode.Add(DVI);
+			hashCode.Add(HDMI);
+			hashCode.Add(DisplayPort);
+			return hashCode.ToHashCode();
+		}
 
 		#endregion
 	}
