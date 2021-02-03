@@ -1,35 +1,39 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class HDDReadDto
-    {
-	    [Required]
-	    public int Id { get; set; }
+	public class HDDReadDto
+	{
+		[Required]
+		public int Id { get; set; }
 
-	    [Required]
+		[Required]
 		public ProducerReadDto Producer { get; set; }
 
-	    [DataType(DataType.Date)]
-	    public DateTime? MarketLaunch { get; set; }
+		[DataType(DataType.Date)]
+		public DateTime? MarketLaunch { get; set; }
 
-	    [Required]
+		[Required]
 		public int HeadSpeed { get; set; }
 
 		[Required]
 		public int BufferSize { get; set; }
 
-	    public int Noise { get; set; }
+		public int Noise { get; set; }
 
 		[Required]
-	    public double Factor { get; set; }
+		public double Factor { get; set; }
 
-	    [MinLength(3)]
-	    [MaxLength(20)]
-	    public string Interface { get; set; }
+		[MinLength(3)]
+		[MaxLength(20)]
+		public string Interface { get; set; }
 
-	    [Required]
+		[Required]
 		public int Volume { get; set; }
 	}
 }

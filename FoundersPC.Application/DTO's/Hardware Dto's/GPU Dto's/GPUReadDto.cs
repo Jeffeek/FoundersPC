@@ -1,14 +1,22 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class GPUReadDto
-    {
-	    public int Id { get; set; }
+	public class GPUReadDto
+	{
+		public int Id { get; set; }
 
 		public ProducerReadDto Producer { get; set; }
 
 		public DateTime? MarketLaunch { get; set; }
+
+		public VideoCardCoreReadDto Core { get; set; }
+
+		public int AdditionalPower { get; set; }
 
 		#region Memory
 
@@ -21,10 +29,6 @@ namespace FoundersPC.Application
 		public int VideoMemoryBusWidth { get; set; }
 
 		#endregion
-
-		public VideoCardCoreReadDto Core { get; set; }
-
-		public int AdditionalPower { get; set; }
 
 		#region Output
 

@@ -12,6 +12,5 @@ namespace FoundersPC.Infrastructure.Repositories
 	{
 		/// <inheritdoc />
 		public ProducersRepository(DbContext repositoryContext) : base(repositoryContext) { }
-
 	}
 }

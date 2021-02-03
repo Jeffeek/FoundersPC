@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.Application
 {

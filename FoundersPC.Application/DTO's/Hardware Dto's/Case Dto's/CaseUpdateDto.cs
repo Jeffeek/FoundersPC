@@ -1,14 +1,18 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class CaseUpdateDto
-    {
-	    [Required]
+	public class CaseUpdateDto
+	{
+		[Required]
 		public int ProducerId { get; set; }
 
-	    [DataType(DataType.Date)]
+		[DataType(DataType.Date)]
 		public DateTime? MarketLaunch { get; set; }
 
 		[MinLength(40)]

@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class CPUReadDto
-    {
+	public class CPUReadDto
+	{
 		public int Id { get; set; }
 
 		public ProducerReadDto Producer { get; set; }

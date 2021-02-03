@@ -1,36 +1,40 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class ProducerReadDto
-    {
+	public class ProducerReadDto
+	{
 		[Required]
 		public int Id { get; set; }
 
-	    [MinLength(2)]
-	    [MaxLength(20)]
-	    [DataType(DataType.Text)]
-	    public string ShortName { get; set; }
+		[MinLength(2)]
+		[MaxLength(20)]
+		[DataType(DataType.Text)]
+		public string ShortName { get; set; }
 
-	    [MinLength(3)]
-	    [MaxLength(100)]
-	    [DataType(DataType.Text)]
-	    [Required]
+		[MinLength(3)]
+		[MaxLength(100)]
+		[DataType(DataType.Text)]
+		[Required]
 		public string FullName { get; set; }
 
-	    [MaxLength(50)]
-	    [MinLength(3)]
-	    [DataType(DataType.Text)]
+		[MaxLength(50)]
+		[MinLength(3)]
+		[DataType(DataType.Text)]
 		[Required]
-	    public string Country { get; set; }
+		public string Country { get; set; }
 
-	    [MaxLength(100)]
-	    [MinLength(5)]
-	    [DataType(DataType.Url)]
+		[MaxLength(100)]
+		[MinLength(5)]
+		[DataType(DataType.Url)]
 		public string Website { get; set; }
 
-	    [DataType(DataType.Date)]
+		[DataType(DataType.Date)]
 		public DateTime? FoundationDate { get; set; }
 	}
 }

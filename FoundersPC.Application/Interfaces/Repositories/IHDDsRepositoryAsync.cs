@@ -1,13 +1,10 @@
 ﻿#region Using derectives
 
-#endregion
-
 using FoundersPC.Domain.Entities.Hardware.Memory;
+
+#endregion
 
 namespace FoundersPC.Application.Interfaces.Repositories
 {
-	public interface IHDDsRepositoryAsync : IGenericRepositoryAsync<HDD>
-	{
-		
-	}
+	public interface IHDDsRepositoryAsync : IGenericRepositoryAsync<HDD> { }
 }

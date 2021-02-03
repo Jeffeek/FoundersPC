@@ -18,9 +18,9 @@ namespace FoundersPC.Infrastructure.Repositories
 		#region Overrides of GenericRepositoryAsync<Case>
 
 		/// <inheritdoc />
-		public override async Task<IQueryable<CPU>> GetAllAsync() =>
-			(await base.GetAllAsync()).Include(cpu => cpu.Producer)
-			                          .Include(cpu => cpu.Core);
+		public override async Task<IQueryable<CPU>> GetAllAsync() => (await base.GetAllAsync())
+		                                                             .Include(cpu => cpu.Producer)
+		                                                             .Include(cpu => cpu.Core);
 
 		#endregion
 	}

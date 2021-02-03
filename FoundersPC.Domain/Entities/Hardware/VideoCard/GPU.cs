@@ -11,6 +11,22 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 	[Index(nameof(Id))]
 	public class GPU : EquipmentEntityBase
 	{
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("GraphicsProcessorId")]
+		[MinLength(3)]
+		[MaxLength(20)]
+		[DataType(DataType.Text)]
+		[Required]
+		public int GraphicsProcessorId { get; set; }
+
+		[ForeignKey(nameof(GraphicsProcessorId))]
+		public VideoCardCore Core { get; set; }
+
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("AdditionalPower")]
+		[Required]
+		public int AdditionalPower { get; set; }
+
 		#region Memory
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -40,22 +56,6 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		public int VideoMemoryBusWidth { get; set; }
 
 		#endregion
-
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("GraphicsProcessorId")]
-		[MinLength(3)]
-		[MaxLength(20)]
-		[DataType(DataType.Text)]
-		[Required]
-		public int GraphicsProcessorId { get; set; }
-
-		[ForeignKey(nameof(GraphicsProcessorId))]
-		public VideoCardCore Core { get; set; }
-
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("AdditionalPower")]
-		[Required]
-		public int AdditionalPower { get; set; }
 
 		#region Output
 

@@ -1,44 +1,48 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class RAMUpdateDto
-    {
-	    [Required]
-	    public int ProducerId { get; set; }
+	public class RAMUpdateDto
+	{
+		[Required]
+		public int ProducerId { get; set; }
 
-	    [DataType(DataType.Date)]
-	    public DateTime? MarketLaunch { get; set; }
+		[DataType(DataType.Date)]
+		public DateTime? MarketLaunch { get; set; }
 
-	    [MinLength(5)]
-	    [MaxLength(15)]
-	    [Required]
-	    public string MemoryType { get; set; }
+		[MinLength(5)]
+		[MaxLength(15)]
+		[Required]
+		public string MemoryType { get; set; }
 
-	    [Required]
-	    public int Frequency { get; set; }
+		[Required]
+		public int Frequency { get; set; }
 
-	    [MinLength(3)]
-	    [MaxLength(5)]
-	    [Required]
-	    public string CASLatency { get; set; }
+		[MinLength(3)]
+		[MaxLength(5)]
+		[Required]
+		public string CASLatency { get; set; }
 
-	    [MinLength(5)]
-	    [MaxLength(8)]
-	    [Required]
-	    public string Timings { get; set; }
+		[MinLength(5)]
+		[MaxLength(8)]
+		[Required]
+		public string Timings { get; set; }
 
-	    [Required]
-	    public double Voltage { get; set; }
+		[Required]
+		public double Voltage { get; set; }
 
-	    [Required]
-	    public bool XMP { get; set; }
+		[Required]
+		public bool XMP { get; set; }
 
-	    [Required]
+		[Required]
 		public bool ECC { get; set; }
 
-	    [Required]
+		[Required]
 		public int PCIndex { get; set; }
 	}
 }

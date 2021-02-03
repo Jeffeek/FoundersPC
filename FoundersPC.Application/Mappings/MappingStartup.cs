@@ -1,7 +1,6 @@
 ﻿#region Using derectives
 
 using AutoMapper;
-using FoundersPC.Application;
 using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Domain.Entities.Hardware.Memory;
 using FoundersPC.Domain.Entities.Hardware.Processor;
@@ -9,7 +8,7 @@ using FoundersPC.Domain.Entities.Hardware.VideoCard;
 
 #endregion
 
-namespace FoundersPC.API.Utils
+namespace FoundersPC.Application.Mappings
 {
 	public class MappingStartup : Profile
 	{

@@ -1,21 +1,18 @@
 ﻿#region Using derectives
 
-#endregion
-
 using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Domain.Entities.Hardware.Memory;
 using FoundersPC.Domain.Entities.Hardware.Processor;
 using FoundersPC.Domain.Entities.Hardware.VideoCard;
 using Microsoft.EntityFrameworkCore;
 
+#endregion
+
 namespace FoundersPC.Infrastructure.Contexts
 {
 	public sealed class FoundersPCDbContext : DbContext
 	{
-		public FoundersPCDbContext(DbContextOptions<FoundersPCDbContext> options) : base(options)
-		{
-			
-		}
+		public FoundersPCDbContext(DbContextOptions<FoundersPCDbContext> options) : base(options) { }
 
 		public DbSet<CPU> Processors { get; set; }
 		public DbSet<ProcessorCore> ProcessorCores { get; set; }

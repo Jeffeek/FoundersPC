@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
-using FoundersPC.Application.Interfaces;
+using FoundersPC.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
@@ -71,7 +71,7 @@ namespace FoundersPC.API.Controllers
 		//	if (!id.HasValue) return BadRequest(nameof(id));
 		//	var readDto = await _cpuService.GetCPUByIdAsync(id.Value);
 		//	if (readDto == null) return NotFound(id);
-			
+
 		//	var cpuToPatch = _mapper.Map<CPUUpdateDto>(readDto);
 		//	patchDocument.ApplyTo(cpuToPatch, ModelState);
 		//	if (!TryValidateModel(cpuToPatch)) return ValidationProblem(ModelState);

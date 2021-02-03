@@ -1,10 +1,14 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class ProcessorCoreReadDto
-    {
-	    public int Id { get; set; }
+	public class ProcessorCoreReadDto
+	{
+		public int Id { get; set; }
 
 		public DateTime? MarketLaunch { get; set; }
 

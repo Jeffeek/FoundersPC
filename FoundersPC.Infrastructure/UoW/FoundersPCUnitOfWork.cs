@@ -16,10 +16,10 @@ namespace FoundersPC.Infrastructure.UoW
 		                            ICPUsRepositoryAsync processorsRepository,
 		                            IProducersRepositoryAsync producersRepository,
 		                            IProcessorCoresRepositoryAsync processorCoresRepository,
-		                            IGPUsRepositoryAsync videoCardsRepository, 
+		                            IGPUsRepositoryAsync videoCardsRepository,
 		                            IVideoCardCoresRepositoryAsync videoCardCoresRepository,
 		                            ICasesRepositoryAsync casesRepository,
-		                            IHDDsRepositoryAsync hddsRepository, 
+		                            IHDDsRepositoryAsync hddsRepository,
 		                            IMotherboardsRepositoryAsync motherboardsRepository,
 		                            IPowerSuppliersRepositoryAsync powerSuppliersRepository,
 		                            ISSDsRepositoryAsync ssdsRepository,
@@ -76,20 +76,20 @@ namespace FoundersPC.Infrastructure.UoW
 
 		/// <inheritdoc />
 		public async Task<bool> SaveChangesAsync()
-        {
-	        bool saveChangesResult;
-	        try
-	        {
-		        saveChangesResult = await _context.SaveChangesAsync() >= 0;
+		{
+			bool saveChangesResult;
+			try
+			{
+				saveChangesResult = await _context.SaveChangesAsync() >= 0;
 			}
-	        catch
-	        {
-		        return false;
-	        }
+			catch
+			{
+				return false;
+			}
 
-	        return saveChangesResult;
-        }
+			return saveChangesResult;
+		}
 
-        #endregion
+		#endregion
 	}
 }

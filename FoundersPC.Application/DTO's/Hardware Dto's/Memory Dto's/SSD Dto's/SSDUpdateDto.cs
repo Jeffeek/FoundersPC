@@ -1,11 +1,15 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.Application
 {
-    public class SSDUpdateDto
-    {
-	    [Required]
+	public class SSDUpdateDto
+	{
+		[Required]
 		public int ProducerId { get; set; }
 
 		[DataType(DataType.Date)]

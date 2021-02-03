@@ -1,12 +1,16 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+#endregion
+
 namespace FoundersPC.Application
 {
-    public class CaseReadDto
-    {
-	    [Required]
+	public class CaseReadDto
+	{
+		[Required]
 		public int Id { get; set; }
 
 		[Required]
@@ -50,5 +54,5 @@ namespace FoundersPC.Application
 		[DataType(DataType.Text)]
 		[Required]
 		public string Color { get; set; }
-    }
+	}
 }

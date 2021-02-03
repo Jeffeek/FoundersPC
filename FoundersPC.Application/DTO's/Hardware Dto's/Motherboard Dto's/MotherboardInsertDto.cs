@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region Using derectives
+
+using System;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.Application
 {
@@ -54,5 +58,5 @@ namespace FoundersPC.Application
 		[MaxLength(12)]
 		[Required]
 		public string PCIExpressVersion { get; set; }
-    }
+	}
 }

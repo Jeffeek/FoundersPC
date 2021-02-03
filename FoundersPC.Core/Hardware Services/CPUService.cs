@@ -1,15 +1,19 @@
-﻿using System.Collections.Generic;
+﻿#region Using derectives
+
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
-using FoundersPC.Application.Interfaces;
+using FoundersPC.Application.Interfaces.Services;
 using FoundersPC.Domain.Entities.Hardware.Processor;
 using FoundersPC.Infrastructure.UoW;
 
+#endregion
+
 namespace FoundersPC.Services.Hardware_Services
 {
-    public class CPUService : ICPUService
-    {
+	public class CPUService : ICPUService
+	{
 		private readonly IUnitOfWorkAsync _unitOfWork;
 		private readonly IMapper _mapper;
 
@@ -20,10 +24,13 @@ namespace FoundersPC.Services.Hardware_Services
 		}
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync() => _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork.ProcessorsRepository.GetAllAsync());
+		public async Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync() =>
+			_mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork.ProcessorsRepository
+				                                                       .GetAllAsync());
 
 		/// <inheritdoc />
-		public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) => _mapper.Map<CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetByIdAsync(cpuId));
+		public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) =>
+			_mapper.Map<CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetByIdAsync(cpuId));
 
 		/// <inheritdoc />
 		public async Task<bool> CreateCPU(CPUInsertDto cpu)

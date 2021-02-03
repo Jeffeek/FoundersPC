@@ -1,13 +1,10 @@
 ﻿#region Using derectives
 
-#endregion
-
 using FoundersPC.Domain.Entities.Hardware;
+
+#endregion
 
 namespace FoundersPC.Application.Interfaces.Repositories
 {
-	public interface IProducersRepositoryAsync : IGenericRepositoryAsync<Producer>
-	{
-		
-	}
+	public interface IProducersRepositoryAsync : IGenericRepositoryAsync<Producer> { }
 }
