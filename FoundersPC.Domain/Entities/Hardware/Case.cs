@@ -13,8 +13,8 @@ namespace FoundersPC.Domain.Entities.Hardware
 	public class Case : EquipmentEntityBase, IEquatable<Case>
 	{
 		[Column("Type")]
-		[MinLength(40)]
-		[MaxLength(3)]
+		[MinLength(3)]
+		[MaxLength(40)]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[DataType(DataType.Text)]
 		[Required]

@@ -10,9 +10,9 @@ namespace FoundersPC.Application.Interfaces.Services
 	public interface IProcessorCoreService
 	{
 		Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync();
-		Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuId);
-		Task<bool> CreateProcessorCore(ProcessorCoreInsertDto cpu);
-		Task<bool> UpdateProcessorCore(int id, ProcessorCoreUpdateDto cpu);
+		Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId);
+		Task<bool> CreateProcessorCore(ProcessorCoreInsertDto cpuCore);
+		Task<bool> UpdateProcessorCore(int id, ProcessorCoreUpdateDto cpuCore);
 		Task<bool> DeleteProcessorCore(int id);
 	}
 }

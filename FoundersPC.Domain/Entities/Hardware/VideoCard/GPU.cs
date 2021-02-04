@@ -45,7 +45,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("VideoMemoryType")]
 		[MinLength(4)]
-		[MaxLength(7)]
+		[MaxLength(8)]
 		[Required]
 		public string VideoMemoryType { get; set; }
 

@@ -36,6 +36,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("MonitorsSupport")]
+		[Range(1,20)]
 		[Required]
 		public int MonitorsSupport { get; set; }
 
@@ -49,15 +50,13 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("Frequency")]
-		[MinLength(3)]
-		[MaxLength(5)]
+		[Range(1, 6)]
 		[Required]
 		public int Frequency { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("DirectX_Version")]
-		[MinLength(1)]
-		[MaxLength(3)]
+		[Range(0, 5)]
 		public int DirectX { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]

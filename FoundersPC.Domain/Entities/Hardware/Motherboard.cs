@@ -27,20 +27,21 @@ namespace FoundersPC.Domain.Entities.Hardware
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("RAMSupport")]
-		[MinLength(5)]
+		[MinLength(4)]
 		[MaxLength(6)]
 		[Required]
 		public string RAMSupport { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("RAMSlots")]
+		[Range(1, 6)]
 		[Required]
 		public int RAMSlots { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("RAMMode")]
 		[MinLength(2)]
-		[MaxLength(2)]
+		[MaxLength(3)]
 		[Required]
 		public string RAMMode { get; set; }
 

@@ -61,6 +61,7 @@ namespace FoundersPC.Services.Hardware_Services
 		public async Task<bool> DeleteCPU(int id)
 		{
 			var cpuToDelete = await _unitOfWork.ProcessorsRepository.GetByIdAsync(id);
+			if (cpuToDelete == null) return false;
 			await _unitOfWork.ProcessorsRepository.DeleteAsync(cpuToDelete);
 			return await _unitOfWork.SaveChangesAsync();
 		}

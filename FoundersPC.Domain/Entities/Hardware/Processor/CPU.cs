@@ -14,6 +14,7 @@ namespace FoundersPC.Domain.Entities.Hardware.Processor
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("TDP")]
+		[Range(1, 3)]
 		[Required]
 		public int TDP { get; set; }
 
