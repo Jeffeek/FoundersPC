@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services.Hardware.CPU;
-using FoundersPC.Domain.Entities.Hardware.Processor;
 using FoundersPC.Infrastructure.UoW;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace FoundersPC.Services.Hardware_Services
+namespace FoundersPC.Services.Hardware_Services.Hardware.CPU
 {
 	public class CPUService : ICPUService
 	{
@@ -26,17 +25,17 @@ namespace FoundersPC.Services.Hardware_Services
 
 		/// <inheritdoc />
 		public async Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync() =>
-			_mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork.ProcessorsRepository
-				                                                       .GetAllAsync());
+			_mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor.CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork.ProcessorsRepository
+				                                                                 .GetAllAsync());
 
 		/// <inheritdoc />
 		public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) =>
-			_mapper.Map<CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetByIdAsync(cpuId));
+			_mapper.Map<Domain.Entities.Hardware.Processor.CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetByIdAsync(cpuId));
 
 		/// <inheritdoc />
 		public async Task<bool> CreateCPU(CPUInsertDto cpu)
 		{
-			var mappedCpu = _mapper.Map<CPUInsertDto, CPU>(cpu);
+			var mappedCpu = _mapper.Map<CPUInsertDto, Domain.Entities.Hardware.Processor.CPU>(cpu);
 			if (
 				await (await _unitOfWork.ProcessorsRepository
 				                        .GetAllAsync())

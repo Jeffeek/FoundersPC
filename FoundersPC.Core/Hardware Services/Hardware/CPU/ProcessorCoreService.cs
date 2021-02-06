@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace FoundersPC.Services.Hardware_Services
+namespace FoundersPC.Services.Hardware_Services.Hardware.CPU
 {
 	public class ProcessorCoreService : IProcessorCoreService
 	{
