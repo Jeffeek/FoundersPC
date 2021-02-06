@@ -14,14 +14,8 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.Domain.Entities.Hardware
 {
 	[Index(nameof(Id))]
-	public class Producer : IEquatable<Producer>
+	public class Producer : IdentityItem, IEquatable<Producer>
 	{
-		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		[Column("Id")]
-		[Required]
-		public int Id { get; set; }
-
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[MinLength(2)]
 		[MaxLength(20)]

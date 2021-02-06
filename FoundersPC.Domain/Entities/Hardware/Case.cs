@@ -57,6 +57,26 @@ namespace FoundersPC.Domain.Entities.Hardware
 		[Required]
 		public string Color { get; set; }
 
+		[Column("Weight")]
+		[Range(0.1, 100)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public double? Weight { get; set; }
+
+		[Column("Height")]
+		[Range(0.1, 1000)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public int? Height { get; set; }
+
+		[Column("Width")]
+		[Range(0.1, 1000)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public int? Width { get; set; }
+
+		[Column("Depth")]
+		[Range(0.1, 1000)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public int? Depth { get; set; }
+
 		#region Equality members
 
 		/// <inheritdoc />
@@ -69,7 +89,11 @@ namespace FoundersPC.Domain.Entities.Hardware
 			       Material == other.Material &&
 			       WindowMaterial == other.WindowMaterial &&
 			       TransparentWindow == other.TransparentWindow &&
-			       Color == other.Color;
+			       Color == other.Color && 
+			       Depth == (other.Depth ?? 0) &&
+			       Width == (other.Width ?? 0) &&
+			       Height == (other.Height ?? 0) &&
+			       Weight.Equals(other.Weight ?? 0);
 		}
 
 		/// <inheritdoc />

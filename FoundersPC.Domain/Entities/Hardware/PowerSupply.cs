@@ -12,14 +12,16 @@ namespace FoundersPC.Domain.Entities.Hardware
 	[Index(nameof(Id))]
 	public class PowerSupply : EquipmentEntityBase, IEquatable<PowerSupply>
 	{
+		[Range(50, 10000)]
 		[Column("Power")]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Required]
 		public int Power { get; set; }
 
+		[Range(50, 100)]
 		[Column("Efficiency")]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		public int Efficiency { get; set; }
+		public int? Efficiency { get; set; }
 
 		[MinLength(1)]
 		[MaxLength(10)]
@@ -42,6 +44,7 @@ namespace FoundersPC.Domain.Entities.Hardware
 		[Required]
 		public bool CPU8PIN { get; set; }
 
+		[Range(0, 300)]
 		[Column("FanDiameter")]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Required]

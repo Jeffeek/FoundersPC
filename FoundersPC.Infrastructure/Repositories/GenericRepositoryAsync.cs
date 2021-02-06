@@ -18,24 +18,28 @@ namespace FoundersPC.Infrastructure.Repositories
 		#region Implementation of IGenericRepositoryAsync<T>
 
 		/// <inheritdoc />
-		public async Task<T> AddAsync(T entity)
+		public virtual async Task<T> AddAsync(T entity)
 		{
 			await _context.Set<T>().AddAsync(entity);
 			return entity;
 		}
 
 		/// <inheritdoc />
-		public async Task UpdateAsync(T entity) =>
+		public virtual async Task UpdateAsync(T entity) =>
 			await Task.Run(() => _context.Entry(entity).State = EntityState.Modified);
 
 		/// <inheritdoc />
-		public async Task DeleteAsync(T entity) => await Task.Run(() => _context.Set<T>().Remove(entity));
+		public virtual async Task DeleteAsync(T entity) => await Task.Run(() => _context.Set<T>().Remove(entity));
 
 		/// <inheritdoc />
-		public async Task<T> GetByIdAsync(int id) => await _context.Set<T>().FindAsync(id);
+		public virtual async Task<T> GetByIdAsync(int id)
+		{
+			await _context.Set<T>().LoadAsync();
+			return await _context.Set<T>().FindAsync(id);
+		}
 
 		/// <inheritdoc />
-		public virtual async Task<IQueryable<T>> GetAllAsync() => await Task.Run(() => _context.Set<T>().AsQueryable());
+		public virtual async Task<IQueryable<T>> GetAllAsync() => await _context.Set<T>().LoadAsync();
 
 		#endregion
 	}

@@ -1,6 +1,5 @@
 ﻿#region Using derectives
 
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoundersPC.Domain.Entities.Hardware
 {
-	public abstract class EquipmentEntityBase : BaseEntity
+	public abstract class EquipmentEntityBase : IdentityItem
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("ProducerId")]
@@ -18,9 +17,11 @@ namespace FoundersPC.Domain.Entities.Hardware
 		[ForeignKey(nameof(ProducerId))]
 		public Producer Producer { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("MarketLaunch")]
-		[DataType(DataType.Date)]
-		public DateTime? MarketLaunch { get; set; }
+		[MaxLength(100)]
+		[MinLength(0)]
+		[DataType(DataType.Text)]
+		[Column("Title")]
+		[Required]
+		public string Title { get; set; }
 	}
 }

@@ -9,25 +9,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoundersPC.Domain.Entities.Hardware.Processor
 {
-	public class ProcessorCore : IEquatable<ProcessorCore>
+	public class ProcessorCore : IdentityItem, IEquatable<ProcessorCore>
 	{
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		[Column("Id")]
-		[Key]
-		public int Id { get; set; }
-
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("MarketLaunch")]
 		[DataType(DataType.Date)]
 		public DateTime? MarketLaunch { get; set; }
-
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[DataType(DataType.Text)]
-		[MaxLength(50)]
-		[MinLength(3)]
-		[Column("Title")]
-		[Required]
-		public string Title { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[DataType(DataType.Text)]
@@ -52,6 +39,12 @@ namespace FoundersPC.Domain.Entities.Hardware.Processor
 		[Column("Socket")]
 		[Required]
 		public string Socket { get; set; }
+
+		[DataType(DataType.Text)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("Title")]
+		[Required]
+		public string Title { get; set; }
 
 		public ICollection<CPU> Processors { get; set; }
 

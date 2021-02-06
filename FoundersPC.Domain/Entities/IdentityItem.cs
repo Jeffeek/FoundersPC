@@ -7,10 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoundersPC.Domain.Entities
 {
-	public abstract class BaseEntity
+	public abstract class IdentityItem
 	{
 		[Column("Id")]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		[Required]
 		[Key]
 		public int Id { get; set; }
 	}

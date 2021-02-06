@@ -1,6 +1,5 @@
 ﻿#region Using derectives
 
-using System;
 using System.ComponentModel.DataAnnotations;
 
 #endregion
@@ -12,30 +11,28 @@ namespace FoundersPC.Application
 		[Required]
 		public int ProducerId { get; set; }
 
-		[DataType(DataType.Date)]
-		public DateTime? MarketLaunch { get; set; }
+		[MaxLength(100)]
+		[MinLength(0)]
+		[Required]
+		public string Title { get; set; }
 
-		[MinLength(40)]
-		[MaxLength(3)]
-		[DataType(DataType.Text)]
+		[MinLength(3)]
+		[MaxLength(40)]
 		[Required]
 		public string Type { get; set; }
 
 		[MinLength(3)]
 		[MaxLength(20)]
-		[DataType(DataType.Text)]
 		[Required]
 		public string MaxMotherboardSize { get; set; }
 
 		[MinLength(3)]
 		[MaxLength(50)]
-		[DataType(DataType.Text)]
 		[Required]
 		public string Material { get; set; }
 
 		[MinLength(3)]
 		[MaxLength(50)]
-		[DataType(DataType.Text)]
 		[Required]
 		public string WindowMaterial { get; set; }
 
@@ -44,8 +41,19 @@ namespace FoundersPC.Application
 
 		[MinLength(2)]
 		[MaxLength(50)]
-		[DataType(DataType.Text)]
 		[Required]
 		public string Color { get; set; }
+
+		[Range(0.1, 100)]
+		public double? Weight { get; set; }
+
+		[Range(0.1, 1000)]
+		public int? Height { get; set; }
+
+		[Range(0.1, 1000)]
+		public int? Width { get; set; }
+
+		[Range(0.1, 1000)]
+		public int? Depth { get; set; }
 	}
 }

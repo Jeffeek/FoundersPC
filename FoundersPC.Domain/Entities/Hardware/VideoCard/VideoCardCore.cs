@@ -9,19 +9,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 {
-	public class VideoCardCore : IEquatable<VideoCardCore>
+	public class VideoCardCore : IdentityItem, IEquatable<VideoCardCore>
 	{
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		[Column("Id")]
-		[Key]
-		public int Id { get; set; }
-
-		[MinLength(5)]
-		[MaxLength(30)]
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("Title")]
-		public string Title { get; set; }
-
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("TechProcess")]
 		[Required]
@@ -69,6 +58,12 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		[Column("ArchitectureTitle")]
 		[Required]
 		public string ArchitectureTitle { get; set; }
+
+		[DataType(DataType.Text)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("Title")]
+		[Required]
+		public string Title { get; set; }
 
 		public ICollection<GPU> VideoCards { get; set; }
 

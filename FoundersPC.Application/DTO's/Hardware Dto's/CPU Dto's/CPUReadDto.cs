@@ -12,8 +12,6 @@ namespace FoundersPC.Application
 
 		public ProducerReadDto Producer { get; set; }
 
-		public DateTime? MarketLaunch { get; set; }
-
 		public int TDP { get; set; }
 
 		public ProcessorCoreReadDto Core { get; set; }

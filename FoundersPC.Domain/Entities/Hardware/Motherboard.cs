@@ -20,15 +20,17 @@ namespace FoundersPC.Domain.Entities.Hardware
 		[Required]
 		public string Socket { get; set; }
 
+		[MinLength(3)]
+		[MaxLength(10)]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("Factor")]
 		[Required]
-		public double Factor { get; set; }
+		public string Factor { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("RAMSupport")]
 		[MinLength(4)]
-		[MaxLength(6)]
+		[MaxLength(7)]
 		[Required]
 		public string RAMSupport { get; set; }
 

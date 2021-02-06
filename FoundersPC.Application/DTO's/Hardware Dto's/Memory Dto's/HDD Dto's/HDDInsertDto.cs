@@ -1,6 +1,5 @@
 ﻿#region Using derectives
 
-using System;
 using System.ComponentModel.DataAnnotations;
 
 #endregion
@@ -10,10 +9,10 @@ namespace FoundersPC.Application
 	public class HDDInsertDto
 	{
 		[Required]
-		public int ProducerId { get; set; }
+		public string Title { get; set; }
 
-		[DataType(DataType.Date)]
-		public DateTime? MarketLaunch { get; set; }
+		[Required]
+		public int ProducerId { get; set; }
 
 		[Required]
 		public int HeadSpeed { get; set; }

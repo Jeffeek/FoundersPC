@@ -12,13 +12,6 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 	[Index(nameof(Id))]
 	public class GPU : EquipmentEntityBase, IEquatable<GPU>
 	{
-		[DataType(DataType.Text)]
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[MinLength(5)]
-		[MaxLength(100)]
-		[Required]
-		public string Title { get; set; }
-
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("GraphicsProcessorId")]
 		[MinLength(3)]

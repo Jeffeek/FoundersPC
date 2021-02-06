@@ -1,6 +1,5 @@
 ﻿#region Using derectives
 
-using System;
 using System.ComponentModel.DataAnnotations;
 
 #endregion
@@ -15,8 +14,8 @@ namespace FoundersPC.Application
 		[Required]
 		public int ProducerId { get; set; }
 
-		[DataType(DataType.Date)]
-		public DateTime? MarketLaunch { get; set; }
+		[Required]
+		public string Title { get; set; }
 
 		[MaxLength(10)]
 		[MinLength(3)]

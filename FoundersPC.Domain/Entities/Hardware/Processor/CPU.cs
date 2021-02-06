@@ -33,14 +33,6 @@ namespace FoundersPC.Domain.Entities.Hardware.Processor
 		public ProcessorCore Core { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[DataType(DataType.Text)]
-		[MaxLength(20)]
-		[MinLength(3)]
-		[Column("Title")]
-		[Required]
-		public string Title { get; set; }
-
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("MaxRamSpeed")]
 		[Required]
 		public int MaxRamSpeed { get; set; }
