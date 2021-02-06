@@ -25,7 +25,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("MonitorsSupport")]
-		[Range(1,20)]
+		[Range(1, 20)]
 		[Required]
 		public int MonitorsSupport { get; set; }
 

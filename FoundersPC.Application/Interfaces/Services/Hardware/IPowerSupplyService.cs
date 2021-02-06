@@ -1,0 +1,18 @@
+﻿#region Using derectives
+
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+#endregion
+
+namespace FoundersPC.Application.Interfaces.Services.Hardware
+{
+	public interface IPowerSupplyService
+	{
+		Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliersAsync();
+		Task<PowerSupplyReadDto> GetSSDByIdAsync(int powerSupply);
+		Task<bool> CreatePowerSupply(PowerSupplyInsertDto powerSupply);
+		Task<bool> UpdatePowerSupply(int id, PowerSupplyUpdateDto powerSupply);
+		Task<bool> DeletePowerSupply(int id);
+	}
+}

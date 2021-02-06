@@ -1,6 +1,7 @@
 ﻿#region Using derectives
 
 using FoundersPC.Application.Interfaces.Services;
+using FoundersPC.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.Services.Hardware_Services;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,10 +1,4 @@
-﻿#region Using derectives
-
-using System;
-
-#endregion
-
-namespace FoundersPC.Application
+﻿namespace FoundersPC.Application
 {
 	public class CPUReadDto
 	{

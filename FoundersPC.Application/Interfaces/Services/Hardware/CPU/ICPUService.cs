@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 #endregion
 
-namespace FoundersPC.Application.Interfaces.Services
+namespace FoundersPC.Application.Interfaces.Services.Hardware.CPU
 {
 	public interface ICPUService
 	{

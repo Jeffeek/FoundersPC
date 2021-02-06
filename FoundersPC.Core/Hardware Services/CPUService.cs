@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
-using FoundersPC.Application.Interfaces.Services;
+using FoundersPC.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.Domain.Entities.Hardware.Processor;
 using FoundersPC.Infrastructure.UoW;
 using Microsoft.EntityFrameworkCore;

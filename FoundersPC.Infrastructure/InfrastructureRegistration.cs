@@ -1,8 +1,16 @@
 ﻿#region Using derectives
 
 using FoundersPC.Application.Interfaces.Repositories;
+using FoundersPC.Application.Interfaces.Repositories.Hardware;
+using FoundersPC.Application.Interfaces.Repositories.Hardware.CPU;
+using FoundersPC.Application.Interfaces.Repositories.Hardware.GPU;
+using FoundersPC.Application.Interfaces.Repositories.Hardware.Memory;
 using FoundersPC.Infrastructure.Contexts;
 using FoundersPC.Infrastructure.Repositories;
+using FoundersPC.Infrastructure.Repositories.Hardware;
+using FoundersPC.Infrastructure.Repositories.Hardware.CPU;
+using FoundersPC.Infrastructure.Repositories.Hardware.GPU;
+using FoundersPC.Infrastructure.Repositories.Hardware.Memory;
 using FoundersPC.Infrastructure.UoW;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

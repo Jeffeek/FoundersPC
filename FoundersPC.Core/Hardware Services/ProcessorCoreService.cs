@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
-using FoundersPC.Application.Interfaces.Services;
+using FoundersPC.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.Domain.Entities.Hardware.Processor;
 using FoundersPC.Infrastructure.UoW;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +33,8 @@ namespace FoundersPC.Services.Hardware_Services
 
 		/// <inheritdoc />
 		public async Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId) =>
-			_mapper.Map<ProcessorCore, ProcessorCoreReadDto>(await _unitOfWork.ProcessorCoresRepository.GetByIdAsync(cpuCoreId));
+			_mapper.Map<ProcessorCore, ProcessorCoreReadDto>(await _unitOfWork.ProcessorCoresRepository
+			                                                                  .GetByIdAsync(cpuCoreId));
 
 		/// <inheritdoc />
 		public async Task<bool> CreateProcessorCore(ProcessorCoreInsertDto cpuCore)

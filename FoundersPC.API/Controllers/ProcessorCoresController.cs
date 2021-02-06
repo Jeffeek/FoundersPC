@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Application;
-using FoundersPC.Application.Interfaces.Services;
+using FoundersPC.Application.Interfaces.Services.Hardware.CPU;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion

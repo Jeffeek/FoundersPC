@@ -89,7 +89,7 @@ namespace FoundersPC.Domain.Entities.Hardware
 			       Material == other.Material &&
 			       WindowMaterial == other.WindowMaterial &&
 			       TransparentWindow == other.TransparentWindow &&
-			       Color == other.Color && 
+			       Color == other.Color &&
 			       Depth == (other.Depth ?? 0) &&
 			       Width == (other.Width ?? 0) &&
 			       Height == (other.Height ?? 0) &&

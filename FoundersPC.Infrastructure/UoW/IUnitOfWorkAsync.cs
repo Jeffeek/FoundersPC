@@ -2,6 +2,10 @@
 
 using System.Threading.Tasks;
 using FoundersPC.Application.Interfaces.Repositories;
+using FoundersPC.Application.Interfaces.Repositories.Hardware;
+using FoundersPC.Application.Interfaces.Repositories.Hardware.CPU;
+using FoundersPC.Application.Interfaces.Repositories.Hardware.GPU;
+using FoundersPC.Application.Interfaces.Repositories.Hardware.Memory;
 
 #endregion
 

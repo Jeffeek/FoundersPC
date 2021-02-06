@@ -1,8 +1,4 @@
-﻿#region Using derectives
-
-#endregion
-
-namespace FoundersPC.Application
+﻿namespace FoundersPC.Application
 {
 	public class RAMReadDto
 	{
