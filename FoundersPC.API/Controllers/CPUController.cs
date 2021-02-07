@@ -12,15 +12,15 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.API.Controllers
 {
 	[ApiController]
-	[Route("api/cpu")]
+	[Route("api/cpus")]
 	public class CPUController : ControllerBase
 	{
 		private readonly ICPUService _cpuService;
 		private readonly IMapper _mapper;
 
-		public CPUController(ICPUService request, IMapper mapper)
+		public CPUController(ICPUService service, IMapper mapper)
 		{
-			_cpuService = request;
+			_cpuService = service;
 			_mapper = mapper;
 		}
 

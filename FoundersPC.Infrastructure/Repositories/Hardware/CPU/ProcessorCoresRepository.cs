@@ -23,7 +23,9 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.CPU
 
 		/// <inheritdoc />
 		public async Task<IQueryable<ProcessorCore>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<ProcessorCore>().Include(processorCore => processorCore.Processors));
+			await Task.Run(() => _context.Set<ProcessorCore>()
+			                             .Include(processorCore => processorCore.Processors)
+			                             .AsNoTracking());
 
 		#endregion
 	}

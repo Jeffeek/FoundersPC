@@ -19,5 +19,7 @@ namespace FoundersPC.Application.Interfaces.Repositories
 		Task<Producer> GetByIdAsync(int id);
 
 		Task<IQueryable<Producer>> GetAllAsync(bool includeEquipment);
+
+		Task<bool> AnyAsync(Producer producer);
 	}
 }

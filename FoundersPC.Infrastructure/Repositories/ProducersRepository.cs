@@ -45,6 +45,13 @@ namespace FoundersPC.Infrastructure.Repositories
 			return producers;
 		}
 
+		/// <inheritdoc />
+		public async Task<bool> AnyAsync(Producer producer)
+		{
+			await _context.Set<Producer>().LoadAsync();
+			return await _context.Set<Producer>().AnyAsync(prod => prod.Equals(producer));
+		}
+
 		#endregion
 	}
 }

@@ -23,7 +23,7 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware
 
 		/// <inheritdoc />
 		public async Task<IQueryable<Case>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<Case>().Include(@case => @case.Producer));
+			await Task.Run(() => _context.Set<Case>().Include(@case => @case.Producer).AsNoTracking());
 
 		#endregion
 	}

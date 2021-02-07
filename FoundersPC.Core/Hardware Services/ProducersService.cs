@@ -36,6 +36,8 @@ namespace FoundersPC.Services.Hardware_Services
 		public async Task<bool> CreateProducer(ProducerInsertDto producer)
 		{
 			var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
+			var canAdd = await _unitOfWork.ProducersRepository.AnyAsync(mappedProducer);
+			if (!canAdd) return false;
 			await _unitOfWork.ProducersRepository.AddAsync(mappedProducer);
 			return await _unitOfWork.SaveChangesAsync();
 		}

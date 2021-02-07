@@ -24,7 +24,8 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.CPU
 		public async Task<IQueryable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync() =>
 			await Task.Run(() => _context.Set<Domain.Entities.Hardware.Processor.CPU>()
 			                             .Include(cpu => cpu.Producer)
-			                             .Include(cpu => cpu.Core));
+			                             .Include(cpu => cpu.Core)
+			                             .AsNoTracking());
 
 		#endregion
 	}
