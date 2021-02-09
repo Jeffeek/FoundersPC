@@ -1,6 +1,6 @@
 ﻿#region Using derectives
 
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Application.Interfaces.Repositories.Hardware.Memory;
 using FoundersPC.Domain.Entities.Hardware.Memory;
@@ -18,12 +18,10 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.Memory
 		#region Implementation of ISSDsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<SSD> GetByIdAsync(int id) =>
-			await (await GetAllAsync()).FirstOrDefaultAsync(ssd => ssd.Id == id);
-
-		/// <inheritdoc />
-		public async Task<IQueryable<SSD>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<SSD>().Include(ssd => ssd.Producer));
+		public async Task<IEnumerable<SSD>> GetAllAsync() =>
+			await _context.Set<SSD>()
+			              .Include(ssd => ssd.Producer)
+			              .ToListAsync();
 
 		#endregion
 	}

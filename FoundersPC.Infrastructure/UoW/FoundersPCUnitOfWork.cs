@@ -79,19 +79,16 @@ namespace FoundersPC.Infrastructure.UoW
 		public IRAMsRepositoryAsync RAMsRepository { get; }
 
 		/// <inheritdoc />
-		public async Task<bool> SaveChangesAsync()
-		{
-			bool saveChangesResult;
+		public async Task<int> SaveChangesAsync()
+		{ 
 			try
 			{
-				saveChangesResult = await _context.SaveChangesAsync() >= 0;
+				return await _context.SaveChangesAsync();
 			}
 			catch
 			{
-				return false;
+				return 0;
 			}
-
-			return saveChangesResult;
 		}
 
 		#endregion

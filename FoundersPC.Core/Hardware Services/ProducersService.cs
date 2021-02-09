@@ -25,8 +25,7 @@ namespace FoundersPC.Services.Hardware_Services
 
 		/// <inheritdoc />
 		public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
-			_mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWork.ProducersRepository
-				                                                                 .GetAllAsync(false));
+			_mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWork.ProducersRepository.GetAllAsync());
 
 		/// <inheritdoc />
 		public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
@@ -39,7 +38,7 @@ namespace FoundersPC.Services.Hardware_Services
 			var canAdd = await _unitOfWork.ProducersRepository.AnyAsync(mappedProducer);
 			if (!canAdd) return false;
 			await _unitOfWork.ProducersRepository.AddAsync(mappedProducer);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		/// <inheritdoc />
@@ -49,7 +48,7 @@ namespace FoundersPC.Services.Hardware_Services
 			if (bdEntity == null) return false;
 			_mapper.Map(producer, bdEntity);
 			await _unitOfWork.ProducersRepository.UpdateAsync(bdEntity);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		/// <inheritdoc />
@@ -57,7 +56,7 @@ namespace FoundersPC.Services.Hardware_Services
 		{
 			var producerToDelete = await _unitOfWork.ProducersRepository.GetByIdAsync(id);
 			await _unitOfWork.ProducersRepository.DeleteAsync(producerToDelete);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿#region Using derectives
 
+using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories
 {
-	public abstract class GenericRepositoryAsync<T> where T : class
+	public abstract class GenericRepositoryAsync<T> where T : class, IEquatable<T>
 	{
 		protected readonly DbContext _context;
 
@@ -19,8 +20,11 @@ namespace FoundersPC.Infrastructure.Repositories
 			return entity;
 		}
 
-		public virtual async Task UpdateAsync(T entity) =>
-			await Task.Run(() => _context.Entry(entity).State = EntityState.Modified);
+		public virtual async Task<T> GetByIdAsync(int id) => await _context.Set<T>().FindAsync(id);
+
+		public virtual async Task<bool> AnyAsync(T entity) => await _context.Set<T>().AnyAsync(x => x.Equals(entity));
+
+		public virtual async Task UpdateAsync(T entity) => await Task.Run(() => _context.Entry(entity).State = EntityState.Modified);
 
 		public virtual async Task DeleteAsync(T entity) => await Task.Run(() => _context.Set<T>().Remove(entity));
 	}

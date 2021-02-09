@@ -7,7 +7,6 @@ using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.Domain.Entities.Hardware.Processor;
 using FoundersPC.Infrastructure.UoW;
-using Microsoft.EntityFrameworkCore;
 
 #endregion
 
@@ -40,14 +39,11 @@ namespace FoundersPC.Services.Hardware_Services.Hardware.CPU
 		public async Task<bool> CreateProcessorCore(ProcessorCoreInsertDto cpuCore)
 		{
 			var mappedCpuCore = _mapper.Map<ProcessorCoreInsertDto, ProcessorCore>(cpuCore);
-			if (
-				await (await _unitOfWork.ProcessorCoresRepository
-				                        .GetAllAsync())
-					.AnyAsync(x => x.Equals(mappedCpuCore)))
+			if (await _unitOfWork.ProcessorCoresRepository.AnyAsync(mappedCpuCore))
 				return false;
 
 			await _unitOfWork.ProcessorCoresRepository.AddAsync(mappedCpuCore);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		/// <inheritdoc />
@@ -57,7 +53,7 @@ namespace FoundersPC.Services.Hardware_Services.Hardware.CPU
 			if (bdEntity == null) return false;
 			_mapper.Map(cpuCore, bdEntity);
 			await _unitOfWork.ProcessorCoresRepository.UpdateAsync(bdEntity);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		/// <inheritdoc />
@@ -66,7 +62,7 @@ namespace FoundersPC.Services.Hardware_Services.Hardware.CPU
 			var cpuCoreToDelete = await _unitOfWork.ProcessorCoresRepository.GetByIdAsync(id);
 			if (cpuCoreToDelete == null) return false;
 			await _unitOfWork.ProcessorCoresRepository.DeleteAsync(cpuCoreToDelete);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		#endregion

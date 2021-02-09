@@ -1,6 +1,6 @@
 ﻿#region Using derectives
 
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Application.Interfaces.Repositories.Hardware.GPU;
 using FoundersPC.Domain.Entities.Hardware.VideoCard;
@@ -18,12 +18,10 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.GPU
 		#region Implementation of IVideoCardCoresRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<VideoCardCore> GetByIdAsync(int id) =>
-			await (await GetAllAsync()).FirstOrDefaultAsync(videoCardCore => videoCardCore.Id == id);
-
-		/// <inheritdoc />
-		public async Task<IQueryable<VideoCardCore>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<VideoCardCore>().Include(videoCardCore => videoCardCore.VideoCards));
+		public async Task<IEnumerable<VideoCardCore>> GetAllAsync() =>
+			await _context.Set<VideoCardCore>()
+			              .Include(videoCardCore => videoCardCore.VideoCards)
+			              .ToListAsync();
 
 		#endregion
 	}

@@ -28,6 +28,6 @@ namespace FoundersPC.Infrastructure.UoW
 		ISSDsRepositoryAsync SSDsRepository { get; }
 		IRAMsRepositoryAsync RAMsRepository { get; }
 
-		Task<bool> SaveChangesAsync();
+		Task<int> SaveChangesAsync();
 	}
 }

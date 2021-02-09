@@ -1,6 +1,6 @@
 ﻿#region Using derectives
 
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Application.Interfaces.Repositories.Hardware.Memory;
 using FoundersPC.Domain.Entities.Hardware.Memory;
@@ -18,12 +18,10 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.Memory
 		#region Implementation of IHDDsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<HDD> GetByIdAsync(int id) =>
-			await (await GetAllAsync()).FirstOrDefaultAsync(hdd => hdd.Id == id);
-
-		/// <inheritdoc />
-		public async Task<IQueryable<HDD>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<HDD>().Include(hdd => hdd.Producer));
+		public async Task<IEnumerable<HDD>> GetAllAsync() =>
+			await _context.Set<HDD>()
+			              .Include(hdd => hdd.Producer)
+			              .ToListAsync();
 
 		#endregion
 	}

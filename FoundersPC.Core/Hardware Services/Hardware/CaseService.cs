@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services.Hardware;
 using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Infrastructure.UoW;
-using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Services.Hardware_Services.Hardware
 {
@@ -26,19 +23,19 @@ namespace FoundersPC.Services.Hardware_Services.Hardware
 
 		/// <inheritdoc />
 		public async Task<IEnumerable<CaseReadDto>> GetAllCasesAsync() =>
-			_mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>((await _unitOfWork.CasesRepository
-				                                                                 .GetAllAsync()).Include(@case => @case.Producer));
+			_mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>(await _unitOfWork.CasesRepository
+				                                                         .GetAllAsync());
 
 		/// <inheritdoc />
-		public async Task<CaseReadDto> GetCaseByIdAsync(int @caseId) =>
-			_mapper.Map<Case, CaseReadDto>(await _unitOfWork.CasesRepository.GetByIdAsync(@caseId));
+		public async Task<CaseReadDto> GetCaseByIdAsync(int caseId) =>
+			_mapper.Map<Case, CaseReadDto>(await _unitOfWork.CasesRepository.GetByIdAsync(caseId));
 
 		/// <inheritdoc />
 		public async Task<bool> CreateCase(CaseInsertDto @case)
 		{
 			var mappedCase = _mapper.Map<CaseInsertDto, Case>(@case);
 			await _unitOfWork.CasesRepository.AddAsync(mappedCase);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		/// <inheritdoc />
@@ -48,7 +45,7 @@ namespace FoundersPC.Services.Hardware_Services.Hardware
 			if (bdEntity == null) return false;
 			_mapper.Map(@case, bdEntity);
 			await _unitOfWork.CasesRepository.UpdateAsync(bdEntity);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		/// <inheritdoc />
@@ -56,7 +53,7 @@ namespace FoundersPC.Services.Hardware_Services.Hardware
 		{
 			var caseToDelete = await _unitOfWork.CasesRepository.GetByIdAsync(id);
 			await _unitOfWork.CasesRepository.DeleteAsync(caseToDelete);
-			return await _unitOfWork.SaveChangesAsync();
+			return await _unitOfWork.SaveChangesAsync() > 0;
 		}
 
 		#endregion

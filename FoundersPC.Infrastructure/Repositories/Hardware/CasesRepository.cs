@@ -1,6 +1,6 @@
 ﻿#region Using derectives
 
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Application.Interfaces.Repositories.Hardware;
 using FoundersPC.Domain.Entities.Hardware;
@@ -18,12 +18,10 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware
 		#region Implementation of ICasesRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<Case> GetByIdAsync(int id) =>
-			await (await GetAllAsync()).FirstOrDefaultAsync(@case => @case.Id == id);
-
-		/// <inheritdoc />
-		public async Task<IQueryable<Case>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<Case>().Include(@case => @case.Producer).AsNoTracking());
+		public async Task<IEnumerable<Case>> GetAllAsync() =>
+			await _context.Set<Case>()
+			              .Include(@case => @case.Producer)
+			              .ToListAsync();
 
 		#endregion
 	}

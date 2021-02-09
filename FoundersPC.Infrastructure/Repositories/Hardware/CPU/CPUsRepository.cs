@@ -1,6 +1,6 @@
 ﻿#region Using derectives
 
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Application.Interfaces.Repositories.Hardware.CPU;
 using Microsoft.EntityFrameworkCore;
@@ -17,15 +17,11 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.CPU
 		#region Implementation of ICPUsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<Domain.Entities.Hardware.Processor.CPU> GetByIdAsync(int id) =>
-			await (await GetAllAsync()).FirstOrDefaultAsync(cpu => cpu.Id == id);
-
-		/// <inheritdoc />
-		public async Task<IQueryable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<Domain.Entities.Hardware.Processor.CPU>()
+		public async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync() =>
+			await _context.Set<Domain.Entities.Hardware.Processor.CPU>()
 			                             .Include(cpu => cpu.Producer)
 			                             .Include(cpu => cpu.Core)
-			                             .AsNoTracking());
+			                             .ToListAsync();
 
 		#endregion
 	}

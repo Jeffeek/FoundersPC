@@ -1,6 +1,6 @@
 ﻿#region Using derectives
 
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Application.Interfaces.Repositories.Hardware.GPU;
 using Microsoft.EntityFrameworkCore;
@@ -17,14 +17,11 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.GPU
 		#region Implementation of IGPUsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<Domain.Entities.Hardware.VideoCard.GPU> GetByIdAsync(int id) =>
-			await (await GetAllAsync()).FirstOrDefaultAsync(gpu => gpu.Id == id);
-
-		/// <inheritdoc />
-		public async Task<IQueryable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync() =>
-			await Task.Run(() => _context.Set<Domain.Entities.Hardware.VideoCard.GPU>()
+		public async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync() =>
+			await _context.Set<Domain.Entities.Hardware.VideoCard.GPU>()
 			                             .Include(gpu => gpu.Producer)
-			                             .Include(gpu => gpu.Core));
+			                             .Include(gpu => gpu.Core)
+			                             .ToListAsync();
 
 		#endregion
 	}
