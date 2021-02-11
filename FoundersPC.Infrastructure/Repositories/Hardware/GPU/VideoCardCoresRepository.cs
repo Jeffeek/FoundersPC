@@ -18,10 +18,10 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.GPU
 		#region Implementation of IVideoCardCoresRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<VideoCardCore>> GetAllAsync() =>
-			await _context.Set<VideoCardCore>()
-			              .Include(videoCardCore => videoCardCore.VideoCards)
-			              .ToListAsync();
+		public async Task<IEnumerable<VideoCardCore>> GetAllAsync() => await _context.Set<VideoCardCore>()
+			                                                               .Include(videoCardCore =>
+				                                                               videoCardCore.VideoCards)
+			                                                               .ToListAsync();
 
 		#endregion
 	}

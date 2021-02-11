@@ -12,9 +12,7 @@
 
 		public int MonitorsSupport { get; set; }
 
-		public string Interface { get; set; }
-
-		public int Frequency { get; set; }
+		public string ConnectionInterface { get; set; }
 
 		public int DirectX { get; set; }
 

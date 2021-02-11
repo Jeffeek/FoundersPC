@@ -310,8 +310,8 @@ namespace FoundersPC.Infrastructure.Migrations
 
 				                    b.Property<string>("RAMMode")
 				                     .IsRequired()
-				                     .HasMaxLength(3)
-				                     .HasColumnType("nvarchar(3)")
+				                     .HasMaxLength(5)
+				                     .HasColumnType("nvarchar(5)")
 				                     .HasColumnName("RAMMode");
 
 				                    b.Property<int>("RAMSlots")
@@ -603,6 +603,10 @@ namespace FoundersPC.Infrastructure.Migrations
 				                     .HasColumnType("int")
 				                     .HasColumnName("DisplayPort");
 
+				                    b.Property<int>("Frequency")
+				                     .HasColumnType("int")
+				                     .HasColumnName("Frequency");
+
 				                    b.Property<int>("GraphicsProcessorId")
 				                     .HasMaxLength(20)
 				                     .HasColumnType("int")
@@ -616,6 +620,11 @@ namespace FoundersPC.Infrastructure.Migrations
 				                     .HasColumnType("int")
 				                     .HasColumnName("ProducerId");
 
+				                    b.Property<string>("Series")
+				                     .IsRequired()
+				                     .HasColumnType("nvarchar(max)")
+				                     .HasColumnName("Series");
+
 				                    b.Property<string>("Title")
 				                     .IsRequired()
 				                     .HasMaxLength(100)
@@ -627,12 +636,10 @@ namespace FoundersPC.Infrastructure.Migrations
 				                     .HasColumnName("VGA");
 
 				                    b.Property<int>("VideoMemoryBusWidth")
-				                     .HasMaxLength(4)
 				                     .HasColumnType("int")
 				                     .HasColumnName("VideoMemoryBusWidth");
 
 				                    b.Property<int>("VideoMemoryFrequency")
-				                     .HasMaxLength(5)
 				                     .HasColumnType("int")
 				                     .HasColumnName("VideoMemoryFrequency");
 
@@ -670,19 +677,20 @@ namespace FoundersPC.Infrastructure.Migrations
 				                     .HasColumnType("nvarchar(max)")
 				                     .HasColumnName("ArchitectureTitle");
 
-				                    b.Property<int>("DirectX")
-				                     .HasColumnType("int")
-				                     .HasColumnName("DirectX_Version");
+				                    b.Property<string>("Codename")
+				                     .HasMaxLength(30)
+				                     .HasColumnType("nvarchar(30)")
+				                     .HasColumnName("Codename");
 
-				                    b.Property<int>("Frequency")
-				                     .HasColumnType("int")
-				                     .HasColumnName("Frequency");
-
-				                    b.Property<string>("Interface")
+				                    b.Property<string>("ConnectionInterface")
 				                     .IsRequired()
 				                     .HasMaxLength(30)
 				                     .HasColumnType("nvarchar(30)")
-				                     .HasColumnName("Interface");
+				                     .HasColumnName("ConnectionInterface");
+
+				                    b.Property<int>("DirectX")
+				                     .HasColumnType("int")
+				                     .HasColumnName("DirectX_Version");
 
 				                    b.Property<string>("MaxResolution")
 				                     .IsRequired()

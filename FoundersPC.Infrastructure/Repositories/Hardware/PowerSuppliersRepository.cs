@@ -18,10 +18,9 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware
 		#region Implementation of IPowerSuppliersRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<PowerSupply>> GetAllAsync() =>
-			await _context.Set<PowerSupply>()
-			              .Include(powerSupply => powerSupply.Producer)
-			              .ToListAsync();
+		public async Task<IEnumerable<PowerSupply>> GetAllAsync() => await _context.Set<PowerSupply>()
+			                                                             .Include(powerSupply => powerSupply.Producer)
+			                                                             .ToListAsync();
 
 		#endregion
 	}

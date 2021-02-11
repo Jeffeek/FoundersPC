@@ -30,22 +30,23 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		public int MonitorsSupport { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("Interface")]
-		[MinLength(5)]
+		[Column("ConnectionInterface")]
+		[MinLength(4)]
 		[MaxLength(30)]
 		[DataType(DataType.Text)]
 		[Required]
-		public string Interface { get; set; }
+		public string ConnectionInterface { get; set; }
 
+		[MinLength(5)]
+		[MaxLength(30)]
+		[Column("Codename")]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("Frequency")]
-		[Range(1, 6)]
-		[Required]
-		public int Frequency { get; set; }
+		[DataType(DataType.Text)]
+		public string Codename { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("DirectX_Version")]
-		[Range(0, 5)]
+		[Range(0, 13)]
 		public int DirectX { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -78,8 +79,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 			       TechProcess == other.TechProcess &&
 			       MaxResolution == other.MaxResolution &&
 			       MonitorsSupport == other.MonitorsSupport &&
-			       Interface == other.Interface &&
-			       Frequency == other.Frequency &&
+			       ConnectionInterface == other.ConnectionInterface &&
 			       DirectX == other.DirectX &&
 			       SLIOrCrossfire == other.SLIOrCrossfire &&
 			       ArchitectureTitle == other.ArchitectureTitle;
@@ -102,8 +102,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 			hashCode.Add(TechProcess);
 			hashCode.Add(MaxResolution);
 			hashCode.Add(MonitorsSupport);
-			hashCode.Add(Interface);
-			hashCode.Add(Frequency);
+			hashCode.Add(ConnectionInterface);
 			hashCode.Add(DirectX);
 			hashCode.Add(SLIOrCrossfire);
 			hashCode.Add(ArchitectureTitle);

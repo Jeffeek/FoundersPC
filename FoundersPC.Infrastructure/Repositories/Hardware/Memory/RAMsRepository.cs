@@ -18,10 +18,9 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.Memory
 		#region Implementation of IRAMsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<RAM>> GetAllAsync() =>
-			await _context.Set<RAM>()
-			              .Include(ram => ram.Producer)
-			              .ToListAsync();
+		public async Task<IEnumerable<RAM>> GetAllAsync() => await _context.Set<RAM>()
+		                                                                   .Include(ram => ram.Producer)
+		                                                                   .ToListAsync();
 
 		#endregion
 	}

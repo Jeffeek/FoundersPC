@@ -18,10 +18,10 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.CPU
 		#region Implementation of IProcessorCoresRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<ProcessorCore>> GetAllAsync() =>
-			await _context.Set<ProcessorCore>()
-			                             .Include(processorCore => processorCore.Processors)
-			                             .ToListAsync();
+		public async Task<IEnumerable<ProcessorCore>> GetAllAsync() => await _context.Set<ProcessorCore>()
+			                                                               .Include(processorCore =>
+				                                                               processorCore.Processors)
+			                                                               .ToListAsync();
 
 		#endregion
 	}

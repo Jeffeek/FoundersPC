@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿#region Using derectives
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services.Hardware;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.API.Controllers
 {

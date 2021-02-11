@@ -80,7 +80,7 @@ namespace FoundersPC.Infrastructure.UoW
 
 		/// <inheritdoc />
 		public async Task<int> SaveChangesAsync()
-		{ 
+		{
 			try
 			{
 				return await _context.SaveChangesAsync();

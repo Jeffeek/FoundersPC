@@ -25,7 +25,8 @@ namespace FoundersPC.Services.Hardware_Services
 
 		/// <inheritdoc />
 		public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
-			_mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWork.ProducersRepository.GetAllAsync());
+			_mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWork.ProducersRepository
+				                                                                 .GetAllAsync());
 
 		/// <inheritdoc />
 		public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>

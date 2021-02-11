@@ -24,12 +24,14 @@ namespace FoundersPC.Services.Hardware_Services.Hardware.CPU
 
 		/// <inheritdoc />
 		public async Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync() =>
-			_mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor.CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork.ProcessorsRepository
-				                                                                 .GetAllAsync());
+			_mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor.CPU>, IEnumerable<CPUReadDto>>(await _unitOfWork
+				.ProcessorsRepository
+				.GetAllAsync());
 
 		/// <inheritdoc />
 		public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) =>
-			_mapper.Map<Domain.Entities.Hardware.Processor.CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository.GetByIdAsync(cpuId));
+			_mapper.Map<Domain.Entities.Hardware.Processor.CPU, CPUReadDto>(await _unitOfWork.ProcessorsRepository
+				                                                                .GetByIdAsync(cpuId));
 
 		/// <inheritdoc />
 		public async Task<bool> CreateCPU(CPUInsertDto cpu)

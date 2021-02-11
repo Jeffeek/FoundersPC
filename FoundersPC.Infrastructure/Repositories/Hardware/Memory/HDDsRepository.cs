@@ -18,10 +18,9 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.Memory
 		#region Implementation of IHDDsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<HDD>> GetAllAsync() =>
-			await _context.Set<HDD>()
-			              .Include(hdd => hdd.Producer)
-			              .ToListAsync();
+		public async Task<IEnumerable<HDD>> GetAllAsync() => await _context.Set<HDD>()
+		                                                                   .Include(hdd => hdd.Producer)
+		                                                                   .ToListAsync();
 
 		#endregion
 	}

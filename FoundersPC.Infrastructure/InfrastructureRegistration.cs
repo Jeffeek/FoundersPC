@@ -42,7 +42,8 @@ namespace FoundersPC.Infrastructure
 			services.AddScoped<IUnitOfWorkAsync, FoundersPCUnitOfWork>();
 		}
 
-		public static void AddFoundersPCHardwareContext(this IServiceCollection services, IConfiguration configuration) =>
+		public static void
+			AddFoundersPCHardwareContext(this IServiceCollection services, IConfiguration configuration) =>
 			services.AddDbContext<DbContext, FoundersPCDbContext>(options =>
 				                                                      options.UseSqlServer(
 				                                                       configuration

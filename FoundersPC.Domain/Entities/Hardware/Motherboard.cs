@@ -42,8 +42,8 @@ namespace FoundersPC.Domain.Entities.Hardware
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("RAMMode")]
-		[MinLength(2)]
-		[MaxLength(3)]
+		[MinLength(1)]
+		[MaxLength(5)]
 		[Required]
 		public string RAMMode { get; set; }
 

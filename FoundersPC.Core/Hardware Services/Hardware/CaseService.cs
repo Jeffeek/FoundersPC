@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿#region Using derectives
+
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services.Hardware;
 using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Infrastructure.UoW;
+
+#endregion
 
 namespace FoundersPC.Services.Hardware_Services.Hardware
 {

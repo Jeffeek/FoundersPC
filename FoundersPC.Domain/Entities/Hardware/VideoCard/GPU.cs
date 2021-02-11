@@ -28,6 +28,17 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		[Required]
 		public int AdditionalPower { get; set; }
 
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("Frequency")]
+		[Required]
+		public int Frequency { get; set; }
+
+		[DataType(DataType.Text)]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[Column("Series")]
+		[Required]
+		public string Series { get; set; }
+
 		#region Memory
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -44,15 +55,11 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("VideoMemoryFrequency")]
-		[MinLength(3)]
-		[MaxLength(5)]
 		[Required]
 		public int VideoMemoryFrequency { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("VideoMemoryBusWidth")]
-		[MinLength(2)]
-		[MaxLength(4)]
 		[Required]
 		public int VideoMemoryBusWidth { get; set; }
 
@@ -96,6 +103,8 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 			       VideoMemoryFrequency == other.VideoMemoryFrequency &&
 			       VideoMemoryBusWidth == other.VideoMemoryBusWidth &&
 			       VGA == other.VGA &&
+			       Frequency == other.Frequency &&
+			       Series == other.Series &&
 			       DVI == other.DVI &&
 			       HDMI == other.HDMI &&
 			       DisplayPort == other.DisplayPort;

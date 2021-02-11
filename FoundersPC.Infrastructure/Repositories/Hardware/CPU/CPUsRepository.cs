@@ -17,11 +17,11 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.CPU
 		#region Implementation of ICPUsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync() =>
-			await _context.Set<Domain.Entities.Hardware.Processor.CPU>()
-			                             .Include(cpu => cpu.Producer)
-			                             .Include(cpu => cpu.Core)
-			                             .ToListAsync();
+		public async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync() => await _context
+			.Set<Domain.Entities.Hardware.Processor.CPU>()
+			.Include(cpu => cpu.Producer)
+			.Include(cpu => cpu.Core)
+			.ToListAsync();
 
 		#endregion
 	}

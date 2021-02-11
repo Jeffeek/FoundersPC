@@ -18,6 +18,10 @@ namespace FoundersPC.Application
 
 		public int AdditionalPower { get; set; }
 
+		public int Frequency { get; set; }
+
+		public string Series { get; set; }
+
 		#region Memory
 
 		public int VideoMemoryVolume { get; set; }

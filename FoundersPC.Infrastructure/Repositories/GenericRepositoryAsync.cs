@@ -24,7 +24,8 @@ namespace FoundersPC.Infrastructure.Repositories
 
 		public virtual async Task<bool> AnyAsync(T entity) => await _context.Set<T>().AnyAsync(x => x.Equals(entity));
 
-		public virtual async Task UpdateAsync(T entity) => await Task.Run(() => _context.Entry(entity).State = EntityState.Modified);
+		public virtual async Task UpdateAsync(T entity) =>
+			await Task.Run(() => _context.Entry(entity).State = EntityState.Modified);
 
 		public virtual async Task DeleteAsync(T entity) => await Task.Run(() => _context.Set<T>().Remove(entity));
 	}

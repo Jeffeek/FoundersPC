@@ -17,11 +17,11 @@ namespace FoundersPC.Infrastructure.Repositories.Hardware.GPU
 		#region Implementation of IGPUsRepositoryAsync
 
 		/// <inheritdoc />
-		public async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync() =>
-			await _context.Set<Domain.Entities.Hardware.VideoCard.GPU>()
-			                             .Include(gpu => gpu.Producer)
-			                             .Include(gpu => gpu.Core)
-			                             .ToListAsync();
+		public async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync() => await _context
+			.Set<Domain.Entities.Hardware.VideoCard.GPU>()
+			.Include(gpu => gpu.Producer)
+			.Include(gpu => gpu.Core)
+			.ToListAsync();
 
 		#endregion
 	}
