@@ -1,45 +1,25 @@
 ﻿#region Using derectives
 
 using System.ComponentModel.DataAnnotations;
+using FoundersPC.Application.Base.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 
 #endregion
 
 namespace FoundersPC.Application
 {
-	public class PowerSupplyInsertDto
+	public class PowerSupplyInsertDto : IPowerSupply, IProducerIdentiable
 	{
-		[Required]
-		public int ProducerId { get; set; }
-
-		[Required]
-		public string Title { get; set; }
-
-		[Required]
-		public int Power { get; set; }
-
-		public int Efficiency { get; set; }
-
-		[MinLength(1)]
-		[MaxLength(10)]
-		[Required]
-		public string MotherboardPowering { get; set; }
-
-		[Required]
-		public bool IsModular { get; set; }
-
-		[Required]
-		public bool CPU4PIN { get; set; }
-
-		[Required]
-		public bool CPU8PIN { get; set; }
-
-		[Required]
-		public int FanDiameter { get; set; }
-
-		[Required]
-		public bool Certificate80PLUS { get; set; }
-
-		[Required]
-		public bool PFC { get; set; }
-	}
+        public int ProducerId { get; set; }
+        public int Power { get; set; }
+        public int? Efficiency { get; set; }
+        public string MotherboardPowering { get; set; }
+        public bool IsModular { get; set; }
+        public bool? CPU4PIN { get; set; }
+        public bool? CPU8PIN { get; set; }
+        public int FanDiameter { get; set; }
+        public bool Certificate80PLUS { get; set; }
+        public bool PFC { get; set; }
+        public string Title { get; set; }
+    }
 }

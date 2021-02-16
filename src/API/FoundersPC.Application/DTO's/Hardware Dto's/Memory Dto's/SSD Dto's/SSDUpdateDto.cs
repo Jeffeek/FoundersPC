@@ -2,39 +2,22 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using FoundersPC.Application.Base.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 
 #endregion
 
 namespace FoundersPC.Application
 {
-	public class SSDUpdateDto
+	public class SSDUpdateDto : ISSD, IProducerIdentiable
 	{
-		[Required]
-		public int ProducerId { get; set; }
-
-		[DataType(DataType.Date)]
-		public DateTime? MarketLaunch { get; set; }
-
-		[Required]
-		public double Factor { get; set; }
-
-		[MinLength(3)]
-		[MaxLength(20)]
-		[Required]
-		public string Interface { get; set; }
-
-		[Required]
-		public int Volume { get; set; }
-
-		[MinLength(3)]
-		[MaxLength(50)]
-		[Required]
-		public string MicroScheme { get; set; }
-
-		[Required]
-		public int SequentialRead { get; set; }
-
-		[Required]
-		public int SequentialRecording { get; set; }
-	}
+        public double Factor { get; set; }
+        public string Interface { get; set; }
+        public int Volume { get; set; }
+        public string MicroScheme { get; set; }
+        public int SequentialRead { get; set; }
+        public int SequentialRecording { get; set; }
+        public string Title { get; set; }
+        public int ProducerId { get; set; }
+    }
 }

@@ -1,35 +1,22 @@
 ﻿#region Using derectives
 
 using System.ComponentModel.DataAnnotations;
+using FoundersPC.Application.Base.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 
 #endregion
 
 namespace FoundersPC.Application
 {
-	public class SSDInsertDto
+	public class SSDInsertDto : ISSD, IProducerIdentiable
 	{
-		[Required]
-		public int ProducerId { get; set; }
-
-		[Required]
-		public string Title { get; set; }
-
-		[Required]
-		public int HeadSpeed { get; set; }
-
-		[Required]
-		public int BufferSize { get; set; }
-
-		public int Noise { get; set; }
-
-		[Required]
-		public double Factor { get; set; }
-
-		[MinLength(3)]
-		[MaxLength(20)]
-		public string Interface { get; set; }
-
-		[Required]
-		public int Volume { get; set; }
-	}
+        public double Factor { get; set; }
+        public string Interface { get; set; }
+        public int Volume { get; set; }
+        public string MicroScheme { get; set; }
+        public int SequentialRead { get; set; }
+        public int SequentialRecording { get; set; }
+        public string Title { get; set; }
+        public int ProducerId { get; set; }
+    }
 }

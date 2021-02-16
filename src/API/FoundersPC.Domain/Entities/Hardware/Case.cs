@@ -3,6 +3,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -10,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.Domain.Entities.Hardware
 {
 	[Index(nameof(Id))]
-	public class Case : EquipmentEntityBase, IEquatable<Case>
+	public class Case : HardwareEntityBase, ICase, IEquatable<Case>
 	{
 		[Column("Type")]
 		[MinLength(3)]

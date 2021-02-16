@@ -3,13 +3,36 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
+using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.Domain.Entities.Hardware.Memory
 {
-	public class SSD : DriveBase, IEquatable<SSD>
-	{
+    [Index(nameof(Id))]
+	public class SSD : HardwareEntityBase, IEquatable<SSD>, ISSD
+    {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("Factor")]
+        [Required]
+        public double Factor { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("Interface")]
+        [MinLength(3)]
+        [MaxLength(20)]
+        [Required]
+        public string Interface { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("Volume")]
+        [Required]
+        public int Volume { get; set; }
+
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("MicroScheme")]
 		[MinLength(3)]

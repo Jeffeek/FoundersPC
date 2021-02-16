@@ -1,14 +1,38 @@
 ﻿#region Using derectives
 
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
+using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.Domain.Entities.Hardware.Memory
 {
-	public class HDD : DriveBase, IEquatable<HDD>
+    [Index(nameof(Id))]
+	public class HDD : HardwareEntityBase, IHDD, IEquatable<HDD>
 	{
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("Factor")]
+        [Required]
+        public double Factor { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("Interface")]
+        [MinLength(3)]
+        [MaxLength(20)]
+        [Required]
+        public string Interface { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("Volume")]
+        [Required]
+        public int Volume { get; set; }
+
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("HeadSpeed")]
 		public int HeadSpeed { get; set; }

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
 
 #endregion
 

@@ -4,13 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 
 #endregion
 
 namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 {
-	public class VideoCardCore : IdentityItem, IEquatable<VideoCardCore>
-	{
+    public class VideoCardCore : IdentityItem, IEquatable<VideoCardCore>, IVideoCardCore
+    {
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("TechProcess")]
 		[Required]
@@ -47,7 +51,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("DirectX_Version")]
 		[Range(0, 13)]
-		public int DirectX { get; set; }
+		public string DirectX { get; set; }
 
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("SLI_Crossfire")]

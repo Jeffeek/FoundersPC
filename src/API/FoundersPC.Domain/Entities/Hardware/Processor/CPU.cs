@@ -3,15 +3,19 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.Domain.Entities.Hardware.Processor
 {
-	[Index(nameof(Id))]
-	public class CPU : EquipmentEntityBase, IEquatable<CPU>
-	{
+    [Index(nameof(Id))]
+	public class CPU : HardwareEntityBase, IEquatable<CPU>, ICPU
+    {
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("TDP")]
 		[Range(3, 300)]

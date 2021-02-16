@@ -2,12 +2,14 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Entities.Hardware;
 
 #endregion
 
-namespace FoundersPC.Domain.Entities.Hardware
+namespace FoundersPC.Domain.Common.Base
 {
-	public abstract class EquipmentEntityBase : IdentityItem
+	public abstract class HardwareEntityBase : IHardware
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("ProducerId")]
@@ -23,5 +25,10 @@ namespace FoundersPC.Domain.Entities.Hardware
 		[Column("Title")]
 		[Required]
 		public string Title { get; set; }
-	}
+
+		[Column("Id")]
+		[Required]
+		[Key]
+        public int Id { get; set; }
+    }
 }

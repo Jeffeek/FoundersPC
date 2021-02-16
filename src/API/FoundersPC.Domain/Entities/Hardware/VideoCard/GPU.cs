@@ -3,15 +3,19 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 {
-	[Index(nameof(Id))]
-	public class GPU : EquipmentEntityBase, IEquatable<GPU>
-	{
+    [Index(nameof(Id))]
+	public class GPU : HardwareEntityBase, IEquatable<GPU>, IGPU
+    {
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("GraphicsProcessorId")]
 		[MinLength(3)]
@@ -23,7 +27,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		[ForeignKey(nameof(GraphicsProcessorId))]
 		public VideoCardCore Core { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("AdditionalPower")]
 		[Required]
 		public int AdditionalPower { get; set; }
@@ -87,7 +91,7 @@ namespace FoundersPC.Domain.Entities.Hardware.VideoCard
 		[Required]
 		public int DisplayPort { get; set; }
 
-		#endregion
+        #endregion
 
 		#region Equality members
 

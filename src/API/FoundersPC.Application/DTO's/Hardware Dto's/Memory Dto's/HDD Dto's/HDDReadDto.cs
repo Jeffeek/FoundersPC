@@ -1,6 +1,10 @@
-﻿namespace FoundersPC.Application
+﻿using FoundersPC.Application.Base.Interfaces;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
+
+namespace FoundersPC.Application
 {
-	public class HDDReadDto
+	public class HDDReadDto : IHDD, IIdentityItem, IProducerableDto
 	{
 		public int Id { get; set; }
 
@@ -19,5 +23,6 @@
 		public string Interface { get; set; }
 
 		public int Volume { get; set; }
-	}
+        public int ProducerId { get; set; }
+    }
 }

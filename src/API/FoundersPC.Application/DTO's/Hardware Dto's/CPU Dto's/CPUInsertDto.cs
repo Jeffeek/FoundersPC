@@ -2,64 +2,29 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using FoundersPC.Application.Base.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 
 #endregion
 
 namespace FoundersPC.Application
 {
-	public class CPUInsertDto
+	public class CPUInsertDto : ICPU, IProducerIdentiable
 	{
-		[Required]
-		public int ProducerId { get; set; }
-
-		[DataType(DataType.Date)]
-		public DateTime? MarketLaunch { get; set; }
-
-		[Required]
-		public int TDP { get; set; }
-
-		[Required]
-		public int ProcessorCoreId { get; set; }
-
-		[MaxLength(15)]
-		[MinLength(3)]
-		[Required]
-		public string Series { get; set; }
-
-		[DataType(DataType.Text)]
-		[MaxLength(20)]
-		[MinLength(3)]
-		[Required]
-		public string Title { get; set; }
-
-		[Required]
-		public int MaxRamSpeed { get; set; }
-
-		[Required]
-		public int TechProcess { get; set; }
-
-		[Required]
-		public int Cores { get; set; }
-
-		[Required]
-		public int Threads { get; set; }
-
-		[Required]
-		public int Frequency { get; set; }
-
-		[Required]
-		public int TurboBoostFrequency { get; set; }
-
-		[Required]
-		public int L1Cache { get; set; }
-
-		[Required]
-		public int L2Cache { get; set; }
-
-		[Required]
-		public int L3Cache { get; set; }
-
-		[Required]
-		public bool IntegratedGraphics { get; set; }
-	}
+        public int TDP { get; set; }
+        public string Title { get; set; }
+        public int MaxRamSpeed { get; set; }
+        public int Cores { get; set; }
+        public int Threads { get; set; }
+        public int Frequency { get; set; }
+        public int TurboBoostFrequency { get; set; }
+        public int TechProcess { get; set; }
+        public int L1Cache { get; set; }
+        public int L2Cache { get; set; }
+        public int L3Cache { get; set; }
+        public bool IntegratedGraphics { get; set; }
+        public string Series { get; set; }
+        public int ProcessorCoreId { get; set; }
+        public int ProducerId { get; set; }
+    }
 }

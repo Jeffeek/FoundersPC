@@ -3,15 +3,19 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.Domain.Entities.Hardware.Memory
 {
-	[Index(nameof(Id))]
-	public class RAM : EquipmentEntityBase, IEquatable<RAM>
-	{
+    [Index(nameof(Id))]
+	public class RAM : HardwareEntityBase, IEquatable<RAM>, IRAM
+    {
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Column("MemoryType")]
 		[MinLength(5)]

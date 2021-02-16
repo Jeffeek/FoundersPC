@@ -3,6 +3,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Domain.Common;
+using FoundersPC.Domain.Common.Base;
+using FoundersPC.Domain.Common.Interfaces;
+using FoundersPC.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -10,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.Domain.Entities.Hardware
 {
 	[Index(nameof(Id))]
-	public class PowerSupply : EquipmentEntityBase, IEquatable<PowerSupply>
+	public class PowerSupply : HardwareEntityBase, IPowerSupply, IEquatable<PowerSupply>
 	{
 		[Range(50, 10000)]
 		[Column("Power")]
@@ -37,12 +41,12 @@ namespace FoundersPC.Domain.Entities.Hardware
 		[Column("CPU4PIN")]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Required]
-		public bool CPU4PIN { get; set; }
+		public bool? CPU4PIN { get; set; }
 
 		[Column("CPU8PIN")]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[Required]
-		public bool CPU8PIN { get; set; }
+		public bool? CPU8PIN { get; set; }
 
 		[Range(0, 300)]
 		[Column("FanDiameter")]
