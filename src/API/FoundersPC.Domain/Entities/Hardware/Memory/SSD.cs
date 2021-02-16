@@ -3,9 +3,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using FoundersPC.Domain.Common;
 using FoundersPC.Domain.Common.Base;
-using FoundersPC.Domain.Common.Interfaces;
 using FoundersPC.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.Domain.Entities.Hardware.Memory
 {
     [Index(nameof(Id))]
-	public class SSD : HardwareEntityBase, IEquatable<SSD>, ISSD
+    public class SSD : HardwareEntityBase, IEquatable<SSD>, ISSD
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Factor")]
@@ -33,50 +31,55 @@ namespace FoundersPC.Domain.Entities.Hardware.Memory
         [Required]
         public int Volume { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("MicroScheme")]
-		[MinLength(3)]
-		[MaxLength(50)]
-		[Required]
-		public string MicroScheme { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("MicroScheme")]
+        [MinLength(3)]
+        [MaxLength(50)]
+        [Required]
+        public string MicroScheme { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("SequentialRead")]
-		[Required]
-		public int SequentialRead { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("SequentialRead")]
+        [Required]
+        public int SequentialRead { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("SequentialRecording")]
-		[Required]
-		public int SequentialRecording { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("SequentialRecording")]
+        [Required]
+        public int SequentialRecording { get; set; }
 
-		#region Equality members
+        #region Equality members
 
-		/// <inheritdoc />
-		public bool Equals(SSD other)
-		{
-			if (ReferenceEquals(null, other)) return false;
-			if (ReferenceEquals(this, other)) return true;
-			return MicroScheme == other.MicroScheme &&
-			       SequentialRead == other.SequentialRead &&
-			       SequentialRecording == other.SequentialRecording &&
-			       Volume == other.Volume &&
-			       Factor.Equals(other.Factor) &&
-			       Interface == other.Interface;
-		}
+        /// <inheritdoc />
+        public bool Equals(SSD other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
 
-		/// <inheritdoc />
-		public override bool Equals(object obj)
-		{
-			if (ReferenceEquals(null, obj)) return false;
-			if (ReferenceEquals(this, obj)) return true;
-			if (obj.GetType() != GetType()) return false;
-			return Equals((SSD)obj);
-		}
+            return MicroScheme == other.MicroScheme
+                   && SequentialRead == other.SequentialRead
+                   && SequentialRecording == other.SequentialRecording
+                   && Volume == other.Volume
+                   && Factor.Equals(other.Factor)
+                   && Interface == other.Interface;
+        }
 
-		/// <inheritdoc />
-		public override int GetHashCode() => HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
+        /// <inheritdoc />
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != GetType()) return false;
 
-		#endregion
-	}
+            return Equals((SSD)obj);
+        }
+
+        /// <inheritdoc />
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
+        }
+
+        #endregion
+    }
 }

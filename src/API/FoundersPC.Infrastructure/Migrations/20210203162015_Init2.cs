@@ -6,46 +6,40 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FoundersPC.Infrastructure.Migrations
 {
-	public partial class Init2 : Migration
-	{
-		protected override void Up(MigrationBuilder migrationBuilder)
-		{
-			migrationBuilder.RenameColumn(
-			                              "Name",
-			                              "Processors",
-			                              "Title");
+    public partial class Init2 : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.RenameColumn("Name",
+                                          "Processors",
+                                          "Title");
 
-			migrationBuilder.AddColumn<string>(
-			                                   "Title",
-			                                   "VideoCards",
-			                                   "nvarchar(100)",
-			                                   maxLength:100,
-			                                   nullable:false,
-			                                   defaultValue:"");
+            migrationBuilder.AddColumn<string>("Title",
+                                               "VideoCards",
+                                               "nvarchar(100)",
+                                               maxLength : 100,
+                                               nullable : false,
+                                               defaultValue : "");
 
-			migrationBuilder.AddColumn<string>(
-			                                   "Series",
-			                                   "Processors",
-			                                   "nvarchar(15)",
-			                                   maxLength:15,
-			                                   nullable:false,
-			                                   defaultValue:"");
-		}
+            migrationBuilder.AddColumn<string>("Series",
+                                               "Processors",
+                                               "nvarchar(15)",
+                                               maxLength : 15,
+                                               nullable : false,
+                                               defaultValue : "");
+        }
 
-		protected override void Down(MigrationBuilder migrationBuilder)
-		{
-			migrationBuilder.DropColumn(
-			                            "Title",
-			                            "VideoCards");
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn("Title",
+                                        "VideoCards");
 
-			migrationBuilder.DropColumn(
-			                            "Series",
-			                            "Processors");
+            migrationBuilder.DropColumn("Series",
+                                        "Processors");
 
-			migrationBuilder.RenameColumn(
-			                              "Title",
-			                              "Processors",
-			                              "Name");
-		}
-	}
+            migrationBuilder.RenameColumn("Title",
+                                          "Processors",
+                                          "Name");
+        }
+    }
 }

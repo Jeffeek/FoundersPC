@@ -10,25 +10,32 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.API.Controllers
 {
-	[ApiController]
-	[Route("api/producers")]
-	public class ProducersController : ControllerBase
-	{
-		private readonly IProducerService _producerService;
+    [ApiController]
+    [Route("api/producers")]
+    public class ProducersController : ControllerBase
+    {
+        private readonly IProducerService _producerService;
 
-		public ProducersController(IProducerService service) => _producerService = service;
+        public ProducersController(IProducerService service)
+        {
+            _producerService = service;
+        }
 
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get() =>
-			Ok(await _producerService.GetAllProducersAsync());
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get()
+        {
+            return Ok(await _producerService.GetAllProducersAsync());
+        }
 
-		[HttpGet("{id}")]
-		public async Task<ActionResult<ProducerReadDto>> Get(int? id)
-		{
-			if (!id.HasValue) return BadRequest();
-			var producer = await _producerService.GetProducerByIdAsync(id.Value);
-			if (producer == null) return NotFound();
-			return Ok(producer);
-		}
-	}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProducerReadDto>> Get(int? id)
+        {
+            if (!id.HasValue) return BadRequest();
+            var producer = await _producerService.GetProducerByIdAsync(id.Value);
+
+            if (producer == null) return NotFound();
+
+            return Ok(producer);
+        }
+    }
 }

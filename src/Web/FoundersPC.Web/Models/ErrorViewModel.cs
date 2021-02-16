@@ -1,5 +1,3 @@
-using System;
-
 namespace FoundersPC.Web.Models
 {
     public sealed class ErrorViewModel

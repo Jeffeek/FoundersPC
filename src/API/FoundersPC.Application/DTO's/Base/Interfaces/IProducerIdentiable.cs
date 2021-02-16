@@ -2,6 +2,6 @@
 {
     public interface IProducerIdentiable
     {
-        int ProducerId { get; set;}
+        int ProducerId { get; set; }
     }
 }

@@ -8,8 +8,8 @@ using FoundersPC.Domain.Entities.Hardware;
 
 namespace FoundersPC.Application.Interfaces.Repositories
 {
-	public interface IProducersRepositoryAsync : IRepositoryAsync<Producer>
-	{
-		Task<IEnumerable<Producer>> GetAllWithHardwareAsync();
-	}
+    public interface IProducersRepositoryAsync : IRepositoryAsync<Producer>
+    {
+        Task<IEnumerable<Producer>> GetAllWithHardwareAsync();
+    }
 }

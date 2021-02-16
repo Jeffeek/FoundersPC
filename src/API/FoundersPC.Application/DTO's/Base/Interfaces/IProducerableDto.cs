@@ -2,6 +2,6 @@
 {
     public interface IProducerableDto : IProducerIdentiable
     {
-        ProducerReadDto Producer { get; set;}
+        ProducerReadDto Producer { get; set; }
     }
 }

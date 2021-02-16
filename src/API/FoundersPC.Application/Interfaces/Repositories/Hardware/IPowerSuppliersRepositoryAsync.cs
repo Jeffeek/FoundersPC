@@ -6,5 +6,5 @@ using FoundersPC.Domain.Entities.Hardware;
 
 namespace FoundersPC.Application.Interfaces.Repositories.Hardware
 {
-	public interface IPowerSuppliersRepositoryAsync : IRepositoryAsync<PowerSupply> { }
+    public interface IPowerSuppliersRepositoryAsync : IRepositoryAsync<PowerSupply> { }
 }

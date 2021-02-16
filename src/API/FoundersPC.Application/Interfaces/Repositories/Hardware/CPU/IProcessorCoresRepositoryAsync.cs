@@ -6,5 +6,5 @@ using FoundersPC.Domain.Entities.Hardware.Processor;
 
 namespace FoundersPC.Application.Interfaces.Repositories.Hardware.CPU
 {
-	public interface IProcessorCoresRepositoryAsync : IRepositoryAsync<ProcessorCore> { }
+    public interface IProcessorCoresRepositoryAsync : IRepositoryAsync<ProcessorCore> { }
 }

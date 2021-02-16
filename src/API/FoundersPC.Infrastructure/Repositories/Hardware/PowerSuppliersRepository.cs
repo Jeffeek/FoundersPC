@@ -10,18 +10,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories.Hardware
 {
-	public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupply>, IPowerSuppliersRepositoryAsync
-	{
-		/// <inheritdoc />
-		public PowerSuppliersRepository(DbContext repositoryContext) : base(repositoryContext) { }
+    public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupply>, IPowerSuppliersRepositoryAsync
+    {
+        /// <inheritdoc />
+        public PowerSuppliersRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-		#region Implementation of IPowerSuppliersRepositoryAsync
+        #region Implementation of IPowerSuppliersRepositoryAsync
 
-		/// <inheritdoc />
-		public async Task<IEnumerable<PowerSupply>> GetAllAsync() => await _context.Set<PowerSupply>()
-			                                                             .Include(powerSupply => powerSupply.Producer)
-			                                                             .ToListAsync();
+        /// <inheritdoc />
+        public async Task<IEnumerable<PowerSupply>> GetAllAsync()
+        {
+            return await _context.Set<PowerSupply>()
+                                 .Include(powerSupply => powerSupply.Producer)
+                                 .ToListAsync();
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

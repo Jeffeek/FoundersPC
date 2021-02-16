@@ -10,18 +10,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories.Hardware
 {
-	public class CasesRepository : GenericRepositoryAsync<Case>, ICasesRepositoryAsync
-	{
-		/// <inheritdoc />
-		public CasesRepository(DbContext context) : base(context) { }
+    public class CasesRepository : GenericRepositoryAsync<Case>, ICasesRepositoryAsync
+    {
+        /// <inheritdoc />
+        public CasesRepository(DbContext context) : base(context) { }
 
-		#region Implementation of ICasesRepositoryAsync
+        #region Implementation of ICasesRepositoryAsync
 
-		/// <inheritdoc />
-		public async Task<IEnumerable<Case>> GetAllAsync() => await _context.Set<Case>()
-		                                                                    .Include(@case => @case.Producer)
-		                                                                    .ToListAsync();
+        /// <inheritdoc />
+        public async Task<IEnumerable<Case>> GetAllAsync()
+        {
+            return await _context.Set<Case>()
+                                 .Include(@case => @case.Producer)
+                                 .ToListAsync();
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

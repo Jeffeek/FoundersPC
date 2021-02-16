@@ -10,18 +10,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories.Hardware.Memory
 {
-	public class SSDsRepository : GenericRepositoryAsync<SSD>, ISSDsRepositoryAsync
-	{
-		/// <inheritdoc />
-		public SSDsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+    public class SSDsRepository : GenericRepositoryAsync<SSD>, ISSDsRepositoryAsync
+    {
+        /// <inheritdoc />
+        public SSDsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-		#region Implementation of ISSDsRepositoryAsync
+        #region Implementation of ISSDsRepositoryAsync
 
-		/// <inheritdoc />
-		public async Task<IEnumerable<SSD>> GetAllAsync() => await _context.Set<SSD>()
-		                                                                   .Include(ssd => ssd.Producer)
-		                                                                   .ToListAsync();
+        /// <inheritdoc />
+        public async Task<IEnumerable<SSD>> GetAllAsync()
+        {
+            return await _context.Set<SSD>()
+                                 .Include(ssd => ssd.Producer)
+                                 .ToListAsync();
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

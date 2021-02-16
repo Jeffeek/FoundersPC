@@ -8,14 +8,20 @@ using FoundersPC.Domain.Common.Interfaces.Hardware;
 
 namespace FoundersPC.Application
 {
-	public class ProcessorCoreReadDto : IProcessorCore, IIdentityItem
-	{
-        public DateTime? MarketLaunch { get; set; }
-        public string Title { get; set; }
-        public string MicroArchitecture { get; set; }
-        public int L2Cache { get; set; }
-        public int L3Cache { get; set; }
-        public string Socket { get; set; }
+    public class ProcessorCoreReadDto : IProcessorCore, IIdentityItem
+    {
         public int Id { get; set; }
+
+        public DateTime? MarketLaunch { get; set; }
+
+        public string Title { get; set; }
+
+        public string MicroArchitecture { get; set; }
+
+        public int L2Cache { get; set; }
+
+        public int L3Cache { get; set; }
+
+        public string Socket { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿#region Using derectives
 
-using System.ComponentModel.DataAnnotations;
 using FoundersPC.Application.Base.Interfaces;
 using FoundersPC.Domain.Common.Interfaces.Hardware;
 
@@ -8,15 +7,22 @@ using FoundersPC.Domain.Common.Interfaces.Hardware;
 
 namespace FoundersPC.Application
 {
-	public class SSDInsertDto : ISSD, IProducerIdentiable
-	{
-        public double Factor { get; set; }
-        public string Interface { get; set; }
-        public int Volume { get; set; }
-        public string MicroScheme { get; set; }
-        public int SequentialRead { get; set; }
-        public int SequentialRecording { get; set; }
-        public string Title { get; set; }
+    public class SSDInsertDto : ISSD, IProducerIdentiable
+    {
         public int ProducerId { get; set; }
+
+        public double Factor { get; set; }
+
+        public string Interface { get; set; }
+
+        public int Volume { get; set; }
+
+        public string MicroScheme { get; set; }
+
+        public int SequentialRead { get; set; }
+
+        public int SequentialRecording { get; set; }
+
+        public string Title { get; set; }
     }
 }

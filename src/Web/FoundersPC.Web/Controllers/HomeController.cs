@@ -1,13 +1,10 @@
-﻿using FoundersPC.Web.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.Application;
+using FoundersPC.Web.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Controllers
 {
@@ -38,7 +35,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> ApiResult()
         {
-            var response = await GlobalContext.WeClient.GetAsync($"cpus/1");
+            var response = await GlobalContext.WeClient.GetAsync("cpus/1");
             var result = await response.Content.ReadFromJsonAsync<CaseReadDto>();
 
             return View(result);

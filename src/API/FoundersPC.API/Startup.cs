@@ -14,51 +14,56 @@ using Microsoft.OpenApi.Models;
 
 namespace FoundersPC.API
 {
-	public sealed class Startup
-	{
-		public Startup(IConfiguration configuration) => Configuration = configuration;
-		public IConfiguration Configuration { get; }
+    public sealed class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
-		// This method gets called by the runtime. Use this method to add services to the container.
-		public void ConfigureServices(IServiceCollection services)
-		{
-			//.AddNewtonsoftJson(setup => setup.SerializerSettings.ContractResolver =
-			//                             new CamelCasePropertyNamesContractResolver());
+        public IConfiguration Configuration { get; }
 
-			services.AddControllers();
-			services.AddRepositories();
-			services.AddUnitOfWork();
-			services.AddApplicationExtensions();
-			services.AddHardwareServices();
-			services.AddFoundersPCHardwareContext(Configuration);
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            //.AddNewtonsoftJson(setup => setup.SerializerSettings.ContractResolver =
+            //                             new CamelCasePropertyNamesContractResolver());
 
-			services.AddSwaggerGen(options =>
-			                       {
-				                       options.SwaggerDoc("v1", new OpenApiInfo
-				                                                {
-					                                                Title = "FoundersPC.API",
-					                                                Version = "v1"
-				                                                });
-			                       });
-		}
+            services.AddControllers();
+            services.AddRepositories();
+            services.AddUnitOfWork();
+            services.AddApplicationExtensions();
+            services.AddHardwareServices();
+            services.AddFoundersPCHardwareContext(Configuration);
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-		{
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-				app.UseSwagger();
-				app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "FoundersPC.API v1"));
-			}
+            services.AddSwaggerGen(options =>
+                                   {
+                                       options.SwaggerDoc("v1",
+                                                          new OpenApiInfo
+                                                          {
+                                                              Title = "FoundersPC.API",
+                                                              Version = "v1"
+                                                          });
+                                   });
+        }
 
-			app.UseHttpsRedirection();
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "FoundersPC.API v1"));
+            }
 
-			app.UseRouting();
+            app.UseHttpsRedirection();
 
-			app.UseAuthorization();
+            app.UseRouting();
 
-			app.UseEndpoints(endpoints => endpoints.MapControllers());
-		}
-	}
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
+        }
+    }
 }

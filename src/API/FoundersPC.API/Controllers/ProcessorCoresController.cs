@@ -12,42 +12,47 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.API.Controllers
 {
-	[Route("api/processorcores")]
-	[ApiController]
-	public class ProcessorCoresController : ControllerBase
-	{
-		private readonly IProcessorCoreService _service;
+    [Route("api/processorcores")]
+    [ApiController]
+    public class ProcessorCoresController : ControllerBase
+    {
+        private readonly IProcessorCoreService _service;
 
-		public ProcessorCoresController(IProcessorCoreService service) => _service = service;
+        public ProcessorCoresController(IProcessorCoreService service)
+        {
+            _service = service;
+        }
 
-		// GET: api/<ProcessorCoresController>
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<ProcessorCoreReadDto>>> Get() =>
-			Ok(await _service.GetAllProcessorCoresAsync());
+        // GET: api/<ProcessorCoresController>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProcessorCoreReadDto>>> Get()
+        {
+            return Ok(await _service.GetAllProcessorCoresAsync());
+        }
 
-		//// GET api/<ProcessorCoresController>/5
-		//[HttpGet("{id}")]
-		//public string Get(int id)
-		//{
-		//	return "value";
-		//}
+        //// GET api/<ProcessorCoresController>/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //	return "value";
+        //}
 
-		//// POST api/<ProcessorCoresController>
-		//[HttpPost]
-		//public void Post([FromBody] string value)
-		//{
-		//}
+        //// POST api/<ProcessorCoresController>
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
-		//// PUT api/<ProcessorCoresController>/5
-		//[HttpPut("{id}")]
-		//public void Put(int id, [FromBody] string value)
-		//{
-		//}
+        //// PUT api/<ProcessorCoresController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-		//// DELETE api/<ProcessorCoresController>/5
-		//[HttpDelete("{id}")]
-		//public void Delete(int id)
-		//{
-		//}
-	}
+        //// DELETE api/<ProcessorCoresController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
+    }
 }

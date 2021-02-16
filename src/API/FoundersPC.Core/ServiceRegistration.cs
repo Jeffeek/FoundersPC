@@ -16,21 +16,21 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.Services
 {
-	public static class ServiceRegistration
-	{
-		public static void AddHardwareServices(this IServiceCollection services)
-		{
-			services.AddScoped<IProducerService, ProducersService>();
-			services.AddScoped<IProcessorCoreService, ProcessorCoreService>();
-			services.AddScoped<ICPUService, CPUService>();
-			services.AddScoped<IVideoCardCoreService, VideoCardCoreService>();
-			services.AddScoped<IGPUService, GPUService>();
-			services.AddScoped<IHDDService, HDDService>();
-			services.AddScoped<ISSDService, SSDService>();
-			services.AddScoped<IRAMService, RAMService>();
-			services.AddScoped<ICaseService, CaseService>();
-			services.AddScoped<IMotherboardService, MotherboardService>();
-			services.AddScoped<IPowerSupplyService, PowerSupplyService>();
-		}
-	}
+    public static class ServiceRegistration
+    {
+        public static void AddHardwareServices(this IServiceCollection services)
+        {
+            services.AddScoped<IProducerService, ProducersService>();
+            services.AddScoped<IProcessorCoreService, ProcessorCoreService>();
+            services.AddScoped<ICPUService, CPUService>();
+            services.AddScoped<IVideoCardCoreService, VideoCardCoreService>();
+            services.AddScoped<IGPUService, GPUService>();
+            services.AddScoped<IHDDService, HDDService>();
+            services.AddScoped<ISSDService, SSDService>();
+            services.AddScoped<IRAMService, RAMService>();
+            services.AddScoped<ICaseService, CaseService>();
+            services.AddScoped<IMotherboardService, MotherboardService>();
+            services.AddScoped<IPowerSupplyService, PowerSupplyService>();
+        }
+    }
 }

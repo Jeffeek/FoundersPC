@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.Application.Interfaces.Services.Hardware.GPU
 {
-	public interface IVideoCardCoreService
-	{
-		Task<IEnumerable<VideoCardCoreReadDto>> GetAllVideoCardCoresAsync();
-		Task<VideoCardCoreReadDto> GetVideoCardCoreByIdAsync(int videoCardCoreId);
-		Task<bool> CreateVideoCardCore(VideoCardCoreInsertDto videoCardCore);
-		Task<bool> UpdateVideoCardCore(int id, VideoCardCoreUpdateDto videoCardCore);
-		Task<bool> DeleteVideoCardCore(int id);
-	}
+    public interface IVideoCardCoreService
+    {
+        Task<IEnumerable<VideoCardCoreReadDto>> GetAllVideoCardCoresAsync();
+
+        Task<VideoCardCoreReadDto> GetVideoCardCoreByIdAsync(int videoCardCoreId);
+
+        Task<bool> CreateVideoCardCore(VideoCardCoreInsertDto videoCardCore);
+
+        Task<bool> UpdateVideoCardCore(int id, VideoCardCoreUpdateDto videoCardCore);
+
+        Task<bool> DeleteVideoCardCore(int id);
+    }
 }

@@ -11,23 +11,30 @@ using FoundersPC.Application.Interfaces.Repositories.Hardware.Memory;
 
 namespace FoundersPC.Infrastructure.UoW
 {
-	public interface IUnitOfWorkAsync
-	{
-		IProducersRepositoryAsync ProducersRepository { get; }
+    public interface IUnitOfWorkAsync
+    {
+        IProducersRepositoryAsync ProducersRepository { get; }
 
-		ICPUsRepositoryAsync ProcessorsRepository { get; }
-		IProcessorCoresRepositoryAsync ProcessorCoresRepository { get; }
+        ICPUsRepositoryAsync ProcessorsRepository { get; }
 
-		IGPUsRepositoryAsync VideoCardsRepository { get; }
-		IVideoCardCoresRepositoryAsync VideoCardCoresRepository { get; }
+        IProcessorCoresRepositoryAsync ProcessorCoresRepository { get; }
 
-		ICasesRepositoryAsync CasesRepository { get; }
-		IHDDsRepositoryAsync HDDsRepository { get; }
-		IMotherboardsRepositoryAsync MotherboardsRepository { get; }
-		IPowerSuppliersRepositoryAsync PowerSuppliersRepository { get; }
-		ISSDsRepositoryAsync SSDsRepository { get; }
-		IRAMsRepositoryAsync RAMsRepository { get; }
+        IGPUsRepositoryAsync VideoCardsRepository { get; }
 
-		Task<int> SaveChangesAsync();
-	}
+        IVideoCardCoresRepositoryAsync VideoCardCoresRepository { get; }
+
+        ICasesRepositoryAsync CasesRepository { get; }
+
+        IHDDsRepositoryAsync HDDsRepository { get; }
+
+        IMotherboardsRepositoryAsync MotherboardsRepository { get; }
+
+        IPowerSuppliersRepositoryAsync PowerSuppliersRepository { get; }
+
+        ISSDsRepositoryAsync SSDsRepository { get; }
+
+        IRAMsRepositoryAsync RAMsRepository { get; }
+
+        Task<int> SaveChangesAsync();
+    }
 }
