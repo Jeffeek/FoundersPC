@@ -1,6 +1,6 @@
 ﻿namespace FoundersPC.Domain.Common.Interfaces.Hardware
 {
-    public interface ICase
+    public interface ICase 
     {
         string Type { get; set; }
         string MaxMotherboardSize { get; set; }

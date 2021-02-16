@@ -8,6 +8,6 @@
         string MicroScheme { get; set; }
         int SequentialRead { get; set; }
         int SequentialRecording { get; set; }
-        string Title { get; set; }
+        string Title { get;set; }
     }
 }

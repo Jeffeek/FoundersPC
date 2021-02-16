@@ -3,7 +3,6 @@
     public interface ICPU
     {
         int TDP { get; set; }
-        string Title { get; set; }
         int MaxRamSpeed { get; set; }
         int Cores { get; set; }
         int Threads { get; set; }
@@ -16,5 +15,6 @@
         bool IntegratedGraphics { get; set; }
         string Series { get; set; }
         int ProcessorCoreId { get;set; }
+        string Title {get;set;}
     }
 }
