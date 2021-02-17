@@ -338,4 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-FoundersPC.API/appsettings.json
+src/API/FoundersPC.API/appsettings.json

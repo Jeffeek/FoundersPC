@@ -1,19 +1,19 @@
 ﻿namespace FoundersPC.Domain.Common.Interfaces.Hardware
 {
-	public interface ISSD
-	{
-		double Factor { get; set; }
+    public interface ISSD
+    {
+        double Factor { get; set; }
 
-		string Interface { get; set; }
+        string Interface { get; set; }
 
-		int Volume { get; set; }
+        int Volume { get; set; }
 
-		string MicroScheme { get; set; }
+        string MicroScheme { get; set; }
 
-		int SequentialRead { get; set; }
+        int SequentialRead { get; set; }
 
-		int SequentialRecording { get; set; }
+        int SequentialRecording { get; set; }
 
-		string Title { get; set; }
-	}
+        string Title { get; set; }
+    }
 }

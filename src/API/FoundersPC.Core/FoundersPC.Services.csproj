@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoundersPC.Application\FoundersPC.Application.csproj" />
-    <ProjectReference Include="..\FoundersPC.Infrastructure\FoundersPC.Infrastructure.csproj" />
+    <ProjectReference Include="..\FoundersPC.Infrastructure.API\FoundersPC.Infrastructure.API.csproj" />
   </ItemGroup>
 
 </Project>

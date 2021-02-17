@@ -6,63 +6,64 @@ using AutoMapper;
 using FoundersPC.Application;
 using FoundersPC.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.Domain.Entities.Hardware.Memory;
-using FoundersPC.Infrastructure.UoW;
+using FoundersPC.Infrastructure.API.UoW;
 
 #endregion
 
 namespace FoundersPC.Services.Hardware_Services.Hardware.Memory
 {
-	public class RAMService : IRAMService
-	{
-		private readonly IMapper _mapper;
-		private readonly IUnitOfWorkAsync _unitOfWork;
+    public class RAMService : IRAMService
+    {
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWorkAPIAsync _unitOfWorkApi;
 
-		public RAMService(IUnitOfWorkAsync unitOfWork, IMapper mapper)
-		{
-			_unitOfWork = unitOfWork;
-			_mapper = mapper;
-		}
+        public RAMService(IUnitOfWorkAPIAsync unitOfWorkApi, IMapper mapper)
+        {
+            _unitOfWorkApi = unitOfWorkApi;
+            _mapper = mapper;
+        }
 
-		#region Implementation of IRAMService
+        #region Implementation of IRAMService
 
-		/// <inheritdoc />
-		public async Task<IEnumerable<RAMReadDto>> GetAllRAMsAsync() => _mapper.Map<IEnumerable<RAM>, IEnumerable<RAMReadDto>>(await _unitOfWork.RAMsRepository
-																																				.GetAllAsync());
+        /// <inheritdoc />
+        public async Task<IEnumerable<RAMReadDto>> GetAllRAMsAsync() =>
+            _mapper.Map<IEnumerable<RAM>, IEnumerable<RAMReadDto>>(await _unitOfWorkApi.RAMsRepository
+                                                                                       .GetAllAsync());
 
-		/// <inheritdoc />
-		public async Task<RAMReadDto> GetRAMByIdAsync(int ramId) => _mapper.Map<RAM, RAMReadDto>(await _unitOfWork.RAMsRepository.GetByIdAsync(ramId));
+        /// <inheritdoc />
+        public async Task<RAMReadDto> GetRAMByIdAsync(int ramId) => _mapper.Map<RAM, RAMReadDto>(await _unitOfWorkApi.RAMsRepository.GetByIdAsync(ramId));
 
-		/// <inheritdoc />
-		public async Task<bool> CreateRAM(RAMInsertDto ram)
-		{
-			var mappedRAM = _mapper.Map<RAMInsertDto, RAM>(ram);
-			await _unitOfWork.RAMsRepository.AddAsync(mappedRAM);
+        /// <inheritdoc />
+        public async Task<bool> CreateRAM(RAMInsertDto ram)
+        {
+            var mappedRAM = _mapper.Map<RAMInsertDto, RAM>(ram);
+            await _unitOfWorkApi.RAMsRepository.AddAsync(mappedRAM);
 
-			return await _unitOfWork.SaveChangesAsync() > 0;
-		}
+            return await _unitOfWorkApi.SaveChangesAsync() > 0;
+        }
 
-		/// <inheritdoc />
-		public async Task<bool> UpdateRAM(int id, RAMUpdateDto ram)
-		{
-			var bdEntity = await _unitOfWork.RAMsRepository.GetByIdAsync(id);
+        /// <inheritdoc />
+        public async Task<bool> UpdateRAM(int id, RAMUpdateDto ram)
+        {
+            var bdEntity = await _unitOfWorkApi.RAMsRepository.GetByIdAsync(id);
 
-			if (bdEntity == null) return false;
+            if (bdEntity == null) return false;
 
-			_mapper.Map(ram, bdEntity);
-			await _unitOfWork.RAMsRepository.UpdateAsync(bdEntity);
+            _mapper.Map(ram, bdEntity);
+            await _unitOfWorkApi.RAMsRepository.UpdateAsync(bdEntity);
 
-			return await _unitOfWork.SaveChangesAsync() > 0;
-		}
+            return await _unitOfWorkApi.SaveChangesAsync() > 0;
+        }
 
-		/// <inheritdoc />
-		public async Task<bool> DeleteRAM(int id)
-		{
-			var ramToDelete = await _unitOfWork.RAMsRepository.GetByIdAsync(id);
-			await _unitOfWork.RAMsRepository.DeleteAsync(ramToDelete);
+        /// <inheritdoc />
+        public async Task<bool> DeleteRAM(int id)
+        {
+            var ramToDelete = await _unitOfWorkApi.RAMsRepository.GetByIdAsync(id);
+            await _unitOfWorkApi.RAMsRepository.DeleteAsync(ramToDelete);
 
-			return await _unitOfWork.SaveChangesAsync() > 0;
-		}
+            return await _unitOfWorkApi.SaveChangesAsync() > 0;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

@@ -9,26 +9,26 @@ using FoundersPC.Domain.Entities.Hardware;
 
 namespace FoundersPC.Domain.Common.Base
 {
-	public abstract class HardwareEntityBase : IHardware
-	{
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		[Column("ProducerId")]
-		[Required]
-		public int ProducerId { get; set; }
+    public abstract class HardwareEntityBase : IHardware
+    {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("ProducerId")]
+        [Required]
+        public int ProducerId { get; set; }
 
-		[ForeignKey(nameof(ProducerId))]
-		public Producer Producer { get; set; }
+        [ForeignKey(nameof(ProducerId))]
+        public Producer Producer { get; set; }
 
-		[MaxLength(100)]
-		[MinLength(0)]
-		[DataType(DataType.Text)]
-		[Column("Title")]
-		[Required]
-		public string Title { get; set; }
+        [MaxLength(100)]
+        [MinLength(0)]
+        [DataType(DataType.Text)]
+        [Column("Title")]
+        [Required]
+        public string Title { get; set; }
 
-		[Column("Id")]
-		[Required]
-		[Key]
-		public int Id { get; set; }
-	}
+        [Column("Id")]
+        [Required]
+        [Key]
+        public int Id { get; set; }
+    }
 }
