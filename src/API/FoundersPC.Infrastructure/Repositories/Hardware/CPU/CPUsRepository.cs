@@ -9,23 +9,23 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories.Hardware.CPU
 {
-    public class CPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.Processor.CPU>, ICPUsRepositoryAsync
-    {
-        /// <inheritdoc />
-        public CPUsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+	public class CPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.Processor.CPU>, ICPUsRepositoryAsync
+	{
+		/// <inheritdoc />
+		public CPUsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of ICPUsRepositoryAsync
+		#region Implementation of ICPUsRepositoryAsync
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync()
-        {
-            return await _context
-                         .Set<Domain.Entities.Hardware.Processor.CPU>()
-                         .Include(cpu => cpu.Producer)
-                         .Include(cpu => cpu.Core)
-                         .ToListAsync();
-        }
+		/// <inheritdoc />
+		public async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync()
+		{
+			return await _context
+						 .Set<Domain.Entities.Hardware.Processor.CPU>()
+						 .Include(cpu => cpu.Producer)
+						 .Include(cpu => cpu.Core)
+						 .ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

@@ -9,23 +9,23 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories.Hardware.GPU
 {
-    public class GPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.VideoCard.GPU>, IGPUsRepositoryAsync
-    {
-        /// <inheritdoc />
-        public GPUsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+	public class GPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.VideoCard.GPU>, IGPUsRepositoryAsync
+	{
+		/// <inheritdoc />
+		public GPUsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of IGPUsRepositoryAsync
+		#region Implementation of IGPUsRepositoryAsync
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()
-        {
-            return await _context
-                         .Set<Domain.Entities.Hardware.VideoCard.GPU>()
-                         .Include(gpu => gpu.Producer)
-                         .Include(gpu => gpu.Core)
-                         .ToListAsync();
-        }
+		/// <inheritdoc />
+		public async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()
+		{
+			return await _context
+						 .Set<Domain.Entities.Hardware.VideoCard.GPU>()
+						 .Include(gpu => gpu.Producer)
+						 .Include(gpu => gpu.Core)
+						 .ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

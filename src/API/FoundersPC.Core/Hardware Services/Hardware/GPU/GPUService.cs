@@ -11,64 +11,60 @@ using FoundersPC.Infrastructure.UoW;
 
 namespace FoundersPC.Services.Hardware_Services.Hardware.GPU
 {
-    public class GPUService : IGPUService
-    {
-        private readonly IMapper _mapper;
-        private readonly IUnitOfWorkAsync _unitOfWork;
+	public class GPUService : IGPUService
+	{
+		private readonly IMapper _mapper;
+		private readonly IUnitOfWorkAsync _unitOfWork;
 
-        public GPUService(IUnitOfWorkAsync unitOfWork, IMapper mapper)
-        {
-            _unitOfWork = unitOfWork;
-            _mapper = mapper;
-        }
+		public GPUService(IUnitOfWorkAsync unitOfWork, IMapper mapper)
+		{
+			_unitOfWork = unitOfWork;
+			_mapper = mapper;
+		}
 
-        #region Implementation of IGPUService
+		#region Implementation of IGPUService
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<GPUReadDto>> GetAllGPUsAsync()
-        {
-            return _mapper.Map<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>, IEnumerable<GPUReadDto>>(await _unitOfWork
-                .VideoCardsRepository
-                .GetAllAsync());
-        }
+		/// <inheritdoc />
+		public async Task<IEnumerable<GPUReadDto>> GetAllGPUsAsync() => _mapper.Map<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>, IEnumerable<GPUReadDto>>(await _unitOfWork
+																																										.VideoCardsRepository
+																																										.GetAllAsync());
 
-        /// <inheritdoc />
-        public async Task<GPUReadDto> GetGPUByIdAsync(int gpuId)
-        {
-            return _mapper.Map<Domain.Entities.Hardware.VideoCard.GPU, GPUReadDto>(await _unitOfWork.VideoCardsRepository
-                                                                                                    .GetByIdAsync(gpuId));
-        }
+		/// <inheritdoc />
+		public async Task<GPUReadDto> GetGPUByIdAsync(int gpuId) => _mapper.Map<Domain.Entities.Hardware.VideoCard.GPU, GPUReadDto>(await _unitOfWork
+																																		  .VideoCardsRepository
+																																		  .GetByIdAsync(gpuId));
 
-        /// <inheritdoc />
-        public async Task<bool> CreateGPU(GPUInsertDto gpu)
-        {
-            var mappedGPU = _mapper.Map<GPUInsertDto, Domain.Entities.Hardware.VideoCard.GPU>(gpu);
-            await _unitOfWork.VideoCardsRepository.AddAsync(mappedGPU);
+		/// <inheritdoc />
+		public async Task<bool> CreateGPU(GPUInsertDto gpu)
+		{
+			var mappedGPU = _mapper.Map<GPUInsertDto, Domain.Entities.Hardware.VideoCard.GPU>(gpu);
+			await _unitOfWork.VideoCardsRepository.AddAsync(mappedGPU);
 
-            return await _unitOfWork.SaveChangesAsync() > 0;
-        }
+			return await _unitOfWork.SaveChangesAsync() > 0;
+		}
 
-        /// <inheritdoc />
-        public async Task<bool> UpdateGPU(int id, GPUUpdateDto gpu)
-        {
-            var bdEntity = await _unitOfWork.VideoCardsRepository.GetByIdAsync(id);
+		/// <inheritdoc />
+		public async Task<bool> UpdateGPU(int id, GPUUpdateDto gpu)
+		{
+			var bdEntity = await _unitOfWork.VideoCardsRepository.GetByIdAsync(id);
 
-            if (bdEntity == null) return false;
-            _mapper.Map(gpu, bdEntity);
-            await _unitOfWork.VideoCardsRepository.UpdateAsync(bdEntity);
+			if (bdEntity == null) return false;
 
-            return await _unitOfWork.SaveChangesAsync() > 0;
-        }
+			_mapper.Map(gpu, bdEntity);
+			await _unitOfWork.VideoCardsRepository.UpdateAsync(bdEntity);
 
-        /// <inheritdoc />
-        public async Task<bool> DeleteGPU(int id)
-        {
-            var gpuToDelete = await _unitOfWork.VideoCardsRepository.GetByIdAsync(id);
-            await _unitOfWork.VideoCardsRepository.DeleteAsync(gpuToDelete);
+			return await _unitOfWork.SaveChangesAsync() > 0;
+		}
 
-            return await _unitOfWork.SaveChangesAsync() > 0;
-        }
+		/// <inheritdoc />
+		public async Task<bool> DeleteGPU(int id)
+		{
+			var gpuToDelete = await _unitOfWork.VideoCardsRepository.GetByIdAsync(id);
+			await _unitOfWork.VideoCardsRepository.DeleteAsync(gpuToDelete);
 
-        #endregion
-    }
+			return await _unitOfWork.SaveChangesAsync() > 0;
+		}
+
+		#endregion
+	}
 }

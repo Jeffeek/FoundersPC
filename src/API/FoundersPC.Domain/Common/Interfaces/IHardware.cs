@@ -2,12 +2,12 @@
 
 namespace FoundersPC.Domain.Common.Interfaces
 {
-    public interface IHardware : IIdentityItem
-    {
-        int ProducerId { get; set; }
+	public interface IHardware : IIdentityItem
+	{
+		int ProducerId { get; set; }
 
-        Producer Producer { get; set; }
+		Producer Producer { get; set; }
 
-        string Title { get; set; }
-    }
+		string Title { get; set; }
+	}
 }

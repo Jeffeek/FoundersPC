@@ -17,4 +17,10 @@
     <PackageReference Include="WpfAnimatedGif" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="View\Pages\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
 </Project>

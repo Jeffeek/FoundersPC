@@ -10,22 +10,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories.Hardware.CPU
 {
-    public class ProcessorCoresRepository : GenericRepositoryAsync<ProcessorCore>, IProcessorCoresRepositoryAsync
-    {
-        /// <inheritdoc />
-        public ProcessorCoresRepository(DbContext repositoryContext) : base(repositoryContext) { }
+	public class ProcessorCoresRepository : GenericRepositoryAsync<ProcessorCore>, IProcessorCoresRepositoryAsync
+	{
+		/// <inheritdoc />
+		public ProcessorCoresRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of IProcessorCoresRepositoryAsync
+		#region Implementation of IProcessorCoresRepositoryAsync
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<ProcessorCore>> GetAllAsync()
-        {
-            return await _context.Set<ProcessorCore>()
-                                 .Include(processorCore =>
-                                              processorCore.Processors)
-                                 .ToListAsync();
-        }
+		/// <inheritdoc />
+		public async Task<IEnumerable<ProcessorCore>> GetAllAsync()
+		{
+			return await _context.Set<ProcessorCore>()
+								 .Include(processorCore =>
+												  processorCore.Processors)
+								 .ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

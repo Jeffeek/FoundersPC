@@ -10,21 +10,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.Repositories.Hardware
 {
-    public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>, IMotherboardsRepositoryAsync
-    {
-        /// <inheritdoc />
-        public MotherboardsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+	public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>, IMotherboardsRepositoryAsync
+	{
+		/// <inheritdoc />
+		public MotherboardsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of IMotherboardsRepositoryAsync
+		#region Implementation of IMotherboardsRepositoryAsync
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<Motherboard>> GetAllAsync()
-        {
-            return await _context.Set<Motherboard>()
-                                 .Include(motherboard => motherboard.Producer)
-                                 .ToListAsync();
-        }
+		/// <inheritdoc />
+		public async Task<IEnumerable<Motherboard>> GetAllAsync()
+		{
+			return await _context.Set<Motherboard>()
+								 .Include(motherboard => motherboard.Producer)
+								 .ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }
