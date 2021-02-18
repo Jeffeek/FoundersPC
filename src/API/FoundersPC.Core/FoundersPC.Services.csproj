@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MailKit" Version="2.10.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Application\FoundersPC.Application.csproj" />
     <ProjectReference Include="..\FoundersPC.Infrastructure.API\FoundersPC.Infrastructure.API.csproj" />
   </ItemGroup>

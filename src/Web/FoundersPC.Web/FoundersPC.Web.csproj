@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\API\FoundersPC.Application\FoundersPC.Application.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿#region Using namespaces
+
 using FoundersPC.Domain.Entities.Users;
+
+#endregion
 
 namespace FoundersPC.Application.Interfaces.Repositories.Users
 {

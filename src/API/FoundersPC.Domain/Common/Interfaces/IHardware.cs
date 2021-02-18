@@ -1,13 +1,17 @@
-﻿using FoundersPC.Domain.Entities.Hardware;
+﻿#region Using namespaces
+
+using FoundersPC.Domain.Entities.Hardware;
+
+#endregion
 
 namespace FoundersPC.Domain.Common.Interfaces
 {
-	public interface IHardware : IIdentityItem
-	{
-		int ProducerId { get; set; }
+    public interface IHardware : IIdentityItem
+    {
+        int ProducerId { get; set; }
 
-		Producer Producer { get; set; }
+        Producer Producer { get; set; }
 
-		string Title { get; set; }
-	}
+        string Title { get; set; }
+    }
 }

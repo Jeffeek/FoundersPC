@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Reposotories\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FoundersPC.Application\FoundersPC.Application.csproj" />
     <ProjectReference Include="..\FoundersPC.Domain\FoundersPC.Domain.csproj" />
   </ItemGroup>
 

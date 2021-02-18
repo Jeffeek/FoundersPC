@@ -1,22 +1,22 @@
-﻿#region Using derectives
+﻿#region Using namespaces
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 #endregion
 
-namespace FoundersPC.Application.Interfaces.Services
+namespace FoundersPC.Application.Interfaces.Services.Hardware
 {
-	public interface IProducerService
-	{
-		Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync();
+    public interface IProducerService
+    {
+        Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync();
 
-		Task<ProducerReadDto> GetProducerByIdAsync(int producerId);
+        Task<ProducerReadDto> GetProducerByIdAsync(int producerId);
 
-		Task<bool> CreateProducer(ProducerInsertDto producer);
+        Task<bool> CreateProducer(ProducerInsertDto producer);
 
-		Task<bool> UpdateProducer(int id, ProducerUpdateDto producer);
+        Task<bool> UpdateProducer(int id, ProducerUpdateDto producer);
 
-		Task<bool> DeleteProducer(int id);
-	}
+        Task<bool> DeleteProducer(int id);
+    }
 }

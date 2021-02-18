@@ -1,7 +1,12 @@
-﻿using System.Windows;
+﻿#region Using namespaces
+
+using System.Windows;
+
+#endregion
 
 namespace FoundersPC.AdminPanelApp
 {
-	/// <inheritdoc />
-	public class App : Application { }
+    /// <inheritdoc />
+    // ReSharper disable once PartialTypeWithSinglePart
+    public partial class App : Application { }
 }

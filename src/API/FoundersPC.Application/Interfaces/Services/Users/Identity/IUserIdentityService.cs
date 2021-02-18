@@ -1,18 +1,22 @@
-﻿using System.Threading.Tasks;
-using FoundersPC.Application.ViewModels;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
+using FoundersPC.ApplicationShared.DTO.Users.ViewModels;
+
+#endregion
 
 namespace FoundersPC.Application.Interfaces.Services.Users.Identity
 {
-	public interface IUserIdentityService
-	{
-		Task<bool> AuthorizeAsync(UserLoginViewModel user);
+    public interface IUserIdentityService
+    {
+        Task<bool> AuthorizeAsync(UserLoginViewModel user);
 
-		Task<bool> RegisterAsync(UserRegisterViewModel user);
+        Task<bool> RegisterAsync(UserRegisterViewModel user);
 
-		Task<bool> DisableAccountAsync(int id);
+        Task<bool> DisableAccountAsync(int id);
 
-		Task<bool> ChangeLoginAsync(int id, string newLogin);
+        Task<bool> ChangeLoginAsync(int id, string newLogin);
 
-		Task<bool> ChangePasswordAsync(int id, string newPassword);
-	}
+        Task<bool> ChangePasswordAsync(int id, string newPassword);
+    }
 }

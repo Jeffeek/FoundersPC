@@ -1,4 +1,4 @@
-﻿#region Using derectives
+﻿#region Using namespaces
 
 using FoundersPC.Domain.Entities.Hardware.VideoCard;
 
@@ -6,5 +6,5 @@ using FoundersPC.Domain.Entities.Hardware.VideoCard;
 
 namespace FoundersPC.Application.Interfaces.Repositories.Hardware.GPU
 {
-	public interface IVideoCardCoresRepositoryAsync : IRepositoryAsync<VideoCardCore> { }
+    public interface IVideoCardCoresRepositoryAsync : IRepositoryAsync<VideoCardCore> { }
 }

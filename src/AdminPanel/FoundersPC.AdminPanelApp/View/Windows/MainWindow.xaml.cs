@@ -1,12 +1,16 @@
-﻿using System.Windows;
+﻿#region Using namespaces
+
+using System.Windows;
+
+#endregion
 
 namespace FoundersPC.AdminPanelApp.View.Windows
 {
-	/// <inheritdoc />
+    /// <inheritdoc />
 
-	// ReSharper disable once PartialTypeWithSinglePart
-	public partial class MainWindow : Window
-	{
-		//public MainWindow() => InitializeComponent();
-	}
+    // ReSharper disable once PartialTypeWithSinglePart
+    public partial class MainWindow : Window
+    {
+        //public MainWindow() => InitializeComponent();
+    }
 }

@@ -1,4 +1,4 @@
-﻿#region Using derectives
+﻿#region Using namespaces
 
 using FoundersPC.Domain.Entities.Hardware.Processor;
 
@@ -6,5 +6,5 @@ using FoundersPC.Domain.Entities.Hardware.Processor;
 
 namespace FoundersPC.Application.Interfaces.Repositories.Hardware.CPU
 {
-	public interface IProcessorCoresRepositoryAsync : IRepositoryAsync<ProcessorCore> { }
+    public interface IProcessorCoresRepositoryAsync : IRepositoryAsync<ProcessorCore> { }
 }

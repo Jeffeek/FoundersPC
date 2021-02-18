@@ -1,4 +1,4 @@
-﻿#region Using derectives
+﻿#region Using namespaces
 
 using FoundersPC.Domain.Entities.Hardware;
 
@@ -6,5 +6,5 @@ using FoundersPC.Domain.Entities.Hardware;
 
 namespace FoundersPC.Application.Interfaces.Repositories.Hardware
 {
-	public interface IMotherboardsRepositoryAsync : IRepositoryAsync<Motherboard> { }
+    public interface IMotherboardsRepositoryAsync : IRepositoryAsync<Motherboard> { }
 }

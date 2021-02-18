@@ -1,4 +1,4 @@
-﻿#region Using derectives
+﻿#region Using namespaces
 
 using FoundersPC.Domain.Entities.Hardware.Memory;
 
@@ -6,5 +6,5 @@ using FoundersPC.Domain.Entities.Hardware.Memory;
 
 namespace FoundersPC.Application.Interfaces.Repositories.Hardware.Memory
 {
-	public interface IHDDsRepositoryAsync : IRepositoryAsync<HDD> { }
+    public interface IHDDsRepositoryAsync : IRepositoryAsync<HDD> { }
 }

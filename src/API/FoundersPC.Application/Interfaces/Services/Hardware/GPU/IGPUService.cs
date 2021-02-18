@@ -1,4 +1,4 @@
-﻿#region Using derectives
+﻿#region Using namespaces
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.Application.Interfaces.Services.Hardware.GPU
 {
-	public interface IGPUService
-	{
-		Task<IEnumerable<GPUReadDto>> GetAllGPUsAsync();
+    public interface IGPUService
+    {
+        Task<IEnumerable<GPUReadDto>> GetAllGPUsAsync();
 
-		Task<GPUReadDto> GetGPUByIdAsync(int gpuId);
+        Task<GPUReadDto> GetGPUByIdAsync(int gpuId);
 
-		Task<bool> CreateGPU(GPUInsertDto gpu);
+        Task<bool> CreateGPU(GPUInsertDto gpu);
 
-		Task<bool> UpdateGPU(int id, GPUUpdateDto gpu);
+        Task<bool> UpdateGPU(int id, GPUUpdateDto gpu);
 
-		Task<bool> DeleteGPU(int id);
-	}
+        Task<bool> DeleteGPU(int id);
+    }
 }
