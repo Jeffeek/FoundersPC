@@ -20,38 +20,38 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.Infrastructure.API
 {
-    public static class HardwareInfrastructureRegistration
-    {
-        public static void AddHardwareRepositories(this IServiceCollection services)
-        {
-            services.AddScoped<IProducersRepositoryAsync, ProducersRepository>();
-            services.AddScoped<ICPUsRepositoryAsync, CPUsRepository>();
-            services.AddScoped<IProcessorCoresRepositoryAsync, ProcessorCoresRepository>();
-            services.AddScoped<IGPUsRepositoryAsync, GPUsRepository>();
-            services.AddScoped<IVideoCardCoresRepositoryAsync, VideoCardCoresRepository>();
-            services.AddScoped<ICasesRepositoryAsync, CasesRepository>();
-            services.AddScoped<IHDDsRepositoryAsync, HDDsRepository>();
-            services.AddScoped<IMotherboardsRepositoryAsync, MotherboardsRepository>();
-            services.AddScoped<IPowerSuppliersRepositoryAsync, PowerSuppliersRepository>();
-            services.AddScoped<IRAMsRepositoryAsync, RAMsRepository>();
-            services.AddScoped<ISSDsRepositoryAsync, SSDsRepository>();
-        }
+	public static class HardwareInfrastructureRegistration
+	{
+		public static void AddHardwareRepositories(this IServiceCollection services)
+		{
+			services.AddScoped<IProducersRepositoryAsync, ProducersRepository>();
+			services.AddScoped<ICPUsRepositoryAsync, CPUsRepository>();
+			services.AddScoped<IProcessorCoresRepositoryAsync, ProcessorCoresRepository>();
+			services.AddScoped<IGPUsRepositoryAsync, GPUsRepository>();
+			services.AddScoped<IVideoCardCoresRepositoryAsync, VideoCardCoresRepository>();
+			services.AddScoped<ICasesRepositoryAsync, CasesRepository>();
+			services.AddScoped<IHDDsRepositoryAsync, HDDsRepository>();
+			services.AddScoped<IMotherboardsRepositoryAsync, MotherboardsRepository>();
+			services.AddScoped<IPowerSuppliersRepositoryAsync, PowerSuppliersRepository>();
+			services.AddScoped<IRAMsRepositoryAsync, RAMsRepository>();
+			services.AddScoped<ISSDsRepositoryAsync, SSDsRepository>();
+		}
 
-        public static void AddHardwareUnitOfWork(this IServiceCollection services)
-        {
-            services.AddScoped<IUnitOfWorkAPIAsync, FoundersPCUnitOfWorkAPI>();
-        }
+		public static void AddHardwareUnitOfWork(this IServiceCollection services)
+		{
+			services.AddScoped<IUnitOfWorkAPIAsync, FoundersPCUnitOfWorkAPI>();
+		}
 
-        public static void AddFoundersPCHardwareContext(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddDbContext<DbContext, FoundersPCDbContext>(options =>
-                                                                      options.UseSqlServer(configuration
-                                                                                               .GetConnectionString("FoundercPC.connectionString"),
-                                                                                           b =>
-                                                                                               b.MigrationsAssembly(typeof(
-                                                                                                       FoundersPCDbContext)
-                                                                                                   .Assembly
-                                                                                                   .FullName)));
-        }
-    }
+		public static void AddFoundersPCHardwareContext(this IServiceCollection services, IConfiguration configuration)
+		{
+			services.AddDbContext<DbContext, FoundersPCDbContext>(options =>
+																		  options.UseSqlServer(configuration
+																									   .GetConnectionString("FoundercPC.connectionString"),
+																							   b =>
+																									   b.MigrationsAssembly(typeof(
+																																	FoundersPCDbContext)
+																															.Assembly
+																															.FullName)));
+		}
+	}
 }

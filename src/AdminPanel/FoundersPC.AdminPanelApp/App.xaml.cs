@@ -2,6 +2,6 @@
 
 namespace FoundersPC.AdminPanelApp
 {
-    /// <inheritdoc />
-    public partial class App : Application { }
+	/// <inheritdoc />
+	public class App : Application { }
 }

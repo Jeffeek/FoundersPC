@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.Application.Interfaces.Services.Hardware.Memory
 {
-    public interface ISSDService
-    {
-        Task<IEnumerable<SSDReadDto>> GetAllSSDsAsync();
+	public interface ISSDService
+	{
+		Task<IEnumerable<SSDReadDto>> GetAllSSDsAsync();
 
-        Task<SSDReadDto> GetSSDByIdAsync(int ssdId);
+		Task<SSDReadDto> GetSSDByIdAsync(int ssdId);
 
-        Task<bool> CreateSSD(SSDInsertDto ssd);
+		Task<bool> CreateSSD(SSDInsertDto ssd);
 
-        Task<bool> UpdateSSD(int id, SSDUpdateDto ssd);
+		Task<bool> UpdateSSD(int id, SSDUpdateDto ssd);
 
-        Task<bool> DeleteSSD(int id);
-    }
+		Task<bool> DeleteSSD(int id);
+	}
 }

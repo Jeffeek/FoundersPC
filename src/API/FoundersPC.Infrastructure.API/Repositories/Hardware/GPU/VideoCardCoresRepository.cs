@@ -10,22 +10,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.API.Repositories.Hardware.GPU
 {
-    public class VideoCardCoresRepository : GenericRepositoryAsync<VideoCardCore>, IVideoCardCoresRepositoryAsync
-    {
-        /// <inheritdoc />
-        public VideoCardCoresRepository(DbContext context) : base(context) { }
+	public class VideoCardCoresRepository : GenericRepositoryAsync<VideoCardCore>, IVideoCardCoresRepositoryAsync
+	{
+		/// <inheritdoc />
+		public VideoCardCoresRepository(DbContext context) : base(context) { }
 
-        #region Implementation of IVideoCardCoresRepositoryAsync
+		#region Implementation of IVideoCardCoresRepositoryAsync
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<VideoCardCore>> GetAllAsync()
-        {
-            return await _context.Set<VideoCardCore>()
-                                 .Include(videoCardCore =>
-                                              videoCardCore.VideoCards)
-                                 .ToListAsync();
-        }
+		/// <inheritdoc />
+		public async Task<IEnumerable<VideoCardCore>> GetAllAsync()
+		{
+			return await _context.Set<VideoCardCore>()
+								 .Include(videoCardCore =>
+												  videoCardCore.VideoCards)
+								 .ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

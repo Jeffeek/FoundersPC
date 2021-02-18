@@ -10,21 +10,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Infrastructure.API.Repositories.Hardware.Memory
 {
-    public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync
-    {
-        /// <inheritdoc />
-        public HDDsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+	public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync
+	{
+		/// <inheritdoc />
+		public HDDsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of IHDDsRepositoryAsync
+		#region Implementation of IHDDsRepositoryAsync
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<HDD>> GetAllAsync()
-        {
-            return await _context.Set<HDD>()
-                                 .Include(hdd => hdd.Producer)
-                                 .ToListAsync();
-        }
+		/// <inheritdoc />
+		public async Task<IEnumerable<HDD>> GetAllAsync()
+		{
+			return await _context.Set<HDD>()
+								 .Include(hdd => hdd.Producer)
+								 .ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }
