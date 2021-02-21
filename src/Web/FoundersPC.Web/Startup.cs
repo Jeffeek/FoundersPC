@@ -1,13 +1,17 @@
 #region Using namespaces
 
+using System.Text;
+using System.Threading.Tasks;
 using FoundersPC.Web.Data;
+using FoundersPC.Web.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
@@ -19,16 +23,42 @@ namespace FoundersPC.Web
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            JwtSettings.Initialize(Configuration);
+
             services.AddDbContext<ApplicationDbContext>(options =>
                                                             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddAuthentication("OAuth")
+                    .AddJwtBearer("OAuth",
+                                  config =>
+                                  {
+                                      var secretBytes = Encoding.UTF8.GetBytes(JwtSettings.SecretKey);
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<ApplicationDbContext>();
+                                      var key = new SymmetricSecurityKey(secretBytes);
+
+                                      config.Events = new JwtBearerEvents
+                                                      {
+                                                          OnMessageReceived = context =>
+                                                                              {
+                                                                                  if (context.Request.Query.ContainsKey("token"))
+                                                                                      context.Token = context.Request.Query["token"];
+
+                                                                                  return Task.CompletedTask;
+                                                                              }
+                                                      };
+
+                                      config.TokenValidationParameters = new TokenValidationParameters
+                                                                         {
+                                                                             ValidateAudience = false,
+                                                                             ValidIssuer = JwtSettings.Issuer,
+                                                                             ValidAudience = JwtSettings.Audience,
+                                                                             IssuerSigningKey = key
+                                                                         };
+                                  });
+
+            services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddControllersWithViews();
         }
@@ -57,13 +87,7 @@ namespace FoundersPC.Web
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-                             {
-                                 endpoints.MapControllerRoute("default",
-                                                              "{controller=Home}/{action=Index}/{id?}");
-
-                                 endpoints.MapRazorPages();
-                             });
+            app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
         }
     }
 }

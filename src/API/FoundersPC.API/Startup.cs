@@ -1,10 +1,8 @@
 #region Using namespaces
 
-using FoundersPC.Application;
-using FoundersPC.Infrastructure.API;
-using FoundersPC.Infrastructure.Identity;
-using FoundersPC.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.API.Application;
+using FoundersPC.API.Infrastructure;
+using FoundersPC.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,32 +24,17 @@ namespace FoundersPC.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //.AddNewtonsoftJson(setup => setup.SerializerSettings.ContractResolver =
-            //                             new CamelCasePropertyNamesContractResolver());
-
             services.AddControllers();
             //
             services.AddHardwareRepositories();
-            services.AddIdentityRepositories();
             //
             services.AddHardwareUnitOfWork();
-            services.AddIdentityUnitOfWork();
             //
             services.AddFoundersPCHardwareContext(Configuration);
-            services.AddFoundersPCIdentityUsersContext(Configuration);
             //
             services.AddHardwareServices();
-            services.AddUserServices(Configuration);
             //
-            services.AddApplicationExtensions();
-
-            // TODO: authorization
-            services.AddAuthorization(options => options.AddPolicy("AdministratorsOnly",
-                                                                   policy =>
-                                                                       policy.RequireRole("Administrator")));
-
-            // TODO: authentication
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
+            services.AddHardwareApplicationExtensions();
 
             services.AddApiVersioning(options =>
                                       {
@@ -64,7 +47,7 @@ namespace FoundersPC.API
                                                                  new OpenApiInfo
                                                                  {
                                                                      Title = "FoundersPC.API",
-                                                                     Version = "v1"
+                                                                     Version = "v1.0"
                                                                  }));
         }
 
@@ -75,7 +58,8 @@ namespace FoundersPC.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "FoundersPC.API v1"));
+                app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json",
+                                                                    "FoundersPC.API v1"));
             }
 
             app.UseHttpsRedirection();

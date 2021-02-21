@@ -1,12 +1,13 @@
 ﻿#region Using namespaces
 
-using System.Diagnostics;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using FoundersPC.Application;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using FoundersPC.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
@@ -14,27 +15,36 @@ namespace FoundersPC.Web.Controllers
 {
     public sealed class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger) => _logger = logger;
-
         public IActionResult Index() => View();
 
-        public IActionResult Privacy() => View();
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error() =>
-            View(new ErrorViewModel
-                 {
-                     RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
-                 });
-
-        public async Task<IActionResult> ApiResult()
+        public IActionResult Authenticate()
         {
-            var response = await GlobalContext.WeClient.GetAsync("cpus/1");
-            var result = await response.Content.ReadFromJsonAsync<CaseReadDto>();
+            // find user
 
-            return View(result);
+            var claims = new List<Claim>
+                         {
+                             new(JwtRegisteredClaimNames.Sub, "Arcadiy"),
+                             new(JwtRegisteredClaimNames.Email, "arc@mail.com")
+                         };
+
+            var secretBytes = Encoding.UTF8.GetBytes(JwtSettings.SecretKey);
+
+            var key = new SymmetricSecurityKey(secretBytes);
+
+            var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(JwtSettings.Issuer,
+                                             JwtSettings.Audience,
+                                             claims,
+                                             DateTime.Now,
+                                             DateTime.Now.AddMinutes(60),
+                                             signingCredentials);
+
+            var value = new JwtSecurityTokenHandler().WriteToken(token);
+
+            ViewBag.Token = value;
+
+            return View();
         }
     }
 }

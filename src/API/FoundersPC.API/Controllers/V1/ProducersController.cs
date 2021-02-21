@@ -2,9 +2,8 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.Application;
-using FoundersPC.Application.Interfaces.Services.Hardware;
-using Microsoft.AspNetCore.Authorization;
+using FoundersPC.API.Application;
+using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
@@ -14,7 +13,6 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("api/producers")]
-    [Authorize]
     public class ProducersController : ControllerBase
     {
         private readonly IProducerService _producerService;

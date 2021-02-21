@@ -3,8 +3,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.Application;
-using FoundersPC.Application.Interfaces.Services.Hardware.CPU;
+using FoundersPC.API.Application;
+using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +15,6 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("api/cpus")]
-    [Authorize]
     public class CPUController : ControllerBase
     {
         private readonly ICPUService _cpuService;
@@ -42,7 +41,7 @@ namespace FoundersPC.API.Controllers.V1
             return Ok(cpu);
         }
 
-        [Authorize(Policy = "Administrator")]
+        //[Authorize(Policy = "Administrator")]
         [HttpPost]
         public async Task<ActionResult> Insert(CPUInsertDto cpu)
         {
@@ -53,7 +52,7 @@ namespace FoundersPC.API.Controllers.V1
             return !insertResult ? Problem() : Ok(cpu);
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPost("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, CPUUpdateDto cpu)
         {

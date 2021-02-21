@@ -23,8 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FoundersPC.Core\FoundersPC.Services.csproj" />
-    <ProjectReference Include="..\FoundersPC.Infrastructure.Identity\FoundersPC.Infrastructure.Identity.csproj" />
+    <ProjectReference Include="..\FoundersPC.API.Application\FoundersPC.API.Application.csproj" />
+    <ProjectReference Include="..\FoundersPC.API.Infrastructure\FoundersPC.API.Infrastructure.csproj" />
+    <ProjectReference Include="..\FoundersPC.API.Services\FoundersPC.API.Services.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
