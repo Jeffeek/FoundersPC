@@ -29,15 +29,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.ApplicationShare
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{764A5124-242E-4488-8D25-105C09FB2D31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.IdentityServer", "src\Identity\FoundersPC.IdentityServer\FoundersPC.IdentityServer.csproj", "{FB259913-F258-4ABE-88DA-A1C5855346C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.IdentityServer", "src\Identity\FoundersPC.IdentityServer\FoundersPC.IdentityServer.csproj", "{FB259913-F258-4ABE-88DA-A1C5855346C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Identity.Application", "src\Identity\FoundersPC.Identity.Application\FoundersPC.Identity.Application.csproj", "{3B068F63-7421-41C4-94BC-8A1358764A55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Identity.Application", "src\Identity\FoundersPC.Identity.Application\FoundersPC.Identity.Application.csproj", "{3B068F63-7421-41C4-94BC-8A1358764A55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Identity.Domain", "src\Identity\FoundersPC.Identity.Domain\FoundersPC.Identity.Domain.csproj", "{3017A8F6-BA08-49E8-BD15-36343DFE93A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Identity.Domain", "src\Identity\FoundersPC.Identity.Domain\FoundersPC.Identity.Domain.csproj", "{3017A8F6-BA08-49E8-BD15-36343DFE93A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Identity.Infrastructure", "src\Identity\FoundersPC.Identity.Infrastructure\FoundersPC.Identity.Infrastructure.csproj", "{D0246A37-A178-4AE0-A24E-DD2441DFF5C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Identity.Infrastructure", "src\Identity\FoundersPC.Identity.Infrastructure\FoundersPC.Identity.Infrastructure.csproj", "{D0246A37-A178-4AE0-A24E-DD2441DFF5C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Identity.Services", "src\Identity\FoundersPC.Identity.Services\FoundersPC.Identity.Services.csproj", "{40AF6242-605B-42C9-B13C-E4D8BFCDD498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Identity.Services", "src\Identity\FoundersPC.Identity.Services\FoundersPC.Identity.Services.csproj", "{40AF6242-605B-42C9-B13C-E4D8BFCDD498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.AuthorizationShared", "src\ApplicationShared\FoundersPC.AuthorizationShared\FoundersPC.AuthorizationShared.csproj", "{5A61956C-0C90-4AF3-9559-B16FC92EBCF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,10 +75,6 @@ Global
 		{C412260C-27FA-463D-B9A6-6582DE8559DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C412260C-27FA-463D-B9A6-6582DE8559DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C412260C-27FA-463D-B9A6-6582DE8559DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7B64725-5404-49A8-9C6D-F0867573CBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7B64725-5404-49A8-9C6D-F0867573CBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7B64725-5404-49A8-9C6D-F0867573CBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7B64725-5404-49A8-9C6D-F0867573CBD5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{87459B32-9AB3-4434-954A-0EF296ECF84C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{87459B32-9AB3-4434-954A-0EF296ECF84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87459B32-9AB3-4434-954A-0EF296ECF84C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -101,6 +99,10 @@ Global
 		{40AF6242-605B-42C9-B13C-E4D8BFCDD498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40AF6242-605B-42C9-B13C-E4D8BFCDD498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40AF6242-605B-42C9-B13C-E4D8BFCDD498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A61956C-0C90-4AF3-9559-B16FC92EBCF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A61956C-0C90-4AF3-9559-B16FC92EBCF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A61956C-0C90-4AF3-9559-B16FC92EBCF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A61956C-0C90-4AF3-9559-B16FC92EBCF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,7 +116,6 @@ Global
 		{E3552988-C878-458B-98E1-DF5FF73EBD7F} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
 		{230BB8A3-27F7-4FF0-98B2-D5FE3D7587C0} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
 		{C412260C-27FA-463D-B9A6-6582DE8559DD} = {230BB8A3-27F7-4FF0-98B2-D5FE3D7587C0}
-		{B7B64725-5404-49A8-9C6D-F0867573CBD5} = {230BB8A3-27F7-4FF0-98B2-D5FE3D7587C0}
 		{07572D40-804A-4325-848D-F8918A708396} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
 		{87459B32-9AB3-4434-954A-0EF296ECF84C} = {07572D40-804A-4325-848D-F8918A708396}
 		{764A5124-242E-4488-8D25-105C09FB2D31} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
@@ -123,6 +124,7 @@ Global
 		{3017A8F6-BA08-49E8-BD15-36343DFE93A6} = {764A5124-242E-4488-8D25-105C09FB2D31}
 		{D0246A37-A178-4AE0-A24E-DD2441DFF5C3} = {764A5124-242E-4488-8D25-105C09FB2D31}
 		{40AF6242-605B-42C9-B13C-E4D8BFCDD498} = {764A5124-242E-4488-8D25-105C09FB2D31}
+		{5A61956C-0C90-4AF3-9559-B16FC92EBCF8} = {07572D40-804A-4325-848D-F8918A708396}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {075268B3-89DC-4091-B71B-68483288E0A8}

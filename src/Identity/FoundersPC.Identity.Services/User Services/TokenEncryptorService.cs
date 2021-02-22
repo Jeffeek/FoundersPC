@@ -1,0 +1,30 @@
+﻿using System;
+using System.Security.Cryptography;
+using System.Text;
+using FoundersPC.Identity.Application.Interfaces.Services;
+
+namespace FoundersPC.Identity.Services.User_Services
+{
+    public class TokenEncryptorService : ITokenEncryptorService
+    {
+        public string Encrypt(string rawToken, string key)
+        {
+            var keyBytes = Encoding.Unicode.GetBytes(key);
+            var tokenBytes = Encoding.Unicode.GetBytes(rawToken);
+
+            using var hasher = new HMACSHA512(keyBytes);
+            var hashResult = hasher.ComputeHash(tokenBytes);
+
+            return Convert.ToBase64String(hashResult);
+        }
+
+        public string CreateRawToken()
+        {
+            var guid = Guid.NewGuid();
+
+            var rawToken = guid.ToString().Replace("-", String.Empty).ToUpperInvariant();
+
+            return rawToken;
+        }
+    }
+}

@@ -3,7 +3,6 @@
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Repositories;
 using FoundersPC.Identity.Infrastructure.Contexts;
-using Microsoft.EntityFrameworkCore;
 
 #endregion
 

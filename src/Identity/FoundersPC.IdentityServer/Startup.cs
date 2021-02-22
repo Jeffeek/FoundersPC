@@ -32,6 +32,7 @@ namespace FoundersPC.IdentityServer
             services.AddUserApplicationExtensions();
 
             services.AddAuthentication();
+
             services.AddAuthorization();
 
             services.AddSwaggerGen(c =>

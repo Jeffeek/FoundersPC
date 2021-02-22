@@ -1,11 +1,13 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.ApplicationShared.Identity;
 using FoundersPC.Identity.Domain.Common.Interfaces;
+using FoundersPC.Identity.Domain.Entities.Tokens;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -37,6 +39,10 @@ namespace FoundersPC.Identity.Domain.Entities
 
         [ForeignKey(nameof(RoleId))]
         public RoleEntity Role { get; set; }
+
+        public ICollection<ApiAccessUserToken> Tokens { get; set; }
+
+        public ICollection<UserEntranceLog> Entrances { get; set; }
 
         public bool Equals(UserEntity other) => Email == other?.Email;
 

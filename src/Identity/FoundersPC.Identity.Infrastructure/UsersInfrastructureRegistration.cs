@@ -20,6 +20,11 @@ namespace FoundersPC.Identity.Infrastructure
             services.AddScoped<IRolesRepository, RolesRepository>();
         }
 
+        public static void AddUsersAndTokenLogsRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<I>()
+        }
+
         public static void AddUsersIdentityUnitOfWork(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWorkUsersIdentity, UnitOfWorkUsersIdentity>();

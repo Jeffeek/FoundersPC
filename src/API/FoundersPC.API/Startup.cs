@@ -36,6 +36,9 @@ namespace FoundersPC.API
             //
             services.AddHardwareApplicationExtensions();
 
+            services.AddAuthentication();
+            services.AddAuthorization();
+
             services.AddApiVersioning(options =>
                                       {
                                           options.AssumeDefaultVersionWhenUnspecified = true;

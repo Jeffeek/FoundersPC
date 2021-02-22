@@ -1,6 +1,8 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.Repository;
 using FoundersPC.Identity.Application.Interfaces.Repositories;
@@ -20,5 +22,13 @@ namespace FoundersPC.Identity.Infrastructure.Repositories
             await Context.Set<UserEntity>()
                          .Include(user => user.Role)
                          .ToListAsync();
+
+        public async Task<UserEntity> GetBy(Expression<Func<UserEntity, bool>> predicate)
+        {
+            await Context.Set<UserEntity>().LoadAsync();
+            var user = await Context.Set<UserEntity>().FirstOrDefaultAsync(predicate);
+
+            return user;
+        }
     }
 }

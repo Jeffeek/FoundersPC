@@ -15,6 +15,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("api/cpus")]
+    [Authorize]
     public class CPUController : ControllerBase
     {
         private readonly ICPUService _cpuService;
@@ -26,9 +27,14 @@ namespace FoundersPC.API.Controllers.V1
             _mapper = mapper;
         }
 
+        [Authorize(Roles = "Admin,Manager,DefaultUser")]
+        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() => Ok(await _cpuService.GetAllCPUsAsync());
+        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() =>
+            Ok(await _cpuService.GetAllCPUsAsync());
 
+        [Authorize(Roles = "Admin,Manager,DefaultUser")]
+        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<CPUReadDto>> Get(int? id)
         {
@@ -36,12 +42,13 @@ namespace FoundersPC.API.Controllers.V1
 
             var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
 
-            if (cpu == null) return NotFound();
+            if (cpu == null) return NotFound(id);
 
             return Ok(cpu);
         }
 
-        //[Authorize(Policy = "Administrator")]
+        [Authorize(Roles = "Admin,Manager")]
+        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert(CPUInsertDto cpu)
         {
@@ -52,7 +59,8 @@ namespace FoundersPC.API.Controllers.V1
             return !insertResult ? Problem() : Ok(cpu);
         }
 
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Admin,Manager")]
+        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, CPUUpdateDto cpu)
         {
@@ -67,6 +75,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Roles = "Administrator")]
+        [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)
         {
@@ -80,22 +89,5 @@ namespace FoundersPC.API.Controllers.V1
 
             return result ? Ok(readCpu) : Problem();
         }
-
-        //TODO: Works, but need to close a dependency between grabbing a full list of objects from service. And just send a ready "Update" object
-        //[HttpPatch("{id}")]
-        //public async Task<ActionResult> PartialUpdate(int? id, JsonPatchDocument<CPUUpdateDto> patchDocument)
-        //{
-        //	if (!id.HasValue) return BadRequest(nameof(id));
-        //	var readDto = await _cpuService.GetCPUByIdAsync(id.Value);
-        //	if (readDto == null) return NotFound(id);
-
-        //	var cpuToPatch = _mapper.Map<CPUUpdateDto>(readDto);
-        //	patchDocument.ApplyTo(cpuToPatch, ModelState);
-        //	if (!TryValidateModel(cpuToPatch)) return ValidationProblem(ModelState);
-
-        //	var result = await _cpuService.UpdateCPU(id.Value, cpuToPatch);
-        //	if (!result) return Problem("Database has not changed");
-        //	return Ok();
-        //}
     }
 }

@@ -1,17 +1,10 @@
 #region Using namespaces
 
-using System.Text;
-using System.Threading.Tasks;
-using FoundersPC.Web.Data;
-using FoundersPC.Web.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
@@ -21,43 +14,10 @@ namespace FoundersPC.Web
     {
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            JwtSettings.Initialize(Configuration);
-
-            services.AddDbContext<ApplicationDbContext>(options =>
-                                                            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddAuthentication("OAuth")
-                    .AddJwtBearer("OAuth",
-                                  config =>
-                                  {
-                                      var secretBytes = Encoding.UTF8.GetBytes(JwtSettings.SecretKey);
-
-                                      var key = new SymmetricSecurityKey(secretBytes);
-
-                                      config.Events = new JwtBearerEvents
-                                                      {
-                                                          OnMessageReceived = context =>
-                                                                              {
-                                                                                  if (context.Request.Query.ContainsKey("token"))
-                                                                                      context.Token = context.Request.Query["token"];
-
-                                                                                  return Task.CompletedTask;
-                                                                              }
-                                                      };
-
-                                      config.TokenValidationParameters = new TokenValidationParameters
-                                                                         {
-                                                                             ValidateAudience = false,
-                                                                             ValidIssuer = JwtSettings.Issuer,
-                                                                             ValidAudience = JwtSettings.Audience,
-                                                                             IssuerSigningKey = key
-                                                                         };
-                                  });
-
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddControllersWithViews();
@@ -74,8 +34,6 @@ namespace FoundersPC.Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

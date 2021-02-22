@@ -4,6 +4,12 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <a >Login</a>
-    <a >Register</a>
+    <form asp-action="Authorize" asp-controller="Login" method="post">
+        <span>Email</span>
+        <input name="LoginOrEmail">
+        <span>Password</span>
+        <input name="RawPassword">
+        <button asp-action="Authorize" asp-controller="Login" type="submit">Login</button>
+    </form>
+    <a asp-action="Index" asp-controller="Register">Register</a>
 </div>

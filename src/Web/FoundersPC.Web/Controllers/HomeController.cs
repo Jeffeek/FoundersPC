@@ -1,13 +1,9 @@
 ﻿#region Using namespaces
 
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using FoundersPC.Web.Models;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using FoundersPC.AuthorizationShared;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
@@ -15,34 +11,20 @@ namespace FoundersPC.Web.Controllers
 {
     public sealed class HomeController : Controller
     {
-        public IActionResult Index() => View();
+        public HomeController() { }
 
-        public IActionResult Authenticate()
+        public ActionResult Index() => View();
+
+        public async Task<ActionResult<UserAuthorizationResponse>> Authenticate(UserAuthorizationRequest request)
         {
-            // find user
+            var user =
+                await ApplicationMicroservicesContext.IdentityServerClient.GetFromJsonAsync<UserAuthorizationResponse>("AuthorizationAPI/signin");
 
-            var claims = new List<Claim>
-                         {
-                             new(JwtRegisteredClaimNames.Sub, "Arcadiy"),
-                             new(JwtRegisteredClaimNames.Email, "arc@mail.com")
-                         };
+            if (ReferenceEquals(user, null)) return NotFound(request);
 
-            var secretBytes = Encoding.UTF8.GetBytes(JwtSettings.SecretKey);
+            if (user.IsUserBlocked) return Problem(detail : "User us blocked");
 
-            var key = new SymmetricSecurityKey(secretBytes);
-
-            var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(JwtSettings.Issuer,
-                                             JwtSettings.Audience,
-                                             claims,
-                                             DateTime.Now,
-                                             DateTime.Now.AddMinutes(60),
-                                             signingCredentials);
-
-            var value = new JwtSecurityTokenHandler().WriteToken(token);
-
-            ViewBag.Token = value;
+            ViewBag.Token = user.Token;
 
             return View();
         }
