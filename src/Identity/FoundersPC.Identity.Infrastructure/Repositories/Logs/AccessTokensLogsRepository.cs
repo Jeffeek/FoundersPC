@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.Repository;
-using FoundersPC.Identity.Application.Interfaces.Repositories;
-using FoundersPC.Identity.Domain.Entities;
+using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
+using FoundersPC.Identity.Domain.Entities.Logs;
+using FoundersPC.Identity.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace FoundersPC.Identity.Infrastructure.Repositories
+namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 {
     public class AccessTokensLogsRepository : GenericRepositoryAsync<AccessTokenLog>, IAccessTokensLogsRepository
     {
-        public AccessTokensLogsRepository(DbContext context) : base(context) { }
+        public AccessTokensLogsRepository(FoundersPCUsersContext context) : base(context) { }
 
-        public Task<IEnumerable<AccessTokenLog>> GetAllAsync() => throw new NotImplementedException();
+        public async Task<IEnumerable<AccessTokenLog>> GetAllAsync() =>
+            await Context.Set<AccessTokenLog>()
+                         .Include(log => log.ApiAccessToken)
+                         .ToListAsync();
     }
 }

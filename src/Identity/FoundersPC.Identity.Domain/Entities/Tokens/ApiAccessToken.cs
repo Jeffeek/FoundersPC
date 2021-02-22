@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using FoundersPC.ApplicationShared.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace FoundersPC.Identity.Domain.Entities
+namespace FoundersPC.Identity.Domain.Entities.Tokens
 {
     [Index(nameof(Id))]
     public class ApiAccessToken : IdentityItem, IEquatable<ApiAccessToken>

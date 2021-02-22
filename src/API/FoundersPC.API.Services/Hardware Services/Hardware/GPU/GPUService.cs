@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
-using FoundersPC.API.Infrastructure.UoW;
+using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
 

@@ -6,7 +6,7 @@ using AutoMapper;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.API.Domain.Entities.Hardware.Processor;
-using FoundersPC.API.Infrastructure.UoW;
+using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
 

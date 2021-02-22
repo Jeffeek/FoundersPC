@@ -1,7 +1,9 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.Identity.Application.Interfaces.Repositories;
+using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
+using FoundersPC.Identity.Application.Interfaces.Repositories.Tokens;
+using FoundersPC.Identity.Application.Interfaces.Repositories.Users;
 using FoundersPC.Identity.Infrastructure.Contexts;
 
 #endregion
@@ -14,13 +16,29 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 
         public UnitOfWorkUsersIdentity(IUsersRepository usersRepository,
                                        IRolesRepository rolesRepository,
-                                       FoundersPCUsersContext context
+                                       FoundersPCUsersContext context,
+                                       IAccessTokensLogsRepository accessTokensLogsRepository,
+                                       IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
+                                       IApiAccessTokensRepository apiAccessTokensRepository,
+                                       IApiAccessUsersTokensRepository apiAccessUsersTokensRepository
         )
         {
             _context = context;
+            AccessTokensLogsRepository = accessTokensLogsRepository;
+            UsersEntrancesLogsRepository = usersEntrancesLogsRepository;
+            ApiAccessTokensRepository = apiAccessTokensRepository;
+            ApiAccessUsersTokensRepository = apiAccessUsersTokensRepository;
             UsersRepository = usersRepository;
             RolesRepository = rolesRepository;
         }
+
+        public IAccessTokensLogsRepository AccessTokensLogsRepository { get; }
+
+        public IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
+
+        public IApiAccessTokensRepository ApiAccessTokensRepository { get; }
+
+        public IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
 
         public IUsersRepository UsersRepository { get; }
 
@@ -28,7 +46,7 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 
         public async Task<int> SaveChangesAsync()
         {
-            var saveChangesResult = 0;
+            int saveChangesResult;
             try
             {
                 saveChangesResult = await _context.SaveChangesAsync();

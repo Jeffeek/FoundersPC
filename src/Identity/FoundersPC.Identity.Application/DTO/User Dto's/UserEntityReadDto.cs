@@ -12,10 +12,10 @@ namespace FoundersPC.Identity.Application.DTO
 
         public bool IsBlocked { get; set; }
 
-        public RoleEntityReadDto Role { get; set; }
-
         public string Email { get; set; }
 
         public string HashedPassword { get; set; }
+
+        public RoleEntityReadDto Role { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using FoundersPC.ApplicationShared.Identity;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using Microsoft.EntityFrameworkCore;
 
-namespace FoundersPC.Identity.Domain.Entities
+namespace FoundersPC.Identity.Domain.Entities.Logs
 {
     [Index(nameof(Id))]
     public class AccessTokenLog : IdentityItem, IEquatable<AccessTokenLog>

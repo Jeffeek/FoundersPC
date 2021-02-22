@@ -4,11 +4,11 @@ using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.Repository;
-using FoundersPC.Identity.Domain.Entities;
+using FoundersPC.Identity.Domain.Entities.Users;
 
 #endregion
 
-namespace FoundersPC.Identity.Application.Interfaces.Repositories
+namespace FoundersPC.Identity.Application.Interfaces.Repositories.Users
 {
     public interface IUsersRepository : IRepositoryAsync<UserEntity>
     {

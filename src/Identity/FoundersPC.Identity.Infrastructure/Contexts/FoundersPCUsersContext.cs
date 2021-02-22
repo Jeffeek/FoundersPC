@@ -1,7 +1,8 @@
 ﻿#region Using namespaces
 
-using FoundersPC.Identity.Domain.Entities;
+using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
+using FoundersPC.Identity.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
 #endregion

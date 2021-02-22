@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Security.Cryptography;
-using FoundersPC.Identity.Application.Interfaces.Services;
+using System.Text;
+using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 
-namespace FoundersPC.Identity.Services.User_Services
+namespace FoundersPC.Identity.Services.Encryption_Services
 {
     public class PasswordEncryptorService : IPasswordEncryptorService
     {
@@ -11,7 +12,7 @@ namespace FoundersPC.Identity.Services.User_Services
             if (ReferenceEquals(rawPassword, null)) throw new ArgumentNullException(nameof(rawPassword));
 
             var hasher = SHA512.Create();
-            var buffer = new byte[64];
+            var buffer = Encoding.Unicode.GetBytes(rawPassword);
             var hash = hasher.ComputeHash(buffer);
 
             return Convert.ToBase64String(hash);

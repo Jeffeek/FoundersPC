@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.ApplicationShared.Identity;
+using FoundersPC.Identity.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Domain.Entities.Tokens

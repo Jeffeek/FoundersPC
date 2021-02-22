@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using FoundersPC.Identity.Application.Interfaces.Services;
+using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 
-namespace FoundersPC.Identity.Services.User_Services
+namespace FoundersPC.Identity.Services.Encryption_Services
 {
     public class TokenEncryptorService : ITokenEncryptorService
     {

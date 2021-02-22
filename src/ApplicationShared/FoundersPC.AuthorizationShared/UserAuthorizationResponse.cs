@@ -2,12 +2,12 @@
 {
     public class UserAuthorizationResponse
     {
-        public bool IsUserExists { get; set; }
+        public bool IsUserExists { get; set; } = false;
 
-        public bool IsUserBlocked { get; set; }
+        public bool IsUserBlocked { get; set; } = false;
 
-        public string Email { get; set; } = null;
+        public string EmailOrLogin { get; set; } = null;
 
-        public string Token { get; set; } = null;
+        public string RoleTitle { get; set; } = "None";
     }
 }

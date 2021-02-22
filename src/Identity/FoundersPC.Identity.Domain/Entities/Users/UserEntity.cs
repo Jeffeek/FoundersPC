@@ -7,12 +7,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.ApplicationShared.Identity;
 using FoundersPC.Identity.Domain.Common.Interfaces;
+using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace FoundersPC.Identity.Domain.Entities
+namespace FoundersPC.Identity.Domain.Entities.Users
 {
     [Index(nameof(Id))]
     public class UserEntity : IdentityItem, IUser, IEquatable<UserEntity>

@@ -1,6 +1,8 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -22,11 +24,29 @@ namespace FoundersPC.ApplicationShared.Repository
             return entity;
         }
 
-        public virtual async Task<T> GetByIdAsync(int id) => await Context.Set<T>().FindAsync(id);
+        public virtual async Task<T> GetByIdAsync(int id)
+        {
+            var entity = await Context.Set<T>().FindAsync(id);
+            await Context.Entry(entity).ReloadAsync();
+
+            return entity;
+        }
+
+        public virtual async Task<IEnumerable<T>> GetAllAsync()
+        {
+            await Context.Set<T>().LoadAsync();
+
+            return await Context.Set<T>().ToListAsync();
+        }
 
         public virtual async Task<bool> AnyAsync(T entity) => await Context.Set<T>().AnyAsync(x => x.Equals(entity));
 
-        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) => await Context.Set<T>().AnyAsync(predicate);
+        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            var entities = await GetAllAsync();
+
+            return entities.Any(predicate.Compile());
+        }
 
         public virtual async Task<bool> UpdateAsync(T entity)
         {

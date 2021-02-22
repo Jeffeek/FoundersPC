@@ -1,7 +1,7 @@
 ﻿using FoundersPC.ApplicationShared.Repository;
-using FoundersPC.Identity.Domain.Entities;
+using FoundersPC.Identity.Domain.Entities.Logs;
 
-namespace FoundersPC.Identity.Application.Interfaces.Repositories
+namespace FoundersPC.Identity.Application.Interfaces.Repositories.Logs
 {
     public interface IAccessTokensLogsRepository : IRepositoryAsync<AccessTokenLog> { }
 }

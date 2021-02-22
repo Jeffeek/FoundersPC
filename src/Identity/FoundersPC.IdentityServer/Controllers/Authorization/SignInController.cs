@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.AuthorizationShared;
 using FoundersPC.Identity.Application.DTO;
-using FoundersPC.Identity.Application.Interfaces.Services;
+using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 
 namespace FoundersPC.IdentityServer.Controllers.Authorization
 {
@@ -14,9 +14,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authorization
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
 
-        public SignInController(IUserService userService,
-                                IMapper mapper
-        )
+        public SignInController(IUserService userService, IMapper mapper)
         {
             _userService = userService;
             _mapper = mapper;
@@ -32,18 +30,17 @@ namespace FoundersPC.IdentityServer.Controllers.Authorization
             if (ReferenceEquals(user, null))
                 return new UserAuthorizationResponse()
                        {
-                           Email = request.LoginOrEmail,
-                           IsUserExists = false
+                           EmailOrLogin = request.LoginOrEmail,
+                           IsUserExists = false,
+                           IsUserBlocked = false,
+                           RoleTitle = "None"
                        };
 
             var mappedUser = _mapper.Map<UserEntityReadDto, UserAuthorizationResponse>(user);
+            mappedUser.IsUserExists = true;
+            mappedUser.EmailOrLogin = user.Email;
 
-            return new UserAuthorizationResponse()
-                   {
-                       Email = user.Email,
-                       IsUserBlocked = user.IsBlocked,
-                       IsUserExists = true
-                   };
+            return mappedUser;
         }
     }
 }

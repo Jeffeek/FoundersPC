@@ -22,13 +22,12 @@
     },
     "FoundersPC.IdentityServer": {
       "commandName": "Project",
-      "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": "true",
-      "applicationUrl": "https://localhost:5010;http://localhost:5011"
+      "applicationUrl": "https://localhost:5010"
     }
   }
 }

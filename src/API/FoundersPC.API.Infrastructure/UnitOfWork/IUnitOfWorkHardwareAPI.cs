@@ -8,7 +8,7 @@ using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
 
 #endregion
 
-namespace FoundersPC.API.Infrastructure.UoW
+namespace FoundersPC.API.Infrastructure.UnitOfWork
 {
     public interface IUnitOfWorkHardwareAPI
     {

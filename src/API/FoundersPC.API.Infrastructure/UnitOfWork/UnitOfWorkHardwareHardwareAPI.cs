@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace FoundersPC.API.Infrastructure.UoW
+namespace FoundersPC.API.Infrastructure.UnitOfWork
 {
     public class UnitOfWorkHardwareHardwareAPI : IUnitOfWorkHardwareAPI
     {

@@ -8,7 +8,7 @@ using FoundersPC.Identity.Domain.Common.Interfaces;
 
 #endregion
 
-namespace FoundersPC.Identity.Domain.Entities
+namespace FoundersPC.Identity.Domain.Entities.Users
 {
     public class RoleEntity : IdentityItem, IRole, IEquatable<RoleEntity>
     {

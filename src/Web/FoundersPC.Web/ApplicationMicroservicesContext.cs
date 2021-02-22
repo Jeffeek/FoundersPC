@@ -16,7 +16,7 @@ namespace FoundersPC.Web
 
         static ApplicationMicroservicesContext()
         {
-            IdentityServerClient.BaseAddress = new Uri("https://localhost:44349/");
+            IdentityServerClient.BaseAddress = new Uri("https://localhost:5010/");
             IdentityServerClient.DefaultRequestHeaders.Clear();
             IdentityServerClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             IdentityServerClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

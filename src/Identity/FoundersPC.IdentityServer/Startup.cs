@@ -26,13 +26,21 @@ namespace FoundersPC.IdentityServer
             services.AddControllers();
 
             services.AddUsersRepository();
+            services.AddApiAccessTokensRepositories();
+            services.AddUsersAndTokenLogsRepositories();
+
             services.AddUsersIdentityUnitOfWork();
+
             services.AddFoundersPCUsersContext(Configuration);
+
+            services.AddEncryptionServices();
+            services.AddLogsServices();
+            services.AddTokenServices();
             services.AddUsersIdentityServices();
+
             services.AddUserApplicationExtensions();
 
             services.AddAuthentication();
-
             services.AddAuthorization();
 
             services.AddSwaggerGen(c =>

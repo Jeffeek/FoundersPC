@@ -1,5 +1,6 @@
 #region Using namespaces
 
+using FoundersPC.AuthorizationShared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,8 @@ namespace FoundersPC.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<TokenConfiguration>();
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddControllersWithViews();

@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.Identity.Application.Interfaces.Services
+﻿namespace FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services
 {
     public interface ITokenEncryptorService
     {

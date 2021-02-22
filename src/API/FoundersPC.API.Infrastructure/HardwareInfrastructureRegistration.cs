@@ -10,7 +10,7 @@ using FoundersPC.API.Infrastructure.Repositories.Hardware;
 using FoundersPC.API.Infrastructure.Repositories.Hardware.CPU;
 using FoundersPC.API.Infrastructure.Repositories.Hardware.GPU;
 using FoundersPC.API.Infrastructure.Repositories.Hardware.Memory;
-using FoundersPC.API.Infrastructure.UoW;
+using FoundersPC.API.Infrastructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

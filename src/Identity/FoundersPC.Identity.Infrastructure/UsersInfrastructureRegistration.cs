@@ -1,8 +1,12 @@
 ﻿#region Using namespaces
 
-using FoundersPC.Identity.Application.Interfaces.Repositories;
+using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
+using FoundersPC.Identity.Application.Interfaces.Repositories.Tokens;
+using FoundersPC.Identity.Application.Interfaces.Repositories.Users;
 using FoundersPC.Identity.Infrastructure.Contexts;
-using FoundersPC.Identity.Infrastructure.Repositories;
+using FoundersPC.Identity.Infrastructure.Repositories.Logs;
+using FoundersPC.Identity.Infrastructure.Repositories.Tokens;
+using FoundersPC.Identity.Infrastructure.Repositories.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,9 +24,16 @@ namespace FoundersPC.Identity.Infrastructure
             services.AddScoped<IRolesRepository, RolesRepository>();
         }
 
+        public static void AddApiAccessTokensRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<IApiAccessTokensRepository, ApiAccessTokensRepository>();
+            services.AddScoped<IApiAccessUsersTokensRepository, ApiAccessUsersTokensRepository>();
+        }
+
         public static void AddUsersAndTokenLogsRepositories(this IServiceCollection services)
         {
-            services.AddScoped<I>()
+            services.AddScoped<IUsersEntrancesLogsRepository, UsersEntrancesLogsRepository>();
+            services.AddScoped<IAccessTokensLogsRepository, AccessTokensLogsRepository>();
         }
 
         public static void AddUsersIdentityUnitOfWork(this IServiceCollection services)
