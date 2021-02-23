@@ -12,7 +12,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
     {
         public AccessTokensLogsRepository(FoundersPCUsersContext context) : base(context) { }
 
-        public async Task<IEnumerable<AccessTokenLog>> GetAllAsync() =>
+        public override async Task<IEnumerable<AccessTokenLog>> GetAllAsync() =>
             await Context.Set<AccessTokenLog>()
                          .Include(log => log.ApiAccessToken)
                          .ToListAsync();

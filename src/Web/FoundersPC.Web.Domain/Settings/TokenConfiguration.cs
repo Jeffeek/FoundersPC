@@ -1,11 +1,10 @@
 ﻿#region Using namespaces
 
-using Microsoft.Extensions.Configuration;
-
 #endregion
 
+using Microsoft.Extensions.Configuration;
 
-namespace FoundersPC.AuthorizationShared
+namespace FoundersPC.Web.Domain.Settings
 {
     public class TokenConfiguration
     {
@@ -13,7 +12,7 @@ namespace FoundersPC.AuthorizationShared
 
         public TokenConfiguration(IConfiguration configuration)
         {
-            HashTokenKey = configuration["TokenConfiguration:Audience"];
+            HashTokenKey = configuration["TokenConfiguration:HashTokenKey"];
         }
     }
 }

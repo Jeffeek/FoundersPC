@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.AuthorizationShared\FoundersPC.AuthorizationShared.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.AuthenticationShared\FoundersPC.AuthenticationShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Identity.Infrastructure\FoundersPC.Identity.Infrastructure.csproj" />
     <ProjectReference Include="..\FoundersPC.Identity.Services\FoundersPC.Identity.Services.csproj" />
   </ItemGroup>

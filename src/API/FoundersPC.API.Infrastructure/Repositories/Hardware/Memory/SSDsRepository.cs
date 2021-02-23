@@ -20,7 +20,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
         #region Implementation of ISSDsRepositoryAsync
 
         /// <inheritdoc />
-        public async Task<IEnumerable<SSD>> GetAllAsync()
+        public override async Task<IEnumerable<SSD>> GetAllAsync()
         {
             return await Context.Set<SSD>()
                                 .Include(ssd => ssd.Producer)

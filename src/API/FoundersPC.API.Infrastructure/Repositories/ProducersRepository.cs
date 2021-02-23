@@ -46,7 +46,7 @@ namespace FoundersPC.API.Infrastructure.Repositories
                                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Producer>> GetAllAsync() => await Context.Set<Producer>().ToListAsync();
+        public override async Task<IEnumerable<Producer>> GetAllAsync() => await Context.Set<Producer>().ToListAsync();
 
         #endregion
     }

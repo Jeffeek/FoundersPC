@@ -19,14 +19,12 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
                                        FoundersPCUsersContext context,
                                        IAccessTokensLogsRepository accessTokensLogsRepository,
                                        IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
-                                       IApiAccessTokensRepository apiAccessTokensRepository,
                                        IApiAccessUsersTokensRepository apiAccessUsersTokensRepository
         )
         {
             _context = context;
             AccessTokensLogsRepository = accessTokensLogsRepository;
             UsersEntrancesLogsRepository = usersEntrancesLogsRepository;
-            ApiAccessTokensRepository = apiAccessTokensRepository;
             ApiAccessUsersTokensRepository = apiAccessUsersTokensRepository;
             UsersRepository = usersRepository;
             RolesRepository = rolesRepository;
@@ -35,8 +33,6 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
         public IAccessTokensLogsRepository AccessTokensLogsRepository { get; }
 
         public IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
-
-        public IApiAccessTokensRepository ApiAccessTokensRepository { get; }
 
         public IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
 

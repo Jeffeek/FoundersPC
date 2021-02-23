@@ -20,7 +20,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var allTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllAsync();
 
-            var tokenEntity = allTokens.FirstOrDefault(t => t.Token.HashedToken == token);
+            var tokenEntity = allTokens.FirstOrDefault(t => t.HashedToken == token);
 
             if (ReferenceEquals(tokenEntity, null)) throw new KeyNotFoundException(nameof(tokenEntity));
 
@@ -31,7 +31,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var allTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllAsync();
 
-            var tokenEntity = allTokens.FirstOrDefault(t => t.Token.HashedToken == token);
+            var tokenEntity = allTokens.FirstOrDefault(t => t.HashedToken == token);
 
             if (ReferenceEquals(tokenEntity, null)) throw new KeyNotFoundException(nameof(tokenEntity));
 
@@ -42,7 +42,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
 
-            var tokenEntity = allLogs.SingleOrDefault(log => log.ApiAccessToken.Token.HashedToken == token);
+            var tokenEntity = allLogs.SingleOrDefault(log => log.ApiAccessToken.HashedToken == token);
 
             if (ReferenceEquals(tokenEntity, null)) return false;
 

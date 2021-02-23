@@ -20,7 +20,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
         #region Implementation of ICasesRepositoryAsync
 
         /// <inheritdoc />
-        public async Task<IEnumerable<Case>> GetAllAsync()
+        public override async Task<IEnumerable<Case>> GetAllAsync()
         {
             return await Context.Set<Case>()
                                 .Include(@case => @case.Producer)

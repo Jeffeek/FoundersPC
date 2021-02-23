@@ -1,22 +1,4 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <form asp-action="Authorize" asp-controller="Login" method="post">
-        <span>Email Or Login</span>
-        <input name="LoginOrEmail">
-        <span>Password</span>
-        <input name="RawPassword">
-        <button asp-action="Authorize" asp-controller="Login" type="submit">Login</button>
-    </form>
-    <hr/>
-    <form asp-action="Register" asp-controller="Register" method="post">
-        <span>Email</span>
-        <input name="Email">
-        <span>Password</span>
-        <input name="RawPassword">
-        <button type="submit">Register</button>
-    </form>
-</div>

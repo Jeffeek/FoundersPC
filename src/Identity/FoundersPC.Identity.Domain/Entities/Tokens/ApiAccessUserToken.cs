@@ -11,11 +11,10 @@ namespace FoundersPC.Identity.Domain.Entities.Tokens
     [Index(nameof(Id))]
     public class ApiAccessUserToken : IdentityItem, IEquatable<ApiAccessUserToken>
     {
-        [ForeignKey(nameof(ApiAccessTokenId))]
-        public ApiAccessToken Token { get; set; }
-
         [Required]
-        public int ApiAccessTokenId { get; set; }
+        [MaxLength(88)]
+        [MinLength(88)]
+        public string HashedToken { get; set; }
 
         [ForeignKey(nameof(UserId))]
         public UserEntity User { get; set; }
@@ -38,8 +37,7 @@ namespace FoundersPC.Identity.Domain.Entities.Tokens
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return ApiAccessTokenId == other.ApiAccessTokenId
-                   && UserId == other.UserId
+            return UserId == other.UserId
                    && StartEvaluationDate.Equals(other.StartEvaluationDate)
                    && ExpirationDate.Equals(other.ExpirationDate)
                    && IsBlocked == other.IsBlocked;
@@ -54,8 +52,7 @@ namespace FoundersPC.Identity.Domain.Entities.Tokens
             return Equals((ApiAccessUserToken)obj);
         }
 
-        public override int GetHashCode() => HashCode.Combine(ApiAccessTokenId,
-                                                              UserId,
+        public override int GetHashCode() => HashCode.Combine(UserId,
                                                               StartEvaluationDate,
                                                               ExpirationDate,
                                                               IsBlocked);

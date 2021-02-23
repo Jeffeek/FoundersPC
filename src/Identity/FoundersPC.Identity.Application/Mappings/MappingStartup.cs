@@ -1,8 +1,9 @@
 ﻿#region Using namespaces
 
 using AutoMapper;
-using FoundersPC.AuthorizationShared;
+using FoundersPC.AuthenticationShared;
 using FoundersPC.Identity.Application.DTO;
+using FoundersPC.Identity.Application.DTO.Response;
 using FoundersPC.Identity.Domain.Entities.Users;
 
 #endregion
@@ -16,13 +17,15 @@ namespace FoundersPC.Identity.Application.Mappings
             CreateMap<RoleEntity, RoleEntityReadDto>().ReverseMap();
             CreateMap<UserEntity, UserEntityReadDto>().ReverseMap();
 
-            CreateMap<UserEntityReadDto, UserAuthorizationResponse>()
+            CreateMap<UserEntityReadDto, UserLoginResponse>()
                 .ForMember(dest => dest.IsUserBlocked,
                            source => source
                                .MapFrom(x => x.IsBlocked))
-                .ForMember(dest => dest.RoleTitle,
+                .ForMember(dest => dest.Role,
                            source => source
-                               .MapFrom(x => x.Role.RoleTitle));
+                               .MapFrom(x => x.Role.RoleTitle))
+                .ForMember(dest => dest.IsUserActive,
+                           source => source.MapFrom(x => x.IsActive));
         }
     }
 }

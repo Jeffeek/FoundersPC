@@ -12,7 +12,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
     {
         public UsersEntrancesLogsRepository(FoundersPCUsersContext context) : base(context) { }
 
-        public async Task<IEnumerable<UserEntranceLog>> GetAllAsync() =>
+        public override async Task<IEnumerable<UserEntranceLog>> GetAllAsync() =>
             await Context.Set<UserEntranceLog>()
                          .Include(log => log.User)
                          .ThenInclude(user => user.Role)

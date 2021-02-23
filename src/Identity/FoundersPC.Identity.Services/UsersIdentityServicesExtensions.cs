@@ -35,7 +35,6 @@ namespace FoundersPC.Identity.Services
 
         public static void AddTokenServices(this IServiceCollection services)
         {
-            services.AddTransient<IApiAccessTokensService, ApiAccessTokensService>();
             services.AddTransient<IApiAccessUsersTokensService, ApiAccessUsersTokensService>();
         }
     }

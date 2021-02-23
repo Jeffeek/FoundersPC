@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand text-white"><img src="~/img/computer.svg" alt="">FoundersPC</a>
+    @{
+        if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <a class="navbar-brand btn btn-outline-danger my-2 my-sm-0" asp-controller="Login" asp-action="LogOut">Logout</a>
+        }
+        else
+        {
+            <a class="navbar-brand btn btn-outline-success my-2 my-sm-0" asp-controller="Login" asp-action="LoginIndex">LogIn</a>
+        }
+    } 
+</nav>
+<div class="container modal-body">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>FoundersPC</p>
+    </footer>
+</div>
+</body>
+</html>

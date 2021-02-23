@@ -19,7 +19,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
         #region Implementation of IGPUsRepositoryAsync
 
         /// <inheritdoc />
-        public async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()
+        public override async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()
         {
             return await Context
                          .Set<Domain.Entities.Hardware.VideoCard.GPU>()

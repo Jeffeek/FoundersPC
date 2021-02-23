@@ -12,9 +12,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
     {
         public ApiAccessUsersTokensRepository(FoundersPCUsersContext context) : base(context) { }
 
-        public async Task<IEnumerable<ApiAccessUserToken>> GetAllAsync() =>
+        public override async Task<IEnumerable<ApiAccessUserToken>> GetAllAsync() =>
             await Context.Set<ApiAccessUserToken>()
-                         .Include(token => token.Token)
                          .Include(token => token.User)
                          .ThenInclude(user => user.Role)
                          .ToListAsync();

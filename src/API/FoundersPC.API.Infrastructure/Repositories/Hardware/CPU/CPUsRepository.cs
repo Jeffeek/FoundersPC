@@ -19,7 +19,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.CPU
         #region Implementation of ICPUsRepositoryAsync
 
         /// <inheritdoc />
-        public async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync()
+        public override async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync()
         {
             return await Context
                          .Set<Domain.Entities.Hardware.Processor.CPU>()

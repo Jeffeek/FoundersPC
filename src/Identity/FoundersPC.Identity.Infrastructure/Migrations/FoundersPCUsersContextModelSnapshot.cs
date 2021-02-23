@@ -4,6 +4,7 @@ using FoundersPC.Identity.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoundersPC.Identity.Infrastructure.Migrations
 {
@@ -18,7 +19,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.AccessTokenLog", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.AccessTokenLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,7 +42,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.ToTable("TokenAccessLogs");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.ApiAccessToken", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.UserEntranceLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,19 +50,22 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                         .HasColumnName("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("HashedToken")
-                        .IsRequired()
-                        .HasMaxLength(88)
-                        .HasColumnType("nvarchar(88)");
+                    b.Property<DateTime>("Entrance")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Id");
 
-                    b.ToTable("ApiTokens");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserEntranceLog");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.ApiAccessUserToken", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -69,11 +73,13 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                         .HasColumnName("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ApiAccessTokenId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ExpirationDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("HashedToken")
+                        .IsRequired()
+                        .HasMaxLength(88)
+                        .HasColumnType("nvarchar(88)");
 
                     b.Property<bool>("IsBlocked")
                         .HasColumnType("bit");
@@ -86,8 +92,6 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApiAccessTokenId");
-
                     b.HasIndex("Id");
 
                     b.HasIndex("UserId");
@@ -95,7 +99,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.ToTable("UsersTokens");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.RoleEntity", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.RoleEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,7 +116,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.UserEntity", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.UserEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -155,32 +159,9 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.UserEntranceLog", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.AccessTokenLog", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Entrance")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserEntranceLog");
-                });
-
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.AccessTokenLog", b =>
-                {
-                    b.HasOne("FoundersPC.Identity.Domain.Entities.ApiAccessUserToken", "ApiAccessToken")
+                    b.HasOne("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken", "ApiAccessToken")
                         .WithMany()
                         .HasForeignKey("ApiAccessUsersTokenId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -189,39 +170,9 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.Navigation("ApiAccessToken");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.ApiAccessUserToken", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.UserEntranceLog", b =>
                 {
-                    b.HasOne("FoundersPC.Identity.Domain.Entities.ApiAccessToken", "Token")
-                        .WithMany()
-                        .HasForeignKey("ApiAccessTokenId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FoundersPC.Identity.Domain.Entities.UserEntity", "User")
-                        .WithMany("Tokens")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Token");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.UserEntity", b =>
-                {
-                    b.HasOne("FoundersPC.Identity.Domain.Entities.RoleEntity", "Role")
-                        .WithMany("Users")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.UserEntranceLog", b =>
-                {
-                    b.HasOne("FoundersPC.Identity.Domain.Entities.UserEntity", "User")
+                    b.HasOne("FoundersPC.Identity.Domain.Entities.Users.UserEntity", "User")
                         .WithMany("Entrances")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -230,12 +181,34 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.RoleEntity", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken", b =>
+                {
+                    b.HasOne("FoundersPC.Identity.Domain.Entities.Users.UserEntity", "User")
+                        .WithMany("Tokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.UserEntity", b =>
+                {
+                    b.HasOne("FoundersPC.Identity.Domain.Entities.Users.RoleEntity", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.RoleEntity", b =>
                 {
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.UserEntity", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.UserEntity", b =>
                 {
                     b.Navigation("Entrances");
 

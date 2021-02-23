@@ -20,7 +20,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
         #region Implementation of IMotherboardsRepositoryAsync
 
         /// <inheritdoc />
-        public async Task<IEnumerable<Motherboard>> GetAllAsync()
+        public override async Task<IEnumerable<Motherboard>> GetAllAsync()
         {
             return await Context.Set<Motherboard>()
                                 .Include(motherboard => motherboard.Producer)

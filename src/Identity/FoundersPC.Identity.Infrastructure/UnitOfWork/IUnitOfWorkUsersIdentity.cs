@@ -15,8 +15,6 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 
         IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
 
-        IApiAccessTokensRepository ApiAccessTokensRepository { get; }
-
         IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
 
         IUsersRepository UsersRepository { get; }
