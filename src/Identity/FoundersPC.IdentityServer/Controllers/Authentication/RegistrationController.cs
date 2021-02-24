@@ -1,10 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.AuthenticationShared;
-using FoundersPC.Identity.Application.DTO.Request;
-using FoundersPC.Identity.Application.DTO.Response;
+using FoundersPC.AuthenticationShared.Request;
+using FoundersPC.AuthenticationShared.Response;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
@@ -12,8 +15,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [ApiController]
     public class RegistrationController : Controller
     {
-        private readonly IUserService _userService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
         public RegistrationController(IUserService userService, IMapper mapper)
         {
@@ -22,21 +25,21 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         }
 
         [HttpPost]
-        public async Task<UserRegisterResponse> TryToRegisterUser(UserRegisterRequestViewModel request)
+        public async Task<UserRegisterResponse> TryToRegisterUser(UserRegisterRequest request)
         {
             if (ReferenceEquals(request, null)) return null;
 
             var result = await _userService.TryToRegisterUser(request.Email, request.Password);
 
             if (result)
-                return new UserRegisterResponse()
+                return new UserRegisterResponse
                        {
                            Email = request.Email,
                            IsRegistrationSuccessful = true,
                            ResponseException = null
                        };
 
-            return new UserRegisterResponse()
+            return new UserRegisterResponse
                    {
                        Email = request.Email,
                        IsRegistrationSuccessful = false,

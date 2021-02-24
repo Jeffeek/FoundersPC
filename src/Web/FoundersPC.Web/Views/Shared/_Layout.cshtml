@@ -12,20 +12,22 @@
     @{
         if (User.Identity?.IsAuthenticated ?? false)
         {
-            <a class="navbar-brand btn btn-outline-danger my-2 my-sm-0" asp-controller="Login" asp-action="LogOut">Logout</a>
+            <a class="navbar-brand btn btn-outline-danger my-2 my-sm-0" asp-controller="Authentication" asp-action="LogOut">Logout</a>
         }
         else
         {
-            <a class="navbar-brand btn btn-outline-success my-2 my-sm-0" asp-controller="Login" asp-action="LoginIndex">LogIn</a>
+            <a class="navbar-brand btn btn-outline-success my-2 my-sm-0" asp-controller="Authentication" asp-action="LoginIndex">LogIn</a>
         }
-    } 
+    }
 </nav>
-<div class="container modal-body">
+<div class="container">
     @RenderBody()
-    <hr/>
-    <footer>
-        <p>FoundersPC</p>
-    </footer>
 </div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+@await RenderSectionAsync("Scripts", false)
 </body>
 </html>

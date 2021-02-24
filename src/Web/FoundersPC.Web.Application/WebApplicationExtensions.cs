@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FoundersPC.Web.Application
+﻿namespace FoundersPC.Web.Application
 {
-    public static class WebApplicationExtensions
-    {
-    }
+    public static class WebApplicationExtensions { }
 }

@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.Identity.Application.DTO.Response
+﻿namespace FoundersPC.AuthenticationShared.Response
 {
     public class UserRegisterResponse
     {

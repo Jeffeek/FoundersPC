@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿#region Using namespaces
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.API.Controllers.V1
 {
@@ -14,11 +18,12 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     public class VideoCardCoresController : Controller
     {
-        private readonly IVideoCardCoreService _videoCardCoreService;
         private readonly IMapper _mapper;
+        private readonly IVideoCardCoreService _videoCardCoreService;
 
         public VideoCardCoresController(IVideoCardCoreService service,
-                                        IMapper mapper)
+                                        IMapper mapper
+        )
         {
             _videoCardCoreService = service;
             _mapper = mapper;
@@ -27,8 +32,7 @@ namespace FoundersPC.API.Controllers.V1
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get() =>
-            Ok(await _videoCardCoreService.GetAllVideoCardCoresAsync());
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get() => Ok(await _videoCardCoreService.GetAllVideoCardCoresAsync());
 
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]

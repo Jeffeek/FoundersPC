@@ -1,18 +1,13 @@
 #region Using namespaces
 
 using System;
-using FoundersPC.Web.Domain.Settings;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
-using TokenConfiguration = FoundersPC.AuthenticationShared.TokenConfiguration;
 
 #endregion
 
@@ -57,9 +52,9 @@ namespace FoundersPC.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseSession(new SessionOptions()
+            app.UseSession(new SessionOptions
                            {
-                               Cookie = new CookieBuilder()
+                               Cookie = new CookieBuilder
                                         {
                                             SecurePolicy = CookieSecurePolicy.Always,
                                             Expiration = TimeSpan.FromHours(24),

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,16 +9,17 @@ using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
-using FoundersPC.Identity.Infrastructure.Contexts;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.User_Services
 {
     public class UserService : IUserService
     {
-        private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
         private readonly IPasswordEncryptorService _encryptorService;
         private readonly IMapper _mapper;
+        private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
 
         public UserService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
                            IPasswordEncryptorService encryptorService,
@@ -58,7 +61,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (ReferenceEquals(defaultUser, null)) throw new KeyNotFoundException(nameof(defaultUser));
 
-            var newUser = new UserEntity()
+            var newUser = new UserEntity
                           {
                               Email = email,
                               HashedPassword = hashedPassword,
@@ -91,7 +94,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (ReferenceEquals(manager, null)) throw new KeyNotFoundException(nameof(manager));
 
-            var newUser = new UserEntity()
+            var newUser = new UserEntity
                           {
                               Email = email,
                               HashedPassword = hashedPassword,

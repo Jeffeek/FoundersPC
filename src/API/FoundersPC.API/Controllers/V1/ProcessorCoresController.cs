@@ -24,8 +24,7 @@ namespace FoundersPC.API.Controllers.V1
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProcessorCoreReadDto>>> Get() =>
-            Ok(await _service.GetAllProcessorCoresAsync());
+        public async Task<ActionResult<IEnumerable<ProcessorCoreReadDto>>> Get() => Ok(await _service.GetAllProcessorCoresAsync());
 
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
@@ -83,6 +82,5 @@ namespace FoundersPC.API.Controllers.V1
 
             return result ? Ok(readCpuCore) : Problem();
         }
-
     }
 }

@@ -30,8 +30,7 @@ namespace FoundersPC.API.Controllers.V1
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() =>
-            Ok(await _cpuService.GetAllCPUsAsync());
+        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() => Ok(await _cpuService.GetAllCPUsAsync());
 
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]

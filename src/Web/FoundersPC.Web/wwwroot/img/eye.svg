@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><radialGradient id="q52hzhdzvMMZA5gZkbbYUa" cx="24.134" cy="19.042" r="21.223" gradientTransform="matrix(1.05 0 0 1.0625 -1.2 -1.563)" gradientUnits="userSpaceOnUse"><stop offset=".55" stop-color="#e4e4e6"/><stop offset=".73" stop-color="#e1e2e4"/><stop offset=".854" stop-color="#d8dadc"/><stop offset=".961" stop-color="#c9cdcf"/><stop offset="1" stop-color="#c1c6c9"/></radialGradient><ellipse cx="24" cy="24" fill="url(#q52hzhdzvMMZA5gZkbbYUa)" rx="21" ry="17"/><linearGradient id="q52hzhdzvMMZA5gZkbbYUb" x1="15.089" x2="33.163" y1="12.089" y2="30.163" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#32bdef"/><stop offset="1" stop-color="#1ea2e4"/></linearGradient><circle cx="24" cy="21" r="14" fill="url(#q52hzhdzvMMZA5gZkbbYUb)"/><radialGradient id="q52hzhdzvMMZA5gZkbbYUc" cx="19.876" cy="10.758" r="18.169" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4b4b4b"/><stop offset=".531" stop-color="#393939"/><stop offset="1" stop-color="#252525"/></radialGradient><circle cx="24" cy="21" r="7" fill="url(#q52hzhdzvMMZA5gZkbbYUc)"/><circle cx="19" cy="16" r="2" fill="#fff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48"
+     viewBox="0 0 48 48">
+  <path fill="#FFF" d="M5.995,24c0,0,8.06-11,18.004-11s17.996,11,17.996,11S33.944,35,24,35S5.995,24,5.995,24z" />
+  <path fill="#CFD8DC"
+        d="M24,13c9.945,0,17.996,11,17.996,11S33.944,35,24,35S5.995,24,5.995,24S14.055,13,24,13 M24,11C13.165,11,4.735,22.335,4.382,22.818L3.516,24l0.866,1.182C4.735,25.665,13.165,37,24,37s19.256-11.336,19.61-11.818L44.474,24l-0.864-1.181C43.256,22.336,34.834,11,24,11L24,11z" />
+  <path fill="#00ACC1"
+        d="M15,23.953c0-4.971,4.034-8.994,9-8.994c4.967,0,9,4.023,9,8.994c0,4.977-4.033,9.006-9,9.006C19.034,32.959,15,28.93,15,23.953z" />
+  <path fill="#006064"
+        d="M20,23.958c0-2.213,1.786-3.999,4-3.999c2.203,0,4,1.786,4,3.999c0,2.22-1.797,4.001-4,4.001C21.786,27.959,20,26.178,20,23.958z" />
+  <path fill="#90A4AE"
+        d="M6.025,23.96C6.549,23.26,14.394,13,24,13c9.606,0,17.442,10.26,17.965,10.96h4.958l-1.7-2.322C44.846,21.121,35.838,9,24,9C12.163,9,3.146,21.12,2.769,21.636L1.065,23.96H6.025z" />
+  <path fill="#37474F" d="M21.586 -3.284H25.586V50.456H21.586z" transform="rotate(-45.001 23.586 23.586)" />
+</svg>

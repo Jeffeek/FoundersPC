@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.Token_Services
 {
@@ -11,10 +15,7 @@ namespace FoundersPC.Identity.Services.Token_Services
     {
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
-        public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
+        public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork) => _unitOfWork = unitOfWork;
 
         public async Task<bool> IsTokenBlocked(string token)
         {

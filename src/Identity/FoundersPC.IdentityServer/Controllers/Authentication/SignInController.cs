@@ -1,11 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.AuthenticationShared;
+using FoundersPC.AuthenticationShared.Request;
+using FoundersPC.AuthenticationShared.Response;
 using FoundersPC.Identity.Application.DTO;
-using FoundersPC.Identity.Application.DTO.Request;
-using FoundersPC.Identity.Application.DTO.Response;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
@@ -13,8 +16,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [ApiController]
     public class SignInController : Controller
     {
-        private readonly IUserService _userService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
         public SignInController(IUserService userService, IMapper mapper)
         {
@@ -23,7 +26,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         }
 
         [HttpPost]
-        public async Task<UserLoginResponse> TryToLoginUser(UserLoginRequestViewModel request)
+        public async Task<UserLoginResponse> TryToLoginUser(UserLoginRequest request)
         {
             if (ReferenceEquals(request, null)) return null;
 

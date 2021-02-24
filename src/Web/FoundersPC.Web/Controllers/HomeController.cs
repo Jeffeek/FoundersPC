@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿#region Using namespaces
+
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.Web.Controllers
 {
@@ -15,30 +14,24 @@ namespace FoundersPC.Web.Controllers
         public IActionResult Index() => View();
 
         [Authorize(Roles = "Administrator")]
-        public IActionResult Admin()
-        {
-            return Ok(new
-                      {
-                          role = "admin"
-                      });
-        }
+        public IActionResult Admin() =>
+            Ok(new
+               {
+                   role = "admin"
+               });
 
         [Authorize(Roles = "Administrator, Manager, DefaultUser")]
-        public IActionResult Authenticated()
-        {
-            return Ok(new
-                      {
-                          role = "Authenticated"
-                      });
-        }
+        public IActionResult Authenticated() =>
+            Ok(new
+               {
+                   role = "Authenticated"
+               });
 
         [AllowAnonymous]
-        public IActionResult All()
-        {
-            return Ok(new
-                      {
-                          role = "None"
-                      });
-        }
+        public IActionResult All() =>
+            Ok(new
+               {
+                   role = "None"
+               });
     }
 }

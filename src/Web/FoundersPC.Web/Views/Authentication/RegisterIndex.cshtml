@@ -1,0 +1,91 @@
+﻿@model FoundersPC.AuthenticationShared.Request.UserRegisterRequest
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/loginstyles.css">
+}
+
+@{
+    if (User.Identity?.IsAuthenticated ?? false)
+    {
+        <button asp-controller="Authentication" asp-action="LogOut" class="btn-danger btn-outline-danger btn-primary btn-stupid">LOGOUT</button>
+    }
+    else
+    {
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2>FoundersPC<br> Register Page</h2>
+                <p>Register from here to have an access to our API.</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="col-md-9 col-sm-12">
+                <div class="login-form">
+                    <form asp-action="Register" asp-controller="Authentication">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="text-info"></label>
+                            <input type="text" class="form-control" asp-for="Email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="text-info"></label>
+                            <input type="password" asp-for="Password" id="password-box" class="form-control">
+                            <div class="btn-group">
+                                <a onclick="showHidePasswordBox()" class="btn btn-outline-info">
+                                    <ion-icon name="eye-off-outline" id="pass-hide"/>
+                                </a>
+                                <a onclick="generateRandomPassword()" class="btn btn-outline-info">
+                                    <ion-icon name="reload-outline"/>
+                                </a>
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-dark" value="Log In">
+                        </div>
+                    </form>
+                    <a class="btn btn-secondary" asp-controller="Authentication" asp-action="LoginIndex">Have an account?</a>
+                </div>
+            </div>
+        </div>
+    }
+}
+<script>
+
+    const passwordBox = document.getElementById('password-box');
+    const passwordShowHideImage = document.getElementById('pass-hide');
+
+    const randomInt = (min, max) => {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+    const randomString = () => {
+        return Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+    };
+
+    function generateRandomPassword() {
+        const countOfLetters = randomInt(6, 30);
+        const randomPasswordString = randomString();
+        passwordBox.value = randomPasswordString.slice(-countOfLetters);
+    }
+
+    function showHidePasswordBox() {
+        if (passwordBox.type === 'text') {
+            passwordBox.type = 'password';
+            passwordShowHideImage.name = 'eye-off-outline';
+        } else {
+            passwordBox.type = 'text';
+            passwordShowHideImage.name = 'eye-outline';
+        }
+    }
+
+</script>
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

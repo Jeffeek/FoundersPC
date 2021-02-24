@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.Web.Application.DTO.Response
+﻿namespace FoundersPC.AuthenticationShared.Response
 {
     public class UserLoginResponse
     {

@@ -1,22 +1,67 @@
-﻿body {
-    margin: 0;
-    padding: 0;
-    background-color: #17a2b8;
+﻿body { font-family: "Lato", sans-serif; }
+
+.main-head {
+    background: #FFF;
+    height: 150px;
+}
+
+.sidenav {
+    background-color: #000;
+    height: 100%;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main { padding: 0px 10px; }
+
+@media screen and (max-height: 450px) {
+    .sidenav { padding-top: 15px; }
+}
+
+@media screen and (max-width: 450px) {
+    .login-form { margin-top: 10%; }
+
+    .register-form { margin-top: 10%; }
+}
+
+@media screen and (min-width: 768px) {
+    .main { margin-left: 40%; }
+
+    .sidenav {
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 40%;
+        z-index: 1;
+    }
+
+    .login-form { margin-top: 80%; }
+
+    .register-form { margin-top: 20%; }
+}
+
+.login-main-text {
+    color: #fff;
+    margin-top: 20%;
+    padding: 60px;
+}
+
+.login-main-text h2 { font-weight: 300; }
+
+.btn-black {
+    background-color: #000 !important;
+    color: #fff;
+}
+
+a ion-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.btn-stupid {
+    align-self: center;
+    font-size: 200px;
     height: 100vh;
+    width: 95vh;
 }
-
-#login .container #login-row #login-column #login-box {
-    margin-top: 120px;
-    max-width: 600px;
-    height: 360px;
-    border: 1px solid #9C9C9C;
-    background-color: #EAEAEA;
-}
-
-#login .container #login-row #login-column #login-box #login-form {
-    padding: 20px;
-}
-
-/*#login .container #login-row #login-column #login-box #login-form #register-link {
-    margin-top: -85px;
-}*/

@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.ApplicationShared.Identity;
 using FoundersPC.Identity.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
+
+#endregion
 
 namespace FoundersPC.Identity.Domain.Entities.Logs
 {
@@ -32,7 +36,7 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (obj.GetType() != GetType()) return false;
 
             return Equals((UserEntranceLog)obj);
         }

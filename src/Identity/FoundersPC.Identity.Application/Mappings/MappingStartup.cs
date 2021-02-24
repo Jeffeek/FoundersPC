@@ -1,9 +1,8 @@
 ﻿#region Using namespaces
 
 using AutoMapper;
-using FoundersPC.AuthenticationShared;
+using FoundersPC.AuthenticationShared.Response;
 using FoundersPC.Identity.Application.DTO;
-using FoundersPC.Identity.Application.DTO.Response;
 using FoundersPC.Identity.Domain.Entities.Users;
 
 #endregion

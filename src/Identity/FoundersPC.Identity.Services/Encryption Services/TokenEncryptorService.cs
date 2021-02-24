@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Security.Cryptography;
 using System.Text;
 using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.Encryption_Services
 {

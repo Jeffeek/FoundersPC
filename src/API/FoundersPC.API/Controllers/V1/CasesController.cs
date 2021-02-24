@@ -31,8 +31,7 @@ namespace FoundersPC.API.Controllers.V1
         //[Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get() =>
-            Ok(await _caseService.GetAllCasesAsync());
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get() => Ok(await _caseService.GetAllCasesAsync());
 
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]

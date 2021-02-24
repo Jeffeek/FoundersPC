@@ -1,10 +1,14 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.ApplicationShared.Identity;
 using FoundersPC.Identity.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
+
+#endregion
 
 namespace FoundersPC.Identity.Domain.Entities.Tokens
 {
@@ -47,14 +51,15 @@ namespace FoundersPC.Identity.Domain.Entities.Tokens
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (obj.GetType() != GetType()) return false;
 
             return Equals((ApiAccessUserToken)obj);
         }
 
-        public override int GetHashCode() => HashCode.Combine(UserId,
-                                                              StartEvaluationDate,
-                                                              ExpirationDate,
-                                                              IsBlocked);
+        public override int GetHashCode() =>
+            HashCode.Combine(UserId,
+                             StartEvaluationDate,
+                             ExpirationDate,
+                             IsBlocked);
     }
 }

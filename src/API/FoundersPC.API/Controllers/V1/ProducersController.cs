@@ -24,8 +24,7 @@ namespace FoundersPC.API.Controllers.V1
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get() =>
-            Ok(await _producerService.GetAllProducersAsync());
+        public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get() => Ok(await _producerService.GetAllProducersAsync());
 
         [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
