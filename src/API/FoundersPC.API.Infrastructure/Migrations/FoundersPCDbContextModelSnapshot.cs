@@ -21,7 +21,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Case",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Case",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -99,7 +99,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("Cases");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Memory.HDD",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Memory.HDD",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -153,7 +153,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("HardDrives");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Memory.RAM",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Memory.RAM",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -219,7 +219,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("RandomAccessMemory");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Memory.SSD",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Memory.SSD",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -275,7 +275,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("SolidStateDrives");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Motherboard",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Motherboard",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -359,7 +359,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("Motherboards");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.PowerSupply",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.PowerSupply",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -425,7 +425,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("PowerSupplies");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Processor.CPU",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Processor.CPU",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -509,7 +509,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("Processors");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Processor.ProcessorCore",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Processor.ProcessorCore",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -544,7 +544,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
 
                                     b.Property<string>("Title")
                                      .IsRequired()
-                                     .HasColumnType("nvarchar(max)")
+                                     .HasMaxLength(50)
+                                     .HasColumnType("nvarchar(50)")
                                      .HasColumnName("Title");
 
                                     b.HasKey("Id");
@@ -552,7 +553,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("ProcessorCores");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Producer",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Producer",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -593,7 +594,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("Producers");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.VideoCard.GPU",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.VideoCard.GPU",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -633,7 +634,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
 
                                     b.Property<string>("Series")
                                      .IsRequired()
-                                     .HasColumnType("nvarchar(max)")
+                                     .HasMaxLength(30)
+                                     .HasColumnType("nvarchar(30)")
                                      .HasColumnName("Series");
 
                                     b.Property<string>("Title")
@@ -675,7 +677,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("VideoCards");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.VideoCard.VideoCardCore",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.VideoCard.VideoCardCore",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -686,7 +688,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
 
                                     b.Property<string>("ArchitectureTitle")
                                      .IsRequired()
-                                     .HasColumnType("nvarchar(max)")
+                                     .HasMaxLength(30)
+                                     .HasColumnType("nvarchar(30)")
                                      .HasColumnName("ArchitectureTitle");
 
                                     b.Property<string>("Codename")
@@ -701,7 +704,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .HasColumnName("ConnectionInterface");
 
                                     b.Property<string>("DirectX")
-                                     .HasColumnType("nvarchar(max)")
+                                     .HasMaxLength(10)
+                                     .HasColumnType("nvarchar(10)")
                                      .HasColumnName("DirectX_Version");
 
                                     b.Property<string>("MaxResolution")
@@ -724,7 +728,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
 
                                     b.Property<string>("Title")
                                      .IsRequired()
-                                     .HasColumnType("nvarchar(max)")
+                                     .HasMaxLength(100)
+                                     .HasColumnType("nvarchar(100)")
                                      .HasColumnName("Title");
 
                                     b.HasKey("Id");
@@ -732,10 +737,10 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.ToTable("VideoCardCores");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Case",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Case",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("Cases")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -744,10 +749,10 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Memory.HDD",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Memory.HDD",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("HardDrives")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -756,10 +761,10 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Memory.RAM",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Memory.RAM",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("RandomAccessMemory")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -768,10 +773,10 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Memory.SSD",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Memory.SSD",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("SolidStateDrive")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -780,10 +785,10 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Motherboard",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Motherboard",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("Motherboards")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -792,10 +797,10 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.PowerSupply",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.PowerSupply",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("PowerSupplies")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -804,16 +809,16 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Processor.CPU",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Processor.CPU",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Processor.ProcessorCore", "Core")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Processor.ProcessorCore", "Core")
                                      .WithMany("Processors")
                                      .HasForeignKey("ProcessorCoreId")
                                      .OnDelete(DeleteBehavior.Cascade)
                                      .IsRequired();
 
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("Processors")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -824,16 +829,16 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.VideoCard.GPU",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.VideoCard.GPU",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.VideoCard.VideoCardCore", "Core")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.VideoCard.VideoCardCore", "Core")
                                      .WithMany("VideoCards")
                                      .HasForeignKey("GraphicsProcessorId")
                                      .OnDelete(DeleteBehavior.Cascade)
                                      .IsRequired();
 
-                                    b.HasOne("FoundersPC.Domain.Entities.Hardware.Producer", "Producer")
+                                    b.HasOne("FoundersPC.API.Domain.Entities.Hardware.Producer", "Producer")
                                      .WithMany("VideoCards")
                                      .HasForeignKey("ProducerId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -844,9 +849,9 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Processor.ProcessorCore", b => { b.Navigation("Processors"); });
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Processor.ProcessorCore", b => { b.Navigation("Processors"); });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.Producer",
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Producer",
                                 b =>
                                 {
                                     b.Navigation("Cases");
@@ -866,7 +871,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("VideoCards");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Domain.Entities.Hardware.VideoCard.VideoCardCore", b => { b.Navigation("VideoCards"); });
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.VideoCard.VideoCardCore", b => { b.Navigation("VideoCards"); });
             #pragma warning restore 612, 618
         }
     }

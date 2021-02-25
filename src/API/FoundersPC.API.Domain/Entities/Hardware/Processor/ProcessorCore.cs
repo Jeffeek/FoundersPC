@@ -44,6 +44,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
         [DataType(DataType.Text)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Title")]
+        [MaxLength(50)]
         [Required]
         public string Title { get; set; }
 

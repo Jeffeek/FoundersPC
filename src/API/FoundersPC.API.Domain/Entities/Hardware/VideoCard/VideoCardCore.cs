@@ -50,7 +50,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("DirectX_Version")]
-        [Range(0, 13)]
+        [MaxLength(10)]
         public string DirectX { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -61,12 +61,14 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DataType(DataType.Text)]
         [Column("ArchitectureTitle")]
+        [MaxLength(30)]
         [Required]
         public string ArchitectureTitle { get; set; }
 
         [DataType(DataType.Text)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Title")]
+        [MaxLength(100)]
         [Required]
         public string Title { get; set; }
 

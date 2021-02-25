@@ -24,10 +24,10 @@ namespace FoundersPC.ApplicationShared.Repository
             return entity;
         }
 
+        // override to include ref data
         public virtual async Task<T> GetByIdAsync(int id)
         {
             var entity = await Context.Set<T>().FindAsync(id);
-            await Context.Entry(entity).ReloadAsync();
 
             return entity;
         }

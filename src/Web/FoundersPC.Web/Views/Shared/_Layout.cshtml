@@ -12,7 +12,7 @@
     @{
         if (User.Identity?.IsAuthenticated ?? false)
         {
-            <a class="navbar-brand btn btn-outline-danger my-2 my-sm-0" asp-controller="Authentication" asp-action="LogOut">Logout</a>
+            <a class="navbar-brand btn btn-outline-danger my-2 my-sm-0" asp-controller="Authentication" asp-action="SignOut">Logout</a>
         }
         else
         {

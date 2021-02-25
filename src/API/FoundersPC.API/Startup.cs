@@ -35,6 +35,8 @@ namespace FoundersPC.API
             services.AddHardwareServices();
             //
             services.AddHardwareApplicationExtensions();
+            //
+            services.AddValidators();
 
             services.AddAuthentication();
             services.AddAuthorization();

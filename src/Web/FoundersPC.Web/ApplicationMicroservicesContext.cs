@@ -16,12 +16,12 @@ namespace FoundersPC.Web
 
         static ApplicationMicroservicesContext()
         {
-            IdentityServerClient.BaseAddress = new Uri("https://localhost:5010/");
+            IdentityServerClient.BaseAddress = new Uri("https://localhost:3000/");
             IdentityServerClient.DefaultRequestHeaders.Clear();
             IdentityServerClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             IdentityServerClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
 
-            HardwareApiClient.BaseAddress = new Uri("https://localhost:5001/api/");
+            HardwareApiClient.BaseAddress = new Uri("https://localhost:9000/api/");
             HardwareApiClient.DefaultRequestHeaders.Clear();
             HardwareApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HardwareApiClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

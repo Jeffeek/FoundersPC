@@ -2,3 +2,14 @@
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@{
+    if (User.Identity?.IsAuthenticated ?? false)
+    {
+        <a class="btn btn-black align-middle text-light" asp-controller="Authentication" asp-action="SignOut">Logout</a>
+    }
+    else
+    {
+        <a class="btn btn-black align-middle text-light" asp-controller="Authentication" asp-action="LoginIndex">LogIn</a>
+    }
+}

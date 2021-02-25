@@ -38,6 +38,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
         [DataType(DataType.Text)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Series")]
+        [MaxLength(30)]
         [Required]
         public string Series { get; set; }
 

@@ -24,14 +24,13 @@ namespace FoundersPC.Web
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
                                {
-                                   options.LoginPath = new PathString("/Auth/Login");
-                                   options.AccessDeniedPath = new PathString("/Auth/Login");
+                                   options.LoginPath = new PathString("/Authentication/LoginIndex");
+                                   options.AccessDeniedPath = new PathString("/Authentication/LoginIndex");
+                                   options.LogoutPath = "/Authentication/LoginIndex";
+                                   options.ExpireTimeSpan = TimeSpan.FromHours(24);
                                });
 
-            services.AddSession();
-
             services.AddDatabaseDeveloperPageExceptionFilter();
-
             services.AddControllersWithViews();
         }
 
@@ -52,26 +51,12 @@ namespace FoundersPC.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseSession(new SessionOptions
-                           {
-                               Cookie = new CookieBuilder
-                                        {
-                                            SecurePolicy = CookieSecurePolicy.Always,
-                                            Expiration = TimeSpan.FromHours(24),
-                                            IsEssential = true,
-                                            HttpOnly = false,
-                                            Name = "UserCredentials"
-                                        },
-                               IdleTimeout = TimeSpan.FromSeconds(20),
-                               IOTimeout = TimeSpan.FromSeconds(5)
-                           });
-
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
+            app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
         }
     }
 }

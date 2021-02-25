@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
@@ -15,8 +14,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("api/cpus")]
-    [Authorize]
-    public class CPUController : ControllerBase
+    public class CPUController : Controller
     {
         private readonly ICPUService _cpuService;
         private readonly IMapper _mapper;
@@ -27,66 +25,57 @@ namespace FoundersPC.API.Controllers.V1
             _mapper = mapper;
         }
 
-        [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() => Ok(await _cpuService.GetAllCPUsAsync());
+        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() => Json(await _cpuService.GetAllCPUsAsync());
 
-        [Authorize(Roles = "Admin,Manager,DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<CPUReadDto>> Get(int? id)
         {
-            if (!id.HasValue) return BadRequest();
+            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
             var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
 
-            if (cpu == null) return NotFound(id);
-
-            return Ok(cpu);
+            return cpu == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(cpu);
         }
 
-        [Authorize(Roles = "Admin,Manager")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
-        public async Task<ActionResult> Insert(CPUInsertDto cpu)
+        public async Task<ActionResult> Insert([FromBody] CPUInsertDto cpu)
         {
             if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
 
             var insertResult = await _cpuService.CreateCPU(cpu);
 
-            return !insertResult ? Problem() : Ok(cpu);
+            return insertResult ? Json(cpu) : ResultsHelper.InsertError();
         }
 
-        [Authorize(Roles = "Admin,Manager")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, CPUUpdateDto cpu)
+        public async Task<ActionResult> Update(int? id, [FromBody] CPUUpdateDto cpu)
         {
-            if (!id.HasValue) return BadRequest(nameof(id));
+            if (!id.HasValue) return ResultsHelper.UpdateError();
             if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
 
             var result = await _cpuService.UpdateCPU(id.Value, cpu);
 
-            if (!result) return Problem();
-
-            return NoContent();
+            return result ? Json(cpu) : ResultsHelper.UpdateError();
         }
 
-        [Authorize(Roles = "Administrator")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)
         {
-            if (!id.HasValue) return BadRequest(nameof(id));
+            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
             var readCpu = await _cpuService.GetCPUByIdAsync(id.Value);
 
-            if (readCpu == null) return NotFound(id);
+            if (readCpu == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
             var result = await _cpuService.DeleteCPU(id.Value);
 
-            return result ? Ok(readCpu) : Problem();
+            return result ? Json(readCpu) : ResultsHelper.DeleteError();
         }
     }
 }

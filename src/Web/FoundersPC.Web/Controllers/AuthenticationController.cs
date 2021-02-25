@@ -19,12 +19,30 @@ namespace FoundersPC.Web.Controllers
     [Controller]
     public class AuthenticationController : Controller
     {
-        public ActionResult LoginIndex() => View();
+        [Authorize]
+        public async Task<ActionResult> SignOutAsync()
+        {
+            if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
 
-        public IActionResult RegisterIndex() => View();
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        #region Redirection
+
+        public ActionResult LoginIndex() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
+
+        public IActionResult RegisterIndex() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
+
+        public IActionResult ForgotPassword() => View();
+
+        #endregion
+
+        #region SignIn
 
         [HttpPost]
-        public async Task<IActionResult> Login(UserLoginRequest authenticationRequest)
+        public async Task<IActionResult> LogInAsync(UserLoginRequest authenticationRequest)
         {
             if (!ModelState.IsValid) return ValidationProblem("Not valid credentials", nameof(authenticationRequest));
 
@@ -34,26 +52,16 @@ namespace FoundersPC.Web.Controllers
 
             var content = await result.Content.ReadFromJsonAsync<UserLoginResponse>();
 
-            if (content == null) return NotFound();
+            if (content == null) return NotFound(result);
 
-            if (!content.IsUserExists) return NotFound();
+            if (!content.IsUserExists) return NotFound(result);
 
-            await Authenticate(content);
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        [Authorize]
-        public async Task<ActionResult> LogOut()
-        {
-            if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
-
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await AuthenticateAsync(content);
 
             return RedirectToAction("Index", "Home");
         }
 
-        private async Task Authenticate(UserLoginResponse cookieDetails)
+        private async Task AuthenticateAsync(UserLoginResponse cookieDetails)
         {
             var claims = new List<Claim>
                          {
@@ -69,7 +77,30 @@ namespace FoundersPC.Web.Controllers
                                           new ClaimsPrincipal(identity));
         }
 
-        private async Task Authenticate(UserRegisterResponse cookieDetails)
+        #endregion
+
+        #region SignUp
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterAsync(UserRegisterRequest request)
+        {
+            if (!TryValidateModel(request)) return BadRequest(request);
+
+            var registrationResult =
+                await ApplicationMicroservicesContext.IdentityServerClient.PostAsJsonAsync("authAPI/registration", request);
+
+            var deliveredResult = await registrationResult.Content.ReadFromJsonAsync<UserRegisterResponse>();
+
+            if (ReferenceEquals(deliveredResult, null)) throw new ArgumentNullException(nameof(deliveredResult));
+
+            if (!deliveredResult.IsRegistrationSuccessful) return Conflict(deliveredResult);
+
+            await AuthenticateAsync(deliveredResult);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        private async Task AuthenticateAsync(UserRegisterResponse cookieDetails)
         {
             var claims = new List<Claim>
                          {
@@ -85,23 +116,6 @@ namespace FoundersPC.Web.Controllers
                                           new ClaimsPrincipal(identity));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(UserRegisterRequest request)
-        {
-            if (!TryValidateModel(request)) return BadRequest(request);
-
-            var registrationResult =
-                await ApplicationMicroservicesContext.IdentityServerClient.PostAsJsonAsync("authAPI/registration", request);
-
-            var deliveredResult = await registrationResult.Content.ReadFromJsonAsync<UserRegisterResponse>();
-
-            if (ReferenceEquals(deliveredResult, null)) throw new ArgumentNullException(nameof(deliveredResult));
-
-            if (!deliveredResult.IsRegistrationSuccessful) return Conflict(deliveredResult);
-
-            await Authenticate(deliveredResult);
-
-            return Ok();
-        }
+        #endregion
     }
 }
