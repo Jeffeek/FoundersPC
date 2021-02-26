@@ -1,5 +1,6 @@
 ﻿#region Using namespaces
 
+using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.Repository;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 
@@ -7,5 +8,8 @@ using FoundersPC.Identity.Domain.Entities.Tokens;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Tokens
 {
-    public interface IApiAccessUsersTokensRepository : IRepositoryAsync<ApiAccessUserToken> { }
+    public interface IApiAccessUsersTokensRepository : IRepositoryAsync<ApiAccessUserToken>
+    {
+        Task<ApiAccessUserToken> GetByToken(string token);
+    }
 }

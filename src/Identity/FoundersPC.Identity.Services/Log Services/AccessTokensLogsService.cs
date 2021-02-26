@@ -42,5 +42,45 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             return filtered;
         }
+
+        public async Task<bool> Log(int tokenId)
+        {
+            if (tokenId <= 0) return false;
+
+            var token = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(tokenId);
+
+            if (token == null) return false;
+
+            var newLog = new AccessTokenLog()
+                         {
+                             ApiAccessToken = token,
+                             ApiAccessUsersTokenId = tokenId,
+                             RequestDateTime = DateTime.Now
+                         };
+
+            await _unitOfWork.AccessTokensLogsRepository.AddAsync(newLog);
+
+            return true;
+        }
+
+        public async Task<bool> Log(string token)
+        {
+            if (token == null || token.Length != 88) return false;
+
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByToken(token);
+
+            if (tokenEntity == null) return false;
+
+            var newLog = new AccessTokenLog()
+                         {
+                             ApiAccessToken = tokenEntity,
+                             ApiAccessUsersTokenId = tokenEntity.Id,
+                             RequestDateTime = DateTime.Now
+                         };
+
+            await _unitOfWork.AccessTokensLogsRepository.AddAsync(newLog);
+
+            return true;
+        }
     }
 }

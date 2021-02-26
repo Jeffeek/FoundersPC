@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
+using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
+using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
@@ -20,15 +22,21 @@ namespace FoundersPC.Identity.Services.User_Services
         private readonly IPasswordEncryptorService _encryptorService;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
+        private readonly IUsersEntrancesService _usersEntrancesService;
+        private readonly IMailService _mailService;
 
         public UserService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
                            IPasswordEncryptorService encryptorService,
-                           IMapper mapper
+                           IMapper mapper,
+                           IUsersEntrancesService usersEntrancesService,
+                           IMailService mailService
         )
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
             _encryptorService = encryptorService;
             _mapper = mapper;
+            _usersEntrancesService = usersEntrancesService;
+            _mailService = mailService;
         }
 
         public async Task<UserEntityReadDto> TryToFindUser(string emailOrLogin, string rawPassword)
@@ -42,6 +50,12 @@ namespace FoundersPC.Identity.Services.User_Services
                                                                                 (x.Email == emailOrLogin
                                                                                  || x.Login == emailOrLogin)
                                                                                 && x.HashedPassword == hashedPassword);
+
+            if (user == null) return null;
+
+            await _usersEntrancesService.Log(user.Id);
+            await _unitOfWorkUsersIdentity.SaveChangesAsync();
+            //await _mailService.SendToAsync(user.Email, "Signed In", "Congratz!", false);
 
             return _mapper.Map<UserEntity, UserEntityReadDto>(user);
         }

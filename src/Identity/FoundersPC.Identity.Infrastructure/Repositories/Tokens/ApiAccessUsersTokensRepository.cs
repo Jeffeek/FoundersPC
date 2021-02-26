@@ -21,5 +21,9 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
                          .Include(token => token.User)
                          .ThenInclude(user => user.Role)
                          .ToListAsync();
+
+        public async Task<ApiAccessUserToken> GetByToken(string token) =>
+            await Context.Set<ApiAccessUserToken>()
+                         .SingleOrDefaultAsync(x => x.HashedToken == token);
     }
 }

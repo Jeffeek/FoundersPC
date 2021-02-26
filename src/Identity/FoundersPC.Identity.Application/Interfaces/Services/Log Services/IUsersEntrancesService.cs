@@ -18,5 +18,7 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
         Task<IEnumerable<UserEntranceLog>> GetEntrancesBetween(DateTime start, DateTime finish);
 
         Task<IEnumerable<UserEntranceLog>> GetEntrancesIn(DateTime date);
+
+        Task<bool> Log(int userId);
     }
 }

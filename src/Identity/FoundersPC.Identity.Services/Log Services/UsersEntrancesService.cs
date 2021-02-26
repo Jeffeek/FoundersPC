@@ -43,5 +43,23 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             return filtered;
         }
+
+        public async Task<bool> Log(int userId)
+        {
+            var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
+
+            if (user == null) return false;
+
+            var log = new UserEntranceLog()
+                      {
+                          Entrance = DateTime.Now,
+                          User = user,
+                          UserId = userId
+                      };
+
+            await _unitOfWork.UsersEntrancesLogsRepository.AddAsync(log);
+
+            return true;
+        }
     }
 }

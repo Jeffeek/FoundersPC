@@ -18,5 +18,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
         Task<IEnumerable<AccessTokenLog>> GetUsagesBetween(DateTime start, DateTime finish);
 
         Task<IEnumerable<AccessTokenLog>> GetUsagesIn(DateTime date);
+
+        Task<bool> Log(int tokenId);
+
+        Task<bool> Log(string token);
     }
 }
