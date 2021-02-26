@@ -11,11 +11,26 @@ namespace FoundersPC.API.Application.Validation.Producer
     {
         public ProducerUpdateDtoValidator()
         {
-            RuleFor(x => x.Country).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MaximumLength(50);
-            RuleFor(x => x.FullName).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MinimumLength(100);
-            RuleFor(x => x.ShortName).Cascade(CascadeMode.Stop).MaximumLength(20);
-            RuleFor(x => x.Website).Cascade(CascadeMode.Stop).MaximumLength(100);
-            RuleFor(x => x.FoundationDate).Cascade(CascadeMode.Stop).LessThan(DateTime.Now);
+            RuleFor(x => x.Country)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(50);
+            RuleFor(x => x.FullName)
+                .NotNull()
+                .NotEmpty()
+                .MinimumLength(100)
+                .MinimumLength(2)
+                .When(x => x != null);
+            RuleFor(x => x.ShortName)
+                .MaximumLength(20);
+            RuleFor(x => x.Website)
+                .Matches(x => "^https?://")
+                .When(x => x != null)
+                .MaximumLength(100)
+                .When(x => x != null);
+            RuleFor(x => x.FoundationDate)
+                .LessThan(DateTime.Now)
+                .When(x => x != null);
         }
     }
 }

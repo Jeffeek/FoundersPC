@@ -10,13 +10,38 @@ namespace FoundersPC.API.Application.Validation.Hardware.Case
     {
         public CaseInsertDtoValidation()
         {
-            RuleFor(x => x.Type).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MaximumLength(40);
-            RuleFor(x => x.MaxMotherboardSize).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MaximumLength(20);
-            RuleFor(x => x.Material).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MaximumLength(50);
-            RuleFor(x => x.WindowMaterial).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MaximumLength(50);
-            RuleFor(x => x.Color).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MaximumLength(50);
-            RuleFor(x => x.ProducerId).Cascade(CascadeMode.Stop).NotEmpty().GreaterThan(0);
-            RuleFor(x => x.Title).Cascade(CascadeMode.Stop).NotNull().NotEmpty().MaximumLength(100);
+            RuleFor(x => x.Type)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(40)
+                .MinimumLength(3);
+            RuleFor(x => x.MaxMotherboardSize)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(20)
+                .MinimumLength(3);
+            RuleFor(x => x.Material)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(50)
+                .MinimumLength(3);
+            RuleFor(x => x.WindowMaterial)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(50)
+                .MinimumLength(3);
+            RuleFor(x => x.Color)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(50)
+                .MinimumLength(2);
+            RuleFor(x => x.ProducerId)
+                .NotEmpty()
+                .GreaterThan(0);
+            RuleFor(x => x.Title)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(100);
         }
     }
 }

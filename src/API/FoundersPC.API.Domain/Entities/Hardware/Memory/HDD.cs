@@ -16,6 +16,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Factor")]
+        [Range(2.5, 3.5)]
         [Required]
         public double Factor { get; set; }
 

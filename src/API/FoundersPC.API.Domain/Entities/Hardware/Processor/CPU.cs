@@ -41,11 +41,13 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Cores")]
+        [Range(1, 256)]
         [Required]
         public int Cores { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Threads")]
+        [Range(1, 512)]
         [Required]
         public int Threads { get; set; }
 

@@ -73,6 +73,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("M2SlotsCount")]
+        [Range(0, 6)]
         [Required]
         public int M2SlotsCount { get; set; }
 

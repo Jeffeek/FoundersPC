@@ -19,8 +19,6 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("GraphicsProcessorId")]
-        [MinLength(3)]
-        [MaxLength(20)]
         [DataType(DataType.Text)]
         [Required]
         public int GraphicsProcessorId { get; set; }
@@ -38,6 +36,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
         [DataType(DataType.Text)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Series")]
+        [MinLength(3)]
         [MaxLength(30)]
         [Required]
         public string Series { get; set; }

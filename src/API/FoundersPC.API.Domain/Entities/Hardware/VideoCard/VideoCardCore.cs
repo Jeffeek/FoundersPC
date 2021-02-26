@@ -17,6 +17,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("TechProcess")]
+        [Range(3, 48)]
         [Required]
         public int TechProcess { get; set; }
 
