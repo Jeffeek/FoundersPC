@@ -12,6 +12,6 @@ namespace FoundersPC.Identity.Application.Interfaces.Repositories.Users
 {
     public interface IUsersRepository : IRepositoryAsync<UserEntity>
     {
-        Task<UserEntity> GetBy(Expression<Func<UserEntity, bool>> predicate);
+        Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate);
     }
 }

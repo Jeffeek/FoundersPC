@@ -36,7 +36,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             _mapper.Map<SSD, SSDReadDto>(await _unitOfWorkHardwareAPI.SSDsRepository.GetByIdAsync(ssdId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateSSD(SSDInsertDto ssd)
+        public async Task<bool> CreateSSDAsync(SSDInsertDto ssd)
         {
             var mappedSSD = _mapper.Map<SSDInsertDto, SSD>(ssd);
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.SSDsRepository.AnyAsync(x => x.Equals(mappedSSD));
@@ -49,7 +49,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateSSD(int id, SSDUpdateDto ssd)
+        public async Task<bool> UpdateSSDAsync(int id, SSDUpdateDto ssd)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.SSDsRepository.GetByIdAsync(id);
 
@@ -64,7 +64,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteSSD(int id)
+        public async Task<bool> DeleteSSDAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.SSDsRepository.DeleteAsync(id);
 

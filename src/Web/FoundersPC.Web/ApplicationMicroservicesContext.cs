@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 
 namespace FoundersPC.Web
 {
+    // make service for microservices
     internal static class ApplicationMicroservicesContext
     {
         internal static readonly HttpClient HardwareApiClient = new();

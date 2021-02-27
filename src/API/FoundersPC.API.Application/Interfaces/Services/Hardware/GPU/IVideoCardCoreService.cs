@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware.GPU
 
         Task<VideoCardCoreReadDto> GetVideoCardCoreByIdAsync(int videoCardCoreId);
 
-        Task<bool> CreateVideoCardCore(VideoCardCoreInsertDto videoCardCore);
+        Task<bool> CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore);
 
-        Task<bool> UpdateVideoCardCore(int id, VideoCardCoreUpdateDto videoCardCore);
+        Task<bool> UpdateVideoCardCoreAsync(int id, VideoCardCoreUpdateDto videoCardCore);
 
-        Task<bool> DeleteVideoCardCore(int id);
+        Task<bool> DeleteVideoCardCoreAsync(int id);
     }
 }

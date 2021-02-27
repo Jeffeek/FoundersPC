@@ -19,6 +19,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
         #region Implementation of IMotherboardsRepositoryAsync
 
+        public override async Task<Motherboard> GetByIdAsync(int id)
+        {
+            var motherboard = await Context.Set<Motherboard>().FindAsync(id);
+
+            if (motherboard is null) return null;
+
+            await Context.Entry(motherboard).Reference<Producer>(x => x.Producer).LoadAsync();
+
+            return motherboard;
+        }
+
         /// <inheritdoc />
         public override async Task<IEnumerable<Motherboard>> GetAllAsync()
         {

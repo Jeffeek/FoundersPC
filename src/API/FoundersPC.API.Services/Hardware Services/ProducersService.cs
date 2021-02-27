@@ -33,7 +33,7 @@ namespace FoundersPC.API.Services.Hardware_Services
             _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository.GetByIdAsync(producerId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateProducer(ProducerInsertDto producer)
+        public async Task<bool> CreateProducerAsync(ProducerInsertDto producer)
         {
             var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.ProducersRepository.AnyAsync(x => x.Equals(mappedProducer));
@@ -46,7 +46,7 @@ namespace FoundersPC.API.Services.Hardware_Services
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateProducer(int id, ProducerUpdateDto producer)
+        public async Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProducersRepository.GetByIdAsync(id);
 
@@ -59,7 +59,7 @@ namespace FoundersPC.API.Services.Hardware_Services
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteProducer(int id)
+        public async Task<bool> DeleteProducerAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.ProducersRepository.DeleteAsync(id);
 

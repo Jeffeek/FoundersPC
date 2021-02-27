@@ -37,7 +37,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
                                                                                          .GetByIdAsync(videoCardCoreId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateVideoCardCore(VideoCardCoreInsertDto videoCardCore)
+        public async Task<bool> CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore)
         {
             var mappedVideoCardCore = _mapper.Map<VideoCardCoreInsertDto, VideoCardCore>(videoCardCore);
 
@@ -51,7 +51,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateVideoCardCore(int id, VideoCardCoreUpdateDto videoCardCore)
+        public async Task<bool> UpdateVideoCardCoreAsync(int id, VideoCardCoreUpdateDto videoCardCore)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.GetByIdAsync(id);
 
@@ -66,7 +66,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteVideoCardCore(int id)
+        public async Task<bool> DeleteVideoCardCoreAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.DeleteAsync(id);
 

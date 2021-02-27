@@ -46,7 +46,7 @@ namespace FoundersPC.API.Controllers.V1
         {
             if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
 
-            var insertResult = await _cpuService.CreateCPU(cpu);
+            var insertResult = await _cpuService.CreateCPUAsync(cpu);
 
             return insertResult ? Json(cpu) : ResultsHelper.InsertError();
         }
@@ -58,7 +58,7 @@ namespace FoundersPC.API.Controllers.V1
             if (!id.HasValue) return ResultsHelper.UpdateError();
             if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
 
-            var result = await _cpuService.UpdateCPU(id.Value, cpu);
+            var result = await _cpuService.UpdateCPUAsync(id.Value, cpu);
 
             return result ? Json(cpu) : ResultsHelper.UpdateError();
         }
@@ -73,7 +73,7 @@ namespace FoundersPC.API.Controllers.V1
 
             if (readCpu == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
-            var result = await _cpuService.DeleteCPU(id.Value);
+            var result = await _cpuService.DeleteCPUAsync(id.Value);
 
             return result ? Json(readCpu) : ResultsHelper.DeleteError();
         }

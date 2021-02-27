@@ -36,7 +36,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             _mapper.Map<Case, CaseReadDto>(await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(caseId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateCase(CaseInsertDto @case)
+        public async Task<bool> CreateCaseAsync(CaseInsertDto @case)
         {
             var mappedCase = _mapper.Map<CaseInsertDto, Case>(@case);
 
@@ -50,7 +50,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateCase(int id, CaseUpdateDto @case)
+        public async Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(id);
 
@@ -65,7 +65,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteCase(int id)
+        public async Task<bool> DeleteCaseAsync(int id)
         {
             var deleteResult = await _unitOfWorkHardwareAPI.CasesRepository.DeleteAsync(id);
 

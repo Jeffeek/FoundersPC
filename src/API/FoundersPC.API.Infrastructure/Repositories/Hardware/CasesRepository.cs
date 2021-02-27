@@ -19,6 +19,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
         #region Implementation of ICasesRepositoryAsync
 
+        public override async Task<Case> GetByIdAsync(int id)
+        {
+            var @case = await Context.Set<Case>().FindAsync(id);
+
+            if (@case is null) return null;
+
+            await Context.Entry(@case).Reference<Producer>(x => x.Producer).LoadAsync();
+
+            return @case;
+        }
+
         /// <inheritdoc />
         public override async Task<IEnumerable<Case>> GetAllAsync()
         {

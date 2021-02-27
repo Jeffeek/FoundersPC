@@ -19,6 +19,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
         #region Implementation of IPowerSuppliersRepositoryAsync
 
+        public override async Task<PowerSupply> GetByIdAsync(int id)
+        {
+            var powerSupply = await Context.Set<PowerSupply>().FindAsync(id);
+
+            if (powerSupply is null) return null;
+
+            await Context.Entry(powerSupply).Reference<Producer>(x => x.Producer).LoadAsync();
+
+            return powerSupply;
+        }
+
         /// <inheritdoc />
         public override async Task<IEnumerable<PowerSupply>> GetAllAsync()
         {

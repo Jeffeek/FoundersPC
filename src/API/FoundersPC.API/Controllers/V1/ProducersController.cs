@@ -41,7 +41,7 @@ namespace FoundersPC.API.Controllers.V1
             if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
             if (!TryValidateModel(producer)) return ValidationProblem(ModelState);
 
-            var result = await _producerService.UpdateProducer(id.Value, producer);
+            var result = await _producerService.UpdateProducerAsync(id.Value, producer);
 
             return result ? Json(producer) : ResultsHelper.UpdateError();
         }
@@ -52,7 +52,7 @@ namespace FoundersPC.API.Controllers.V1
         {
             if (!TryValidateModel(producer)) return ValidationProblem(ModelState);
 
-            var insertResult = await _producerService.CreateProducer(producer);
+            var insertResult = await _producerService.CreateProducerAsync(producer);
 
             return insertResult ? Json(producer) : ResultsHelper.InsertError();
         }
@@ -67,7 +67,7 @@ namespace FoundersPC.API.Controllers.V1
 
             if (readCase == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
-            var result = await _producerService.DeleteProducer(id.Value);
+            var result = await _producerService.DeleteProducerAsync(id.Value);
 
             return result ? Json(readCase) : ResultsHelper.DeleteError();
         }

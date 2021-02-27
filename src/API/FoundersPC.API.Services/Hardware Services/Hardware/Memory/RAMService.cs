@@ -36,7 +36,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             _mapper.Map<RAM, RAMReadDto>(await _unitOfWorkHardwareAPI.RAMsRepository.GetByIdAsync(ramId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateRAM(RAMInsertDto ram)
+        public async Task<bool> CreateRAMAsync(RAMInsertDto ram)
         {
             var mappedRAM = _mapper.Map<RAMInsertDto, RAM>(ram);
 
@@ -50,7 +50,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateRAM(int id, RAMUpdateDto ram)
+        public async Task<bool> UpdateRAMAsync(int id, RAMUpdateDto ram)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.RAMsRepository.GetByIdAsync(id);
 
@@ -65,7 +65,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteRAM(int id)
+        public async Task<bool> DeleteRAMAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.RAMsRepository.DeleteAsync(id);
 

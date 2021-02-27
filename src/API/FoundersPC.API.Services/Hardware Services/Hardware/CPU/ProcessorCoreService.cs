@@ -37,7 +37,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
                                                                    .GetByIdAsync(cpuCoreId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateProcessorCore(ProcessorCoreInsertDto cpuCore)
+        public async Task<bool> CreateProcessorCoreAsync(ProcessorCoreInsertDto cpuCore)
         {
             var mappedCpuCore = _mapper.Map<ProcessorCoreInsertDto, ProcessorCore>(cpuCore);
 
@@ -51,7 +51,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateProcessorCore(int id, ProcessorCoreUpdateDto cpuCore)
+        public async Task<bool> UpdateProcessorCoreAsync(int id, ProcessorCoreUpdateDto cpuCore)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.GetByIdAsync(id);
 
@@ -66,7 +66,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteProcessorCore(int id)
+        public async Task<bool> DeleteProcessorCoreAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.DeleteAsync(id);
 

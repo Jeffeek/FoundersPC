@@ -18,11 +18,11 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public UsersEntrancesService(IUnitOfWorkUsersIdentity unitOfWork) => _unitOfWork = unitOfWork;
 
-        public async Task<IEnumerable<UserEntranceLog>> GetAll() => await _unitOfWork.UsersEntrancesLogsRepository.GetAllAsync();
+        public async Task<IEnumerable<UserEntranceLog>> GetAllAsync() => await _unitOfWork.UsersEntrancesLogsRepository.GetAllAsync();
 
-        public async Task<UserEntranceLog> Get(int id) => await _unitOfWork.UsersEntrancesLogsRepository.GetByIdAsync(id);
+        public async Task<UserEntranceLog> GetByIdAsync(int id) => await _unitOfWork.UsersEntrancesLogsRepository.GetByIdAsync(id);
 
-        public async Task<IEnumerable<UserEntranceLog>> GetEntrancesBetween(DateTime start, DateTime finish)
+        public async Task<IEnumerable<UserEntranceLog>> GetEntrancesBetweenAsync(DateTime start, DateTime finish)
         {
             var allLogs = await _unitOfWork.UsersEntrancesLogsRepository.GetAllAsync();
 
@@ -32,7 +32,7 @@ namespace FoundersPC.Identity.Services.Log_Services
             return filtered;
         }
 
-        public async Task<IEnumerable<UserEntranceLog>> GetEntrancesIn(DateTime date)
+        public async Task<IEnumerable<UserEntranceLog>> GetEntrancesInAsync(DateTime date)
         {
             var allLogs = await _unitOfWork.UsersEntrancesLogsRepository.GetAllAsync();
 
@@ -44,7 +44,7 @@ namespace FoundersPC.Identity.Services.Log_Services
             return filtered;
         }
 
-        public async Task<bool> Log(int userId)
+        public async Task<bool> LogAsync(int userId)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 

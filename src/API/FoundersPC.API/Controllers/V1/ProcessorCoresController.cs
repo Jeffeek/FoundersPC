@@ -40,7 +40,7 @@ namespace FoundersPC.API.Controllers.V1
         {
             if (!TryValidateModel(cpuCore)) return ValidationProblem(ModelState);
 
-            var insertResult = await _service.CreateProcessorCore(cpuCore);
+            var insertResult = await _service.CreateProcessorCoreAsync(cpuCore);
 
             return insertResult
                        ? Json(cpuCore)
@@ -54,7 +54,7 @@ namespace FoundersPC.API.Controllers.V1
             if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult("null");
             if (!TryValidateModel(cpuCore)) return ValidationProblem(ModelState);
 
-            var result = await _service.UpdateProcessorCore(id.Value, cpuCore);
+            var result = await _service.UpdateProcessorCoreAsync(id.Value, cpuCore);
 
             return result ? Json(cpuCore) : ResultsHelper.UpdateError();
         }
@@ -69,7 +69,7 @@ namespace FoundersPC.API.Controllers.V1
 
             if (readCpuCore == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
-            var result = await _service.DeleteProcessorCore(id.Value);
+            var result = await _service.DeleteProcessorCoreAsync(id.Value);
 
             return result ? Json(readCpuCore) : ResultsHelper.DeleteError();
         }

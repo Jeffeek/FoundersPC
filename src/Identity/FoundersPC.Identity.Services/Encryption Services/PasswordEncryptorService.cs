@@ -21,5 +21,15 @@ namespace FoundersPC.Identity.Services.Encryption_Services
 
             return Convert.ToBase64String(hash);
         }
+
+        public string GeneratePassword(int length = 6)
+        {
+            if (length < 6 || length > 30) throw new ArgumentOutOfRangeException(nameof(length));
+
+            var guid = Guid.NewGuid();
+            var guidPass = guid.ToString().Replace("-", String.Empty);
+
+            return guidPass.Substring(0, length);
+        }
     }
 }

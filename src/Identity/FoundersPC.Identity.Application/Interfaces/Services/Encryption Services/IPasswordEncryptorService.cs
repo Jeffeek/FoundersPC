@@ -2,6 +2,8 @@
 {
     public interface IPasswordEncryptorService
     {
-        public string EncryptPassword(string rawPassword);
+        string EncryptPassword(string rawPassword);
+
+        string GeneratePassword(int length = 6);
     }
 }

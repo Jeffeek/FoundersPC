@@ -22,45 +22,42 @@ namespace FoundersPC.Identity.Services.User_Services
         private readonly IPasswordEncryptorService _encryptorService;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
-        private readonly IUsersEntrancesService _usersEntrancesService;
-        private readonly IMailService _mailService;
 
         public UserService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
                            IPasswordEncryptorService encryptorService,
-                           IMapper mapper,
-                           IUsersEntrancesService usersEntrancesService,
-                           IMailService mailService
+                           IMapper mapper
         )
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
             _encryptorService = encryptorService;
             _mapper = mapper;
-            _usersEntrancesService = usersEntrancesService;
-            _mailService = mailService;
         }
 
-        public async Task<UserEntityReadDto> TryToFindUser(string emailOrLogin, string rawPassword)
+        public async Task<UserEntityReadDto> GetUserWithEmailAsync(string email)
+        {
+            if (ReferenceEquals(email, null)) return null;
+
+            var user = await _unitOfWorkUsersIdentity.UsersRepository.GetByAsync(x => x.Email == email);
+
+            return user == null ? null : _mapper.Map<UserEntity, UserEntityReadDto>(user);
+        }
+
+        public async Task<UserEntityReadDto> GetUserWithEmailAndPasswordAsync(string emailOrLogin, string rawPassword)
         {
             if (ReferenceEquals(emailOrLogin, null)) return null;
             if (ReferenceEquals(rawPassword, null)) return null;
 
             var hashedPassword = _encryptorService.EncryptPassword(rawPassword);
 
-            var user = await _unitOfWorkUsersIdentity.UsersRepository.GetBy(x =>
-                                                                                (x.Email == emailOrLogin
-                                                                                 || x.Login == emailOrLogin)
-                                                                                && x.HashedPassword == hashedPassword);
+            var user = await _unitOfWorkUsersIdentity.UsersRepository.GetByAsync(x =>
+                                                                                     (x.Email == emailOrLogin
+                                                                                      || x.Login == emailOrLogin)
+                                                                                     && x.HashedPassword == hashedPassword);
 
-            if (user == null) return null;
-
-            await _usersEntrancesService.Log(user.Id);
-            await _unitOfWorkUsersIdentity.SaveChangesAsync();
-            //await _mailService.SendToAsync(user.Email, "Signed In", "Congratz!", false);
-
-            return _mapper.Map<UserEntity, UserEntityReadDto>(user);
+            return user == null ? null : _mapper.Map<UserEntity, UserEntityReadDto>(user);
         }
 
-        public async Task<bool> TryToRegisterUser(string email, string rawPassword)
+        public async Task<bool> RegisterUserAsync(string email, string rawPassword)
         {
             var userAlreadyExists = await _unitOfWorkUsersIdentity.UsersRepository
                                                                   .AnyAsync(user => user.Email == email);
@@ -93,7 +90,7 @@ namespace FoundersPC.Identity.Services.User_Services
             return saveChangesResult > 0;
         }
 
-        public async Task<bool> TryToRegisterManager(string email, string rawPassword)
+        public async Task<bool> RegisterManagerAsync(string email, string rawPassword)
         {
             var userAlreadyExists = await _unitOfWorkUsersIdentity.UsersRepository
                                                                   .AnyAsync(user => user.Email == email);
@@ -122,6 +119,23 @@ namespace FoundersPC.Identity.Services.User_Services
             var result = await _unitOfWorkUsersIdentity.UsersRepository.AddAsync(newUser);
 
             return result != null;
+        }
+
+        public async Task<bool> ChangePassword(int id, string newPassword)
+        {
+            var user = await _unitOfWorkUsersIdentity.UsersRepository.GetByIdAsync(id);
+
+            var hashedPassword = _encryptorService.EncryptPassword(newPassword);
+
+            user.HashedPassword = hashedPassword;
+
+            var resultOfUpdating = await _unitOfWorkUsersIdentity.UsersRepository.UpdateAsync(user);
+
+            if (!resultOfUpdating) return false;
+
+            var resultOfSaving = await _unitOfWorkUsersIdentity.SaveChangesAsync();
+
+            return resultOfSaving > 0;
         }
     }
 }

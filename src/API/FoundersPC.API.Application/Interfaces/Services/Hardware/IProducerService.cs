@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 
         Task<ProducerReadDto> GetProducerByIdAsync(int producerId);
 
-        Task<bool> CreateProducer(ProducerInsertDto producer);
+        Task<bool> CreateProducerAsync(ProducerInsertDto producer);
 
-        Task<bool> UpdateProducer(int id, ProducerUpdateDto producer);
+        Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer);
 
-        Task<bool> DeleteProducer(int id);
+        Task<bool> DeleteProducerAsync(int id);
     }
 }

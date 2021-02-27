@@ -40,7 +40,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
                                                                .GetByIdAsync(motherboardId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateMotherboard(MotherboardInsertDto motherboard)
+        public async Task<bool> CreateMotherboardAsync(MotherboardInsertDto motherboard)
         {
             var mappedMotherboard = _mapper.Map<MotherboardInsertDto, Motherboard>(motherboard);
 
@@ -54,7 +54,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateMotherboard(int id, MotherboardUpdateDto motherboard)
+        public async Task<bool> UpdateMotherboardAsync(int id, MotherboardUpdateDto motherboard)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.MotherboardsRepository.GetByIdAsync(id);
 
@@ -69,7 +69,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteMotherboard(int id)
+        public async Task<bool> DeleteMotherboardAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.MotherboardsRepository.DeleteAsync(id);
 

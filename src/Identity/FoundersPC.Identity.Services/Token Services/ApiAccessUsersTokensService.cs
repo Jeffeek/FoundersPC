@@ -17,29 +17,25 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork) => _unitOfWork = unitOfWork;
 
-        public async Task<bool> IsTokenBlocked(string token)
+        public async Task<bool> IsTokenBlockedAsync(string token)
         {
-            var allTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllAsync();
-
-            var tokenEntity = allTokens.FirstOrDefault(t => t.HashedToken == token);
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
             if (ReferenceEquals(tokenEntity, null)) throw new KeyNotFoundException(nameof(tokenEntity));
 
             return tokenEntity.IsBlocked;
         }
 
-        public async Task<bool> IsTokenActive(string token)
+        public async Task<bool> IsTokenActiveAsync(string token)
         {
-            var allTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllAsync();
-
-            var tokenEntity = allTokens.FirstOrDefault(t => t.HashedToken == token);
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
             if (ReferenceEquals(tokenEntity, null)) throw new KeyNotFoundException(nameof(tokenEntity));
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
 
-        public async Task<bool> CanMakeRequest(string token)
+        public async Task<bool> CanMakeRequestAsync(string token)
         {
             var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
 

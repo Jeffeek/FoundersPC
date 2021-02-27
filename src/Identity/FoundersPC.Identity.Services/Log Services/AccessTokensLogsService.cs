@@ -18,11 +18,11 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public AccessTokensLogsService(IUnitOfWorkUsersIdentity unitOfWork) => _unitOfWork = unitOfWork;
 
-        public async Task<IEnumerable<AccessTokenLog>> GetAll() => await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
+        public async Task<IEnumerable<AccessTokenLog>> GetAllAsync() => await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
 
-        public async Task<AccessTokenLog> Get(int id) => await _unitOfWork.AccessTokensLogsRepository.GetByIdAsync(id);
+        public async Task<AccessTokenLog> GetByIdAsync(int id) => await _unitOfWork.AccessTokensLogsRepository.GetByIdAsync(id);
 
-        public async Task<IEnumerable<AccessTokenLog>> GetUsagesBetween(DateTime start, DateTime finish)
+        public async Task<IEnumerable<AccessTokenLog>> GetUsagesBetweenAsync(DateTime start, DateTime finish)
         {
             var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
 
@@ -31,7 +31,7 @@ namespace FoundersPC.Identity.Services.Log_Services
             return filtered;
         }
 
-        public async Task<IEnumerable<AccessTokenLog>> GetUsagesIn(DateTime date)
+        public async Task<IEnumerable<AccessTokenLog>> GetUsagesInAsync(DateTime date)
         {
             var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
 
@@ -43,7 +43,7 @@ namespace FoundersPC.Identity.Services.Log_Services
             return filtered;
         }
 
-        public async Task<bool> Log(int tokenId)
+        public async Task<bool> LogAsync(int tokenId)
         {
             if (tokenId <= 0) return false;
 
@@ -63,11 +63,11 @@ namespace FoundersPC.Identity.Services.Log_Services
             return true;
         }
 
-        public async Task<bool> Log(string token)
+        public async Task<bool> LogAsync(string token)
         {
             if (token == null || token.Length != 88) return false;
 
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByToken(token);
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
             if (tokenEntity == null) return false;
 

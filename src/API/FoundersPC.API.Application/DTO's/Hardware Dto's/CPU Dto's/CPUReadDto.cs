@@ -38,6 +38,8 @@ namespace FoundersPC.API.Application
 
         public int ProcessorCoreId { get; set; }
 
+        public ProcessorCoreReadDto Core { get; set; }
+
         public int Id { get; set; }
 
         public int ProducerId { get; set; }

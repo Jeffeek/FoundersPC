@@ -11,16 +11,16 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 {
     public interface IAccessTokensLogsService
     {
-        Task<IEnumerable<AccessTokenLog>> GetAll();
+        Task<IEnumerable<AccessTokenLog>> GetAllAsync();
 
-        Task<AccessTokenLog> Get(int id);
+        Task<AccessTokenLog> GetByIdAsync(int id);
 
-        Task<IEnumerable<AccessTokenLog>> GetUsagesBetween(DateTime start, DateTime finish);
+        Task<IEnumerable<AccessTokenLog>> GetUsagesBetweenAsync(DateTime start, DateTime finish);
 
-        Task<IEnumerable<AccessTokenLog>> GetUsagesIn(DateTime date);
+        Task<IEnumerable<AccessTokenLog>> GetUsagesInAsync(DateTime date);
 
-        Task<bool> Log(int tokenId);
+        Task<bool> LogAsync(int tokenId);
 
-        Task<bool> Log(string token);
+        Task<bool> LogAsync(string token);
     }
 }

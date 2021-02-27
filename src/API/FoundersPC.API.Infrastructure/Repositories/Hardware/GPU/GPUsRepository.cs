@@ -3,6 +3,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU;
+using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
 using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.ApplicationShared.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +19,18 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
         public GPUsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IGPUsRepositoryAsync
+
+        public override async Task<Domain.Entities.Hardware.VideoCard.GPU> GetByIdAsync(int id)
+        {
+            var gpu = await Context.Set<Domain.Entities.Hardware.VideoCard.GPU>().FindAsync(id);
+
+            if (gpu is null) return null;
+
+            await Context.Entry(gpu).Reference<Producer>(x => x.Producer).LoadAsync();
+            await Context.Entry(gpu).Reference<VideoCardCore>(x => x.Core).LoadAsync();
+
+            return gpu;
+        }
 
         /// <inheritdoc />
         public override async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()

@@ -36,6 +36,8 @@ namespace FoundersPC.API.Application
 
         public int GraphicsProcessorId { get; set; }
 
+        public VideoCardCoreReadDto Core { get; set; }
+
         public int Id { get; set; }
 
         public int ProducerId { get; set; }

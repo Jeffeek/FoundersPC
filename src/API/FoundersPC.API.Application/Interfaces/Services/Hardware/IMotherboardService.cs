@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 
         Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId);
 
-        Task<bool> CreateMotherboard(MotherboardInsertDto motherboard);
+        Task<bool> CreateMotherboardAsync(MotherboardInsertDto motherboard);
 
-        Task<bool> UpdateMotherboard(int id, MotherboardUpdateDto motherboard);
+        Task<bool> UpdateMotherboardAsync(int id, MotherboardUpdateDto motherboard);
 
-        Task<bool> DeleteMotherboard(int id);
+        Task<bool> DeleteMotherboardAsync(int id);
     }
 }

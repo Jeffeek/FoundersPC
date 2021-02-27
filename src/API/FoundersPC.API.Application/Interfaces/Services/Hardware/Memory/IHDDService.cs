@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware.Memory
 
         Task<HDDReadDto> GetHDDByIdAsync(int hddId);
 
-        Task<bool> CreateHDD(HDDInsertDto hdd);
+        Task<bool> CreateHDDAsync(HDDInsertDto hdd);
 
-        Task<bool> UpdateHDD(int id, HDDUpdateDto hdd);
+        Task<bool> UpdateHDDAsync(int id, HDDUpdateDto hdd);
 
-        Task<bool> DeleteHDD(int id);
+        Task<bool> DeleteHDDAsync(int id);
     }
 }

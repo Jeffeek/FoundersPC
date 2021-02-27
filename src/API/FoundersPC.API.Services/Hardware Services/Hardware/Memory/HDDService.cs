@@ -36,7 +36,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             _mapper.Map<HDD, HDDReadDto>(await _unitOfWorkHardwareAPI.HDDsRepository.GetByIdAsync(hddId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateHDD(HDDInsertDto hdd)
+        public async Task<bool> CreateHDDAsync(HDDInsertDto hdd)
         {
             var mappedHDD = _mapper.Map<HDDInsertDto, HDD>(hdd);
 
@@ -50,7 +50,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateHDD(int id, HDDUpdateDto hdd)
+        public async Task<bool> UpdateHDDAsync(int id, HDDUpdateDto hdd)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.HDDsRepository.GetByIdAsync(id);
 
@@ -65,7 +65,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteHDD(int id)
+        public async Task<bool> DeleteHDDAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.HDDsRepository.DeleteAsync(id);
 

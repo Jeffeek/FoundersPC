@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 
         Task<CaseReadDto> GetCaseByIdAsync(int caseId);
 
-        Task<bool> CreateCase(CaseInsertDto @case);
+        Task<bool> CreateCaseAsync(CaseInsertDto @case);
 
-        Task<bool> UpdateCase(int id, CaseUpdateDto @case);
+        Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case);
 
-        Task<bool> DeleteCase(int id);
+        Task<bool> DeleteCaseAsync(int id);
     }
 }

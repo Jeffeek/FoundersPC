@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware.CPU
 
         Task<CPUReadDto> GetCPUByIdAsync(int cpuId);
 
-        Task<bool> CreateCPU(CPUInsertDto cpu);
+        Task<bool> CreateCPUAsync(CPUInsertDto cpu);
 
-        Task<bool> UpdateCPU(int id, CPUUpdateDto cpu);
+        Task<bool> UpdateCPUAsync(int id, CPUUpdateDto cpu);
 
-        Task<bool> DeleteCPU(int id);
+        Task<bool> DeleteCPUAsync(int id);
     }
 }

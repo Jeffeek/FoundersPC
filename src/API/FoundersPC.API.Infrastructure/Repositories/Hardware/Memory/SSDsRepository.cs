@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.ApplicationShared.Repository;
@@ -18,6 +19,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
         public SSDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of ISSDsRepositoryAsync
+
+        public override async Task<SSD> GetByIdAsync(int id)
+        {
+            var ssd = await Context.Set<SSD>().FindAsync(id);
+
+            if (ssd is null) return null;
+
+            await Context.Entry(ssd).Reference<Producer>(x => x.Producer).LoadAsync();
+
+            return ssd;
+        }
 
         /// <inheritdoc />
         public override async Task<IEnumerable<SSD>> GetAllAsync()

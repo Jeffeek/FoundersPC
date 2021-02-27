@@ -25,11 +25,11 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         }
 
         [HttpPost]
-        public async Task<UserRegisterResponse> TryToRegisterUser(UserRegisterRequest request)
+        public async Task<UserRegisterResponse> Register(UserRegisterRequest request)
         {
             if (ReferenceEquals(request, null)) return null;
 
-            var result = await _userService.TryToRegisterUser(request.Email, request.Password);
+            var result = await _userService.RegisterUserAsync(request.Email, request.Password);
 
             if (result)
                 return new UserRegisterResponse

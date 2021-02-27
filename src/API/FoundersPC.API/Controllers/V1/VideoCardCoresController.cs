@@ -49,7 +49,7 @@ namespace FoundersPC.API.Controllers.V1
             if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
             if (!TryValidateModel(videoCardCore)) return ValidationProblem(ModelState);
 
-            var result = await _videoCardCoreService.UpdateVideoCardCore(id.Value, videoCardCore);
+            var result = await _videoCardCoreService.UpdateVideoCardCoreAsync(id.Value, videoCardCore);
 
             return result ? Json(videoCardCore) : ResultsHelper.UpdateError();
         }
@@ -60,7 +60,7 @@ namespace FoundersPC.API.Controllers.V1
         {
             if (!TryValidateModel(videoCardCore)) return ValidationProblem(ModelState);
 
-            var insertResult = await _videoCardCoreService.CreateVideoCardCore(videoCardCore);
+            var insertResult = await _videoCardCoreService.CreateVideoCardCoreAsync(videoCardCore);
 
             return insertResult ? Json(videoCardCore) : ResultsHelper.InsertError();
         }
@@ -75,7 +75,7 @@ namespace FoundersPC.API.Controllers.V1
 
             if (readDto == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
-            var result = await _videoCardCoreService.DeleteVideoCardCore(id.Value);
+            var result = await _videoCardCoreService.DeleteVideoCardCoreAsync(id.Value);
 
             return result ? Json(readDto) : ResultsHelper.DeleteError();
         }

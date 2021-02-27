@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware.GPU
 
         Task<GPUReadDto> GetGPUByIdAsync(int gpuId);
 
-        Task<bool> CreateGPU(GPUInsertDto gpu);
+        Task<bool> CreateGPUAsync(GPUInsertDto gpu);
 
-        Task<bool> UpdateGPU(int id, GPUUpdateDto gpu);
+        Task<bool> UpdateGPUAsync(int id, GPUUpdateDto gpu);
 
-        Task<bool> DeleteGPU(int id);
+        Task<bool> DeleteGPUAsync(int id);
     }
 }

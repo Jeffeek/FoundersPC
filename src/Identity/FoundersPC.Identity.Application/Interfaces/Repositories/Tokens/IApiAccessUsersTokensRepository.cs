@@ -10,6 +10,6 @@ namespace FoundersPC.Identity.Application.Interfaces.Repositories.Tokens
 {
     public interface IApiAccessUsersTokensRepository : IRepositoryAsync<ApiAccessUserToken>
     {
-        Task<ApiAccessUserToken> GetByToken(string token);
+        Task<ApiAccessUserToken> GetByTokenAsync(string token);
     }
 }

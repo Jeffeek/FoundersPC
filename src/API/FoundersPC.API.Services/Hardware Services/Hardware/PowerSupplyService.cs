@@ -40,7 +40,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
                                                                .GetByIdAsync(powerSupplyId));
 
         /// <inheritdoc />
-        public async Task<bool> CreatePowerSupply(PowerSupplyInsertDto powerSupply)
+        public async Task<bool> CreatePowerSupplyAsync(PowerSupplyInsertDto powerSupply)
         {
             var mappedPowerSupply = _mapper.Map<PowerSupplyInsertDto, PowerSupply>(powerSupply);
 
@@ -54,7 +54,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdatePowerSupply(int id, PowerSupplyUpdateDto powerSupply)
+        public async Task<bool> UpdatePowerSupplyAsync(int id, PowerSupplyUpdateDto powerSupply)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.GetByIdAsync(id);
 
@@ -69,7 +69,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeletePowerSupply(int id)
+        public async Task<bool> DeletePowerSupplyAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.DeleteAsync(id);
 

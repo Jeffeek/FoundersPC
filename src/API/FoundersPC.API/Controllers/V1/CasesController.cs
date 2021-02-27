@@ -49,7 +49,7 @@ namespace FoundersPC.API.Controllers.V1
             if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
             if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
 
-            var result = await _caseService.UpdateCase(id.Value, @case);
+            var result = await _caseService.UpdateCaseAsync(id.Value, @case);
 
             return result ? Json(@case) : ResultsHelper.UpdateError();
         }
@@ -60,7 +60,7 @@ namespace FoundersPC.API.Controllers.V1
         {
             if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
 
-            var insertResult = await _caseService.CreateCase(@case);
+            var insertResult = await _caseService.CreateCaseAsync(@case);
 
             return insertResult ? Json(@case) : ResultsHelper.InsertError();
         }
@@ -75,7 +75,7 @@ namespace FoundersPC.API.Controllers.V1
 
             if (readCase == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
-            var result = await _caseService.DeleteCase(id.Value);
+            var result = await _caseService.DeleteCaseAsync(id.Value);
 
             return result ? Json(readCase) : ResultsHelper.DeleteError();
         }

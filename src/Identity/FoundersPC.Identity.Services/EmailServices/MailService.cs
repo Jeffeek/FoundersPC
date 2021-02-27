@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
 using System.Threading.Tasks;
 using FluentEmail.Core;
 using FluentEmail.Smtp;
@@ -34,7 +33,7 @@ namespace FoundersPC.Identity.Services.EmailServices
         {
             if (email == null) throw new ArgumentNullException(nameof(email));
 
-            var sendResult = await Email.From(_botConfiguration.MailAddress, "FoundersPC_daemon")
+            var sendResult = await Email.From(_botConfiguration.MailAddress, "FoundersPC_DAEMON")
                                         .Subject(subject)
                                         .Body(content)
                                         .To(email)
@@ -53,6 +52,34 @@ namespace FoundersPC.Identity.Services.EmailServices
             }
 
             return sendResults.All(x => x);
+        }
+
+        public async Task<bool> SendEntranceNotificationAsync(string email)
+        {
+            var content = $"You've been entered to FoundersPC API at {DateTime.Now}";
+
+            return await SendToAsync(email, "Entrance", content, false);
+        }
+
+        public async Task<bool> SendRegistrationNotificationAsync(string email)
+        {
+            const string content = "Thanks for registration in our service!";
+
+            return await SendToAsync(email, "Registration Notification", content, false);
+        }
+
+        public Task<bool> SendAPIAccessToken(string email, string token)
+        {
+            var content = $"This is your token for getting access to our API: {token}\nDon't lose it, we will not(and couldn't) restore it";
+
+            return SendToAsync(email, "API Access Token", content, false);
+        }
+
+        public async Task<bool> SendNewPasswordAsync(string email, string password)
+        {
+            var content = $"Congratz! You've changed your password to {password}. Use it to get access to our site!";
+
+            return await SendToAsync(email, "Password Change", content, false);
         }
     }
 }

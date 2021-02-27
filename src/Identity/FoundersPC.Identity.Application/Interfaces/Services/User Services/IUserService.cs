@@ -9,10 +9,14 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 {
     public interface IUserService
     {
-        Task<UserEntityReadDto> TryToFindUser(string emailOrLogin, string rawPassword);
+        Task<UserEntityReadDto> GetUserWithEmailAndPasswordAsync(string emailOrLogin, string rawPassword);
 
-        Task<bool> TryToRegisterUser(string email, string rawPassword);
+        Task<UserEntityReadDto> GetUserWithEmailAsync(string email);
 
-        Task<bool> TryToRegisterManager(string email, string rawPassword);
+        Task<bool> RegisterUserAsync(string email, string rawPassword);
+
+        Task<bool> RegisterManagerAsync(string email, string rawPassword);
+
+        Task<bool> ChangePassword(int id, string newPassword);
     }
 }

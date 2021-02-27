@@ -37,7 +37,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
                                                                                   .GetByIdAsync(gpuId));
 
         /// <inheritdoc />
-        public async Task<bool> CreateGPU(GPUInsertDto gpu)
+        public async Task<bool> CreateGPUAsync(GPUInsertDto gpu)
         {
             var mappedGPU = _mapper.Map<GPUInsertDto, Domain.Entities.Hardware.VideoCard.GPU>(gpu);
 
@@ -51,7 +51,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
         }
 
         /// <inheritdoc />
-        public async Task<bool> UpdateGPU(int id, GPUUpdateDto gpu)
+        public async Task<bool> UpdateGPUAsync(int id, GPUUpdateDto gpu)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.VideoCardsRepository.GetByIdAsync(id);
 
@@ -66,7 +66,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
         }
 
         /// <inheritdoc />
-        public async Task<bool> DeleteGPU(int id)
+        public async Task<bool> DeleteGPUAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.VideoCardsRepository.DeleteAsync(id);
 

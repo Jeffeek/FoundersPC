@@ -8,6 +8,8 @@ namespace FoundersPC.Identity.Application.DTO
 {
     public class UserEntityReadDto
     {
+        public int Id { get; set; }
+
         public string Login { get; set; }
 
         public DateTime RegistrationDate { get; set; }

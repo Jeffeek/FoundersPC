@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 {
+    // todo: by id
     public class UsersEntrancesLogsRepository : GenericRepositoryAsync<UserEntranceLog>, IUsersEntrancesLogsRepository
     {
         public UsersEntrancesLogsRepository(FoundersPCUsersContext context) : base(context) { }

@@ -1,10 +1,12 @@
 #region Using namespaces
 
 using System;
+using System.Web;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -56,7 +58,11 @@ namespace FoundersPC.Web
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
+            app.UseEndpoints(endpoints =>
+                             {
+                                 endpoints.MapControllerRoute(name : "default", pattern : "{controller=Home}/{action=Index}");
+                                 endpoints.MapDefaultControllerRoute();
+                             });
         }
     }
 }

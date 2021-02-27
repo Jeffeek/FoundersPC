@@ -13,10 +13,10 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware.Memory
 
         Task<SSDReadDto> GetSSDByIdAsync(int ssdId);
 
-        Task<bool> CreateSSD(SSDInsertDto ssd);
+        Task<bool> CreateSSDAsync(SSDInsertDto ssd);
 
-        Task<bool> UpdateSSD(int id, SSDUpdateDto ssd);
+        Task<bool> UpdateSSDAsync(int id, SSDUpdateDto ssd);
 
-        Task<bool> DeleteSSD(int id);
+        Task<bool> DeleteSSDAsync(int id);
     }
 }
