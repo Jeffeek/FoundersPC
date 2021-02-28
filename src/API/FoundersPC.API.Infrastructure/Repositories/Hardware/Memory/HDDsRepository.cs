@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.ApplicationShared.Repository;
@@ -26,7 +25,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 
             if (hdd is null) return null;
 
-            await Context.Entry(hdd).Reference<Producer>(x => x.Producer).LoadAsync();
+            await Context.Entry(hdd).Reference(x => x.Producer).LoadAsync();
 
             return hdd;
         }

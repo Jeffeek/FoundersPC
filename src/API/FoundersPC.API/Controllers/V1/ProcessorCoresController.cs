@@ -12,6 +12,7 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [Route("api/processorcores")]
+    [Route("api/cpucores")]
     [ApiController]
     public class ProcessorCoresController : Controller
     {

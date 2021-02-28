@@ -1,5 +1,8 @@
 ﻿#region Using namespaces
 
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using FoundersPC.AuthenticationShared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,5 +36,23 @@ namespace FoundersPC.Web.Controllers
                {
                    role = "None"
                });
+
+        [AllowAnonymous]
+        public IActionResult AccessDenied() => View("AccessDenied");
+
+        [Authorize]
+        public async Task<ActionResult> Cases()
+        {
+            var roleRequest = new UserRoleRequest()
+                              {
+                                  Role = HttpContext.User.FindFirst(x => x.Type == "Role")?.Value
+                              };
+
+            var request = await ApplicationMicroservicesContext.HardwareApiClient.GetAsync("cases");
+
+            var response = await request.Content.ReadAsStringAsync();
+
+            return Ok(response);
+        }
     }
 }

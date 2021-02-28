@@ -28,7 +28,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         #region Implementation of IPowerSupplyService
 
         /// <inheritdoc />
-        public async Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliersAsync() =>
+        public async Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync() =>
             _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
                                                                                          .PowerSuppliersRepository
                                                                                          .GetAllAsync());

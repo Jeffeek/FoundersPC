@@ -25,7 +25,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
             if (powerSupply is null) return null;
 
-            await Context.Entry(powerSupply).Reference<Producer>(x => x.Producer).LoadAsync();
+            await Context.Entry(powerSupply).Reference(x => x.Producer).LoadAsync();
 
             return powerSupply;
         }

@@ -50,7 +50,7 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             if (user == null) return false;
 
-            var log = new UserEntranceLog()
+            var log = new UserEntranceLog
                       {
                           Entrance = DateTime.Now,
                           User = user,

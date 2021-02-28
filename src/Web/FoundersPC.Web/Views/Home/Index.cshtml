@@ -7,6 +7,11 @@
     if (User.Identity?.IsAuthenticated ?? false)
     {
         <a class="btn btn-black align-middle text-danger" asp-controller="Authentication" asp-action="SignOut">Logout</a>
+        <ul>
+            <li class="list-group-item">
+                <a class="btn btn-outline-info" asp-controller="Home" asp-action="Cases">CASES</a>
+            </li>
+        </ul>
     }
     else
     {

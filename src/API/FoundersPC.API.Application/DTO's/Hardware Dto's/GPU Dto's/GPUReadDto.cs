@@ -10,6 +10,8 @@ namespace FoundersPC.API.Application
 {
     public class GPUReadDto : IGPU, IIdentityItem, IProducerableDto
     {
+        public VideoCardCoreReadDto Core { get; set; }
+
         public int AdditionalPower { get; set; }
 
         public int Frequency { get; set; }
@@ -35,8 +37,6 @@ namespace FoundersPC.API.Application
         public string Title { get; set; }
 
         public int GraphicsProcessorId { get; set; }
-
-        public VideoCardCoreReadDto Core { get; set; }
 
         public int Id { get; set; }
 

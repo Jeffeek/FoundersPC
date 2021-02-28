@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces
+
+using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.Encryption_Services
 {

@@ -1,0 +1,671 @@
+02/28/2021 15:14:51 HARDWARE API started..
+02/28/2021 15:14:51 HostBuilder created
+02/28/2021 15:14:51 Host built
+02/28/2021 15:14:52 Now listening on: "https://localhost:5001"
+02/28/2021 15:14:52 Now listening on: "http://localhost:5000"
+02/28/2021 15:14:52 Application started. Press Ctrl+C to shut down.
+02/28/2021 15:14:52 Hosting environment: "Development"
+02/28/2021 15:14:52 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 15:15:02 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 2.7961 ms
+02/28/2021 15:15:02 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 2.7968 ms
+02/28/2021 15:15:10 HTTP "GET" "/api/cases" responded 200 in 1759.1782 ms
+02/28/2021 15:15:15 HTTP "GET" "/api/cases" responded 200 in 34.8458 ms
+02/28/2021 15:15:22 HTTP "GET" "/api/cpus" responded 200 in 82.8875 ms
+02/28/2021 15:15:30 HTTP "GET" "/api/processorcores" responded 200 in 73.4625 ms
+02/28/2021 15:15:37 HTTP "GET" "/api/producers" responded 200 in 16.7997 ms
+02/28/2021 15:15:57 HTTP "GET" "/api/videocardcores/999" responded 404 in 77.8292 ms
+02/28/2021 15:18:30 HARDWARE API started..
+02/28/2021 15:18:30 HARDWARE API HostBuilder created
+02/28/2021 15:18:31 Host built
+02/28/2021 15:18:31 Now listening on: "https://localhost:5001"
+02/28/2021 15:18:31 Now listening on: "http://localhost:5000"
+02/28/2021 15:18:31 Application started. Press Ctrl+C to shut down.
+02/28/2021 15:18:31 Hosting environment: "Development"
+02/28/2021 15:18:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 15:18:47 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 2.3795 ms
+02/28/2021 15:18:47 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 2.3795 ms
+02/28/2021 15:18:53 HTTP "GET" "/api/cases" responded 200 in 1622.5387 ms
+02/28/2021 15:20:02 HARDWARE API started..
+02/28/2021 15:20:02 HARDWARE API HostBuilder created
+02/28/2021 15:20:02 Host built
+02/28/2021 15:20:03 Now listening on: "https://localhost:5001"
+02/28/2021 15:20:03 Now listening on: "http://localhost:5000"
+02/28/2021 15:20:03 Application started. Press Ctrl+C to shut down.
+02/28/2021 15:20:03 Hosting environment: "Development"
+02/28/2021 15:20:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 15:20:10 Application is shutting down...
+02/28/2021 15:20:59 HARDWARE API started..
+02/28/2021 15:20:59 HARDWARE API HostBuilder created
+02/28/2021 15:21:00 Host built
+02/28/2021 15:21:00 Now listening on: "https://localhost:5001"
+02/28/2021 15:21:00 Now listening on: "http://localhost:5000"
+02/28/2021 15:21:00 Application started. Press Ctrl+C to shut down.
+02/28/2021 15:21:00 Hosting environment: "Development"
+02/28/2021 15:21:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 15:21:06 Application is shutting down...
+02/28/2021 15:25:39 HARDWARE API started..
+02/28/2021 15:25:39 HARDWARE API HostBuilder created
+02/28/2021 15:25:39 Host built
+02/28/2021 15:25:40 Now listening on: "https://localhost:5001"
+02/28/2021 15:25:40 Now listening on: "http://localhost:5000"
+02/28/2021 15:25:40 Application started. Press Ctrl+C to shut down.
+02/28/2021 15:25:40 Hosting environment: "Development"
+02/28/2021 15:25:40 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 15:25:50 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 2.1205 ms
+02/28/2021 15:25:50 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 2.1205 ms
+02/28/2021 15:26:03 HTTP "POST" "/api/cases" responded 400 in 439.1459 ms
+02/28/2021 15:26:20 HTTP "POST" "/api/cases" responded 200 in 1403.2287 ms
+02/28/2021 15:27:31 HARDWARE API started..
+02/28/2021 15:27:31 HARDWARE API HostBuilder created
+02/28/2021 15:27:32 Host built
+02/28/2021 15:27:32 Now listening on: "https://localhost:5001"
+02/28/2021 15:27:32 Now listening on: "http://localhost:5000"
+02/28/2021 15:27:32 Application started. Press Ctrl+C to shut down.
+02/28/2021 15:27:32 Hosting environment: "Development"
+02/28/2021 15:27:32 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 15:27:35 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 2.0664 ms
+02/28/2021 15:27:35 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 2.0661 ms
+02/28/2021 15:28:11 HTTP "POST" "/api/cases" responded 400 in 403.0487 ms
+02/28/2021 15:35:01 HARDWARE API started..
+02/28/2021 15:35:01 HARDWARE API HostBuilder created
+02/28/2021 15:35:02 Host built
+02/28/2021 15:35:03 Now listening on: "https://localhost:5001"
+02/28/2021 15:35:03 Now listening on: "http://localhost:5000"
+02/28/2021 15:35:03 Application started. Press Ctrl+C to shut down.
+02/28/2021 15:35:03 Hosting environment: "Development"
+02/28/2021 15:35:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 15:35:20 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 3.8464 ms
+02/28/2021 15:35:20 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 3.3037 ms
+02/28/2021 15:35:47 HTTP "GET" "/api/cases/5" responded 500 in 3.4029 ms
+System.InvalidOperationException: No authentication handlers are registered. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("Cookies",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+02/28/2021 15:35:47 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authentication handlers are registered. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("Cookies",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 16:29:12 HARDWARE API started..
+02/28/2021 16:29:12 HARDWARE API HostBuilder created
+02/28/2021 16:29:13 Host built
+02/28/2021 16:29:13 Now listening on: "https://localhost:5001"
+02/28/2021 16:29:13 Now listening on: "http://localhost:5000"
+02/28/2021 16:29:13 Application started. Press Ctrl+C to shut down.
+02/28/2021 16:29:13 Hosting environment: "Development"
+02/28/2021 16:29:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 16:29:25 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 2.1982 ms
+02/28/2021 16:29:25 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 2.1955 ms
+02/28/2021 16:29:50 HTTP "POST" "/api/cases" responded 200 in 1676.1380 ms
+02/28/2021 16:30:01 HTTP "GET" "/api/cases" responded 200 in 165.7212 ms
+02/28/2021 16:30:20 HTTP "DELETE" "/api/cases/27" responded 200 in 77.9923 ms
+02/28/2021 16:30:40 HTTP "POST" "/api/cases" responded 200 in 7.9594 ms
+02/28/2021 16:30:50 HTTP "GET" "/api/cases" responded 200 in 3.6959 ms
+02/28/2021 16:31:17 HTTP "POST" "/api/cases/28" responded 200 in 33.1900 ms
+02/28/2021 16:31:26 HTTP "GET" "/api/cases" responded 200 in 2.8824 ms
+02/28/2021 17:00:59 HARDWARE API started..
+02/28/2021 17:01:00 HARDWARE API HostBuilder created
+02/28/2021 17:01:00 Host built
+02/28/2021 17:01:01 Now listening on: "https://localhost:5001"
+02/28/2021 17:01:01 Now listening on: "http://localhost:5000"
+02/28/2021 17:01:01 Application started. Press Ctrl+C to shut down.
+02/28/2021 17:01:01 Hosting environment: "Development"
+02/28/2021 17:01:01 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 17:01:16 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 2.5148 ms
+02/28/2021 17:01:16 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 2.5152 ms
+02/28/2021 17:01:26 HTTP "GET" "/api/hdds" responded 200 in 1586.5838 ms
+02/28/2021 17:01:32 HTTP "GET" "/api/harddrives" responded 200 in 33.3105 ms
+02/28/2021 17:13:36 HARDWARE API started..
+02/28/2021 17:13:36 HARDWARE API HostBuilder created
+02/28/2021 17:13:36 Host built
+02/28/2021 17:13:37 Now listening on: "https://localhost:5001"
+02/28/2021 17:13:37 Now listening on: "http://localhost:5000"
+02/28/2021 17:13:37 Application started. Press Ctrl+C to shut down.
+02/28/2021 17:13:37 Hosting environment: "Development"
+02/28/2021 17:13:37 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 17:13:56 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 15.2097 ms
+02/28/2021 17:13:56 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 15.2065 ms
+02/28/2021 17:14:02 HTTP "GET" "/api/cases" responded 500 in 3.8717 ms
+System.InvalidOperationException: The AuthorizationPolicy named: 'Administrator, Manager, DefaultUser' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+02/28/2021 17:14:02 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The AuthorizationPolicy named: 'Administrator, Manager, DefaultUser' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 17:16:39 HARDWARE API started..
+02/28/2021 17:16:39 HARDWARE API HostBuilder created
+02/28/2021 17:16:40 Host built
+02/28/2021 17:16:40 Now listening on: "https://localhost:5001"
+02/28/2021 17:16:40 Now listening on: "http://localhost:5000"
+02/28/2021 17:16:40 Application started. Press Ctrl+C to shut down.
+02/28/2021 17:16:40 Hosting environment: "Development"
+02/28/2021 17:16:40 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 17:16:58 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 15.3512 ms
+02/28/2021 17:16:58 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 15.3508 ms
+02/28/2021 17:17:02 HTTP "GET" "/api/cases" responded 500 in 4.0475 ms
+System.InvalidOperationException: The AuthorizationPolicy named: 'Administrator, Manager, DefaultUser' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+02/28/2021 17:17:02 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The AuthorizationPolicy named: 'Administrator, Manager, DefaultUser' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 17:17:39 HARDWARE API started..
+02/28/2021 17:17:40 HARDWARE API HostBuilder created
+02/28/2021 17:17:40 Host built
+02/28/2021 17:17:41 Now listening on: "https://localhost:5001"
+02/28/2021 17:17:41 Now listening on: "http://localhost:5000"
+02/28/2021 17:17:41 Application started. Press Ctrl+C to shut down.
+02/28/2021 17:17:41 Hosting environment: "Development"
+02/28/2021 17:17:41 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 17:18:01 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 13.8032 ms
+02/28/2021 17:18:01 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 13.8033 ms
+02/28/2021 17:18:06 HTTP "GET" "/api/cases" responded 302 in 9.6604 ms
+02/28/2021 17:18:06 HTTP "GET" "/Account/Login?ReturnUrl=%2Fapi%2Fcases" responded 404 in 0.1503 ms
+02/28/2021 20:15:06 HARDWARE API started..
+02/28/2021 20:15:06 HARDWARE API HostBuilder created
+02/28/2021 20:15:07 Host built
+02/28/2021 20:15:07 Now listening on: "https://localhost:5001"
+02/28/2021 20:15:07 Now listening on: "http://localhost:5000"
+02/28/2021 20:15:07 Application started. Press Ctrl+C to shut down.
+02/28/2021 20:15:07 Hosting environment: "Development"
+02/28/2021 20:15:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 20:20:20 Application is shutting down...
+02/28/2021 21:42:23 HARDWARE API started..
+02/28/2021 21:42:23 HARDWARE API HostBuilder created
+02/28/2021 21:42:23 Host built
+02/28/2021 21:42:23 Now listening on: "https://localhost:5001"
+02/28/2021 21:42:23 Now listening on: "http://localhost:5000"
+02/28/2021 21:42:23 Application started. Press Ctrl+C to shut down.
+02/28/2021 21:42:23 Hosting environment: "Development"
+02/28/2021 21:42:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 21:43:04 Application is shutting down...
+02/28/2021 21:43:24 HARDWARE API started..
+02/28/2021 21:43:24 HARDWARE API HostBuilder created
+02/28/2021 21:43:25 Host built
+02/28/2021 21:43:25 Now listening on: "https://localhost:5001"
+02/28/2021 21:43:25 Now listening on: "http://localhost:5000"
+02/28/2021 21:43:25 Application started. Press Ctrl+C to shut down.
+02/28/2021 21:43:25 Hosting environment: "Development"
+02/28/2021 21:43:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 21:43:31 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:43:32 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:43:34 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:43:35 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:43:36 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:43:38 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:44:27 HARDWARE API started..
+02/28/2021 21:44:27 HARDWARE API HostBuilder created
+02/28/2021 21:44:28 Host built
+02/28/2021 21:44:29 Now listening on: "https://localhost:5001"
+02/28/2021 21:44:29 Now listening on: "http://localhost:5000"
+02/28/2021 21:44:29 Application started. Press Ctrl+C to shut down.
+02/28/2021 21:44:29 Hosting environment: "Development"
+02/28/2021 21:44:29 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 21:44:35 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:44:37 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:44:39 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:44:39 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:44:40 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:44:42 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 21:49:42 HARDWARE API started..
+02/28/2021 21:49:42 HARDWARE API HostBuilder created
+02/28/2021 21:49:43 Host built
+02/28/2021 21:49:43 Now listening on: "https://localhost:5001"
+02/28/2021 21:49:43 Now listening on: "http://localhost:5000"
+02/28/2021 21:49:43 Application started. Press Ctrl+C to shut down.
+02/28/2021 21:49:43 Hosting environment: "Development"
+02/28/2021 21:49:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 21:49:59 Application is shutting down...
+02/28/2021 21:50:42 HARDWARE API started..
+02/28/2021 21:50:42 HARDWARE API HostBuilder created
+02/28/2021 21:50:43 Host built
+02/28/2021 21:50:43 Now listening on: "https://localhost:5001"
+02/28/2021 21:50:43 Now listening on: "http://localhost:5000"
+02/28/2021 21:50:43 Application started. Press Ctrl+C to shut down.
+02/28/2021 21:50:43 Hosting environment: "Development"
+02/28/2021 21:50:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 21:50:58 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 12.0427 ms
+02/28/2021 21:50:58 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.3306 ms
+02/28/2021 21:51:46 HTTP "GET" "/api/cases" responded 405 in 1.6131 ms
+02/28/2021 21:55:35 HARDWARE API started..
+02/28/2021 21:55:35 HARDWARE API HostBuilder created
+02/28/2021 21:55:36 Host built
+02/28/2021 21:55:36 Now listening on: "https://localhost:5001"
+02/28/2021 21:55:36 Now listening on: "http://localhost:5000"
+02/28/2021 21:55:36 Application started. Press Ctrl+C to shut down.
+02/28/2021 21:55:36 Hosting environment: "Development"
+02/28/2021 21:55:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 21:55:52 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 1.6364 ms
+02/28/2021 21:55:52 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.1138 ms
+02/28/2021 21:56:18 HTTP "GET" "/api/cases" responded 405 in 1.0048 ms
+02/28/2021 21:56:47 HTTP "GET" "/api/cases" responded 405 in 0.0841 ms
+02/28/2021 21:57:25 HARDWARE API started..
+02/28/2021 21:57:25 HARDWARE API HostBuilder created
+02/28/2021 21:57:26 Host built
+02/28/2021 21:57:27 Now listening on: "https://localhost:5001"
+02/28/2021 21:57:27 Now listening on: "http://localhost:5000"
+02/28/2021 21:57:27 Application started. Press Ctrl+C to shut down.
+02/28/2021 21:57:27 Hosting environment: "Development"
+02/28/2021 21:57:27 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 21:57:42 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 3.5215 ms
+02/28/2021 21:57:43 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.0858 ms
+02/28/2021 21:57:52 HTTP "GET" "/api/cases" responded 405 in 1.2867 ms
+02/28/2021 21:58:04 HTTP "GET" "/api/cases" responded 405 in 0.0808 ms
+02/28/2021 21:58:50 HTTP "GET" "/api/cases" responded 405 in 0.0292 ms
+02/28/2021 22:01:07 HARDWARE API started..
+02/28/2021 22:01:07 HARDWARE API HostBuilder created
+02/28/2021 22:01:08 Host built
+02/28/2021 22:01:08 Now listening on: "https://localhost:5001"
+02/28/2021 22:01:08 Now listening on: "http://localhost:5000"
+02/28/2021 22:01:08 Application started. Press Ctrl+C to shut down.
+02/28/2021 22:01:08 Hosting environment: "Development"
+02/28/2021 22:01:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 22:01:25 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 1.5984 ms
+02/28/2021 22:01:25 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.0888 ms
+02/28/2021 22:01:34 An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+FoundersPC.API.Controllers.V1.CasesController.Get (FoundersPC.API)
+FoundersPC.API.Controllers.V1.CasesController.Get (FoundersPC.API)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.SelectAsync(HttpContext httpContext, CandidateSet candidateSet)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.SelectEndpointWithPoliciesAsync(HttpContext httpContext, IEndpointSelectorPolicy[] policies, CandidateSet candidateSet)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatch|8_1(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task matchTask)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 22:02:15 HTTP "GET" "/api/cases" responded 405 in 0.8810 ms
+02/28/2021 22:11:12 HARDWARE API started..
+02/28/2021 22:11:12 HARDWARE API HostBuilder created
+02/28/2021 22:11:13 Host built
+02/28/2021 22:11:13 Now listening on: "https://localhost:5001"
+02/28/2021 22:11:13 Now listening on: "http://localhost:5000"
+02/28/2021 22:11:13 Application started. Press Ctrl+C to shut down.
+02/28/2021 22:11:13 Hosting environment: "Development"
+02/28/2021 22:11:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 22:11:31 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 1.6567 ms
+02/28/2021 22:11:32 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.1126 ms
+02/28/2021 22:12:45 HTTP "GET" "/api/cases" responded 500 in 1.1641 ms
+System.InvalidOperationException: Endpoint FoundersPC.API.Controllers.V1.CasesController.Get (FoundersPC.API) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+02/28/2021 22:12:45 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Endpoint FoundersPC.API.Controllers.V1.CasesController.Get (FoundersPC.API) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 22:24:50 HARDWARE API started..
+02/28/2021 22:24:50 HARDWARE API HostBuilder created
+02/28/2021 22:24:51 Host built
+02/28/2021 22:24:51 Now listening on: "https://localhost:5001"
+02/28/2021 22:24:51 Now listening on: "http://localhost:5000"
+02/28/2021 22:24:51 Application started. Press Ctrl+C to shut down.
+02/28/2021 22:24:51 Hosting environment: "Development"
+02/28/2021 22:24:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 22:25:04 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 1.6172 ms
+02/28/2021 22:25:04 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.1086 ms
+02/28/2021 22:26:07 HTTP "POST" "/api/cases" responded 500 in 1.5896 ms
+System.InvalidOperationException: Endpoint FoundersPC.API.Controllers.V1.CasesController.Insert (FoundersPC.API) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+02/28/2021 22:26:07 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Endpoint FoundersPC.API.Controllers.V1.CasesController.Insert (FoundersPC.API) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+02/28/2021 22:29:09 HARDWARE API started..
+02/28/2021 22:29:09 HARDWARE API HostBuilder created
+02/28/2021 22:29:10 Host built
+02/28/2021 22:29:11 Now listening on: "https://localhost:5001"
+02/28/2021 22:29:11 Now listening on: "http://localhost:5000"
+02/28/2021 22:29:11 Application started. Press Ctrl+C to shut down.
+02/28/2021 22:29:11 Hosting environment: "Development"
+02/28/2021 22:29:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 22:29:31 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 3.4063 ms
+02/28/2021 22:29:31 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.1006 ms
+02/28/2021 22:30:05 HTTP "POST" "/api/cases" responded 400 in 424.5571 ms
+02/28/2021 22:35:10 HARDWARE API started..
+02/28/2021 22:35:10 HARDWARE API HostBuilder created
+02/28/2021 22:35:11 Host built
+02/28/2021 22:35:12 Now listening on: "https://localhost:5001"
+02/28/2021 22:35:12 Now listening on: "http://localhost:5000"
+02/28/2021 22:35:12 Application started. Press Ctrl+C to shut down.
+02/28/2021 22:35:12 Hosting environment: "Development"
+02/28/2021 22:35:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+02/28/2021 22:35:31 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 2.2532 ms
+02/28/2021 22:35:31 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 2.2259 ms
+02/28/2021 22:35:51 HTTP "GET" "/api/cases" responded 200 in 1548.6426 ms
+02/28/2021 22:36:17 HTTP "GET" "/api/cases" responded 200 in 37.6079 ms

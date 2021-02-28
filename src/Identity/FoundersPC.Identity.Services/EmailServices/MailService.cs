@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -8,6 +10,8 @@ using FluentEmail.Core;
 using FluentEmail.Smtp;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Domain.Settings;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.EmailServices
 {
@@ -35,7 +39,7 @@ namespace FoundersPC.Identity.Services.EmailServices
 
             var sendResult = await Email.From(_botConfiguration.MailAddress, "FoundersPC_DAEMON")
                                         .Subject(subject)
-                                        .Body(content)
+                                        .Body(content, html)
                                         .To(email)
                                         .SendAsync();
 
@@ -47,7 +51,7 @@ namespace FoundersPC.Identity.Services.EmailServices
             var sendResults = new List<bool>();
             foreach (var email in emails)
             {
-                var send = await SendToAsync(email, subject, content);
+                var send = await SendToAsync(email, subject, content, html);
                 sendResults.Add(send);
             }
 
@@ -58,28 +62,28 @@ namespace FoundersPC.Identity.Services.EmailServices
         {
             var content = $"You've been entered to FoundersPC API at {DateTime.Now}";
 
-            return await SendToAsync(email, "Entrance", content, false);
+            return await SendToAsync(email, "Entrance", content);
         }
 
         public async Task<bool> SendRegistrationNotificationAsync(string email)
         {
             const string content = "Thanks for registration in our service!";
 
-            return await SendToAsync(email, "Registration Notification", content, false);
+            return await SendToAsync(email, "Registration Notification", content);
         }
 
         public Task<bool> SendAPIAccessToken(string email, string token)
         {
-            var content = $"This is your token for getting access to our API: {token}\nDon't lose it, we will not(and couldn't) restore it";
+            var content = $"This is your token for getting access to our API: {token}\nDon't lose it, we will not(and can't) restore it";
 
-            return SendToAsync(email, "API Access Token", content, false);
+            return SendToAsync(email, "API Access Token", content);
         }
 
         public async Task<bool> SendNewPasswordAsync(string email, string password)
         {
             var content = $"Congratz! You've changed your password to {password}. Use it to get access to our site!";
 
-            return await SendToAsync(email, "Password Change", content, false);
+            return await SendToAsync(email, "Password Change", content);
         }
     }
 }

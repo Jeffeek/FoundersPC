@@ -51,7 +51,7 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             if (token == null) return false;
 
-            var newLog = new AccessTokenLog()
+            var newLog = new AccessTokenLog
                          {
                              ApiAccessToken = token,
                              ApiAccessUsersTokenId = tokenId,
@@ -71,7 +71,7 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             if (tokenEntity == null) return false;
 
-            var newLog = new AccessTokenLog()
+            var newLog = new AccessTokenLog
                          {
                              ApiAccessToken = tokenEntity,
                              ApiAccessUsersTokenId = tokenEntity.Id,

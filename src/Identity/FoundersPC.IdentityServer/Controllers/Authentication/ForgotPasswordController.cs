@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿#region Using namespaces
+
 using System.Threading.Tasks;
 using FoundersPC.AuthenticationShared.Request;
 using FoundersPC.AuthenticationShared.Response;
 using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
@@ -12,9 +16,9 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [ApiController]
     public class ForgotPasswordController : Controller
     {
-        private readonly IUserService _userService;
         private readonly IMailService _mailService;
         private readonly IPasswordEncryptorService _passwordEncryptorService;
+        private readonly IUserService _userService;
 
         public ForgotPasswordController(IUserService userService,
                                         IMailService mailService,
@@ -30,7 +34,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         public async Task<UserForgotPasswordResponse> ForgotPassword(UserForgotPasswordRequest request)
         {
             if (!ModelState.IsValid)
-                return new UserForgotPasswordResponse()
+                return new UserForgotPasswordResponse
                        {
                            EmailSendError = "Bad model",
                            Email = request.Email,
@@ -41,7 +45,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             var user = await _userService.GetUserWithEmailAsync(request.Email);
 
             if (user is null)
-                return new UserForgotPasswordResponse()
+                return new UserForgotPasswordResponse
                        {
                            Email = request.Email,
                            EmailSendError = "User with this email doesn't exists",
@@ -53,7 +57,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             var updateResult = await _userService.ChangePassword(user.Id, newPassword);
 
             if (!updateResult)
-                return new UserForgotPasswordResponse()
+                return new UserForgotPasswordResponse
                        {
                            Email = user.Email,
                            EmailSendError = "Error happened when application tried to update the database",
@@ -61,10 +65,10 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                            IsConfirmationMailSent = false
                        };
 
-            var emailSendResult = await _mailService.SendNewPasswordAsync(user.Email, newPassword); 
+            var emailSendResult = await _mailService.SendNewPasswordAsync(user.Email, newPassword);
 
             if (emailSendResult)
-                return new UserForgotPasswordResponse()
+                return new UserForgotPasswordResponse
                        {
                            Email = user.Email,
                            EmailSendError = null,
@@ -72,7 +76,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                            IsUserExists = true
                        };
 
-            return new UserForgotPasswordResponse()
+            return new UserForgotPasswordResponse
                    {
                        Email = user.Email,
                        IsConfirmationMailSent = false,

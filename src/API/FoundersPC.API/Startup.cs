@@ -3,6 +3,7 @@
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 #endregion
 
@@ -24,6 +26,18 @@ namespace FoundersPC.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+                             {
+                                 options.AddPolicy("WebClientPolicy",
+                                                   builder =>
+                                                   {
+                                                       builder.WithOrigins("http://localhost:9000")
+                                                              .AllowAnyMethod()
+                                                              .AllowAnyHeader()
+                                                              .AllowCredentials();
+                                                   });
+                             });
+
             services.AddControllers();
             //
             services.AddHardwareRepositories();
@@ -38,8 +52,32 @@ namespace FoundersPC.API
             //
             services.AddValidators();
 
-            services.AddAuthentication();
+            services.AddAuthentication();/*CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();*/
             services.AddAuthorization();
+            //services.AddAuthorization(cfg =>
+            //                          {
+            //                              cfg.AddPolicy("Admin",
+            //                                            builder =>
+            //                                            {
+            //                                                builder.RequireAuthenticatedUser();
+            //                                                builder.RequireClaim("Role", "Administrator");
+            //                                            });
+            //                              cfg.AddPolicy("Changeable",
+            //                                            builder =>
+            //                                            {
+            //                                                builder.RequireAuthenticatedUser();
+            //                                                builder.RequireClaim("Role", "Administrator");
+            //                                                builder.RequireClaim("Role", "Manager");
+            //                                            });
+            //                              cfg.AddPolicy("Readable",
+            //                                            builder =>
+            //                                            {
+            //                                                builder.RequireAuthenticatedUser();
+            //                                                builder.RequireClaim("Role", "DefaultUser");
+            //                                                builder.RequireClaim("Role", "Administrator");
+            //                                                builder.RequireClaim("Role", "Manager");
+            //                                            });
+            //                          });
 
             services.AddApiVersioning(options =>
                                       {
@@ -70,6 +108,10 @@ namespace FoundersPC.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("WebClientPolicy");
+
+            app.UseSerilogRequestLogging();
 
             app.UseAuthentication();
             app.UseAuthorization();

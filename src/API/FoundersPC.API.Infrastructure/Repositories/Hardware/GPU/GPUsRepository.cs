@@ -3,8 +3,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU;
-using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
 using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.ApplicationShared.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +24,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
 
             if (gpu is null) return null;
 
-            await Context.Entry(gpu).Reference<Producer>(x => x.Producer).LoadAsync();
-            await Context.Entry(gpu).Reference<VideoCardCore>(x => x.Core).LoadAsync();
+            await Context.Entry(gpu).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(gpu).Reference(x => x.Core).LoadAsync();
 
             return gpu;
         }

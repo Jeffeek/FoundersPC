@@ -1,17 +1,18 @@
 #region Using namespaces
 
+using System;
 using System.IO;
 using FoundersPC.Identity.Application;
-using FoundersPC.Identity.Domain.Settings;
 using FoundersPC.Identity.Infrastructure;
 using FoundersPC.Identity.Services;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.HostFiltering;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 #endregion
 
@@ -77,6 +78,10 @@ namespace FoundersPC.IdentityServer
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSerilogRequestLogging();
+
+            //app.UseCors("WebClientPolicy");
 
             app.UseRouting();
 

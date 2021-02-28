@@ -25,7 +25,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
             if (@case is null) return null;
 
-            await Context.Entry(@case).Reference<Producer>(x => x.Producer).LoadAsync();
+            await Context.Entry(@case).Reference(x => x.Producer).LoadAsync();
 
             return @case;
         }

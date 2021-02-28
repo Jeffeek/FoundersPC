@@ -9,7 +9,7 @@ namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
     public interface IPowerSupplyService
     {
-        Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliersAsync();
+        Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync();
 
         Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId);
 

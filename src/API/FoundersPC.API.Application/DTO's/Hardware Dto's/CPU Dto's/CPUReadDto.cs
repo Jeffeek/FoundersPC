@@ -10,6 +10,8 @@ namespace FoundersPC.API.Application
 {
     public class CPUReadDto : ICPU, IIdentityItem, IProducerableDto
     {
+        public ProcessorCoreReadDto Core { get; set; }
+
         public int TDP { get; set; }
 
         public string Title { get; set; }
@@ -37,8 +39,6 @@ namespace FoundersPC.API.Application
         public string Series { get; set; }
 
         public int ProcessorCoreId { get; set; }
-
-        public ProcessorCoreReadDto Core { get; set; }
 
         public int Id { get; set; }
 

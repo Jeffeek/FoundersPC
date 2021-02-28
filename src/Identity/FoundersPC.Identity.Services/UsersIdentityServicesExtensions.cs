@@ -1,7 +1,5 @@
 ﻿#region Using namespaces
 
-using System;
-using AutoMapper.Configuration;
 using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
@@ -15,7 +13,6 @@ using FoundersPC.Identity.Services.Token_Services;
 using FoundersPC.Identity.Services.User_Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 #endregion
 

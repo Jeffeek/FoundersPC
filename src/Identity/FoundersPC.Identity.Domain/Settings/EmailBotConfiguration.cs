@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+
+#endregion
 
 namespace FoundersPC.Identity.Domain.Settings
 {
@@ -17,6 +21,14 @@ namespace FoundersPC.Identity.Domain.Settings
                                        configuration["Password:Encrypted"],
                                        configuration["Password:IV"]);
         }
+
+        public string Host { get; }
+
+        public int Port { get; }
+
+        public string MailAddress { get; }
+
+        public string Password { get; }
 
         private static string DecryptPassword(string key, string password, string iv)
         {
@@ -33,13 +45,5 @@ namespace FoundersPC.Identity.Domain.Settings
 
             return streamReader.ReadToEnd();
         }
-
-        public string Host { get; }
-
-        public int Port { get; }
-
-        public string MailAddress { get; }
-
-        public string Password { get; }
     }
 }

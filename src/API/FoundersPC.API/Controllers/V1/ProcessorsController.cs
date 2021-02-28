@@ -13,13 +13,14 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
+    [Route("api/processors")]
     [Route("api/cpus")]
-    public class CPUController : Controller
+    public class ProcessorsController : Controller
     {
         private readonly ICPUService _cpuService;
         private readonly IMapper _mapper;
 
-        public CPUController(ICPUService service, IMapper mapper)
+        public ProcessorsController(ICPUService service, IMapper mapper)
         {
             _cpuService = service;
             _mapper = mapper;

@@ -18,10 +18,10 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [ApiController]
     public class SignInController : Controller
     {
-        private readonly IMapper _mapper;
-        private readonly IUserService _userService;
-        private readonly IUsersEntrancesService _usersEntrancesService;
         private readonly IMailService _mailService;
+        private readonly IMapper _mapper;
+        private readonly IUsersEntrancesService _usersEntrancesService;
+        private readonly IUserService _userService;
 
         public SignInController(IUserService userService,
                                 IMapper mapper,
@@ -44,8 +44,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             if (ReferenceEquals(user, null)) return new UserLoginResponse();
 
-            await _usersEntrancesService.LogAsync(user.Id);
-            await _mailService.SendEntranceNotificationAsync(user.Email);
+            //await _usersEntrancesService.LogAsync(user.Id);
+            //await _mailService.SendEntranceNotificationAsync(user.Email);
 
             var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
             mappedUser.IsUserExists = true;

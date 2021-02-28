@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid d-sm-block">
+    <div>
+        <span class="text-danger font-weight-bolder display-1">Access denied</span>
+    </div>
+    <p class="lead display-4">
+        This page or request is denied for you :(
+    </p>
+    <a class="btn btn-block btn-primary" asp-controller="Home" asp-action="Index">
+        Back
+    </a>
+</div>

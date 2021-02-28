@@ -14,6 +14,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("api/videocardcores")]
+    [Route("api/gpucores")]
     public class VideoCardCoresController : Controller
     {
         private readonly IMapper _mapper;

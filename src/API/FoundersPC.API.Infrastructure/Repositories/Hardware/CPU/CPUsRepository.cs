@@ -3,8 +3,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.CPU;
-using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.API.Domain.Entities.Hardware.Processor;
 using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.ApplicationShared.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +24,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.CPU
 
             if (cpu is null) return null;
 
-            await Context.Entry(cpu).Reference<Producer>(x => x.Producer).LoadAsync();
-            await Context.Entry(cpu).Reference<ProcessorCore>(x => x.Core).LoadAsync();
+            await Context.Entry(cpu).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(cpu).Reference(x => x.Core).LoadAsync();
 
             return cpu;
         }

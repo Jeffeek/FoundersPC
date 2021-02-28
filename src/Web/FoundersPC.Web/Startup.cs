@@ -1,15 +1,17 @@
 #region Using namespaces
 
 using System;
-using System.Web;
+using FoundersPC.AuthenticationShared;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using Serilog;
 
 #endregion
 
@@ -53,6 +55,8 @@ namespace FoundersPC.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSerilogRequestLogging();
+
             app.UseRouting();
 
             app.UseAuthentication();
@@ -60,7 +64,7 @@ namespace FoundersPC.Web
 
             app.UseEndpoints(endpoints =>
                              {
-                                 endpoints.MapControllerRoute(name : "default", pattern : "{controller=Home}/{action=Index}");
+                                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
                                  endpoints.MapDefaultControllerRoute();
                              });
         }

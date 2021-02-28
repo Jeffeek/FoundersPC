@@ -5,14 +5,16 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
+using FoundersPC.AuthenticationShared;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
-// todo: Решить проблему валидации пи пустом объекте на входе
-
 namespace FoundersPC.API.Controllers.V1
 {
+    //[EnableCors(PolicyName = "WebClientPolicy")]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("api/cases")]

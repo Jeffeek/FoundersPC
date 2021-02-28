@@ -25,7 +25,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
             if (motherboard is null) return null;
 
-            await Context.Entry(motherboard).Reference<Producer>(x => x.Producer).LoadAsync();
+            await Context.Entry(motherboard).Reference(x => x.Producer).LoadAsync();
 
             return motherboard;
         }
