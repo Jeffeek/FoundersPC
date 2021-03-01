@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -11,12 +10,9 @@ using FoundersPC.AuthenticationShared.Request;
 using FoundersPC.AuthenticationShared.Response;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
@@ -62,6 +58,39 @@ namespace FoundersPC.Web.Controllers
 
         #endregion
 
+        #region SignUp
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterAsync(UserRegisterRequest request)
+        {
+            if (!TryValidateModel(request)) return BadRequest(request);
+
+            var registrationResult =
+                await ApplicationMicroservicesContext.IdentityServerClient.PostAsJsonAsync("authAPI/registration", request);
+
+            var deliveredResult = await registrationResult.Content.ReadFromJsonAsync<UserRegisterResponse>();
+
+            if (ReferenceEquals(deliveredResult, null)) throw new ArgumentNullException(nameof(deliveredResult));
+
+            if (!deliveredResult.IsRegistrationSuccessful) return Conflict(deliveredResult);
+
+            await SetupSessionCookieAsync(deliveredResult.Email, "DefaultUser");
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        #endregion
+
+        [Authorize]
+        public async Task<ActionResult> SignOutAsync()
+        {
+            if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Index", "Home");
+        }
+
         #region SignIn
 
         [HttpPost]
@@ -79,57 +108,49 @@ namespace FoundersPC.Web.Controllers
 
             if (!content.IsUserExists) return NotFound(result);
 
-            await SetupCookieAsync(content.Email, content.Role);
+            await SetupSessionCookieAsync(content.Email, content.Role);
+            SetupJwtTokenInCookie(content.Email, content.Role);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        private void SetupJwtTokenInCookie(string contentEmail, string contentRole)
+        {
+            RemoveJwtTokenInCookie();
+            var jwtToken = new JwtUserToken(contentEmail, contentRole);
+            var token = jwtToken.GetToken();
+            HttpContext.Response.Cookies.Append("token",
+                                                token,
+                                                new CookieOptions
+                                                {
+                                                    HttpOnly = true,
+                                                    IsEssential = true,
+                                                    Secure = true
+                                                });
         }
 
         #endregion
 
-        #region SignUp
+        #region Cookie
 
-        [HttpPost]
-        public async Task<IActionResult> RegisterAsync(UserRegisterRequest request)
-        {
-            if (!TryValidateModel(request)) return BadRequest(request);
-
-            var registrationResult =
-                await ApplicationMicroservicesContext.IdentityServerClient.PostAsJsonAsync("authAPI/registration", request);
-
-            var deliveredResult = await registrationResult.Content.ReadFromJsonAsync<UserRegisterResponse>();
-
-            if (ReferenceEquals(deliveredResult, null)) throw new ArgumentNullException(nameof(deliveredResult));
-
-            if (!deliveredResult.IsRegistrationSuccessful) return Conflict(deliveredResult);
-
-            await SetupCookieAsync(deliveredResult.Email, "DefaultUser");
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        #endregion
-
-        [Authorize]
-        public async Task<ActionResult> SignOutAsync()
-        {
-            if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
-
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        private async Task SetupCookieAsync(string email, string role)
+        private async Task SetupSessionCookieAsync(string email, string role)
         {
             var claims = new List<Claim>
                          {
-                             new("Email", email),
-                             new("Role", role)
+                             new(ClaimsIdentity.DefaultNameClaimType, email),
+                             new(ClaimsIdentity.DefaultRoleClaimType, role)
                          };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
         }
+
+        private void RemoveJwtTokenInCookie()
+        {
+            if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
+        }
+
+        #endregion
 
         #region Redirection
 

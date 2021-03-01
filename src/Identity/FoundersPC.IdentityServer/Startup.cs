@@ -1,12 +1,10 @@
 #region Using namespaces
 
-using System;
 using System.IO;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
 using FoundersPC.Identity.Services;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.HostFiltering;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,8 +1,8 @@
 ﻿#region Using namespaces
 
-using System.Net.Http.Json;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using FoundersPC.AuthenticationShared;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,10 +43,15 @@ namespace FoundersPC.Web.Controllers
         [Authorize]
         public async Task<ActionResult> Cases()
         {
-            var roleRequest = new UserRoleRequest()
-                              {
-                                  Role = HttpContext.User.FindFirst(x => x.Type == "Role")?.Value
-                              };
+            if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
+                return BadRequest(new
+                                  {
+                                      error = "No tokens"
+                                  });
+
+            ApplicationMicroservicesContext.HardwareApiClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
+                                              token);
 
             var request = await ApplicationMicroservicesContext.HardwareApiClient.GetAsync("cases");
 

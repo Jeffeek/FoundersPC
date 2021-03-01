@@ -3,13 +3,15 @@
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using FoundersPC.AuthenticationShared;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -26,17 +28,17 @@ namespace FoundersPC.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-                             {
-                                 options.AddPolicy("WebClientPolicy",
-                                                   builder =>
-                                                   {
-                                                       builder.WithOrigins("http://localhost:9000")
-                                                              .AllowAnyMethod()
-                                                              .AllowAnyHeader()
-                                                              .AllowCredentials();
-                                                   });
-                             });
+            //services.AddCors(options =>
+            //                 {
+            //                     options.AddPolicy("WebClientPolicy",
+            //                                       builder =>
+            //                                       {
+            //                                           builder.WithOrigins("http://localhost:9000")
+            //                                                  .AllowAnyMethod()
+            //                                                  .AllowAnyHeader()
+            //                                                  .AllowCredentials();
+            //                                       });
+            //                 });
 
             services.AddControllers();
             //
@@ -52,32 +54,20 @@ namespace FoundersPC.API
             //
             services.AddValidators();
 
-            services.AddAuthentication();/*CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();*/
-            services.AddAuthorization();
-            //services.AddAuthorization(cfg =>
-            //                          {
-            //                              cfg.AddPolicy("Admin",
-            //                                            builder =>
-            //                                            {
-            //                                                builder.RequireAuthenticatedUser();
-            //                                                builder.RequireClaim("Role", "Administrator");
-            //                                            });
-            //                              cfg.AddPolicy("Changeable",
-            //                                            builder =>
-            //                                            {
-            //                                                builder.RequireAuthenticatedUser();
-            //                                                builder.RequireClaim("Role", "Administrator");
-            //                                                builder.RequireClaim("Role", "Manager");
-            //                                            });
-            //                              cfg.AddPolicy("Readable",
-            //                                            builder =>
-            //                                            {
-            //                                                builder.RequireAuthenticatedUser();
-            //                                                builder.RequireClaim("Role", "DefaultUser");
-            //                                                builder.RequireClaim("Role", "Administrator");
-            //                                                builder.RequireClaim("Role", "Manager");
-            //                                            });
-            //                          });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
+                                  config =>
+                                  {
+                                      var key = JwtConfiguration.GetSymmetricSecurityKey();
+
+                                      config.TokenValidationParameters = new TokenValidationParameters
+                                                                         {
+                                                                             ValidateAudience = false,
+                                                                             ValidIssuer = JwtConfiguration.Issuer,
+                                                                             ValidAudience = JwtConfiguration.Audience,
+                                                                             IssuerSigningKey = key
+                                                                         };
+                                  });
 
             services.AddApiVersioning(options =>
                                       {
@@ -94,7 +84,6 @@ namespace FoundersPC.API
                                                                  }));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -109,7 +98,7 @@ namespace FoundersPC.API
 
             app.UseRouting();
 
-            app.UseCors("WebClientPolicy");
+            //app.UseCors("WebClientPolicy");
 
             app.UseSerilogRequestLogging();
 
