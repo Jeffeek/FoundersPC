@@ -1,0 +1,8 @@
+03/02/2021 12:19:38 Identity server started..
+03/02/2021 12:19:38 Identity server HostBuilder created
+03/02/2021 12:20:37 Identity server started..
+03/02/2021 12:20:37 Identity server HostBuilder created
+03/02/2021 12:21:55 Identity server started..
+03/02/2021 12:21:55 Identity server HostBuilder created
+03/02/2021 12:27:26 Identity server started..
+03/02/2021 12:27:26 Identity server HostBuilder created

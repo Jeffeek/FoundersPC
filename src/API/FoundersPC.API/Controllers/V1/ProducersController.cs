@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
 namespace FoundersPC.API.Controllers.V1
 {
+    [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("api/producers")]
@@ -19,10 +22,14 @@ namespace FoundersPC.API.Controllers.V1
 
         public ProducersController(IProducerService service) => _producerService = service;
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Roles = "Administrator, Manager, DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get() => Json(await _producerService.GetAllProducersAsync());
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Roles = "Administrator, Manager, DefaultUser")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<ProducerReadDto>> Get(int? id)
@@ -34,6 +41,8 @@ namespace FoundersPC.API.Controllers.V1
             return producer == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(producer);
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Roles = "Administrator, Manager")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] ProducerUpdateDto producer)
@@ -46,6 +55,8 @@ namespace FoundersPC.API.Controllers.V1
             return result ? Json(producer) : ResultsHelper.UpdateError();
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Roles = "Administrator, Manager")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] ProducerInsertDto producer)
@@ -57,6 +68,8 @@ namespace FoundersPC.API.Controllers.V1
             return insertResult ? Json(producer) : ResultsHelper.InsertError();
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Roles = "Administrator, Manager")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)

@@ -43,13 +43,13 @@ namespace FoundersPC.Identity.Infrastructure
         public static void AddFoundersPCUsersContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<FoundersPCUsersContext>(options =>
-                                                              options.UseSqlServer(configuration
-                                                                                       .GetConnectionString("FoundersPC_Users"),
-                                                                                   b =>
-                                                                                       b.MigrationsAssembly(typeof(
-                                                                                               FoundersPCUsersContext)
-                                                                                           .Assembly
-                                                                                           .FullName)));
+                                                                  options.UseSqlServer(configuration
+                                                                                               .GetConnectionString("FoundersPC_Users"),
+                                                                                       b =>
+                                                                                               b.MigrationsAssembly(typeof(
+                                                                                                                            FoundersPCUsersContext)
+                                                                                                                    .Assembly
+                                                                                                                    .FullName)));
         }
     }
 }

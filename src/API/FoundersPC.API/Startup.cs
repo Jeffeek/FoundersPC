@@ -1,10 +1,12 @@
 #region Using namespaces
 
+using System;
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
 using FoundersPC.AuthenticationShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -59,15 +61,34 @@ namespace FoundersPC.API
                                   config =>
                                   {
                                       var key = JwtConfiguration.GetSymmetricSecurityKey();
+                                      config.BackchannelTimeout = TimeSpan.FromSeconds(20);
 
                                       config.TokenValidationParameters = new TokenValidationParameters
                                                                          {
-                                                                             ValidateAudience = false,
-                                                                             ValidIssuer = JwtConfiguration.Issuer,
-                                                                             ValidAudience = JwtConfiguration.Audience,
-                                                                             IssuerSigningKey = key
+                                                                                 ValidateAudience = false,
+                                                                                 ValidIssuer = JwtConfiguration.Issuer,
+                                                                                 ValidAudience = JwtConfiguration.Audience,
+                                                                                 IssuerSigningKey = key
                                                                          };
                                   });
+
+            services.AddAuthorization(config =>
+                                      {
+                                          config.AddPolicy("Changeable",
+                                                           builder => builder.RequireAuthenticatedUser()
+                                                                             .RequireRole("Administrator",
+                                                                                          "Manager")
+                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+                                                                             .Build());
+
+                                          config.AddPolicy("Readable",
+                                                           builder => builder.RequireAuthenticatedUser()
+                                                                             .RequireRole("Administrator",
+                                                                                          "Manager",
+                                                                                          "DefaultUser")
+                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+                                                                             .Build());
+                                      });
 
             services.AddApiVersioning(options =>
                                       {
@@ -79,8 +100,8 @@ namespace FoundersPC.API
             services.AddSwaggerGen(options => options.SwaggerDoc("v1",
                                                                  new OpenApiInfo
                                                                  {
-                                                                     Title = "FoundersPC.API",
-                                                                     Version = "v1.0"
+                                                                         Title = "FoundersPC.API",
+                                                                         Version = "v1.0"
                                                                  }));
         }
 

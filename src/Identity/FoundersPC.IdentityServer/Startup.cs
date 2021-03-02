@@ -21,9 +21,11 @@ namespace FoundersPC.IdentityServer
         public Startup(IConfiguration configuration)
         {
             var builder = new ConfigurationBuilder();
+
             builder
-                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json", false, true)
-                .AddConfiguration(configuration, false);
+                    .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json", false, true)
+                    .AddConfiguration(configuration, false);
+
             Configuration = builder.Build();
         }
 
@@ -54,15 +56,12 @@ namespace FoundersPC.IdentityServer
             services.AddAuthentication();
             services.AddAuthorization();
 
-            services.AddSwaggerGen(c =>
-                                   {
-                                       c.SwaggerDoc("v1",
-                                                    new OpenApiInfo
-                                                    {
-                                                        Title = "FoundersPC.IdentityServer",
-                                                        Version = "v1"
-                                                    });
-                                   });
+            services.AddSwaggerGen(c => c.SwaggerDoc("v1",
+                                                     new OpenApiInfo
+                                                     {
+                                                             Title = "FoundersPC.IdentityServer",
+                                                             Version = "v1"
+                                                     }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

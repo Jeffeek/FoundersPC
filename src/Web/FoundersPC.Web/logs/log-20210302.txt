@@ -1,0 +1,21 @@
+03/02/2021 12:16:39 Web server started.. 1 
+03/02/2021 12:16:39 Web server HostBuilder created 1 
+03/02/2021 12:16:41 Host built 1 
+03/02/2021 12:16:42 Now listening on: "https://[::]:443" 1 
+03/02/2021 12:16:42 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 12:16:42 Hosting environment: "Development" 1 
+03/02/2021 12:16:42 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 12:17:55 Web server started.. 1 
+03/02/2021 12:17:55 Web server HostBuilder created 1 
+03/02/2021 12:17:56 Host built 1 
+03/02/2021 12:17:57 Now listening on: "https://[::]:443" 1 
+03/02/2021 12:17:57 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 12:17:57 Hosting environment: "Development" 1 
+03/02/2021 12:17:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 12:18:21 Web server started.. 1 
+03/02/2021 12:18:22 Web server HostBuilder created 1 
+03/02/2021 12:18:23 Host built 1 
+03/02/2021 12:18:23 Now listening on: "https://[::]:443" 1 
+03/02/2021 12:18:23 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 12:18:23 Hosting environment: "Development" 1 
+03/02/2021 12:18:23 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
