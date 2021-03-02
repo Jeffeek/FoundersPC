@@ -1,0 +1,47 @@
+03/02/2021 14:54:35 HARDWARE API started..
+03/02/2021 14:54:35 HARDWARE API HostBuilder created
+03/02/2021 14:54:35 Host built
+03/02/2021 14:54:36 Now listening on: "https://localhost:5001"
+03/02/2021 14:54:36 Now listening on: "http://localhost:5000"
+03/02/2021 14:54:36 Application started. Press Ctrl+C to shut down.
+03/02/2021 14:54:36 Hosting environment: "Development"
+03/02/2021 14:54:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/02/2021 14:56:33 Application is shutting down...
+03/02/2021 14:58:01 HARDWARE API started..
+03/02/2021 14:58:01 HARDWARE API HostBuilder created
+03/02/2021 14:58:01 Host built
+03/02/2021 14:58:01 Now listening on: "https://localhost:5001"
+03/02/2021 14:58:01 Now listening on: "http://localhost:5000"
+03/02/2021 14:58:01 Application started. Press Ctrl+C to shut down.
+03/02/2021 14:58:01 Hosting environment: "Development"
+03/02/2021 14:58:01 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/02/2021 14:58:13 Application is shutting down...
+03/02/2021 14:58:54 HARDWARE API started..
+03/02/2021 14:58:54 HARDWARE API HostBuilder created
+03/02/2021 14:58:54 Host built
+03/02/2021 14:58:54 Now listening on: "https://localhost:5001"
+03/02/2021 14:58:54 Now listening on: "http://localhost:5000"
+03/02/2021 14:58:54 Application started. Press Ctrl+C to shut down.
+03/02/2021 14:58:54 Hosting environment: "Development"
+03/02/2021 14:58:54 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/02/2021 15:01:38 HTTP "POST" "/api/cases/1" responded 400 in 529.0760 ms
+03/02/2021 15:01:52 HTTP "GET" "/api/cases/1" responded 200 in 1179.9575 ms
+03/02/2021 15:02:57 Application is shutting down...
+03/02/2021 15:23:02 HARDWARE API started..
+03/02/2021 15:23:02 HARDWARE API HostBuilder created
+03/02/2021 15:23:03 Host built
+03/02/2021 15:23:03 Now listening on: "https://localhost:5001"
+03/02/2021 15:23:03 Now listening on: "http://localhost:5000"
+03/02/2021 15:23:03 Application started. Press Ctrl+C to shut down.
+03/02/2021 15:23:03 Hosting environment: "Development"
+03/02/2021 15:23:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/02/2021 15:24:11 HTTP "GET" "/api/cases" responded 200 in 1724.1205 ms
+03/02/2021 15:24:16 HTTP "GET" "/api/producers" responded 200 in 49.4478 ms
+03/02/2021 15:24:21 HTTP "GET" "/api/solidstatedrives" responded 200 in 29.0987 ms
+03/02/2021 15:24:22 HTTP "GET" "/api/randomaccessmemory" responded 200 in 27.7747 ms
+03/02/2021 15:24:23 HTTP "GET" "/api/videocardcores" responded 200 in 124.1641 ms
+03/02/2021 15:24:23 HTTP "GET" "/api/videocards" responded 200 in 42.5460 ms
+03/02/2021 15:24:24 HTTP "GET" "/api/harddrives" responded 200 in 20.4146 ms
+03/02/2021 15:24:25 HTTP "GET" "/api/motherboards" responded 200 in 25.1601 ms
+03/02/2021 15:24:52 HTTP "GET" "/api/producers" responded 200 in 2.6074 ms
+03/02/2021 15:27:08 Application is shutting down...

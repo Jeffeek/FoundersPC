@@ -65,10 +65,10 @@ namespace FoundersPC.API
 
                                       config.TokenValidationParameters = new TokenValidationParameters
                                                                          {
-                                                                                 ValidateAudience = false,
-                                                                                 ValidIssuer = JwtConfiguration.Issuer,
-                                                                                 ValidAudience = JwtConfiguration.Audience,
-                                                                                 IssuerSigningKey = key
+                                                                             ValidateAudience = false,
+                                                                             ValidIssuer = JwtConfiguration.Issuer,
+                                                                             ValidAudience = JwtConfiguration.Audience,
+                                                                             IssuerSigningKey = key
                                                                          };
                                   });
 
@@ -100,8 +100,8 @@ namespace FoundersPC.API
             services.AddSwaggerGen(options => options.SwaggerDoc("v1",
                                                                  new OpenApiInfo
                                                                  {
-                                                                         Title = "FoundersPC.API",
-                                                                         Version = "v1.0"
+                                                                     Title = "FoundersPC.API",
+                                                                     Version = "v1.0"
                                                                  }));
         }
 

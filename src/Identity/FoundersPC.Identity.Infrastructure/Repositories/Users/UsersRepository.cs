@@ -24,12 +24,9 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
                          .Include(user => user.Role)
                          .ToListAsync();
 
-        public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate)
-        {
-            var allUsers = await GetAllAsync();
-            var user = allUsers.FirstOrDefault(predicate.Compile());
-
-            return user;
-        }
+        public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate) => 
+            await Context.Set<UserEntity>()
+                         .Include(user => user.Role)
+                         .FirstOrDefaultAsync(predicate);
     }
 }

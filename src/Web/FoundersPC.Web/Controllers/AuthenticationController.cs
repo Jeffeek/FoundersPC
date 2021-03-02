@@ -86,6 +86,7 @@ namespace FoundersPC.Web.Controllers
         {
             if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
 
+            RemoveJwtTokenInCookie();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Index", "Home");

@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -67,6 +68,14 @@ namespace FoundersPC.ApplicationShared.Repository
             if (entity == null) return false;
 
             return await DeleteAsync(entity);
+        }
+
+        [Obsolete]
+        public virtual async Task<IQueryable<T>> GetAllAsQueryable()
+        {
+            await Context.Set<T>().LoadAsync();
+
+            return Context.Set<T>().AsQueryable();
         }
     }
 }

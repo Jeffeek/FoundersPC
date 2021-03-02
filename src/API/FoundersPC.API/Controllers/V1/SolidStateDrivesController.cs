@@ -30,13 +30,13 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Roles = "Administrator, Manager, DefaultUser")]
+                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SSDReadDto>>> Get() => Json(await _ssdService.GetAllSSDsAsync());
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Roles = "Administrator, Manager, DefaultUser")]
+                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<SSDReadDto>> Get(int? id)
@@ -49,7 +49,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Roles = "Administrator, Manager")]
+                   Policy = "Changeable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] SSDUpdateDto ssd)
@@ -63,7 +63,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Roles = "Administrator, Manager")]
+                   Policy = "Changeable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] SSDInsertDto ssd)
@@ -76,7 +76,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Roles = "Administrator, Manager")]
+                   Policy = "Changeable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)

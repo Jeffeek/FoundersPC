@@ -33,7 +33,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         [HttpPost]
         public async Task<UserForgotPasswordResponse> ForgotPassword(UserForgotPasswordRequest request)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid == false)
                 return new UserForgotPasswordResponse
                        {
                            EmailSendError = "Bad model",
@@ -44,7 +44,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             var user = await _userService.GetUserWithEmailAsync(request.Email);
 
-            if (user is null)
+            if (user == null)
                 return new UserForgotPasswordResponse
                        {
                            Email = request.Email,
@@ -56,7 +56,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             var newPassword = _passwordEncryptorService.GeneratePassword();
             var updateResult = await _userService.ChangePassword(user.Id, newPassword);
 
-            if (!updateResult)
+            if (updateResult == false)
                 return new UserForgotPasswordResponse
                        {
                            Email = user.Email,
@@ -67,22 +67,22 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             var emailSendResult = await _mailService.SendNewPasswordAsync(user.Email, newPassword);
 
-            if (emailSendResult)
-                return new UserForgotPasswordResponse
-                       {
-                           Email = user.Email,
-                           EmailSendError = null,
-                           IsConfirmationMailSent = true,
-                           IsUserExists = true
-                       };
-
-            return new UserForgotPasswordResponse
-                   {
-                       Email = user.Email,
-                       IsConfirmationMailSent = false,
-                       IsUserExists = true,
-                       EmailSendError = "The password was changed. But our Email Daemon didn't send a new password to you. Contact the admin"
-                   };
+            return emailSendResult is true
+                       ? new UserForgotPasswordResponse
+                         {
+                             Email = user.Email,
+                             EmailSendError = null,
+                             IsConfirmationMailSent = true,
+                             IsUserExists = true
+                         }
+                       : new UserForgotPasswordResponse
+                         {
+                             Email = user.Email,
+                             IsConfirmationMailSent = false,
+                             IsUserExists = true,
+                             EmailSendError =
+                                 "New password: {newPassword}\nThe password was changed. But our Email Daemon didn't send a new password to you."
+                         };
         }
     }
 }
