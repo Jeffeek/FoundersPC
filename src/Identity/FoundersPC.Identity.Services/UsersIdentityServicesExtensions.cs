@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
@@ -22,13 +21,16 @@ namespace FoundersPC.Identity.Services
     {
         public static void AddUsersIdentityServices(this IServiceCollection services)
         {
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRegistrationService, UserRegistrationService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IManagerService, ManagerService>();
+            services.AddScoped<IAdminService, AdminService>();
         }
 
         public static void AddEncryptionServices(this IServiceCollection services)
         {
-            services.AddScoped<ITokenEncryptorService, TokenEncryptorService>();
-            services.AddScoped<IPasswordEncryptorService, PasswordEncryptorService>();
+            services.AddSingleton<TokenEncryptorService>(new TokenEncryptorService());
+            services.AddSingleton<PasswordEncryptorService>(new PasswordEncryptorService());
         }
 
         public static void AddLogsServices(this IServiceCollection services)

@@ -23,8 +23,8 @@ namespace FoundersPC.IdentityServer
             var builder = new ConfigurationBuilder();
 
             builder
-                    .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json", false, true)
-                    .AddConfiguration(configuration, false);
+                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json", false, true)
+                .AddConfiguration(configuration, false);
 
             Configuration = builder.Build();
         }
@@ -59,8 +59,8 @@ namespace FoundersPC.IdentityServer
             services.AddSwaggerGen(c => c.SwaggerDoc("v1",
                                                      new OpenApiInfo
                                                      {
-                                                             Title = "FoundersPC.IdentityServer",
-                                                             Version = "v1"
+                                                         Title = "FoundersPC.IdentityServer",
+                                                         Version = "v1"
                                                      }));
         }
 

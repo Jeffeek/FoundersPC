@@ -3,13 +3,12 @@
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 
 #endregion
 
 namespace FoundersPC.Identity.Services.Encryption_Services
 {
-    public class PasswordEncryptorService : IPasswordEncryptorService
+    public class PasswordEncryptorService
     {
         public string EncryptPassword(string rawPassword)
         {

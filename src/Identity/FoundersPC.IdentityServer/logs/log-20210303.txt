@@ -1,0 +1,8 @@
+03/03/2021 22:19:26 Identity server started..
+03/03/2021 22:19:26 Identity server HostBuilder created
+03/03/2021 22:19:27 Host built
+03/03/2021 22:19:27 Now listening on: "https://localhost:3000"
+03/03/2021 22:19:27 Application started. Press Ctrl+C to shut down.
+03/03/2021 22:19:27 Hosting environment: "Development"
+03/03/2021 22:19:27 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/03/2021 22:20:43 HTTP "POST" "/authAPI/login" responded 200 in 36441.5625 ms

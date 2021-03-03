@@ -16,12 +16,17 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     public class RegistrationController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IUserService _userService;
+        private readonly IAuthenticationService _authenticationService;
+        private readonly IUserRegistrationService _userRegistrationService;
 
-        public RegistrationController(IUserService userService, IMapper mapper)
+        public RegistrationController(IAuthenticationService authenticationService,
+                                      IMapper mapper,
+                                      IUserRegistrationService userRegistrationService
+        )
         {
-            _userService = userService;
+            _authenticationService = authenticationService;
             _mapper = mapper;
+            _userRegistrationService = userRegistrationService;
         }
 
         [HttpPost]
@@ -29,7 +34,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         {
             if (ReferenceEquals(request, null)) return null;
 
-            var result = await _userService.RegisterUserAsync(request.Email, request.Password);
+            var result = await _userRegistrationService.RegisterDefaultUserAsync(request.Email, request.Password);
 
             if (result)
                 return new UserRegisterResponse

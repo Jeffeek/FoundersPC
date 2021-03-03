@@ -3,13 +3,12 @@
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
 
 #endregion
 
 namespace FoundersPC.Identity.Services.Encryption_Services
 {
-    public class TokenEncryptorService : ITokenEncryptorService
+    public class TokenEncryptorService
     {
         public string Encrypt(string rawToken, string key)
         {

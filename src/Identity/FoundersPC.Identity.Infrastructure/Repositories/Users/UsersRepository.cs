@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.Repository;
@@ -22,11 +21,24 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
         public override async Task<IEnumerable<UserEntity>> GetAllAsync() =>
             await Context.Set<UserEntity>()
                          .Include(user => user.Role)
+                         .Include(user => user.Tokens)
                          .ToListAsync();
 
-        public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate) => 
+        public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate) =>
             await Context.Set<UserEntity>()
                          .Include(user => user.Role)
+                         .Include(user => user.Tokens)
                          .FirstOrDefaultAsync(predicate);
+
+        public override async Task<UserEntity> GetByIdAsync(int id)
+        {
+            var user = await Context.Set<UserEntity>().FindAsync(id);
+
+            if (user is null) return null;
+
+            await Context.Entry(user).Reference(x => x.Tokens).LoadAsync();
+
+            return user;
+        }
     }
 }

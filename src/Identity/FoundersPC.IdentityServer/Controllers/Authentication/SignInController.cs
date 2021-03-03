@@ -21,15 +21,15 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly IUsersEntrancesService _usersEntrancesService;
-        private readonly IUserService _userService;
+        private readonly IAuthenticationService _authenticationService;
 
-        public SignInController(IUserService userService,
+        public SignInController(IAuthenticationService authenticationService,
                                 IMapper mapper,
                                 IUsersEntrancesService usersEntrancesService,
                                 IMailService mailService
         )
         {
-            _userService = userService;
+            _authenticationService = authenticationService;
             _mapper = mapper;
             _usersEntrancesService = usersEntrancesService;
             _mailService = mailService;
@@ -40,7 +40,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         {
             if (ReferenceEquals(request, null)) return null;
 
-            var user = await _userService.GetUserWithEmailAndPasswordAsync(request.LoginOrEmail, request.Password);
+            var user = await _authenticationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
 
             if (ReferenceEquals(user, null)) return new UserLoginResponse();
 

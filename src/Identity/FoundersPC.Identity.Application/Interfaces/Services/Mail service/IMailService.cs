@@ -15,10 +15,12 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Mail_service
 
         Task<bool> SendEntranceNotificationAsync(string email);
 
-        Task<bool> SendRegistrationNotificationAsync(string email);
+        Task<bool> SendRegistrationNotificationAsync(string email, string subject = null);
 
-        Task<bool> SendAPIAccessToken(string email, string token);
+        Task<bool> SendAPIAccessTokenAsync(string email, string token);
 
         Task<bool> SendNewPasswordAsync(string email, string password);
+
+        Task<bool> SendBlockNotificationAsync(string email, string reason = null);
     }
 }

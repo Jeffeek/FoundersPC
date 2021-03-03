@@ -10,6 +10,7 @@ using FoundersPC.API.Services.Hardware_Services.Hardware.CPU;
 using FoundersPC.API.Services.Hardware_Services.Hardware.GPU;
 using FoundersPC.API.Services.Hardware_Services.Hardware.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 #endregion
 

@@ -65,16 +65,16 @@ namespace FoundersPC.Identity.Services.EmailServices
             return await SendToAsync(email, "Entrance", content);
         }
 
-        public async Task<bool> SendRegistrationNotificationAsync(string email)
+        public async Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
         {
-            const string content = "Thanks for registration in our service!";
+            var content = $"Thanks for registration in our service!{(subject == null ? String.Empty : $"{Environment.NewLine}{subject}")}";
 
             return await SendToAsync(email, "Registration Notification", content);
         }
 
-        public Task<bool> SendAPIAccessToken(string email, string token)
+        public Task<bool> SendAPIAccessTokenAsync(string email, string token)
         {
-            var content = $"This is your token for getting access to our API: {token}\nDon't lose it, we will not(and can't) restore it";
+            var content = $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not(and can't) restore it";
 
             return SendToAsync(email, "API Access Token", content);
         }
@@ -84,6 +84,13 @@ namespace FoundersPC.Identity.Services.EmailServices
             var content = $"Congratz! You've changed your password to {password}. Use it to get access to our site!";
 
             return await SendToAsync(email, "Password Change", content);
+        }
+
+        public async Task<bool> SendBlockNotificationAsync(string email, string reason = null)
+        {
+            var content = $"You've banned in out service. Thanks!{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
+
+            return await SendToAsync(email, "Your account was blocked", content);
         }
     }
 }

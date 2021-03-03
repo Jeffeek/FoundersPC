@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
+//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -60,7 +61,7 @@ namespace FoundersPC.API.Controllers.V1
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
                    Policy = "Changeable")]
         [ApiVersion("1.0", Deprecated = false)]
-        [HttpPost("{id}", Order = 0)]
+        [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] ProcessorCoreUpdateDto cpuCore)
         {
             if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult("null");
