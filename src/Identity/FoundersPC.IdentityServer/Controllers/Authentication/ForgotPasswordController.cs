@@ -1,5 +1,6 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Threading.Tasks;
 using FoundersPC.AuthenticationShared.Request;
 using FoundersPC.AuthenticationShared.Response;
@@ -12,20 +13,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
-    [Route("authAPI/forgotpassword")]
+    [Route("identityAPI/forgotpassword")]
     [ApiController]
     public class ForgotPasswordController : Controller
     {
         private readonly IMailService _mailService;
         private readonly PasswordEncryptorService _passwordEncryptorService;
-        private readonly IAuthenticationService _authenticationService;
+        private readonly IUsersService _usersService;
 
-        public ForgotPasswordController(IAuthenticationService authenticationService,
+        public ForgotPasswordController(IUsersService authenticationService,
                                         IMailService mailService,
                                         PasswordEncryptorService passwordEncryptorService
         )
         {
-            _authenticationService = authenticationService;
+            _usersService = authenticationService;
             _mailService = mailService;
             _passwordEncryptorService = passwordEncryptorService;
         }
@@ -42,7 +43,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                            IsUserExists = false
                        };
 
-            var user = await _authenticationService.FindUserByEmailAsync(request.Email);
+            var user = await _usersService.FindUserByEmailAsync(request.Email);
 
             if (user == null)
                 return new UserForgotPasswordResponse
@@ -54,7 +55,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        };
 
             var newPassword = _passwordEncryptorService.GeneratePassword();
-            var updateResult = await _authenticationService.ChangePasswordToAsync(user.Id, newPassword);
+            var updateResult = await _usersService.ChangePasswordToAsync(user.Id, newPassword);
 
             if (updateResult == false)
                 return new UserForgotPasswordResponse
@@ -81,7 +82,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                              IsConfirmationMailSent = false,
                              IsUserExists = true,
                              EmailSendError =
-                                 $"New password: {newPassword}\nThe password was changed. But our Email Daemon didn't send a new password to you."
+                                 $"New password: {newPassword}{Environment.NewLine}The password was changed. But our Email Daemon didn't send a new password to you."
                          };
         }
     }

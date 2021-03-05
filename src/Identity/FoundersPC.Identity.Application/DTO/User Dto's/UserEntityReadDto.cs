@@ -22,6 +22,8 @@ namespace FoundersPC.Identity.Application.DTO
 
         public string HashedPassword { get; set; }
 
+        public bool SendMessageOnEntrance { get; }
+
         public RoleEntityReadDto Role { get; set; }
     }
 }

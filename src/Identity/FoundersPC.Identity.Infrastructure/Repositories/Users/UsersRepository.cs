@@ -21,13 +21,11 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
         public override async Task<IEnumerable<UserEntity>> GetAllAsync() =>
             await Context.Set<UserEntity>()
                          .Include(user => user.Role)
-                         .Include(user => user.Tokens)
                          .ToListAsync();
 
         public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate) =>
             await Context.Set<UserEntity>()
                          .Include(user => user.Role)
-                         .Include(user => user.Tokens)
                          .FirstOrDefaultAsync(predicate);
 
         public override async Task<UserEntity> GetByIdAsync(int id)
@@ -36,7 +34,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 
             if (user is null) return null;
 
-            await Context.Entry(user).Reference(x => x.Tokens).LoadAsync();
+            await Context.Entry(user).Reference(x => x.Role).LoadAsync();
 
             return user;
         }

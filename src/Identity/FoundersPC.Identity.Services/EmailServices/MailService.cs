@@ -29,7 +29,8 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                          EnableSsl = true,
                                                          DeliveryMethod = SmtpDeliveryMethod.Network,
                                                          DeliveryFormat = SmtpDeliveryFormat.International,
-                                                         Credentials = new NetworkCredential(_botConfiguration.MailAddress, _botConfiguration.Password)
+                                                         Credentials = new NetworkCredential(_botConfiguration.MailAddress,
+                                                                                             _botConfiguration.Password)
                                                      });
         }
 

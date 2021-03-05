@@ -1,6 +1,7 @@
 #region Using namespaces
 
 using System;
+using FoundersPC.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,13 +23,15 @@ namespace FoundersPC.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMicroservices(Configuration);
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
                                {
                                    options.LoginPath = new PathString("/Authentication/LoginIndex");
-                                   options.AccessDeniedPath = new PathString("/Authentication/LoginIndex");
+                                   options.AccessDeniedPath = new PathString("/Shared/AccessDenied");
                                    options.LogoutPath = "/Authentication/LoginIndex";
-                                   options.ExpireTimeSpan = TimeSpan.FromHours(24);
+                                   options.ExpireTimeSpan = TimeSpan.FromDays(30);
                                });
 
             services.AddDatabaseDeveloperPageExceptionFilter();

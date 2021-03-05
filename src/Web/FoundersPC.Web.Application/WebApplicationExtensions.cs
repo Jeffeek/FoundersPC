@@ -1,4 +1,10 @@
-﻿namespace FoundersPC.Web.Application
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace FoundersPC.Web.Application
 {
-    public static class WebApplicationExtensions { }
+    public static class WebApplicationExtensions
+    {
+        
+    }
 }

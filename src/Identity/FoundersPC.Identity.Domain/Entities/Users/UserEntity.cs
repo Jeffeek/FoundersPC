@@ -34,9 +34,11 @@ namespace FoundersPC.Identity.Domain.Entities.Users
         [DefaultValue(true)]
         public bool IsActive { get; set; }
 
-        [DefaultValue(false)]
         [Required]
         public bool IsBlocked { get; set; }
+
+        [Required]
+        public bool SendMessageOnEntrance { get; set; }
 
         [ForeignKey(nameof(RoleId))]
         public RoleEntity Role { get; set; }
@@ -55,7 +57,7 @@ namespace FoundersPC.Identity.Domain.Entities.Users
         public string Email { get; set; }
 
         [MaxLength(128)]
-        [MinLength(12)]
+        [MinLength(128)]
         [Required]
         [DataType(DataType.Password)]
         public string HashedPassword { get; set; }

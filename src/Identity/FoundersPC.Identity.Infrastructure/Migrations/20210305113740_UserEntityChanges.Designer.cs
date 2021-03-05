@@ -4,14 +4,16 @@ using FoundersPC.Identity.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoundersPC.Identity.Infrastructure.Migrations
 {
     [DbContext(typeof(FoundersPCUsersContext))]
-    partial class FoundersPCUsersContextModelSnapshot : ModelSnapshot
+    [Migration("20210305113740_UserEntityChanges")]
+    partial class UserEntityChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

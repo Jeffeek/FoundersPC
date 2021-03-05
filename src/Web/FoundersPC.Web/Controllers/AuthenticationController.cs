@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using FoundersPC.AuthenticationShared;
 using FoundersPC.AuthenticationShared.Request;
 using FoundersPC.AuthenticationShared.Response;
+using FoundersPC.Web.Services.Web_Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -21,6 +22,13 @@ namespace FoundersPC.Web.Controllers
     [Controller]
     public class AuthenticationController : Controller
     {
+        private readonly ApplicationMicroservices _applicationMicroservices;
+
+        public AuthenticationController(ApplicationMicroservices applicationMicroservices)
+        {
+            _applicationMicroservices = applicationMicroservices;
+        }
+
         #region ForgotPassword
 
         [HttpPost]
@@ -33,7 +41,11 @@ namespace FoundersPC.Web.Controllers
                                   });
 
             var serverMessage =
-                await ApplicationMicroservicesContext.IdentityServerClient.PostAsJsonAsync("authAPI/forgotpassword", request);
+                await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("forgotpassword", request);
+
+            if (!serverMessage.IsSuccessStatusCode)
+                return Problem(detail : "Server error",
+                               statusCode : (int)serverMessage.StatusCode);
 
             var result = await serverMessage.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
 
@@ -66,7 +78,7 @@ namespace FoundersPC.Web.Controllers
             if (!TryValidateModel(request)) return BadRequest(request);
 
             var registrationResult =
-                await ApplicationMicroservicesContext.IdentityServerClient.PostAsJsonAsync("authAPI/registration", request);
+                await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("registration", request);
 
             var deliveredResult = await registrationResult.Content.ReadFromJsonAsync<UserRegisterResponse>();
 
@@ -99,7 +111,7 @@ namespace FoundersPC.Web.Controllers
         {
             if (!ModelState.IsValid) return ValidationProblem("Not valid credentials", nameof(authenticationRequest));
 
-            var result = await ApplicationMicroservicesContext.IdentityServerClient.PostAsJsonAsync("authAPI/login", authenticationRequest);
+            var result = await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("login", authenticationRequest);
 
             if (!result.IsSuccessStatusCode) return NotFound(authenticationRequest);
 

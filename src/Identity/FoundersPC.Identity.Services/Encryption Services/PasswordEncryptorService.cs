@@ -14,11 +14,16 @@ namespace FoundersPC.Identity.Services.Encryption_Services
         {
             if (ReferenceEquals(rawPassword, null)) throw new ArgumentNullException(nameof(rawPassword));
 
-            var hasher = SHA512.Create();
-            var buffer = Encoding.Unicode.GetBytes(rawPassword);
-            var hash = hasher.ComputeHash(buffer);
+            var passwordBytes = Encoding.ASCII.GetBytes(rawPassword);
 
-            return Convert.ToBase64String(hash);
+            using var hash = SHA512.Create();
+            var hashedInputBytes = hash.ComputeHash(passwordBytes);
+
+            var hashedInputStringBuilder = new StringBuilder(128);
+            foreach (var b in hashedInputBytes)
+                hashedInputStringBuilder.Append(b.ToString("X2"));
+
+            return hashedInputStringBuilder.ToString();
         }
 
         public string GeneratePassword(int length = 6)

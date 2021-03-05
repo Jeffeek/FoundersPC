@@ -11,20 +11,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
-    [Route("authAPI/registration")]
+    [Route("identityAPI/registration")]
     [ApiController]
     public class RegistrationController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IAuthenticationService _authenticationService;
         private readonly IUserRegistrationService _userRegistrationService;
 
-        public RegistrationController(IAuthenticationService authenticationService,
-                                      IMapper mapper,
+        public RegistrationController(IMapper mapper,
                                       IUserRegistrationService userRegistrationService
         )
         {
-            _authenticationService = authenticationService;
             _mapper = mapper;
             _userRegistrationService = userRegistrationService;
         }

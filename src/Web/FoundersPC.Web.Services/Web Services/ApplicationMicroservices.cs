@@ -6,23 +6,33 @@ using System.Net.Http.Headers;
 
 #endregion
 
-namespace FoundersPC.Web
+namespace FoundersPC.Web.Services.Web_Services
 {
     // make service for microservices
-    internal static class ApplicationMicroservicesContext
+    public class ApplicationMicroservices
     {
-        internal static readonly HttpClient HardwareApiClient = new();
+        public HttpClient HardwareApiClient { get; }
 
-        internal static readonly HttpClient IdentityServerClient = new();
+        public HttpClient IdentityServerClient { get; }
 
-        static ApplicationMicroservicesContext()
+        public ApplicationMicroservices(string identityServerUri,
+                                        string hardwareApiServerUri
+        )
         {
-            IdentityServerClient.BaseAddress = new Uri("https://localhost:3000/");
+            HardwareApiClient = new HttpClient
+                                {
+                                    BaseAddress = new Uri(hardwareApiServerUri)
+                                };
+
+            IdentityServerClient = new HttpClient
+                                   {
+                                       BaseAddress = new Uri(identityServerUri)
+                                   };
+
             IdentityServerClient.DefaultRequestHeaders.Clear();
             IdentityServerClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             IdentityServerClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
 
-            HardwareApiClient.BaseAddress = new Uri("https://localhost:5001/api/");
             HardwareApiClient.DefaultRequestHeaders.Clear();
             HardwareApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HardwareApiClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

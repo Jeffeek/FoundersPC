@@ -41,6 +41,8 @@ namespace FoundersPC.Identity.Services.User_Services
             _accessUsersTokensService = accessUsersTokensService;
         }
 
+        #region New manager registration
+
         public async Task<bool> RegisterNewManagerAsync(string email, string password)
         {
             if (ReferenceEquals(password, null)) throw new ArgumentNullException(nameof(password));
@@ -61,6 +63,10 @@ namespace FoundersPC.Identity.Services.User_Services
             return resultOfRegistration && sendResult;
         }
 
+        #endregion
+
+        #region Block or inactive user
+
         public async Task<bool> BlockUserAsync(int userId, bool blockAllTokens = true, bool sendNotification = true)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
@@ -71,7 +77,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (blockAllTokens)
             {
-                var userTokens = user.Tokens;
+                var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
                 foreach (var token in userTokens)
                     await _accessUsersTokensService.BlockAsync(token.Id);
             }
@@ -102,30 +108,14 @@ namespace FoundersPC.Identity.Services.User_Services
             return await _unitOfWork.UsersRepository.UpdateAsync(user);
         }
 
-        public async Task<bool> BlockAPITokenAsync(int tokenId)
-        {
-            var token = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(tokenId);
+        #endregion
 
-            if (token is null) return false;
+        #region Block API token
 
-            if (!token.IsBlocked) return false;
+        public async Task<bool> BlockAPITokenAsync(int tokenId) => await _accessUsersTokensService.BlockAsync(tokenId);
 
-            token.IsBlocked = true;
+        public async Task<bool> BlockAPITokenAsync(string token) => await _accessUsersTokensService.BlockAsync(token);
 
-            return await _unitOfWork.ApiAccessUsersTokensRepository.UpdateAsync(token);
-        }
-
-        public async Task<bool> BlockAPITokenAsync(string token)
-        {
-            var userToken = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
-
-            if (userToken is null) return false;
-
-            if (!userToken.IsBlocked) return false;
-
-            userToken.IsBlocked = true;
-
-            return await _unitOfWork.ApiAccessUsersTokensRepository.UpdateAsync(userToken);
-        }
+        #endregion
     }
 }

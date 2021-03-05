@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.AuthenticationShared\FoundersPC.AuthenticationShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Web.Application\FoundersPC.Web.Application.csproj" />
     <ProjectReference Include="..\FoundersPC.Web.Domain\FoundersPC.Web.Domain.csproj" />
+    <ProjectReference Include="..\FoundersPC.Web.Services\FoundersPC.Web.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

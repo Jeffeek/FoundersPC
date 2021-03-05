@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.Repository;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Tokens;
 using FoundersPC.Identity.Domain.Entities.Tokens;
+using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,5 +26,16 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
         public async Task<ApiAccessUserToken> GetByTokenAsync(string token) =>
             await Context.Set<ApiAccessUserToken>()
                          .SingleOrDefaultAsync(x => x.HashedToken == token);
+
+        public async Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(int userId)
+        {
+            var user = await Context.Set<UserEntity>().FindAsync(userId);
+
+            if (user is null) return null;
+
+            await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
+
+            return user.Tokens;
+        }
     }
 }

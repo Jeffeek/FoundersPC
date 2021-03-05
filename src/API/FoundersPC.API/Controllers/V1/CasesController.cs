@@ -9,6 +9,7 @@ using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

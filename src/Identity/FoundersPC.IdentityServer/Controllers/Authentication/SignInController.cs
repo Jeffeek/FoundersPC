@@ -14,22 +14,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
-    [Route("authAPI/login")]
+    [Route("identityAPI/login")]
     [ApiController]
     public class SignInController : Controller
     {
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly IUsersEntrancesService _usersEntrancesService;
-        private readonly IAuthenticationService _authenticationService;
+        private readonly IUsersService _usersService;
 
-        public SignInController(IAuthenticationService authenticationService,
+        public SignInController(IUsersService authenticationService,
                                 IMapper mapper,
                                 IUsersEntrancesService usersEntrancesService,
                                 IMailService mailService
         )
         {
-            _authenticationService = authenticationService;
+            _usersService = authenticationService;
             _mapper = mapper;
             _usersEntrancesService = usersEntrancesService;
             _mailService = mailService;
@@ -40,12 +40,13 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         {
             if (ReferenceEquals(request, null)) return null;
 
-            var user = await _authenticationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
+            var user = await _usersService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
 
             if (ReferenceEquals(user, null)) return new UserLoginResponse();
 
-            //await _usersEntrancesService.LogAsync(user.Id);
-            //await _mailService.SendEntranceNotificationAsync(user.Email);
+            await _usersEntrancesService.LogAsync(user.Id);
+            if (user.SendMessageOnEntrance)
+                await _mailService.SendEntranceNotificationAsync(user.Email);
 
             var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
             mappedUser.IsUserExists = true;

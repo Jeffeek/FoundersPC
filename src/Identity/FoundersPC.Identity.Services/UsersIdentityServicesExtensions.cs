@@ -22,7 +22,7 @@ namespace FoundersPC.Identity.Services
         public static void AddUsersIdentityServices(this IServiceCollection services)
         {
             services.AddScoped<IUserRegistrationService, UserRegistrationService>();
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<IManagerService, ManagerService>();
             services.AddScoped<IAdminService, AdminService>();
         }

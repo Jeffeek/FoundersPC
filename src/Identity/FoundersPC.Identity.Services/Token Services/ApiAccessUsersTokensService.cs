@@ -8,6 +8,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
+using FoundersPC.Identity.Services.Encryption_Services;
 
 #endregion
 
@@ -16,12 +17,21 @@ namespace FoundersPC.Identity.Services.Token_Services
     public class ApiAccessUsersTokensService : IApiAccessUsersTokensService
     {
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
+        private readonly TokenEncryptorService _tokenEncryptorService;
 
-        public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork) => _unitOfWork = unitOfWork;
+        public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork, TokenEncryptorService tokenEncryptorService)
+        {
+            _unitOfWork = unitOfWork;
+            _tokenEncryptorService = tokenEncryptorService;
+        }
+
+        #region IsTokenBlocked
 
         public async Task<bool> IsTokenBlockedAsync(string token)
         {
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
+            var hashedToken = _tokenEncryptorService.ComputeHash(token);
+
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(hashedToken);
 
             return tokenEntity is not null && tokenEntity.IsBlocked;
         }
@@ -32,6 +42,10 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             return token is not null && token.IsBlocked;
         }
+
+        #endregion
+
+        #region IsTokenActive
 
         public async Task<bool> IsTokenActiveAsync(string token)
         {
@@ -50,6 +64,10 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
+
+        #endregion
+
+        #region Can make API request
 
         public async Task<bool> CanMakeRequestAsync(string token)
         {
@@ -77,6 +95,10 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             return DateTime.Now.Ticks - tokenLog.RequestDateTime.Ticks >= 594530547;
         }
+
+        #endregion
+
+        #region Blocking
 
         public async Task<bool> BlockAsync(string token)
         {
@@ -107,5 +129,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             return await _unitOfWork.ApiAccessUsersTokensRepository.UpdateAsync(token);
         }
+
+        #endregion
     }
 }

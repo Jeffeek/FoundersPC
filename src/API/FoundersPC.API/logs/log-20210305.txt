@@ -1,0 +1,112 @@
+03/05/2021 15:50:19 HARDWARE API started..
+03/05/2021 15:50:20 HARDWARE API HostBuilder created
+03/05/2021 15:50:20 Host built
+03/05/2021 15:50:21 Now listening on: "https://localhost:5001"
+03/05/2021 15:50:21 Now listening on: "http://localhost:5000"
+03/05/2021 15:50:21 Application started. Press Ctrl+C to shut down.
+03/05/2021 15:50:21 Hosting environment: "Development"
+03/05/2021 15:50:21 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 15:50:54 HTTP "GET" "/api/cases/5" responded 401 in 85.4800 ms
+03/05/2021 15:51:50 HTTP "GET" "/api/cases/6" responded 401 in 132.6008 ms
+03/05/2021 15:52:07 HTTP "GET" "/api/cases/6" responded 401 in 1.1903 ms
+03/05/2021 16:05:57 HARDWARE API started..
+03/05/2021 16:05:57 HARDWARE API HostBuilder created
+03/05/2021 16:05:57 Host built
+03/05/2021 16:05:58 Now listening on: "https://localhost:5001"
+03/05/2021 16:05:58 Now listening on: "http://localhost:5000"
+03/05/2021 16:05:58 Application started. Press Ctrl+C to shut down.
+03/05/2021 16:05:58 Hosting environment: "Development"
+03/05/2021 16:05:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 16:06:18 T: request for reading (one) by ilyushin_misha@mail.ru
+03/05/2021 16:10:41 HARDWARE API started..
+03/05/2021 16:10:41 HARDWARE API HostBuilder created
+03/05/2021 16:10:42 Host built
+03/05/2021 16:10:42 Now listening on: "https://localhost:5001"
+03/05/2021 16:10:42 Now listening on: "http://localhost:5000"
+03/05/2021 16:10:42 Application started. Press Ctrl+C to shut down.
+03/05/2021 16:10:42 Hosting environment: "Development"
+03/05/2021 16:10:42 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 16:11:03 CasesController: request for reading with id = 6 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:11:04 HTTP "GET" "/api/cases/6" responded 200 in 2208.0541 ms
+03/05/2021 16:11:36 CasesController: request for reading with id = 6 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:21:31 HARDWARE API started..
+03/05/2021 16:21:31 HARDWARE API HostBuilder created
+03/05/2021 16:21:31 Host built
+03/05/2021 16:21:32 Now listening on: "https://localhost:5001"
+03/05/2021 16:21:32 Now listening on: "http://localhost:5000"
+03/05/2021 16:21:32 Application started. Press Ctrl+C to shut down.
+03/05/2021 16:21:32 Hosting environment: "Development"
+03/05/2021 16:21:32 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 16:22:08 CasesController: request for reading with id = 6 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:26:27 HARDWARE API started..
+03/05/2021 16:26:27 HARDWARE API HostBuilder created
+03/05/2021 16:26:28 Host built
+03/05/2021 16:26:28 Now listening on: "https://localhost:5001"
+03/05/2021 16:26:28 Now listening on: "http://localhost:5000"
+03/05/2021 16:26:28 Application started. Press Ctrl+C to shut down.
+03/05/2021 16:26:28 Hosting environment: "Development"
+03/05/2021 16:26:28 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 16:26:38 CasesController: request for reading with id = 6 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:26:39 HTTP "GET" "/api/cases/6" responded 200 in 2054.4990 ms
+03/05/2021 16:26:52 CasesController: request for reading with id = 6 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:27:20 CasesController: request for reading with id = 10 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:27:35 CasesController: request for reading (all) by ilyushin_misha@mail.ru, IPv4 : ::1
+03/05/2021 16:27:57 CasesController: request for reading (all) by ilyushin_misha@mail.ru, IPv4 : ::1
+03/05/2021 16:28:15 CasesController: request for reading with id = 8 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:29:19 HARDWARE API started..
+03/05/2021 16:29:20 HARDWARE API HostBuilder created
+03/05/2021 16:29:20 Host built
+03/05/2021 16:29:21 Now listening on: "https://localhost:5001"
+03/05/2021 16:29:21 Now listening on: "http://localhost:5000"
+03/05/2021 16:29:21 Application started. Press Ctrl+C to shut down.
+03/05/2021 16:29:21 Hosting environment: "Development"
+03/05/2021 16:29:21 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 16:29:29 CasesController: request for reading with id = 8 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:29:30 HTTP "GET" "/api/cases/8" responded 200 in 2126.9439 ms
+03/05/2021 16:29:42 CasesController: request for reading (all) by ilyushin_misha@mail.ru, IPv4 : ::1
+03/05/2021 16:30:08 CasesController: request for reading with id = 10 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:30:18 HTTP "GET" "/api/cases/10" responded 200 in 10132.9392 ms
+03/05/2021 16:30:18 HTTP "GET" "/api/cases" responded 200 in 35813.6788 ms
+03/05/2021 16:30:23 Application is shutting down...
+03/05/2021 16:30:48 HARDWARE API started..
+03/05/2021 16:30:48 HARDWARE API HostBuilder created
+03/05/2021 16:30:49 Host built
+03/05/2021 16:30:49 Now listening on: "https://localhost:5001"
+03/05/2021 16:30:49 Now listening on: "http://localhost:5000"
+03/05/2021 16:30:49 Application started. Press Ctrl+C to shut down.
+03/05/2021 16:30:49 Hosting environment: "Development"
+03/05/2021 16:30:49 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 16:31:14 CasesController: request for reading (all) by ilyushin_misha@mail.ru, IPv4 : ::1
+03/05/2021 16:31:15 HTTP "GET" "/api/cases" responded 200 in 2118.0949 ms
+03/05/2021 16:31:25 CasesController: request for reading (all) by ilyushin_misha@mail.ru, IPv4 : ::1
+03/05/2021 16:31:42 HTTP "GET" "/api/cases" responded 200 in 16858.5580 ms
+03/05/2021 16:31:45 Application is shutting down...
+03/05/2021 16:32:03 HARDWARE API started..
+03/05/2021 16:32:03 HARDWARE API HostBuilder created
+03/05/2021 16:32:04 Host built
+03/05/2021 16:32:04 Now listening on: "https://localhost:5001"
+03/05/2021 16:32:04 Now listening on: "http://localhost:5000"
+03/05/2021 16:32:04 Application started. Press Ctrl+C to shut down.
+03/05/2021 16:32:04 Hosting environment: "Development"
+03/05/2021 16:32:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/05/2021 16:32:18 CasesController: request for reading with id = 10 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:32:24 HTTP "GET" "/api/cases/10" responded 200 in 6884.8847 ms
+03/05/2021 16:32:31 CasesController: request for reading with id = 15 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:32:34 HTTP "GET" "/api/cases/15" responded 200 in 3186.2219 ms
+03/05/2021 16:32:39 CasesController: request for reading with id = 15 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:32:41 HTTP "GET" "/api/cases/15" responded 200 in 2541.6546 ms
+03/05/2021 16:32:58 CasesController: request for reading with id = 150 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:33:00 HTTP "GET" "/api/cases/150" responded 404 in 2227.2521 ms
+03/05/2021 16:33:25 CasesController: request for reading with id = 15 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:33:25 HTTP "GET" "/api/cases/15" responded 200 in 41.4922 ms
+03/05/2021 16:33:29 CasesController: request for reading with id = 20 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:33:29 HTTP "GET" "/api/cases/20" responded 200 in 5.5956 ms
+03/05/2021 16:33:33 CasesController: request for reading with id = 1 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:33:33 HTTP "GET" "/api/cases/1" responded 200 in 14.3112 ms
+03/05/2021 16:33:38 CasesController: request for reading with id = 55 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:33:38 HTTP "GET" "/api/cases/55" responded 404 in 3.8583 ms
+03/05/2021 16:33:41 CasesController: request for reading with id = 22 (one) by ilyushin_misha@mail.ru
+03/05/2021 16:33:41 HTTP "GET" "/api/cases/22" responded 200 in 8.5996 ms
+03/05/2021 16:33:46 CasesController: request for reading (all) by ilyushin_misha@mail.ru, IPv4 : ::1
+03/05/2021 16:33:46 HTTP "GET" "/api/cases" responded 200 in 69.9243 ms
+03/05/2021 16:34:05 Application is shutting down...
