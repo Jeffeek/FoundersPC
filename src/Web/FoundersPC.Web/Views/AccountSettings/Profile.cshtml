@@ -1,0 +1,512 @@
+﻿@model FoundersPC.Web.Models.ViewModels.UserAccountSettingsViewModel
+
+@{
+    <link
+        href = "~/css/account.css"
+        rel = "stylesheet"/>
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div
+    class = "mt-5 rounded shadow text-light"
+    id = "main-container">
+<div>
+    <div
+        class = "p-3">
+        <h4
+            class = "text-center">
+            Email
+        </h4>
+    </div>
+    <ul
+        class = "mb-3 nav nav-justified nav-pills"
+        id = "pills-tab"
+        role = "tablist">
+        <li
+            class = "my-3 nav-item"
+            role = "presentation">
+            <a
+                aria-controls = "account"
+                aria-selected = "true"
+                class = "active nav-link"
+                data-bs-target = "#account"
+                data-bs-toggle = "pill"
+                id = "pills-account-tab"
+                role = "tab">
+                <img
+                    alt = ""
+                    class = "img-fluid"
+                    src = "~/img/account.svg">
+                <span
+                    class = "align-self-center mx-2">
+                    Account
+                </span>
+            </a>
+        </li>
+        <li
+            class = "my-3 nav-item"
+            role = "presentation">
+            <a
+                aria-selected = "false"
+                class = "nav-link"
+                data-bs-target = "#password"
+                data-bs-toggle = "pill"
+                id = "pills-password-tab"
+                role = "tab">
+                <img
+                    alt = ""
+                    class = "img-fluid"
+                    src = "~/img/password.svg">
+                <span
+                    class = "align-self-center mx-2">
+                    Password
+                </span>
+            </a>
+        </li>
+        <li
+            class = "my-3 nav-item"
+            role = "presentation">
+            <a
+                aria-controls = "security"
+                aria-selected = "true"
+                class = "nav-link"
+                data-bs-target = "#security"
+                data-bs-toggle = "pill"
+                id = "pills-security-tab"
+                role = "tab">
+                <img
+                    alt = ""
+                    class = "img-fluid"
+                    src = "~/img/security.svg">
+                <span
+                    class = "align-self-center mx-2">
+                    Security
+                </span>
+            </a>
+        </li>
+        <li
+            class = "my-3 nav-item"
+            role = "presentation">
+            <a
+                aria-controls = "application"
+                aria-selected = "true"
+                class = "nav-link"
+                data-bs-target = "#application"
+                data-bs-toggle = "pill"
+                id = "pills-application-tab"
+                role = "tab">
+                <img
+                    alt = ""
+                    class = "img-fluid"
+                    src = "~/img/application.svg">
+                <span
+                    class = "align-self-center mx-2">
+                    Application
+                </span>
+            </a>
+        </li>
+        <li
+            class = "my-3 nav-item"
+            role = "presentation">
+            <a
+                aria-controls = "notification"
+                aria-selected = "false"
+                class = "nav-link"
+                data-bs-target = "#notification"
+                data-bs-toggle = "pill"
+                id = "pills-notification-tab"
+                role = "tab">
+                <img
+                    alt = ""
+                    class = "img-fluid"
+                    src = "~/img/notification.svg">
+                <span
+                    class = "align-self-center mx-2">
+                    Notification
+                </span>
+            </a>
+        </li>
+        <li
+            class = "my-3 nav-item"
+            role = "presentation">
+            <a
+                aria-controls = "tokens"
+                aria-selected = "true"
+                class = "nav-link"
+                data-bs-target = "#tokens"
+                data-bs-toggle = "pill"
+                id = "pills-tokens-tab"
+                role = "tab">
+                <img
+                    alt = ""
+                    class = "img-fluid"
+                    src = "~/img/token.svg">
+                <span
+                    class = "align-self-center mx-2">
+                    Tokens
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div
+    class = "p-4 p-md-5 tab-content"
+    id = "pills-tabContent">
+    <div
+        aria-labelledby = "pills-account-tab"
+        class = "active fade show tab-pane"
+        id = "account"
+        role = "tabpanel">
+        <h3
+            class = "mb-4">
+            Account Information
+        </h3>
+        <div
+            class = "row">
+            <div
+                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-3 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0">
+                <div
+                    class = "form-floating">
+                    <input
+                        asp-for = "AccountInformationViewModel.Email"
+                        class = "bg-dark form-control text-white"
+                        readonly
+                        type = "email"/>
+                    <label
+                        asp-for = "AccountInformationViewModel.Email"
+                        class = "form-label">
+                        Email
+                    </label>
+                </div>
+            </div>
+            <div
+                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-10 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0">
+                <div
+                    class = "form-floating">
+                    <input
+                        asp-for = "AccountInformationViewModel.Role"
+                        class = "bg-dark form-control text-white"
+                        readonly
+                        type = "text"/>
+                    <label
+                        asp-for = "AccountInformationViewModel.Role"
+                        class = "form-label">
+                        Role
+                    </label>
+                </div>
+            </div>
+            <div
+                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3">
+                <div
+                    class = "form-floating">
+                    <input
+                        asp-for = "AccountInformationViewModel.Login"
+                        class = "bg-dark form-control text-white"
+                        id = "formLogin"
+                        readonly
+                        type = "text"/>
+                    <label
+                        asp-for = "AccountInformationViewModel.Login"
+                        class = "form-label">
+                        Login
+                    </label>
+                </div>
+            </div>
+        </div>
+</div>
+<div
+    aria-labelledby = "password-tab"
+    class = "fade tab-pane"
+    id = "password"
+    role = "tabpanel">
+    <form
+        asp-action = "ChangePassword"
+        asp-controller = "AccountSettings"
+        method = "post">
+        <h3
+            class = "mb-4">
+            Password Settings
+        </h3>
+        <div
+            asp-validation-summary = "All">
+        </div>
+        <div
+            class = "row">
+            <div
+                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3">
+                <div
+                    class = "form-floating">
+                    <input
+                        asp-for = "PasswordViewModel.OldPassword"
+                        class = "bg-dark form-control text-white"
+                        maxlength = "30"
+                        minlength = "6"
+                        placeholder = "Old password"
+                        type = "password">
+                    <label
+                        asp-for = "PasswordViewModel.OldPassword">
+                        Old password
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div
+            class = "row">
+            <div
+                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3">
+                <div
+                    class = "form-floating">
+                    <input
+                        asp-for = "PasswordViewModel.NewPassword"
+                        class = "bg-dark form-control text-white"
+                        maxlength = "30"
+                        minlength = "6"
+                        placeholder = "New password"
+                        type = "password">
+                    <label>New password</label>
+                </div>
+            </div>
+            <div
+                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3">
+                <div
+                    class = "form-floating">
+                    <input
+                        asp-for = "PasswordViewModel.NewPasswordConfirm"
+                        class = "bg-dark form-control text-white"
+                        maxlength = "30"
+                        minlength = "6"
+                        placeholder = "Confirm new password"
+                        type = "password">
+                    <label
+                        asp-for = "PasswordViewModel.NewPasswordConfirm">
+                        Confirm new password
+                    </label>
+                    <span
+                        asp-validation-for = "PasswordViewModel.NewPasswordConfirm">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div
+            class = "mt-3">
+            <input
+                class = "btn btn-primary"
+                type = "submit"
+                value = "Update">
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby = "security-tab"
+    class = "fade tab-pane"
+    id = "security"
+    role = "tabpanel">
+    <form
+        asp-action = "ChangeLogin"
+        asp-controller = "AccountSettings"
+        method = "post">
+        <h3
+            class = "mb-4">
+            Security Settings
+        </h3>
+        <div
+            asp-validation-summary = "All">
+        </div>
+        <div
+            class = "row">
+            <div
+                class = "col-md-6">
+                <div
+                    class = "form-floating">
+                    <input
+                        asp-for = "LoginViewModel.NewLogin"
+                        class = "bg-dark form-control text-white"
+                        maxlength = "30"
+                        minlength = "6"
+                        placeholder = "New login"
+                        type = "text">
+                    <label
+                        asp-for = "LoginViewModel.NewLogin"
+                        class = "form-label">
+                        New login
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div
+            class = "mt-3">
+            <input
+                class = "btn btn-primary"
+                type = "submit"
+                value = "Update">
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby = "application-tab"
+    class = "fade tab-pane"
+    id = "application"
+    role = "tabpanel">
+    <form
+        asp-action = ""
+        asp-controller = ""
+        method = "post">
+        <h3
+            class = "mb-4">
+            Application Settings
+        </h3>
+        <div
+            class = "row">
+            <div
+                class = "col-md-6">
+                <div
+                    class = "form-group">
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <input
+                class = "btn btn-primary"
+                type = "submit"
+                value = "Update">
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby = "notification-tab"
+    class = "fade tab-pane"
+    id = "notification"
+    role = "tabpanel">
+    <form
+        asp-action = "ChangeNotifications"
+        asp-controller = "AccountSettings"
+        method = "post">
+        <h3>Notification Settings</h3>
+        <div
+            class = "form-check form-switch mt-4">
+            <input
+                asp-for = "NotificationsViewModel.SendNotificationOnEntrance"
+                class = "form-check-input"
+                type = "checkbox"/>
+            <label
+                asp-for = "NotificationsViewModel.SendNotificationOnEntrance"
+                class = "form-label text-light">
+            </label>
+        </div>
+        <div
+            class = "form-check form-switch mt-2">
+            <input
+                asp-for = "NotificationsViewModel.SendNotificationOnUsingAPI"
+                class = "form-check-input"
+                type = "checkbox"/>
+            <label
+                asp-for = "NotificationsViewModel.SendNotificationOnUsingAPI"
+                class = "form-label text-light">
+            </label>
+        </div>
+        <div
+            class = "mt-3">
+            <input
+                class = "btn btn-primary"
+                type = "submit"
+                value = "Update">
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby = "notification-tab"
+    class = "fade tab-pane"
+    id = "tokens"
+    role = "tabpanel">
+    <h3
+        class = "mb-4">
+        API Access Tokens
+    </h3>
+    <div
+        class = "my-custom-scrollbar table-wrapper-scroll-y">
+        <table
+            class = "table table-dark table-hover">
+            <thead>
+            <tr
+                class = "border-5">
+                <th
+                    class = "sticky-top"
+                    scope = "col">
+                    Id
+                </th>
+                <th
+                    class = "sticky-top"
+                    scope = "col">
+                    Token
+                </th>
+                <th
+                    class = "sticky-top"
+                    scope = "col">
+                    Start evaluation
+                </th>
+                <th
+                    class = "sticky-top"
+                    scope = "col">
+                    Finish evaluation
+                </th>
+                <th
+                    class = "sticky-top"
+                    scope = "col">
+                    IsAvailable
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach (var token in Model.TokensViewModel.Tokens)
+                {
+                    <tr>
+                        <th
+                            scope = "row">
+                            @token.Id
+                        </th>
+                        <td>@token.HashedToken</td>
+                        <td>@token.StartEvaluationDate</td>
+                        <td>@token.ExpirationDate</td>
+                        <td>
+                            @if (token.IsBlocked || token.ExpirationDate >= DateTime.Now)
+                            {
+                                <input
+                                    class = "form-check-inline"
+                                    disabled
+                                    type = "checkbox">
+                            }
+                            else
+                            {
+                                <input
+                                    checked
+                                    class = "form-check-inline"
+                                    disabled
+                                    type = "checkbox">
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a
+            class = "btn btn-primary">
+            Update
+        </a>
+    </div>
+</div>
+</div>
+</div>
+
+@section Scripts
+{
+    <script
+        src = "~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script
+        src = "~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -10,6 +10,8 @@ namespace FoundersPC.Web.Models
     {
         public string RequestId { get; set; }
 
+        public string Error { get; set; }
+
         public bool ShowRequestId => !String.IsNullOrEmpty(RequestId);
     }
 }

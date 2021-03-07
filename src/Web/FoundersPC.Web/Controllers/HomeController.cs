@@ -21,32 +21,8 @@ namespace FoundersPC.Web.Controllers
             _applicationMicroservices = applicationMicroservices;
         }
 
-        [Authorize]
-        public IActionResult Profile() => View();
-
         [AllowAnonymous]
         public IActionResult Index() => View();
-
-        [Authorize(Roles = "Administrator")]
-        public IActionResult Admin() =>
-            Ok(new
-               {
-                   role = "admin"
-               });
-
-        [Authorize(Roles = "Administrator, Manager, DefaultUser")]
-        public IActionResult Authenticated() =>
-            Ok(new
-               {
-                   role = "Authenticated"
-               });
-
-        [AllowAnonymous]
-        public IActionResult All() =>
-            Ok(new
-               {
-                   role = "None"
-               });
 
         [AllowAnonymous]
         public IActionResult AccessDenied() => View("AccessDenied");

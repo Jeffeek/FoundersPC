@@ -22,7 +22,9 @@ namespace FoundersPC.Identity.Application.DTO
 
         public string HashedPassword { get; set; }
 
-        public bool SendMessageOnEntrance { get; }
+        public bool SendMessageOnEntrance { get; set; }
+
+        public bool SendMessageOnApiRequest { get; set; }
 
         public RoleEntityReadDto Role { get; set; }
     }

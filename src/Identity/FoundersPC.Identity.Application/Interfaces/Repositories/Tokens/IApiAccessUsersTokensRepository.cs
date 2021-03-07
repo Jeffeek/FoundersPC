@@ -14,5 +14,7 @@ namespace FoundersPC.Identity.Application.Interfaces.Repositories.Tokens
         Task<ApiAccessUserToken> GetByTokenAsync(string token);
 
         Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(int userId);
+
+        Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(string userEmail);
     }
 }

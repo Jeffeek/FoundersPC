@@ -150,6 +150,9 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("SendMessageOnApiRequest")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("SendMessageOnEntrance")
                         .HasColumnType("bit");
 

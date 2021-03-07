@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace FoundersPC.Web.Controllers
                                   });
 
             var serverMessage =
-                await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("forgotpassword", request);
+                await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("authentication/forgotpassword", request);
 
             if (!serverMessage.IsSuccessStatusCode)
                 return Problem(detail : "Server error",
@@ -78,7 +79,7 @@ namespace FoundersPC.Web.Controllers
             if (!TryValidateModel(request)) return BadRequest(request);
 
             var registrationResult =
-                await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("registration", request);
+                await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("authentication/registration", request);
 
             var deliveredResult = await registrationResult.Content.ReadFromJsonAsync<UserRegisterResponse>();
 
@@ -86,7 +87,7 @@ namespace FoundersPC.Web.Controllers
 
             if (!deliveredResult.IsRegistrationSuccessful) return Conflict(deliveredResult);
 
-            await SetupSessionCookieAsync(deliveredResult.Email, "DefaultUser");
+            await SetupSessionCookieAsync(deliveredResult.Email, deliveredResult.Role, deliveredResult.UserId);
 
             return RedirectToAction("Index", "Home");
         }
@@ -111,7 +112,7 @@ namespace FoundersPC.Web.Controllers
         {
             if (!ModelState.IsValid) return ValidationProblem("Not valid credentials", nameof(authenticationRequest));
 
-            var result = await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("login", authenticationRequest);
+            var result = await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("authentication/login", authenticationRequest);
 
             if (!result.IsSuccessStatusCode) return NotFound(authenticationRequest);
 
@@ -121,16 +122,16 @@ namespace FoundersPC.Web.Controllers
 
             if (!content.IsUserExists) return NotFound(result);
 
-            await SetupSessionCookieAsync(content.Email, content.Role);
-            SetupJwtTokenInCookie(content.Email, content.Role);
+            await SetupSessionCookieAsync(content.Email, content.Role, content.UserId);
+            SetupJwtTokenInCookie(content.Email, content.Role, content.UserId);
 
             return RedirectToAction("Index", "Home");
         }
 
-        private void SetupJwtTokenInCookie(string contentEmail, string contentRole)
+        private void SetupJwtTokenInCookie(string contentEmail, string contentRole, int userId)
         {
             RemoveJwtTokenInCookie();
-            var jwtToken = new JwtUserToken(contentEmail, contentRole);
+            var jwtToken = new JwtUserToken(contentEmail, contentRole, userId);
             var token = jwtToken.GetToken();
             HttpContext.Response.Cookies.Append("token",
                                                 token,
@@ -146,12 +147,13 @@ namespace FoundersPC.Web.Controllers
 
         #region Cookie
 
-        private async Task SetupSessionCookieAsync(string email, string role)
+        private async Task SetupSessionCookieAsync(string email, string role, int userId)
         {
             var claims = new List<Claim>
                          {
                              new(ClaimsIdentity.DefaultNameClaimType, email),
-                             new(ClaimsIdentity.DefaultRoleClaimType, role)
+                             new(ClaimsIdentity.DefaultRoleClaimType, role),
+                             new(JwtRegisteredClaimNames.NameId, userId.ToString())
                          };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

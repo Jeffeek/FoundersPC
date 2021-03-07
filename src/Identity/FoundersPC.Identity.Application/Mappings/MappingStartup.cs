@@ -24,7 +24,8 @@ namespace FoundersPC.Identity.Application.Mappings
                            source => source
                                .MapFrom(x => x.Role.RoleTitle))
                 .ForMember(dest => dest.IsUserActive,
-                           source => source.MapFrom(x => x.IsActive));
+                           source => source.MapFrom(x => x.IsActive))
+                .ForMember(dest => dest.UserId, source => source.MapFrom(x => x.Id));
         }
     }
 }

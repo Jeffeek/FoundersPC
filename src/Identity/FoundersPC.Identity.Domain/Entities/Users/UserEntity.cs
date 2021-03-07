@@ -40,6 +40,9 @@ namespace FoundersPC.Identity.Domain.Entities.Users
         [Required]
         public bool SendMessageOnEntrance { get; set; }
 
+        [Required]
+        public bool SendMessageOnApiRequest { get; set; }
+
         [ForeignKey(nameof(RoleId))]
         public RoleEntity Role { get; set; }
 

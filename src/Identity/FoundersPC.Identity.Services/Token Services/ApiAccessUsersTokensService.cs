@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using FoundersPC.AuthenticationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
@@ -18,11 +20,16 @@ namespace FoundersPC.Identity.Services.Token_Services
     {
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
         private readonly TokenEncryptorService _tokenEncryptorService;
+        private readonly IMapper _mapper;
 
-        public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork, TokenEncryptorService tokenEncryptorService)
+        public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork,
+                                           TokenEncryptorService tokenEncryptorService,
+                                           IMapper mapper
+        )
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
+            _mapper = mapper;
         }
 
         #region IsTokenBlocked
@@ -131,5 +138,26 @@ namespace FoundersPC.Identity.Services.Token_Services
         }
 
         #endregion
+
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId)
+        {
+            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
+
+            if (tokens is null) return null;
+
+            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
+        }
+
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail)
+        {
+            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
+
+            if (tokens is null) return null;
+
+            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
+        }
+
     }
 }

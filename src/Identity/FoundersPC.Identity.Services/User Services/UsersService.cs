@@ -66,15 +66,17 @@ namespace FoundersPC.Identity.Services.User_Services
             return await FindUserByEmailOrLoginAndHashedPasswordAsync(emailOrLogin, hashedPassword);
         }
 
-        public async Task<bool> ChangePasswordToAsync(int userId, string newPassword)
+        public async Task<bool> ChangePasswordToAsync(int userId, string newPassword, string oldHashedPassword)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 
             if (user is null) return false;
 
-            var hashedPassword = _passwordEncryptorService.EncryptPassword(newPassword);
+            if (user.HashedPassword != oldHashedPassword) return false;
 
-            user.HashedPassword = hashedPassword;
+            var hashedNewPassword = _passwordEncryptorService.EncryptPassword(newPassword);
+
+            user.HashedPassword = hashedNewPassword;
 
             var resultOfUpdating = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
@@ -85,18 +87,108 @@ namespace FoundersPC.Identity.Services.User_Services
             return resultOfSaving > 0;
         }
 
-        public async Task<bool> ChangePasswordToAsync(string userEmail, string newPassword)
+        public async Task<bool> ChangePasswordToAsync(string userEmail, string newPassword, string oldHashedPassword)
         {
             var user = await FindUserByEmailAsync(userEmail);
 
-            return await ChangePasswordToAsync(user, newPassword);
+            return await ChangePasswordToAsync(user, newPassword, oldHashedPassword);
         }
 
-        public async Task<bool> ChangePasswordToAsync(UserEntityReadDto user, string newPassword)
+        public async Task<bool> ChangePasswordToAsync(UserEntityReadDto user, string newPassword, string oldPassword)
         {
             if (ReferenceEquals(user, null)) throw new ArgumentNullException(nameof(user));
 
-            return await ChangePasswordToAsync(user.Id, newPassword);
+            return await ChangePasswordToAsync(user.Id, newPassword, oldPassword);
+        }
+
+        public async Task<bool> ChangeLoginToAsync(string userEmail, string newLogin)
+        {
+            if (userEmail is null) throw new ArgumentNullException(nameof(userEmail));
+            if (newLogin is null) throw new ArgumentNullException(nameof(newLogin));
+
+            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+
+            if (user is null || user.Login == newLogin) return false;
+
+            user.Login = newLogin;
+
+            var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
+
+            if (!updateResult) return false;
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> ChangeLoginToAsync(UserEntityReadDto user, string newLogin)
+        {
+            if (user is null) throw new ArgumentNullException(nameof(user));
+            if (newLogin is null) throw new ArgumentNullException(nameof(newLogin));
+
+            if (user.Email is null) return false;
+
+            return await ChangeLoginToAsync(user.Email, newLogin);
+        }
+
+        public async Task<bool> ChangeLoginToAsync(int userId, string newLogin)
+        {
+            if (userId < 1) throw new ArgumentOutOfRangeException(nameof(userId));
+            if (newLogin is null) throw new ArgumentNullException(nameof(newLogin));
+
+            var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
+
+            if (user is null || user.Login == newLogin) return false;
+
+            user.Login = newLogin;
+
+            var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
+
+            if (!updateResult) return false;
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> ChangeNotificationsToAsync(string userEmail, bool notificationOnEntrance, bool notificationOnApiRequest)
+        {
+            if (userEmail is null) throw new ArgumentNullException(nameof(userEmail));
+
+            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+
+            if (user is null) return false;
+
+            user.SendMessageOnApiRequest = notificationOnApiRequest;
+            user.SendMessageOnEntrance = notificationOnEntrance;
+
+            var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
+
+            if (!updateResult) return false;
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> ChangeNotificationsToAsync(UserEntityReadDto user, bool notificationOnEntrance, bool notificationOnApiRequest)
+        {
+            if (user is null) throw new ArgumentNullException(nameof(user));
+            if (user.Id < 1) throw new ArgumentOutOfRangeException(nameof(user.Id));
+
+            return await ChangeNotificationsToAsync(user.Id, notificationOnEntrance, notificationOnApiRequest);
+        }
+
+        public async Task<bool> ChangeNotificationsToAsync(int userId, bool notificationOnEntrance, bool notificationOnApiRequest)
+        {
+            if (userId < 1) throw new ArgumentOutOfRangeException(nameof(userId));
+
+            var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
+
+            if (user is null) return false;
+
+            user.SendMessageOnApiRequest = notificationOnApiRequest;
+            user.SendMessageOnEntrance = notificationOnEntrance;
+
+            var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
+
+            if (!updateResult) return false;
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
         }
     }
 }

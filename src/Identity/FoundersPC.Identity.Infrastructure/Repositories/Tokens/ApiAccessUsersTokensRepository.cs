@@ -37,5 +37,18 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
 
             return user.Tokens;
         }
+
+        public async Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(string userEmail)
+        {
+            if (userEmail is null) return null;
+
+            var user = await Context.Set<UserEntity>().FirstOrDefaultAsync(x => x.Email == userEmail);
+
+            if (user is null) return null;
+
+            await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
+
+            return user.Tokens;
+        }
     }
 }

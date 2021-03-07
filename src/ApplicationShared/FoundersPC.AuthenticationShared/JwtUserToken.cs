@@ -12,11 +12,14 @@ namespace FoundersPC.AuthenticationShared
 {
     public class JwtUserToken
     {
-        public JwtUserToken(string email, string role)
+        public JwtUserToken(string email, string role, int userId)
         {
             Email = email;
             Role = role;
+            UserId = userId;
         }
+
+        public int UserId { get; set; }
 
         public string Email { get; }
 
@@ -27,7 +30,8 @@ namespace FoundersPC.AuthenticationShared
             var claims = new List<Claim>
                          {
                              new(ClaimsIdentity.DefaultRoleClaimType, Role),
-                             new(ClaimsIdentity.DefaultNameClaimType, Email)
+                             new(ClaimsIdentity.DefaultNameClaimType, Email),
+                             new(JwtRegisteredClaimNames.NameId, UserId.ToString())
                          };
 
             var key = JwtConfiguration.GetSymmetricSecurityKey();

@@ -1,6 +1,8 @@
 ﻿#region Using namespaces
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using FoundersPC.AuthenticationShared;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
 #endregion
@@ -24,5 +26,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
         Task<bool> CanMakeRequestAsync(int tokenId);
 
         Task<bool> BlockAsync(int id);
+
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId);
+
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail);
     }
 }
