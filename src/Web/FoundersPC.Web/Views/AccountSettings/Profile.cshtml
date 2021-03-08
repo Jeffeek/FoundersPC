@@ -153,67 +153,67 @@
 <div
     class = "p-4 p-md-5 tab-content"
     id = "pills-tabContent">
+<div
+    aria-labelledby = "pills-account-tab"
+    class = "active fade show tab-pane"
+    id = "account"
+    role = "tabpanel">
+    <h3
+        class = "mb-4">
+        Account Information
+    </h3>
     <div
-        aria-labelledby = "pills-account-tab"
-        class = "active fade show tab-pane"
-        id = "account"
-        role = "tabpanel">
-        <h3
-            class = "mb-4">
-            Account Information
-        </h3>
+        class = "row">
         <div
-            class = "row">
+            class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-3 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0">
             <div
-                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-3 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0">
-                <div
-                    class = "form-floating">
-                    <input
-                        asp-for = "AccountInformationViewModel.Email"
-                        class = "bg-dark form-control text-white"
-                        readonly
-                        type = "email"/>
-                    <label
-                        asp-for = "AccountInformationViewModel.Email"
-                        class = "form-label">
-                        Email
-                    </label>
-                </div>
-            </div>
-            <div
-                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-10 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0">
-                <div
-                    class = "form-floating">
-                    <input
-                        asp-for = "AccountInformationViewModel.Role"
-                        class = "bg-dark form-control text-white"
-                        readonly
-                        type = "text"/>
-                    <label
-                        asp-for = "AccountInformationViewModel.Role"
-                        class = "form-label">
-                        Role
-                    </label>
-                </div>
-            </div>
-            <div
-                class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3">
-                <div
-                    class = "form-floating">
-                    <input
-                        asp-for = "AccountInformationViewModel.Login"
-                        class = "bg-dark form-control text-white"
-                        id = "formLogin"
-                        readonly
-                        type = "text"/>
-                    <label
-                        asp-for = "AccountInformationViewModel.Login"
-                        class = "form-label">
-                        Login
-                    </label>
-                </div>
+                class = "form-floating">
+                <input
+                    asp-for = "AccountInformationViewModel.Email"
+                    class = "bg-dark form-control text-white"
+                    readonly
+                    type = "email"/>
+                <label
+                    asp-for = "AccountInformationViewModel.Email"
+                    class = "form-label">
+                    Email
+                </label>
             </div>
         </div>
+        <div
+            class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-10 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0">
+            <div
+                class = "form-floating">
+                <input
+                    asp-for = "AccountInformationViewModel.Role"
+                    class = "bg-dark form-control text-white"
+                    readonly
+                    type = "text"/>
+                <label
+                    asp-for = "AccountInformationViewModel.Role"
+                    class = "form-label">
+                    Role
+                </label>
+            </div>
+        </div>
+        <div
+            class = "col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3">
+            <div
+                class = "form-floating">
+                <input
+                    asp-for = "AccountInformationViewModel.Login"
+                    class = "bg-dark form-control text-white"
+                    id = "formLogin"
+                    readonly
+                    type = "text"/>
+                <label
+                    asp-for = "AccountInformationViewModel.Login"
+                    class = "form-label">
+                    Login
+                </label>
+            </div>
+        </div>
+    </div>
 </div>
 <div
     aria-labelledby = "password-tab"

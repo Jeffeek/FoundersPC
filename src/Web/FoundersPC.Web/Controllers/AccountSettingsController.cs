@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿#region Using namespaces
+
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Net;
 using System.Net.Http.Json;
 using System.Security.Claims;
@@ -11,11 +11,13 @@ using FoundersPC.ApplicationShared.AccountSettings;
 using FoundersPC.ApplicationShared.AccountSettings.Request;
 using FoundersPC.ApplicationShared.AccountSettings.Response;
 using FoundersPC.AuthenticationShared;
-using FoundersPC.AuthenticationShared.Response;
 using FoundersPC.Web.Models;
 using FoundersPC.Web.Models.ViewModels;
 using FoundersPC.Web.Services.Web_Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.Web.Controllers
 {
@@ -24,10 +26,7 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly ApplicationMicroservices _applicationMicroservices;
 
-        public AccountSettingsController(ApplicationMicroservices applicationMicroservices)
-        {
-            _applicationMicroservices = applicationMicroservices;
-        }
+        public AccountSettingsController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
 
         [HttpGet]
         [Authorize]
@@ -39,32 +38,33 @@ namespace FoundersPC.Web.Controllers
 
             if (id is null || !Int32.TryParse(id, out var intId)) throw new CookieException();
 
-            var request = await _applicationMicroservices.IdentityServerClient.GetFromJsonAsync<UserNotificationsViewModel>($"user/settings/notifications/{intId}");
+            var request =
+                await _applicationMicroservices.IdentityServerClient.GetFromJsonAsync<UserNotificationsViewModel>($"user/settings/notifications/{intId}");
             var login = await _applicationMicroservices.IdentityServerClient.GetStringAsync($"user/settings/login/{intId}");
             var tokens = await _applicationMicroservices.IdentityServerClient.GetFromJsonAsync<IEnumerable<ApiAccessUserTokenReadDto>>($"tokens/user/{intId}");
 
             login = login.Trim('"');
 
-            var settings = new UserAccountSettingsViewModel()
+            var settings = new UserAccountSettingsViewModel
                            {
-                               AccountInformationViewModel = new UserAccountInformationViewModel()
+                               AccountInformationViewModel = new UserAccountInformationViewModel
                                                              {
                                                                  Email = email ?? "unknown",
                                                                  Login = login,
                                                                  Role = role ?? "unknown"
                                                              },
-                               LoginViewModel = new UserSecurityViewModel()
+                               LoginViewModel = new UserSecurityViewModel
                                                 {
                                                     NewLogin = login
                                                 },
-                               PasswordViewModel = new UserPasswordViewModel()
+                               PasswordViewModel = new UserPasswordViewModel
                                                    {
                                                        NewPassword = String.Empty,
                                                        NewPasswordConfirm = String.Empty,
                                                        OldPassword = String.Empty
                                                    },
                                NotificationsViewModel = request,
-                               TokensViewModel = new UserTokensViewModel()
+                               TokensViewModel = new UserTokensViewModel
                                                  {
                                                      Tokens = tokens
                                                  }
@@ -78,7 +78,7 @@ namespace FoundersPC.Web.Controllers
         {
             if (!TryValidateModel(request.PasswordViewModel))
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 RequestId = HttpContext.Request.Path,
                                 Error = "Bad model"
@@ -88,25 +88,25 @@ namespace FoundersPC.Web.Controllers
 
             if (userIdClaim is null)
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 RequestId = HttpContext.Request.Path,
                                 Error = "Bad user id"
                             });
 
-            var postRequest = await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync<UserChangePasswordRequest>("user/settings/change/password",
-                                  new UserChangePasswordRequest()
-                                  {
-                                      NewPassword = request.PasswordViewModel.NewPassword,
-                                      OldPassword = request.PasswordViewModel.OldPassword,
-                                      UserId = Int32.Parse(userIdClaim)
-                                  });
+            var postRequest = await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("user/settings/change/password",
+                                                                                                   new UserChangePasswordRequest
+                                                                                                   {
+                                                                                                       NewPassword = request.PasswordViewModel.NewPassword,
+                                                                                                       OldPassword = request.PasswordViewModel.OldPassword,
+                                                                                                       UserId = Int32.Parse(userIdClaim)
+                                                                                                   });
 
             var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
 
             if (!response?.Successful ?? false)
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 RequestId = HttpContext.Request.Path,
                                 Error = response?.Error ?? "Reading json error"
@@ -120,7 +120,7 @@ namespace FoundersPC.Web.Controllers
         {
             if (!TryValidateModel(request.LoginViewModel))
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 RequestId = HttpContext.Request.Path,
                                 Error = "Bad model"
@@ -130,7 +130,7 @@ namespace FoundersPC.Web.Controllers
 
             if (userIdClaim is null)
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 RequestId = HttpContext.Request.Path,
                                 Error = "Bad user id"
@@ -138,18 +138,18 @@ namespace FoundersPC.Web.Controllers
 
             var postRequest = await _applicationMicroservices
                                     .IdentityServerClient
-                                    .PostAsJsonAsync<UserChangeLoginRequest>("user/settings/change/login",
-                                                                             new UserChangeLoginRequest()
-                                                                             {
-                                                                                 UserId = Int32.Parse(userIdClaim),
-                                                                                 NewLogin = request.LoginViewModel.NewLogin
-                                                                             });
+                                    .PostAsJsonAsync("user/settings/change/login",
+                                                     new UserChangeLoginRequest
+                                                     {
+                                                         UserId = Int32.Parse(userIdClaim),
+                                                         NewLogin = request.LoginViewModel.NewLogin
+                                                     });
 
             var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
 
             if (!response?.Successful ?? false)
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 Error = response.Operation,
                                 RequestId = HttpContext.Request.Path
@@ -163,7 +163,7 @@ namespace FoundersPC.Web.Controllers
         {
             if (!TryValidateModel(request.NotificationsViewModel))
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 RequestId = HttpContext.Request.Path,
                                 Error = "Bad model"
@@ -173,7 +173,7 @@ namespace FoundersPC.Web.Controllers
 
             if (userIdClaim is null)
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 RequestId = HttpContext.Request.Path,
                                 Error = "Bad user id"
@@ -181,19 +181,19 @@ namespace FoundersPC.Web.Controllers
 
             var postRequest = await _applicationMicroservices
                                     .IdentityServerClient
-                                    .PostAsJsonAsync<UserChangeNotificationsRequest>("user/settings/change/notifications",
-                                                                                     new UserChangeNotificationsRequest()
-                                                                                     {
-                                                                                         UserId = Int32.Parse(userIdClaim),
-                                                                                         SendMessageOnApiRequest = request.NotificationsViewModel.SendNotificationOnUsingAPI,
-                                                                                         SendMessageOnEntrance = request.NotificationsViewModel.SendNotificationOnEntrance
-                                                                                     });
+                                    .PostAsJsonAsync("user/settings/change/notifications",
+                                                     new UserChangeNotificationsRequest
+                                                     {
+                                                         UserId = Int32.Parse(userIdClaim),
+                                                         SendMessageOnApiRequest = request.NotificationsViewModel.SendNotificationOnUsingAPI,
+                                                         SendMessageOnEntrance = request.NotificationsViewModel.SendNotificationOnEntrance
+                                                     });
 
             var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
 
             if (!response?.Successful ?? false)
                 return View("Error",
-                            new ErrorViewModel()
+                            new ErrorViewModel
                             {
                                 Error = response.Operation,
                                 RequestId = HttpContext.Request.Path

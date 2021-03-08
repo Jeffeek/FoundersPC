@@ -1,0 +1,130 @@
+﻿@model FoundersPC.AuthenticationShared.Request.UserRegisterRequest
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link
+        href = "~/css/authstyles.css"
+        rel = "stylesheet">
+}
+
+<div
+    class = "sidenav">
+    <div
+        class = "login-main-text">
+        <h2>
+            FoundersPC
+            <br> Registration Page
+        </h2>
+        <p>RegisterAsync from here to have an access to our API.</p>
+    </div>
+</div>
+<div
+    class = "main">
+    <div
+        class = "col-md-6 col-sm-12">
+        <div
+            class = "login-form">
+            <form
+                asp-action = "Register"
+                asp-controller = "Authentication">
+                <div
+                    asp-validation-summary = "ModelOnly"
+                    class = "text-danger">
+                </div>
+                <div
+                    class = "form-group">
+                    <label
+                        asp-for = "Email"
+                        class = "col-form-label text-info">
+                    </label>
+                    <input
+                        asp-for = "Email"
+                        class = "form-control"
+                        type = "text">
+                    <span
+                        asp-validation-for = "Email"
+                        class = "text-danger">
+                    </span>
+                </div>
+                <div
+                    class = "form-group">
+                    <label
+                        asp-for = "Password"
+                        class = "text-info">
+                    </label>
+                    <div
+                        class = "input-group mb-auto">
+                        <input
+                            asp-for = "Password"
+                            class = "form-control"
+                            id = "password-box"
+                            type = "password">
+                        <span
+                            class = "input-group-text"
+                            onclick = "showHidePasswordBox()">
+                            <ion-icon
+                                id = "pass-hide"
+                                name = "eye-off-outline"/>
+                        </span>
+                        <span
+                            class = "input-group-text"
+                            onclick = "generateRandomPassword()">
+                            <ion-icon
+                                name = "reload-outline"/>
+                        </span>
+                    </div>
+                    <span
+                        asp-validation-for = "Password"
+                        class = "text-danger">
+                    </span>
+                </div>
+                <div
+                    class = "form-group">
+                    <input
+                        class = "btn btn-dark btn-primary"
+                        type = "submit"
+                        value = "Register">
+                </div>
+            </form>
+            <div>
+                <a
+                    asp-action = "Signin"
+                    asp-controller = "Authentication"
+                    class = "text-info">
+                    Have an account
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script
+        src = "~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script
+        src = "~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<script>
+
+    const passwordBox = document.getElementById('password-box');
+    const passwordShowHideImage = document.getElementById('pass-hide');
+
+    function generateRandomPassword() {
+        const countOfLetters = randomInt(6, 30);
+        const randomPasswordString = randomString();
+        passwordBox.value = randomPasswordString.slice(-countOfLetters);
+    }
+
+    function showHidePasswordBox() {
+        if (passwordBox.type === 'text') {
+            passwordBox.type = 'password';
+            passwordShowHideImage.name = 'eye-off-outline';
+        } else {
+            passwordBox.type = 'text';
+            passwordShowHideImage.name = 'eye-outline';
+        }
+    }
+
+</script>

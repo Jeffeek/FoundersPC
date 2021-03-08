@@ -18,9 +18,9 @@ namespace FoundersPC.Identity.Services.Token_Services
 {
     public class ApiAccessUsersTokensService : IApiAccessUsersTokensService
     {
-        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
-        private readonly TokenEncryptorService _tokenEncryptorService;
         private readonly IMapper _mapper;
+        private readonly TokenEncryptorService _tokenEncryptorService;
+        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork,
                                            TokenEncryptorService tokenEncryptorService,
@@ -30,6 +30,26 @@ namespace FoundersPC.Identity.Services.Token_Services
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
             _mapper = mapper;
+        }
+
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId)
+        {
+            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
+
+            if (tokens is null) return null;
+
+            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
+        }
+
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail)
+        {
+            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
+
+            if (tokens is null) return null;
+
+            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
         }
 
         #region IsTokenBlocked
@@ -138,26 +158,5 @@ namespace FoundersPC.Identity.Services.Token_Services
         }
 
         #endregion
-
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId)
-        {
-            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
-
-            if (tokens is null) return null;
-
-            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
-                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
-        }
-
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail)
-        {
-            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
-
-            if (tokens is null) return null;
-
-            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
-                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
-        }
-
     }
 }

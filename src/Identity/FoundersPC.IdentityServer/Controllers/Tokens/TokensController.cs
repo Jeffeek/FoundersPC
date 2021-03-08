@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿#region Using namespaces
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.AuthenticationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
@@ -14,10 +17,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
     {
         private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
 
-        public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService)
-        {
-            _apiAccessUsersTokensService = apiAccessUsersTokensService;
-        }
+        public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
 
         [HttpGet]
         [Route("user/{userId}")]

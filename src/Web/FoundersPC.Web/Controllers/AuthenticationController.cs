@@ -25,10 +25,7 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly ApplicationMicroservices _applicationMicroservices;
 
-        public AuthenticationController(ApplicationMicroservices applicationMicroservices)
-        {
-            _applicationMicroservices = applicationMicroservices;
-        }
+        public AuthenticationController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
 
         #region ForgotPassword
 
@@ -45,7 +42,7 @@ namespace FoundersPC.Web.Controllers
                 await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("authentication/forgotpassword", request);
 
             if (!serverMessage.IsSuccessStatusCode)
-                return Problem(detail : "Server error",
+                return Problem("Server error",
                                statusCode : (int)serverMessage.StatusCode);
 
             var result = await serverMessage.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
@@ -95,7 +92,7 @@ namespace FoundersPC.Web.Controllers
         #endregion
 
         [Authorize]
-        public async Task<ActionResult> SignOutAsync()
+        public async Task<ActionResult> LogoutAsync()
         {
             if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
 
@@ -108,7 +105,7 @@ namespace FoundersPC.Web.Controllers
         #region SignIn
 
         [HttpPost]
-        public async Task<IActionResult> LogInAsync(UserLoginRequest authenticationRequest)
+        public async Task<IActionResult> SigninAsync(UserLoginRequest authenticationRequest)
         {
             if (!ModelState.IsValid) return ValidationProblem("Not valid credentials", nameof(authenticationRequest));
 
@@ -170,13 +167,13 @@ namespace FoundersPC.Web.Controllers
         #region Redirection
 
         [HttpGet]
-        public ActionResult LoginIndex() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
+        public ActionResult Signin() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
 
         [HttpGet]
-        public IActionResult RegisterIndex() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
+        public IActionResult Registration() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
 
         [HttpGet]
-        public IActionResult ForgotPasswordIndex() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
+        public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
 
         #endregion
     }

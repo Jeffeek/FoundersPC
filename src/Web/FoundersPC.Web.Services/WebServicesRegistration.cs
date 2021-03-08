@@ -1,6 +1,10 @@
-﻿using FoundersPC.Web.Services.Web_Services;
+﻿#region Using namespaces
+
+using FoundersPC.Web.Services.Web_Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
+#endregion
 
 namespace FoundersPC.Web.Services
 {
@@ -8,8 +12,8 @@ namespace FoundersPC.Web.Services
     {
         public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<ApplicationMicroservices>(new ApplicationMicroservices(configuration["ConnectionServers:IdentityServer"],
-                                                                                         configuration["ConnectionServers:API"]));
+            services.AddSingleton(new ApplicationMicroservices(configuration["ConnectionServers:IdentityServer"],
+                                                               configuration["ConnectionServers:API"]));
         }
     }
 }

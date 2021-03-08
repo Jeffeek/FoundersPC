@@ -16,10 +16,7 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly ApplicationMicroservices _applicationMicroservices;
 
-        public HomeController(ApplicationMicroservices applicationMicroservices)
-        {
-            _applicationMicroservices = applicationMicroservices;
-        }
+        public HomeController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
 
         [AllowAnonymous]
         public IActionResult Index() => View();

@@ -1,0 +1,157 @@
+03/08/2021 15:59:57 Web server started.. 1 
+03/08/2021 15:59:57 Web server HostBuilder created 1 
+03/08/2021 15:59:57 Host built 1 
+03/08/2021 15:59:58 Now listening on: "https://localhost:9000" 1 
+03/08/2021 15:59:58 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 15:59:58 Hosting environment: "Development" 1 
+03/08/2021 15:59:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 15:59:58 HTTP "GET" "/" responded 200 in 143.3145 ms 8 
+03/08/2021 16:00:32 HTTP "GET" "/" responded 200 in 3.5655 ms 16 
+03/08/2021 16:00:44 HTTP "GET" "/" responded 200 in 3402.1068 ms 18 
+03/08/2021 16:00:57 HTTP "GET" "/" responded 200 in 158.9887 ms 18 
+03/08/2021 16:01:14 HTTP "GET" "/" responded 200 in 120.4420 ms 19 
+03/08/2021 16:01:26 HTTP "GET" "/" responded 200 in 146.7175 ms 11 
+03/08/2021 16:01:36 HTTP "GET" "/" responded 200 in 0.7360 ms 19 
+03/08/2021 16:02:48 HTTP "GET" "/" responded 200 in 101.5683 ms 27 
+03/08/2021 16:02:56 HTTP "GET" "/Authentication/Signin" responded 405 in 1.4476 ms 30 
+03/08/2021 16:03:02 HTTP "GET" "/Authentication/Signin" responded 405 in 2.3212 ms 27 
+03/08/2021 16:04:17 Application is shutting down... 25 
+03/08/2021 16:06:54 Web server started.. 1 
+03/08/2021 16:06:54 Web server HostBuilder created 1 
+03/08/2021 16:06:54 Host built 1 
+03/08/2021 16:06:54 Now listening on: "https://localhost:9000" 1 
+03/08/2021 16:06:54 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 16:06:54 Hosting environment: "Development" 1 
+03/08/2021 16:06:54 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 16:06:55 HTTP "GET" "/" responded 200 in 151.6401 ms 7 
+03/08/2021 16:06:56 HTTP "GET" "/Authentication/Signin" responded 200 in 54.2463 ms 7 
+03/08/2021 16:08:32 HTTP "GET" "/Authentication/Signin" responded 200 in 5.3891 ms 23 
+03/08/2021 16:08:35 HTTP "GET" "/Authentication/Signin" responded 200 in 2.3923 ms 23 
+03/08/2021 16:09:42 HTTP "GET" "/Authentication/Signin" responded 200 in 1.2451 ms 25 
+03/08/2021 16:09:44 HTTP "GET" "/Authentication/Signin" responded 200 in 0.8621 ms 7 
+03/08/2021 16:10:16 HTTP "GET" "/Authentication/Signin" responded 200 in 0.9664 ms 34 
+03/08/2021 16:10:18 Application is shutting down... 37 
+03/08/2021 16:12:59 Web server started.. 1 
+03/08/2021 16:12:59 Web server HostBuilder created 1 
+03/08/2021 16:12:59 Host built 1 
+03/08/2021 16:12:59 Now listening on: "https://localhost:9000" 1 
+03/08/2021 16:12:59 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 16:12:59 Hosting environment: "Development" 1 
+03/08/2021 16:12:59 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 16:12:59 HTTP "GET" "/" responded 200 in 134.9967 ms 10 
+03/08/2021 16:13:01 HTTP "GET" "/Authentication/Signin" responded 200 in 43.2702 ms 10 
+03/08/2021 16:14:10 Application is shutting down... 9 
+03/08/2021 16:14:40 Web server started.. 1 
+03/08/2021 16:14:40 Web server HostBuilder created 1 
+03/08/2021 16:14:40 Host built 1 
+03/08/2021 16:14:41 Now listening on: "https://localhost:9000" 1 
+03/08/2021 16:14:41 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 16:14:41 Hosting environment: "Development" 1 
+03/08/2021 16:14:41 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 16:14:41 HTTP "GET" "/" responded 200 in 170.3239 ms 11 
+03/08/2021 16:14:44 HTTP "GET" "/Authentication/Signin" responded 200 in 48.1673 ms 4 
+03/08/2021 16:18:02 Application is shutting down... 17 
+03/08/2021 16:21:06 Web server started.. 1 
+03/08/2021 16:21:06 Web server HostBuilder created 1 
+03/08/2021 16:21:07 Host built 1 
+03/08/2021 16:21:07 Now listening on: "https://localhost:9000" 1 
+03/08/2021 16:21:07 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 16:21:07 Hosting environment: "Development" 1 
+03/08/2021 16:21:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 16:21:10 HTTP "GET" "/" responded 200 in 167.6462 ms 5 
+03/08/2021 16:21:12 HTTP "GET" "/Authentication/Signin" responded 200 in 44.9514 ms 8 
+03/08/2021 19:11:38 Web server started.. 1 
+03/08/2021 19:11:38 Web server HostBuilder created 1 
+03/08/2021 19:11:38 Host built 1 
+03/08/2021 19:11:39 Now listening on: "https://localhost:9000" 1 
+03/08/2021 19:11:39 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 19:11:39 Hosting environment: "Development" 1 
+03/08/2021 19:11:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 19:11:39 HTTP "GET" "/" responded 200 in 139.4810 ms 7 
+03/08/2021 19:11:44 Application is shutting down... 2 
+03/08/2021 19:40:55 Web server started.. 1 
+03/08/2021 19:40:55 Web server HostBuilder created 1 
+03/08/2021 19:40:55 Host built 1 
+03/08/2021 19:40:55 Now listening on: "https://localhost:9000" 1 
+03/08/2021 19:40:55 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 19:40:55 Hosting environment: "Development" 1 
+03/08/2021 19:40:55 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 19:40:56 HTTP "GET" "/" responded 200 in 138.3875 ms 8 
+03/08/2021 19:41:05 HTTP "GET" "/Authentication/Signin" responded 200 in 26.6525 ms 8 
+03/08/2021 19:41:10 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 25.7372 ms 8 
+03/08/2021 19:41:12 HTTP "GET" "/Authentication/Signin" responded 200 in 1.1968 ms 12 
+03/08/2021 19:41:13 HTTP "GET" "/Authentication/Registration" responded 200 in 18.3222 ms 12 
+03/08/2021 19:41:15 HTTP "GET" "/Authentication/Signin" responded 200 in 1.3544 ms 13 
+03/08/2021 19:41:37 HTTP "POST" "/Authentication/Signin" responded 400 in 62.6312 ms 12 
+03/08/2021 19:41:45 HTTP "GET" "/Authentication/Signin" responded 200 in 0.7202 ms 8 
+03/08/2021 19:47:09 Application is shutting down... 40 
+03/08/2021 19:47:10 Web server started.. 1 
+03/08/2021 19:47:10 Web server HostBuilder created 1 
+03/08/2021 19:47:10 Host built 1 
+03/08/2021 19:47:10 Now listening on: "https://localhost:9000" 1 
+03/08/2021 19:47:10 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 19:47:10 Hosting environment: "Development" 1 
+03/08/2021 19:47:10 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 19:47:11 HTTP "GET" "/" responded 200 in 167.9508 ms 12 
+03/08/2021 19:47:13 HTTP "GET" "/Authentication/Signin" responded 200 in 35.9086 ms 13 
+03/08/2021 19:47:34 Application is shutting down... 10 
+03/08/2021 19:48:14 Web server started.. 1 
+03/08/2021 19:48:14 Web server HostBuilder created 1 
+03/08/2021 19:48:14 Host built 1 
+03/08/2021 19:48:14 Now listening on: "https://localhost:9000" 1 
+03/08/2021 19:48:14 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 19:48:14 Hosting environment: "Development" 1 
+03/08/2021 19:48:14 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 19:48:15 HTTP "GET" "/" responded 200 in 161.3518 ms 8 
+03/08/2021 19:48:16 HTTP "GET" "/Authentication/Signin" responded 200 in 41.7629 ms 8 
+03/08/2021 19:49:55 HTTP "GET" "/Authentication/Signin" responded 200 in 4.4483 ms 21 
+03/08/2021 19:51:35 HTTP "GET" "/Authentication/Signin" responded 200 in 3162.0135 ms 35 
+03/08/2021 19:52:28 HTTP "GET" "/Authentication/Signin" responded 200 in 203.4979 ms 10 
+03/08/2021 19:52:36 Application is shutting down... 15 
+03/08/2021 19:53:13 Web server started.. 1 
+03/08/2021 19:53:13 Web server HostBuilder created 1 
+03/08/2021 19:53:13 Host built 1 
+03/08/2021 19:53:13 Now listening on: "https://localhost:9000" 1 
+03/08/2021 19:53:13 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 19:53:13 Hosting environment: "Development" 1 
+03/08/2021 19:53:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 19:53:14 HTTP "GET" "/" responded 200 in 143.2295 ms 11 
+03/08/2021 19:53:16 HTTP "GET" "/Authentication/Signin" responded 200 in 44.7010 ms 7 
+03/08/2021 19:53:37 HTTP "GET" "/Authentication/Signin" responded 200 in 3196.0109 ms 13 
+03/08/2021 19:55:37 HTTP "GET" "/Authentication/Signin" responded 200 in 1.9454 ms 28 
+03/08/2021 19:55:40 HTTP "GET" "/Authentication/Signin" responded 200 in 0.9159 ms 11 
+03/08/2021 19:55:47 HTTP "GET" "/Authentication/Signin" responded 200 in 0.8696 ms 11 
+03/08/2021 19:55:51 HTTP "GET" "/Authentication/Signin" responded 200 in 0.8758 ms 28 
+03/08/2021 19:55:55 Application is shutting down... 25 
+03/08/2021 19:56:12 Web server started.. 1 
+03/08/2021 19:56:12 Web server HostBuilder created 1 
+03/08/2021 19:56:12 Host built 1 
+03/08/2021 19:56:12 Now listening on: "https://localhost:9000" 1 
+03/08/2021 19:56:12 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 19:56:12 Hosting environment: "Development" 1 
+03/08/2021 19:56:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 19:56:12 HTTP "GET" "/" responded 200 in 140.4206 ms 11 
+03/08/2021 19:56:14 HTTP "GET" "/Authentication/Signin" responded 200 in 39.6836 ms 8 
+03/08/2021 19:56:19 Application is shutting down... 17 
+03/08/2021 19:56:59 Web server started.. 1 
+03/08/2021 19:56:59 Web server HostBuilder created 1 
+03/08/2021 19:56:59 Host built 1 
+03/08/2021 19:56:59 Now listening on: "https://localhost:9000" 1 
+03/08/2021 19:56:59 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 19:56:59 Hosting environment: "Development" 1 
+03/08/2021 19:56:59 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 19:57:00 HTTP "GET" "/" responded 200 in 144.3447 ms 10 
+03/08/2021 19:57:01 HTTP "GET" "/Authentication/Signin" responded 200 in 37.0948 ms 10 
+03/08/2021 19:58:41 HTTP "GET" "/Authentication/Signin" responded 200 in 3130.5361 ms 22 
+03/08/2021 19:58:54 Application is shutting down... 16 
+03/08/2021 20:00:18 Web server started.. 1 
+03/08/2021 20:00:18 Web server HostBuilder created 1 
+03/08/2021 20:00:19 Host built 1 
+03/08/2021 20:00:20 Now listening on: "https://localhost:9000" 1 
+03/08/2021 20:00:20 Application started. Press Ctrl+C to shut down. 1 
+03/08/2021 20:00:20 Hosting environment: "Development" 1 
+03/08/2021 20:00:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/08/2021 20:00:25 HTTP "GET" "/" responded 200 in 3445.5338 ms 8 
+03/08/2021 20:00:30 HTTP "GET" "/Authentication/Signin" responded 200 in 1907.0401 ms 5 
+03/08/2021 20:01:52 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 3032.1667 ms 4 
+03/08/2021 20:02:36 HTTP "GET" "/Authentication/Signin" responded 200 in 4.7571 ms 8 

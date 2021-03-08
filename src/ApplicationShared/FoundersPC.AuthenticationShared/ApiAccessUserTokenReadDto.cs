@@ -1,4 +1,8 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
+
+#endregion
 
 namespace FoundersPC.AuthenticationShared
 {

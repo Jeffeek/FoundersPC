@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region Using namespaces
+
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.User_Services
 {
-    public class ManagerService : IManagerService
-    {
-    }
+    public class ManagerService : IManagerService { }
 }

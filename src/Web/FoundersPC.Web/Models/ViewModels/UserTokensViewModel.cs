@@ -1,8 +1,9 @@
-﻿using System;
+﻿#region Using namespaces
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using FoundersPC.AuthenticationShared;
+
+#endregion
 
 namespace FoundersPC.Web.Models.ViewModels
 {

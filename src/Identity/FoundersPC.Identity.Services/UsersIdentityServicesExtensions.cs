@@ -29,8 +29,8 @@ namespace FoundersPC.Identity.Services
 
         public static void AddEncryptionServices(this IServiceCollection services)
         {
-            services.AddSingleton<TokenEncryptorService>(new TokenEncryptorService());
-            services.AddSingleton<PasswordEncryptorService>(new PasswordEncryptorService());
+            services.AddSingleton(new TokenEncryptorService());
+            services.AddSingleton(new PasswordEncryptorService());
         }
 
         public static void AddLogsServices(this IServiceCollection services)

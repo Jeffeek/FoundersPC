@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces
+
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.User
 {
@@ -13,10 +14,7 @@ namespace FoundersPC.IdentityServer.Controllers.User
     {
         private readonly IUsersService _usersService;
 
-        public UserSettingsController(IUsersService usersService)
-        {
-            _usersService = usersService;
-        }
+        public UserSettingsController(IUsersService usersService) => _usersService = usersService;
 
         [HttpGet]
         [Route("notifications/{userId}")]

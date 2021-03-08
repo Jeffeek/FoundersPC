@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region Using namespaces
+
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.ApplicationShared.AccountSettings
 {
@@ -12,7 +11,7 @@ namespace FoundersPC.ApplicationShared.AccountSettings
         [Required]
         public int UserId { get; set; }
 
-        [StringLength(maximumLength : 30,
+        [StringLength(30,
                       MinimumLength = 5,
                       ErrorMessage = "Min 5, max 30")]
         [Required]

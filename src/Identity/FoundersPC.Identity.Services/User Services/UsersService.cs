@@ -1,7 +1,7 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
@@ -10,14 +10,16 @@ using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
 
+#endregion
+
 namespace FoundersPC.Identity.Services.User_Services
 {
     //todo: interface
     public class UsersService : IUsersService
     {
-        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
-        private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IMapper _mapper;
+        private readonly PasswordEncryptorService _passwordEncryptorService;
+        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public UsersService(PasswordEncryptorService passwordEncryptorService, IUnitOfWorkUsersIdentity unitOfWork, IMapper mapper)
         {

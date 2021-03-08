@@ -1,4 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 {

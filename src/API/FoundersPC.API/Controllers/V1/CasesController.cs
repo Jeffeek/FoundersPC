@@ -2,14 +2,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -24,8 +22,8 @@ namespace FoundersPC.API.Controllers.V1
     [Route("api/cases")]
     public class CasesController : Controller
     {
-        private readonly ILogger<CasesController> _logger;
         private readonly ICaseService _caseService;
+        private readonly ILogger<CasesController> _logger;
         private readonly IMapper _mapper;
 
         public CasesController(ICaseService service, IMapper mapper, ILogger<CasesController> logger)

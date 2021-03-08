@@ -1,6 +1,10 @@
-﻿using FoundersPC.ApplicationShared;
+﻿#region Using namespaces
+
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+
+#endregion
 
 namespace FoundersPC.API.Controllers
 {

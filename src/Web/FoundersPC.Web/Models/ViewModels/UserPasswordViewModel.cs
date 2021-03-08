@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region Using namespaces
+
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Web.Models.ViewModels
 {
     public class UserPasswordViewModel
     {
-        [StringLength(maximumLength : 30,
+        [StringLength(30,
                       MinimumLength = 6,
                       ErrorMessage = "Min 6, max 30")]
         [PasswordPropertyText]
         [Required]
         public string OldPassword { get; set; }
 
-        [StringLength(maximumLength : 30,
+        [StringLength(30,
                       MinimumLength = 6,
                       ErrorMessage = "Min 6, max 30")]
         [Compare(nameof(NewPassword),
@@ -25,7 +25,7 @@ namespace FoundersPC.Web.Models.ViewModels
         [Required]
         public string NewPassword { get; set; }
 
-        [StringLength(maximumLength : 30,
+        [StringLength(30,
                       MinimumLength = 6,
                       ErrorMessage = "Min 6, max 30")]
         [Compare(nameof(NewPassword),

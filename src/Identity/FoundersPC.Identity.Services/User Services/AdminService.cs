@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region Using namespaces
+
+using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
@@ -9,19 +8,20 @@ using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
-using Serilog;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.User_Services
 {
     public class AdminService : IAdminService
     {
-        private IManagerService _managerService;
+        private readonly IApiAccessUsersTokensService _accessUsersTokensService;
+        private readonly IMailService _mailService;
+        private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUserRegistrationService _registrationService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
-        private readonly IMailService _mailService;
+        private IManagerService _managerService;
         private IMapper _mapper;
-        private readonly PasswordEncryptorService _passwordEncryptorService;
-        private readonly IApiAccessUsersTokensService _accessUsersTokensService;
 
         public AdminService(IManagerService managerService,
                             IUserRegistrationService registrationService,
@@ -78,8 +78,7 @@ namespace FoundersPC.Identity.Services.User_Services
             if (blockAllTokens)
             {
                 var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
-                foreach (var token in userTokens)
-                    await _accessUsersTokensService.BlockAsync(token.Id);
+                foreach (var token in userTokens) await _accessUsersTokensService.BlockAsync(token.Id);
             }
 
             // todo: add subject
@@ -100,8 +99,7 @@ namespace FoundersPC.Identity.Services.User_Services
             if (!user.IsActive) return false;
 
             // todo: add subject
-            if (sendNotification)
-                await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");
+            if (sendNotification) await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");
 
             user.IsActive = false;
 

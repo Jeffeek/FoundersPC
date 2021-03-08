@@ -28,9 +28,9 @@ namespace FoundersPC.Web
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
                                {
-                                   options.LoginPath = new PathString("/Authentication/LoginIndex");
+                                   options.LoginPath = new PathString("/Authentication/Signin");
                                    options.AccessDeniedPath = new PathString("/Shared/AccessDenied");
-                                   options.LogoutPath = "/Authentication/LoginIndex";
+                                   options.LogoutPath = "/Authentication/Signin";
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
                                });
 

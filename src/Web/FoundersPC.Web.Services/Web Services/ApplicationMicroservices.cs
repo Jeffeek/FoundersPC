@@ -11,10 +11,6 @@ namespace FoundersPC.Web.Services.Web_Services
     // make service for microservices
     public class ApplicationMicroservices
     {
-        public HttpClient HardwareApiClient { get; }
-
-        public HttpClient IdentityServerClient { get; }
-
         public ApplicationMicroservices(string identityServerUri,
                                         string hardwareApiServerUri
         )
@@ -37,5 +33,9 @@ namespace FoundersPC.Web.Services.Web_Services
             HardwareApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HardwareApiClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
         }
+
+        public HttpClient HardwareApiClient { get; }
+
+        public HttpClient IdentityServerClient { get; }
     }
 }

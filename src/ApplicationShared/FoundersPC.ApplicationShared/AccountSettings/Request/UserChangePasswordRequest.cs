@@ -1,5 +1,9 @@
-﻿using System.ComponentModel;
+﻿#region Using namespaces
+
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+
+#endregion
 
 namespace FoundersPC.ApplicationShared.AccountSettings.Request
 {
@@ -8,14 +12,14 @@ namespace FoundersPC.ApplicationShared.AccountSettings.Request
         [Required]
         public int UserId { get; set; }
 
-        [StringLength(maximumLength : 30,
+        [StringLength(30,
                       MinimumLength = 6,
                       ErrorMessage = "Min 6, max 30")]
         [PasswordPropertyText]
         [Required]
         public string OldPassword { get; set; }
 
-        [StringLength(maximumLength : 30,
+        [StringLength(30,
                       MinimumLength = 6,
                       ErrorMessage = "Min 6, max 30")]
         [PasswordPropertyText]

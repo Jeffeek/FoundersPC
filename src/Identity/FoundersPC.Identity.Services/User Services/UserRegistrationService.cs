@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +9,8 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.User_Services
 {
@@ -18,7 +22,8 @@ namespace FoundersPC.Identity.Services.User_Services
 
         public UserRegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
                                        IMapper mapper,
-                                       PasswordEncryptorService encryptorService)
+                                       PasswordEncryptorService encryptorService
+        )
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
             _mapper = mapper;

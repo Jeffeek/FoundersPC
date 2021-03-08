@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region Using namespaces
+
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Web.Models.ViewModels
 {

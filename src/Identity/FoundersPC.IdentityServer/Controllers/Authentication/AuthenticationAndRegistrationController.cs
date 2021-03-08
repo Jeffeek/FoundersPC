@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces
+
+using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.AuthenticationShared.Request;
@@ -12,18 +12,20 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Services.Encryption_Services;
 using Microsoft.AspNetCore.Mvc;
 
+#endregion
+
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
     [Route("identityAPI/authentication")]
     [ApiController]
     public class AuthenticationAndRegistrationController : Controller
     {
-        private readonly IMapper _mapper;
         private readonly IMailService _mailService;
+        private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
-        private readonly IUsersService _usersService;
         private readonly IUserRegistrationService _userRegistrationService;
         private readonly IUsersEntrancesService _usersEntrancesService;
+        private readonly IUsersService _usersService;
 
         public AuthenticationAndRegistrationController(IUsersService authenticationService,
                                                        IMailService mailService,
@@ -115,7 +117,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             var user = await _usersService.FindUserByEmailAsync(request.Email);
 
-            return new UserRegisterResponse()
+            return new UserRegisterResponse
                    {
                        Email = request.Email,
                        IsRegistrationSuccessful = true,
@@ -136,8 +138,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             if (ReferenceEquals(user, null)) return new UserLoginResponse();
 
             await _usersEntrancesService.LogAsync(user.Id);
-            if (user.SendMessageOnEntrance)
-                await _mailService.SendEntranceNotificationAsync(user.Email);
+            if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
 
             var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
             mappedUser.IsUserExists = true;

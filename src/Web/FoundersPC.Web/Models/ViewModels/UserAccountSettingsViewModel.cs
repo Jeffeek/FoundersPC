@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FoundersPC.Web.Models.ViewModels
+﻿namespace FoundersPC.Web.Models.ViewModels
 {
     public class UserAccountSettingsViewModel
     {

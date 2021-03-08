@@ -1,4 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 {
@@ -7,14 +11,14 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         Task<bool> RegisterNewManagerAsync(string email, string password);
 
         /// <summary>
-        /// Register new manager by email and generates a password(sends via email too)
+        ///     Register new manager by email and generates a password(sends via email too)
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
         Task<bool> RegisterNewManagerAsync(string email);
 
         /// <summary>
-        /// Blocking the user account with all tokens he had
+        ///     Blocking the user account with all tokens he had
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="blockAllTokens"></param>
@@ -23,7 +27,7 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         Task<bool> BlockUserAsync(int userId, bool blockAllTokens = true, bool sendNotification = true);
 
         /// <summary>
-        /// Makes user inactive ('removes') from database
+        ///     Makes user inactive ('removes') from database
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="sendNotification"></param>
@@ -31,14 +35,14 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true);
 
         /// <summary>
-        /// Blocking API token by id
+        ///     Blocking API token by id
         /// </summary>
         /// <param name="tokenId"></param>
         /// <returns></returns>
         Task<bool> BlockAPITokenAsync(int tokenId);
 
         /// <summary>
-        /// Blocking API token by token itself
+        ///     Blocking API token by token itself
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>

@@ -1,12 +1,15 @@
-﻿using System.Threading.Tasks;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared.AccountSettings;
 using FoundersPC.ApplicationShared.AccountSettings.Request;
 using FoundersPC.ApplicationShared.AccountSettings.Response;
-using FoundersPC.AuthenticationShared.Response;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Services.Encryption_Services;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.User
 {
@@ -14,13 +17,14 @@ namespace FoundersPC.IdentityServer.Controllers.User
     [ApiController]
     public class UserChangeSettingsController : ControllerBase
     {
-        private readonly IUsersService _usersService;
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
+        private readonly IUsersService _usersService;
 
         public UserChangeSettingsController(IUsersService usersService,
                                             IMapper mapper,
-                                            PasswordEncryptorService passwordEncryptorService)
+                                            PasswordEncryptorService passwordEncryptorService
+        )
         {
             _usersService = usersService;
             _mapper = mapper;
@@ -40,7 +44,7 @@ namespace FoundersPC.IdentityServer.Controllers.User
             var hashedOldPassword = _passwordEncryptorService.EncryptPassword(request.OldPassword);
             var result = await _usersService.ChangePasswordToAsync(request.UserId, request.NewPassword, hashedOldPassword);
 
-            return new UserSettingsChangeResponse()
+            return new UserSettingsChangeResponse
                    {
                        UserId = request.UserId,
                        Successful = result,
@@ -61,7 +65,7 @@ namespace FoundersPC.IdentityServer.Controllers.User
 
             var result = await _usersService.ChangeLoginToAsync(request.UserId, request.NewLogin);
 
-            return new UserSettingsChangeResponse()
+            return new UserSettingsChangeResponse
                    {
                        UserId = request.UserId,
                        Operation = "Login changing",
@@ -81,7 +85,7 @@ namespace FoundersPC.IdentityServer.Controllers.User
 
             var result = await _usersService.ChangeNotificationsToAsync(request.UserId, request.SendMessageOnEntrance, request.SendMessageOnApiRequest);
 
-            return new UserSettingsChangeResponse()
+            return new UserSettingsChangeResponse
                    {
                        Operation = "Notifications changing",
                        Successful = result,
