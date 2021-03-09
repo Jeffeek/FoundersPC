@@ -9,16 +9,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Infrastructure.Contexts
 {
-    public class FoundersPCUsersContext : DbContext
-    {
-        public FoundersPCUsersContext(DbContextOptions<FoundersPCUsersContext> options) : base(options) { }
+	public class FoundersPCUsersContext : DbContext
+	{
+		public FoundersPCUsersContext(DbContextOptions<FoundersPCUsersContext> options) : base(options) { }
 
-        public DbSet<UserEntity> Users { get; set; }
+		public DbSet<UserEntity> Users { get; set; }
 
-        public DbSet<RoleEntity> Roles { get; set; }
+		public DbSet<RoleEntity> Roles { get; set; }
 
-        public DbSet<ApiAccessUserToken> UsersTokens { get; set; }
+		public DbSet<ApiAccessUserToken> UsersTokens { get; set; }
 
-        public DbSet<AccessTokenLog> TokenAccessLogs { get; set; }
-    }
+		public DbSet<AccessTokenLog> TokenAccessLogs { get; set; }
+	}
 }

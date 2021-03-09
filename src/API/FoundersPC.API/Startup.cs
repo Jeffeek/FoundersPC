@@ -4,7 +4,7 @@ using System;
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
-using FoundersPC.AuthenticationShared;
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,114 +20,121 @@ using Serilog;
 
 namespace FoundersPC.API
 {
-    public sealed class Startup
-    {
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+	public sealed class Startup
+	{
+		public Startup(IConfiguration configuration) => Configuration = configuration;
 
-        public IConfiguration Configuration { get; }
+		public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            //services.AddCors(options =>
-            //                 {
-            //                     options.AddPolicy("WebClientPolicy",
-            //                                       builder =>
-            //                                       {
-            //                                           builder.WithOrigins("http://localhost:9000")
-            //                                                  .AllowAnyMethod()
-            //                                                  .AllowAnyHeader()
-            //                                                  .AllowCredentials();
-            //                                       });
-            //                 });
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
+			//services.AddCors(options =>
+			//                 {
+			//                     options.AddPolicy("WebClientPolicy",
+			//                                       builder =>
+			//                                       {
+			//                                           builder.WithOrigins("http://localhost:9000")
+			//                                                  .AllowAnyMethod()
+			//                                                  .AllowAnyHeader()
+			//                                                  .AllowCredentials();
+			//                                       });
+			//                 });
 
-            services.AddLogging(config => config.AddSerilog(Log.Logger));
+			services.AddLogging(config => config.AddSerilog(Log.Logger));
 
-            services.AddControllers();
-            //
-            services.AddHardwareRepositories();
-            //
-            services.AddHardwareUnitOfWork();
-            //
-            services.AddFoundersPCHardwareContext(Configuration);
-            //
-            services.AddHardwareServices();
-            //
-            services.AddHardwareApplicationExtensions();
-            //
-            services.AddValidators();
+			services.AddControllers();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
-                                  config =>
-                                  {
-                                      var key = JwtConfiguration.GetSymmetricSecurityKey();
-                                      config.BackchannelTimeout = TimeSpan.FromSeconds(20);
+			//
+			services.AddHardwareRepositories();
 
-                                      config.TokenValidationParameters = new TokenValidationParameters
-                                                                         {
-                                                                             ValidateAudience = false,
-                                                                             ValidIssuer = JwtConfiguration.Issuer,
-                                                                             ValidAudience = JwtConfiguration.Audience,
-                                                                             IssuerSigningKey = key
-                                                                         };
-                                  });
+			//
+			services.AddHardwareUnitOfWork();
 
-            services.AddAuthorization(config =>
-                                      {
-                                          config.AddPolicy("Changeable",
-                                                           builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole("Administrator",
-                                                                                          "Manager")
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-                                                                             .Build());
+			//
+			services.AddFoundersPCHardwareContext(Configuration);
 
-                                          config.AddPolicy("Readable",
-                                                           builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole("Administrator",
-                                                                                          "Manager",
-                                                                                          "DefaultUser")
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-                                                                             .Build());
-                                      });
+			//
+			services.AddHardwareServices();
 
-            services.AddApiVersioning(options =>
-                                      {
-                                          options.AssumeDefaultVersionWhenUnspecified = true;
-                                          options.DefaultApiVersion = new ApiVersion(1, 0);
-                                          options.ReportApiVersions = true;
-                                      });
+			//
+			services.AddHardwareApplicationExtensions();
 
-            services.AddSwaggerGen(options => options.SwaggerDoc("v1",
-                                                                 new OpenApiInfo
-                                                                 {
-                                                                     Title = "FoundersPC.API",
-                                                                     Version = "v1.0"
-                                                                 }));
-        }
+			//
+			services.AddValidators();
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json",
-                                                                    "FoundersPC.API v1"));
-            }
+			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+					.AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
+								  config =>
+								  {
+									  var key = JwtConfiguration.GetSymmetricSecurityKey();
+									  config.BackchannelTimeout = TimeSpan.FromSeconds(20);
 
-            app.UseHttpsRedirection();
+									  config.TokenValidationParameters = new TokenValidationParameters
+																		 {
+																				 ValidateAudience = false,
+																				 ValidIssuer = JwtConfiguration.Issuer,
+																				 ValidAudience = JwtConfiguration.Audience,
+																				 IssuerSigningKey = key
+																		 };
+								  });
 
-            app.UseRouting();
+			services.AddAuthorization(config =>
+									  {
+										  config.AddPolicy("Changeable",
+														   builder => builder.RequireAuthenticatedUser()
+																			 .RequireRole("Administrator",
+																						  "Manager")
+																			 .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+																			 .Build());
 
-            //app.UseCors("WebClientPolicy");
+										  config.AddPolicy("Readable",
+														   builder => builder.RequireAuthenticatedUser()
+																			 .RequireRole("Administrator",
+																						  "Manager",
+																						  "DefaultUser")
+																			 .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+																			 .Build());
+									  });
 
-            app.UseSerilogRequestLogging();
+			services.AddApiVersioning(options =>
+									  {
+										  options.AssumeDefaultVersionWhenUnspecified = true;
+										  options.DefaultApiVersion = new ApiVersion(1, 0);
+										  options.ReportApiVersions = true;
+									  });
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+			services.AddSwaggerGen(options => options.SwaggerDoc("v1",
+																 new OpenApiInfo
+																 {
+																		 Title = "FoundersPC.API",
+																		 Version = "v1.0"
+																 }));
+		}
 
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
-        }
-    }
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		{
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+				app.UseSwagger();
+
+				app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json",
+																	"FoundersPC.API v1"));
+			}
+
+			app.UseHttpsRedirection();
+
+			app.UseRouting();
+
+			//app.UseCors("WebClientPolicy");
+
+			app.UseSerilogRequestLogging();
+
+			app.UseAuthentication();
+			app.UseAuthorization();
+
+			app.UseEndpoints(endpoints => endpoints.MapControllers());
+		}
+	}
 }

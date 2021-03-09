@@ -10,30 +10,30 @@ using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
 
 namespace FoundersPC.API.Infrastructure.UnitOfWork
 {
-    public interface IUnitOfWorkHardwareAPI
-    {
-        IProducersRepositoryAsync ProducersRepository { get; }
+	public interface IUnitOfWorkHardwareAPI
+	{
+		IProducersRepositoryAsync ProducersRepository { get; }
 
-        ICPUsRepositoryAsync ProcessorsRepository { get; }
+		ICPUsRepositoryAsync ProcessorsRepository { get; }
 
-        IProcessorCoresRepositoryAsync ProcessorCoresRepository { get; }
+		IProcessorCoresRepositoryAsync ProcessorCoresRepository { get; }
 
-        IGPUsRepositoryAsync VideoCardsRepository { get; }
+		IGPUsRepositoryAsync VideoCardsRepository { get; }
 
-        IVideoCardCoresRepositoryAsync VideoCardCoresRepository { get; }
+		IVideoCardCoresRepositoryAsync VideoCardCoresRepository { get; }
 
-        ICasesRepositoryAsync CasesRepository { get; }
+		ICasesRepositoryAsync CasesRepository { get; }
 
-        IHDDsRepositoryAsync HDDsRepository { get; }
+		IHDDsRepositoryAsync HDDsRepository { get; }
 
-        IMotherboardsRepositoryAsync MotherboardsRepository { get; }
+		IMotherboardsRepositoryAsync MotherboardsRepository { get; }
 
-        IPowerSuppliersRepositoryAsync PowerSuppliersRepository { get; }
+		IPowerSuppliersRepositoryAsync PowerSuppliersRepository { get; }
 
-        ISSDsRepositoryAsync SSDsRepository { get; }
+		ISSDsRepositoryAsync SSDsRepository { get; }
 
-        IRAMsRepositoryAsync RAMsRepository { get; }
+		IRAMsRepositoryAsync RAMsRepository { get; }
 
-        Task<int> SaveChangesAsync();
-    }
+		Task<int> SaveChangesAsync();
+	}
 }

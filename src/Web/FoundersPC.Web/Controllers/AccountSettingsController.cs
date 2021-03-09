@@ -7,199 +7,232 @@ using System.Net;
 using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared.AccountSettings;
-using FoundersPC.ApplicationShared.AccountSettings.Request;
-using FoundersPC.ApplicationShared.AccountSettings.Response;
-using FoundersPC.AuthenticationShared;
+using FoundersPC.ApplicationShared;
+using FoundersPC.RequestResponseShared.Request.ChangeSettings;
+using FoundersPC.RequestResponseShared.Response.ChangeSettings;
 using FoundersPC.Web.Models;
 using FoundersPC.Web.Models.ViewModels;
 using FoundersPC.Web.Services.Web_Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
 namespace FoundersPC.Web.Controllers
 {
-    [Authorize]
-    public class AccountSettingsController : Controller
-    {
-        private readonly ApplicationMicroservices _applicationMicroservices;
+	[Authorize]
+	public class AccountSettingsController : Controller
+	{
+		private readonly ApplicationMicroservices _applicationMicroservices;
 
-        public AccountSettingsController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
+		public AccountSettingsController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
 
-        [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> Profile()
-        {
-            var email = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
-            var role = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType);
-            var id = HttpContext.User.FindFirstValue(JwtRegisteredClaimNames.NameId);
+		[HttpGet]
+		[Authorize]
+		public async Task<IActionResult> Profile()
+		{
+			var email = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
+			var role = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType);
+			var id = HttpContext.User.FindFirstValue(JwtRegisteredClaimNames.NameId);
 
-            if (id is null || !Int32.TryParse(id, out var intId)) throw new CookieException();
+			if (id is null
+				|| !Int32.TryParse(id, out var intId))
+			{
+				throw new CookieException
+					  {
+							  HelpLink = "google.com"
+					  };
+			}
 
-            var request =
-                await _applicationMicroservices.IdentityServerClient.GetFromJsonAsync<UserNotificationsViewModel>($"user/settings/notifications/{intId}");
-            var login = await _applicationMicroservices.IdentityServerClient.GetStringAsync($"user/settings/login/{intId}");
-            var tokens = await _applicationMicroservices.IdentityServerClient.GetFromJsonAsync<IEnumerable<ApiAccessUserTokenReadDto>>($"tokens/user/{intId}");
+			var request =
+					await _applicationMicroservices.IdentityServer.GetFromJsonAsync<UserNotificationsViewModel>($"user/settings/notifications/{intId}");
 
-            login = login.Trim('"');
+			if (request is null) throw new BadHttpRequestException(nameof(UserNotificationsViewModel));
 
-            var settings = new UserAccountSettingsViewModel
-                           {
-                               AccountInformationViewModel = new UserAccountInformationViewModel
-                                                             {
-                                                                 Email = email ?? "unknown",
-                                                                 Login = login,
-                                                                 Role = role ?? "unknown"
-                                                             },
-                               LoginViewModel = new UserSecurityViewModel
-                                                {
-                                                    NewLogin = login
-                                                },
-                               PasswordViewModel = new UserPasswordViewModel
-                                                   {
-                                                       NewPassword = String.Empty,
-                                                       NewPasswordConfirm = String.Empty,
-                                                       OldPassword = String.Empty
-                                                   },
-                               NotificationsViewModel = request,
-                               TokensViewModel = new UserTokensViewModel
-                                                 {
-                                                     Tokens = tokens
-                                                 }
-                           };
+			var login = await _applicationMicroservices.IdentityServer.GetStringAsync($"user/settings/login/{intId}");
 
-            return View(settings);
-        }
+			if (login is null) throw new BadHttpRequestException("UserLogin");
 
-        [HttpPost]
-        public async Task<IActionResult> ChangePassword(UserAccountSettingsViewModel request)
-        {
-            if (!TryValidateModel(request.PasswordViewModel))
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad model"
-                            });
+			var tokens = await _applicationMicroservices.IdentityServer.GetFromJsonAsync<IEnumerable<ApiAccessUserTokenReadDto>>($"tokens/user/{intId}");
 
-            var userIdClaim = HttpContext.User.FindFirstValue(JwtRegisteredClaimNames.NameId);
+			if (tokens is null) throw new BadHttpRequestException(nameof(IEnumerable<ApiAccessUserTokenReadDto>));
 
-            if (userIdClaim is null)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad user id"
-                            });
+			login = login.Trim('"');
 
-            var postRequest = await _applicationMicroservices.IdentityServerClient.PostAsJsonAsync("user/settings/change/password",
-                                                                                                   new UserChangePasswordRequest
-                                                                                                   {
-                                                                                                       NewPassword = request.PasswordViewModel.NewPassword,
-                                                                                                       OldPassword = request.PasswordViewModel.OldPassword,
-                                                                                                       UserId = Int32.Parse(userIdClaim)
-                                                                                                   });
+			var settings = new UserAccountSettingsViewModel
+						   {
+								   AccountInformationViewModel = new UserAccountInformationViewModel
+																 {
+																		 Email = email ?? "unknown",
+																		 Login = login,
+																		 Role = role ?? "unknown"
+																 },
+								   LoginViewModel = new UserSecurityViewModel
+													{
+															NewLogin = login
+													},
+								   PasswordViewModel = new UserPasswordViewModel
+													   {
+															   NewPassword = String.Empty,
+															   NewPasswordConfirm = String.Empty,
+															   OldPassword = String.Empty
+													   },
+								   NotificationsViewModel = request,
+								   TokensViewModel = new UserTokensViewModel
+													 {
+															 Tokens = tokens
+													 }
+						   };
 
-            var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
+			return View(settings);
+		}
 
-            if (!response?.Successful ?? false)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = response?.Error ?? "Reading json error"
-                            });
+		[HttpPost]
+		public async Task<IActionResult> ChangePassword(UserAccountSettingsViewModel request)
+		{
+			if (!TryValidateModel(request.PasswordViewModel))
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									RequestId = HttpContext.Request.Path,
+									Error = "Bad model"
+							});
+			}
 
-            return RedirectToAction("Profile", "AccountSettings");
-        }
+			var userEmailClaim = User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-        [HttpPost]
-        public async Task<IActionResult> ChangeLogin(UserAccountSettingsViewModel request)
-        {
-            if (!TryValidateModel(request.LoginViewModel))
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad model"
-                            });
+			if (userEmailClaim is null)
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									RequestId = HttpContext.Request.Path,
+									Error = "Bad user email"
+							});
+			}
 
-            var userIdClaim = HttpContext.User.FindFirstValue(JwtRegisteredClaimNames.NameId);
+			var postRequest = await _applicationMicroservices.IdentityServer.PostAsJsonAsync("user/settings/change/password",
+																							 new UserChangePasswordRequest
+																							 {
+																									 NewPassword = request.PasswordViewModel.NewPassword,
+																									 OldPassword = request.PasswordViewModel.OldPassword,
+																									 Email = userEmailClaim
+																							 });
 
-            if (userIdClaim is null)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad user id"
-                            });
+			var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
 
-            var postRequest = await _applicationMicroservices
-                                    .IdentityServerClient
-                                    .PostAsJsonAsync("user/settings/change/login",
-                                                     new UserChangeLoginRequest
-                                                     {
-                                                         UserId = Int32.Parse(userIdClaim),
-                                                         NewLogin = request.LoginViewModel.NewLogin
-                                                     });
+			if (!response?.Successful ?? false)
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									RequestId = HttpContext.Request.Path,
+									Error = response?.Error ?? "Reading json error"
+							});
+			}
 
-            var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
+			return RedirectToAction("Profile", "AccountSettings");
+		}
 
-            if (!response?.Successful ?? false)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                Error = response.Operation,
-                                RequestId = HttpContext.Request.Path
-                            });
+		[HttpPost]
+		public async Task<IActionResult> ChangeLogin(UserAccountSettingsViewModel request)
+		{
+			if (!TryValidateModel(request.LoginViewModel))
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									RequestId = HttpContext.Request.Path,
+									Error = "Bad model"
+							});
+			}
 
-            return RedirectToAction("Profile", "AccountSettings");
-        }
+			var userEmailClaim = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-        [HttpPost]
-        public async Task<IActionResult> ChangeNotifications(UserAccountSettingsViewModel request)
-        {
-            if (!TryValidateModel(request.NotificationsViewModel))
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad model"
-                            });
+			if (userEmailClaim is null)
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									RequestId = HttpContext.Request.Path,
+									Error = "Bad user id"
+							});
+			}
 
-            var userIdClaim = HttpContext.User.FindFirstValue(JwtRegisteredClaimNames.NameId);
+			var postRequest = await _applicationMicroservices
+									.IdentityServer
+									.PostAsJsonAsync("user/settings/change/login",
+													 new UserChangeLoginRequest
+													 {
+															 Email = userEmailClaim,
+															 NewLogin = request.LoginViewModel.NewLogin
+													 });
 
-            if (userIdClaim is null)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad user id"
-                            });
+			var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
 
-            var postRequest = await _applicationMicroservices
-                                    .IdentityServerClient
-                                    .PostAsJsonAsync("user/settings/change/notifications",
-                                                     new UserChangeNotificationsRequest
-                                                     {
-                                                         UserId = Int32.Parse(userIdClaim),
-                                                         SendMessageOnApiRequest = request.NotificationsViewModel.SendNotificationOnUsingAPI,
-                                                         SendMessageOnEntrance = request.NotificationsViewModel.SendNotificationOnEntrance
-                                                     });
+			if (!response?.Successful ?? false)
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									Error = response.Operation,
+									RequestId = HttpContext.Request.Path
+							});
+			}
 
-            var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
+			return RedirectToAction("Profile", "AccountSettings");
+		}
 
-            if (!response?.Successful ?? false)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                Error = response.Operation,
-                                RequestId = HttpContext.Request.Path
-                            });
+		[HttpPost]
+		public async Task<IActionResult> ChangeNotifications(UserAccountSettingsViewModel request)
+		{
+			if (!TryValidateModel(request.NotificationsViewModel))
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									RequestId = HttpContext.Request.Path,
+									Error = "Bad model"
+							});
+			}
 
-            return RedirectToAction("Profile", "AccountSettings");
-        }
-    }
+			var userEmailClaim = HttpContext.User.FindFirstValue(JwtRegisteredClaimNames.NameId);
+
+			if (userEmailClaim is null)
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									RequestId = HttpContext.Request.Path,
+									Error = "Bad user email"
+							});
+			}
+
+			var postRequest = await _applicationMicroservices
+									.IdentityServer
+									.PostAsJsonAsync("user/settings/change/notifications",
+													 new UserChangeNotificationsRequest
+													 {
+															 Email = userEmailClaim,
+															 SendMessageOnApiRequest = request.NotificationsViewModel.SendNotificationOnUsingAPI,
+															 SendMessageOnEntrance = request.NotificationsViewModel.SendNotificationOnEntrance
+													 });
+
+			var response = await postRequest.Content.ReadFromJsonAsync<UserSettingsChangeResponse>();
+
+			if (!response?.Successful ?? false)
+			{
+				return View("Error",
+							new ErrorViewModel
+							{
+									Error = response.Operation,
+									RequestId = HttpContext.Request.Path
+							});
+			}
+
+			return RedirectToAction("Profile", "AccountSettings");
+		}
+	}
 }

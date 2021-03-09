@@ -5,39 +5,39 @@ using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Infrastructure.Contexts;
-using FoundersPC.ApplicationShared.Repository;
+using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class CasesRepository : GenericRepositoryAsync<Case>, ICasesRepositoryAsync
-    {
-        /// <inheritdoc />
-        public CasesRepository(FoundersPCHardwareContext context) : base(context) { }
+	public class CasesRepository : GenericRepositoryAsync<Case>, ICasesRepositoryAsync
+	{
+		/// <inheritdoc />
+		public CasesRepository(FoundersPCHardwareContext context) : base(context) { }
 
-        #region Implementation of ICasesRepositoryAsync
+		#region Implementation of ICasesRepositoryAsync
 
-        public override async Task<Case> GetByIdAsync(int id)
-        {
-            var @case = await Context.Set<Case>().FindAsync(id);
+		public override async Task<Case> GetByIdAsync(int id)
+		{
+			var @case = await Context.Set<Case>().FindAsync(id);
 
-            if (@case is null) return null;
+			if (@case is null) return null;
 
-            await Context.Entry(@case).Reference(x => x.Producer).LoadAsync();
+			await Context.Entry(@case).Reference(x => x.Producer).LoadAsync();
 
-            return @case;
-        }
+			return @case;
+		}
 
-        /// <inheritdoc />
-        public override async Task<IEnumerable<Case>> GetAllAsync()
-        {
-            return await Context.Set<Case>()
-                                .Include(@case => @case.Producer)
-                                .ToListAsync();
-        }
+		/// <inheritdoc />
+		public override async Task<IEnumerable<Case>> GetAllAsync()
+		{
+			return await Context.Set<Case>()
+								.Include(@case => @case.Producer)
+								.ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

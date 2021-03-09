@@ -1,0 +1,130 @@
+﻿@model FoundersPC.Web.Models.ViewModels.Authentication.SignUpViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="~/css/authstyles.css"
+          rel="stylesheet">
+}
+
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2>
+            FoundersPC
+            <br> Registration Page
+        </h2>
+        <p>RegisterAsync from here to have an access to our API.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form asp-action="Register"
+                  asp-controller="Authentication">
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger">
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Email"
+                           class="form-control bg-dark text-light"
+                           placeholder="Email"
+                           type="text">
+                    <label class="text-light">
+                        Email address
+                    </label>
+                </div>
+                <span asp-validation-for="Email"
+                      class="text-danger">
+                </span>
+                <div class="form-floating input-group mt-3">
+                    <input asp-for="RawPassword"
+                           class="form-control bg-dark text-light"
+                           placeholder="Password"
+                           id="password-box"
+                           type="password">
+                    <label class="text-light"
+                           for="password-box">
+                           Password
+                    </label>
+                    <span class="input-group-text"
+                          id="btn-hide">
+                        <ion-icon id="pass-eye"
+                                  name="eye-off-outline" />
+                    </span>
+                    <span class="input-group-text"
+                          id="img-generate-password">
+                        <ion-icon name="reload-outline" />
+                    </span>
+                </div>
+                <span asp-validation-for="RawPassword"
+                      class="text-danger">
+                </span>
+                <div class="form-floating input-group mt-3">
+                    <input asp-for="RawPasswordConfirm"
+                           class="form-control bg-dark text-light"
+                           placeholder="PasswordConfirm"
+                           id="password-box-confirm"
+                           type="password">
+                    <label class="text-light"
+                           for="password-box-confirm">
+                           Password Confirm
+                    </label>
+                    <span class="input-group-text"
+                          id="btn-hide-confirm">
+                        <ion-icon id="pass-eye-confirm"
+                                  name="eye-off-outline" />
+                    </span>
+                </div>
+                <span asp-validation-for="RawPasswordConfirm"
+                      class="text-danger">
+                </span>
+                <div class="form-group">
+                    <input class="btn btn-dark btn-primary"
+                           type="submit"
+                           value="Register">
+                </div>
+            </form>
+            <div>
+                <a asp-action="Signin"
+                   asp-controller="Authentication"
+                   class="text-info">
+                    Have an account
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const passwordBox = document.getElementById('password-box');
+            const passwordBoxConfirm = document.getElementById('password-box-confirm');
+
+            const passwordShowHideImage = document.getElementById('pass-eye');
+            const passwordConfirmShowHideImage = document.getElementById('pass-eye-confirm');
+
+            $('#btn-hide').click(() => 
+            {
+                const isHided = passwordBox.type === 'password';
+                passwordBox.type = isHided ? 'text' : 'password';
+                passwordShowHideImage.name = isHided ? 'eye-outline' : 'eye-off-outline';
+            });
+            $('#btn-hide-confirm').click(() => 
+            {
+                const isHided = passwordBoxConfirm.type === 'password';
+                passwordBoxConfirm.type = isHided ? 'text' : 'password';
+                passwordConfirmShowHideImage.name = isHided ? 'eye-outline' : 'eye-off-outline';
+            });
+            $('#img-generate-password').click(() => 
+            {
+                const countOfLetters = randomInt(6, 30);
+                const randomPasswordString = randomString();
+                passwordBox.value = randomPasswordString.slice(-countOfLetters);
+            });
+        });
+    </script>
+}

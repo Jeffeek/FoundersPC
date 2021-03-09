@@ -5,39 +5,39 @@ using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Infrastructure.Contexts;
-using FoundersPC.ApplicationShared.Repository;
+using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>, IMotherboardsRepositoryAsync
-    {
-        /// <inheritdoc />
-        public MotherboardsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+	public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>, IMotherboardsRepositoryAsync
+	{
+		/// <inheritdoc />
+		public MotherboardsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of IMotherboardsRepositoryAsync
+		#region Implementation of IMotherboardsRepositoryAsync
 
-        public override async Task<Motherboard> GetByIdAsync(int id)
-        {
-            var motherboard = await Context.Set<Motherboard>().FindAsync(id);
+		public override async Task<Motherboard> GetByIdAsync(int id)
+		{
+			var motherboard = await Context.Set<Motherboard>().FindAsync(id);
 
-            if (motherboard is null) return null;
+			if (motherboard is null) return null;
 
-            await Context.Entry(motherboard).Reference(x => x.Producer).LoadAsync();
+			await Context.Entry(motherboard).Reference(x => x.Producer).LoadAsync();
 
-            return motherboard;
-        }
+			return motherboard;
+		}
 
-        /// <inheritdoc />
-        public override async Task<IEnumerable<Motherboard>> GetAllAsync()
-        {
-            return await Context.Set<Motherboard>()
-                                .Include(motherboard => motherboard.Producer)
-                                .ToListAsync();
-        }
+		/// <inheritdoc />
+		public override async Task<IEnumerable<Motherboard>> GetAllAsync()
+		{
+			return await Context.Set<Motherboard>()
+								.Include(motherboard => motherboard.Producer)
+								.ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

@@ -14,83 +14,83 @@ using Microsoft.AspNetCore.Mvc;
 //todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize]
-    [ApiVersion("1.0", Deprecated = false)]
-    [ApiController]
-    [Route("api/videocards")]
-    [Route("api/gpus")]
-    public class VideoCardsController : Controller
-    {
-        private readonly IGPUService _gpuService;
-        private readonly IMapper _mapper;
+	[Authorize]
+	[ApiVersion("1.0", Deprecated = false)]
+	[ApiController]
+	[Route("api/videocards")]
+	[Route("api/gpus")]
+	public class VideoCardsController : Controller
+	{
+		private readonly IGPUService _gpuService;
+		private readonly IMapper _mapper;
 
-        public VideoCardsController(IGPUService service, IMapper mapper)
-        {
-            _gpuService = service;
-            _mapper = mapper;
-        }
+		public VideoCardsController(IGPUService service, IMapper mapper)
+		{
+			_gpuService = service;
+			_mapper = mapper;
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<GPUReadDto>>> Get() => Json(await _gpuService.GetAllGPUsAsync());
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Readable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpGet]
+		public async Task<ActionResult<IEnumerable<GPUReadDto>>> Get() => Json(await _gpuService.GetAllGPUsAsync());
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<GPUReadDto>> Get(int? id)
-        {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Readable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpGet("{id}")]
+		public async Task<ActionResult<GPUReadDto>> Get(int? id)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
-            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id.Value);
+			var gpuReadDto = await _gpuService.GetGPUByIdAsync(id.Value);
 
-            return gpuReadDto == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(gpuReadDto);
-        }
+			return gpuReadDto == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(gpuReadDto);
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] GPUUpdateDto gpu)
-        {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
-            if (!TryValidateModel(gpu)) return ValidationProblem(ModelState);
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpPut("{id}", Order = 0)]
+		public async Task<ActionResult> Update(int? id, [FromBody] GPUUpdateDto gpu)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+			if (!TryValidateModel(gpu)) return ValidationProblem(ModelState);
 
-            var result = await _gpuService.UpdateGPUAsync(id.Value, gpu);
+			var result = await _gpuService.UpdateGPUAsync(id.Value, gpu);
 
-            return result ? Json(gpu) : ResultsHelper.UpdateError();
-        }
+			return result ? Json(gpu) : ResultsHelper.UpdateError();
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPost]
-        public async Task<ActionResult> Insert([FromBody] GPUInsertDto gpu)
-        {
-            if (!TryValidateModel(gpu)) return ValidationProblem(ModelState);
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpPost]
+		public async Task<ActionResult> Insert([FromBody] GPUInsertDto gpu)
+		{
+			if (!TryValidateModel(gpu)) return ValidationProblem(ModelState);
 
-            var insertResult = await _gpuService.CreateGPUAsync(gpu);
+			var insertResult = await _gpuService.CreateGPUAsync(gpu);
 
-            return insertResult ? Json(gpu) : ResultsHelper.InsertError();
-        }
+			return insertResult ? Json(gpu) : ResultsHelper.InsertError();
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
-        {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpDelete("{id}")]
+		public async Task<ActionResult> Delete(int? id)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
-            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id.Value);
+			var gpuReadDto = await _gpuService.GetGPUByIdAsync(id.Value);
 
-            if (gpuReadDto == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+			if (gpuReadDto == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
-            var result = await _gpuService.DeleteGPUAsync(id.Value);
+			var result = await _gpuService.DeleteGPUAsync(id.Value);
 
-            return result ? Json(gpuReadDto) : ResultsHelper.DeleteError();
-        }
-    }
+			return result ? Json(gpuReadDto) : ResultsHelper.DeleteError();
+		}
+	}
 }

@@ -1,63 +1,78 @@
-﻿body {
+﻿body
+{
     font-family: "Lato", sans-serif;
 }
 
-.sidenav {
-    height: 100%;
+.sidenav
+{
     background-color: #21242a;
+    height: 100%;
     overflow-x: hidden;
     padding-top: 20px;
 }
 
-.main {
+.main
+{
     padding: 0px 10px;
 }
 
-@media screen and (max-height: 450px) {
-    .sidenav {
+@media screen and (max-height: 450px)
+{
+    .sidenav
+    {
         padding-top: 15px;
     }
 }
 
-@media screen and (max-width: 450px) {
-    .login-form {
+@media screen and (max-width: 450px)
+{
+    .login-form
+    {
         margin-top: 10%;
     }
 
-    .register-form {
+    .register-form
+    {
         margin-top: 10%;
     }
 }
 
-@media screen and (min-width: 768px) {
-    .main {
+@media screen and (min-width: 768px)
+{
+    .main
+    {
         margin-left: 40%;
     }
 
-    .sidenav {
-        width: 40%;
-        position: fixed;
-        z-index: 0;
-        top: 0;
+    .sidenav
+    {
         left: 0;
+        position: fixed;
+        top: 0;
+        width: 40%;
+        z-index: 0;
     }
 
-    .login-form {
+    .login-form
+    {
         margin-top: 60%;
     }
 
-    .register-form {
+    .register-form
+    {
         margin-top: 60%;
     }
 }
 
 
-.login-main-text {
+.login-main-text
+{
+    color: #fff;
     margin-top: 20%;
     padding: 60px;
-    color: #fff;
 }
 
-.login-main-text h2 {
+.login-main-text h2
+{
     font-weight: 300;
 }

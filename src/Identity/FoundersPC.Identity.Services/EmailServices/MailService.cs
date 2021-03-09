@@ -15,83 +15,85 @@ using FoundersPC.Identity.Domain.Settings;
 
 namespace FoundersPC.Identity.Services.EmailServices
 {
-    public class MailService : IMailService
-    {
-        private readonly EmailBotConfiguration _botConfiguration;
+	public class MailService : IMailService
+	{
+		private readonly EmailBotConfiguration _botConfiguration;
 
-        public MailService(EmailBotConfiguration botConfiguration)
-        {
-            _botConfiguration = botConfiguration;
-            Email.DefaultSender = new SmtpSender(() =>
-                                                     new SmtpClient(_botConfiguration.Host,
-                                                                    _botConfiguration.Port)
-                                                     {
-                                                         EnableSsl = true,
-                                                         DeliveryMethod = SmtpDeliveryMethod.Network,
-                                                         DeliveryFormat = SmtpDeliveryFormat.International,
-                                                         Credentials = new NetworkCredential(_botConfiguration.MailAddress,
-                                                                                             _botConfiguration.Password)
-                                                     });
-        }
+		public MailService(EmailBotConfiguration botConfiguration)
+		{
+			_botConfiguration = botConfiguration;
 
-        public async Task<bool> SendToAsync(string email, string subject = "Unnamed", string content = "", bool html = false)
-        {
-            if (email == null) throw new ArgumentNullException(nameof(email));
+			Email.DefaultSender = new SmtpSender(() =>
+														 new SmtpClient(_botConfiguration.Host,
+																		_botConfiguration.Port)
+														 {
+																 EnableSsl = true,
+																 DeliveryMethod = SmtpDeliveryMethod.Network,
+																 DeliveryFormat = SmtpDeliveryFormat.International,
+																 Credentials = new NetworkCredential(_botConfiguration.MailAddress,
+																									 _botConfiguration.Password)
+														 });
+		}
 
-            var sendResult = await Email.From(_botConfiguration.MailAddress, "FoundersPC_DAEMON")
-                                        .Subject(subject)
-                                        .Body(content, html)
-                                        .To(email)
-                                        .SendAsync();
+		public async Task<bool> SendToAsync(string email, string subject = "Unnamed", string content = "", bool html = false)
+		{
+			if (email == null) throw new ArgumentNullException(nameof(email));
 
-            return sendResult.Successful;
-        }
+			var sendResult = await Email.From(_botConfiguration.MailAddress, "FoundersPC_DAEMON")
+										.Subject(subject)
+										.Body(content, html)
+										.To(email)
+										.SendAsync();
 
-        public async Task<bool> SendToManyAsync(IEnumerable<string> emails, string subject = "Unnamed", string content = "", bool html = false)
-        {
-            var sendResults = new List<bool>();
-            foreach (var email in emails)
-            {
-                var send = await SendToAsync(email, subject, content, html);
-                sendResults.Add(send);
-            }
+			return sendResult.Successful;
+		}
 
-            return sendResults.All(x => x);
-        }
+		public async Task<bool> SendToManyAsync(IEnumerable<string> emails, string subject = "Unnamed", string content = "", bool html = false)
+		{
+			var sendResults = new List<bool>();
 
-        public async Task<bool> SendEntranceNotificationAsync(string email)
-        {
-            var content = $"You've been entered to FoundersPC API at {DateTime.Now}";
+			foreach (var email in emails)
+			{
+				var send = await SendToAsync(email, subject, content, html);
+				sendResults.Add(send);
+			}
 
-            return await SendToAsync(email, "Entrance", content);
-        }
+			return sendResults.All(x => x);
+		}
 
-        public async Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
-        {
-            var content = $"Thanks for registration in our service!{(subject == null ? String.Empty : $"{Environment.NewLine}{subject}")}";
+		public async Task<bool> SendEntranceNotificationAsync(string email)
+		{
+			var content = $"You've been entered to FoundersPC API at {DateTime.Now}";
 
-            return await SendToAsync(email, "Registration Notification", content);
-        }
+			return await SendToAsync(email, "Entrance", content);
+		}
 
-        public Task<bool> SendAPIAccessTokenAsync(string email, string token)
-        {
-            var content = $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not(and can't) restore it";
+		public async Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
+		{
+			var content = $"Thanks for registration in our service!{(subject == null ? String.Empty : $"{Environment.NewLine}{subject}")}";
 
-            return SendToAsync(email, "API Access Token", content);
-        }
+			return await SendToAsync(email, "Registration Notification", content);
+		}
 
-        public async Task<bool> SendNewPasswordAsync(string email, string password)
-        {
-            var content = $"Congratz! You've changed your password to {password}. Use it to get access to our site!";
+		public Task<bool> SendAPIAccessTokenAsync(string email, string token)
+		{
+			var content = $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not(and can't) restore it";
 
-            return await SendToAsync(email, "Password Change", content);
-        }
+			return SendToAsync(email, "API Access Token", content);
+		}
 
-        public async Task<bool> SendBlockNotificationAsync(string email, string reason = null)
-        {
-            var content = $"You've banned in out service. Thanks!{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
+		public async Task<bool> SendNewPasswordAsync(string email, string password)
+		{
+			var content = $"Congratz! You've changed your password to {password}. Use it to get access to our site!";
 
-            return await SendToAsync(email, "Your account was blocked", content);
-        }
-    }
+			return await SendToAsync(email, "Password Change", content);
+		}
+
+		public async Task<bool> SendBlockNotificationAsync(string email, string reason = null)
+		{
+			var content = $"You've banned in out service. Thanks!{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
+
+			return await SendToAsync(email, "Your account was blocked", content);
+		}
+	}
 }

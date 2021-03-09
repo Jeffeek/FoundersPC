@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.AuthenticationShared\FoundersPC.AuthenticationShared.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Identity.Infrastructure\FoundersPC.Identity.Infrastructure.csproj" />
     <ProjectReference Include="..\FoundersPC.Identity.Services\FoundersPC.Identity.Services.csproj" />
   </ItemGroup>

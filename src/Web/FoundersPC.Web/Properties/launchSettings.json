@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://founderspc/",
+      "applicationUrl": "https://localhost:9000",
       "sslPort": 0
     },
     "iisExpress": {
@@ -20,10 +20,10 @@
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
       },
       "use64Bit": true,
-      "applicationUrl": "https://founders.pc"
+      "applicationUrl": "https://localhost:9000"
     },
     "FoundersPC.Web": {
-      "commandName": "Project",
+      "commandName": "IIS",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",

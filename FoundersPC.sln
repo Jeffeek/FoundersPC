@@ -39,13 +39,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Identity.Infrast
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Identity.Services", "src\Identity\FoundersPC.Identity.Services\FoundersPC.Identity.Services.csproj", "{40AF6242-605B-42C9-B13C-E4D8BFCDD498}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.AuthenticationShared", "src\ApplicationShared\FoundersPC.AuthenticationShared\FoundersPC.AuthenticationShared.csproj", "{5A61956C-0C90-4AF3-9559-B16FC92EBCF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.RequestResponseShared", "src\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj", "{5A61956C-0C90-4AF3-9559-B16FC92EBCF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Web.Application", "src\Web\FoundersPC.Web.Application\FoundersPC.Web.Application.csproj", "{85252355-0811-46D0-95E2-91B2B29CAF4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Web.Application", "src\Web\FoundersPC.Web.Application\FoundersPC.Web.Application.csproj", "{85252355-0811-46D0-95E2-91B2B29CAF4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Web.Domain", "src\Web\FoundersPC.Web.Domain\FoundersPC.Web.Domain.csproj", "{D9B676B9-BB7F-45AB-AC54-E322A7860475}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Web.Domain", "src\Web\FoundersPC.Web.Domain\FoundersPC.Web.Domain.csproj", "{D9B676B9-BB7F-45AB-AC54-E322A7860475}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Web.Services", "src\Web\FoundersPC.Web.Services\FoundersPC.Web.Services.csproj", "{65530A4D-43A4-4FE3-971A-FEF25EE9E0F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Web.Services", "src\Web\FoundersPC.Web.Services\FoundersPC.Web.Services.csproj", "{65530A4D-43A4-4FE3-971A-FEF25EE9E0F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.RepositoryShared", "src\ApplicationShared\FoundersPC.RepositoryShared\FoundersPC.RepositoryShared.csproj", "{67317287-8902-4972-8A21-6C438697508B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +123,10 @@ Global
 		{65530A4D-43A4-4FE3-971A-FEF25EE9E0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65530A4D-43A4-4FE3-971A-FEF25EE9E0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65530A4D-43A4-4FE3-971A-FEF25EE9E0F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67317287-8902-4972-8A21-6C438697508B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67317287-8902-4972-8A21-6C438697508B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67317287-8902-4972-8A21-6C438697508B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67317287-8902-4972-8A21-6C438697508B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{85252355-0811-46D0-95E2-91B2B29CAF4F} = {230BB8A3-27F7-4FF0-98B2-D5FE3D7587C0}
 		{D9B676B9-BB7F-45AB-AC54-E322A7860475} = {230BB8A3-27F7-4FF0-98B2-D5FE3D7587C0}
 		{65530A4D-43A4-4FE3-971A-FEF25EE9E0F3} = {230BB8A3-27F7-4FF0-98B2-D5FE3D7587C0}
+		{67317287-8902-4972-8A21-6C438697508B} = {07572D40-804A-4325-848D-F8918A708396}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {075268B3-89DC-4091-B71B-68483288E0A8}

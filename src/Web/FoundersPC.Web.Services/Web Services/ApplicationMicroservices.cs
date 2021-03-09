@@ -8,34 +8,34 @@ using System.Net.Http.Headers;
 
 namespace FoundersPC.Web.Services.Web_Services
 {
-    // make service for microservices
-    public class ApplicationMicroservices
-    {
-        public ApplicationMicroservices(string identityServerUri,
-                                        string hardwareApiServerUri
-        )
-        {
-            HardwareApiClient = new HttpClient
-                                {
-                                    BaseAddress = new Uri(hardwareApiServerUri)
-                                };
+	// make service for microservices
+	public class ApplicationMicroservices
+	{
+		public ApplicationMicroservices(string identityServerUri,
+										string hardwareApiServerUri
+		)
+		{
+			HardwareApiServer = new HttpClient
+								{
+										BaseAddress = new Uri(hardwareApiServerUri)
+								};
 
-            IdentityServerClient = new HttpClient
-                                   {
-                                       BaseAddress = new Uri(identityServerUri)
-                                   };
+			IdentityServer = new HttpClient
+							 {
+									 BaseAddress = new Uri(identityServerUri)
+							 };
 
-            IdentityServerClient.DefaultRequestHeaders.Clear();
-            IdentityServerClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            IdentityServerClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+			IdentityServer.DefaultRequestHeaders.Clear();
+			IdentityServer.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+			IdentityServer.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
 
-            HardwareApiClient.DefaultRequestHeaders.Clear();
-            HardwareApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HardwareApiClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-        }
+			HardwareApiServer.DefaultRequestHeaders.Clear();
+			HardwareApiServer.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+			HardwareApiServer.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+		}
 
-        public HttpClient HardwareApiClient { get; }
+		public HttpClient HardwareApiServer { get; }
 
-        public HttpClient IdentityServerClient { get; }
-    }
+		public HttpClient IdentityServer { get; }
+	}
 }

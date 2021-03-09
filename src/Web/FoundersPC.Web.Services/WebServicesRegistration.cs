@@ -8,12 +8,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.Web.Services
 {
-    public static class WebServicesRegistration
-    {
-        public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddSingleton(new ApplicationMicroservices(configuration["ConnectionServers:IdentityServer"],
-                                                               configuration["ConnectionServers:API"]));
-        }
-    }
+	public static class WebServicesRegistration
+	{
+		public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
+		{
+			services.AddTransient<ApplicationMicroservices>(provider => new ApplicationMicroservices(configuration["ConnectionServers:IdentityServer"],
+																									 configuration["ConnectionServers:API"]));
+		}
+	}
 }
