@@ -7,5 +7,5 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Users
 {
-	public interface IRolesRepository : IRepositoryAsync<RoleEntity> { }
+    public interface IRolesRepository : IRepositoryAsync<RoleEntity> { }
 }

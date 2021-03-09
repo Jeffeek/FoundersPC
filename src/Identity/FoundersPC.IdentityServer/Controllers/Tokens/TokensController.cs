@@ -11,25 +11,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-	[Route("identityAPI/tokens")]
-	[ApiController]
-	public class TokensController : Controller
-	{
-		private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
+    [Route("identityAPI/tokens")]
+    [ApiController]
+    public class TokensController : Controller
+    {
+        private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
 
-		public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
+        public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
 
-		[HttpGet]
-		[Route("user/{userId}")]
-		public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens(int? userId)
-		{
-			if (!userId.HasValue
-				|| userId.Value < 1)
-				return BadRequest();
+        [HttpGet]
+        [Route("user/{email}")]
+        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens(string email)
+        {
+            var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
 
-			var tokens = await _apiAccessUsersTokensService.GetUserTokens(userId.Value);
+            if (tokens is null)
+                return BadRequest(new
+                                  {
+                                      error = "No user with this email"
+                                  });
 
-			return Json(tokens ?? Enumerable.Empty<ApiAccessUserTokenReadDto>());
-		}
-	}
+            return Json(tokens ?? Enumerable.Empty<ApiAccessUserTokenReadDto>());
+        }
+    }
 }

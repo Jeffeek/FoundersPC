@@ -27,3 +27,42 @@ System.ArgumentNullException: Value cannot be null. (Parameter 's')
    at FoundersPC.IdentityServer.Program.Main(String[] args) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Program.cs:line 35
 03/09/2021 11:47:49 Identity server started..
 03/09/2021 11:47:49 Identity server HostBuilder created
+03/09/2021 17:15:40 Identity server started..
+03/09/2021 17:15:40 Identity server HostBuilder created
+03/09/2021 17:15:40 Host built
+03/09/2021 17:15:40 Application started. Press Ctrl+C to shut down.
+03/09/2021 17:15:40 Hosting environment: "Development"
+03/09/2021 17:15:40 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/09/2021 17:17:10 Identity server started..
+03/09/2021 17:17:10 Identity server HostBuilder created
+03/09/2021 17:17:10 Host built
+03/09/2021 17:17:10 Application started. Press Ctrl+C to shut down.
+03/09/2021 17:17:10 Hosting environment: "Development"
+03/09/2021 17:17:10 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/09/2021 17:17:19 Application is shutting down...
+03/09/2021 17:17:54 Identity server started..
+03/09/2021 17:17:54 Identity server HostBuilder created
+03/09/2021 17:17:54 Host built
+03/09/2021 17:17:54 Now listening on: "https://localhost:3000"
+03/09/2021 17:17:54 Application started. Press Ctrl+C to shut down.
+03/09/2021 17:17:54 Hosting environment: "Development"
+03/09/2021 17:17:54 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/09/2021 17:18:08 Application is shutting down...
+03/09/2021 17:19:06 Identity server started..
+03/09/2021 17:19:06 Identity server HostBuilder created
+03/09/2021 17:19:06 Host built
+03/09/2021 17:19:06 Now listening on: "https://localhost:3000"
+03/09/2021 17:19:06 Application started. Press Ctrl+C to shut down.
+03/09/2021 17:19:06 Hosting environment: "Development"
+03/09/2021 17:19:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/09/2021 17:19:48 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1462.7421 ms
+03/09/2021 17:21:51 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 39.1915 ms
+03/09/2021 17:21:51 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 16.1100 ms
+03/09/2021 17:21:51 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 36.5473 ms
+03/09/2021 17:22:37 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.7481 ms
+03/09/2021 17:22:40 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.4440 ms
+03/09/2021 17:22:42 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.4785 ms
+03/09/2021 17:23:13 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.2371 ms
+03/09/2021 17:23:14 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.6546 ms
+03/09/2021 17:23:26 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9386 ms
+03/09/2021 17:35:13 Application is shutting down...

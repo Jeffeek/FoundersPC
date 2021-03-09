@@ -6,276 +6,136 @@ using FoundersPC.Web.Services.Web_Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 #endregion
 
 namespace FoundersPC.Web.Controllers
 {
-	[Authorize]
-	public class HomeController : Controller
-	{
-		private readonly ApplicationMicroservices _applicationMicroservices;
+    [Authorize]
+    public class HomeController : Controller
+    {
+        private readonly ApplicationMicroservices _applicationMicroservices;
 
-		public HomeController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
+        public HomeController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
 
-		[AllowAnonymous]
-		public IActionResult Index() => View();
+        [AllowAnonymous]
+        public IActionResult Index() => View();
 
-		[AllowAnonymous]
-		public IActionResult AccessDenied() => View("AccessDenied");
+        [AllowAnonymous]
+        public IActionResult AccessDenied() => View("AccessDenied");
 
-		[Authorize]
-		public async Task<ActionResult> Cases()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
+        [Authorize]
+        public async Task<ActionResult> Cases()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("cases");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
+            if (apiResult is null) return BadRequest();
 
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("cases");
+            return Ok(apiResult);
+        }
 
-			var response = await request.Content.ReadAsStringAsync();
+        public async Task<IActionResult> HardDrives()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("harddrives");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
+            if (apiResult is null) return BadRequest();
 
-			return Ok(response);
-		}
+            return Ok(apiResult);
+        }
 
-		public async Task<IActionResult> HardDrives()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
+        public async Task<IActionResult> Motherboards()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("motherboards");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
+            if (apiResult is null) return BadRequest();
 
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("harddrives");
+            return Ok(apiResult);
+        }
 
-			var response = await request.Content.ReadAsStringAsync();
+        public async Task<IActionResult> PowerSupplies()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("powersupplies");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
+            if (apiResult is null) return BadRequest();
 
-			return Ok(response);
-		}
+            return Ok(apiResult);
+        }
 
-		public async Task<IActionResult> Motherboards()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
+        public async Task<IActionResult> ProcessorCores()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("processorcores");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
+            if (apiResult is null) return BadRequest();
 
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("motherboards");
+            return Ok(apiResult);
+        }
 
-			var response = await request.Content.ReadAsStringAsync();
+        public async Task<IActionResult> Processors()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("processors");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
+            if (apiResult is null) return BadRequest();
 
-			return Ok(response);
-		}
+            return Ok(apiResult);
+        }
 
-		public async Task<IActionResult> PowerSupplies()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
+        public async Task<IActionResult> Producers()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("producers");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
+            if (apiResult is null) return BadRequest();
 
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("powersupplies");
+            return Ok(apiResult);
+        }
 
-			var response = await request.Content.ReadAsStringAsync();
+        public async Task<IActionResult> RandomAccessMemory()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("randomaccessmemory");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
+            if (apiResult is null) return BadRequest();
 
-			return Ok(response);
-		}
+            return Ok(apiResult);
+        }
 
-		public async Task<IActionResult> ProcessorCores()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
+        public async Task<IActionResult> SolidStateDrives()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("solidstatedrives");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
+            if (apiResult is null) return BadRequest();
 
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("processorcores");
+            return Ok(apiResult);
+        }
 
-			var response = await request.Content.ReadAsStringAsync();
+        public async Task<IActionResult> VideoCardCores()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("videocardcores");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
+            if (apiResult is null) return BadRequest();
 
-			return Ok(response);
-		}
+            return Ok(apiResult);
+        }
 
-		public async Task<IActionResult> Processors()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
+        public async Task<IActionResult> VideoCards()
+        {
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("videocards");
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
+            if (apiResult is null) return BadRequest();
 
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("processors");
+            return Ok(apiResult);
+        }
 
-			var response = await request.Content.ReadAsStringAsync();
+        private async Task<string> MakeRequestAndGetResponseFromApiAsync(string apiModels)
+        {
+            if (!HttpContext.Request.Cookies.TryGetValue("token", out var token)) return null;
 
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
+            _applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
+                                              token);
 
-			return Ok(response);
-		}
+            var request = await _applicationMicroservices.HardwareApiServer.GetAsync(apiModels);
 
-		public async Task<IActionResult> Producers()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
-
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("producers");
-
-			var response = await request.Content.ReadAsStringAsync();
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
-
-			return Ok(response);
-		}
-
-		public async Task<IActionResult> RandomAccessMemory()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
-
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("randomaccessmemory");
-
-			var response = await request.Content.ReadAsStringAsync();
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
-
-			return Ok(response);
-		}
-
-		public async Task<IActionResult> SolidStateDrives()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
-
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("solidstatedrives");
-
-			var response = await request.Content.ReadAsStringAsync();
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
-
-			return Ok(response);
-		}
-
-		public async Task<IActionResult> VideoCardCores()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
-
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("videocardcores");
-
-			var response = await request.Content.ReadAsStringAsync();
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
-
-			return Ok(response);
-		}
-
-		public async Task<IActionResult> VideoCards()
-		{
-			if (!HttpContext.Request.Cookies.TryGetValue("token", out var token))
-			{
-				return BadRequest(new
-								  {
-										  error = "No tokens"
-								  });
-			}
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-					new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-												  token);
-
-			var request = await _applicationMicroservices.HardwareApiServer.GetAsync("videocards");
-
-			var response = await request.Content.ReadAsStringAsync();
-
-			_applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization = null;
-
-			return Ok(response);
-		}
-	}
+            return await request.Content.ReadAsStringAsync();
+        }
+    }
 }

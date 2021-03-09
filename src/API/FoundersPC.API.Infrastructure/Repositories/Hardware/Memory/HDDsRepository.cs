@@ -12,32 +12,32 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
-	public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync
-	{
-		/// <inheritdoc />
-		public HDDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+    public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync
+    {
+        /// <inheritdoc />
+        public HDDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
-		#region Implementation of IHDDsRepositoryAsync
+        #region Implementation of IHDDsRepositoryAsync
 
-		public override async Task<HDD> GetByIdAsync(int id)
-		{
-			var hdd = await Context.Set<HDD>().FindAsync(id);
+        public override async Task<HDD> GetByIdAsync(int id)
+        {
+            var hdd = await Context.Set<HDD>().FindAsync(id);
 
-			if (hdd is null) return null;
+            if (hdd is null) return null;
 
-			await Context.Entry(hdd).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(hdd).Reference(x => x.Producer).LoadAsync();
 
-			return hdd;
-		}
+            return hdd;
+        }
 
-		/// <inheritdoc />
-		public override async Task<IEnumerable<HDD>> GetAllAsync()
-		{
-			return await Context.Set<HDD>()
-								.Include(hdd => hdd.Producer)
-								.ToListAsync();
-		}
+        /// <inheritdoc />
+        public override async Task<IEnumerable<HDD>> GetAllAsync()
+        {
+            return await Context.Set<HDD>()
+                                .Include(hdd => hdd.Producer)
+                                .ToListAsync();
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

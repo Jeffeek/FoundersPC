@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿#region Using namespaces
 
-namespace FoundersPC.Web.Models.ViewModels.Authentication
+using System.ComponentModel.DataAnnotations;
+
+#endregion
+
+namespace FoundersPC.Web.Domain.Entities.ViewModels.Authentication
 {
     public class ForgotPasswordViewModel
     {

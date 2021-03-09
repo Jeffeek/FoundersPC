@@ -27,7 +27,7 @@
       "applicationUrl": "https://localhost:3000"
     },
     "FoundersPC.IdentityServer": {
-      "commandName": "IIS",
+      "commandName": "Project",
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

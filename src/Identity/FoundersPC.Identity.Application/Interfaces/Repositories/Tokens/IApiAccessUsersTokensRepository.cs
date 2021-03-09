@@ -9,12 +9,12 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Tokens
 {
-	public interface IApiAccessUsersTokensRepository : IRepositoryAsync<ApiAccessUserToken>
-	{
-		Task<ApiAccessUserToken> GetByTokenAsync(string token);
+    public interface IApiAccessUsersTokensRepository : IRepositoryAsync<ApiAccessUserToken>
+    {
+        Task<ApiAccessUserToken> GetByTokenAsync(string token);
 
-		Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(int userId);
+        Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(int userId);
 
-		Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(string userEmail);
-	}
+        Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(string userEmail);
+    }
 }

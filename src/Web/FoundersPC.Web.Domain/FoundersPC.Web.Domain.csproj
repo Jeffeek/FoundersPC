@@ -1,17 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Entities\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
   </ItemGroup>
 
 </Project>

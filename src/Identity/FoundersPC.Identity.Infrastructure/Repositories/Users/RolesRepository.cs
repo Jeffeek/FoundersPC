@@ -12,12 +12,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 {
-	public class RolesRepository : GenericRepositoryAsync<RoleEntity>, IRolesRepository
-	{
-		public RolesRepository(FoundersPCUsersContext context) : base(context) { }
+    public class RolesRepository : GenericRepositoryAsync<RoleEntity>, IRolesRepository
+    {
+        public RolesRepository(FoundersPCUsersContext context) : base(context) { }
 
-		public override async Task<IEnumerable<RoleEntity>> GetAllAsync() => await Context.Set<RoleEntity>()
-																						  .Include(role => role.Users)
-																						  .ToListAsync();
-	}
+        public override async Task<IEnumerable<RoleEntity>> GetAllAsync() =>
+            await Context.Set<RoleEntity>()
+                         .Include(role => role.Users)
+                         .ToListAsync();
+    }
 }

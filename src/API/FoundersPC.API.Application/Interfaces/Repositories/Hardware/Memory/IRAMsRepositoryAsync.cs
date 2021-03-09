@@ -7,5 +7,5 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory
 {
-	public interface IRAMsRepositoryAsync : IRepositoryAsync<RAM> { }
+    public interface IRAMsRepositoryAsync : IRepositoryAsync<RAM> { }
 }

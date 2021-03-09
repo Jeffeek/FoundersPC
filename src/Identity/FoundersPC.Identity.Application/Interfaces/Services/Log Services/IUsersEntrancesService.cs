@@ -9,16 +9,16 @@ using FoundersPC.Identity.Domain.Entities.Logs;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 {
-	public interface IUsersEntrancesService
-	{
-		Task<IEnumerable<UserEntranceLog>> GetAllAsync();
+    public interface IUsersEntrancesService
+    {
+        Task<IEnumerable<UserEntranceLog>> GetAllAsync();
 
-		Task<UserEntranceLog> GetByIdAsync(int id);
+        Task<UserEntranceLog> GetByIdAsync(int id);
 
-		Task<IEnumerable<UserEntranceLog>> GetEntrancesBetweenAsync(DateTime start, DateTime finish);
+        Task<IEnumerable<UserEntranceLog>> GetEntrancesBetweenAsync(DateTime start, DateTime finish);
 
-		Task<IEnumerable<UserEntranceLog>> GetEntrancesInAsync(DateTime date);
+        Task<IEnumerable<UserEntranceLog>> GetEntrancesInAsync(DateTime date);
 
-		Task<bool> LogAsync(int userId);
-	}
+        Task<bool> LogAsync(int userId);
+    }
 }

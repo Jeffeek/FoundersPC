@@ -8,46 +8,38 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.User
 {
-	[Route("identityAPI/user/settings")]
-	[ApiController]
-	public class UserSettingsController : Controller
-	{
-		private readonly IUsersService _usersService;
+    [Route("identityAPI/user/settings")]
+    [ApiController]
+    public class UserSettingsController : Controller
+    {
+        private readonly IUsersService _usersService;
 
-		public UserSettingsController(IUsersService usersService) => _usersService = usersService;
+        public UserSettingsController(IUsersService usersService) => _usersService = usersService;
 
-		[HttpGet]
-		[Route("notifications/{userId}")]
-		public async Task<IActionResult> GetUserNotifications(int? userId)
-		{
-			if (!userId.HasValue
-				|| userId.Value < 1)
-				return BadRequest();
+        [HttpGet]
+        [Route("notifications/{email}")]
+        public async Task<IActionResult> GetUserNotifications(string email)
+        {
+            var user = await _usersService.FindUserByEmailAsync(email);
 
-			var user = await _usersService.GetByIdAsync(userId.Value);
+            if (user is null) return NotFound();
 
-			if (user is null) return NotFound();
+            return Json(new
+                        {
+                            SendNotificationOnEntrance = user.SendMessageOnEntrance,
+                            SendNotificationOnUsingAPI = user.SendMessageOnApiRequest
+                        });
+        }
 
-			return Json(new
-						{
-								SendNotificationOnEntrance = user.SendMessageOnEntrance,
-								SendNotificationOnUsingAPI = user.SendMessageOnApiRequest
-						});
-		}
+        [HttpGet]
+        [Route("login/{email}")]
+        public async Task<ActionResult> GetUserLogin(string email)
+        {
+            var user = await _usersService.FindUserByEmailAsync(email);
 
-		[HttpGet]
-		[Route("login/{userId}")]
-		public async Task<ActionResult> GetUserLogin(int? userId)
-		{
-			if (!userId.HasValue
-				|| userId.Value < 1)
-				return BadRequest();
+            if (user is null) return NotFound();
 
-			var user = await _usersService.GetByIdAsync(userId.Value);
-
-			if (user is null) return NotFound();
-
-			return new ObjectResult(user.Login);
-		}
-	}
+            return Ok(user.Login);
+        }
+    }
 }
