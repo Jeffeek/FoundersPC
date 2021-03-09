@@ -1,0 +1,78 @@
+03/02/2021 12:16:39 Web server started.. 1 
+03/02/2021 12:16:39 Web server HostBuilder created 1 
+03/02/2021 12:16:41 Host built 1 
+03/02/2021 12:16:42 Now listening on: "https://[::]:443" 1 
+03/02/2021 12:16:42 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 12:16:42 Hosting environment: "Development" 1 
+03/02/2021 12:16:42 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 12:17:55 Web server started.. 1 
+03/02/2021 12:17:55 Web server HostBuilder created 1 
+03/02/2021 12:17:56 Host built 1 
+03/02/2021 12:17:57 Now listening on: "https://[::]:443" 1 
+03/02/2021 12:17:57 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 12:17:57 Hosting environment: "Development" 1 
+03/02/2021 12:17:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 12:18:21 Web server started.. 1 
+03/02/2021 12:18:22 Web server HostBuilder created 1 
+03/02/2021 12:18:23 Host built 1 
+03/02/2021 12:18:23 Now listening on: "https://[::]:443" 1 
+03/02/2021 12:18:23 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 12:18:23 Hosting environment: "Development" 1 
+03/02/2021 12:18:23 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 14:54:38 Web server started.. 1 
+03/02/2021 14:54:38 Web server HostBuilder created 1 
+03/02/2021 14:54:38 Host built 1 
+03/02/2021 14:54:39 Now listening on: "https://localhost:9000" 1 
+03/02/2021 14:54:39 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 14:54:39 Hosting environment: "Development" 1 
+03/02/2021 14:54:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 14:54:47 HTTP "GET" "/" responded 200 in 180.7389 ms 4 
+03/02/2021 14:54:55 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 49.7796 ms 12 
+03/02/2021 14:55:59 HTTP "POST" "/Authentication/LogIn" responded 404 in 32778.5203 ms 16 
+03/02/2021 14:58:02 Web server started.. 1 
+03/02/2021 14:58:02 Web server HostBuilder created 1 
+03/02/2021 14:58:03 Host built 1 
+03/02/2021 14:58:03 Now listening on: "https://localhost:9000" 1 
+03/02/2021 14:58:03 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 14:58:03 Hosting environment: "Development" 1 
+03/02/2021 14:58:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 14:58:07 HTTP "GET" "/" responded 200 in 176.7771 ms 4 
+03/02/2021 14:58:55 Web server started.. 1 
+03/02/2021 14:58:55 Web server HostBuilder created 1 
+03/02/2021 14:58:55 Host built 1 
+03/02/2021 14:58:56 Now listening on: "https://localhost:9000" 1 
+03/02/2021 14:58:56 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 14:58:56 Hosting environment: "Development" 1 
+03/02/2021 14:58:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 14:58:58 HTTP "GET" "/" responded 200 in 220.1260 ms 11 
+03/02/2021 14:59:02 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 45.0317 ms 11 
+03/02/2021 14:59:16 HTTP "POST" "/Authentication/LogIn" responded 302 in 1691.4839 ms 9 
+03/02/2021 14:59:16 HTTP "GET" "/" responded 200 in 3.5001 ms 8 
+03/02/2021 15:02:41 HTTP "GET" "/Authentication/SignOut" responded 302 in 21.6517 ms 22 
+03/02/2021 15:02:41 HTTP "GET" "/" responded 200 in 1.0485 ms 25 
+03/02/2021 15:02:49 HTTP "GET" "/" responded 200 in 0.7461 ms 23 
+03/02/2021 15:23:03 Web server started.. 1 
+03/02/2021 15:23:03 Web server HostBuilder created 1 
+03/02/2021 15:23:04 Host built 1 
+03/02/2021 15:23:04 Now listening on: "https://localhost:9000" 1 
+03/02/2021 15:23:04 Application started. Press Ctrl+C to shut down. 1 
+03/02/2021 15:23:04 Hosting environment: "Development" 1 
+03/02/2021 15:23:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/02/2021 15:23:12 HTTP "GET" "/" responded 200 in 228.7599 ms 11 
+03/02/2021 15:23:46 HTTP "GET" "/" responded 200 in 2.7814 ms 12 
+03/02/2021 15:23:49 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 56.1614 ms 7 
+03/02/2021 15:24:04 HTTP "POST" "/Authentication/LogIn" responded 302 in 1703.5654 ms 10 
+03/02/2021 15:24:04 HTTP "GET" "/" responded 200 in 7.9338 ms 4 
+03/02/2021 15:24:11 HTTP "GET" "/Home/Cases" responded 200 in 1870.1867 ms 5 
+03/02/2021 15:24:16 HTTP "GET" "/Home/Producers" responded 200 in 64.1756 ms 5 
+03/02/2021 15:24:22 HTTP "GET" "/Home/SolidStateDrives" responded 200 in 36.9496 ms 5 
+03/02/2021 15:24:22 HTTP "GET" "/Home/RandomAccessMemory" responded 200 in 36.7511 ms 5 
+03/02/2021 15:24:23 HTTP "GET" "/Home/VideoCardCores" responded 200 in 129.4252 ms 5 
+03/02/2021 15:24:23 HTTP "GET" "/Home/VideoCards" responded 200 in 49.8180 ms 5 
+03/02/2021 15:24:24 HTTP "GET" "/Home/HardDrives" responded 200 in 25.3748 ms 5 
+03/02/2021 15:24:25 HTTP "GET" "/Home/Motherboards" responded 200 in 31.7835 ms 19 
+03/02/2021 15:24:52 HTTP "GET" "/Home/Producers" responded 200 in 5.5215 ms 19 
+03/02/2021 15:26:10 HTTP "GET" "/" responded 200 in 4.6095 ms 7 
+03/02/2021 15:26:55 HTTP "GET" "/Authentication/SignOut" responded 302 in 5.3689 ms 4 
+03/02/2021 15:26:55 HTTP "GET" "/" responded 200 in 0.4639 ms 4 
+03/02/2021 15:27:04 Application is shutting down... 22 

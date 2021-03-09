@@ -2,9 +2,13 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "https://localhost:3000",
+      "sslPort": 0
+    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:57249",
-      "sslPort": 44349
+      "applicationUrl": "https://localhost:3000",
+      "sslPort": 0
     }
   },
   "ConnectionStrings": {
@@ -13,21 +17,24 @@
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "use64Bit": true,
+      "applicationUrl": "https://localhost:3000"
     },
     "FoundersPC.IdentityServer": {
-      "commandName": "Project",
+      "commandName": "IIS",
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": "true",
-      "applicationUrl": "https://localhost:5010"
+      "use64Bit": true,
+      "applicationUrl": "https://localhost:3000"
     }
   }
 }

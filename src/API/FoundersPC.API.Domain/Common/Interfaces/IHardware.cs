@@ -1,18 +1,18 @@
 ﻿#region Using namespaces
 
 using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.ApplicationShared.Identity;
+using FoundersPC.RepositoryShared.Identity;
 
 #endregion
 
 namespace FoundersPC.API.Domain.Common.Interfaces
 {
-    public interface IHardware : IIdentityItem
-    {
-        int ProducerId { get; set; }
+	public interface IHardware : IIdentityItem
+	{
+		int ProducerId { get; set; }
 
-        Producer Producer { get; set; }
+		Producer Producer { get; set; }
 
-        string Title { get; set; }
-    }
+		string Title { get; set; }
+	}
 }

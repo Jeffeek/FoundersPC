@@ -7,11 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.Identity.Application
 {
-    public static class IdentityApplicationExtensions
-    {
-        public static void AddUserApplicationExtensions(this IServiceCollection services)
-        {
-            services.AddAutoMapper(typeof(MappingStartup));
-        }
-    }
+	public static class IdentityApplicationExtensions
+	{
+		public static void AddUserApplicationExtensions(this IServiceCollection services)
+		{
+			services.AddAutoMapper(typeof(MappingStartup));
+		}
+	}
 }

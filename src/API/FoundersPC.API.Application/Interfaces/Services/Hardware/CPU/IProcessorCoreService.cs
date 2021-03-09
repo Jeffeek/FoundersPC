@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware.CPU
 {
-    public interface IProcessorCoreService
-    {
-        Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync();
+	public interface IProcessorCoreService
+	{
+		Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync();
 
-        Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId);
+		Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId);
 
-        Task<bool> CreateProcessorCore(ProcessorCoreInsertDto cpuCore);
+		Task<bool> CreateProcessorCoreAsync(ProcessorCoreInsertDto cpuCore);
 
-        Task<bool> UpdateProcessorCore(int id, ProcessorCoreUpdateDto cpuCore);
+		Task<bool> UpdateProcessorCoreAsync(int id, ProcessorCoreUpdateDto cpuCore);
 
-        Task<bool> DeleteProcessorCore(int id);
-    }
+		Task<bool> DeleteProcessorCoreAsync(int id);
+	}
 }

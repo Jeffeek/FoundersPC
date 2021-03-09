@@ -1,0 +1,249 @@
+03/01/2021 20:57:32 Web server started.. 1 
+03/01/2021 20:57:32 Web server HostBuilder created 1 
+03/01/2021 20:57:33 Host built 1 
+03/01/2021 20:57:33 Now listening on: "https://localhost:9000" 1 
+03/01/2021 20:57:33 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 20:57:33 Hosting environment: "Development" 1 
+03/01/2021 20:57:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 20:57:43 HTTP "GET" "/" responded 200 in 229.3810 ms 7 
+03/01/2021 20:57:50 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 48.0737 ms 8 
+03/01/2021 20:58:46 HTTP "POST" "/Authentication/LogIn" responded 302 in 26780.0951 ms 17 
+03/01/2021 20:58:46 HTTP "GET" "/" responded 200 in 4.5906 ms 7 
+03/01/2021 20:59:11 HTTP "GET" "/" responded 200 in 1.3576 ms 4 
+03/01/2021 20:59:24 HTTP "GET" "/Home/Cases" responded 200 in 39.9100 ms 5 
+03/01/2021 21:05:49 Web server started.. 1 
+03/01/2021 21:05:49 Web server HostBuilder created 1 
+03/01/2021 21:05:50 Host built 1 
+03/01/2021 21:05:50 Now listening on: "https://localhost:9000" 1 
+03/01/2021 21:05:50 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 21:05:50 Hosting environment: "Development" 1 
+03/01/2021 21:05:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 21:05:58 HTTP "GET" "/" responded 200 in 195.2520 ms 4 
+03/01/2021 21:06:08 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 61.4334 ms 8 
+03/01/2021 21:06:16 HTTP "POST" "/Authentication/LogIn" responded 302 in 1892.8425 ms 6 
+03/01/2021 21:06:16 HTTP "GET" "/" responded 200 in 4.3720 ms 13 
+03/01/2021 21:12:07 Web server started.. 1 
+03/01/2021 21:12:08 Web server HostBuilder created 1 
+03/01/2021 21:12:08 Host built 1 
+03/01/2021 21:12:09 Now listening on: "https://localhost:9000" 1 
+03/01/2021 21:12:09 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 21:12:09 Hosting environment: "Development" 1 
+03/01/2021 21:12:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 21:12:15 HTTP "GET" "/" responded 200 in 227.2569 ms 4 
+03/01/2021 21:12:19 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 53.2885 ms 8 
+03/01/2021 21:12:25 HTTP "POST" "/Authentication/LogIn" responded 302 in 1837.4271 ms 9 
+03/01/2021 21:12:25 HTTP "GET" "/" responded 200 in 3.5129 ms 4 
+03/01/2021 21:14:51 Web server started.. 1 
+03/01/2021 21:14:51 Web server HostBuilder created 1 
+03/01/2021 21:14:52 Host built 1 
+03/01/2021 21:14:52 Now listening on: "https://localhost:9000" 1 
+03/01/2021 21:14:52 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 21:14:52 Hosting environment: "Development" 1 
+03/01/2021 21:14:52 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 21:14:58 HTTP "GET" "/" responded 200 in 212.8958 ms 4 
+03/01/2021 21:15:10 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 48.7935 ms 8 
+03/01/2021 21:15:15 HTTP "POST" "/Authentication/LogIn" responded 302 in 1847.5397 ms 6 
+03/01/2021 21:15:15 HTTP "GET" "/" responded 200 in 4.7208 ms 10 
+03/01/2021 21:20:20 Web server started.. 1 
+03/01/2021 21:20:20 Web server HostBuilder created 1 
+03/01/2021 21:20:21 Host built 1 
+03/01/2021 21:20:22 Now listening on: "https://localhost:9000" 1 
+03/01/2021 21:20:22 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 21:20:22 Hosting environment: "Development" 1 
+03/01/2021 21:20:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 21:20:28 HTTP "GET" "/" responded 200 in 216.1824 ms 7 
+03/01/2021 21:20:48 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 81.1882 ms 10 
+03/01/2021 21:21:04 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 5.2463 ms 10 
+03/01/2021 21:21:25 HTTP "POST" "/Authentication/LogIn" responded 302 in 1815.2587 ms 17 
+03/01/2021 21:21:25 HTTP "GET" "/" responded 200 in 4.0280 ms 8 
+03/01/2021 21:32:04 Web server started.. 1 
+03/01/2021 21:32:04 Web server HostBuilder created 1 
+03/01/2021 21:32:05 Host built 1 
+03/01/2021 21:32:06 Now listening on: "https://localhost:9000" 1 
+03/01/2021 21:32:06 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 21:32:06 Hosting environment: "Development" 1 
+03/01/2021 21:32:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 21:32:13 HTTP "GET" "/" responded 200 in 200.3479 ms 5 
+03/01/2021 21:32:25 HTTP "GET" "/" responded 200 in 6.0468 ms 5 
+03/01/2021 21:32:29 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 48.1005 ms 8 
+03/01/2021 21:33:03 HTTP "POST" "/Authentication/LogIn" responded 302 in 20511.5259 ms 17 
+03/01/2021 21:33:03 HTTP "GET" "/" responded 200 in 5.5732 ms 10 
+03/01/2021 21:34:30 HTTP "GET" "/" responded 200 in 13.1690 ms 8 
+03/01/2021 21:34:35 HTTP "GET" "/Authentication/SignOut" responded 302 in 9.2587 ms 8 
+03/01/2021 21:34:35 HTTP "GET" "/" responded 200 in 0.6255 ms 5 
+03/01/2021 21:37:38 Web server started.. 1 
+03/01/2021 21:37:38 Web server HostBuilder created 1 
+03/01/2021 21:37:39 Host built 1 
+03/01/2021 21:37:39 Now listening on: "https://localhost:9000" 1 
+03/01/2021 21:37:39 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 21:37:39 Hosting environment: "Development" 1 
+03/01/2021 21:37:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 21:37:43 HTTP "GET" "/" responded 200 in 221.7649 ms 4 
+03/01/2021 21:37:52 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 53.1604 ms 8 
+03/01/2021 21:37:57 HTTP "POST" "/Authentication/LogIn" responded 302 in 1835.9095 ms 9 
+03/01/2021 21:37:57 HTTP "GET" "/" responded 200 in 3.6807 ms 5 
+03/01/2021 21:39:43 Application is shutting down... 16 
+03/01/2021 21:49:47 Web server started.. 1 
+03/01/2021 21:49:47 Web server HostBuilder created 1 
+03/01/2021 21:49:47 Host built 1 
+03/01/2021 21:49:48 Now listening on: "https://localhost:9000" 1 
+03/01/2021 21:49:48 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 21:49:48 Hosting environment: "Development" 1 
+03/01/2021 21:49:48 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 21:49:53 HTTP "GET" "/" responded 200 in 216.9673 ms 4 
+03/01/2021 21:49:58 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 51.3718 ms 7 
+03/01/2021 21:50:13 HTTP "POST" "/Authentication/LogIn" responded 302 in 1833.9218 ms 9 
+03/01/2021 21:50:13 HTTP "GET" "/" responded 200 in 3.6178 ms 11 
+03/01/2021 21:51:05 HTTP "GET" "/" responded 200 in 1.8536 ms 8 
+03/01/2021 21:51:12 HTTP "GET" "/Authentication/SignOut" responded 302 in 9.6036 ms 11 
+03/01/2021 21:51:12 HTTP "GET" "/" responded 200 in 0.5747 ms 7 
+03/01/2021 22:11:35 Web server started.. 1 
+03/01/2021 22:11:35 Web server HostBuilder created 1 
+03/01/2021 22:11:36 Host built 1 
+03/01/2021 22:11:36 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:11:36 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:11:36 Hosting environment: "Development" 1 
+03/01/2021 22:11:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:11:39 HTTP "GET" "/" responded 200 in 203.3049 ms 4 
+03/01/2021 22:11:50 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 49.0139 ms 7 
+03/01/2021 22:11:55 HTTP "POST" "/Authentication/LogIn" responded 302 in 1733.2697 ms 9 
+03/01/2021 22:11:55 HTTP "GET" "/" responded 200 in 3.6418 ms 4 
+03/01/2021 22:26:37 Web server started.. 1 
+03/01/2021 22:26:37 Web server HostBuilder created 1 
+03/01/2021 22:26:38 Host built 1 
+03/01/2021 22:26:38 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:26:38 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:26:38 Hosting environment: "Development" 1 
+03/01/2021 22:26:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:26:45 HTTP "GET" "/" responded 200 in 188.2370 ms 11 
+03/01/2021 22:26:51 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 55.8604 ms 4 
+03/01/2021 22:28:00 HTTP "POST" "/Authentication/LogIn" responded 500 in 57092.7704 ms 9 
+System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'System.String' requires a key size of at least 'System.Int32' bits. Key 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', is of size: 'System.Int32'. (Parameter 'key')
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider..ctor(SecurityKey key, String algorithm, Boolean willCreateSignatures)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateSignatureProvider(SecurityKey key, String algorithm, Boolean willCreateSignatures, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at FoundersPC.AuthenticationShared.JwtUserToken.GetToken() in E:\projectsVS\GitHub\FoundersPC\src\ApplicationShared\FoundersPC.AuthenticationShared\JwtUserToken.cs:line 43
+   at FoundersPC.Web.Controllers.AuthenticationController.SetupJwtTokenInCookie(String contentEmail, String contentRole) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 94
+   at FoundersPC.Web.Controllers.AuthenticationController.LogInAsync(UserLoginRequest authenticationRequest) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 83
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/01/2021 22:28:00 An unhandled exception has occurred while executing the request. 9 
+System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'System.String' requires a key size of at least 'System.Int32' bits. Key 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', is of size: 'System.Int32'. (Parameter 'key')
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider..ctor(SecurityKey key, String algorithm, Boolean willCreateSignatures)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateSignatureProvider(SecurityKey key, String algorithm, Boolean willCreateSignatures, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at FoundersPC.AuthenticationShared.JwtUserToken.GetToken() in E:\projectsVS\GitHub\FoundersPC\src\ApplicationShared\FoundersPC.AuthenticationShared\JwtUserToken.cs:line 43
+   at FoundersPC.Web.Controllers.AuthenticationController.SetupJwtTokenInCookie(String contentEmail, String contentRole) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 94
+   at FoundersPC.Web.Controllers.AuthenticationController.LogInAsync(UserLoginRequest authenticationRequest) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 83
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/01/2021 22:30:44 Web server started.. 1 
+03/01/2021 22:30:44 Web server HostBuilder created 1 
+03/01/2021 22:30:44 Host built 1 
+03/01/2021 22:30:45 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:30:45 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:30:45 Hosting environment: "Development" 1 
+03/01/2021 22:30:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:30:52 HTTP "GET" "/" responded 200 in 194.5380 ms 4 
+03/01/2021 22:31:04 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 51.4211 ms 4 
+03/01/2021 22:31:30 HTTP "POST" "/Authentication/LogIn" responded 302 in 22154.1283 ms 9 
+03/01/2021 22:31:30 HTTP "GET" "/" responded 200 in 9.6491 ms 4 
+03/01/2021 22:32:35 HTTP "GET" "/Authentication/SignOut" responded 302 in 15.7654 ms 4 
+03/01/2021 22:32:35 HTTP "GET" "/" responded 200 in 3.1667 ms 21 
+03/01/2021 22:33:43 Web server started.. 1 
+03/01/2021 22:33:43 Web server HostBuilder created 1 
+03/01/2021 22:33:44 Host built 1 
+03/01/2021 22:33:44 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:33:44 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:33:44 Hosting environment: "Development" 1 
+03/01/2021 22:33:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:33:48 HTTP "GET" "/" responded 200 in 272.4827 ms 8 
+03/01/2021 22:33:54 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 52.6146 ms 12 
+03/01/2021 22:34:18 HTTP "POST" "/Authentication/LogIn" responded 302 in 19556.1472 ms 5 
+03/01/2021 22:34:18 HTTP "GET" "/" responded 200 in 10.7986 ms 11 
+03/01/2021 22:38:52 Web server started.. 1 
+03/01/2021 22:38:52 Web server HostBuilder created 1 
+03/01/2021 22:38:53 Host built 1 
+03/01/2021 22:38:53 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:38:53 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:38:53 Hosting environment: "Development" 1 
+03/01/2021 22:38:53 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:39:01 HTTP "GET" "/" responded 200 in 224.5624 ms 7 
+03/01/2021 22:39:13 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 46.0970 ms 4 
+03/01/2021 22:39:30 HTTP "POST" "/Authentication/LogIn" responded 302 in 1771.0361 ms 5 
+03/01/2021 22:39:30 HTTP "GET" "/" responded 200 in 3.4674 ms 10 
+03/01/2021 22:41:18 HTTP "GET" "/Authentication/SignOut" responded 302 in 10.4372 ms 8 
+03/01/2021 22:41:18 HTTP "GET" "/" responded 200 in 1.4639 ms 8 
+03/01/2021 22:42:29 Web server started.. 1 
+03/01/2021 22:42:29 Web server HostBuilder created 1 
+03/01/2021 22:42:29 Host built 1 
+03/01/2021 22:42:30 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:42:30 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:42:30 Hosting environment: "Development" 1 
+03/01/2021 22:42:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:42:36 HTTP "GET" "/" responded 200 in 221.1108 ms 7 
+03/01/2021 22:42:43 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 53.1900 ms 8 
+03/01/2021 22:42:54 HTTP "POST" "/Authentication/LogIn" responded 302 in 1692.4816 ms 9 
+03/01/2021 22:42:54 HTTP "GET" "/" responded 200 in 4.1959 ms 7 
+03/01/2021 22:43:55 HTTP "GET" "/Authentication/SignOut" responded 302 in 8.3160 ms 10 
+03/01/2021 22:43:55 HTTP "GET" "/" responded 200 in 1.4559 ms 4 
+03/01/2021 22:44:59 Web server started.. 1 
+03/01/2021 22:44:59 Web server HostBuilder created 1 
+03/01/2021 22:45:00 Host built 1 
+03/01/2021 22:45:01 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:45:01 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:45:01 Hosting environment: "Development" 1 
+03/01/2021 22:45:01 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:45:05 HTTP "GET" "/" responded 200 in 227.8456 ms 4 
+03/01/2021 22:45:07 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 64.7498 ms 13 
+03/01/2021 22:45:12 HTTP "POST" "/Authentication/LogIn" responded 302 in 1769.5547 ms 5 
+03/01/2021 22:45:12 HTTP "GET" "/" responded 200 in 3.4391 ms 8 
+03/01/2021 22:47:05 HTTP "GET" "/Home/Cases" responded 200 in 32.9695 ms 17 
+03/01/2021 22:47:29 HTTP "GET" "/Home/Cases" responded 200 in 16.5205 ms 10 
+03/01/2021 22:51:24 Web server started.. 1 
+03/01/2021 22:51:24 Web server HostBuilder created 1 
+03/01/2021 22:51:24 Host built 1 
+03/01/2021 22:51:25 Now listening on: "https://localhost:9000" 1 
+03/01/2021 22:51:25 Application started. Press Ctrl+C to shut down. 1 
+03/01/2021 22:51:25 Hosting environment: "Development" 1 
+03/01/2021 22:51:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/01/2021 22:51:32 HTTP "GET" "/" responded 200 in 215.1407 ms 4 
+03/01/2021 22:51:50 HTTP "GET" "/Authentication/LoginIndex" responded 200 in 50.8892 ms 7 
+03/01/2021 22:52:03 HTTP "POST" "/Authentication/LogIn" responded 302 in 1711.2426 ms 5 
+03/01/2021 22:52:03 HTTP "GET" "/" responded 200 in 3.2169 ms 4 
+03/01/2021 22:53:32 HTTP "GET" "/Authentication/SignOut" responded 302 in 11.0799 ms 8 
+03/01/2021 22:53:32 HTTP "GET" "/" responded 200 in 0.9308 ms 4 

@@ -5,59 +5,64 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using FoundersPC.ApplicationShared.Identity;
 using FoundersPC.Identity.Domain.Common.Interfaces;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
+using FoundersPC.RepositoryShared.Identity;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.Identity.Domain.Entities.Users
 {
-    [Index(nameof(Id))]
-    public class UserEntity : IdentityItem, IUser, IEquatable<UserEntity>
-    {
-        [MaxLength(30)]
-        [MinLength(5)]
-        [DataType(DataType.Text)]
-        public string Login { get; set; }
+	[Index(nameof(Id))]
+	public class UserEntity : IdentityItem, IUser, IEquatable<UserEntity>
+	{
+		[MaxLength(30)]
+		[MinLength(5)]
+		[DataType(DataType.Text)]
+		public string Login { get; set; }
 
-        [Required]
-        [DataType(DataType.DateTime)]
-        public DateTime RegistrationDate { get; set; }
+		[Required]
+		[DataType(DataType.DateTime)]
+		public DateTime RegistrationDate { get; set; }
 
-        [Required]
-        public int RoleId { get; set; }
+		[Required]
+		public int RoleId { get; set; }
 
-        [Required]
-        [DefaultValue(true)]
-        public bool IsActive { get; set; }
+		[Required]
+		[DefaultValue(true)]
+		public bool IsActive { get; set; }
 
-        [DefaultValue(false)]
-        [Required]
-        public bool IsBlocked { get; set; }
+		[Required]
+		public bool IsBlocked { get; set; }
 
-        [ForeignKey(nameof(RoleId))]
-        public RoleEntity Role { get; set; }
+		[Required]
+		public bool SendMessageOnEntrance { get; set; }
 
-        public ICollection<ApiAccessUserToken> Tokens { get; set; }
+		[Required]
+		public bool SendMessageOnApiRequest { get; set; }
 
-        public ICollection<UserEntranceLog> Entrances { get; set; }
+		[ForeignKey(nameof(RoleId))]
+		public RoleEntity Role { get; set; }
 
-        public bool Equals(UserEntity other) => Email == other?.Email;
+		public ICollection<ApiAccessUserToken> Tokens { get; set; }
 
-        [MaxLength(128)]
-        [MinLength(3)]
-        [DataType(DataType.EmailAddress)]
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+		public ICollection<UserEntranceLog> Entrances { get; set; }
 
-        [MaxLength(128)]
-        [MinLength(12)]
-        [Required]
-        [DataType(DataType.Password)]
-        public string HashedPassword { get; set; }
-    }
+		public bool Equals(UserEntity other) => Email == other?.Email;
+
+		[MaxLength(128)]
+		[MinLength(3)]
+		[DataType(DataType.EmailAddress)]
+		[Required]
+		[EmailAddress]
+		public string Email { get; set; }
+
+		[MaxLength(128)]
+		[MinLength(128)]
+		[Required]
+		[DataType(DataType.Password)]
+		public string HashedPassword { get; set; }
+	}
 }

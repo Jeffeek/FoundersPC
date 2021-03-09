@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware.Memory
 {
-    public interface IRAMService
-    {
-        Task<IEnumerable<RAMReadDto>> GetAllRAMsAsync();
+	public interface IRAMService
+	{
+		Task<IEnumerable<RAMReadDto>> GetAllRAMsAsync();
 
-        Task<RAMReadDto> GetRAMByIdAsync(int ramId);
+		Task<RAMReadDto> GetRAMByIdAsync(int ramId);
 
-        Task<bool> CreateRAM(RAMInsertDto ram);
+		Task<bool> CreateRAMAsync(RAMInsertDto ram);
 
-        Task<bool> UpdateRAM(int id, RAMUpdateDto ram);
+		Task<bool> UpdateRAMAsync(int id, RAMUpdateDto ram);
 
-        Task<bool> DeleteRAM(int id);
-    }
+		Task<bool> DeleteRAMAsync(int id);
+	}
 }

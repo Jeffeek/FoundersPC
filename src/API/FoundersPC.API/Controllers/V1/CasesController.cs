@@ -1,94 +1,120 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [ApiVersion("1.0", Deprecated = false)]
-    [ApiController]
-    [Route("api/cases")]
-    [Authorize]
-    public class CasesController : Controller
-    {
-        private readonly ICaseService _caseService;
-        private readonly IMapper _mapper;
+	//[EnableCors(PolicyName = "WebClientPolicy")]
+	[Authorize]
+	[ApiVersion("1.0", Deprecated = false)]
+	[ApiController]
+	[Route("api/cases")]
+	public class CasesController : Controller
+	{
+		private readonly ICaseService _caseService;
+		private readonly ILogger<CasesController> _logger;
+		private readonly IMapper _mapper;
 
-        public CasesController(ICaseService service, IMapper mapper)
-        {
-            _caseService = service;
-            _mapper = mapper;
-        }
+		public CasesController(ICaseService service, IMapper mapper, ILogger<CasesController> logger)
+		{
+			_logger = logger ?? throw new ArgumentNullException(nameof(logger));
+			_caseService = service;
+			_mapper = mapper;
+			_logger = logger;
+		}
 
-        [AllowAnonymous]
-        //[Authorize(Roles = "Admin,Manager,DefaultUser")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get() =>
-            Ok(await _caseService.GetAllCasesAsync());
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Readable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpGet]
+		public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get()
+		{
+			_logger.LogForModelsRead(HttpContext);
 
-        [Authorize(Roles = "Admin,Manager,DefaultUser")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CaseReadDto>> Get(int? id)
-        {
-            if (!id.HasValue) return BadRequest(nameof(id));
+			return Json(await _caseService.GetAllCasesAsync());
+		}
 
-            var @case = await _caseService.GetCaseByIdAsync(id.Value);
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Readable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpGet("{id}")]
+		public async Task<ActionResult<CaseReadDto>> Get(int? id)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
-            if (@case == null) return NotFound(nameof(@case));
+			_logger.LogForModelRead(HttpContext, id.Value);
 
-            return Ok(@case);
-        }
+			var @case = await _caseService.GetCaseByIdAsync(id.Value);
 
-        [Authorize(Roles = "Admin,Manager")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPost("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, CaseUpdateDto @case)
-        {
-            if (!id.HasValue) return BadRequest(nameof(id));
-            if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
+			return @case == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(@case);
+		}
 
-            var result = await _caseService.UpdateCase(id.Value, @case);
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpPut("{id}", Order = 0)]
+		public async Task<ActionResult> Update(int? id, [FromBody] CaseUpdateDto @case)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
-            if (!result) return Problem();
+			if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
 
-            return NoContent();
-        }
+			var result = await _caseService.UpdateCaseAsync(id.Value, @case);
 
-        [Authorize(Roles = "Admin,Manager")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPost]
-        public async Task<ActionResult> Insert(CaseInsertDto @case)
-        {
-            if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
+			if (!result) return ResultsHelper.UpdateError();
 
-            var insertResult = await _caseService.CreateCase(@case);
+			_logger.LogForModelUpdated(HttpContext, id.Value);
 
-            return !insertResult ? Problem() : Ok(@case);
-        }
+			return Json(@case);
+		}
 
-        [Authorize(Roles = "Administrator")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
-        {
-            if (!id.HasValue) return BadRequest(nameof(id));
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpPost]
+		public async Task<ActionResult> Insert([FromBody] CaseInsertDto @case)
+		{
+			if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
 
-            var readCase = await _caseService.GetCaseByIdAsync(id.Value);
+			var insertResult = await _caseService.CreateCaseAsync(@case);
 
-            if (readCase == null) return NotFound(id);
+			if (!insertResult) return ResultsHelper.InsertError();
 
-            var result = await _caseService.DeleteCase(id.Value);
+			_logger.LogForModelInserted(HttpContext);
 
-            return result ? Ok(readCase) : Problem();
-        }
-    }
+			return Json(@case);
+		}
+
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpDelete("{id}")]
+		public async Task<ActionResult> Delete(int? id)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+
+			var readCase = await _caseService.GetCaseByIdAsync(id.Value);
+
+			if (readCase == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+
+			var result = await _caseService.DeleteCaseAsync(id.Value);
+
+			if (!result) return ResultsHelper.DeleteError();
+
+			_logger.LogForModelDeleted(HttpContext, id.Value);
+
+			return Json(readCase);
+		}
+	}
 }

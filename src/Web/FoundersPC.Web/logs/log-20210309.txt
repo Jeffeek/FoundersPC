@@ -1,0 +1,172 @@
+03/09/2021 11:31:50 Web server started.. 1 
+03/09/2021 11:31:50 Web server HostBuilder created 1 
+03/09/2021 11:31:51 Host built 1 
+03/09/2021 11:31:52 Now listening on: "https://[::]:443" 1 
+03/09/2021 11:31:52 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 11:31:52 Hosting environment: "Development" 1 
+03/09/2021 11:31:52 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 11:32:49 Web server started.. 1 
+03/09/2021 11:32:49 Web server HostBuilder created 1 
+03/09/2021 11:32:49 Host built 1 
+03/09/2021 11:32:49 Now listening on: "https://localhost:9000" 1 
+03/09/2021 11:32:49 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 11:32:49 Hosting environment: "Development" 1 
+03/09/2021 11:32:49 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 11:32:50 HTTP "GET" "/" responded 200 in 187.8475 ms 7 
+03/09/2021 11:32:55 HTTP "GET" "/" responded 200 in 3.2720 ms 8 
+03/09/2021 11:32:56 HTTP "GET" "/Authentication/Signin" responded 200 in 58.4693 ms 11 
+03/09/2021 11:33:01 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 23.0725 ms 12 
+03/09/2021 11:33:03 HTTP "GET" "/Authentication/Signin" responded 200 in 2.6360 ms 16 
+03/09/2021 11:33:04 HTTP "GET" "/Authentication/Registration" responded 200 in 18.6679 ms 8 
+03/09/2021 11:33:38 HTTP "GET" "/Authentication/Signin" responded 200 in 2.2647 ms 20 
+03/09/2021 11:35:47 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 2.8796 ms 19 
+03/09/2021 11:35:50 HTTP "GET" "/Authentication/Signin" responded 200 in 2.4437 ms 24 
+03/09/2021 11:35:57 HTTP "GET" "/" responded 200 in 1.3500 ms 24 
+03/09/2021 11:36:07 Application is shutting down... 2 
+03/09/2021 11:46:31 Web server started.. 1 
+03/09/2021 11:46:31 Web server HostBuilder created 1 
+03/09/2021 11:46:32 Host built 1 
+03/09/2021 11:46:32 Now listening on: "https://localhost:9000" 1 
+03/09/2021 11:46:33 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 11:46:33 Hosting environment: "Development" 1 
+03/09/2021 11:46:33 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 11:46:34 HTTP "GET" "/" responded 200 in 404.5075 ms 4 
+03/09/2021 11:59:36 Web server started.. 1 
+03/09/2021 11:59:36 Web server HostBuilder created 1 
+03/09/2021 11:59:36 Host built 1 
+03/09/2021 11:59:36 Now listening on: "https://localhost:9000" 1 
+03/09/2021 11:59:36 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 11:59:36 Hosting environment: "Development" 1 
+03/09/2021 11:59:36 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 11:59:37 HTTP "GET" "/" responded 200 in 179.7564 ms 8 
+03/09/2021 11:59:39 HTTP "GET" "/Authentication/Signin" responded 200 in 91.2884 ms 7 
+03/09/2021 11:59:54 HTTP "GET" "/Authentication/Registration" responded 200 in 33.2275 ms 7 
+03/09/2021 12:00:00 HTTP "GET" "/Authentication/Signin" responded 200 in 2.5952 ms 12 
+03/09/2021 12:00:06 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 25.4466 ms 12 
+03/09/2021 12:00:08 HTTP "GET" "/Authentication/Signin" responded 200 in 2.1937 ms 14 
+03/09/2021 12:00:16 Application is shutting down... 2 
+03/09/2021 12:43:43 Web server started.. 1 
+03/09/2021 12:43:43 Web server HostBuilder created 1 
+03/09/2021 12:43:43 Host built 1 
+03/09/2021 12:43:43 Now listening on: "https://localhost:9000" 1 
+03/09/2021 12:43:43 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 12:43:43 Hosting environment: "Development" 1 
+03/09/2021 12:43:43 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 12:43:44 HTTP "GET" "/" responded 200 in 226.8743 ms 12 
+03/09/2021 12:43:46 HTTP "GET" "/Authentication/Signin" responded 200 in 63.0025 ms 14 
+03/09/2021 12:43:48 The view '"Registration"' was not found. Searched locations: ["/Views/Authentication/Registration.cshtml", "/Views/Shared/Registration.cshtml"] 11 
+03/09/2021 12:43:48 HTTP "GET" "/Authentication/Registration" responded 500 in 47.7944 ms 11 
+System.InvalidOperationException: The view 'Registration' was not found. The following locations were searched:
+/Views/Authentication/Registration.cshtml
+/Views/Shared/Registration.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/09/2021 12:43:48 An unhandled exception has occurred while executing the request. 11 
+System.InvalidOperationException: The view 'Registration' was not found. The following locations were searched:
+/Views/Authentication/Registration.cshtml
+/Views/Shared/Registration.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/09/2021 12:43:57 Application is shutting down... 2 
+03/09/2021 12:45:37 Web server started.. 1 
+03/09/2021 12:45:37 Web server HostBuilder created 1 
+03/09/2021 12:45:37 Host built 1 
+03/09/2021 12:45:37 Now listening on: "https://localhost:9000" 1 
+03/09/2021 12:45:37 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 12:45:37 Hosting environment: "Development" 1 
+03/09/2021 12:45:37 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 12:45:38 HTTP "GET" "/" responded 200 in 199.3949 ms 7 
+03/09/2021 12:45:40 HTTP "GET" "/Authentication/Signin" responded 200 in 55.9355 ms 14 
+03/09/2021 12:45:41 HTTP "GET" "/Authentication/SignUp" responded 200 in 29.2207 ms 16 
+03/09/2021 12:46:01 HTTP "GET" "/Authentication/Signin" responded 200 in 2.3981 ms 12 
+03/09/2021 12:46:04 HTTP "GET" "/Authentication/SignUp" responded 200 in 2.7141 ms 14 
+03/09/2021 12:46:38 Application is shutting down... 20 
+03/09/2021 12:48:24 Web server started.. 1 
+03/09/2021 12:48:24 Web server HostBuilder created 1 
+03/09/2021 12:48:24 Host built 1 
+03/09/2021 12:48:24 Now listening on: "https://localhost:9000" 1 
+03/09/2021 12:48:24 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 12:48:24 Hosting environment: "Development" 1 
+03/09/2021 12:48:24 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 12:48:25 HTTP "GET" "/" responded 200 in 224.9051 ms 4 
+03/09/2021 12:48:27 HTTP "GET" "/Authentication/Signin" responded 200 in 50.4038 ms 8 
+03/09/2021 12:48:28 HTTP "GET" "/Authentication/SignUp" responded 200 in 25.8324 ms 7 
+03/09/2021 12:48:40 Application is shutting down... 10 
+03/09/2021 12:51:27 Web server started.. 1 
+03/09/2021 12:51:27 Web server HostBuilder created 1 
+03/09/2021 12:51:27 Host built 1 
+03/09/2021 12:51:27 Now listening on: "https://localhost:9000" 1 
+03/09/2021 12:51:27 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 12:51:27 Hosting environment: "Development" 1 
+03/09/2021 12:51:27 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 12:51:31 HTTP "GET" "/" responded 200 in 211.4815 ms 8 
+03/09/2021 12:51:41 HTTP "GET" "/Authentication/Signin" responded 200 in 61.8424 ms 4 
+03/09/2021 12:51:42 HTTP "GET" "/Authentication/SignUp" responded 200 in 29.6906 ms 4 
+03/09/2021 12:52:16 Application is shutting down... 22 
+03/09/2021 12:55:59 Web server started.. 1 
+03/09/2021 12:55:59 Web server HostBuilder created 1 
+03/09/2021 12:55:59 Host built 1 
+03/09/2021 12:55:59 Now listening on: "https://localhost:9000" 1 
+03/09/2021 12:55:59 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 12:55:59 Hosting environment: "Development" 1 
+03/09/2021 12:55:59 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 12:56:02 HTTP "GET" "/" responded 200 in 293.7881 ms 7 
+03/09/2021 12:56:03 HTTP "GET" "/Authentication/Signin" responded 200 in 60.5039 ms 11 
+03/09/2021 12:56:04 HTTP "GET" "/Authentication/SignUp" responded 200 in 44.5176 ms 13 
+03/09/2021 12:56:53 Application is shutting down... 21 
+03/09/2021 12:59:04 Web server started.. 1 
+03/09/2021 12:59:04 Web server HostBuilder created 1 
+03/09/2021 12:59:04 Host built 1 
+03/09/2021 12:59:05 Now listening on: "https://localhost:9000" 1 
+03/09/2021 12:59:05 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 12:59:05 Hosting environment: "Development" 1 
+03/09/2021 12:59:05 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 12:59:07 HTTP "GET" "/" responded 200 in 242.4098 ms 4 
+03/09/2021 12:59:08 HTTP "GET" "/Authentication/Signin" responded 200 in 63.4136 ms 13 
+03/09/2021 12:59:09 HTTP "GET" "/Authentication/SignUp" responded 200 in 34.7029 ms 4 
+03/09/2021 12:59:29 Application is shutting down... 17 
+03/09/2021 13:01:23 Web server started.. 1 
+03/09/2021 13:01:23 Web server HostBuilder created 1 
+03/09/2021 13:01:23 Host built 1 
+03/09/2021 13:01:24 Now listening on: "https://localhost:9000" 1 
+03/09/2021 13:01:24 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 13:01:24 Hosting environment: "Development" 1 
+03/09/2021 13:01:24 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 13:01:26 HTTP "GET" "/" responded 200 in 250.6812 ms 7 
+03/09/2021 13:01:27 HTTP "GET" "/Authentication/Signin" responded 200 in 60.0449 ms 15 
+03/09/2021 13:01:29 HTTP "GET" "/Authentication/SignUp" responded 200 in 35.4040 ms 13 
+03/09/2021 13:05:12 Application is shutting down... 24 

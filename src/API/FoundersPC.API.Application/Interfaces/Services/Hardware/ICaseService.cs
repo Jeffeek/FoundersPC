@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
-    public interface ICaseService
-    {
-        Task<IEnumerable<CaseReadDto>> GetAllCasesAsync();
+	public interface ICaseService
+	{
+		Task<IEnumerable<CaseReadDto>> GetAllCasesAsync();
 
-        Task<CaseReadDto> GetCaseByIdAsync(int caseId);
+		Task<CaseReadDto> GetCaseByIdAsync(int caseId);
 
-        Task<bool> CreateCase(CaseInsertDto @case);
+		Task<bool> CreateCaseAsync(CaseInsertDto @case);
 
-        Task<bool> UpdateCase(int id, CaseUpdateDto @case);
+		Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case);
 
-        Task<bool> DeleteCase(int id);
-    }
+		Task<bool> DeleteCaseAsync(int id);
+	}
 }

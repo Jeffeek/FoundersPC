@@ -1,0 +1,311 @@
+03/04/2021 22:07:07 Identity server started..
+03/04/2021 22:07:07 Identity server HostBuilder created
+03/04/2021 22:07:07 Host built
+03/04/2021 22:07:07 Now listening on: "https://localhost:3000"
+03/04/2021 22:07:07 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:07:07 Hosting environment: "Development"
+03/04/2021 22:07:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:07:32 Application is shutting down...
+03/04/2021 22:07:58 Identity server started..
+03/04/2021 22:07:58 Identity server HostBuilder created
+03/04/2021 22:07:58 Host built
+03/04/2021 22:07:58 Now listening on: "https://localhost:3000"
+03/04/2021 22:07:58 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:07:58 Hosting environment: "Development"
+03/04/2021 22:07:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:09:39 Application is shutting down...
+03/04/2021 22:09:51 Identity server started..
+03/04/2021 22:09:51 Identity server HostBuilder created
+03/04/2021 22:09:51 Host built
+03/04/2021 22:09:51 Now listening on: "https://localhost:3000"
+03/04/2021 22:09:51 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:09:51 Hosting environment: "Development"
+03/04/2021 22:09:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:10:36 HTTP "POST" "/authAPI/forgotpassword" responded 500 in 1542.8672 ms
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 39
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/04/2021 22:10:36 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 39
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/04/2021 22:12:36 Application is shutting down...
+03/04/2021 22:12:45 Identity server started..
+03/04/2021 22:12:45 Identity server HostBuilder created
+03/04/2021 22:12:45 Host built
+03/04/2021 22:12:45 Now listening on: "https://localhost:3000"
+03/04/2021 22:12:45 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:12:45 Hosting environment: "Development"
+03/04/2021 22:12:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:13:08 HTTP "POST" "/authAPI/forgotpassword" responded 500 in 1556.6510 ms
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 39
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/04/2021 22:13:08 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 39
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/04/2021 22:13:50 Application is shutting down...
+03/04/2021 22:15:12 Identity server started..
+03/04/2021 22:15:13 Identity server HostBuilder created
+03/04/2021 22:15:13 Host built
+03/04/2021 22:15:14 Now listening on: "https://localhost:3000"
+03/04/2021 22:15:14 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:15:14 Hosting environment: "Development"
+03/04/2021 22:15:14 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:17:57 Identity server started..
+03/04/2021 22:17:57 Identity server HostBuilder created
+03/04/2021 22:17:57 Host built
+03/04/2021 22:17:58 Now listening on: "https://localhost:3000"
+03/04/2021 22:17:58 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:17:58 Hosting environment: "Development"
+03/04/2021 22:17:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:19:37 HTTP "POST" "/authAPI/forgotpassword" responded 500 in 83982.7224 ms
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 37
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/04/2021 22:19:37 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 37
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/04/2021 22:20:50 Identity server started..
+03/04/2021 22:20:50 Identity server HostBuilder created
+03/04/2021 22:20:50 Host built
+03/04/2021 22:20:51 Now listening on: "https://localhost:3000"
+03/04/2021 22:20:51 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:20:51 Hosting environment: "Development"
+03/04/2021 22:20:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:21:04 HTTP "POST" "/authAPI/forgotpassword" responded 500 in 1883.4757 ms
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 37
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/04/2021 22:21:04 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 37
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/04/2021 22:22:09 Identity server started..
+03/04/2021 22:22:09 Identity server HostBuilder created
+03/04/2021 22:22:09 Host built
+03/04/2021 22:22:10 Now listening on: "https://localhost:3000"
+03/04/2021 22:22:10 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:22:10 Hosting environment: "Development"
+03/04/2021 22:22:10 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:22:50 HTTP "POST" "/authAPI/forgotpassword" responded 500 in 33086.4180 ms
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 37
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/04/2021 22:22:50 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'UserEntity.Tokens' is being accessed using the 'Reference' method, but is defined in the model as a collection navigation. Use the 'Collection' method to access collection navigation properties.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry.GetNavigation(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry..ctor(InternalEntityEntry internalEntry, String name, Boolean collection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry`2..ctor(InternalEntityEntry internalEntry, String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry`1.Reference[TProperty](Expression`1 propertyExpression)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByIdAsync(Int32 id) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 37
+   at FoundersPC.Identity.Services.User_Services.AuthenticationService.ChangePasswordToAsync(Int32 userId, String newPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\AuthenticationService.cs:line 64
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 57
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/04/2021 22:24:21 Identity server started..
+03/04/2021 22:24:21 Identity server HostBuilder created
+03/04/2021 22:24:22 Host built
+03/04/2021 22:24:22 Now listening on: "https://localhost:3000"
+03/04/2021 22:24:22 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:24:22 Hosting environment: "Development"
+03/04/2021 22:24:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:25:38 Identity server started..
+03/04/2021 22:25:38 Identity server HostBuilder created
+03/04/2021 22:25:39 Host built
+03/04/2021 22:25:39 Now listening on: "https://localhost:3000"
+03/04/2021 22:25:39 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:25:39 Hosting environment: "Development"
+03/04/2021 22:25:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/04/2021 22:27:26 HTTP "POST" "/authAPI/forgotpassword" responded 200 in 93904.7293 ms
+03/04/2021 22:28:47 HTTP "POST" "/authAPI/login" responded 200 in 84.3579 ms

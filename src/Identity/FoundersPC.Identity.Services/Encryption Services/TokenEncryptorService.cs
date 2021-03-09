@@ -1,30 +1,37 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Security.Cryptography;
 using System.Text;
-using FoundersPC.Identity.Application.Interfaces.Services.Encryption_Services;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.Encryption_Services
 {
-    public class TokenEncryptorService : ITokenEncryptorService
-    {
-        public string Encrypt(string rawToken, string key)
-        {
-            var keyBytes = Encoding.Unicode.GetBytes(key);
-            var tokenBytes = Encoding.Unicode.GetBytes(rawToken);
+	public class TokenEncryptorService
+	{
+		public string ComputeHash(string rawToken)
+		{
+			var tokenBytes = Encoding.Unicode.GetBytes(rawToken);
 
-            using var hasher = new HMACSHA512(keyBytes);
-            var hashResult = hasher.ComputeHash(tokenBytes);
+			using var hash = SHA256.Create();
+			var hashedInputBytes = hash.ComputeHash(tokenBytes);
 
-            return Convert.ToBase64String(hashResult);
-        }
+			var hashedInputStringBuilder = new StringBuilder(64);
+			foreach (var tokenByte in hashedInputBytes) hashedInputStringBuilder.Append(tokenByte.ToString("X2"));
 
-        public string CreateRawToken()
-        {
-            var guid = Guid.NewGuid();
+			return hashedInputStringBuilder.ToString();
+		}
 
-            var rawToken = guid.ToString().Replace("-", String.Empty).ToUpperInvariant();
+		public string CreateRawToken()
+		{
+			var guid = Guid.NewGuid();
 
-            return rawToken;
-        }
-    }
+			var rawToken = guid.ToString()
+							   .Replace("-", String.Empty)
+							   .ToUpperInvariant();
+
+			return rawToken;
+		}
+	}
 }

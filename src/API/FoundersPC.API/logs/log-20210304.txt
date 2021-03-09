@@ -1,0 +1,72 @@
+03/04/2021 22:07:07 HARDWARE API started..
+03/04/2021 22:07:07 HARDWARE API HostBuilder created
+03/04/2021 22:07:07 Host built
+03/04/2021 22:07:07 Now listening on: "https://localhost:5001"
+03/04/2021 22:07:07 Now listening on: "http://localhost:5000"
+03/04/2021 22:07:07 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:07:07 Hosting environment: "Development"
+03/04/2021 22:07:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:07:35 Application is shutting down...
+03/04/2021 22:07:58 HARDWARE API started..
+03/04/2021 22:07:58 HARDWARE API HostBuilder created
+03/04/2021 22:07:58 Host built
+03/04/2021 22:07:58 Now listening on: "https://localhost:5001"
+03/04/2021 22:07:58 Now listening on: "http://localhost:5000"
+03/04/2021 22:07:58 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:07:58 Hosting environment: "Development"
+03/04/2021 22:07:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:09:43 Application is shutting down...
+03/04/2021 22:09:50 HARDWARE API started..
+03/04/2021 22:09:51 HARDWARE API HostBuilder created
+03/04/2021 22:09:51 Host built
+03/04/2021 22:09:51 Now listening on: "https://localhost:5001"
+03/04/2021 22:09:51 Now listening on: "http://localhost:5000"
+03/04/2021 22:09:51 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:09:51 Hosting environment: "Development"
+03/04/2021 22:09:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:12:38 Application is shutting down...
+03/04/2021 22:12:45 HARDWARE API started..
+03/04/2021 22:12:45 HARDWARE API HostBuilder created
+03/04/2021 22:12:45 Host built
+03/04/2021 22:12:45 Now listening on: "https://localhost:5001"
+03/04/2021 22:12:45 Now listening on: "http://localhost:5000"
+03/04/2021 22:12:45 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:12:45 Hosting environment: "Development"
+03/04/2021 22:12:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:13:54 Application is shutting down...
+03/04/2021 22:15:11 HARDWARE API started..
+03/04/2021 22:15:11 HARDWARE API HostBuilder created
+03/04/2021 22:15:11 Host built
+03/04/2021 22:15:12 Now listening on: "https://localhost:5001"
+03/04/2021 22:15:12 Now listening on: "http://localhost:5000"
+03/04/2021 22:15:12 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:15:12 Hosting environment: "Development"
+03/04/2021 22:15:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:16:29 Application is shutting down...
+03/04/2021 22:17:56 HARDWARE API started..
+03/04/2021 22:17:56 HARDWARE API HostBuilder created
+03/04/2021 22:17:56 Host built
+03/04/2021 22:17:56 Now listening on: "https://localhost:5001"
+03/04/2021 22:17:56 Now listening on: "http://localhost:5000"
+03/04/2021 22:17:56 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:17:56 Hosting environment: "Development"
+03/04/2021 22:17:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:19:54 Application is shutting down...
+03/04/2021 22:20:49 HARDWARE API started..
+03/04/2021 22:20:49 HARDWARE API HostBuilder created
+03/04/2021 22:20:49 Host built
+03/04/2021 22:20:49 Now listening on: "https://localhost:5001"
+03/04/2021 22:20:49 Now listening on: "http://localhost:5000"
+03/04/2021 22:20:49 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:20:49 Hosting environment: "Development"
+03/04/2021 22:20:49 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:22:07 Application is shutting down...
+03/04/2021 22:24:20 HARDWARE API started..
+03/04/2021 22:24:20 HARDWARE API HostBuilder created
+03/04/2021 22:24:20 Host built
+03/04/2021 22:24:20 Now listening on: "https://localhost:5001"
+03/04/2021 22:24:20 Now listening on: "http://localhost:5000"
+03/04/2021 22:24:20 Application started. Press Ctrl+C to shut down.
+03/04/2021 22:24:20 Hosting environment: "Development"
+03/04/2021 22:24:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/04/2021 22:29:34 Application is shutting down...
