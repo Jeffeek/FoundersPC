@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region Using namespaces
+
 using FluentValidation;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+
+#endregion
 
 namespace FoundersPC.Web.Application.Validation.Authentication
 {

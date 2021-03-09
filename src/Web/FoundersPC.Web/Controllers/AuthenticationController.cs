@@ -129,8 +129,9 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> SignInAsync(SignInViewModel model)
         {
-            if (!ModelState.IsValid) return ValidationProblem("Not valid credentials",
-                                                              nameof(model));
+            if (!ModelState.IsValid)
+                return ValidationProblem("Not valid credentials",
+                                         nameof(model));
 
             var signInModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 

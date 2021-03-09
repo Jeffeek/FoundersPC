@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region Using namespaces
+
 using FluentValidation;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
+
+#endregion
 
 namespace FoundersPC.Identity.Application.Validation.Requests.ChangeSettings
 {

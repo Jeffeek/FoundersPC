@@ -1,8 +1,4 @@
-﻿#region Using namespaces
-
-#endregion
-
-namespace FoundersPC.RequestResponseShared.Request.ChangeSettings
+﻿namespace FoundersPC.RequestResponseShared.Request.ChangeSettings
 {
     public class ChangeLoginRequest
     {

@@ -33,7 +33,15 @@ body {
     width: 100%;
 }
 
-/* -- Animated-hr -- */
+.btn-stupid {
+    align-self: center;
+    font-size: 200px;
+    height: 100vh;
+    position: fixed;
+    width: 100vh;
+}
+
+/* -- Animated -hr -- */
 
 .hr-runner {
     background: rgba(253, 251, 251, 0.973);
@@ -61,4 +69,79 @@ body {
     100% { transform: translateX(1440px); }
 }
 
-/* -- END Animated-hr -- */
+/* -- END Animated -hr -- */
+
+/*Floating label v2*/
+
+.form-label-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.form-label-group > input,
+.form-label-group > label,
+.input-group > input,
+.input-group > label {
+    height: 3.125rem;
+    padding: .75rem;
+}
+
+.form-label-group > label,
+.input-group > label {
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #929292;
+    cursor: text; /* Match the input under the label */
+    display: block;
+    left: 0;
+    line-height: 1.5;
+    margin-bottom: 0; /* Override default `<label>` margin */
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: all .1s ease-in-out;
+    width: 100%;
+    z-index: 3;
+}
+
+.form-label-group input::-webkit-input-placeholder { color: transparent; }
+
+.form-label-group input:-ms-input-placeholder { color: transparent; }
+
+.form-label-group input::-ms-input-placeholder { color: transparent; }
+
+.form-label-group input::-moz-placeholder { color: transparent; }
+
+.form-label-group input::placeholder { color: transparent; }
+
+.form-label-group input:not(:placeholder-shown) {
+    padding-bottom: .25rem;
+    padding-top: 1.25rem;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+    color: rgba(199, 199, 199, 0.781);
+    font-size: 12px;
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+    .form-label-group > label { display: none; }
+
+    .form-label-group input::-ms-input-placeholder { color: #777; }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .form-label-group > label { display: none; }
+
+    .form-label-group input:-ms-input-placeholder { color: #777; }
+}
+
+/*Floating label v2 end*/

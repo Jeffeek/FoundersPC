@@ -66,3 +66,11 @@ System.ArgumentNullException: Value cannot be null. (Parameter 's')
 03/09/2021 17:23:14 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.6546 ms
 03/09/2021 17:23:26 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9386 ms
 03/09/2021 17:35:13 Application is shutting down...
+03/09/2021 19:28:16 Identity server started..
+03/09/2021 19:28:16 Identity server HostBuilder created
+03/09/2021 19:28:16 Host built
+03/09/2021 19:28:16 Now listening on: "https://localhost:3000"
+03/09/2021 19:28:16 Application started. Press Ctrl+C to shut down.
+03/09/2021 19:28:16 Hosting environment: "Development"
+03/09/2021 19:28:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/09/2021 19:28:42 Application is shutting down...

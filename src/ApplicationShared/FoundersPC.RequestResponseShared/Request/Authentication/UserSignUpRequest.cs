@@ -1,8 +1,4 @@
-﻿#region Using namespaces
-
-#endregion
-
-namespace FoundersPC.RequestResponseShared.Request.Authentication
+﻿namespace FoundersPC.RequestResponseShared.Request.Authentication
 {
     public class UserSignUpRequest
     {

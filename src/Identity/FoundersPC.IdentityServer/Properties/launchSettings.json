@@ -12,7 +12,8 @@
     }
   },
   "ConnectionStrings": {
-    "FoundersPC.Users": "Data Source=DESKTOP-1MKQIKU;Initial Catalog=FoundersPC.Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+    "FoundersPC.Users":
+      "Data Source=DESKTOP-1MKQIKU;Initial Catalog=FoundersPC.Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {

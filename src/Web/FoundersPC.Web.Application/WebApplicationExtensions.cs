@@ -1,8 +1,12 @@
-﻿using FluentValidation;
+﻿#region Using namespaces
+
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.Web.Application.Mappings;
 using FoundersPC.Web.Application.Validation.AccountSettings;
 using Microsoft.Extensions.DependencyInjection;
+
+#endregion
 
 namespace FoundersPC.Web.Application
 {

@@ -3,14 +3,12 @@
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Net;
 using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
-using FoundersPC.Web.Domain.Entities.ViewModels;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 using FoundersPC.Web.Models;
 using FoundersPC.Web.Services.Web_Services;

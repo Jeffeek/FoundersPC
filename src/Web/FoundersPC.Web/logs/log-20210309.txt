@@ -198,3 +198,69 @@ System.InvalidOperationException: The view 'Registration' was not found. The fol
 03/09/2021 17:23:54 HTTP "GET" "/Authentication/Signin" responded 200 in 1.4767 ms 25 
 03/09/2021 17:34:21 HTTP "GET" "/Authentication/SignUp" responded 200 in 26.6518 ms 8 
 03/09/2021 17:34:41 HTTP "GET" "/Authentication/Signin" responded 200 in 2.0994 ms 7 
+03/09/2021 19:28:16 Web server started.. 1 
+03/09/2021 19:28:16 Web server HostBuilder created 1 
+03/09/2021 19:28:16 Host built 1 
+03/09/2021 19:28:16 Now listening on: "https://localhost:9000" 1 
+03/09/2021 19:28:16 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 19:28:16 Hosting environment: "Development" 1 
+03/09/2021 19:28:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 19:28:17 HTTP "GET" "/" responded 200 in 164.7135 ms 7 
+03/09/2021 19:28:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 231.5446 ms 8 
+03/09/2021 19:28:41 Application is shutting down... 10 
+03/09/2021 21:47:42 Web server started.. 1 
+03/09/2021 21:47:42 Web server HostBuilder created 1 
+03/09/2021 21:47:42 Host built 1 
+03/09/2021 21:47:42 Now listening on: "https://localhost:9000" 1 
+03/09/2021 21:47:42 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 21:47:42 Hosting environment: "Development" 1 
+03/09/2021 21:47:42 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 21:47:43 HTTP "GET" "/" responded 200 in 145.1399 ms 7 
+03/09/2021 21:47:45 HTTP "GET" "/Authentication/SignIn" responded 200 in 220.8629 ms 7 
+03/09/2021 21:47:47 HTTP "GET" "/Authentication/SignUp" responded 200 in 16.3445 ms 7 
+03/09/2021 21:48:27 Application is shutting down... 17 
+03/09/2021 21:53:33 Web server started.. 1 
+03/09/2021 21:53:33 Web server HostBuilder created 1 
+03/09/2021 21:53:33 Host built 1 
+03/09/2021 21:53:33 Now listening on: "https://localhost:9000" 1 
+03/09/2021 21:53:33 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 21:53:33 Hosting environment: "Development" 1 
+03/09/2021 21:53:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 21:53:34 HTTP "GET" "/" responded 200 in 166.7312 ms 16 
+03/09/2021 21:53:38 HTTP "GET" "/Authentication/SignIn" responded 200 in 227.0785 ms 14 
+03/09/2021 21:53:40 HTTP "GET" "/Authentication/SignUp" responded 200 in 23.4594 ms 17 
+03/09/2021 21:54:57 HTTP "GET" "/Authentication/SignUp" responded 200 in 3545.1044 ms 8 
+03/09/2021 21:56:25 HTTP "GET" "/Authentication/SignUp" responded 200 in 179.1977 ms 24 
+03/09/2021 21:57:46 HTTP "GET" "/" responded 200 in 1.7952 ms 30 
+03/09/2021 21:57:47 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.3561 ms 18 
+03/09/2021 21:57:52 HTTP "GET" "/Authentication/SignUp" responded 200 in 126.5876 ms 18 
+03/09/2021 21:57:54 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.6584 ms 18 
+03/09/2021 21:57:56 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.6674 ms 31 
+03/09/2021 21:57:57 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.0167 ms 31 
+03/09/2021 21:57:58 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.0267 ms 18 
+03/09/2021 21:58:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.2755 ms 31 
+03/09/2021 21:58:05 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.1415 ms 31 
+03/09/2021 21:58:39 Application is shutting down... 32 
+03/09/2021 22:04:24 Web server started.. 1 
+03/09/2021 22:04:24 Web server HostBuilder created 1 
+03/09/2021 22:04:24 Host built 1 
+03/09/2021 22:04:24 Now listening on: "https://localhost:9000" 1 
+03/09/2021 22:04:24 Application started. Press Ctrl+C to shut down. 1 
+03/09/2021 22:04:24 Hosting environment: "Development" 1 
+03/09/2021 22:04:24 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/09/2021 22:04:25 HTTP "GET" "/" responded 200 in 154.2772 ms 4 
+03/09/2021 22:04:29 HTTP "GET" "/Authentication/SignIn" responded 200 in 230.6688 ms 12 
+03/09/2021 22:04:31 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 14.9040 ms 7 
+03/09/2021 22:05:03 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 3256.4473 ms 16 
+03/09/2021 22:05:07 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.0796 ms 13 
+03/09/2021 22:05:09 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.6090 ms 7 
+03/09/2021 22:05:10 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.6564 ms 7 
+03/09/2021 22:05:12 HTTP "GET" "/Authentication/SignUp" responded 200 in 28.0085 ms 13 
+03/09/2021 22:05:19 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.4236 ms 7 
+03/09/2021 22:05:21 HTTP "GET" "/Authentication/SignUp" responded 200 in 2.4038 ms 7 
+03/09/2021 22:05:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.0358 ms 15 
+03/09/2021 22:05:25 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 0.9029 ms 7 
+03/09/2021 22:05:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.2576 ms 7 
+03/09/2021 22:05:27 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.5766 ms 13 
+03/09/2021 22:05:28 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.2657 ms 13 
+03/09/2021 22:05:34 Application is shutting down... 5 

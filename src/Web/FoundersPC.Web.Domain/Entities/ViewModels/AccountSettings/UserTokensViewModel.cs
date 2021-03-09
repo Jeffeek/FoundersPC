@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
-using FoundersPC.ApplicationShared;
 using System.Collections.Generic;
+using FoundersPC.ApplicationShared;
 
 #endregion
 
