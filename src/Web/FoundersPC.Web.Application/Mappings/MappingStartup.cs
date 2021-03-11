@@ -18,6 +18,8 @@ namespace FoundersPC.Web.Application.Mappings
                 .ReverseMap();
             CreateMap<SignUpViewModel, UserSignUpRequest>()
                 .ForMember(dest => dest.Password, source => source.MapFrom(x => x.RawPassword));
+
+            CreateMap<ForgotPasswordViewModel, UserForgotPasswordRequest>().ReverseMap();
         }
     }
 }

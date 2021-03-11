@@ -29,6 +29,8 @@ namespace FoundersPC.Web
             services.AddWebApplicationMappings();
             services.AddValidators();
 
+            services.AddHttpClient();
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
                                {

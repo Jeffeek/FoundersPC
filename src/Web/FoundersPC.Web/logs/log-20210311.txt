@@ -1,0 +1,560 @@
+03/11/2021 16:31:01 Web server started.. 1 
+03/11/2021 16:31:01 Web server HostBuilder created 1 
+03/11/2021 16:31:02 Host built 1 
+03/11/2021 16:31:02 Now listening on: "https://localhost:9000" 1 
+03/11/2021 16:31:02 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 16:31:02 Hosting environment: "Development" 1 
+03/11/2021 16:31:02 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 16:31:06 HTTP "GET" "/" responded 200 in 204.6706 ms 8 
+03/11/2021 16:31:08 HTTP "GET" "/Authentication/SignIn" responded 200 in 207.9337 ms 4 
+03/11/2021 16:31:10 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 18.0725 ms 4 
+03/11/2021 16:31:12 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.5614 ms 4 
+03/11/2021 16:31:13 HTTP "GET" "/Authentication/SignUp" responded 200 in 19.7892 ms 4 
+03/11/2021 16:31:22 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.1023 ms 8 
+03/11/2021 16:34:25 Web server started.. 1 
+03/11/2021 16:34:25 Web server HostBuilder created 1 
+03/11/2021 16:34:26 Host built 1 
+03/11/2021 16:34:26 Now listening on: "https://localhost:9000" 1 
+03/11/2021 16:34:26 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 16:34:26 Hosting environment: "Development" 1 
+03/11/2021 16:34:26 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 16:34:29 HTTP "GET" "/" responded 200 in 198.9207 ms 4 
+03/11/2021 16:34:34 HTTP "GET" "/Authentication/SignIn" responded 200 in 202.8736 ms 8 
+03/11/2021 16:34:35 HTTP "GET" "/Authentication/SignUp" responded 200 in 23.8752 ms 4 
+03/11/2021 16:35:36 HTTP "GET" "/Authentication/SignUp" responded 200 in 3441.9654 ms 5 
+03/11/2021 16:36:36 HTTP "GET" "/Authentication/SignUp" responded 200 in 188.4598 ms 6 
+03/11/2021 16:37:06 HTTP "GET" "/Authentication/SignUp" responded 200 in 139.5817 ms 22 
+03/11/2021 16:38:40 HTTP "GET" "/Authentication/SignUp" responded 200 in 137.0383 ms 8 
+03/11/2021 16:39:48 HTTP "GET" "/Authentication/SignUp" responded 200 in 137.2429 ms 46 
+03/11/2021 16:40:16 HTTP "GET" "/Authentication/SignUp" responded 200 in 135.8467 ms 8 
+03/11/2021 16:42:35 HTTP "GET" "/Authentication/SignUp" responded 200 in 172.1884 ms 63 
+03/11/2021 16:43:25 HTTP "GET" "/Authentication/SignUp" responded 200 in 131.6638 ms 67 
+03/11/2021 16:43:35 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.0329 ms 67 
+03/11/2021 16:45:03 HTTP "GET" "/Authentication/SignIn" responded 200 in 144.7253 ms 8 
+03/11/2021 16:47:04 HTTP "GET" "/Authentication/SignUp" responded 200 in 127.0237 ms 8 
+03/11/2021 16:47:30 HTTP "GET" "/Authentication/SignUp" responded 200 in 135.2425 ms 24 
+03/11/2021 16:49:34 HTTP "GET" "/Authentication/SignIn" responded 200 in 151.0220 ms 79 
+03/11/2021 16:50:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 141.8304 ms 8 
+03/11/2021 16:50:38 HTTP "GET" "/Authentication/SignUp" responded 200 in 127.2095 ms 88 
+03/11/2021 16:51:07 HTTP "GET" "/Authentication/SignUp" responded 200 in 162.6931 ms 4 
+03/11/2021 16:51:31 HTTP "GET" "/Authentication/SignUp" responded 200 in 160.3112 ms 8 
+03/11/2021 16:51:48 HTTP "GET" "/Authentication/SignUp" responded 200 in 155.5388 ms 8 
+03/11/2021 16:53:00 HTTP "GET" "/Authentication/SignUp" responded 200 in 147.8199 ms 8 
+03/11/2021 16:53:27 HTTP "GET" "/Authentication/SignUp" responded 200 in 124.8755 ms 8 
+03/11/2021 16:53:50 HTTP "GET" "/Authentication/SignUp" responded 200 in 133.7162 ms 8 
+03/11/2021 16:54:05 HTTP "GET" "/Authentication/SignUp" responded 200 in 138.7181 ms 8 
+03/11/2021 16:55:31 HTTP "GET" "/Authentication/SignUp" responded 200 in 177.2879 ms 4 
+03/11/2021 16:56:29 HTTP "GET" "/Authentication/SignUp" responded 200 in 123.8411 ms 8 
+03/11/2021 16:58:44 HTTP "GET" "/Authentication/SignUp" responded 200 in 140.0773 ms 8 
+03/11/2021 16:59:08 HTTP "GET" "/Authentication/SignIn" responded 200 in 4.3841 ms 4 
+03/11/2021 17:01:05 HTTP "GET" "/Authentication/SignIn" responded 200 in 150.8713 ms 4 
+03/11/2021 17:01:44 HTTP "GET" "/Authentication/SignIn" responded 200 in 113.3824 ms 8 
+03/11/2021 17:02:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 109.3449 ms 8 
+03/11/2021 17:02:25 HTTP "GET" "/Authentication/SignUp" responded 200 in 118.4684 ms 4 
+03/11/2021 17:02:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.6209 ms 8 
+03/11/2021 17:02:27 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 13.3471 ms 16 
+03/11/2021 17:03:18 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 116.7920 ms 4 
+03/11/2021 17:04:40 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 114.3105 ms 8 
+03/11/2021 17:07:00 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 131.7642 ms 38 
+03/11/2021 17:11:29 Web server started.. 1 
+03/11/2021 17:11:30 Web server HostBuilder created 1 
+03/11/2021 17:11:30 Host built 1 
+03/11/2021 17:11:30 Now listening on: "https://localhost:9000" 1 
+03/11/2021 17:11:30 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 17:11:30 Hosting environment: "Development" 1 
+03/11/2021 17:11:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 17:11:33 HTTP "GET" "/" responded 200 in 168.7712 ms 4 
+03/11/2021 17:11:37 HTTP "GET" "/Authentication/SignIn" responded 200 in 209.0022 ms 4 
+03/11/2021 17:11:40 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 18.6655 ms 4 
+03/11/2021 17:11:45 HTTP "POST" "/Authentication/ForgotPassword" responded 400 in 80.4270 ms 13 
+03/11/2021 17:11:48 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.7504 ms 15 
+03/11/2021 17:37:16 Web server started.. 1 
+03/11/2021 17:37:16 Web server HostBuilder created 1 
+03/11/2021 17:37:17 Host built 1 
+03/11/2021 17:37:17 Now listening on: "https://localhost:9000" 1 
+03/11/2021 17:37:17 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 17:37:17 Hosting environment: "Development" 1 
+03/11/2021 17:37:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 17:37:21 HTTP "GET" "/" responded 200 in 198.5028 ms 7 
+03/11/2021 17:37:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 206.0613 ms 13 
+03/11/2021 17:37:35 HTTP "GET" "/Authentication/SignUp" responded 200 in 27.8079 ms 11 
+03/11/2021 17:37:40 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.6469 ms 7 
+03/11/2021 17:37:41 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 14.1735 ms 10 
+03/11/2021 17:37:44 HTTP "POST" "/Authentication/ForgotPassword" responded 500 in 101.7460 ms 7 
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 43
+   at lambda_method53(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/11/2021 17:37:44 An unhandled exception has occurred while executing the request. 7 
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 43
+   at lambda_method53(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/11/2021 17:37:45 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.3322 ms 7 
+03/11/2021 17:37:47 HTTP "POST" "/Authentication/ForgotPassword" responded 500 in 21.7145 ms 15 
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 43
+   at lambda_method53(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/11/2021 17:37:47 An unhandled exception has occurred while executing the request. 15 
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 43
+   at lambda_method53(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/11/2021 17:37:51 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.8589 ms 4 
+03/11/2021 17:43:20 Web server started.. 1 
+03/11/2021 17:43:20 Web server HostBuilder created 1 
+03/11/2021 17:43:21 Host built 1 
+03/11/2021 17:43:21 Now listening on: "https://localhost:9000" 1 
+03/11/2021 17:43:21 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 17:43:21 Hosting environment: "Development" 1 
+03/11/2021 17:43:21 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 17:43:24 HTTP "GET" "/" responded 200 in 185.9002 ms 7 
+03/11/2021 17:43:25 HTTP "GET" "/Authentication/SignIn" responded 200 in 204.5735 ms 13 
+03/11/2021 17:43:32 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 19.3109 ms 14 
+03/11/2021 17:43:54 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 27.8516 ms 11 
+03/11/2021 17:44:21 Application is shutting down... 17 
+03/11/2021 17:47:03 Web server started.. 1 
+03/11/2021 17:47:03 Web server HostBuilder created 1 
+03/11/2021 17:47:04 Host built 1 
+03/11/2021 17:47:04 Now listening on: "https://localhost:9000" 1 
+03/11/2021 17:47:04 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 17:47:04 Hosting environment: "Development" 1 
+03/11/2021 17:47:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 17:47:05 HTTP "GET" "/" responded 200 in 187.4749 ms 12 
+03/11/2021 17:47:11 HTTP "GET" "/Authentication/SignIn" responded 200 in 194.4517 ms 13 
+03/11/2021 17:47:13 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 19.8683 ms 8 
+03/11/2021 17:51:57 Web server started.. 1 
+03/11/2021 17:51:57 Web server HostBuilder created 1 
+03/11/2021 17:51:57 Host built 1 
+03/11/2021 17:51:58 Now listening on: "https://localhost:9000" 1 
+03/11/2021 17:51:58 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 17:51:58 Hosting environment: "Development" 1 
+03/11/2021 17:51:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 17:52:01 HTTP "GET" "/" responded 200 in 183.1841 ms 7 
+03/11/2021 17:52:03 HTTP "GET" "/Authentication/SignIn" responded 200 in 223.0470 ms 11 
+03/11/2021 17:52:06 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 21.0918 ms 4 
+03/11/2021 17:53:48 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 3035.0944 ms 4 
+03/11/2021 17:54:09 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 30.1590 ms 22 
+03/11/2021 17:54:12 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.9481 ms 19 
+03/11/2021 17:54:22 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 2.0848 ms 8 
+03/11/2021 17:54:23 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.5735 ms 20 
+03/11/2021 17:54:38 Web server started.. 1 
+03/11/2021 17:54:39 Web server HostBuilder created 1 
+03/11/2021 17:54:39 Host built 1 
+03/11/2021 17:54:40 Now listening on: "https://localhost:9000" 1 
+03/11/2021 17:54:40 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 17:54:40 Hosting environment: "Development" 1 
+03/11/2021 17:54:40 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 17:54:42 HTTP "GET" "/" responded 200 in 179.8808 ms 4 
+03/11/2021 17:54:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 199.2164 ms 13 
+03/11/2021 17:54:45 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 22.6019 ms 15 
+03/11/2021 17:54:50 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 30.1147 ms 13 
+03/11/2021 17:54:54 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.9085 ms 4 
+03/11/2021 17:56:28 Web server started.. 1 
+03/11/2021 17:56:28 Web server HostBuilder created 1 
+03/11/2021 17:56:28 Host built 1 
+03/11/2021 17:56:29 Now listening on: "https://localhost:9000" 1 
+03/11/2021 17:56:29 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 17:56:29 Hosting environment: "Development" 1 
+03/11/2021 17:56:29 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 17:56:31 HTTP "GET" "/" responded 200 in 191.8363 ms 4 
+03/11/2021 17:56:35 HTTP "GET" "/Authentication/SignIn" responded 200 in 224.8263 ms 4 
+03/11/2021 17:56:36 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 20.7758 ms 7 
+03/11/2021 17:56:57 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 33.5095 ms 8 
+03/11/2021 17:56:59 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 2.7134 ms 20 
+03/11/2021 17:57:19 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 3102.3268 ms 8 
+03/11/2021 17:57:21 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 0.9633 ms 7 
+03/11/2021 17:57:24 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.5216 ms 19 
+03/11/2021 17:57:53 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 199.3683 ms 8 
+03/11/2021 17:58:52 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 157.1228 ms 8 
+03/11/2021 17:59:27 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 144.2862 ms 4 
+03/11/2021 18:00:44 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 128.5400 ms 4 
+03/11/2021 18:06:08 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 136.7360 ms 7 
+03/11/2021 18:06:17 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.0303 ms 7 
+03/11/2021 18:06:24 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 0.9646 ms 4 
+03/11/2021 18:06:36 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 1.3456 ms 7 
+03/11/2021 18:09:15 Web server started.. 1 
+03/11/2021 18:09:15 Web server HostBuilder created 1 
+03/11/2021 18:09:15 Host built 1 
+03/11/2021 18:09:16 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:09:16 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:09:16 Hosting environment: "Development" 1 
+03/11/2021 18:09:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:09:18 HTTP "GET" "/" responded 200 in 185.3952 ms 4 
+03/11/2021 18:09:20 HTTP "GET" "/Authentication/SignIn" responded 200 in 200.2724 ms 8 
+03/11/2021 18:09:21 HTTP "GET" "/Authentication/SignUp" responded 200 in 26.9367 ms 4 
+03/11/2021 18:09:22 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.3951 ms 14 
+03/11/2021 18:09:23 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 17.2281 ms 15 
+03/11/2021 18:10:20 Web server started.. 1 
+03/11/2021 18:10:20 Web server HostBuilder created 1 
+03/11/2021 18:10:20 Host built 1 
+03/11/2021 18:10:21 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:10:21 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:10:21 Hosting environment: "Development" 1 
+03/11/2021 18:10:21 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:10:23 HTTP "GET" "/" responded 200 in 210.3213 ms 10 
+03/11/2021 18:10:24 HTTP "GET" "/Authentication/SignIn" responded 200 in 206.5631 ms 14 
+03/11/2021 18:10:26 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 20.5704 ms 8 
+03/11/2021 18:14:08 Web server started.. 1 
+03/11/2021 18:14:08 Web server HostBuilder created 1 
+03/11/2021 18:14:08 Host built 1 
+03/11/2021 18:14:09 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:14:09 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:14:09 Hosting environment: "Development" 1 
+03/11/2021 18:14:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:14:11 HTTP "GET" "/" responded 200 in 186.5341 ms 11 
+03/11/2021 18:14:12 HTTP "GET" "/Authentication/SignIn" responded 200 in 215.5123 ms 4 
+03/11/2021 18:14:14 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 20.3668 ms 8 
+03/11/2021 18:14:16 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 28.3106 ms 8 
+03/11/2021 18:14:18 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 2.6036 ms 12 
+03/11/2021 18:14:36 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 3077.2418 ms 8 
+03/11/2021 18:14:38 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 0.9082 ms 14 
+03/11/2021 18:14:43 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.7736 ms 11 
+03/11/2021 18:15:40 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 202.5385 ms 4 
+03/11/2021 18:15:42 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 2.3287 ms 11 
+03/11/2021 18:15:44 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 2.3001 ms 4 
+03/11/2021 18:18:07 Web server started.. 1 
+03/11/2021 18:18:07 Web server HostBuilder created 1 
+03/11/2021 18:18:07 Host built 1 
+03/11/2021 18:18:08 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:18:08 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:18:08 Hosting environment: "Development" 1 
+03/11/2021 18:18:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:18:10 HTTP "GET" "/" responded 200 in 182.8181 ms 4 
+03/11/2021 18:18:12 HTTP "GET" "/Authentication/SignIn" responded 200 in 199.8440 ms 8 
+03/11/2021 18:18:14 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 18.8325 ms 11 
+03/11/2021 18:18:16 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 27.9433 ms 8 
+03/11/2021 18:22:26 Web server started.. 1 
+03/11/2021 18:22:26 Web server HostBuilder created 1 
+03/11/2021 18:24:08 Host built 1 
+03/11/2021 18:24:22 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:24:22 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:24:22 Hosting environment: "Development" 1 
+03/11/2021 18:24:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:24:25 HTTP "GET" "/" responded 200 in 210.3759 ms 6 
+03/11/2021 18:24:27 HTTP "GET" "/Authentication/SignIn" responded 200 in 204.6252 ms 4 
+03/11/2021 18:24:28 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 18.8858 ms 4 
+03/11/2021 18:28:30 Web server started.. 1 
+03/11/2021 18:28:31 Web server HostBuilder created 1 
+03/11/2021 18:28:34 Host built 1 
+03/11/2021 18:28:35 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:28:35 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:28:35 Hosting environment: "Development" 1 
+03/11/2021 18:28:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:28:37 HTTP "GET" "/" responded 200 in 191.1882 ms 4 
+03/11/2021 18:28:40 HTTP "GET" "/Authentication/SignIn" responded 200 in 201.8536 ms 15 
+03/11/2021 18:28:42 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 21.7499 ms 4 
+03/11/2021 18:28:53 HTTP "POST" "/Authentication/ForgotPassword" responded 415 in 28.1975 ms 7 
+03/11/2021 18:29:26 Web server started.. 1 
+03/11/2021 18:29:26 Web server HostBuilder created 1 
+03/11/2021 18:29:26 Host built 1 
+03/11/2021 18:29:27 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:29:27 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:29:27 Hosting environment: "Development" 1 
+03/11/2021 18:29:27 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:29:29 HTTP "GET" "/" responded 200 in 213.5923 ms 5 
+03/11/2021 18:29:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 225.5342 ms 8 
+03/11/2021 18:29:32 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 19.3052 ms 5 
+03/11/2021 18:30:13 Web server started.. 1 
+03/11/2021 18:30:13 Web server HostBuilder created 1 
+03/11/2021 18:30:14 Host built 1 
+03/11/2021 18:30:14 Now listening on: "https://localhost:9000" 1 
+03/11/2021 18:30:14 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 18:30:14 Hosting environment: "Development" 1 
+03/11/2021 18:30:14 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 18:30:16 HTTP "GET" "/" responded 200 in 174.8942 ms 13 
+03/11/2021 18:30:18 HTTP "GET" "/Authentication/SignIn" responded 200 in 202.2538 ms 4 
+03/11/2021 18:30:20 HTTP "GET" "/Authentication/SignUp" responded 200 in 25.8952 ms 7 
+03/11/2021 18:30:30 HTTP "POST" "/Authentication/SignUp" responded 415 in 27.2836 ms 12 
+03/11/2021 21:01:37 Web server started.. 1 
+03/11/2021 21:01:37 Web server HostBuilder created 1 
+03/11/2021 21:01:37 Host built 1 
+03/11/2021 21:01:38 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:01:38 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:01:38 Hosting environment: "Development" 1 
+03/11/2021 21:01:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:01:40 HTTP "GET" "/" responded 200 in 185.3563 ms 13 
+03/11/2021 21:01:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 199.5462 ms 4 
+03/11/2021 21:02:20 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/11/2021 21:02:20 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/11/2021 21:02:22 Received HTTP response headers after 1940.8184ms - 200 6 
+03/11/2021 21:02:22 End processing HTTP request after 1952.3835ms - 200 6 
+03/11/2021 21:03:18 Web server started.. 1 
+03/11/2021 21:03:18 Web server HostBuilder created 1 
+03/11/2021 21:03:19 Host built 1 
+03/11/2021 21:03:19 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:03:19 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:03:19 Hosting environment: "Development" 1 
+03/11/2021 21:03:19 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:03:22 HTTP "GET" "/" responded 200 in 175.2525 ms 8 
+03/11/2021 21:03:24 HTTP "GET" "/Authentication/SignIn" responded 200 in 193.9109 ms 9 
+03/11/2021 21:03:26 HTTP "GET" "/Authentication/SignUp" responded 200 in 28.4380 ms 4 
+03/11/2021 21:04:05 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/registration 5 
+03/11/2021 21:04:05 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/registration 5 
+03/11/2021 21:04:07 Received HTTP response headers after 2002.3188ms - 200 18 
+03/11/2021 21:04:07 End processing HTTP request after 2016.9269ms - 200 18 
+03/11/2021 21:05:24 Web server started.. 1 
+03/11/2021 21:05:24 Web server HostBuilder created 1 
+03/11/2021 21:05:24 Host built 1 
+03/11/2021 21:05:25 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:05:25 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:05:25 Hosting environment: "Development" 1 
+03/11/2021 21:05:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:05:26 HTTP "GET" "/" responded 200 in 211.5537 ms 5 
+03/11/2021 21:05:28 HTTP "GET" "/Authentication/SignIn" responded 200 in 193.8635 ms 8 
+03/11/2021 21:06:05 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/11/2021 21:06:05 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/11/2021 21:06:06 Received HTTP response headers after 1820.352ms - 200 6 
+03/11/2021 21:06:06 End processing HTTP request after 1831.5428ms - 200 6 
+03/11/2021 21:25:08 Web server started.. 1 
+03/11/2021 21:25:08 Web server HostBuilder created 1 
+03/11/2021 21:25:08 Host built 1 
+03/11/2021 21:25:09 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:25:09 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:25:09 Hosting environment: "Development" 1 
+03/11/2021 21:25:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:25:11 HTTP "GET" "/" responded 200 in 176.8344 ms 7 
+03/11/2021 21:25:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 202.7694 ms 4 
+03/11/2021 21:25:27 HTTP "GET" "/Authentication/SignUp" responded 200 in 24.3908 ms 11 
+03/11/2021 21:25:28 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.5993 ms 15 
+03/11/2021 21:25:29 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 13.0261 ms 10 
+03/11/2021 21:25:54 HTTP "POST" "/Authentication/ForgotPassword" responded 500 in 21234.3899 ms 8 
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ForgotPasswordViewModel -> UserForgotPasswordRequest
+FoundersPC.Web.Domain.Entities.ViewModels.Authentication.ForgotPasswordViewModel -> FoundersPC.RequestResponseShared.Request.Authentication.UserForgotPasswordRequest
+   at lambda_method59(Closure , ForgotPasswordViewModel , UserForgotPasswordRequest , ResolutionContext )
+   at FoundersPC.Web.Services.Web_Services.Identity.IdentityAuthenticationService.ForgotPasswordAsync(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\IdentityAuthenticationService.cs:line 142
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 52
+   at lambda_method53(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/11/2021 21:25:54 An unhandled exception has occurred while executing the request. 8 
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ForgotPasswordViewModel -> UserForgotPasswordRequest
+FoundersPC.Web.Domain.Entities.ViewModels.Authentication.ForgotPasswordViewModel -> FoundersPC.RequestResponseShared.Request.Authentication.UserForgotPasswordRequest
+   at lambda_method59(Closure , ForgotPasswordViewModel , UserForgotPasswordRequest , ResolutionContext )
+   at FoundersPC.Web.Services.Web_Services.Identity.IdentityAuthenticationService.ForgotPasswordAsync(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\IdentityAuthenticationService.cs:line 142
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 52
+   at lambda_method53(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/11/2021 21:27:04 Web server started.. 1 
+03/11/2021 21:27:04 Web server HostBuilder created 1 
+03/11/2021 21:27:05 Host built 1 
+03/11/2021 21:27:06 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:27:06 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:27:06 Hosting environment: "Development" 1 
+03/11/2021 21:27:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:27:08 HTTP "GET" "/" responded 200 in 178.1376 ms 8 
+03/11/2021 21:27:10 HTTP "GET" "/Authentication/SignIn" responded 200 in 202.9156 ms 4 
+03/11/2021 21:27:12 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 20.1237 ms 11 
+03/11/2021 21:27:21 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/forgotpassword 8 
+03/11/2021 21:27:21 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/forgotpassword 8 
+03/11/2021 21:27:25 Received HTTP response headers after 4410.3873ms - 200 6 
+03/11/2021 21:27:25 End processing HTTP request after 4423.6444ms - 200 6 
+03/11/2021 21:27:47 HTTP "POST" "/Authentication/ForgotPassword" responded 200 in 32535.1804 ms 6 
+03/11/2021 21:52:06 Web server started.. 1 
+03/11/2021 21:52:06 Web server HostBuilder created 1 
+03/11/2021 21:52:07 Host built 1 
+03/11/2021 21:52:07 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:52:07 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:52:07 Hosting environment: "Development" 1 
+03/11/2021 21:52:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:52:11 HTTP "GET" "/" responded 200 in 193.2553 ms 7 
+03/11/2021 21:52:12 HTTP "GET" "/Authentication/SignIn" responded 200 in 204.1794 ms 8 
+03/11/2021 21:52:25 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 10 
+03/11/2021 21:52:25 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 10 
+03/11/2021 21:52:26 Received HTTP response headers after 1888.0619ms - 200 9 
+03/11/2021 21:52:26 End processing HTTP request after 1899.6953ms - 200 9 
+03/11/2021 21:52:36 HTTP "POST" "/Authentication/SignIn" responded 404 in 18837.7821 ms 9 
+03/11/2021 21:52:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.2541 ms 4 
+03/11/2021 21:54:10 Web server started.. 1 
+03/11/2021 21:54:10 Web server HostBuilder created 1 
+03/11/2021 21:54:10 Host built 1 
+03/11/2021 21:54:11 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:54:11 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:54:11 Hosting environment: "Development" 1 
+03/11/2021 21:54:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:54:13 HTTP "GET" "/" responded 200 in 184.8940 ms 4 
+03/11/2021 21:54:15 HTTP "GET" "/Authentication/SignIn" responded 200 in 217.5946 ms 8 
+03/11/2021 21:54:25 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/11/2021 21:54:25 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/11/2021 21:54:27 Received HTTP response headers after 1833.3526ms - 200 10 
+03/11/2021 21:54:27 End processing HTTP request after 1844.178ms - 200 10 
+03/11/2021 21:54:54 HTTP "POST" "/Authentication/SignIn" responded 302 in 35816.5680 ms 10 
+03/11/2021 21:54:54 HTTP "GET" "/" responded 200 in 33.2005 ms 4 
+03/11/2021 21:55:03 HTTP "GET" "/AccountSettings/Profile" responded 500 in 8.5477 ms 11 
+System.InvalidOperationException: Unable to resolve service for type 'FoundersPC.Web.Services.Web_Services.Identity.Authentication.IIdentityUserInformationService' while attempting to activate 'FoundersPC.Web.Controllers.AccountSettingsController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method53(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/11/2021 21:55:03 An unhandled exception has occurred while executing the request. 11 
+System.InvalidOperationException: Unable to resolve service for type 'FoundersPC.Web.Services.Web_Services.Identity.Authentication.IIdentityUserInformationService' while attempting to activate 'FoundersPC.Web.Controllers.AccountSettingsController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method53(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/11/2021 21:56:29 Web server started.. 1 
+03/11/2021 21:56:29 Web server HostBuilder created 1 
+03/11/2021 21:56:29 Host built 1 
+03/11/2021 21:56:30 Now listening on: "https://localhost:9000" 1 
+03/11/2021 21:56:30 Application started. Press Ctrl+C to shut down. 1 
+03/11/2021 21:56:30 Hosting environment: "Development" 1 
+03/11/2021 21:56:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/11/2021 21:56:32 HTTP "GET" "/" responded 200 in 191.7067 ms 5 
+03/11/2021 21:56:34 HTTP "GET" "/Authentication/SignIn" responded 200 in 220.9051 ms 11 
+03/11/2021 21:56:37 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 8 
+03/11/2021 21:56:37 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 8 
+03/11/2021 21:56:39 Received HTTP response headers after 1801.1371ms - 200 6 
+03/11/2021 21:56:39 End processing HTTP request after 1811.9996ms - 200 6 
+03/11/2021 21:56:39 HTTP "POST" "/Authentication/SignIn" responded 302 in 2030.4704 ms 6 
+03/11/2021 21:56:39 HTTP "GET" "/" responded 200 in 8.0447 ms 4 
+03/11/2021 21:56:52 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 12 
+03/11/2021 21:56:52 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 12 
+03/11/2021 21:56:52 Received HTTP response headers after 73.5278ms - 200 6 
+03/11/2021 21:56:52 End processing HTTP request after 75.3237ms - 200 6 
+03/11/2021 21:56:59 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/11/2021 21:56:59 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/11/2021 21:56:59 Received HTTP response headers after 49.4589ms - 200 20 
+03/11/2021 21:56:59 End processing HTTP request after 51.3423ms - 200 20 
+03/11/2021 21:57:06 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 20 
+03/11/2021 21:57:06 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 20 
+03/11/2021 21:57:06 Received HTTP response headers after 82.4905ms - 200 20 
+03/11/2021 21:57:06 End processing HTTP request after 84.5172ms - 200 20 
+03/11/2021 21:57:11 HTTP "GET" "/AccountSettings/Profile" responded 200 in 30123.0717 ms 20 

@@ -47,7 +47,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         [HttpPost]
         public async Task<UserForgotPasswordResponse> ForgotPassword(UserForgotPasswordRequest request)
         {
-            if (ModelState.IsValid == false)
+            if (!ModelState.IsValid)
                 return new UserForgotPasswordResponse
                        {
                            EmailSendError = "Bad model",
