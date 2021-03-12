@@ -35,6 +35,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
             if (user is null) return null;
 
             await Context.Entry(user).Reference(x => x.Role).LoadAsync();
+            await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
+            await Context.Entry(user).Collection(x => x.Entrances).LoadAsync();
 
             return user;
         }

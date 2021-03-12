@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region Using namespaces
+
 using System.Threading.Tasks;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+
+#endregion
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication
 {

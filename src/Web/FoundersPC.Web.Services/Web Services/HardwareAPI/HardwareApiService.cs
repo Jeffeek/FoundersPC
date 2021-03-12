@@ -1,24 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces
+
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+
+#endregion
 
 namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 {
     public class HardwareApiService : IHardwareApiService
     {
-        private readonly IHttpClientFactory _clientFactory;
         private readonly MicroservicesBaseAddresses _baseAddresses;
-        
+        private readonly IHttpClientFactory _clientFactory;
+
         public HardwareApiService(IHttpClientFactory clientFactory, MicroservicesBaseAddresses baseAddresses)
         {
             _clientFactory = clientFactory;
             _baseAddresses = baseAddresses;
+        }
+
+        public async Task<string> GetStringAsync(string entityType, string token)
+        {
+            if (entityType is null) throw new ArgumentNullException(nameof(entityType));
+            if (token is null) throw new ArgumentNullException(nameof(token));
+
+            using var client = _clientFactory.CreateClient();
+
+            PrepareRequest(client, token);
+
+            var request = await client.GetAsync(entityType);
+
+            return await request.Content.ReadAsStringAsync();
         }
 
         private void PrepareRequest(HttpClient client, string token)
@@ -30,20 +45,6 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
                                                                                        token);
-        }
-        
-        public async Task<string> GetStringAsync(string entityType, string token)
-        {
-            if (entityType is null) throw new ArgumentNullException(nameof(entityType));
-            if (token is null) throw new ArgumentNullException(nameof(token));
-
-            using var client = _clientFactory.CreateClient();
-            
-            PrepareRequest(client, token);
-
-            var request = await client.GetAsync(entityType);
-
-            return await request.Content.ReadAsStringAsync();
         }
     }
 }

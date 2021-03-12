@@ -11,11 +11,6 @@ namespace FoundersPC.Identity.Application.Validation.Requests.ChangeSettings
     {
         public ChangeLoginRequestValidator()
         {
-            RuleFor(model => model.Email)
-                .NotNull()
-                .NotEmpty()
-                .EmailAddress();
-
             RuleFor(model => model.NewLogin)
                 .NotNull()
                 .NotEmpty()

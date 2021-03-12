@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -9,12 +11,14 @@ using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 
+#endregion
+
 namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 {
     public class IdentityAuthenticationService : IIdentityAuthenticationService
     {
-        private readonly IHttpClientFactory _httpClientFactory;
         private readonly MicroservicesBaseAddresses _baseAddresses;
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly IMapper _mapper;
 
         public IdentityAuthenticationService(IHttpClientFactory httpClientFactory,
@@ -27,14 +31,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             _mapper = mapper;
         }
 
-        private void PrepareRequest(HttpClient client)
-        {
-            client.BaseAddress = new Uri(_baseAddresses.IdentityApiBaseAddress);
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-        }
-
         public async Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword)
         {
             if (emailOrLogin is null) throw new ArgumentNullException(nameof(emailOrLogin));
@@ -44,7 +40,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             PrepareRequest(client);
 
             var signInRequest = await client.PostAsJsonAsync("authentication/login",
-                                                             new UserSignInRequest()
+                                                             new UserSignInRequest
                                                              {
                                                                  LoginOrEmail = emailOrLogin,
                                                                  Password = rawPassword
@@ -82,7 +78,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             PrepareRequest(client);
 
             var signUpRequest = await client.PostAsJsonAsync("authentication/registration",
-                                                             new UserSignUpRequest()
+                                                             new UserSignUpRequest
                                                              {
                                                                  Email = email,
                                                                  Password = rawPassword
@@ -118,11 +114,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             var client = _httpClientFactory.CreateClient("Forgot password client");
             PrepareRequest(client);
 
-            var forgotPasswordRequest = await client.PostAsJsonAsync<UserForgotPasswordRequest>("authentication/forgotpassword",
-                                                                                                new UserForgotPasswordRequest()
-                                                                                                {
-                                                                                                    Email = email
-                                                                                                });
+            var forgotPasswordRequest = await client.PostAsJsonAsync("authentication/forgotpassword",
+                                                                     new UserForgotPasswordRequest
+                                                                     {
+                                                                         Email = email
+                                                                     });
 
             var forgotPasswordResponseContent = await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
 
@@ -145,6 +141,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             var forgotPasswordResponseContent = await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
 
             return forgotPasswordResponseContent;
+        }
+
+        private void PrepareRequest(HttpClient client)
+        {
+            client.BaseAddress = new Uri(_baseAddresses.IdentityApiBaseAddress);
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
         }
     }
 }

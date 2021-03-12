@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region Using namespaces
+
 using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Web.Application.Interfaces.Services.HardwareApi
 {

@@ -1,24 +1,16 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.Net;
-using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
-using FoundersPC.RequestResponseShared.Request.ChangeSettings;
-using FoundersPC.RequestResponseShared.Response.ChangeSettings;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 using FoundersPC.Web.Models;
-using FoundersPC.Web.Services.Web_Services;
-using FoundersPC.Web.Services.Web_Services.Identity;
-using FoundersPC.Web.Services.Web_Services.Identity.Authentication;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
@@ -28,10 +20,9 @@ namespace FoundersPC.Web.Controllers
     [Authorize]
     public class AccountSettingsController : Controller
     {
-        private readonly IIdentityUserInformationService _userInformationService;
         private readonly IIdentityUserSettingsChangeService _settingsChangeService;
-        
-        
+        private readonly IIdentityUserInformationService _userInformationService;
+
         public AccountSettingsController(IIdentityUserInformationService userInformationService, IIdentityUserSettingsChangeService settingsChangeService)
         {
             _userInformationService = userInformationService;
@@ -44,14 +35,15 @@ namespace FoundersPC.Web.Controllers
         {
             var emailInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
             var roleInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType);
+            Request.Cookies.TryGetValue("token", out var jwtToken);
 
             if (emailInCookie is null) throw new CookieException();
 
-            var notifications = await _userInformationService.GetUserNotificationsAsync(emailInCookie);
+            var notifications = await _userInformationService.GetUserNotificationsAsync(emailInCookie, jwtToken);
 
-            var login = await _userInformationService.GetUserLoginAsync(emailInCookie);
+            var login = await _userInformationService.GetUserLoginAsync(emailInCookie, jwtToken);
 
-            var tokens = await _userInformationService.GetUserTokensAsync(emailInCookie);
+            var tokens = await _userInformationService.GetUserTokensAsync(emailInCookie, jwtToken);
 
             var settings = new AccountSettingsViewModel
                            {
@@ -92,22 +84,11 @@ namespace FoundersPC.Web.Controllers
                                 Error = "Bad model"
                             });
 
-            var userEmailClaim = User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
-
-            if (userEmailClaim is null)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                    RequestId = HttpContext.Request.Path,
-                                    Error = "Bad user email"
-                            });
-
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
             if (token is null) return BadRequest();
 
             var response = await _settingsChangeService.ChangePasswordAsync(request.PasswordSettingsViewModel,
-                                                                            userEmailClaim,
                                                                             token);
 
             if (response is null) return BadRequest();
@@ -116,8 +97,8 @@ namespace FoundersPC.Web.Controllers
                 return View("Error",
                             new ErrorViewModel
                             {
-                                    RequestId = HttpContext.Request.Path,
-                                    Error = response?.Error ?? "Reading json error"
+                                RequestId = HttpContext.Request.Path,
+                                Error = response?.Error ?? "Reading json error"
                             });
 
             return RedirectToAction("Profile", "AccountSettings");
@@ -130,26 +111,15 @@ namespace FoundersPC.Web.Controllers
                 return View("Error",
                             new ErrorViewModel
                             {
-                                    RequestId = HttpContext.Request.Path,
-                                    Error = "Bad model"
+                                RequestId = HttpContext.Request.Path,
+                                Error = "Bad model"
                             });
-
-            var userEmailClaim = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
             if (token is null) return BadRequest();
-            
-            if (userEmailClaim is null)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad user id"
-                            });
 
             var response = await _settingsChangeService.ChangeLoginAsync(request.LoginSettingsViewModel,
-                                                                         userEmailClaim,
                                                                          token);
 
             if (response is null) return BadRequest();
@@ -172,26 +142,15 @@ namespace FoundersPC.Web.Controllers
                 return View("Error",
                             new ErrorViewModel
                             {
-                                    RequestId = HttpContext.Request.Path,
-                                    Error = "Bad model"
+                                RequestId = HttpContext.Request.Path,
+                                Error = "Bad model"
                             });
-
-            var userEmailClaim = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
             if (token is null) return BadRequest();
 
-            if (userEmailClaim is null)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                    RequestId = HttpContext.Request.Path,
-                                    Error = "Bad user id"
-                            });
-
             var response = await _settingsChangeService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
-                                                                                 userEmailClaim,
                                                                                  token);
 
             if (response is null) return BadRequest();
@@ -200,8 +159,8 @@ namespace FoundersPC.Web.Controllers
                 return View("Error",
                             new ErrorViewModel
                             {
-                                    Error = response.Operation,
-                                    RequestId = HttpContext.Request.Path
+                                Error = response.Operation,
+                                RequestId = HttpContext.Request.Path
                             });
 
             return RedirectToAction("Profile", "AccountSettings");

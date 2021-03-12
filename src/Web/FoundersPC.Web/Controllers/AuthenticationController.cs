@@ -1,19 +1,13 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Collections.Generic;
-using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
-using FoundersPC.Web.Services.Web_Services;
-using FoundersPC.Web.Services.Web_Services.Identity;
-using FoundersPC.Web.Services.Web_Services.Identity.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -45,21 +39,21 @@ namespace FoundersPC.Web.Controllers
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
             if (!ModelState.IsValid)
-                return ValidationProblem(detail : "Bad email validation",
-                                         instance : nameof(model),
-                                         statusCode : 400,
-                                         title : "Error",
-                                         type : nameof(ForgotPasswordViewModel));
+                return ValidationProblem("Bad email validation",
+                                         nameof(model),
+                                         400,
+                                         "Error",
+                                         nameof(ForgotPasswordViewModel));
 
             var forgotPasswordResponse =
                 await _authenticationService.ForgotPasswordAsync(model);
 
             if (forgotPasswordResponse is null)
                 return ValidationProblem("Server returned null object",
-                                         instance : nameof(forgotPasswordResponse),
-                                         statusCode : 400,
-                                         title : "Error",
-                                         type : nameof(UserForgotPasswordResponse));
+                                         nameof(forgotPasswordResponse),
+                                         400,
+                                         "Error",
+                                         nameof(UserForgotPasswordResponse));
 
             if (!forgotPasswordResponse.IsUserExists)
                 return NotFound(new
@@ -82,12 +76,12 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
         {
-            if (!ModelState.IsValid) 
-                return ValidationProblem(detail : "Bad validation/model",
-                                         instance : nameof(signUpModel),
-                                         statusCode : 400,
-                                         title : "Error",
-                                         type : nameof(SignUpViewModel));
+            if (!ModelState.IsValid)
+                return ValidationProblem("Bad validation/model",
+                                         nameof(signUpModel),
+                                         400,
+                                         "Error",
+                                         nameof(SignUpViewModel));
 
             var registrationResponse = await _authenticationService.SignUpAsync(signUpModel);
 
@@ -131,9 +125,9 @@ namespace FoundersPC.Web.Controllers
             if (!ModelState.IsValid)
                 return ValidationProblem("Not valid credentials. Bad model.",
                                          nameof(model),
-                                         statusCode : 400,
-                                         title : "Error",
-                                         type : nameof(SignInViewModel));
+                                         400,
+                                         "Error",
+                                         nameof(SignInViewModel));
 
             var signInResponse = await _authenticationService.SignInAsync(model);
 

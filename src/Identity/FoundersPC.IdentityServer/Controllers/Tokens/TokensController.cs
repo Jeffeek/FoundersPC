@@ -5,12 +5,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("identityAPI/tokens")]
     [ApiController]
     public class TokensController : Controller

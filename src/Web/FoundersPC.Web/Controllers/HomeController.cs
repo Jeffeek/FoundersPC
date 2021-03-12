@@ -1,10 +1,7 @@
 ﻿#region Using namespaces
 
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
-using FoundersPC.Web.Services.Web_Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,12 +13,9 @@ namespace FoundersPC.Web.Controllers
     public class HomeController : Controller
     {
         private readonly IHardwareApiService _hardwareApiService;
-        
-        public HomeController(IHardwareApiService hardwareApiService)
-        {
-            _hardwareApiService = hardwareApiService;
-        }
-        
+
+        public HomeController(IHardwareApiService hardwareApiService) => _hardwareApiService = hardwareApiService;
+
         [AllowAnonymous]
         public IActionResult Index() => View();
 

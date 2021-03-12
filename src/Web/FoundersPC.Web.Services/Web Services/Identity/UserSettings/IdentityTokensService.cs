@@ -1,4 +1,8 @@
-﻿using System.Net.Http;
+﻿#region Using namespaces
+
+using System.Net.Http;
+
+#endregion
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
@@ -6,9 +10,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
     {
         private IHttpClientFactory _httpClientFactory;
 
-        public IdentityTokensService(IHttpClientFactory httpClientFactory)
-        {
-            _httpClientFactory = httpClientFactory;
-        }
+        public IdentityTokensService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
     }
 }

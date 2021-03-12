@@ -31,47 +31,60 @@
                     asp-validation-summary="ModelOnly"
                     class="text-danger">
                 </div>
-                <div class="mb-3">
-                    <div class="form-label-group
+                <div
+                    class="mb-3">
+                    <div
+                        class="form-label-group
                                mb-1">
-                        <input asp-for="LoginOrEmail"
+                        <input
+                            asp-for="LoginOrEmail"
                             class="bg-dark
                                       form-control
                                       text-light"
-                            placeholder="email@example.com"
-                            type="email">
-                        <label asp-for="LoginOrEmail">
+                            placeholder="email@example.com">
+                        <label
+                            asp-for="LoginOrEmail">
                         </label>
                     </div>
-                    <span asp-validation-for="LoginOrEmail"
-                        class="text-danger d-block">
+                    <span
+                        asp-validation-for="LoginOrEmail"
+                        class="d-block text-danger">
                     </span>
                 </div>
-                <div class="mb-3">
-                    <div class="form-label-group
+                <div
+                    class="mb-3">
+                    <div
+                        class="form-label-group
                            input-group
                            mb-1">
-                        <input asp-for="RawPassword"
-                               class="bg-dark
-                               form-control
-                               text-light"
-                               id="inputPassword"
-                               placeholder="Password"
-                               type="password">
-                        <label asp-for="RawPassword">
+                        <input
+                            asp-for="RawPassword"
+                            class="bg-dark
+                                   form-control
+                                   text-light"
+                            id="inputPassword"
+                            placeholder="Password"
+                            type="password">
+                        <label
+                            asp-for="RawPassword">
                         </label>
-                        <div class="d-flex">
-                            <div class="d-flex"
-                                 id="btn-hide">
-                                <a class="btn btn-outline-info d-flex input-group-text">
-                                    <ion-icon id="pass-eye"
-                                              name="eye-off-outline" />
+                        <div
+                            class="d-flex">
+                            <div
+                                class="d-flex"
+                                id="btn-hide">
+                                <a
+                                    class="btn btn-outline-info d-flex input-group-text">
+                                    <ion-icon
+                                        id="pass-eye"
+                                        name="eye-off-outline"/>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <span asp-validation-for="RawPassword"
-                          class="text-danger d-block">
+                    <span
+                        asp-validation-for="RawPassword"
+                        class="d-block text-danger">
                     </span>
                 </div>
                 <div
@@ -119,9 +132,10 @@
         src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script>
         $(document).ready(function() {
-            const passwordBox = document.getElementById('password-box');
-            const passwordShowHideImage = document.getElementById('pass-hide');
-            $('#password-hide-btn').click(() => {
+            const passwordBox = document.getElementById('inputPassword');
+            const passwordShowHideImage = document.getElementById('pass-eye');
+            console.log($('#btn-hide'));
+            $('#btn-hide').click(() => {
                 const isHided = passwordBox.type === 'password';
                 passwordBox.type = isHided ? 'text' : 'password';
                 passwordShowHideImage.name = isHided ? 'eye-outline' : 'eye-off-outline';
