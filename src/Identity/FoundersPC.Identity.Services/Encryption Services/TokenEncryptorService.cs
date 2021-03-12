@@ -8,30 +8,30 @@ using System.Text;
 
 namespace FoundersPC.Identity.Services.Encryption_Services
 {
-    public class TokenEncryptorService
-    {
-        public string ComputeHash(string rawToken)
-        {
-            var tokenBytes = Encoding.Unicode.GetBytes(rawToken);
+	public class TokenEncryptorService
+	{
+		public string ComputeHash(string rawToken)
+		{
+			var tokenBytes = Encoding.Unicode.GetBytes(rawToken);
 
-            using var hash = SHA256.Create();
-            var hashedInputBytes = hash.ComputeHash(tokenBytes);
+			using var hash = SHA256.Create();
+			var hashedInputBytes = hash.ComputeHash(tokenBytes);
 
-            var hashedInputStringBuilder = new StringBuilder(64);
-            foreach (var tokenByte in hashedInputBytes) hashedInputStringBuilder.Append(tokenByte.ToString("X2"));
+			var hashedInputStringBuilder = new StringBuilder(64);
+			foreach (var tokenByte in hashedInputBytes) hashedInputStringBuilder.Append(tokenByte.ToString("X2"));
 
-            return hashedInputStringBuilder.ToString();
-        }
+			return hashedInputStringBuilder.ToString();
+		}
 
-        public string CreateRawToken()
-        {
-            var guid = Guid.NewGuid();
+		public string CreateRawToken()
+		{
+			var guid = Guid.NewGuid();
 
-            var rawToken = guid.ToString()
-                               .Replace("-", String.Empty)
-                               .ToUpperInvariant();
+			var rawToken = guid.ToString()
+							   .Replace("-", String.Empty)
+							   .ToUpperInvariant();
 
-            return rawToken;
-        }
-    }
+			return rawToken;
+		}
+	}
 }

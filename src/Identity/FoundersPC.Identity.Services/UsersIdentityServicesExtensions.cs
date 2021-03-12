@@ -17,37 +17,37 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.Identity.Services
 {
-    public static class UsersIdentityServicesExtensions
-    {
-        public static void AddUsersIdentityServices(this IServiceCollection services)
-        {
-            services.AddScoped<IUserRegistrationService, UserRegistrationService>();
-            services.AddScoped<IUsersService, UsersService>();
-            services.AddScoped<IManagerService, ManagerService>();
-            services.AddScoped<IAdminService, AdminService>();
-        }
+	public static class UsersIdentityServicesExtensions
+	{
+		public static void AddUsersIdentityServices(this IServiceCollection services)
+		{
+			services.AddScoped<IUserRegistrationService, UserRegistrationService>();
+			services.AddScoped<IUsersService, UsersService>();
+			services.AddScoped<IManagerService, ManagerService>();
+			services.AddScoped<IAdminService, AdminService>();
+		}
 
-        public static void AddEncryptionServices(this IServiceCollection services)
-        {
-            services.AddSingleton(new TokenEncryptorService());
-            services.AddSingleton(new PasswordEncryptorService());
-        }
+		public static void AddEncryptionServices(this IServiceCollection services)
+		{
+			services.AddSingleton(new TokenEncryptorService());
+			services.AddSingleton(new PasswordEncryptorService());
+		}
 
-        public static void AddLogsServices(this IServiceCollection services)
-        {
-            services.AddScoped<IAccessTokensLogsService, AccessTokensLogsService>();
-            services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
-        }
+		public static void AddLogsServices(this IServiceCollection services)
+		{
+			services.AddScoped<IAccessTokensLogsService, AccessTokensLogsService>();
+			services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
+		}
 
-        public static void AddTokenServices(this IServiceCollection services)
-        {
-            services.AddScoped<IApiAccessUsersTokensService, ApiAccessUsersTokensService>();
-        }
+		public static void AddTokenServices(this IServiceCollection services)
+		{
+			services.AddScoped<IApiAccessUsersTokensService, ApiAccessUsersTokensService>();
+		}
 
-        public static void AddBotEmailConfigurationAndService(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddSingleton(new EmailBotConfiguration(configuration));
-            services.AddScoped<IMailService, MailService>();
-        }
-    }
+		public static void AddBotEmailConfigurationAndService(this IServiceCollection services, IConfiguration configuration)
+		{
+			services.AddSingleton(new EmailBotConfiguration(configuration));
+			services.AddScoped<IMailService, MailService>();
+		}
+	}
 }

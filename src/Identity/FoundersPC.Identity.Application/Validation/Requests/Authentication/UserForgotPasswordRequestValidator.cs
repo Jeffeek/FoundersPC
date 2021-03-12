@@ -7,14 +7,14 @@ using FoundersPC.RequestResponseShared.Request.Authentication;
 
 namespace FoundersPC.Identity.Application.Validation.Requests.Authentication
 {
-    public class UserForgotPasswordRequestValidator : AbstractValidator<UserForgotPasswordRequest>
-    {
-        public UserForgotPasswordRequestValidator()
-        {
-            RuleFor(model => model.Email)
-                .NotNull()
-                .NotEmpty()
-                .EmailAddress();
-        }
-    }
+	public class UserForgotPasswordRequestValidator : AbstractValidator<UserForgotPasswordRequest>
+	{
+		public UserForgotPasswordRequestValidator()
+		{
+			RuleFor(model => model.Email)
+					.NotNull()
+					.NotEmpty()
+					.EmailAddress();
+		}
+	}
 }

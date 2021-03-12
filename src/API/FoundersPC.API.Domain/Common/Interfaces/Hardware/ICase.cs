@@ -1,27 +1,27 @@
 ﻿namespace FoundersPC.API.Domain.Common.Interfaces.Hardware
 {
-    public interface ICase
-    {
-        string Type { get; set; }
+	public interface ICase
+	{
+		string Type { get; set; }
 
-        string WindowMaterial { get; set; }
+		string WindowMaterial { get; set; }
 
-        string MaxMotherboardSize { get; set; }
+		string MaxMotherboardSize { get; set; }
 
-        string Material { get; set; }
+		string Material { get; set; }
 
-        bool TransparentWindow { get; set; }
+		bool TransparentWindow { get; set; }
 
-        string Color { get; set; }
+		string Color { get; set; }
 
-        int? Depth { get; set; }
+		int? Depth { get; set; }
 
-        int? Height { get; set; }
+		int? Height { get; set; }
 
-        string Title { get; set; }
+		string Title { get; set; }
 
-        double? Weight { get; set; }
+		double? Weight { get; set; }
 
-        int? Width { get; set; }
-    }
+		int? Width { get; set; }
+	}
 }

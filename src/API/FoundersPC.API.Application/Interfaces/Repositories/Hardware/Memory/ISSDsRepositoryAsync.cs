@@ -7,5 +7,5 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory
 {
-    public interface ISSDsRepositoryAsync : IRepositoryAsync<SSD> { }
+	public interface ISSDsRepositoryAsync : IRepositoryAsync<SSD> { }
 }

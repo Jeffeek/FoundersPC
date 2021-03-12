@@ -4,10 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Administration
 {
-    [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-               Roles = "Manager, Administrator")]
-    public class ManagerController : Controller
-    {
-    }
+	[ApiController]
+	[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+			   Roles = "Manager, Administrator")]
+	public class ManagerController : Controller { }
 }

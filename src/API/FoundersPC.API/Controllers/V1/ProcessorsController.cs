@@ -14,83 +14,83 @@ using Microsoft.AspNetCore.Mvc;
 //todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize]
-    [ApiVersion("1.0", Deprecated = false)]
-    [ApiController]
-    [Route("api/processors")]
-    [Route("api/cpus")]
-    public class ProcessorsController : Controller
-    {
-        private readonly ICPUService _cpuService;
-        private readonly IMapper _mapper;
+	[Authorize]
+	[ApiVersion("1.0", Deprecated = false)]
+	[ApiController]
+	[Route("api/processors")]
+	[Route("api/cpus")]
+	public class ProcessorsController : Controller
+	{
+		private readonly ICPUService _cpuService;
+		private readonly IMapper _mapper;
 
-        public ProcessorsController(ICPUService service, IMapper mapper)
-        {
-            _cpuService = service;
-            _mapper = mapper;
-        }
+		public ProcessorsController(ICPUService service, IMapper mapper)
+		{
+			_cpuService = service;
+			_mapper = mapper;
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() => Json(await _cpuService.GetAllCPUsAsync());
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Readable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpGet]
+		public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() => Json(await _cpuService.GetAllCPUsAsync());
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CPUReadDto>> Get(int? id)
-        {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Readable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpGet("{id}")]
+		public async Task<ActionResult<CPUReadDto>> Get(int? id)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
-            var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
+			var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
 
-            return cpu == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(cpu);
-        }
+			return cpu == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(cpu);
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPost]
-        public async Task<ActionResult> Insert([FromBody] CPUInsertDto cpu)
-        {
-            if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpPost]
+		public async Task<ActionResult> Insert([FromBody] CPUInsertDto cpu)
+		{
+			if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
 
-            var insertResult = await _cpuService.CreateCPUAsync(cpu);
+			var insertResult = await _cpuService.CreateCPUAsync(cpu);
 
-            return insertResult ? Json(cpu) : ResultsHelper.InsertError();
-        }
+			return insertResult ? Json(cpu) : ResultsHelper.InsertError();
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] CPUUpdateDto cpu)
-        {
-            if (!id.HasValue) return ResultsHelper.UpdateError();
-            if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpPut("{id}", Order = 0)]
+		public async Task<ActionResult> Update(int? id, [FromBody] CPUUpdateDto cpu)
+		{
+			if (!id.HasValue) return ResultsHelper.UpdateError();
+			if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
 
-            var result = await _cpuService.UpdateCPUAsync(id.Value, cpu);
+			var result = await _cpuService.UpdateCPUAsync(id.Value, cpu);
 
-            return result ? Json(cpu) : ResultsHelper.UpdateError();
-        }
+			return result ? Json(cpu) : ResultsHelper.UpdateError();
+		}
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
-        {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+				   Policy = "Changeable")]
+		[ApiVersion("1.0", Deprecated = false)]
+		[HttpDelete("{id}")]
+		public async Task<ActionResult> Delete(int? id)
+		{
+			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
 
-            var readCpu = await _cpuService.GetCPUByIdAsync(id.Value);
+			var readCpu = await _cpuService.GetCPUByIdAsync(id.Value);
 
-            if (readCpu == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+			if (readCpu == null) return ResultsHelper.NotFoundByIdResult(id.Value);
 
-            var result = await _cpuService.DeleteCPUAsync(id.Value);
+			var result = await _cpuService.DeleteCPUAsync(id.Value);
 
-            return result ? Json(readCpu) : ResultsHelper.DeleteError();
-        }
-    }
+			return result ? Json(readCpu) : ResultsHelper.DeleteError();
+		}
+	}
 }

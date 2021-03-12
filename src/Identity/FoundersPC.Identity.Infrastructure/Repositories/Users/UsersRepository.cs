@@ -14,31 +14,29 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 {
-    public class UsersRepository : GenericRepositoryAsync<UserEntity>, IUsersRepository
-    {
-        public UsersRepository(FoundersPCUsersContext context) : base(context) { }
+	public class UsersRepository : GenericRepositoryAsync<UserEntity>, IUsersRepository
+	{
+		public UsersRepository(FoundersPCUsersContext context) : base(context) { }
 
-        public override async Task<IEnumerable<UserEntity>> GetAllAsync() =>
-            await Context.Set<UserEntity>()
-                         .Include(user => user.Role)
-                         .ToListAsync();
+		public override async Task<IEnumerable<UserEntity>> GetAllAsync() => await Context.Set<UserEntity>()
+																						  .Include(user => user.Role)
+																						  .ToListAsync();
 
-        public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate) =>
-            await Context.Set<UserEntity>()
-                         .Include(user => user.Role)
-                         .FirstOrDefaultAsync(predicate);
+		public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate) => await Context.Set<UserEntity>()
+																											   .Include(user => user.Role)
+																											   .FirstOrDefaultAsync(predicate);
 
-        public override async Task<UserEntity> GetByIdAsync(int id)
-        {
-            var user = await Context.Set<UserEntity>().FindAsync(id);
+		public override async Task<UserEntity> GetByIdAsync(int id)
+		{
+			var user = await Context.Set<UserEntity>().FindAsync(id);
 
-            if (user is null) return null;
+			if (user is null) return null;
 
-            await Context.Entry(user).Reference(x => x.Role).LoadAsync();
-            await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
-            await Context.Entry(user).Collection(x => x.Entrances).LoadAsync();
+			await Context.Entry(user).Reference(x => x.Role).LoadAsync();
+			await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
+			await Context.Entry(user).Collection(x => x.Entrances).LoadAsync();
 
-            return user;
-        }
-    }
+			return user;
+		}
+	}
 }

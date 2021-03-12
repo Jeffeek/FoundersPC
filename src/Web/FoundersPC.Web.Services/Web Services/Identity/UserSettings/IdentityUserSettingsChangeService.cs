@@ -16,94 +16,94 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
-    public class IdentityUserSettingsChangeService : IIdentityUserSettingsChangeService
-    {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
-        private readonly IHttpClientFactory _httpClientFactory;
-        private readonly IMapper _mapper;
+	public class IdentityUserSettingsChangeService : IIdentityUserSettingsChangeService
+	{
+		private readonly MicroservicesBaseAddresses _baseAddresses;
+		private readonly IHttpClientFactory _httpClientFactory;
+		private readonly IMapper _mapper;
 
-        public IdentityUserSettingsChangeService(IHttpClientFactory httpClientFactory, MicroservicesBaseAddresses baseAddresses, IMapper mapper)
-        {
-            _httpClientFactory = httpClientFactory;
-            _baseAddresses = baseAddresses;
-            _mapper = mapper;
-        }
+		public IdentityUserSettingsChangeService(IHttpClientFactory httpClientFactory, MicroservicesBaseAddresses baseAddresses, IMapper mapper)
+		{
+			_httpClientFactory = httpClientFactory;
+			_baseAddresses = baseAddresses;
+			_mapper = mapper;
+		}
 
-        public async Task<AccountSettingsChangeResponse> ChangePasswordAsync(PasswordSettingsViewModel model,
-                                                                             string token
-        )
-        {
-            if (model is null) throw new ArgumentNullException(nameof(model));
-            if (model.OldPassword is null) throw new ArgumentNullException(nameof(model.OldPassword));
-            if (model.NewPassword is null) throw new ArgumentNullException(nameof(model.NewPassword));
-            if (model.NewPasswordConfirm is null) throw new ArgumentNullException(nameof(model.NewPasswordConfirm));
-            if (token is null) throw new ArgumentNullException(nameof(token));
+		public async Task<AccountSettingsChangeResponse> ChangePasswordAsync(PasswordSettingsViewModel model,
+																			 string token
+		)
+		{
+			if (model is null) throw new ArgumentNullException(nameof(model));
+			if (model.OldPassword is null) throw new ArgumentNullException(nameof(model.OldPassword));
+			if (model.NewPassword is null) throw new ArgumentNullException(nameof(model.NewPassword));
+			if (model.NewPasswordConfirm is null) throw new ArgumentNullException(nameof(model.NewPasswordConfirm));
+			if (token is null) throw new ArgumentNullException(nameof(token));
 
-            using var client = _httpClientFactory.CreateClient("Change password client");
-            PrepareRequest(client, token);
+			using var client = _httpClientFactory.CreateClient("Change password client");
+			PrepareRequest(client, token);
 
-            var mappedModel = _mapper.Map<PasswordSettingsViewModel, ChangePasswordRequest>(model);
+			var mappedModel = _mapper.Map<PasswordSettingsViewModel, ChangePasswordRequest>(model);
 
-            var changePasswordRequest = await client.PutAsJsonAsync("user/settings/change/password",
-                                                                    mappedModel);
+			var changePasswordRequest = await client.PutAsJsonAsync("user/settings/change/password",
+																	mappedModel);
 
-            var responseContent = await changePasswordRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+			var responseContent = await changePasswordRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
 
-            return responseContent;
-        }
+			return responseContent;
+		}
 
-        public async Task<AccountSettingsChangeResponse> ChangeLoginAsync(SecuritySettingsViewModel model,
-                                                                          string token
-        )
-        {
-            if (model is null) throw new ArgumentNullException(nameof(model));
-            if (model.NewLogin is null) throw new ArgumentNullException(nameof(model.NewLogin));
-            if (token is null) throw new ArgumentNullException(nameof(token));
+		public async Task<AccountSettingsChangeResponse> ChangeLoginAsync(SecuritySettingsViewModel model,
+																		  string token
+		)
+		{
+			if (model is null) throw new ArgumentNullException(nameof(model));
+			if (model.NewLogin is null) throw new ArgumentNullException(nameof(model.NewLogin));
+			if (token is null) throw new ArgumentNullException(nameof(token));
 
-            using var client = _httpClientFactory.CreateClient("Change password client");
-            PrepareRequest(client, token);
+			using var client = _httpClientFactory.CreateClient("Change password client");
+			PrepareRequest(client, token);
 
-            var mappedModel = _mapper.Map<SecuritySettingsViewModel, ChangeLoginRequest>(model);
+			var mappedModel = _mapper.Map<SecuritySettingsViewModel, ChangeLoginRequest>(model);
 
-            var changeLoginRequest = await client.PutAsJsonAsync("user/settings/change/login",
-                                                                 mappedModel);
+			var changeLoginRequest = await client.PutAsJsonAsync("user/settings/change/login",
+																 mappedModel);
 
-            var responseContent = await changeLoginRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+			var responseContent = await changeLoginRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
 
-            return responseContent;
-        }
+			return responseContent;
+		}
 
-        public async Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model,
-                                                                                  string token
-        )
-        {
-            if (model is null) throw new ArgumentNullException(nameof(model));
-            if (token is null) throw new ArgumentNullException(nameof(token));
+		public async Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model,
+																				  string token
+		)
+		{
+			if (model is null) throw new ArgumentNullException(nameof(model));
+			if (token is null) throw new ArgumentNullException(nameof(token));
 
-            using var client = _httpClientFactory.CreateClient("Change password client");
-            PrepareRequest(client, token);
+			using var client = _httpClientFactory.CreateClient("Change password client");
+			PrepareRequest(client, token);
 
-            var mappedModel = _mapper.Map<NotificationsSettingsViewModel, ChangeNotificationsRequest>(model);
+			var mappedModel = _mapper.Map<NotificationsSettingsViewModel, ChangeNotificationsRequest>(model);
 
-            var changeNotificationsRequest = await client.PutAsJsonAsync("user/settings/change/notifications",
-                                                                         mappedModel);
+			var changeNotificationsRequest = await client.PutAsJsonAsync("user/settings/change/notifications",
+																		 mappedModel);
 
-            var responseContent = await changeNotificationsRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+			var responseContent = await changeNotificationsRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
 
-            return responseContent;
-        }
+			return responseContent;
+		}
 
-        private void PrepareRequest(HttpClient client,
-                                    string token
-        )
-        {
-            client.BaseAddress = new Uri(_baseAddresses.IdentityApiBaseAddress);
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+		private void PrepareRequest(HttpClient client,
+									string token
+		)
+		{
+			client.BaseAddress = new Uri(_baseAddresses.IdentityApiBaseAddress);
+			client.DefaultRequestHeaders.Clear();
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+			client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                                                                       token);
-        }
-    }
+			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
+																					   token);
+		}
+	}
 }

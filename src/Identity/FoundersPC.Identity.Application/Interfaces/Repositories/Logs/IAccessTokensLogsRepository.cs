@@ -7,5 +7,5 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Logs
 {
-    public interface IAccessTokensLogsRepository : IRepositoryAsync<AccessTokenLog> { }
+	public interface IAccessTokensLogsRepository : IRepositoryAsync<AccessTokenLog> { }
 }

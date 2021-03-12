@@ -10,50 +10,50 @@ using FoundersPC.Identity.Infrastructure.Contexts;
 
 namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 {
-    public class UnitOfWorkUsersIdentity : IUnitOfWorkUsersIdentity
-    {
-        private readonly FoundersPCUsersContext _context;
+	public class UnitOfWorkUsersIdentity : IUnitOfWorkUsersIdentity
+	{
+		private readonly FoundersPCUsersContext _context;
 
-        public UnitOfWorkUsersIdentity(IUsersRepository usersRepository,
-                                       IRolesRepository rolesRepository,
-                                       FoundersPCUsersContext context,
-                                       IAccessTokensLogsRepository accessTokensLogsRepository,
-                                       IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
-                                       IApiAccessUsersTokensRepository apiAccessUsersTokensRepository
-        )
-        {
-            _context = context;
-            AccessTokensLogsRepository = accessTokensLogsRepository;
-            UsersEntrancesLogsRepository = usersEntrancesLogsRepository;
-            ApiAccessUsersTokensRepository = apiAccessUsersTokensRepository;
-            UsersRepository = usersRepository;
-            RolesRepository = rolesRepository;
-        }
+		public UnitOfWorkUsersIdentity(IUsersRepository usersRepository,
+									   IRolesRepository rolesRepository,
+									   FoundersPCUsersContext context,
+									   IAccessTokensLogsRepository accessTokensLogsRepository,
+									   IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
+									   IApiAccessUsersTokensRepository apiAccessUsersTokensRepository
+		)
+		{
+			_context = context;
+			AccessTokensLogsRepository = accessTokensLogsRepository;
+			UsersEntrancesLogsRepository = usersEntrancesLogsRepository;
+			ApiAccessUsersTokensRepository = apiAccessUsersTokensRepository;
+			UsersRepository = usersRepository;
+			RolesRepository = rolesRepository;
+		}
 
-        public IAccessTokensLogsRepository AccessTokensLogsRepository { get; }
+		public IAccessTokensLogsRepository AccessTokensLogsRepository { get; }
 
-        public IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
+		public IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
 
-        public IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
+		public IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
 
-        public IUsersRepository UsersRepository { get; }
+		public IUsersRepository UsersRepository { get; }
 
-        public IRolesRepository RolesRepository { get; }
+		public IRolesRepository RolesRepository { get; }
 
-        public async Task<int> SaveChangesAsync()
-        {
-            int saveChangesResult;
+		public async Task<int> SaveChangesAsync()
+		{
+			int saveChangesResult;
 
-            try
-            {
-                saveChangesResult = await _context.SaveChangesAsync();
-            }
-            catch
-            {
-                saveChangesResult = -1;
-            }
+			try
+			{
+				saveChangesResult = await _context.SaveChangesAsync();
+			}
+			catch
+			{
+				saveChangesResult = -1;
+			}
 
-            return saveChangesResult;
-        }
-    }
+			return saveChangesResult;
+		}
+	}
 }

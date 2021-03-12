@@ -12,32 +12,32 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
-    public class SSDsRepository : GenericRepositoryAsync<SSD>, ISSDsRepositoryAsync
-    {
-        /// <inheritdoc />
-        public SSDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+	public class SSDsRepository : GenericRepositoryAsync<SSD>, ISSDsRepositoryAsync
+	{
+		/// <inheritdoc />
+		public SSDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of ISSDsRepositoryAsync
+		#region Implementation of ISSDsRepositoryAsync
 
-        public override async Task<SSD> GetByIdAsync(int id)
-        {
-            var ssd = await Context.Set<SSD>().FindAsync(id);
+		public override async Task<SSD> GetByIdAsync(int id)
+		{
+			var ssd = await Context.Set<SSD>().FindAsync(id);
 
-            if (ssd is null) return null;
+			if (ssd is null) return null;
 
-            await Context.Entry(ssd).Reference(x => x.Producer).LoadAsync();
+			await Context.Entry(ssd).Reference(x => x.Producer).LoadAsync();
 
-            return ssd;
-        }
+			return ssd;
+		}
 
-        /// <inheritdoc />
-        public override async Task<IEnumerable<SSD>> GetAllAsync()
-        {
-            return await Context.Set<SSD>()
-                                .Include(ssd => ssd.Producer)
-                                .ToListAsync();
-        }
+		/// <inheritdoc />
+		public override async Task<IEnumerable<SSD>> GetAllAsync()
+		{
+			return await Context.Set<SSD>()
+								.Include(ssd => ssd.Producer)
+								.ToListAsync();
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

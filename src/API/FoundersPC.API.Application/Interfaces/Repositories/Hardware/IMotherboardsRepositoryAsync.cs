@@ -7,5 +7,5 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.Hardware
 {
-    public interface IMotherboardsRepositoryAsync : IRepositoryAsync<Motherboard> { }
+	public interface IMotherboardsRepositoryAsync : IRepositoryAsync<Motherboard> { }
 }

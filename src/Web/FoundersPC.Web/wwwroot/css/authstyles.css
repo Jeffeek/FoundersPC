@@ -1,28 +1,51 @@
-﻿body { font-family: "Lato", sans-serif; }
+﻿body
+{
+    font-family: "Lato", sans-serif;
+}
 
-.sidenav {
+.sidenav
+{
     background-color: #21242a;
     height: 100%;
     overflow-x: hidden;
     padding-top: 20px;
 }
 
-.main { padding: 0px 10px; }
-
-@media screen and (max-height: 450px) {
-    .sidenav { padding-top: 15px; }
+.main
+{
+    padding: 0px 10px;
 }
 
-@media screen and (max-width: 450px) {
-    .login-form { margin-top: 10%; }
-
-    .register-form { margin-top: 10%; }
+@media screen and (max-height: 450px)
+{
+    .sidenav
+    {
+        padding-top: 15px;
+    }
 }
 
-@media screen and (min-width: 768px) {
-    .main { margin-left: 40%; }
+@media screen and (max-width: 450px)
+{
+    .login-form
+    {
+        margin-top: 10%;
+    }
 
-    .sidenav {
+    .register-form
+    {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .main
+    {
+        margin-left: 40%;
+    }
+
+    .sidenav
+    {
         left: 0;
         position: fixed;
         top: 0;
@@ -30,18 +53,31 @@
         z-index: 0;
     }
 
-    .login-form { margin-top: 60%; }
+    .login-form
+    {
+        margin-top: 60%;
+    }
 
-    .register-form { margin-top: 55%; }
+    .register-form
+    {
+        margin-top: 55%;
+    }
 
-    .forgotpassword-form { margin-top: 50%; }
+    .forgotpassword-form
+    {
+        margin-top: 50%;
+    }
 }
 
 
-.login-main-text {
+.login-main-text
+{
     color: #fff;
     margin-top: 20%;
     padding: 60px;
 }
 
-.login-main-text h2 { font-weight: 300; }
+.login-main-text h2
+{
+    font-weight: 300;
+}

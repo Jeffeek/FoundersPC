@@ -10,28 +10,29 @@ using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 
 namespace FoundersPC.Web.Application.Mappings
 {
-    public class MappingStartup : Profile
-    {
-        public MappingStartup()
-        {
-            CreateMap<SignInViewModel, UserSignInRequest>()
-                .ForMember(dest => dest.Password,
-                           source => source.MapFrom(x => x.RawPassword))
-                .ReverseMap();
-            CreateMap<SignUpViewModel, UserSignUpRequest>()
-                .ForMember(dest => dest.Password, source => source.MapFrom(x => x.RawPassword));
+	public class MappingStartup : Profile
+	{
+		public MappingStartup()
+		{
+			CreateMap<SignInViewModel, UserSignInRequest>()
+					.ForMember(dest => dest.Password,
+							   source => source.MapFrom(x => x.RawPassword))
+					.ReverseMap();
 
-            CreateMap<ForgotPasswordViewModel, UserForgotPasswordRequest>();
+			CreateMap<SignUpViewModel, UserSignUpRequest>()
+					.ForMember(dest => dest.Password, source => source.MapFrom(x => x.RawPassword));
 
-            CreateMap<SecuritySettingsViewModel, ChangeLoginRequest>();
+			CreateMap<ForgotPasswordViewModel, UserForgotPasswordRequest>();
 
-            CreateMap<PasswordSettingsViewModel, ChangePasswordRequest>();
+			CreateMap<SecuritySettingsViewModel, ChangeLoginRequest>();
 
-            CreateMap<NotificationsSettingsViewModel, ChangeNotificationsRequest>()
-                .ForMember(dest => dest.SendMessageOnApiRequest,
-                           source => source.MapFrom(x => x.SendNotificationOnUsingAPI))
-                .ForMember(dest => dest.SendMessageOnEntrance,
-                           source => source.MapFrom(x => x.SendNotificationOnEntrance));
-        }
-    }
+			CreateMap<PasswordSettingsViewModel, ChangePasswordRequest>();
+
+			CreateMap<NotificationsSettingsViewModel, ChangeNotificationsRequest>()
+					.ForMember(dest => dest.SendMessageOnApiRequest,
+							   source => source.MapFrom(x => x.SendNotificationOnUsingAPI))
+					.ForMember(dest => dest.SendMessageOnEntrance,
+							   source => source.MapFrom(x => x.SendNotificationOnEntrance));
+		}
+	}
 }
