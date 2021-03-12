@@ -8,7 +8,7 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 
-namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
+namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
     public class IdentityUserInformationService : IIdentityUserInformationService
     {

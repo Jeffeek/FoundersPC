@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
+namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
     public class IdentityTokensService
     {

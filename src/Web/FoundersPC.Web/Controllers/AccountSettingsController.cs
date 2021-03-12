@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 using FoundersPC.Web.Models;
 using FoundersPC.Web.Services.Web_Services;
@@ -27,10 +29,13 @@ namespace FoundersPC.Web.Controllers
     public class AccountSettingsController : Controller
     {
         private readonly IIdentityUserInformationService _userInformationService;
-
-        public AccountSettingsController(IIdentityUserInformationService userInformationService)
+        private readonly IIdentityUserSettingsChangeService _settingsChangeService;
+        
+        
+        public AccountSettingsController(IIdentityUserInformationService userInformationService, IIdentityUserSettingsChangeService settingsChangeService)
         {
             _userInformationService = userInformationService;
+            _settingsChangeService = settingsChangeService;
         }
 
         [HttpGet]
@@ -79,133 +84,127 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangePassword(AccountSettingsViewModel request)
         {
-            return Ok();
-            //if (!TryValidateModel(request.PasswordSettingsViewModel))
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    RequestId = HttpContext.Request.Path,
-            //                    Error = "Bad model"
-            //                });
+            if (!TryValidateModel(request.PasswordSettingsViewModel))
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                RequestId = HttpContext.Request.Path,
+                                Error = "Bad model"
+                            });
 
-            //var userEmailClaim = User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
+            var userEmailClaim = User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-            //if (userEmailClaim is null)
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    RequestId = HttpContext.Request.Path,
-            //                    Error = "Bad user email"
-            //                });
+            if (userEmailClaim is null)
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                    RequestId = HttpContext.Request.Path,
+                                    Error = "Bad user email"
+                            });
 
-            //var postRequest = await _applicationMicroservices.IdentityServer.PostAsJsonAsync("user/settings/change/password",
-            //                                                                                 new ChangePasswordRequest
-            //                                                                                 {
-            //                                                                                     NewPassword = request.PasswordSettingsViewModel.NewPassword,
-            //                                                                                     OldPassword = request.PasswordSettingsViewModel.OldPassword,
-            //                                                                                     Email = userEmailClaim
-            //                                                                                 });
+            HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
-            //var response = await postRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+            if (token is null) return BadRequest();
 
-            //if (!response?.Successful ?? false)
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    RequestId = HttpContext.Request.Path,
-            //                    Error = response?.Error ?? "Reading json error"
-            //                });
+            var response = await _settingsChangeService.ChangePasswordAsync(request.PasswordSettingsViewModel,
+                                                                            userEmailClaim,
+                                                                            token);
 
-            //return RedirectToAction("Profile", "AccountSettings");
+            if (response is null) return BadRequest();
+
+            if (!response.Successful)
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                    RequestId = HttpContext.Request.Path,
+                                    Error = response?.Error ?? "Reading json error"
+                            });
+
+            return RedirectToAction("Profile", "AccountSettings");
         }
 
         [HttpPost]
         public async Task<IActionResult> ChangeLogin(AccountSettingsViewModel request)
         {
-            return Ok();
-            //if (!TryValidateModel(request.LoginSettingsViewModel))
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    RequestId = HttpContext.Request.Path,
-            //                    Error = "Bad model"
-            //                });
+            if (!TryValidateModel(request.LoginSettingsViewModel))
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                    RequestId = HttpContext.Request.Path,
+                                    Error = "Bad model"
+                            });
 
-            //var userEmailClaim = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
+            var userEmailClaim = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-            //if (userEmailClaim is null)
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    RequestId = HttpContext.Request.Path,
-            //                    Error = "Bad user id"
-            //                });
+            HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
-            //var postRequest = await _applicationMicroservices
-            //                        .IdentityServer
-            //                        .PostAsJsonAsync("user/settings/change/login",
-            //                                         new ChangeLoginRequest
-            //                                         {
-            //                                             Email = userEmailClaim,
-            //                                             NewLogin = request.LoginSettingsViewModel.NewLogin
-            //                                         });
+            if (token is null) return BadRequest();
+            
+            if (userEmailClaim is null)
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                RequestId = HttpContext.Request.Path,
+                                Error = "Bad user id"
+                            });
 
-            //var response = await postRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+            var response = await _settingsChangeService.ChangeLoginAsync(request.LoginSettingsViewModel,
+                                                                         userEmailClaim,
+                                                                         token);
 
-            //if (!response?.Successful ?? false)
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    Error = response.Operation,
-            //                    RequestId = HttpContext.Request.Path
-            //                });
+            if (response is null) return BadRequest();
 
-            //return RedirectToAction("Profile", "AccountSettings");
+            if (!response.Successful)
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                Error = response.Operation,
+                                RequestId = HttpContext.Request.Path
+                            });
+
+            return RedirectToAction("Profile", "AccountSettings");
         }
 
         [HttpPost]
         public async Task<IActionResult> ChangeNotifications(AccountSettingsViewModel request)
         {
-            return Ok();
-            //if (!TryValidateModel(request.NotificationsSettingsViewModel))
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    RequestId = HttpContext.Request.Path,
-            //                    Error = "Bad model"
-            //                });
+            if (!TryValidateModel(request.NotificationsSettingsViewModel))
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                    RequestId = HttpContext.Request.Path,
+                                    Error = "Bad model"
+                            });
 
-            //var userEmailClaim = HttpContext.User.FindFirstValue(JwtRegisteredClaimNames.NameId);
+            var userEmailClaim = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-            //if (userEmailClaim is null)
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    RequestId = HttpContext.Request.Path,
-            //                    Error = "Bad user email"
-            //                });
+            HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
-            //var postRequest = await _applicationMicroservices
-            //                        .IdentityServer
-            //                        .PostAsJsonAsync("user/settings/change/notifications",
-            //                                         new ChangeNotificationsRequest
-            //                                         {
-            //                                             Email = userEmailClaim,
-            //                                             SendMessageOnApiRequest = request.NotificationsSettingsViewModel.SendNotificationOnUsingAPI,
-            //                                             SendMessageOnEntrance = request.NotificationsSettingsViewModel.SendNotificationOnEntrance
-            //                                         });
+            if (token is null) return BadRequest();
 
-            //var response = await postRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+            if (userEmailClaim is null)
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                    RequestId = HttpContext.Request.Path,
+                                    Error = "Bad user id"
+                            });
 
-            //if (!response?.Successful ?? false)
-            //    return View("Error",
-            //                new ErrorViewModel
-            //                {
-            //                    Error = response.Operation,
-            //                    RequestId = HttpContext.Request.Path
-            //                });
+            var response = await _settingsChangeService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
+                                                                                 userEmailClaim,
+                                                                                 token);
 
-            //return RedirectToAction("Profile", "AccountSettings");
+            if (response is null) return BadRequest();
+
+            if (!response.Successful)
+                return View("Error",
+                            new ErrorViewModel
+                            {
+                                    Error = response.Operation,
+                                    RequestId = HttpContext.Request.Path
+                            });
+
+            return RedirectToAction("Profile", "AccountSettings");
         }
     }
 }
