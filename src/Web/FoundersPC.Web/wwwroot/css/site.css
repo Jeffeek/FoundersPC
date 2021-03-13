@@ -1,47 +1,31 @@
-﻿html
-{
-    font-size: 14px;
-}
+﻿html { font-size: 14px; }
 
-@media (min-width: 768px)
-{
-    html
-    {
-        font-size: 16px;
-    }
+@media (min-width: 768px) {
+    html { font-size: 16px; }
 }
 
 /*borders*/
 
-.border-top
-{
-    border-top: 1px solid #e5e5e5;
-}
+.border-top { border-top: 1px solid #e5e5e5; }
 
-.border-bottom
-{
-    border-bottom: 1px solid #e5e5e5;
-}
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
 
 /*end borders*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
 
-html
-{
+html {
     min-height: 100%;
     position: relative;
 }
 
-body
-{
+body {
     background: #323232;
     margin-bottom: 60px;
 }
 
-.footer
-{
+.footer {
     bottom: 0;
     line-height: 60px; /* Vertically center the text there */
     position: absolute;
@@ -49,8 +33,7 @@ body
     width: 100%;
 }
 
-.btn-stupid
-{
+.btn-stupid {
     align-self: center;
     font-size: 200px;
     height: 100vh;
@@ -60,16 +43,14 @@ body
 
 /* -- Animated -hr -- */
 
-.hr-runner
-{
+.hr-runner {
     background: rgba(253, 251, 251, 0.973);
     height: 1px;
     overflow: hidden;
     position: relative;
 }
 
-.hr-runner::before
-{
+.hr-runner::before {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-name: hr-runner;
@@ -82,25 +63,17 @@ body
     width: 80px;
 }
 
-@keyframes hr-runner
-{
-    0%
-    {
-        transform: translateX(0px);
-    }
+@keyframes hr-runner {
+    0% { transform: translateX(0px); }
 
-    100%
-    {
-        transform: translateX(1440px);
-    }
+    100% { transform: translateX(1440px); }
 }
 
 /* -- END Animated -hr -- */
 
 /*Floating label v2*/
 
-.form-label-group
-{
+.form-label-group {
     margin-bottom: 1rem;
     position: relative;
 }
@@ -108,15 +81,13 @@ body
 .form-label-group > input,
 .form-label-group > label,
 .input-group > input,
-.input-group > label
-{
+.input-group > label {
     height: 3.125rem;
     padding: .75rem;
 }
 
 .form-label-group > label,
-.input-group > label
-{
+.input-group > label {
     border: 1px solid transparent;
     border-radius: .25rem;
     color: #929292;
@@ -133,39 +104,22 @@ body
     z-index: 3;
 }
 
-.form-label-group input::-webkit-input-placeholder
-{
-    color: transparent;
-}
+.form-label-group input::-webkit-input-placeholder { color: transparent; }
 
-.form-label-group input:-ms-input-placeholder
-{
-    color: transparent;
-}
+.form-label-group input:-ms-input-placeholder { color: transparent; }
 
-.form-label-group input::-ms-input-placeholder
-{
-    color: transparent;
-}
+.form-label-group input::-ms-input-placeholder { color: transparent; }
 
-.form-label-group input::-moz-placeholder
-{
-    color: transparent;
-}
+.form-label-group input::-moz-placeholder { color: transparent; }
 
-.form-label-group input::placeholder
-{
-    color: transparent;
-}
+.form-label-group input::placeholder { color: transparent; }
 
-.form-label-group input:not(:placeholder-shown)
-{
+.form-label-group input:not(:placeholder-shown) {
     padding-bottom: .25rem;
     padding-top: 1.25rem;
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label
-{
+.form-label-group input:not(:placeholder-shown) ~ label {
     color: rgba(199, 199, 199, 0.781);
     font-size: 12px;
     padding-bottom: .25rem;
@@ -175,33 +129,19 @@ body
 /* Fallback for Edge
 -------------------------------------------------- */
 
-@supports (-ms-ime-align: auto)
-{
-    .form-label-group > label
-    {
-        display: none;
-    }
+@supports (-ms-ime-align: auto) {
+    .form-label-group > label { display: none; }
 
-    .form-label-group input::-ms-input-placeholder
-    {
-        color: #777;
-    }
+    .form-label-group input::-ms-input-placeholder { color: #777; }
 }
 
 /* Fallback for IE
 -------------------------------------------------- */
 
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
-{
-    .form-label-group > label
-    {
-        display: none;
-    }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .form-label-group > label { display: none; }
 
-    .form-label-group input:-ms-input-placeholder
-    {
-        color: #777;
-    }
+    .form-label-group input:-ms-input-placeholder { color: #777; }
 }
 
 /*Floating label v2 end*/

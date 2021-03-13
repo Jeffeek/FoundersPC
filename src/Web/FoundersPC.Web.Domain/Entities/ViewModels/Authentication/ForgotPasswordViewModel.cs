@@ -6,12 +6,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FoundersPC.Web.Domain.Entities.ViewModels.Authentication
 {
-	public class ForgotPasswordViewModel
-	{
-		[Display(Name = "Email address",
-				 Prompt = "Email address")]
-		[Required]
-		[EmailAddress]
-		public string Email { get; set; }
-	}
+    public class ForgotPasswordViewModel
+    {
+        [Display(Name = "Email address",
+                 Prompt = "Email address")]
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+    }
 }

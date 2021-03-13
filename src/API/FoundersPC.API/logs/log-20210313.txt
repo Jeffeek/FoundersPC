@@ -1,0 +1,31 @@
+03/13/2021 21:47:12 HARDWARE API started..
+03/13/2021 21:47:18 HARDWARE API HostBuilder created
+03/13/2021 21:47:50 Host built
+03/13/2021 21:48:03 Application started. Press Ctrl+C to shut down.
+03/13/2021 21:48:03 Hosting environment: "Development"
+03/13/2021 21:48:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/13/2021 21:51:05 HARDWARE API started..
+03/13/2021 21:51:05 HARDWARE API HostBuilder created
+03/13/2021 21:51:05 Host built
+03/13/2021 21:51:06 Application started. Press Ctrl+C to shut down.
+03/13/2021 21:51:06 Hosting environment: "Development"
+03/13/2021 21:51:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/13/2021 21:53:15 HARDWARE API started..
+03/13/2021 21:53:15 HARDWARE API HostBuilder created
+03/13/2021 21:53:15 Host built
+03/13/2021 21:53:16 Application started. Press Ctrl+C to shut down.
+03/13/2021 21:53:16 Hosting environment: "Development"
+03/13/2021 21:53:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/13/2021 21:53:16 HTTP "GET" "/" responded 404 in 78.5081 ms
+03/13/2021 21:53:23 Application is shutting down...
+03/13/2021 21:56:15 HARDWARE API started..
+03/13/2021 21:56:15 HARDWARE API HostBuilder created
+03/13/2021 21:56:15 Host built
+03/13/2021 21:56:16 Now listening on: "https://localhost:44321"
+03/13/2021 21:56:16 Application started. Press Ctrl+C to shut down.
+03/13/2021 21:56:16 Hosting environment: "Development"
+03/13/2021 21:56:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/13/2021 21:56:27 HTTP "GET" "/api/cpu" responded 404 in 55.4546 ms
+03/13/2021 21:56:52 CasesController: request for reading with id = 3 (one) by Unknown, IPv4 : ::1
+03/13/2021 21:57:14 HTTP "GET" "/api/cases/3" responded 200 in 38088.8011 ms
+03/13/2021 21:57:15 HTTP "GET" "/favicon.ico" responded 404 in 1.1874 ms

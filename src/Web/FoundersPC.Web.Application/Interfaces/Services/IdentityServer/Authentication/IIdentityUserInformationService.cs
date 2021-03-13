@@ -9,12 +9,12 @@ using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication
 {
-	public interface IIdentityUserInformationService
-	{
-		Task<string> GetUserLoginAsync(string login, string token);
+    public interface IIdentityUserInformationService
+    {
+        Task<string> GetUserLoginAsync(string login, string token);
 
-		Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(string email, string token);
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(string email, string token);
 
-		Task<NotificationsSettingsViewModel> GetUserNotificationsAsync(string email, string token);
-	}
+        Task<NotificationsSettingsViewModel> GetUserNotificationsAsync(string email, string token);
+    }
 }

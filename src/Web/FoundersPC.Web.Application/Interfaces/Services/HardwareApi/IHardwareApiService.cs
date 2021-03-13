@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.Web.Application.Interfaces.Services.HardwareApi
 {
-	public interface IHardwareApiService
-	{
-		Task<string> GetStringAsync(string entityType, string token);
-	}
+    public interface IHardwareApiService
+    {
+        Task<string> GetStringAsync(string entityType, string token);
+    }
 }

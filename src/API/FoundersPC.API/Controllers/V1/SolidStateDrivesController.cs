@@ -8,89 +8,105 @@ using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
 //todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
-	[Authorize]
-	[ApiVersion("1.0", Deprecated = false)]
-	[ApiController]
-	[Route("api/solidstatedrives")]
-	[Route("api/ssds")]
-	public class SolidStateDrivesController : Controller
-	{
-		private readonly IMapper _mapper;
-		private readonly ISSDService _ssdService;
+    [Authorize]
+    [ApiVersion("1.0", Deprecated = false)]
+    [ApiController]
+    [Route("api/solidstatedrives")]
+    [Route("api/ssds")]
+    public class SolidStateDrivesController : Controller
+    {
+        private readonly IMapper _mapper;
+        private readonly ISSDService _ssdService;
+        private readonly ILogger<SolidStateDrivesController> _logger;
 
-		public SolidStateDrivesController(ISSDService ssdService, IMapper mapper)
-		{
-			_ssdService = ssdService;
-			_mapper = mapper;
-		}
+        public SolidStateDrivesController(ISSDService ssdService, IMapper mapper, ILogger<SolidStateDrivesController> logger)
+        {
+            _ssdService = ssdService;
+            _mapper = mapper;
+            _logger = logger;
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<SSDReadDto>>> Get() => Json(await _ssdService.GetAllSSDsAsync());
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<SSDReadDto>>> Get()
+        {
+            _logger.LogForModelsRead(HttpContext);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet("{id}")]
-		public async Task<ActionResult<SSDReadDto>> Get(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+            return Json(await _ssdService.GetAllSSDsAsync());
+        }
 
-			var ssd = await _ssdService.GetSSDByIdAsync(id.Value);
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<SSDReadDto>> Get(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
-			return ssd == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(ssd);
-		}
+            _logger.LogForModelRead(HttpContext, id.Value);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPut("{id}", Order = 0)]
-		public async Task<ActionResult> Update(int? id, [FromBody] SSDUpdateDto ssd)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
-			if (!TryValidateModel(ssd)) return ValidationProblem(ModelState);
+            var ssd = await _ssdService.GetSSDByIdAsync(id.Value);
 
-			var result = await _ssdService.UpdateSSDAsync(id.Value, ssd);
+            return ssd == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(ssd);
+        }
 
-			return result ? Json(ssd) : ResultsHelper.UpdateError();
-		}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPut("{id}", Order = 0)]
+        public async Task<ActionResult> Update(int? id, [FromBody] SSDUpdateDto ssd)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPost]
-		public async Task<ActionResult> Insert([FromBody] SSDInsertDto ssd)
-		{
-			if (!TryValidateModel(ssd)) return ValidationProblem(ModelState);
+            _logger.LogForModelUpdate(HttpContext, id.Value);
 
-			var insertResult = await _ssdService.CreateSSDAsync(ssd);
+            var result = await _ssdService.UpdateSSDAsync(id.Value, ssd);
 
-			return insertResult ? Json(ssd) : ResultsHelper.InsertError();
-		}
+            return result ? Json(ssd) : ResponseResultsHelper.UpdateError();
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpDelete("{id}")]
-		public async Task<ActionResult> Delete(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPost]
+        public async Task<ActionResult> Insert([FromBody] SSDInsertDto ssd)
+        {
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-			var readSSD = await _ssdService.GetSSDByIdAsync(id.Value);
+            _logger.LogForModelInsert(HttpContext);
 
-			if (readSSD == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+            var insertResult = await _ssdService.CreateSSDAsync(ssd);
 
-			var result = await _ssdService.DeleteSSDAsync(id.Value);
+            return insertResult ? Json(ssd) : ResponseResultsHelper.InsertError();
+        }
 
-			return result ? Json(readSSD) : ResultsHelper.DeleteError();
-		}
-	}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+
+            _logger.LogForModelDelete(HttpContext, id.Value);
+
+            var readSSD = await _ssdService.GetSSDByIdAsync(id.Value);
+
+            if (readSSD == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
+
+            var result = await _ssdService.DeleteSSDAsync(id.Value);
+
+            return result ? Json(readSSD) : ResponseResultsHelper.DeleteError();
+        }
+    }
 }

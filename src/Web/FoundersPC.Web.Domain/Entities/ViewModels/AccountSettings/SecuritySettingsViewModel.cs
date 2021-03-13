@@ -6,13 +6,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings
 {
-	public class SecuritySettingsViewModel
-	{
-		[Display(Name = "New login", Prompt = "New login")]
-		[StringLength(30,
-					  MinimumLength = 5,
-					  ErrorMessage = "Min 5, max 30")]
-		[Required]
-		public string NewLogin { get; set; }
-	}
+    public class SecuritySettingsViewModel
+    {
+        [Display(Name = "New login", Prompt = "New login")]
+        [StringLength(30,
+                      MinimumLength = 5,
+                      ErrorMessage = "Min 5, max 30")]
+        [Required]
+        public string NewLogin { get; set; }
+    }
 }

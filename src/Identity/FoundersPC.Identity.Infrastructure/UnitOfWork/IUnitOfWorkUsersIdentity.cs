@@ -9,18 +9,18 @@ using FoundersPC.Identity.Application.Interfaces.Repositories.Users;
 
 namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 {
-	public interface IUnitOfWorkUsersIdentity
-	{
-		IAccessTokensLogsRepository AccessTokensLogsRepository { get; }
+    public interface IUnitOfWorkUsersIdentity
+    {
+        IAccessTokensLogsRepository AccessTokensLogsRepository { get; }
 
-		IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
+        IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
 
-		IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
+        IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
 
-		IUsersRepository UsersRepository { get; }
+        IUsersRepository UsersRepository { get; }
 
-		IRolesRepository RolesRepository { get; }
+        IRolesRepository RolesRepository { get; }
 
-		Task<int> SaveChangesAsync();
-	}
+        Task<int> SaveChangesAsync();
+    }
 }

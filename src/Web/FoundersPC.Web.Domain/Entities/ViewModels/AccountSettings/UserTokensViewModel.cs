@@ -7,8 +7,8 @@ using FoundersPC.ApplicationShared;
 
 namespace FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings
 {
-	public class UserTokensViewModel
-	{
-		public IEnumerable<ApiAccessUserTokenReadDto> Tokens { get; set; }
-	}
+    public class UserTokensViewModel
+    {
+        public IEnumerable<ApiAccessUserTokenReadDto> Tokens { get; set; }
+    }
 }

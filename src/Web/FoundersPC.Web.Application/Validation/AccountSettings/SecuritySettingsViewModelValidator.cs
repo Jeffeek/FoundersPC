@@ -7,15 +7,15 @@ using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 
 namespace FoundersPC.Web.Application.Validation.AccountSettings
 {
-	public class SecuritySettingsViewModelValidator : AbstractValidator<SecuritySettingsViewModel>
-	{
-		public SecuritySettingsViewModelValidator()
-		{
-			RuleFor(model => model.NewLogin)
-					.NotNull()
-					.NotEmpty()
-					.MinimumLength(5)
-					.MaximumLength(30);
-		}
-	}
+    public class SecuritySettingsViewModelValidator : AbstractValidator<SecuritySettingsViewModel>
+    {
+        public SecuritySettingsViewModelValidator()
+        {
+            RuleFor(model => model.NewLogin)
+                .NotNull()
+                .NotEmpty()
+                .MinimumLength(5)
+                .MaximumLength(30);
+        }
+    }
 }

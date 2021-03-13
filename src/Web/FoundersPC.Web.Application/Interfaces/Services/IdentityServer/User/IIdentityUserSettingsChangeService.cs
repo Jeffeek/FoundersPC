@@ -8,12 +8,12 @@ using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User
 {
-	public interface IIdentityUserSettingsChangeService
-	{
-		Task<AccountSettingsChangeResponse> ChangePasswordAsync(PasswordSettingsViewModel model, string token);
+    public interface IIdentityUserSettingsChangeService
+    {
+        Task<AccountSettingsChangeResponse> ChangePasswordAsync(PasswordSettingsViewModel model, string token);
 
-		Task<AccountSettingsChangeResponse> ChangeLoginAsync(SecuritySettingsViewModel model, string token);
+        Task<AccountSettingsChangeResponse> ChangeLoginAsync(SecuritySettingsViewModel model, string token);
 
-		Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model, string token);
-	}
+        Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model, string token);
+    }
 }

@@ -7,31 +7,31 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings
 {
-	public class PasswordSettingsViewModel
-	{
-		[StringLength(30,
-					  MinimumLength = 6,
-					  ErrorMessage = "Min 6, max 30")]
-		[PasswordPropertyText]
-		[Required]
-		public string OldPassword { get; set; }
+    public class PasswordSettingsViewModel
+    {
+        [StringLength(30,
+                      MinimumLength = 6,
+                      ErrorMessage = "Min 6, max 30")]
+        [PasswordPropertyText]
+        [Required]
+        public string OldPassword { get; set; }
 
-		[StringLength(30,
-					  MinimumLength = 6,
-					  ErrorMessage = "Min 6, max 30")]
-		[Compare(nameof(NewPassword),
-				 ErrorMessage = "New password and New password confirmation should be equal")]
-		[PasswordPropertyText]
-		[Required]
-		public string NewPassword { get; set; }
+        [StringLength(30,
+                      MinimumLength = 6,
+                      ErrorMessage = "Min 6, max 30")]
+        [Compare(nameof(NewPassword),
+                 ErrorMessage = "New password and New password confirmation should be equal")]
+        [PasswordPropertyText]
+        [Required]
+        public string NewPassword { get; set; }
 
-		[StringLength(30,
-					  MinimumLength = 6,
-					  ErrorMessage = "Min 6, max 30")]
-		[Compare(nameof(NewPassword),
-				 ErrorMessage = "New password and New password confirmation should be equal")]
-		[PasswordPropertyText]
-		[Required]
-		public string NewPasswordConfirm { get; set; }
-	}
+        [StringLength(30,
+                      MinimumLength = 6,
+                      ErrorMessage = "Min 6, max 30")]
+        [Compare(nameof(NewPassword),
+                 ErrorMessage = "New password and New password confirmation should be equal")]
+        [PasswordPropertyText]
+        [Required]
+        public string NewPasswordConfirm { get; set; }
+    }
 }

@@ -8,89 +8,105 @@ using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
 //todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
-	[Authorize]
-	[ApiVersion("1.0", Deprecated = false)]
-	[ApiController]
-	[Route("api/randomaccessmemory")]
-	[Route("api/rams")]
-	public class RandomAccessMemoryController : Controller
-	{
-		private readonly IMapper _mapper;
-		private readonly IRAMService _ramService;
+    [Authorize]
+    [ApiVersion("1.0", Deprecated = false)]
+    [ApiController]
+    [Route("api/randomaccessmemory")]
+    [Route("api/rams")]
+    public class RandomAccessMemoryController : Controller
+    {
+        private readonly IMapper _mapper;
+        private readonly IRAMService _ramService;
+        private readonly ILogger<RandomAccessMemoryController> _logger;
 
-		public RandomAccessMemoryController(IRAMService ramService, IMapper mapper)
-		{
-			_ramService = ramService;
-			_mapper = mapper;
-		}
+        public RandomAccessMemoryController(IRAMService ramService, IMapper mapper, ILogger<RandomAccessMemoryController> logger)
+        {
+            _ramService = ramService;
+            _mapper = mapper;
+            _logger = logger;
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<RAMReadDto>>> Get() => Json(await _ramService.GetAllRAMsAsync());
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<RAMReadDto>>> Get()
+        {
+            _logger.LogForModelsRead(HttpContext);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet("{id}")]
-		public async Task<ActionResult<RAMReadDto>> Get(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+            return Json(await _ramService.GetAllRAMsAsync());
+        }
 
-			var ram = await _ramService.GetRAMByIdAsync(id.Value);
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<RAMReadDto>> Get(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
-			return ram == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(ram);
-		}
+            _logger.LogForModelRead(HttpContext, id.Value);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPut("{id}", Order = 0)]
-		public async Task<ActionResult> Update(int? id, [FromBody] RAMUpdateDto ram)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
-			if (!TryValidateModel(ram)) return ValidationProblem(ModelState);
+            var ram = await _ramService.GetRAMByIdAsync(id.Value);
 
-			var result = await _ramService.UpdateRAMAsync(id.Value, ram);
+            return ram == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(ram);
+        }
 
-			return result ? Json(ram) : ResultsHelper.UpdateError();
-		}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPut("{id}", Order = 0)]
+        public async Task<ActionResult> Update(int? id, [FromBody] RAMUpdateDto ram)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPost]
-		public async Task<ActionResult> Insert([FromBody] RAMInsertDto ram)
-		{
-			if (!TryValidateModel(ram)) return ValidationProblem(ModelState);
+            _logger.LogForModelUpdate(HttpContext, id.Value);
 
-			var insertResult = await _ramService.CreateRAMAsync(ram);
+            var result = await _ramService.UpdateRAMAsync(id.Value, ram);
 
-			return insertResult ? Json(ram) : ResultsHelper.InsertError();
-		}
+            return result ? Json(ram) : ResponseResultsHelper.UpdateError();
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpDelete("{id}")]
-		public async Task<ActionResult> Delete(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPost]
+        public async Task<ActionResult> Insert([FromBody] RAMInsertDto ram)
+        {
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-			var readRAM = await _ramService.GetRAMByIdAsync(id.Value);
+            _logger.LogForModelInsert(HttpContext);
 
-			if (readRAM == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+            var insertResult = await _ramService.CreateRAMAsync(ram);
 
-			var result = await _ramService.DeleteRAMAsync(id.Value);
+            return insertResult ? Json(ram) : ResponseResultsHelper.InsertError();
+        }
 
-			return result ? Json(readRAM) : ResultsHelper.DeleteError();
-		}
-	}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+
+            _logger.LogForModelDelete(HttpContext, id.Value);
+
+            var readRAM = await _ramService.GetRAMByIdAsync(id.Value);
+
+            if (readRAM == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
+
+            var result = await _ramService.DeleteRAMAsync(id.Value);
+
+            return result ? Json(readRAM) : ResponseResultsHelper.DeleteError();
+        }
+    }
 }

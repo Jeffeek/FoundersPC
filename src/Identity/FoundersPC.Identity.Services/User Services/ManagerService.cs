@@ -6,5 +6,5 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 
 namespace FoundersPC.Identity.Services.User_Services
 {
-	public class ManagerService : IManagerService { }
+    public class ManagerService : IManagerService { }
 }

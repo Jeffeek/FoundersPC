@@ -6,10 +6,15 @@ using System.Net.Http;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
-	public class IdentityTokensService
-	{
-		private IHttpClientFactory _httpClientFactory;
+    public class IdentityTokensService
+    {
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly MicroservicesBaseAddresses _baseAddresses;
 
-		public IdentityTokensService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
-	}
+        public IdentityTokensService(IHttpClientFactory httpClientFactory, MicroservicesBaseAddresses baseAddresses)
+        {
+            _httpClientFactory = httpClientFactory;
+            _baseAddresses = baseAddresses;
+        }
+    }
 }

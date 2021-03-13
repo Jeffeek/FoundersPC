@@ -7,15 +7,15 @@ using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 
 namespace FoundersPC.Identity.Application.Validation.Requests.ChangeSettings
 {
-	public class ChangeLoginRequestValidator : AbstractValidator<ChangeLoginRequest>
-	{
-		public ChangeLoginRequestValidator()
-		{
-			RuleFor(model => model.NewLogin)
-					.NotNull()
-					.NotEmpty()
-					.MinimumLength(5)
-					.MaximumLength(30);
-		}
-	}
+    public class ChangeLoginRequestValidator : AbstractValidator<ChangeLoginRequest>
+    {
+        public ChangeLoginRequestValidator()
+        {
+            RuleFor(model => model.NewLogin)
+                .NotNull()
+                .NotEmpty()
+                .MinimumLength(5)
+                .MaximumLength(30);
+        }
+    }
 }

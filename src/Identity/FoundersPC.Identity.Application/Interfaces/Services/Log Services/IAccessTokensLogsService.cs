@@ -9,18 +9,18 @@ using FoundersPC.Identity.Domain.Entities.Logs;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 {
-	public interface IAccessTokensLogsService
-	{
-		Task<IEnumerable<AccessTokenLog>> GetAllAsync();
+    public interface IAccessTokensLogsService
+    {
+        Task<IEnumerable<AccessTokenLog>> GetAllAsync();
 
-		Task<AccessTokenLog> GetByIdAsync(int id);
+        Task<AccessTokenLog> GetByIdAsync(int id);
 
-		Task<IEnumerable<AccessTokenLog>> GetUsagesBetweenAsync(DateTime start, DateTime finish);
+        Task<IEnumerable<AccessTokenLog>> GetUsagesBetweenAsync(DateTime start, DateTime finish);
 
-		Task<IEnumerable<AccessTokenLog>> GetUsagesInAsync(DateTime date);
+        Task<IEnumerable<AccessTokenLog>> GetUsagesInAsync(DateTime date);
 
-		Task<bool> LogAsync(int tokenId);
+        Task<bool> LogAsync(int tokenId);
 
-		Task<bool> LogAsync(string token);
-	}
+        Task<bool> LogAsync(string token);
+    }
 }

@@ -1,23 +1,23 @@
 ﻿namespace FoundersPC.API.Domain.Common.Interfaces.Hardware
 {
-	public interface IRAM
-	{
-		string MemoryType { get; set; }
+    public interface IRAM
+    {
+        string MemoryType { get; set; }
 
-		int Frequency { get; set; }
+        int Frequency { get; set; }
 
-		string CASLatency { get; set; }
+        string CASLatency { get; set; }
 
-		string Timings { get; set; }
+        string Timings { get; set; }
 
-		double Voltage { get; set; }
+        double Voltage { get; set; }
 
-		bool XMP { get; set; }
+        bool XMP { get; set; }
 
-		bool ECC { get; set; }
+        bool ECC { get; set; }
 
-		int PCIndex { get; set; }
+        int PCIndex { get; set; }
 
-		string Title { get; set; }
-	}
+        string Title { get; set; }
+    }
 }

@@ -10,14 +10,14 @@ using FoundersPC.RepositoryShared.Identity;
 
 namespace FoundersPC.Identity.Domain.Entities.Users
 {
-	public class RoleEntity : IdentityItem, IRole, IEquatable<RoleEntity>
-	{
-		public ICollection<UserEntity> Users { get; set; }
+    public class RoleEntity : IdentityItem, IRole, IEquatable<RoleEntity>
+    {
+        public ICollection<UserEntity> Users { get; set; }
 
-		public bool Equals(RoleEntity other) => RoleTitle == other?.RoleTitle;
+        public bool Equals(RoleEntity other) => RoleTitle == other?.RoleTitle;
 
-		[DataType(DataType.Text)]
-		[Required]
-		public string RoleTitle { get; set; }
-	}
+        [DataType(DataType.Text)]
+        [Required]
+        public string RoleTitle { get; set; }
+    }
 }
