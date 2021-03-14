@@ -8,6 +8,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -16,6 +17,7 @@ namespace FoundersPC.Identity.Services.User_Services
     public class AdminService : IAdminService
     {
         private readonly IApiAccessUsersTokensService _accessUsersTokensService;
+        private readonly ILogger<AdminService> _logger;
         private readonly IMailService _mailService;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUserRegistrationService _registrationService;
@@ -29,7 +31,8 @@ namespace FoundersPC.Identity.Services.User_Services
                             IMapper mapper,
                             PasswordEncryptorService passwordEncryptorService,
                             IUnitOfWorkUsersIdentity unitOfWork,
-                            IApiAccessUsersTokensService accessUsersTokensService
+                            IApiAccessUsersTokensService accessUsersTokensService,
+                            ILogger<AdminService> logger
         )
         {
             _managerService = managerService;
@@ -39,14 +42,26 @@ namespace FoundersPC.Identity.Services.User_Services
             _passwordEncryptorService = passwordEncryptorService;
             _unitOfWork = unitOfWork;
             _accessUsersTokensService = accessUsersTokensService;
+            _logger = logger;
         }
 
         #region New manager registration
 
         public async Task<bool> RegisterNewManagerAsync(string email, string password)
         {
-            if (password is null) throw new ArgumentNullException(nameof(password));
-            if (email is null) throw new ArgumentNullException(nameof(email));
+            if (password is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: Input password was null.");
+
+                throw new ArgumentNullException(nameof(password));
+            }
+
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: Input email was null");
+
+                throw new ArgumentNullException(nameof(email));
+            }
 
             return await _registrationService.RegisterManagerAsync(email, password);
         }
@@ -83,7 +98,6 @@ namespace FoundersPC.Identity.Services.User_Services
                 foreach (var token in userTokens) await _accessUsersTokensService.BlockAsync(token.Id);
             }
 
-            // todo: add subject
             if (sendNotification)
                 await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can be unblocked. Contact the administrator for reasons");
 
@@ -100,8 +114,8 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (!user.IsActive) return false;
 
-            // todo: add subject
-            if (sendNotification) await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");
+            if (sendNotification)
+                await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");
 
             user.IsActive = false;
 

@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -22,9 +21,9 @@ namespace FoundersPC.API.Controllers.V1
     [Route("api/rams")]
     public class RandomAccessMemoryController : Controller
     {
+        private readonly ILogger<RandomAccessMemoryController> _logger;
         private readonly IMapper _mapper;
         private readonly IRAMService _ramService;
-        private readonly ILogger<RandomAccessMemoryController> _logger;
 
         public RandomAccessMemoryController(IRAMService ramService, IMapper mapper, ILogger<RandomAccessMemoryController> logger)
         {

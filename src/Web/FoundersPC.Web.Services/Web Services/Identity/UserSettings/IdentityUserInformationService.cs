@@ -10,6 +10,7 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -19,19 +20,33 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
     {
         private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly ILogger<IdentityUserInformationService> _logger;
 
         public IdentityUserInformationService(IHttpClientFactory httpClientFactory,
-                                              MicroservicesBaseAddresses microservicesBaseAddresses
+                                              MicroservicesBaseAddresses microservicesBaseAddresses,
+                                              ILogger<IdentityUserInformationService> logger
         )
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = microservicesBaseAddresses;
+            _logger = logger;
         }
 
         public async Task<string> GetUserLoginAsync(string email, string token)
         {
-            if (email is null) throw new ArgumentNullException(nameof(email));
-            if (token is null) throw new ArgumentNullException(nameof(token));
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get user login: email was null");
+
+                throw new ArgumentNullException(nameof(email));
+            }
+
+            if (token is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get user login: token was null");
+
+                throw new ArgumentNullException(nameof(token));
+            }
 
             using var client = _httpClientFactory.CreateClient("Login client");
 
@@ -44,8 +59,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
         public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(string email, string token)
         {
-            if (token is null) throw new ArgumentNullException(nameof(token));
-            if (email is null) throw new ArgumentNullException(nameof(email));
+            if (token is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get user api tokens: token was null");
+
+                throw new ArgumentNullException(nameof(token));
+            }
+
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get user api tokens: email was null");
+
+                throw new ArgumentNullException(nameof(email));
+            }
 
             using var client = _httpClientFactory.CreateClient("User's tokens client");
 
@@ -58,8 +84,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
         public async Task<NotificationsSettingsViewModel> GetUserNotificationsAsync(string email, string token)
         {
-            if (email is null) throw new ArgumentNullException(nameof(email));
-            if (token is null) throw new ArgumentNullException(nameof(token));
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get user notifications: email was null");
+
+                throw new ArgumentNullException(nameof(email));
+            }
+
+            if (token is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get user notifications: token was null");
+
+                throw new ArgumentNullException(nameof(token));
+            }
 
             using var client = _httpClientFactory.CreateClient("User's notifications settings client");
 

@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -22,9 +21,9 @@ namespace FoundersPC.API.Controllers.V1
     [Route("api/ssds")]
     public class SolidStateDrivesController : Controller
     {
+        private readonly ILogger<SolidStateDrivesController> _logger;
         private readonly IMapper _mapper;
         private readonly ISSDService _ssdService;
-        private readonly ILogger<SolidStateDrivesController> _logger;
 
         public SolidStateDrivesController(ISSDService ssdService, IMapper mapper, ILogger<SolidStateDrivesController> logger)
         {

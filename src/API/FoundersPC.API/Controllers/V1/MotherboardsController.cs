@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -21,9 +20,9 @@ namespace FoundersPC.API.Controllers.V1
     [Route("api/motherboards")]
     public class MotherboardsController : Controller
     {
+        private readonly ILogger<MotherboardsController> _logger;
         private readonly IMapper _mapper;
         private readonly IMotherboardService _motherboardService;
-        private readonly ILogger<MotherboardsController> _logger;
 
         public MotherboardsController(IMotherboardService service, IMapper mapper, ILogger<MotherboardsController> logger)
         {

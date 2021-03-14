@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -28,7 +27,7 @@ namespace FoundersPC.API.Controllers.V1
 
         public CasesController(ICaseService service, IMapper mapper, ILogger<CasesController> logger)
         {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _logger = logger;
             _caseService = service;
             _mapper = mapper;
             _logger = logger;

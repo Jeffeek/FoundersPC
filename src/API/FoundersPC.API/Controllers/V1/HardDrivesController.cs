@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]

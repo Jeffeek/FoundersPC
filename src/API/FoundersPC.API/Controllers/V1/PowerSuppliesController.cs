@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -22,9 +21,9 @@ namespace FoundersPC.API.Controllers.V1
     [Route("api/psus")]
     public class PowerSuppliesController : Controller
     {
+        private readonly ILogger<PowerSuppliesController> _logger;
         private readonly IMapper _mapper;
         private readonly IPowerSupplyService _powerSupplyService;
-        private readonly ILogger<PowerSuppliesController> _logger;
 
         public PowerSuppliesController(IPowerSupplyService service, IMapper mapper, ILogger<PowerSuppliesController> logger)
         {

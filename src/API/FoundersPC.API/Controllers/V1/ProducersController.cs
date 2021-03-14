@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -20,8 +19,8 @@ namespace FoundersPC.API.Controllers.V1
     [Route("api/producers")]
     public class ProducersController : Controller
     {
-        private readonly IProducerService _producerService;
         private readonly ILogger<ProducersController> _logger;
+        private readonly IProducerService _producerService;
 
         public ProducersController(IProducerService service, ILogger<ProducersController> logger)
         {

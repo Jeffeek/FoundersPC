@@ -8,8 +8,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
     public class IdentityTokensService
     {
-        private readonly IHttpClientFactory _httpClientFactory;
         private readonly MicroservicesBaseAddresses _baseAddresses;
+        private readonly IHttpClientFactory _httpClientFactory;
 
         public IdentityTokensService(IHttpClientFactory httpClientFactory, MicroservicesBaseAddresses baseAddresses)
         {

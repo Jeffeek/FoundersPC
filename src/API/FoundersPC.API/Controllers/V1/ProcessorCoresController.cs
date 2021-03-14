@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -21,8 +20,8 @@ namespace FoundersPC.API.Controllers.V1
     [ApiController]
     public class ProcessorCoresController : Controller
     {
-        private readonly IProcessorCoreService _service;
         private readonly ILogger<ProcessorCoresController> _logger;
+        private readonly IProcessorCoreService _service;
 
         public ProcessorCoresController(IProcessorCoreService service, ILogger<ProcessorCoresController> logger)
         {

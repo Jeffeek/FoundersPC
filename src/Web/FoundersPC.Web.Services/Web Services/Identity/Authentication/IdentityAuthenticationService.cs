@@ -10,6 +10,7 @@ using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -19,22 +20,36 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
     {
         private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly ILogger<IdentityAuthenticationService> _logger;
         private readonly IMapper _mapper;
 
         public IdentityAuthenticationService(IHttpClientFactory httpClientFactory,
                                              MicroservicesBaseAddresses baseAddresses,
-                                             IMapper mapper
+                                             IMapper mapper,
+                                             ILogger<IdentityAuthenticationService> logger
         )
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = baseAddresses;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword)
         {
-            if (emailOrLogin is null) throw new ArgumentNullException(nameof(emailOrLogin));
-            if (rawPassword is null) throw new ArgumentNullException(nameof(rawPassword));
+            if (emailOrLogin is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: email or login was null");
+
+                throw new ArgumentNullException(nameof(emailOrLogin));
+            }
+
+            if (rawPassword is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: raw password was null");
+
+                throw new ArgumentNullException(nameof(rawPassword));
+            }
 
             using var client = _httpClientFactory.CreateClient("Sign In client");
             PrepareRequest(client);
@@ -53,9 +68,26 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserLoginResponse> SignInAsync(SignInViewModel model)
         {
-            if (model is null) throw new ArgumentNullException(nameof(model));
-            if (model.LoginOrEmail is null) throw new ArgumentNullException(nameof(model.LoginOrEmail));
-            if (model.RawPassword is null) throw new ArgumentNullException(nameof(model.RawPassword));
+            if (model is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: model was null");
+
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            if (model.LoginOrEmail is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: login or email was null");
+
+                throw new ArgumentNullException(nameof(model.LoginOrEmail));
+            }
+
+            if (model.RawPassword is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: raw password was null");
+
+                throw new ArgumentNullException(nameof(model.RawPassword));
+            }
 
             using var client = _httpClientFactory.CreateClient("Sign In client");
             PrepareRequest(client);
@@ -71,8 +103,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserRegisterResponse> SignUpAsync(string email, string rawPassword)
         {
-            if (email is null) throw new ArgumentNullException(nameof(email));
-            if (rawPassword is null) throw new ArgumentNullException(nameof(rawPassword));
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: email was null");
+
+                throw new ArgumentNullException(nameof(email));
+            }
+
+            if (rawPassword is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: raw password was null");
+
+                throw new ArgumentNullException(nameof(rawPassword));
+            }
 
             var client = _httpClientFactory.CreateClient("Sign Up client");
             PrepareRequest(client);
@@ -91,9 +134,26 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserRegisterResponse> SignUpAsync(SignUpViewModel model)
         {
-            if (model is null) throw new ArgumentNullException(nameof(model));
-            if (model.Email is null) throw new ArgumentNullException(nameof(model.Email));
-            if (model.RawPassword is null) throw new ArgumentNullException(nameof(model.RawPassword));
+            if (model is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: model was null");
+
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            if (model.Email is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: email was null");
+
+                throw new ArgumentNullException(nameof(model.Email));
+            }
+
+            if (model.RawPassword is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: raw password was null");
+
+                throw new ArgumentNullException(nameof(model.RawPassword));
+            }
 
             var client = _httpClientFactory.CreateClient("Sign Up client");
             PrepareRequest(client);
@@ -109,7 +169,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(string email)
         {
-            if (email is null) throw new ArgumentNullException(nameof(email));
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: forgot password: email was null");
+
+                throw new ArgumentNullException(nameof(email));
+            }
 
             var client = _httpClientFactory.CreateClient("Forgot password client");
             PrepareRequest(client);
@@ -127,8 +192,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordViewModel model)
         {
-            if (model is null) throw new ArgumentNullException(nameof(model));
-            if (model.Email is null) throw new ArgumentNullException(nameof(model.Email));
+            if (model is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: forgot password: model was null");
+
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            if (model.Email is null)
+            {
+                _logger.LogError($"{nameof(IdentityAuthenticationService)}: forgot password: email was null");
+
+                throw new ArgumentNullException(nameof(model.Email));
+            }
 
             var client = _httpClientFactory.CreateClient("Forgot password client");
             PrepareRequest(client);

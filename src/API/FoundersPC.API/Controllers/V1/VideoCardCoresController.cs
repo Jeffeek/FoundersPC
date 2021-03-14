@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
@@ -22,9 +21,9 @@ namespace FoundersPC.API.Controllers.V1
     [Route("api/gpucores")]
     public class VideoCardCoresController : Controller
     {
+        private readonly ILogger<VideoCardCoresController> _logger;
         private readonly IMapper _mapper;
         private readonly IVideoCardCoreService _videoCardCoreService;
-        private readonly ILogger<VideoCardCoresController> _logger;
 
         public VideoCardCoresController(IVideoCardCoreService service,
                                         IMapper mapper,

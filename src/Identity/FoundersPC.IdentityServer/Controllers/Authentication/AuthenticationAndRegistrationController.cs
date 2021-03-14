@@ -21,13 +21,13 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [ApiController]
     public class AuthenticationAndRegistrationController : Controller
     {
+        private readonly ILogger<AuthenticationAndRegistrationController> _logger;
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUserRegistrationService _userRegistrationService;
         private readonly IUsersEntrancesService _usersEntrancesService;
         private readonly IUsersService _usersService;
-        private readonly ILogger<AuthenticationAndRegistrationController> _logger;
 
         public AuthenticationAndRegistrationController(IUsersService authenticationService,
                                                        IMailService mailService,
@@ -52,7 +52,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword(UserForgotPasswordRequest request)
         {
             if (!ModelState.IsValid)
-                return BadRequest(new UserForgotPasswordResponse()
+                return BadRequest(new UserForgotPasswordResponse
                                   {
                                       Error = "Bad model",
                                       Email = request.Email,
@@ -125,7 +125,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         public async Task<ActionResult<UserRegisterResponse>> Register(UserSignUpRequest request)
         {
             if (!ModelState.IsValid)
-                return BadRequest(new UserRegisterResponse()
+                return BadRequest(new UserRegisterResponse
                                   {
                                       Email = request.Email,
                                       IsRegistrationSuccessful = false,
@@ -169,7 +169,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         public async Task<ActionResult<UserLoginResponse>> Login(UserSignInRequest request)
         {
             if (!ModelState.IsValid)
-                return BadRequest(new UserLoginResponse()
+                return BadRequest(new UserLoginResponse
                                   {
                                       MetaInfo = "Bad model"
                                   });

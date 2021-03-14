@@ -40,7 +40,12 @@ namespace FoundersPC.Identity.Services.EmailServices
 
         public async Task<bool> SendToAsync(string email, string subject = "Unnamed", string content = "", bool html = false)
         {
-            if (email == null) throw new ArgumentNullException(nameof(email));
+            if (email == null)
+            {
+                _logger.LogError($"{nameof(MailService)}: email was null when tried to send message");
+
+                throw new ArgumentNullException(nameof(email));
+            }
 
             var sendResult = await Email.From(_botConfiguration.MailAddress, "FoundersPC_DAEMON")
                                         .Subject(subject)

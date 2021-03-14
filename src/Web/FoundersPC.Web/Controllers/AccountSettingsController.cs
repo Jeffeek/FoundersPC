@@ -10,6 +10,7 @@ using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 using FoundersPC.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -18,13 +19,18 @@ namespace FoundersPC.Web.Controllers
     [Authorize]
     public class AccountSettingsController : Controller
     {
+        private readonly ILogger<AccountSettingsController> _logger;
         private readonly IIdentityUserSettingsChangeService _settingsChangeService;
         private readonly IIdentityUserInformationService _userInformationService;
 
-        public AccountSettingsController(IIdentityUserInformationService userInformationService, IIdentityUserSettingsChangeService settingsChangeService)
+        public AccountSettingsController(IIdentityUserInformationService userInformationService,
+                                         IIdentityUserSettingsChangeService settingsChangeService,
+                                         ILogger<AccountSettingsController> logger
+        )
         {
             _userInformationService = userInformationService;
             _settingsChangeService = settingsChangeService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -35,9 +41,26 @@ namespace FoundersPC.Web.Controllers
             var roleInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType);
             Request.Cookies.TryGetValue("token", out var jwtToken);
 
-            if (emailInCookie is null) throw new CookieException();
-            if (roleInCookie is null) throw new CookieException();
-            if (jwtToken is null) throw new CookieException();
+            if (emailInCookie is null)
+            {
+                _logger.LogError($"Email cookie not found. ConnectionId: {HttpContext.Connection.Id}");
+
+                throw new CookieException();
+            }
+
+            if (roleInCookie is null)
+            {
+                _logger.LogError($"Role cookie not found. ConnectionId: {HttpContext.Connection.Id}");
+
+                throw new CookieException();
+            }
+
+            if (jwtToken is null)
+            {
+                _logger.LogError($"Jwt cookie not found. ConnectionId: {HttpContext.Connection.Id}");
+
+                throw new CookieException();
+            }
 
             var notifications = await _userInformationService.GetUserNotificationsAsync(emailInCookie, jwtToken);
 
