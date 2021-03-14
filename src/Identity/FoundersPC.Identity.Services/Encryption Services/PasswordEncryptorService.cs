@@ -12,7 +12,7 @@ namespace FoundersPC.Identity.Services.Encryption_Services
     {
         public string EncryptPassword(string rawPassword)
         {
-            if (ReferenceEquals(rawPassword, null)) throw new ArgumentNullException(nameof(rawPassword));
+            if (rawPassword is null) throw new ArgumentNullException(nameof(rawPassword));
 
             var passwordBytes = Encoding.ASCII.GetBytes(rawPassword);
 

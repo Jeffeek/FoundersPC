@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -28,7 +27,7 @@ namespace FoundersPC.API.Controllers.V1
 
         public CasesController(ICaseService service, IMapper mapper, ILogger<CasesController> logger)
         {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _logger = logger;
             _caseService = service;
             _mapper = mapper;
             _logger = logger;
@@ -51,13 +50,13 @@ namespace FoundersPC.API.Controllers.V1
         [HttpGet("{id}")]
         public async Task<ActionResult<CaseReadDto>> Get(int? id)
         {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
             _logger.LogForModelRead(HttpContext, id.Value);
 
             var @case = await _caseService.GetCaseByIdAsync(id.Value);
 
-            return @case == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(@case);
+            return @case == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(@case);
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
@@ -66,15 +65,15 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] CaseUpdateDto @case)
         {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
             if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
 
             var result = await _caseService.UpdateCaseAsync(id.Value, @case);
 
-            if (!result) return ResultsHelper.UpdateError();
+            if (!result) return ResponseResultsHelper.UpdateError();
 
-            _logger.LogForModelUpdated(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id.Value);
 
             return Json(@case);
         }
@@ -89,9 +88,9 @@ namespace FoundersPC.API.Controllers.V1
 
             var insertResult = await _caseService.CreateCaseAsync(@case);
 
-            if (!insertResult) return ResultsHelper.InsertError();
+            if (!insertResult) return ResponseResultsHelper.InsertError();
 
-            _logger.LogForModelInserted(HttpContext);
+            _logger.LogForModelInsert(HttpContext);
 
             return Json(@case);
         }
@@ -102,17 +101,17 @@ namespace FoundersPC.API.Controllers.V1
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)
         {
-            if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
             var readCase = await _caseService.GetCaseByIdAsync(id.Value);
 
-            if (readCase == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+            if (readCase == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
 
             var result = await _caseService.DeleteCaseAsync(id.Value);
 
-            if (!result) return ResultsHelper.DeleteError();
+            if (!result) return ResponseResultsHelper.DeleteError();
 
-            _logger.LogForModelDeleted(HttpContext, id.Value);
+            _logger.LogForModelDelete(HttpContext, id.Value);
 
             return Json(readCase);
         }

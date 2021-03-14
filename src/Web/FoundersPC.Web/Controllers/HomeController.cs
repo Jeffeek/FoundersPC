@@ -1,9 +1,7 @@
 ﻿#region Using namespaces
 
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using FoundersPC.Web.Services.Web_Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +12,9 @@ namespace FoundersPC.Web.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly ApplicationMicroservices _applicationMicroservices;
+        private readonly IHardwareApiService _hardwareApiService;
 
-        public HomeController(ApplicationMicroservices applicationMicroservices) => _applicationMicroservices = applicationMicroservices;
+        public HomeController(IHardwareApiService hardwareApiService) => _hardwareApiService = hardwareApiService;
 
         [AllowAnonymous]
         public IActionResult Index() => View();
@@ -128,13 +126,9 @@ namespace FoundersPC.Web.Controllers
         {
             if (!HttpContext.Request.Cookies.TryGetValue("token", out var token)) return null;
 
-            _applicationMicroservices.HardwareApiServer.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                              token);
+            var result = await _hardwareApiService.GetStringAsync(apiModels, token);
 
-            var request = await _applicationMicroservices.HardwareApiServer.GetAsync(apiModels);
-
-            return await request.Content.ReadAsStringAsync();
+            return result;
         }
     }
 }

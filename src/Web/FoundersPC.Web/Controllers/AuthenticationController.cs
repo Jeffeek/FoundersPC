@@ -1,15 +1,13 @@
 ﻿#region Using namespaces
 
 using System.Collections.Generic;
-using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
-using FoundersPC.Web.Services.Web_Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -23,15 +21,16 @@ namespace FoundersPC.Web.Controllers
     [Controller]
     public class AuthenticationController : Controller
     {
-        private readonly ApplicationMicroservices _applicationMicroservices;
+        private readonly IIdentityAuthenticationService _authenticationService;
         private readonly IMapper _mapper;
 
-        public AuthenticationController(ApplicationMicroservices applicationMicroservices,
-                                        IMapper mapper
+        public AuthenticationController(IMapper mapper,
+                                        IIdentityAuthenticationService authenticationService
         )
         {
-            _applicationMicroservices = applicationMicroservices;
+            _authenticationService = authenticationService;
             _mapper = mapper;
+            _authenticationService = authenticationService;
         }
 
         #region ForgotPassword
@@ -40,40 +39,34 @@ namespace FoundersPC.Web.Controllers
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
             if (!ModelState.IsValid)
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
+                return ValidationProblem("Bad email validation",
+                                         nameof(model),
+                                         400,
+                                         "Error",
+                                         nameof(ForgotPasswordViewModel));
 
-            var requestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);
+            var forgotPasswordResponse =
+                await _authenticationService.ForgotPasswordAsync(model);
 
-            var serverMessage =
-                await _applicationMicroservices.IdentityServer.PostAsJsonAsync("authentication/forgotpassword",
-                                                                               requestModel);
+            if (forgotPasswordResponse is null)
+                return ValidationProblem("Server returned null object",
+                                         nameof(forgotPasswordResponse),
+                                         400,
+                                         "Error",
+                                         nameof(UserForgotPasswordResponse));
 
-            if (!serverMessage.IsSuccessStatusCode)
-                return Problem("Server error",
-                               statusCode : (int)serverMessage.StatusCode);
-
-            var result = await serverMessage.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
-
-            if (result is null)
-                return Problem("Authentication server returned null object. Contact the administration",
-                               statusCode : 404,
-                               title : "Error");
-
-            if (!result.IsUserExists)
+            if (!forgotPasswordResponse.IsUserExists)
                 return NotFound(new
                                 {
                                     error = $"User with email = {model.Email} does not exists in our database"
                                 });
 
-            if (!result.IsConfirmationMailSent)
-                return Problem(result.EmailSendError,
-                               statusCode : 404,
-                               title : "Error");
+            if (!forgotPasswordResponse.IsConfirmationMailSent)
+                return Problem(forgotPasswordResponse.Error,
+                               statusCode : 401,
+                               title : "Email send error");
 
-            return View("ForgotPasswordResult", result);
+            return View("SignIn");
         }
 
         #endregion
@@ -83,30 +76,30 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
         {
-            if (!TryValidateModel(signUpModel)) return BadRequest(signUpModel);
+            if (!ModelState.IsValid)
+                return ValidationProblem("Bad validation/model",
+                                         nameof(signUpModel),
+                                         400,
+                                         "Error",
+                                         nameof(SignUpViewModel));
 
-            var requestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(signUpModel);
+            var registrationResponse = await _authenticationService.SignUpAsync(signUpModel);
 
-            var registrationRequest =
-                await _applicationMicroservices.IdentityServer.PostAsJsonAsync("authentication/registration", requestModel);
-
-            var registerResponseContent = await registrationRequest.Content.ReadFromJsonAsync<UserRegisterResponse>();
-
-            if (ReferenceEquals(registerResponseContent, null))
+            if (registrationResponse is null)
                 return Problem("Deserialize error",
-                               nameof(registerResponseContent),
+                               nameof(registrationResponse),
                                StatusCodes.Status500InternalServerError,
                                "Response error",
                                nameof(UserRegisterResponse));
 
-            if (!registerResponseContent.IsRegistrationSuccessful)
+            if (!registrationResponse.IsRegistrationSuccessful)
                 return Problem("Registration not successful",
                                nameof(signUpModel),
                                StatusCodes.Status409Conflict,
                                "Not acceptable registration",
                                nameof(UserRegisterResponse));
 
-            await SetupSessionCookieAsync(registerResponseContent.Email, registerResponseContent.Role);
+            await SetupSessionCookieAsync(registrationResponse.Email, registrationResponse.Role);
 
             return RedirectToAction("Index", "Home");
         }
@@ -130,32 +123,29 @@ namespace FoundersPC.Web.Controllers
         public async Task<IActionResult> SignInAsync(SignInViewModel model)
         {
             if (!ModelState.IsValid)
-                return ValidationProblem("Not valid credentials",
-                                         nameof(model));
+                return ValidationProblem("Not valid credentials. Bad model.",
+                                         nameof(model),
+                                         400,
+                                         "Error",
+                                         nameof(SignInViewModel));
 
-            var signInModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
+            var signInResponse = await _authenticationService.SignInAsync(model);
 
-            var signInRequest = await _applicationMicroservices.IdentityServer.PostAsJsonAsync("authentication/login", signInModel);
-
-            if (!signInRequest.IsSuccessStatusCode) return BadRequest(signInModel);
-
-            var userLoginResponseContent = await signInRequest.Content.ReadFromJsonAsync<UserLoginResponse>();
-
-            if (userLoginResponseContent == null)
+            if (signInResponse == null)
                 return Problem("Deserialize error",
-                               nameof(userLoginResponseContent),
+                               nameof(signInResponse),
                                StatusCodes.Status500InternalServerError,
                                "Response error",
                                nameof(UserLoginResponse));
 
-            if (!userLoginResponseContent.IsUserExists)
+            if (!signInResponse.IsUserExists)
                 return NotFound(new
                                 {
                                     error = "User not exists"
                                 });
 
-            await SetupSessionCookieAsync(userLoginResponseContent.Email, userLoginResponseContent.Role);
-            SetupJwtTokenInCookie(userLoginResponseContent.Email, userLoginResponseContent.Role);
+            await SetupSessionCookieAsync(signInResponse.Email, signInResponse.Role);
+            SetupJwtTokenInCookie(signInResponse.Email, signInResponse.Role);
 
             return RedirectToAction("Index", "Home");
         }

@@ -22,51 +22,61 @@
     class="main">
     <div
         class="col-md-9 col-sm-12
-                        mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-4 mt-sm-4 mt-4">
+               mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-4 mt-sm-4 mt-4">
         <div
             class="register-form">
             <form
                 asp-action="SignUp"
-                asp-controller="Authentication">
+                asp-controller="Authentication"
+                method="post">
                 <div
                     asp-validation-summary="ModelOnly"
                     class="text-danger">
                 </div>
                 <div
-                    class="form-label-group">
+                    class="mb-3">
                     <div
-                        class="input-group">
+                        class="form-label-group
+                               mb-1">
                         <input
                             asp-for="Email"
-                            class="bg-dark form-control text-light"
-                            id="inputEmail"
-                            placeholder="Email address"
+                            class="bg-dark
+                                   form-control
+                                   text-light"
+                            placeholder="email@example.com"
                             type="email">
-                        <label>Email address</label>
+                        <label
+                            asp-for="Email">
+                        </label>
                     </div>
+                    <span
+                        asp-validation-for="Email"
+                        class="text-danger
+                               d-block">
+                    </span>
                 </div>
-                <span
-                    asp-validation-for="Email"
-                    class="text-danger">
-                </span>
 
                 <div
-                    class="form-label-group">
+                    class="mb-3">
                     <div
-                        class="input-group">
+                        class="form-label-group
+                           input-group
+                           mb-1">
                         <input
                             asp-for="RawPassword"
-                            autofocus
-                            class="bg-dark form-control text-light"
+                            class="bg-dark
+                                   form-control
+                                   text-light"
                             id="inputPassword"
                             placeholder="Password"
-                            required
                             type="password">
-                        <label>Password</label>
+                        <label
+                            asp-for="RawPassword">
+                        </label>
                         <div
                             class="d-flex">
                             <div
-                                class="d-flex input-group-append"
+                                class="d-flex"
                                 id="img-generate-password">
                                 <a
                                     class="btn btn-outline-warning d-flex input-group-text">
@@ -75,7 +85,7 @@
                                 </a>
                             </div>
                             <div
-                                class="d-flex input-group-append"
+                                class="d-flex"
                                 id="btn-hide">
                                 <a
                                     class="btn btn-outline-info d-flex input-group-text">
@@ -86,19 +96,23 @@
                             </div>
                         </div>
                     </div>
+                    <span
+                        asp-validation-for="RawPassword"
+                        class="d-block text-danger">
+                    </span>
                 </div>
-                <span
-                    asp-validation-for="RawPassword"
-                    class="text-danger">
-                </span>
 
                 <div
-                    class="form-label-group">
+                    class="mb-3">
                     <div
-                        class="input-group">
+                        class="form-label-group
+                               input-group
+                               mb-1">
                         <input
                             asp-for="RawPasswordConfirm"
-                            class="bg-dark form-control text-light"
+                            class="bg-dark
+                                   form-control
+                                   text-light"
                             id="inputPasswordConfirm"
                             placeholder="Email address"
                             type="password">
@@ -106,7 +120,7 @@
                         <div
                             class="d-flex">
                             <div
-                                class="d-flex input-group-append"
+                                class="d-flex"
                                 id="btn-hide-confirm">
                                 <a
                                     class="btn btn-outline-info d-flex input-group-text">
@@ -117,13 +131,14 @@
                             </div>
                         </div>
                     </div>
+                    <span
+                        asp-validation-for="RawPasswordConfirm"
+                        class="text-danger
+                               d-block">
+                    </span>
                 </div>
-                <span
-                    asp-validation-for="RawPasswordConfirm"
-                    class="text-danger">
-                </span>
                 <div
-                    class="form-group mt-4">
+                    class="form-group">
                     <input
                         class="btn btn-success"
                         type="submit"

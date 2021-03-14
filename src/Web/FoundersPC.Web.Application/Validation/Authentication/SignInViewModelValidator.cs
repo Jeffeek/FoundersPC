@@ -15,6 +15,7 @@ namespace FoundersPC.Web.Application.Validation.Authentication
                 .NotNull()
                 .NotEmpty()
                 .MinimumLength(5);
+
             RuleFor(model => model.LoginOrEmail)
                 .NotNull()
                 .NotEmpty()

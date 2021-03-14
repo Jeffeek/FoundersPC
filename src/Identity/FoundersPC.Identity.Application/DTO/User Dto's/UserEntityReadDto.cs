@@ -1,6 +1,8 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
+using FoundersPC.ApplicationShared;
 
 #endregion
 
@@ -27,5 +29,7 @@ namespace FoundersPC.Identity.Application.DTO
         public bool SendMessageOnApiRequest { get; set; }
 
         public RoleEntityReadDto Role { get; set; }
+
+        public IEnumerable<ApiAccessUserTokenReadDto> Tokens { get; set; }
     }
 }

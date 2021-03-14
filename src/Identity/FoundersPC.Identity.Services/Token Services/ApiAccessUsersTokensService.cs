@@ -11,6 +11,7 @@ using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -18,18 +19,21 @@ namespace FoundersPC.Identity.Services.Token_Services
 {
     public class ApiAccessUsersTokensService : IApiAccessUsersTokensService
     {
+        private readonly ILogger<ApiAccessUsersTokensService> _logger;
         private readonly IMapper _mapper;
         private readonly TokenEncryptorService _tokenEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork,
                                            TokenEncryptorService tokenEncryptorService,
-                                           IMapper mapper
+                                           IMapper mapper,
+                                           ILogger<ApiAccessUsersTokensService> logger
         )
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId)
@@ -78,7 +82,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
-            if (ReferenceEquals(tokenEntity, null)) return false;
+            if (tokenEntity is null) return false;
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
@@ -87,7 +91,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
 
-            if (ReferenceEquals(tokenEntity, null)) return false;
+            if (tokenEntity is null) return false;
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
@@ -116,7 +120,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         private bool CanMakeRequestAsync(AccessTokenLog tokenLog)
         {
-            if (ReferenceEquals(tokenLog, null)) return false;
+            if (tokenLog is null) return false;
 
             if (tokenLog.ApiAccessToken.IsBlocked) return false;
 
@@ -129,7 +133,12 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> BlockAsync(string token)
         {
-            if (ReferenceEquals(token, null)) throw new ArgumentNullException(nameof(token));
+            if (token is null)
+            {
+                _logger.LogError($"{nameof(ApiAccessUsersTokensService)}: token was null when tried to block");
+
+                throw new ArgumentNullException(nameof(token));
+            }
 
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 

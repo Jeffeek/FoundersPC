@@ -8,19 +8,19 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers
 {
-    public static class LogHelper
+    public static class LogRequestExtensions
     {
-        public static void LogForModelUpdated<T>(this ILogger<T> logger, HttpContext httpContext, int modelId)
+        public static void LogForModelUpdate<T>(this ILogger<T> logger, HttpContext httpContext, int modelId)
         {
             logger.LogInformation($"{typeof(T).Name}: request for updating model with id = {modelId} by {httpContext.User.Identity?.Name ?? "Unknown"}, IPv4 : {httpContext.GetIpAddress()}");
         }
 
-        public static void LogForModelInserted<T>(this ILogger<T> logger, HttpContext httpContext)
+        public static void LogForModelInsert<T>(this ILogger<T> logger, HttpContext httpContext)
         {
             logger.LogInformation($"{typeof(T).Name}: request for inserting by {httpContext.User.Identity?.Name ?? "Unknown"}, IPv4 : {httpContext.GetIpAddress()}");
         }
 
-        public static void LogForModelDeleted<T>(this ILogger<T> logger, HttpContext httpContext, int modelId)
+        public static void LogForModelDelete<T>(this ILogger<T> logger, HttpContext httpContext, int modelId)
         {
             logger.LogInformation($"{typeof(T).Name}: request for deleting model with id = {modelId} by {httpContext.User.Identity?.Name ?? "Unknown"}, IPv4 : {httpContext.GetIpAddress()}");
         }

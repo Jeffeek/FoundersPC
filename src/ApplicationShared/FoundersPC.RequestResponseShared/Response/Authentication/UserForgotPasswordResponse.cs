@@ -8,6 +8,6 @@
 
         public bool IsConfirmationMailSent { get; set; } = false;
 
-        public string EmailSendError { get; set; } = null;
+        public string Error { get; set; } = null;
     }
 }

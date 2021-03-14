@@ -9,6 +9,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -17,17 +18,20 @@ namespace FoundersPC.Identity.Services.User_Services
     public class UserRegistrationService : IUserRegistrationService
     {
         private readonly PasswordEncryptorService _encryptorService;
+        private readonly ILogger<UserRegistrationService> _logger;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
 
         public UserRegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
                                        IMapper mapper,
-                                       PasswordEncryptorService encryptorService
+                                       PasswordEncryptorService encryptorService,
+                                       ILogger<UserRegistrationService> logger
         )
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
             _mapper = mapper;
             _encryptorService = encryptorService;
+            _logger = logger;
         }
 
         public async Task<bool> RegisterDefaultUserAsync(string email, string password)
@@ -35,7 +39,14 @@ namespace FoundersPC.Identity.Services.User_Services
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
                 .SingleOrDefault(role => role.RoleTitle == "DefaultUser");
 
-            if (ReferenceEquals(defaultUserRole, null)) throw new NoNullAllowedException("No role found");
+            if (defaultUserRole is null)
+            {
+                _logger.LogError($"{nameof(UserRegistrationService)}: role 'Default user' not found");
+
+                throw new NoNullAllowedException("No role found");
+            }
+
+            _logger.LogInformation($"{nameof(UserRegistrationService)}: role 'Default User' found");
 
             return await Register(email, password, defaultUserRole);
         }
@@ -45,21 +56,50 @@ namespace FoundersPC.Identity.Services.User_Services
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
                 .SingleOrDefault(role => role.RoleTitle == "Manager");
 
-            if (ReferenceEquals(defaultUserRole, null)) throw new NoNullAllowedException("No role found");
+            if (defaultUserRole is null)
+            {
+                _logger.LogError($"{nameof(UserRegistrationService)}: role 'Manager' not found");
+
+                throw new NoNullAllowedException("No role found");
+            }
+
+            _logger.LogInformation($"{nameof(UserRegistrationService)}: role 'Manager' found");
 
             return await Register(email, password, defaultUserRole);
         }
 
         private async Task<bool> Register(string email, string rawPassword, RoleEntity role)
         {
-            if (ReferenceEquals(email, null)) throw new ArgumentNullException(nameof(email));
-            if (ReferenceEquals(rawPassword, null)) throw new ArgumentNullException(nameof(rawPassword));
-            if (ReferenceEquals(role, null)) throw new ArgumentNullException(nameof(role));
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(UserRegistrationService)}: email was null when tried to register user");
+
+                throw new ArgumentNullException(nameof(email));
+            }
+
+            if (rawPassword is null)
+            {
+                _logger.LogError($"{nameof(UserRegistrationService)}: raw password was null when tried to register user");
+
+                throw new ArgumentNullException(nameof(rawPassword));
+            }
+
+            if (role is null)
+            {
+                _logger.LogError($"{nameof(UserRegistrationService)}: role was null when tried to register user");
+
+                throw new ArgumentNullException(nameof(role));
+            }
 
             var userAlreadyExists = await _unitOfWorkUsersIdentity.UsersRepository
                                                                   .AnyAsync(user => user.Email == email);
 
-            if (userAlreadyExists) return false;
+            if (userAlreadyExists)
+            {
+                _logger.LogWarning($"{nameof(UserRegistrationService)}: user with email = {email} is already exist");
+
+                return false;
+            }
 
             var hashedPassword = _encryptorService.EncryptPassword(rawPassword);
 

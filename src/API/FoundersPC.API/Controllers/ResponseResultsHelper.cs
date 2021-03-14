@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.API.Controllers
 {
-    internal static class ResultsHelper
+    internal static class ResponseResultsHelper
     {
         public static ActionResult NotFoundByIdResult(int id) =>
             new ContentResult

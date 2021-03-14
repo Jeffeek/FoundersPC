@@ -1,14 +1,18 @@
 #region Using namespaces
 
+using System;
 using System.IO;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
 using FoundersPC.Identity.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -56,7 +60,22 @@ namespace FoundersPC.IdentityServer
             services.AddMappings();
             services.AddValidators();
 
-            services.AddAuthentication();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
+                                  config =>
+                                  {
+                                      var key = JwtConfiguration.GetSymmetricSecurityKey();
+                                      config.BackchannelTimeout = TimeSpan.FromSeconds(20);
+
+                                      config.TokenValidationParameters = new TokenValidationParameters
+                                                                         {
+                                                                             ValidateAudience = false,
+                                                                             ValidIssuer = JwtConfiguration.Issuer,
+                                                                             ValidAudience = JwtConfiguration.Audience,
+                                                                             IssuerSigningKey = key
+                                                                         };
+                                  });
+
             services.AddAuthorization();
 
             services.AddSwaggerGen(c => c.SwaggerDoc("v1",

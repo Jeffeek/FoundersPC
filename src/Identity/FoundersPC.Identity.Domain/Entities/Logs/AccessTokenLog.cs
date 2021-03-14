@@ -25,7 +25,7 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
 
         public bool Equals(AccessTokenLog other)
         {
-            if (ReferenceEquals(null, other)) return false;
+            if (other is null) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return ApiAccessUsersTokenId == other.ApiAccessUsersTokenId

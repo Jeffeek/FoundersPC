@@ -10,6 +10,7 @@ using FluentEmail.Core;
 using FluentEmail.Smtp;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Domain.Settings;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -18,10 +19,12 @@ namespace FoundersPC.Identity.Services.EmailServices
     public class MailService : IMailService
     {
         private readonly EmailBotConfiguration _botConfiguration;
+        private readonly ILogger<IMailService> _logger;
 
-        public MailService(EmailBotConfiguration botConfiguration)
+        public MailService(EmailBotConfiguration botConfiguration, ILogger<MailService> logger)
         {
             _botConfiguration = botConfiguration;
+            _logger = logger;
 
             Email.DefaultSender = new SmtpSender(() =>
                                                      new SmtpClient(_botConfiguration.Host,
@@ -37,7 +40,12 @@ namespace FoundersPC.Identity.Services.EmailServices
 
         public async Task<bool> SendToAsync(string email, string subject = "Unnamed", string content = "", bool html = false)
         {
-            if (email == null) throw new ArgumentNullException(nameof(email));
+            if (email == null)
+            {
+                _logger.LogError($"{nameof(MailService)}: email was null when tried to send message");
+
+                throw new ArgumentNullException(nameof(email));
+            }
 
             var sendResult = await Email.From(_botConfiguration.MailAddress, "FoundersPC_DAEMON")
                                         .Subject(subject)
@@ -45,7 +53,16 @@ namespace FoundersPC.Identity.Services.EmailServices
                                         .To(email)
                                         .SendAsync();
 
-            return sendResult.Successful;
+            if (sendResult.Successful)
+            {
+                _logger.LogInformation($"Successful sending an email to: {email}");
+
+                return true;
+            }
+
+            _logger.LogError($"Unsuccessful sending an email to: {email}");
+
+            return false;
         }
 
         public async Task<bool> SendToManyAsync(IEnumerable<string> emails, string subject = "Unnamed", string content = "", bool html = false)
