@@ -112,6 +112,19 @@
                                         Settings
                                     </a>
                                 </li>
+                                @{
+                                    if (User.IsInRole("Administrator"))
+                                    {
+                                        <li>
+                                            <a
+                                                asp-action="Users"
+                                                asp-controller="Admin"
+                                                class="btn btn-black dropdown-item text-center text-info">
+                                                Users
+                                            </a>
+                                        </li>
+                                    }
+                                }
                                 <li>
                                     <hr
                                         class="hr-runner"/>

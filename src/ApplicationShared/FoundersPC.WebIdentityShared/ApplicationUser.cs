@@ -1,14 +1,12 @@
-﻿#region Using namespaces
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using FoundersPC.ApplicationShared;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-#endregion
-
-namespace FoundersPC.Identity.Application.DTO
+namespace FoundersPC.WebIdentityShared
 {
-    public class UserEntityReadDto
+    public class ApplicationUser
     {
         public int Id { get; set; }
 
@@ -22,14 +20,10 @@ namespace FoundersPC.Identity.Application.DTO
 
         public string Email { get; set; }
 
-        public string HashedPassword { get; set; }
-
         public bool SendMessageOnEntrance { get; set; }
 
         public bool SendMessageOnApiRequest { get; set; }
 
-        public RoleEntityReadDto Role { get; set; }
-
-        public IEnumerable<ApiAccessUserTokenReadDto> Tokens { get; set; }
+        public string Role { get; set; }
     }
 }

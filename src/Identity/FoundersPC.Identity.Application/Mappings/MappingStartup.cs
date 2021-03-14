@@ -4,6 +4,7 @@ using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.WebIdentityShared;
 
 #endregion
 
@@ -15,6 +16,11 @@ namespace FoundersPC.Identity.Application.Mappings
         {
             CreateMap<RoleEntity, RoleEntityReadDto>().ReverseMap();
             CreateMap<UserEntity, UserEntityReadDto>().ReverseMap();
+            CreateMap<UserEntityReadDto, ApplicationUser>()
+                .ForMember(dest => dest.Role,
+                           source => source.MapFrom(x => x.Role.RoleTitle));
+
+            CreateMap<UserEntranceLogReadDto, ApplicationUserEntrance>();
 
             CreateMap<UserEntityReadDto, UserLoginResponse>()
                 .ForMember(dest => dest.IsUserBlocked,
