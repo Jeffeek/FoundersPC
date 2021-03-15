@@ -5,6 +5,8 @@ using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Settings;
+using FoundersPC.Identity.Services.Administration.Admin_Services;
+using FoundersPC.Identity.Services.Administration.Manager_Services;
 using FoundersPC.Identity.Services.EmailServices;
 using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.Identity.Services.Log_Services;
@@ -22,7 +24,7 @@ namespace FoundersPC.Identity.Services
         public static void AddUsersIdentityServices(this IServiceCollection services)
         {
             services.AddScoped<IUserRegistrationService, UserRegistrationService>();
-            services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<IUsersInformationService, UsersInformationService>();
             services.AddScoped<IManagerService, ManagerService>();
             services.AddScoped<IAdminService, AdminService>();
         }

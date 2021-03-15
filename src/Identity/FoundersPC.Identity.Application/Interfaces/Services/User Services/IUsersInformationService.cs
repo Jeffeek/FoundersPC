@@ -8,7 +8,7 @@ using FoundersPC.Identity.Application.DTO;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 {
-    public interface IUsersService
+    public interface IUsersInformationService
     {
         Task<IEnumerable<UserEntityReadDto>> GetAllAsync();
 

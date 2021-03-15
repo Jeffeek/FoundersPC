@@ -60,9 +60,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> IsTokenBlockedAsync(string token)
         {
-            var hashedToken = _tokenEncryptorService.ComputeHash(token);
-
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(hashedToken);
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
             return tokenEntity is not null && tokenEntity.IsBlocked;
         }

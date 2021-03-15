@@ -27,9 +27,9 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUserRegistrationService _userRegistrationService;
         private readonly IUsersEntrancesService _usersEntrancesService;
-        private readonly IUsersService _usersService;
+        private readonly IUsersInformationService _usersInformationService;
 
-        public AuthenticationAndRegistrationController(IUsersService authenticationService,
+        public AuthenticationAndRegistrationController(IUsersInformationService authenticationInformationService,
                                                        IMailService mailService,
                                                        PasswordEncryptorService passwordEncryptorService,
                                                        IUserRegistrationService userRegistrationService,
@@ -38,7 +38,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                                                        ILogger<AuthenticationAndRegistrationController> logger
         )
         {
-            _usersService = authenticationService;
+            _usersInformationService = authenticationInformationService;
             _mailService = mailService;
             _passwordEncryptorService = passwordEncryptorService;
             _userRegistrationService = userRegistrationService;
@@ -62,7 +62,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Forgot Password request with email = {request.Email}");
 
-            var user = await _usersService.FindUserByEmailAsync(request.Email);
+            var user = await _usersInformationService.FindUserByEmailAsync(request.Email);
 
             if (user is null)
             {
@@ -78,7 +78,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             }
 
             var newPassword = _passwordEncryptorService.GeneratePassword();
-            var updateResult = await _usersService.ChangePasswordToAsync(user.Id, newPassword, user.HashedPassword);
+            var updateResult = await _usersInformationService.ChangePasswordToAsync(user.Id, newPassword, user.HashedPassword);
 
             if (updateResult == false)
             {
@@ -150,7 +150,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        };
             }
 
-            var user = await _usersService.FindUserByEmailAsync(request.Email);
+            var user = await _usersInformationService.FindUserByEmailAsync(request.Email);
 
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: successful registration for user with email = {request.Email}");
 
@@ -174,7 +174,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                                       MetaInfo = "Bad model"
                                   });
 
-            var user = await _usersService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
+            var user = await _usersInformationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
 
             if (user is null)
             {

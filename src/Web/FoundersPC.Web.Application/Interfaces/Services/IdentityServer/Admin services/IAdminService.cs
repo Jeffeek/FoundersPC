@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.WebIdentityShared;
 
-namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer
+namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services
 {
     // todo: get all token usages
     public interface IAdminService

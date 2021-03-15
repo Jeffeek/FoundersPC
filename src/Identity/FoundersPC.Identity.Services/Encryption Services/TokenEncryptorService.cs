@@ -10,8 +10,9 @@ namespace FoundersPC.Identity.Services.Encryption_Services
 {
     public class TokenEncryptorService
     {
-        public string ComputeHash(string rawToken)
+        public string CreateToken()
         {
+            var rawToken = CreateRawToken();
             var tokenBytes = Encoding.Unicode.GetBytes(rawToken);
 
             using var hash = SHA256.Create();
@@ -23,7 +24,7 @@ namespace FoundersPC.Identity.Services.Encryption_Services
             return hashedInputStringBuilder.ToString();
         }
 
-        public string CreateRawToken()
+        private string CreateRawToken()
         {
             var guid = Guid.NewGuid();
 

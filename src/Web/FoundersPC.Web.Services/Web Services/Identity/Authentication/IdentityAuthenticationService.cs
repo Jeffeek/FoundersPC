@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.RequestResponseShared.Request.Authentication;
@@ -95,6 +96,13 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
             var signInRequest = await client.PostAsJsonAsync("authentication/login", mappedRequestModel);
+
+            if (!signInRequest.IsSuccessStatusCode)
+            {
+                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)} to Identity server returned a server error {signInRequest.StatusCode}");
+
+                throw new NetworkInformationException((int)signInRequest.StatusCode);
+            }
 
             var signInResponseContent = await signInRequest.Content.ReadFromJsonAsync<UserLoginResponse>();
 

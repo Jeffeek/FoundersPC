@@ -65,14 +65,18 @@ namespace FoundersPC.Identity.Services.EmailServices
             return false;
         }
 
-        public async Task<bool> SendToManyAsync(IEnumerable<string> emails, string subject = "Unnamed", string content = "", bool html = false)
+        public async Task<bool> SendToManyAsync(IEnumerable<string> emails,
+                                                string subject = "Unnamed",
+                                                string content = "",
+                                                bool html = false
+        )
         {
             var sendResults = new List<bool>();
 
             foreach (var email in emails)
             {
-                var send = await SendToAsync(email, subject, content, html);
-                sendResults.Add(send);
+                var sendResult = await SendToAsync(email, subject, content, html);
+                sendResults.Add(sendResult);
             }
 
             return sendResults.All(x => x);
@@ -101,7 +105,7 @@ namespace FoundersPC.Identity.Services.EmailServices
 
         public async Task<bool> SendNewPasswordAsync(string email, string password)
         {
-            var content = $"Congratz! You've changed your password to {password}. Use it to get access to our site!";
+            var content = $"Congrats! You've changed your password to {password}. Use it to get access to our site!";
 
             return await SendToAsync(email, "Password Change", content);
         }

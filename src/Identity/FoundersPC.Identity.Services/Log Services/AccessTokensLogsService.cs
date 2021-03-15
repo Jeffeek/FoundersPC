@@ -63,6 +63,7 @@ namespace FoundersPC.Identity.Services.Log_Services
             return true;
         }
 
+        // 88 - length of the token
         public async Task<bool> LogAsync(string token)
         {
             if (token == null

@@ -18,13 +18,22 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         Task<bool> RegisterNewManagerAsync(string email);
 
         /// <summary>
-        ///     Blocking the user account with all tokens he had
+        ///     Blocking the user account by id with all tokens he had
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="blockAllTokens"></param>
         /// <param name="sendNotification"></param>
         /// <returns></returns>
         Task<bool> BlockUserAsync(int userId, bool blockAllTokens = true, bool sendNotification = true);
+
+        /// <summary>
+        ///     Blocking the user account by email with all tokens he had
+        /// </summary>
+        /// <param name="userEmail"></param>
+        /// <param name="blockAllTokens"></param>
+        /// <param name="sendNotification"></param>
+        /// <returns></returns>
+        Task<bool> BlockUserAsync(string userEmail, bool blockAllTokens = true, bool sendNotification = true);
 
         /// <summary>
         ///     Makes user inactive ('removes') from database

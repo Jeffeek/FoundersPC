@@ -56,14 +56,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             PrepareRequest(client, token);
 
-            var request = await client.GetFromJsonAsync<IEnumerable<ApplicationUser>>($"{_baseAddresses.IdentityApiBaseAddress}admin/users");
+            var request = await client.GetFromJsonAsync<IEnumerable<ApplicationUser>>("users");
 
             return request;
         }
 
         private void PrepareRequest(HttpClient client, string token)
         {
-            //client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}admin");
+            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}/admin/");
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

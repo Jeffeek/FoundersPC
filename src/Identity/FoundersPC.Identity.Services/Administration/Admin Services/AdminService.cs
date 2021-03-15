@@ -3,6 +3,7 @@
 using System;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
@@ -12,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-namespace FoundersPC.Identity.Services.User_Services
+namespace FoundersPC.Identity.Services.Administration.Admin_Services
 {
     public class AdminService : IAdminService
     {
@@ -92,6 +93,8 @@ namespace FoundersPC.Identity.Services.User_Services
                 || user.IsBlocked)
                 return false;
 
+            if (user.Role.RoleTitle == "Administrator") return false;
+
             if (blockAllTokens)
             {
                 var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
@@ -103,7 +106,41 @@ namespace FoundersPC.Identity.Services.User_Services
 
             user.IsBlocked = true;
 
-            return await _unitOfWork.UsersRepository.UpdateAsync(user);
+            var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
+
+            if (!updateResult) return false;
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> BlockUserAsync(string userEmail, bool blockAllTokens = true, bool sendNotification = true)
+        {
+            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+
+            if (user is null) return false;
+
+            if (!user.IsActive
+                || user.IsBlocked)
+                return false;
+
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
+
+            if (blockAllTokens)
+            {
+                var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
+                foreach (var token in userTokens) await _accessUsersTokensService.BlockAsync(token.Id);
+            }
+
+            if (sendNotification)
+                await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can be unblocked. Contact the administrator for reasons");
+
+            user.IsBlocked = true;
+
+            var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
+
+            if (!updateResult) return false;
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true)
@@ -113,6 +150,8 @@ namespace FoundersPC.Identity.Services.User_Services
             if (user is null) return false;
 
             if (!user.IsActive) return false;
+
+            if (user.Role.RoleTitle == "Administrator") return false;
 
             if (sendNotification)
                 await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");

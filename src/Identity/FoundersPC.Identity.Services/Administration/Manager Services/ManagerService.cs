@@ -4,7 +4,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 
 #endregion
 
-namespace FoundersPC.Identity.Services.User_Services
+namespace FoundersPC.Identity.Services.Administration.Manager_Services
 {
     public class ManagerService : IManagerService { }
 }

@@ -13,19 +13,19 @@ using Microsoft.Extensions.Logging;
 
 #endregion
 
-namespace FoundersPC.Identity.Services.User_Services
+namespace FoundersPC.Identity.Services.Administration.Admin_Services
 {
-    public class UsersService : IUsersService
+    public class UsersInformationService : IUsersInformationService
     {
-        private readonly ILogger<UsersService> _logger;
+        private readonly ILogger<UsersInformationService> _logger;
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
-        public UsersService(PasswordEncryptorService passwordEncryptorService,
-                            IUnitOfWorkUsersIdentity unitOfWork,
-                            IMapper mapper,
-                            ILogger<UsersService> logger
+        public UsersInformationService(PasswordEncryptorService passwordEncryptorService,
+                                       IUnitOfWorkUsersIdentity unitOfWork,
+                                       IMapper mapper,
+                                       ILogger<UsersInformationService> logger
         )
         {
             _passwordEncryptorService = passwordEncryptorService;
@@ -44,7 +44,7 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (email is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: user by email: email was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: user by email: email was null");
 
                 throw new ArgumentNullException(nameof(email));
             }
@@ -58,21 +58,21 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (emailOrLogin is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: Find User By Email Or Login And Hashed Password: email or login was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: Find User By Email Or Login And Hashed Password: email or login was null");
 
                 throw new ArgumentNullException(nameof(emailOrLogin));
             }
 
             if (hashedPassword is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: Find User By Email Or Login And Hashed Password: hashed password was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: Find User By Email Or Login And Hashed Password: hashed password was null");
 
                 throw new ArgumentNullException(nameof(hashedPassword));
             }
 
             if (hashedPassword.Length != 128)
             {
-                _logger.LogError($"{nameof(UsersService)}: Find User By Email Or Login And Hashed Password: hashed password was not 128 length");
+                _logger.LogError($"{nameof(UsersInformationService)}: Find User By Email Or Login And Hashed Password: hashed password was not 128 length");
 
                 throw new ArgumentException($"Hashed password should be 128 length, but was {hashedPassword.Length}");
             }
@@ -89,14 +89,14 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (emailOrLogin is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: Find User By Email Or Login And Password: email or login was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: Find User By Email Or Login And Password: email or login was null");
 
                 throw new ArgumentNullException(nameof(emailOrLogin));
             }
 
             if (password is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: Find User By Email Or Login And Password: password was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: Find User By Email Or Login And Password: password was null");
 
                 throw new ArgumentNullException(nameof(password));
             }
@@ -112,14 +112,14 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (user is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change password: user model was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change password: user model was null");
 
                 return false;
             }
 
             if (user.HashedPassword != oldHashedPassword)
             {
-                _logger.LogError($"{nameof(UsersService)}: change password: user's hashed password was not equal to old hashed password");
+                _logger.LogError($"{nameof(UsersInformationService)}: change password: user's hashed password was not equal to old hashed password");
 
                 return false;
             }
@@ -148,7 +148,7 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (user is not null) return await ChangePasswordToAsync(user.Id, newPassword, oldPassword);
 
-            _logger.LogError($"{nameof(UsersService)}: change password: user model was null");
+            _logger.LogError($"{nameof(UsersInformationService)}: change password: user model was null");
 
             throw new ArgumentNullException(nameof(user));
         }
@@ -157,14 +157,14 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (userEmail is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change login: email was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change login: email was null");
 
                 throw new ArgumentNullException(nameof(userEmail));
             }
 
             if (newLogin is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change login: new login was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change login: new login was null");
 
                 throw new ArgumentNullException(nameof(newLogin));
             }
@@ -175,8 +175,8 @@ namespace FoundersPC.Identity.Services.User_Services
                 || user.Login == newLogin)
             {
                 _logger.LogError(user is null
-                                     ? $"{nameof(UsersService)}: change login: user from db was null"
-                                     : $"{nameof(UsersService)}: change login: user's login was equal to new login");
+                                     ? $"{nameof(UsersInformationService)}: change login: user from db was null"
+                                     : $"{nameof(UsersInformationService)}: change login: user's login was equal to new login");
 
                 return false;
             }
@@ -187,7 +187,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
 
-            _logger.LogError($"{nameof(UsersService)}: change login: update result was false");
+            _logger.LogError($"{nameof(UsersInformationService)}: change login: update result was false");
 
             return false;
         }
@@ -196,21 +196,21 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (user is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change login: user model was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change login: user model was null");
 
                 throw new ArgumentNullException(nameof(user));
             }
 
             if (newLogin is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change login: new login was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change login: new login was null");
 
                 throw new ArgumentNullException(nameof(newLogin));
             }
 
             if (user.Email is not null) return await ChangeLoginToAsync(user.Email, newLogin);
 
-            _logger.LogError($"{nameof(UsersService)}: change login: user email was null");
+            _logger.LogError($"{nameof(UsersInformationService)}: change login: user email was null");
 
             return false;
         }
@@ -219,14 +219,14 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (userId < 1)
             {
-                _logger.LogError($"{nameof(UsersService)}: change login: user id < 1");
+                _logger.LogError($"{nameof(UsersInformationService)}: change login: user id < 1");
 
                 throw new ArgumentOutOfRangeException(nameof(userId));
             }
 
             if (newLogin is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change login: new login was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change login: new login was null");
 
                 throw new ArgumentNullException(nameof(newLogin));
             }
@@ -237,8 +237,8 @@ namespace FoundersPC.Identity.Services.User_Services
                 || user.Login == newLogin)
             {
                 _logger.LogError(user is null
-                                     ? $"{nameof(UsersService)}: change login: user from db was null"
-                                     : $"{nameof(UsersService)}: change login: user's login was equal to new login");
+                                     ? $"{nameof(UsersInformationService)}: change login: user from db was null"
+                                     : $"{nameof(UsersInformationService)}: change login: user's login was equal to new login");
 
                 return false;
             }
@@ -249,7 +249,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
 
-            _logger.LogError($"{nameof(UsersService)}: change login: user from db was null");
+            _logger.LogError($"{nameof(UsersInformationService)}: change login: user from db was null");
 
             return false;
         }
@@ -258,7 +258,7 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (userEmail is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change notifications: user email was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change notifications: user email was null");
 
                 throw new ArgumentNullException(nameof(userEmail));
             }
@@ -267,7 +267,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (user is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change notifications: user from db was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change notifications: user from db was null");
 
                 return false;
             }
@@ -279,7 +279,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
 
-            _logger.LogError($"{nameof(UsersService)}: change notifications: update result was null");
+            _logger.LogError($"{nameof(UsersInformationService)}: change notifications: update result was null");
 
             return false;
         }
@@ -288,14 +288,14 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (user is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change notifications: user model was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change notifications: user model was null");
 
                 throw new ArgumentNullException(nameof(user));
             }
 
             if (user.Id >= 1) return await ChangeNotificationsToAsync(user.Id, notificationOnEntrance, notificationOnApiRequest);
 
-            _logger.LogError($"{nameof(UsersService)}: change notifications: user id < 1");
+            _logger.LogError($"{nameof(UsersInformationService)}: change notifications: user id < 1");
 
             throw new ArgumentOutOfRangeException(nameof(user.Id));
         }
@@ -304,7 +304,7 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (userId < 1)
             {
-                _logger.LogError($"{nameof(UsersService)}: change notifications: user id < 1");
+                _logger.LogError($"{nameof(UsersInformationService)}: change notifications: user id < 1");
 
                 throw new ArgumentOutOfRangeException(nameof(userId));
             }
@@ -313,7 +313,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (user is null)
             {
-                _logger.LogError($"{nameof(UsersService)}: change notifications: user from db was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change notifications: user from db was null");
 
                 return false;
             }
@@ -325,7 +325,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (!updateResult)
             {
-                _logger.LogError($"{nameof(UsersService)}: change notifications: update result was null");
+                _logger.LogError($"{nameof(UsersInformationService)}: change notifications: update result was null");
 
                 return false;
             }
