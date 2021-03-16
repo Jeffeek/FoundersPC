@@ -2,6 +2,7 @@
 
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -29,7 +30,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
             var isRequestGranted = false;
 
-            if (HttpContext.User.IsInRole("Administrator"))
+            if (HttpContext.User.IsInRole(ApplicationRoles.Administrator.ToString()))
                 isRequestGranted = true;
             else if (HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType) == email)
                 isRequestGranted = true;
@@ -56,7 +57,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
             var isRequestGranted = false;
 
-            if (HttpContext.User.IsInRole("Administrator"))
+            if (HttpContext.User.IsInRole(ApplicationRoles.Administrator.ToString()))
                 isRequestGranted = true;
             else if (HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType) == email) isRequestGranted = true;
 

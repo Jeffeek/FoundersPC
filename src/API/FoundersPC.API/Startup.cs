@@ -83,16 +83,16 @@ namespace FoundersPC.API
                                       {
                                           config.AddPolicy("Changeable",
                                                            builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole("Administrator",
-                                                                                          "Manager")
+                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
+                                                                                          ApplicationRoles.Manager.ToString())
                                                                              .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                                                                              .Build());
 
                                           config.AddPolicy("Readable",
                                                            builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole("Administrator",
-                                                                                          "Manager",
-                                                                                          "DefaultUser")
+                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
+                                                                                          ApplicationRoles.Manager.ToString(),
+                                                                                          ApplicationRoles.DefaultUser.ToString())
                                                                              .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                                                                              .Build());
                                       });

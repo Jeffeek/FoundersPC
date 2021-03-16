@@ -93,7 +93,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
                 || user.IsBlocked)
                 return false;
 
-            if (user.Role.RoleTitle == "Administrator") return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
 
             if (blockAllTokens)
             {
@@ -151,7 +151,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             if (!user.IsActive) return false;
 
-            if (user.Role.RoleTitle == "Administrator") return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
 
             if (sendNotification)
                 await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");

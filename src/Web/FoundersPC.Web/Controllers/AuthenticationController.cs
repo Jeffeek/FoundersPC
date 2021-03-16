@@ -179,12 +179,14 @@ namespace FoundersPC.Web.Controllers
                          };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                                          new ClaimsPrincipal(identity));
         }
 
         private void RemoveJwtTokenInCookie()
         {
-            if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
+            if (HttpContext.Request.Cookies.ContainsKey("token"))
+                HttpContext.Response.Cookies.Delete("token");
         }
 
         #endregion

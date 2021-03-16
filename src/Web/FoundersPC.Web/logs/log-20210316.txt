@@ -1,0 +1,245 @@
+03/16/2021 09:50:54 Web server started.. 1 
+03/16/2021 09:50:55 Web server HostBuilder created 1 
+03/16/2021 09:50:58 Host built 1 
+03/16/2021 09:51:04 Now listening on: "https://localhost:9000" 1 
+03/16/2021 09:51:04 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 09:51:04 Hosting environment: "Development" 1 
+03/16/2021 09:51:04 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 09:51:07 HTTP "GET" "/" responded 200 in 486.3884 ms 4 
+03/16/2021 09:51:45 HTTP "GET" "/" responded 200 in 6.4886 ms 5 
+03/16/2021 09:51:54 HTTP "GET" "/Authentication/SignIn" responded 200 in 258.6546 ms 5 
+03/16/2021 09:52:00 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 09:52:00 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 09:52:35 Received HTTP response headers after 34982.173ms - 500 16 
+03/16/2021 09:52:35 End processing HTTP request after 34995.8343ms - 500 16 
+03/16/2021 09:52:35 Request from IdentityAuthenticationService to Identity server returned a server error InternalServerError 16 
+03/16/2021 09:52:35 HTTP "POST" "/Authentication/SignIn" responded 500 in 35330.1595 ms 16 
+System.Net.NetworkInformation.NetworkInformationException (500): Невозможно загрузить профиль пользователя.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 132
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 09:52:35 An unhandled exception has occurred while executing the request. 16 
+System.Net.NetworkInformation.NetworkInformationException (500): Невозможно загрузить профиль пользователя.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 132
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 09:52:47 HTTP "GET" "/Authentication/SignIn" responded 200 in 6.0413 ms 4 
+03/16/2021 09:54:21 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 24 
+03/16/2021 09:54:21 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 24 
+03/16/2021 09:57:55 Web server started.. 1 
+03/16/2021 09:57:55 Web server HostBuilder created 1 
+03/16/2021 09:57:56 Host built 1 
+03/16/2021 09:57:57 Now listening on: "https://localhost:9000" 1 
+03/16/2021 09:57:57 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 09:57:57 Hosting environment: "Development" 1 
+03/16/2021 09:57:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 09:57:59 HTTP "GET" "/" responded 200 in 695.0426 ms 13 
+03/16/2021 09:58:02 HTTP "GET" "/Authentication/SignIn" responded 200 in 253.3223 ms 9 
+03/16/2021 09:58:16 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/16/2021 09:58:16 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/16/2021 09:58:21 Received HTTP response headers after 5693.6752ms - 200 6 
+03/16/2021 09:58:21 End processing HTTP request after 5707.0912ms - 200 6 
+03/16/2021 09:59:04 HTTP "POST" "/Authentication/SignIn" responded 302 in 57411.3712 ms 6 
+03/16/2021 09:59:04 HTTP "GET" "/" responded 200 in 45.6028 ms 4 
+03/16/2021 09:59:15 Start processing HTTP request "GET" https://localhost:3000/identityAPI/harddrives 13 
+03/16/2021 09:59:15 Sending HTTP request "GET" https://localhost:3000/identityAPI/harddrives 13 
+03/16/2021 09:59:15 Received HTTP response headers after 23.5549ms - 404 6 
+03/16/2021 09:59:15 End processing HTTP request after 28.2501ms - 404 6 
+03/16/2021 09:59:35 HTTP "GET" "/" responded 200 in 2.1798 ms 8 
+03/16/2021 09:59:35 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 5 
+03/16/2021 09:59:35 Start processing HTTP request "GET" https://localhost:3000/identityAPI/cases 4 
+03/16/2021 09:59:35 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 5 
+03/16/2021 09:59:35 HTTP "GET" "/Home/HardDrives" responded 200 in 19919.5064 ms 6 
+03/16/2021 09:59:35 Sending HTTP request "GET" https://localhost:3000/identityAPI/cases 4 
+03/16/2021 09:59:35 Received HTTP response headers after 40.9765ms - 404 19 
+03/16/2021 09:59:35 End processing HTTP request after 48.6659ms - 404 19 
+03/16/2021 09:59:35 HTTP "GET" "/Home/Cases" responded 200 in 59.7688 ms 19 
+03/16/2021 09:59:35 Received HTTP response headers after 499.8756ms - 200 6 
+03/16/2021 09:59:35 End processing HTTP request after 504.5324ms - 200 6 
+03/16/2021 09:59:35 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:35 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:36 Received HTTP response headers after 52.2776ms - 200 20 
+03/16/2021 09:59:36 End processing HTTP request after 58.3073ms - 200 20 
+03/16/2021 09:59:36 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 20 
+03/16/2021 09:59:36 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 20 
+03/16/2021 09:59:36 Received HTTP response headers after 51.566ms - 200 6 
+03/16/2021 09:59:36 End processing HTTP request after 54.1842ms - 200 6 
+03/16/2021 09:59:36 HTTP "GET" "/AccountSettings/Profile" responded 200 in 846.3453 ms 6 
+03/16/2021 09:59:41 Start processing HTTP request "GET" https://localhost:3000/identityAPI/cases 13 
+03/16/2021 09:59:41 Sending HTTP request "GET" https://localhost:3000/identityAPI/cases 13 
+03/16/2021 09:59:41 Received HTTP response headers after 4.8636ms - 404 19 
+03/16/2021 09:59:41 End processing HTTP request after 11.7068ms - 404 19 
+03/16/2021 09:59:41 HTTP "GET" "/Home/Cases" responded 200 in 15.4804 ms 19 
+03/16/2021 09:59:44 Start processing HTTP request "GET" https://localhost:3000/identityAPI/powersupplies 5 
+03/16/2021 09:59:44 Sending HTTP request "GET" https://localhost:3000/identityAPI/powersupplies 5 
+03/16/2021 09:59:44 Received HTTP response headers after 8.3192ms - 404 6 
+03/16/2021 09:59:44 End processing HTTP request after 12.3251ms - 404 6 
+03/16/2021 09:59:44 HTTP "GET" "/Home/PowerSupplies" responded 200 in 19.4558 ms 6 
+03/16/2021 09:59:47 Start processing HTTP request "GET" https://localhost:3000/identityAPI/randomaccessmemory 5 
+03/16/2021 09:59:47 Sending HTTP request "GET" https://localhost:3000/identityAPI/randomaccessmemory 5 
+03/16/2021 09:59:47 Received HTTP response headers after 5.2938ms - 404 20 
+03/16/2021 09:59:47 End processing HTTP request after 11.5343ms - 404 20 
+03/16/2021 09:59:47 HTTP "GET" "/Home/RandomAccessMemory" responded 200 in 17.3317 ms 20 
+03/16/2021 09:59:50 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 14 
+03/16/2021 09:59:50 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 14 
+03/16/2021 09:59:50 Received HTTP response headers after 33.7763ms - 200 6 
+03/16/2021 09:59:50 End processing HTTP request after 37.8834ms - 200 6 
+03/16/2021 09:59:50 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Received HTTP response headers after 36.0528ms - 200 6 
+03/16/2021 09:59:50 End processing HTTP request after 40.8924ms - 200 6 
+03/16/2021 09:59:50 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Received HTTP response headers after 27.2557ms - 200 6 
+03/16/2021 09:59:50 End processing HTTP request after 29.2866ms - 200 6 
+03/16/2021 09:59:50 HTTP "GET" "/AccountSettings/Profile" responded 200 in 118.5071 ms 6 
+03/16/2021 09:59:57 HTTP "GET" "/" responded 200 in 1.5243 ms 25 
+03/16/2021 10:00:01 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.5044 ms 23 
+03/16/2021 10:00:01 HTTP "GET" "/" responded 200 in 0.6338 ms 4 
+03/16/2021 10:00:20 HTTP "GET" "/Authentication/SignIn" responded 200 in 5.8775 ms 16 
+03/16/2021 10:00:25 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 89.2656 ms 8 
+03/16/2021 10:00:27 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.2282 ms 23 
+03/16/2021 10:00:28 HTTP "GET" "/Authentication/SignUp" responded 200 in 84.1335 ms 23 
+03/16/2021 10:00:45 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.3075 ms 25 
+03/16/2021 10:01:06 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 10:01:06 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 10:01:08 Received HTTP response headers after 2180.8906ms - 200 6 
+03/16/2021 10:01:08 End processing HTTP request after 2185.126ms - 200 6 
+03/16/2021 10:01:08 HTTP "POST" "/Authentication/SignIn" responded 302 in 5404.7953 ms 6 
+03/16/2021 10:01:08 HTTP "GET" "/" responded 200 in 1.2560 ms 5 
+03/16/2021 10:01:15 Start processing HTTP request "GET" https://localhost:3000/identityAPI//admin/users 29 
+03/16/2021 10:01:15 Sending HTTP request "GET" https://localhost:3000/identityAPI//admin/users 29 
+03/16/2021 10:01:15 Received HTTP response headers after 16.1219ms - 404 27 
+03/16/2021 10:01:15 End processing HTTP request after 21.0638ms - 404 27 
+03/16/2021 10:01:16 HTTP "GET" "/admin/userstable" responded 500 in 251.6224 ms 27 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.UsersInformationService.GetAll(String token) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\UsersInformationService.cs:line 59
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 36
+   at FoundersPC.Web.Controllers.Administration.AdminController.Users() in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 36
+   at lambda_method130(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 10:01:16 An unhandled exception has occurred while executing the request. 27 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.UsersInformationService.GetAll(String token) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\UsersInformationService.cs:line 59
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 36
+   at FoundersPC.Web.Controllers.Administration.AdminController.Users() in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 36
+   at lambda_method130(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 10:01:19 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 28 
+03/16/2021 10:01:19 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 28 
+03/16/2021 10:01:19 Received HTTP response headers after 35.6087ms - 200 6 
+03/16/2021 10:01:19 End processing HTTP request after 41.2857ms - 200 6 
+03/16/2021 10:01:19 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 10:01:19 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 10:01:19 Received HTTP response headers after 34.4169ms - 200 6 
+03/16/2021 10:01:19 End processing HTTP request after 37.6925ms - 200 6 
+03/16/2021 10:01:19 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 9 
+03/16/2021 10:01:19 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 9 
+03/16/2021 10:01:19 Received HTTP response headers after 44.4257ms - 200 31 
+03/16/2021 10:01:19 End processing HTTP request after 48.4156ms - 200 31 
+03/16/2021 10:01:19 HTTP "GET" "/AccountSettings/Profile" responded 200 in 139.6578 ms 31 
+03/16/2021 10:04:39 HTTP "GET" "/" responded 200 in 16.9399 ms 8 
+03/16/2021 10:55:36 Web server started.. 1 
+03/16/2021 10:55:36 Web server HostBuilder created 1 
+03/16/2021 10:55:37 Host built 1 
+03/16/2021 10:55:37 Now listening on: "https://localhost:9000" 1 
+03/16/2021 10:55:37 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 10:55:37 Hosting environment: "Development" 1 
+03/16/2021 10:55:37 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 10:55:38 HTTP "GET" "/" responded 200 in 308.2783 ms 15 
+03/16/2021 10:55:39 HTTP "GET" "/Authentication/SignIn" responded 200 in 296.6253 ms 17 
+03/16/2021 10:55:46 HTTP "GET" "/Authentication/SignUp" responded 200 in 45.4359 ms 17 
+03/16/2021 10:55:57 HTTP "GET" "/Authentication/SignIn" responded 200 in 5.0808 ms 18 
+03/16/2021 10:55:58 HTTP "GET" "/Authentication/SignUp" responded 200 in 82.7743 ms 17 
+03/16/2021 10:55:59 HTTP "GET" "/Authentication/SignIn" responded 200 in 4.8353 ms 18 
+03/16/2021 10:56:00 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 19.9280 ms 14 
+03/16/2021 10:56:01 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.6572 ms 7 
+03/16/2021 10:56:15 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 10:56:15 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 10:56:27 Received HTTP response headers after 12262.7899ms - 200 10 
+03/16/2021 10:56:27 End processing HTTP request after 12279.6866ms - 200 10 
+03/16/2021 10:56:27 HTTP "POST" "/Authentication/SignIn" responded 302 in 12513.6567 ms 10 
+03/16/2021 10:56:27 HTTP "GET" "/" responded 200 in 9.7739 ms 7 
+03/16/2021 10:56:43 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 4 
+03/16/2021 10:56:43 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 4 
+03/16/2021 10:56:43 Received HTTP response headers after 217.4982ms - 200 19 
+03/16/2021 10:56:43 End processing HTTP request after 222.2885ms - 200 19 
+03/16/2021 10:56:43 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 19 
+03/16/2021 10:56:43 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 19 
+03/16/2021 10:56:43 Received HTTP response headers after 26.4421ms - 200 10 
+03/16/2021 10:56:43 End processing HTTP request after 30.66ms - 200 10 
+03/16/2021 10:56:43 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 10 
+03/16/2021 10:56:43 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 10 
+03/16/2021 10:56:43 Received HTTP response headers after 23.743ms - 200 10 
+03/16/2021 10:56:43 End processing HTTP request after 26.5789ms - 200 10 
+03/16/2021 10:56:43 HTTP "GET" "/AccountSettings/Profile" responded 200 in 410.4933 ms 10 
+03/16/2021 10:57:18 HTTP "GET" "/" responded 200 in 3.2041 ms 25 
+03/16/2021 11:03:29 HTTP "GET" "/" responded 200 in 2.4969 ms 40 
+03/16/2021 11:04:07 HTTP "GET" "/" responded 200 in 0.9701 ms 39 
+03/16/2021 11:04:43 Application is shutting down... 2 

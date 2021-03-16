@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
@@ -37,7 +38,7 @@ namespace FoundersPC.Identity.Services.User_Services
         public async Task<bool> RegisterDefaultUserAsync(string email, string password)
         {
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
-                .SingleOrDefault(role => role.RoleTitle == "DefaultUser");
+                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.DefaultUser.ToString());
 
             if (defaultUserRole is null)
             {
@@ -54,7 +55,7 @@ namespace FoundersPC.Identity.Services.User_Services
         public async Task<bool> RegisterManagerAsync(string email, string password)
         {
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
-                .SingleOrDefault(role => role.RoleTitle == "Manager");
+                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.Manager.ToString());
 
             if (defaultUserRole is null)
             {

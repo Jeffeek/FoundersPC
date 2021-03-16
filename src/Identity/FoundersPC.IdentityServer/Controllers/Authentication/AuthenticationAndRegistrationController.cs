@@ -3,6 +3,7 @@
 using System;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
@@ -159,7 +160,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        Email = request.Email,
                        IsRegistrationSuccessful = true,
                        ResponseException = null,
-                       Role = "DefaultUser",
+                       Role = ApplicationRoles.DefaultUser.ToString(),
                        UserId = user.Id
                    };
         }
