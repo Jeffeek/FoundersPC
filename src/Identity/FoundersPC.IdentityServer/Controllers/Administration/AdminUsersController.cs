@@ -8,6 +8,7 @@ using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
 using FoundersPC.WebIdentityShared;
@@ -133,6 +134,69 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
                    };
         }
 
+        [HttpPut("UnBlock/By/Id")]
+        public async Task<ActionResult<UnblockUserResponse>> BlockUser(UnblockUserByIdRequest byIdRequest)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new
+                                  {
+                                      error = "Bad model"
+                                  });
 
+            if (byIdRequest.UserId < 1)
+                return BadRequest(new
+                                  {
+                                      error = $"Bad id. Id was {byIdRequest.UserId}, expected > 1"
+                                  });
+
+            var unblockUserResult = await _adminService.UnBlockUserAsync(byIdRequest.UserId);
+
+            if (unblockUserResult)
+                return new UnblockUserResponse()
+                       {
+                           AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
+                           IsUnblockingSuccessful = true
+                       };
+
+            return new UnblockUserResponse()
+                   {
+                       AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
+                       IsUnblockingSuccessful = false,
+                       Error = $"User with id = {byIdRequest.UserId} was not unblocked at this byIdRequest."
+                   };
+        }
+
+        [HttpPut("UnBlock/By/Email")]
+        public async Task<ActionResult<UnblockUserResponse>> BlockUser(UnblockUserByEmailRequest byEmailRequest)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new
+                                  {
+                                      error = "Bad model"
+                                  });
+
+            if (byEmailRequest.UserEmail is null)
+                return BadRequest(new
+                                  {
+                                      error = $"Bad email. Id was was, expected not null"
+                                  });
+
+            var blockUserResult = await _adminService.UnBlockUserAsync(byEmailRequest.UserEmail,
+                                                                       byEmailRequest.SendNotificationToUserViaEmail);
+
+            if (blockUserResult)
+                return new UnblockUserResponse()
+                       {
+                           AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
+                           IsUnblockingSuccessful = true
+                       };
+
+            return new UnblockUserResponse()
+                   {
+                       AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
+                       IsUnblockingSuccessful = false,
+                       Error = $"User with email = {byEmailRequest.UserEmail} was not unblocked at this byEmailRequest."
+                   };
+        }
     }
 }

@@ -67,7 +67,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                                  UserId = id
                              };
 
-            // todo: implement
             var blockUserRequest = await client.PutAsJsonAsync<BlockUserByIdRequest>($"Users/Block/By/Id", blockModel);
 
             if (!blockUserRequest.IsSuccessStatusCode) return false;
@@ -121,7 +120,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                              };
 
             // todo: implement
-            var unblockUserRequest = await client.PutAsJsonAsync<UnblockUserByIdRequest>($"Users/Unblock/{id}", blockModel);
+            var unblockUserRequest = await client.PutAsJsonAsync<UnblockUserByIdRequest>($"Users/Unblock/By/Id", blockModel);
 
             if (!unblockUserRequest.IsSuccessStatusCode) return false;
 

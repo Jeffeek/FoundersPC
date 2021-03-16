@@ -815,3 +815,966 @@ Error Number:53,State:0,Class:20
 03/16/2021 20:06:11 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 2164.2325 ms
 03/16/2021 20:06:31 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 6.7845 ms
 03/16/2021 20:06:40 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.0700 ms
+03/16/2021 20:39:49 Identity server started..
+03/16/2021 20:39:49 Identity server HostBuilder created
+03/16/2021 20:39:50 Host built
+03/16/2021 20:39:50 Now listening on: "https://localhost:3000"
+03/16/2021 20:39:50 Application started. Press Ctrl+C to shut down.
+03/16/2021 20:39:50 Hosting environment: "Development"
+03/16/2021 20:39:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 20:39:58 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 20:39:58 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1811.3163 ms
+03/16/2021 20:40:00 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 145.2202 ms
+03/16/2021 20:40:03 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/13" responded 404 in 0.7597 ms
+03/16/2021 20:40:03 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 13.9321 ms
+03/16/2021 20:40:10 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/12" responded 404 in 0.6962 ms
+03/16/2021 20:40:10 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 6.7764 ms
+03/16/2021 20:40:48 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/13" responded 404 in 0.0249 ms
+03/16/2021 20:41:22 Identity server started..
+03/16/2021 20:41:22 Identity server HostBuilder created
+03/16/2021 20:41:22 Host built
+03/16/2021 20:41:23 Now listening on: "https://localhost:3000"
+03/16/2021 20:41:23 Application started. Press Ctrl+C to shut down.
+03/16/2021 20:41:23 Hosting environment: "Development"
+03/16/2021 20:41:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 20:41:32 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 20:41:32 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1801.7810 ms
+03/16/2021 20:41:34 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 144.2930 ms
+03/16/2021 20:41:39 Successful sending an email to: jbophqgw@laste.ml
+03/16/2021 20:41:39 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1734.7664 ms
+03/16/2021 20:41:39 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 6.6466 ms
+03/16/2021 20:41:42 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:41:42 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1177.0419 ms
+03/16/2021 20:41:42 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.8640 ms
+03/16/2021 20:41:44 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:41:44 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1173.8772 ms
+03/16/2021 20:41:44 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.6406 ms
+03/16/2021 20:41:52 Successful sending an email to: mishamine26@gmail.com
+03/16/2021 20:41:52 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1010.4800 ms
+03/16/2021 20:41:52 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6852 ms
+03/16/2021 20:42:05 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.0508 ms
+03/16/2021 20:42:07 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:07 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1029.1121 ms
+03/16/2021 20:42:07 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 4.4448 ms
+03/16/2021 20:42:09 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:09 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1109.9392 ms
+03/16/2021 20:42:09 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4766 ms
+03/16/2021 20:42:12 Successful sending an email to: jbophqgw@laste.ml
+03/16/2021 20:42:12 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1764.5324 ms
+03/16/2021 20:42:12 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6879 ms
+03/16/2021 20:42:14 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:14 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 992.1627 ms
+03/16/2021 20:42:14 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6213 ms
+03/16/2021 20:42:16 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:16 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1094.9918 ms
+03/16/2021 20:42:16 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6524 ms
+03/16/2021 20:42:18 Successful sending an email to: mishamine26@gmail.com
+03/16/2021 20:42:18 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1043.6115 ms
+03/16/2021 20:42:18 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.7409 ms
+03/16/2021 20:42:20 Successful sending an email to: jbophqgw@laste.ml
+03/16/2021 20:42:20 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 986.6361 ms
+03/16/2021 20:42:20 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.7583 ms
+03/16/2021 20:42:22 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:22 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1179.4563 ms
+03/16/2021 20:42:22 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5741 ms
+03/16/2021 20:42:24 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:24 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1006.8580 ms
+03/16/2021 20:42:24 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6950 ms
+03/16/2021 20:42:30 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:30 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1009.2811 ms
+03/16/2021 20:42:30 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6793 ms
+03/16/2021 20:42:32 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:32 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1109.3103 ms
+03/16/2021 20:42:32 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.2995 ms
+03/16/2021 20:42:35 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:35 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1018.3685 ms
+03/16/2021 20:42:35 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4465 ms
+03/16/2021 20:42:37 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:37 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1147.3777 ms
+03/16/2021 20:42:37 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4178 ms
+03/16/2021 20:42:41 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:41 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1690.2490 ms
+03/16/2021 20:42:41 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4159 ms
+03/16/2021 20:42:43 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:43 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1059.1761 ms
+03/16/2021 20:42:43 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.2020 ms
+03/16/2021 20:42:44 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:44 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1097.8584 ms
+03/16/2021 20:42:44 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.3260 ms
+03/16/2021 20:42:46 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:46 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 954.4992 ms
+03/16/2021 20:42:46 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.3960 ms
+03/16/2021 20:42:47 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:47 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1087.5089 ms
+03/16/2021 20:42:47 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4224 ms
+03/16/2021 20:42:49 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:49 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1160.0445 ms
+03/16/2021 20:42:49 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5341 ms
+03/16/2021 20:42:51 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:51 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1103.1248 ms
+03/16/2021 20:42:51 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4005 ms
+03/16/2021 20:42:52 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:52 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1072.3996 ms
+03/16/2021 20:42:52 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5144 ms
+03/16/2021 20:42:54 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:42:54 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1132.4023 ms
+03/16/2021 20:42:54 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4485 ms
+03/16/2021 20:42:56 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:56 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1090.6154 ms
+03/16/2021 20:42:56 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4735 ms
+03/16/2021 20:42:57 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:57 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 973.6061 ms
+03/16/2021 20:42:57 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5589 ms
+03/16/2021 20:42:59 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:42:59 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 995.4473 ms
+03/16/2021 20:42:59 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5370 ms
+03/16/2021 20:43:01 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:01 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1087.3645 ms
+03/16/2021 20:43:01 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4570 ms
+03/16/2021 20:43:02 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:02 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1230.4682 ms
+03/16/2021 20:43:03 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:03 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1405.1634 ms
+03/16/2021 20:43:03 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:03 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1865.2195 ms
+03/16/2021 20:43:04 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:04 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1909.1857 ms
+03/16/2021 20:43:04 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:04 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 2141.9206 ms
+03/16/2021 20:43:05 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:05 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 2483.5601 ms
+03/16/2021 20:43:05 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:05 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 2695.6568 ms
+03/16/2021 20:43:06 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:06 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 2953.2125 ms
+03/16/2021 20:43:06 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.3398 ms
+03/16/2021 20:43:06 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:06 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 3367.5026 ms
+03/16/2021 20:43:10 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:10 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1119.9479 ms
+03/16/2021 20:43:10 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5590 ms
+03/16/2021 20:43:12 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:12 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1022.6138 ms
+03/16/2021 20:43:12 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4790 ms
+03/16/2021 20:43:14 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:14 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1112.7994 ms
+03/16/2021 20:43:14 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:14 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1449.1199 ms
+03/16/2021 20:43:15 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:15 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1774.9773 ms
+03/16/2021 20:43:15 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:15 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 2116.9722 ms
+03/16/2021 20:43:16 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:16 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 2538.9837 ms
+03/16/2021 20:43:16 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 888.6341 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). m19sm3094690lfj.82 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:16 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 1233.3699 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). j18sm3099547lfg.26 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:16 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). m19sm3094690lfj.82 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:16 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). j18sm3099547lfg.26 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:17 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 1039.6230 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). a28sm3325014ljn.45 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 890.8896 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). a1sm3116592lfk.148 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 3048.1875 ms
+03/16/2021 20:43:17 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). a28sm3325014ljn.45 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:17 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). a1sm3116592lfk.148 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:17 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 3514.8117 ms
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 966.9881 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). w1sm3139340lfp.202 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 1146.5648 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). w5sm3101977lfu.179 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:17 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). w1sm3139340lfp.202 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:17 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). w5sm3101977lfu.179 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:17 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 807.2646 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). e2sm3331885ljp.135 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:17 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 3548.0661 ms
+03/16/2021 20:43:17 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). e2sm3331885ljp.135 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:18 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:18 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 4117.6019 ms
+03/16/2021 20:43:18 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 1004.5238 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). v9sm3103623lfd.195 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:18 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 1189.6250 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). n13sm3082787lfu.265 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:18 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). v9sm3103623lfd.195 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:18 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). n13sm3082787lfu.265 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:18 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 807.1159 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). h19sm3236623ljk.86 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:18 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). h19sm3236623ljk.86 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:19 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:19 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 4365.5598 ms
+03/16/2021 20:43:19 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:19 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 4119.1727 ms
+03/16/2021 20:43:19 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 500 in 923.6946 ms
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). z13sm3112217lfh.144 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 20:43:19 An unhandled exception has occurred while executing the request.
+System.Net.Mail.SmtpException: Service not available, closing transmission channel. The server response was: 4.3.0 Temporary System Problem.  Try again later (10). z13sm3112217lfh.144 - gsmtp
+   at System.Net.Mail.DataCommand.CheckResponse(SmtpStatusCode statusCode, String serverResponse)
+   at System.Net.Mail.DataCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendDataCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at FluentEmail.Smtp.SendMailEx.SendMailExImplAsync(SmtpClient client, MailMessage message, CancellationToken token)
+   at FluentEmail.Smtp.SmtpSender.SendAsync(IFluentEmail email, Nullable`1 token)
+   at FluentEmail.Core.Email.SendAsync(Nullable`1 token)
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendToAsync(String email, String subject, String content, Boolean html) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 50
+   at FoundersPC.Identity.Services.EmailServices.MailService.SendBlockNotificationAsync(String email, String reason) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\EmailServices\MailService.cs:line 117
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.ChangeUserBlockStatusAsync(UserEntity user, Boolean block, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 164
+   at FoundersPC.Identity.Services.Administration.Admin_Services.AdminService.UnBlockUserAsync(Int32 userId, Boolean sendNotification) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\AdminService.cs:line 129
+   at FoundersPC.IdentityServer.Controllers.Administration.AdminUsersController.BlockUser(UnblockUserByIdRequest byIdRequest) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Administration\AdminUsersController.cs:line 152
+   at lambda_method197(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 20:43:19 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5679 ms
+03/16/2021 20:43:19 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:19 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 5142.6289 ms
+03/16/2021 20:43:21 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:21 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 5855.2506 ms
+03/16/2021 20:43:21 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:21 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 6446.1319 ms
+03/16/2021 20:43:22 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:22 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 6399.1092 ms
+03/16/2021 20:43:22 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:22 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 4638.6196 ms
+03/16/2021 20:43:23 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:23 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 5449.1333 ms
+03/16/2021 20:43:23 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:23 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 7164.0466 ms
+03/16/2021 20:43:24 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:24 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 6838.1291 ms
+03/16/2021 20:43:24 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:24 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 7658.1060 ms
+03/16/2021 20:43:25 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:25 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 6649.2121 ms
+03/16/2021 20:43:25 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:25 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 7112.5695 ms
+03/16/2021 20:43:26 Successful sending an email to: mishamine26@gmail.com
+03/16/2021 20:43:26 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 5602.4847 ms
+03/16/2021 20:43:26 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.7796 ms
+03/16/2021 20:43:29 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:29 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1091.3011 ms
+03/16/2021 20:43:29 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.9031 ms
+03/16/2021 20:43:33 Successful sending an email to: oekuncpeqffk@dropmail.me
+03/16/2021 20:43:33 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1086.0547 ms
+03/16/2021 20:43:33 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.7061 ms
+03/16/2021 20:43:36 Successful sending an email to: ilyushinmisha@yandex.ru
+03/16/2021 20:43:36 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1108.1233 ms
+03/16/2021 20:43:36 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4793 ms
+03/16/2021 20:43:38 Successful sending an email to: mishamine26@gmail.com
+03/16/2021 20:43:38 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1071.9206 ms
+03/16/2021 20:43:38 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.2529 ms
+03/16/2021 20:43:40 Successful sending an email to: jbophqgw@laste.ml
+03/16/2021 20:43:40 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 1085.8272 ms
+03/16/2021 20:43:40 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.7098 ms

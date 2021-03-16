@@ -36,6 +36,22 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         Task<bool> BlockUserAsync(string userEmail, bool blockAllTokens = true, bool sendNotification = true);
 
         /// <summary>
+        ///     Unblocking the user account by id
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="sendNotification"></param>
+        /// <returns></returns>
+        Task<bool> UnBlockUserAsync(int userId, bool sendNotification = true);
+
+        /// <summary>
+        ///     Unblocking the user account by email
+        /// </summary>
+        /// <param name="userEmail"></param>
+        /// <param name="sendNotification"></param>
+        /// <returns></returns>
+        Task<bool> UnBlockUserAsync(string userEmail, bool sendNotification = true);
+
+        /// <summary>
         ///     Makes user inactive ('removes') from database
         /// </summary>
         /// <param name="userId"></param>
