@@ -17,8 +17,8 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/harddrives")]
-    [Route("api/hdds")]
+    [Route("HardwareApi/HardDrives")]
+    [Route("HardwareApi/HDDs")]
     public class HardDrivesController : Controller
     {
         private readonly IHDDService _hddService;

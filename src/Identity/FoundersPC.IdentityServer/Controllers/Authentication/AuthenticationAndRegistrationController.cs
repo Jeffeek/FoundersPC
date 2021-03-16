@@ -18,7 +18,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
-    [Route("identityAPI/authentication")]
+    [Route("FoundersPCIdentity/Authentication")]
     [ApiController]
     public class AuthenticationAndRegistrationController : Controller
     {
@@ -48,7 +48,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _logger = logger;
         }
 
-        [Route("forgotpassword")]
+        [Route("ForgotPassword")]
         [HttpPost]
         public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword(UserForgotPasswordRequest request)
         {
@@ -121,18 +121,17 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                    };
         }
 
-        [Route("registration")]
+        [Route("Registration")]
         [HttpPost]
-        public async Task<ActionResult<UserRegisterResponse>> Register(UserSignUpRequest request)
+        public async Task<ActionResult<UserSignUpResponse>> Register(UserSignUpRequest request)
         {
             if (!ModelState.IsValid)
-                return BadRequest(new UserRegisterResponse
+                return BadRequest(new UserSignUpResponse
                                   {
                                       Email = request.Email,
                                       IsRegistrationSuccessful = false,
                                       ResponseException = "Bad model",
-                                      Role = null,
-                                      UserId = -1
+                                      Role = null
                                   });
 
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Registration request with email = {request.Email}");
@@ -143,7 +142,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             {
                 _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Registration request with email = {request.Email}. Registration service sent an error");
 
-                return new UserRegisterResponse
+                return new UserSignUpResponse
                        {
                            Email = request.Email,
                            IsRegistrationSuccessful = false,
@@ -151,21 +150,21 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        };
             }
 
-            var user = await _usersInformationService.FindUserByEmailAsync(request.Email);
-
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: successful registration for user with email = {request.Email}");
 
-            return new UserRegisterResponse
+            var token = new JwtUserToken(request.Email, ApplicationRoles.DefaultUser.ToString());
+
+            return new UserSignUpResponse
                    {
                        Email = request.Email,
                        IsRegistrationSuccessful = true,
                        ResponseException = null,
                        Role = ApplicationRoles.DefaultUser.ToString(),
-                       UserId = user.Id
+                       JwtToken = token.GetToken()
                    };
         }
 
-        [Route("login")]
+        [Route("Login")]
         [HttpPost]
         public async Task<ActionResult<UserLoginResponse>> Login(UserSignInRequest request)
         {
@@ -188,8 +187,11 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             await _usersEntrancesService.LogAsync(user.Id);
             if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
 
+            var token = new JwtUserToken(user.Email, user.Role.RoleTitle);
+
             var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
             mappedUser.IsUserExists = true;
+            mappedUser.JwtToken = token.GetToken();
 
             return mappedUser;
         }

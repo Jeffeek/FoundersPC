@@ -17,8 +17,8 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/videocards")]
-    [Route("api/gpus")]
+    [Route("HardwareApi/VideoCards")]
+    [Route("HardwareApi/GPUs")]
     public class VideoCardsController : Controller
     {
         private readonly IGPUService _gpuService;

@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.User.Settings
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("identityAPI/user/settings")]
+    [Route("FoundersPCIdentity/User/Settings")]
     [ApiController]
     public class UserSettingsController : Controller
     {
@@ -23,7 +23,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
-        [Route("notifications/{email}")]
+        [Route("Notifications/{email}")]
         public async Task<IActionResult> GetUserNotifications(string email)
         {
             if (email is null) return BadRequest();
@@ -50,7 +50,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
-        [Route("login/{email}")]
+        [Route("Login/{email}")]
         public async Task<ActionResult> GetUserLogin(string email)
         {
             if (email is null) return BadRequest();

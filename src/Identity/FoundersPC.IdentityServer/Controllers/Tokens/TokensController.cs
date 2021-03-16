@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("identityAPI/tokens")]
+    [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
     public class TokensController : Controller
     {
@@ -23,7 +23,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
 
         [HttpGet]
-        [Route("user/{email}")]
+        [Route("User/{email}")]
         public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens(string email)
         {
             var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
@@ -34,7 +34,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
                                       error = "No user with this email"
                                   });
 
-            return Json(tokens ?? Enumerable.Empty<ApiAccessUserTokenReadDto>());
+            return Json(tokens);
         }
     }
 }

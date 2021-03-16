@@ -16,10 +16,9 @@
             class="row">
             <div>
                 <a
-                    class="btn btn-outline-success d-flex"
-                    data-bs-target="#addManager"
-                    data-bs-toggle="modal"
-                    href="#">
+                    asp-action="RegisterManager"
+                    asp-controller="Admin"
+                    class="btn btn-outline-success d-flex">
                     <img
                         alt=""
                         height="20"
@@ -65,7 +64,8 @@
                                 <input
                                     @if (user.IsActive)
                                     {
-                                        @Html.Raw("checked");
+                                        @Html.Raw("checked")
+                                        ;
                                     }
                                     class="form-check-input"
                                     disabled
@@ -78,7 +78,8 @@
                                 <input
                                     @if (user.IsBlocked)
                                     {
-                                        @Html.Raw("checked");
+                                        @Html.Raw("checked")
+                                        ;
                                     }
                                     class="form-check-input"
                                     disabled
@@ -90,13 +91,38 @@
                                 class="d-flex">
                                 <a
                                     class="btn btn-outline-warning d-flex"
-                                    data-bs-target="#blockSettings"
-                                    data-bs-toggle="modal"
-                                    title="Block user">
+                                    href=
+                                    @{
+                                        if (user.IsBlocked)
+                                        {
+                                            @Url.ActionLink("UnblockUser", "Admin", new { id = user.Id })
+                                        }
+                                        else
+                                        {
+                                            @Url.ActionLink("BlockUser", "Admin", new { id = user.Id })
+                                        }
+                                    }
+                                    title=
+                                    @{ if (user.IsBlocked)
+                                       {
+                                           @("Unblock user")
+                                       }
+                                       else {
+                                           @("Block user")
+                                       }
+                                    }>
                                     <img
                                         alt=""
                                         height="20"
-                                        src="~/img/block.svg"
+                                        src=
+                                        @{
+                                            if (user.IsBlocked) {
+                                               @Href("~/img/easy.svg")
+                                           }
+                                           else {
+                                               @Href("~/img/block.svg")
+                                           }
+                                        }
                                         width="20">
                                 </a>
                                 <a
@@ -104,11 +130,11 @@
                                     @{
                                         if (!user.IsActive)
                                         {
-                                            @Html.Raw("disabled");
+                                            @Html.Raw("disabled")
                                         }
                                         else
                                         {
-                                            @Html.Raw("data-bs-target=\"#activeSettings\"data-bs-toggle=\"modal\"");
+                                            @Html.Raw("data-bs-target=\"#activeSettings\"data-bs-toggle=\"modal\"")
                                         }
                                     }
                                     title="Make user inactive">
@@ -125,81 +151,6 @@
             }
             </tbody>
         </table>
-    </div>
-</div>
-<!-- Add Modal HTML -->
-<div
-    aria-hidden="true"
-    aria-labelledby="staticBackdropLabel"
-    class="bg-gradient fade modal"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    id="addManager"
-    tabindex="-1">
-    <div
-        class="modal-dialog">
-        <div
-            class="modal-content">
-            <div
-                class="modal-header">
-                <h5
-                    class="modal-title"
-                    id="staticBackdropLabel">
-                    Add new manager
-                </h5>
-                <button
-                    aria-label="Close"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    type="button">
-                </button>
-            </div>
-            <div
-                class="modal-body">
-                <form>
-                    <div
-                        class="mb-3">
-                        <label
-                            class="form-label">
-                            Email address
-                        </label>
-                        <input
-                            class="form-control"
-                            type="email">
-                        <span
-                            class="text-danger">
-                        </span>
-                    </div>
-                    <div
-                        class="mb-3">
-                        <label
-                            class="form-label">
-                            Password
-                        </label>
-                        <input
-                            class="form-control"
-                            type="password">
-                        <span
-                            class="text-danger">
-                        </span>
-                    </div>
-                    <button
-                        class="btn btn-success"
-                        type="submit">
-                        Submit
-                    </button>
-                </form>
-            </div>
-            <div
-                class="modal-footer">
-                <button
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                    type="button">
-                    Close
-                </button>
-            </div>
-        </div>
     </div>
 </div>
 <!-- Inactive Modal HTML -->
@@ -230,24 +181,22 @@
             </div>
             <div
                 class="bg-danger modal-body">
-                <form>
-                    <div
-                        class="mb-3">
-                        <label
-                            class="text-light">
-                            Are you sure to remove(make inactive) user with Id = 1.
-                            <span
-                                class="text-decoration-underline text-warning">
-                                You will never restore it.
-                            </span>
-                        </label>
-                    </div>
-                    <button
-                        class="btn btn-dark text-light"
-                        type="submit">
-                        Submit
-                    </button>
-                </form>
+                <div
+                    class="mb-3">
+                    <label
+                        class="text-light">
+                        Are you sure to remove(make inactive) user with Id = 1.
+                        <span
+                            class="text-decoration-underline text-warning">
+                            You will never restore it.
+                        </span>
+                    </label>
+                </div>
+                <button
+                    class="btn btn-dark text-light"
+                    type="submit">
+                    Submit
+                </button>
             </div>
         </div>
     </div>
@@ -280,24 +229,36 @@
             </div>
             <div
                 class="bg-warning modal-body">
-                <form>
-                    <div
-                        class="mb-3">
-                        <label>
-                            Are you sure block/unblock user with Id = 1.
-                            <span
-                                class="text-decoration-underline text-success">
-                                Later you can change it.
-                            </span>
-                        </label>
-                    </div>
-                    <button
-                        class="btn btn-dark text-light"
-                        type="submit">
-                        Submit
-                    </button>
-                </form>
+                <div
+                    class="mb-3">
+                    <label>
+                        Are you sure block/unblock user with Id @Html.ViewBag.BlockId .
+                        <span
+                            class="text-decoration-underline text-success">
+                            Later you can change it.
+                        </span>
+                    </label>
+                </div>
+                <button
+                    class="btn btn-dark text-light"
+                    type="submit">
+                    Submit
+                </button>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            const blockButtons = document.selectNodes(".block-user");
+            console.log(blockButtons);
+            for (let button in blockButtons) {
+                button.addEventListener('click', () => console.log('click'));
+            }
+            console.log(blockButtons);
+        });
+    </script>
+}

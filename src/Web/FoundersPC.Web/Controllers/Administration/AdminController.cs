@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
+using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using Humanizer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -16,7 +17,7 @@ namespace FoundersPC.Web.Controllers.Administration
 {
     // todo: add manager service
     [Authorize(Roles = "Administrator")]
-    [Route("admin")]
+    [Route("Admin")]
     public class AdminController : Controller
     {
         private readonly IAdminService _adminService;
@@ -28,8 +29,9 @@ namespace FoundersPC.Web.Controllers.Administration
 
         #region Redirection to view
 
-        [Route("userstable")]
-        public async Task<ActionResult> Users()
+        [HttpGet]
+        [Route("UsersTable")]
+        public async Task<ActionResult> UsersTable()
         {
             var token = GetJwtToken();
 
@@ -40,11 +42,38 @@ namespace FoundersPC.Web.Controllers.Administration
             return View(users);
         }
 
-        //public ActionResult RegisterManager() => View();
+        [HttpGet]
+        public ActionResult RegisterManager() => View();
 
         //public ActionResult Entrances() => View();
 
         #endregion
+
+        [Route("BlockUser")]
+        public async Task<ActionResult> BlockUser([FromQuery] int id)
+        {
+            await _adminService.BlockUserByIdAsync(id, GetJwtToken());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
+
+        [Route("UnblockUser")]
+        public async Task<ActionResult> UnblockUser([FromQuery] int id)
+        {
+            await _adminService.UnblockUserByIdAsync(id, GetJwtToken());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> RegisterManager(SignUpViewModel model)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            var result = await _adminService.RegisterNewManagerAsync(model, GetJwtToken());
+
+            return result ? Ok() : Problem();
+        }
 
         private string GetJwtToken()
         {

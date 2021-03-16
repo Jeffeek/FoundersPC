@@ -195,3 +195,623 @@ Error Number:53,State:0,Class:20
 03/16/2021 10:56:43 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 213.9384 ms
 03/16/2021 10:56:43 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 21.9180 ms
 03/16/2021 10:56:43 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 19.5724 ms
+03/16/2021 16:53:07 Identity server started..
+03/16/2021 16:53:07 Identity server HostBuilder created
+03/16/2021 16:53:07 Host built
+03/16/2021 16:53:08 Now listening on: "https://localhost:3000"
+03/16/2021 16:53:08 Application started. Press Ctrl+C to shut down.
+03/16/2021 16:53:08 Hosting environment: "Development"
+03/16/2021 16:53:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 16:53:33 Application is shutting down...
+03/16/2021 16:53:57 Identity server started..
+03/16/2021 16:53:57 Identity server HostBuilder created
+03/16/2021 16:53:57 Host built
+03/16/2021 16:53:58 Now listening on: "https://localhost:3000"
+03/16/2021 16:53:58 Application started. Press Ctrl+C to shut down.
+03/16/2021 16:53:58 Hosting environment: "Development"
+03/16/2021 16:53:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 16:54:37 An error occurred using the connection to database '"FoundersPC.Users"' on server '"DESKTOP-3M6EMTF"'.
+03/16/2021 16:54:38 An exception occurred while iterating over the results of a query for context type '"FoundersPC.Identity.Infrastructure.Contexts.FoundersPCUsersContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+03/16/2021 16:54:41 HTTP "POST" "/identityAPI/authentication/login" responded 500 in 37319.0412 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByAsync(Expression`1 predicate) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 27
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndHashedPasswordAsync(String emailOrLogin, String hashedPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 80
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndPasswordAsync(String emailOrLogin, String password) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 106
+   at FoundersPC.IdentityServer.Controllers.Authentication.AuthenticationAndRegistrationController.Login(UserSignInRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\AuthenticationAndRegistrationController.cs:line 177
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+03/16/2021 16:54:41 An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByAsync(Expression`1 predicate) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 27
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndHashedPasswordAsync(String emailOrLogin, String hashedPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 80
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndPasswordAsync(String emailOrLogin, String password) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 106
+   at FoundersPC.IdentityServer.Controllers.Authentication.AuthenticationAndRegistrationController.Login(UserSignInRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\AuthenticationAndRegistrationController.cs:line 177
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+03/16/2021 16:55:24 An error occurred using the connection to database '"FoundersPC.Users"' on server '"DESKTOP-3M6EMTF"'.
+03/16/2021 16:55:24 An exception occurred while iterating over the results of a query for context type '"FoundersPC.Identity.Infrastructure.Contexts.FoundersPCUsersContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+03/16/2021 16:55:24 HTTP "POST" "/identityAPI/authentication/login" responded 500 in 31606.5643 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByAsync(Expression`1 predicate) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 27
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndHashedPasswordAsync(String emailOrLogin, String hashedPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 80
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndPasswordAsync(String emailOrLogin, String password) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 106
+   at FoundersPC.IdentityServer.Controllers.Authentication.AuthenticationAndRegistrationController.Login(UserSignInRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\AuthenticationAndRegistrationController.cs:line 177
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+03/16/2021 16:55:24 An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FoundersPC.Identity.Infrastructure.Repositories.Users.UsersRepository.GetByAsync(Expression`1 predicate) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Users\UsersRepository.cs:line 27
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndHashedPasswordAsync(String emailOrLogin, String hashedPassword) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 80
+   at FoundersPC.Identity.Services.Administration.Admin_Services.UsersInformationService.FindUserByEmailOrLoginAndPasswordAsync(String emailOrLogin, String password) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Administration\Admin Services\UsersInformationService.cs:line 106
+   at FoundersPC.IdentityServer.Controllers.Authentication.AuthenticationAndRegistrationController.Login(UserSignInRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\AuthenticationAndRegistrationController.cs:line 177
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+03/16/2021 16:56:01 Identity server started..
+03/16/2021 16:56:02 Identity server HostBuilder created
+03/16/2021 16:56:02 Host built
+03/16/2021 16:56:02 Now listening on: "https://localhost:3000"
+03/16/2021 16:56:02 Application started. Press Ctrl+C to shut down.
+03/16/2021 16:56:02 Hosting environment: "Development"
+03/16/2021 16:56:02 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 16:57:09 Identity server started..
+03/16/2021 16:57:09 Identity server HostBuilder created
+03/16/2021 16:57:10 Host built
+03/16/2021 16:57:11 Now listening on: "https://localhost:3000"
+03/16/2021 16:57:11 Application started. Press Ctrl+C to shut down.
+03/16/2021 16:57:11 Hosting environment: "Development"
+03/16/2021 16:57:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 16:58:06 Identity server started..
+03/16/2021 16:58:07 Identity server HostBuilder created
+03/16/2021 16:58:07 Host built
+03/16/2021 16:58:08 Now listening on: "https://localhost:3000"
+03/16/2021 16:58:08 Application started. Press Ctrl+C to shut down.
+03/16/2021 16:58:08 Hosting environment: "Development"
+03/16/2021 16:58:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 16:58:55 Identity server started..
+03/16/2021 16:58:55 Identity server HostBuilder created
+03/16/2021 16:58:56 Host built
+03/16/2021 16:58:56 Now listening on: "https://localhost:3000"
+03/16/2021 16:58:56 Application started. Press Ctrl+C to shut down.
+03/16/2021 16:58:56 Hosting environment: "Development"
+03/16/2021 16:58:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 16:59:59 Identity server started..
+03/16/2021 16:59:59 Identity server HostBuilder created
+03/16/2021 17:00:00 Host built
+03/16/2021 17:00:00 Now listening on: "https://localhost:3000"
+03/16/2021 17:00:00 Application started. Press Ctrl+C to shut down.
+03/16/2021 17:00:00 Hosting environment: "Development"
+03/16/2021 17:00:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 17:00:13 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 17:00:46 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 40913.4576 ms
+03/16/2021 17:04:21 AuthenticationAndRegistrationController: Registration request with email = jbophqgw@laste.ml
+03/16/2021 17:04:21 UserRegistrationService: role 'Default User' found
+03/16/2021 17:04:21 AuthenticationAndRegistrationController: successful registration for user with email = jbophqgw@laste.ml
+03/16/2021 17:04:21 HTTP "POST" "/identityAPI/authentication/registration" responded 200 in 252.2043 ms
+03/16/2021 17:04:27 HTTP "GET" "/identityAPI/user/settings/notifications/jbophqgw@laste.ml" responded 200 in 117.1335 ms
+03/16/2021 17:04:27 HTTP "GET" "/identityAPI/user/settings/login/jbophqgw@laste.ml" responded 204 in 13.0896 ms
+03/16/2021 17:04:27 HTTP "GET" "/identityAPI/tokens/user/jbophqgw@laste.ml" responded 200 in 20.9416 ms
+03/16/2021 17:10:40 Identity server started..
+03/16/2021 17:10:40 Identity server HostBuilder created
+03/16/2021 17:10:41 Host built
+03/16/2021 17:10:42 Now listening on: "https://localhost:3000"
+03/16/2021 17:10:42 Application started. Press Ctrl+C to shut down.
+03/16/2021 17:10:42 Hosting environment: "Development"
+03/16/2021 17:10:42 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 17:10:54 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 17:10:54 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1885.5649 ms
+03/16/2021 17:10:56 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 127.7149 ms
+03/16/2021 17:10:56 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 19.4082 ms
+03/16/2021 17:10:56 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 19.3134 ms
+03/16/2021 17:11:47 Identity server started..
+03/16/2021 17:11:47 Identity server HostBuilder created
+03/16/2021 17:11:48 Host built
+03/16/2021 17:11:48 Now listening on: "https://localhost:3000"
+03/16/2021 17:11:48 Application started. Press Ctrl+C to shut down.
+03/16/2021 17:11:48 Hosting environment: "Development"
+03/16/2021 17:11:48 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 17:11:58 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 17:11:59 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1916.0274 ms
+03/16/2021 17:12:18 HTTP "GET" "/identityAPI/admin/users" responded 200 in 6515.4021 ms
+03/16/2021 17:12:45 AuthenticationAndRegistrationController: user with email or login = jbophqgw@laste.ml entered the service
+03/16/2021 17:12:45 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 30.4701 ms
+03/16/2021 17:12:47 HTTP "GET" "/identityAPI/user/settings/notifications/jbophqgw@laste.ml" responded 200 in 24.6302 ms
+03/16/2021 17:12:47 HTTP "GET" "/identityAPI/user/settings/login/jbophqgw@laste.ml" responded 204 in 10.8316 ms
+03/16/2021 17:12:47 HTTP "GET" "/identityAPI/tokens/user/jbophqgw@laste.ml" responded 200 in 13.5036 ms
+03/16/2021 17:13:10 HTTP "PUT" "/identityAPI/user/settings/change/login" responded 200 in 111.7409 ms
+03/16/2021 17:13:10 HTTP "GET" "/identityAPI/user/settings/notifications/jbophqgw@laste.ml" responded 200 in 2.8185 ms
+03/16/2021 17:13:10 HTTP "GET" "/identityAPI/user/settings/login/jbophqgw@laste.ml" responded 200 in 2.6658 ms
+03/16/2021 17:13:10 HTTP "GET" "/identityAPI/tokens/user/jbophqgw@laste.ml" responded 200 in 4.0984 ms
+03/16/2021 17:13:21 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 17:13:21 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 9.3999 ms
+03/16/2021 17:13:29 HTTP "GET" "/identityAPI/admin/users" responded 200 in 3249.4965 ms
+03/16/2021 17:14:16 HTTP "GET" "/identityAPI/admin/users" responded 200 in 6.1870 ms
+03/16/2021 17:14:18 HTTP "GET" "/identityAPI/admin/users" responded 200 in 5.5068 ms
+03/16/2021 17:14:25 HTTP "GET" "/identityAPI/admin/users" responded 200 in 2.9459 ms
+03/16/2021 17:31:41 Identity server started..
+03/16/2021 17:31:41 Identity server HostBuilder created
+03/16/2021 17:31:42 Host built
+03/16/2021 17:31:43 Now listening on: "https://localhost:3000"
+03/16/2021 17:31:43 Application started. Press Ctrl+C to shut down.
+03/16/2021 17:31:43 Hosting environment: "Development"
+03/16/2021 17:31:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 17:31:52 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 17:31:52 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1889.7564 ms
+03/16/2021 17:31:54 HTTP "GET" "/identityAPI/admin/users" responded 200 in 144.2773 ms
+03/16/2021 17:32:31 HTTP "GET" "/identityAPI/admin/users" responded 200 in 25.8252 ms
+03/16/2021 17:34:32 HTTP "GET" "/identityAPI/admin/users" responded 200 in 6.7761 ms
+03/16/2021 17:35:03 HTTP "GET" "/identityAPI/admin/users" responded 200 in 2.6346 ms
+03/16/2021 17:36:22 HTTP "GET" "/identityAPI/admin/users" responded 200 in 9.2618 ms
+03/16/2021 17:37:38 HTTP "GET" "/identityAPI/admin/users" responded 200 in 2.6732 ms
+03/16/2021 17:38:18 HTTP "GET" "/identityAPI/admin/users" responded 200 in 2.5320 ms
+03/16/2021 17:38:46 HTTP "GET" "/identityAPI/admin/users" responded 200 in 2.8122 ms
+03/16/2021 17:39:21 HTTP "GET" "/identityAPI/admin/users" responded 200 in 8.3900 ms
+03/16/2021 17:40:33 HTTP "GET" "/identityAPI/admin/users" responded 200 in 4.6419 ms
+03/16/2021 17:41:15 HTTP "GET" "/identityAPI/admin/users" responded 200 in 7.2208 ms
+03/16/2021 17:41:46 HTTP "GET" "/identityAPI/admin/users" responded 200 in 9.9538 ms
+03/16/2021 17:46:42 HTTP "GET" "/identityAPI/admin/users" responded 200 in 7.3935 ms
+03/16/2021 17:47:09 HTTP "GET" "/identityAPI/admin/users" responded 200 in 7.5045 ms
+03/16/2021 17:47:25 HTTP "GET" "/identityAPI/admin/users" responded 200 in 3.1353 ms
+03/16/2021 17:48:23 HTTP "GET" "/identityAPI/admin/users" responded 200 in 28.9052 ms
+03/16/2021 17:48:55 HTTP "GET" "/identityAPI/admin/users" responded 200 in 4.7317 ms
+03/16/2021 17:49:33 HTTP "GET" "/identityAPI/admin/users" responded 200 in 10.5626 ms
+03/16/2021 17:49:47 HTTP "GET" "/identityAPI/admin/users" responded 200 in 3.0015 ms
+03/16/2021 17:50:55 HTTP "GET" "/identityAPI/admin/users" responded 200 in 2.9560 ms
+03/16/2021 17:52:03 Application is shutting down...
+03/16/2021 18:34:27 Identity server started..
+03/16/2021 18:34:27 Identity server HostBuilder created
+03/16/2021 18:34:27 Host built
+03/16/2021 18:34:28 Now listening on: "https://localhost:3000"
+03/16/2021 18:34:28 Application started. Press Ctrl+C to shut down.
+03/16/2021 18:34:28 Hosting environment: "Development"
+03/16/2021 18:34:28 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 18:34:39 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 18:34:39 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1837.4031 ms
+03/16/2021 18:34:47 HTTP "GET" "/identityAPI/admin/users" responded 200 in 141.4026 ms
+03/16/2021 18:36:34 Identity server started..
+03/16/2021 18:36:34 Identity server HostBuilder created
+03/16/2021 18:36:34 Host built
+03/16/2021 18:36:35 Now listening on: "https://localhost:3000"
+03/16/2021 18:36:35 Application started. Press Ctrl+C to shut down.
+03/16/2021 18:36:35 Hosting environment: "Development"
+03/16/2021 18:36:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 18:36:41 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 18:36:41 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1806.6103 ms
+03/16/2021 18:36:43 HTTP "GET" "/identityAPI/admin/users" responded 200 in 141.5819 ms
+03/16/2021 18:39:43 Identity server started..
+03/16/2021 18:39:43 Identity server HostBuilder created
+03/16/2021 18:39:44 Host built
+03/16/2021 18:39:45 Now listening on: "https://localhost:3000"
+03/16/2021 18:39:45 Application started. Press Ctrl+C to shut down.
+03/16/2021 18:39:45 Hosting environment: "Development"
+03/16/2021 18:39:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 18:39:53 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 18:39:53 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1816.0277 ms
+03/16/2021 18:40:01 HTTP "GET" "/identityAPI/admin/users" responded 200 in 139.8480 ms
+03/16/2021 18:49:17 Identity server started..
+03/16/2021 18:49:17 Identity server HostBuilder created
+03/16/2021 18:49:18 Host built
+03/16/2021 18:49:18 Now listening on: "https://localhost:3000"
+03/16/2021 18:49:18 Application started. Press Ctrl+C to shut down.
+03/16/2021 18:49:18 Hosting environment: "Development"
+03/16/2021 18:49:18 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 18:49:26 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 18:49:27 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1791.7363 ms
+03/16/2021 18:49:30 HTTP "GET" "/identityAPI/admin/users" responded 200 in 139.8690 ms
+03/16/2021 18:51:29 HTTP "GET" "/identityAPI/admin/users" responded 200 in 44.4158 ms
+03/16/2021 18:52:24 HTTP "GET" "/identityAPI/admin/users" responded 200 in 9.2302 ms
+03/16/2021 18:52:30 HTTP "GET" "/identityAPI/admin/users" responded 200 in 2.9788 ms
+03/16/2021 18:53:52 HTTP "GET" "/identityAPI/admin/users" responded 200 in 8.4669 ms
+03/16/2021 19:08:55 Identity server started..
+03/16/2021 19:08:55 Identity server HostBuilder created
+03/16/2021 19:08:56 Host built
+03/16/2021 19:08:56 Now listening on: "https://localhost:3000"
+03/16/2021 19:08:56 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:08:56 Hosting environment: "Development"
+03/16/2021 19:08:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:09:07 HTTP "POST" "/FoundersPCIdentity/Login" responded 404 in 24.2778 ms
+03/16/2021 19:10:43 Identity server started..
+03/16/2021 19:10:43 Identity server HostBuilder created
+03/16/2021 19:10:44 Host built
+03/16/2021 19:10:44 Now listening on: "https://localhost:3000"
+03/16/2021 19:10:44 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:10:44 Hosting environment: "Development"
+03/16/2021 19:10:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:10:54 HTTP "POST" "/FoundersPCIdentity/Login" responded 404 in 25.4180 ms
+03/16/2021 19:11:32 Identity server started..
+03/16/2021 19:11:32 Identity server HostBuilder created
+03/16/2021 19:11:33 Host built
+03/16/2021 19:11:33 Now listening on: "https://localhost:3000"
+03/16/2021 19:11:33 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:11:33 Hosting environment: "Development"
+03/16/2021 19:11:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:12:48 HTTP "POST" "/FoundersPCIdentity/Login" responded 404 in 27.5806 ms
+03/16/2021 19:13:21 Identity server started..
+03/16/2021 19:13:21 Identity server HostBuilder created
+03/16/2021 19:13:22 Host built
+03/16/2021 19:13:22 Now listening on: "https://localhost:3000"
+03/16/2021 19:13:22 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:13:22 Hosting environment: "Development"
+03/16/2021 19:13:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:13:45 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:13:45 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 7550.9573 ms
+03/16/2021 19:13:57 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 147.6658 ms
+03/16/2021 19:20:48 Identity server started..
+03/16/2021 19:20:48 Identity server HostBuilder created
+03/16/2021 19:20:49 Host built
+03/16/2021 19:20:49 Now listening on: "https://localhost:3000"
+03/16/2021 19:20:49 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:20:49 Hosting environment: "Development"
+03/16/2021 19:20:49 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:20:56 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:20:56 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1809.3848 ms
+03/16/2021 19:20:59 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 141.9428 ms
+03/16/2021 19:25:11 Identity server started..
+03/16/2021 19:25:11 Identity server HostBuilder created
+03/16/2021 19:25:12 Host built
+03/16/2021 19:25:12 Now listening on: "https://localhost:3000"
+03/16/2021 19:25:12 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:25:12 Hosting environment: "Development"
+03/16/2021 19:25:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:25:19 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:25:19 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1864.0919 ms
+03/16/2021 19:25:21 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 145.0909 ms
+03/16/2021 19:28:33 Identity server started..
+03/16/2021 19:28:33 Identity server HostBuilder created
+03/16/2021 19:28:34 Host built
+03/16/2021 19:28:34 Now listening on: "https://localhost:3000"
+03/16/2021 19:28:34 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:28:34 Hosting environment: "Development"
+03/16/2021 19:28:34 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:28:43 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:28:44 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1818.9465 ms
+03/16/2021 19:28:46 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 140.0305 ms
+03/16/2021 19:31:34 Identity server started..
+03/16/2021 19:31:34 Identity server HostBuilder created
+03/16/2021 19:31:35 Host built
+03/16/2021 19:31:36 Now listening on: "https://localhost:3000"
+03/16/2021 19:31:36 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:31:36 Hosting environment: "Development"
+03/16/2021 19:31:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:31:42 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:31:43 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1863.1504 ms
+03/16/2021 19:31:44 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 142.7213 ms
+03/16/2021 19:35:19 Identity server started..
+03/16/2021 19:35:20 Identity server HostBuilder created
+03/16/2021 19:35:20 Host built
+03/16/2021 19:35:21 Now listening on: "https://localhost:3000"
+03/16/2021 19:35:21 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:35:21 Hosting environment: "Development"
+03/16/2021 19:35:21 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:35:27 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:35:28 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1855.6819 ms
+03/16/2021 19:35:29 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 143.9956 ms
+03/16/2021 19:39:52 Identity server started..
+03/16/2021 19:39:52 Identity server HostBuilder created
+03/16/2021 19:39:52 Host built
+03/16/2021 19:39:53 Now listening on: "https://localhost:3000"
+03/16/2021 19:39:53 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:39:53 Hosting environment: "Development"
+03/16/2021 19:39:53 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:40:05 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:40:05 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1800.5633 ms
+03/16/2021 19:40:08 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 136.7754 ms
+03/16/2021 19:41:09 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 43.9564 ms
+03/16/2021 19:42:59 Identity server started..
+03/16/2021 19:43:00 Identity server HostBuilder created
+03/16/2021 19:43:00 Host built
+03/16/2021 19:43:01 Now listening on: "https://localhost:3000"
+03/16/2021 19:43:01 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:43:01 Hosting environment: "Development"
+03/16/2021 19:43:01 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:43:10 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:43:10 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1808.3507 ms
+03/16/2021 19:43:13 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 138.1301 ms
+03/16/2021 19:49:09 Identity server started..
+03/16/2021 19:49:10 Identity server HostBuilder created
+03/16/2021 19:49:10 Host built
+03/16/2021 19:49:11 Now listening on: "https://localhost:3000"
+03/16/2021 19:49:11 Application started. Press Ctrl+C to shut down.
+03/16/2021 19:49:11 Hosting environment: "Development"
+03/16/2021 19:49:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 19:49:20 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 19:49:20 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1793.4761 ms
+03/16/2021 19:49:22 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 141.4955 ms
+03/16/2021 20:00:58 Identity server started..
+03/16/2021 20:00:58 Identity server HostBuilder created
+03/16/2021 20:00:59 Host built
+03/16/2021 20:01:00 Now listening on: "https://localhost:3000"
+03/16/2021 20:01:00 Application started. Press Ctrl+C to shut down.
+03/16/2021 20:01:00 Hosting environment: "Development"
+03/16/2021 20:01:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 20:01:07 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 20:01:07 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1839.6091 ms
+03/16/2021 20:01:08 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 140.4944 ms
+03/16/2021 20:01:25 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 15.5455 ms
+03/16/2021 20:02:08 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/13" responded 404 in 0.1939 ms
+03/16/2021 20:04:07 Identity server started..
+03/16/2021 20:04:07 Identity server HostBuilder created
+03/16/2021 20:04:08 Host built
+03/16/2021 20:04:08 Now listening on: "https://localhost:3000"
+03/16/2021 20:04:08 Application started. Press Ctrl+C to shut down.
+03/16/2021 20:04:08 Hosting environment: "Development"
+03/16/2021 20:04:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 20:04:19 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 20:04:19 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1829.5795 ms
+03/16/2021 20:04:24 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 140.2058 ms
+03/16/2021 20:04:41 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id/13" responded 404 in 1.1039 ms
+03/16/2021 20:05:55 Identity server started..
+03/16/2021 20:05:56 Identity server HostBuilder created
+03/16/2021 20:05:56 Host built
+03/16/2021 20:05:57 Now listening on: "https://localhost:3000"
+03/16/2021 20:05:57 Application started. Press Ctrl+C to shut down.
+03/16/2021 20:05:57 Hosting environment: "Development"
+03/16/2021 20:05:57 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/16/2021 20:06:03 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/16/2021 20:06:03 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1812.3018 ms
+03/16/2021 20:06:05 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 137.9269 ms
+03/16/2021 20:06:11 Successful sending an email to: jbophqgw@laste.ml
+03/16/2021 20:06:11 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 2164.2325 ms
+03/16/2021 20:06:31 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 6.7845 ms
+03/16/2021 20:06:40 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.0700 ms

@@ -17,8 +17,8 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/powersupplies")]
-    [Route("api/psus")]
+    [Route("HardwareApi/PowerSupplies")]
+    [Route("HardwareApi/PSUs")]
     public class PowerSuppliesController : Controller
     {
         private readonly ILogger<PowerSuppliesController> _logger;

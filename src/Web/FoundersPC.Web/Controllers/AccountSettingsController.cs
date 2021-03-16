@@ -37,6 +37,7 @@ namespace FoundersPC.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Profile()
         {
+            // todo: take the user in cost of settings by single
             var emailInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
             var roleInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType);
             Request.Cookies.TryGetValue("token", out var jwtToken);

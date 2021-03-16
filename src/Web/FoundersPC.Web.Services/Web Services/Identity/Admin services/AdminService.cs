@@ -7,6 +7,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer;
@@ -67,7 +68,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                              };
 
             // todo: implement
-            var blockUserRequest = await client.PutAsJsonAsync<BlockUserByIdRequest>($"users/block/{id}", blockModel);
+            var blockUserRequest = await client.PutAsJsonAsync<BlockUserByIdRequest>($"Users/Block/By/Id", blockModel);
 
             if (!blockUserRequest.IsSuccessStatusCode) return false;
 
@@ -92,7 +93,62 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             return false;
         }
 
+        public async Task<bool> UnblockUserByIdAsync(int id, string adminToken)
+        {
+            if (id < 1)
+            {
+                _logger.LogWarning($"{nameof(AdminService)}: unblock user with id = {id}. Error");
+
+                return false;
+            }
+
+            if (adminToken is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: unblock user: admin token was null.");
+
+                throw new ArgumentNullException(nameof(adminToken));
+            }
+
+            using var client = _clientFactory.CreateClient("Unblock user client");
+
+            PrepareRequest(client, adminToken);
+
+            var blockModel = new UnblockUserByIdRequest()
+                             {
+                                 UnblockUserTokens = true,
+                                 SendNotificationToUserViaEmail = true,
+                                 UserId = id
+                             };
+
+            // todo: implement
+            var unblockUserRequest = await client.PutAsJsonAsync<UnblockUserByIdRequest>($"Users/Unblock/{id}", blockModel);
+
+            if (!unblockUserRequest.IsSuccessStatusCode) return false;
+
+            var unblockingResultModel = await unblockUserRequest.Content.ReadFromJsonAsync<UnblockUserResponse>();
+
+            if (unblockingResultModel is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: unblock user: {nameof(unblockingResultModel)} was null after parsing");
+
+                throw new NoNullAllowedException(nameof(unblockingResultModel));
+            }
+
+            if (unblockingResultModel.IsUnblockingSuccessful)
+            {
+                _logger.LogInformation($"{nameof(AdminService)}: unblock user: user with id = {id} was unblocked by {unblockingResultModel.AdministratorEmail}");
+
+                return true;
+            }
+
+            _logger.LogWarning($"{nameof(AdminService)}: unblock user: user with id = {id} was not unblocked by {unblockingResultModel.AdministratorEmail}. Error = {unblockingResultModel.Error}");
+
+            return false;
+        }
+
         public Task<bool> BlockUserByEmailAsync(string email, string adminToken) => throw new NotImplementedException();
+
+        public Task<bool> UnblockUserByEmailAsync(string email, string adminToken) => throw new NotImplementedException();
 
         public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken) => throw new NotImplementedException();
 
@@ -108,7 +164,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         private void PrepareRequest(HttpClient client, string adminToken)
         {
-            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}/admin/");
+            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}Admin/");
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

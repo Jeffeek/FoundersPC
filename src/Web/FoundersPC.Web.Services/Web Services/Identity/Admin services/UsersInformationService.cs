@@ -32,7 +32,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             PrepareRequest(client, token);
 
-            var request = await client.GetFromJsonAsync<ApplicationUser>($"users/{userId}");
+            var request = await client.GetFromJsonAsync<ApplicationUser>($"Users/{userId}");
 
             return request;
         }
@@ -45,25 +45,25 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             PrepareRequest(client, token);
 
-            var request = await client.GetFromJsonAsync<ApplicationUser>($"users/{email}");
+            var request = await client.GetFromJsonAsync<ApplicationUser>($"Users/{email}");
 
             return request;
         }
 
         public async Task<IEnumerable<ApplicationUser>> GetAll(string token)
         {
-            using var client = _httpClientFactory.CreateClient("Users client");
+            using var client = _httpClientFactory.CreateClient("UsersTable client");
 
             PrepareRequest(client, token);
 
-            var request = await client.GetFromJsonAsync<IEnumerable<ApplicationUser>>("users");
+            var request = await client.GetFromJsonAsync<IEnumerable<ApplicationUser>>("Users");
 
             return request;
         }
 
         private void PrepareRequest(HttpClient client, string token)
         {
-            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}/admin/");
+            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}Admin/");
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

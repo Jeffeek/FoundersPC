@@ -21,7 +21,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
                Roles = "Administrator")]
     [ApiController]
-    [Route("identityAPI/admin/users")]
+    [Route("FoundersPCIdentity/Admin/Users")]
     public class AdminUsersController : Controller
     {
         private readonly IUsersInformationService _usersInformationService;
@@ -69,7 +69,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
             return _mapper.Map<IEnumerable<UserEntityReadDto>, IEnumerable<ApplicationUser>>(users);
         }
 
-        [HttpPut("block/by/id")]
+        [HttpPut("Block/By/Id")]
         public async Task<ActionResult<BlockUserResponse>> BlockUser(BlockUserByIdRequest byIdRequest)
         {
             if (!ModelState.IsValid)
@@ -101,7 +101,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
                    };
         }
 
-        [HttpPut("block/by/email")]
+        [HttpPut("Block/By/Email")]
         public async Task<ActionResult<BlockUserResponse>> BlockUser(BlockUserByEmailRequest byEmailRequest)
         {
             if (!ModelState.IsValid)

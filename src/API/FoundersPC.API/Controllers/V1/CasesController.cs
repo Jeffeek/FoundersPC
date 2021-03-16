@@ -18,7 +18,7 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/cases")]
+    [Route("HardwareApi/Cases")]
     public class CasesController : Controller
     {
         private readonly ICaseService _caseService;

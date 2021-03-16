@@ -17,8 +17,8 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/randomaccessmemory")]
-    [Route("api/rams")]
+    [Route("HardwareApi/RandomAccessMemory")]
+    [Route("HardwareApi/RAMs")]
     public class RandomAccessMemoryController : Controller
     {
         private readonly ILogger<RandomAccessMemoryController> _logger;

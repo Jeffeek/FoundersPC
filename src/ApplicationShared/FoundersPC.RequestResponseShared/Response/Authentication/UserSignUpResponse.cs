@@ -1,6 +1,6 @@
 ﻿namespace FoundersPC.RequestResponseShared.Response.Authentication
 {
-    public class UserRegisterResponse
+    public class UserSignUpResponse
     {
         public bool IsRegistrationSuccessful { get; set; } = false;
 
@@ -8,8 +8,8 @@
 
         public string Email { get; set; } = null;
 
-        public int UserId { get; set; } = -1;
-
         public string Role { get; set; } = null;
+
+        public string JwtToken { get; set; } = null;
     }
 }

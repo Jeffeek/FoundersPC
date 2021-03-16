@@ -25,7 +25,7 @@ namespace FoundersPC.Web.Controllers
         [Authorize]
         public async Task<ActionResult> Cases()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("cases");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("Cases");
 
             if (apiResult is null) return BadRequest();
 
@@ -34,7 +34,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> HardDrives()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("harddrives");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("HardDrives");
 
             if (apiResult is null) return BadRequest();
 
@@ -43,7 +43,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> Motherboards()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("motherboards");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("Motherboards");
 
             if (apiResult is null) return BadRequest();
 
@@ -52,7 +52,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> PowerSupplies()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("powersupplies");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("PowerSupplies");
 
             if (apiResult is null) return BadRequest();
 
@@ -61,7 +61,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> ProcessorCores()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("processorcores");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("ProcessorCores");
 
             if (apiResult is null) return BadRequest();
 
@@ -70,7 +70,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> Processors()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("processors");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("Processors");
 
             if (apiResult is null) return BadRequest();
 
@@ -79,7 +79,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> Producers()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("producers");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("Producers");
 
             if (apiResult is null) return BadRequest();
 
@@ -88,7 +88,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> RandomAccessMemory()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("randomaccessmemory");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("RandomAccessMemory");
 
             if (apiResult is null) return BadRequest();
 
@@ -97,7 +97,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> SolidStateDrives()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("solidstatedrives");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("SolidStateDrives");
 
             if (apiResult is null) return BadRequest();
 
@@ -106,7 +106,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> VideoCardCores()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("videocardcores");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("VideoCardCores");
 
             if (apiResult is null) return BadRequest();
 
@@ -115,7 +115,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> VideoCards()
         {
-            var apiResult = await MakeRequestAndGetResponseFromApiAsync("videocards");
+            var apiResult = await MakeRequestAndGetResponseFromApiAsync("VideoCards");
 
             if (apiResult is null) return BadRequest();
 

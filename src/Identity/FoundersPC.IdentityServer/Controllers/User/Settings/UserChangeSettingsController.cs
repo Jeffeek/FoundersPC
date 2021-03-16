@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.User.Settings
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("identityAPI/user/settings/change")]
+    [Route("FoundersPCIdentity/User/Settings/Change")]
     [ApiController]
     public class UserChangeSettingsController : ControllerBase
     {
@@ -34,7 +34,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
             _passwordEncryptorService = passwordEncryptorService;
         }
 
-        [Route("password")]
+        [Route("Password")]
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword(ChangePasswordRequest request)
         {
@@ -80,7 +80,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                    };
         }
 
-        [Route("login")]
+        [Route("Login")]
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin(ChangeLoginRequest request)
         {
@@ -111,7 +111,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                    };
         }
 
-        [Route("notifications")]
+        [Route("Notifications")]
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(ChangeNotificationsRequest request)
         {
@@ -130,8 +130,8 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                                   });
 
             var result = await _usersInformationService.ChangeNotificationsToAsync(credentials.Email,
-                                                                        request.SendMessageOnEntrance,
-                                                                        request.SendMessageOnApiRequest);
+                                                                                   request.SendMessageOnEntrance,
+                                                                                   request.SendMessageOnApiRequest);
 
             return new AccountSettingsChangeResponse
                    {

@@ -90,16 +90,17 @@ namespace FoundersPC.Web.Controllers
                                nameof(registrationResponse),
                                StatusCodes.Status500InternalServerError,
                                "Response error",
-                               nameof(UserRegisterResponse));
+                               nameof(UserSignUpResponse));
 
             if (!registrationResponse.IsRegistrationSuccessful)
                 return Problem("Registration not successful",
                                nameof(signUpModel),
                                StatusCodes.Status409Conflict,
                                "Not acceptable registration",
-                               nameof(UserRegisterResponse));
+                               nameof(UserSignUpResponse));
 
             await SetupSessionCookieAsync(registrationResponse.Email, registrationResponse.Role);
+            SetupJwtTokenInCookie(registrationResponse.JwtToken);
 
             return RedirectToAction("Index", "Home");
         }
@@ -145,16 +146,18 @@ namespace FoundersPC.Web.Controllers
                                 });
 
             await SetupSessionCookieAsync(signInResponse.Email, signInResponse.Role);
-            SetupJwtTokenInCookie(signInResponse.Email, signInResponse.Role);
+            SetupJwtTokenInCookie(signInResponse.JwtToken);
 
             return RedirectToAction("Index", "Home");
         }
 
-        private void SetupJwtTokenInCookie(string contentEmail, string contentRole)
+        #endregion
+
+        #region Cookie
+
+        private void SetupJwtTokenInCookie(string token)
         {
             RemoveJwtTokenInCookie();
-            var jwtToken = new JwtUserToken(contentEmail, contentRole);
-            var token = jwtToken.GetToken();
 
             HttpContext.Response.Cookies.Append("token",
                                                 token,
@@ -165,10 +168,6 @@ namespace FoundersPC.Web.Controllers
                                                     Secure = true
                                                 });
         }
-
-        #endregion
-
-        #region Cookie
 
         private async Task SetupSessionCookieAsync(string email, string role)
         {
