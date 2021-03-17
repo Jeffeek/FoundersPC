@@ -1,9 +1,10 @@
-﻿using System;
+﻿#region Using namespaces
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FoundersPC.WebIdentityShared;
+
+#endregion
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services
 {

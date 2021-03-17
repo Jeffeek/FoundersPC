@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
@@ -26,7 +25,7 @@ namespace FoundersPC.Web.Controllers
 
         public AuthenticationController(IMapper mapper,
                                         IIdentityAuthenticationService authenticationService
-            )
+        )
         {
             _authenticationService = authenticationService;
             _mapper = mapper;
@@ -187,8 +186,7 @@ namespace FoundersPC.Web.Controllers
 
         private void RemoveJwtTokenInCookie()
         {
-            if (HttpContext.Request.Cookies.ContainsKey("token"))
-                HttpContext.Response.Cookies.Delete("token");
+            if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
         }
 
         #endregion
@@ -196,13 +194,13 @@ namespace FoundersPC.Web.Controllers
         #region Redirection
 
         [HttpGet]
-        public ActionResult SignIn() => User.Identity?.IsAuthenticated ?? false ? View("AccessDenied") : View();
+        public ActionResult SignIn() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
         [HttpGet]
-        public IActionResult SignUp() => User.Identity?.IsAuthenticated ?? false ? View("AccessDenied") : View();
+        public IActionResult SignUp() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
         [HttpGet]
-        public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("AccessDenied") : View();
+        public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
         #endregion
     }

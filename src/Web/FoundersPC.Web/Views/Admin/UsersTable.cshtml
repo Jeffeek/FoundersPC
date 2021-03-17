@@ -92,37 +92,14 @@
                                 <a
                                     class="btn btn-outline-warning d-flex"
                                     href=
-                                    @{
-                                        if (user.IsBlocked)
-                                        {
-                                            @Url.ActionLink("UnblockUser", "Admin", new { id = user.Id })
-                                        }
-                                        else
-                                        {
-                                            @Url.ActionLink("BlockUser", "Admin", new { id = user.Id })
-                                        }
-                                    }
+                                    @{ if (user.IsBlocked) { @Url.ActionLink("UnblockUser", "Admin", new { id = user.Id }) } else { @Url.ActionLink("BlockUser", "Admin", new { id = user.Id }) } }
                                     title=
-                                    @{ if (user.IsBlocked)
-                                       {
-                                           @("Unblock user")
-                                       }
-                                       else {
-                                           @("Block user")
-                                       }
-                                    }>
+                                    @{ if (user.IsBlocked) { @("Unblock user") } else { @("Block user") } }>
                                     <img
                                         alt=""
                                         height="20"
                                         src=
-                                        @{
-                                            if (user.IsBlocked) {
-                                               @Href("~/img/easy.svg")
-                                           }
-                                           else {
-                                               @Href("~/img/block.svg")
-                                           }
-                                        }
+                                        @{ if (user.IsBlocked) { @Href("~/img/easy.svg") } else { @Href("~/img/block.svg") } }
                                         width="20">
                                 </a>
                                 <a

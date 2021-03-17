@@ -1,9 +1,13 @@
-﻿using System.Net;
+﻿#region Using namespaces
+
+using System.Net;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.Web.Controllers.Administration
 {
@@ -14,32 +18,7 @@ namespace FoundersPC.Web.Controllers.Administration
     {
         private readonly IAdminService _adminService;
 
-        public AdminController(IAdminService adminService)
-        {
-            _adminService = adminService;
-        }
-
-        #region Redirection to view
-
-        [HttpGet]
-        [Route("UsersTable")]
-        public async Task<ActionResult> UsersTable()
-        {
-            var token = GetJwtToken();
-
-            if (token is null) throw new CookieException();
-
-            var users = await _adminService.GetAllUsersAsync(token);
-
-            return View(users);
-        }
-
-        [HttpGet]
-        public ActionResult RegisterManager() => View();
-
-        //public ActionResult Entrances() => View();
-
-        #endregion
+        public AdminController(IAdminService adminService) => _adminService = adminService;
 
         [Route("BlockUser")]
         public async Task<ActionResult> BlockUser([FromQuery] int id)
@@ -73,5 +52,27 @@ namespace FoundersPC.Web.Controllers.Administration
 
             return token;
         }
+
+        #region Redirection to view
+
+        [HttpGet]
+        [Route("UsersTable")]
+        public async Task<ActionResult> UsersTable()
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            var users = await _adminService.GetAllUsersAsync(token);
+
+            return View(users);
+        }
+
+        [HttpGet]
+        public ActionResult RegisterManager() => View();
+
+        //public ActionResult Entrances() => View();
+
+        #endregion
     }
 }

@@ -1,13 +1,11 @@
 ﻿#region Using namespaces
 
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
-using FoundersPC.Web.Application.Interfaces.Services.IdentityServer;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Services.Web_Services;
 using FoundersPC.Web.Services.Web_Services.HardwareAPI;
-using FoundersPC.Web.Services.Web_Services.Identity;
 using FoundersPC.Web.Services.Web_Services.Identity.Admin_services;
 using FoundersPC.Web.Services.Web_Services.Identity.Authentication;
 using FoundersPC.Web.Services.Web_Services.Identity.UserSettings;

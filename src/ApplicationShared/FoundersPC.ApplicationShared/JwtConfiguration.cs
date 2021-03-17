@@ -1,9 +1,7 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -15,6 +13,8 @@ namespace FoundersPC.ApplicationShared
     public class JwtConfiguration
     {
         private static JwtConfiguration _configuration;
+
+        private JwtConfiguration() { }
 
         public static JwtConfiguration Configuration
         {
@@ -33,19 +33,6 @@ namespace FoundersPC.ApplicationShared
             }
         }
 
-        public static void Initialize(IConfiguration configuration)
-        {
-            Configuration = new JwtConfiguration()
-                            {
-                                Issuer = configuration["JwtSettings:Issuer"],
-                                Audience = configuration["JwtSettings:Audience"],
-                                Key = configuration["JwtSettings:Key"],
-                                HoursToExpire = Int32.Parse(configuration["JwtSettings:HoursToExpire"])
-                            };
-        }
-
-        private JwtConfiguration() { }
-
         public string Key { get; private init; }
 
         public string Issuer { get; private init; }
@@ -53,6 +40,17 @@ namespace FoundersPC.ApplicationShared
         public string Audience { get; private init; }
 
         public int HoursToExpire { get; private init; }
+
+        public static void Initialize(IConfiguration configuration)
+        {
+            Configuration = new JwtConfiguration
+                            {
+                                Issuer = configuration["JwtSettings:Issuer"],
+                                Audience = configuration["JwtSettings:Audience"],
+                                Key = configuration["JwtSettings:Key"],
+                                HoursToExpire = Int32.Parse(configuration["JwtSettings:HoursToExpire"])
+                            };
+        }
 
         public SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
     }

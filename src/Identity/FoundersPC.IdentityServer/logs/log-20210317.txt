@@ -326,3 +326,97 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP meth
 03/17/2021 13:51:23 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/email@email.com" responded 200 in 64.2492 ms
 03/17/2021 13:51:23 HTTP "GET" "/FoundersPCIdentity/user/settings/login/email@email.com" responded 200 in 32.2540 ms
 03/17/2021 13:51:23 HTTP "GET" "/FoundersPCIdentity/tokens/user/email@email.com" responded 200 in 78.6684 ms
+03/17/2021 17:29:34 Identity server started..
+03/17/2021 17:29:34 Identity server HostBuilder created
+03/17/2021 17:29:35 Host built
+03/17/2021 17:29:35 Now listening on: "https://localhost:3000"
+03/17/2021 17:29:35 Application started. Press Ctrl+C to shut down.
+03/17/2021 17:29:35 Hosting environment: "Development"
+03/17/2021 17:29:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/17/2021 17:36:36 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/17/2021 17:36:36 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1947.6701 ms
+03/17/2021 17:36:38 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 125.8070 ms
+03/17/2021 17:36:38 HTTP "GET" "/FoundersPCIdentity/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 18.5631 ms
+03/17/2021 17:36:38 HTTP "GET" "/FoundersPCIdentity/tokens/user/ilyushin_misha@mail.ru" responded 200 in 19.7900 ms
+03/17/2021 17:36:40 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 33.3209 ms
+03/17/2021 17:36:44 Successful sending an email to: jbophqgw@laste.ml
+03/17/2021 17:36:44 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 1418.4163 ms
+03/17/2021 17:36:44 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 4.6889 ms
+03/17/2021 17:37:17 AuthenticationAndRegistrationController: Registration request with email = ubkganrw@zeroe.ml
+03/17/2021 17:37:17 UserRegistrationService: role 'Default User' found
+03/17/2021 17:37:17 AuthenticationAndRegistrationController: successful registration for user with email = ubkganrw@zeroe.ml
+03/17/2021 17:37:17 HTTP "POST" "/FoundersPCIdentity/Authentication/Registration" responded 200 in 106.2917 ms
+03/17/2021 17:37:26 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml" responded 200 in 3.0456 ms
+03/17/2021 17:37:26 HTTP "GET" "/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml" responded 204 in 3.2031 ms
+03/17/2021 17:37:26 HTTP "GET" "/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml" responded 200 in 3.5062 ms
+03/17/2021 17:37:48 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/login" responded 200 in 20.4028 ms
+03/17/2021 17:37:48 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml" responded 200 in 2.9950 ms
+03/17/2021 17:37:48 HTTP "GET" "/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml" responded 200 in 2.4143 ms
+03/17/2021 17:37:48 HTTP "GET" "/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml" responded 200 in 4.2162 ms
+03/17/2021 17:37:57 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/notifications" responded 200 in 15.2818 ms
+03/17/2021 17:37:57 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml" responded 200 in 2.7537 ms
+03/17/2021 17:37:57 HTTP "GET" "/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml" responded 200 in 2.6480 ms
+03/17/2021 17:37:57 HTTP "GET" "/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml" responded 200 in 4.1235 ms
+03/17/2021 17:38:11 AuthenticationAndRegistrationController: user with email or login = ubkganrw@zeroe.ml entered the service
+03/17/2021 17:38:12 Successful sending an email to: ubkganrw@zeroe.ml
+03/17/2021 17:38:12 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 806.2003 ms
+03/17/2021 17:38:29 AuthenticationAndRegistrationController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/17/2021 17:38:29 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 7.3571 ms
+03/17/2021 17:38:30 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.7151 ms
+03/17/2021 17:38:38 Successful sending an email to: ubkganrw@zeroe.ml
+03/17/2021 17:38:38 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 889.5616 ms
+03/17/2021 17:38:38 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.7220 ms
+03/17/2021 17:38:51 Successful sending an email to: ubkganrw@zeroe.ml
+03/17/2021 17:38:51 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 790.0836 ms
+03/17/2021 17:38:51 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5302 ms
+03/17/2021 20:05:45 Identity server started..
+03/17/2021 20:05:45 Identity server HostBuilder created
+03/17/2021 20:05:46 Host built
+03/17/2021 20:05:46 Now listening on: "https://localhost:3000"
+03/17/2021 20:05:46 Application started. Press Ctrl+C to shut down.
+03/17/2021 20:05:46 Hosting environment: "Development"
+03/17/2021 20:05:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/17/2021 20:06:20 AuthenticationAndRegistrationController: Registration request with email = agqinecj@yomail.info
+03/17/2021 20:06:21 UserRegistrationService: role 'Default User' found
+03/17/2021 20:06:24 Successful sending an email to: agqinecj@yomail.info
+03/17/2021 20:06:24 AuthenticationAndRegistrationController: successful registration for user with email = agqinecj@yomail.info
+03/17/2021 20:06:24 HTTP "POST" "/FoundersPCIdentity/Authentication/Registration" responded 200 in 3977.2125 ms
+03/17/2021 20:06:37 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info" responded 200 in 155.2731 ms
+03/17/2021 20:06:37 HTTP "GET" "/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info" responded 204 in 19.5021 ms
+03/17/2021 20:06:37 HTTP "GET" "/FoundersPCIdentity/tokens/user/agqinecj@yomail.info" responded 200 in 40.0611 ms
+03/17/2021 20:07:34 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/login" responded 200 in 36.3119 ms
+03/17/2021 20:07:34 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info" responded 200 in 4.1475 ms
+03/17/2021 20:07:34 HTTP "GET" "/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info" responded 200 in 2.8065 ms
+03/17/2021 20:07:34 HTTP "GET" "/FoundersPCIdentity/tokens/user/agqinecj@yomail.info" responded 200 in 4.4941 ms
+03/17/2021 20:13:00 Identity server started..
+03/17/2021 20:13:00 Identity server HostBuilder created
+03/17/2021 20:13:01 Host built
+03/17/2021 20:13:01 Now listening on: "https://localhost:3000"
+03/17/2021 20:13:01 Application started. Press Ctrl+C to shut down.
+03/17/2021 20:13:01 Hosting environment: "Development"
+03/17/2021 20:13:01 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/17/2021 20:13:24 AuthenticationAndRegistrationController: user with email or login = TestTest entered the service
+03/17/2021 20:13:25 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1841.5765 ms
+03/17/2021 20:13:27 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info" responded 200 in 126.8588 ms
+03/17/2021 20:13:27 HTTP "GET" "/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info" responded 200 in 19.1752 ms
+03/17/2021 20:13:27 HTTP "GET" "/FoundersPCIdentity/tokens/user/agqinecj@yomail.info" responded 200 in 19.3205 ms
+03/17/2021 20:13:35 User with email = agqinecj@yomail.info tried to change login to Jeffeek, but it's using by someone else
+03/17/2021 20:13:35 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/login" responded 200 in 34.3493 ms
+03/17/2021 20:16:59 Identity server started..
+03/17/2021 20:16:59 Identity server HostBuilder created
+03/17/2021 20:17:00 Host built
+03/17/2021 20:17:00 Now listening on: "https://localhost:3000"
+03/17/2021 20:17:00 Application started. Press Ctrl+C to shut down.
+03/17/2021 20:17:00 Hosting environment: "Development"
+03/17/2021 20:17:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/17/2021 20:17:14 AuthenticationAndRegistrationController: user with email or login = TestTest entered the service
+03/17/2021 20:17:14 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 1938.1956 ms
+03/17/2021 20:17:18 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info" responded 200 in 128.7706 ms
+03/17/2021 20:17:18 HTTP "GET" "/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info" responded 200 in 19.2589 ms
+03/17/2021 20:17:18 HTTP "GET" "/FoundersPCIdentity/tokens/user/agqinecj@yomail.info" responded 200 in 20.1904 ms
+03/17/2021 20:17:26 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/login" responded 200 in 132.7349 ms
+03/17/2021 20:17:26 HTTP "GET" "/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info" responded 200 in 2.5032 ms
+03/17/2021 20:17:26 HTTP "GET" "/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info" responded 200 in 2.4807 ms
+03/17/2021 20:17:26 HTTP "GET" "/FoundersPCIdentity/tokens/user/agqinecj@yomail.info" responded 200 in 4.0409 ms
+03/17/2021 20:17:35 User with email = agqinecj@yomail.info tried to change login to Jeffeek, but it's using by someone else
+03/17/2021 20:17:35 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/login" responded 200 in 6.9824 ms

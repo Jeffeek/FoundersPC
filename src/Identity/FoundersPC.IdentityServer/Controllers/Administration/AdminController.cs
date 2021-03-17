@@ -1,19 +1,14 @@
 ﻿#region Using namespaces
 
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
-using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 #endregion
 
@@ -25,8 +20,8 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
     [ApiController]
     public class AdminController : Controller
     {
-        private readonly IMapper _mapper;
         private readonly IAdminService _adminService;
+        private readonly IMapper _mapper;
 
         public AdminController(IMapper mapper, IAdminService adminService)
         {
@@ -41,7 +36,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
 
             var result = await _adminService.RegisterNewManagerAsync(request.Email, request.Password);
 
-            var response = new UserSignUpResponse()
+            var response = new UserSignUpResponse
                            {
                                Email = request.Email,
                                Role = ApplicationRoles.Manager.ToString(),

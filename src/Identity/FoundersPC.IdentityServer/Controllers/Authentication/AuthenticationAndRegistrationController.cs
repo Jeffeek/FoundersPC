@@ -22,6 +22,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [ApiController]
     public class AuthenticationAndRegistrationController : Controller
     {
+        private readonly JwtConfiguration _jwtConfiguration;
         private readonly ILogger<AuthenticationAndRegistrationController> _logger;
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
@@ -29,7 +30,6 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         private readonly IUserRegistrationService _userRegistrationService;
         private readonly IUsersEntrancesService _usersEntrancesService;
         private readonly IUsersInformationService _usersInformationService;
-        private readonly JwtConfiguration _jwtConfiguration;
 
         public AuthenticationAndRegistrationController(IUsersInformationService authenticationInformationService,
                                                        IMailService mailService,
@@ -39,7 +39,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                                                        IMapper mapper,
                                                        ILogger<AuthenticationAndRegistrationController> logger,
                                                        JwtConfiguration jwtConfiguration
-            )
+        )
         {
             _usersInformationService = authenticationInformationService;
             _mailService = mailService;

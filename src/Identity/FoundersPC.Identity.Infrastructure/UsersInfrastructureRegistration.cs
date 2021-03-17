@@ -47,9 +47,9 @@ namespace FoundersPC.Identity.Infrastructure
                                                                                        .GetConnectionString("FoundersPC_Users"),
                                                                                    b =>
                                                                                        b.MigrationsAssembly(typeof(
-                                                                                                                FoundersPCUsersContext)
-                                                                                                            .Assembly
-                                                                                                            .FullName)));
+                                                                                               FoundersPCUsersContext)
+                                                                                           .Assembly
+                                                                                           .FullName)));
         }
     }
 }

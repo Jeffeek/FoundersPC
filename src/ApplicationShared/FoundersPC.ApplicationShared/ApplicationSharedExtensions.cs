@@ -1,9 +1,7 @@
-﻿#region Usings
+﻿#region Using namespaces
 
 using System;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +16,7 @@ namespace FoundersPC.ApplicationShared
         public static void AddJwtSettings(this IServiceCollection services, IConfiguration configuration)
         {
             JwtConfiguration.Initialize(configuration);
-            services.AddSingleton<JwtConfiguration>(JwtConfiguration.Configuration);
+            services.AddSingleton(JwtConfiguration.Configuration);
         }
 
         public static void AddBearerAuthenticationWithSettings(this IServiceCollection services)

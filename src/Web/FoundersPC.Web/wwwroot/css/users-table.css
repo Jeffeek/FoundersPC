@@ -1,7 +1,7 @@
 .table-wrapper {
-    padding: 1%;
     border-radius: 3px;
     box-shadow: 20px 20px 200px #044d50 !important;
+    padding: 1%;
 }
 
 .table-title {
@@ -10,6 +10,6 @@
 }
 
 .table-title .btn {
-    font-size: 14px;
     border-radius: 50px;
+    font-size: 14px;
 }

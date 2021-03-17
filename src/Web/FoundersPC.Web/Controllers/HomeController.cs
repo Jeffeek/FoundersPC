@@ -20,7 +20,7 @@ namespace FoundersPC.Web.Controllers
         public IActionResult Index() => View();
 
         [AllowAnonymous]
-        public IActionResult AccessDenied() => View("AccessDenied");
+        public IActionResult AccessDenied() => View("Forbidden");
 
         [Authorize]
         public async Task<ActionResult> Cases()

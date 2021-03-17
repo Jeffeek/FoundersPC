@@ -181,6 +181,15 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
                 return false;
             }
 
+            var isAnyOneHasSameLogin = await _unitOfWork.UsersRepository.AnyAsync(x => x.Login == newLogin);
+
+            if (isAnyOneHasSameLogin)
+            {
+                _logger.LogWarning($"User with email = {userEmail} tried to change login to {newLogin}, but it's using by someone else");
+
+                return false;
+            }
+
             user.Login = newLogin;
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);

@@ -32,8 +32,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
             if (HttpContext.User.IsInRole(ApplicationRoles.Administrator.ToString()))
                 isRequestGranted = true;
-            else if (HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType) == email)
-                isRequestGranted = true;
+            else if (HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType) == email) isRequestGranted = true;
 
             if (!isRequestGranted) return Unauthorized();
 

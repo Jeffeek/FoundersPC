@@ -48,6 +48,23 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             _logger = logger;
         }
 
+        public async Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true)
+        {
+            var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
+
+            if (user is null) return false;
+
+            if (!user.IsActive) return false;
+
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
+
+            if (sendNotification) await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");
+
+            user.IsActive = false;
+
+            return await _unitOfWork.UsersRepository.UpdateAsync(user);
+        }
+
         #region New manager registration
 
         public async Task<bool> RegisterNewManagerAsync(string email, string password)
@@ -143,7 +160,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         #endregion
 
         /// <summary>
-        /// Blocks/Unblocks user
+        ///     Blocks/Unblocks user
         /// </summary>
         /// <param name="user">User to change</param>
         /// <param name="block">true - blocking, false - unblocking</param>
@@ -161,10 +178,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             if (sendNotification)
             {
-                await _mailService.SendBlockNotificationAsync(user.Email,
-                                                              block
-                                                                  ? "You've been blocked, you can be unblocked. Contact the administrator for reasons"
-                                                                  : "You've been unblocked. Thanks");
+                if (block)
+                    await _mailService.SendBlockNotificationAsync(user.Email,
+                                                                  "You've been BLOCKED, you can be unblocked. Contact the administrator for reasons");
+                else
+                    await _mailService.SendUnBlockNotificationAsync(user.Email, "You've been UNBLOCKED.");
             }
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
@@ -175,24 +193,6 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         }
 
         #endregion
-
-        public async Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true)
-        {
-            var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
-
-            if (user is null) return false;
-
-            if (!user.IsActive) return false;
-
-            if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
-
-            if (sendNotification)
-                await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");
-
-            user.IsActive = false;
-
-            return await _unitOfWork.UsersRepository.UpdateAsync(user);
-        }
 
         #region Block API token
 

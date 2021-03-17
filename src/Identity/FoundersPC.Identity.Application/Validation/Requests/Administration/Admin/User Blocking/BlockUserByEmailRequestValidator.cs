@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region Using namespaces
+
 using FluentValidation;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
+
+#endregion
 
 namespace FoundersPC.Identity.Application.Validation.Requests.Administration.Admin.User_Blocking
 {
@@ -13,9 +12,9 @@ namespace FoundersPC.Identity.Application.Validation.Requests.Administration.Adm
         public BlockUserByEmailRequestValidator()
         {
             RuleFor(x => x.UserEmail)
-                    .NotNull()
-                    .NotEmpty()
-                    .EmailAddress();
+                .NotNull()
+                .NotEmpty()
+                .EmailAddress();
         }
     }
 }

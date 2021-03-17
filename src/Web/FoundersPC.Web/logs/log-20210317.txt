@@ -457,3 +457,336 @@ System.Net.NetworkInformation.NetworkInformationException (500): Невозмо�
 03/17/2021 13:51:23 Received HTTP response headers after 85.8307ms - 200 27 
 03/17/2021 13:51:23 End processing HTTP request after 88.827ms - 200 27 
 03/17/2021 13:51:23 HTTP "GET" "/AccountSettings/Profile" responded 200 in 309.8576 ms 27 
+03/17/2021 17:29:34 Web server started.. 1 
+03/17/2021 17:29:34 Web server HostBuilder created 1 
+03/17/2021 17:29:35 Host built 1 
+03/17/2021 17:29:35 Now listening on: "https://localhost:9000" 1 
+03/17/2021 17:29:35 Application started. Press Ctrl+C to shut down. 1 
+03/17/2021 17:29:35 Hosting environment: "Development" 1 
+03/17/2021 17:29:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/17/2021 17:29:38 HTTP "GET" "/" responded 200 in 196.8362 ms 4 
+03/17/2021 17:36:33 HTTP "GET" "/Authentication/SignIn" responded 200 in 210.3551 ms 7 
+03/17/2021 17:36:34 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 7 
+03/17/2021 17:36:34 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 7 
+03/17/2021 17:36:36 Received HTTP response headers after 2114.0332ms - 200 12 
+03/17/2021 17:36:36 End processing HTTP request after 2125.7091ms - 200 12 
+03/17/2021 17:36:36 HTTP "POST" "/Authentication/SignIn" responded 302 in 2233.7714 ms 12 
+03/17/2021 17:36:36 HTTP "GET" "/" responded 200 in 9.1384 ms 4 
+03/17/2021 17:36:38 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ilyushin_misha@mail.ru 7 
+03/17/2021 17:36:38 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ilyushin_misha@mail.ru 7 
+03/17/2021 17:36:38 Received HTTP response headers after 139.5913ms - 200 12 
+03/17/2021 17:36:38 End processing HTTP request after 141.2755ms - 200 12 
+03/17/2021 17:36:38 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ilyushin_misha@mail.ru 12 
+03/17/2021 17:36:38 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ilyushin_misha@mail.ru 12 
+03/17/2021 17:36:38 Received HTTP response headers after 25.2081ms - 200 18 
+03/17/2021 17:36:38 End processing HTTP request after 26.7875ms - 200 18 
+03/17/2021 17:36:38 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ilyushin_misha@mail.ru 18 
+03/17/2021 17:36:38 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ilyushin_misha@mail.ru 18 
+03/17/2021 17:36:38 Received HTTP response headers after 23.3669ms - 200 25 
+03/17/2021 17:36:38 End processing HTTP request after 24.7809ms - 200 25 
+03/17/2021 17:36:38 HTTP "GET" "/AccountSettings/Profile" responded 200 in 315.0361 ms 25 
+03/17/2021 17:36:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 19 
+03/17/2021 17:36:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 19 
+03/17/2021 17:36:40 Received HTTP response headers after 37.4755ms - 200 12 
+03/17/2021 17:36:40 End processing HTTP request after 39.0652ms - 200 12 
+03/17/2021 17:36:40 HTTP "GET" "/Admin/UsersTable" responded 200 in 77.9966 ms 12 
+03/17/2021 17:36:43 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 21 
+03/17/2021 17:36:43 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 21 
+03/17/2021 17:36:44 Received HTTP response headers after 1427.3419ms - 200 18 
+03/17/2021 17:36:44 End processing HTTP request after 1429.0898ms - 200 18 
+03/17/2021 17:36:44 AdminService: unblock user: user with id = 13 was unblocked by ilyushin_misha@mail.ru 18 
+03/17/2021 17:36:44 HTTP "GET" "/Admin/UnblockUser?id=13" responded 302 in 1444.1941 ms 18 
+03/17/2021 17:36:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 21 
+03/17/2021 17:36:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 21 
+03/17/2021 17:36:44 Received HTTP response headers after 10.1929ms - 200 12 
+03/17/2021 17:36:44 End processing HTTP request after 11.9623ms - 200 12 
+03/17/2021 17:36:44 HTTP "GET" "/Admin/UsersTable" responded 200 in 15.0540 ms 12 
+03/17/2021 17:37:06 HTTP "GET" "/Authentication/LogOut" responded 302 in 4.7348 ms 22 
+03/17/2021 17:37:06 HTTP "GET" "/" responded 200 in 1.4331 ms 19 
+03/17/2021 17:37:07 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.1773 ms 8 
+03/17/2021 17:37:08 HTTP "GET" "/Authentication/SignUp" responded 200 in 18.5203 ms 19 
+03/17/2021 17:37:17 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Registration 22 
+03/17/2021 17:37:17 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Registration 22 
+03/17/2021 17:37:17 Received HTTP response headers after 149.4905ms - 200 33 
+03/17/2021 17:37:17 End processing HTTP request after 151.2225ms - 200 33 
+03/17/2021 17:37:17 HTTP "POST" "/Authentication/SignUp" responded 302 in 163.4789 ms 33 
+03/17/2021 17:37:17 HTTP "GET" "/" responded 200 in 0.8978 ms 22 
+03/17/2021 17:37:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml 19 
+03/17/2021 17:37:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml 19 
+03/17/2021 17:37:26 Received HTTP response headers after 5.0107ms - 200 12 
+03/17/2021 17:37:26 End processing HTTP request after 7.1762ms - 200 12 
+03/17/2021 17:37:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml 12 
+03/17/2021 17:37:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml 12 
+03/17/2021 17:37:26 Received HTTP response headers after 6.7708ms - 204 12 
+03/17/2021 17:37:26 End processing HTTP request after 9.1833ms - 204 12 
+03/17/2021 17:37:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml 12 
+03/17/2021 17:37:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml 12 
+03/17/2021 17:37:26 Received HTTP response headers after 4.7286ms - 200 12 
+03/17/2021 17:37:26 End processing HTTP request after 6.6899ms - 200 12 
+03/17/2021 17:37:26 HTTP "GET" "/AccountSettings/Profile" responded 200 in 34.7613 ms 21 
+03/17/2021 17:37:48 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 22 
+03/17/2021 17:37:48 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 22 
+03/17/2021 17:37:48 Received HTTP response headers after 38.4063ms - 200 39 
+03/17/2021 17:37:48 End processing HTTP request after 40.0063ms - 200 39 
+03/17/2021 17:37:48 HTTP "POST" "/AccountSettings/ChangeLogin" responded 302 in 55.9135 ms 39 
+03/17/2021 17:37:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml 19 
+03/17/2021 17:37:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml 19 
+03/17/2021 17:37:48 Received HTTP response headers after 4.4131ms - 200 31 
+03/17/2021 17:37:48 End processing HTTP request after 6.0135ms - 200 31 
+03/17/2021 17:37:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml 31 
+03/17/2021 17:37:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml 31 
+03/17/2021 17:37:48 Received HTTP response headers after 3.7212ms - 200 31 
+03/17/2021 17:37:48 End processing HTTP request after 6.5552ms - 200 31 
+03/17/2021 17:37:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml 31 
+03/17/2021 17:37:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml 31 
+03/17/2021 17:37:48 Received HTTP response headers after 5.3173ms - 200 31 
+03/17/2021 17:37:48 End processing HTTP request after 6.9502ms - 200 31 
+03/17/2021 17:37:48 HTTP "GET" "/AccountSettings/Profile" responded 200 in 29.9033 ms 31 
+03/17/2021 17:37:57 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/notifications 22 
+03/17/2021 17:37:57 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/notifications 22 
+03/17/2021 17:37:57 Received HTTP response headers after 17.4258ms - 200 31 
+03/17/2021 17:37:57 End processing HTTP request after 19.5022ms - 200 31 
+03/17/2021 17:37:57 HTTP "POST" "/AccountSettings/ChangeNotifications" responded 302 in 27.5104 ms 31 
+03/17/2021 17:37:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml 19 
+03/17/2021 17:37:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/ubkganrw@zeroe.ml 19 
+03/17/2021 17:37:57 Received HTTP response headers after 4.2623ms - 200 39 
+03/17/2021 17:37:57 End processing HTTP request after 6.288ms - 200 39 
+03/17/2021 17:37:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml 39 
+03/17/2021 17:37:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/ubkganrw@zeroe.ml 39 
+03/17/2021 17:37:57 Received HTTP response headers after 3.8439ms - 200 39 
+03/17/2021 17:37:57 End processing HTTP request after 6.9963ms - 200 39 
+03/17/2021 17:37:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml 22 
+03/17/2021 17:37:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/ubkganrw@zeroe.ml 22 
+03/17/2021 17:37:57 Received HTTP response headers after 5.925ms - 200 31 
+03/17/2021 17:37:57 End processing HTTP request after 7.6516ms - 200 31 
+03/17/2021 17:37:57 HTTP "GET" "/AccountSettings/Profile" responded 200 in 30.0786 ms 19 
+03/17/2021 17:38:03 HTTP "GET" "/" responded 200 in 2.2519 ms 22 
+03/17/2021 17:38:06 HTTP "GET" "/Authentication/LogOut" responded 302 in 1.0423 ms 22 
+03/17/2021 17:38:06 HTTP "GET" "/" responded 200 in 0.6418 ms 19 
+03/17/2021 17:38:06 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.6638 ms 35 
+03/17/2021 17:38:11 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 19 
+03/17/2021 17:38:11 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 19 
+03/17/2021 17:38:12 Received HTTP response headers after 808.1603ms - 200 39 
+03/17/2021 17:38:12 End processing HTTP request after 810.0376ms - 200 39 
+03/17/2021 17:38:12 HTTP "POST" "/Authentication/SignIn" responded 302 in 813.3579 ms 39 
+03/17/2021 17:38:12 HTTP "GET" "/" responded 200 in 0.7766 ms 21 
+03/17/2021 17:38:27 HTTP "GET" "/Authentication/LogOut" responded 302 in 0.7215 ms 32 
+03/17/2021 17:38:27 HTTP "GET" "/" responded 200 in 0.5736 ms 32 
+03/17/2021 17:38:28 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.3312 ms 32 
+03/17/2021 17:38:29 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 42 
+03/17/2021 17:38:29 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 42 
+03/17/2021 17:38:29 Received HTTP response headers after 8.9761ms - 200 39 
+03/17/2021 17:38:29 End processing HTTP request after 11.0545ms - 200 39 
+03/17/2021 17:38:29 HTTP "POST" "/Authentication/SignIn" responded 302 in 13.6178 ms 39 
+03/17/2021 17:38:29 HTTP "GET" "/" responded 200 in 0.8571 ms 21 
+03/17/2021 17:38:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 21 
+03/17/2021 17:38:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 21 
+03/17/2021 17:38:30 Received HTTP response headers after 4.2039ms - 200 39 
+03/17/2021 17:38:30 End processing HTTP request after 5.8184ms - 200 39 
+03/17/2021 17:38:30 HTTP "GET" "/Admin/UsersTable" responded 200 in 9.0575 ms 39 
+03/17/2021 17:38:37 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 19 
+03/17/2021 17:38:37 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 19 
+03/17/2021 17:38:38 Received HTTP response headers after 897.913ms - 200 39 
+03/17/2021 17:38:38 End processing HTTP request after 899.6257ms - 200 39 
+03/17/2021 17:38:38 AdminService: block user: user with id = 14 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 14 was not blocked at this byIdRequest. 39 
+03/17/2021 17:38:38 HTTP "GET" "/Admin/BlockUser?id=14" responded 302 in 910.0482 ms 39 
+03/17/2021 17:38:38 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 19 
+03/17/2021 17:38:38 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 19 
+03/17/2021 17:38:38 Received HTTP response headers after 4.7063ms - 200 39 
+03/17/2021 17:38:38 End processing HTTP request after 6.1494ms - 200 39 
+03/17/2021 17:38:38 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.2834 ms 39 
+03/17/2021 17:38:50 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 19 
+03/17/2021 17:38:50 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 19 
+03/17/2021 17:38:51 Received HTTP response headers after 794.6706ms - 200 39 
+03/17/2021 17:38:51 End processing HTTP request after 796.6062ms - 200 39 
+03/17/2021 17:38:51 AdminService: unblock user: user with id = 14 was unblocked by ilyushin_misha@mail.ru 39 
+03/17/2021 17:38:51 HTTP "GET" "/Admin/UnblockUser?id=14" responded 302 in 800.7034 ms 39 
+03/17/2021 17:38:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 19 
+03/17/2021 17:38:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 19 
+03/17/2021 17:38:51 Received HTTP response headers after 7.8198ms - 200 49 
+03/17/2021 17:38:51 End processing HTTP request after 9.4004ms - 200 49 
+03/17/2021 17:38:51 HTTP "GET" "/Admin/UsersTable" responded 200 in 12.0874 ms 49 
+03/17/2021 20:05:45 Web server started.. 1 
+03/17/2021 20:05:45 Web server HostBuilder created 1 
+03/17/2021 20:05:46 Host built 1 
+03/17/2021 20:05:46 Now listening on: "https://localhost:9000" 1 
+03/17/2021 20:05:46 Application started. Press Ctrl+C to shut down. 1 
+03/17/2021 20:05:46 Hosting environment: "Development" 1 
+03/17/2021 20:05:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/17/2021 20:05:49 HTTP "GET" "/" responded 200 in 180.2153 ms 8 
+03/17/2021 20:06:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 216.5523 ms 13 
+03/17/2021 20:06:02 HTTP "GET" "/Authentication/SignUp" responded 200 in 24.4740 ms 17 
+03/17/2021 20:06:20 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Registration 13 
+03/17/2021 20:06:20 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Registration 13 
+03/17/2021 20:06:24 Received HTTP response headers after 4145.926ms - 200 12 
+03/17/2021 20:06:24 End processing HTTP request after 4157.3557ms - 200 12 
+03/17/2021 20:06:24 HTTP "POST" "/Authentication/SignUp" responded 302 in 4252.9938 ms 12 
+03/17/2021 20:06:24 HTTP "GET" "/" responded 200 in 7.5112 ms 8 
+03/17/2021 20:06:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 4 
+03/17/2021 20:06:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 4 
+03/17/2021 20:06:37 Received HTTP response headers after 169.6626ms - 200 12 
+03/17/2021 20:06:37 End processing HTTP request after 171.4889ms - 200 12 
+03/17/2021 20:06:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 12 
+03/17/2021 20:06:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 12 
+03/17/2021 20:06:37 Received HTTP response headers after 27.3868ms - 204 12 
+03/17/2021 20:06:37 End processing HTTP request after 28.7684ms - 204 12 
+03/17/2021 20:06:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 12 
+03/17/2021 20:06:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 12 
+03/17/2021 20:06:37 Received HTTP response headers after 44.5176ms - 200 19 
+03/17/2021 20:06:37 End processing HTTP request after 46.1868ms - 200 19 
+03/17/2021 20:06:38 HTTP "GET" "/AccountSettings/Profile" responded 200 in 354.7998 ms 19 
+03/17/2021 20:07:34 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 4 
+03/17/2021 20:07:34 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 4 
+03/17/2021 20:07:34 Received HTTP response headers after 65.1935ms - 200 26 
+03/17/2021 20:07:34 End processing HTTP request after 66.8831ms - 200 26 
+03/17/2021 20:07:34 HTTP "POST" "/AccountSettings/ChangeLogin" responded 302 in 92.9919 ms 13 
+03/17/2021 20:07:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 13 
+03/17/2021 20:07:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 13 
+03/17/2021 20:07:34 Received HTTP response headers after 8.7702ms - 200 26 
+03/17/2021 20:07:34 End processing HTTP request after 10.5149ms - 200 26 
+03/17/2021 20:07:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 26 
+03/17/2021 20:07:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 26 
+03/17/2021 20:07:34 Received HTTP response headers after 4.2956ms - 200 26 
+03/17/2021 20:07:34 End processing HTTP request after 5.862ms - 200 26 
+03/17/2021 20:07:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 26 
+03/17/2021 20:07:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 26 
+03/17/2021 20:07:34 Received HTTP response headers after 5.6795ms - 200 26 
+03/17/2021 20:07:34 End processing HTTP request after 7.2414ms - 200 26 
+03/17/2021 20:07:34 HTTP "GET" "/AccountSettings/Profile" responded 200 in 31.1882 ms 26 
+03/17/2021 20:13:00 Web server started.. 1 
+03/17/2021 20:13:00 Web server HostBuilder created 1 
+03/17/2021 20:13:01 Host built 1 
+03/17/2021 20:13:01 Now listening on: "https://localhost:9000" 1 
+03/17/2021 20:13:01 Application started. Press Ctrl+C to shut down. 1 
+03/17/2021 20:13:01 Hosting environment: "Development" 1 
+03/17/2021 20:13:01 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/17/2021 20:13:04 HTTP "GET" "/" responded 200 in 186.4900 ms 4 
+03/17/2021 20:13:05 HTTP "GET" "/Authentication/SignIn" responded 200 in 210.8169 ms 8 
+03/17/2021 20:13:23 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/17/2021 20:13:23 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/17/2021 20:13:25 Received HTTP response headers after 2009.6974ms - 200 6 
+03/17/2021 20:13:25 End processing HTTP request after 2022.175ms - 200 6 
+03/17/2021 20:13:25 HTTP "POST" "/Authentication/SignIn" responded 302 in 2127.3715 ms 6 
+03/17/2021 20:13:25 HTTP "GET" "/" responded 200 in 8.3767 ms 8 
+03/17/2021 20:13:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 13 
+03/17/2021 20:13:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 13 
+03/17/2021 20:13:27 Received HTTP response headers after 138.247ms - 200 6 
+03/17/2021 20:13:27 End processing HTTP request after 140.0091ms - 200 6 
+03/17/2021 20:13:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 6 
+03/17/2021 20:13:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 6 
+03/17/2021 20:13:27 Received HTTP response headers after 23.411ms - 200 12 
+03/17/2021 20:13:27 End processing HTTP request after 25.0778ms - 200 12 
+03/17/2021 20:13:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 12 
+03/17/2021 20:13:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 12 
+03/17/2021 20:13:27 Received HTTP response headers after 25.8719ms - 200 6 
+03/17/2021 20:13:27 End processing HTTP request after 27.4864ms - 200 6 
+03/17/2021 20:13:27 HTTP "GET" "/AccountSettings/Profile" responded 200 in 301.3477 ms 6 
+03/17/2021 20:13:35 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 4 
+03/17/2021 20:13:35 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 4 
+03/17/2021 20:13:35 Received HTTP response headers after 40.3851ms - 200 6 
+03/17/2021 20:13:35 End processing HTTP request after 42.0804ms - 200 6 
+03/17/2021 20:13:35 HTTP "POST" "/AccountSettings/ChangeLogin" responded 500 in 68.6265 ms 6 
+System.InvalidOperationException: The layout view '/Views/_Layout.cshtml' could not be located. The following locations were searched:
+/Views/_Layout.cshtml
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.GetLayoutPage(ViewContext context, String executingFilePath, String layoutPath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/17/2021 20:13:35 An unhandled exception has occurred while executing the request. 6 
+System.InvalidOperationException: The layout view '/Views/_Layout.cshtml' could not be located. The following locations were searched:
+/Views/_Layout.cshtml
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.GetLayoutPage(ViewContext context, String executingFilePath, String layoutPath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/17/2021 20:16:59 Web server started.. 1 
+03/17/2021 20:16:59 Web server HostBuilder created 1 
+03/17/2021 20:17:00 Host built 1 
+03/17/2021 20:17:00 Now listening on: "https://localhost:9000" 1 
+03/17/2021 20:17:00 Application started. Press Ctrl+C to shut down. 1 
+03/17/2021 20:17:00 Hosting environment: "Development" 1 
+03/17/2021 20:17:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/17/2021 20:17:02 HTTP "GET" "/" responded 200 in 194.9042 ms 7 
+03/17/2021 20:17:05 HTTP "GET" "/Authentication/SignIn" responded 200 in 211.0364 ms 7 
+03/17/2021 20:17:12 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 11 
+03/17/2021 20:17:12 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 11 
+03/17/2021 20:17:14 Received HTTP response headers after 2109.9069ms - 200 5 
+03/17/2021 20:17:15 End processing HTTP request after 2123.295ms - 200 5 
+03/17/2021 20:17:15 HTTP "POST" "/Authentication/SignIn" responded 302 in 2233.7119 ms 5 
+03/17/2021 20:17:15 HTTP "GET" "/" responded 200 in 9.5065 ms 4 
+03/17/2021 20:17:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 11 
+03/17/2021 20:17:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 11 
+03/17/2021 20:17:18 Received HTTP response headers after 140.4876ms - 200 9 
+03/17/2021 20:17:18 End processing HTTP request after 142.2978ms - 200 9 
+03/17/2021 20:17:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 9 
+03/17/2021 20:17:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 9 
+03/17/2021 20:17:18 Received HTTP response headers after 26.0544ms - 200 17 
+03/17/2021 20:17:18 End processing HTTP request after 27.6975ms - 200 17 
+03/17/2021 20:17:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 17 
+03/17/2021 20:17:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 17 
+03/17/2021 20:17:18 Received HTTP response headers after 23.9153ms - 200 5 
+03/17/2021 20:17:18 End processing HTTP request after 25.4324ms - 200 5 
+03/17/2021 20:17:18 HTTP "GET" "/AccountSettings/Profile" responded 200 in 306.5550 ms 5 
+03/17/2021 20:17:26 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 13 
+03/17/2021 20:17:26 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 13 
+03/17/2021 20:17:26 Received HTTP response headers after 138.5304ms - 200 17 
+03/17/2021 20:17:26 End processing HTTP request after 140.3754ms - 200 17 
+03/17/2021 20:17:26 HTTP "POST" "/AccountSettings/ChangeLogin" responded 302 in 158.4963 ms 17 
+03/17/2021 20:17:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 8 
+03/17/2021 20:17:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/notifications/agqinecj@yomail.info 8 
+03/17/2021 20:17:26 Received HTTP response headers after 9.0504ms - 200 5 
+03/17/2021 20:17:26 End processing HTTP request after 10.8338ms - 200 5 
+03/17/2021 20:17:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 5 
+03/17/2021 20:17:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/user/settings/login/agqinecj@yomail.info 5 
+03/17/2021 20:17:26 Received HTTP response headers after 4.0262ms - 200 5 
+03/17/2021 20:17:26 End processing HTTP request after 6.5965ms - 200 5 
+03/17/2021 20:17:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 5 
+03/17/2021 20:17:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/tokens/user/agqinecj@yomail.info 5 
+03/17/2021 20:17:26 Received HTTP response headers after 5.5027ms - 200 17 
+03/17/2021 20:17:26 End processing HTTP request after 7.3716ms - 200 17 
+03/17/2021 20:17:26 HTTP "GET" "/AccountSettings/Profile" responded 200 in 32.2956 ms 17 
+03/17/2021 20:17:35 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 12 
+03/17/2021 20:17:35 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/user/settings/change/login 12 
+03/17/2021 20:17:35 Received HTTP response headers after 9.6176ms - 200 9 
+03/17/2021 20:17:35 End processing HTTP request after 11.3625ms - 200 9 
+03/17/2021 20:17:35 HTTP "POST" "/AccountSettings/ChangeLogin" responded 200 in 17.7402 ms 9 

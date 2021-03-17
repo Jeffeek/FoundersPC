@@ -1,6 +1,5 @@
 #region Using namespaces
 
-using System;
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
@@ -12,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 

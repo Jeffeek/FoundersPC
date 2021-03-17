@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region Using namespaces
+
 using FluentValidation;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
+
+#endregion
 
 namespace FoundersPC.Identity.Application.Validation.Requests.Administration.Admin.User_Blocking
 {
@@ -13,7 +12,7 @@ namespace FoundersPC.Identity.Application.Validation.Requests.Administration.Adm
         public BlockUserByIdRequestValidator()
         {
             RuleFor(x => x.UserId)
-                    .GreaterThan(0);
+                .GreaterThan(0);
         }
     }
 }

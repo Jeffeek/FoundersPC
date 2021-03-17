@@ -1,21 +1,21 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
 using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Administration
 {
@@ -25,9 +25,9 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
     [Route("FoundersPCIdentity/Admin/Users")]
     public class AdminUsersController : Controller
     {
-        private readonly IUsersInformationService _usersInformationService;
         private readonly IAdminService _adminService;
         private readonly IMapper _mapper;
+        private readonly IUsersInformationService _usersInformationService;
 
         public AdminUsersController(IUsersInformationService usersInformationService, IMapper mapper, IAdminService adminService)
         {
@@ -88,13 +88,13 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
             var blockUserResult = await _adminService.BlockUserAsync(byIdRequest.UserId);
 
             if (blockUserResult)
-                return new BlockUserResponse()
+                return new BlockUserResponse
                        {
                            AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                            IsBlockingSuccessful = true
                        };
 
-            return new BlockUserResponse()
+            return new BlockUserResponse
                    {
                        AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                        IsBlockingSuccessful = false,
@@ -114,19 +114,20 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
             if (byEmailRequest.UserEmail is null)
                 return BadRequest(new
                                   {
-                                      error = $"Bad email. Id was was, expected not null"
+                                      error = "Bad email. Id was was, expected not null"
                                   });
 
-            var blockUserResult = await _adminService.BlockUserAsync(byEmailRequest.UserEmail, byEmailRequest.BlockUserTokens, byEmailRequest.SendNotificationToUserViaEmail);
+            var blockUserResult =
+                await _adminService.BlockUserAsync(byEmailRequest.UserEmail, byEmailRequest.BlockUserTokens, byEmailRequest.SendNotificationToUserViaEmail);
 
             if (blockUserResult)
-                return new BlockUserResponse()
+                return new BlockUserResponse
                        {
                            AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                            IsBlockingSuccessful = true
                        };
 
-            return new BlockUserResponse()
+            return new BlockUserResponse
                    {
                        AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                        IsBlockingSuccessful = false,
@@ -135,7 +136,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         }
 
         [HttpPut("UnBlock/By/Id")]
-        public async Task<ActionResult<UnblockUserResponse>> BlockUser(UnblockUserByIdRequest byIdRequest)
+        public async Task<ActionResult<UnblockUserResponse>> UnBlockUser(UnblockUserByIdRequest byIdRequest)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new
@@ -152,13 +153,13 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
             var unblockUserResult = await _adminService.UnBlockUserAsync(byIdRequest.UserId);
 
             if (unblockUserResult)
-                return new UnblockUserResponse()
+                return new UnblockUserResponse
                        {
                            AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                            IsUnblockingSuccessful = true
                        };
 
-            return new UnblockUserResponse()
+            return new UnblockUserResponse
                    {
                        AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                        IsUnblockingSuccessful = false,
@@ -167,7 +168,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         }
 
         [HttpPut("UnBlock/By/Email")]
-        public async Task<ActionResult<UnblockUserResponse>> BlockUser(UnblockUserByEmailRequest byEmailRequest)
+        public async Task<ActionResult<UnblockUserResponse>> UnBlockUser(UnblockUserByEmailRequest byEmailRequest)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new
@@ -178,20 +179,20 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
             if (byEmailRequest.UserEmail is null)
                 return BadRequest(new
                                   {
-                                      error = $"Bad email. Id was was, expected not null"
+                                      error = "Bad email. Id was was, expected not null"
                                   });
 
             var blockUserResult = await _adminService.UnBlockUserAsync(byEmailRequest.UserEmail,
                                                                        byEmailRequest.SendNotificationToUserViaEmail);
 
             if (blockUserResult)
-                return new UnblockUserResponse()
+                return new UnblockUserResponse
                        {
                            AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                            IsUnblockingSuccessful = true
                        };
 
-            return new UnblockUserResponse()
+            return new UnblockUserResponse
                    {
                        AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                        IsUnblockingSuccessful = false,

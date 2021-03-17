@@ -1,32 +1,37 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
-using FoundersPC.Web.Application.Interfaces.Services.IdentityServer;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
+#endregion
+
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 {
     public class AdminService : IAdminService
     {
-        private readonly IUsersInformationService _usersInformationService;
+        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<AdminService> _logger;
-        private readonly MicroservicesBaseAddresses _baseAddresses;
+        private readonly IUsersInformationService _usersInformationService;
 
-        public AdminService(IUsersInformationService usersInformationService, IHttpClientFactory clientFactory, MicroservicesBaseAddresses baseAddresses, ILogger<AdminService> logger)
+        public AdminService(IUsersInformationService usersInformationService,
+                            IHttpClientFactory clientFactory,
+                            MicroservicesBaseAddresses baseAddresses,
+                            ILogger<AdminService> logger
+        )
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
@@ -38,7 +43,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         public async Task<ApplicationUser> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetByIdAsync(id, adminToken);
 
-        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) => await _usersInformationService.GetByEmailAsync(email, adminToken);
+        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) =>
+            await _usersInformationService.GetByEmailAsync(email, adminToken);
 
         public async Task<bool> BlockUserByIdAsync(int id, string adminToken)
         {
@@ -60,14 +66,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             PrepareRequest(client, adminToken);
 
-            var blockModel = new BlockUserByIdRequest()
+            var blockModel = new BlockUserByIdRequest
                              {
                                  BlockUserTokens = true,
                                  SendNotificationToUserViaEmail = true,
                                  UserId = id
                              };
 
-            var blockUserRequest = await client.PutAsJsonAsync<BlockUserByIdRequest>($"Users/Block/By/Id", blockModel);
+            var blockUserRequest = await client.PutAsJsonAsync("Users/Block/By/Id", blockModel);
 
             if (!blockUserRequest.IsSuccessStatusCode) return false;
 
@@ -112,7 +118,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             PrepareRequest(client, adminToken);
 
-            var blockModel = new UnblockUserByIdRequest()
+            var blockModel = new UnblockUserByIdRequest
                              {
                                  UnblockUserTokens = true,
                                  SendNotificationToUserViaEmail = true,
@@ -120,7 +126,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                              };
 
             // todo: implement
-            var unblockUserRequest = await client.PutAsJsonAsync<UnblockUserByIdRequest>($"Users/Unblock/By/Id", blockModel);
+            var unblockUserRequest = await client.PutAsJsonAsync("Users/Unblock/By/Id", blockModel);
 
             if (!unblockUserRequest.IsSuccessStatusCode) return false;
 
@@ -155,7 +161,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         public Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesAsync(int userId, string adminToken) => throw new NotImplementedException();
 
-        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) => throw new NotImplementedException();
+        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
+            throw new NotImplementedException();
 
         public Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken) => throw new NotImplementedException();
 

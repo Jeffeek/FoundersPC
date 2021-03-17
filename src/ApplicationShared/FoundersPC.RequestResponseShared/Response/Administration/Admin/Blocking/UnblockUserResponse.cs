@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking
+﻿namespace FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking
 {
     public class UnblockUserResponse
     {

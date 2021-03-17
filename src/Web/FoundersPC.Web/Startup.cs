@@ -35,7 +35,7 @@ namespace FoundersPC.Web
                     .AddCookie(options =>
                                {
                                    options.LoginPath = new PathString("/Authentication/SignIn");
-                                   options.AccessDeniedPath = new PathString("/Shared/AccessDenied");
+                                   options.AccessDeniedPath = new PathString("/Shared/Forbidden");
                                    options.LogoutPath = "/Authentication/SignIn";
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
                                });

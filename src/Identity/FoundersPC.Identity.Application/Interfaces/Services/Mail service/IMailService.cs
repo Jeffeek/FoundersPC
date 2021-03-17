@@ -22,5 +22,7 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Mail_service
         Task<bool> SendNewPasswordAsync(string email, string password);
 
         Task<bool> SendBlockNotificationAsync(string email, string reason = null);
+
+        Task<bool> SendUnBlockNotificationAsync(string email, string reason = null);
     }
 }

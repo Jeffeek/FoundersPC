@@ -112,9 +112,16 @@ namespace FoundersPC.Identity.Services.EmailServices
 
         public async Task<bool> SendBlockNotificationAsync(string email, string reason = null)
         {
-            var content = $"You've banned in out service. Thanks!{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
+            var content = $"You've banned in out service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
 
             return await SendToAsync(email, "Your account was blocked", content);
+        }
+
+        public async Task<bool> SendUnBlockNotificationAsync(string email, string reason = null)
+        {
+            var content = "You've UnBanned in out service.";
+
+            return await SendToAsync(email, "Your account was UNBLOCKED", content);
         }
     }
 }
