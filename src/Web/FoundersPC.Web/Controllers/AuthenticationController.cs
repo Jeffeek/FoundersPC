@@ -23,15 +23,12 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IIdentityAuthenticationService _authenticationService;
         private readonly IMapper _mapper;
-        private readonly JwtConfiguration _jwtConfiguration;
 
         public AuthenticationController(IMapper mapper,
-                                        IIdentityAuthenticationService authenticationService,
-                                        JwtConfiguration jwtConfiguration
+                                        IIdentityAuthenticationService authenticationService
             )
         {
             _authenticationService = authenticationService;
-            _jwtConfiguration = jwtConfiguration;
             _mapper = mapper;
             _authenticationService = authenticationService;
         }

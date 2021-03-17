@@ -29,6 +29,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         private readonly IUserRegistrationService _userRegistrationService;
         private readonly IUsersEntrancesService _usersEntrancesService;
         private readonly IUsersInformationService _usersInformationService;
+        private readonly JwtConfiguration _jwtConfiguration;
 
         public AuthenticationAndRegistrationController(IUsersInformationService authenticationInformationService,
                                                        IMailService mailService,
@@ -36,8 +37,9 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                                                        IUserRegistrationService userRegistrationService,
                                                        IUsersEntrancesService usersEntrancesService,
                                                        IMapper mapper,
-                                                       ILogger<AuthenticationAndRegistrationController> logger
-        )
+                                                       ILogger<AuthenticationAndRegistrationController> logger,
+                                                       JwtConfiguration jwtConfiguration
+            )
         {
             _usersInformationService = authenticationInformationService;
             _mailService = mailService;
@@ -46,6 +48,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _usersEntrancesService = usersEntrancesService;
             _mapper = mapper;
             _logger = logger;
+            _jwtConfiguration = jwtConfiguration;
         }
 
         [Route("ForgotPassword")]
@@ -152,7 +155,11 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: successful registration for user with email = {request.Email}");
 
-            var token = new JwtUserToken(request.Email, ApplicationRoles.DefaultUser.ToString());
+            var token = new JwtUserToken(_jwtConfiguration)
+                        {
+                            Email = request.Email,
+                            Role = ApplicationRoles.DefaultUser.ToString()
+                        };
 
             return new UserSignUpResponse
                    {
@@ -187,7 +194,11 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             await _usersEntrancesService.LogAsync(user.Id);
             if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
 
-            var token = new JwtUserToken(user.Email, user.Role.RoleTitle);
+            var token = new JwtUserToken(_jwtConfiguration)
+                        {
+                            Email = user.Email,
+                            Role = user.Role.RoleTitle
+                        };
 
             var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
             mappedUser.IsUserExists = true;

@@ -30,6 +30,9 @@ namespace FoundersPC.IdentityServer
                 .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json",
                              false,
                              true)
+                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\JwtSettings.json",
+                             false,
+                             true)
                 .AddConfiguration(configuration, false);
 
             Configuration = builder.Build();
@@ -60,7 +63,7 @@ namespace FoundersPC.IdentityServer
             services.AddMappings();
             services.AddValidators();
 
-            services.AddJwtSettings();
+            services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
             services.AddAuthorization();

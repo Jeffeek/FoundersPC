@@ -15,12 +15,10 @@ namespace FoundersPC.ApplicationShared
 {
     public static class ApplicationSharedExtensions
     {
-        public static void AddJwtSettings(this IServiceCollection services)
+        public static void AddJwtSettings(this IServiceCollection services, IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder();
-            var config = builder.AddJsonFile($"{Directory.GetCurrentDirectory()}\\jwtSettings.json").Build();
-
-            services.AddSingleton(new JwtConfiguration(config));
+            JwtConfiguration.Initialize(configuration);
+            services.AddSingleton<JwtConfiguration>(JwtConfiguration.Configuration);
         }
 
         public static void AddBearerAuthenticationWithSettings(this IServiceCollection services)

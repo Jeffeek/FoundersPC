@@ -63,7 +63,7 @@ namespace FoundersPC.API
             //
             services.AddValidators();
 
-            services.AddJwtSettings();
+            services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
             services.AddAuthorization(config =>

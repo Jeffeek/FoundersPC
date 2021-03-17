@@ -5,14 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="jwtSettings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="jwtSettings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="FluentValidation" Version="9.5.1" />

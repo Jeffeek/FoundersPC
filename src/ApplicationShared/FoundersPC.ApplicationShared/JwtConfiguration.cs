@@ -1,5 +1,6 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -13,18 +14,45 @@ namespace FoundersPC.ApplicationShared
     // todo: make this class as singleton service, take credentials behind config / file
     public class JwtConfiguration
     {
-        public JwtConfiguration(IConfiguration configuration)
+        private static JwtConfiguration _configuration;
+
+        public static JwtConfiguration Configuration
         {
-            Issuer = configuration["JwtSettings:Issuer"];
-            Audience = configuration["JwtSettings:Audience"];
-            Key = configuration["JwtSettings:Key"];
+            get
+            {
+                if (_configuration is null) throw new NotSupportedException();
+
+                return _configuration;
+            }
+
+            private set
+            {
+                if (_configuration is not null) return;
+
+                _configuration = value;
+            }
         }
 
-        public string Issuer { get; }
+        public static void Initialize(IConfiguration configuration)
+        {
+            Configuration = new JwtConfiguration()
+                            {
+                                Issuer = configuration["JwtSettings:Issuer"],
+                                Audience = configuration["JwtSettings:Audience"],
+                                Key = configuration["JwtSettings:Key"],
+                                HoursToExpire = Int32.Parse(configuration["JwtSettings:HoursToExpire"])
+                            };
+        }
 
-        public string Audience { get; }
+        private JwtConfiguration() { }
 
-        private string Key { get; }
+        public string Key { get; private init; }
+
+        public string Issuer { get; private init; }
+
+        public string Audience { get; private init; }
+
+        public int HoursToExpire { get; private init; }
 
         public SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
     }
