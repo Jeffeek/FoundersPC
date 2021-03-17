@@ -60,21 +60,8 @@ namespace FoundersPC.IdentityServer
             services.AddMappings();
             services.AddValidators();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
-                                  config =>
-                                  {
-                                      var key = JwtConfiguration.GetSymmetricSecurityKey();
-                                      config.BackchannelTimeout = TimeSpan.FromSeconds(20);
-
-                                      config.TokenValidationParameters = new TokenValidationParameters
-                                                                         {
-                                                                             ValidateAudience = false,
-                                                                             ValidIssuer = JwtConfiguration.Issuer,
-                                                                             ValidAudience = JwtConfiguration.Audience,
-                                                                             IssuerSigningKey = key
-                                                                         };
-                                  });
+            services.AddJwtSettings();
+            services.AddBearerAuthenticationWithSettings();
 
             services.AddAuthorization();
 

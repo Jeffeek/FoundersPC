@@ -23,12 +23,15 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IIdentityAuthenticationService _authenticationService;
         private readonly IMapper _mapper;
+        private readonly JwtConfiguration _jwtConfiguration;
 
         public AuthenticationController(IMapper mapper,
-                                        IIdentityAuthenticationService authenticationService
-        )
+                                        IIdentityAuthenticationService authenticationService,
+                                        JwtConfiguration jwtConfiguration
+            )
         {
             _authenticationService = authenticationService;
+            _jwtConfiguration = jwtConfiguration;
             _mapper = mapper;
             _authenticationService = authenticationService;
         }
@@ -173,11 +176,14 @@ namespace FoundersPC.Web.Controllers
         {
             var claims = new List<Claim>
                          {
-                             new(ClaimsIdentity.DefaultNameClaimType, email),
-                             new(ClaimsIdentity.DefaultRoleClaimType, role)
+                             new(ClaimsIdentity.DefaultNameClaimType,
+                                 email),
+                             new(ClaimsIdentity.DefaultRoleClaimType,
+                                 role)
                          };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                                           new ClaimsPrincipal(identity));
         }
