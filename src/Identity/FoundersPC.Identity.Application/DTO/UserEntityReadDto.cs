@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using FoundersPC.ApplicationShared;
+using FoundersPC.WebIdentityShared;
 
 #endregion
 
@@ -30,7 +31,7 @@ namespace FoundersPC.Identity.Application.DTO
 
         public RoleEntityReadDto Role { get; set; }
 
-        public IEnumerable<ApiAccessUserTokenReadDto> Tokens { get; set; }
+        public IEnumerable<ApplicationAccessToken> Tokens { get; set; }
 
         public IEnumerable<UserEntranceLogReadDto> Entrances { get; set; }
     }

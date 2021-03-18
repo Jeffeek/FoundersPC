@@ -81,7 +81,8 @@
                     <a
                         aria-current="page"
                         class="btn btn-outline-warning nav-link text-light"
-                        href="#">
+                        asp-controller="Home"
+                        asp-action="SpaceInvaders">
                         Privacy
                     </a>
                 </li>
@@ -109,7 +110,7 @@
                                     <a
                                         asp-action="Profile"
                                         asp-controller="AccountSettings"
-                                        class="btn btn-black dropdown-item text-center text-info">
+                                        class="btn dropdown-item text-center text-info">
                                         Settings
                                     </a>
                                 </li>
@@ -120,7 +121,7 @@
                                             <a
                                                 asp-action="UsersTable"
                                                 asp-controller="Admin"
-                                                class="btn btn-black dropdown-item text-center text-info">
+                                                class="btn dropdown-item text-center text-info">
                                                 UsersTable
                                             </a>
                                         </li>
@@ -165,7 +166,6 @@
     class="container">
     @RenderBody()
 </div>
-
 <script
     src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
 <script

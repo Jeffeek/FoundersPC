@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
 
 #endregion
 
@@ -25,5 +26,7 @@ namespace FoundersPC.WebIdentityShared
         public bool SendMessageOnApiRequest { get; set; }
 
         public string Role { get; set; }
+
+        public IEnumerable<ApplicationAccessToken> Tokens { get; set; }
     }
 }

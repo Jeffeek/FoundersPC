@@ -130,5 +130,7 @@ namespace FoundersPC.Web.Controllers
 
             return result;
         }
+
+        public ActionResult SpaceInvaders() => View("space-invaders/space-invaders");
     }
 }

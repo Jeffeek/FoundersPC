@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
+using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
@@ -57,7 +58,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             return loginResponse.Trim('"');
         }
 
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(string email, string token)
+        public async Task<IEnumerable<ApplicationAccessToken>> GetUserTokensAsync(string email, string token)
         {
             if (token is null)
             {
@@ -77,7 +78,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             PrepareRequest(client, token);
 
-            var tokensResponse = await client.GetFromJsonAsync<IEnumerable<ApiAccessUserTokenReadDto>>($"tokens/user/{email}");
+            var tokensResponse = await client.GetFromJsonAsync<IEnumerable<ApplicationAccessToken>>($"Tokens/User/{email}");
 
             return tokensResponse;
         }
@@ -102,9 +103,34 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             PrepareRequest(client, token);
 
-            var userNotificationsSettings = await client.GetFromJsonAsync<NotificationsSettingsViewModel>($"user/settings/notifications/{email}");
+            var userNotificationsSettings = await client.GetFromJsonAsync<NotificationsSettingsViewModel>($"User/Settings/OverallInformation/{email}");
 
             return userNotificationsSettings;
+        }
+
+        public async Task<ApplicationUser> GetOverallInformation(string email, string token)
+        {
+            if (email is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get overall information: email was null");
+
+                throw new ArgumentNullException(nameof(email));
+            }
+
+            if (token is null)
+            {
+                _logger.LogError($"{nameof(IdentityUserInformationService)}: get overall information: token was null");
+
+                throw new ArgumentNullException(nameof(token));
+            }
+
+            using var client = _httpClientFactory.CreateClient("User's overall information settings client");
+
+            PrepareRequest(client, token);
+
+            var userInformation = await client.GetFromJsonAsync<ApplicationUser>($"User/Settings/OverallInformation/{email}");
+
+            return userInformation;
         }
 
         private void PrepareRequest(HttpClient client, string token)
@@ -113,7 +139,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
                                                                                        token);
         }

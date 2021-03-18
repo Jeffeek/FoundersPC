@@ -2,8 +2,11 @@
 
 using System.Security.Claims;
 using System.Threading.Tasks;
+using AutoMapper;
 using FoundersPC.ApplicationShared;
+using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,13 +21,18 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
     public class UserSettingsController : Controller
     {
         private readonly IUsersInformationService _usersInformationService;
+        private readonly IMapper _mapper;
 
-        public UserSettingsController(IUsersInformationService usersInformationService) => _usersInformationService = usersInformationService;
+        public UserSettingsController(IUsersInformationService usersInformationService, IMapper mapper)
+        {
+            _usersInformationService = usersInformationService;
+            _mapper = mapper;
+        }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         [Route("Notifications/{email}")]
-        public async Task<IActionResult> GetUserNotifications(string email)
+        public async Task<ActionResult> GetUserNotifications(string email)
         {
             if (email is null) return BadRequest();
 
@@ -67,6 +75,20 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
             if (user is null) return NotFound();
 
             return Ok(user.Login);
+        }
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet]
+        [Route("OverallInformation/{email}")]
+        public async Task<ActionResult<ApplicationUser>> GetOverallInformation(string email)
+        {
+            if (email is null) return BadRequest();
+
+            var user = await _usersInformationService.FindUserByEmailAsync(email);
+
+            if (User is null) return NotFound();
+
+            return _mapper.Map<UserEntityReadDto, ApplicationUser>(user);
         }
     }
 }

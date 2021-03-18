@@ -1,0 +1,86 @@
+03/18/2021 09:06:10 Identity server started..
+03/18/2021 09:06:11 Identity server HostBuilder created
+03/18/2021 09:06:13 Host built
+03/18/2021 09:06:15 Now listening on: "https://localhost:3000"
+03/18/2021 09:06:15 Application started. Press Ctrl+C to shut down.
+03/18/2021 09:06:15 Hosting environment: "Development"
+03/18/2021 09:06:15 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/18/2021 09:06:17 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - FoundersPC.IdentityServer.Controllers.Administration.AdminController.RegisterManager (FoundersPC.IdentityServer). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/18/2021 09:06:53 Identity server started..
+03/18/2021 09:06:53 Identity server HostBuilder created
+03/18/2021 09:06:55 Host built
+03/18/2021 09:06:55 Now listening on: "https://localhost:3000"
+03/18/2021 09:06:55 Application started. Press Ctrl+C to shut down.
+03/18/2021 09:06:55 Hosting environment: "Development"
+03/18/2021 09:06:55 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/18/2021 09:06:56 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - FoundersPC.IdentityServer.Controllers.Administration.AdminController.RegisterManager (FoundersPC.IdentityServer). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/18/2021 09:07:18 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/email@email.com" responded 401 in 271.8871 ms
+03/18/2021 09:08:14 Identity server started..
+03/18/2021 09:08:14 Identity server HostBuilder created
+03/18/2021 09:08:16 Host built
+03/18/2021 09:08:17 Now listening on: "https://localhost:3000"
+03/18/2021 09:08:17 Application started. Press Ctrl+C to shut down.
+03/18/2021 09:08:17 Hosting environment: "Development"
+03/18/2021 09:08:17 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/18/2021 09:08:18 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - FoundersPC.IdentityServer.Controllers.Administration.AdminController.RegisterManager (FoundersPC.IdentityServer). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/18/2021 09:08:22 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/email@email.com" responded 401 in 238.8565 ms
+03/18/2021 09:09:25 Identity server started..
+03/18/2021 09:09:25 Identity server HostBuilder created
+03/18/2021 09:09:27 Host built
+03/18/2021 09:09:28 Now listening on: "https://localhost:3000"
+03/18/2021 09:09:28 Application started. Press Ctrl+C to shut down.
+03/18/2021 09:09:28 Hosting environment: "Development"
+03/18/2021 09:09:28 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/18/2021 09:09:29 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - FoundersPC.IdentityServer.Controllers.Administration.AdminController.RegisterManager (FoundersPC.IdentityServer). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/18/2021 09:09:42 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 401 in 234.8429 ms
+03/18/2021 09:11:10 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/email@email.com" responded 401 in 3.2528 ms
+03/18/2021 09:17:31 Identity server started..
+03/18/2021 09:17:31 Identity server HostBuilder created
+03/18/2021 09:17:32 Host built
+03/18/2021 09:17:33 Now listening on: "https://localhost:3000"
+03/18/2021 09:17:33 Application started. Press Ctrl+C to shut down.
+03/18/2021 09:17:33 Hosting environment: "Development"
+03/18/2021 09:17:33 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/18/2021 09:17:34 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - FoundersPC.IdentityServer.Controllers.Administration.AdminController.RegisterManager (FoundersPC.IdentityServer). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/18/2021 09:18:07 AuthenticationAndRegistrationController: user with email or login = Jeffeek entered the service
+03/18/2021 09:18:09 Successful sending an email to: ilyushin_misha@mail.ru
+03/18/2021 09:20:44 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 159457.8498 ms
+03/18/2021 09:20:57 AuthenticationAndRegistrationController: user with email or login = Jeffeek entered the service
+03/18/2021 09:20:59 Successful sending an email to: ilyushin_misha@mail.ru
+03/18/2021 09:20:59 HTTP "POST" "/FoundersPCIdentity/Authentication/Login" responded 200 in 2252.4906 ms
+03/18/2021 09:21:57 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 19545.8394 ms
+03/18/2021 09:22:38 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/notifications" responded 200 in 185.1128 ms
+03/18/2021 09:22:49 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 6486.1345 ms
+03/18/2021 09:22:54 HTTP "PUT" "/FoundersPCIdentity/user/settings/change/notifications" responded 200 in 43.3513 ms
+03/18/2021 09:22:54 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 24.8450 ms
+03/18/2021 09:24:57 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 33.9600 ms

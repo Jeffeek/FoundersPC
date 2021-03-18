@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
+using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [HttpGet]
         [Route("User/{email}")]
-        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens(string email)
+        public async Task<ActionResult<IEnumerable<ApplicationAccessToken>>> GetUserTokens(string email)
         {
             var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
 

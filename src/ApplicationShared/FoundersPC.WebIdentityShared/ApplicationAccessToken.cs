@@ -4,9 +4,9 @@ using System;
 
 #endregion
 
-namespace FoundersPC.ApplicationShared
+namespace FoundersPC.WebIdentityShared
 {
-    public class ApiAccessUserTokenReadDto
+    public class ApplicationAccessToken
     {
         public int Id { get; set; }
 

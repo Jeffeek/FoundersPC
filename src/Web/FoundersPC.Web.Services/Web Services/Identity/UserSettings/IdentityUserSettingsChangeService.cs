@@ -80,7 +80,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             var mappedModel = _mapper.Map<PasswordSettingsViewModel, ChangePasswordRequest>(model);
 
-            var changePasswordRequest = await client.PutAsJsonAsync("user/settings/change/password",
+            var changePasswordRequest = await client.PutAsJsonAsync("User/Settings/Change/Password",
                                                                     mappedModel);
 
             var responseContent = await changePasswordRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
@@ -118,7 +118,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             var mappedModel = _mapper.Map<SecuritySettingsViewModel, ChangeLoginRequest>(model);
 
-            var changeLoginRequest = await client.PutAsJsonAsync("user/settings/change/login",
+            var changeLoginRequest = await client.PutAsJsonAsync("User/Settings/Change/Login",
                                                                  mappedModel);
 
             var responseContent = await changeLoginRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
@@ -149,7 +149,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             var mappedModel = _mapper.Map<NotificationsSettingsViewModel, ChangeNotificationsRequest>(model);
 
-            var changeNotificationsRequest = await client.PutAsJsonAsync("user/settings/change/notifications",
+            var changeNotificationsRequest = await client.PutAsJsonAsync("User/Settings/Change/Notifications",
                                                                          mappedModel);
 
             var responseContent = await changeNotificationsRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
