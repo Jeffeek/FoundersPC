@@ -3,6 +3,7 @@
 using System;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
@@ -17,37 +18,40 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
-    [Route("identityAPI/authentication")]
+    [Route("FoundersPCIdentity/Authentication")]
     [ApiController]
     public class AuthenticationAndRegistrationController : Controller
     {
+        private readonly JwtConfiguration _jwtConfiguration;
         private readonly ILogger<AuthenticationAndRegistrationController> _logger;
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUserRegistrationService _userRegistrationService;
         private readonly IUsersEntrancesService _usersEntrancesService;
-        private readonly IUsersService _usersService;
+        private readonly IUsersInformationService _usersInformationService;
 
-        public AuthenticationAndRegistrationController(IUsersService authenticationService,
+        public AuthenticationAndRegistrationController(IUsersInformationService authenticationInformationService,
                                                        IMailService mailService,
                                                        PasswordEncryptorService passwordEncryptorService,
                                                        IUserRegistrationService userRegistrationService,
                                                        IUsersEntrancesService usersEntrancesService,
                                                        IMapper mapper,
-                                                       ILogger<AuthenticationAndRegistrationController> logger
+                                                       ILogger<AuthenticationAndRegistrationController> logger,
+                                                       JwtConfiguration jwtConfiguration
         )
         {
-            _usersService = authenticationService;
+            _usersInformationService = authenticationInformationService;
             _mailService = mailService;
             _passwordEncryptorService = passwordEncryptorService;
             _userRegistrationService = userRegistrationService;
             _usersEntrancesService = usersEntrancesService;
             _mapper = mapper;
             _logger = logger;
+            _jwtConfiguration = jwtConfiguration;
         }
 
-        [Route("forgotpassword")]
+        [Route("ForgotPassword")]
         [HttpPost]
         public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword(UserForgotPasswordRequest request)
         {
@@ -62,7 +66,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Forgot Password request with email = {request.Email}");
 
-            var user = await _usersService.FindUserByEmailAsync(request.Email);
+            var user = await _usersInformationService.FindUserByEmailAsync(request.Email);
 
             if (user is null)
             {
@@ -78,7 +82,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             }
 
             var newPassword = _passwordEncryptorService.GeneratePassword();
-            var updateResult = await _usersService.ChangePasswordToAsync(user.Id, newPassword, user.HashedPassword);
+            var updateResult = await _usersInformationService.ChangePasswordToAsync(user.Id, newPassword, user.HashedPassword);
 
             if (updateResult == false)
             {
@@ -120,18 +124,17 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                    };
         }
 
-        [Route("registration")]
+        [Route("Registration")]
         [HttpPost]
-        public async Task<ActionResult<UserRegisterResponse>> Register(UserSignUpRequest request)
+        public async Task<ActionResult<UserSignUpResponse>> Register(UserSignUpRequest request)
         {
             if (!ModelState.IsValid)
-                return BadRequest(new UserRegisterResponse
+                return BadRequest(new UserSignUpResponse
                                   {
                                       Email = request.Email,
                                       IsRegistrationSuccessful = false,
                                       ResponseException = "Bad model",
-                                      Role = null,
-                                      UserId = -1
+                                      Role = null
                                   });
 
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Registration request with email = {request.Email}");
@@ -142,7 +145,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             {
                 _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Registration request with email = {request.Email}. Registration service sent an error");
 
-                return new UserRegisterResponse
+                return new UserSignUpResponse
                        {
                            Email = request.Email,
                            IsRegistrationSuccessful = false,
@@ -150,21 +153,25 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        };
             }
 
-            var user = await _usersService.FindUserByEmailAsync(request.Email);
-
             _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: successful registration for user with email = {request.Email}");
 
-            return new UserRegisterResponse
+            var token = new JwtUserToken(_jwtConfiguration)
+                        {
+                            Email = request.Email,
+                            Role = ApplicationRoles.DefaultUser.ToString()
+                        };
+
+            return new UserSignUpResponse
                    {
                        Email = request.Email,
                        IsRegistrationSuccessful = true,
                        ResponseException = null,
-                       Role = "DefaultUser",
-                       UserId = user.Id
+                       Role = ApplicationRoles.DefaultUser.ToString(),
+                       JwtToken = token.GetToken()
                    };
         }
 
-        [Route("login")]
+        [Route("Login")]
         [HttpPost]
         public async Task<ActionResult<UserLoginResponse>> Login(UserSignInRequest request)
         {
@@ -174,7 +181,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                                       MetaInfo = "Bad model"
                                   });
 
-            var user = await _usersService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
+            var user = await _usersInformationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
 
             if (user is null)
             {
@@ -187,8 +194,15 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             await _usersEntrancesService.LogAsync(user.Id);
             if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
 
+            var token = new JwtUserToken(_jwtConfiguration)
+                        {
+                            Email = user.Email,
+                            Role = user.Role.RoleTitle
+                        };
+
             var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
             mappedUser.IsUserExists = true;
+            mappedUser.JwtToken = token.GetToken();
 
             return mappedUser;
         }

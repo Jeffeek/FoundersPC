@@ -12,11 +12,11 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authenti
     {
         Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword);
 
-        Task<UserRegisterResponse> SignUpAsync(string email, string rawPassword);
+        Task<UserSignUpResponse> SignUpAsync(string email, string rawPassword);
 
         Task<UserLoginResponse> SignInAsync(SignInViewModel model);
 
-        Task<UserRegisterResponse> SignUpAsync(SignUpViewModel model);
+        Task<UserSignUpResponse> SignUpAsync(SignUpViewModel model);
 
         Task<UserForgotPasswordResponse> ForgotPasswordAsync(string email);
 

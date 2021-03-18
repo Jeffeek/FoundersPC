@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
+using FoundersPC.WebIdentityShared;
 
 #endregion
 
@@ -26,8 +26,8 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 
         Task<bool> BlockAsync(int id);
 
-        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId);
+        Task<IEnumerable<ApplicationAccessToken>> GetUserTokens(int userId);
 
-        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail);
+        Task<IEnumerable<ApplicationAccessToken>> GetUserTokens(string userEmail);
     }
 }

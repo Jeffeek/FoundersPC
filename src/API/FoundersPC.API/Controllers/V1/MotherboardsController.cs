@@ -17,7 +17,7 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/motherboards")]
+    [Route("HardwareApi/Motherboards")]
     public class MotherboardsController : Controller
     {
         private readonly ILogger<MotherboardsController> _logger;

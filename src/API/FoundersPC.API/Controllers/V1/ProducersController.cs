@@ -16,7 +16,7 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/producers")]
+    [Route("HardwareApi/Producers")]
     public class ProducersController : Controller
     {
         private readonly ILogger<ProducersController> _logger;

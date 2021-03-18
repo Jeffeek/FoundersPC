@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
@@ -90,16 +89,17 @@ namespace FoundersPC.Web.Controllers
                                nameof(registrationResponse),
                                StatusCodes.Status500InternalServerError,
                                "Response error",
-                               nameof(UserRegisterResponse));
+                               nameof(UserSignUpResponse));
 
             if (!registrationResponse.IsRegistrationSuccessful)
                 return Problem("Registration not successful",
                                nameof(signUpModel),
                                StatusCodes.Status409Conflict,
                                "Not acceptable registration",
-                               nameof(UserRegisterResponse));
+                               nameof(UserSignUpResponse));
 
             await SetupSessionCookieAsync(registrationResponse.Email, registrationResponse.Role);
+            SetupJwtTokenInCookie(registrationResponse.JwtToken);
 
             return RedirectToAction("Index", "Home");
         }
@@ -145,16 +145,18 @@ namespace FoundersPC.Web.Controllers
                                 });
 
             await SetupSessionCookieAsync(signInResponse.Email, signInResponse.Role);
-            SetupJwtTokenInCookie(signInResponse.Email, signInResponse.Role);
+            SetupJwtTokenInCookie(signInResponse.JwtToken);
 
             return RedirectToAction("Index", "Home");
         }
 
-        private void SetupJwtTokenInCookie(string contentEmail, string contentRole)
+        #endregion
+
+        #region Cookie
+
+        private void SetupJwtTokenInCookie(string token)
         {
             RemoveJwtTokenInCookie();
-            var jwtToken = new JwtUserToken(contentEmail, contentRole);
-            var token = jwtToken.GetToken();
 
             HttpContext.Response.Cookies.Append("token",
                                                 token,
@@ -166,20 +168,20 @@ namespace FoundersPC.Web.Controllers
                                                 });
         }
 
-        #endregion
-
-        #region Cookie
-
         private async Task SetupSessionCookieAsync(string email, string role)
         {
             var claims = new List<Claim>
                          {
-                             new(ClaimsIdentity.DefaultNameClaimType, email),
-                             new(ClaimsIdentity.DefaultRoleClaimType, role)
+                             new(ClaimsIdentity.DefaultNameClaimType,
+                                 email),
+                             new(ClaimsIdentity.DefaultRoleClaimType,
+                                 role)
                          };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                                          new ClaimsPrincipal(identity));
         }
 
         private void RemoveJwtTokenInCookie()
@@ -192,13 +194,13 @@ namespace FoundersPC.Web.Controllers
         #region Redirection
 
         [HttpGet]
-        public ActionResult SignIn() => User.Identity?.IsAuthenticated ?? false ? View("AccessDenied") : View();
+        public ActionResult SignIn() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
         [HttpGet]
-        public IActionResult SignUp() => User.Identity?.IsAuthenticated ?? false ? View("AccessDenied") : View();
+        public IActionResult SignUp() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
         [HttpGet]
-        public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("AccessDenied") : View();
+        public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
         #endregion
     }

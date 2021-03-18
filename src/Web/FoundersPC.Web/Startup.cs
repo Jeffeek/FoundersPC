@@ -35,10 +35,12 @@ namespace FoundersPC.Web
                     .AddCookie(options =>
                                {
                                    options.LoginPath = new PathString("/Authentication/SignIn");
-                                   options.AccessDeniedPath = new PathString("/Shared/AccessDenied");
+                                   options.AccessDeniedPath = new PathString("/Shared/Forbidden");
                                    options.LogoutPath = "/Authentication/SignIn";
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
                                });
+
+            services.AddAuthorization();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddControllersWithViews();
@@ -70,7 +72,9 @@ namespace FoundersPC.Web
 
             app.UseEndpoints(endpoints =>
                              {
-                                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+                                 endpoints.MapControllerRoute("default",
+                                                              "{controller=Home}/{action=Index}");
+
                                  endpoints.MapDefaultControllerRoute();
                              });
         }

@@ -4,7 +4,6 @@ using System;
 using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 using FoundersPC.Web.Models;
@@ -38,19 +37,11 @@ namespace FoundersPC.Web.Controllers
         public async Task<IActionResult> Profile()
         {
             var emailInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
-            var roleInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType);
             Request.Cookies.TryGetValue("token", out var jwtToken);
 
             if (emailInCookie is null)
             {
                 _logger.LogError($"Email cookie not found. ConnectionId: {HttpContext.Connection.Id}");
-
-                throw new CookieException();
-            }
-
-            if (roleInCookie is null)
-            {
-                _logger.LogError($"Role cookie not found. ConnectionId: {HttpContext.Connection.Id}");
 
                 throw new CookieException();
             }
@@ -62,23 +53,21 @@ namespace FoundersPC.Web.Controllers
                 throw new CookieException();
             }
 
-            var notifications = await _userInformationService.GetUserNotificationsAsync(emailInCookie, jwtToken);
+            var information = await _userInformationService.GetOverallInformation(emailInCookie, jwtToken);
 
-            var login = await _userInformationService.GetUserLoginAsync(emailInCookie, jwtToken);
-
-            var tokens = await _userInformationService.GetUserTokensAsync(emailInCookie, jwtToken);
+            if (information is null) return RedirectToPagePermanent("Forbidden");
 
             var settings = new AccountSettingsViewModel
                            {
                                AccountInformationViewModel = new AccountInformationViewModel
                                                              {
                                                                  Email = emailInCookie,
-                                                                 Login = login,
-                                                                 Role = roleInCookie
+                                                                 Login = information.Login,
+                                                                 Role = information.Role
                                                              },
                                LoginSettingsViewModel = new SecuritySettingsViewModel
                                                         {
-                                                            NewLogin = login
+                                                            NewLogin = information.Login
                                                         },
                                PasswordSettingsViewModel = new PasswordSettingsViewModel
                                                            {
@@ -86,10 +75,14 @@ namespace FoundersPC.Web.Controllers
                                                                NewPasswordConfirm = String.Empty,
                                                                OldPassword = String.Empty
                                                            },
-                               NotificationsSettingsViewModel = notifications,
+                               NotificationsSettingsViewModel = new NotificationsSettingsViewModel
+                                                                {
+                                                                    SendNotificationOnEntrance = information.SendMessageOnEntrance,
+                                                                    SendNotificationOnUsingAPI = information.SendMessageOnApiRequest
+                                                                },
                                TokensViewModel = new UserTokensViewModel
                                                  {
-                                                     Tokens = tokens
+                                                     Tokens = information.Tokens
                                                  }
                            };
 

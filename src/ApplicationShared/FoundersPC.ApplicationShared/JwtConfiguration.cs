@@ -1,6 +1,8 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 #endregion
@@ -8,12 +10,48 @@ using Microsoft.IdentityModel.Tokens;
 namespace FoundersPC.ApplicationShared
 {
     // todo: make this class as singleton service, take credentials behind config / file
-    public static class JwtConfiguration
+    public class JwtConfiguration
     {
-        public static string Issuer = "MyAuthServer";
-        public static string Audience = "MyAuthClient";
-        public static string Key = "qwerty7894561256789";
+        private static JwtConfiguration _configuration;
 
-        public static SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
+        private JwtConfiguration() { }
+
+        public static JwtConfiguration Configuration
+        {
+            get
+            {
+                if (_configuration is null) throw new NotSupportedException();
+
+                return _configuration;
+            }
+
+            private set
+            {
+                if (_configuration is not null) return;
+
+                _configuration = value;
+            }
+        }
+
+        public string Key { get; private init; }
+
+        public string Issuer { get; private init; }
+
+        public string Audience { get; private init; }
+
+        public int HoursToExpire { get; private init; }
+
+        public static void Initialize(IConfiguration configuration)
+        {
+            Configuration = new JwtConfiguration
+                            {
+                                Issuer = configuration["JwtSettings:Issuer"],
+                                Audience = configuration["JwtSettings:Audience"],
+                                Key = configuration["JwtSettings:Key"],
+                                HoursToExpire = Int32.Parse(configuration["JwtSettings:HoursToExpire"])
+                            };
+        }
+
+        public SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
     }
 }

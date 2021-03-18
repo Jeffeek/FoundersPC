@@ -16,25 +16,25 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.User.Settings
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("identityAPI/user/settings/change")]
+    [Route("FoundersPCIdentity/User/Settings/Change")]
     [ApiController]
     public class UserChangeSettingsController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
-        private readonly IUsersService _usersService;
+        private readonly IUsersInformationService _usersInformationService;
 
-        public UserChangeSettingsController(IUsersService usersService,
+        public UserChangeSettingsController(IUsersInformationService usersInformationService,
                                             IMapper mapper,
                                             PasswordEncryptorService passwordEncryptorService
         )
         {
-            _usersService = usersService;
+            _usersInformationService = usersInformationService;
             _mapper = mapper;
             _passwordEncryptorService = passwordEncryptorService;
         }
 
-        [Route("password")]
+        [Route("Password")]
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword(ChangePasswordRequest request)
         {
@@ -57,7 +57,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
             var hashedOldPassword = _passwordEncryptorService.EncryptPassword(request.OldPassword);
 
-            var user = await _usersService.FindUserByEmailOrLoginAndHashedPasswordAsync(credentials.Email, hashedOldPassword);
+            var user = await _usersInformationService.FindUserByEmailOrLoginAndHashedPasswordAsync(credentials.Email, hashedOldPassword);
 
             if (user is null)
                 return new NotFoundObjectResult(new AccountSettingsChangeResponse
@@ -69,7 +69,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                                                     Successful = false
                                                 });
 
-            var result = await _usersService.ChangePasswordToAsync(credentials.Email, request.NewPassword, hashedOldPassword);
+            var result = await _usersInformationService.ChangePasswordToAsync(credentials.Email, request.NewPassword, hashedOldPassword);
 
             return new AccountSettingsChangeResponse
                    {
@@ -80,7 +80,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                    };
         }
 
-        [Route("login")]
+        [Route("Login")]
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin(ChangeLoginRequest request)
         {
@@ -101,7 +101,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                                                       Error = "Token not valid. Email address not found"
                                                   });
 
-            var result = await _usersService.ChangeLoginToAsync(credentials.Email, request.NewLogin);
+            var result = await _usersInformationService.ChangeLoginToAsync(credentials.Email, request.NewLogin);
 
             return new AccountSettingsChangeResponse
                    {
@@ -111,7 +111,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                    };
         }
 
-        [Route("notifications")]
+        [Route("Notifications")]
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(ChangeNotificationsRequest request)
         {
@@ -129,9 +129,9 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                                       error = "Token not valid. Email address not found"
                                   });
 
-            var result = await _usersService.ChangeNotificationsToAsync(credentials.Email,
-                                                                        request.SendMessageOnEntrance,
-                                                                        request.SendMessageOnApiRequest);
+            var result = await _usersInformationService.ChangeNotificationsToAsync(credentials.Email,
+                                                                                   request.SendMessageOnEntrance,
+                                                                                   request.SendMessageOnApiRequest);
 
             return new AccountSettingsChangeResponse
                    {

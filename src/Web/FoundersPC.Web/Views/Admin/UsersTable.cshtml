@@ -1,0 +1,198 @@
+﻿@model IEnumerable<FoundersPC.WebIdentityShared.ApplicationUser>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+@section Styles {
+    <link
+        href="~/css/users-table.css"
+        rel="stylesheet"/>
+}
+}
+
+<div
+    class="mt-5 table-wrapper">
+    <div
+        class="p-2 table-title">
+        <div
+            class="row">
+            <div>
+                <a
+                    asp-action="RegisterManager"
+                    asp-controller="Admin"
+                    class="btn btn-outline-success d-flex">
+                    <img
+                        alt=""
+                        height="20"
+                        src="~/img/add.svg"
+                        width="20">
+                    <span
+                        class="mx-2 text-light">
+                        Add new manager
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div
+        class="table-responsive">
+        <table
+            class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Email</th>
+                <th>Registration date</th>
+                <th>Role</th>
+                <th>IsActive</th>
+                <th>IsBlocked</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach (var user in Model)
+                {
+                    <tr>
+                        <th>@user.Id</th>
+                        <th>@user.Login</th>
+                        <th>@user.Email</th>
+                        <th>@user.RegistrationDate.ToLongDateString()</th>
+                        <th>@user.Role</th>
+                        <th>
+                            <div
+                                class="form-check">
+                                <input
+                                    @if (user.IsActive)
+                                    {
+                                        @Html.Raw("checked")
+                                    }
+                                    class="form-check-input"
+                                    disabled
+                                    type="checkbox">
+                            </div>
+                        </th>
+                        <th>
+                            <div
+                                class="form-check">
+                                <input
+                                    @if (user.IsBlocked)
+                                    {
+                                        @Html.Raw("checked")
+                                    }
+                                    class="form-check-input"
+                                    disabled
+                                    type="checkbox">
+                            </div>
+                        </th>
+                        <td>
+                            <div
+                                class="d-flex">
+                                <a
+                                    class="btn btn-outline-warning d-flex"
+                                    href=
+                                    @{ if (user.IsBlocked) { @Url.ActionLink("UnblockUser", "Admin", new { id = user.Id }) } else { @Url.ActionLink("BlockUser", "Admin", new { id = user.Id }) } }
+                                    title=
+                                    @{ if (user.IsBlocked) { @("Unblock user") } else { @("Block user") } }>
+                                    <img
+                                        alt=""
+                                        height="20"
+                                        src=
+                                        @{ if (user.IsBlocked) { @Href("~/img/easy.svg") } else { @Href("~/img/block.svg") } }
+                                        width="20">
+                                </a>
+                                <a
+                                    class="btn btn-outline-danger d-flex mx-3"
+                                    @{
+                                        if (!user.IsActive)
+                                        {
+                                            @Html.Raw("disabled")
+                                        }
+                                        else
+                                        {
+                                            @Html.Raw("data-bs-target=\"#activeSettings\"data-bs-toggle=\"modal\"")
+                                        }
+                                    }
+                                    title="Make user inactive">
+                                    <img
+                                        alt=""
+                                        height="20"
+                                        src="~/img/trash.svg"
+                                        width="20">
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Inactive Modal HTML -->
+<div
+    aria-hidden="true"
+    aria-labelledby="staticBackdropLabel"
+    class="bg-gradient fade modal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    id="activeSettings"
+    tabindex="-1">
+    <div
+        class="modal-dialog">
+        <div
+            class="modal-content">
+            <div
+                class="modal-header">
+                <h5
+                    class="modal-title">
+                    Make user inactive
+                </h5>
+                <button
+                    aria-label="Close"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    type="button">
+                </button>
+            </div>
+            <div
+                class="bg-danger modal-body">
+                <div
+                    class="mb-3">
+                    <label
+                        class="text-light">
+                        Are you sure to remove(make inactive) user with Id = 1.
+                        <span
+                            class="text-decoration-underline text-warning">
+                            You will never restore it.
+                        </span>
+                    </label>
+                </div>
+                <button
+                    class="btn btn-dark text-light"
+                    type="submit">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).
+            ready(
+                function ()
+                {
+                    const blockButtons = document.selectNodes(".block-user");
+                    console.log(blockButtons);
+                    for (let button in blockButtons)
+                    {
+                        button.addEventListener('click', () => console.log('click'));
+                    }
+                    console.log(blockButtons);
+                });
+    </script>
+}

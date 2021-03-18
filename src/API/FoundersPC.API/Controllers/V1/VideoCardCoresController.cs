@@ -17,8 +17,8 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/videocardcores")]
-    [Route("api/gpucores")]
+    [Route("HardwareApi/VideoCardCores")]
+    [Route("HardwareApi/GPUCores")]
     public class VideoCardCoresController : Controller
     {
         private readonly ILogger<VideoCardCoresController> _logger;

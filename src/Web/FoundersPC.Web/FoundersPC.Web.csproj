@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="FluentValidation" Version="9.5.2" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="9.5.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.3" />
@@ -45,6 +48,13 @@
 
   <ItemGroup>
     <Folder Include="Areas\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
+    <None Include="wwwroot\css\space-invaders.css" />
+    <None Include="wwwroot\js\space-invaders.js" />
   </ItemGroup>
 
 </Project>

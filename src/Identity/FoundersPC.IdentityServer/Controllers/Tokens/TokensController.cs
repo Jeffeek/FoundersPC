@@ -1,10 +1,9 @@
 ﻿#region Using namespaces
 
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
+using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("identityAPI/tokens")]
+    [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
     public class TokensController : Controller
     {
@@ -23,8 +22,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
 
         [HttpGet]
-        [Route("user/{email}")]
-        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens(string email)
+        [Route("User/{email}")]
+        public async Task<ActionResult<IEnumerable<ApplicationAccessToken>>> GetUserTokens(string email)
         {
             var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
 
@@ -34,7 +33,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
                                       error = "No user with this email"
                                   });
 
-            return Json(tokens ?? Enumerable.Empty<ApiAccessUserTokenReadDto>());
+            return Json(tokens);
         }
     }
 }

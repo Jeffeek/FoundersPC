@@ -12,15 +12,13 @@ namespace FoundersPC.ApplicationShared
 {
     public class JwtUserToken
     {
-        public JwtUserToken(string email, string role)
-        {
-            Email = email;
-            Role = role;
-        }
+        private readonly JwtConfiguration _configuration;
 
-        public string Email { get; }
+        public JwtUserToken(JwtConfiguration configuration) => _configuration = configuration;
 
-        public string Role { get; }
+        public string Email { get; init; }
+
+        public string Role { get; init; }
 
         public string GetToken()
         {
@@ -30,12 +28,12 @@ namespace FoundersPC.ApplicationShared
                              new(ClaimsIdentity.DefaultNameClaimType, Email)
                          };
 
-            var key = JwtConfiguration.GetSymmetricSecurityKey();
+            var key = _configuration.GetSymmetricSecurityKey();
 
             var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(JwtConfiguration.Issuer,
-                                             JwtConfiguration.Audience,
+            var token = new JwtSecurityToken(_configuration.Issuer,
+                                             _configuration.Audience,
                                              claims,
                                              DateTime.Now,
                                              DateTime.Now.AddMinutes(60),

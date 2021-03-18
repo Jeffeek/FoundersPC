@@ -1,28 +1,27 @@
 {
-  "Serilog":
+  "Serilog" :
   {
-    "Using": [],
-    "MinimumLevel":
+    "Using" : []
+    , "MinimumLevel" :
     {
-      "Default": "Information",
-      "Override":
+      "Default" : "Information"
+      , "Override" :
       {
-        "Microsoft": "Warning",
-        "Microsoft.Hosting.Lifetime": "Information"
+        "Microsoft" : "Warning"
+        , "Microsoft.Hosting.Lifetime" : "Information"
       }
-    },
-    "WriteTo":
+    }
+    , "WriteTo" :
     [
       {
-        "Name": "File",
-        "Args": {
-          "path": "./logs/log-.txt",
-          "rollingInterval": "Day",
-          "outputTemplate": "{Timestamp:G} {Message}{NewLine:1}{Exception:1}"
+        "Name" : "File"
+        , "Args" : {
+          "path" : "./logs/log-.txt"
+          , "rollingInterval" : "Day"
+          , "outputTemplate" : "{Timestamp:G} {Message}{NewLine:1}{Exception:1}"
         }
-      },
-      {
-        "Name": "Console"
+      }, {
+        "Name" : "Console"
       }
     ]
   }

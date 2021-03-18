@@ -1,6 +1,5 @@
 #region Using namespaces
 
-using System;
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
@@ -12,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -63,36 +61,23 @@ namespace FoundersPC.API
             //
             services.AddValidators();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
-                                  config =>
-                                  {
-                                      var key = JwtConfiguration.GetSymmetricSecurityKey();
-                                      config.BackchannelTimeout = TimeSpan.FromSeconds(20);
-
-                                      config.TokenValidationParameters = new TokenValidationParameters
-                                                                         {
-                                                                             ValidateAudience = false,
-                                                                             ValidIssuer = JwtConfiguration.Issuer,
-                                                                             ValidAudience = JwtConfiguration.Audience,
-                                                                             IssuerSigningKey = key
-                                                                         };
-                                  });
+            services.AddJwtSettings(Configuration);
+            services.AddBearerAuthenticationWithSettings();
 
             services.AddAuthorization(config =>
                                       {
                                           config.AddPolicy("Changeable",
                                                            builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole("Administrator",
-                                                                                          "Manager")
+                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
+                                                                                          ApplicationRoles.Manager.ToString())
                                                                              .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                                                                              .Build());
 
                                           config.AddPolicy("Readable",
                                                            builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole("Administrator",
-                                                                                          "Manager",
-                                                                                          "DefaultUser")
+                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
+                                                                                          ApplicationRoles.Manager.ToString(),
+                                                                                          ApplicationRoles.DefaultUser.ToString())
                                                                              .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                                                                              .Build());
                                       });

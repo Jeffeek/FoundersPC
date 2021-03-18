@@ -15,8 +15,8 @@ namespace FoundersPC.API.Controllers.V1
 {
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
-    [Route("api/processorcores")]
-    [Route("api/cpucores")]
+    [Route("HardwareApi/ProcessorCores")]
+    [Route("HardwareApi/CPUCores")]
     [ApiController]
     public class ProcessorCoresController : Controller
     {

@@ -1,0 +1,1893 @@
+03/16/2021 09:50:54 Web server started.. 1 
+03/16/2021 09:50:55 Web server HostBuilder created 1 
+03/16/2021 09:50:58 Host built 1 
+03/16/2021 09:51:04 Now listening on: "https://localhost:9000" 1 
+03/16/2021 09:51:04 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 09:51:04 Hosting environment: "Development" 1 
+03/16/2021 09:51:04 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 09:51:07 HTTP "GET" "/" responded 200 in 486.3884 ms 4 
+03/16/2021 09:51:45 HTTP "GET" "/" responded 200 in 6.4886 ms 5 
+03/16/2021 09:51:54 HTTP "GET" "/Authentication/SignIn" responded 200 in 258.6546 ms 5 
+03/16/2021 09:52:00 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 09:52:00 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 09:52:35 Received HTTP response headers after 34982.173ms - 500 16 
+03/16/2021 09:52:35 End processing HTTP request after 34995.8343ms - 500 16 
+03/16/2021 09:52:35 Request from IdentityAuthenticationService to Identity server returned a server error InternalServerError 16 
+03/16/2021 09:52:35 HTTP "POST" "/Authentication/SignIn" responded 500 in 35330.1595 ms 16 
+System.Net.NetworkInformation.NetworkInformationException (500): Невозможно загрузить профиль пользователя.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 132
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 09:52:35 An unhandled exception has occurred while executing the request. 16 
+System.Net.NetworkInformation.NetworkInformationException (500): Невозможно загрузить профиль пользователя.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 132
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 09:52:47 HTTP "GET" "/Authentication/SignIn" responded 200 in 6.0413 ms 4 
+03/16/2021 09:54:21 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 24 
+03/16/2021 09:54:21 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 24 
+03/16/2021 09:57:55 Web server started.. 1 
+03/16/2021 09:57:55 Web server HostBuilder created 1 
+03/16/2021 09:57:56 Host built 1 
+03/16/2021 09:57:57 Now listening on: "https://localhost:9000" 1 
+03/16/2021 09:57:57 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 09:57:57 Hosting environment: "Development" 1 
+03/16/2021 09:57:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 09:57:59 HTTP "GET" "/" responded 200 in 695.0426 ms 13 
+03/16/2021 09:58:02 HTTP "GET" "/Authentication/SignIn" responded 200 in 253.3223 ms 9 
+03/16/2021 09:58:16 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/16/2021 09:58:16 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/16/2021 09:58:21 Received HTTP response headers after 5693.6752ms - 200 6 
+03/16/2021 09:58:21 End processing HTTP request after 5707.0912ms - 200 6 
+03/16/2021 09:59:04 HTTP "POST" "/Authentication/SignIn" responded 302 in 57411.3712 ms 6 
+03/16/2021 09:59:04 HTTP "GET" "/" responded 200 in 45.6028 ms 4 
+03/16/2021 09:59:15 Start processing HTTP request "GET" https://localhost:3000/identityAPI/harddrives 13 
+03/16/2021 09:59:15 Sending HTTP request "GET" https://localhost:3000/identityAPI/harddrives 13 
+03/16/2021 09:59:15 Received HTTP response headers after 23.5549ms - 404 6 
+03/16/2021 09:59:15 End processing HTTP request after 28.2501ms - 404 6 
+03/16/2021 09:59:35 HTTP "GET" "/" responded 200 in 2.1798 ms 8 
+03/16/2021 09:59:35 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 5 
+03/16/2021 09:59:35 Start processing HTTP request "GET" https://localhost:3000/identityAPI/cases 4 
+03/16/2021 09:59:35 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 5 
+03/16/2021 09:59:35 HTTP "GET" "/Home/HardDrives" responded 200 in 19919.5064 ms 6 
+03/16/2021 09:59:35 Sending HTTP request "GET" https://localhost:3000/identityAPI/cases 4 
+03/16/2021 09:59:35 Received HTTP response headers after 40.9765ms - 404 19 
+03/16/2021 09:59:35 End processing HTTP request after 48.6659ms - 404 19 
+03/16/2021 09:59:35 HTTP "GET" "/Home/Cases" responded 200 in 59.7688 ms 19 
+03/16/2021 09:59:35 Received HTTP response headers after 499.8756ms - 200 6 
+03/16/2021 09:59:35 End processing HTTP request after 504.5324ms - 200 6 
+03/16/2021 09:59:35 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:35 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:36 Received HTTP response headers after 52.2776ms - 200 20 
+03/16/2021 09:59:36 End processing HTTP request after 58.3073ms - 200 20 
+03/16/2021 09:59:36 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 20 
+03/16/2021 09:59:36 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 20 
+03/16/2021 09:59:36 Received HTTP response headers after 51.566ms - 200 6 
+03/16/2021 09:59:36 End processing HTTP request after 54.1842ms - 200 6 
+03/16/2021 09:59:36 HTTP "GET" "/AccountSettings/Profile" responded 200 in 846.3453 ms 6 
+03/16/2021 09:59:41 Start processing HTTP request "GET" https://localhost:3000/identityAPI/cases 13 
+03/16/2021 09:59:41 Sending HTTP request "GET" https://localhost:3000/identityAPI/cases 13 
+03/16/2021 09:59:41 Received HTTP response headers after 4.8636ms - 404 19 
+03/16/2021 09:59:41 End processing HTTP request after 11.7068ms - 404 19 
+03/16/2021 09:59:41 HTTP "GET" "/Home/Cases" responded 200 in 15.4804 ms 19 
+03/16/2021 09:59:44 Start processing HTTP request "GET" https://localhost:3000/identityAPI/powersupplies 5 
+03/16/2021 09:59:44 Sending HTTP request "GET" https://localhost:3000/identityAPI/powersupplies 5 
+03/16/2021 09:59:44 Received HTTP response headers after 8.3192ms - 404 6 
+03/16/2021 09:59:44 End processing HTTP request after 12.3251ms - 404 6 
+03/16/2021 09:59:44 HTTP "GET" "/Home/PowerSupplies" responded 200 in 19.4558 ms 6 
+03/16/2021 09:59:47 Start processing HTTP request "GET" https://localhost:3000/identityAPI/randomaccessmemory 5 
+03/16/2021 09:59:47 Sending HTTP request "GET" https://localhost:3000/identityAPI/randomaccessmemory 5 
+03/16/2021 09:59:47 Received HTTP response headers after 5.2938ms - 404 20 
+03/16/2021 09:59:47 End processing HTTP request after 11.5343ms - 404 20 
+03/16/2021 09:59:47 HTTP "GET" "/Home/RandomAccessMemory" responded 200 in 17.3317 ms 20 
+03/16/2021 09:59:50 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 14 
+03/16/2021 09:59:50 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 14 
+03/16/2021 09:59:50 Received HTTP response headers after 33.7763ms - 200 6 
+03/16/2021 09:59:50 End processing HTTP request after 37.8834ms - 200 6 
+03/16/2021 09:59:50 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Received HTTP response headers after 36.0528ms - 200 6 
+03/16/2021 09:59:50 End processing HTTP request after 40.8924ms - 200 6 
+03/16/2021 09:59:50 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 6 
+03/16/2021 09:59:50 Received HTTP response headers after 27.2557ms - 200 6 
+03/16/2021 09:59:50 End processing HTTP request after 29.2866ms - 200 6 
+03/16/2021 09:59:50 HTTP "GET" "/AccountSettings/Profile" responded 200 in 118.5071 ms 6 
+03/16/2021 09:59:57 HTTP "GET" "/" responded 200 in 1.5243 ms 25 
+03/16/2021 10:00:01 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.5044 ms 23 
+03/16/2021 10:00:01 HTTP "GET" "/" responded 200 in 0.6338 ms 4 
+03/16/2021 10:00:20 HTTP "GET" "/Authentication/SignIn" responded 200 in 5.8775 ms 16 
+03/16/2021 10:00:25 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 89.2656 ms 8 
+03/16/2021 10:00:27 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.2282 ms 23 
+03/16/2021 10:00:28 HTTP "GET" "/Authentication/SignUp" responded 200 in 84.1335 ms 23 
+03/16/2021 10:00:45 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.3075 ms 25 
+03/16/2021 10:01:06 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 10:01:06 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 10:01:08 Received HTTP response headers after 2180.8906ms - 200 6 
+03/16/2021 10:01:08 End processing HTTP request after 2185.126ms - 200 6 
+03/16/2021 10:01:08 HTTP "POST" "/Authentication/SignIn" responded 302 in 5404.7953 ms 6 
+03/16/2021 10:01:08 HTTP "GET" "/" responded 200 in 1.2560 ms 5 
+03/16/2021 10:01:15 Start processing HTTP request "GET" https://localhost:3000/identityAPI//admin/users 29 
+03/16/2021 10:01:15 Sending HTTP request "GET" https://localhost:3000/identityAPI//admin/users 29 
+03/16/2021 10:01:15 Received HTTP response headers after 16.1219ms - 404 27 
+03/16/2021 10:01:15 End processing HTTP request after 21.0638ms - 404 27 
+03/16/2021 10:01:16 HTTP "GET" "/admin/userstable" responded 500 in 251.6224 ms 27 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.UsersInformationService.GetAll(String token) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\UsersInformationService.cs:line 59
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 36
+   at FoundersPC.Web.Controllers.Administration.AdminController.Users() in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 36
+   at lambda_method130(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 10:01:16 An unhandled exception has occurred while executing the request. 27 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.UsersInformationService.GetAll(String token) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\UsersInformationService.cs:line 59
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 36
+   at FoundersPC.Web.Controllers.Administration.AdminController.Users() in C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 36
+   at lambda_method130(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 10:01:19 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 28 
+03/16/2021 10:01:19 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 28 
+03/16/2021 10:01:19 Received HTTP response headers after 35.6087ms - 200 6 
+03/16/2021 10:01:19 End processing HTTP request after 41.2857ms - 200 6 
+03/16/2021 10:01:19 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 10:01:19 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 10:01:19 Received HTTP response headers after 34.4169ms - 200 6 
+03/16/2021 10:01:19 End processing HTTP request after 37.6925ms - 200 6 
+03/16/2021 10:01:19 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 9 
+03/16/2021 10:01:19 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 9 
+03/16/2021 10:01:19 Received HTTP response headers after 44.4257ms - 200 31 
+03/16/2021 10:01:19 End processing HTTP request after 48.4156ms - 200 31 
+03/16/2021 10:01:19 HTTP "GET" "/AccountSettings/Profile" responded 200 in 139.6578 ms 31 
+03/16/2021 10:04:39 HTTP "GET" "/" responded 200 in 16.9399 ms 8 
+03/16/2021 10:55:36 Web server started.. 1 
+03/16/2021 10:55:36 Web server HostBuilder created 1 
+03/16/2021 10:55:37 Host built 1 
+03/16/2021 10:55:37 Now listening on: "https://localhost:9000" 1 
+03/16/2021 10:55:37 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 10:55:37 Hosting environment: "Development" 1 
+03/16/2021 10:55:37 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 10:55:38 HTTP "GET" "/" responded 200 in 308.2783 ms 15 
+03/16/2021 10:55:39 HTTP "GET" "/Authentication/SignIn" responded 200 in 296.6253 ms 17 
+03/16/2021 10:55:46 HTTP "GET" "/Authentication/SignUp" responded 200 in 45.4359 ms 17 
+03/16/2021 10:55:57 HTTP "GET" "/Authentication/SignIn" responded 200 in 5.0808 ms 18 
+03/16/2021 10:55:58 HTTP "GET" "/Authentication/SignUp" responded 200 in 82.7743 ms 17 
+03/16/2021 10:55:59 HTTP "GET" "/Authentication/SignIn" responded 200 in 4.8353 ms 18 
+03/16/2021 10:56:00 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 19.9280 ms 14 
+03/16/2021 10:56:01 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.6572 ms 7 
+03/16/2021 10:56:15 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 10:56:15 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 10:56:27 Received HTTP response headers after 12262.7899ms - 200 10 
+03/16/2021 10:56:27 End processing HTTP request after 12279.6866ms - 200 10 
+03/16/2021 10:56:27 HTTP "POST" "/Authentication/SignIn" responded 302 in 12513.6567 ms 10 
+03/16/2021 10:56:27 HTTP "GET" "/" responded 200 in 9.7739 ms 7 
+03/16/2021 10:56:43 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 4 
+03/16/2021 10:56:43 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 4 
+03/16/2021 10:56:43 Received HTTP response headers after 217.4982ms - 200 19 
+03/16/2021 10:56:43 End processing HTTP request after 222.2885ms - 200 19 
+03/16/2021 10:56:43 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 19 
+03/16/2021 10:56:43 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 19 
+03/16/2021 10:56:43 Received HTTP response headers after 26.4421ms - 200 10 
+03/16/2021 10:56:43 End processing HTTP request after 30.66ms - 200 10 
+03/16/2021 10:56:43 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 10 
+03/16/2021 10:56:43 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 10 
+03/16/2021 10:56:43 Received HTTP response headers after 23.743ms - 200 10 
+03/16/2021 10:56:43 End processing HTTP request after 26.5789ms - 200 10 
+03/16/2021 10:56:43 HTTP "GET" "/AccountSettings/Profile" responded 200 in 410.4933 ms 10 
+03/16/2021 10:57:18 HTTP "GET" "/" responded 200 in 3.2041 ms 25 
+03/16/2021 11:03:29 HTTP "GET" "/" responded 200 in 2.4969 ms 40 
+03/16/2021 11:04:07 HTTP "GET" "/" responded 200 in 0.9701 ms 39 
+03/16/2021 11:04:43 Application is shutting down... 2 
+03/16/2021 16:53:56 Web server started.. 1 
+03/16/2021 16:53:57 Web server HostBuilder created 1 
+03/16/2021 16:53:57 Host built 1 
+03/16/2021 16:53:58 Now listening on: "https://localhost:9000" 1 
+03/16/2021 16:53:58 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 16:53:58 Hosting environment: "Development" 1 
+03/16/2021 16:53:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 16:54:01 HTTP "GET" "/" responded 200 in 206.1111 ms 4 
+03/16/2021 16:54:02 HTTP "GET" "/Authentication/SignIn" responded 200 in 214.8248 ms 8 
+03/16/2021 16:54:04 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 8 
+03/16/2021 16:54:04 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 8 
+03/16/2021 16:54:52 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 16:54:52 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 16:54:52 Received HTTP response headers after 48481.3957ms - 500 6 
+03/16/2021 16:54:52 End processing HTTP request after 48493.5494ms - 500 6 
+03/16/2021 16:54:52 Request from IdentityAuthenticationService to Identity server returned a server error InternalServerError 6 
+03/16/2021 16:54:53 HTTP "POST" "/Authentication/SignIn" responded 500 in 48698.3150 ms 6 
+System.Net.NetworkInformation.NetworkInformationException (500): Невозможно загрузить профиль пользователя.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 133
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 16:54:53 An unhandled exception has occurred while executing the request. 6 
+System.Net.NetworkInformation.NetworkInformationException (500): Невозможно загрузить профиль пользователя.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 133
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 16:55:24 Received HTTP response headers after 31742.4183ms - 500 6 
+03/16/2021 16:55:24 End processing HTTP request after 31748.4776ms - 500 6 
+03/16/2021 16:56:01 Web server started.. 1 
+03/16/2021 16:56:01 Web server HostBuilder created 1 
+03/16/2021 16:56:02 Host built 1 
+03/16/2021 16:56:02 Now listening on: "https://localhost:9000" 1 
+03/16/2021 16:56:02 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 16:56:02 Hosting environment: "Development" 1 
+03/16/2021 16:56:02 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 16:56:05 HTTP "GET" "/" responded 200 in 218.1565 ms 12 
+03/16/2021 16:56:06 HTTP "GET" "/Authentication/SignIn" responded 200 in 218.6927 ms 9 
+03/16/2021 16:56:22 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 16:56:22 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 7 
+03/16/2021 16:57:09 Web server started.. 1 
+03/16/2021 16:57:09 Web server HostBuilder created 1 
+03/16/2021 16:57:10 Host built 1 
+03/16/2021 16:57:11 Now listening on: "https://localhost:9000" 1 
+03/16/2021 16:57:11 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 16:57:11 Hosting environment: "Development" 1 
+03/16/2021 16:57:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 16:57:13 HTTP "GET" "/" responded 200 in 200.7420 ms 4 
+03/16/2021 16:57:17 HTTP "GET" "/Authentication/SignIn" responded 200 in 225.4027 ms 8 
+03/16/2021 16:57:19 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 13 
+03/16/2021 16:57:19 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 13 
+03/16/2021 16:58:06 Web server started.. 1 
+03/16/2021 16:58:06 Web server HostBuilder created 1 
+03/16/2021 16:58:07 Host built 1 
+03/16/2021 16:58:08 Now listening on: "https://localhost:9000" 1 
+03/16/2021 16:58:08 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 16:58:08 Hosting environment: "Development" 1 
+03/16/2021 16:58:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 16:58:10 HTTP "GET" "/" responded 200 in 199.7788 ms 11 
+03/16/2021 16:58:11 HTTP "GET" "/Authentication/SignIn" responded 200 in 210.7261 ms 4 
+03/16/2021 16:58:13 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 16:58:13 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 16:58:55 Web server started.. 1 
+03/16/2021 16:58:55 Web server HostBuilder created 1 
+03/16/2021 16:58:56 Host built 1 
+03/16/2021 16:58:56 Now listening on: "https://localhost:9000" 1 
+03/16/2021 16:58:56 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 16:58:56 Hosting environment: "Development" 1 
+03/16/2021 16:58:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 16:58:59 HTTP "GET" "/" responded 200 in 217.1600 ms 4 
+03/16/2021 16:59:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 211.6153 ms 8 
+03/16/2021 16:59:01 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 14 
+03/16/2021 16:59:01 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 14 
+03/16/2021 16:59:59 Web server started.. 1 
+03/16/2021 16:59:59 Web server HostBuilder created 1 
+03/16/2021 17:00:00 Host built 1 
+03/16/2021 17:00:00 Now listening on: "https://localhost:9000" 1 
+03/16/2021 17:00:00 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 17:00:00 Hosting environment: "Development" 1 
+03/16/2021 17:00:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 17:00:03 HTTP "GET" "/" responded 200 in 203.7559 ms 4 
+03/16/2021 17:00:04 HTTP "GET" "/Authentication/SignIn" responded 200 in 212.0420 ms 12 
+03/16/2021 17:00:05 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 17:00:05 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 17:00:46 Received HTTP response headers after 41088.6979ms - 200 6 
+03/16/2021 17:00:46 End processing HTTP request after 41100.0723ms - 200 6 
+03/16/2021 17:00:46 HTTP "POST" "/Authentication/SignIn" responded 302 in 41216.2783 ms 6 
+03/16/2021 17:00:46 HTTP "GET" "/" responded 200 in 11.4489 ms 5 
+03/16/2021 17:03:46 HTTP "GET" "/Authentication/LogOut" responded 302 in 8.7558 ms 28 
+03/16/2021 17:03:46 HTTP "GET" "/" responded 200 in 1.2815 ms 4 
+03/16/2021 17:03:54 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.7520 ms 4 
+03/16/2021 17:03:55 HTTP "GET" "/Authentication/SignUp" responded 200 in 24.0111 ms 30 
+03/16/2021 17:04:21 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/registration 4 
+03/16/2021 17:04:21 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/registration 4 
+03/16/2021 17:04:21 Received HTTP response headers after 269.1276ms - 200 6 
+03/16/2021 17:04:21 End processing HTTP request after 271.0212ms - 200 6 
+03/16/2021 17:04:21 HTTP "POST" "/Authentication/SignUp" responded 302 in 285.4819 ms 6 
+03/16/2021 17:04:21 HTTP "GET" "/" responded 200 in 0.8079 ms 24 
+03/16/2021 17:04:27 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/jbophqgw@laste.ml 34 
+03/16/2021 17:04:27 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/jbophqgw@laste.ml 34 
+03/16/2021 17:04:27 Received HTTP response headers after 130.1214ms - 200 6 
+03/16/2021 17:04:27 End processing HTTP request after 131.7505ms - 200 6 
+03/16/2021 17:04:27 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/jbophqgw@laste.ml 6 
+03/16/2021 17:04:27 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/jbophqgw@laste.ml 6 
+03/16/2021 17:04:27 Received HTTP response headers after 18.7245ms - 204 38 
+03/16/2021 17:04:27 End processing HTTP request after 20.5917ms - 204 38 
+03/16/2021 17:04:27 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/jbophqgw@laste.ml 38 
+03/16/2021 17:04:27 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/jbophqgw@laste.ml 38 
+03/16/2021 17:04:27 Received HTTP response headers after 27.9592ms - 200 6 
+03/16/2021 17:04:27 End processing HTTP request after 29.4659ms - 200 6 
+03/16/2021 17:04:27 HTTP "GET" "/AccountSettings/Profile" responded 200 in 290.8361 ms 6 
+03/16/2021 17:05:10 HTTP "GET" "/" responded 200 in 5.3720 ms 4 
+03/16/2021 17:10:40 Web server started.. 1 
+03/16/2021 17:10:40 Web server HostBuilder created 1 
+03/16/2021 17:10:41 Host built 1 
+03/16/2021 17:10:42 Now listening on: "https://localhost:9000" 1 
+03/16/2021 17:10:42 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 17:10:42 Hosting environment: "Development" 1 
+03/16/2021 17:10:42 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 17:10:44 HTTP "GET" "/" responded 200 in 214.9133 ms 4 
+03/16/2021 17:10:46 HTTP "GET" "/Authentication/SignIn" responded 200 in 211.7542 ms 5 
+03/16/2021 17:10:52 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 17:10:52 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 17:10:54 Received HTTP response headers after 2052.6696ms - 200 6 
+03/16/2021 17:10:54 End processing HTTP request after 2063.6264ms - 200 6 
+03/16/2021 17:10:54 HTTP "POST" "/Authentication/SignIn" responded 302 in 2177.1154 ms 6 
+03/16/2021 17:10:54 HTTP "GET" "/" responded 200 in 8.2683 ms 8 
+03/16/2021 17:10:56 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 15 
+03/16/2021 17:10:56 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru 15 
+03/16/2021 17:10:56 Received HTTP response headers after 140.804ms - 200 6 
+03/16/2021 17:10:56 End processing HTTP request after 142.5807ms - 200 6 
+03/16/2021 17:10:56 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 17:10:56 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/ilyushin_misha@mail.ru 6 
+03/16/2021 17:10:56 Received HTTP response headers after 23.5425ms - 200 9 
+03/16/2021 17:10:56 End processing HTTP request after 25.4055ms - 200 9 
+03/16/2021 17:10:56 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 9 
+03/16/2021 17:10:56 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/ilyushin_misha@mail.ru 9 
+03/16/2021 17:10:56 Received HTTP response headers after 26.0376ms - 200 12 
+03/16/2021 17:10:56 End processing HTTP request after 27.751ms - 200 12 
+03/16/2021 17:10:57 HTTP "GET" "/AccountSettings/Profile" responded 200 in 311.7153 ms 12 
+03/16/2021 17:10:59 HTTP "GET" "/" responded 200 in 1.2950 ms 8 
+03/16/2021 17:11:47 Web server started.. 1 
+03/16/2021 17:11:47 Web server HostBuilder created 1 
+03/16/2021 17:11:48 Host built 1 
+03/16/2021 17:11:48 Now listening on: "https://localhost:9000" 1 
+03/16/2021 17:11:48 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 17:11:48 Hosting environment: "Development" 1 
+03/16/2021 17:11:48 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 17:11:52 HTTP "GET" "/" responded 200 in 183.9759 ms 5 
+03/16/2021 17:11:54 HTTP "GET" "/Authentication/SignIn" responded 200 in 215.1482 ms 5 
+03/16/2021 17:11:56 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 17:11:56 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 17:11:59 Received HTTP response headers after 2089.8016ms - 200 6 
+03/16/2021 17:11:59 End processing HTTP request after 2101.4283ms - 200 6 
+03/16/2021 17:11:59 HTTP "POST" "/Authentication/SignIn" responded 302 in 2209.5408 ms 6 
+03/16/2021 17:11:59 HTTP "GET" "/" responded 200 in 8.9940 ms 14 
+03/16/2021 17:12:11 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 14 
+03/16/2021 17:12:11 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 14 
+03/16/2021 17:12:18 Received HTTP response headers after 6543.8887ms - 200 9 
+03/16/2021 17:12:18 End processing HTTP request after 6545.7249ms - 200 9 
+03/16/2021 17:12:22 HTTP "GET" "/admin/userstable" responded 200 in 21263.8857 ms 9 
+03/16/2021 17:12:41 HTTP "GET" "/Authentication/LogOut" responded 302 in 6.2079 ms 4 
+03/16/2021 17:12:41 HTTP "GET" "/" responded 200 in 1.5960 ms 16 
+03/16/2021 17:12:42 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.6480 ms 17 
+03/16/2021 17:12:45 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 14 
+03/16/2021 17:12:45 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 14 
+03/16/2021 17:12:45 Received HTTP response headers after 39.7258ms - 200 6 
+03/16/2021 17:12:45 End processing HTTP request after 41.7245ms - 200 6 
+03/16/2021 17:12:45 HTTP "POST" "/Authentication/SignIn" responded 302 in 45.7718 ms 6 
+03/16/2021 17:12:45 HTTP "GET" "/" responded 200 in 0.9041 ms 4 
+03/16/2021 17:12:47 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/jbophqgw@laste.ml 15 
+03/16/2021 17:12:47 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/jbophqgw@laste.ml 15 
+03/16/2021 17:12:47 Received HTTP response headers after 30.9717ms - 200 6 
+03/16/2021 17:12:47 End processing HTTP request after 32.9254ms - 200 6 
+03/16/2021 17:12:47 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/jbophqgw@laste.ml 6 
+03/16/2021 17:12:47 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/jbophqgw@laste.ml 6 
+03/16/2021 17:12:47 Received HTTP response headers after 19.0196ms - 204 6 
+03/16/2021 17:12:47 End processing HTTP request after 20.9359ms - 204 6 
+03/16/2021 17:12:47 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/jbophqgw@laste.ml 6 
+03/16/2021 17:12:47 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/jbophqgw@laste.ml 6 
+03/16/2021 17:12:47 Received HTTP response headers after 20.2918ms - 200 23 
+03/16/2021 17:12:47 End processing HTTP request after 21.9837ms - 200 23 
+03/16/2021 17:12:47 HTTP "GET" "/AccountSettings/Profile" responded 200 in 141.1272 ms 23 
+03/16/2021 17:13:10 Start processing HTTP request "PUT" https://localhost:3000/identityAPI/user/settings/change/login 4 
+03/16/2021 17:13:10 Sending HTTP request "PUT" https://localhost:3000/identityAPI/user/settings/change/login 4 
+03/16/2021 17:13:10 Received HTTP response headers after 127.0937ms - 200 24 
+03/16/2021 17:13:10 End processing HTTP request after 128.7544ms - 200 24 
+03/16/2021 17:13:10 HTTP "POST" "/AccountSettings/ChangeLogin" responded 302 in 151.1060 ms 24 
+03/16/2021 17:13:10 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/jbophqgw@laste.ml 8 
+03/16/2021 17:13:10 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/notifications/jbophqgw@laste.ml 8 
+03/16/2021 17:13:10 Received HTTP response headers after 5.5415ms - 200 6 
+03/16/2021 17:13:10 End processing HTTP request after 8.0854ms - 200 6 
+03/16/2021 17:13:10 Start processing HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/jbophqgw@laste.ml 6 
+03/16/2021 17:13:10 Sending HTTP request "GET" https://localhost:3000/identityAPI/user/settings/login/jbophqgw@laste.ml 6 
+03/16/2021 17:13:10 Received HTTP response headers after 6.5129ms - 200 6 
+03/16/2021 17:13:10 End processing HTTP request after 8.2537ms - 200 6 
+03/16/2021 17:13:10 Start processing HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/jbophqgw@laste.ml 6 
+03/16/2021 17:13:10 Sending HTTP request "GET" https://localhost:3000/identityAPI/tokens/user/jbophqgw@laste.ml 6 
+03/16/2021 17:13:10 Received HTTP response headers after 5.3495ms - 200 6 
+03/16/2021 17:13:10 End processing HTTP request after 6.8807ms - 200 6 
+03/16/2021 17:13:10 HTTP "GET" "/AccountSettings/Profile" responded 200 in 30.5868 ms 6 
+03/16/2021 17:13:19 HTTP "GET" "/Authentication/LogOut" responded 302 in 0.6862 ms 8 
+03/16/2021 17:13:19 HTTP "GET" "/" responded 200 in 0.5232 ms 5 
+03/16/2021 17:13:20 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.2938 ms 29 
+03/16/2021 17:13:21 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 8 
+03/16/2021 17:13:21 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 8 
+03/16/2021 17:13:21 Received HTTP response headers after 13.6339ms - 200 6 
+03/16/2021 17:13:21 End processing HTTP request after 15.0948ms - 200 6 
+03/16/2021 17:13:21 HTTP "POST" "/Authentication/SignIn" responded 302 in 16.8082 ms 6 
+03/16/2021 17:13:21 HTTP "GET" "/" responded 200 in 0.8954 ms 5 
+03/16/2021 17:13:26 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:13:26 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:13:29 Received HTTP response headers after 3251.2694ms - 200 6 
+03/16/2021 17:13:29 End processing HTTP request after 3252.9945ms - 200 6 
+03/16/2021 17:13:29 HTTP "GET" "/admin/userstable" responded 200 in 5813.0887 ms 6 
+03/16/2021 17:14:16 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:14:16 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:14:16 Received HTTP response headers after 28.6692ms - 200 6 
+03/16/2021 17:14:16 End processing HTTP request after 30.2282ms - 200 6 
+03/16/2021 17:14:16 HTTP "GET" "/admin/userstable?" responded 200 in 36.1139 ms 6 
+03/16/2021 17:14:18 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 17:14:18 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 17:14:18 Received HTTP response headers after 7.4656ms - 200 34 
+03/16/2021 17:14:18 End processing HTTP request after 9.001ms - 200 34 
+03/16/2021 17:14:18 HTTP "GET" "/admin/userstable?" responded 200 in 11.7171 ms 34 
+03/16/2021 17:14:25 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 17:14:25 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 17:14:25 Received HTTP response headers after 4.932ms - 200 6 
+03/16/2021 17:14:25 End processing HTTP request after 8.3095ms - 200 6 
+03/16/2021 17:14:25 HTTP "GET" "/admin/userstable" responded 200 in 10.5971 ms 6 
+03/16/2021 17:31:41 Web server started.. 1 
+03/16/2021 17:31:41 Web server HostBuilder created 1 
+03/16/2021 17:31:42 Host built 1 
+03/16/2021 17:31:43 Now listening on: "https://localhost:9000" 1 
+03/16/2021 17:31:43 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 17:31:43 Hosting environment: "Development" 1 
+03/16/2021 17:31:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 17:31:47 HTTP "GET" "/" responded 200 in 213.9164 ms 5 
+03/16/2021 17:31:49 HTTP "GET" "/Authentication/SignIn" responded 200 in 214.5235 ms 5 
+03/16/2021 17:31:50 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 17:31:50 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 17:31:52 Received HTTP response headers after 2053.665ms - 200 6 
+03/16/2021 17:31:52 End processing HTTP request after 2065.0795ms - 200 6 
+03/16/2021 17:31:52 HTTP "POST" "/Authentication/SignIn" responded 302 in 2176.4272 ms 6 
+03/16/2021 17:31:52 HTTP "GET" "/" responded 200 in 8.5552 ms 8 
+03/16/2021 17:31:54 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 11 
+03/16/2021 17:31:54 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 11 
+03/16/2021 17:31:54 Received HTTP response headers after 156.7046ms - 200 6 
+03/16/2021 17:31:54 End processing HTTP request after 158.5893ms - 200 6 
+03/16/2021 17:31:54 HTTP "GET" "/admin/userstable" responded 200 in 247.6777 ms 6 
+03/16/2021 17:32:31 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 12 
+03/16/2021 17:32:31 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 12 
+03/16/2021 17:32:31 Received HTTP response headers after 34.697ms - 200 19 
+03/16/2021 17:32:31 End processing HTTP request after 36.5395ms - 200 19 
+03/16/2021 17:32:34 HTTP "GET" "/admin/userstable" responded 200 in 3818.6277 ms 19 
+03/16/2021 17:34:32 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:34:32 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:34:32 Received HTTP response headers after 17.007ms - 200 35 
+03/16/2021 17:34:32 End processing HTTP request after 18.6165ms - 200 35 
+03/16/2021 17:34:32 HTTP "GET" "/admin/userstable" responded 200 in 206.8873 ms 35 
+03/16/2021 17:35:03 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:35:03 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:35:03 Received HTTP response headers after 4.7809ms - 200 45 
+03/16/2021 17:35:03 End processing HTTP request after 6.6301ms - 200 45 
+03/16/2021 17:35:03 HTTP "GET" "/admin/userstable" responded 200 in 157.8370 ms 45 
+03/16/2021 17:36:22 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 17:36:22 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 17:36:22 Received HTTP response headers after 14.6077ms - 200 54 
+03/16/2021 17:36:22 End processing HTTP request after 16.3745ms - 200 54 
+03/16/2021 17:36:22 HTTP "GET" "/admin/userstable" responded 200 in 156.0133 ms 60 
+03/16/2021 17:37:38 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 66 
+03/16/2021 17:37:38 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 66 
+03/16/2021 17:37:38 Received HTTP response headers after 47.0179ms - 200 64 
+03/16/2021 17:37:38 End processing HTTP request after 48.5997ms - 200 64 
+03/16/2021 17:37:38 HTTP "GET" "/admin/userstable" responded 200 in 177.4079 ms 64 
+03/16/2021 17:38:18 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 93 
+03/16/2021 17:38:18 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 93 
+03/16/2021 17:38:18 Received HTTP response headers after 9.7081ms - 200 63 
+03/16/2021 17:38:18 End processing HTTP request after 11.3374ms - 200 63 
+03/16/2021 17:38:18 HTTP "GET" "/admin/userstable" responded 200 in 148.9110 ms 63 
+03/16/2021 17:38:46 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:38:46 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:38:46 Received HTTP response headers after 4.2373ms - 200 63 
+03/16/2021 17:38:46 End processing HTTP request after 5.6622ms - 200 63 
+03/16/2021 17:38:46 HTTP "GET" "/admin/userstable" responded 200 in 149.7375 ms 63 
+03/16/2021 17:39:21 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:39:21 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:39:21 Received HTTP response headers after 10.8425ms - 200 114 
+03/16/2021 17:39:21 End processing HTTP request after 12.4128ms - 200 114 
+03/16/2021 17:39:21 HTTP "GET" "/admin/userstable" responded 200 in 141.7118 ms 114 
+03/16/2021 17:40:33 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:40:33 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:40:33 Received HTTP response headers after 19.1317ms - 200 122 
+03/16/2021 17:40:33 End processing HTTP request after 20.7924ms - 200 122 
+03/16/2021 17:40:33 HTTP "GET" "/admin/userstable" responded 200 in 194.3994 ms 63 
+03/16/2021 17:41:15 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 116 
+03/16/2021 17:41:15 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 116 
+03/16/2021 17:41:15 Received HTTP response headers after 14.8886ms - 200 63 
+03/16/2021 17:41:15 End processing HTTP request after 16.4344ms - 200 63 
+03/16/2021 17:41:15 HTTP "GET" "/admin/userstable" responded 200 in 144.8949 ms 63 
+03/16/2021 17:41:46 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:41:46 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 17:41:46 Received HTTP response headers after 14.5995ms - 200 128 
+03/16/2021 17:41:46 End processing HTTP request after 16.0756ms - 200 128 
+03/16/2021 17:41:47 HTTP "GET" "/admin/userstable" responded 200 in 140.1195 ms 128 
+03/16/2021 17:46:42 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:46:42 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 17:46:42 Received HTTP response headers after 28.9716ms - 200 112 
+03/16/2021 17:46:42 End processing HTTP request after 31.0146ms - 200 112 
+03/16/2021 17:46:42 HTTP "GET" "/admin/userstable" responded 200 in 164.9271 ms 112 
+03/16/2021 17:47:09 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 88 
+03/16/2021 17:47:09 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 88 
+03/16/2021 17:47:09 Received HTTP response headers after 15.0064ms - 200 97 
+03/16/2021 17:47:09 End processing HTTP request after 16.5495ms - 200 97 
+03/16/2021 17:47:09 HTTP "GET" "/admin/userstable" responded 200 in 138.9420 ms 97 
+03/16/2021 17:47:25 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 89 
+03/16/2021 17:47:25 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 89 
+03/16/2021 17:47:25 Received HTTP response headers after 7.338ms - 200 97 
+03/16/2021 17:47:25 End processing HTTP request after 8.7252ms - 200 97 
+03/16/2021 17:47:25 HTTP "GET" "/admin/userstable" responded 200 in 12.0992 ms 97 
+03/16/2021 17:48:23 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 89 
+03/16/2021 17:48:23 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 89 
+03/16/2021 17:48:23 Received HTTP response headers after 33.8294ms - 200 97 
+03/16/2021 17:48:23 End processing HTTP request after 35.4753ms - 200 97 
+03/16/2021 17:48:23 HTTP "GET" "/admin/userstable" responded 200 in 159.9167 ms 97 
+03/16/2021 17:48:55 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 89 
+03/16/2021 17:48:55 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 89 
+03/16/2021 17:48:55 Received HTTP response headers after 22.1405ms - 200 67 
+03/16/2021 17:48:55 End processing HTTP request after 23.8849ms - 200 67 
+03/16/2021 17:48:55 HTTP "GET" "/admin/userstable" responded 200 in 147.1735 ms 67 
+03/16/2021 17:49:33 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 91 
+03/16/2021 17:49:33 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 91 
+03/16/2021 17:49:33 Received HTTP response headers after 15.9149ms - 200 60 
+03/16/2021 17:49:33 End processing HTTP request after 17.582ms - 200 60 
+03/16/2021 17:49:34 HTTP "GET" "/admin/userstable" responded 200 in 141.3471 ms 60 
+03/16/2021 17:49:47 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 91 
+03/16/2021 17:49:47 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 91 
+03/16/2021 17:49:47 Received HTTP response headers after 7.2324ms - 200 54 
+03/16/2021 17:49:47 End processing HTTP request after 10.3037ms - 200 54 
+03/16/2021 17:49:47 HTTP "GET" "/admin/userstable" responded 200 in 133.5132 ms 54 
+03/16/2021 17:50:55 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 40 
+03/16/2021 17:50:55 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 40 
+03/16/2021 17:50:55 Received HTTP response headers after 4.9641ms - 200 53 
+03/16/2021 17:50:55 End processing HTTP request after 8.0937ms - 200 53 
+03/16/2021 17:50:55 HTTP "GET" "/admin/userstable" responded 200 in 132.4703 ms 53 
+03/16/2021 18:34:26 Web server started.. 1 
+03/16/2021 18:34:27 Web server HostBuilder created 1 
+03/16/2021 18:34:27 Host built 1 
+03/16/2021 18:34:28 Now listening on: "https://localhost:9000" 1 
+03/16/2021 18:34:28 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 18:34:28 Hosting environment: "Development" 1 
+03/16/2021 18:34:28 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 18:34:32 HTTP "GET" "/" responded 200 in 188.1723 ms 5 
+03/16/2021 18:34:36 HTTP "GET" "/Authentication/SignIn" responded 200 in 232.4705 ms 4 
+03/16/2021 18:34:37 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 15 
+03/16/2021 18:34:37 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 15 
+03/16/2021 18:34:39 Received HTTP response headers after 2009.0003ms - 200 6 
+03/16/2021 18:34:39 End processing HTTP request after 2021.4319ms - 200 6 
+03/16/2021 18:34:39 HTTP "POST" "/Authentication/SignIn" responded 302 in 2125.2355 ms 6 
+03/16/2021 18:34:39 HTTP "GET" "/" responded 200 in 9.1782 ms 14 
+03/16/2021 18:34:47 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 15 
+03/16/2021 18:34:47 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 15 
+03/16/2021 18:34:47 Received HTTP response headers after 154.3398ms - 200 6 
+03/16/2021 18:34:47 End processing HTTP request after 155.97ms - 200 6 
+03/16/2021 18:35:17 HTTP "GET" "/" responded 200 in 1.6372 ms 13 
+03/16/2021 18:35:20 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 18:35:24 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 18:36:33 Web server started.. 1 
+03/16/2021 18:36:33 Web server HostBuilder created 1 
+03/16/2021 18:36:34 Host built 1 
+03/16/2021 18:36:34 Now listening on: "https://localhost:9000" 1 
+03/16/2021 18:36:34 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 18:36:34 Hosting environment: "Development" 1 
+03/16/2021 18:36:34 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 18:36:37 HTTP "GET" "/" responded 200 in 224.7413 ms 4 
+03/16/2021 18:36:38 HTTP "GET" "/Authentication/SignIn" responded 200 in 207.0648 ms 5 
+03/16/2021 18:36:39 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/16/2021 18:36:39 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 12 
+03/16/2021 18:36:41 Received HTTP response headers after 1997.569ms - 200 6 
+03/16/2021 18:36:41 End processing HTTP request after 2008.0922ms - 200 6 
+03/16/2021 18:36:41 HTTP "POST" "/Authentication/SignIn" responded 302 in 2110.3648 ms 6 
+03/16/2021 18:36:41 HTTP "GET" "/" responded 200 in 8.3155 ms 5 
+03/16/2021 18:36:43 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 18:36:43 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 18:36:43 Received HTTP response headers after 156.968ms - 200 9 
+03/16/2021 18:36:43 End processing HTTP request after 158.7689ms - 200 9 
+03/16/2021 18:36:51 HTTP "GET" "/admin/userstable" responded 200 in 7844.0252 ms 9 
+03/16/2021 18:36:58 HTTP "GET" "/admin" responded 500 in 1.2678 ms 5 
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+FoundersPC.Web.Controllers.Administration.AdminController.RegisterManager (FoundersPC.Web)
+FoundersPC.Web.Controllers.Administration.AdminController.RegisterManager (FoundersPC.Web)
+FoundersPC.Web.Controllers.Administration.AdminController.BlockUser (FoundersPC.Web)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 18:36:58 An unhandled exception has occurred while executing the request. 5 
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+FoundersPC.Web.Controllers.Administration.AdminController.RegisterManager (FoundersPC.Web)
+FoundersPC.Web.Controllers.Administration.AdminController.RegisterManager (FoundersPC.Web)
+FoundersPC.Web.Controllers.Administration.AdminController.BlockUser (FoundersPC.Web)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 18:39:43 Web server started.. 1 
+03/16/2021 18:39:43 Web server HostBuilder created 1 
+03/16/2021 18:39:44 Host built 1 
+03/16/2021 18:39:45 Now listening on: "https://localhost:9000" 1 
+03/16/2021 18:39:45 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 18:39:45 Hosting environment: "Development" 1 
+03/16/2021 18:39:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 18:39:47 HTTP "GET" "/" responded 200 in 214.0648 ms 4 
+03/16/2021 18:39:50 HTTP "GET" "/Authentication/SignIn" responded 200 in 213.1244 ms 4 
+03/16/2021 18:39:51 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 18:39:51 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 5 
+03/16/2021 18:39:53 Received HTTP response headers after 1981.3252ms - 200 6 
+03/16/2021 18:39:53 End processing HTTP request after 1994.2351ms - 200 6 
+03/16/2021 18:39:53 HTTP "POST" "/Authentication/SignIn" responded 302 in 2098.7298 ms 6 
+03/16/2021 18:39:53 HTTP "GET" "/" responded 200 in 12.7838 ms 4 
+03/16/2021 18:40:01 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 18:40:01 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 8 
+03/16/2021 18:40:01 Received HTTP response headers after 153.2817ms - 200 9 
+03/16/2021 18:40:01 End processing HTTP request after 155.023ms - 200 9 
+03/16/2021 18:40:04 HTTP "GET" "/admin/userstable" responded 200 in 2999.3806 ms 9 
+03/16/2021 18:40:09 HTTP "GET" "/admin" responded 200 in 21.5661 ms 10 
+03/16/2021 18:49:17 Web server started.. 1 
+03/16/2021 18:49:17 Web server HostBuilder created 1 
+03/16/2021 18:49:18 Host built 1 
+03/16/2021 18:49:18 Now listening on: "https://localhost:9000" 1 
+03/16/2021 18:49:18 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 18:49:18 Hosting environment: "Development" 1 
+03/16/2021 18:49:18 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 18:49:21 HTTP "GET" "/" responded 200 in 173.8755 ms 4 
+03/16/2021 18:49:24 HTTP "GET" "/Authentication/SignIn" responded 200 in 212.5084 ms 14 
+03/16/2021 18:49:25 Start processing HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 18:49:25 Sending HTTP request "POST" https://localhost:3000/identityAPI/authentication/login 4 
+03/16/2021 18:49:27 Received HTTP response headers after 1950.083ms - 200 6 
+03/16/2021 18:49:27 End processing HTTP request after 1961.5301ms - 200 6 
+03/16/2021 18:49:27 HTTP "POST" "/Authentication/SignIn" responded 302 in 2071.9112 ms 6 
+03/16/2021 18:49:27 HTTP "GET" "/" responded 200 in 9.2708 ms 4 
+03/16/2021 18:49:30 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 18:49:30 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 18:49:30 Received HTTP response headers after 150.8339ms - 200 10 
+03/16/2021 18:49:30 End processing HTTP request after 152.3682ms - 200 10 
+03/16/2021 18:49:30 HTTP "GET" "/admin/userstable" responded 200 in 240.5219 ms 10 
+03/16/2021 18:51:29 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 18:51:29 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 18:51:29 Received HTTP response headers after 55.2283ms - 200 28 
+03/16/2021 18:51:29 End processing HTTP request after 56.9199ms - 200 28 
+03/16/2021 18:51:32 HTTP "GET" "/admin/userstable" responded 200 in 3174.4577 ms 28 
+03/16/2021 18:52:24 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 18:52:24 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 4 
+03/16/2021 18:52:24 Received HTTP response headers after 24.6064ms - 200 18 
+03/16/2021 18:52:24 End processing HTTP request after 26.2124ms - 200 18 
+03/16/2021 18:52:24 HTTP "GET" "/admin/userstable" responded 200 in 236.9248 ms 4 
+03/16/2021 18:52:30 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 18:52:30 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 5 
+03/16/2021 18:52:30 Received HTTP response headers after 4.9385ms - 200 17 
+03/16/2021 18:52:30 End processing HTTP request after 6.6037ms - 200 17 
+03/16/2021 18:52:30 HTTP "GET" "/admin/userstable" responded 200 in 9.9108 ms 17 
+03/16/2021 18:53:52 Start processing HTTP request "GET" https://localhost:3000/identityAPI/admin/users 41 
+03/16/2021 18:53:52 Sending HTTP request "GET" https://localhost:3000/identityAPI/admin/users 41 
+03/16/2021 18:53:52 Received HTTP response headers after 19.0526ms - 200 35 
+03/16/2021 18:53:52 End processing HTTP request after 20.692ms - 200 35 
+03/16/2021 18:53:52 HTTP "GET" "/admin/userstable" responded 200 in 186.4510 ms 35 
+03/16/2021 19:08:55 Web server started.. 1 
+03/16/2021 19:08:55 Web server HostBuilder created 1 
+03/16/2021 19:08:56 Host built 1 
+03/16/2021 19:08:56 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:08:56 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:08:56 Hosting environment: "Development" 1 
+03/16/2021 19:08:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:09:02 HTTP "GET" "/" responded 200 in 198.0042 ms 4 
+03/16/2021 19:09:03 HTTP "GET" "/Authentication/SignIn" responded 200 in 217.0228 ms 5 
+03/16/2021 19:09:07 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Login 4 
+03/16/2021 19:09:07 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Login 4 
+03/16/2021 19:09:07 Received HTTP response headers after 195.8128ms - 404 6 
+03/16/2021 19:09:07 End processing HTTP request after 207.1687ms - 404 6 
+03/16/2021 19:09:07 Request from IdentityAuthenticationService to Identity server returned a server error NotFound 6 
+03/16/2021 19:09:07 HTTP "POST" "/Authentication/SignIn" responded 500 in 382.7935 ms 6 
+System.Net.NetworkInformation.NetworkInformationException (404): Поставщик облачного файла неожиданно завершил работу.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 133
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 19:09:07 An unhandled exception has occurred while executing the request. 6 
+System.Net.NetworkInformation.NetworkInformationException (404): Поставщик облачного файла неожиданно завершил работу.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 133
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 19:09:36 Application is shutting down... 2 
+03/16/2021 19:10:43 Web server started.. 1 
+03/16/2021 19:10:43 Web server HostBuilder created 1 
+03/16/2021 19:10:44 Host built 1 
+03/16/2021 19:10:44 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:10:44 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:10:44 Hosting environment: "Development" 1 
+03/16/2021 19:10:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:10:47 HTTP "GET" "/" responded 200 in 194.4441 ms 4 
+03/16/2021 19:10:52 HTTP "GET" "/Authentication/SignIn" responded 200 in 205.9288 ms 8 
+03/16/2021 19:10:54 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Login 8 
+03/16/2021 19:10:54 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Login 8 
+03/16/2021 19:10:54 Received HTTP response headers after 200.5641ms - 404 6 
+03/16/2021 19:10:54 End processing HTTP request after 212.2027ms - 404 6 
+03/16/2021 19:10:54 Request from IdentityAuthenticationService to Identity server returned a server error NotFound 6 
+03/16/2021 19:10:54 HTTP "POST" "/Authentication/SignIn" responded 500 in 392.8405 ms 6 
+System.Net.NetworkInformation.NetworkInformationException (404): Поставщик облачного файла неожиданно завершил работу.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 133
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/16/2021 19:10:54 An unhandled exception has occurred while executing the request. 6 
+System.Net.NetworkInformation.NetworkInformationException (404): Поставщик облачного файла неожиданно завершил работу.
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.IdentityAuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\IdentityAuthenticationService.cs:line 104
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 133
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/16/2021 19:11:32 Web server started.. 1 
+03/16/2021 19:11:32 Web server HostBuilder created 1 
+03/16/2021 19:11:33 Host built 1 
+03/16/2021 19:11:33 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:11:33 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:11:33 Hosting environment: "Development" 1 
+03/16/2021 19:11:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:11:36 HTTP "GET" "/" responded 200 in 194.7193 ms 5 
+03/16/2021 19:11:37 HTTP "GET" "/Authentication/SignIn" responded 200 in 213.2117 ms 5 
+03/16/2021 19:12:48 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Login 14 
+03/16/2021 19:12:48 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Login 14 
+03/16/2021 19:12:48 Received HTTP response headers after 216.1638ms - 404 6 
+03/16/2021 19:12:48 End processing HTTP request after 228.2899ms - 404 6 
+03/16/2021 19:13:21 Web server started.. 1 
+03/16/2021 19:13:21 Web server HostBuilder created 1 
+03/16/2021 19:13:22 Host built 1 
+03/16/2021 19:13:22 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:13:22 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:13:22 Hosting environment: "Development" 1 
+03/16/2021 19:13:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:13:25 HTTP "GET" "/" responded 200 in 201.2614 ms 5 
+03/16/2021 19:13:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 203.0580 ms 11 
+03/16/2021 19:13:37 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 4 
+03/16/2021 19:13:37 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 4 
+03/16/2021 19:13:45 Received HTTP response headers after 7719.0228ms - 200 6 
+03/16/2021 19:13:45 End processing HTTP request after 7731.1269ms - 200 6 
+03/16/2021 19:13:50 HTTP "POST" "/Authentication/SignIn" responded 302 in 22443.4362 ms 6 
+03/16/2021 19:13:50 HTTP "GET" "/" responded 200 in 9.7308 ms 8 
+03/16/2021 19:13:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 19:13:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 19:13:57 Received HTTP response headers after 158.8503ms - 200 6 
+03/16/2021 19:13:57 End processing HTTP request after 160.6302ms - 200 6 
+03/16/2021 19:13:57 HTTP "GET" "/Admin/UsersTable" responded 200 in 249.5464 ms 6 
+03/16/2021 19:20:48 Web server started.. 1 
+03/16/2021 19:20:48 Web server HostBuilder created 1 
+03/16/2021 19:20:49 Host built 1 
+03/16/2021 19:20:49 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:20:49 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:20:49 Hosting environment: "Development" 1 
+03/16/2021 19:20:49 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:20:52 HTTP "GET" "/" responded 200 in 177.3632 ms 9 
+03/16/2021 19:20:53 HTTP "GET" "/Authentication/SignIn" responded 200 in 205.5067 ms 4 
+03/16/2021 19:20:54 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/16/2021 19:20:54 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/16/2021 19:20:56 Received HTTP response headers after 1983.7982ms - 200 6 
+03/16/2021 19:20:56 End processing HTTP request after 1995.7249ms - 200 6 
+03/16/2021 19:20:56 HTTP "POST" "/Authentication/SignIn" responded 302 in 2107.2534 ms 6 
+03/16/2021 19:20:56 HTTP "GET" "/" responded 200 in 7.9365 ms 4 
+03/16/2021 19:20:58 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 19:20:58 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 19:20:59 Received HTTP response headers after 155.1914ms - 200 6 
+03/16/2021 19:20:59 End processing HTTP request after 156.9509ms - 200 6 
+03/16/2021 19:20:59 HTTP "GET" "/Admin/UsersTable" responded 200 in 247.1197 ms 6 
+03/16/2021 19:20:59 HTTP "GET" "/Admin/~img/ok.svg" responded 404 in 1.0473 ms 5 
+03/16/2021 19:20:59 HTTP "GET" "/Admin/~img/block.svg" responded 404 in 1.0478 ms 8 
+03/16/2021 19:21:46 HTTP "GET" "/Admin/img/ok.svg" responded 404 in 0.4552 ms 20 
+03/16/2021 19:21:55 HTTP "GET" "/Admin/img/ok.svg" responded 404 in 0.2168 ms 4 
+03/16/2021 19:25:11 Web server started.. 1 
+03/16/2021 19:25:11 Web server HostBuilder created 1 
+03/16/2021 19:25:12 Host built 1 
+03/16/2021 19:25:12 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:25:12 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:25:12 Hosting environment: "Development" 1 
+03/16/2021 19:25:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:25:15 HTTP "GET" "/" responded 200 in 219.2209 ms 4 
+03/16/2021 19:25:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 215.1725 ms 4 
+03/16/2021 19:25:17 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 19:25:17 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 19:25:19 Received HTTP response headers after 2042.913ms - 200 6 
+03/16/2021 19:25:19 End processing HTTP request after 2054.2071ms - 200 6 
+03/16/2021 19:25:19 HTTP "POST" "/Authentication/SignIn" responded 302 in 2156.5291 ms 6 
+03/16/2021 19:25:19 HTTP "GET" "/" responded 200 in 8.5183 ms 8 
+03/16/2021 19:25:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 19:25:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 19:25:21 Received HTTP response headers after 155.2308ms - 200 10 
+03/16/2021 19:25:21 End processing HTTP request after 157.0726ms - 200 10 
+03/16/2021 19:25:21 HTTP "GET" "/Admin/UsersTable" responded 200 in 244.4144 ms 10 
+03/16/2021 19:28:33 Web server started.. 1 
+03/16/2021 19:28:33 Web server HostBuilder created 1 
+03/16/2021 19:28:34 Host built 1 
+03/16/2021 19:28:34 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:28:34 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:28:34 Hosting environment: "Development" 1 
+03/16/2021 19:28:34 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:28:39 HTTP "GET" "/" responded 200 in 179.2092 ms 5 
+03/16/2021 19:28:41 HTTP "GET" "/Authentication/SignIn" responded 200 in 208.6274 ms 14 
+03/16/2021 19:28:42 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 15 
+03/16/2021 19:28:42 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 15 
+03/16/2021 19:28:44 Received HTTP response headers after 1985.3166ms - 200 6 
+03/16/2021 19:28:44 End processing HTTP request after 1997.6077ms - 200 6 
+03/16/2021 19:28:44 HTTP "POST" "/Authentication/SignIn" responded 302 in 2100.6866 ms 6 
+03/16/2021 19:28:44 HTTP "GET" "/" responded 200 in 8.3063 ms 5 
+03/16/2021 19:28:46 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 15 
+03/16/2021 19:28:46 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 15 
+03/16/2021 19:28:46 Received HTTP response headers after 151.0442ms - 200 6 
+03/16/2021 19:28:46 End processing HTTP request after 152.6926ms - 200 6 
+03/16/2021 19:28:46 HTTP "GET" "/Admin/UsersTable" responded 200 in 245.6542 ms 6 
+03/16/2021 19:31:34 Web server started.. 1 
+03/16/2021 19:31:34 Web server HostBuilder created 1 
+03/16/2021 19:31:35 Host built 1 
+03/16/2021 19:31:36 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:31:36 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:31:36 Hosting environment: "Development" 1 
+03/16/2021 19:31:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:31:38 HTTP "GET" "/" responded 200 in 203.6287 ms 11 
+03/16/2021 19:31:39 HTTP "GET" "/Authentication/SignIn" responded 200 in 209.2939 ms 8 
+03/16/2021 19:31:41 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 16 
+03/16/2021 19:31:41 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 16 
+03/16/2021 19:31:43 Received HTTP response headers after 2024.4742ms - 200 6 
+03/16/2021 19:31:43 End processing HTTP request after 2035.0484ms - 200 6 
+03/16/2021 19:31:43 HTTP "POST" "/Authentication/SignIn" responded 302 in 2141.8282 ms 6 
+03/16/2021 19:31:43 HTTP "GET" "/" responded 200 in 9.8205 ms 8 
+03/16/2021 19:31:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 19:31:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 19:31:44 Received HTTP response headers after 155.1254ms - 200 6 
+03/16/2021 19:31:44 End processing HTTP request after 157.2182ms - 200 6 
+03/16/2021 19:31:45 HTTP "GET" "/Admin/UsersTable" responded 200 in 243.7917 ms 6 
+03/16/2021 19:35:19 Web server started.. 1 
+03/16/2021 19:35:20 Web server HostBuilder created 1 
+03/16/2021 19:35:20 Host built 1 
+03/16/2021 19:35:21 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:35:21 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:35:21 Hosting environment: "Development" 1 
+03/16/2021 19:35:21 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:35:23 HTTP "GET" "/" responded 200 in 212.7980 ms 15 
+03/16/2021 19:35:25 HTTP "GET" "/Authentication/SignIn" responded 200 in 220.9652 ms 14 
+03/16/2021 19:35:26 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 19:35:26 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 19:35:28 Received HTTP response headers after 2029.9395ms - 200 6 
+03/16/2021 19:35:28 End processing HTTP request after 2042.7872ms - 200 6 
+03/16/2021 19:35:28 HTTP "POST" "/Authentication/SignIn" responded 302 in 2148.0879 ms 6 
+03/16/2021 19:35:28 HTTP "GET" "/" responded 200 in 9.5994 ms 5 
+03/16/2021 19:35:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 19:35:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 19:35:29 Received HTTP response headers after 157.033ms - 200 6 
+03/16/2021 19:35:29 End processing HTTP request after 158.7257ms - 200 6 
+03/16/2021 19:35:29 HTTP "GET" "/Admin/UsersTable" responded 200 in 243.7730 ms 6 
+03/16/2021 19:39:52 Web server started.. 1 
+03/16/2021 19:39:52 Web server HostBuilder created 1 
+03/16/2021 19:39:52 Host built 1 
+03/16/2021 19:39:53 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:39:53 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:39:53 Hosting environment: "Development" 1 
+03/16/2021 19:39:53 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:39:55 HTTP "GET" "/" responded 200 in 209.0294 ms 4 
+03/16/2021 19:39:57 HTTP "GET" "/Authentication/SignIn" responded 200 in 216.3460 ms 13 
+03/16/2021 19:40:03 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/16/2021 19:40:03 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/16/2021 19:40:05 Received HTTP response headers after 1960.8861ms - 200 6 
+03/16/2021 19:40:05 End processing HTTP request after 1974.0695ms - 200 6 
+03/16/2021 19:40:05 HTTP "POST" "/Authentication/SignIn" responded 302 in 2078.8310 ms 6 
+03/16/2021 19:40:05 HTTP "GET" "/" responded 200 in 8.6040 ms 5 
+03/16/2021 19:40:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 19:40:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 19:40:08 Received HTTP response headers after 148.1202ms - 200 9 
+03/16/2021 19:40:08 End processing HTTP request after 149.9568ms - 200 9 
+03/16/2021 19:40:08 HTTP "GET" "/Admin/UsersTable" responded 200 in 235.4452 ms 9 
+03/16/2021 19:41:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 21 
+03/16/2021 19:41:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 21 
+03/16/2021 19:41:09 Received HTTP response headers after 54.3274ms - 200 6 
+03/16/2021 19:41:09 End processing HTTP request after 56.4445ms - 200 6 
+03/16/2021 19:41:12 HTTP "GET" "/Admin/UsersTable" responded 200 in 3228.6564 ms 6 
+03/16/2021 19:41:15 HTTP "GET" "/Admin/BlockUser?id=1" responded 405 in 0.3558 ms 5 
+03/16/2021 19:43:00 Web server started.. 1 
+03/16/2021 19:43:00 Web server HostBuilder created 1 
+03/16/2021 19:43:01 Host built 1 
+03/16/2021 19:43:01 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:43:01 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:43:01 Hosting environment: "Development" 1 
+03/16/2021 19:43:01 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:43:04 HTTP "GET" "/" responded 200 in 172.7180 ms 4 
+03/16/2021 19:43:07 HTTP "GET" "/Authentication/SignIn" responded 200 in 205.5921 ms 7 
+03/16/2021 19:43:08 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/16/2021 19:43:08 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/16/2021 19:43:10 Received HTTP response headers after 1972.4702ms - 200 5 
+03/16/2021 19:43:10 End processing HTTP request after 1985.3893ms - 200 5 
+03/16/2021 19:43:10 HTTP "POST" "/Authentication/SignIn" responded 302 in 2093.7170 ms 5 
+03/16/2021 19:43:10 HTTP "GET" "/" responded 200 in 8.9393 ms 7 
+03/16/2021 19:43:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 19:43:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 19:43:13 Received HTTP response headers after 148.8269ms - 200 5 
+03/16/2021 19:43:13 End processing HTTP request after 150.5625ms - 200 5 
+03/16/2021 19:43:13 HTTP "GET" "/Admin/UsersTable" responded 200 in 236.8844 ms 5 
+03/16/2021 19:43:17 HTTP "GET" "/Admin/BlockUser?id=4" responded 405 in 1.2376 ms 8 
+03/16/2021 19:43:22 HTTP "GET" "/Admin/UnblockUser?id=5" responded 405 in 0.2299 ms 7 
+03/16/2021 19:49:09 Web server started.. 1 
+03/16/2021 19:49:09 Web server HostBuilder created 1 
+03/16/2021 19:49:10 Host built 1 
+03/16/2021 19:49:11 Now listening on: "https://localhost:9000" 1 
+03/16/2021 19:49:11 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 19:49:11 Hosting environment: "Development" 1 
+03/16/2021 19:49:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 19:49:13 HTTP "GET" "/" responded 200 in 177.1842 ms 5 
+03/16/2021 19:49:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 217.2159 ms 15 
+03/16/2021 19:49:18 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 5 
+03/16/2021 19:49:18 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 5 
+03/16/2021 19:49:20 Received HTTP response headers after 1955.4215ms - 200 6 
+03/16/2021 19:49:20 End processing HTTP request after 1967.7162ms - 200 6 
+03/16/2021 19:49:20 HTTP "POST" "/Authentication/SignIn" responded 302 in 2070.5078 ms 6 
+03/16/2021 19:49:20 HTTP "GET" "/" responded 200 in 9.4675 ms 5 
+03/16/2021 19:49:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 19:49:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 19:49:22 Received HTTP response headers after 154.2248ms - 200 6 
+03/16/2021 19:49:22 End processing HTTP request after 155.9572ms - 200 6 
+03/16/2021 19:49:22 HTTP "GET" "/Admin/UsersTable" responded 200 in 245.3098 ms 6 
+03/16/2021 19:49:35 HTTP "GET" "/Admin/BlockUser?id=1" responded 405 in 1.2859 ms 11 
+03/16/2021 20:00:58 Web server started.. 1 
+03/16/2021 20:00:58 Web server HostBuilder created 1 
+03/16/2021 20:00:59 Host built 1 
+03/16/2021 20:01:00 Now listening on: "https://localhost:9000" 1 
+03/16/2021 20:01:00 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 20:01:00 Hosting environment: "Development" 1 
+03/16/2021 20:01:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 20:01:02 HTTP "GET" "/" responded 200 in 213.2058 ms 4 
+03/16/2021 20:01:03 HTTP "GET" "/Authentication/SignIn" responded 200 in 201.9600 ms 12 
+03/16/2021 20:01:05 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 11 
+03/16/2021 20:01:05 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 11 
+03/16/2021 20:01:07 Received HTTP response headers after 2001.2328ms - 200 6 
+03/16/2021 20:01:07 End processing HTTP request after 2012.0092ms - 200 6 
+03/16/2021 20:01:07 HTTP "POST" "/Authentication/SignIn" responded 302 in 2117.0518 ms 6 
+03/16/2021 20:01:07 HTTP "GET" "/" responded 200 in 8.1103 ms 4 
+03/16/2021 20:01:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:01:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:01:08 Received HTTP response headers after 153.7831ms - 200 6 
+03/16/2021 20:01:08 End processing HTTP request after 155.5224ms - 200 6 
+03/16/2021 20:01:08 HTTP "GET" "/Admin/UsersTable" responded 200 in 240.6287 ms 6 
+03/16/2021 20:01:22 HTTP "GET" "/Admin" responded 200 in 23.2766 ms 12 
+03/16/2021 20:01:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:01:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:01:25 Received HTTP response headers after 20.055ms - 200 6 
+03/16/2021 20:01:25 End processing HTTP request after 21.6064ms - 200 6 
+03/16/2021 20:01:25 HTTP "GET" "/Admin/UsersTable" responded 200 in 25.0542 ms 6 
+03/16/2021 20:02:08 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/13 12 
+03/16/2021 20:02:08 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/13 12 
+03/16/2021 20:02:08 Received HTTP response headers after 37.8704ms - 404 6 
+03/16/2021 20:02:08 End processing HTTP request after 39.5891ms - 404 6 
+03/16/2021 20:04:07 Web server started.. 1 
+03/16/2021 20:04:07 Web server HostBuilder created 1 
+03/16/2021 20:04:08 Host built 1 
+03/16/2021 20:04:08 Now listening on: "https://localhost:9000" 1 
+03/16/2021 20:04:08 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 20:04:08 Hosting environment: "Development" 1 
+03/16/2021 20:04:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 20:04:11 HTTP "GET" "/" responded 200 in 179.4383 ms 4 
+03/16/2021 20:04:15 HTTP "GET" "/Authentication/SignIn" responded 200 in 198.2269 ms 15 
+03/16/2021 20:04:17 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 20:04:17 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 20:04:19 Received HTTP response headers after 1991.0143ms - 200 6 
+03/16/2021 20:04:19 End processing HTTP request after 2002.2696ms - 200 6 
+03/16/2021 20:04:19 HTTP "POST" "/Authentication/SignIn" responded 302 in 2106.0462 ms 6 
+03/16/2021 20:04:19 HTTP "GET" "/" responded 200 in 10.4152 ms 5 
+03/16/2021 20:04:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:04:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:04:24 Received HTTP response headers after 152.4871ms - 200 6 
+03/16/2021 20:04:24 End processing HTTP request after 154.325ms - 200 6 
+03/16/2021 20:04:24 HTTP "GET" "/Admin/UsersTable" responded 200 in 243.1241 ms 6 
+03/16/2021 20:04:41 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id/13 4 
+03/16/2021 20:04:41 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id/13 4 
+03/16/2021 20:04:41 Received HTTP response headers after 29.8925ms - 404 21 
+03/16/2021 20:04:41 End processing HTTP request after 31.6273ms - 404 21 
+03/16/2021 20:05:55 Web server started.. 1 
+03/16/2021 20:05:56 Web server HostBuilder created 1 
+03/16/2021 20:05:56 Host built 1 
+03/16/2021 20:05:57 Now listening on: "https://localhost:9000" 1 
+03/16/2021 20:05:57 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 20:05:57 Hosting environment: "Development" 1 
+03/16/2021 20:05:57 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 20:05:59 HTTP "GET" "/" responded 200 in 203.5759 ms 4 
+03/16/2021 20:06:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 206.1763 ms 4 
+03/16/2021 20:06:01 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 4 
+03/16/2021 20:06:01 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 4 
+03/16/2021 20:06:03 Received HTTP response headers after 1991.0202ms - 200 6 
+03/16/2021 20:06:03 End processing HTTP request after 2003.3958ms - 200 6 
+03/16/2021 20:06:03 HTTP "POST" "/Authentication/SignIn" responded 302 in 2108.0708 ms 6 
+03/16/2021 20:06:03 HTTP "GET" "/" responded 200 in 8.5275 ms 4 
+03/16/2021 20:06:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:06:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:06:05 Received HTTP response headers after 148.3731ms - 200 6 
+03/16/2021 20:06:05 End processing HTTP request after 150.0183ms - 200 6 
+03/16/2021 20:06:05 HTTP "GET" "/Admin/UsersTable" responded 200 in 237.5680 ms 6 
+03/16/2021 20:06:09 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:06:09 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:06:11 Received HTTP response headers after 2190.1074ms - 200 6 
+03/16/2021 20:06:11 End processing HTTP request after 2192.0018ms - 200 6 
+03/16/2021 20:06:27 AdminService: block user: user with id = 13 was blocked by ilyushin_misha@mail.ru 6 
+03/16/2021 20:06:31 HTTP "GET" "/Admin/BlockUser?id=13" responded 302 in 23484.5181 ms 6 
+03/16/2021 20:06:31 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:06:31 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:06:31 Received HTTP response headers after 11.6535ms - 200 6 
+03/16/2021 20:06:31 End processing HTTP request after 13.3857ms - 200 6 
+03/16/2021 20:06:31 HTTP "GET" "/Admin/UsersTable" responded 200 in 94.6841 ms 6 
+03/16/2021 20:06:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:06:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:06:40 Received HTTP response headers after 5.2652ms - 200 10 
+03/16/2021 20:06:40 End processing HTTP request after 7.1611ms - 200 10 
+03/16/2021 20:06:40 HTTP "GET" "/Admin/UsersTable" responded 200 in 9.6801 ms 10 
+03/16/2021 20:39:49 Web server started.. 1 
+03/16/2021 20:39:49 Web server HostBuilder created 1 
+03/16/2021 20:39:50 Host built 1 
+03/16/2021 20:39:50 Now listening on: "https://localhost:9000" 1 
+03/16/2021 20:39:50 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 20:39:50 Hosting environment: "Development" 1 
+03/16/2021 20:39:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 20:39:53 HTTP "GET" "/" responded 200 in 189.1836 ms 14 
+03/16/2021 20:39:55 HTTP "GET" "/Authentication/SignIn" responded 200 in 208.1106 ms 8 
+03/16/2021 20:39:56 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 4 
+03/16/2021 20:39:56 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 4 
+03/16/2021 20:39:58 Received HTTP response headers after 1973.1822ms - 200 11 
+03/16/2021 20:39:58 End processing HTTP request after 1984.1069ms - 200 11 
+03/16/2021 20:39:58 HTTP "POST" "/Authentication/SignIn" responded 302 in 2088.3546 ms 11 
+03/16/2021 20:39:58 HTTP "GET" "/" responded 200 in 8.1345 ms 8 
+03/16/2021 20:40:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:40:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:40:00 Received HTTP response headers after 160.418ms - 200 6 
+03/16/2021 20:40:00 End processing HTTP request after 162.043ms - 200 6 
+03/16/2021 20:40:00 HTTP "GET" "/Admin/UsersTable" responded 200 in 244.5546 ms 6 
+03/16/2021 20:40:03 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/13 8 
+03/16/2021 20:40:03 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/13 8 
+03/16/2021 20:40:03 Received HTTP response headers after 11.1779ms - 404 12 
+03/16/2021 20:40:03 End processing HTTP request after 12.8087ms - 404 12 
+03/16/2021 20:40:03 HTTP "GET" "/Admin/UnblockUser?id=13" responded 302 in 25.5546 ms 12 
+03/16/2021 20:40:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:40:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:40:03 Received HTTP response headers after 18.4433ms - 200 9 
+03/16/2021 20:40:03 End processing HTTP request after 21.277ms - 200 9 
+03/16/2021 20:40:03 HTTP "GET" "/Admin/UsersTable" responded 200 in 24.7949 ms 9 
+03/16/2021 20:40:10 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/12 4 
+03/16/2021 20:40:10 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/12 4 
+03/16/2021 20:40:10 Received HTTP response headers after 4.0962ms - 404 6 
+03/16/2021 20:40:10 End processing HTTP request after 5.7632ms - 404 6 
+03/16/2021 20:40:10 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 7.4310 ms 6 
+03/16/2021 20:40:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:40:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/16/2021 20:40:10 Received HTTP response headers after 8.4829ms - 200 6 
+03/16/2021 20:40:10 End processing HTTP request after 10.9065ms - 200 6 
+03/16/2021 20:40:10 HTTP "GET" "/Admin/UsersTable" responded 200 in 13.4883 ms 6 
+03/16/2021 20:40:48 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/13 5 
+03/16/2021 20:40:48 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/13 5 
+03/16/2021 20:40:48 Received HTTP response headers after 57.9941ms - 404 21 
+03/16/2021 20:40:48 End processing HTTP request after 77.1527ms - 404 21 
+03/16/2021 20:41:22 Web server started.. 1 
+03/16/2021 20:41:22 Web server HostBuilder created 1 
+03/16/2021 20:41:23 Host built 1 
+03/16/2021 20:41:23 Now listening on: "https://localhost:9000" 1 
+03/16/2021 20:41:23 Application started. Press Ctrl+C to shut down. 1 
+03/16/2021 20:41:23 Hosting environment: "Development" 1 
+03/16/2021 20:41:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/16/2021 20:41:26 HTTP "GET" "/" responded 200 in 215.6513 ms 13 
+03/16/2021 20:41:29 HTTP "GET" "/Authentication/SignIn" responded 200 in 226.5239 ms 7 
+03/16/2021 20:41:30 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 20:41:30 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 8 
+03/16/2021 20:41:32 Received HTTP response headers after 1968.7252ms - 200 5 
+03/16/2021 20:41:32 End processing HTTP request after 1979.6964ms - 200 5 
+03/16/2021 20:41:32 HTTP "POST" "/Authentication/SignIn" responded 302 in 2079.6725 ms 5 
+03/16/2021 20:41:32 HTTP "GET" "/" responded 200 in 9.1231 ms 8 
+03/16/2021 20:41:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:41:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:41:34 Received HTTP response headers after 156.1671ms - 200 5 
+03/16/2021 20:41:34 End processing HTTP request after 157.9406ms - 200 5 
+03/16/2021 20:41:35 HTTP "GET" "/Admin/UsersTable" responded 200 in 246.0204 ms 5 
+03/16/2021 20:41:37 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 7 
+03/16/2021 20:41:37 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 7 
+03/16/2021 20:41:39 Received HTTP response headers after 1743.8755ms - 200 5 
+03/16/2021 20:41:39 End processing HTTP request after 1745.5321ms - 200 5 
+03/16/2021 20:41:39 AdminService: unblock user: user with id = 13 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:41:39 HTTP "GET" "/Admin/UnblockUser?id=13" responded 302 in 1761.5912 ms 5 
+03/16/2021 20:41:39 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 7 
+03/16/2021 20:41:39 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 7 
+03/16/2021 20:41:39 Received HTTP response headers after 10.7413ms - 200 9 
+03/16/2021 20:41:39 End processing HTTP request after 12.1575ms - 200 9 
+03/16/2021 20:41:39 HTTP "GET" "/Admin/UsersTable" responded 200 in 15.3143 ms 9 
+03/16/2021 20:41:41 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 7 
+03/16/2021 20:41:41 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 7 
+03/16/2021 20:41:42 Received HTTP response headers after 1178.8822ms - 200 5 
+03/16/2021 20:41:42 End processing HTTP request after 1180.4532ms - 200 5 
+03/16/2021 20:41:42 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:41:42 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 1182.4934 ms 5 
+03/16/2021 20:41:42 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:41:42 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:41:42 Received HTTP response headers after 4.1409ms - 200 10 
+03/16/2021 20:41:42 End processing HTTP request after 5.4265ms - 200 10 
+03/16/2021 20:41:42 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.0942 ms 10 
+03/16/2021 20:41:43 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:41:43 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:41:44 Received HTTP response headers after 1176.1928ms - 200 9 
+03/16/2021 20:41:44 End processing HTTP request after 1178.0804ms - 200 9 
+03/16/2021 20:41:44 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:41:44 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1179.9656 ms 9 
+03/16/2021 20:41:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:41:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:41:44 Received HTTP response headers after 5.1022ms - 200 5 
+03/16/2021 20:41:44 End processing HTTP request after 6.8287ms - 200 5 
+03/16/2021 20:41:44 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.6659 ms 5 
+03/16/2021 20:41:51 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:41:51 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:41:52 Received HTTP response headers after 1034.6524ms - 200 5 
+03/16/2021 20:41:52 End processing HTTP request after 1036.1718ms - 200 5 
+03/16/2021 20:41:52 AdminService: block user: user with id = 4 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 4 was not blocked at this byIdRequest. 5 
+03/16/2021 20:41:52 HTTP "GET" "/Admin/BlockUser?id=4" responded 302 in 6734.5432 ms 5 
+03/16/2021 20:41:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:41:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:41:52 Received HTTP response headers after 4.1889ms - 200 9 
+03/16/2021 20:41:52 End processing HTTP request after 5.6225ms - 200 9 
+03/16/2021 20:41:52 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.4910 ms 9 
+03/16/2021 20:42:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:05 Received HTTP response headers after 4.1563ms - 200 5 
+03/16/2021 20:42:05 End processing HTTP request after 5.6921ms - 200 5 
+03/16/2021 20:42:05 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.9529 ms 5 
+03/16/2021 20:42:06 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:42:06 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:42:07 Received HTTP response headers after 1030.4732ms - 200 9 
+03/16/2021 20:42:07 End processing HTTP request after 1032.4108ms - 200 9 
+03/16/2021 20:42:07 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 9 
+03/16/2021 20:42:07 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1034.5382 ms 9 
+03/16/2021 20:42:07 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:07 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:07 Received HTTP response headers after 6.3753ms - 200 5 
+03/16/2021 20:42:07 End processing HTTP request after 7.8168ms - 200 5 
+03/16/2021 20:42:07 HTTP "GET" "/Admin/UsersTable" responded 200 in 9.8311 ms 5 
+03/16/2021 20:42:08 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:42:08 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:42:09 Received HTTP response headers after 1111.2259ms - 200 5 
+03/16/2021 20:42:09 End processing HTTP request after 1113.2691ms - 200 5 
+03/16/2021 20:42:09 AdminService: block user: user with id = 12 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 12 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:09 HTTP "GET" "/Admin/BlockUser?id=12" responded 302 in 1116.5195 ms 5 
+03/16/2021 20:42:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:09 Received HTTP response headers after 3.7598ms - 200 5 
+03/16/2021 20:42:09 End processing HTTP request after 5.1249ms - 200 5 
+03/16/2021 20:42:09 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.6277 ms 5 
+03/16/2021 20:42:10 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:42:10 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:42:12 Received HTTP response headers after 1766.0398ms - 200 9 
+03/16/2021 20:42:12 End processing HTTP request after 1767.6489ms - 200 9 
+03/16/2021 20:42:12 AdminService: block user: user with id = 13 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 13 was not blocked at this byIdRequest. 9 
+03/16/2021 20:42:12 HTTP "GET" "/Admin/BlockUser?id=13" responded 302 in 1769.8102 ms 9 
+03/16/2021 20:42:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:12 Received HTTP response headers after 3.8173ms - 200 5 
+03/16/2021 20:42:12 End processing HTTP request after 5.0475ms - 200 5 
+03/16/2021 20:42:12 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.7729 ms 5 
+03/16/2021 20:42:13 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 8 
+03/16/2021 20:42:13 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 8 
+03/16/2021 20:42:14 Received HTTP response headers after 993.4904ms - 200 5 
+03/16/2021 20:42:14 End processing HTTP request after 995.0857ms - 200 5 
+03/16/2021 20:42:14 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:14 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 997.2491 ms 5 
+03/16/2021 20:42:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:14 Received HTTP response headers after 3.81ms - 200 9 
+03/16/2021 20:42:14 End processing HTTP request after 5.1646ms - 200 9 
+03/16/2021 20:42:14 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.0453 ms 9 
+03/16/2021 20:42:15 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:42:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:42:16 Received HTTP response headers after 1096.7562ms - 200 5 
+03/16/2021 20:42:16 End processing HTTP request after 1099.5216ms - 200 5 
+03/16/2021 20:42:16 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:16 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1102.3017 ms 5 
+03/16/2021 20:42:16 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:16 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:16 Received HTTP response headers after 3.8742ms - 200 5 
+03/16/2021 20:42:16 End processing HTTP request after 5.1057ms - 200 5 
+03/16/2021 20:42:16 HTTP "GET" "/Admin/UsersTable" responded 200 in 10.1932 ms 8 
+03/16/2021 20:42:17 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:42:17 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:42:18 Received HTTP response headers after 1044.9884ms - 200 5 
+03/16/2021 20:42:18 End processing HTTP request after 1046.9503ms - 200 5 
+03/16/2021 20:42:18 AdminService: unblock user: user with id = 4 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:18 HTTP "GET" "/Admin/UnblockUser?id=4" responded 302 in 1049.5579 ms 5 
+03/16/2021 20:42:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:42:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:42:18 Received HTTP response headers after 3.886ms - 200 5 
+03/16/2021 20:42:18 End processing HTTP request after 5.233ms - 200 5 
+03/16/2021 20:42:18 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.9891 ms 5 
+03/16/2021 20:42:19 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:42:19 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:42:20 Received HTTP response headers after 988.0508ms - 200 5 
+03/16/2021 20:42:20 End processing HTTP request after 989.8174ms - 200 5 
+03/16/2021 20:42:20 AdminService: unblock user: user with id = 13 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:20 HTTP "GET" "/Admin/UnblockUser?id=13" responded 302 in 992.1159 ms 5 
+03/16/2021 20:42:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:42:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:42:20 Received HTTP response headers after 4.2235ms - 200 9 
+03/16/2021 20:42:20 End processing HTTP request after 5.901ms - 200 9 
+03/16/2021 20:42:20 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.9375 ms 9 
+03/16/2021 20:42:21 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 15 
+03/16/2021 20:42:21 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 15 
+03/16/2021 20:42:22 Received HTTP response headers after 1180.8252ms - 200 5 
+03/16/2021 20:42:22 End processing HTTP request after 1182.4066ms - 200 5 
+03/16/2021 20:42:22 AdminService: block user: user with id = 12 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 12 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:22 HTTP "GET" "/Admin/BlockUser?id=12" responded 302 in 1184.5150 ms 5 
+03/16/2021 20:42:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:22 Received HTTP response headers after 3.9937ms - 200 9 
+03/16/2021 20:42:22 End processing HTTP request after 5.6049ms - 200 9 
+03/16/2021 20:42:22 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.9196 ms 9 
+03/16/2021 20:42:23 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:23 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:24 Received HTTP response headers after 1008.2245ms - 200 5 
+03/16/2021 20:42:24 End processing HTTP request after 1009.5838ms - 200 5 
+03/16/2021 20:42:24 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:24 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1012.1098 ms 5 
+03/16/2021 20:42:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:24 Received HTTP response headers after 4.0229ms - 200 5 
+03/16/2021 20:42:24 End processing HTTP request after 5.2557ms - 200 5 
+03/16/2021 20:42:24 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.8621 ms 5 
+03/16/2021 20:42:29 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:42:29 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:42:30 Received HTTP response headers after 1010.9922ms - 200 5 
+03/16/2021 20:42:30 End processing HTTP request after 1012.6534ms - 200 5 
+03/16/2021 20:42:30 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:30 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1015.9417 ms 5 
+03/16/2021 20:42:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:30 Received HTTP response headers after 4.0643ms - 200 5 
+03/16/2021 20:42:30 End processing HTTP request after 5.4697ms - 200 5 
+03/16/2021 20:42:30 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.4267 ms 5 
+03/16/2021 20:42:31 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:42:31 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:42:32 Received HTTP response headers after 1110.4954ms - 200 5 
+03/16/2021 20:42:32 End processing HTTP request after 1112.1743ms - 200 5 
+03/16/2021 20:42:32 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:32 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 1114.2399 ms 5 
+03/16/2021 20:42:32 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:32 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:32 Received HTTP response headers after 3.4582ms - 200 5 
+03/16/2021 20:42:32 End processing HTTP request after 4.7344ms - 200 5 
+03/16/2021 20:42:32 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.3705 ms 5 
+03/16/2021 20:42:34 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:34 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:35 Received HTTP response headers after 1019.8915ms - 200 5 
+03/16/2021 20:42:35 End processing HTTP request after 1022.4063ms - 200 5 
+03/16/2021 20:42:35 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:35 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1025.0627 ms 5 
+03/16/2021 20:42:35 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:35 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:35 Received HTTP response headers after 3.4233ms - 200 5 
+03/16/2021 20:42:35 End processing HTTP request after 4.9589ms - 200 5 
+03/16/2021 20:42:35 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.7510 ms 5 
+03/16/2021 20:42:36 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:42:36 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:42:37 Received HTTP response headers after 1148.603ms - 200 5 
+03/16/2021 20:42:37 End processing HTTP request after 1150.3694ms - 200 5 
+03/16/2021 20:42:37 AdminService: block user: user with id = 12 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 12 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:37 HTTP "GET" "/Admin/BlockUser?id=12" responded 302 in 1152.4910 ms 5 
+03/16/2021 20:42:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:37 Received HTTP response headers after 3.4825ms - 200 5 
+03/16/2021 20:42:37 End processing HTTP request after 4.7054ms - 200 5 
+03/16/2021 20:42:37 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.4641 ms 5 
+03/16/2021 20:42:39 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:42:39 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:42:41 Received HTTP response headers after 1691.5386ms - 200 9 
+03/16/2021 20:42:41 End processing HTTP request after 1693.2484ms - 200 9 
+03/16/2021 20:42:41 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:42:41 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1695.0869 ms 9 
+03/16/2021 20:42:41 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:41 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:41 Received HTTP response headers after 3.5132ms - 200 5 
+03/16/2021 20:42:41 End processing HTTP request after 4.8572ms - 200 5 
+03/16/2021 20:42:41 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.6089 ms 5 
+03/16/2021 20:42:42 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:42:42 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:42:43 Received HTTP response headers after 1060.4717ms - 200 5 
+03/16/2021 20:42:43 End processing HTTP request after 1062.3912ms - 200 5 
+03/16/2021 20:42:43 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:43 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 1064.7860 ms 5 
+03/16/2021 20:42:43 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:43 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:43 Received HTTP response headers after 3.3435ms - 200 5 
+03/16/2021 20:42:43 End processing HTTP request after 4.6672ms - 200 5 
+03/16/2021 20:42:43 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.2805 ms 5 
+03/16/2021 20:42:43 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:42:43 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:42:44 Received HTTP response headers after 1099.052ms - 200 5 
+03/16/2021 20:42:44 End processing HTTP request after 1100.5838ms - 200 5 
+03/16/2021 20:42:44 AdminService: block user: user with id = 12 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 12 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:44 HTTP "GET" "/Admin/BlockUser?id=12" responded 302 in 1102.5573 ms 5 
+03/16/2021 20:42:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:42:44 Received HTTP response headers after 3.4621ms - 200 9 
+03/16/2021 20:42:44 End processing HTTP request after 4.8721ms - 200 9 
+03/16/2021 20:42:44 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.4460 ms 9 
+03/16/2021 20:42:45 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 15 
+03/16/2021 20:42:45 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 15 
+03/16/2021 20:42:46 Received HTTP response headers after 955.6157ms - 200 5 
+03/16/2021 20:42:46 End processing HTTP request after 957.1531ms - 200 5 
+03/16/2021 20:42:46 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:42:46 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 959.0900 ms 5 
+03/16/2021 20:42:46 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:46 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:46 Received HTTP response headers after 3.4716ms - 200 5 
+03/16/2021 20:42:46 End processing HTTP request after 4.8391ms - 200 5 
+03/16/2021 20:42:46 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.4754 ms 5 
+03/16/2021 20:42:46 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:42:46 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:42:47 Received HTTP response headers after 1088.8574ms - 200 5 
+03/16/2021 20:42:47 End processing HTTP request after 1090.4868ms - 200 5 
+03/16/2021 20:42:47 AdminService: block user: user with id = 12 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 12 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:47 HTTP "GET" "/Admin/BlockUser?id=12" responded 302 in 1093.4759 ms 5 
+03/16/2021 20:42:47 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:42:47 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:42:47 Received HTTP response headers after 3.4849ms - 200 5 
+03/16/2021 20:42:47 End processing HTTP request after 4.7569ms - 200 5 
+03/16/2021 20:42:47 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.2918 ms 5 
+03/16/2021 20:42:48 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:42:48 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:42:49 Received HTTP response headers after 1161.2639ms - 200 9 
+03/16/2021 20:42:49 End processing HTTP request after 1163.0442ms - 200 9 
+03/16/2021 20:42:49 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:42:49 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 1164.9690 ms 9 
+03/16/2021 20:42:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 15 
+03/16/2021 20:42:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 15 
+03/16/2021 20:42:49 Received HTTP response headers after 3.5752ms - 200 10 
+03/16/2021 20:42:49 End processing HTTP request after 5.1351ms - 200 10 
+03/16/2021 20:42:49 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.8417 ms 10 
+03/16/2021 20:42:49 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 20 
+03/16/2021 20:42:49 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 20 
+03/16/2021 20:42:51 Received HTTP response headers after 1104.4786ms - 200 10 
+03/16/2021 20:42:51 End processing HTTP request after 1106.1464ms - 200 10 
+03/16/2021 20:42:51 AdminService: block user: user with id = 12 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 12 was not blocked at this byIdRequest. 10 
+03/16/2021 20:42:51 HTTP "GET" "/Admin/BlockUser?id=12" responded 302 in 1108.1244 ms 10 
+03/16/2021 20:42:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:51 Received HTTP response headers after 3.722ms - 200 10 
+03/16/2021 20:42:51 End processing HTTP request after 5.1343ms - 200 10 
+03/16/2021 20:42:51 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.0170 ms 10 
+03/16/2021 20:42:51 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 8 
+03/16/2021 20:42:51 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 8 
+03/16/2021 20:42:52 Received HTTP response headers after 1073.5362ms - 200 9 
+03/16/2021 20:42:52 End processing HTTP request after 1075.0475ms - 200 9 
+03/16/2021 20:42:52 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:42:52 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 1077.1917 ms 9 
+03/16/2021 20:42:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:42:52 Received HTTP response headers after 3.6798ms - 200 5 
+03/16/2021 20:42:52 End processing HTTP request after 5.5753ms - 200 5 
+03/16/2021 20:42:52 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.2916 ms 5 
+03/16/2021 20:42:53 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 20 
+03/16/2021 20:42:53 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 20 
+03/16/2021 20:42:54 Received HTTP response headers after 1133.525ms - 200 5 
+03/16/2021 20:42:54 End processing HTTP request after 1135.3572ms - 200 5 
+03/16/2021 20:42:54 AdminService: block user: user with id = 12 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 12 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:54 HTTP "GET" "/Admin/BlockUser?id=12" responded 302 in 1137.4056 ms 5 
+03/16/2021 20:42:54 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:54 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:54 Received HTTP response headers after 3.5371ms - 200 5 
+03/16/2021 20:42:54 End processing HTTP request after 4.9283ms - 200 5 
+03/16/2021 20:42:54 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.6315 ms 5 
+03/16/2021 20:42:55 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:55 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:56 Received HTTP response headers after 1091.8103ms - 200 5 
+03/16/2021 20:42:56 End processing HTTP request after 1093.4399ms - 200 5 
+03/16/2021 20:42:56 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:56 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1095.3968 ms 5 
+03/16/2021 20:42:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:42:56 Received HTTP response headers after 3.4856ms - 200 5 
+03/16/2021 20:42:56 End processing HTTP request after 4.7637ms - 200 5 
+03/16/2021 20:42:56 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.5089 ms 5 
+03/16/2021 20:42:56 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 15 
+03/16/2021 20:42:56 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 15 
+03/16/2021 20:42:57 Received HTTP response headers after 976.4215ms - 200 9 
+03/16/2021 20:42:57 End processing HTTP request after 977.952ms - 200 9 
+03/16/2021 20:42:57 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:42:57 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 979.8680 ms 9 
+03/16/2021 20:42:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:42:57 Received HTTP response headers after 3.6282ms - 200 5 
+03/16/2021 20:42:57 End processing HTTP request after 5.1101ms - 200 5 
+03/16/2021 20:42:57 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.8995 ms 5 
+03/16/2021 20:42:58 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:58 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:42:59 Received HTTP response headers after 996.7943ms - 200 5 
+03/16/2021 20:42:59 End processing HTTP request after 998.8176ms - 200 5 
+03/16/2021 20:42:59 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:42:59 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1001.0221 ms 5 
+03/16/2021 20:42:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:42:59 Received HTTP response headers after 3.5763ms - 200 9 
+03/16/2021 20:42:59 End processing HTTP request after 5.0217ms - 200 9 
+03/16/2021 20:42:59 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.8265 ms 9 
+03/16/2021 20:43:00 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 16 
+03/16/2021 20:43:00 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 16 
+03/16/2021 20:43:01 Received HTTP response headers after 1088.6645ms - 200 5 
+03/16/2021 20:43:01 End processing HTTP request after 1090.8812ms - 200 5 
+03/16/2021 20:43:01 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:01 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1093.5158 ms 5 
+03/16/2021 20:43:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:43:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 8 
+03/16/2021 20:43:01 Received HTTP response headers after 3.653ms - 200 5 
+03/16/2021 20:43:01 End processing HTTP request after 5.1382ms - 200 5 
+03/16/2021 20:43:01 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.2637 ms 5 
+03/16/2021 20:43:01 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 14 
+03/16/2021 20:43:01 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 14 
+03/16/2021 20:43:01 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:43:01 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:43:02 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:43:02 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:43:02 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:43:02 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:43:02 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:43:02 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:43:02 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:43:02 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 8 
+03/16/2021 20:43:02 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:43:02 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/16/2021 20:43:02 Received HTTP response headers after 1231.5742ms - 200 5 
+03/16/2021 20:43:02 End processing HTTP request after 1233.1251ms - 200 5 
+03/16/2021 20:43:02 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:02 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1235.1678 ms 5 
+03/16/2021 20:43:03 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 14 
+03/16/2021 20:43:03 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 14 
+03/16/2021 20:43:03 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:43:03 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:43:03 Received HTTP response headers after 1412.8919ms - 200 9 
+03/16/2021 20:43:03 End processing HTTP request after 1414.4608ms - 200 9 
+03/16/2021 20:43:03 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 9 
+03/16/2021 20:43:03 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1416.2859 ms 9 
+03/16/2021 20:43:03 Received HTTP response headers after 1871.9203ms - 200 9 
+03/16/2021 20:43:03 End processing HTTP request after 1873.6977ms - 200 9 
+03/16/2021 20:43:03 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 9 
+03/16/2021 20:43:03 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1875.5816 ms 9 
+03/16/2021 20:43:04 Received HTTP response headers after 1914.6508ms - 200 5 
+03/16/2021 20:43:04 End processing HTTP request after 1916.3107ms - 200 5 
+03/16/2021 20:43:04 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:04 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1918.1739 ms 5 
+03/16/2021 20:43:04 Received HTTP response headers after 2145.8085ms - 200 10 
+03/16/2021 20:43:04 End processing HTTP request after 2147.3383ms - 200 10 
+03/16/2021 20:43:04 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 10 
+03/16/2021 20:43:04 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 2149.1527 ms 10 
+03/16/2021 20:43:05 Received HTTP response headers after 2488.1187ms - 200 10 
+03/16/2021 20:43:05 End processing HTTP request after 2489.8573ms - 200 10 
+03/16/2021 20:43:05 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 10 
+03/16/2021 20:43:05 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 2492.3672 ms 10 
+03/16/2021 20:43:05 Received HTTP response headers after 2702.4711ms - 200 5 
+03/16/2021 20:43:05 End processing HTTP request after 2703.9571ms - 200 5 
+03/16/2021 20:43:05 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:05 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 2705.7873 ms 5 
+03/16/2021 20:43:06 Received HTTP response headers after 2957.1488ms - 200 5 
+03/16/2021 20:43:06 End processing HTTP request after 2958.8962ms - 200 5 
+03/16/2021 20:43:06 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:06 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 2960.6319 ms 5 
+03/16/2021 20:43:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:06 Received HTTP response headers after 3.3466ms - 200 5 
+03/16/2021 20:43:06 End processing HTTP request after 4.7314ms - 200 5 
+03/16/2021 20:43:06 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.1925 ms 5 
+03/16/2021 20:43:06 Received HTTP response headers after 3369.191ms - 200 5 
+03/16/2021 20:43:06 End processing HTTP request after 3371.4874ms - 200 5 
+03/16/2021 20:43:06 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:06 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 3373.5543 ms 5 
+03/16/2021 20:43:09 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:43:09 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 4 
+03/16/2021 20:43:10 Received HTTP response headers after 1121.3522ms - 200 9 
+03/16/2021 20:43:10 End processing HTTP request after 1123.0528ms - 200 9 
+03/16/2021 20:43:10 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:43:10 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1124.8984 ms 9 
+03/16/2021 20:43:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:43:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/16/2021 20:43:10 Received HTTP response headers after 3.615ms - 200 9 
+03/16/2021 20:43:10 End processing HTTP request after 5.1696ms - 200 9 
+03/16/2021 20:43:10 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.9892 ms 9 
+03/16/2021 20:43:11 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:43:11 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 12 
+03/16/2021 20:43:12 Received HTTP response headers after 1023.8146ms - 200 5 
+03/16/2021 20:43:12 End processing HTTP request after 1025.5727ms - 200 5 
+03/16/2021 20:43:12 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:12 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1027.7935 ms 5 
+03/16/2021 20:43:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:43:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:43:12 Received HTTP response headers after 3.7016ms - 200 5 
+03/16/2021 20:43:12 End processing HTTP request after 5.0411ms - 200 5 
+03/16/2021 20:43:12 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.5711 ms 5 
+03/16/2021 20:43:13 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:13 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:13 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:13 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:13 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:13 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:13 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:13 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:13 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:13 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:14 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:14 Received HTTP response headers after 1113.8948ms - 200 5 
+03/16/2021 20:43:14 End processing HTTP request after 1115.9045ms - 200 5 
+03/16/2021 20:43:14 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:14 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1118.1443 ms 5 
+03/16/2021 20:43:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:14 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:14 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:14 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:14 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:14 Received HTTP response headers after 1452.9786ms - 200 10 
+03/16/2021 20:43:14 End processing HTTP request after 1454.3288ms - 200 10 
+03/16/2021 20:43:14 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 10 
+03/16/2021 20:43:14 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1456.1409 ms 10 
+03/16/2021 20:43:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:14 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:15 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:43:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:43:15 Received HTTP response headers after 1779.3176ms - 200 9 
+03/16/2021 20:43:15 End processing HTTP request after 1780.9569ms - 200 9 
+03/16/2021 20:43:15 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:43:15 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1783.3563 ms 9 
+03/16/2021 20:43:15 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:15 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:15 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:15 Received HTTP response headers after 2121.5977ms - 200 9 
+03/16/2021 20:43:15 End processing HTTP request after 2123.5138ms - 200 9 
+03/16/2021 20:43:15 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:43:15 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 2125.2801 ms 9 
+03/16/2021 20:43:15 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:16 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:16 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:16 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:16 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:16 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:16 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:16 Received HTTP response headers after 2543.7727ms - 200 10 
+03/16/2021 20:43:16 End processing HTTP request after 2545.1816ms - 200 10 
+03/16/2021 20:43:16 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 10 
+03/16/2021 20:43:16 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 2546.7626 ms 10 
+03/16/2021 20:43:16 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:16 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:16 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:16 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:16 Received HTTP response headers after 964.6717ms - 500 10 
+03/16/2021 20:43:16 End processing HTTP request after 966.4763ms - 500 10 
+03/16/2021 20:43:16 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 968.3220 ms 10 
+03/16/2021 20:43:16 Received HTTP response headers after 1317.313ms - 500 10 
+03/16/2021 20:43:16 End processing HTTP request after 1318.8159ms - 500 10 
+03/16/2021 20:43:16 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1319.8788 ms 10 
+03/16/2021 20:43:16 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:16 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:17 Received HTTP response headers after 3052.0027ms - 200 5 
+03/16/2021 20:43:17 End processing HTTP request after 3055.0988ms - 200 5 
+03/16/2021 20:43:17 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:17 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:17 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 3082.7351 ms 9 
+03/16/2021 20:43:17 Received HTTP response headers after 1108.1547ms - 500 9 
+03/16/2021 20:43:17 End processing HTTP request after 1109.8136ms - 500 9 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1111.3354 ms 9 
+03/16/2021 20:43:17 Received HTTP response headers after 950.4279ms - 500 9 
+03/16/2021 20:43:17 End processing HTTP request after 951.9843ms - 500 9 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 953.0180 ms 9 
+03/16/2021 20:43:17 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:17 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:17 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:17 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:17 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:17 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:17 Received HTTP response headers after 3515.7261ms - 200 10 
+03/16/2021 20:43:17 End processing HTTP request after 3517.806ms - 200 10 
+03/16/2021 20:43:17 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 10 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 3523.4563 ms 10 
+03/16/2021 20:43:17 Received HTTP response headers after 1010.7233ms - 500 10 
+03/16/2021 20:43:17 End processing HTTP request after 1012.6703ms - 500 10 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1014.3878 ms 10 
+03/16/2021 20:43:17 Received HTTP response headers after 1197.1523ms - 500 10 
+03/16/2021 20:43:17 End processing HTTP request after 1199.0582ms - 500 10 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1200.6747 ms 10 
+03/16/2021 20:43:17 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:17 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:17 Received HTTP response headers after 3551.9477ms - 200 5 
+03/16/2021 20:43:17 End processing HTTP request after 3553.5179ms - 200 5 
+03/16/2021 20:43:17 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 3564.5317 ms 5 
+03/16/2021 20:43:17 Received HTTP response headers after 831.9925ms - 500 5 
+03/16/2021 20:43:17 End processing HTTP request after 833.5418ms - 500 5 
+03/16/2021 20:43:17 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 834.9483 ms 5 
+03/16/2021 20:43:18 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:18 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:18 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:43:18 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 14 
+03/16/2021 20:43:18 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:18 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:18 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:18 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:18 Received HTTP response headers after 4136.136ms - 200 5 
+03/16/2021 20:43:18 End processing HTTP request after 4138.5583ms - 200 5 
+03/16/2021 20:43:18 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:18 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 4140.9176 ms 5 
+03/16/2021 20:43:18 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:18 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 12 
+03/16/2021 20:43:18 Received HTTP response headers after 1040.4024ms - 500 5 
+03/16/2021 20:43:18 End processing HTTP request after 1042.1929ms - 500 5 
+03/16/2021 20:43:18 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1043.9233 ms 5 
+03/16/2021 20:43:18 Received HTTP response headers after 1238.3867ms - 500 5 
+03/16/2021 20:43:18 End processing HTTP request after 1239.8586ms - 500 5 
+03/16/2021 20:43:18 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1240.8352 ms 5 
+03/16/2021 20:43:19 Received HTTP response headers after 832.4242ms - 500 5 
+03/16/2021 20:43:19 End processing HTTP request after 833.8298ms - 500 5 
+03/16/2021 20:43:19 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 835.1384 ms 5 
+03/16/2021 20:43:19 Received HTTP response headers after 4369.3552ms - 200 5 
+03/16/2021 20:43:19 End processing HTTP request after 4370.7696ms - 200 5 
+03/16/2021 20:43:19 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:19 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 4372.4812 ms 5 
+03/16/2021 20:43:19 Received HTTP response headers after 4122.789ms - 200 5 
+03/16/2021 20:43:19 End processing HTTP request after 4124.325ms - 200 5 
+03/16/2021 20:43:19 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:19 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 4126.1478 ms 5 
+03/16/2021 20:43:19 Received HTTP response headers after 944.9109ms - 500 5 
+03/16/2021 20:43:19 End processing HTTP request after 946.5386ms - 500 5 
+03/16/2021 20:43:19 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 947.7974 ms 5 
+03/16/2021 20:43:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:43:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:43:19 Received HTTP response headers after 3.631ms - 200 5 
+03/16/2021 20:43:19 End processing HTTP request after 5.1064ms - 200 5 
+03/16/2021 20:43:19 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.8005 ms 5 
+03/16/2021 20:43:19 Received HTTP response headers after 5143.6785ms - 200 5 
+03/16/2021 20:43:19 End processing HTTP request after 5145.2798ms - 200 5 
+03/16/2021 20:43:19 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:19 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 5147.2048 ms 5 
+03/16/2021 20:43:20 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 14 
+03/16/2021 20:43:20 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 14 
+03/16/2021 20:43:21 Received HTTP response headers after 5856.3456ms - 200 5 
+03/16/2021 20:43:21 End processing HTTP request after 5857.794ms - 200 5 
+03/16/2021 20:43:21 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:21 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 5859.4419 ms 5 
+03/16/2021 20:43:21 Received HTTP response headers after 6450.706ms - 200 5 
+03/16/2021 20:43:21 End processing HTTP request after 6452.6117ms - 200 5 
+03/16/2021 20:43:21 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:21 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 6454.5847 ms 5 
+03/16/2021 20:43:22 Received HTTP response headers after 6405.6217ms - 200 5 
+03/16/2021 20:43:22 End processing HTTP request after 6407.2872ms - 200 5 
+03/16/2021 20:43:22 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:22 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 6409.0821 ms 5 
+03/16/2021 20:43:22 Received HTTP response headers after 4639.7651ms - 200 5 
+03/16/2021 20:43:22 End processing HTTP request after 4641.4216ms - 200 5 
+03/16/2021 20:43:22 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:22 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 4643.1913 ms 5 
+03/16/2021 20:43:23 Received HTTP response headers after 5462.0342ms - 200 5 
+03/16/2021 20:43:23 End processing HTTP request after 5463.5232ms - 200 5 
+03/16/2021 20:43:23 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:23 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 5465.9256 ms 5 
+03/16/2021 20:43:23 Received HTTP response headers after 7167.7135ms - 200 5 
+03/16/2021 20:43:23 End processing HTTP request after 7169.4109ms - 200 5 
+03/16/2021 20:43:23 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:23 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 7171.1537 ms 5 
+03/16/2021 20:43:24 Received HTTP response headers after 6839.174ms - 200 5 
+03/16/2021 20:43:24 End processing HTTP request after 6840.6796ms - 200 5 
+03/16/2021 20:43:24 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:24 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 6842.5626 ms 5 
+03/16/2021 20:43:24 Received HTTP response headers after 7674.0407ms - 200 5 
+03/16/2021 20:43:24 End processing HTTP request after 7675.8006ms - 200 5 
+03/16/2021 20:43:24 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:24 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 7677.4890 ms 5 
+03/16/2021 20:43:25 Received HTTP response headers after 6659.0938ms - 200 5 
+03/16/2021 20:43:25 End processing HTTP request after 6660.559ms - 200 5 
+03/16/2021 20:43:25 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:25 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 6662.4336 ms 5 
+03/16/2021 20:43:25 Received HTTP response headers after 7114.0819ms - 200 5 
+03/16/2021 20:43:25 End processing HTTP request after 7115.6681ms - 200 5 
+03/16/2021 20:43:25 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:25 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 7117.2629 ms 5 
+03/16/2021 20:43:26 Received HTTP response headers after 5603.6409ms - 200 5 
+03/16/2021 20:43:26 End processing HTTP request after 5605.2354ms - 200 5 
+03/16/2021 20:43:26 AdminService: block user: user with id = 4 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 4 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:26 HTTP "GET" "/Admin/BlockUser?id=4" responded 302 in 5607.3531 ms 5 
+03/16/2021 20:43:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:43:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/16/2021 20:43:26 Received HTTP response headers after 3.8289ms - 200 5 
+03/16/2021 20:43:26 End processing HTTP request after 5.1976ms - 200 5 
+03/16/2021 20:43:26 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.7833 ms 5 
+03/16/2021 20:43:28 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 13 
+03/16/2021 20:43:28 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 13 
+03/16/2021 20:43:29 Received HTTP response headers after 1092.9173ms - 200 5 
+03/16/2021 20:43:29 End processing HTTP request after 1094.539ms - 200 5 
+03/16/2021 20:43:29 AdminService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:29 HTTP "GET" "/Admin/BlockUser?id=5" responded 302 in 1096.6328 ms 5 
+03/16/2021 20:43:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:29 Received HTTP response headers after 3.9311ms - 200 10 
+03/16/2021 20:43:29 End processing HTTP request after 5.4288ms - 200 10 
+03/16/2021 20:43:29 HTTP "GET" "/Admin/UsersTable" responded 200 in 7.3079 ms 10 
+03/16/2021 20:43:32 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:32 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 13 
+03/16/2021 20:43:33 Received HTTP response headers after 1087.678ms - 200 10 
+03/16/2021 20:43:33 End processing HTTP request after 1089.3007ms - 200 10 
+03/16/2021 20:43:33 AdminService: unblock user: user with id = 12 was unblocked by ilyushin_misha@mail.ru 10 
+03/16/2021 20:43:33 HTTP "GET" "/Admin/UnblockUser?id=12" responded 302 in 1091.1916 ms 10 
+03/16/2021 20:43:33 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:33 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:33 Received HTTP response headers after 3.6664ms - 200 5 
+03/16/2021 20:43:33 End processing HTTP request after 4.8755ms - 200 5 
+03/16/2021 20:43:33 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.3816 ms 5 
+03/16/2021 20:43:35 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:35 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:36 Received HTTP response headers after 1109.3649ms - 200 5 
+03/16/2021 20:43:36 End processing HTTP request after 1111.0844ms - 200 5 
+03/16/2021 20:43:36 AdminService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 5 
+03/16/2021 20:43:36 HTTP "GET" "/Admin/UnblockUser?id=5" responded 302 in 1113.1217 ms 5 
+03/16/2021 20:43:36 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:36 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 11 
+03/16/2021 20:43:36 Received HTTP response headers after 9.3459ms - 200 10 
+03/16/2021 20:43:36 End processing HTTP request after 10.73ms - 200 10 
+03/16/2021 20:43:36 HTTP "GET" "/Admin/UsersTable" responded 200 in 12.8825 ms 10 
+03/16/2021 20:43:37 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:37 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 11 
+03/16/2021 20:43:38 Received HTTP response headers after 1073.1942ms - 200 9 
+03/16/2021 20:43:38 End processing HTTP request after 1075.3156ms - 200 9 
+03/16/2021 20:43:38 AdminService: unblock user: user with id = 4 was unblocked by ilyushin_misha@mail.ru 9 
+03/16/2021 20:43:38 HTTP "GET" "/Admin/UnblockUser?id=4" responded 302 in 1077.2818 ms 9 
+03/16/2021 20:43:38 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:43:38 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/16/2021 20:43:38 Received HTTP response headers after 3.3351ms - 200 9 
+03/16/2021 20:43:38 End processing HTTP request after 5.0349ms - 200 9 
+03/16/2021 20:43:38 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.8205 ms 9 
+03/16/2021 20:43:38 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:43:38 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 11 
+03/16/2021 20:43:40 Received HTTP response headers after 1087.0047ms - 200 5 
+03/16/2021 20:43:40 End processing HTTP request after 1088.5377ms - 200 5 
+03/16/2021 20:43:40 AdminService: block user: user with id = 13 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 13 was not blocked at this byIdRequest. 5 
+03/16/2021 20:43:40 HTTP "GET" "/Admin/BlockUser?id=13" responded 302 in 1090.3351 ms 5 
+03/16/2021 20:43:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:43:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 14 
+03/16/2021 20:43:40 Received HTTP response headers after 3.7304ms - 200 10 
+03/16/2021 20:43:40 End processing HTTP request after 5.1637ms - 200 10 
+03/16/2021 20:43:40 HTTP "GET" "/Admin/UsersTable" responded 200 in 6.7867 ms 10 

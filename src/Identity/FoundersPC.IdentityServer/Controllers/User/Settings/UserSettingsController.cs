@@ -1,8 +1,10 @@
 ﻿#region Using namespaces
 
-using System.Security.Claims;
 using System.Threading.Tasks;
+using AutoMapper;
+using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,60 +14,31 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.User.Settings
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("identityAPI/user/settings")]
+    [Route("FoundersPCIdentity/User/Settings")]
     [ApiController]
     public class UserSettingsController : Controller
     {
-        private readonly IUsersService _usersService;
+        private readonly IMapper _mapper;
+        private readonly IUsersInformationService _usersInformationService;
 
-        public UserSettingsController(IUsersService usersService) => _usersService = usersService;
-
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [HttpGet]
-        [Route("notifications/{email}")]
-        public async Task<IActionResult> GetUserNotifications(string email)
+        public UserSettingsController(IUsersInformationService usersInformationService, IMapper mapper)
         {
-            if (email is null) return BadRequest();
-
-            var isRequestGranted = false;
-
-            if (HttpContext.User.IsInRole("Administrator"))
-                isRequestGranted = true;
-            else if (HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType) == email) isRequestGranted = true;
-
-            if (!isRequestGranted) return Unauthorized();
-
-            var user = await _usersService.FindUserByEmailAsync(email);
-
-            if (user is null) return NotFound();
-
-            return Json(new
-                        {
-                            SendNotificationOnEntrance = user.SendMessageOnEntrance,
-                            SendNotificationOnUsingAPI = user.SendMessageOnApiRequest
-                        });
+            _usersInformationService = usersInformationService;
+            _mapper = mapper;
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
-        [Route("login/{email}")]
-        public async Task<ActionResult> GetUserLogin(string email)
+        [Route("OverallInformation/{email}")]
+        public async Task<ActionResult<ApplicationUser>> GetOverallInformation(string email)
         {
             if (email is null) return BadRequest();
 
-            var isRequestGranted = false;
+            var user = await _usersInformationService.FindUserByEmailAsync(email);
 
-            if (HttpContext.User.IsInRole("Administrator"))
-                isRequestGranted = true;
-            else if (HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType) == email) isRequestGranted = true;
+            if (User is null) return NotFound();
 
-            if (!isRequestGranted) return Unauthorized();
-
-            var user = await _usersService.FindUserByEmailAsync(email);
-
-            if (user is null) return NotFound();
-
-            return Ok(user.Login);
+            return _mapper.Map<UserEntityReadDto, ApplicationUser>(user);
         }
     }
 }

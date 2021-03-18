@@ -25,7 +25,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
 
         public async Task<ApiAccessUserToken> GetByTokenAsync(string token) =>
             await Context.Set<ApiAccessUserToken>()
-                         .SingleOrDefaultAsync(x => x.HashedToken == token);
+                         .FirstOrDefaultAsync(x => x.HashedToken == token);
 
         public async Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(int userId)
         {

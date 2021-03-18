@@ -17,8 +17,8 @@ namespace FoundersPC.API.Controllers.V1
     [Authorize]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("api/processors")]
-    [Route("api/cpus")]
+    [Route("HardwareApi/Processors")]
+    [Route("HardwareApi/Cpus")]
     public class ProcessorsController : Controller
     {
         private readonly ICPUService _cpuService;

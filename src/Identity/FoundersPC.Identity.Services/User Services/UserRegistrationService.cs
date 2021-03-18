@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
+using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
@@ -19,25 +21,28 @@ namespace FoundersPC.Identity.Services.User_Services
     {
         private readonly PasswordEncryptorService _encryptorService;
         private readonly ILogger<UserRegistrationService> _logger;
+        private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
 
         public UserRegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
                                        IMapper mapper,
                                        PasswordEncryptorService encryptorService,
-                                       ILogger<UserRegistrationService> logger
+                                       ILogger<UserRegistrationService> logger,
+                                       IMailService mailService
         )
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
             _mapper = mapper;
             _encryptorService = encryptorService;
             _logger = logger;
+            _mailService = mailService;
         }
 
         public async Task<bool> RegisterDefaultUserAsync(string email, string password)
         {
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
-                .SingleOrDefault(role => role.RoleTitle == "DefaultUser");
+                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.DefaultUser.ToString());
 
             if (defaultUserRole is null)
             {
@@ -54,7 +59,7 @@ namespace FoundersPC.Identity.Services.User_Services
         public async Task<bool> RegisterManagerAsync(string email, string password)
         {
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
-                .SingleOrDefault(role => role.RoleTitle == "Manager");
+                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.Manager.ToString());
 
             if (defaultUserRole is null)
             {
@@ -117,6 +122,8 @@ namespace FoundersPC.Identity.Services.User_Services
             await _unitOfWorkUsersIdentity.UsersRepository.AddAsync(newUser);
 
             var saveChangesResult = await _unitOfWorkUsersIdentity.SaveChangesAsync();
+
+            await _mailService.SendRegistrationNotificationAsync(email);
 
             return saveChangesResult > 0;
         }

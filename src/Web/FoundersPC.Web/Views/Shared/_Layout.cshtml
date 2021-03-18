@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using FoundersPC.ApplicationShared
+<!DOCTYPE html>
 <html>
 <head>
     <meta
@@ -16,6 +17,7 @@
     <link
         href="~/css/navbar.css"
         rel="stylesheet"/>
+    @await RenderSectionAsync("Styles", false);
 </head>
 <body>
 <nav
@@ -79,8 +81,9 @@
                      my-xxl-0 my-xl-0 my-lg-0 my-md-3 my-sm-3 my-3">
                     <a
                         aria-current="page"
-                        class="btn btn-outline-warning nav-link text-light"
-                        href="#">
+                        asp-action="SpaceInvaders"
+                        asp-controller="Home"
+                        class="btn btn-outline-warning nav-link text-light">
                         Privacy
                     </a>
                 </li>
@@ -108,10 +111,23 @@
                                     <a
                                         asp-action="Profile"
                                         asp-controller="AccountSettings"
-                                        class="btn btn-black dropdown-item text-center text-info">
+                                        class="btn dropdown-item text-center text-info">
                                         Settings
                                     </a>
                                 </li>
+                                @{
+                                    if (User.IsInRole(ApplicationRoles.Administrator.ToString()))
+                                    {
+                                        <li>
+                                            <a
+                                                asp-action="UsersTable"
+                                                asp-controller="Admin"
+                                                class="btn dropdown-item text-center text-info">
+                                                UsersTable
+                                            </a>
+                                        </li>
+                                    }
+                                }
                                 <li>
                                     <hr
                                         class="hr-runner"/>
@@ -151,7 +167,6 @@
     class="container">
     @RenderBody()
 </div>
-
 <script
     src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
 <script
@@ -159,8 +174,6 @@
 <script
     asp-append-version="true"
     src="~/js/site.js"></script>
-<script
-    src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 @await RenderSectionAsync("Scripts", false)
 </body>
 </html>

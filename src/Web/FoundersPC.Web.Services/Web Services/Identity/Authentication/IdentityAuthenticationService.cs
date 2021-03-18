@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.RequestResponseShared.Request.Authentication;
@@ -54,7 +55,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             using var client = _httpClientFactory.CreateClient("Sign In client");
             PrepareRequest(client);
 
-            var signInRequest = await client.PostAsJsonAsync("authentication/login",
+            var signInRequest = await client.PostAsJsonAsync("Login",
                                                              new UserSignInRequest
                                                              {
                                                                  LoginOrEmail = emailOrLogin,
@@ -94,14 +95,21 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
-            var signInRequest = await client.PostAsJsonAsync("authentication/login", mappedRequestModel);
+            var signInRequest = await client.PostAsJsonAsync("Login", mappedRequestModel);
+
+            if (!signInRequest.IsSuccessStatusCode)
+            {
+                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)} to Identity server returned a server error {signInRequest.StatusCode}");
+
+                throw new NetworkInformationException((int)signInRequest.StatusCode);
+            }
 
             var signInResponseContent = await signInRequest.Content.ReadFromJsonAsync<UserLoginResponse>();
 
             return signInResponseContent;
         }
 
-        public async Task<UserRegisterResponse> SignUpAsync(string email, string rawPassword)
+        public async Task<UserSignUpResponse> SignUpAsync(string email, string rawPassword)
         {
             if (email is null)
             {
@@ -120,19 +128,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             var client = _httpClientFactory.CreateClient("Sign Up client");
             PrepareRequest(client);
 
-            var signUpRequest = await client.PostAsJsonAsync("authentication/registration",
+            var signUpRequest = await client.PostAsJsonAsync("Registration",
                                                              new UserSignUpRequest
                                                              {
                                                                  Email = email,
                                                                  Password = rawPassword
                                                              });
 
-            var signUpResponseContent = await signUpRequest.Content.ReadFromJsonAsync<UserRegisterResponse>();
+            var signUpResponseContent = await signUpRequest.Content.ReadFromJsonAsync<UserSignUpResponse>();
 
             return signUpResponseContent;
         }
 
-        public async Task<UserRegisterResponse> SignUpAsync(SignUpViewModel model)
+        public async Task<UserSignUpResponse> SignUpAsync(SignUpViewModel model)
         {
             if (model is null)
             {
@@ -160,9 +168,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
-            var signUpRequest = await client.PostAsJsonAsync("authentication/registration", mappedRequestModel);
+            var signUpRequest = await client.PostAsJsonAsync("Registration", mappedRequestModel);
 
-            var signUpResponseContent = await signUpRequest.Content.ReadFromJsonAsync<UserRegisterResponse>();
+            var signUpResponseContent = await signUpRequest.Content.ReadFromJsonAsync<UserSignUpResponse>();
 
             return signUpResponseContent;
         }
@@ -179,7 +187,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             var client = _httpClientFactory.CreateClient("Forgot password client");
             PrepareRequest(client);
 
-            var forgotPasswordRequest = await client.PostAsJsonAsync("authentication/forgotpassword",
+            var forgotPasswordRequest = await client.PostAsJsonAsync("ForgotPassword",
                                                                      new UserForgotPasswordRequest
                                                                      {
                                                                          Email = email
@@ -211,7 +219,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);
 
-            var forgotPasswordRequest = await client.PostAsJsonAsync("authentication/forgotpassword",
+            var forgotPasswordRequest = await client.PostAsJsonAsync("ForgotPassword",
                                                                      mappedRequestModel);
 
             var forgotPasswordResponseContent = await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
@@ -221,7 +229,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         private void PrepareRequest(HttpClient client)
         {
-            client.BaseAddress = new Uri(_baseAddresses.IdentityApiBaseAddress);
+            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

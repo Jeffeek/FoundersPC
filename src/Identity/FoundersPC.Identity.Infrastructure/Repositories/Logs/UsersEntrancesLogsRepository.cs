@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
 using FoundersPC.Identity.Domain.Entities.Logs;
