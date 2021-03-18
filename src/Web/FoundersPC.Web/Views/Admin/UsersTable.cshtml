@@ -3,9 +3,11 @@
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
+@section Styles {
     <link
         href="~/css/users-table.css"
         rel="stylesheet"/>
+}
 }
 
 <div
@@ -180,13 +182,17 @@
 @section Scripts
 {
     <script>
-        $(document).ready(function() {
-            const blockButtons = document.selectNodes(".block-user");
-            console.log(blockButtons);
-            for (let button in blockButtons) {
-                button.addEventListener('click', () => console.log('click'));
-            }
-            console.log(blockButtons);
-        });
+        $(document).
+            ready(
+                function ()
+                {
+                    const blockButtons = document.selectNodes(".block-user");
+                    console.log(blockButtons);
+                    for (let button in blockButtons)
+                    {
+                        button.addEventListener('click', () => console.log('click'));
+                    }
+                    console.log(blockButtons);
+                });
     </script>
 }

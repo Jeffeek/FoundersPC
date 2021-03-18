@@ -27,6 +27,10 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
 
         Task<bool> UnblockUserByEmailAsync(string email, string adminToken);
 
+        Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken);
+
+        Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken);
+
         Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken);
 
         Task<ApplicationUserEntrance> GetEntranceByIdAsync(int id, string adminToken);

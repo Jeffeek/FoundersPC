@@ -1,9 +1,9 @@
 {
-  "JwtSettings":
+  "JwtSettings" :
   {
-    "Issuer": "FoundersPC.ApplicationShared",
-    "Audience": "FoundersPC_User",
-    "Key": "RHItZLdAcVEE5gI70aNg5cqgoM4J7j6MN3jSJ/75uW8=",
-    "HoursToExpire": 24
+    "Issuer" : "FoundersPC.ApplicationShared"
+    , "Audience" : "FoundersPC_User"
+    , "Key" : "RHItZLdAcVEE5gI70aNg5cqgoM4J7j6MN3jSJ/75uW8="
+    , "HoursToExpire" : 24
   }
 }

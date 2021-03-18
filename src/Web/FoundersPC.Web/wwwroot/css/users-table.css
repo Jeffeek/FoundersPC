@@ -1,15 +1,18 @@
-.table-wrapper {
+.table-wrapper
+{
     border-radius: 3px;
     box-shadow: 20px 20px 200px #044d50 !important;
     padding: 1%;
 }
 
-.table-title {
+.table-title
+{
     background: #252525;
     color: rgb(197, 197, 197);
 }
 
-.table-title .btn {
+.table-title .btn
+{
     border-radius: 50px;
     font-size: 14px;
 }

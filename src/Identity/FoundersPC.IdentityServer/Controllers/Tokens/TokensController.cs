@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

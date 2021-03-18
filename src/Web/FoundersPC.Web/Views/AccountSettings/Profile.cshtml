@@ -1,11 +1,13 @@
 ﻿@model FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings.AccountSettingsViewModel
 
 @{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+@section Styles {
     <link
         href="~/css/account.css"
         rel="stylesheet"/>
-    ViewBag.Title = "Account";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 }
 
 <div

@@ -62,7 +62,7 @@ body
 
 .hr-runner
 {
-    background: rgba(253, 251, 251, 0.973);
+    background: #fdfbfb;
     height: 1px;
     overflow: hidden;
     position: relative;
@@ -166,7 +166,7 @@ body
 
 .form-label-group input:not(:placeholder-shown) ~ label
 {
-    color: rgba(199, 199, 199, 0.781);
+    color: #c7c7c7;
     font-size: 12px;
     padding-bottom: .25rem;
     padding-top: .25rem;
@@ -213,7 +213,7 @@ body
 {
     -webkit-transition: all ease-in-out 300ms;
     border-radius: 5px;
-    box-shadow: 0rem 0.5rem 2rem 0rem rgba(255, 255, 255, 0.212);
+    box-shadow: 0rem 0.1rem 0.05rem 0rem #ffffff;
     color: #fff;
     cursor: pointer;
     margin-top: 1rem;
@@ -223,7 +223,7 @@ body
 .btn-upper-animate:hover
 {
     -webkit-transform: translate(0px, -6px) scale(1.1);
-    box-shadow: 0rem 1rem 3rem 0.3rem rgba(172, 172, 172, 0.534);
+    box-shadow: 0rem 0.5rem 0.6rem 0rem #acacac;
     transform: translate(0px, -6px) scale(1.1);
 }
 
@@ -231,8 +231,8 @@ body
 
 .icon
 {
-    height: 1.5rem;
-    width: 1.5rem;
-    position: relative;
     fill: rgb(255, 255, 255);
+    height: 1.5rem;
+    position: relative;
+    width: 1.5rem;
 }

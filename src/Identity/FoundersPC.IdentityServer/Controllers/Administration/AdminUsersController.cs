@@ -199,5 +199,12 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
                        Error = $"User with email = {byEmailRequest.UserEmail} was not unblocked at this byEmailRequest."
                    };
         }
+
+        // todo: make request/response models for making user inactive and implement controller methods
+        //[HttpDelete("Inactive/By/Email")]
+        //public async Task<ActionResult<ByEmail>> MakeUserInactive()
+
+        //[HttpDelete("Inactive/By/Id")]
+        //public async Task<ActionResult<ById>> MakeUserInactive()
     }
 }

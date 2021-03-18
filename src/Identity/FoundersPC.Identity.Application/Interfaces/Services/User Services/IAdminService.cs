@@ -60,6 +60,14 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true);
 
         /// <summary>
+        ///     Makes user inactive ('removes') from database
+        /// </summary>
+        /// <param name="userEmail"></param>
+        /// <param name="sendNotification"></param>
+        /// <returns></returns>
+        Task<bool> MakeUserInactiveAsync(string userEmail, bool sendNotification = true);
+
+        /// <summary>
         ///     Blocking API token by id
         /// </summary>
         /// <param name="tokenId"></param>

@@ -55,13 +55,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                 return false;
             }
 
-            if (adminToken is null)
-            {
-                _logger.LogError($"{nameof(AdminService)}: block user: admin token was null.");
-
-                throw new ArgumentNullException(nameof(adminToken));
-            }
-
             using var client = _clientFactory.CreateClient("Block user client");
 
             PrepareRequest(client, adminToken);
@@ -107,26 +100,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                 return false;
             }
 
-            if (adminToken is null)
-            {
-                _logger.LogError($"{nameof(AdminService)}: unblock user: admin token was null.");
-
-                throw new ArgumentNullException(nameof(adminToken));
-            }
-
             using var client = _clientFactory.CreateClient("Unblock user client");
 
             PrepareRequest(client, adminToken);
 
-            var blockModel = new UnblockUserByIdRequest
-                             {
-                                 UnblockUserTokens = true,
-                                 SendNotificationToUserViaEmail = true,
-                                 UserId = id
-                             };
+            var unblockModel = new UnblockUserByIdRequest
+                               {
+                                   UnblockUserTokens = true,
+                                   SendNotificationToUserViaEmail = true,
+                                   UserId = id
+                               };
 
-            // todo: implement
-            var unblockUserRequest = await client.PutAsJsonAsync("Users/Unblock/By/Id", blockModel);
+            var unblockUserRequest = await client.PutAsJsonAsync("Users/Unblock/By/Id", unblockModel);
 
             if (!unblockUserRequest.IsSuccessStatusCode) return false;
 
@@ -151,9 +136,99 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             return false;
         }
 
-        public Task<bool> BlockUserByEmailAsync(string email, string adminToken) => throw new NotImplementedException();
+        public async Task<bool> BlockUserByEmailAsync(string email, string adminToken)
+        {
+            if (email is null)
+            {
+                _logger.LogWarning($"{nameof(AdminService)}: block user with email = null. Error");
 
-        public Task<bool> UnblockUserByEmailAsync(string email, string adminToken) => throw new NotImplementedException();
+                return false;
+            }
+
+            using var client = _clientFactory.CreateClient("Block user client");
+
+            PrepareRequest(client, adminToken);
+
+            var blockModel = new BlockUserByEmailRequest
+                             {
+                                 BlockUserTokens = true,
+                                 SendNotificationToUserViaEmail = true,
+                                 UserEmail = email
+                             };
+
+            var blockUserRequest = await client.PutAsJsonAsync("Users/Block/By/Email", blockModel);
+
+            if (!blockUserRequest.IsSuccessStatusCode) return false;
+
+            var blockingResultModel = await blockUserRequest.Content.ReadFromJsonAsync<BlockUserResponse>();
+
+            if (blockingResultModel is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: block user: {nameof(blockingResultModel)} was null after parsing");
+
+                throw new NoNullAllowedException(nameof(blockingResultModel));
+            }
+
+            if (blockingResultModel.IsBlockingSuccessful)
+            {
+                _logger.LogInformation($"{nameof(AdminService)}: block user: user with email = {email} was blocked by {blockingResultModel.AdministratorEmail}");
+
+                return true;
+            }
+
+            _logger.LogWarning($"{nameof(AdminService)}: block user: user with email = {email} was not blocked by {blockingResultModel.AdministratorEmail}. Error = {blockingResultModel.Error}");
+
+            return false;
+        }
+
+        public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken)
+        {
+            if (email is null)
+            {
+                _logger.LogWarning($"{nameof(AdminService)}: unblock user with email = null. Error");
+
+                return false;
+            }
+
+            using var client = _clientFactory.CreateClient("Unblock user client");
+
+            PrepareRequest(client, adminToken);
+
+            var unblockModel = new UnblockUserByEmailRequest
+                               {
+                                   UnblockUserTokens = true,
+                                   SendNotificationToUserViaEmail = true,
+                                   UserEmail = email
+                               };
+
+            var unblockUserRequest = await client.PutAsJsonAsync("Users/Unblock/By/Email", unblockModel);
+
+            if (!unblockUserRequest.IsSuccessStatusCode) return false;
+
+            var unblockingResultModel = await unblockUserRequest.Content.ReadFromJsonAsync<UnblockUserResponse>();
+
+            if (unblockingResultModel is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: unblock user: {nameof(unblockingResultModel)} was null after parsing");
+
+                throw new NoNullAllowedException(nameof(unblockingResultModel));
+            }
+
+            if (unblockingResultModel.IsUnblockingSuccessful)
+            {
+                _logger.LogInformation($"{nameof(AdminService)}: unblock user: user with email = {email} was unblocked by {unblockingResultModel.AdministratorEmail}");
+
+                return true;
+            }
+
+            _logger.LogWarning($"{nameof(AdminService)}: unblock user: user with email = {email} was not unblocked by {unblockingResultModel.AdministratorEmail}. Error = {unblockingResultModel.Error}");
+
+            return false;
+        }
+
+        public Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => throw new NotImplementedException();
+
+        public Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) => throw new NotImplementedException();
 
         public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken) => throw new NotImplementedException();
 
@@ -170,6 +245,13 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         private void PrepareRequest(HttpClient client, string adminToken)
         {
+            if (adminToken is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: unblock user: admin token was null.");
+
+                throw new ArgumentNullException(nameof(adminToken));
+            }
+
             client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}Admin/");
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

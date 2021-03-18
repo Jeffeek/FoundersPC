@@ -48,10 +48,24 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             _logger = logger;
         }
 
+        #region Make user inactive
+
         public async Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 
+            return await MakeUserInactiveAsync(user, sendNotification);
+        }
+
+        public async Task<bool> MakeUserInactiveAsync(string email, bool sendNotification = true)
+        {
+            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == email);
+
+            return await MakeUserInactiveAsync(user, sendNotification);
+        }
+
+        private async Task<bool> MakeUserInactiveAsync(UserEntity user, bool sendNotification)
+        {
             if (user is null) return false;
 
             if (!user.IsActive) return false;
@@ -64,6 +78,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             return await _unitOfWork.UsersRepository.UpdateAsync(user);
         }
+
+        #endregion
 
         #region New manager registration
 
@@ -83,7 +99,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
                 throw new ArgumentNullException(nameof(email));
             }
 
-            return await _registrationService.RegisterManagerAsync(email, password);
+            var registrationResult = await _registrationService.RegisterManagerAsync(email, password);
+
+            if (registrationResult) return await _mailService.SendRegistrationNotificationAsync(email, $"Password for entrance: {password}");
+
+            return false;
         }
 
         public async Task<bool> RegisterNewManagerAsync(string email)
@@ -91,11 +111,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             var random = new Random();
             var newPassword = _passwordEncryptorService.GeneratePassword(random.Next(10, 25));
 
-            var resultOfRegistration = await RegisterNewManagerAsync(email, newPassword);
-
-            var sendResult = await _mailService.SendRegistrationNotificationAsync(email, $"Password for entrance: {newPassword}");
-
-            return resultOfRegistration && sendResult;
+            return await RegisterNewManagerAsync(email, newPassword);
         }
 
         #endregion

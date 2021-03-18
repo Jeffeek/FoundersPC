@@ -4,7 +4,6 @@ using System;
 using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 using FoundersPC.Web.Models;
@@ -76,7 +75,7 @@ namespace FoundersPC.Web.Controllers
                                                                NewPasswordConfirm = String.Empty,
                                                                OldPassword = String.Empty
                                                            },
-                               NotificationsSettingsViewModel = new NotificationsSettingsViewModel()
+                               NotificationsSettingsViewModel = new NotificationsSettingsViewModel
                                                                 {
                                                                     SendNotificationOnEntrance = information.SendMessageOnEntrance,
                                                                     SendNotificationOnUsingAPI = information.SendMessageOnApiRequest

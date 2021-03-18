@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;

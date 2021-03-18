@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using FoundersPC.ApplicationShared;
 using FoundersPC.WebIdentityShared;
 
 #endregion
