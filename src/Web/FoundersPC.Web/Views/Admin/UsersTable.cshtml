@@ -65,7 +65,6 @@
                                     @if (user.IsActive)
                                     {
                                         @Html.Raw("checked")
-                                        ;
                                     }
                                     class="form-check-input"
                                     disabled
@@ -79,7 +78,6 @@
                                     @if (user.IsBlocked)
                                     {
                                         @Html.Raw("checked")
-                                        ;
                                     }
                                     class="form-check-input"
                                     disabled
@@ -166,53 +164,6 @@
                         <span
                             class="text-decoration-underline text-warning">
                             You will never restore it.
-                        </span>
-                    </label>
-                </div>
-                <button
-                    class="btn btn-dark text-light"
-                    type="submit">
-                    Submit
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Block Modal HTML -->
-<div
-    aria-hidden="true"
-    aria-labelledby="staticBackdropLabel"
-    class="bg-gradient fade modal"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    id="blockSettings"
-    tabindex="-1">
-    <div
-        class="modal-dialog">
-        <div
-            class="modal-content">
-            <div
-                class="modal-header">
-                <h5
-                    class="modal-title">
-                    Block/Unblock user
-                </h5>
-                <button
-                    aria-label="Close"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    type="button">
-                </button>
-            </div>
-            <div
-                class="bg-warning modal-body">
-                <div
-                    class="mb-3">
-                    <label>
-                        Are you sure block/unblock user with Id @Html.ViewBag.BlockId .
-                        <span
-                            class="text-decoration-underline text-success">
-                            Later you can change it.
                         </span>
                     </label>
                 </div>

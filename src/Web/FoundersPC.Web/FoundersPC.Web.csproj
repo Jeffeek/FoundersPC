@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Home\space-invaders\space-invaders.cshtml" />
+    <Content Remove="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,7 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\space-invaders\space-invaders.cshtml" />
+    <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
     <None Include="wwwroot\css\space-invaders.css" />
     <None Include="wwwroot\js\space-invaders.js" />
   </ItemGroup>
