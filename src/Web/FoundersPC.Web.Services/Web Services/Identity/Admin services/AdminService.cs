@@ -7,9 +7,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Inactivity;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
+using FoundersPC.RequestResponseShared.Response.Administration.Admin.Inactivity;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.WebIdentityShared;
@@ -43,8 +46,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         public async Task<ApplicationUser> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetByIdAsync(id, adminToken);
 
-        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) =>
-            await _usersInformationService.GetByEmailAsync(email, adminToken);
+        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) => await _usersInformationService.GetByEmailAsync(email, adminToken);
 
         public async Task<bool> BlockUserByIdAsync(int id, string adminToken)
         {
@@ -226,9 +228,83 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             return false;
         }
 
-        public Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => throw new NotImplementedException();
+        public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken)
+        {
+            if (id < 1) return false;
 
-        public Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) => throw new NotImplementedException();
+            var client = _clientFactory.CreateClient("Make user inactive client");
+
+            PrepareRequest(client, adminToken);
+
+            var requestModel = new MakeUserInactiveByIdRequest()
+                               {
+                                   SendNotificationToUserViaEmail = true,
+                                   UserId = id
+                               };
+
+            var request = await client.DeleteAsJsonAsync("Inactive/By/Id", requestModel);
+
+            if (request.IsSuccessStatusCode) return false;
+
+            var contentResult = await request.Content.ReadFromJsonAsync<MakeUserInactiveResponse>();
+
+            if (contentResult is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: Make user inactive with id = {id}. Response deserialize error");
+
+                throw new NoNullAllowedException();
+            }
+
+            if (!contentResult.IsUserMadeInactiveSuccessful)
+            {
+                _logger.LogWarning($"{nameof(AdminService)}: Make user inactive with id = {id}. Error = {contentResult.Error}");
+
+                return false;
+            }
+
+            _logger.LogInformation($"{nameof(AdminService)}: Make user inactive with id = {id}. Operation successful");
+
+            return true;
+        }
+
+        public async Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken)
+        {
+            if (email is null) return false;
+
+            var client = _clientFactory.CreateClient("Make user inactive client");
+
+            PrepareRequest(client, adminToken);
+
+            var requestModel = new MakeUserInactiveByEmailRequest()
+                               {
+                                   SendNotificationToUserViaEmail = true,
+                                   UserEmail = email
+                               };
+
+            var request = await client.DeleteAsJsonAsync("Inactive/By/Email", requestModel);
+
+            if (request.IsSuccessStatusCode) return false;
+
+            var contentResult = await request.Content.ReadFromJsonAsync<MakeUserInactiveResponse>();
+
+            if (contentResult is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: Make user inactive with email = {email}. Response deserialize error");
+
+                throw new NoNullAllowedException();
+            }
+
+            if (!contentResult.IsUserMadeInactiveSuccessful)
+            {
+                _logger.LogWarning($"{nameof(AdminService)}: Make user inactive with email = {email}. Error = {contentResult.Error}");
+
+                return false;
+            }
+
+            _logger.LogInformation($"{nameof(AdminService)}: Make user inactive with email = {email}. Operation successful");
+
+            return true;
+        }
 
         public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken) => throw new NotImplementedException();
 
@@ -247,7 +323,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         {
             if (adminToken is null)
             {
-                _logger.LogError($"{nameof(AdminService)}: unblock user: admin token was null.");
+                _logger.LogError($"{nameof(AdminService)}: admin token was null.");
 
                 throw new ArgumentNullException(nameof(adminToken));
             }
@@ -256,6 +332,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
                                                                                        adminToken);
         }

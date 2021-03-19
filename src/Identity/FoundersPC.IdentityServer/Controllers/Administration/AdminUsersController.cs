@@ -8,8 +8,10 @@ using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Inactivity;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
+using FoundersPC.RequestResponseShared.Response.Administration.Admin.Inactivity;
 using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -176,12 +178,6 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
                                       error = "Bad model"
                                   });
 
-            if (byEmailRequest.UserEmail is null)
-                return BadRequest(new
-                                  {
-                                      error = "Bad email. Id was was, expected not null"
-                                  });
-
             var blockUserResult = await _adminService.UnBlockUserAsync(byEmailRequest.UserEmail,
                                                                        byEmailRequest.SendNotificationToUserViaEmail);
 
@@ -201,10 +197,34 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         }
 
         // todo: make request/response models for making user inactive and implement controller methods
-        //[HttpDelete("Inactive/By/Email")]
-        //public async Task<ActionResult<ByEmail>> MakeUserInactive()
+        [HttpDelete("Inactive/By/Email")]
+        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(MakeUserInactiveByEmailRequest request)
+        {
+            if (ModelState.IsValid) return BadRequest();
 
-        //[HttpDelete("Inactive/By/Id")]
-        //public async Task<ActionResult<ById>> MakeUserInactive()
+            var result = await _adminService.MakeUserInactiveAsync(request.UserEmail);
+
+            return new MakeUserInactiveResponse()
+                   {
+                       AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
+                       Error = null,
+                       IsUserMadeInactiveSuccessful = result
+                   };
+        }
+
+        [HttpDelete("Inactive/By/Id")]
+        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(MakeUserInactiveByIdRequest request)
+        {
+            if (ModelState.IsValid) return BadRequest();
+
+            var result = await _adminService.MakeUserInactiveAsync(request.UserId);
+
+            return new MakeUserInactiveResponse()
+                   {
+                       AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
+                       Error = null,
+                       IsUserMadeInactiveSuccessful = result
+                   };
+        }
     }
 }

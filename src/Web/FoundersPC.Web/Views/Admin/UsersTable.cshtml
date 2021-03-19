@@ -111,7 +111,7 @@
                                         }
                                         else
                                         {
-                                            @Html.Raw("data-bs-target=\"#activeSettings\"data-bs-toggle=\"modal\"")
+                                            @Html.Raw("")
                                         }
                                     }
                                     title="Make user inactive">
@@ -130,54 +130,6 @@
         </table>
     </div>
 </div>
-<!-- Inactive Modal HTML -->
-<div
-    aria-hidden="true"
-    aria-labelledby="staticBackdropLabel"
-    class="bg-gradient fade modal"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    id="activeSettings"
-    tabindex="-1">
-    <div
-        class="modal-dialog">
-        <div
-            class="modal-content">
-            <div
-                class="modal-header">
-                <h5
-                    class="modal-title">
-                    Make user inactive
-                </h5>
-                <button
-                    aria-label="Close"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    type="button">
-                </button>
-            </div>
-            <div
-                class="bg-danger modal-body">
-                <div
-                    class="mb-3">
-                    <label
-                        class="text-light">
-                        Are you sure to remove(make inactive) user with Id = 1.
-                        <span
-                            class="text-decoration-underline text-warning">
-                            You will never restore it.
-                        </span>
-                    </label>
-                </div>
-                <button
-                    class="btn btn-dark text-light"
-                    type="submit">
-                    Submit
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
 
 @section Scripts
 {
@@ -186,13 +138,7 @@
             ready(
                 function ()
                 {
-                    const blockButtons = document.selectNodes(".block-user");
-                    console.log(blockButtons);
-                    for (let button in blockButtons)
-                    {
-                        button.addEventListener('click', () => console.log('click'));
-                    }
-                    console.log(blockButtons);
+                    
                 });
     </script>
 }
