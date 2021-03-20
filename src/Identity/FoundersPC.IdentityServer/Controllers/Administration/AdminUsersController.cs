@@ -196,15 +196,14 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
                    };
         }
 
-        // todo: make request/response models for making user inactive and implement controller methods
         [HttpDelete("Inactive/By/Email")]
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(MakeUserInactiveByEmailRequest request)
         {
-            if (ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid) return BadRequest();
 
             var result = await _adminService.MakeUserInactiveAsync(request.UserEmail);
 
-            return new MakeUserInactiveResponse()
+            return new MakeUserInactiveResponse
                    {
                        AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                        Error = null,
@@ -215,11 +214,11 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         [HttpDelete("Inactive/By/Id")]
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(MakeUserInactiveByIdRequest request)
         {
-            if (ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid) return BadRequest();
 
             var result = await _adminService.MakeUserInactiveAsync(request.UserId);
 
-            return new MakeUserInactiveResponse()
+            return new MakeUserInactiveResponse
                    {
                        AdministratorEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
                        Error = null,

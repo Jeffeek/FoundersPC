@@ -36,8 +36,16 @@ namespace FoundersPC.Web.Controllers.Administration
             return RedirectToAction("UsersTable", "Admin");
         }
 
+        [Route("MakeUserInactive")]
+        public async Task<ActionResult> MakeUserInactive([FromQuery] int id)
+        {
+            await _adminService.MakeUserInactiveByIdAsync(id, GetJwtToken());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
+
         [HttpPost]
-        public async Task<ActionResult> RegisterManager(SignUpViewModel model)
+        public async Task<ActionResult> RegisterManager([FromForm] SignUpViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest();
 

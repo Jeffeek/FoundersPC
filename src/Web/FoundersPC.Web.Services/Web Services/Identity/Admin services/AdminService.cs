@@ -46,7 +46,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         public async Task<ApplicationUser> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetByIdAsync(id, adminToken);
 
-        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) => await _usersInformationService.GetByEmailAsync(email, adminToken);
+        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) =>
+            await _usersInformationService.GetByEmailAsync(email, adminToken);
 
         public async Task<bool> BlockUserByIdAsync(int id, string adminToken)
         {
@@ -236,13 +237,13 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             PrepareRequest(client, adminToken);
 
-            var requestModel = new MakeUserInactiveByIdRequest()
+            var requestModel = new MakeUserInactiveByIdRequest
                                {
                                    SendNotificationToUserViaEmail = true,
                                    UserId = id
                                };
 
-            var request = await client.DeleteAsJsonAsync("Inactive/By/Id", requestModel);
+            var request = await client.DeleteAsJsonAsync("Users/Inactive/By/Id", requestModel);
 
             if (request.IsSuccessStatusCode) return false;
 
@@ -275,7 +276,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             PrepareRequest(client, adminToken);
 
-            var requestModel = new MakeUserInactiveByEmailRequest()
+            var requestModel = new MakeUserInactiveByEmailRequest
                                {
                                    SendNotificationToUserViaEmail = true,
                                    UserEmail = email

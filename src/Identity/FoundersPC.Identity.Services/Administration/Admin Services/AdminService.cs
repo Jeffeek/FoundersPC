@@ -76,7 +76,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             user.IsActive = false;
 
-            return await _unitOfWork.UsersRepository.UpdateAsync(user);
+            var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
+
+            if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
+
+            return false;
         }
 
         #endregion

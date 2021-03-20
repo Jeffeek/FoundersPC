@@ -82,7 +82,7 @@
     font-weight: 300;
 }
 
-.icon-reset:hover
+.icon-reset:hover path
 {
     animation-duration: 2s;
     animation-iteration-count: 1;
@@ -90,7 +90,7 @@
     animation-timing-function: cubic-bezier(100, 0, 0, 100);
 }
 
-.icon-eye:hover
+.icon-eye:hover path
 {
     animation-duration: 2s;
     animation-iteration-count: 1;

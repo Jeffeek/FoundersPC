@@ -41,19 +41,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\css\authstyles.css">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Areas\" />
     <Folder Include="Pages\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
-    <None Include="wwwroot\css\space-invaders.css" />
     <None Include="wwwroot\js\space-invaders.js" />
   </ItemGroup>
 

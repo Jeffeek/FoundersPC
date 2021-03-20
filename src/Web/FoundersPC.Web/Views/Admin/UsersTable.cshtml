@@ -21,11 +21,20 @@
                     asp-action="RegisterManager"
                     asp-controller="Admin"
                     class="btn btn-outline-success d-flex">
-                    <img
-                        alt=""
-                        height="20"
-                        src="~/img/add.svg"
-                        width="20">
+                    <svg
+                        class="icon"
+                        fill="#FFFFFF"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        width="32"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path
+                            d="M16 11L16 21M11 16L21 16M16 4A12 12 0 1 0 16 28 12 12 0 1 0 16 4z"
+                            fill="none"
+                            stroke="#FFFFFF"
+                            stroke-width="2"/>
+                    </svg>
                     <span
                         class="mx-2 text-light">
                         Add new manager
@@ -92,34 +101,77 @@
                                 <a
                                     class="btn btn-outline-warning d-flex"
                                     href=
-                                    @{ if (user.IsBlocked) { @Url.ActionLink("UnblockUser", "Admin", new { id = user.Id }) } else { @Url.ActionLink("BlockUser", "Admin", new { id = user.Id }) } }
+                                    @{ if (user.IsBlocked) { @Url.Action("UnblockUser", "Admin", new { id = user.Id }) } else { @Url.Action("BlockUser", "Admin", new { id = user.Id }) } }
                                     title=
-                                    @{ if (user.IsBlocked) { @("Unblock user") } else { @("Block user") } }>
-                                    <img
-                                        alt=""
-                                        height="20"
-                                        src=
-                                        @{ if (user.IsBlocked) { @Href("~/img/easy.svg") } else { @Href("~/img/block.svg") } }
-                                        width="20">
-                                </a>
-                                <a
-                                    class="btn btn-outline-danger d-flex mx-3"
-                                    @{
-                                        if (!user.IsActive)
+                                    @{ if (user.IsBlocked) { @("Unblock") } else { @("Block") } }>
+                                    <svg
+                                        class="icon"
+                                        fill="#FFFFFF"
+                                        viewBox="0 0 30 30"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        @if (!user.IsBlocked)
                                         {
-                                            @Html.Raw("disabled")
+                                            <path
+                                                d="M15 4A11 11 0 1 0 15 26 11 11 0 1 0 15 4zM7.222 7.222L22.778 22.778"
+                                                fill="none"
+                                                stroke="#FFFFFF"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"/>
                                         }
                                         else
                                         {
-                                            @Html.Raw("")
+                                            <path
+                                                d="M12 1L12 2M17 3L16 4M7 3L8 4"
+                                                fill="none"
+                                                stroke="#FFFFFF"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"/>
+                                            <path
+                                                d="M25.688,16.911c-0.63-0.874-1.856-0.947-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l4.718-4.718c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218L11.004,14.397c0,0-1.755-3.303-2.635-4.184C6.834,8.679,4.484,8.547,3.701,9.33L3.286,9.745c-0.366,0.366-0.366,0.958,0,1.324l2.113,2.113l1.152,4.843c0.31,1.301,0.974,2.491,1.92,3.437l4.243,4.243c1.706,1.706,4.471,1.706,6.177,0l1.214-1.214l0,0l5.335-5.335C26.037,18.559,26.182,17.596,25.688,16.911z"
+                                                fill="#FFFFFF"/>
                                         }
+                                    </svg>
+                                </a>
+                                <a
+                                    class="btn @if (!user.IsActive){ @Html.Raw("btn-outline-danger") } else { @Html.Raw("btn-outline-dark") } d-flex mx-3"
+                                    href=
+                                    @{ if (user.IsActive) { @Url.Action("MakeUserInactive", "Admin", new { id = user.Id }) } else { @Html.Raw("#"); } }
+                                    title=
+                                    @{ if (user.IsActive) { @Html.Raw("Inactive") } else { @Html.Raw("BLOCKED") } }>
+                                    @if (user.IsActive)
+                                    {
+                                        <svg
+                                            class="icon"
+                                            fill="#FFFFFF"
+                                            viewBox="0 0 30 30"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path
+                                                d="M15 23A2 2 0 1 0 15 27 2 2 0 1 0 15 23zM24 4A2 2 0 1 0 24 8 2 2 0 1 0 24 4zM6 4A2 2 0 1 0 6 8 2 2 0 1 0 6 4z"
+                                                fill="#FFFFFF"/>
+                                            <path
+                                                d="M24.388,4.038C24.388,4.038,19.602,3,15,3S5.612,4.038,5.612,4.038L4,6v6c0,10.398,10.021,14.745,10.021,14.745h1.957C15.979,26.745,26,22.398,26,12V6L24.388,4.038z"
+                                                fill="#FFFFFF"/>
+                                        </svg>
                                     }
-                                    title="Make user inactive">
-                                    <img
-                                        alt=""
-                                        height="20"
-                                        src="~/img/trash.svg"
-                                        width="20">
+                                    else
+                                    {
+                                        <svg
+                                            class="icon"
+                                            fill="#FFFFFF"
+                                            viewBox="0 0 32 32"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path
+                                                d="M23 27H11c-1.1 0-2-.9-2-2V8h16v17C25 26.1 24.1 27 23 27zM27 8L7 8M14 8V6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2M17 23L17 12M21 23L21 12M13 23L13 12"
+                                                fill="none"
+                                                stroke="#FFFFFF"
+                                                stroke-width="2"/>
+                                        </svg>
+                                    }
                                 </a>
                             </div>
                         </td>
@@ -136,9 +188,6 @@
     <script>
         $(document).
             ready(
-                function ()
-                {
-                    
-                });
+                function () { });
     </script>
 }
