@@ -3,6 +3,7 @@
 using System;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,14 +32,7 @@ namespace FoundersPC.Web
 
             services.AddHttpClient();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                    .AddCookie(options =>
-                               {
-                                   options.LoginPath = new PathString("/Authentication/SignIn");
-                                   options.AccessDeniedPath = new PathString("/Shared/Forbidden");
-                                   options.LogoutPath = "/Authentication/SignIn";
-                                   options.ExpireTimeSpan = TimeSpan.FromDays(30);
-                               });
+            services.AddCookieSecureAuthentication();
 
             services.AddAuthorization();
 
@@ -66,6 +60,8 @@ namespace FoundersPC.Web
             app.UseSerilogRequestLogging();
 
             app.UseRouting();
+
+            app.UseStatusCodePagesWithRedirects("/Error/{0}");
 
             app.UseAuthentication();
             app.UseAuthorization();

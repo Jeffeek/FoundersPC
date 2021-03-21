@@ -340,9 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 # Project settings
-/src/API/FoundersPC.API/appsettings.json
-/src/Identity/FoundersPC.IdentityServer/EmailBotConfiguration.json
-/src/Web/FoundersPC.Web/appsettings.json
-src/API/FoundersPC.API/appsettings.json
-src/API/FoundersPC.API/appsettings.json
-src/Identity/FoundersPC.IdentityServer/appsettings.json
+src/Identity/FoundersPC.IdentityServer/EmailBotConfiguration.json
+src/Identity/FoundersPC.IdentityServer/JwtSettings.json

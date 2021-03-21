@@ -1,9 +1,14 @@
 ﻿#region Using namespaces
 
+using System;
+using System.Net.Http;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.Web.Application.Mappings;
 using FoundersPC.Web.Application.Validation.AccountSettings;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion
@@ -26,6 +31,32 @@ namespace FoundersPC.Web.Application
                                              cfg.RegisterValidatorsFromAssemblyContaining<PasswordSettingsViewModelValidator>();
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
+        }
+
+        public static void AddCookieSecureAuthentication(this IServiceCollection services)
+        {
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                    .AddCookie(options =>
+                               {
+                                   options.Cookie = new CookieBuilder()
+                                                    {
+                                                        HttpOnly = true,
+                                                        IsEssential = true,
+                                                        Name = "user_cred",
+                                                        Path = "/",
+                                                        SecurePolicy = CookieSecurePolicy.SameAsRequest,
+                                                        SameSite = SameSiteMode.Strict
+                                                    };
+                                   options.LoginPath = new PathString("/Authentication/SignIn");
+                                   options.AccessDeniedPath = new PathString("/Shared/Forbidden");
+                                   options.LogoutPath = "/Authentication/SignIn";
+                                   options.Events = new CookieAuthenticationEvents()
+                                                    {
+                                                        OnRedirectToAccessDenied =
+                                                            context => context.HttpContext.ForbidAsync(CookieAuthenticationDefaults.AuthenticationScheme),
+                                                    };
+                                   options.ExpireTimeSpan = TimeSpan.FromDays(30);
+                               });
         }
     }
 }
