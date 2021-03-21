@@ -6,12 +6,6 @@
 @{
     if (User.Identity?.IsAuthenticated ?? false)
     {
-        <a
-            asp-action="Logout"
-            asp-controller="Authentication"
-            class="align-middle btn btn-black text-danger">
-            Logout
-        </a>
         <ul>
             <li
                 class="list-group-item">

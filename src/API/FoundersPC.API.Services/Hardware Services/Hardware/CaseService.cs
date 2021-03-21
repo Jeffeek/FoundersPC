@@ -12,67 +12,68 @@ using FoundersPC.API.Infrastructure.UnitOfWork;
 
 namespace FoundersPC.API.Services.Hardware_Services.Hardware
 {
-	public class CaseService : ICaseService
-	{
-		private readonly IMapper _mapper;
-		private readonly IUnitOfWorkHardwareAPI _unitOfWorkHardwareAPI;
+    public class CaseService : ICaseService
+    {
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWorkHardwareAPI _unitOfWorkHardwareAPI;
 
-		public CaseService(IUnitOfWorkHardwareAPI unitOfWorkHardwareAPI, IMapper mapper)
-		{
-			_unitOfWorkHardwareAPI = unitOfWorkHardwareAPI;
-			_mapper = mapper;
-		}
+        public CaseService(IUnitOfWorkHardwareAPI unitOfWorkHardwareAPI, IMapper mapper)
+        {
+            _unitOfWorkHardwareAPI = unitOfWorkHardwareAPI;
+            _mapper = mapper;
+        }
 
-		#region Implementation of ICaseService
+        #region Implementation of ICaseService
 
-		/// <inheritdoc />
-		public async Task<IEnumerable<CaseReadDto>> GetAllCasesAsync() => _mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
-																																		 .CasesRepository
-																																		 .GetAllAsync());
+        /// <inheritdoc />
+        public async Task<IEnumerable<CaseReadDto>> GetAllCasesAsync() =>
+            _mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
+                                                                           .CasesRepository
+                                                                           .GetAllAsync());
 
-		/// <inheritdoc />
-		public async Task<CaseReadDto> GetCaseByIdAsync(int caseId) =>
-				_mapper.Map<Case, CaseReadDto>(await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(caseId));
+        /// <inheritdoc />
+        public async Task<CaseReadDto> GetCaseByIdAsync(int caseId) =>
+            _mapper.Map<Case, CaseReadDto>(await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(caseId));
 
-		/// <inheritdoc />
-		public async Task<bool> CreateCaseAsync(CaseInsertDto @case)
-		{
-			var mappedCase = _mapper.Map<CaseInsertDto, Case>(@case);
+        /// <inheritdoc />
+        public async Task<bool> CreateCaseAsync(CaseInsertDto @case)
+        {
+            var mappedCase = _mapper.Map<CaseInsertDto, Case>(@case);
 
-			var entityAlreadyExists = await _unitOfWorkHardwareAPI.CasesRepository.AnyAsync(x => x.Equals(mappedCase));
+            var entityAlreadyExists = await _unitOfWorkHardwareAPI.CasesRepository.AnyAsync(x => x.Equals(mappedCase));
 
-			if (entityAlreadyExists) return false;
+            if (entityAlreadyExists) return false;
 
-			await _unitOfWorkHardwareAPI.CasesRepository.AddAsync(mappedCase);
+            await _unitOfWorkHardwareAPI.CasesRepository.AddAsync(mappedCase);
 
-			return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
-		}
+            return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
+        }
 
-		/// <inheritdoc />
-		public async Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case)
-		{
-			var dataBaseEntity = await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(id);
+        /// <inheritdoc />
+        public async Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case)
+        {
+            var dataBaseEntity = await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(id);
 
-			if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null) return false;
 
-			_mapper.Map(@case, dataBaseEntity);
-			var updateResult = await _unitOfWorkHardwareAPI.CasesRepository.UpdateAsync(dataBaseEntity);
+            _mapper.Map(@case, dataBaseEntity);
+            var updateResult = await _unitOfWorkHardwareAPI.CasesRepository.UpdateAsync(dataBaseEntity);
 
-			if (!updateResult) return false;
+            if (!updateResult) return false;
 
-			return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
-		}
+            return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
+        }
 
-		/// <inheritdoc />
-		public async Task<bool> DeleteCaseAsync(int id)
-		{
-			var deleteResult = await _unitOfWorkHardwareAPI.CasesRepository.DeleteAsync(id);
+        /// <inheritdoc />
+        public async Task<bool> DeleteCaseAsync(int id)
+        {
+            var deleteResult = await _unitOfWorkHardwareAPI.CasesRepository.DeleteAsync(id);
 
-			if (!deleteResult) return false;
+            if (!deleteResult) return false;
 
-			return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
-		}
+            return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

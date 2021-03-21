@@ -1,0 +1,67 @@
+03/11/2021 21:01:36 Identity server started..
+03/11/2021 21:01:36 Identity server HostBuilder created
+03/11/2021 21:01:37 Host built
+03/11/2021 21:01:38 Now listening on: "https://localhost:3000"
+03/11/2021 21:01:38 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:01:38 Hosting environment: "Development"
+03/11/2021 21:01:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:02:22 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1772.6361 ms
+03/11/2021 21:03:18 Identity server started..
+03/11/2021 21:03:18 Identity server HostBuilder created
+03/11/2021 21:03:19 Host built
+03/11/2021 21:03:19 Now listening on: "https://localhost:3000"
+03/11/2021 21:03:19 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:03:19 Hosting environment: "Development"
+03/11/2021 21:03:19 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:04:07 HTTP "POST" "/identityAPI/authentication/registration" responded 200 in 1805.6563 ms
+03/11/2021 21:05:24 Identity server started..
+03/11/2021 21:05:24 Identity server HostBuilder created
+03/11/2021 21:05:24 Host built
+03/11/2021 21:05:25 Now listening on: "https://localhost:3000"
+03/11/2021 21:05:25 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:05:25 Hosting environment: "Development"
+03/11/2021 21:05:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:06:06 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1649.2397 ms
+03/11/2021 21:25:08 Identity server started..
+03/11/2021 21:25:08 Identity server HostBuilder created
+03/11/2021 21:25:08 Host built
+03/11/2021 21:25:09 Now listening on: "https://localhost:3000"
+03/11/2021 21:25:09 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:25:09 Hosting environment: "Development"
+03/11/2021 21:25:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:27:04 Identity server started..
+03/11/2021 21:27:04 Identity server HostBuilder created
+03/11/2021 21:27:05 Host built
+03/11/2021 21:27:06 Now listening on: "https://localhost:3000"
+03/11/2021 21:27:06 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:27:06 Hosting environment: "Development"
+03/11/2021 21:27:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:27:25 HTTP "POST" "/identityAPI/authentication/forgotpassword" responded 200 in 4241.2052 ms
+03/11/2021 21:28:29 Application is shutting down...
+03/11/2021 21:52:06 Identity server started..
+03/11/2021 21:52:06 Identity server HostBuilder created
+03/11/2021 21:52:07 Host built
+03/11/2021 21:52:07 Now listening on: "https://localhost:3000"
+03/11/2021 21:52:07 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:52:07 Hosting environment: "Development"
+03/11/2021 21:52:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:52:26 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1530.6119 ms
+03/11/2021 21:54:10 Identity server started..
+03/11/2021 21:54:10 Identity server HostBuilder created
+03/11/2021 21:54:10 Host built
+03/11/2021 21:54:11 Now listening on: "https://localhost:3000"
+03/11/2021 21:54:11 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:54:11 Hosting environment: "Development"
+03/11/2021 21:54:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:54:27 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1655.3219 ms
+03/11/2021 21:56:29 Identity server started..
+03/11/2021 21:56:29 Identity server HostBuilder created
+03/11/2021 21:56:29 Host built
+03/11/2021 21:56:30 Now listening on: "https://localhost:3000"
+03/11/2021 21:56:30 Application started. Press Ctrl+C to shut down.
+03/11/2021 21:56:30 Hosting environment: "Development"
+03/11/2021 21:56:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/11/2021 21:56:39 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1638.5432 ms
+03/11/2021 21:56:52 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 44.7382 ms
+03/11/2021 21:56:59 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 20.6128 ms
+03/11/2021 21:57:06 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 44.2101 ms

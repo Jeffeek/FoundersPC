@@ -8,91 +8,107 @@ using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
-	[Authorize]
-	[ApiVersion("1.0", Deprecated = false)]
-	[ApiController]
-	[Route("api/videocardcores")]
-	[Route("api/gpucores")]
-	public class VideoCardCoresController : Controller
-	{
-		private readonly IMapper _mapper;
-		private readonly IVideoCardCoreService _videoCardCoreService;
+    [Authorize]
+    [ApiVersion("1.0", Deprecated = false)]
+    [ApiController]
+    [Route("HardwareApi/VideoCardCores")]
+    [Route("HardwareApi/GPUCores")]
+    public class VideoCardCoresController : Controller
+    {
+        private readonly ILogger<VideoCardCoresController> _logger;
+        private readonly IMapper _mapper;
+        private readonly IVideoCardCoreService _videoCardCoreService;
 
-		public VideoCardCoresController(IVideoCardCoreService service,
-										IMapper mapper
-		)
-		{
-			_videoCardCoreService = service;
-			_mapper = mapper;
-		}
+        public VideoCardCoresController(IVideoCardCoreService service,
+                                        IMapper mapper,
+                                        ILogger<VideoCardCoresController> logger
+        )
+        {
+            _videoCardCoreService = service;
+            _mapper = mapper;
+            _logger = logger;
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get() => Json(await _videoCardCoreService.GetAllVideoCardCoresAsync());
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get()
+        {
+            _logger.LogForModelsRead(HttpContext);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet("{id}")]
-		public async Task<ActionResult<CaseReadDto>> Get(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult("null");
+            return Json(await _videoCardCoreService.GetAllVideoCardCoresAsync());
+        }
 
-			var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id.Value);
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CaseReadDto>> Get(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult("null");
 
-			return readDto == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(readDto);
-		}
+            _logger.LogForModelRead(HttpContext, id.Value);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPut("{id}", Order = 0)]
-		public async Task<ActionResult> Update(int? id, [FromBody] VideoCardCoreUpdateDto videoCardCore)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
-			if (!TryValidateModel(videoCardCore)) return ValidationProblem(ModelState);
+            var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id.Value);
 
-			var result = await _videoCardCoreService.UpdateVideoCardCoreAsync(id.Value, videoCardCore);
+            return readDto == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(readDto);
+        }
 
-			return result ? Json(videoCardCore) : ResultsHelper.UpdateError();
-		}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPut("{id}", Order = 0)]
+        public async Task<ActionResult> Update(int? id, [FromBody] VideoCardCoreUpdateDto videoCardCore)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPost]
-		public async Task<ActionResult> Insert([FromBody] VideoCardCoreInsertDto videoCardCore)
-		{
-			if (!TryValidateModel(videoCardCore)) return ValidationProblem(ModelState);
+            _logger.LogForModelUpdate(HttpContext, id.Value);
 
-			var insertResult = await _videoCardCoreService.CreateVideoCardCoreAsync(videoCardCore);
+            var result = await _videoCardCoreService.UpdateVideoCardCoreAsync(id.Value, videoCardCore);
 
-			return insertResult ? Json(videoCardCore) : ResultsHelper.InsertError();
-		}
+            return result ? Json(videoCardCore) : ResponseResultsHelper.UpdateError();
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpDelete("{id}")]
-		public async Task<ActionResult> Delete(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPost]
+        public async Task<ActionResult> Insert([FromBody] VideoCardCoreInsertDto videoCardCore)
+        {
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-			var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id.Value);
+            _logger.LogForModelInsert(HttpContext);
 
-			if (readDto == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+            var insertResult = await _videoCardCoreService.CreateVideoCardCoreAsync(videoCardCore);
 
-			var result = await _videoCardCoreService.DeleteVideoCardCoreAsync(id.Value);
+            return insertResult ? Json(videoCardCore) : ResponseResultsHelper.InsertError();
+        }
 
-			return result ? Json(readDto) : ResultsHelper.DeleteError();
-		}
-	}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+
+            _logger.LogForModelDelete(HttpContext, id.Value);
+
+            var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id.Value);
+
+            if (readDto == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
+
+            var result = await _videoCardCoreService.DeleteVideoCardCoreAsync(id.Value);
+
+            return result ? Json(readDto) : ResponseResultsHelper.DeleteError();
+        }
+    }
 }

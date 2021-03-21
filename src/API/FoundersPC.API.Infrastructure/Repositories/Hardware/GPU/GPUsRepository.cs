@@ -11,35 +11,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
 {
-	public class GPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.VideoCard.GPU>, IGPUsRepositoryAsync
-	{
-		/// <inheritdoc />
-		public GPUsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+    public class GPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.VideoCard.GPU>, IGPUsRepositoryAsync
+    {
+        /// <inheritdoc />
+        public GPUsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
-		#region Implementation of IGPUsRepositoryAsync
+        #region Implementation of IGPUsRepositoryAsync
 
-		public override async Task<Domain.Entities.Hardware.VideoCard.GPU> GetByIdAsync(int id)
-		{
-			var gpu = await Context.Set<Domain.Entities.Hardware.VideoCard.GPU>().FindAsync(id);
+        public override async Task<Domain.Entities.Hardware.VideoCard.GPU> GetByIdAsync(int id)
+        {
+            var gpu = await Context.Set<Domain.Entities.Hardware.VideoCard.GPU>().FindAsync(id);
 
-			if (gpu is null) return null;
+            if (gpu is null) return null;
 
-			await Context.Entry(gpu).Reference(x => x.Producer).LoadAsync();
-			await Context.Entry(gpu).Reference(x => x.Core).LoadAsync();
+            await Context.Entry(gpu).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(gpu).Reference(x => x.Core).LoadAsync();
 
-			return gpu;
-		}
+            return gpu;
+        }
 
-		/// <inheritdoc />
-		public override async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()
-		{
-			return await Context
-						 .Set<Domain.Entities.Hardware.VideoCard.GPU>()
-						 .Include(gpu => gpu.Producer)
-						 .Include(gpu => gpu.Core)
-						 .ToListAsync();
-		}
+        /// <inheritdoc />
+        public override async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()
+        {
+            return await Context
+                         .Set<Domain.Entities.Hardware.VideoCard.GPU>()
+                         .Include(gpu => gpu.Producer)
+                         .Include(gpu => gpu.Core)
+                         .ToListAsync();
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

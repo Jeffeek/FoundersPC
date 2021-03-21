@@ -1,0 +1,322 @@
+03/12/2021 17:42:29 Identity server started..
+03/12/2021 17:42:29 Identity server HostBuilder created
+03/12/2021 17:42:30 Host built
+03/12/2021 17:42:31 Now listening on: "https://localhost:3000"
+03/12/2021 17:42:31 Application started. Press Ctrl+C to shut down.
+03/12/2021 17:42:31 Hosting environment: "Development"
+03/12/2021 17:42:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 17:44:15 Identity server started..
+03/12/2021 17:44:15 Identity server HostBuilder created
+03/12/2021 17:44:16 Host built
+03/12/2021 17:44:32 Identity server started..
+03/12/2021 17:44:32 Identity server HostBuilder created
+03/12/2021 17:44:32 Host built
+03/12/2021 17:44:50 Identity server started..
+03/12/2021 17:44:50 Identity server HostBuilder created
+03/12/2021 17:44:50 Host built
+03/12/2021 17:44:51 Now listening on: "https://localhost:3000"
+03/12/2021 17:44:51 Application started. Press Ctrl+C to shut down.
+03/12/2021 17:44:51 Hosting environment: "Development"
+03/12/2021 17:44:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 17:45:12 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1763.6232 ms
+03/12/2021 17:45:36 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 44.6092 ms
+03/12/2021 17:45:44 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 24.4504 ms
+03/12/2021 17:46:14 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 44.7332 ms
+03/12/2021 17:51:01 Identity server started..
+03/12/2021 17:51:01 Identity server HostBuilder created
+03/12/2021 17:51:02 Host built
+03/12/2021 17:51:02 Now listening on: "https://localhost:3000"
+03/12/2021 17:51:02 Application started. Press Ctrl+C to shut down.
+03/12/2021 17:51:02 Hosting environment: "Development"
+03/12/2021 17:51:02 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 17:51:23 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1666.3681 ms
+03/12/2021 17:51:31 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 43.5776 ms
+03/12/2021 17:51:31 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 18.6950 ms
+03/12/2021 17:51:31 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 40.0891 ms
+03/12/2021 17:52:13 HTTP "POST" "/identityAPI/user/settings/change/login" responded 200 in 112.6882 ms
+03/12/2021 17:52:32 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.4129 ms
+03/12/2021 17:52:32 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 4.5761 ms
+03/12/2021 17:52:32 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.5396 ms
+03/12/2021 18:00:11 HTTP "POST" "/identityAPI/user/settings/change/notifications" responded 200 in 21.4929 ms
+03/12/2021 18:00:57 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 3.1106 ms
+03/12/2021 18:00:57 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 3.0782 ms
+03/12/2021 18:00:57 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.8339 ms
+03/12/2021 18:09:43 Identity server started..
+03/12/2021 18:09:43 Identity server HostBuilder created
+03/12/2021 18:09:44 Host built
+03/12/2021 18:09:44 Now listening on: "https://localhost:3000"
+03/12/2021 18:09:44 Application started. Press Ctrl+C to shut down.
+03/12/2021 18:09:44 Hosting environment: "Development"
+03/12/2021 18:09:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 18:09:57 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1655.8073 ms
+03/12/2021 18:09:59 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 45.3752 ms
+03/12/2021 18:09:59 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 19.1064 ms
+03/12/2021 18:09:59 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 38.0103 ms
+03/12/2021 18:10:24 HTTP "POST" "/identityAPI/user/settings/change/login" responded 200 in 341.4825 ms
+03/12/2021 18:10:40 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.4562 ms
+03/12/2021 18:10:40 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.4844 ms
+03/12/2021 18:10:40 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.5119 ms
+03/12/2021 18:12:51 HTTP "POST" "/identityAPI/user/settings/change/notifications" responded 200 in 105519.8997 ms
+03/12/2021 18:13:01 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.6166 ms
+03/12/2021 18:13:01 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.6560 ms
+03/12/2021 18:13:04 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2715.6204 ms
+03/12/2021 18:13:23 HTTP "POST" "/identityAPI/user/settings/change/notifications" responded 200 in 2713.5353 ms
+03/12/2021 18:13:23 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.5783 ms
+03/12/2021 18:13:23 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.5289 ms
+03/12/2021 18:13:23 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.6647 ms
+03/12/2021 18:13:33 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.3338 ms
+03/12/2021 18:13:33 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.2607 ms
+03/12/2021 18:13:33 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.4287 ms
+03/12/2021 18:13:40 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1245 ms
+03/12/2021 18:13:40 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0938 ms
+03/12/2021 18:13:40 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1730 ms
+03/12/2021 18:13:43 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 3.6779 ms
+03/12/2021 18:13:43 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.4357 ms
+03/12/2021 18:13:43 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1618 ms
+03/12/2021 18:13:43 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.8231 ms
+03/12/2021 18:13:43 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.3118 ms
+03/12/2021 18:13:43 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9918 ms
+03/12/2021 18:13:44 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1876 ms
+03/12/2021 18:13:44 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.4333 ms
+03/12/2021 18:13:44 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0206 ms
+03/12/2021 18:13:44 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.3421 ms
+03/12/2021 18:13:44 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.1457 ms
+03/12/2021 18:13:44 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9378 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1069 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9779 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.5744 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1281 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0832 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9496 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1362 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.1096 ms
+03/12/2021 18:13:45 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.8354 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1486 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.9774 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0850 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1081 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.1101 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9009 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1031 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.2925 ms
+03/12/2021 18:13:46 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0477 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1456 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.3493 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.7511 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1104 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.3768 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9804 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.8277 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9801 ms
+03/12/2021 18:13:47 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.3155 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9814 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9591 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0702 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9506 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0702 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0326 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1770 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9568 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9318 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9105 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.1980 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0020 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.0543 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0095 ms
+03/12/2021 18:13:48 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.6394 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.0615 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9092 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.5913 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.3225 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.1886 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0429 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1009 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.8809 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1055 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1949 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.1258 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.7242 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.8589 ms
+03/12/2021 18:13:49 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9842 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.5829 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.0821 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.1266 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1039 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.0862 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.2894 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 4.0002 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9957 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9728 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.3391 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9909 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0369 ms
+03/12/2021 18:13:50 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1420 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.0599 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.5315 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.8338 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.5122 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0274 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.4127 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1943 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9768 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1470 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9907 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.8798 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.2285 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1428 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.2506 ms
+03/12/2021 18:13:51 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.0580 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9543 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.2737 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.8072 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.2381 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0715 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.5471 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1505 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0093 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.5714 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1856 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.2313 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1916 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9556 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.8628 ms
+03/12/2021 18:13:52 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.2054 ms
+03/12/2021 18:13:53 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9485 ms
+03/12/2021 18:13:53 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.2986 ms
+03/12/2021 18:13:53 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.9517 ms
+03/12/2021 18:13:53 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.1547 ms
+03/12/2021 18:13:53 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.0506 ms
+03/12/2021 18:13:53 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.3396 ms
+03/12/2021 18:20:38 Identity server started..
+03/12/2021 18:20:38 Identity server HostBuilder created
+03/12/2021 18:20:38 Host built
+03/12/2021 18:20:39 Now listening on: "https://localhost:3000"
+03/12/2021 18:20:39 Application started. Press Ctrl+C to shut down.
+03/12/2021 18:20:39 Hosting environment: "Development"
+03/12/2021 18:20:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 18:21:09 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1715.9451 ms
+03/12/2021 18:21:12 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 43.6225 ms
+03/12/2021 18:21:12 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 19.3668 ms
+03/12/2021 18:21:12 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 44.5816 ms
+03/12/2021 18:23:06 HTTP "POST" "/identityAPI/user/settings/change/password" responded 200 in 303.2472 ms
+03/12/2021 18:23:27 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 2.6092 ms
+03/12/2021 18:23:27 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.5840 ms
+03/12/2021 18:23:27 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.9011 ms
+03/12/2021 18:35:08 Identity server started..
+03/12/2021 18:35:08 Identity server HostBuilder created
+03/12/2021 18:35:08 Host built
+03/12/2021 18:35:09 Now listening on: "https://localhost:3000"
+03/12/2021 18:35:09 Application started. Press Ctrl+C to shut down.
+03/12/2021 18:35:09 Hosting environment: "Development"
+03/12/2021 18:35:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 18:35:19 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1474.6935 ms
+03/12/2021 18:35:36 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 189.4311 ms
+03/12/2021 18:35:38 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 24.6706 ms
+03/12/2021 18:35:38 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 7.9809 ms
+03/12/2021 18:35:38 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 401 in 53.5701 ms
+03/12/2021 18:41:59 Identity server started..
+03/12/2021 18:41:59 Identity server HostBuilder created
+03/12/2021 18:41:59 Host built
+03/12/2021 18:42:00 Now listening on: "https://localhost:3000"
+03/12/2021 18:42:00 Application started. Press Ctrl+C to shut down.
+03/12/2021 18:42:00 Hosting environment: "Development"
+03/12/2021 18:42:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 18:42:27 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1710.8542 ms
+03/12/2021 18:45:15 Identity server started..
+03/12/2021 18:45:15 Identity server HostBuilder created
+03/12/2021 18:45:16 Host built
+03/12/2021 18:45:17 Now listening on: "https://localhost:3000"
+03/12/2021 18:45:17 Application started. Press Ctrl+C to shut down.
+03/12/2021 18:45:17 Hosting environment: "Development"
+03/12/2021 18:45:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 18:45:31 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1740.7824 ms
+03/12/2021 18:46:01 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 252.2521 ms
+03/12/2021 18:49:44 Identity server started..
+03/12/2021 18:49:44 Identity server HostBuilder created
+03/12/2021 18:49:45 Host built
+03/12/2021 18:49:45 Now listening on: "https://localhost:3000"
+03/12/2021 18:49:45 Application started. Press Ctrl+C to shut down.
+03/12/2021 18:49:45 Hosting environment: "Development"
+03/12/2021 18:49:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 18:50:02 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1691.1821 ms
+03/12/2021 18:50:09 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 249.2612 ms
+03/12/2021 18:50:11 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 23.1227 ms
+03/12/2021 18:50:13 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 42.3444 ms
+03/12/2021 18:50:56 HTTP "POST" "/identityAPI/user/settings/change/login" responded 200 in 113.2400 ms
+03/12/2021 18:51:10 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 11.7197 ms
+03/12/2021 18:51:19 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 8.7192 ms
+03/12/2021 18:51:26 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 4.2287 ms
+03/12/2021 20:07:53 Identity server started..
+03/12/2021 20:07:54 Identity server HostBuilder created
+03/12/2021 20:07:54 Host built
+03/12/2021 20:07:55 Now listening on: "https://localhost:3000"
+03/12/2021 20:07:55 Application started. Press Ctrl+C to shut down.
+03/12/2021 20:07:55 Hosting environment: "Development"
+03/12/2021 20:07:55 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 20:08:15 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1699.0055 ms
+03/12/2021 20:09:40 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 76134.2873 ms
+03/12/2021 20:09:40 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 20.4879 ms
+03/12/2021 20:09:40 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 18.9682 ms
+03/12/2021 20:09:45 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 3.0674 ms
+03/12/2021 20:09:45 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.6613 ms
+03/12/2021 20:09:45 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 4.2593 ms
+03/12/2021 20:09:47 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 3.0088 ms
+03/12/2021 20:09:47 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.9299 ms
+03/12/2021 20:09:47 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 4.5402 ms
+03/12/2021 20:10:01 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 3.4745 ms
+03/12/2021 20:10:01 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 2.7120 ms
+03/12/2021 20:10:01 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 4.2248 ms
+03/12/2021 20:29:38 Identity server started..
+03/12/2021 20:29:38 Identity server HostBuilder created
+03/12/2021 20:29:38 Host built
+03/12/2021 20:29:38 Now listening on: "https://localhost:3000"
+03/12/2021 20:29:38 Application started. Press Ctrl+C to shut down.
+03/12/2021 20:29:38 Hosting environment: "Development"
+03/12/2021 20:29:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 20:30:07 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1780.1146 ms
+03/12/2021 20:30:09 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 192.7598 ms
+03/12/2021 20:30:09 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 20.2344 ms
+03/12/2021 20:30:09 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 19.1804 ms
+03/12/2021 20:30:13 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.6040 ms
+03/12/2021 20:30:13 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.9543 ms
+03/12/2021 20:30:13 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.3700 ms
+03/12/2021 20:30:39 HTTP "PUT" "/identityAPI/user/settings/change/password" responded 404 in 14.9055 ms
+03/12/2021 20:30:48 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.9200 ms
+03/12/2021 20:30:48 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.4573 ms
+03/12/2021 20:30:48 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 3.1285 ms
+03/12/2021 20:31:02 HTTP "PUT" "/identityAPI/user/settings/change/password" responded 200 in 111.0650 ms
+03/12/2021 20:31:02 HTTP "GET" "/identityAPI/user/settings/notifications/ilyushin_misha@mail.ru" responded 200 in 1.8431 ms
+03/12/2021 20:31:02 HTTP "GET" "/identityAPI/user/settings/login/ilyushin_misha@mail.ru" responded 200 in 1.3482 ms
+03/12/2021 20:31:02 HTTP "GET" "/identityAPI/tokens/user/ilyushin_misha@mail.ru" responded 200 in 2.3142 ms
+03/12/2021 20:31:28 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 5.3949 ms
+03/12/2021 20:31:31 HTTP "GET" "/identityAPI/user/settings/notifications/mishamine26@gmail.com" responded 403 in 3.5788 ms
+03/12/2021 20:33:32 Application is shutting down...
+03/12/2021 20:34:02 Identity server started..
+03/12/2021 20:34:02 Identity server HostBuilder created
+03/12/2021 20:34:03 Host built
+03/12/2021 20:34:03 Now listening on: "https://localhost:3000"
+03/12/2021 20:34:03 Application started. Press Ctrl+C to shut down.
+03/12/2021 20:34:03 Hosting environment: "Development"
+03/12/2021 20:34:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 20:34:22 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1707.4281 ms
+03/12/2021 20:40:42 Identity server started..
+03/12/2021 20:40:42 Identity server HostBuilder created
+03/12/2021 20:40:43 Host built
+03/12/2021 20:40:43 Now listening on: "https://localhost:3000"
+03/12/2021 20:40:43 Application started. Press Ctrl+C to shut down.
+03/12/2021 20:40:43 Hosting environment: "Development"
+03/12/2021 20:40:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/12/2021 20:40:56 HTTP "POST" "/identityAPI/authentication/login" responded 200 in 1649.1269 ms
+03/12/2021 20:41:43 HTTP "GET" "/identityAPI/user/settings/notifications/mishamine26@gmail.com" responded 200 in 12590.2902 ms
+03/12/2021 20:41:46 HTTP "GET" "/identityAPI/user/settings/login/mishamine26@gmail.com" responded 200 in 23.8123 ms
+03/12/2021 20:41:46 HTTP "GET" "/identityAPI/tokens/user/mishamine26@gmail.com" responded 200 in 20.5893 ms
+03/12/2021 20:42:00 HTTP "GET" "/identityAPI/cases" responded 404 in 0.1450 ms
+03/12/2021 20:42:08 HTTP "GET" "/identityAPI/user/settings/notifications/mishamine26@gmail.com" responded 200 in 2.9629 ms
+03/12/2021 20:42:08 HTTP "GET" "/identityAPI/user/settings/login/mishamine26@gmail.com" responded 200 in 2.4629 ms
+03/12/2021 20:42:08 HTTP "GET" "/identityAPI/tokens/user/mishamine26@gmail.com" responded 200 in 4.6153 ms
+03/12/2021 20:42:12 HTTP "GET" "/identityAPI/user/settings/notifications/mishamine26@gmail.com" responded 200 in 2.8029 ms
+03/12/2021 20:42:12 HTTP "GET" "/identityAPI/user/settings/login/mishamine26@gmail.com" responded 200 in 3.5952 ms
+03/12/2021 20:42:12 HTTP "GET" "/identityAPI/tokens/user/mishamine26@gmail.com" responded 200 in 4.1701 ms
+03/12/2021 20:42:15 HTTP "GET" "/identityAPI/user/settings/notifications/mishamine26@gmail.com" responded 200 in 2.7710 ms
+03/12/2021 20:42:15 HTTP "GET" "/identityAPI/user/settings/login/mishamine26@gmail.com" responded 200 in 2.5454 ms
+03/12/2021 20:42:15 HTTP "GET" "/identityAPI/tokens/user/mishamine26@gmail.com" responded 200 in 3.8555 ms

@@ -1,0 +1,18 @@
+body
+{
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+canvas
+{
+    height: auto;
+
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+
+    position: relative;
+    width: auto;
+}

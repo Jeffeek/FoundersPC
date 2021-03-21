@@ -8,89 +8,104 @@ using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
-//todo: add logger
 namespace FoundersPC.API.Controllers.V1
 {
-	[Authorize]
-	[ApiVersion("1.0", Deprecated = false)]
-	[ApiController]
-	[Route("api/processors")]
-	[Route("api/cpus")]
-	public class ProcessorsController : Controller
-	{
-		private readonly ICPUService _cpuService;
-		private readonly IMapper _mapper;
+    [Authorize]
+    [ApiVersion("1.0", Deprecated = false)]
+    [ApiController]
+    [Route("HardwareApi/Processors")]
+    [Route("HardwareApi/Cpus")]
+    public class ProcessorsController : Controller
+    {
+        private readonly ICPUService _cpuService;
+        private readonly ILogger<ProcessorsController> _logger;
+        private readonly IMapper _mapper;
 
-		public ProcessorsController(ICPUService service, IMapper mapper)
-		{
-			_cpuService = service;
-			_mapper = mapper;
-		}
+        public ProcessorsController(ICPUService service, IMapper mapper, ILogger<ProcessorsController> logger)
+        {
+            _cpuService = service;
+            _mapper = mapper;
+            _logger = logger;
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get() => Json(await _cpuService.GetAllCPUsAsync());
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get()
+        {
+            _logger.LogForModelsRead(HttpContext);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Readable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpGet("{id}")]
-		public async Task<ActionResult<CPUReadDto>> Get(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+            return Json(await _cpuService.GetAllCPUsAsync());
+        }
 
-			var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Readable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CPUReadDto>> Get(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
-			return cpu == null ? ResultsHelper.NotFoundByIdResult(id.Value) : Json(cpu);
-		}
+            _logger.LogForModelRead(HttpContext, id.Value);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPost]
-		public async Task<ActionResult> Insert([FromBody] CPUInsertDto cpu)
-		{
-			if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
+            var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
 
-			var insertResult = await _cpuService.CreateCPUAsync(cpu);
+            return cpu == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(cpu);
+        }
 
-			return insertResult ? Json(cpu) : ResultsHelper.InsertError();
-		}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPost]
+        public async Task<ActionResult> Insert([FromBody] CPUInsertDto cpu)
+        {
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpPut("{id}", Order = 0)]
-		public async Task<ActionResult> Update(int? id, [FromBody] CPUUpdateDto cpu)
-		{
-			if (!id.HasValue) return ResultsHelper.UpdateError();
-			if (!TryValidateModel(cpu)) return ValidationProblem(ModelState);
+            _logger.LogForModelInsert(HttpContext);
 
-			var result = await _cpuService.UpdateCPUAsync(id.Value, cpu);
+            var insertResult = await _cpuService.CreateCPUAsync(cpu);
 
-			return result ? Json(cpu) : ResultsHelper.UpdateError();
-		}
+            return insertResult ? Json(cpu) : ResponseResultsHelper.InsertError();
+        }
 
-		[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-				   Policy = "Changeable")]
-		[ApiVersion("1.0", Deprecated = false)]
-		[HttpDelete("{id}")]
-		public async Task<ActionResult> Delete(int? id)
-		{
-			if (!id.HasValue) return ResultsHelper.BadRequestWithIdResult();
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpPut("{id}", Order = 0)]
+        public async Task<ActionResult> Update(int? id, [FromBody] CPUUpdateDto cpu)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.UpdateError();
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-			var readCpu = await _cpuService.GetCPUByIdAsync(id.Value);
+            _logger.LogForModelUpdate(HttpContext, id.Value);
 
-			if (readCpu == null) return ResultsHelper.NotFoundByIdResult(id.Value);
+            var result = await _cpuService.UpdateCPUAsync(id.Value, cpu);
 
-			var result = await _cpuService.DeleteCPUAsync(id.Value);
+            return result ? Json(cpu) : ResponseResultsHelper.UpdateError();
+        }
 
-			return result ? Json(readCpu) : ResultsHelper.DeleteError();
-		}
-	}
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
+                   Policy = "Changeable")]
+        [ApiVersion("1.0", Deprecated = false)]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int? id)
+        {
+            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+
+            _logger.LogForModelDelete(HttpContext, id.Value);
+
+            var readCpu = await _cpuService.GetCPUByIdAsync(id.Value);
+
+            if (readCpu == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
+
+            var result = await _cpuService.DeleteCPUAsync(id.Value);
+
+            return result ? Json(readCpu) : ResponseResultsHelper.DeleteError();
+        }
+    }
 }

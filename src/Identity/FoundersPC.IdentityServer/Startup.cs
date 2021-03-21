@@ -1,6 +1,7 @@
 #region Using namespaces
 
 using System.IO;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
 using FoundersPC.Identity.Services;
@@ -16,76 +17,82 @@ using Serilog;
 
 namespace FoundersPC.IdentityServer
 {
-	public class Startup
-	{
-		public Startup(IConfiguration configuration)
-		{
-			var builder = new ConfigurationBuilder();
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            var builder = new ConfigurationBuilder();
 
-			builder
-					.AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json",
-								 false,
-								 true)
-					.AddConfiguration(configuration, false);
+            builder
+                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json",
+                             false,
+                             true)
+                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\JwtSettings.json",
+                             false,
+                             true)
+                .AddConfiguration(configuration, false);
 
-			Configuration = builder.Build();
-		}
+            Configuration = builder.Build();
+        }
 
-		public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; }
 
-		// This method gets called by the runtime. Use this method to add services to the container.
-		public void ConfigureServices(IServiceCollection services)
-		{
-			services.AddBotEmailConfigurationAndService(Configuration);
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddBotEmailConfigurationAndService(Configuration);
 
-			services.AddControllers();
+            services.AddControllers();
 
-			services.AddUsersRepository();
-			services.AddApiAccessTokensRepositories();
-			services.AddUsersAndTokenLogsRepositories();
+            services.AddUsersRepository();
+            services.AddApiAccessTokensRepositories();
+            services.AddUsersAndTokenLogsRepositories();
 
-			services.AddUsersIdentityUnitOfWork();
+            services.AddUsersIdentityUnitOfWork();
 
-			services.AddFoundersPCUsersContext(Configuration);
+            services.AddFoundersPCUsersContext(Configuration);
 
-			services.AddEncryptionServices();
-			services.AddLogsServices();
-			services.AddTokenServices();
-			services.AddUsersIdentityServices();
+            services.AddEncryptionServices();
+            services.AddLogsServices();
+            services.AddTokenServices();
+            services.AddUsersIdentityServices();
 
-			services.AddUserApplicationExtensions();
+            services.AddMappings();
+            services.AddValidators();
 
-			services.AddAuthentication();
-			services.AddAuthorization();
+            services.AddJwtSettings(Configuration);
+            services.AddBearerAuthenticationWithSettings();
 
-			services.AddSwaggerGen(c => c.SwaggerDoc("v1",
-													 new OpenApiInfo
-													 {
-															 Title = "FoundersPC.IdentityServer",
-															 Version = "v1"
-													 }));
-		}
+            services.AddAuthorization();
 
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-		{
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-				app.UseSwagger();
-				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FoundersPC.IdentityServer v1"));
-			}
+            services.AddSwaggerGen(c => c.SwaggerDoc("v1",
+                                                     new OpenApiInfo
+                                                     {
+                                                         Title = "FoundersPC.IdentityServer",
+                                                         Version = "v1"
+                                                     }));
+        }
 
-			app.UseHttpsRedirection();
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FoundersPC.IdentityServer v1"));
+            }
 
-			app.UseSerilogRequestLogging();
+            app.UseHttpsRedirection();
 
-			//app.UseCors("WebClientPolicy");
+            app.UseSerilogRequestLogging();
 
-			app.UseRouting();
+            //app.UseCors("WebClientPolicy");
 
-			app.UseAuthorization();
+            app.UseRouting();
 
-			app.UseEndpoints(endpoints => endpoints.MapControllers());
-		}
-	}
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
+        }
+    }
 }

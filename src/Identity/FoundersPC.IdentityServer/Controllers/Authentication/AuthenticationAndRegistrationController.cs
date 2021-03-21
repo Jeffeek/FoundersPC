@@ -3,6 +3,7 @@
 using System;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
@@ -11,147 +12,199 @@ using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
-	[Route("identityAPI/authentication")]
-	[ApiController]
-	public class AuthenticationAndRegistrationController : Controller
-	{
-		private readonly IMailService _mailService;
-		private readonly IMapper _mapper;
-		private readonly PasswordEncryptorService _passwordEncryptorService;
-		private readonly IUserRegistrationService _userRegistrationService;
-		private readonly IUsersEntrancesService _usersEntrancesService;
-		private readonly IUsersService _usersService;
+    [Route("FoundersPCIdentity/Authentication")]
+    [ApiController]
+    public class AuthenticationAndRegistrationController : Controller
+    {
+        private readonly JwtConfiguration _jwtConfiguration;
+        private readonly ILogger<AuthenticationAndRegistrationController> _logger;
+        private readonly IMailService _mailService;
+        private readonly IMapper _mapper;
+        private readonly PasswordEncryptorService _passwordEncryptorService;
+        private readonly IUserRegistrationService _userRegistrationService;
+        private readonly IUsersEntrancesService _usersEntrancesService;
+        private readonly IUsersInformationService _usersInformationService;
 
-		public AuthenticationAndRegistrationController(IUsersService authenticationService,
-													   IMailService mailService,
-													   PasswordEncryptorService passwordEncryptorService,
-													   IUserRegistrationService userRegistrationService,
-													   IUsersEntrancesService usersEntrancesService,
-													   IMapper mapper
-		)
-		{
-			_usersService = authenticationService;
-			_mailService = mailService;
-			_passwordEncryptorService = passwordEncryptorService;
-			_userRegistrationService = userRegistrationService;
-			_usersEntrancesService = usersEntrancesService;
-			_mapper = mapper;
-		}
+        public AuthenticationAndRegistrationController(IUsersInformationService authenticationInformationService,
+                                                       IMailService mailService,
+                                                       PasswordEncryptorService passwordEncryptorService,
+                                                       IUserRegistrationService userRegistrationService,
+                                                       IUsersEntrancesService usersEntrancesService,
+                                                       IMapper mapper,
+                                                       ILogger<AuthenticationAndRegistrationController> logger,
+                                                       JwtConfiguration jwtConfiguration
+        )
+        {
+            _usersInformationService = authenticationInformationService;
+            _mailService = mailService;
+            _passwordEncryptorService = passwordEncryptorService;
+            _userRegistrationService = userRegistrationService;
+            _usersEntrancesService = usersEntrancesService;
+            _mapper = mapper;
+            _logger = logger;
+            _jwtConfiguration = jwtConfiguration;
+        }
 
-		[Route("forgotpassword")]
-		[HttpPost]
-		public async Task<UserForgotPasswordResponse> ForgotPassword(UserForgotPasswordRequest request)
-		{
-			if (ModelState.IsValid == false)
-			{
-				return new UserForgotPasswordResponse
-					   {
-							   EmailSendError = "Bad model",
-							   Email = request.Email,
-							   IsConfirmationMailSent = false,
-							   IsUserExists = false
-					   };
-			}
+        [Route("ForgotPassword")]
+        [HttpPost]
+        public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword(UserForgotPasswordRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new UserForgotPasswordResponse
+                                  {
+                                      Error = "Bad model",
+                                      Email = request.Email,
+                                      IsConfirmationMailSent = false,
+                                      IsUserExists = false
+                                  });
 
-			var user = await _usersService.FindUserByEmailAsync(request.Email);
+            _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Forgot Password request with email = {request.Email}");
 
-			if (user == null)
-			{
-				return new UserForgotPasswordResponse
-					   {
-							   Email = request.Email,
-							   EmailSendError = "User with this email doesn't exists",
-							   IsConfirmationMailSent = false,
-							   IsUserExists = false
-					   };
-			}
+            var user = await _usersInformationService.FindUserByEmailAsync(request.Email);
 
-			var newPassword = _passwordEncryptorService.GeneratePassword();
-			var updateResult = await _usersService.ChangePasswordToAsync(user.Id, newPassword, user.HashedPassword);
+            if (user is null)
+            {
+                _logger.LogWarning($"{nameof(AuthenticationAndRegistrationController)}: user with email = {request.Email} is not found");
 
-			if (updateResult == false)
-			{
-				return new UserForgotPasswordResponse
-					   {
-							   Email = user.Email,
-							   EmailSendError = "Error happened when application tried to update the database",
-							   IsUserExists = true,
-							   IsConfirmationMailSent = false
-					   };
-			}
+                return new UserForgotPasswordResponse
+                       {
+                           Email = request.Email,
+                           Error = "User with this email doesn't exists",
+                           IsConfirmationMailSent = false,
+                           IsUserExists = false
+                       };
+            }
 
-			var emailSendResult = await _mailService.SendNewPasswordAsync(user.Email, newPassword);
+            var newPassword = _passwordEncryptorService.GeneratePassword();
+            var updateResult = await _usersInformationService.ChangePasswordToAsync(user.Id, newPassword, user.HashedPassword);
 
-			return emailSendResult is true
-						   ? new UserForgotPasswordResponse
-							 {
-									 Email = user.Email,
-									 EmailSendError = null,
-									 IsConfirmationMailSent = true,
-									 IsUserExists = true
-							 }
-						   : new UserForgotPasswordResponse
-							 {
-									 Email = user.Email,
-									 IsConfirmationMailSent = false,
-									 IsUserExists = true,
-									 EmailSendError =
-											 $"New password: {newPassword}{Environment.NewLine}The password was changed. But our Email Daemon didn't send a new password to you."
-							 };
-		}
+            if (updateResult == false)
+            {
+                _logger.LogError($"{nameof(AuthenticationAndRegistrationController)}: change password db update error");
 
-		[Route("registration")]
-		[HttpPost]
-		public async Task<UserRegisterResponse> Register(UserRegisterRequest request)
-		{
-			if (ReferenceEquals(request, null)) return null;
+                return new UserForgotPasswordResponse
+                       {
+                           Email = user.Email,
+                           Error = "Error happened when application tried to update the database",
+                           IsUserExists = true,
+                           IsConfirmationMailSent = false
+                       };
+            }
 
-			var result = await _userRegistrationService.RegisterDefaultUserAsync(request.Email, request.Password);
+            var emailSendResult = await _mailService.SendNewPasswordAsync(user.Email, newPassword);
 
-			if (!result)
-			{
-				return new UserRegisterResponse
-					   {
-							   Email = request.Email,
-							   IsRegistrationSuccessful = false,
-							   ResponseException = $"User with email {request.Email} is already exists"
-					   };
-			}
+            if (emailSendResult)
+            {
+                _logger.LogError($"{nameof(AuthenticationAndRegistrationController)}: user with email = {request.Email}: password changed, but email message not sent");
 
-			var user = await _usersService.FindUserByEmailAsync(request.Email);
+                return new UserForgotPasswordResponse
+                       {
+                           Email = user.Email,
+                           IsConfirmationMailSent = false,
+                           IsUserExists = true,
+                           Error =
+                               $"New password: {newPassword}{Environment.NewLine}The password was changed. But our Email Daemon didn't send a new password to you."
+                       };
+            }
 
-			return new UserRegisterResponse
-				   {
-						   Email = request.Email,
-						   IsRegistrationSuccessful = true,
-						   ResponseException = null,
-						   Role = "DefaultUser",
-						   UserId = user.Id
-				   };
-		}
+            _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: user with email = {request.Email}: password changed and email message sent");
 
-		[Route("login")]
-		[HttpPost]
-		public async Task<UserLoginResponse> Login(UserLoginRequest request)
-		{
-			if (ReferenceEquals(request, null)) return null;
+            return new UserForgotPasswordResponse
+                   {
+                       Email = user.Email,
+                       Error = null,
+                       IsConfirmationMailSent = true,
+                       IsUserExists = true
+                   };
+        }
 
-			var user = await _usersService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
+        [Route("Registration")]
+        [HttpPost]
+        public async Task<ActionResult<UserSignUpResponse>> Register(UserSignUpRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new UserSignUpResponse
+                                  {
+                                      Email = request.Email,
+                                      IsRegistrationSuccessful = false,
+                                      ResponseException = "Bad model",
+                                      Role = null
+                                  });
 
-			if (ReferenceEquals(user, null)) return new UserLoginResponse();
+            _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Registration request with email = {request.Email}");
 
-			await _usersEntrancesService.LogAsync(user.Id);
-			if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
+            var result = await _userRegistrationService.RegisterDefaultUserAsync(request.Email, request.Password);
 
-			var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
-			mappedUser.IsUserExists = true;
+            if (!result)
+            {
+                _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: Registration request with email = {request.Email}. Registration service sent an error");
 
-			return mappedUser;
-		}
-	}
+                return new UserSignUpResponse
+                       {
+                           Email = request.Email,
+                           IsRegistrationSuccessful = false,
+                           ResponseException = $"User with email {request.Email} is already exists or may be there another problem. Try another email"
+                       };
+            }
+
+            _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: successful registration for user with email = {request.Email}");
+
+            var token = new JwtUserToken(_jwtConfiguration)
+                        {
+                            Email = request.Email,
+                            Role = ApplicationRoles.DefaultUser.ToString()
+                        };
+
+            return new UserSignUpResponse
+                   {
+                       Email = request.Email,
+                       IsRegistrationSuccessful = true,
+                       ResponseException = null,
+                       Role = ApplicationRoles.DefaultUser.ToString(),
+                       JwtToken = token.GetToken()
+                   };
+        }
+
+        [Route("Login")]
+        [HttpPost]
+        public async Task<ActionResult<UserLoginResponse>> Login(UserSignInRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new UserLoginResponse
+                                  {
+                                      MetaInfo = "Bad model"
+                                  });
+
+            var user = await _usersInformationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
+
+            if (user is null)
+            {
+                _logger.LogWarning($"{nameof(AuthenticationAndRegistrationController)}: user with email or login = {request.LoginOrEmail} and wrote password not exist. Try another password.");
+
+                return NotFound(new UserLoginResponse());
+            }
+
+            _logger.LogInformation($"{nameof(AuthenticationAndRegistrationController)}: user with email or login = {request.LoginOrEmail} entered the service");
+            await _usersEntrancesService.LogAsync(user.Id);
+            if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
+
+            var token = new JwtUserToken(_jwtConfiguration)
+                        {
+                            Email = user.Email,
+                            Role = user.Role.RoleTitle
+                        };
+
+            var mappedUser = _mapper.Map<UserEntityReadDto, UserLoginResponse>(user);
+            mappedUser.IsUserExists = true;
+            mappedUser.JwtToken = token.GetToken();
+
+            return mappedUser;
+        }
+    }
 }

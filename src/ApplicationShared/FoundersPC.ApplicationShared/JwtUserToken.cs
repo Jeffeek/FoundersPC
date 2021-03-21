@@ -10,40 +10,38 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace FoundersPC.ApplicationShared
 {
-	public class JwtUserToken
-	{
-		public JwtUserToken(string email, string role)
-		{
-			Email = email;
-			Role = role;
-		}
+    public class JwtUserToken
+    {
+        private readonly JwtConfiguration _configuration;
 
-		public string Email { get; }
+        public JwtUserToken(JwtConfiguration configuration) => _configuration = configuration;
 
-		public string Role { get; }
+        public string Email { get; init; }
 
-		public string GetToken()
-		{
-			var claims = new List<Claim>
-						 {
-								 new(ClaimsIdentity.DefaultRoleClaimType, Role),
-								 new(ClaimsIdentity.DefaultNameClaimType, Email)
-						 };
+        public string Role { get; init; }
 
-			var key = JwtConfiguration.GetSymmetricSecurityKey();
+        public string GetToken()
+        {
+            var claims = new List<Claim>
+                         {
+                             new(ClaimsIdentity.DefaultRoleClaimType, Role),
+                             new(ClaimsIdentity.DefaultNameClaimType, Email)
+                         };
 
-			var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var key = _configuration.GetSymmetricSecurityKey();
 
-			var token = new JwtSecurityToken(JwtConfiguration.Issuer,
-											 JwtConfiguration.Audience,
-											 claims,
-											 DateTime.Now,
-											 DateTime.Now.AddMinutes(60),
-											 signingCredentials);
+            var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-			var value = new JwtSecurityTokenHandler().WriteToken(token);
+            var token = new JwtSecurityToken(_configuration.Issuer,
+                                             _configuration.Audience,
+                                             claims,
+                                             DateTime.Now,
+                                             DateTime.Now.AddMinutes(60),
+                                             signingCredentials);
 
-			return value;
-		}
-	}
+            var value = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return value;
+        }
+    }
 }

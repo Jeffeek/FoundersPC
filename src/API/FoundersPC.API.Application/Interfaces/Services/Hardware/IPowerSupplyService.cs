@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
-	public interface IPowerSupplyService
-	{
-		Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync();
+    public interface IPowerSupplyService
+    {
+        Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync();
 
-		Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId);
+        Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId);
 
-		Task<bool> CreatePowerSupplyAsync(PowerSupplyInsertDto powerSupply);
+        Task<bool> CreatePowerSupplyAsync(PowerSupplyInsertDto powerSupply);
 
-		Task<bool> UpdatePowerSupplyAsync(int id, PowerSupplyUpdateDto powerSupply);
+        Task<bool> UpdatePowerSupplyAsync(int id, PowerSupplyUpdateDto powerSupply);
 
-		Task<bool> DeletePowerSupplyAsync(int id);
-	}
+        Task<bool> DeletePowerSupplyAsync(int id);
+    }
 }

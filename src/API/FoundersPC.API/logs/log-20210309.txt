@@ -1,0 +1,6 @@
+03/09/2021 17:15:46 HARDWARE API started..
+03/09/2021 17:15:46 HARDWARE API HostBuilder created
+03/09/2021 17:15:46 Host built
+03/09/2021 17:15:47 Application started. Press Ctrl+C to shut down.
+03/09/2021 17:15:47 Hosting environment: "Development"
+03/09/2021 17:15:47 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"

@@ -8,13 +8,15 @@
     <Folder Include="Enums\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Interfaces\Services\Encryption Services\" />
+    <Folder Include="Validation\Requests\Administration\Manager\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentValidation" Version="9.5.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.5.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
@@ -23,6 +25,7 @@
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RepositoryShared\FoundersPC.RepositoryShared.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.WebIdentityShared\FoundersPC.WebIdentityShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Identity.Domain\FoundersPC.Identity.Domain.csproj" />
   </ItemGroup>
 

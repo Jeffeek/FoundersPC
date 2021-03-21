@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace FoundersPC.ApplicationShared
 {
-	public static class HttpContextExtensions
-	{
-		public static string GetIpAddress(this HttpContext httpContext) => httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
-	}
+    public static class HttpContextExtensions
+    {
+        public static string GetIpAddress(this HttpContext httpContext) => httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
+    }
 }

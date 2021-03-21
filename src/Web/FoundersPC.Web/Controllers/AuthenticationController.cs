@@ -1,16 +1,12 @@
 ﻿#region Using namespaces
 
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.ApplicationShared;
-using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
-using FoundersPC.Web.Models.ViewModels.Authentication;
-using FoundersPC.Web.Services.Web_Services;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
+using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -21,208 +17,191 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
-	[Controller]
-	public class AuthenticationController : Controller
-	{
-		private readonly ApplicationMicroservices _applicationMicroservices;
-		private readonly IMapper _mapper;
+    [Controller]
+    public class AuthenticationController : Controller
+    {
+        private readonly IIdentityAuthenticationService _authenticationService;
+        private readonly IMapper _mapper;
 
-		public AuthenticationController(ApplicationMicroservices applicationMicroservices,
-										IMapper mapper)
-		{
-			_applicationMicroservices = applicationMicroservices;
-			_mapper = mapper;
-		}
+        public AuthenticationController(IMapper mapper,
+                                        IIdentityAuthenticationService authenticationService
+        )
+        {
+            _authenticationService = authenticationService;
+            _mapper = mapper;
+            _authenticationService = authenticationService;
+        }
 
-		#region ForgotPassword
+        #region ForgotPassword
 
-		[HttpPost]
-		public async Task<ActionResult> ForgotPassword(UserForgotPasswordRequest request)
-		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(new
-								  {
-										  error = "Bad model"
-								  });
-			}
+        [HttpPost]
+        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return ValidationProblem("Bad email validation",
+                                         nameof(model),
+                                         400,
+                                         "Error",
+                                         nameof(ForgotPasswordViewModel));
 
-			var serverMessage =
-					await _applicationMicroservices.IdentityServer.PostAsJsonAsync("authentication/forgotpassword", request);
+            var forgotPasswordResponse =
+                await _authenticationService.ForgotPasswordAsync(model);
 
-			if (!serverMessage.IsSuccessStatusCode)
-			{
-				return Problem("Server error",
-							   statusCode :(int)serverMessage.StatusCode);
-			}
+            if (forgotPasswordResponse is null)
+                return ValidationProblem("Server returned null object",
+                                         nameof(forgotPasswordResponse),
+                                         400,
+                                         "Error",
+                                         nameof(UserForgotPasswordResponse));
 
-			var result = await serverMessage.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
+            if (!forgotPasswordResponse.IsUserExists)
+                return NotFound(new
+                                {
+                                    error = $"User with email = {model.Email} does not exists in our database"
+                                });
 
-			if (result is null)
-			{
-				return Problem("Authentication server returned null object. Contact the administration",
-							   statusCode :404,
-							   title :"Error");
-			}
+            if (!forgotPasswordResponse.IsConfirmationMailSent)
+                return Problem(forgotPasswordResponse.Error,
+                               statusCode : 401,
+                               title : "Email send error");
 
-			if (!result.IsUserExists)
-			{
-				return NotFound(new
-								{
-										error = $"User with email = {request.Email} does not exists in our database"
-								});
-			}
+            return View("SignIn");
+        }
 
-			if (!result.IsConfirmationMailSent)
-			{
-				return Problem(result.EmailSendError,
-							   statusCode :404,
-							   title :"Error");
-			}
+        #endregion
 
-			return View("ForgotPasswordResult", result);
-		}
+        #region SignUp
 
-		#endregion
+        [HttpPost]
+        public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
+        {
+            if (!ModelState.IsValid)
+                return ValidationProblem("Bad validation/model",
+                                         nameof(signUpModel),
+                                         400,
+                                         "Error",
+                                         nameof(SignUpViewModel));
 
-		#region SignUp
+            var registrationResponse = await _authenticationService.SignUpAsync(signUpModel);
 
-		[HttpPost]
-		public async Task<IActionResult> RegisterAsync(SignUpViewModel signUpModel)
-		{
-			if (!TryValidateModel(signUpModel)) return BadRequest(signUpModel);
+            if (registrationResponse is null)
+                return Problem("Deserialize error",
+                               nameof(registrationResponse),
+                               StatusCodes.Status500InternalServerError,
+                               "Response error",
+                               nameof(UserSignUpResponse));
 
-			var request = _mapper.Map<SignUpViewModel, UserRegisterRequest>(signUpModel);
+            if (!registrationResponse.IsRegistrationSuccessful)
+                return Problem("Registration not successful",
+                               nameof(signUpModel),
+                               StatusCodes.Status409Conflict,
+                               "Not acceptable registration",
+                               nameof(UserSignUpResponse));
 
-			var registrationResult =
-					await _applicationMicroservices.IdentityServer.PostAsJsonAsync("authentication/registration", request);
+            await SetupSessionCookieAsync(registrationResponse.Email, registrationResponse.Role);
+            SetupJwtTokenInCookie(registrationResponse.JwtToken);
 
-			var content = await registrationResult.Content.ReadFromJsonAsync<UserRegisterResponse>();
+            return RedirectToAction("Index", "Home");
+        }
 
-			if (ReferenceEquals(content, null))
-			{
-				return Problem("Deserialize error",
-							   nameof(content),
-							   StatusCodes.Status500InternalServerError,
-							   "Response error",
-							   nameof(UserRegisterResponse));
-			}
+        #endregion
 
-			if (!content.IsRegistrationSuccessful)
-			{
-				return Problem("Registration not successful",
-							   nameof(signUpModel),
-							   StatusCodes.Status409Conflict,
-							   "Not acceptable registration",
-							   nameof(UserRegisterResponse));
-			}
+        [Authorize]
+        public async Task<ActionResult> LogOutAsync()
+        {
+            if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
 
-			await SetupSessionCookieAsync(content.Email, content.Role);
+            RemoveJwtTokenInCookie();
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-			return RedirectToAction("Index", "Home");
-		}
+            return RedirectToAction("Index", "Home");
+        }
 
-		#endregion
+        #region SignIn
 
-		[Authorize]
-		public async Task<ActionResult> LogoutAsync()
-		{
-			if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
+        [HttpPost]
+        public async Task<IActionResult> SignInAsync(SignInViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return ValidationProblem("Not valid credentials. Bad model.",
+                                         nameof(model),
+                                         400,
+                                         "Error",
+                                         nameof(SignInViewModel));
 
-			RemoveJwtTokenInCookie();
-			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            var signInResponse = await _authenticationService.SignInAsync(model);
 
-			return RedirectToAction("Index", "Home");
-		}
+            if (signInResponse == null)
+                return Problem("Deserialize error",
+                               nameof(signInResponse),
+                               StatusCodes.Status500InternalServerError,
+                               "Response error",
+                               nameof(UserLoginResponse));
 
-		#region SignIn
+            if (!signInResponse.IsUserExists)
+                return NotFound(new
+                                {
+                                    error = "User not exists"
+                                });
 
-		[HttpPost]
-		public async Task<IActionResult> SigninAsync(SignInViewModel signInModel)
-		{
-			if (!ModelState.IsValid) return ValidationProblem("Not valid credentials", nameof(signInModel));
+            await SetupSessionCookieAsync(signInResponse.Email, signInResponse.Role);
+            SetupJwtTokenInCookie(signInResponse.JwtToken);
 
-			var request = _mapper.Map<SignInViewModel, UserLoginRequest>(signInModel);
+            return RedirectToAction("Index", "Home");
+        }
 
-			var result = await _applicationMicroservices.IdentityServer.PostAsJsonAsync("authentication/login", request);
+        #endregion
 
-			if (!result.IsSuccessStatusCode) return NotFound(request);
+        #region Cookie
 
-			var content = await result.Content.ReadFromJsonAsync<UserLoginResponse>();
+        private void SetupJwtTokenInCookie(string token)
+        {
+            RemoveJwtTokenInCookie();
 
-			if (content == null)
-			{
-				return Problem("Deserialize error",
-							   nameof(content),
-							   StatusCodes.Status500InternalServerError,
-							   "Response error",
-							   nameof(UserLoginResponse));
-			}
+            HttpContext.Response.Cookies.Append("token",
+                                                token,
+                                                new CookieOptions
+                                                {
+                                                    HttpOnly = true,
+                                                    IsEssential = true,
+                                                    Secure = true
+                                                });
+        }
 
-			if (!content.IsUserExists)
-			{
-				return NotFound(new
-								{
-										error = "User not exists"
-								});
-			}
+        private async Task SetupSessionCookieAsync(string email, string role)
+        {
+            var claims = new List<Claim>
+                         {
+                             new(ClaimsIdentity.DefaultNameClaimType,
+                                 email),
+                             new(ClaimsIdentity.DefaultRoleClaimType,
+                                 role)
+                         };
 
-			await SetupSessionCookieAsync(content.Email, content.Role);
-			SetupJwtTokenInCookie(content.Email, content.Role);
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-			return RedirectToAction("Index", "Home");
-		}
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                                          new ClaimsPrincipal(identity));
+        }
 
-		private void SetupJwtTokenInCookie(string contentEmail, string contentRole)
-		{
-			RemoveJwtTokenInCookie();
-			var jwtToken = new JwtUserToken(contentEmail, contentRole);
-			var token = jwtToken.GetToken();
+        private void RemoveJwtTokenInCookie()
+        {
+            if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
+        }
 
-			HttpContext.Response.Cookies.Append("token",
-												token,
-												new CookieOptions
-												{
-														HttpOnly = true,
-														IsEssential = true,
-														Secure = true
-												});
-		}
+        #endregion
 
-		#endregion
+        #region Redirection
 
-		#region Cookie
+        [HttpGet]
+        public ActionResult SignIn() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
-		private async Task SetupSessionCookieAsync(string email, string role)
-		{
-			var claims = new List<Claim>
-						 {
-								 new(ClaimsIdentity.DefaultNameClaimType, email),
-								 new(ClaimsIdentity.DefaultRoleClaimType, role)
-						 };
+        [HttpGet]
+        public IActionResult SignUp() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
-			var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-			await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
-		}
+        [HttpGet]
+        public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
 
-		private void RemoveJwtTokenInCookie()
-		{
-			if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
-		}
-
-		#endregion
-
-		#region Redirection
-
-		[HttpGet]
-		public ActionResult Signin() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
-
-		[HttpGet]
-		public IActionResult SignUp() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
-
-		[HttpGet]
-		public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("Stupid") : View();
-
-		#endregion
-	}
+        #endregion
+    }
 }

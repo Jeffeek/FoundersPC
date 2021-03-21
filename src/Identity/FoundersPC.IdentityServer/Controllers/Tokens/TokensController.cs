@@ -1,35 +1,39 @@
 ﻿#region Using namespaces
 
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
+using FoundersPC.WebIdentityShared;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-	[Route("identityAPI/tokens")]
-	[ApiController]
-	public class TokensController : Controller
-	{
-		private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Route("FoundersPCIdentity/Tokens")]
+    [ApiController]
+    public class TokensController : Controller
+    {
+        private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
 
-		public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
+        public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
 
-		[HttpGet]
-		[Route("user/{userId}")]
-		public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens(int? userId)
-		{
-			if (!userId.HasValue
-				|| userId.Value < 1)
-				return BadRequest();
+        [HttpGet]
+        [Route("User/{email}")]
+        public async Task<ActionResult<IEnumerable<ApplicationAccessToken>>> GetUserTokens(string email)
+        {
+            var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
 
-			var tokens = await _apiAccessUsersTokensService.GetUserTokens(userId.Value);
+            if (tokens is null)
+                return BadRequest(new
+                                  {
+                                      error = "No user with this email"
+                                  });
 
-			return Json(tokens ?? Enumerable.Empty<ApiAccessUserTokenReadDto>());
-		}
-	}
+            return Json(tokens);
+        }
+    }
 }

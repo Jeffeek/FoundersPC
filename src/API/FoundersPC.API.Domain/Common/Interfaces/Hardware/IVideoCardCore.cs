@@ -1,23 +1,23 @@
 ﻿namespace FoundersPC.API.Domain.Common.Interfaces.Hardware
 {
-	public interface IVideoCardCore
-	{
-		int TechProcess { get; set; }
+    public interface IVideoCardCore
+    {
+        int TechProcess { get; set; }
 
-		string MaxResolution { get; set; }
+        string MaxResolution { get; set; }
 
-		int MonitorsSupport { get; set; }
+        int MonitorsSupport { get; set; }
 
-		string ConnectionInterface { get; set; }
+        string ConnectionInterface { get; set; }
 
-		string Codename { get; set; }
+        string Codename { get; set; }
 
-		string DirectX { get; set; }
+        string DirectX { get; set; }
 
-		bool SLIOrCrossfire { get; set; }
+        bool SLIOrCrossfire { get; set; }
 
-		string ArchitectureTitle { get; set; }
+        string ArchitectureTitle { get; set; }
 
-		string Title { get; set; }
-	}
+        string Title { get; set; }
+    }
 }

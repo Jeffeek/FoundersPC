@@ -10,22 +10,22 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FoundersPC.API.Application
 {
-	public static class HardwareApplicationExtensions
-	{
-		public static void AddHardwareApplicationExtensions(this IServiceCollection services)
-		{
-			services.AddAutoMapper(typeof(MappingStartup));
-		}
+    public static class HardwareApplicationExtensions
+    {
+        public static void AddHardwareApplicationExtensions(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(MappingStartup));
+        }
 
-		public static void AddValidators(this IServiceCollection services)
-		{
-			services.AddMvc()
-					.AddFluentValidation(cfg =>
-										 {
-											 cfg.AutomaticValidationEnabled = true;
-											 cfg.RegisterValidatorsFromAssemblyContaining<CaseInsertDtoValidation>();
-											 cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
-										 });
-		}
-	}
+        public static void AddValidators(this IServiceCollection services)
+        {
+            services.AddMvc()
+                    .AddFluentValidation(cfg =>
+                                         {
+                                             cfg.AutomaticValidationEnabled = true;
+                                             cfg.RegisterValidatorsFromAssemblyContaining<CaseInsertDtoValidation>();
+                                             cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
+                                         });
+        }
+    }
 }

@@ -12,14 +12,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 {
-	// todo: by id
-	public class UsersEntrancesLogsRepository : GenericRepositoryAsync<UserEntranceLog>, IUsersEntrancesLogsRepository
-	{
-		public UsersEntrancesLogsRepository(FoundersPCUsersContext context) : base(context) { }
+    public class UsersEntrancesLogsRepository : GenericRepositoryAsync<UserEntranceLog>, IUsersEntrancesLogsRepository
+    {
+        public UsersEntrancesLogsRepository(FoundersPCUsersContext context) : base(context) { }
 
-		public override async Task<IEnumerable<UserEntranceLog>> GetAllAsync() => await Context.Set<UserEntranceLog>()
-																							   .Include(log => log.User)
-																							   .ThenInclude(user => user.Role)
-																							   .ToListAsync();
-	}
+        public override async Task<IEnumerable<UserEntranceLog>> GetAllAsync() =>
+            await Context.Set<UserEntranceLog>()
+                         .Include(log => log.User)
+                         .ThenInclude(user => user.Role)
+                         .ToListAsync();
+
+        public override async Task<UserEntranceLog> GetByIdAsync(int id)
+        {
+            var entrance = await Context.Set<UserEntranceLog>().FindAsync(id);
+
+            if (entrance is null) return null;
+
+            Context.Entry(entrance).Reference(x => x.User);
+            Context.Entry(entrance).Reference(x => x.User.Role);
+
+            return entrance;
+        }
+    }
 }

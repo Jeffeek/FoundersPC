@@ -60,7 +60,12 @@
 
     .register-form
     {
-        margin-top: 60%;
+        margin-top: 55%;
+    }
+
+    .forgotpassword-form
+    {
+        margin-top: 50%;
     }
 }
 
@@ -75,4 +80,20 @@
 .login-main-text h2
 {
     font-weight: 300;
+}
+
+.icon-reset:hover path
+{
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-name: rotation;
+    animation-timing-function: cubic-bezier(100, 0, 0, 100);
+}
+
+.icon-eye:hover path
+{
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-name: shaking;
+    animation-timing-function: cubic-bezier(100, 0, 0, 100);
 }
