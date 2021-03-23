@@ -41,7 +41,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         public async Task<ActionResult<UserLoginResponse>> SignIn([FromBody] UserSignInRequest request)
         {
             if (!ModelState.IsValid)
-                UnprocessableEntity();
+                return UnprocessableEntity();
 
             var user = await _authenticationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail, request.Password);
 

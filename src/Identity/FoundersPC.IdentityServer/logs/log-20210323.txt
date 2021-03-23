@@ -270,3 +270,33 @@ System.ArgumentException: Old password in hash is not equal to database's hashed
 03/23/2021 21:38:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
 03/23/2021 21:39:14 SignInController: user with email or login = ilyushin_misha@mail.ru entered the service
 03/23/2021 21:39:54 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 71821.3838 ms
+03/23/2021 21:52:14 Identity server started..
+03/23/2021 21:52:14 Identity server HostBuilder created
+03/23/2021 21:52:14 Host built
+03/23/2021 21:52:15 Now listening on: "https://localhost:3000"
+03/23/2021 21:52:15 Application started. Press Ctrl+C to shut down.
+03/23/2021 21:52:15 Hosting environment: "Development"
+03/23/2021 21:52:15 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/23/2021 21:52:22 SignInController: user with email or login = ilyushin_misha@mail.ru and wrote password not exist. Try another password.
+03/23/2021 21:52:22 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 404 in 1527.1776 ms
+03/23/2021 22:07:29 Identity server started..
+03/23/2021 22:07:29 Identity server HostBuilder created
+03/23/2021 22:07:29 Host built
+03/23/2021 22:07:30 Now listening on: "https://localhost:3000"
+03/23/2021 22:07:30 Application started. Press Ctrl+C to shut down.
+03/23/2021 22:07:30 Hosting environment: "Development"
+03/23/2021 22:07:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/23/2021 22:07:44 SignInController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/23/2021 22:07:45 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1905.8266 ms
+03/23/2021 22:07:53 SignInController: user with email or login = ilyushin_misha@mail.ru and wrote password not exist. Try another password.
+03/23/2021 22:07:53 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 404 in 32.8258 ms
+03/23/2021 22:08:29 Identity server started..
+03/23/2021 22:08:29 Identity server HostBuilder created
+03/23/2021 22:08:29 Host built
+03/23/2021 22:08:29 Now listening on: "https://localhost:3000"
+03/23/2021 22:08:29 Application started. Press Ctrl+C to shut down.
+03/23/2021 22:08:29 Hosting environment: "Development"
+03/23/2021 22:08:29 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/23/2021 22:08:36 SignInController: user with email or login = ilyushin_misha@mail.ru and wrote password not exist. Try another password.
+03/23/2021 22:08:36 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 404 in 1614.8921 ms
+03/23/2021 22:08:42 Application is shutting down...

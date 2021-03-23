@@ -6,8 +6,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Net.NetworkInformation;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
@@ -36,35 +38,17 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             _logger = logger;
         }
 
+        #region Sign In
+
         public async Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword)
         {
-            if (emailOrLogin is null)
-            {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: email or login was null");
+            var signInModel = new SignInViewModel()
+                              {
+                                  LoginOrEmail = emailOrLogin,
+                                  RawPassword = rawPassword
+                              };
 
-                throw new ArgumentNullException(nameof(emailOrLogin));
-            }
-
-            if (rawPassword is null)
-            {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: raw password was null");
-
-                throw new ArgumentNullException(nameof(rawPassword));
-            }
-
-            using var client = _httpClientFactory.CreateClient("Sign In client");
-            PrepareRequest(client);
-
-            var signInRequest = await client.PostAsJsonAsync("SignIn",
-                                                             new UserSignInRequest
-                                                             {
-                                                                 LoginOrEmail = emailOrLogin,
-                                                                 Password = rawPassword
-                                                             });
-
-            var signInResponseContent = await signInRequest.Content.ReadFromJsonAsync<UserLoginResponse>();
-
-            return signInResponseContent;
+            return await SignInAsync(signInModel);
         }
 
         public async Task<UserLoginResponse> SignInAsync(SignInViewModel model)
@@ -91,7 +75,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             using var client = _httpClientFactory.CreateClient("Sign In client");
-            PrepareRequest(client);
+            client.PrepareJsonRequest($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
@@ -101,7 +85,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             {
                 _logger.LogError($"Request from {nameof(IdentityAuthenticationService)} to Identity server returned a server error {responseMessage.StatusCode}");
 
-                throw new NetworkInformationException((int)responseMessage.StatusCode);
+                throw new AuthenticationException();
             }
 
             var signInResponseContent = await responseMessage.Content.ReadFromJsonAsync<UserLoginResponse>();
@@ -109,35 +93,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             return signInResponseContent;
         }
 
+        #endregion
+
+        #region Sign Up
+
         public async Task<UserSignUpResponse> SignUpAsync(string email, string rawPassword)
         {
-            if (email is null)
-            {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: email was null");
+            var signUpModel = new SignUpViewModel()
+                              {
+                                  Email = email,
+                                  RawPassword = rawPassword
+                              };
 
-                throw new ArgumentNullException(nameof(email));
-            }
-
-            if (rawPassword is null)
-            {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: raw password was null");
-
-                throw new ArgumentNullException(nameof(rawPassword));
-            }
-
-            var client = _httpClientFactory.CreateClient("Sign Up client");
-            PrepareRequest(client);
-
-            var signUpRequest = await client.PostAsJsonAsync("SignUp",
-                                                             new UserSignUpRequest
-                                                             {
-                                                                 Email = email,
-                                                                 Password = rawPassword
-                                                             });
-
-            var signUpResponseContent = await signUpRequest.Content.ReadFromJsonAsync<UserSignUpResponse>();
-
-            return signUpResponseContent;
+            return await SignUpAsync(signUpModel);
         }
 
         public async Task<UserSignUpResponse> SignUpAsync(SignUpViewModel model)
@@ -164,7 +132,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             var client = _httpClientFactory.CreateClient("Sign Up client");
-            PrepareRequest(client);
+            client.PrepareJsonRequest($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
@@ -175,28 +143,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             return signUpResponseContent;
         }
 
+        #endregion
+
+        #region Forgot password
+
         public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(string email)
         {
-            if (email is null)
-            {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: forgot password: email was null");
+            var forgotPasswordModel = new ForgotPasswordViewModel()
+                                      {
+                                          Email = email
+                                      };
 
-                throw new ArgumentNullException(nameof(email));
-            }
-
-            var client = _httpClientFactory.CreateClient("Forgot password client");
-            PrepareRequest(client);
-
-            var forgotPasswordRequest = await client.PostAsJsonAsync("ForgotPassword",
-                                                                     new UserForgotPasswordRequest
-                                                                     {
-                                                                         Email = email
-                                                                     });
-
-            var forgotPasswordResponseContent =
-                await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
-
-            return forgotPasswordResponseContent;
+            return await ForgotPasswordAsync(forgotPasswordModel);
         }
 
         public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordViewModel model)
@@ -216,7 +174,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             var client = _httpClientFactory.CreateClient("Forgot password client");
-            PrepareRequest(client);
+            client.PrepareJsonRequest($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
 
             var mappedRequestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);
 
@@ -229,12 +187,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             return forgotPasswordResponseContent;
         }
 
-        private void PrepareRequest(HttpClient client)
-        {
-            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-        }
+        #endregion
     }
 }

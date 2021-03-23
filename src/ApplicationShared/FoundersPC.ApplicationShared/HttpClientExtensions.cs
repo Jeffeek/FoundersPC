@@ -2,6 +2,7 @@
 
 using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -50,5 +51,14 @@ namespace FoundersPC.ApplicationShared
                                                                         typeof(T))
                                        },
                                        cancellationToken);
+
+        public static void PrepareJsonRequest(this HttpClient client, string baseAddress = null)
+        {
+            if (baseAddress is not null)
+                client.BaseAddress = new Uri(baseAddress);
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+        }
     }
 }
