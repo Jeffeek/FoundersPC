@@ -5,14 +5,11 @@
 // Inspired by base2 and Prototype
 (function ()
 {
-    var initializing = false
-        , fnTest = /xyz/.test(
-                           function ()
-                           {
-                               xyz;
-                           })
-                       ? /\b_super\b/
-                       : /.*/;
+    var initializing = false,
+        fnTest = /xyz/.test(
+                         function () { xyz; })
+                     ? /\b_super\b/
+                     : /.*/;
     // The base Class implementation (does nothing)
     this.Class = function () { };
     // Create a new Class that inherits from this class
@@ -28,9 +25,7 @@
         for (let name in prop)
         {
             // Check if we're overwriting an existing function
-            prototype[name] = typeof prop[name] == "function" &&
-                              typeof _super[name] == "function" &&
-                              fnTest.test(prop[name])
+            prototype[name] = typeof prop[name] == "function" && typeof _super[name] == "function" && fnTest.test(prop[name])
                               ? (function (name, fn)
                               {
                                   return function ()
@@ -74,10 +69,7 @@
 // ###################################################################
 (function ()
 {
-    const requestAnimationFrame = window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame;
+    const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 (function ()
@@ -86,14 +78,8 @@
     {
         window.performance.now =
             (!Date.now)
-            ? function ()
-            {
-                return new Date().getTime();
-            }
-            : function ()
-            {
-                return Date.now();
-            };
+            ? function () { return new Date().getTime(); }
+            : function () { return Date.now(); };
     }
 })();
 // ###################################################################
@@ -120,32 +106,18 @@ var ALIEN_SQUAD_WIDTH = 10 * ALIEN_X_MARGIN;
 // Utility functions & classes
 //
 // ###################################################################
-function getRandomArbitrary(min, max)
-{
-    return Math.random() * (max - min) + min;
-}
+function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min; }
 
-function getRandomInt(min, max)
-{
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
-function clamp(num, min, max)
-{
-    return Math.min(Math.max(num, min), max);
-}
+function clamp(num, min, max) { return Math.min(Math.max(num, min), max); }
 
-function valueInRange(value, min, max)
-{
-    return (value <= max) && (value >= min);
-}
+function valueInRange(value, min, max) { return (value <= max) && (value >= min); }
 
 function checkRectCollision(A, B)
 {
-    const xOverlap = valueInRange(A.x, B.x, B.x + B.w) ||
-        valueInRange(B.x, A.x, A.x + A.w);
-    const yOverlap = valueInRange(A.y, B.y, B.y + B.h) ||
-        valueInRange(B.y, A.y, A.y + A.h);
+    const xOverlap = valueInRange(A.x, B.x, B.x + B.w) || valueInRange(B.x, A.x, A.x + A.w);
+    const yOverlap = valueInRange(A.y, B.y, B.y + B.h) || valueInRange(B.y, A.y, A.y + A.h);
     return xOverlap && yOverlap;
 }
 
@@ -159,8 +131,8 @@ var Point2D = Class.extend(
             this.y = (typeof y === "undefined")
                      ? 0
                      : y;
-        }
-        , set : function (x, y)
+        },
+        set : function (x, y)
         {
             this.x = x;
             this.y = y;
@@ -182,8 +154,8 @@ var Rect = Class.extend(
             this.h = (typeof h === "undefined")
                      ? 0
                      : h;
-        }
-        , set : function (x, y, w, h)
+        },
+        set : function (x, y, w, h)
         {
             this.x = x;
             this.y = y;
@@ -224,17 +196,11 @@ var BaseSprite = Class.extend(
             this.scale = new Point2D(1, 1);
             this.bounds = new Rect(x, y, this.img.width, this.img.height);
             this.doLogic = true;
-        }
-        , update : function (dt) { }
-        , _updateBounds : function ()
-        {
-            this.bounds.set(this.position.x, this.position.y, ~~(0.5 + this.img.width * this.scale.x), ~~(0.5 + this.img.height * this.scale.y));
-        }
-        , _drawImage : function ()
-        {
-            ctx.drawImage(this.img, this.position.x, this.position.y);
-        }
-        , draw : function (resized)
+        },
+        update : function (dt) { },
+        _updateBounds : function () { this.bounds.set(this.position.x, this.position.y, ~~(0.5 + this.img.width * this.scale.x), ~~(0.5 + this.img.height * this.scale.y)); },
+        _drawImage : function () { ctx.drawImage(this.img, this.position.x, this.position.y); },
+        draw : function (resized)
         {
             this._updateBounds();
             this._drawImage();
@@ -247,25 +213,22 @@ var SheetSprite = BaseSprite.extend(
             this._super(sheetImg, x, y);
             this.clipRect = clipRect;
             this.bounds.set(x, y, this.clipRect.w, this.clipRect.h);
-        }
-        , update : function (dt) { }
-        , _updateBounds : function ()
+        },
+        update : function (dt) { },
+        _updateBounds : function ()
         {
             const w = ~~(0.5 + this.clipRect.w * this.scale.x);
             const h = ~~(0.5 + this.clipRect.h * this.scale.y);
             this.bounds.set(this.position.x - w / 2, this.position.y - h / 2, w, h);
-        }
-        , _drawImage : function ()
+        },
+        _drawImage : function ()
         {
             ctx.save();
             ctx.transform(this.scale.x, 0, 0, this.scale.y, this.position.x, this.position.y);
             ctx.drawImage(this.img, this.clipRect.x, this.clipRect.y, this.clipRect.w, this.clipRect.h, ~~(0.5 + -this.clipRect.w * 0.5), ~~(0.5 + -this.clipRect.h * 0.5), this.clipRect.w, this.clipRect.h);
             ctx.restore();
-        }
-        , draw : function (resized)
-        {
-            this._super(resized);
-        }
+        },
+        draw : function (resized) { this._super(resized); }
     });
 var Player = SheetSprite.extend(
     {
@@ -278,19 +241,19 @@ var Player = SheetSprite.extend(
             this.bullets = [];
             this.bulletDelayAccumulator = 0;
             this.score = 0;
-        }
-        , reset : function ()
+        },
+        reset : function ()
         {
             this.lives = 3;
             this.score = 0;
             this.position.set(CANVAS_WIDTH / 2, CANVAS_HEIGHT - 70);
-        }
-        , shoot : function ()
+        },
+        shoot : function ()
         {
             const bullet = new Bullet(this.position.x, this.position.y - this.bounds.h / 2, 1, 1000);
             this.bullets.push(bullet);
-        }
-        , handleInput : function ()
+        },
+        handleInput : function ()
         {
             if (isKeyDown(LEFT_KEY))
             {
@@ -312,8 +275,8 @@ var Player = SheetSprite.extend(
                     this.bulletDelayAccumulator = 0;
                 }
             }
-        }
-        , updateBullets : function (dt)
+        },
+        updateBullets : function (dt)
         {
             for (let i = this.bullets.length - 1; i >= 0; i--)
             {
@@ -328,8 +291,8 @@ var Player = SheetSprite.extend(
                     bullet = null;
                 }
             }
-        }
-        , update : function (dt)
+        },
+        update : function (dt)
         {
             // update time passed between shots
             this.bulletDelayAccumulator += dt;
@@ -338,8 +301,8 @@ var Player = SheetSprite.extend(
             // cap player position in screen bounds
             this.position.x = clamp(this.position.x, this.bounds.w / 2, CANVAS_WIDTH - this.bounds.w / 2);
             this.updateBullets(dt);
-        }
-        , draw : function (resized)
+        },
+        draw : function (resized)
         {
             this._super(resized);
             // draw bullets
@@ -361,19 +324,16 @@ var Bullet = BaseSprite.extend(
             this.direction = direction;
             this.speed = speed;
             this.alive = true;
-        }
-        , update : function (dt)
+        },
+        update : function (dt)
         {
             this.position.y -= (this.speed * this.direction) * dt;
             if (this.position.y < 0)
             {
                 this.alive = false;
             }
-        }
-        , draw : function (resized)
-        {
-            this._super(resized);
-        }
+        },
+        draw : function (resized) { this._super(resized); }
     });
 var Enemy = SheetSprite.extend(
     {
@@ -388,19 +348,16 @@ var Enemy = SheetSprite.extend(
             this.stepAccumulator = 0;
             this.doShoot - false;
             this.bullet = null;
-        }
-        , toggleFrame : function ()
+        },
+        toggleFrame : function ()
         {
             this.onFirstState = !this.onFirstState;
             this.clipRect = (this.onFirstState)
                             ? this.clipRects[0]
                             : this.clipRects[1];
-        }
-        , shoot : function ()
-        {
-            this.bullet = new Bullet(this.position.x, this.position.y + this.bounds.w / 2, -1, 500);
-        }
-        , update : function (dt)
+        },
+        shoot : function () { this.bullet = new Bullet(this.position.x, this.position.y + this.bounds.w / 2, -1, 500); },
+        update : function (dt)
         {
             this.stepAccumulator += dt;
             if (this.stepAccumulator >= this.stepDelay)
@@ -435,8 +392,8 @@ var Enemy = SheetSprite.extend(
             {
                 this.bullet = null;
             }
-        }
-        , draw : function (resized)
+        },
+        draw : function (resized)
         {
             this._super(resized);
             if (this.bullet !== null && this.bullet.alive)
@@ -451,8 +408,8 @@ var ParticleExplosion = Class.extend(
         {
             this.particlePool = [];
             this.particles = [];
-        }
-        , draw : function ()
+        },
+        draw : function ()
         {
             for (let i = this.particles.length - 1; i >= 0; i--)
             {
@@ -480,8 +437,8 @@ var ParticleExplosion = Class.extend(
                     ctx.globalAlpha = 1;
                 }
             }
-        }
-        , createExplosion : function (x, y, color, number, width, height, spd, grav, lif)
+        },
+        createExplosion : function (x, y, color, number, width, height, spd, grav, lif)
         {
             for (let i = 0; i < number; i++)
             {
@@ -512,18 +469,18 @@ var ParticleExplosion = Class.extend(
                 {
                     this.particles.push(
                         {
-                            x : x
-                            , y : y
-                            , xunits : xunits
-                            , yunits : yunits
-                            , life : life
-                            , color : color
-                            , width : width
-                            , height : height
-                            , gravity : grav
-                            , moves : 0
-                            , alpha : 1
-                            , maxLife : life
+                            x : x,
+                            y : y,
+                            xunits : xunits,
+                            yunits : yunits,
+                            life : life,
+                            color : color,
+                            width : width,
+                            height : height,
+                            gravity : grav,
+                            moves : 0,
+                            alpha : 1,
+                            maxLife : life
                         });
                 }
             }
@@ -554,9 +511,7 @@ function initCanvas()
 function preDrawImages()
 {
     const canvas = drawIntoCanvas(
-        2
-        , 8
-        , function (ctx)
+        2, 8, function (ctx)
         {
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
@@ -631,15 +586,9 @@ function init()
 // Helpful input functions
 //
 // ###################################################################
-function isKeyDown(key)
-{
-    return keyStates[key];
-}
+function isKeyDown(key) { return keyStates[key]; }
 
-function wasKeyPressed(key)
-{
-    return !prevKeyStates[key] && keyStates[key];
-}
+function wasKeyPressed(key) { return !prevKeyStates[key] && keyStates[key]; }
 
 // ###################################################################
 // Drawing & Update functions

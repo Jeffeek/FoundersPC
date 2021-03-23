@@ -110,7 +110,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware
         }
 
         /// <inheritdoc />
-        public override int GetHashCode() => HashCode.Combine(Type, MaxMotherboardSize, Material, WindowMaterial, TransparentWindow, Color);
+        public override int GetHashCode() =>
+            HashCode.Combine(Type, MaxMotherboardSize, Material, WindowMaterial, TransparentWindow, Color);
 
         #endregion
     }

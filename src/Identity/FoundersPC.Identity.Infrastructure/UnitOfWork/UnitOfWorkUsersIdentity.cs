@@ -19,8 +19,7 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
                                        FoundersPCUsersContext context,
                                        IAccessTokensLogsRepository accessTokensLogsRepository,
                                        IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
-                                       IApiAccessUsersTokensRepository apiAccessUsersTokensRepository
-        )
+                                       IApiAccessUsersTokensRepository apiAccessUsersTokensRepository)
         {
             _context = context;
             AccessTokensLogsRepository = accessTokensLogsRepository;

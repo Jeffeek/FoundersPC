@@ -134,16 +134,16 @@ body
     }
 }
 
-.black-cat 
+.black-cat
 {
-    left: 40%;
-    position: absolute;
-    top: 5%;
     height: 7rem;
+    left: 40%;
     margin-top: 50px;
-    stroke: #110000;
-    transition: 0.5s;
     position: absolute;
+    position: absolute;
+    stroke: #110000;
+    top: 5%;
+    transition: 0.5s;
 }
 
 .black-cat:hover

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
+using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 
@@ -15,12 +16,19 @@ namespace FoundersPC.Identity.Services.Log_Services
     public class UsersEntrancesService : IUsersEntrancesService
     {
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
+        private readonly IMailService _mailService;
 
-        public UsersEntrancesService(IUnitOfWorkUsersIdentity unitOfWork) => _unitOfWork = unitOfWork;
+        public UsersEntrancesService(IUnitOfWorkUsersIdentity unitOfWork, IMailService mailService)
+        {
+            _unitOfWork = unitOfWork;
+            _mailService = mailService;
+        }
 
-        public async Task<IEnumerable<UserEntranceLog>> GetAllAsync() => await _unitOfWork.UsersEntrancesLogsRepository.GetAllAsync();
+        public async Task<IEnumerable<UserEntranceLog>> GetAllAsync() =>
+            await _unitOfWork.UsersEntrancesLogsRepository.GetAllAsync();
 
-        public async Task<UserEntranceLog> GetByIdAsync(int id) => await _unitOfWork.UsersEntrancesLogsRepository.GetByIdAsync(id);
+        public async Task<UserEntranceLog> GetByIdAsync(int id) =>
+            await _unitOfWork.UsersEntrancesLogsRepository.GetByIdAsync(id);
 
         public async Task<IEnumerable<UserEntranceLog>> GetEntrancesBetweenAsync(DateTime start, DateTime finish)
         {
@@ -44,11 +52,15 @@ namespace FoundersPC.Identity.Services.Log_Services
             return filtered;
         }
 
+        //todo: logger
         public async Task<bool> LogAsync(int userId)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 
             if (user == null) return false;
+
+            if (user.SendMessageOnEntrance)
+                await _mailService.SendEntranceNotificationAsync(user.Email);
 
             var log = new UserEntranceLog
                       {
@@ -59,7 +71,7 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             await _unitOfWork.UsersEntrancesLogsRepository.AddAsync(log);
 
-            return true;
+            return await _unitOfWork.SaveChangesAsync() > 0;
         }
     }
 }

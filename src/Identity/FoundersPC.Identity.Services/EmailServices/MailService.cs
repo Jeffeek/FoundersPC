@@ -33,12 +33,16 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                          EnableSsl = true,
                                                          DeliveryMethod = SmtpDeliveryMethod.Network,
                                                          DeliveryFormat = SmtpDeliveryFormat.International,
-                                                         Credentials = new NetworkCredential(_botConfiguration.MailAddress,
-                                                                                             _botConfiguration.Password)
+                                                         Credentials =
+                                                             new NetworkCredential(_botConfiguration.MailAddress,
+                                                                 _botConfiguration.Password)
                                                      });
         }
 
-        public async Task<bool> SendToAsync(string email, string subject = "Unnamed", string content = "", bool html = false)
+        public async Task<bool> SendToAsync(string email,
+                                            string subject = "Unnamed",
+                                            string content = "",
+                                            bool html = false)
         {
             if (email == null)
             {
@@ -68,8 +72,7 @@ namespace FoundersPC.Identity.Services.EmailServices
         public async Task<bool> SendToManyAsync(IEnumerable<string> emails,
                                                 string subject = "Unnamed",
                                                 string content = "",
-                                                bool html = false
-        )
+                                                bool html = false)
         {
             var sendResults = new List<bool>();
 
@@ -91,14 +94,16 @@ namespace FoundersPC.Identity.Services.EmailServices
 
         public async Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
         {
-            var content = $"Thanks for registration in our service!{(subject == null ? String.Empty : $"{Environment.NewLine}{subject}")}";
+            var content =
+                $"Thanks for registration in our service!{(subject == null ? String.Empty : $"{Environment.NewLine}{subject}")}";
 
             return await SendToAsync(email, "Registration Notification", content);
         }
 
         public Task<bool> SendAPIAccessTokenAsync(string email, string token)
         {
-            var content = $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not(and can't) restore it";
+            var content =
+                $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not(and can't) restore it";
 
             return SendToAsync(email, "API Access Token", content);
         }
@@ -112,7 +117,8 @@ namespace FoundersPC.Identity.Services.EmailServices
 
         public async Task<bool> SendBlockNotificationAsync(string email, string reason = null)
         {
-            var content = $"You've banned in out service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
+            var content =
+                $"You've banned in out service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
 
             return await SendToAsync(email, "Your account was blocked", content);
         }

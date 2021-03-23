@@ -24,7 +24,9 @@ namespace FoundersPC.API.Controllers.V1
         private readonly IMapper _mapper;
         private readonly IMotherboardService _motherboardService;
 
-        public MotherboardsController(IMotherboardService service, IMapper mapper, ILogger<MotherboardsController> logger)
+        public MotherboardsController(IMotherboardService service,
+                                      IMapper mapper,
+                                      ILogger<MotherboardsController> logger)
         {
             _motherboardService = service;
             _mapper = mapper;
@@ -54,7 +56,9 @@ namespace FoundersPC.API.Controllers.V1
 
             var motherboardReadDto = await _motherboardService.GetMotherboardByIdAsync(id.Value);
 
-            return motherboardReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(motherboardReadDto);
+            return motherboardReadDto == null
+                       ? ResponseResultsHelper.NotFoundByIdResult(id.Value)
+                       : Json(motherboardReadDto);
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,

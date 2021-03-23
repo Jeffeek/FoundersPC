@@ -25,7 +25,9 @@ namespace FoundersPC.API.Controllers.V1
         private readonly IMapper _mapper;
         private readonly ISSDService _ssdService;
 
-        public SolidStateDrivesController(ISSDService ssdService, IMapper mapper, ILogger<SolidStateDrivesController> logger)
+        public SolidStateDrivesController(ISSDService ssdService,
+                                          IMapper mapper,
+                                          ILogger<SolidStateDrivesController> logger)
         {
             _ssdService = ssdService;
             _mapper = mapper;

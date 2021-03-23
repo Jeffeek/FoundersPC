@@ -89,7 +89,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
         }
 
         /// <inheritdoc />
-        public override int GetHashCode() => HashCode.Combine(MemoryType, Frequency, CASLatency, Timings, Voltage, XMP, ECC, PCIndex);
+        public override int GetHashCode() =>
+            HashCode.Combine(MemoryType, Frequency, CASLatency, Timings, Voltage, XMP, ECC, PCIndex);
 
         #endregion
     }

@@ -27,8 +27,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork,
                                            TokenEncryptorService tokenEncryptorService,
                                            IMapper mapper,
-                                           ILogger<ApiAccessUsersTokensService> logger
-        )
+                                           ILogger<ApiAccessUsersTokensService> logger)
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;

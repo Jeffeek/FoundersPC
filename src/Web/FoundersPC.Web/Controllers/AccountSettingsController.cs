@@ -24,8 +24,7 @@ namespace FoundersPC.Web.Controllers
 
         public AccountSettingsController(IIdentityUserInformationService userInformationService,
                                          IIdentityUserSettingsChangeService settingsChangeService,
-                                         ILogger<AccountSettingsController> logger
-        )
+                                         ILogger<AccountSettingsController> logger)
         {
             _userInformationService = userInformationService;
             _settingsChangeService = settingsChangeService;
@@ -77,8 +76,10 @@ namespace FoundersPC.Web.Controllers
                                                            },
                                NotificationsSettingsViewModel = new NotificationsSettingsViewModel
                                                                 {
-                                                                    SendNotificationOnEntrance = information.SendMessageOnEntrance,
-                                                                    SendNotificationOnUsingAPI = information.SendMessageOnApiRequest
+                                                                    SendNotificationOnEntrance =
+                                                                        information.SendMessageOnEntrance,
+                                                                    SendNotificationOnUsingAPI =
+                                                                        information.SendMessageOnApiRequest
                                                                 },
                                TokensViewModel = new UserTokensViewModel
                                                  {
@@ -167,7 +168,7 @@ namespace FoundersPC.Web.Controllers
             if (token is null) return BadRequest();
 
             var response = await _settingsChangeService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
-                                                                                 token);
+                               token);
 
             if (response is null) return BadRequest();
 

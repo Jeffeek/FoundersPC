@@ -78,7 +78,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
         }
 
         /// <inheritdoc />
-        public override int GetHashCode() => HashCode.Combine(MarketLaunch, Title, MicroArchitecture, L2CachePerCore, L3CachePerCore, Socket);
+        public override int GetHashCode() =>
+            HashCode.Combine(MarketLaunch, Title, MicroArchitecture, L2CachePerCore, L3CachePerCore, Socket);
 
         #endregion
     }

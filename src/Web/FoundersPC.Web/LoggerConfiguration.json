@@ -1,23 +1,23 @@
 {
   "Serilog" :
   {
-    "Using" : ["Serilog.Enrichers.Thread"]
-    , "MinimumLevel" : {
-      "Default" : "Information"
-      , "Override" : {
-        "Microsoft" : "Warning"
-        , "Microsoft.Hosting.Lifetime" : "Information"
+    "Using" : ["Serilog.Enrichers.Thread"],
+    "MinimumLevel" : {
+      "Default" : "Information",
+      "Override" : {
+        "Microsoft" : "Warning",
+        "Microsoft.Hosting.Lifetime" : "Information"
       }
-    }
-    , "Enrich" : ["WithThreadId"]
-    , "WriteTo" :
+    },
+    "Enrich" : ["WithThreadId"],
+    "WriteTo" :
     [
       {
-        "Name" : "File"
-        , "Args" : {
-          "path" : "./logs/log-.txt"
-          , "rollingInterval" : "Day"
-          , "outputTemplate" : "{Timestamp:G} {Message} {ThreadId} {NewLine:1}{Exception:1}"
+        "Name" : "File",
+        "Args" : {
+          "path" : "./logs/log-.txt",
+          "rollingInterval" : "Day",
+          "outputTemplate" : "{Timestamp:G} {Message} {ThreadId} {NewLine:1}{Exception:1}"
         }
       }, {
         "Name" : "Console"

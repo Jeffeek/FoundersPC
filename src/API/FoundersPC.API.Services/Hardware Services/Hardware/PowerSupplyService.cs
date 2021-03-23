@@ -18,8 +18,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         private readonly IUnitOfWorkHardwareAPI _unitOfWorkHardwareAPI;
 
         public PowerSupplyService(IMapper mapper,
-                                  IUnitOfWorkHardwareAPI uow
-        )
+                                  IUnitOfWorkHardwareAPI uow)
         {
             _mapper = mapper;
             _unitOfWorkHardwareAPI = uow;
@@ -30,8 +29,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc />
         public async Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync() =>
             _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                         .PowerSuppliersRepository
-                                                                                         .GetAllAsync());
+                .PowerSuppliersRepository
+                .GetAllAsync());
 
         /// <inheritdoc />
         public async Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId) =>
@@ -44,7 +43,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var mappedPowerSupply = _mapper.Map<PowerSupplyInsertDto, PowerSupply>(powerSupply);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.AnyAsync(x => x.Equals(mappedPowerSupply));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.PowerSuppliersRepository.AnyAsync(x => x.Equals(mappedPowerSupply));
 
             if (entityAlreadyExists) return false;
 

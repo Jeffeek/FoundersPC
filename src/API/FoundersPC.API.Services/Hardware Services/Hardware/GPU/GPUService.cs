@@ -26,22 +26,24 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
 
         /// <inheritdoc />
         public async Task<IEnumerable<GPUReadDto>> GetAllGPUsAsync() =>
-            _mapper.Map<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>, IEnumerable<GPUReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                                          .VideoCardsRepository
-                                                                                                          .GetAllAsync());
+            _mapper.Map<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>, IEnumerable<GPUReadDto>>(await
+                _unitOfWorkHardwareAPI
+                    .VideoCardsRepository
+                    .GetAllAsync());
 
         /// <inheritdoc />
         public async Task<GPUReadDto> GetGPUByIdAsync(int gpuId) =>
             _mapper.Map<Domain.Entities.Hardware.VideoCard.GPU, GPUReadDto>(await _unitOfWorkHardwareAPI
-                                                                                  .VideoCardsRepository
-                                                                                  .GetByIdAsync(gpuId));
+                                                                                .VideoCardsRepository
+                                                                                .GetByIdAsync(gpuId));
 
         /// <inheritdoc />
         public async Task<bool> CreateGPUAsync(GPUInsertDto gpu)
         {
             var mappedGPU = _mapper.Map<GPUInsertDto, Domain.Entities.Hardware.VideoCard.GPU>(gpu);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.VideoCardsRepository.AnyAsync(x => x.Equals(mappedGPU));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.VideoCardsRepository.AnyAsync(x => x.Equals(mappedGPU));
 
             if (entityAlreadyExists) return false;
 

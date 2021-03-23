@@ -30,8 +30,7 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
                                              IPowerSuppliersRepositoryAsync powerSuppliersRepository,
                                              ISSDsRepositoryAsync ssdsRepository,
                                              IRAMsRepositoryAsync ramsRepository,
-                                             ILogger<UnitOfWorkHardwareHardwareAPI> logger
-        )
+                                             ILogger<UnitOfWorkHardwareHardwareAPI> logger)
         {
             _context = context;
             ProcessorsRepository = processorsRepository;

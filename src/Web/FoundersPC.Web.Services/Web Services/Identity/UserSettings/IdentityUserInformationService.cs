@@ -22,8 +22,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
         public IdentityUserInformationService(IHttpClientFactory httpClientFactory,
                                               MicroservicesBaseAddresses microservicesBaseAddresses,
-                                              ILogger<IdentityUserInformationService> logger
-        )
+                                              ILogger<IdentityUserInformationService> logger)
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = microservicesBaseAddresses;
@@ -50,7 +49,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             PrepareRequest(client, token);
 
-            var userInformation = await client.GetFromJsonAsync<ApplicationUser>($"User/Settings/OverallInformation/{email}");
+            var userInformation =
+                await client.GetFromJsonAsync<ApplicationUser>($"User/Settings/OverallInformation/{email}");
 
             return userInformation;
         }
@@ -61,8 +61,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                                                                       token);
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
+                                              token);
         }
     }
 }

@@ -41,7 +41,8 @@ namespace FoundersPC.RepositoryShared.Repository
 
         public virtual async Task<bool> AnyAsync(T entity) => await Context.Set<T>().AnyAsync(x => x.Equals(entity));
 
-        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) => await Context.Set<T>().AnyAsync(predicate);
+        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) =>
+            await Context.Set<T>().AnyAsync(predicate);
 
         public virtual async Task<bool> UpdateAsync(T entity)
         {

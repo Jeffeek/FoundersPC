@@ -24,8 +24,7 @@ namespace FoundersPC.Web.Controllers
         private readonly IMapper _mapper;
 
         public AuthenticationController(IMapper mapper,
-                                        IIdentityAuthenticationService authenticationService
-        )
+                                        IIdentityAuthenticationService authenticationService)
         {
             _authenticationService = authenticationService;
             _mapper = mapper;

@@ -14,6 +14,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User
 
         Task<AccountSettingsChangeResponse> ChangeLoginAsync(SecuritySettingsViewModel model, string token);
 
-        Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model, string token);
+        Task<AccountSettingsChangeResponse>
+            ChangeNotificationsAsync(NotificationsSettingsViewModel model, string token);
     }
 }

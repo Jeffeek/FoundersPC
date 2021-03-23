@@ -33,8 +33,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public AdminService(IUsersInformationService usersInformationService,
                             IHttpClientFactory clientFactory,
                             MicroservicesBaseAddresses baseAddresses,
-                            ILogger<AdminService> logger
-        )
+                            ILogger<AdminService> logger)
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
@@ -42,9 +41,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _logger = logger;
         }
 
-        public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string adminToken) => await _usersInformationService.GetAll(adminToken);
+        public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string adminToken) =>
+            await _usersInformationService.GetAll(adminToken);
 
-        public async Task<ApplicationUser> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetByIdAsync(id, adminToken);
+        public async Task<ApplicationUser> GetUserByIdAsync(int id, string adminToken) =>
+            await _usersInformationService.GetByIdAsync(id, adminToken);
 
         public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) =>
             await _usersInformationService.GetByEmailAsync(email, adminToken);
@@ -307,18 +308,26 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             return true;
         }
 
-        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken) => throw new NotImplementedException();
-
-        public Task<ApplicationUserEntrance> GetEntranceByIdAsync(int id, string adminToken) => throw new NotImplementedException();
-
-        public Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesAsync(int userId, string adminToken) => throw new NotImplementedException();
-
-        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
+        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken) =>
             throw new NotImplementedException();
 
-        public Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken) => throw new NotImplementedException();
+        public Task<ApplicationUserEntrance> GetEntranceByIdAsync(int id, string adminToken) =>
+            throw new NotImplementedException();
 
-        public Task<bool> RegisterNewManagerAsync(string email, string rawPassword, string adminToken) => throw new NotImplementedException();
+        public Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesAsync(int userId, string adminToken) =>
+            throw new NotImplementedException();
+
+        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(
+            DateTime start,
+            DateTime finish,
+            string adminToken) =>
+            throw new NotImplementedException();
+
+        public Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken) =>
+            throw new NotImplementedException();
+
+        public Task<bool> RegisterNewManagerAsync(string email, string rawPassword, string adminToken) =>
+            throw new NotImplementedException();
 
         private void PrepareRequest(HttpClient client, string adminToken)
         {
@@ -334,8 +343,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                                                                       adminToken);
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
+                                              adminToken);
         }
     }
 }

@@ -25,7 +25,9 @@ namespace FoundersPC.API.Controllers.V1
         private readonly IMapper _mapper;
         private readonly IPowerSupplyService _powerSupplyService;
 
-        public PowerSuppliesController(IPowerSupplyService service, IMapper mapper, ILogger<PowerSuppliesController> logger)
+        public PowerSuppliesController(IPowerSupplyService service,
+                                       IMapper mapper,
+                                       ILogger<PowerSuppliesController> logger)
         {
             _powerSupplyService = service;
             _mapper = mapper;
@@ -55,7 +57,9 @@ namespace FoundersPC.API.Controllers.V1
 
             var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id.Value);
 
-            return powerSupplyReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(powerSupplyReadDto);
+            return powerSupplyReadDto == null
+                       ? ResponseResultsHelper.NotFoundByIdResult(id.Value)
+                       : Json(powerSupplyReadDto);
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,

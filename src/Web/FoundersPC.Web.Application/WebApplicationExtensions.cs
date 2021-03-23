@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Net.Http;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.Web.Application.Mappings;
@@ -28,7 +27,8 @@ namespace FoundersPC.Web.Application
                     .AddFluentValidation(cfg =>
                                          {
                                              cfg.AutomaticValidationEnabled = true;
-                                             cfg.RegisterValidatorsFromAssemblyContaining<PasswordSettingsViewModelValidator>();
+                                             cfg.RegisterValidatorsFromAssemblyContaining<
+                                                 PasswordSettingsViewModelValidator>();
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
         }
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Application
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options =>
                                {
-                                   options.Cookie = new CookieBuilder()
+                                   options.Cookie = new CookieBuilder
                                                     {
                                                         HttpOnly = true,
                                                         IsEssential = true,
@@ -52,10 +52,13 @@ namespace FoundersPC.Web.Application
                                    options.AccessDeniedPath = new PathString("/Shared/Forbidden");
                                    options.LogoutPath = "/Authentication/SignIn";
 
-                                   options.Events = new CookieAuthenticationEvents()
+                                   options.Events = new CookieAuthenticationEvents
                                                     {
                                                         OnRedirectToAccessDenied =
-                                                            context => context.HttpContext.ForbidAsync(CookieAuthenticationDefaults.AuthenticationScheme),
+                                                            context =>
+                                                                context.HttpContext
+                                                                       .ForbidAsync(CookieAuthenticationDefaults
+                                                                           .AuthenticationScheme)
                                                     };
 
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);

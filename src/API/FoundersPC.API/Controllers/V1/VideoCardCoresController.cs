@@ -27,8 +27,7 @@ namespace FoundersPC.API.Controllers.V1
 
         public VideoCardCoresController(IVideoCardCoreService service,
                                         IMapper mapper,
-                                        ILogger<VideoCardCoresController> logger
-        )
+                                        ILogger<VideoCardCoresController> logger)
         {
             _videoCardCoreService = service;
             _mapper = mapper;

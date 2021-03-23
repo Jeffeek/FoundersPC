@@ -12,7 +12,8 @@ namespace FoundersPC.ApplicationShared
 {
     public static class HttpClientExtensions
     {
-        public static async Task<HttpResponseMessage> DeleteAsJsonAsync<T>(this HttpClient httpClient, string requestUri, T data) =>
+        public static async Task<HttpResponseMessage>
+            DeleteAsJsonAsync<T>(this HttpClient httpClient, string requestUri, T data) =>
             await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Delete, requestUri)
                                        {
                                            Content = JsonContent.Create(data,
@@ -20,7 +21,10 @@ namespace FoundersPC.ApplicationShared
                                        });
 
         public static async Task<HttpResponseMessage>
-            DeleteAsJsonAsync<T>(this HttpClient httpClient, string requestUri, T data, CancellationToken cancellationToken) =>
+            DeleteAsJsonAsync<T>(this HttpClient httpClient,
+                                 string requestUri,
+                                 T data,
+                                 CancellationToken cancellationToken) =>
             await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Delete, requestUri)
                                        {
                                            Content = JsonContent.Create(data,
@@ -28,7 +32,8 @@ namespace FoundersPC.ApplicationShared
                                        },
                                        cancellationToken);
 
-        public static async Task<HttpResponseMessage> DeleteAsJsonAsync<T>(this HttpClient httpClient, Uri requestUri, T data) =>
+        public static async Task<HttpResponseMessage>
+            DeleteAsJsonAsync<T>(this HttpClient httpClient, Uri requestUri, T data) =>
             await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Delete, requestUri)
                                        {
                                            Content = JsonContent.Create(data,
@@ -38,8 +43,7 @@ namespace FoundersPC.ApplicationShared
         public static async Task<HttpResponseMessage> DeleteAsJsonAsync<T>(this HttpClient httpClient,
                                                                            Uri requestUri,
                                                                            T data,
-                                                                           CancellationToken cancellationToken
-        ) =>
+                                                                           CancellationToken cancellationToken) =>
             await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Delete, requestUri)
                                        {
                                            Content = JsonContent.Create(data,

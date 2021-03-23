@@ -25,7 +25,9 @@ namespace FoundersPC.API.Controllers.V1
         private readonly IMapper _mapper;
         private readonly IRAMService _ramService;
 
-        public RandomAccessMemoryController(IRAMService ramService, IMapper mapper, ILogger<RandomAccessMemoryController> logger)
+        public RandomAccessMemoryController(IRAMService ramService,
+                                            IMapper mapper,
+                                            ILogger<RandomAccessMemoryController> logger)
         {
             _ramService = ramService;
             _mapper = mapper;

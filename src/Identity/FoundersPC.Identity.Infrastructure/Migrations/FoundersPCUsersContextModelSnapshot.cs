@@ -28,7 +28,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<int>("ApiAccessUsersTokenId")
                                      .HasColumnType("int");
@@ -52,7 +53,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<DateTime>("Entrance")
                                      .HasColumnType("datetime2");
@@ -76,7 +78,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<DateTime>("ExpirationDate")
                                      .HasColumnType("datetime2");
@@ -111,7 +114,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("RoleTitle")
                                      .IsRequired()
@@ -129,7 +133,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("Email")
                                      .IsRequired()
@@ -147,7 +152,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                     b.Property<bool>("IsBlocked")
                                      .HasColumnType("bit");
 
-                                    b.Property<string>("Login")
+                                    b.Property<string>("SignIn")
                                      .HasMaxLength(30)
                                      .HasColumnType("nvarchar(30)");
 
@@ -175,7 +180,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.AccessTokenLog",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken", "ApiAccessToken")
+                                    b.HasOne("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken",
+                                             "ApiAccessToken")
                                      .WithMany()
                                      .HasForeignKey("ApiAccessUsersTokenId")
                                      .OnDelete(DeleteBehavior.Cascade)
@@ -220,7 +226,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                     b.Navigation("Role");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.RoleEntity", b => { b.Navigation("Users"); });
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.RoleEntity",
+                                b => { b.Navigation("Users"); });
 
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.UserEntity",
                                 b =>

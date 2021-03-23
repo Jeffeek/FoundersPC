@@ -18,8 +18,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         private readonly IUnitOfWorkHardwareAPI _unitOfWorkHardwareAPI;
 
         public MotherboardService(IMapper mapper,
-                                  IUnitOfWorkHardwareAPI uow
-        )
+                                  IUnitOfWorkHardwareAPI uow)
         {
             _mapper = mapper;
             _unitOfWorkHardwareAPI = uow;
@@ -30,8 +29,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc />
         public async Task<IEnumerable<MotherboardReadDto>> GetAllMotherboardsAsync() =>
             _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                         .MotherboardsRepository
-                                                                                         .GetAllAsync());
+                .MotherboardsRepository
+                .GetAllAsync());
 
         /// <inheritdoc />
         public async Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId) =>
@@ -44,7 +43,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var mappedMotherboard = _mapper.Map<MotherboardInsertDto, Motherboard>(motherboard);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.MotherboardsRepository.AnyAsync(x => x.Equals(mappedMotherboard));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.MotherboardsRepository.AnyAsync(x => x.Equals(mappedMotherboard));
 
             if (entityAlreadyExists) return false;
 

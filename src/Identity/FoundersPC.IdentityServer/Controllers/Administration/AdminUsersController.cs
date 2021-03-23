@@ -31,7 +31,9 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         private readonly IMapper _mapper;
         private readonly IUsersInformationService _usersInformationService;
 
-        public AdminUsersController(IUsersInformationService usersInformationService, IMapper mapper, IAdminService adminService)
+        public AdminUsersController(IUsersInformationService usersInformationService,
+                                    IMapper mapper,
+                                    IAdminService adminService)
         {
             _usersInformationService = usersInformationService;
             _mapper = mapper;
@@ -41,7 +43,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ApplicationUser>> Get(int id)
         {
-            var user = await _usersInformationService.GetByIdAsync(id);
+            var user = await _usersInformationService.GetUserByIdAsync(id);
 
             if (user is null) return NotFound();
 
@@ -67,7 +69,7 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         [HttpGet]
         public async Task<IEnumerable<ApplicationUser>> Get()
         {
-            var users = await _usersInformationService.GetAllAsync();
+            var users = await _usersInformationService.GetAllUsersAsync();
 
             return _mapper.Map<IEnumerable<UserEntityReadDto>, IEnumerable<ApplicationUser>>(users);
         }
@@ -120,7 +122,9 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
                                   });
 
             var blockUserResult =
-                await _adminService.BlockUserAsync(byEmailRequest.UserEmail, byEmailRequest.BlockUserTokens, byEmailRequest.SendNotificationToUserViaEmail);
+                await _adminService.BlockUserAsync(byEmailRequest.UserEmail,
+                                                   byEmailRequest.BlockUserTokens,
+                                                   byEmailRequest.SendNotificationToUserViaEmail);
 
             if (blockUserResult)
                 return new BlockUserResponse
@@ -197,7 +201,8 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         }
 
         [HttpDelete("Inactive/By/Email")]
-        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(MakeUserInactiveByEmailRequest request)
+        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(
+            MakeUserInactiveByEmailRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
 

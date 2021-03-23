@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -27,8 +28,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         public IdentityAuthenticationService(IHttpClientFactory httpClientFactory,
                                              MicroservicesBaseAddresses baseAddresses,
                                              IMapper mapper,
-                                             ILogger<IdentityAuthenticationService> logger
-        )
+                                             ILogger<IdentityAuthenticationService> logger)
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = baseAddresses;
@@ -55,7 +55,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             using var client = _httpClientFactory.CreateClient("Sign In client");
             PrepareRequest(client);
 
-            var signInRequest = await client.PostAsJsonAsync("Login",
+            var signInRequest = await client.PostAsJsonAsync("SignIn",
                                                              new UserSignInRequest
                                                              {
                                                                  LoginOrEmail = emailOrLogin,
@@ -95,16 +95,16 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
-            var signInRequest = await client.PostAsJsonAsync("Login", mappedRequestModel);
+            var responseMessage = await client.PostAsJsonAsync<UserSignInRequest>("SignIn", mappedRequestModel);
 
-            if (!signInRequest.IsSuccessStatusCode)
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)} to Identity server returned a server error {signInRequest.StatusCode}");
+                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)} to Identity server returned a server error {responseMessage.StatusCode}");
 
-                throw new NetworkInformationException((int)signInRequest.StatusCode);
+                throw new NetworkInformationException((int)responseMessage.StatusCode);
             }
 
-            var signInResponseContent = await signInRequest.Content.ReadFromJsonAsync<UserLoginResponse>();
+            var signInResponseContent = await responseMessage.Content.ReadFromJsonAsync<UserLoginResponse>();
 
             return signInResponseContent;
         }
@@ -128,7 +128,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             var client = _httpClientFactory.CreateClient("Sign Up client");
             PrepareRequest(client);
 
-            var signUpRequest = await client.PostAsJsonAsync("Registration",
+            var signUpRequest = await client.PostAsJsonAsync("SignUp",
                                                              new UserSignUpRequest
                                                              {
                                                                  Email = email,
@@ -168,7 +168,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
-            var signUpRequest = await client.PostAsJsonAsync("Registration", mappedRequestModel);
+            var signUpRequest = await client.PostAsJsonAsync("SignUp", mappedRequestModel);
 
             var signUpResponseContent = await signUpRequest.Content.ReadFromJsonAsync<UserSignUpResponse>();
 
@@ -193,7 +193,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                                                                          Email = email
                                                                      });
 
-            var forgotPasswordResponseContent = await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
+            var forgotPasswordResponseContent =
+                await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
 
             return forgotPasswordResponseContent;
         }
@@ -222,7 +223,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             var forgotPasswordRequest = await client.PostAsJsonAsync("ForgotPassword",
                                                                      mappedRequestModel);
 
-            var forgotPasswordResponseContent = await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
+            var forgotPasswordResponseContent =
+                await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
 
             return forgotPasswordResponseContent;
         }

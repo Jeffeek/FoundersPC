@@ -28,7 +28,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         /// <inheritdoc />
         public async Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync() =>
             _mapper.Map<IEnumerable<ProcessorCore>, IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                             .ProcessorCoresRepository.GetAllAsync());
+                .ProcessorCoresRepository.GetAllAsync());
 
         /// <inheritdoc />
         public async Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId) =>
@@ -41,7 +41,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         {
             var mappedCpuCore = _mapper.Map<ProcessorCoreInsertDto, ProcessorCore>(cpuCore);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.AnyAsync(x => x.Equals(mappedCpuCore));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.ProcessorCoresRepository.AnyAsync(x => x.Equals(mappedCpuCore));
 
             if (entityAlreadyExists) return false;
 

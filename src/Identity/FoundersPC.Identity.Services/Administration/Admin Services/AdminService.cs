@@ -23,20 +23,19 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         private readonly ILogger<AdminService> _logger;
         private readonly IMailService _mailService;
         private readonly PasswordEncryptorService _passwordEncryptorService;
-        private readonly IUserRegistrationService _registrationService;
+        private readonly IRegistrationService _registrationService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
         private IManagerService _managerService;
         private IMapper _mapper;
 
         public AdminService(IManagerService managerService,
-                            IUserRegistrationService registrationService,
+                            IRegistrationService registrationService,
                             IMailService mailService,
                             IMapper mapper,
                             PasswordEncryptorService passwordEncryptorService,
                             IUnitOfWorkUsersIdentity unitOfWork,
                             IApiAccessUsersTokensService accessUsersTokensService,
-                            ILogger<AdminService> logger
-        )
+                            ILogger<AdminService> logger)
         {
             _managerService = managerService;
             _registrationService = registrationService;
@@ -72,7 +71,9 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
 
-            if (sendNotification) await _mailService.SendBlockNotificationAsync(user.Email, "You've been blocked, you can't be unblocked.");
+            if (sendNotification)
+                await _mailService.SendBlockNotificationAsync(user.Email,
+                                                              "You've been blocked, you can't be unblocked.");
 
             user.IsActive = false;
 
@@ -105,7 +106,9 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var registrationResult = await _registrationService.RegisterManagerAsync(email, password);
 
-            if (registrationResult) return await _mailService.SendRegistrationNotificationAsync(email, $"Password for entrance: {password}");
+            if (registrationResult)
+                return await _mailService.SendRegistrationNotificationAsync(email,
+                                                                            $"Password for entrance: {password}");
 
             return false;
         }
@@ -137,7 +140,9 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             return await BlockAllUserTokensAsync(user.Id);
         }
 
-        public async Task<bool> BlockUserAsync(string userEmail, bool blockAllTokens = true, bool sendNotification = true)
+        public async Task<bool> BlockUserAsync(string userEmail,
+                                               bool blockAllTokens = true,
+                                               bool sendNotification = true)
         {
             var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
 

@@ -17,20 +17,19 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Identity.Services.User_Services
 {
-    public class UserRegistrationService : IUserRegistrationService
+    public class RegistrationService : IRegistrationService
     {
         private readonly PasswordEncryptorService _encryptorService;
-        private readonly ILogger<UserRegistrationService> _logger;
+        private readonly ILogger<RegistrationService> _logger;
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
 
-        public UserRegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
-                                       IMapper mapper,
-                                       PasswordEncryptorService encryptorService,
-                                       ILogger<UserRegistrationService> logger,
-                                       IMailService mailService
-        )
+        public RegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
+                                   IMapper mapper,
+                                   PasswordEncryptorService encryptorService,
+                                   ILogger<RegistrationService> logger,
+                                   IMailService mailService)
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
             _mapper = mapper;
@@ -46,12 +45,12 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (defaultUserRole is null)
             {
-                _logger.LogError($"{nameof(UserRegistrationService)}: role 'Default user' not found");
+                _logger.LogError($"{nameof(RegistrationService)}: role 'Default user' not found");
 
                 throw new NoNullAllowedException("No role found");
             }
 
-            _logger.LogInformation($"{nameof(UserRegistrationService)}: role 'Default User' found");
+            _logger.LogInformation($"{nameof(RegistrationService)}: role 'Default User' found");
 
             return await Register(email, password, defaultUserRole);
         }
@@ -63,12 +62,12 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (defaultUserRole is null)
             {
-                _logger.LogError($"{nameof(UserRegistrationService)}: role 'Manager' not found");
+                _logger.LogError($"{nameof(RegistrationService)}: role 'Manager' not found");
 
                 throw new NoNullAllowedException("No role found");
             }
 
-            _logger.LogInformation($"{nameof(UserRegistrationService)}: role 'Manager' found");
+            _logger.LogInformation($"{nameof(RegistrationService)}: role 'Manager' found");
 
             return await Register(email, password, defaultUserRole);
         }
@@ -77,21 +76,21 @@ namespace FoundersPC.Identity.Services.User_Services
         {
             if (email is null)
             {
-                _logger.LogError($"{nameof(UserRegistrationService)}: email was null when tried to register user");
+                _logger.LogError($"{nameof(RegistrationService)}: email was null when tried to register user");
 
                 throw new ArgumentNullException(nameof(email));
             }
 
             if (rawPassword is null)
             {
-                _logger.LogError($"{nameof(UserRegistrationService)}: raw password was null when tried to register user");
+                _logger.LogError($"{nameof(RegistrationService)}: raw password was null when tried to register user");
 
                 throw new ArgumentNullException(nameof(rawPassword));
             }
 
             if (role is null)
             {
-                _logger.LogError($"{nameof(UserRegistrationService)}: role was null when tried to register user");
+                _logger.LogError($"{nameof(RegistrationService)}: role was null when tried to register user");
 
                 throw new ArgumentNullException(nameof(role));
             }
@@ -101,7 +100,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             if (userAlreadyExists)
             {
-                _logger.LogWarning($"{nameof(UserRegistrationService)}: user with email = {email} is already exist");
+                _logger.LogWarning($"{nameof(RegistrationService)}: user with email = {email} is already exist");
 
                 return false;
             }

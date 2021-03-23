@@ -18,7 +18,9 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<HardwareApiService> _logger;
 
-        public HardwareApiService(IHttpClientFactory clientFactory, MicroservicesBaseAddresses baseAddresses, ILogger<HardwareApiService> logger)
+        public HardwareApiService(IHttpClientFactory clientFactory,
+                                  MicroservicesBaseAddresses baseAddresses,
+                                  ILogger<HardwareApiService> logger)
         {
             _clientFactory = clientFactory;
             _baseAddresses = baseAddresses;
@@ -57,8 +59,9 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                                                                       token);
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
+                                              token);
         }
     }
 }

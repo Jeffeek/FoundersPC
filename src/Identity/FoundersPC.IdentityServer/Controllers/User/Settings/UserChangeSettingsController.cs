@@ -22,16 +22,18 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
     {
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
+        private readonly IUserSettingsService _settingsService;
         private readonly IUsersInformationService _usersInformationService;
 
         public UserChangeSettingsController(IUsersInformationService usersInformationService,
                                             IMapper mapper,
-                                            PasswordEncryptorService passwordEncryptorService
-        )
+                                            PasswordEncryptorService passwordEncryptorService,
+                                            IUserSettingsService settingsService)
         {
             _usersInformationService = usersInformationService;
             _mapper = mapper;
             _passwordEncryptorService = passwordEncryptorService;
+            _settingsService = settingsService;
         }
 
         [Route("Password")]
@@ -44,43 +46,29 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                                       error = "Bad model"
                                   });
 
-            var credentials = ParseJwtUserTokenCredentials();
+            var (email, role) = ParseJwtUserTokenCredentials();
 
-            if (credentials.Email is null)
+            if (email is null)
                 return new BadRequestObjectResult(new AccountSettingsChangeResponse
                                                   {
                                                       Email = "Not found",
-                                                      Operation = "Login changing",
+                                                      Operation = "SignIn changing",
                                                       Successful = false,
                                                       Error = "Token not valid. Email address not found"
                                                   });
 
-            var hashedOldPassword = _passwordEncryptorService.EncryptPassword(request.OldPassword);
-
-            var user = await _usersInformationService.FindUserByEmailOrLoginAndHashedPasswordAsync(credentials.Email, hashedOldPassword);
-
-            if (user is null)
-                return new NotFoundObjectResult(new AccountSettingsChangeResponse
-                                                {
-                                                    Email = credentials.Email,
-                                                    Error =
-                                                        $"User with email: {credentials.Email} and password: {request.OldPassword} not found. Check your password",
-                                                    Operation = "Password changing",
-                                                    Successful = false
-                                                });
-
-            var result = await _usersInformationService.ChangePasswordToAsync(credentials.Email, request.NewPassword, hashedOldPassword);
+            var result = await _settingsService.ChangePasswordToAsync(email, request.NewPassword, request.OldPassword);
 
             return new AccountSettingsChangeResponse
                    {
-                       Email = credentials.Email,
+                       Email = email,
                        Successful = result,
                        Operation = "Password changing",
                        Error = result ? null : "Password changing error happened. Maybe you entered wrong old password"
                    };
         }
 
-        [Route("Login")]
+        [Route("SignIn")]
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin(ChangeLoginRequest request)
         {
@@ -96,17 +84,17 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                 return new BadRequestObjectResult(new AccountSettingsChangeResponse
                                                   {
                                                       Email = "Not found",
-                                                      Operation = "Login changing",
+                                                      Operation = "SignIn changing",
                                                       Successful = false,
                                                       Error = "Token not valid. Email address not found"
                                                   });
 
-            var result = await _usersInformationService.ChangeLoginToAsync(credentials.Email, request.NewLogin);
+            var result = await _settingsService.ChangeLoginToAsync(credentials.Email, request.NewLogin);
 
             return new AccountSettingsChangeResponse
                    {
                        Email = credentials.Email,
-                       Operation = "Login changing",
+                       Operation = "SignIn changing",
                        Successful = result
                    };
         }
@@ -121,23 +109,23 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
                                       error = "Bad model"
                                   });
 
-            var credentials = ParseJwtUserTokenCredentials();
+            var (email, role) = ParseJwtUserTokenCredentials();
 
-            if (credentials.Email is null)
+            if (email is null)
                 return BadRequest(new
                                   {
                                       error = "Token not valid. Email address not found"
                                   });
 
-            var result = await _usersInformationService.ChangeNotificationsToAsync(credentials.Email,
-                                                                                   request.SendMessageOnEntrance,
-                                                                                   request.SendMessageOnApiRequest);
+            var result = await _settingsService.ChangeNotificationsToAsync(email,
+                                                                           request.SendMessageOnEntrance,
+                                                                           request.SendMessageOnApiRequest);
 
             return new AccountSettingsChangeResponse
                    {
                        Operation = "Notifications changing",
                        Successful = result,
-                       Email = credentials.Email
+                       Email = email
                    };
         }
 

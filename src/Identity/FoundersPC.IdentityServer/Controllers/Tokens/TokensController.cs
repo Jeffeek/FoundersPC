@@ -19,7 +19,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
     {
         private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
 
-        public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) => _apiAccessUsersTokensService = apiAccessUsersTokensService;
+        public TokensController(IApiAccessUsersTokensService apiAccessUsersTokensService) =>
+            _apiAccessUsersTokensService = apiAccessUsersTokensService;
 
         [HttpGet]
         [Route("User/{email}")]

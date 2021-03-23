@@ -25,18 +25,21 @@ namespace FoundersPC.API.Services.Hardware_Services
 
         /// <inheritdoc />
         public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
-            _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI.ProducersRepository
-                                                                                                         .GetAllAsync());
+            _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
+                                                                                 .ProducersRepository
+                                                                                 .GetAllAsync());
 
         /// <inheritdoc />
         public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
-            _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository.GetByIdAsync(producerId));
+            _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository
+                                                                               .GetByIdAsync(producerId));
 
         /// <inheritdoc />
         public async Task<bool> CreateProducerAsync(ProducerInsertDto producer)
         {
             var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.ProducersRepository.AnyAsync(x => x.Equals(mappedProducer));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.ProducersRepository.AnyAsync(x => x.Equals(mappedProducer));
 
             if (entityAlreadyExists) return false;
 

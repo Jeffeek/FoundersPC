@@ -9,9 +9,15 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Mail_service
 {
     public interface IMailService
     {
-        Task<bool> SendToAsync(string email, string subject = null, string content = null, bool html = false);
+        Task<bool> SendToAsync(string email,
+                               string subject = null,
+                               string content = null,
+                               bool html = false);
 
-        Task<bool> SendToManyAsync(IEnumerable<string> emails, string subject = null, string content = null, bool html = false);
+        Task<bool> SendToManyAsync(IEnumerable<string> emails,
+                                   string subject = null,
+                                   string content = null,
+                                   bool html = false);
 
         Task<bool> SendEntranceNotificationAsync(string email);
 

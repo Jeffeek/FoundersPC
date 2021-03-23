@@ -19,7 +19,10 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                                   {
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
-                                                      HashedToken = table.Column<string>("nvarchar(88)", maxLength : 88, nullable : false)
+                                                      HashedToken =
+                                                          table.Column<string>("nvarchar(88)",
+                                                                               maxLength : 88,
+                                                                               nullable : false)
                                                   },
                                          constraints : table => { table.PrimaryKey("PK_ApiTokens", x => x.Id); });
 
@@ -49,8 +52,10 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       ApiAccessTokenId = table.Column<int>("int", nullable : false),
                                                       UserId = table.Column<int>("int", nullable : false),
-                                                      StartEvaluationDate = table.Column<DateTime>("datetime2", nullable : false),
-                                                      ExpirationDate = table.Column<DateTime>("datetime2", nullable : false),
+                                                      StartEvaluationDate =
+                                                          table.Column<DateTime>("datetime2", nullable : false),
+                                                      ExpirationDate =
+                                                          table.Column<DateTime>("datetime2", nullable : false),
                                                       IsBlocked = table.Column<bool>("bit", nullable : false)
                                                   },
                                          constraints : table =>
@@ -75,18 +80,21 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                                   {
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
-                                                      ApiAccessUsersTokenId = table.Column<int>("int", nullable : false),
-                                                      RequestDateTime = table.Column<DateTime>("datetime2", nullable : false)
+                                                      ApiAccessUsersTokenId =
+                                                          table.Column<int>("int", nullable : false),
+                                                      RequestDateTime =
+                                                          table.Column<DateTime>("datetime2", nullable : false)
                                                   },
                                          constraints : table =>
                                                        {
                                                            table.PrimaryKey("PK_TokenAccessLogs", x => x.Id);
 
-                                                           table.ForeignKey("FK_TokenAccessLogs_UsersTokens_ApiAccessUsersTokenId",
-                                                                            x => x.ApiAccessUsersTokenId,
-                                                                            "UsersTokens",
-                                                                            "Id",
-                                                                            onDelete : ReferentialAction.Restrict);
+                                                           table
+                                                               .ForeignKey("FK_TokenAccessLogs_UsersTokens_ApiAccessUsersTokenId",
+                                                                           x => x.ApiAccessUsersTokenId,
+                                                                           "UsersTokens",
+                                                                           "Id",
+                                                                           onDelete : ReferentialAction.Restrict);
                                                        });
 
             migrationBuilder.CreateIndex("IX_ApiTokens_Id",

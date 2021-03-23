@@ -18,9 +18,11 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public AccessTokensLogsService(IUnitOfWorkUsersIdentity unitOfWork) => _unitOfWork = unitOfWork;
 
-        public async Task<IEnumerable<AccessTokenLog>> GetAllAsync() => await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
+        public async Task<IEnumerable<AccessTokenLog>> GetAllAsync() =>
+            await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
 
-        public async Task<AccessTokenLog> GetByIdAsync(int id) => await _unitOfWork.AccessTokensLogsRepository.GetByIdAsync(id);
+        public async Task<AccessTokenLog> GetByIdAsync(int id) =>
+            await _unitOfWork.AccessTokensLogsRepository.GetByIdAsync(id);
 
         public async Task<IEnumerable<AccessTokenLog>> GetUsagesBetweenAsync(DateTime start, DateTime finish)
         {

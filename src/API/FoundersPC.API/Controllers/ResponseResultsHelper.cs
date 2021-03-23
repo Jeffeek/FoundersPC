@@ -23,7 +23,8 @@ namespace FoundersPC.API.Controllers
                 StatusCode = (int)HttpStatusCode.BadRequest
             };
 
-        public static ActionResult UpdateError(string description = "Error happened when server tried to update the model") =>
+        public static ActionResult UpdateError(string description =
+                                                   "Error happened when server tried to update the model") =>
             new ObjectResult(new ProblemDetails
                              {
                                  Detail = description,
@@ -31,7 +32,8 @@ namespace FoundersPC.API.Controllers
                                  Status = (int)HttpStatusCode.InternalServerError
                              });
 
-        public static ActionResult InsertError(string description = "Error happened when server tried to insert the model") =>
+        public static ActionResult InsertError(string description =
+                                                   "Error happened when server tried to insert the model") =>
             new ObjectResult(new ProblemDetails
                              {
                                  Detail = description,
@@ -39,7 +41,8 @@ namespace FoundersPC.API.Controllers
                                  Status = (int)HttpStatusCode.InternalServerError
                              });
 
-        public static ActionResult DeleteError(string description = "Error happened when server tried to delete the model") =>
+        public static ActionResult DeleteError(string description =
+                                                   "Error happened when server tried to delete the model") =>
             new ObjectResult(new ProblemDetails
                              {
                                  Detail = description,

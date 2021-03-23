@@ -68,17 +68,24 @@ namespace FoundersPC.API
                                       {
                                           config.AddPolicy("Changeable",
                                                            builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
-                                                                                          ApplicationRoles.Manager.ToString())
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+                                                                             .RequireRole(ApplicationRoles.Administrator
+                                                                                     .ToString(),
+                                                                                 ApplicationRoles.Manager
+                                                                                     .ToString())
+                                                                             .AddAuthenticationSchemes(JwtBearerDefaults
+                                                                                 .AuthenticationScheme)
                                                                              .Build());
 
                                           config.AddPolicy("Readable",
                                                            builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
-                                                                                          ApplicationRoles.Manager.ToString(),
-                                                                                          ApplicationRoles.DefaultUser.ToString())
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+                                                                             .RequireRole(ApplicationRoles.Administrator
+                                                                                     .ToString(),
+                                                                                 ApplicationRoles.Manager
+                                                                                     .ToString(),
+                                                                                 ApplicationRoles.DefaultUser
+                                                                                     .ToString())
+                                                                             .AddAuthenticationSchemes(JwtBearerDefaults
+                                                                                 .AuthenticationScheme)
                                                                              .Build());
                                       });
 

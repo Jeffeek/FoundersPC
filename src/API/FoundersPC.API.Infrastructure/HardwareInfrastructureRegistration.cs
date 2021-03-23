@@ -45,12 +45,13 @@ namespace FoundersPC.API.Infrastructure
         {
             services.AddDbContext<FoundersPCHardwareContext>(options =>
                                                                  options.UseSqlServer(configuration
-                                                                                          .GetConnectionString("FoundersPC_Hardware"),
-                                                                                      b =>
-                                                                                          b.MigrationsAssembly(typeof(
-                                                                                                  FoundersPCHardwareContext)
-                                                                                              .Assembly
-                                                                                              .FullName)));
+                                                                         .GetConnectionString("FoundersPC_Hardware"),
+                                                                     b =>
+                                                                         b.MigrationsAssembly(typeof(
+                                                                                 FoundersPCHardwareContext
+                                                                             )
+                                                                             .Assembly
+                                                                             .FullName)));
         }
     }
 }

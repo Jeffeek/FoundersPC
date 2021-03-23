@@ -11,8 +11,10 @@ namespace FoundersPC.Web.Services.Web_Services
     {
         public MicroservicesBaseAddresses(IConfiguration configuration)
         {
-            HardwareApiBaseAddress = configuration["ConnectionServers:API"] ?? throw new KeyNotFoundException(nameof(configuration));
-            IdentityApiBaseAddress = configuration["ConnectionServers:IdentityServer"] ?? throw new KeyNotFoundException(nameof(configuration));
+            HardwareApiBaseAddress = configuration["ConnectionServers:API"]
+                                     ?? throw new KeyNotFoundException(nameof(configuration));
+            IdentityApiBaseAddress = configuration["ConnectionServers:IdentityServer"]
+                                     ?? throw new KeyNotFoundException(nameof(configuration));
         }
 
         public string HardwareApiBaseAddress { get; }

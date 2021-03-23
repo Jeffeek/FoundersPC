@@ -27,8 +27,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         public IdentityUserSettingsChangeService(IHttpClientFactory httpClientFactory,
                                                  MicroservicesBaseAddresses baseAddresses,
                                                  IMapper mapper,
-                                                 ILogger<IdentityUserSettingsChangeService> logger
-        )
+                                                 ILogger<IdentityUserSettingsChangeService> logger)
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = baseAddresses;
@@ -37,8 +36,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         }
 
         public async Task<AccountSettingsChangeResponse> ChangePasswordAsync(PasswordSettingsViewModel model,
-                                                                             string token
-        )
+                                                                             string token)
         {
             if (model is null)
             {
@@ -83,14 +81,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             var changePasswordRequest = await client.PutAsJsonAsync("User/Settings/Change/Password",
                                                                     mappedModel);
 
-            var responseContent = await changePasswordRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+            var responseContent =
+                await changePasswordRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
 
             return responseContent;
         }
 
         public async Task<AccountSettingsChangeResponse> ChangeLoginAsync(SecuritySettingsViewModel model,
-                                                                          string token
-        )
+                                                                          string token)
         {
             if (model is null)
             {
@@ -127,8 +125,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         }
 
         public async Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model,
-                                                                                  string token
-        )
+            string token)
         {
             if (model is null)
             {
@@ -152,22 +149,23 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             var changeNotificationsRequest = await client.PutAsJsonAsync("User/Settings/Change/Notifications",
                                                                          mappedModel);
 
-            var responseContent = await changeNotificationsRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
+            var responseContent =
+                await changeNotificationsRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
 
             return responseContent;
         }
 
         private void PrepareRequest(HttpClient client,
-                                    string token
-        )
+                                    string token)
         {
             client.BaseAddress = new Uri(_baseAddresses.IdentityApiBaseAddress);
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                                                                       token);
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
+                                              token);
         }
     }
 }
