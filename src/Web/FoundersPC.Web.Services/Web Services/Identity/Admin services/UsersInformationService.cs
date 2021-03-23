@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 {
-    // todo: interface
     public class UsersInformationService : IUsersInformationService
     {
         private readonly MicroservicesBaseAddresses _baseAddresses;

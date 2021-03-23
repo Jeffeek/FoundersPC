@@ -47,14 +47,17 @@ namespace FoundersPC.Web.Application
                                                         SecurePolicy = CookieSecurePolicy.SameAsRequest,
                                                         SameSite = SameSiteMode.Strict
                                                     };
+
                                    options.LoginPath = new PathString("/Authentication/SignIn");
                                    options.AccessDeniedPath = new PathString("/Shared/Forbidden");
                                    options.LogoutPath = "/Authentication/SignIn";
+
                                    options.Events = new CookieAuthenticationEvents()
                                                     {
                                                         OnRedirectToAccessDenied =
                                                             context => context.HttpContext.ForbidAsync(CookieAuthenticationDefaults.AuthenticationScheme),
                                                     };
+
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
                                });
         }

@@ -9,7 +9,6 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace FoundersPC.ApplicationShared
 {
-    // todo: make this class as singleton service, take credentials behind config / file
     public class JwtConfiguration
     {
         private static JwtConfiguration _configuration;

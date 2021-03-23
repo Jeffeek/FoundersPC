@@ -10,7 +10,6 @@ using FoundersPC.WebIdentityShared;
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services
 {
-    // todo: get all token usages
     public interface IAdminService
     {
         Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string adminToken);

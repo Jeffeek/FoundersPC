@@ -1,0 +1,188 @@
+03/23/2021 11:11:17 Web server started.. 1 
+03/23/2021 11:11:17 Web server HostBuilder created 1 
+03/23/2021 11:11:19 Host built 1 
+03/23/2021 11:11:20 Now listening on: "https://localhost:9000" 1 
+03/23/2021 11:11:20 Application started. Press Ctrl+C to shut down. 1 
+03/23/2021 11:11:20 Hosting environment: "Development" 1 
+03/23/2021 11:11:20 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/23/2021 11:11:26 HTTP "GET" "/" responded 200 in 343.8081 ms 4 
+03/23/2021 11:11:28 HTTP "GET" "/Authentication/SignIn" responded 200 in 303.7721 ms 15 
+03/23/2021 11:12:11 HTTP "GET" "/Authentication/SignIn" responded 200 in 14.2218 ms 19 
+03/23/2021 11:12:21 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 22 
+03/23/2021 11:12:21 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 22 
+03/23/2021 11:13:23 Web server started.. 1 
+03/23/2021 11:13:23 Web server HostBuilder created 1 
+03/23/2021 11:13:24 Host built 1 
+03/23/2021 11:13:24 Now listening on: "https://localhost:9000" 1 
+03/23/2021 11:13:24 Application started. Press Ctrl+C to shut down. 1 
+03/23/2021 11:13:24 Hosting environment: "Development" 1 
+03/23/2021 11:13:24 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/23/2021 11:13:27 HTTP "GET" "/" responded 200 in 507.1247 ms 4 
+03/23/2021 11:13:29 HTTP "GET" "/Authentication/SignIn" responded 200 in 247.9096 ms 13 
+03/23/2021 11:13:33 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/23/2021 11:13:33 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 13 
+03/23/2021 11:13:36 Received HTTP response headers after 3370.1178ms - 200 6 
+03/23/2021 11:13:36 End processing HTTP request after 3384.9513ms - 200 6 
+03/23/2021 11:13:36 HTTP "POST" "/Authentication/SignIn" responded 302 in 3518.2247 ms 6 
+03/23/2021 11:13:36 HTTP "GET" "/" responded 200 in 9.9903 ms 4 
+03/23/2021 11:13:39 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 13 
+03/23/2021 11:13:39 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 13 
+03/23/2021 11:13:39 Received HTTP response headers after 196.8851ms - 200 6 
+03/23/2021 11:13:39 End processing HTTP request after 201.1138ms - 200 6 
+03/23/2021 11:13:39 HTTP "GET" "/AccountSettings/Profile" responded 200 in 384.5067 ms 6 
+03/23/2021 11:13:42 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/23/2021 11:13:42 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/23/2021 11:13:42 Received HTTP response headers after 92.7751ms - 200 10 
+03/23/2021 11:13:42 End processing HTTP request after 96.9357ms - 200 10 
+03/23/2021 11:13:42 HTTP "GET" "/Admin/UsersTable" responded 200 in 126.2472 ms 10 
+03/23/2021 11:13:47 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/23/2021 11:13:47 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Block/By/Id 4 
+03/23/2021 11:13:50 Received HTTP response headers after 3414.3186ms - 200 6 
+03/23/2021 11:13:50 End processing HTTP request after 3418.4834ms - 200 6 
+03/23/2021 11:13:50 AdminService: block user: user with id = 4 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 4 was not blocked at this byIdRequest. 6 
+03/23/2021 11:13:50 HTTP "GET" "/Admin/BlockUser?id=4" responded 302 in 3452.1662 ms 6 
+03/23/2021 11:13:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 9 
+03/23/2021 11:13:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 9 
+03/23/2021 11:13:50 Received HTTP response headers after 28.6225ms - 200 6 
+03/23/2021 11:13:50 End processing HTTP request after 31.5391ms - 200 6 
+03/23/2021 11:13:50 HTTP "GET" "/Admin/UsersTable" responded 200 in 35.4445 ms 6 
+03/23/2021 11:13:59 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 5 
+03/23/2021 11:13:59 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Admin/Users/Unblock/By/Id 5 
+03/23/2021 11:14:02 Received HTTP response headers after 2910.6683ms - 200 6 
+03/23/2021 11:14:02 End processing HTTP request after 2915.416ms - 200 6 
+03/23/2021 11:14:02 AdminService: unblock user: user with id = 4 was unblocked by ilyushin_misha@mail.ru 6 
+03/23/2021 11:14:02 HTTP "GET" "/Admin/UnblockUser?id=4" responded 302 in 2924.7384 ms 6 
+03/23/2021 11:14:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/23/2021 11:14:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/23/2021 11:14:02 Received HTTP response headers after 29.1451ms - 200 6 
+03/23/2021 11:14:02 End processing HTTP request after 31.2173ms - 200 6 
+03/23/2021 11:14:02 HTTP "GET" "/Admin/UsersTable" responded 200 in 34.7809 ms 6 
+03/23/2021 11:14:08 Start processing HTTP request "DELETE" https://localhost:3000/FoundersPCIdentity/Admin/Users/Inactive/By/Id 4 
+03/23/2021 11:14:08 Sending HTTP request "DELETE" https://localhost:3000/FoundersPCIdentity/Admin/Users/Inactive/By/Id 4 
+03/23/2021 11:14:09 Received HTTP response headers after 1860.1974ms - 200 6 
+03/23/2021 11:14:09 End processing HTTP request after 1863.6497ms - 200 6 
+03/23/2021 11:14:09 HTTP "GET" "/Admin/MakeUserInactive?id=4" responded 302 in 1870.7182 ms 6 
+03/23/2021 11:14:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/23/2021 11:14:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/23/2021 11:14:09 Received HTTP response headers after 30.9261ms - 200 21 
+03/23/2021 11:14:09 End processing HTTP request after 37.8253ms - 200 21 
+03/23/2021 11:14:09 HTTP "GET" "/Admin/UsersTable" responded 200 in 42.1146 ms 21 
+03/23/2021 11:14:28 Start processing HTTP request "DELETE" https://localhost:3000/FoundersPCIdentity/Admin/Users/Inactive/By/Id 5 
+03/23/2021 11:14:28 Sending HTTP request "DELETE" https://localhost:3000/FoundersPCIdentity/Admin/Users/Inactive/By/Id 5 
+03/23/2021 11:14:28 Received HTTP response headers after 55.3736ms - 200 25 
+03/23/2021 11:14:28 End processing HTTP request after 58.8633ms - 200 25 
+03/23/2021 11:14:28 HTTP "GET" "/Admin/MakeUserInactive?id=2" responded 302 in 80.4856 ms 25 
+03/23/2021 11:14:28 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/23/2021 11:14:28 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 13 
+03/23/2021 11:14:28 Received HTTP response headers after 38.9286ms - 200 25 
+03/23/2021 11:14:28 End processing HTTP request after 42.0846ms - 200 25 
+03/23/2021 11:14:28 HTTP "GET" "/Admin/UsersTable" responded 200 in 48.7788 ms 25 
+03/23/2021 11:14:32 Start processing HTTP request "DELETE" https://localhost:3000/FoundersPCIdentity/Admin/Users/Inactive/By/Id 9 
+03/23/2021 11:14:32 Sending HTTP request "DELETE" https://localhost:3000/FoundersPCIdentity/Admin/Users/Inactive/By/Id 9 
+03/23/2021 11:14:32 Received HTTP response headers after 46.819ms - 200 21 
+03/23/2021 11:14:32 End processing HTTP request after 51.3519ms - 200 21 
+03/23/2021 11:14:32 HTTP "GET" "/Admin/MakeUserInactive?id=2" responded 302 in 54.0975 ms 21 
+03/23/2021 11:14:32 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/23/2021 11:14:32 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 4 
+03/23/2021 11:14:32 Received HTTP response headers after 58.5791ms - 200 21 
+03/23/2021 11:14:32 End processing HTTP request after 63.4769ms - 200 21 
+03/23/2021 11:14:32 HTTP "GET" "/Admin/UsersTable" responded 200 in 67.8696 ms 21 
+03/23/2021 11:15:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/23/2021 11:15:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 5 
+03/23/2021 11:15:17 Received HTTP response headers after 53.014ms - 200 27 
+03/23/2021 11:15:17 End processing HTTP request after 55.9887ms - 200 27 
+03/23/2021 11:15:17 HTTP "GET" "/Admin/UsersTable" responded 200 in 72.5523 ms 27 
+03/23/2021 11:16:36 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 41 
+03/23/2021 11:16:36 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 41 
+03/23/2021 11:16:36 Received HTTP response headers after 40.0603ms - 200 26 
+03/23/2021 11:16:36 End processing HTTP request after 43.9496ms - 200 26 
+03/23/2021 11:16:36 HTTP "GET" "/Admin/UsersTable" responded 200 in 59.4215 ms 26 
+03/23/2021 11:17:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 50 
+03/23/2021 11:17:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 50 
+03/23/2021 11:17:56 Received HTTP response headers after 43.1692ms - 200 34 
+03/23/2021 11:17:56 End processing HTTP request after 60.1089ms - 200 34 
+03/23/2021 11:17:56 HTTP "GET" "/Admin/UsersTable" responded 200 in 65.2363 ms 34 
+03/23/2021 11:18:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 50 
+03/23/2021 11:18:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 50 
+03/23/2021 11:18:08 Received HTTP response headers after 38.4327ms - 200 36 
+03/23/2021 11:18:08 End processing HTTP request after 42.6513ms - 200 36 
+03/23/2021 11:18:08 HTTP "GET" "/Admin/UsersTable" responded 200 in 47.2613 ms 36 
+03/23/2021 11:20:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 63 
+03/23/2021 11:20:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 63 
+03/23/2021 11:20:15 Received HTTP response headers after 129.7839ms - 200 68 
+03/23/2021 11:20:15 End processing HTTP request after 137.5214ms - 200 68 
+03/23/2021 11:20:15 HTTP "GET" "/Admin/UsersTable" responded 200 in 141.3078 ms 68 
+03/23/2021 11:20:31 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 78 
+03/23/2021 11:20:31 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 78 
+03/23/2021 11:20:31 Received HTTP response headers after 32.0426ms - 200 69 
+03/23/2021 11:20:31 End processing HTTP request after 35.1943ms - 200 69 
+03/23/2021 11:20:31 HTTP "GET" "/Admin/UsersTable" responded 200 in 38.5880 ms 69 
+03/23/2021 11:21:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 78 
+03/23/2021 11:21:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 78 
+03/23/2021 11:21:51 Received HTTP response headers after 34.0691ms - 200 82 
+03/23/2021 11:21:51 End processing HTTP request after 37.4756ms - 200 82 
+03/23/2021 11:21:51 HTTP "GET" "/Admin/UsersTable" responded 200 in 47.3806 ms 82 
+03/23/2021 11:23:00 HTTP "GET" "/" responded 200 in 1.9024 ms 74 
+03/23/2021 11:23:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 75 
+03/23/2021 11:23:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 75 
+03/23/2021 11:23:02 Received HTTP response headers after 108.8983ms - 200 94 
+03/23/2021 11:23:02 End processing HTTP request after 111.6974ms - 200 94 
+03/23/2021 11:23:06 HTTP "GET" "/Admin/UsersTable" responded 200 in 4186.8991 ms 94 
+03/23/2021 11:23:43 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 93 
+03/23/2021 11:23:43 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 93 
+03/23/2021 11:23:43 Received HTTP response headers after 44.0871ms - 200 92 
+03/23/2021 11:23:43 End processing HTTP request after 47.6174ms - 200 92 
+03/23/2021 11:23:44 HTTP "GET" "/Admin/UsersTable" responded 200 in 271.5730 ms 92 
+03/23/2021 11:23:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 74 
+03/23/2021 11:23:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 74 
+03/23/2021 11:24:00 Received HTTP response headers after 50.9049ms - 200 94 
+03/23/2021 11:24:00 End processing HTTP request after 55.8145ms - 200 94 
+03/23/2021 11:24:00 HTTP "GET" "/Admin/UsersTable" responded 200 in 227.2689 ms 94 
+03/23/2021 11:24:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 93 
+03/23/2021 11:24:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 93 
+03/23/2021 11:24:10 Received HTTP response headers after 43.222ms - 200 85 
+03/23/2021 11:24:10 End processing HTTP request after 47.7976ms - 200 85 
+03/23/2021 11:24:11 HTTP "GET" "/Admin/UsersTable" responded 200 in 199.1560 ms 85 
+03/23/2021 11:42:09 Web server started.. 1 
+03/23/2021 11:42:09 Web server HostBuilder created 1 
+03/23/2021 11:42:10 Host built 1 
+03/23/2021 11:42:11 Now listening on: "https://localhost:9000" 1 
+03/23/2021 11:42:11 Application started. Press Ctrl+C to shut down. 1 
+03/23/2021 11:42:11 Hosting environment: "Development" 1 
+03/23/2021 11:42:11 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/23/2021 11:42:15 HTTP "GET" "/" responded 200 in 513.6882 ms 5 
+03/23/2021 11:43:02 HTTP "GET" "/Authentication/SignIn" responded 200 in 282.4574 ms 5 
+03/23/2021 11:43:03 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 17 
+03/23/2021 11:43:03 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 17 
+03/23/2021 11:43:06 Received HTTP response headers after 2820.2779ms - 200 11 
+03/23/2021 11:43:06 End processing HTTP request after 2835.6261ms - 200 11 
+03/23/2021 11:43:06 HTTP "POST" "/Authentication/SignIn" responded 302 in 2966.3429 ms 11 
+03/23/2021 11:43:06 HTTP "GET" "/" responded 200 in 10.2861 ms 4 
+03/23/2021 11:43:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 9 
+03/23/2021 11:43:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 9 
+03/23/2021 11:43:08 Received HTTP response headers after 220.4825ms - 200 11 
+03/23/2021 11:43:08 End processing HTTP request after 224.7132ms - 200 11 
+03/23/2021 11:43:08 HTTP "GET" "/Admin/UsersTable" responded 200 in 366.4060 ms 11 
+03/23/2021 11:43:11 HTTP "GET" "/" responded 200 in 2.0896 ms 5 
+03/23/2021 11:43:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Cases 4 
+03/23/2021 11:43:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Cases 4 
+03/23/2021 11:43:19 Received HTTP response headers after 6.562ms - 404 15 
+03/23/2021 11:43:19 End processing HTTP request after 9.9092ms - 404 15 
+03/23/2021 11:43:19 HTTP "GET" "/Home/Cases" responded 200 in 50.6374 ms 15 
+03/23/2021 11:45:01 Web server started.. 1 
+03/23/2021 11:45:01 Web server HostBuilder created 1 
+03/23/2021 11:45:02 Host built 1 
+03/23/2021 11:45:02 Now listening on: "https://localhost:9000" 1 
+03/23/2021 11:45:02 Application started. Press Ctrl+C to shut down. 1 
+03/23/2021 11:45:02 Hosting environment: "Development" 1 
+03/23/2021 11:45:02 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/23/2021 11:45:05 HTTP "GET" "/" responded 200 in 575.6517 ms 4 
+03/23/2021 11:45:07 HTTP "GET" "/Authentication/SignIn" responded 200 in 246.5288 ms 8 
+03/23/2021 11:45:09 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 15 
+03/23/2021 11:45:09 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/Login 15 
+03/23/2021 11:45:12 Received HTTP response headers after 2345.7139ms - 200 6 
+03/23/2021 11:45:12 End processing HTTP request after 2360.147ms - 200 6 
+03/23/2021 11:45:12 HTTP "POST" "/Authentication/SignIn" responded 302 in 2485.5117 ms 6 
+03/23/2021 11:45:12 HTTP "GET" "/" responded 200 in 11.6407 ms 8 
+03/23/2021 11:45:16 HTTP "GET" "/Authentication/LogOut" responded 302 in 14.9971 ms 12 
+03/23/2021 11:45:16 HTTP "GET" "/" responded 200 in 1.2135 ms 8 

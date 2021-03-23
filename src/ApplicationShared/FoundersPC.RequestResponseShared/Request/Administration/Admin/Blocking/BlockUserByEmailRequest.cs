@@ -1,6 +1,5 @@
 ﻿namespace FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking
 {
-    //todo: validation
     public class BlockUserByEmailRequest
     {
         public string UserEmail { get; set; }

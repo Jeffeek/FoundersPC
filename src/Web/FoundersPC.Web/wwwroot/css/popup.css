@@ -1,64 +1,78 @@
-﻿.simple-popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
+﻿.simple-popup
+{
     -moz-user-select: none;
     -ms-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
     user-select: none;
 }
 
-    /* The actual popup */
-    .simple-popup .popuptext {
-        visibility: hidden;
-        width: fit-content;
-        height: fit-content;
-        background-color: #555;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px;
-        position: absolute;
-        z-index: 1;
-        bottom: 125%;
-    }
+/* The actual popup */
 
-        /* Popup arrow */
-        .simple-popup .popuptext::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #555 transparent transparent transparent;
-        }
+.simple-popup .popuptext
+{
+    background-color: #555;
+    border-radius: 6px;
+    bottom: 125%;
+    color: #fff;
+    height: fit-content;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    width: fit-content;
+    z-index: 0;
+}
 
-    /* Toggle this class - hide and show the popup */
-    .simple-popup.show .popuptext {
-        visibility: visible;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s;
-    }
+/* Popup arrow */
+
+.simple-popup .popuptext::after
+{
+    border-color: #555 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    content: "";
+    left: 50%;
+    margin-left: -5px;
+    position: absolute;
+    top: 100%;
+}
+
+/* Toggle this class - hide and show the popup */
+
+.simple-popup.show .popuptext
+{
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    visibility: visible;
+}
 
 /* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {
+
+@-webkit-keyframes fadeIn
+{
+    from
+    {
         opacity: 0;
     }
 
-    to {
+    to
+    {
         opacity: 1;
     }
 }
 
-@keyframes fadeIn {
-    from {
+@keyframes fadeIn
+{
+    from
+    {
         opacity: 0;
     }
 
-    to {
+    to
+    {
         opacity: 1;
     }
 }
