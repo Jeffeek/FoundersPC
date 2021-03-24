@@ -317,8 +317,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesAsync(int userId, string adminToken) =>
             throw new NotImplementedException();
 
-        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(
-            DateTime start,
+        public Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(DateTime start,
             DateTime finish,
             string adminToken) =>
             throw new NotImplementedException();

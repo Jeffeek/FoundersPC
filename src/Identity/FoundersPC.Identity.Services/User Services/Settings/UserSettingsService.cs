@@ -17,9 +17,9 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
     public class UserSettingsService : IUserSettingsService
     {
         private readonly ILogger<UserSettingsService> _logger;
+        private readonly IMailService _mailService;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
-        private readonly IMailService _mailService;
 
         public UserSettingsService(IUnitOfWorkUsersIdentity unitOfWork,
                                    ILogger<UserSettingsService> logger,

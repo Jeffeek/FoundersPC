@@ -36,10 +36,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
 
         Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesAsync(int userId, string adminToken);
 
-        Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(
-            DateTime start,
-            DateTime finish,
-            string adminToken);
+        Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(DateTime start,
+                                                                               DateTime finish,
+                                                                               string adminToken);
 
         Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken);
 

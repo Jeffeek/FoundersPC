@@ -1,17 +1,19 @@
 #region Using namespaces
 
-using System;
-
 #endregion
 
 namespace FoundersPC.Web.Models
 {
-    public sealed class ErrorViewModel
+    public class ErrorViewModel
     {
-        public string RequestId { get; set; }
+        public ErrorViewModel(int statusCode, string content)
+        {
+            StatusCode = statusCode;
+            Content = content;
+        }
 
-        public string Error { get; set; }
+        public int StatusCode { get; }
 
-        public bool ShowRequestId => !String.IsNullOrEmpty(RequestId);
+        public string Content { get; }
     }
 }

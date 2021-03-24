@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region Using namespaces
+
+using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
@@ -12,15 +11,17 @@ using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
 using Microsoft.Extensions.Logging;
 
+#endregion
+
 namespace FoundersPC.Identity.Services.User_Services
 {
     public class AuthenticationService : IAuthenticationService
     {
         private readonly ILogger<AuthenticationService> _logger;
         private readonly IMailService _mailService;
-        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
-        private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IMapper _mapper;
+        private readonly PasswordEncryptorService _passwordEncryptorService;
+        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public AuthenticationService(ILogger<AuthenticationService> logger,
                                      IMailService mailService,
@@ -35,7 +36,9 @@ namespace FoundersPC.Identity.Services.User_Services
             _mapper = mapper;
         }
 
-        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndHashedPasswordAsync(string emailOrLogin, string hashedPassword)
+        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndHashedPasswordAsync(
+            string emailOrLogin,
+            string hashedPassword)
         {
             if (emailOrLogin is null)
             {
@@ -66,7 +69,9 @@ namespace FoundersPC.Identity.Services.User_Services
             return _mapper.Map<UserEntity, UserEntityReadDto>(user);
         }
 
-        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndPasswordAsync(string emailOrLogin, string password)
+        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndPasswordAsync(
+            string emailOrLogin,
+            string password)
         {
             if (emailOrLogin is null)
             {

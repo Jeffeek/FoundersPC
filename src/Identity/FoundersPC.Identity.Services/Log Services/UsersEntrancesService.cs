@@ -15,8 +15,8 @@ namespace FoundersPC.Identity.Services.Log_Services
 {
     public class UsersEntrancesService : IUsersEntrancesService
     {
-        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
         private readonly IMailService _mailService;
+        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public UsersEntrancesService(IUnitOfWorkUsersIdentity unitOfWork, IMailService mailService)
         {
@@ -59,8 +59,7 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             if (user == null) return false;
 
-            if (user.SendMessageOnEntrance)
-                await _mailService.SendEntranceNotificationAsync(user.Email);
+            if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
 
             var log = new UserEntranceLog
                       {

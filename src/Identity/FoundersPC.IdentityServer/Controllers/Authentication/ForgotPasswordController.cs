@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces
+
 using System.Threading.Tasks;
-using AutoMapper;
-using FoundersPC.ApplicationShared;
-using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
@@ -28,10 +26,10 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
         [Route("ForgotPassword")]
         [HttpPost]
-        public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword([FromBody] UserForgotPasswordRequest request)
+        public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword(
+            [FromBody] UserForgotPasswordRequest request)
         {
-            if (!ModelState.IsValid)
-                return UnprocessableEntity();
+            if (!ModelState.IsValid) return UnprocessableEntity();
 
             _logger.LogInformation($"{nameof(ForgotPasswordController)}: Forgot Password request with email = {request.Email}");
 

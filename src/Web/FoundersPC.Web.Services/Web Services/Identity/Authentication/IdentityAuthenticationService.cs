@@ -3,7 +3,6 @@
 using System;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Net.NetworkInformation;
 using System.Security.Authentication;
@@ -42,7 +41,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword)
         {
-            var signInModel = new SignInViewModel()
+            var signInModel = new SignInViewModel
                               {
                                   LoginOrEmail = emailOrLogin,
                                   RawPassword = rawPassword
@@ -79,13 +78,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
-            var responseMessage = await client.PostAsJsonAsync<UserSignInRequest>("SignIn", mappedRequestModel);
+            var responseMessage = await client.PostAsJsonAsync("SignIn", mappedRequestModel);
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)} to Identity server returned a server error {responseMessage.StatusCode}");
+                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)}, Sign In: to Identity server returned a server error : StatusCode: {responseMessage.StatusCode}");
 
-                throw new AuthenticationException();
+                if (responseMessage.StatusCode == HttpStatusCode.UnprocessableEntity)
+                    throw new NetworkInformationException((int)responseMessage.StatusCode);
             }
 
             var signInResponseContent = await responseMessage.Content.ReadFromJsonAsync<UserLoginResponse>();
@@ -99,7 +99,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserSignUpResponse> SignUpAsync(string email, string rawPassword)
         {
-            var signUpModel = new SignUpViewModel()
+            var signUpModel = new SignUpViewModel
                               {
                                   Email = email,
                                   RawPassword = rawPassword
@@ -136,9 +136,17 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
-            var signUpRequest = await client.PostAsJsonAsync("SignUp", mappedRequestModel);
+            var responseMessage = await client.PostAsJsonAsync("SignUp", mappedRequestModel);
 
-            var signUpResponseContent = await signUpRequest.Content.ReadFromJsonAsync<UserSignUpResponse>();
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)}, Sign Up: to Identity server returned a server error {responseMessage.StatusCode}");
+
+                if (responseMessage.StatusCode == HttpStatusCode.UnprocessableEntity)
+                    throw new AuthenticationException($"Unprocessable Entity: {nameof(SignUpViewModel)}");
+            }
+
+            var signUpResponseContent = await responseMessage.Content.ReadFromJsonAsync<UserSignUpResponse>();
 
             return signUpResponseContent;
         }
@@ -149,7 +157,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(string email)
         {
-            var forgotPasswordModel = new ForgotPasswordViewModel()
+            var forgotPasswordModel = new ForgotPasswordViewModel
                                       {
                                           Email = email
                                       };
@@ -178,11 +186,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             var mappedRequestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);
 
-            var forgotPasswordRequest = await client.PostAsJsonAsync("ForgotPassword",
-                                                                     mappedRequestModel);
+            var responseMessage = await client.PostAsJsonAsync("ForgotPassword", mappedRequestModel);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)}, Forgot Password: to Identity server returned a server error {responseMessage.StatusCode} with email = {model.Email}");
+
+                if (responseMessage.StatusCode == HttpStatusCode.UnprocessableEntity)
+                    throw new NetworkInformationException((int)responseMessage.StatusCode);
+            }
 
             var forgotPasswordResponseContent =
-                await forgotPasswordRequest.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
+                await responseMessage.Content.ReadFromJsonAsync<UserForgotPasswordResponse>();
 
             return forgotPasswordResponseContent;
         }

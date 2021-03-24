@@ -6,7 +6,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
-using FoundersPC.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -93,13 +92,7 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangePassword(AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.PasswordSettingsViewModel))
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad model"
-                            });
+            if (!TryValidateModel(request.PasswordSettingsViewModel)) return RedirectToPage("Error");
 
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
@@ -110,13 +103,7 @@ namespace FoundersPC.Web.Controllers
 
             if (response is null) return BadRequest();
 
-            if (!response.Successful)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = response?.Error ?? "Reading json error"
-                            });
+            if (!response.Successful) return RedirectToPage("Error");
 
             return RedirectToAction("Profile", "AccountSettings");
         }
@@ -124,13 +111,7 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangeLogin(AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.LoginSettingsViewModel))
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad model"
-                            });
+            if (!TryValidateModel(request.LoginSettingsViewModel)) return RedirectToPage("Error");
 
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
@@ -141,13 +122,7 @@ namespace FoundersPC.Web.Controllers
 
             if (response is null) return BadRequest();
 
-            if (!response.Successful)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                Error = response.Operation,
-                                RequestId = HttpContext.Request.Path
-                            });
+            if (!response.Successful) return RedirectToPage("Error");
 
             return RedirectToAction("Profile", "AccountSettings");
         }
@@ -155,13 +130,7 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangeNotifications(AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.NotificationsSettingsViewModel))
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                RequestId = HttpContext.Request.Path,
-                                Error = "Bad model"
-                            });
+            if (!TryValidateModel(request.NotificationsSettingsViewModel)) return RedirectToPage("Error");
 
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
 
@@ -172,13 +141,7 @@ namespace FoundersPC.Web.Controllers
 
             if (response is null) return BadRequest();
 
-            if (!response.Successful)
-                return View("Error",
-                            new ErrorViewModel
-                            {
-                                Error = response.Operation,
-                                RequestId = HttpContext.Request.Path
-                            });
+            if (!response.Successful) return RedirectToPage("Error");
 
             return RedirectToAction("Profile", "AccountSettings");
         }

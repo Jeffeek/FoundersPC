@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces
+
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
@@ -33,8 +32,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         [HttpPost]
         public async Task<ActionResult<UserSignUpResponse>> Register([FromBody] UserSignUpRequest request)
         {
-            if (!ModelState.IsValid)
-                UnprocessableEntity();
+            if (!ModelState.IsValid) UnprocessableEntity();
 
             _logger.LogInformation($"{nameof(SignUpController)}: Registration request with email = {request.Email}");
 

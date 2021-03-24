@@ -54,8 +54,7 @@ namespace FoundersPC.ApplicationShared
 
         public static void PrepareJsonRequest(this HttpClient client, string baseAddress = null)
         {
-            if (baseAddress is not null)
-                client.BaseAddress = new Uri(baseAddress);
+            if (baseAddress is not null) client.BaseAddress = new Uri(baseAddress);
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");

@@ -124,24 +124,18 @@ namespace FoundersPC.Web.Controllers
             if (!ModelState.IsValid)
                 return ValidationProblem("Not valid credentials. Bad model.",
                                          nameof(model),
-                                         400,
+                                         StatusCodes.Status422UnprocessableEntity,
                                          "Error",
                                          nameof(SignInViewModel));
 
             var signInResponse = await _authenticationService.SignInAsync(model);
 
-            if (signInResponse == null)
-                return Problem("Deserialize error",
-                               nameof(signInResponse),
-                               StatusCodes.Status500InternalServerError,
-                               "Response error",
-                               nameof(UserLoginResponse));
+            if (signInResponse == null) return RedirectToAction("BadRequestIndex", "Error");
 
-            if (!signInResponse.IsUserExists)
-                return NotFound(new
-                                {
-                                    error = "User not exists"
-                                });
+            if (!signInResponse.IsUserExists) return RedirectToAction("UserNotFound", "Error");
+
+            if (!signInResponse.IsUserActive || signInResponse.IsUserBlocked)
+                return RedirectToAction("BlockedIndex", "Error");
 
             await SetupSessionCookieAsync(signInResponse.Email, signInResponse.Role);
             SetupJwtTokenInCookie(signInResponse.JwtToken);
