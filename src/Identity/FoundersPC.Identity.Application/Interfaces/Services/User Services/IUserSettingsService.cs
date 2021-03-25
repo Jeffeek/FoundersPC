@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
+using FoundersPC.Identity.Application.DTO;
 
 #endregion
 
@@ -20,9 +21,7 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 
         Task<bool> ChangeLoginToAsync(int userId, string newLogin);
 
-        Task<bool> ChangeNotificationsToAsync(string userEmail,
-                                              bool notificationOnEntrance,
-                                              bool notificationOnApiRequest);
+        Task<bool> ChangeNotificationsToAsync(string userEmail, UserNotificationsSettings settings);
 
         Task<bool> ChangeNotificationsToAsync(int userId, bool notificationOnEntrance, bool notificationOnApiRequest);
     }

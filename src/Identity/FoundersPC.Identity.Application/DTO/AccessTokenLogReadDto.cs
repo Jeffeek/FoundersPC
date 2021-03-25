@@ -8,7 +8,9 @@ namespace FoundersPC.Identity.Application.DTO
 {
     public class AccessTokenLogReadDto
     {
-        public int ApiAccessUsersTokenId { get; set; }
+        public int Id { get; set; }
+
+        public int UserId { get; set; }
 
         public DateTime RequestDateTime { get; set; }
     }

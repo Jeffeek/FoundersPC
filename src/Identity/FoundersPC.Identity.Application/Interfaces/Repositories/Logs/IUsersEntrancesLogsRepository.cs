@@ -1,5 +1,8 @@
 ﻿#region Using namespaces
 
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.RepositoryShared.Repository;
 
@@ -7,5 +10,10 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Logs
 {
-    public interface IUsersEntrancesLogsRepository : IRepositoryAsync<UserEntranceLog> { }
+    public interface IUsersEntrancesLogsRepository : IRepositoryAsync<UserEntranceLog>
+    {
+        Task<IEnumerable<UserEntranceLog>> GetEntrancesBetweenAsync(DateTime start, DateTime finish);
+
+        Task<IEnumerable<UserEntranceLog>> GetEntrancesInAsync(DateTime date);
+    }
 }

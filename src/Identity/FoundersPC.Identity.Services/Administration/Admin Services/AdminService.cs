@@ -69,7 +69,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             if (!user.IsActive) return false;
 
-            if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator) return false;
 
             if (sendNotification)
                 await _mailService.SendBlockNotificationAsync(user.Email,
@@ -197,7 +197,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             if (!user.IsActive) return false;
 
-            if (user.Role.RoleTitle == ApplicationRoles.Administrator.ToString()) return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator) return false;
 
             user.IsBlocked = block;
 

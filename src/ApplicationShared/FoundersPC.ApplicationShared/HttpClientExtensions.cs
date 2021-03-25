@@ -59,5 +59,14 @@ namespace FoundersPC.ApplicationShared
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
         }
+
+        public static void PrepareJsonRequestWithAuthentication(this HttpClient client,
+                                                                string authScheme,
+                                                                string token,
+                                                                string baseAddress = null)
+        {
+            client.PrepareJsonRequest(baseAddress);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(authScheme, token);
+        }
     }
 }

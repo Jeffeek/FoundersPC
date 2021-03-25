@@ -3,6 +3,7 @@
 using System;
 using System.Data;
 using System.Threading.Tasks;
+using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
@@ -213,13 +214,9 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
         #endregion
 
-        // todo: change boolean notification settings to an object
-
         #region Change notifications
 
-        public async Task<bool> ChangeNotificationsToAsync(string userEmail,
-                                                           bool notificationOnEntrance,
-                                                           bool notificationOnApiRequest)
+        public async Task<bool> ChangeNotificationsToAsync(string userEmail, UserNotificationsSettings settings)
         {
             if (userEmail is null)
             {
@@ -237,8 +234,8 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
                 return false;
             }
 
-            user.SendMessageOnApiRequest = notificationOnApiRequest;
-            user.SendMessageOnEntrance = notificationOnEntrance;
+            user.SendMessageOnApiRequest = settings.SendMessageOnApiRequest;
+            user.SendMessageOnEntrance = settings.SendMessageOnEntrance;
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 

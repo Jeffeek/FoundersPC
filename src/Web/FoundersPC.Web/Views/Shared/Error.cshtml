@@ -371,13 +371,13 @@
     <hr/>
     <h2
         class="error-content">
-        @Model?.Content
+        @Model.Content
     </h2>
     <div
         class="display-6 error-statuscode text-center">
         <a
             class="glitch"
-            data-glitch="@Model?.StatusCode"
+            data-glitch="@(Model.StatusCode ?? -1)"
             href="#">
         </a>
     </div>

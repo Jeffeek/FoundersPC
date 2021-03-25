@@ -10,8 +10,6 @@ namespace FoundersPC.Identity.Application.DTO
     {
         public int Id { get; set; }
 
-        public UserEntityReadDto User { get; set; }
-
         public int UserId { get; set; }
 
         public DateTime Entrance { get; set; }

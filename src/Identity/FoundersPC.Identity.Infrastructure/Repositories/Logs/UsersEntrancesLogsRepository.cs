@@ -1,6 +1,8 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
 using FoundersPC.Identity.Domain.Entities.Logs;
@@ -33,5 +35,17 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 
             return entrance;
         }
+
+        public async Task<IEnumerable<UserEntranceLog>> GetEntrancesBetweenAsync(DateTime start, DateTime finish) =>
+            await Context.Set<UserEntranceLog>()
+                         .Where(log => log.Entrance >= start && log.Entrance <= finish)
+                         .ToListAsync();
+
+        public async Task<IEnumerable<UserEntranceLog>> GetEntrancesInAsync(DateTime date) =>
+            await Context.Set<UserEntranceLog>()
+                         .Where(log => log.Entrance.Year == date.Year
+                                       && log.Entrance.Month == date.Month
+                                       && log.Entrance.Day == date.Day)
+                         .ToListAsync();
     }
 }

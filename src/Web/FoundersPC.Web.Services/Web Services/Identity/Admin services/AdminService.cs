@@ -4,15 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Inactivity;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
+using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Inactivity;
+using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.WebIdentityShared;
@@ -23,22 +25,28 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 {
+    //todo: refactor this poop
+    //todo: really.
+    //todo: REFACTOR!
     public class AdminService : IAdminService
     {
         private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<AdminService> _logger;
+        private readonly IMapper _mapper;
         private readonly IUsersInformationService _usersInformationService;
 
         public AdminService(IUsersInformationService usersInformationService,
                             IHttpClientFactory clientFactory,
                             MicroservicesBaseAddresses baseAddresses,
-                            ILogger<AdminService> logger)
+                            ILogger<AdminService> logger,
+                            IMapper mapper)
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
             _baseAddresses = baseAddresses;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string adminToken) =>
@@ -61,7 +69,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             using var client = _clientFactory.CreateClient("Block user client");
 
-            PrepareRequest(client, adminToken);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var blockModel = new BlockUserByIdRequest
                              {
@@ -106,7 +116,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             using var client = _clientFactory.CreateClient("Unblock user client");
 
-            PrepareRequest(client, adminToken);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var unblockModel = new UnblockUserByIdRequest
                                {
@@ -151,7 +163,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             using var client = _clientFactory.CreateClient("Block user client");
 
-            PrepareRequest(client, adminToken);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var blockModel = new BlockUserByEmailRequest
                              {
@@ -196,7 +210,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             using var client = _clientFactory.CreateClient("Unblock user client");
 
-            PrepareRequest(client, adminToken);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var unblockModel = new UnblockUserByEmailRequest
                                {
@@ -236,7 +252,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             var client = _clientFactory.CreateClient("Make user inactive client");
 
-            PrepareRequest(client, adminToken);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var requestModel = new MakeUserInactiveByIdRequest
                                {
@@ -275,7 +293,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             var client = _clientFactory.CreateClient("Make user inactive client");
 
-            PrepareRequest(client, adminToken);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var requestModel = new MakeUserInactiveByEmailRequest
                                {
@@ -322,29 +342,52 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             string adminToken) =>
             throw new NotImplementedException();
 
-        public Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken) =>
-            throw new NotImplementedException();
-
-        public Task<bool> RegisterNewManagerAsync(string email, string rawPassword, string adminToken) =>
-            throw new NotImplementedException();
-
-        private void PrepareRequest(HttpClient client, string adminToken)
+        public async Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken)
         {
-            if (adminToken is null)
-            {
-                _logger.LogError($"{nameof(AdminService)}: admin token was null.");
+            if (model is null)
+                throw
+                    new ArgumentNullException(nameof(model));
+            if (model.Email is null) throw new ArgumentNullException(nameof(model.Email));
+            if (model.RawPassword is null) throw new ArgumentNullException(nameof(model.RawPassword));
+            if (model.RawPasswordConfirm is null) throw new ArgumentNullException(nameof(model.RawPasswordConfirm));
+            if (!model.RawPassword.Equals(model.RawPasswordConfirm, StringComparison.Ordinal))
+                throw new
+                    ArgumentException($"{nameof(model.RawPassword)} was not equal to {nameof(model.RawPasswordConfirm)}");
 
-                throw new ArgumentNullException(nameof(adminToken));
+            var client = _clientFactory.CreateClient("Sign Up new manager client");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        _baseAddresses.IdentityApiBaseAddress);
+
+            var requestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
+
+            var messageResponse = await client.PostAsJsonAsync("Admin/NewManager", requestModel);
+
+            if (!messageResponse.IsSuccessStatusCode) return false;
+
+            var messageContent = await messageResponse.Content.ReadFromJsonAsync<UserSignUpResponse>();
+
+            if (messageContent is null)
+            {
+                _logger.LogError($"{nameof(AdminService)}: Register manager with email = {model.Email}. Response deserialize error");
+
+                throw new NoNullAllowedException();
             }
 
-            client.BaseAddress = new Uri($"{_baseAddresses.IdentityApiBaseAddress}Admin/");
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+            if (messageContent.IsRegistrationSuccessful) return true;
 
-            client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                              adminToken);
+            _logger.LogError($"{nameof(AdminService)}: Register manager with email = {model.Email}. Registration unsuccessful: {messageContent.ResponseException}");
+
+            return false;
         }
+
+        public Task<bool> RegisterNewManagerAsync(string email, string rawPassword, string adminToken) =>
+            RegisterNewManagerAsync(new SignUpViewModel
+                                    {
+                                        Email = email,
+                                        RawPassword = rawPassword,
+                                        RawPasswordConfirm = rawPassword
+                                    },
+                                    adminToken);
     }
 }

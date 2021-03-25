@@ -41,7 +41,7 @@ namespace FoundersPC.Identity.Services.User_Services
         public async Task<bool> RegisterDefaultUserAsync(string email, string password)
         {
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
-                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.DefaultUser.ToString());
+                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.DefaultUser);
 
             if (defaultUserRole is null)
             {
@@ -57,10 +57,10 @@ namespace FoundersPC.Identity.Services.User_Services
 
         public async Task<bool> RegisterManagerAsync(string email, string password)
         {
-            var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
-                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.Manager.ToString());
+            var managerRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
+                .SingleOrDefault(role => role.RoleTitle == ApplicationRoles.Manager);
 
-            if (defaultUserRole is null)
+            if (managerRole is null)
             {
                 _logger.LogError($"{nameof(RegistrationService)}: role 'Manager' not found");
 
@@ -69,7 +69,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             _logger.LogInformation($"{nameof(RegistrationService)}: role 'Manager' found");
 
-            return await Register(email, password, defaultUserRole);
+            return await Register(email, password, managerRole);
         }
 
         private async Task<bool> Register(string email, string rawPassword, RoleEntity role)

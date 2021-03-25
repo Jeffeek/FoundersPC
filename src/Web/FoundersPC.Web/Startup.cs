@@ -1,6 +1,7 @@
 #region Using namespaces
 
 using FoundersPC.Web.Application;
+using FoundersPC.Web.Application.Middleware;
 using FoundersPC.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,8 @@ namespace FoundersPC.Web
 
             services.AddHttpClient();
 
+            services.AddScoped<CookieCheckMiddleware>();
+
             services.AddCookieSecureAuthentication();
 
             services.AddAuthorization();
@@ -46,14 +49,22 @@ namespace FoundersPC.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseMiddleware<CookieCheckMiddleware>();
+
             app.UseSerilogRequestLogging();
+
+            //app.UseExceptionHandler(new ExceptionHandlerOptions()
+            //                        {
+            //                            AllowStatusCode404Response = true,
+            //                            ExceptionHandlingPath = new PathString("Error/404"),
+            //                        });
 
             app.UseRouting();
 
