@@ -7,7 +7,7 @@ using FoundersPC.WebIdentityShared;
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User
 {
-    public interface IIdentityUserInformationService
+    public interface IUserSettingsWebService
     {
         Task<ApplicationUser> GetOverallInformation(string email, string token);
     }

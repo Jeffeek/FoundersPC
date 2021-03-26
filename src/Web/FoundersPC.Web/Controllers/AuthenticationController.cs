@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
@@ -19,17 +18,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.Web.Controllers
 {
     [Controller]
-    public class AuthenticationWebController : Controller
+    public class AuthenticationController : Controller
     {
-        private readonly IIdentityAuthenticationService _authenticationService;
-        private readonly IMapper _mapper;
+        private readonly IAuthenticationWebService _authenticationWebService;
 
-        public AuthenticationWebController(IMapper mapper,
-                                           IIdentityAuthenticationService authenticationService)
+        public AuthenticationController(IAuthenticationWebService authenticationWebService)
         {
-            _authenticationService = authenticationService;
-            _mapper = mapper;
-            _authenticationService = authenticationService;
+            _authenticationWebService = authenticationWebService;
         }
 
         #region ForgotPassword
@@ -45,24 +40,15 @@ namespace FoundersPC.Web.Controllers
                                          nameof(ForgotPasswordViewModel));
 
             var forgotPasswordResponse =
-                await _authenticationService.ForgotPasswordAsync(model);
+                await _authenticationWebService.ForgotPasswordAsync(model);
 
-            if (forgotPasswordResponse is null)
-                return ValidationProblem("Server returned null object",
-                                         nameof(forgotPasswordResponse),
-                                         400,
-                                         "Error",
-                                         nameof(UserForgotPasswordResponse));
+            if (forgotPasswordResponse is null) return UnprocessableEntity();
 
-            if (!forgotPasswordResponse.IsUserExists)
-                return NotFound(new
-                                {
-                                    error = $"User with email = {model.Email} does not exists in our database"
-                                });
+            if (!forgotPasswordResponse.IsUserExists) return NotFound();
 
             if (!forgotPasswordResponse.IsConfirmationMailSent)
                 return Problem(forgotPasswordResponse.Error,
-                               statusCode : 401,
+                               statusCode : 500,
                                title : "Email send error");
 
             return View("SignIn");
@@ -82,14 +68,9 @@ namespace FoundersPC.Web.Controllers
                                          "Error",
                                          nameof(SignUpViewModel));
 
-            var registrationResponse = await _authenticationService.SignUpAsync(signUpModel);
+            var registrationResponse = await _authenticationWebService.SignUpAsync(signUpModel);
 
-            if (registrationResponse is null)
-                return Problem("Deserialize error",
-                               nameof(registrationResponse),
-                               StatusCodes.Status500InternalServerError,
-                               "Response error",
-                               nameof(UserSignUpResponse));
+            if (registrationResponse is null) return UnprocessableEntity();
 
             if (!registrationResponse.IsRegistrationSuccessful)
                 return Problem("Registration not successful",
@@ -101,7 +82,7 @@ namespace FoundersPC.Web.Controllers
             await SetupDefaultCookieAsync(registrationResponse.Email, registrationResponse.Role);
             SetupJwtTokenInCookie(registrationResponse.JwtToken);
 
-            return RedirectToAction("Index", "HomeWeb");
+            return RedirectToAction("Index", "Home");
         }
 
         #endregion
@@ -109,12 +90,12 @@ namespace FoundersPC.Web.Controllers
         [Authorize]
         public async Task<ActionResult> LogOutAsync()
         {
-            if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "HomeWeb");
+            if (!User.Identity?.IsAuthenticated ?? false) return Unauthorized();
 
             RemoveJwtTokenInCookie();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            return RedirectToAction("Index", "HomeWeb");
+            return RedirectToAction("Index", "Home");
         }
 
         #region SignIn
@@ -129,21 +110,18 @@ namespace FoundersPC.Web.Controllers
                                          "Error",
                                          nameof(SignInViewModel));
 
-            var signInResponse = await _authenticationService.SignInAsync(model);
+            var signInResponse = await _authenticationWebService.SignInAsync(model);
 
-            if (signInResponse == null) return RedirectToAction("BadRequestIndex", "ErrorWeb");
+            if (signInResponse == null) return UnprocessableEntity();
 
-            if (!signInResponse.IsUserExists)
-                return View("Error",
-                            new ErrorViewModel(404, "We didn't found the user with your credentials :("));
+            if (!signInResponse.IsUserExists) NotFound();
 
-            if (!signInResponse.IsUserActive || signInResponse.IsUserBlocked)
-                return RedirectToAction("BlockedIndex", "ErrorWeb");
+            if (!signInResponse.IsUserActive || signInResponse.IsUserBlocked) return Unauthorized();
 
             await SetupDefaultCookieAsync(signInResponse.Email, signInResponse.Role);
             SetupJwtTokenInCookie(signInResponse.JwtToken);
 
-            return RedirectToAction("Index", "HomeWeb");
+            return RedirectToAction("Index", "Home");
         }
 
         #endregion

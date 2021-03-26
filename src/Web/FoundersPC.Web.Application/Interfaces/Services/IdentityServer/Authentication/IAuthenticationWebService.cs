@@ -8,7 +8,7 @@ using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication
 {
-    public interface IIdentityAuthenticationService
+    public interface IAuthenticationWebService
     {
         Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword);
 

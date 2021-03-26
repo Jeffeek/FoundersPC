@@ -19,17 +19,17 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 {
-    public class IdentityAuthenticationService : IIdentityAuthenticationService
+    public class AuthenticationWebService : IAuthenticationWebService
     {
         private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly ILogger<IdentityAuthenticationService> _logger;
+        private readonly ILogger<AuthenticationWebService> _logger;
         private readonly IMapper _mapper;
 
-        public IdentityAuthenticationService(IHttpClientFactory httpClientFactory,
-                                             MicroservicesBaseAddresses baseAddresses,
-                                             IMapper mapper,
-                                             ILogger<IdentityAuthenticationService> logger)
+        public AuthenticationWebService(IHttpClientFactory httpClientFactory,
+                                        MicroservicesBaseAddresses baseAddresses,
+                                        IMapper mapper,
+                                        ILogger<AuthenticationWebService> logger)
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = baseAddresses;
@@ -54,21 +54,21 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         {
             if (model is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: model was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: sign in: model was null");
 
                 throw new ArgumentNullException(nameof(model));
             }
 
             if (model.LoginOrEmail is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: login or email was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: sign in: login or email was null");
 
                 throw new ArgumentNullException(nameof(model.LoginOrEmail));
             }
 
             if (model.RawPassword is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign in: raw password was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: sign in: raw password was null");
 
                 throw new ArgumentNullException(nameof(model.RawPassword));
             }
@@ -82,7 +82,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)}, Sign In: to Identity server returned a server error : StatusCode: {responseMessage.StatusCode}");
+                _logger.LogError($"Request from {nameof(AuthenticationWebService)}, Sign In: to Identity server returned a server error : StatusCode: {responseMessage.StatusCode}");
 
                 if (responseMessage.StatusCode == HttpStatusCode.UnprocessableEntity)
                     throw new NetworkInformationException((int)responseMessage.StatusCode);
@@ -112,21 +112,21 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         {
             if (model is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: model was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: sign up: model was null");
 
                 throw new ArgumentNullException(nameof(model));
             }
 
             if (model.Email is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: email was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: sign up: email was null");
 
                 throw new ArgumentNullException(nameof(model.Email));
             }
 
             if (model.RawPassword is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: sign up: raw password was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: sign up: raw password was null");
 
                 throw new ArgumentNullException(nameof(model.RawPassword));
             }
@@ -140,7 +140,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)}, Sign Up: to Identity server returned a server error {responseMessage.StatusCode}");
+                _logger.LogError($"Request from {nameof(AuthenticationWebService)}, Sign Up: to Identity server returned a server error {responseMessage.StatusCode}");
 
                 if (responseMessage.StatusCode == HttpStatusCode.UnprocessableEntity)
                     throw new AuthenticationException($"Unprocessable Entity: {nameof(SignUpViewModel)}");
@@ -169,14 +169,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         {
             if (model is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: forgot password: model was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: forgot password: model was null");
 
                 throw new ArgumentNullException(nameof(model));
             }
 
             if (model.Email is null)
             {
-                _logger.LogError($"{nameof(IdentityAuthenticationService)}: forgot password: email was null");
+                _logger.LogError($"{nameof(AuthenticationWebService)}: forgot password: email was null");
 
                 throw new ArgumentNullException(nameof(model.Email));
             }
@@ -190,10 +190,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                _logger.LogError($"Request from {nameof(IdentityAuthenticationService)}, Forgot Password: to Identity server returned a server error {responseMessage.StatusCode} with email = {model.Email}");
+                _logger.LogError($"Request from {nameof(AuthenticationWebService)}, Forgot Password: to Identity server returned a server error {responseMessage.StatusCode} with email = {model.Email}");
 
                 if (responseMessage.StatusCode == HttpStatusCode.UnprocessableEntity)
                     throw new NetworkInformationException((int)responseMessage.StatusCode);
+
+                return new UserForgotPasswordResponse()
+                       {
+                           IsUserExists = false,
+                           Email = model.Email,
+                           Error = "User not exists",
+                           IsConfirmationMailSent = false
+                       };
             }
 
             var forgotPasswordResponseContent =

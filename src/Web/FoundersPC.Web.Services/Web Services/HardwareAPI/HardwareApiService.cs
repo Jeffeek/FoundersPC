@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -45,23 +46,11 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             using var client = _clientFactory.CreateClient();
 
-            PrepareRequest(client, token);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, _baseAddresses.IdentityApiBaseAddress);
 
             var request = await client.GetAsync(entityType);
 
             return await request.Content.ReadAsStringAsync();
-        }
-
-        private void PrepareRequest(HttpClient client, string token)
-        {
-            client.BaseAddress = new Uri(_baseAddresses.IdentityApiBaseAddress);
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-
-            client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue(JwtBearerDefaults.AuthenticationScheme,
-                                              token);
         }
     }
 }

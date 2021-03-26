@@ -8,7 +8,7 @@ using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User
 {
-    public interface IIdentityUserSettingsChangeService
+    public interface IUserSettingsChangeWebService
     {
         Task<AccountSettingsChangeResponse> ChangePasswordAsync(PasswordSettingsViewModel model, string token);
 

@@ -60,12 +60,6 @@ namespace FoundersPC.Web
 
             app.UseSerilogRequestLogging();
 
-            //app.UseExceptionHandler(new ExceptionHandlerOptions()
-            //                        {
-            //                            AllowStatusCode404Response = true,
-            //                            ExceptionHandlingPath = new PathString("Error/404"),
-            //                        });
-
             app.UseRouting();
 
             app.UseStatusCodePagesWithRedirects("/Error/{0}");

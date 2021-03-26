@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Routing;
 
 #endregion
 
@@ -33,7 +34,7 @@ namespace FoundersPC.Web.Application.Middleware
 
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                 // todo: redirect to unauthorized
-                context.Response.Redirect("https://google.com/", true);
+                context.Response.Redirect("Error");
 
                 return;
             }

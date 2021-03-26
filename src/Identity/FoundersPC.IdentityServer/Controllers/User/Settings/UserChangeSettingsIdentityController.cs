@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
-using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -22,18 +21,12 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
     public class UserChangeSettingsIdentityController : ControllerBase
     {
         private readonly IMapper _mapper;
-        private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUserSettingsService _settingsService;
-        private readonly IUsersInformationService _usersInformationService;
 
-        public UserChangeSettingsIdentityController(IUsersInformationService usersInformationService,
-                                                    IMapper mapper,
-                                                    PasswordEncryptorService passwordEncryptorService,
+        public UserChangeSettingsIdentityController(IMapper mapper,
                                                     IUserSettingsService settingsService)
         {
-            _usersInformationService = usersInformationService;
             _mapper = mapper;
-            _passwordEncryptorService = passwordEncryptorService;
             _settingsService = settingsService;
         }
 
@@ -102,15 +95,14 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
         [Route("Notifications")]
         [HttpPut]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(
-            ChangeNotificationsRequest request)
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(ChangeNotificationsRequest request)
         {
             if (!TryValidateModel(request))
                 return BadRequest(new
                                   {
                                       error = "Bad model"
                                   });
-
+            //todo: cont.gettoken
             var (email, role) = ParseJwtUserTokenCredentials();
 
             if (email is null)

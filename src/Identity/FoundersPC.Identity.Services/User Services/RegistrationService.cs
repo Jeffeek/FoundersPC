@@ -4,7 +4,6 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
@@ -22,17 +21,14 @@ namespace FoundersPC.Identity.Services.User_Services
         private readonly PasswordEncryptorService _encryptorService;
         private readonly ILogger<RegistrationService> _logger;
         private readonly IMailService _mailService;
-        private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
 
         public RegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
-                                   IMapper mapper,
                                    PasswordEncryptorService encryptorService,
                                    ILogger<RegistrationService> logger,
                                    IMailService mailService)
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
-            _mapper = mapper;
             _encryptorService = encryptorService;
             _logger = logger;
             _mailService = mailService;

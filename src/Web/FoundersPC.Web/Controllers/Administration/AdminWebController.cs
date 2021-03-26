@@ -16,14 +16,14 @@ namespace FoundersPC.Web.Controllers.Administration
     [Route("Admin")]
     public class AdminWebController : Controller
     {
-        private readonly IAdminService _adminService;
+        private readonly IAdminWebService _adminWebService;
 
-        public AdminWebController(IAdminService adminService) => _adminService = adminService;
+        public AdminWebController(IAdminWebService adminWebService) => _adminWebService = adminWebService;
 
         [Route("BlockUser")]
         public async Task<ActionResult> BlockUser([FromQuery] int id)
         {
-            await _adminService.BlockUserByIdAsync(id, GetJwtToken());
+            await _adminWebService.BlockUserByIdAsync(id, GetJwtToken());
 
             return RedirectToAction("UsersTable", "AdminWeb");
         }
@@ -31,7 +31,7 @@ namespace FoundersPC.Web.Controllers.Administration
         [Route("UnblockUser")]
         public async Task<ActionResult> UnblockUser([FromQuery] int id)
         {
-            await _adminService.UnblockUserByIdAsync(id, GetJwtToken());
+            await _adminWebService.UnblockUserByIdAsync(id, GetJwtToken());
 
             return RedirectToAction("UsersTable", "AdminWeb");
         }
@@ -39,7 +39,7 @@ namespace FoundersPC.Web.Controllers.Administration
         [Route("MakeUserInactive")]
         public async Task<ActionResult> MakeUserInactive([FromQuery] int id)
         {
-            await _adminService.MakeUserInactiveByIdAsync(id, GetJwtToken());
+            await _adminWebService.MakeUserInactiveByIdAsync(id, GetJwtToken());
 
             return RedirectToAction("UsersTable", "AdminWeb");
         }
@@ -49,7 +49,7 @@ namespace FoundersPC.Web.Controllers.Administration
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            var result = await _adminService.RegisterNewManagerAsync(model, GetJwtToken());
+            var result = await _adminWebService.RegisterNewManagerAsync(model, GetJwtToken());
 
             return result ? Ok() : Problem();
         }
@@ -71,7 +71,7 @@ namespace FoundersPC.Web.Controllers.Administration
 
             if (token is null) throw new CookieException();
 
-            var users = await _adminService.GetAllUsersAsync(token);
+            var users = await _adminWebService.GetAllUsersAsync(token);
 
             return View(users);
         }

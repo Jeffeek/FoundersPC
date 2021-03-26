@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.Web.Controllers
 {
     [Authorize]
-    public class HomeWebController : Controller
+    public class HomeController : Controller
     {
         private readonly IHardwareApiService _hardwareApiService;
 
-        public HomeWebController(IHardwareApiService hardwareApiService) => _hardwareApiService = hardwareApiService;
+        public HomeController(IHardwareApiService hardwareApiService) => _hardwareApiService = hardwareApiService;
 
         [AllowAnonymous]
         public IActionResult Index() => View();

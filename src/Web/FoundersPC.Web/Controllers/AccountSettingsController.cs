@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,18 +16,18 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.Web.Controllers
 {
     [Authorize]
-    public class AccountSettingsWebController : Controller
+    public class AccountSettingsController : Controller
     {
-        private readonly ILogger<AccountSettingsWebController> _logger;
-        private readonly IIdentityUserSettingsChangeService _settingsChangeService;
-        private readonly IIdentityUserInformationService _userInformationService;
+        private readonly ILogger<AccountSettingsController> _logger;
+        private readonly IUserSettingsChangeWebService _settingsChangeWebService;
+        private readonly IUserSettingsWebService _userSettingsWebService;
 
-        public AccountSettingsWebController(IIdentityUserInformationService userInformationService,
-                                            IIdentityUserSettingsChangeService settingsChangeService,
-                                            ILogger<AccountSettingsWebController> logger)
+        public AccountSettingsController(IUserSettingsWebService userSettingsWebService,
+                                         IUserSettingsChangeWebService settingsChangeWebService,
+                                         ILogger<AccountSettingsController> logger)
         {
-            _userInformationService = userInformationService;
-            _settingsChangeService = settingsChangeService;
+            _userSettingsWebService = userSettingsWebService;
+            _settingsChangeWebService = settingsChangeWebService;
             _logger = logger;
         }
 
@@ -51,7 +52,7 @@ namespace FoundersPC.Web.Controllers
                 throw new CookieException();
             }
 
-            var information = await _userInformationService.GetOverallInformation(emailInCookie, jwtToken);
+            var information = await _userSettingsWebService.GetOverallInformation(emailInCookie, jwtToken);
 
             if (information is null) return RedirectToPagePermanent("Forbidden");
 
@@ -98,14 +99,14 @@ namespace FoundersPC.Web.Controllers
 
             if (token is null) return BadRequest();
 
-            var response = await _settingsChangeService.ChangePasswordAsync(request.PasswordSettingsViewModel,
+            var response = await _settingsChangeWebService.ChangePasswordAsync(request.PasswordSettingsViewModel,
                                                                             token);
 
             if (response is null) return BadRequest();
 
             if (!response.Successful) return RedirectToPage("Error");
 
-            return RedirectToAction("Profile", "AccountSettingsWeb");
+            return RedirectToAction("Profile", "AccountSettings");
         }
 
         [HttpPost]
@@ -117,14 +118,14 @@ namespace FoundersPC.Web.Controllers
 
             if (token is null) return BadRequest();
 
-            var response = await _settingsChangeService.ChangeLoginAsync(request.LoginSettingsViewModel,
+            var response = await _settingsChangeWebService.ChangeLoginAsync(request.LoginSettingsViewModel,
                                                                          token);
 
             if (response is null) return BadRequest();
 
             if (!response.Successful) return RedirectToPage("Error");
 
-            return RedirectToAction("Profile", "AccountSettingsWeb");
+            return RedirectToAction("Profile", "AccountSettings");
         }
 
         [HttpPost]
@@ -136,14 +137,14 @@ namespace FoundersPC.Web.Controllers
 
             if (token is null) return BadRequest();
 
-            var response = await _settingsChangeService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
+            var response = await _settingsChangeWebService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
                                token);
 
             if (response is null) return BadRequest();
 
             if (!response.Successful) return RedirectToPage("Error");
 
-            return RedirectToAction("Profile", "AccountSettingsWeb");
+            return RedirectToAction("Profile", "AccountSettings");
         }
     }
 }

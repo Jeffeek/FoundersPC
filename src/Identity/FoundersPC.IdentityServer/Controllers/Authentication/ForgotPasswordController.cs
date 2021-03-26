@@ -26,8 +26,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
         [Route("ForgotPassword")]
         [HttpPost]
-        public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword(
-            [FromBody] UserForgotPasswordRequest request)
+        public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword([FromBody] UserForgotPasswordRequest request)
         {
             if (!ModelState.IsValid) return UnprocessableEntity();
 

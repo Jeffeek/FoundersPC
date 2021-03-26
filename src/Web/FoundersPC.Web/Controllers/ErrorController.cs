@@ -9,35 +9,35 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.Web.Controllers
 {
     [Route("Error")]
-    public class ErrorWebController : Controller
+    public class ErrorController : Controller
     {
         [Route("403")]
         [Route("Forbidden")]
         [AllowAnonymous]
         public IActionResult ForbiddenIndex() =>
             View("Error",
-                 new ErrorViewModel(403, "Access forbidden"));
+                 new ErrorViewModel(403, "Access forbidden!"));
 
         [Route("404")]
         [Route("NotFound")]
         [AllowAnonymous]
         public IActionResult NotFoundIndex() =>
             View("Error",
-                 new ErrorViewModel(404, "Not found"));
+                 new ErrorViewModel(404, "Not found!"));
 
         [Route("400")]
         [Route("BadRequest")]
         [AllowAnonymous]
         public IActionResult BadRequestIndex() =>
             View("Error",
-                 new ErrorViewModel(400, "Bad request"));
+                 new ErrorViewModel(400, "Bad request!"));
 
         [Route("401")]
         [Route("UserBlocked")]
         [AllowAnonymous]
-        public IActionResult BlockedIndex() =>
+        public IActionResult UnauthorizedIndex() =>
             View("Error",
-                 new ErrorViewModel(401, "User is blocked or not exist"));
+                 new ErrorViewModel(401, "Unauthorized!"));
 
         [Route("UserNotFound")]
         [AllowAnonymous]
@@ -45,16 +45,24 @@ namespace FoundersPC.Web.Controllers
             View("Error",
                  new ErrorViewModel(404, "We didn't found the user with your credentials :("));
 
+        [Route(("ServerError"))]
+        public IActionResult ServerErrorIndex() => View("Error", new ErrorViewModel(500, "Server error :("));
+
+        [Route(("UnprocessableIndex"))]
+        public IActionResult UnprocessableIndex() => View("Error", new ErrorViewModel(422, "Unprocessable operation or object :("));
+
         [Route("{statusCode:int?}")]
         [AllowAnonymous]
         public IActionResult Error(int? statusCode) =>
             (statusCode ?? -1) switch
             {
                 400 => RedirectToAction("BadRequestIndex"),
-                401 => RedirectToAction("BlockedIndex"),
+                401 => RedirectToAction("UnauthorizedIndex"),
                 403 => RedirectToAction("ForbiddenIndex"),
                 404 => RedirectToAction("NotFoundIndex"),
-                _   => RedirectToAction("Index", "HomeWeb")
+                500 => RedirectToAction("ServerErrorIndex"),
+                422 => RedirectToAction("UnprocessableIndex"),
+                _   => View("Error", new ErrorViewModel("Unknown error!"))
             };
     }
 }

@@ -3,6 +3,7 @@
 using AutoMapper;
 using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Domain.Entities.Users;
+using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.WebIdentityShared;
 
@@ -16,6 +17,7 @@ namespace FoundersPC.Identity.Application.Mappings
         {
             CreateMap<RoleEntity, RoleEntityReadDto>().ReverseMap();
             CreateMap<UserEntity, UserEntityReadDto>().ReverseMap();
+            CreateMap<ChangeNotificationsRequest, UserNotificationsSettings>().ReverseMap();
 
             CreateMap<UserEntityReadDto, ApplicationUser>()
                 .ForMember(dest => dest.Role,

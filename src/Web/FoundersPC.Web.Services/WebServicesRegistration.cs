@@ -21,12 +21,14 @@ namespace FoundersPC.Web.Services
         public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton(new MicroservicesBaseAddresses(configuration));
-            services.AddScoped<IIdentityAuthenticationService, IdentityAuthenticationService>();
-            services.AddScoped<IIdentityUserInformationService, IdentityUserInformationService>();
-            services.AddScoped<IIdentityUserSettingsChangeService, IdentityUserSettingsChangeService>();
+            services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
+            services.AddScoped<IBlockingWebService, BlockingWebService>();
+            services.AddScoped<IAuthenticationWebService, AuthenticationWebService>();
+            services.AddScoped<IUserSettingsWebService, UserSettingsWebService>();
+            services.AddScoped<IUserSettingsChangeWebService, UserSettingsChangeWebService>();
             services.AddScoped<IHardwareApiService, HardwareApiService>();
-            services.AddScoped<IUsersInformationService, UsersInformationService>();
-            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IUsersInformationWebService, UsersInformationWebService>();
+            services.AddScoped<IAdminWebService, AdminWebService>();
         }
     }
 }
