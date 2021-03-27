@@ -24,6 +24,7 @@ namespace FoundersPC.Identity.Services
     {
         public static void AddUsersIdentityServices(this IServiceCollection services)
         {
+            services.AddScoped<IApiAccessTokensReservationService, ApiAccessTokenReservationService>();
             services.AddScoped<IRegistrationService, RegistrationService>();
             services.AddScoped<IUsersInformationService, UsersInformationService>();
             services.AddScoped<IManagerService, ManagerService>();

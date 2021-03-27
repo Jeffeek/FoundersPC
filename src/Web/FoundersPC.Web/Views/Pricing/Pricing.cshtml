@@ -1,0 +1,222 @@
+﻿@{
+    Layout = "_Layout";
+    @section Styles {
+        <link href="~/css/pricing.css"
+              rel="stylesheet">
+        <link href="~/css/neon-btn-styles.css"
+              rel="stylesheet">
+    }}
+
+<div class='container-slider'>
+    <div class='slider'>
+        <div class='box box1'>
+            <div class='bg'>
+            </div>
+            <div class='details'>
+                <h1>Low</h1>
+                <p>
+                    Initial option. For mere pennies, you can evaluate our service.
+                    <hr class='hr-runner' />
+                    <h3>
+                        Access:
+                        <span class='text-danger text-decoration-underline text-uppercase'>
+                            2 months
+                        </span>
+                    </h3>
+                </p>
+                <a class='btn btn-neon neon-pink neon-stripes float-end'
+                   href='@GetLinkForBuyButton("Low")'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Check Now
+                </a>
+            </div>
+
+            <div class='illustration'>
+                <div class='inner'>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='box box2'>
+            <div class='bg'>
+            </div>
+            <div class='details'>
+                <h1>Medium</h1>
+                <p>
+                    For those who have already tried our service, but are not ready to pay more.
+                    <hr class='hr-runner' />
+                    <h3>
+                        Access:
+                        <span class='text-danger text-decoration-underline text-uppercase'>
+                            6 month
+                        </span>
+                    </h3>
+                </p>
+                <a class='btn btn-neon neon-blue neon-stripes float-end'
+                   href='@GetLinkForBuyButton("Medium")'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Check Now
+                </a>
+            </div>
+
+            <div class='illustration'>
+                <div class='inner'>
+                </div>
+            </div>
+        </div>
+
+        <div class='box box3'>
+            <div class='bg'>
+            </div>
+            <div class='details'>
+                <h1>High</h1>
+                <p>
+                    Suitable for small startups.
+                    <hr class='hr-runner' />
+                    <h3>
+                        Access:
+                        <span class='text-danger text-decoration-underline text-uppercase'>
+                            2 years
+                        </span>
+                    </h3>
+                </p>
+                <a class='btn btn-neon neon-green neon-stripes float-end'
+                   href='@GetLinkForBuyButton("High")'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Check Now
+                </a>
+            </div>
+
+            <div class='illustration'>
+                <div class='inner'>
+                </div>
+            </div>
+        </div>
+
+        <div class='box box4'>
+            <div class='bg'>
+            </div>
+            <div class='details'>
+                <h1>Ultra</h1>
+                <p>
+                    Have you been on your feet for a long time? Then this option is yours.
+                    <hr class='hr-runner' />
+                    <h3>
+                        Access:
+                        <span class='text-danger text-decoration-underline text-uppercase'>
+                            5 years
+                        </span>
+                    </h3>
+                </p>
+                <a
+                    class='btn btn-neon neon-orange neon-stripes float-end'
+                    href='@GetLinkForBuyButton("Ultra")'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Check Now
+                </a>
+            </div>
+
+            <div class='illustration'>
+                <div class='inner'>
+                </div>
+            </div>
+        </div>
+
+        <div class='box box5'>
+            <div class='bg'>
+            </div>
+            <div class='details'>
+                <h1>Unstoppable</h1>
+                <p>
+                    Option for those who want only the best.
+                    <hr class='hr-runner' />
+                    <h3>
+                        Access:
+                        <span class='text-danger text-decoration-underline text-uppercase'>
+                            FOREVER
+                        </span>
+                    </h3>
+                </p>
+                <a class='btn btn-neon neon-violet neon-stripes float-end'
+                   href='@GetLinkForBuyButton("Unstoppable")'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Check Now
+                </a>
+            </div>
+
+            <div class='illustration'>
+                <div class='inner'>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <svg class='prev'
+         height='91'
+         viewBox='0 0 56.898 91'
+         width='56.898'
+         xmlns='http://www.w3.org/2000/svg'>
+        <path d='M45.5,0,91,56.9,48.452,24.068,0,56.9Z'
+              fill='#fff'
+              transform='translate(0 91) rotate(-90)' />
+    </svg>
+    <svg class='next'
+         height='91'
+         viewBox='0 0 56.898 91'
+         width='56.898'
+         xmlns='http://www.w3.org/2000/svg'>
+        <path d='M45.5,0,91,56.9,48.452,24.068,0,56.9Z'
+              fill='#fff'
+              transform='translate(56.898) rotate(90)' />
+    </svg>
+    <div class='trail'>
+        <div class='active box1'>
+            1
+        </div>
+        <div class='box2'>
+            2
+        </div>
+        <div class='box3'>
+            3
+        </div>
+        <div class='box4'>
+            4
+        </div>
+        <div class='box5'>
+            5
+        </div>
+    </div>
+</div>
+
+@functions
+{
+    string GetLinkForBuyButton(string tokenType)
+    {
+        var auth = User.Identity?.IsAuthenticated ?? false;
+        return auth ? Url.Action("Buy", "Pricing", new { tokenType = tokenType }) : Url.Action("SignIn", "Authentication");
+    }
+}
+
+@section Scripts
+{
+    <script src='~/lib/GSAP/js/gsap-latest-beta.min.js'></script>
+    <script src='~/lib/GSAP/js/CSSRulePlugin3.min.js'></script>
+    <script src='~/js/pricing.js'></script>
+}

@@ -15,4 +15,8 @@
     <Folder Include="Response\Administration\Manager\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FoundersPC.WebIdentityShared\FoundersPC.WebIdentityShared.csproj" />
+  </ItemGroup>
+
 </Project>

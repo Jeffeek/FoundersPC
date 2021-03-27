@@ -85,21 +85,8 @@
                                 id="img-generate-password">
                                 <a
                                     class="align-items-center btn btn-outline-warning d-flex">
-                                    <svg
-                                        class="icon icon-reset"
-                                        viewBox="0 0 30 30"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path
-                                            d="M22.1,23.4C20.2,25,17.7,26,15,26C8.9,26,4,21.1,4,15 M7.9,6.6C9.8,5,12.3,4,15,4c6.1,0,11,4.9,11,11"
-                                            fill="none"
-                                            stroke="#FFFFFF"
-                                            stroke-linecap="round"
-                                            stroke-width="2"/>
-                                        <path
-                                            d="M26,20l-4-6h8L26,20z"/>
-                                        <polygon
-                                            points="0.3,15 8.3,15 4.3,9"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" class="icon icon-reset">
+                                        <path fill-rule="evenodd" d="M20,12c0,4.418-3.582,8-8,8s-8-3.582-8-8s3.582-8,8-8 c1.114,0,2.169,0.237,3.132,0.649l-2.504,2.674l7.493-0.25L19.485,0l-2.21,2.361C15.709,1.499,13.915,1,12,1C5.925,1,1,5.925,1,12 s4.925,11,11,11s11-4.925,11-11H20z" clip-rule="evenodd" />
                                     </svg>
                                 </a>
                             </div>
@@ -226,8 +213,8 @@
                                                    ? "text"
                                                    : "password";
                                 passwordShowHideSvg.innerHTML = isHided
-                                                                ? eyePaths
-                                                                : eyeHidePaths;
+                                                                ? eyeHidePaths
+                                                                : eyePaths;
                             });
                     $("#btn-hide-confirm").
                         click(
@@ -238,8 +225,8 @@
                                                           ? "text"
                                                           : "password";
                                 passwordConfirmShowHideSvg.innerHTML = isHided
-                                                                       ? eyePaths
-                                                                       : eyeHidePaths;
+                                                                       ? eyeHidePaths
+                                                                       : eyePaths;
                             });
                     $("#img-generate-password").
                         click(

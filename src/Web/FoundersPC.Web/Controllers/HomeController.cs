@@ -19,8 +19,11 @@ namespace FoundersPC.Web.Controllers
         [AllowAnonymous]
         public IActionResult Index() => View();
 
+        [AllowAnonymous]
+        public IActionResult Pricing() => RedirectToAction("Pricing", "Pricing");
+
         [Authorize]
-        public async Task<ActionResult> Cases()
+        public async Task<ActionResult> Cases([FromQuery] string token)
         {
             var apiResult = await MakeRequestAndGetResponseFromApiAsync("Cases");
 

@@ -4,10 +4,12 @@ using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
+using FoundersPC.Web.Application.Interfaces.Services.Pricing;
 using FoundersPC.Web.Services.Web_Services;
 using FoundersPC.Web.Services.Web_Services.HardwareAPI;
 using FoundersPC.Web.Services.Web_Services.Identity.Admin_services;
 using FoundersPC.Web.Services.Web_Services.Identity.Authentication;
+using FoundersPC.Web.Services.Web_Services.Identity.Tokens;
 using FoundersPC.Web.Services.Web_Services.Identity.UserSettings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,7 @@ namespace FoundersPC.Web.Services
         public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton(new MicroservicesBaseAddresses(configuration));
+            services.AddScoped<ITokenReservationWebService, TokenReservationWebService>();
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
             services.AddScoped<IBlockingWebService, BlockingWebService>();
             services.AddScoped<IAuthenticationWebService, AuthenticationWebService>();
