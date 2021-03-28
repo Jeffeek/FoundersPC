@@ -1,30 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region Using namespaces
+
 using System.Data;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Inactivity;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Inactivity;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Blocking;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inactivity;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking;
+using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Blocking;
+using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Inactivity;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
+
+#endregion
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 {
     public class BlockingWebService : IBlockingWebService
     {
-        private readonly ILogger<BlockingWebService> _logger;
         private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
+        private readonly ILogger<BlockingWebService> _logger;
 
-        public BlockingWebService(ILogger<BlockingWebService> logger, MicroservicesBaseAddresses baseAddresses, IHttpClientFactory clientFactory)
+        public BlockingWebService(ILogger<BlockingWebService> logger,
+                                  MicroservicesBaseAddresses baseAddresses,
+                                  IHttpClientFactory clientFactory)
         {
             _logger = logger;
             _baseAddresses = baseAddresses;

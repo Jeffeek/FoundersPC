@@ -1,11 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿#region Using namespaces
+
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.Web.Controllers
 {
@@ -14,29 +19,29 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly ITokenReservationWebService _tokenReservationService;
 
-        public PricingController(ITokenReservationWebService tokenReservationService)
-        {
+        public PricingController(ITokenReservationWebService tokenReservationService) =>
             _tokenReservationService = tokenReservationService;
-        }
 
         [HttpGet]
         public IActionResult Pricing() => View();
 
+        [Authorize]
         [Route("Buy/{tokenType}")]
         public async Task<IActionResult> Buy(string tokenType)
         {
             if (tokenType is null) return BadRequest();
 
-            var isValid = Enum.GetNames<TokenType>().Contains(tokenType);
+            var isValidTokenType = Enum.GetNames<TokenType>().Contains(tokenType);
 
-            if (!isValid) BadRequest();
+            if (!isValidTokenType) BadRequest();
 
             var userEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
             HttpContext.Request.Cookies.TryGetValue("token", out var jwtToken);
 
-            if (userEmail is null)
-                return RedirectToAction("LogOut", "Authentication");
+            if (userEmail is null) return RedirectToAction("LogOut", "Authentication");
+
+            if (jwtToken is null) throw new CookieException();
 
             var result =
                 await _tokenReservationService.ReserveNewTokenAsync(Enum.Parse<TokenType>(tokenType),
@@ -45,7 +50,12 @@ namespace FoundersPC.Web.Controllers
 
             if (result is null || !result.IsBuyingSuccessful) return RedirectToAction("ServerErrorIndex", "Error");
 
-            return Json(result.Token);
+            return Json(new
+                        {
+                            Start = result.Token.StartEvaluationDate,
+                            Finish = result.Token.ExpirationDate,
+                            Token = result.Token.HashedToken
+                        });
         }
     }
 }

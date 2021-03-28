@@ -1,10 +1,12 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.WebIdentityShared;
+
+#endregion
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 {
@@ -24,7 +26,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesByIdAsync(int userId, string adminToken) =>
             throw new NotImplementedException();
 
-        public Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesByEmailAsync(string userEmail, string adminToken) =>
+        public Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesByEmailAsync(string userEmail,
+            string adminToken) =>
             throw new NotImplementedException();
     }
 }

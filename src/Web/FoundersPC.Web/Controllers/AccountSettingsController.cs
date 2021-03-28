@@ -6,7 +6,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -100,7 +99,7 @@ namespace FoundersPC.Web.Controllers
             if (token is null) return BadRequest();
 
             var response = await _settingsChangeWebService.ChangePasswordAsync(request.PasswordSettingsViewModel,
-                                                                            token);
+                                                                               token);
 
             if (response is null) return BadRequest();
 
@@ -119,7 +118,7 @@ namespace FoundersPC.Web.Controllers
             if (token is null) return BadRequest();
 
             var response = await _settingsChangeWebService.ChangeLoginAsync(request.LoginSettingsViewModel,
-                                                                         token);
+                                                                            token);
 
             if (response is null) return BadRequest();
 
@@ -137,8 +136,9 @@ namespace FoundersPC.Web.Controllers
 
             if (token is null) return BadRequest();
 
-            var response = await _settingsChangeWebService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
-                               token);
+            var response =
+                await _settingsChangeWebService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
+                                                                         token);
 
             if (response is null) return BadRequest();
 

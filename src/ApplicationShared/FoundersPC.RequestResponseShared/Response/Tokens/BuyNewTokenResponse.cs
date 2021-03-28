@@ -1,4 +1,8 @@
-﻿using FoundersPC.WebIdentityShared;
+﻿#region Using namespaces
+
+using FoundersPC.WebIdentityShared;
+
+#endregion
 
 namespace FoundersPC.RequestResponseShared.Response.Tokens
 {

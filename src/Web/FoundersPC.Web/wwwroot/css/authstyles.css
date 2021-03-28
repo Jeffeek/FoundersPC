@@ -82,7 +82,8 @@
     font-weight: 300;
 }
 
-.icon-reset:hover path {
+.icon-reset:hover path
+{
     animation-duration: 1.5s;
     animation-iteration-count: 1;
     animation-name: rotation;
@@ -91,7 +92,8 @@
     transition: ease-in-out;
 }
 
-.icon-eye:hover path {
+.icon-eye:hover path
+{
     animation-duration: 1.5s;
     animation-iteration-count: 1;
     animation-name: shaking;

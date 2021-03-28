@@ -404,7 +404,7 @@
             event.delegateTarget = target;
 
             if (handler.oneOff) {
-              // eslint-disable-next-line unicorn/consistent-destructuring
+              // eslint-disable-next-price-card-line unicorn/consistent-destructuring
               EventHandler.off(element, event.type, fn);
             }
 
@@ -1059,8 +1059,8 @@
     wrap: 'boolean',
     touch: 'boolean'
   };
-  var DIRECTION_NEXT = 'next';
-  var DIRECTION_PREV = 'prev';
+  var DIRECTION_NEXT = 'next-price-card';
+  var DIRECTION_PREV = 'prev-price-card';
   var DIRECTION_LEFT = 'left';
   var DIRECTION_RIGHT = 'right';
   var EVENT_SLIDE = "slide" + EVENT_KEY$2;
@@ -1081,14 +1081,14 @@
   var CLASS_NAME_SLIDE = 'slide';
   var CLASS_NAME_END = 'carousel-item-end';
   var CLASS_NAME_START = 'carousel-item-start';
-  var CLASS_NAME_NEXT = 'carousel-item-next';
-  var CLASS_NAME_PREV = 'carousel-item-prev';
+  var CLASS_NAME_NEXT = 'carousel-item-next-price-card';
+  var CLASS_NAME_PREV = 'carousel-item-prev-price-card';
   var CLASS_NAME_POINTER_EVENT = 'pointer-event';
   var SELECTOR_ACTIVE = '.active';
   var SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
   var SELECTOR_ITEM = '.carousel-item';
   var SELECTOR_ITEM_IMG = '.carousel-item img';
-  var SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
+  var SELECTOR_NEXT_PREV = '.carousel-item-next-price-card, .carousel-item-prev-price-card';
   var SELECTOR_INDICATORS = '.carousel-indicators';
   var SELECTOR_INDICATOR = '[data-bs-target]';
   var SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]';
@@ -1137,7 +1137,7 @@
     };
 
     _proto.nextWhenVisible = function nextWhenVisible() {
-      // Don't call next when the page isn't visible
+      // Don't call next-price-card when the page isn't visible
       // or the carousel or its parent isn't visible
       if (!document.hidden && isVisible(this._element)) {
         this.next();
@@ -2157,7 +2157,7 @@
         });
       });
     };
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var applyStyles$1 = {
@@ -2389,7 +2389,7 @@
     state.modifiersData[name + "#persistent"] = {
       padding: mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements))
     };
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var arrow$1 = {
@@ -2520,7 +2520,7 @@
     state.attributes.popper = Object.assign(Object.assign({}, state.attributes.popper), {}, {
       'data-popper-placement': state.placement
     });
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var computeStyles$1 = {
@@ -2567,7 +2567,7 @@
         window.removeEventListener('resize', instance.update, passive);
       }
     };
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var eventListeners = {
@@ -3099,7 +3099,7 @@
       state.placement = firstFittingPlacement;
       state.reset = true;
     }
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var flip$1 = {
@@ -3161,7 +3161,7 @@
       'data-popper-reference-hidden': isReferenceHidden,
       'data-popper-escaped': hasPopperEscaped
     });
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var hide$1 = {
@@ -3213,7 +3213,7 @@
     }
 
     state.modifiersData[name] = data;
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var offset$1 = {
@@ -3230,14 +3230,14 @@
     // Offsets are the actual position the popper needs to have to be
     // properly positioned near its reference element
     // This is the most basic placement, and will be adjusted by
-    // the modifiers in the next step
+    // the modifiers in the next-price-card step
     state.modifiersData[name] = computeOffsets({
       reference: state.rects.reference,
       element: state.rects.popper,
       strategy: 'absolute',
       placement: state.placement
     });
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var popperOffsets$1 = {
@@ -3350,7 +3350,7 @@
     }
 
     state.modifiersData[name] = data;
-  } // eslint-disable-next-line import/no-unused-modules
+  } // eslint-disable-next-price-card-line import/no-unused-modules
 
 
   var preventOverflow$1 = {
@@ -3682,17 +3682,17 @@
       return instance;
     };
   }
-  var createPopper = /*#__PURE__*/popperGenerator(); // eslint-disable-next-line import/no-unused-modules
+  var createPopper = /*#__PURE__*/popperGenerator(); // eslint-disable-next-price-card-line import/no-unused-modules
 
   var defaultModifiers = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1];
   var createPopper$1 = /*#__PURE__*/popperGenerator({
     defaultModifiers: defaultModifiers
-  }); // eslint-disable-next-line import/no-unused-modules
+  }); // eslint-disable-next-price-card-line import/no-unused-modules
 
   var defaultModifiers$1 = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1, offset$1, flip$1, preventOverflow$1, arrow$1, hide$1];
   var createPopper$2 = /*#__PURE__*/popperGenerator({
     defaultModifiers: defaultModifiers$1
-  }); // eslint-disable-next-line import/no-unused-modules
+  }); // eslint-disable-next-price-card-line import/no-unused-modules
 
   var Popper = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -6128,7 +6128,7 @@
         // Set triggered link as active
         link.classList.add(CLASS_NAME_ACTIVE$2);
         SelectorEngine.parents(link, SELECTOR_NAV_LIST_GROUP).forEach(function (listGroup) {
-          // Set triggered links parents as active
+          // Set triggered links parents as ctive
           // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
           SelectorEngine.prev(listGroup, SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).forEach(function (item) {
             return item.classList.add(CLASS_NAME_ACTIVE$2);

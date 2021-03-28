@@ -4,14 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using FoundersPC.RepositoryShared.Identity;
 
 #endregion
 
 namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 {
-    public class VideoCardCore : IdentityItem, IEquatable<VideoCardCore>, IVideoCardCore
+    public class VideoCardCore : IdentityItem, IEquatable<VideoCardCore>
     {
         public ICollection<GPU> VideoCards { get; set; }
 

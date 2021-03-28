@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware.Processor
 {
     [Index(nameof(Id))]
-    public class CPU : HardwareEntityBase, IEquatable<CPU>, ICPU
+    public class CPU : HardwareEntityBase, IEquatable<CPU>
     {
         [ForeignKey(nameof(ProcessorCoreId))]
         public ProcessorCore Core { get; set; }

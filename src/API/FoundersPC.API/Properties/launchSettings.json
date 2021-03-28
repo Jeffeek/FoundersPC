@@ -3,11 +3,11 @@
     "windowsAuthentication" : false,
     "anonymousAuthentication" : true,
     "iis" : {
-      "applicationUrl" : "https://localhost:44321",
-      "sslPort" : 44321
+      "applicationUrl" : "https://localhost:4000",
+      "sslPort" : 4000
     },
     "iisExpress" : {
-      "applicationUrl" : "https://localhost:44321",
+      "applicationUrl" : "https://localhost:4000",
       "sslPort" : 0
     }
   },
@@ -20,10 +20,10 @@
         "ASPNETCORE_ENVIRONMENT" : "Development"
       },
       "use64Bit" : true,
-      "applicationUrl" : "https://localhost:9000"
+      "applicationUrl" : "https://localhost:4000"
     },
     "FoundersPC.API" : {
-      "commandName" : "Project",
+      "commandName" : "IISExpress",
       "launchBrowser" : true,
       "launchUrl" : "swagger",
       "environmentVariables" : {
@@ -31,7 +31,7 @@
       },
       "dotnetRunMessages" : "true",
       "use64Bit" : true,
-      "applicationUrl" : "https://localhost:44321"
+      "applicationUrl" : "https://localhost:4000"
     }
   }
 }

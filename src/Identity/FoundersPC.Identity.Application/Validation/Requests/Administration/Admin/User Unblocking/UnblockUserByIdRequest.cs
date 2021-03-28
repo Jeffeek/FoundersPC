@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using FluentValidation;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking;
 
 #endregion
 

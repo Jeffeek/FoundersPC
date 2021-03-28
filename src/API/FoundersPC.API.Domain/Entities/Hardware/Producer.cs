@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.API.Domain.Entities.Hardware.Processor;
 using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
@@ -16,7 +15,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware
 {
     [Index(nameof(Id))]
-    public class Producer : IdentityItem, IEquatable<Producer>, IProducer
+    public class Producer : IdentityItem, IEquatable<Producer>
     {
         public ICollection<HDD> HardDrives { get; set; }
 

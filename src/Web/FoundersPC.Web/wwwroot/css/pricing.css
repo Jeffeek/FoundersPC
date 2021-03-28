@@ -1,321 +1,474 @@
-html {
+html
+{
     overflow: hidden;
 }
 
-.container {
+.container
+{
     max-width: none;
     padding: 0;
 }
 
-@media only screen and (max-width: 992px) {
-    html {
+@media only screen and (max-width: 992px)
+{
+    html
+    {
         font-size: 57%;
-   }
+    }
 }
-@media only screen and (max-width: 1200px) {
-    body {
+
+@media only screen and (max-width: 1200px)
+{
+    body
+    {
         padding: 0;
-   }
+    }
 }
-.container-slider {
-    position: relative;
-    overflow: hidden;
+
+.container-slider
+{
     border-radius: 0rem;
-    color: white;
     box-sizing: border-box;
+    color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    height: 100vh;
-}
-@media only screen and (max-width: 1200px) {
-    .container-slider {
-        border-radius: 0;
-   }
-}
-.slider {
-    display: flex;
-    width: 500%;
-    height: 100vh;
-    transition: all 0.25s ease-in;
-    transform: translateX(0);
-}
-@media only screen and (max-width: 1200px) {
-    .slider {
-        height: 100vh;
-   }
-}
-.slider .box {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
     overflow: hidden;
+    padding: 0;
     position: relative;
 }
-@media only screen and (max-width: 768px) {
-    .slider .box {
+
+@media only screen and (max-width: 1200px)
+{
+    .container-slider
+    {
+        border-radius: 0;
+    }
+}
+
+.pricing-slider
+{
+    display: flex;
+    height: 100vh;
+    transform: translateX(0);
+    transition: all 0.25s ease-in;
+    width: 500%;
+}
+
+@media only screen and (max-width: 1200px)
+{
+    .pricing-slider
+    {
+        height: 100vh;
+    }
+}
+
+.pricing-slider .price-box
+{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px)
+{
+    .pricing-slider .price-box
+    {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr);
-   }
+    }
 }
-.slider .box .bg {
-    padding: 2rem;
+
+.pricing-slider .price-box .bg
+{
+    background-color: #000000;
     background-color: rgba(0, 0, 0, .2);
-    width: 55%;
-    transform: skewX(7deg);
-    position: absolute;
     height: 100%;
     left: -10%;
+    padding: 2rem;
     padding-left: 20rem;
+    position: absolute;
+    transform: skewX(7deg);
     transform-origin: 0 100%;
+    width: 55%;
 }
-@media only screen and (max-width: 992px) {
-    .slider .box .bg {
+
+@media only screen and (max-width: 992px)
+{
+    .pricing-slider .price-box .bg
+    {
         width: 65%;
-   }
+    }
 }
-@media only screen and (max-width: 768px) {
-    .slider .box .bg {
-        width: 100%;
-        left: 0;
+
+@media only screen and (max-width: 768px)
+{
+    .pricing-slider .price-box .bg
+    {
         bottom: 0;
         height: 54%;
+        left: 0;
         transform: skewX(0deg);
-   }
+        width: 100%;
+    }
 }
-.slider .box .bg::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+
+.pricing-slider .price-box .bg::before
+{
     background-color: inherit;
+    content: "";
+    height: 100%;
+    left: 0;
     pointer-events: none;
+    position: absolute;
+    top: 0;
     transform: skewX(10deg);
+    width: 100%;
 }
-@media only screen and (max-width: 768px) {
-    .slider .box .bg::before {
-        width: 120%;
+
+@media only screen and (max-width: 768px)
+{
+    .pricing-slider .price-box .bg::before
+    {
         bottom: 0;
         transform: skewX(0deg);
-   }
+        width: 120%;
+    }
 }
-.slider .box .details {
+
+.pricing-slider .price-box .details
+{
+    grid-column: 1/span 1;
+    grid-row: -1;
     padding: 5rem;
     padding-left: 10rem;
     z-index: 100;
-    grid-column: 1 / span 1;
-    grid-row: -1;
 }
-@media only screen and (max-width: 768px) {
-    .slider .box .details {
-        grid-row: 2 / span 1;
+
+@media only screen and (max-width: 768px)
+{
+    .pricing-slider .price-box .details
+    {
         grid-column: -1;
-        text-align: center;
+        grid-row: 2/span 1;
         padding: 2rem;
+        text-align: center;
         transform: translateY(-9rem);
-   }
+    }
 }
-.slider .box .details h1 {
+
+.pricing-slider .price-box .details h1
+{
     font-size: 3.5rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
-.slider .box .details p {
+
+.pricing-slider .price-box .details p
+{
+    color: #b5b4b4;
     display: inline-block;
     font-size: 1.3rem;
-    color: #b5b4b4;
     margin-bottom: 2rem;
     margin-right: 5rem;
 }
-@media only screen and (max-width: 992px) {
-    .slider .box .details p {
+
+@media only screen and (max-width: 992px)
+{
+    .pricing-slider .price-box .details p
+    {
         margin-right: 0;
-   }
+    }
 }
-.slider .box .details a {
-    padding: 1rem 3rem;
-    color: #fff;
-    border-radius: 2rem;
-    outline: none;
+
+.pricing-slider .price-box .details a
+{
     border: none;
+    border-radius: 2rem;
+    color: #fff;
     cursor: pointer;
+    outline: none;
+    padding: 1rem 3rem;
     transition: all 0.3s ease;
 }
-.slider .box .details a:hover {
+
+.pricing-slider .price-box .details a:hover
+{
     opacity: 0.8;
 }
-.slider .box .details a:focus {
-    outline: none;
+
+.pricing-slider .price-box .details a:focus
+{
     border: none;
+    outline: none;
 }
-.slider .box1 {
+
+.pricing-slider .price-box-low
+{
     background-color: #500033;
 }
-.slider .box1 .illustration .inner {
+
+.pricing-slider .price-box-low .price-card-illustration .inner
+{
     background-color: #f07;
 }
-.slider .box1 .illustration .inner::after, .slider .box1 .illustration .inner::before {
+
+.pricing-slider .price-box-low .price-card-illustration .inner::after,
+.pricing-slider .price-box-low .price-card-illustration .inner::before
+{
+    background-color: #ff0077;
     background-color: rgba(255, 0, 119, .4);
 }
-.slider .box1 button {
+
+.pricing-slider .price-box-low button
+{
     background-color: #f07;
 }
-.slider .box2 {
+
+.pricing-slider .price-box-medium
+{
     background-color: #000050;
 }
-.slider .box2 .illustration .inner {
+
+.pricing-slider .price-box-medium .price-card-illustration .inner
+{
     background-color: #03f;
 }
-.slider .box2 .illustration .inner::after, .slider .box2 .illustration .inner::before {
+
+.pricing-slider .price-box-medium .price-card-illustration .inner::after,
+.pricing-slider .price-box-medium .price-card-illustration .inner::before
+{
+    background-color: #0033ff;
     background-color: rgba(0, 51, 255, .4);
 }
-.slider .box2 button {
+
+.pricing-slider .price-box-medium button
+{
     background-color: #03f;
 }
-.slider .box3 {
+
+.pricing-slider .price-box-high
+{
     background-color: #00501d;
 }
-.slider .box3 .illustration .inner {
+
+.pricing-slider .price-box-high .price-card-illustration .inner
+{
     background-color: #0f4;
 }
-.slider .box3 .illustration .inner::after, .slider .box3 .illustration .inner::before {
+
+.pricing-slider .price-box-high .price-card-illustration .inner::after,
+.pricing-slider .price-box-high .price-card-illustration .inner::before
+{
+    background-color: #00ff44;
     background-color: rgba(0, 255, 68, .4);
 }
-.slider .box3 button {
+
+.pricing-slider .price-box-high button
+{
     background-color: #0f4;
 }
-.slider .box4 {
+
+.pricing-slider .price-box-ultra
+{
     background-color: #554d00;
 }
-.slider .box4 .illustration .inner {
+
+.pricing-slider .price-box-ultra .price-card-illustration .inner
+{
     background-color: #ff4e00;
 }
-.slider .box4 .illustration .inner::after, .slider .box4 .illustration .inner::before {
+
+.pricing-slider .price-box-ultra .price-card-illustration .inner::after,
+.pricing-slider .price-box-ultra .price-card-illustration .inner::before
+{
+    background-color: #ff4e00;
     background-color: rgba(255, 78, 0, .4);
 }
-.slider .box4 button {
+
+.pricing-slider .price-box-ultra button
+{
     background-color: #ff4e00;
 }
-.slider .box5 {
+
+.pricing-slider .price-box-unstoppable
+{
     background-color: #300050;
 }
-.slider .box5 .illustration .inner {
+
+.pricing-slider .price-box-unstoppable .price-card-illustration .inner
+{
     background-color: #8000ff;
 }
-.slider .box5 .illustration .inner::after, .slider .box5 .illustration .inner::before {
+
+.pricing-slider .price-box-unstoppable .price-card-illustration .inner::after,
+.pricing-slider .price-box-unstoppable .price-card-illustration .inner::before
+{
+    background-color: #8000ff;
     background-color: rgba(128, 0, 255, .4);
 }
-.slider .box5 button {
+
+.pricing-slider .price-box-unstoppable button
+{
     background-color: #8000ff;
 }
-.slider .illustration {
+
+.pricing-slider .price-card-illustration
+{
     grid-column: -2;
     grid-row: -1;
     justify-self: center;
 }
-@media only screen and (max-width: 768px) {
-    .slider .illustration {
-        grid-row: 1 / span 1;
-        grid-column: -1;
-        display: flex;
-        justify-content: center;
+
+@media only screen and (max-width: 768px)
+{
+    .pricing-slider .price-card-illustration
+    {
         align-items: center;
-   }
+        display: flex;
+        grid-column: -1;
+        grid-row: 1/span 1;
+        justify-content: center;
+    }
 }
-.slider .illustration div {
-    height: 25rem;
-    width: 18rem;
-    border-radius: 3rem;
+
+.pricing-slider .price-card-illustration div
+{
     background-color: #f07;
+    border-radius: 3rem;
+    height: 25rem;
     position: relative;
     transform: skewX(-10deg);
+    width: 18rem;
 }
-@media only screen and (max-width: 992px) {
-    .slider .illustration div {
+
+@media only screen and (max-width: 992px)
+{
+    .pricing-slider .price-card-illustration div
+    {
         height: 20rem;
         width: 15rem;
-   }
+    }
 }
-.slider .illustration div::after, .slider .illustration div::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
+
+.pricing-slider .price-card-illustration div::after,
+.pricing-slider .price-card-illustration div::before
+{
     border-radius: 3rem;
-    top: 0;
+    content: "";
+    height: 100%;
     left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
-.slider .illustration div::after {
+
+.pricing-slider .price-card-illustration div::after
+{
     transform: translate(4rem, -1rem);
 }
-.slider .illustration div::before {
+
+.pricing-slider .price-card-illustration div::before
+{
     transform: translate(2rem, -2rem);
 }
-.prev, .next, .trail {
-    z-index: 10000;
+
+.prev-price-card,
+.next-price-card,
+.price-trail
+{
     position: absolute;
+    z-index: 10000;
 }
-.prev, .next {
-    width: 4rem;
+
+.prev-price-card,
+.next-price-card
+{
     cursor: pointer;
     opacity: 0.2;
     transition: all 0.3s ease;
+    width: 4rem;
 }
-@media only screen and (max-width: 768px) {
-    .prev, .next {
+
+@media only screen and (max-width: 768px)
+{
+    .prev-price-card,
+    .next-price-card
+    {
         display: none;
-   }
+    }
 }
-.prev:hover, .next:hover {
+
+.prev-price-card:hover,
+.next-price-card:hover
+{
     opacity: 1;
 }
-.prev {
-    top: 50%;
+
+.prev-price-card
+{
     left: 2%;
-    transform: translateY(-50%);
-}
-.next {
     top: 50%;
-    right: 2%;
     transform: translateY(-50%);
 }
-.trail {
+
+.next-price-card
+{
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.price-trail
+{
     bottom: 5%;
+    display: grid;
+    font-size: 1.5rem;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
     left: 50%;
+    text-align: center;
     transform: translateX(-50%);
     width: 60%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    text-align: center;
-    font-size: 1.5rem;
 }
-@media only screen and (max-width: 768px) {
-    .trail {
-        width: 90%;
+
+@media only screen and (max-width: 768px)
+{
+    .price-trail
+    {
         bottom: 13%;
-   }
+        width: 90%;
+    }
 }
-.trail div {
-    padding: 2rem;
+
+.price-trail div
+{
     border-top: 3px solid #fff;
     cursor: pointer;
     opacity: 0.2;
+    padding: 2rem;
     transition: all 0.3s ease;
 }
-.trail div:hover {
+
+.price-trail div:hover
+{
     opacity: 0.35;
 }
-@media only screen and (max-width: 768px) {
-    .trail div {
+
+@media only screen and (max-width: 768px)
+{
+    .price-trail div
+    {
         padding: 1rem;
-   }
+    }
 }
-.active {
+
+.price-trail-active
+{
     opacity: 1 !important;
 }

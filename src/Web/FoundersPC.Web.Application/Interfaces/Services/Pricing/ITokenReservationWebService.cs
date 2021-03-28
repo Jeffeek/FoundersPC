@@ -1,7 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.RequestResponseShared.Response.Tokens;
-using FoundersPC.WebIdentityShared;
+
+#endregion
 
 namespace FoundersPC.Web.Application.Interfaces.Services.Pricing
 {

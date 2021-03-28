@@ -2,7 +2,6 @@
 
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
@@ -46,7 +45,9 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             using var client = _clientFactory.CreateClient();
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, _baseAddresses.IdentityApiBaseAddress);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        token,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var request = await client.GetAsync(entityType);
 

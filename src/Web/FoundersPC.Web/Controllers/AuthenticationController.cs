@@ -22,10 +22,8 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IAuthenticationWebService _authenticationWebService;
 
-        public AuthenticationController(IAuthenticationWebService authenticationWebService)
-        {
+        public AuthenticationController(IAuthenticationWebService authenticationWebService) =>
             _authenticationWebService = authenticationWebService;
-        }
 
         #region ForgotPassword
 

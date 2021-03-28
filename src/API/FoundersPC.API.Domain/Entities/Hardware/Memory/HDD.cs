@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware.Memory
 {
     [Index(nameof(Id))]
-    public class HDD : HardwareEntityBase, IHDD, IEquatable<HDD>
+    public class HDD : HardwareEntityBase, IEquatable<HDD>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Factor")]

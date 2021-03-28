@@ -2,13 +2,13 @@
 
 using System;
 using System.Threading.Tasks;
+using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.WebIdentityShared;
-using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
@@ -18,14 +18,17 @@ namespace FoundersPC.Identity.Services.Token_Services
     // todo: add mail service to throw token into email
     public class ApiAccessTokenReservationService : IApiAccessTokensReservationService
     {
-        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
+        private readonly IMailService _mailService;
         private readonly TokenEncryptorService _tokenEncryptorService;
+        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessTokenReservationService(IUnitOfWorkUsersIdentity unitOfWork,
-                                                TokenEncryptorService tokenEncryptorService)
+                                                TokenEncryptorService tokenEncryptorService,
+                                                IMailService mailService)
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
+            _mailService = mailService;
         }
 
         public async Task<ApplicationAccessToken> ReserveNewTokenAsync(string userEmail, TokenType type)
@@ -33,7 +36,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             var tokenStartEvaluation = DateTime.Now;
             var tokenLifetime = GetTheExpirationDate(type);
 
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             if (user is null)
                 throw new
@@ -41,7 +44,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             var newHashedToken = _tokenEncryptorService.CreateToken();
 
-            var newToken = new ApiAccessUserToken()
+            var newToken = new ApiAccessUserToken
                            {
                                ExpirationDate = tokenLifetime,
                                IsBlocked = false,
@@ -55,19 +58,20 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             var saveChangesResult = await _unitOfWork.SaveChangesAsync() > 0;
 
-            if (saveChangesResult)
-                return new ApplicationAccessToken()
-                       {
-                           ExpirationDate = tokenLifetime,
-                           HashedToken = newHashedToken,
-                           Id = entity.Id,
-                           IsBlocked = false,
-                           StartEvaluationDate = tokenStartEvaluation,
-                           UserId = user.Id
-                       };
-
             // todo: maybe throw exception
-            return null;
+            if (!saveChangesResult) return null;
+
+            await _mailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
+
+            return new ApplicationAccessToken
+                   {
+                       ExpirationDate = tokenLifetime,
+                       HashedToken = newHashedToken,
+                       Id = entity.Id,
+                       IsBlocked = false,
+                       StartEvaluationDate = tokenStartEvaluation,
+                       UserId = user.Id
+                   };
         }
 
         // this method calculates the expiration date, it bases on TokenType.

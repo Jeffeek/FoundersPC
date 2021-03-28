@@ -45,11 +45,12 @@ namespace FoundersPC.Web.Controllers
             View("Error",
                  new ErrorViewModel(404, "We didn't found the user with your credentials :("));
 
-        [Route(("ServerError"))]
+        [Route("ServerError")]
         public IActionResult ServerErrorIndex() => View("Error", new ErrorViewModel(500, "Server error :("));
 
-        [Route(("UnprocessableIndex"))]
-        public IActionResult UnprocessableIndex() => View("Error", new ErrorViewModel(422, "Unprocessable operation or object :("));
+        [Route("UnprocessableIndex")]
+        public IActionResult UnprocessableIndex() =>
+            View("Error", new ErrorViewModel(422, "Unprocessable operation or object :("));
 
         [Route("{statusCode:int?}")]
         [AllowAnonymous]

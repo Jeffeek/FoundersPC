@@ -1,5 +1,6 @@
 #region Using namespaces
 
+using System.IO;
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
@@ -20,7 +21,18 @@ namespace FoundersPC.API
 {
     public sealed class Startup
     {
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration)
+        {
+            var builder = new ConfigurationBuilder();
+
+            builder
+                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\JwtSettings.json",
+                             false,
+                             true)
+                .AddConfiguration(configuration, false);
+
+            Configuration = builder.Build();
+        }
 
         public IConfiguration Configuration { get; }
 

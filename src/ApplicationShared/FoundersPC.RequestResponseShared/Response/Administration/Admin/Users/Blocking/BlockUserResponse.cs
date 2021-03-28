@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking
+﻿namespace FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Blocking
 {
     public class BlockUserResponse
     {

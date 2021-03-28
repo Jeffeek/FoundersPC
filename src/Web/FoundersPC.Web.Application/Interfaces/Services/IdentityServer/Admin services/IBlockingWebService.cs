@@ -1,4 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿#region Using namespaces
+
+using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services
 {

@@ -103,7 +103,7 @@ namespace FoundersPC.Identity.Services.EmailServices
         public Task<bool> SendAPIAccessTokenAsync(string email, string token)
         {
             var content =
-                $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not(and can't) restore it";
+                $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not restore it";
 
             return SendToAsync(email, "API Access Token", content);
         }

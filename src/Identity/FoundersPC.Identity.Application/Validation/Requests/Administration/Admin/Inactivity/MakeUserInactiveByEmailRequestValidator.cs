@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using FluentValidation;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Inactivity;
+using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inactivity;
 
 #endregion
 

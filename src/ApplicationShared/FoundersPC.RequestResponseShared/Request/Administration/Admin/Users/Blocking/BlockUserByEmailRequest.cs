@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking
+﻿namespace FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Blocking
 {
     public class BlockUserByEmailRequest
     {

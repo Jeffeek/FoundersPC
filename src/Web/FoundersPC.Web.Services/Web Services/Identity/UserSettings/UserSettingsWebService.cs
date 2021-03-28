@@ -2,7 +2,6 @@
 
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
@@ -48,7 +47,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             using var client = _httpClientFactory.CreateClient("User's overall information settings client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, _baseAddresses.IdentityApiBaseAddress);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        token,
+                                                        _baseAddresses.IdentityApiBaseAddress);
 
             var userInformation =
                 await client.GetFromJsonAsync<ApplicationUser>($"User/Settings/OverallInformation/{email}");

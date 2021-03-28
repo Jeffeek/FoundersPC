@@ -64,7 +64,7 @@ namespace FoundersPC.Identity.Services.User_Services
                 throw new ArgumentNullException(nameof(email));
             }
 
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == email);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(email);
 
             return user is null ? null : _mapper.Map<UserEntity, UserEntityReadDto>(user);
         }

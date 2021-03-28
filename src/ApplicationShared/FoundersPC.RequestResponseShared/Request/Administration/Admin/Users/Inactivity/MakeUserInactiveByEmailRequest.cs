@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.RequestResponseShared.Request.Administration.Admin.Inactivity
+﻿namespace FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inactivity
 {
     public class MakeUserInactiveByEmailRequest
     {

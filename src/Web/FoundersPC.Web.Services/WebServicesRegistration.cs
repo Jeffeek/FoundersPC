@@ -23,6 +23,7 @@ namespace FoundersPC.Web.Services
         public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton(new MicroservicesBaseAddresses(configuration));
+            services.AddScoped<IProducersManagingService, ProducersManagingService>();
             services.AddScoped<ITokenReservationWebService, TokenReservationWebService>();
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
             services.AddScoped<IBlockingWebService, BlockingWebService>();

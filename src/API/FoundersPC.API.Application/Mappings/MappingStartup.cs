@@ -5,6 +5,7 @@ using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.API.Domain.Entities.Hardware.Processor;
 using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
+using FoundersPC.API.Dto;
 
 #endregion
 

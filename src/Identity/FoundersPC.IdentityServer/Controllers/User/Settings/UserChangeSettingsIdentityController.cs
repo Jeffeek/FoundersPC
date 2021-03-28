@@ -95,7 +95,8 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
         [Route("Notifications")]
         [HttpPut]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(ChangeNotificationsRequest request)
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(
+            ChangeNotificationsRequest request)
         {
             if (!TryValidateModel(request))
                 return BadRequest(new

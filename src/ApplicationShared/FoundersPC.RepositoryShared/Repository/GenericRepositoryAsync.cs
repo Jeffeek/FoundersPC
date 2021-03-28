@@ -19,7 +19,7 @@ namespace FoundersPC.RepositoryShared.Repository
 
         public virtual async Task<T> AddAsync(T entity)
         {
-            var result =  await Context.Set<T>().AddAsync(entity);
+            var result = await Context.Set<T>().AddAsync(entity);
 
             return result.Entity;
         }

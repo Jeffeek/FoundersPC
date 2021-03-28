@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking
+﻿namespace FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking
 {
     public class UnblockUserByIdRequest
     {

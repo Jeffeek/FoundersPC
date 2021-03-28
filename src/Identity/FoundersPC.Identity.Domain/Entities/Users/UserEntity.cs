@@ -15,7 +15,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Domain.Entities.Users
 {
-    [Index(nameof(Id))]
+    [Index(nameof(Email), IsUnique = true, Name = "ix_users_email")]
+    [Index(nameof(Id), IsUnique = true, Name = "ix_users_id")]
     public class UserEntity : IdentityItem, IUser, IEquatable<UserEntity>
     {
         [MaxLength(30)]

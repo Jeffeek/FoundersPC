@@ -2,6 +2,7 @@
 
 using System;
 using FluentValidation;
+using FoundersPC.API.Dto;
 
 #endregion
 

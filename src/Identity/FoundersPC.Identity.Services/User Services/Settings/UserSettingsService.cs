@@ -83,7 +83,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
         public async Task<bool> ChangePasswordToAsync(string userEmail, string newPassword, string oldPassword)
         {
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             return await ChangePasswordToAsync(user, oldPassword, newPassword);
         }
@@ -115,7 +115,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
         {
             if (userEmail is null) throw new ArgumentNullException(nameof(userEmail));
 
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             if (user is null) throw new NoNullAllowedException($"user with email = {userEmail} is not found");
 
@@ -186,7 +186,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
                 throw new ArgumentNullException(nameof(newLogin));
             }
 
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             return await ChangeLoginToAsync(user, newLogin);
         }
@@ -225,7 +225,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
                 throw new ArgumentNullException(nameof(userEmail));
             }
 
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             if (user is null)
             {

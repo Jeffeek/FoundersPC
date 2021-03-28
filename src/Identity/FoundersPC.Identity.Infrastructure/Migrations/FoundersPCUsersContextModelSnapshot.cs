@@ -152,7 +152,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                     b.Property<bool>("IsBlocked")
                                      .HasColumnType("bit");
 
-                                    b.Property<string>("SignIn")
+                                    b.Property<string>("Login")
                                      .HasMaxLength(30)
                                      .HasColumnType("nvarchar(30)");
 
@@ -170,9 +170,21 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
 
                                     b.HasKey("Id");
 
-                                    b.HasIndex("Id");
-
                                     b.HasIndex("RoleId");
+
+                                    b.HasIndex(new[]
+                                               {
+                                                   "Email"
+                                               },
+                                               "ix_users_email")
+                                     .IsUnique();
+
+                                    b.HasIndex(new[]
+                                               {
+                                                   "Id"
+                                               },
+                                               "ix_users_id")
+                                     .IsUnique();
 
                                     b.ToTable("Users");
                                 });

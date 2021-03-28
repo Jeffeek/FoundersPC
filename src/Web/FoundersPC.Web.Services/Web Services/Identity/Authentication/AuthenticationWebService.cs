@@ -195,7 +195,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                 if (responseMessage.StatusCode == HttpStatusCode.UnprocessableEntity)
                     throw new NetworkInformationException((int)responseMessage.StatusCode);
 
-                return new UserForgotPasswordResponse()
+                return new UserForgotPasswordResponse
                        {
                            IsUserExists = false,
                            Email = model.Email,

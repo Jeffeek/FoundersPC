@@ -1,0 +1,8 @@
+{
+  "JwtSettings" : {
+    "Issuer" : "FoundersPC.ApplicationShared",
+    "Audience" : "FoundersPC_User",
+    "Key" : "bllvR68jR9OzCRXifQZ3Kv90vvSztHbEWb/ETx+yDT5j6N537/y0PJjeRDkYsDVv",
+    "HoursToExpire" : 24
+  }
+}

@@ -401,7 +401,7 @@ function bootstrapDelegationHandler(element, selector, fn) {
           event.delegateTarget = target;
 
           if (handler.oneOff) {
-            // eslint-disable-next-line unicorn/consistent-destructuring
+            // eslint-disable-next-price-card-line unicorn/consistent-destructuring
             EventHandler.off(element, event.type, fn);
           }
 
@@ -1056,8 +1056,8 @@ var DefaultType = {
   wrap: 'boolean',
   touch: 'boolean'
 };
-var DIRECTION_NEXT = 'next';
-var DIRECTION_PREV = 'prev';
+var DIRECTION_NEXT = 'next-price-card';
+var DIRECTION_PREV = 'prev-price-card';
 var DIRECTION_LEFT = 'left';
 var DIRECTION_RIGHT = 'right';
 var EVENT_SLIDE = "slide" + EVENT_KEY$2;
@@ -1078,14 +1078,14 @@ var CLASS_NAME_ACTIVE$1 = 'active';
 var CLASS_NAME_SLIDE = 'slide';
 var CLASS_NAME_END = 'carousel-item-end';
 var CLASS_NAME_START = 'carousel-item-start';
-var CLASS_NAME_NEXT = 'carousel-item-next';
-var CLASS_NAME_PREV = 'carousel-item-prev';
+var CLASS_NAME_NEXT = 'carousel-item-next-price-card';
+var CLASS_NAME_PREV = 'carousel-item-prev-price-card';
 var CLASS_NAME_POINTER_EVENT = 'pointer-event';
 var SELECTOR_ACTIVE = '.active';
 var SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
 var SELECTOR_ITEM = '.carousel-item';
 var SELECTOR_ITEM_IMG = '.carousel-item img';
-var SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
+var SELECTOR_NEXT_PREV = '.carousel-item-next-price-card, .carousel-item-prev-price-card';
 var SELECTOR_INDICATORS = '.carousel-indicators';
 var SELECTOR_INDICATOR = '[data-bs-target]';
 var SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]';
@@ -1134,7 +1134,7 @@ var Carousel = /*#__PURE__*/function (_BaseComponent) {
   };
 
   _proto.nextWhenVisible = function nextWhenVisible() {
-    // Don't call next when the page isn't visible
+    // Don't call next-price-card when the page isn't visible
     // or the carousel or its parent isn't visible
     if (!document.hidden && isVisible(this._element)) {
       this.next();

@@ -60,10 +60,10 @@ namespace FoundersPC.Identity.Services.User_Services
                 throw new ArgumentException($"Hashed password should be 128 length, but was {hashedPassword.Length}");
             }
 
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x =>
-                                                                        (x.Email == emailOrLogin
-                                                                         || x.Login == emailOrLogin)
-                                                                        && x.HashedPassword == hashedPassword);
+            var user = await _unitOfWork.UsersRepository.GetUserByAsync(x =>
+                                                                            (x.Email == emailOrLogin
+                                                                             || x.Login == emailOrLogin)
+                                                                            && x.HashedPassword == hashedPassword);
 
             return _mapper.Map<UserEntity, UserEntityReadDto>(user);
         }

@@ -8,18 +8,12 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Blocking;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Inactivity;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Unblocking;
 using FoundersPC.RequestResponseShared.Request.Authentication;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Blocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Inactivity;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -28,18 +22,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 {
     public class AdminWebService : IAdminWebService
     {
-        #region DI
-
-        private readonly MicroservicesBaseAddresses _baseAddresses;
-        private readonly IHttpClientFactory _clientFactory;
-        private readonly ILogger<AdminWebService> _logger;
-        private readonly IMapper _mapper;
-        private readonly IUsersInformationWebService _usersInformationWebService;
-        private readonly IBlockingWebService _blockingService;
-        private readonly IUsersEntrancesService _usersEntrancesService;
-
-        #endregion
-
         public AdminWebService(IUsersInformationWebService usersInformationWebService,
                                IHttpClientFactory clientFactory,
                                MicroservicesBaseAddresses baseAddresses,
@@ -56,6 +38,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _blockingService = blockingService;
             _usersEntrancesService = usersEntrancesService;
         }
+
+        #region DI
+
+        private readonly MicroservicesBaseAddresses _baseAddresses;
+        private readonly IHttpClientFactory _clientFactory;
+        private readonly ILogger<AdminWebService> _logger;
+        private readonly IMapper _mapper;
+        private readonly IUsersInformationWebService _usersInformationWebService;
+        private readonly IBlockingWebService _blockingService;
+        private readonly IUsersEntrancesService _usersEntrancesService;
+
+        #endregion
 
         #region Users information
 
@@ -108,10 +102,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public async Task<ApplicationUserEntrance> GetEntranceByIdAsync(int id, string adminToken) =>
             await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
-        public async Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesAsync(int userId, string adminToken) =>
+        public async Task<IEnumerable<ApplicationUserEntrance>>
+            GetAllUserEntrancesAsync(int userId, string adminToken) =>
             await _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
 
-        public async Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
+        public async Task<IEnumerable<ApplicationUserEntrance>>
+            GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
             await _usersEntrancesService.GetAllEntrancesBetweenAsync(start, finish, adminToken);
 
         #endregion

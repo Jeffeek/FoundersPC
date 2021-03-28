@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
@@ -20,7 +19,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public UsersInformationWebService(IHttpClientFactory httpClientFactory, MicroservicesBaseAddresses baseAddresses)
+        public UsersInformationWebService(IHttpClientFactory httpClientFactory,
+                                          MicroservicesBaseAddresses baseAddresses)
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = baseAddresses;
@@ -32,7 +32,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             using var client = _httpClientFactory.CreateClient("User by id client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        token,
+                                                        $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
 
             var request = await client.GetFromJsonAsync<ApplicationUser>($"Users/{userId}");
 
@@ -45,7 +47,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             using var client = _httpClientFactory.CreateClient("User by email client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        token,
+                                                        $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
 
             var request = await client.GetFromJsonAsync<ApplicationUser>($"Users/{email}");
 
@@ -56,7 +60,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         {
             using var client = _httpClientFactory.CreateClient("UsersTable client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        token,
+                                                        $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
 
             var request = await client.GetFromJsonAsync<IEnumerable<ApplicationUser>>("Users");
 

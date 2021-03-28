@@ -31,7 +31,5 @@ namespace FoundersPC.Identity.Application.DTO
         public RoleEntityReadDto Role { get; set; }
 
         public IEnumerable<ApplicationAccessToken> Tokens { get; set; }
-
-        public IEnumerable<UserEntranceLogReadDto> Entrances { get; set; }
     }
 }

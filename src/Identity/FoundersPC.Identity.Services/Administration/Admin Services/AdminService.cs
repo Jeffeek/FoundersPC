@@ -58,7 +58,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         public async Task<bool> MakeUserInactiveAsync(string email, bool sendNotification = true)
         {
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == email);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(email);
 
             return await MakeUserInactiveAsync(user, sendNotification);
         }
@@ -144,7 +144,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
                                                bool blockAllTokens = true,
                                                bool sendNotification = true)
         {
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             if (user is null) return false;
 
@@ -175,7 +175,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         public async Task<bool> UnBlockUserAsync(string userEmail, bool sendNotification = true)
         {
-            var user = await _unitOfWork.UsersRepository.GetByAsync(x => x.Email == userEmail);
+            var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             var changeStatusResult = await ChangeUserBlockStatusAsync(user, false, sendNotification);
 

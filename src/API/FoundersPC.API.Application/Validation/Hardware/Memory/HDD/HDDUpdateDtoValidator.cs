@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using FluentValidation;
+using FoundersPC.API.Dto;
 
 #endregion
 

@@ -2,7 +2,6 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using FoundersPC.API.Domain.Common.Interfaces;
 using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.RepositoryShared.Identity;
 
@@ -10,7 +9,7 @@ using FoundersPC.RepositoryShared.Identity;
 
 namespace FoundersPC.API.Domain.Common.Base
 {
-    public abstract class HardwareEntityBase : IdentityItem, IHardware
+    public abstract class HardwareEntityBase : IdentityItem
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ProducerId")]
