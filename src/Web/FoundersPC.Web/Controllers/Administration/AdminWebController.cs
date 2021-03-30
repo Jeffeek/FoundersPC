@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers.Administration
 {
-    // todo: add manager service
     [Authorize(Roles = "Administrator")]
     [Route("Admin")]
     public class AdminWebController : Controller
@@ -44,6 +43,7 @@ namespace FoundersPC.Web.Controllers.Administration
             return RedirectToAction("UsersTable", "AdminWeb");
         }
 
+        [Route("RegisterManager")]
         [HttpPost]
         public async Task<ActionResult> RegisterManager([FromForm] SignUpViewModel model)
         {
@@ -76,6 +76,7 @@ namespace FoundersPC.Web.Controllers.Administration
             return View(users);
         }
 
+        [Route("RegisterManager")]
         [HttpGet]
         public ActionResult RegisterManager() => View();
 

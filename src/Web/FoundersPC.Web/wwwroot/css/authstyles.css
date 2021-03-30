@@ -82,7 +82,7 @@
     font-weight: 300;
 }
 
-.icon-reset:hover path
+a:hover .icon-reset path
 {
     animation-duration: 1.5s;
     animation-iteration-count: 1;
@@ -92,7 +92,7 @@
     transition: ease-in-out;
 }
 
-.icon-eye:hover path
+a:hover .icon-eye path
 {
     animation-duration: 1.5s;
     animation-iteration-count: 1;

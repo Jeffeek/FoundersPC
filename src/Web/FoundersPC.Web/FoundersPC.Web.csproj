@@ -42,12 +42,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
+    <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
+    <None Include="wwwroot\js\space-invaders.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
-    <None Include="wwwroot\js\space-invaders.js" />
+    <Folder Include="Areas\Producers\" />
   </ItemGroup>
 
 </Project>

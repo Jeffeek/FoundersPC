@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Controllers
 {
+    [Route("Account")]
     [Authorize]
     public class AccountSettingsController : Controller
     {
@@ -30,7 +31,7 @@ namespace FoundersPC.Web.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [Route("")]
         [Authorize]
         public async Task<IActionResult> Profile()
         {
@@ -89,6 +90,7 @@ namespace FoundersPC.Web.Controllers
             return View(settings);
         }
 
+        [Route("ChangePassword")]
         [HttpPost]
         public async Task<IActionResult> ChangePassword(AccountSettingsViewModel request)
         {
@@ -108,6 +110,7 @@ namespace FoundersPC.Web.Controllers
             return RedirectToAction("Profile", "AccountSettings");
         }
 
+        [Route("ChangeLogin")]
         [HttpPost]
         public async Task<IActionResult> ChangeLogin(AccountSettingsViewModel request)
         {
@@ -127,6 +130,7 @@ namespace FoundersPC.Web.Controllers
             return RedirectToAction("Profile", "AccountSettings");
         }
 
+        [Route("ChangeNotifications")]
         [HttpPost]
         public async Task<IActionResult> ChangeNotifications(AccountSettingsViewModel request)
         {

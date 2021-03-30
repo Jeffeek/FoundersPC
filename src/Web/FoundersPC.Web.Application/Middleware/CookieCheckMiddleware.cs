@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 
 #endregion
 
@@ -32,8 +33,7 @@ namespace FoundersPC.Web.Application.Middleware
                 context.Response.Cookies.Delete("token");
 
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                // todo: redirect to unauthorized
-                context.Response.Redirect("Error");
+                context.Response.Redirect("/Error/401");
 
                 return;
             }

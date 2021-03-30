@@ -63,9 +63,9 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("ProducersWeb", "Edit", new { }) |
+    @Html.ActionLink("Edit", "Edit", "Producers", new { id = Model.Id }) |
     <a
-        asp-action='Index'>
+        asp-action='Table'>
         Back to List
     </a>
 </div>

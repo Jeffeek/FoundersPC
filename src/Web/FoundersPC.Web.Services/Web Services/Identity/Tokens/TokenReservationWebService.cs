@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
 {
-    // todo: inject
     public class TokenReservationWebService : ITokenReservationWebService
     {
         private readonly MicroservicesBaseAddresses _baseAddresses;

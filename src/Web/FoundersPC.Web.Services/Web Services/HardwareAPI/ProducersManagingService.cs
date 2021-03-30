@@ -31,7 +31,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         {
             if (managerToken is null) throw new ArgumentNullException(nameof(managerToken));
 
-            var client = _clientFactory.CreateClient("Producers getter client");
+            using var client = _clientFactory.CreateClient("Producers getter client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,

@@ -15,6 +15,7 @@ namespace FoundersPC.Identity.Application.Mappings
     {
         public MappingStartup()
         {
+            CreateMap<ApiAccessUserToken, ApiAccessUserTokenReadDto>();
             CreateMap<RoleEntity, RoleEntityReadDto>();
             CreateMap<UserEntity, UserEntityReadDto>();
             CreateMap<ChangeNotificationsRequest, UserNotificationsSettings>().ReverseMap();

@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
+    [Route("Authentication")]
     [Controller]
     public class AuthenticationController : Controller
     {
@@ -27,6 +28,7 @@ namespace FoundersPC.Web.Controllers
 
         #region ForgotPassword
 
+        [Route("ForgotPassword")]
         [HttpPost]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
@@ -56,6 +58,7 @@ namespace FoundersPC.Web.Controllers
 
         #region SignUp
 
+        [Route("SignUp")]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
@@ -86,6 +89,7 @@ namespace FoundersPC.Web.Controllers
 
         #endregion
 
+        [Route("LogOut")]
         [Authorize]
         public async Task<ActionResult> LogOutAsync()
         {
@@ -99,6 +103,7 @@ namespace FoundersPC.Web.Controllers
 
         #region SignIn
 
+        [Route("SignIn")]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> SignInAsync(SignInViewModel model)
@@ -167,18 +172,21 @@ namespace FoundersPC.Web.Controllers
 
         #region Redirection
 
+        [Route("SignIn")]
         [HttpGet]
         public ActionResult SignIn() =>
             User.Identity?.IsAuthenticated ?? false
                 ? View("Error", new ErrorViewModel("You are already authenticated"))
                 : View();
 
+        [Route("SignUp")]
         [HttpGet]
         public IActionResult SignUp() =>
             User.Identity?.IsAuthenticated ?? false
                 ? View("Error", new ErrorViewModel("You are already authenticated"))
                 : View();
 
+        [Route("ForgotPassword")]
         [HttpGet]
         public IActionResult ForgotPassword() =>
             User.Identity?.IsAuthenticated ?? false

@@ -6,6 +6,6 @@ using FoundersPC.Web.Application.Interfaces.Services.IdentityServer;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Manager_services
 {
-    // todo: implement
+    // todo: implement or /not/
     public class ManagerWebService : IManagerService { }
 }

@@ -36,8 +36,7 @@ namespace FoundersPC.Identity.Services.User_Services
             _mapper = mapper;
         }
 
-        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndHashedPasswordAsync(string emailOrLogin,
-            string hashedPassword)
+        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndHashedPasswordAsync(string emailOrLogin, string hashedPassword)
         {
             if (emailOrLogin is null)
             {
@@ -68,8 +67,7 @@ namespace FoundersPC.Identity.Services.User_Services
             return _mapper.Map<UserEntity, UserEntityReadDto>(user);
         }
 
-        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndPasswordAsync(string emailOrLogin,
-            string password)
+        public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndPasswordAsync(string emailOrLogin, string password)
         {
             if (emailOrLogin is null)
             {

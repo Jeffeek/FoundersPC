@@ -49,7 +49,7 @@ namespace FoundersPC.Web
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Error/{0}");
                 app.UseHsts();
             }
 
@@ -69,10 +69,8 @@ namespace FoundersPC.Web
 
             app.UseEndpoints(endpoints =>
                              {
-                                 endpoints.MapControllerRoute("default",
-                                                              "{controller=Home}/{action=Index}");
-
                                  endpoints.MapDefaultControllerRoute();
+                                 endpoints.MapControllers();
                              });
         }
     }

@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
+    [Route("Pricing")]
     // todo: make service
     public class PricingController : Controller
     {
@@ -21,9 +22,6 @@ namespace FoundersPC.Web.Controllers
 
         public PricingController(ITokenReservationWebService tokenReservationService) =>
             _tokenReservationService = tokenReservationService;
-
-        [HttpGet]
-        public IActionResult Pricing() => View();
 
         [Authorize]
         [Route("Buy/{tokenType}")]
@@ -50,12 +48,7 @@ namespace FoundersPC.Web.Controllers
 
             if (result is null || !result.IsBuyingSuccessful) return RedirectToAction("ServerErrorIndex", "Error");
 
-            return Json(new
-                        {
-                            Start = result.Token.StartEvaluationDate,
-                            Finish = result.Token.ExpirationDate,
-                            Token = result.Token.HashedToken
-                        });
+            return RedirectToAction("Profile", "AccountSettings");
         }
     }
 }
