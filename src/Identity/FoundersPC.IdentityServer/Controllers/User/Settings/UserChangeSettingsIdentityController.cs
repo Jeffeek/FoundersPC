@@ -3,8 +3,8 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

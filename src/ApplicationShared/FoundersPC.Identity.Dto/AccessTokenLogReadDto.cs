@@ -4,14 +4,14 @@ using System;
 
 #endregion
 
-namespace FoundersPC.Identity.Application.DTO
+namespace FoundersPC.Identity.Dto
 {
-    public class UserEntranceLogReadDto
+    public class AccessTokenLogReadDto
     {
         public int Id { get; set; }
 
         public int UserId { get; set; }
 
-        public DateTime Entrance { get; set; }
+        public DateTime RequestDateTime { get; set; }
     }
 }

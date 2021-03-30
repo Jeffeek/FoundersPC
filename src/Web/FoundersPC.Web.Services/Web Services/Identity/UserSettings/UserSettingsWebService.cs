@@ -5,8 +5,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
+using FoundersPC.Identity.Dto;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
-using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
@@ -29,7 +29,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             _logger = logger;
         }
 
-        public async Task<ApplicationUser> GetOverallInformation(string email, string token)
+        public async Task<UserEntityReadDto> GetOverallInformation(string email, string token)
         {
             if (email is null)
             {
@@ -52,7 +52,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
                                                         _baseAddresses.IdentityApiBaseAddress);
 
             var userInformation =
-                await client.GetFromJsonAsync<ApplicationUser>($"User/Settings/OverallInformation/{email}");
+                await client.GetFromJsonAsync<UserEntityReadDto>($"User/Settings/OverallInformation/{email}");
 
             return userInformation;
         }

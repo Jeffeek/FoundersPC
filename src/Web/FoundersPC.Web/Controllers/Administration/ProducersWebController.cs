@@ -18,8 +18,7 @@ namespace FoundersPC.Web.Controllers.Administration
     {
         private readonly IProducersManagingService _producersManagingService;
 
-        public ProducersWebController(IProducersManagingService producersManagingService) =>
-            _producersManagingService = producersManagingService;
+        public ProducersWebController(IProducersManagingService producersManagingService) => _producersManagingService = producersManagingService;
 
         [Route("All")]
         public async Task<ActionResult> Index()

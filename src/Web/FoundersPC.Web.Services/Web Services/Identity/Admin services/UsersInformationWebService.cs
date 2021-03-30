@@ -6,8 +6,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
+using FoundersPC.Identity.Dto;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
-using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 #endregion
@@ -26,7 +26,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _baseAddresses = baseAddresses;
         }
 
-        public async Task<ApplicationUser> GetUserByIdAsync(int userId, string token)
+        public async Task<UserEntityReadDto> GetUserByIdAsync(int userId, string token)
         {
             if (userId < 1) return null;
 
@@ -36,12 +36,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                                                         token,
                                                         $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
 
-            var request = await client.GetFromJsonAsync<ApplicationUser>($"Users/{userId}");
+            var request = await client.GetFromJsonAsync<UserEntityReadDto>($"Users/{userId}");
 
             return request;
         }
 
-        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string token)
+        public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string token)
         {
             if (email is null) throw new ArgumentNullException(nameof(email));
 
@@ -51,12 +51,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                                                         token,
                                                         $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
 
-            var request = await client.GetFromJsonAsync<ApplicationUser>($"Users/{email}");
+            var request = await client.GetFromJsonAsync<UserEntityReadDto>($"Users/{email}");
 
             return request;
         }
 
-        public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string token)
+        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string token)
         {
             using var client = _httpClientFactory.CreateClient("UsersTable client");
 
@@ -64,7 +64,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                                                         token,
                                                         $"{_baseAddresses.IdentityApiBaseAddress}Admin/");
 
-            var request = await client.GetFromJsonAsync<IEnumerable<ApplicationUser>>("Users");
+            var request = await client.GetFromJsonAsync<IEnumerable<UserEntityReadDto>>("Users");
 
             return request;
         }

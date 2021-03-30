@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.Identity.Application.DTO;
+using FoundersPC.Identity.Dto;
 
 #endregion
 

@@ -6,14 +6,13 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Blocking;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inactivity;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Blocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Inactivity;
-using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -42,17 +41,17 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<ApplicationUser>> Get(int id)
+        public async Task<ActionResult<UserEntityReadDto>> Get(int id)
         {
             var user = await _usersInformationService.GetUserByIdAsync(id);
 
             if (user is null) return NotFound();
 
-            return _mapper.Map<UserEntityReadDto, ApplicationUser>(user);
+            return _mapper.Map<UserEntityReadDto, UserEntityReadDto>(user);
         }
 
         [HttpGet("{email}")]
-        public async Task<ActionResult<ApplicationUser>> Get(string email)
+        public async Task<ActionResult<UserEntityReadDto>> Get(string email)
         {
             if (String.IsNullOrEmpty(email))
                 return BadRequest(new
@@ -64,15 +63,15 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
 
             if (user is null) return NotFound();
 
-            return _mapper.Map<UserEntityReadDto, ApplicationUser>(user);
+            return _mapper.Map<UserEntityReadDto, UserEntityReadDto>(user);
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ApplicationUser>> Get()
+        public async Task<IEnumerable<UserEntityReadDto>> Get()
         {
             var users = await _usersInformationService.GetAllUsersAsync();
 
-            return _mapper.Map<IEnumerable<UserEntityReadDto>, IEnumerable<ApplicationUser>>(users);
+            return _mapper.Map<IEnumerable<UserEntityReadDto>, IEnumerable<UserEntityReadDto>>(users);
         }
 
         [HttpPut("Block/By/Id")]

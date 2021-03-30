@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.Identity.Application.DTO;
+using FoundersPC.Identity.Dto;
 
 #endregion
 

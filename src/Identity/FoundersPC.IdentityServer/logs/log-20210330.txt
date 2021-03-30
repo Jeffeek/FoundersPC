@@ -1,0 +1,38 @@
+03/30/2021 09:52:51 Identity server started..
+03/30/2021 09:52:51 Identity server HostBuilder created
+03/30/2021 09:52:54 Host built
+03/30/2021 09:52:54 Now listening on: "https://localhost:3000"
+03/30/2021 09:52:54 Application started. Press Ctrl+C to shut down.
+03/30/2021 09:52:54 Hosting environment: "Development"
+03/30/2021 09:52:54 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/30/2021 10:04:35 Identity server started..
+03/30/2021 10:04:35 Identity server HostBuilder created
+03/30/2021 10:04:37 Host built
+03/30/2021 10:04:37 Now listening on: "https://localhost:3000"
+03/30/2021 10:04:37 Application started. Press Ctrl+C to shut down.
+03/30/2021 10:04:37 Hosting environment: "Development"
+03/30/2021 10:04:37 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/30/2021 10:04:48 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/30/2021 10:04:48 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2523.8283 ms
+03/30/2021 10:05:00 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 284.4243 ms
+03/30/2021 10:08:11 Identity server started..
+03/30/2021 10:08:11 Identity server HostBuilder created
+03/30/2021 10:08:13 Host built
+03/30/2021 10:08:13 Now listening on: "https://localhost:3000"
+03/30/2021 10:08:13 Application started. Press Ctrl+C to shut down.
+03/30/2021 10:08:13 Hosting environment: "Development"
+03/30/2021 10:08:13 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/30/2021 10:08:21 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 1965.6316 ms
+03/30/2021 10:08:43 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 221.5854 ms
+03/30/2021 10:09:10 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Notifications" responded 200 in 221.8869 ms
+03/30/2021 10:09:10 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 34.9770 ms
+03/30/2021 10:09:30 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 54.9228 ms
+03/30/2021 10:50:04 Identity server started..
+03/30/2021 10:50:04 Identity server HostBuilder created
+03/30/2021 10:50:06 Host built
+03/30/2021 10:50:06 Now listening on: "https://localhost:3000"
+03/30/2021 10:50:06 Application started. Press Ctrl+C to shut down.
+03/30/2021 10:50:06 Hosting environment: "Development"
+03/30/2021 10:50:06 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/30/2021 10:50:36 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 2172.4281 ms
+03/30/2021 10:50:41 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 153.5566 ms

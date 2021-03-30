@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.WebIdentityShared;
+using FoundersPC.Identity.Dto;
 
 #endregion
 
@@ -9,6 +9,6 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User
 {
     public interface IUserSettingsWebService
     {
-        Task<ApplicationUser> GetOverallInformation(string email, string token);
+        Task<UserEntityReadDto> GetOverallInformation(string email, string token);
     }
 }

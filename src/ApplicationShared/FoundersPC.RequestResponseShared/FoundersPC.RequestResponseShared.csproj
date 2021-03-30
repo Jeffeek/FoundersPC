@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FoundersPC.WebIdentityShared\FoundersPC.WebIdentityShared.csproj" />
+    <ProjectReference Include="..\FoundersPC.Identity.Dto\FoundersPC.Identity.Dto.csproj" />
   </ItemGroup>
 
 </Project>

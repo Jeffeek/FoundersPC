@@ -8,11 +8,11 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
+using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
-using FoundersPC.WebIdentityShared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
@@ -53,14 +53,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Users information
 
-        public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string adminToken) =>
-            await _usersInformationWebService.GetAllUsersAsync(adminToken);
+        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => await _usersInformationWebService.GetAllUsersAsync(adminToken);
 
-        public async Task<ApplicationUser> GetUserByIdAsync(int id, string adminToken) =>
-            await _usersInformationWebService.GetUserByIdAsync(id, adminToken);
+        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => await _usersInformationWebService.GetUserByIdAsync(id, adminToken);
 
-        public async Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken) =>
-            await _usersInformationWebService.GetUserByEmailAsync(email, adminToken);
+        public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken) => await _usersInformationWebService.GetUserByEmailAsync(email, adminToken);
 
         #endregion
 
@@ -96,19 +93,15 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Users entrances
 
-        public async Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken) =>
-            await _usersEntrancesService.GetAllEntrancesAsync(adminToken);
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) => await _usersEntrancesService.GetAllEntrancesAsync(adminToken);
 
-        public async Task<ApplicationUserEntrance> GetEntranceByIdAsync(int id, string adminToken) =>
-            await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
+        public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) => await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
-        public async Task<IEnumerable<ApplicationUserEntrance>>
-            GetAllUserEntrancesAsync(int userId, string adminToken) =>
-            await _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
+        public async Task<IEnumerable<UserEntranceLogReadDto>>
+            GetAllUserEntrancesAsync(int userId, string adminToken) => await _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
 
-        public async Task<IEnumerable<ApplicationUserEntrance>>
-            GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
-            await _usersEntrancesService.GetAllEntrancesBetweenAsync(start, finish, adminToken);
+        public async Task<IEnumerable<UserEntranceLogReadDto>>
+            GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) => await _usersEntrancesService.GetAllEntrancesBetweenAsync(start, finish, adminToken);
 
         #endregion
 

@@ -3,9 +3,9 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
+using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using Microsoft.AspNetCore.Mvc;

@@ -3,8 +3,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FoundersPC.Identity.Dto;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
-using FoundersPC.WebIdentityShared;
 
 #endregion
 
@@ -21,7 +21,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// </summary>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string adminToken);
+        Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken);
 
         /// <summary>
         ///     Returns user with specified identification
@@ -29,7 +29,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="id"></param>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<ApplicationUser> GetUserByIdAsync(int id, string adminToken);
+        Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken);
 
         /// <summary>
         ///     Returns user with specified identification
@@ -37,7 +37,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="email"></param>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<ApplicationUser> GetUserByEmailAsync(string email, string adminToken);
+        Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken);
 
         /// <summary>
         ///     Blocks user with id = <paramref name="id" />
@@ -91,21 +91,21 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// </summary>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesAsync(string adminToken);
+        Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken);
 
         /// <summary>
         /// </summary>
         /// <param name="id"></param>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<ApplicationUserEntrance> GetEntranceByIdAsync(int id, string adminToken);
+        Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken);
 
         /// <summary>
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<IEnumerable<ApplicationUserEntrance>> GetAllUserEntrancesAsync(int userId, string adminToken);
+        Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesAsync(int userId, string adminToken);
 
         /// <summary>
         /// </summary>
@@ -113,9 +113,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="finish"></param>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<IEnumerable<ApplicationUserEntrance>> GetAllEntrancesBetweenAsync(DateTime start,
-                                                                               DateTime finish,
-                                                                               string adminToken);
+        Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesBetweenAsync(DateTime start,
+                                                                              DateTime finish,
+                                                                              string adminToken);
 
         /// <summary>
         /// </summary>

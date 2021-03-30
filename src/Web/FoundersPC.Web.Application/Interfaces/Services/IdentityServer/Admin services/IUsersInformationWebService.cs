@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.WebIdentityShared;
+using FoundersPC.Identity.Dto;
 
 #endregion
 
@@ -10,10 +10,10 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
 {
     public interface IUsersInformationWebService
     {
-        Task<ApplicationUser> GetUserByIdAsync(int userId, string token);
+        Task<UserEntityReadDto> GetUserByIdAsync(int userId, string token);
 
-        Task<ApplicationUser> GetUserByEmailAsync(string email, string token);
+        Task<UserEntityReadDto> GetUserByEmailAsync(string email, string token);
 
-        Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(string token);
+        Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string token);
     }
 }

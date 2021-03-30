@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FoundersPC.WebIdentityShared.ApplicationUser>
+﻿@model IEnumerable<FoundersPC.Identity.Dto.UserEntityReadDto>
 
 @{
     ViewBag.Title = "title";
@@ -70,7 +70,7 @@
                         <th>@user.Login</th>
                         <th>@user.Email</th>
                         <th>@user.RegistrationDate.ToLongDateString()</th>
-                        <th>@user.Role</th>
+                        <th>@user.Role.RoleTitle</th>
                         <th>
                             <div
                                 class="form-check">

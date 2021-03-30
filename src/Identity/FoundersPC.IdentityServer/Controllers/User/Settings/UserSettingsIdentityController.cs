@@ -2,9 +2,8 @@
 
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
-using FoundersPC.WebIdentityShared;
+using FoundersPC.Identity.Dto;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +29,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         [Route("OverallInformation/{email}")]
-        public async Task<ActionResult<ApplicationUser>> GetOverallInformation(string email)
+        public async Task<ActionResult<UserEntityReadDto>> GetOverallInformation(string email)
         {
             if (email is null) return BadRequest();
 
@@ -38,7 +37,7 @@ namespace FoundersPC.IdentityServer.Controllers.User.Settings
 
             if (User is null) return NotFound();
 
-            return _mapper.Map<UserEntityReadDto, ApplicationUser>(user);
+            return user;
         }
     }
 }

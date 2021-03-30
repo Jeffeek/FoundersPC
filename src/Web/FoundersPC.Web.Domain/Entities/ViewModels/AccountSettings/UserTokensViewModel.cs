@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Collections.Generic;
-using FoundersPC.WebIdentityShared;
+using FoundersPC.Identity.Dto;
 
 #endregion
 
@@ -9,6 +9,6 @@ namespace FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings
 {
     public class UserTokensViewModel
     {
-        public IEnumerable<ApplicationAccessToken> Tokens { get; set; }
+        public IEnumerable<ApiAccessUserTokenReadDto> Tokens { get; set; }
     }
 }

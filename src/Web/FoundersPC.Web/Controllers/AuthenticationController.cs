@@ -56,6 +56,7 @@ namespace FoundersPC.Web.Controllers
 
         #region SignUp
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
         {
@@ -98,6 +99,7 @@ namespace FoundersPC.Web.Controllers
 
         #region SignIn
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> SignInAsync(SignInViewModel model)
         {

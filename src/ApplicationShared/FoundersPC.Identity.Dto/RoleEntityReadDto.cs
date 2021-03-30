@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.Identity.Application.DTO
+﻿namespace FoundersPC.Identity.Dto
 {
     public class RoleEntityReadDto
     {

@@ -1,0 +1,109 @@
+03/30/2021 09:44:06 Web server started.. 1 
+03/30/2021 09:44:09 Web server HostBuilder created 1 
+03/30/2021 09:44:13 Host built 1 
+03/30/2021 09:44:14 Now listening on: "https://localhost:9000" 1 
+03/30/2021 09:44:14 Application started. Press Ctrl+C to shut down. 1 
+03/30/2021 09:44:14 Hosting environment: "Development" 1 
+03/30/2021 09:44:14 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/30/2021 09:44:21 HTTP "GET" "/" responded 200 in 1103.9413 ms 15 
+03/30/2021 09:44:38 HTTP "GET" "/Authentication/SignIn" responded 200 in 294.7836 ms 5 
+03/30/2021 09:44:43 HTTP "GET" "/Home/SpaceInvaders" responded 302 in 9.7497 ms 13 
+03/30/2021 09:44:43 HTTP "GET" "/Authentication/SignIn?ReturnUrl=%2FHome%2FSpaceInvaders" responded 200 in 18.2323 ms 13 
+03/30/2021 09:52:51 Web server started.. 1 
+03/30/2021 09:52:51 Web server HostBuilder created 1 
+03/30/2021 09:52:52 Host built 1 
+03/30/2021 09:52:53 Now listening on: "https://localhost:9000" 1 
+03/30/2021 09:52:53 Application started. Press Ctrl+C to shut down. 1 
+03/30/2021 09:52:53 Hosting environment: "Development" 1 
+03/30/2021 09:52:53 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/30/2021 09:52:55 HTTP "GET" "/" responded 200 in 583.6935 ms 4 
+03/30/2021 10:03:27 HTTP "GET" "/" responded 200 in 14.8309 ms 17 
+03/30/2021 10:03:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 222.9802 ms 18 
+03/30/2021 10:03:33 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 21 
+03/30/2021 10:03:33 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 21 
+03/30/2021 10:03:46 Application is shutting down... 2 
+03/30/2021 10:04:35 Web server started.. 1 
+03/30/2021 10:04:35 Web server HostBuilder created 1 
+03/30/2021 10:04:36 Host built 1 
+03/30/2021 10:04:37 Now listening on: "https://localhost:9000" 1 
+03/30/2021 10:04:37 Application started. Press Ctrl+C to shut down. 1 
+03/30/2021 10:04:37 Hosting environment: "Development" 1 
+03/30/2021 10:04:37 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/30/2021 10:04:38 HTTP "GET" "/" responded 200 in 504.2036 ms 8 
+03/30/2021 10:04:44 HTTP "GET" "/Authentication/SignIn" responded 200 in 226.6245 ms 8 
+03/30/2021 10:04:45 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 8 
+03/30/2021 10:04:45 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 8 
+03/30/2021 10:04:48 Received HTTP response headers after 2643.8814ms - 200 6 
+03/30/2021 10:04:48 End processing HTTP request after 2660.5392ms - 200 6 
+03/30/2021 10:04:48 HTTP "POST" "/Authentication/SignIn" responded 302 in 2796.8246 ms 6 
+03/30/2021 10:04:48 HTTP "GET" "/" responded 200 in 8.5993 ms 12 
+03/30/2021 10:05:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 16 
+03/30/2021 10:05:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 16 
+03/30/2021 10:05:00 Received HTTP response headers after 303.1865ms - 200 6 
+03/30/2021 10:05:00 End processing HTTP request after 308.5723ms - 200 6 
+03/30/2021 10:05:22 HTTP "GET" "/" responded 200 in 1.5693 ms 8 
+03/30/2021 10:05:30 HTTP "GET" "/Home/Pricing" responded 302 in 5.3853 ms 4 
+03/30/2021 10:05:32 HTTP "GET" "/Home/SpaceInvaders" responded 200 in 4023.9156 ms 12 
+03/30/2021 10:05:45 HTTP "GET" "/" responded 200 in 2.0905 ms 14 
+03/30/2021 10:05:49 HTTP "GET" "/" responded 200 in 1.8391 ms 16 
+03/30/2021 10:06:08 Application is shutting down... 2 
+03/30/2021 10:08:11 Web server started.. 1 
+03/30/2021 10:08:11 Web server HostBuilder created 1 
+03/30/2021 10:08:12 Host built 1 
+03/30/2021 10:08:13 Now listening on: "https://localhost:9000" 1 
+03/30/2021 10:08:13 Application started. Press Ctrl+C to shut down. 1 
+03/30/2021 10:08:13 Hosting environment: "Development" 1 
+03/30/2021 10:08:13 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/30/2021 10:08:14 HTTP "GET" "/" responded 200 in 460.8115 ms 14 
+03/30/2021 10:08:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 15 
+03/30/2021 10:08:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 15 
+03/30/2021 10:08:21 Received HTTP response headers after 2044.3992ms - 200 9 
+03/30/2021 10:08:21 End processing HTTP request after 2058.8382ms - 200 9 
+03/30/2021 10:08:21 HTTP "GET" "/Admin/UsersTable" responded 200 in 2376.6970 ms 9 
+03/30/2021 10:08:43 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 7 
+03/30/2021 10:08:43 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 7 
+03/30/2021 10:08:43 Received HTTP response headers after 244.0658ms - 200 17 
+03/30/2021 10:08:43 End processing HTTP request after 247.774ms - 200 17 
+03/30/2021 10:08:43 HTTP "GET" "/AccountSettings/Profile" responded 200 in 369.2540 ms 17 
+03/30/2021 10:09:10 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/User/Settings/Change/Notifications 22 
+03/30/2021 10:09:10 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/User/Settings/Change/Notifications 22 
+03/30/2021 10:09:10 Received HTTP response headers after 254.8445ms - 200 20 
+03/30/2021 10:09:10 End processing HTTP request after 260.5748ms - 200 20 
+03/30/2021 10:09:10 HTTP "POST" "/AccountSettings/ChangeNotifications" responded 302 in 334.9751 ms 20 
+03/30/2021 10:09:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 8 
+03/30/2021 10:09:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 8 
+03/30/2021 10:09:10 Received HTTP response headers after 43.5897ms - 200 21 
+03/30/2021 10:09:10 End processing HTTP request after 46.1674ms - 200 21 
+03/30/2021 10:09:10 HTTP "GET" "/AccountSettings/Profile" responded 200 in 56.5230 ms 21 
+03/30/2021 10:09:23 HTTP "GET" "/Home/SpaceInvaders" responded 200 in 3097.5890 ms 4 
+03/30/2021 10:09:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 24 
+03/30/2021 10:09:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 24 
+03/30/2021 10:09:30 Received HTTP response headers after 64.5609ms - 200 20 
+03/30/2021 10:09:30 End processing HTTP request after 68.9135ms - 200 20 
+03/30/2021 10:09:30 HTTP "GET" "/AccountSettings/Profile" responded 200 in 82.3277 ms 20 
+03/30/2021 10:09:32 HTTP "GET" "/Home/Pricing" responded 302 in 5.4700 ms 23 
+03/30/2021 10:09:32 HTTP "GET" "/Pricing/Pricing" responded 200 in 14.1253 ms 24 
+03/30/2021 10:50:04 Web server started.. 1 
+03/30/2021 10:50:04 Web server HostBuilder created 1 
+03/30/2021 10:50:05 Host built 1 
+03/30/2021 10:50:06 Now listening on: "https://localhost:9000" 1 
+03/30/2021 10:50:06 Application started. Press Ctrl+C to shut down. 1 
+03/30/2021 10:50:06 Hosting environment: "Development" 1 
+03/30/2021 10:50:06 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+03/30/2021 10:50:28 HTTP "GET" "/" responded 200 in 255.1948 ms 5 
+03/30/2021 10:50:32 HTTP "GET" "/" responded 200 in 5.8800 ms 12 
+03/30/2021 10:50:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 8 
+03/30/2021 10:50:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru 8 
+03/30/2021 10:50:36 Received HTTP response headers after 2361.5462ms - 200 9 
+03/30/2021 10:50:36 End processing HTTP request after 2378.5187ms - 200 9 
+03/30/2021 10:50:36 HTTP "GET" "/AccountSettings/Profile" responded 200 in 2781.2144 ms 9 
+03/30/2021 10:50:41 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/30/2021 10:50:41 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Admin/Users 12 
+03/30/2021 10:50:41 Received HTTP response headers after 162.4799ms - 200 9 
+03/30/2021 10:50:41 End processing HTTP request after 166.2769ms - 200 9 
+03/30/2021 10:50:41 HTTP "GET" "/Admin/UsersTable" responded 200 in 199.9863 ms 9 
+03/30/2021 10:53:01 HTTP "GET" "/Home/Pricing" responded 302 in 14.4642 ms 5 
+03/30/2021 10:53:01 HTTP "GET" "/Pricing/Pricing" responded 200 in 20.1576 ms 12 
+03/30/2021 10:58:34 HTTP "GET" "/Pricing/Pricing" responded 200 in 13.5356 ms 39 
+03/30/2021 10:58:40 HTTP "GET" "/Pricing/Pricing" responded 200 in 1.7221 ms 39 
+03/30/2021 11:00:13 HTTP "GET" "/Pricing/Pricing" responded 200 in 1.3974 ms 63 

@@ -1,8 +1,9 @@
 ﻿#region Using namespaces
 
-using FoundersPC.WebIdentityShared;
 
 #endregion
+
+using FoundersPC.Identity.Dto;
 
 namespace FoundersPC.RequestResponseShared.Response.Tokens
 {
@@ -10,6 +11,6 @@ namespace FoundersPC.RequestResponseShared.Response.Tokens
     {
         public bool IsBuyingSuccessful { get; set; } = false;
 
-        public ApplicationAccessToken Token { get; set; } = null;
+        public ApiAccessUserTokenReadDto Token { get; set; } = null;
     }
 }

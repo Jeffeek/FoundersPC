@@ -2,11 +2,10 @@
 
 using System;
 using System.Collections.Generic;
-using FoundersPC.WebIdentityShared;
 
 #endregion
 
-namespace FoundersPC.Identity.Application.DTO
+namespace FoundersPC.Identity.Dto
 {
     public class UserEntityReadDto
     {
@@ -30,6 +29,6 @@ namespace FoundersPC.Identity.Application.DTO
 
         public RoleEntityReadDto Role { get; set; }
 
-        public IEnumerable<ApplicationAccessToken> Tokens { get; set; }
+        public IEnumerable<ApiAccessUserTokenReadDto> Tokens { get; set; }
     }
 }

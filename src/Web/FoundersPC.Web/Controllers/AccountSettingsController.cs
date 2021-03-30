@@ -61,7 +61,7 @@ namespace FoundersPC.Web.Controllers
                                                              {
                                                                  Email = emailInCookie,
                                                                  Login = information.Login,
-                                                                 Role = information.Role
+                                                                 Role = information.Role.RoleTitle
                                                              },
                                LoginSettingsViewModel = new SecuritySettingsViewModel
                                                         {

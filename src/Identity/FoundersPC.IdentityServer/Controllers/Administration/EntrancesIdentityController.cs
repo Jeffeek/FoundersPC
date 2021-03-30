@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
-using FoundersPC.Identity.Application.DTO;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
-using FoundersPC.WebIdentityShared;
+using FoundersPC.Identity.Dto;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,14 +31,11 @@ namespace FoundersPC.IdentityServer.Controllers.Administration
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ApplicationUserEntrance>> Get() =>
-            _mapper
-                .Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<ApplicationUserEntrance>
-                >(await _usersEntrancesService.GetAllAsync());
+        public async Task<IEnumerable<UserEntranceLogReadDto>> Get() => _mapper
+            .Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<UserEntranceLogReadDto>>(await _usersEntrancesService.GetAllAsync());
 
         [Route("{id:int}")]
         [HttpGet]
-        public async Task<ApplicationUserEntrance> Get(int id) =>
-            _mapper.Map<UserEntranceLogReadDto, ApplicationUserEntrance>(await _usersEntrancesService.GetByIdAsync(id));
+        public async Task<UserEntranceLogReadDto> Get(int id) => _mapper.Map<UserEntranceLogReadDto, UserEntranceLogReadDto>(await _usersEntrancesService.GetByIdAsync(id));
     }
 }

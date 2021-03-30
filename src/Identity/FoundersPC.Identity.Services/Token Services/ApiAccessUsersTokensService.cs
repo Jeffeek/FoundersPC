@@ -8,9 +8,9 @@ using AutoMapper;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
+using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
-using FoundersPC.WebIdentityShared;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -35,24 +35,24 @@ namespace FoundersPC.Identity.Services.Token_Services
             _logger = logger;
         }
 
-        public async Task<IEnumerable<ApplicationAccessToken>> GetUserTokens(int userId)
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId)
         {
             var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
 
             if (tokens is null) return null;
 
             return _mapper.Map<IEnumerable<ApiAccessUserToken>,
-                IEnumerable<ApplicationAccessToken>>(tokens);
+                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
         }
 
-        public async Task<IEnumerable<ApplicationAccessToken>> GetUserTokens(string userEmail)
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail)
         {
             var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
 
             if (tokens is null) return null;
 
             return _mapper.Map<IEnumerable<ApiAccessUserToken>,
-                IEnumerable<ApplicationAccessToken>>(tokens);
+                IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
         }
 
         #region IsTokenBlocked

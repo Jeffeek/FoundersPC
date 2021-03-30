@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Tokens;
+using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.RequestResponseShared.Request.Tokens;
-using FoundersPC.WebIdentityShared;
 
 #endregion
 
@@ -31,7 +31,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             _mailService = mailService;
         }
 
-        public async Task<ApplicationAccessToken> ReserveNewTokenAsync(string userEmail, TokenType type)
+        public async Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
         {
             var tokenStartEvaluation = DateTime.Now;
             var tokenLifetime = GetTheExpirationDate(type);
@@ -63,7 +63,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             await _mailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
 
-            return new ApplicationAccessToken
+            return new ApiAccessUserTokenReadDto
                    {
                        ExpirationDate = tokenLifetime,
                        HashedToken = newHashedToken,
@@ -76,10 +76,11 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         // this method calculates the expiration date, it bases on TokenType.
         // Numbers are months.
-        // Why ENDLESS is just 1200 month? I don't know, it's a 100 years probably o_O
+        // Why ENDLESS is just 1200 month? I don't know, it's a 100 years probably O_O
         private DateTime GetTheExpirationDate(TokenType type)
         {
             var now = DateTime.Now;
+
             var expirationDate = now.AddMonths(type switch
                                                {
                                                    TokenType.Low => 2,
