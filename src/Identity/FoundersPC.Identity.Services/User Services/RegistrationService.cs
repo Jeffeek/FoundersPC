@@ -20,18 +20,18 @@ namespace FoundersPC.Identity.Services.User_Services
     {
         private readonly PasswordEncryptorService _encryptorService;
         private readonly ILogger<RegistrationService> _logger;
-        private readonly IMailService _mailService;
+        private readonly IEmailService _emailService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
 
         public RegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,
                                    PasswordEncryptorService encryptorService,
                                    ILogger<RegistrationService> logger,
-                                   IMailService mailService)
+                                   IEmailService emailService)
         {
             _unitOfWorkUsersIdentity = unitOfWorkUsersIdentity;
             _encryptorService = encryptorService;
             _logger = logger;
-            _mailService = mailService;
+            _emailService = emailService;
         }
 
         public async Task<bool> RegisterDefaultUserAsync(string email, string password)
@@ -48,7 +48,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             _logger.LogInformation($"{nameof(RegistrationService)}: role 'Default User' found");
 
-            return await Register(email, password, defaultUserRole);
+            return await RegisterAsync(email, password, defaultUserRole);
         }
 
         public async Task<bool> RegisterManagerAsync(string email, string password)
@@ -65,10 +65,10 @@ namespace FoundersPC.Identity.Services.User_Services
 
             _logger.LogInformation($"{nameof(RegistrationService)}: role 'Manager' found");
 
-            return await Register(email, password, managerRole);
+            return await RegisterAsync(email, password, managerRole);
         }
 
-        private async Task<bool> Register(string email, string rawPassword, RoleEntity role)
+        private async Task<bool> RegisterAsync(string email, string rawPassword, RoleEntity role)
         {
             if (email is null)
             {
@@ -118,7 +118,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
             var saveChangesResult = await _unitOfWorkUsersIdentity.SaveChangesAsync();
 
-            await _mailService.SendRegistrationNotificationAsync(email);
+            await _emailService.SendRegistrationNotificationAsync(email);
 
             return saveChangesResult > 0;
         }

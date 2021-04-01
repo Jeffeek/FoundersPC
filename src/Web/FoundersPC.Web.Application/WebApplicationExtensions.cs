@@ -3,6 +3,7 @@
 using System;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using FoundersPC.API.Dto.Mapping;
 using FoundersPC.Web.Application.Mappings;
 using FoundersPC.Web.Application.Validation.AccountSettings;
 using Microsoft.AspNetCore.Authentication;
@@ -19,6 +20,7 @@ namespace FoundersPC.Web.Application
         public static void AddWebApplicationMappings(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingStartup));
+            services.AddAutoMapper(typeof(HardwareApiDtoMapping));
         }
 
         public static void AddValidators(this IServiceCollection services)

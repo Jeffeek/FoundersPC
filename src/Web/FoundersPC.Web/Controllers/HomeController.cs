@@ -9,8 +9,6 @@ namespace FoundersPC.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController() { }
-
         [AllowAnonymous]
         public IActionResult Index() => View();
 

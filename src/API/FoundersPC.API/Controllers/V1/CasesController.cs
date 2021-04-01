@@ -63,7 +63,7 @@ namespace FoundersPC.API.Controllers.V1
                    Policy = "Changeable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] CaseUpdateDto @case)
+        public async Task<ActionResult> Update([FromRoute] int? id, [FromBody] CaseUpdateDto @case)
         {
             if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
@@ -99,7 +99,7 @@ namespace FoundersPC.API.Controllers.V1
                    Policy = "Changeable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> Delete([FromRoute] int? id)
         {
             if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 

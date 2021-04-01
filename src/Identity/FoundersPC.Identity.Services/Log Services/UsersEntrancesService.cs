@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
@@ -18,17 +19,17 @@ namespace FoundersPC.Identity.Services.Log_Services
     public class UsersEntrancesService : IUsersEntrancesService
     {
         private readonly ILogger<UsersEntrancesService> _logger;
-        private readonly IMailService _mailService;
+        private readonly IEmailService _emailService;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public UsersEntrancesService(IUnitOfWorkUsersIdentity unitOfWork,
-                                     IMailService mailService,
+                                     IEmailService emailService,
                                      ILogger<UsersEntrancesService> logger,
                                      IMapper mapper)
         {
             _unitOfWork = unitOfWork;
-            _mailService = mailService;
+            _emailService = emailService;
             _logger = logger;
             _mapper = mapper;
         }
@@ -55,6 +56,26 @@ namespace FoundersPC.Identity.Services.Log_Services
             return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(logs);
         }
 
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(int userId)
+        {
+            // todo: logger
+            if (userId < 1) throw new ArgumentOutOfRangeException(nameof(userId));
+
+            var userEntrances = await _unitOfWork.UsersEntrancesLogsRepository.GetUserEntrancesAsync(userId);
+
+            return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(userEntrances);
+        }
+
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(string userEmail)
+        {
+            // todo: logger
+            if (userEmail is null) throw new ArgumentNullException(nameof(userEmail));
+
+            var userEntrances = await _unitOfWork.UsersEntrancesLogsRepository.GetUserEntrancesAsync(userEmail);
+
+            return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(userEntrances);
+        }
+
         public async Task<bool> LogAsync(int userId)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
@@ -66,7 +87,8 @@ namespace FoundersPC.Identity.Services.Log_Services
                 return false;
             }
 
-            if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
+            if (user.SendMessageOnEntrance)
+                await _emailService.SendEntranceNotificationAsync(user.Email);
 
             var log = new UserEntranceLog
                       {

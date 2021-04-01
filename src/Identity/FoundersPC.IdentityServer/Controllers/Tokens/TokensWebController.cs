@@ -31,7 +31,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [HttpGet]
         [Route("User/{email}")]
-        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens(string email)
+        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
         {
             var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
 

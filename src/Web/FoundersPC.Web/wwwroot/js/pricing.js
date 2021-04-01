@@ -2,7 +2,7 @@ const slider = document.querySelector(".pricing-slider");
 const trail = document.querySelector(".price-trail").querySelectorAll("div");
 let value = 0;
 let trailValue = 0;
-let interval = 5000;
+let interval = 60000;
 const slide = (condition) =>
 {
     clearInterval(start);

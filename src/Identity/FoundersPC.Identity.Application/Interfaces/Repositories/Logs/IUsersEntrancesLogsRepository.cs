@@ -15,5 +15,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Repositories.Logs
         Task<IEnumerable<UserEntranceLog>> GetEntrancesBetweenAsync(DateTime start, DateTime finish);
 
         Task<IEnumerable<UserEntranceLog>> GetEntrancesInAsync(DateTime date);
+
+        Task<IEnumerable<UserEntranceLog>> GetUserEntrancesAsync(int userId);
+
+        Task<IEnumerable<UserEntranceLog>> GetUserEntrancesAsync(string userEmail);
     }
 }

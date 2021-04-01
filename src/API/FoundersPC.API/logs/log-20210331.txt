@@ -1,0 +1,556 @@
+03/31/2021 19:28:02 HARDWARE API started..
+03/31/2021 19:28:03 HARDWARE API HostBuilder created
+03/31/2021 19:28:03 Host built
+03/31/2021 19:28:04 Now listening on: "https://localhost:4000"
+03/31/2021 19:28:04 Application started. Press Ctrl+C to shut down.
+03/31/2021 19:28:04 Hosting environment: "Development"
+03/31/2021 19:28:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 19:28:22 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:28:23 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1778.1537 ms
+03/31/2021 19:29:47 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:29:47 HTTP "GET" "/HardwareApi/Producers" responded 200 in 36.0813 ms
+03/31/2021 19:30:34 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:30:34 HTTP "GET" "/HardwareApi/Producers" responded 200 in 15.3566 ms
+03/31/2021 19:31:03 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:31:03 HTTP "GET" "/HardwareApi/Producers" responded 200 in 9.9412 ms
+03/31/2021 19:32:47 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:32:47 HTTP "GET" "/HardwareApi/Producers" responded 200 in 6.4802 ms
+03/31/2021 19:32:49 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:32:49 HTTP "GET" "/HardwareApi/Producers" responded 200 in 3.6601 ms
+03/31/2021 19:32:51 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:32:51 HTTP "GET" "/HardwareApi/Producers" responded 200 in 3.9613 ms
+03/31/2021 19:33:41 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:33:41 HTTP "GET" "/HardwareApi/Producers" responded 200 in 13.8970 ms
+03/31/2021 19:34:02 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:34:02 HTTP "GET" "/HardwareApi/Producers" responded 200 in 3.6094 ms
+03/31/2021 19:47:16 HARDWARE API started..
+03/31/2021 19:47:17 HARDWARE API HostBuilder created
+03/31/2021 19:47:18 Host built
+03/31/2021 19:47:18 Now listening on: "https://localhost:4000"
+03/31/2021 19:47:18 Application started. Press Ctrl+C to shut down.
+03/31/2021 19:47:18 Hosting environment: "Development"
+03/31/2021 19:47:18 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 19:47:32 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:47:33 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1786.0050 ms
+03/31/2021 19:47:38 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:47:39 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 152.2758 ms
+03/31/2021 19:47:46 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:47:46 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 18.9630 ms
+03/31/2021 19:49:15 HARDWARE API started..
+03/31/2021 19:49:15 HARDWARE API HostBuilder created
+03/31/2021 19:49:16 Host built
+03/31/2021 19:49:16 Now listening on: "https://localhost:4000"
+03/31/2021 19:49:16 Application started. Press Ctrl+C to shut down.
+03/31/2021 19:49:16 Hosting environment: "Development"
+03/31/2021 19:49:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 19:49:33 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:49:34 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1814.2489 ms
+03/31/2021 19:51:25 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:51:25 HTTP "GET" "/HardwareApi/Producers" responded 200 in 35.2261 ms
+03/31/2021 19:51:40 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:51:40 HTTP "GET" "/HardwareApi/Producers" responded 200 in 17.7411 ms
+03/31/2021 19:53:10 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:53:10 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 121.2559 ms
+03/31/2021 19:56:04 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:56:04 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 8.1660 ms
+03/31/2021 19:58:59 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:58:59 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 6.3441 ms
+03/31/2021 19:59:20 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 19:59:20 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 9.6845 ms
+03/31/2021 20:00:19 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:00:19 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.4370 ms
+03/31/2021 20:00:30 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:00:30 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 9.3389 ms
+03/31/2021 20:01:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:01:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.5915 ms
+03/31/2021 20:01:37 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:01:37 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.8633 ms
+03/31/2021 20:01:46 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:01:46 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.9232 ms
+03/31/2021 20:02:30 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:02:31 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 14.2659 ms
+03/31/2021 20:03:54 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:03:54 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 6.8017 ms
+03/31/2021 20:04:03 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:04:03 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.7219 ms
+03/31/2021 20:04:15 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:04:15 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.7166 ms
+03/31/2021 20:04:56 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:04:56 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.3430 ms
+03/31/2021 20:07:02 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:07:02 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.6416 ms
+03/31/2021 20:08:33 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:08:33 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 11.4426 ms
+03/31/2021 20:08:48 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:08:48 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.7316 ms
+03/31/2021 20:08:49 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:08:49 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.5657 ms
+03/31/2021 20:09:10 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:09:10 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 4.0304 ms
+03/31/2021 20:10:07 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:10:07 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 10.5676 ms
+03/31/2021 20:10:08 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:10:08 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.6989 ms
+03/31/2021 20:10:09 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:10:09 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.4813 ms
+03/31/2021 20:10:51 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:10:51 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 12.7773 ms
+03/31/2021 20:11:47 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:11:47 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.6124 ms
+03/31/2021 20:11:49 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:11:49 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.5794 ms
+03/31/2021 20:12:30 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:12:30 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 30.8819 ms
+03/31/2021 20:12:56 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:12:56 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 7.4546 ms
+03/31/2021 20:13:38 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:13:38 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 5.2059 ms
+03/31/2021 20:14:03 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:14:03 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.7777 ms
+03/31/2021 20:14:17 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:14:17 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.5777 ms
+03/31/2021 20:16:06 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:16:06 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.4618 ms
+03/31/2021 20:16:08 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:16:08 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1725 ms
+03/31/2021 20:17:50 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:17:50 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.4108 ms
+03/31/2021 20:17:52 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:17:52 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.4195 ms
+03/31/2021 20:19:22 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:19:22 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 5.5852 ms
+03/31/2021 20:19:44 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:19:44 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 10.3104 ms
+03/31/2021 20:20:37 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:20:37 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 10.9352 ms
+03/31/2021 20:20:53 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:20:53 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.2491 ms
+03/31/2021 20:21:02 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:21:02 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 2.8888 ms
+03/31/2021 20:21:14 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:21:14 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.0600 ms
+03/31/2021 20:21:40 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:21:40 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 5.3825 ms
+03/31/2021 20:23:03 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:03 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 8.1566 ms
+03/31/2021 20:23:11 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:11 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.2858 ms
+03/31/2021 20:23:16 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:16 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.9271 ms
+03/31/2021 20:23:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1519 ms
+03/31/2021 20:23:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1435 ms
+03/31/2021 20:23:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.3754 ms
+03/31/2021 20:23:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1298 ms
+03/31/2021 20:23:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 2.9428 ms
+03/31/2021 20:23:19 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:19 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.2240 ms
+03/31/2021 20:23:19 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:19 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.6681 ms
+03/31/2021 20:23:19 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:19 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1629 ms
+03/31/2021 20:23:24 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:23:24 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.2838 ms
+03/31/2021 20:25:08 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:25:08 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 6.3259 ms
+03/31/2021 20:25:29 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:25:29 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 8.6375 ms
+03/31/2021 20:25:59 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:25:59 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 29.8062 ms
+03/31/2021 20:26:28 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:26:28 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 9.5719 ms
+03/31/2021 20:26:30 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:26:30 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1936 ms
+03/31/2021 20:26:38 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:26:38 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 2.9157 ms
+03/31/2021 20:27:09 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:27:09 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 7.1453 ms
+03/31/2021 20:27:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:27:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.3384 ms
+03/31/2021 20:28:37 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:28:37 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 2.8739 ms
+03/31/2021 20:29:19 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:29:19 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.4561 ms
+03/31/2021 20:29:20 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:29:20 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 2.9175 ms
+03/31/2021 20:29:46 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:29:46 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 10.1428 ms
+03/31/2021 20:30:27 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:30:27 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 9.4060 ms
+03/31/2021 20:30:38 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:30:38 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 2.9521 ms
+03/31/2021 20:31:02 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:31:02 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1864 ms
+03/31/2021 20:31:16 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:31:16 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 7.3356 ms
+03/31/2021 20:31:30 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:31:30 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1889 ms
+03/31/2021 20:31:54 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:31:54 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 27.9313 ms
+03/31/2021 20:32:10 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:32:10 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 2.7460 ms
+03/31/2021 20:32:25 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:32:25 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 3.1874 ms
+03/31/2021 20:32:55 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 20:32:55 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 9.1707 ms
+03/31/2021 21:22:23 HARDWARE API started..
+03/31/2021 21:22:23 HARDWARE API HostBuilder created
+03/31/2021 21:22:24 Host built
+03/31/2021 21:22:25 Now listening on: "https://localhost:4000"
+03/31/2021 21:22:25 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:22:25 Hosting environment: "Development"
+03/31/2021 21:22:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:24:29 HARDWARE API started..
+03/31/2021 21:24:29 HARDWARE API HostBuilder created
+03/31/2021 21:24:30 Host built
+03/31/2021 21:24:31 Now listening on: "https://localhost:4000"
+03/31/2021 21:24:31 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:24:31 Hosting environment: "Development"
+03/31/2021 21:24:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:25:23 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:25:24 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1705.2834 ms
+03/31/2021 21:25:51 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:25:51 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 149.4292 ms
+03/31/2021 21:33:36 HARDWARE API started..
+03/31/2021 21:33:37 HARDWARE API HostBuilder created
+03/31/2021 21:33:37 Host built
+03/31/2021 21:33:38 Now listening on: "https://localhost:4000"
+03/31/2021 21:33:38 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:33:38 Hosting environment: "Development"
+03/31/2021 21:33:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:33:53 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:33:54 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1677.7642 ms
+03/31/2021 21:33:57 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:33:57 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 149.2175 ms
+03/31/2021 21:34:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:34:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 22.3444 ms
+03/31/2021 21:45:30 HARDWARE API started..
+03/31/2021 21:45:30 HARDWARE API HostBuilder created
+03/31/2021 21:45:31 Host built
+03/31/2021 21:45:31 Now listening on: "https://localhost:4000"
+03/31/2021 21:45:31 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:45:31 Hosting environment: "Development"
+03/31/2021 21:45:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:45:43 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:45:44 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1657.0587 ms
+03/31/2021 21:46:10 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:46:10 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 145.3049 ms
+03/31/2021 21:47:33 HARDWARE API started..
+03/31/2021 21:47:33 HARDWARE API HostBuilder created
+03/31/2021 21:47:34 Host built
+03/31/2021 21:47:34 Now listening on: "https://localhost:4000"
+03/31/2021 21:47:34 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:47:34 Hosting environment: "Development"
+03/31/2021 21:47:34 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:47:44 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:47:46 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1644.5768 ms
+03/31/2021 21:47:47 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:47:47 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 145.8855 ms
+03/31/2021 21:47:55 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:47:55 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 19.8089 ms
+03/31/2021 21:49:14 HARDWARE API started..
+03/31/2021 21:49:14 HARDWARE API HostBuilder created
+03/31/2021 21:49:15 Host built
+03/31/2021 21:49:15 Now listening on: "https://localhost:4000"
+03/31/2021 21:49:15 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:49:15 Hosting environment: "Development"
+03/31/2021 21:49:15 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:49:26 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:49:28 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1747.7905 ms
+03/31/2021 21:49:30 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:49:30 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 144.6983 ms
+03/31/2021 21:51:12 HARDWARE API started..
+03/31/2021 21:51:12 HARDWARE API HostBuilder created
+03/31/2021 21:51:13 Host built
+03/31/2021 21:51:13 Now listening on: "https://localhost:4000"
+03/31/2021 21:51:13 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:51:13 Hosting environment: "Development"
+03/31/2021 21:51:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:51:27 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:51:28 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1677.8959 ms
+03/31/2021 21:51:30 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:51:31 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 154.1233 ms
+03/31/2021 21:54:03 HARDWARE API started..
+03/31/2021 21:54:03 HARDWARE API HostBuilder created
+03/31/2021 21:54:04 Host built
+03/31/2021 21:54:05 Now listening on: "https://localhost:4000"
+03/31/2021 21:54:05 Application started. Press Ctrl+C to shut down.
+03/31/2021 21:54:05 Hosting environment: "Development"
+03/31/2021 21:54:05 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 21:54:15 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:54:16 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1666.0505 ms
+03/31/2021 21:54:18 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 21:54:18 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 143.9740 ms
+03/31/2021 21:55:11 HTTP "PUT" "/HardwareApi/Producers" responded 400 in 67.4969 ms
+03/31/2021 22:01:31 HARDWARE API started..
+03/31/2021 22:01:31 HARDWARE API HostBuilder created
+03/31/2021 22:01:32 Host built
+03/31/2021 22:01:32 Now listening on: "https://localhost:4000"
+03/31/2021 22:01:32 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:01:32 Hosting environment: "Development"
+03/31/2021 22:01:32 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:01:55 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:01:56 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1639.0143 ms
+03/31/2021 22:01:59 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:01:59 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 144.9432 ms
+03/31/2021 22:02:25 HTTP "PUT" "/HardwareApi/Producers/1" responded 400 in 85.6165 ms
+03/31/2021 22:06:15 HARDWARE API started..
+03/31/2021 22:06:15 HARDWARE API HostBuilder created
+03/31/2021 22:06:16 Host built
+03/31/2021 22:06:16 Now listening on: "https://localhost:4000"
+03/31/2021 22:06:16 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:06:16 Hosting environment: "Development"
+03/31/2021 22:06:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:06:30 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:06:31 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1683.4853 ms
+03/31/2021 22:06:33 ProducersController: request for reading with id = 2 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:06:33 HTTP "GET" "/HardwareApi/Producers/2" responded 200 in 143.7581 ms
+03/31/2021 22:07:13 HTTP "PUT" "/HardwareApi/Producers/2" responded 400 in 64.3767 ms
+03/31/2021 22:10:26 HARDWARE API started..
+03/31/2021 22:10:26 HARDWARE API HostBuilder created
+03/31/2021 22:10:27 Host built
+03/31/2021 22:10:28 Now listening on: "https://localhost:4000"
+03/31/2021 22:10:28 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:10:28 Hosting environment: "Development"
+03/31/2021 22:10:28 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:10:44 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:10:46 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1679.2211 ms
+03/31/2021 22:10:47 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:10:47 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 149.1947 ms
+03/31/2021 22:11:10 HTTP "PUT" "/HardwareApi/Producers/1" responded 400 in 65.9325 ms
+03/31/2021 22:15:34 HARDWARE API started..
+03/31/2021 22:15:34 HARDWARE API HostBuilder created
+03/31/2021 22:15:35 Host built
+03/31/2021 22:15:35 Now listening on: "https://localhost:4000"
+03/31/2021 22:15:35 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:15:35 Hosting environment: "Development"
+03/31/2021 22:15:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:15:48 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:15:49 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1676.1783 ms
+03/31/2021 22:16:12 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:16:12 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 173.7003 ms
+03/31/2021 22:16:35 HTTP "PUT" "/HardwareApi/Producers/1" responded 400 in 65.5663 ms
+03/31/2021 22:20:24 HARDWARE API started..
+03/31/2021 22:20:24 HARDWARE API HostBuilder created
+03/31/2021 22:20:25 Host built
+03/31/2021 22:20:25 Now listening on: "https://localhost:4000"
+03/31/2021 22:20:25 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:20:25 Hosting environment: "Development"
+03/31/2021 22:20:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:20:37 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:20:38 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1694.8609 ms
+03/31/2021 22:20:39 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:20:39 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 147.9551 ms
+03/31/2021 22:20:46 HTTP "PUT" "/HardwareApi/Producers/1" responded 400 in 66.2042 ms
+03/31/2021 22:21:39 HARDWARE API started..
+03/31/2021 22:21:39 HARDWARE API HostBuilder created
+03/31/2021 22:21:40 Host built
+03/31/2021 22:21:41 Now listening on: "https://localhost:4000"
+03/31/2021 22:21:41 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:21:41 Hosting environment: "Development"
+03/31/2021 22:21:41 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:21:54 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:21:55 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1659.7461 ms
+03/31/2021 22:21:57 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:21:57 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 151.3005 ms
+03/31/2021 22:22:02 HTTP "PUT" "/HardwareApi/Producers/1" responded 405 in 0.5775 ms
+03/31/2021 22:25:37 HARDWARE API started..
+03/31/2021 22:25:37 HARDWARE API HostBuilder created
+03/31/2021 22:25:38 Host built
+03/31/2021 22:25:38 Now listening on: "https://localhost:4000"
+03/31/2021 22:25:38 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:25:38 Hosting environment: "Development"
+03/31/2021 22:25:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:25:50 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:25:51 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1683.8822 ms
+03/31/2021 22:25:53 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:25:53 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 156.9499 ms
+03/31/2021 22:25:59 HTTP "PUT" "/HardwareApi/Producers/1" responded 405 in 0.5383 ms
+03/31/2021 22:26:54 HARDWARE API started..
+03/31/2021 22:26:54 HARDWARE API HostBuilder created
+03/31/2021 22:26:55 Host built
+03/31/2021 22:26:55 Now listening on: "https://localhost:4000"
+03/31/2021 22:26:55 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:26:55 Hosting environment: "Development"
+03/31/2021 22:26:55 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:27:20 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:27:21 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1705.8038 ms
+03/31/2021 22:27:22 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:27:23 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 143.2530 ms
+03/31/2021 22:27:42 HTTP "PUT" "/HardwareApi/Producers/1" responded 400 in 66.6101 ms
+03/31/2021 22:28:43 HARDWARE API started..
+03/31/2021 22:28:43 HARDWARE API HostBuilder created
+03/31/2021 22:28:44 Host built
+03/31/2021 22:28:44 Now listening on: "https://localhost:4000"
+03/31/2021 22:28:44 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:28:44 Hosting environment: "Development"
+03/31/2021 22:28:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:28:47 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 48.5465 ms
+03/31/2021 22:28:47 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.2345 ms
+03/31/2021 22:28:59 HTTP "GET" "/HardwareApi/Producers" responded 401 in 10.5844 ms
+03/31/2021 22:29:01 HTTP "GET" "/HardwareApi/Producers" responded 401 in 0.7026 ms
+03/31/2021 22:30:09 HARDWARE API started..
+03/31/2021 22:30:09 HARDWARE API HostBuilder created
+03/31/2021 22:30:10 Host built
+03/31/2021 22:30:11 Now listening on: "https://localhost:4000"
+03/31/2021 22:30:11 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:30:11 Hosting environment: "Development"
+03/31/2021 22:30:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:30:14 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 53.4053 ms
+03/31/2021 22:30:14 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.2304 ms
+03/31/2021 22:30:41 HARDWARE API started..
+03/31/2021 22:30:41 HARDWARE API HostBuilder created
+03/31/2021 22:30:42 Host built
+03/31/2021 22:30:42 Now listening on: "https://localhost:4000"
+03/31/2021 22:30:42 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:30:42 Hosting environment: "Development"
+03/31/2021 22:30:42 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:30:46 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 62.3313 ms
+03/31/2021 22:30:46 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.2463 ms
+03/31/2021 22:30:55 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:30:56 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1853.0692 ms
+03/31/2021 22:31:19 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:31:19 HTTP "GET" "/HardwareApi/Producers" responded 200 in 34.7339 ms
+03/31/2021 22:31:24 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:31:24 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 155.6691 ms
+03/31/2021 22:31:30 HTTP "POST" "/HardwareApi/Producers/1" responded 405 in 0.2744 ms
+03/31/2021 22:33:49 HTTP "POST" "/HardwareApi/Producers/1" responded 405 in 0.1992 ms
+03/31/2021 22:33:53 HTTP "POST" "/HardwareApi/Producers/1" responded 405 in 0.2257 ms
+03/31/2021 22:34:35 HTTP "POST" "/HardwareApi/Producers/1" responded 405 in 0.2728 ms
+03/31/2021 22:34:42 HTTP "PUT" "/HardwareApi/Producers/1" responded 400 in 65.7427 ms
+03/31/2021 22:35:48 HARDWARE API started..
+03/31/2021 22:35:48 HARDWARE API HostBuilder created
+03/31/2021 22:35:49 Host built
+03/31/2021 22:35:49 Now listening on: "https://localhost:4000"
+03/31/2021 22:35:49 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:35:49 Hosting environment: "Development"
+03/31/2021 22:35:49 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:35:52 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 51.6431 ms
+03/31/2021 22:35:52 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.2444 ms
+03/31/2021 22:35:58 HTTP "PUT" "/HardwareApi/Producers/1" responded 400 in 623.0973 ms
+03/31/2021 22:36:06 Application is shutting down...
+03/31/2021 22:36:44 HARDWARE API started..
+03/31/2021 22:36:44 HARDWARE API HostBuilder created
+03/31/2021 22:36:45 Host built
+03/31/2021 22:36:46 Now listening on: "https://localhost:4000"
+03/31/2021 22:36:46 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:36:46 Hosting environment: "Development"
+03/31/2021 22:36:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:36:49 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 57.2394 ms
+03/31/2021 22:36:49 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.2292 ms
+03/31/2021 22:37:00 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:37:01 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1558.1748 ms
+03/31/2021 22:37:02 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:37:02 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 148.3770 ms
+03/31/2021 22:38:19 HARDWARE API started..
+03/31/2021 22:38:19 HARDWARE API HostBuilder created
+03/31/2021 22:38:20 Host built
+03/31/2021 22:38:20 Now listening on: "https://localhost:4000"
+03/31/2021 22:38:20 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:38:20 Hosting environment: "Development"
+03/31/2021 22:38:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:38:24 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 46.7746 ms
+03/31/2021 22:38:24 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.2473 ms
+03/31/2021 22:38:31 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:38:32 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1594.8038 ms
+03/31/2021 22:38:33 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:38:34 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 142.6689 ms
+03/31/2021 22:40:11 HARDWARE API started..
+03/31/2021 22:40:11 HARDWARE API HostBuilder created
+03/31/2021 22:40:12 Host built
+03/31/2021 22:40:13 Now listening on: "https://localhost:4000"
+03/31/2021 22:40:13 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:40:13 Hosting environment: "Development"
+03/31/2021 22:40:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:40:25 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:40:26 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1652.5624 ms
+03/31/2021 22:40:28 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:40:28 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 144.2284 ms
+03/31/2021 22:41:07 HARDWARE API started..
+03/31/2021 22:41:07 HARDWARE API HostBuilder created
+03/31/2021 22:41:08 Host built
+03/31/2021 22:41:09 Now listening on: "https://localhost:4000"
+03/31/2021 22:41:09 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:41:09 Hosting environment: "Development"
+03/31/2021 22:41:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:41:21 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:41:22 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1700.3656 ms
+03/31/2021 22:41:23 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:41:23 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 146.6842 ms
+03/31/2021 22:41:48 ProducersController: request for updating model with id = 1 by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:41:50 Save changes
+03/31/2021 22:41:50 Successful save changes
+03/31/2021 22:43:43 HARDWARE API started..
+03/31/2021 22:43:43 HARDWARE API HostBuilder created
+03/31/2021 22:43:44 Host built
+03/31/2021 22:43:45 Now listening on: "https://localhost:4000"
+03/31/2021 22:43:45 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:43:45 Hosting environment: "Development"
+03/31/2021 22:43:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:43:57 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:43:58 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1671.1532 ms
+03/31/2021 22:44:00 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:44:00 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 142.9324 ms
+03/31/2021 22:44:05 ProducersController: request for updating model with id = 1 by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:44:05 Save changes
+03/31/2021 22:44:05 Successful save changes
+03/31/2021 22:44:05 HTTP "PUT" "/HardwareApi/Producers/1" responded 200 in 167.0645 ms
+03/31/2021 22:44:05 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:44:05 HTTP "GET" "/HardwareApi/Producers" responded 200 in 5.5500 ms
+03/31/2021 22:44:07 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:44:07 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 4.7034 ms
+03/31/2021 22:44:11 ProducersController: request for updating model with id = 1 by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:44:11 Save changes
+03/31/2021 22:44:11 Successful save changes
+03/31/2021 22:44:11 HTTP "PUT" "/HardwareApi/Producers/1" responded 200 in 9.3728 ms
+03/31/2021 22:44:11 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:44:11 HTTP "GET" "/HardwareApi/Producers" responded 200 in 3.7550 ms
+03/31/2021 22:49:59 HARDWARE API started..
+03/31/2021 22:49:59 HARDWARE API HostBuilder created
+03/31/2021 22:50:00 Host built
+03/31/2021 22:50:00 Now listening on: "https://localhost:4000"
+03/31/2021 22:50:00 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:50:00 Hosting environment: "Development"
+03/31/2021 22:50:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:50:16 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:50:17 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1668.8648 ms
+03/31/2021 22:51:58 HARDWARE API started..
+03/31/2021 22:51:58 HARDWARE API HostBuilder created
+03/31/2021 22:51:58 Host built
+03/31/2021 22:51:59 Now listening on: "https://localhost:4000"
+03/31/2021 22:51:59 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:51:59 Hosting environment: "Development"
+03/31/2021 22:51:59 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:52:10 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:52:11 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1664.0859 ms
+03/31/2021 22:54:36 HARDWARE API started..
+03/31/2021 22:54:36 HARDWARE API HostBuilder created
+03/31/2021 22:54:37 Host built
+03/31/2021 22:54:37 Now listening on: "https://localhost:4000"
+03/31/2021 22:54:37 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:54:37 Hosting environment: "Development"
+03/31/2021 22:54:37 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:54:47 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:54:49 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1756.9343 ms
+03/31/2021 22:56:33 HARDWARE API started..
+03/31/2021 22:56:33 HARDWARE API HostBuilder created
+03/31/2021 22:56:34 Host built
+03/31/2021 22:56:35 Now listening on: "https://localhost:4000"
+03/31/2021 22:56:35 Application started. Press Ctrl+C to shut down.
+03/31/2021 22:56:35 Hosting environment: "Development"
+03/31/2021 22:56:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+03/31/2021 22:56:45 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:56:47 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1659.6796 ms
+03/31/2021 22:57:32 ProducersController: request for deleting model with id = 63 by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:58:00 Save changes
+03/31/2021 22:58:01 Successful save changes
+03/31/2021 22:58:05 HTTP "DELETE" "/HardwareApi/Producers/63" responded 200 in 56509.4551 ms
+03/31/2021 22:58:11 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:58:11 HTTP "GET" "/HardwareApi/Producers" responded 200 in 17.6833 ms
+03/31/2021 22:58:19 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+03/31/2021 22:58:19 HTTP "GET" "/HardwareApi/Producers" responded 200 in 5.0784 ms
+03/31/2021 22:58:30 Application is shutting down...

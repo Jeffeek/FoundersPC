@@ -21,27 +21,15 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
     {
         private readonly IApiAccessUsersTokensService _accessUsersTokensService;
         private readonly ILogger<AdminService> _logger;
-        private readonly IMailService _mailService;
-        private readonly PasswordEncryptorService _passwordEncryptorService;
-        private readonly IRegistrationService _registrationService;
+        private readonly IEmailService _emailService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
-        private IManagerService _managerService;
-        private IMapper _mapper;
 
-        public AdminService(IManagerService managerService,
-                            IRegistrationService registrationService,
-                            IMailService mailService,
-                            IMapper mapper,
-                            PasswordEncryptorService passwordEncryptorService,
+        public AdminService(IEmailService emailService,
                             IUnitOfWorkUsersIdentity unitOfWork,
                             IApiAccessUsersTokensService accessUsersTokensService,
                             ILogger<AdminService> logger)
         {
-            _managerService = managerService;
-            _registrationService = registrationService;
-            _mailService = mailService;
-            _mapper = mapper;
-            _passwordEncryptorService = passwordEncryptorService;
+            _emailService = emailService;
             _unitOfWork = unitOfWork;
             _accessUsersTokensService = accessUsersTokensService;
             _logger = logger;
@@ -72,7 +60,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             if (user.Role.RoleTitle == ApplicationRoles.Administrator) return false;
 
             if (sendNotification)
-                await _mailService.SendBlockNotificationAsync(user.Email,
+                await _emailService.SendBlockNotificationAsync(user.Email,
                                                               "You've been blocked, you can't be unblocked.");
 
             user.IsActive = false;
@@ -82,43 +70,6 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
 
             return false;
-        }
-
-        #endregion
-
-        #region New manager registration
-
-        public async Task<bool> RegisterNewManagerAsync(string email, string password)
-        {
-            if (password is null)
-            {
-                _logger.LogError($"{nameof(AdminService)}: Input password was null.");
-
-                throw new ArgumentNullException(nameof(password));
-            }
-
-            if (email is null)
-            {
-                _logger.LogError($"{nameof(AdminService)}: Input email was null");
-
-                throw new ArgumentNullException(nameof(email));
-            }
-
-            var registrationResult = await _registrationService.RegisterManagerAsync(email, password);
-
-            if (registrationResult)
-                return await _mailService.SendRegistrationNotificationAsync(email,
-                                                                            $"Password for entrance: {password}");
-
-            return false;
-        }
-
-        public async Task<bool> RegisterNewManagerAsync(string email)
-        {
-            var random = new Random();
-            var newPassword = _passwordEncryptorService.GeneratePassword(random.Next(10, 25));
-
-            return await RegisterNewManagerAsync(email, newPassword);
         }
 
         #endregion
@@ -204,10 +155,10 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             if (sendNotification)
             {
                 if (block)
-                    await _mailService.SendBlockNotificationAsync(user.Email,
+                    await _emailService.SendBlockNotificationAsync(user.Email,
                                                                   "You've been BLOCKED, you can be unblocked. Contact the administrator for reasons");
                 else
-                    await _mailService.SendUnBlockNotificationAsync(user.Email, "You've been UNBLOCKED.");
+                    await _emailService.SendUnBlockNotificationAsync(user.Email, "You've been UNBLOCKED.");
             }
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);

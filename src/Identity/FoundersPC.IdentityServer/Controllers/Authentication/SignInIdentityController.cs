@@ -8,6 +8,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -15,8 +16,9 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
+    [ApiController]
     [Route("FoundersPCIdentity/Authentication")]
-    public class SignInIdentityController : Controller
+    public class SignInIdentityController : ControllerBase
     {
         private readonly IAuthenticationService _authenticationService;
         private readonly JwtConfiguration _jwtConfiguration;
@@ -74,7 +76,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             userLoginResponse.IsUserExists = true;
             userLoginResponse.JwtToken = token.GetToken();
 
-            return Json(userLoginResponse);
+            return userLoginResponse;
         }
     }
 }

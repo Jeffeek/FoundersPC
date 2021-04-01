@@ -18,17 +18,17 @@ namespace FoundersPC.Identity.Services.Token_Services
     // todo: add mail service to throw token into email
     public class ApiAccessTokenReservationService : IApiAccessTokensReservationService
     {
-        private readonly IMailService _mailService;
+        private readonly IEmailService _emailService;
         private readonly TokenEncryptorService _tokenEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessTokenReservationService(IUnitOfWorkUsersIdentity unitOfWork,
                                                 TokenEncryptorService tokenEncryptorService,
-                                                IMailService mailService)
+                                                IEmailService emailService)
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
-            _mailService = mailService;
+            _emailService = emailService;
         }
 
         public async Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
@@ -61,7 +61,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             // todo: maybe throw exception
             if (!saveChangesResult) return null;
 
-            await _mailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
+            await _emailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
 
             return new ApiAccessUserTokenReadDto
                    {

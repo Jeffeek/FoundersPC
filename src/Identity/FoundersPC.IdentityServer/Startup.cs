@@ -5,6 +5,8 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
 using FoundersPC.Identity.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -63,7 +65,25 @@ namespace FoundersPC.IdentityServer
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
-            services.AddAuthorization();
+            services.AddAuthorization(configuration =>
+                                      {
+                                          configuration.AddPolicy("AdministratorPolicy",
+                                                                  builder =>
+                                                                  {
+                                                                      builder.AddAuthenticationSchemes(JwtBearerDefaults
+                                                                          .AuthenticationScheme);
+                                                                      builder.RequireRole(ApplicationRoles
+                                                                          .Administrator);
+                                                                      builder.RequireAuthenticatedUser();
+                                                                  });
+                                          configuration.AddPolicy("AuthenticatedUserPolicy",
+                                                                  builder =>
+                                                                  {
+                                                                      builder.RequireAuthenticatedUser();
+                                                                      builder.AddAuthenticationSchemes(JwtBearerDefaults
+                                                                          .AuthenticationScheme);
+                                                                  });
+                                      });
 
             services.AddSwaggerGen(c => c.SwaggerDoc("v1",
                                                      new OpenApiInfo

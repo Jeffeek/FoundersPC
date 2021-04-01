@@ -18,19 +18,19 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
     public class UserSettingsService : IUserSettingsService
     {
         private readonly ILogger<UserSettingsService> _logger;
-        private readonly IMailService _mailService;
+        private readonly IEmailService _emailService;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public UserSettingsService(IUnitOfWorkUsersIdentity unitOfWork,
                                    ILogger<UserSettingsService> logger,
                                    PasswordEncryptorService passwordEncryptorService,
-                                   IMailService mailService)
+                                   IEmailService emailService)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
             _passwordEncryptorService = passwordEncryptorService;
-            _mailService = mailService;
+            _emailService = emailService;
         }
 
         #region Change password
@@ -67,7 +67,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             if (!updateResult) return false;
 
-            await _mailService.SendNewPasswordAsync(user.Email, newPassword);
+            await _emailService.SendNewPasswordAsync(user.Email, newPassword);
 
             return await _unitOfWork.SaveChangesAsync() > 0;
         }

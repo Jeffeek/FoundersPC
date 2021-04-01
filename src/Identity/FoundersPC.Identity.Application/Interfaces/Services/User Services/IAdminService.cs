@@ -8,15 +8,6 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 {
     public interface IAdminService
     {
-        Task<bool> RegisterNewManagerAsync(string email, string password);
-
-        /// <summary>
-        ///     Register new manager by email and generates a password(sends via email too)
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        Task<bool> RegisterNewManagerAsync(string email);
-
         /// <summary>
         ///     Blocking the user account by id with all tokens he had
         /// </summary>

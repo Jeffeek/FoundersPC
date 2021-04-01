@@ -30,7 +30,7 @@ namespace FoundersPC.Web.Controllers
 
         [Route("ForgotPassword")]
         [HttpPost]
-        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<ActionResult> ForgotPassword([FromForm] ForgotPasswordViewModel model)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Bad email validation",
@@ -61,7 +61,7 @@ namespace FoundersPC.Web.Controllers
         [Route("SignUp")]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
+        public async Task<IActionResult> SignUpAsync([FromForm] SignUpViewModel signUpModel)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Bad validation/model",
@@ -106,7 +106,7 @@ namespace FoundersPC.Web.Controllers
         [Route("SignIn")]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> SignInAsync(SignInViewModel model)
+        public async Task<IActionResult> SignInAsync([FromForm] SignInViewModel model)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Not valid credentials. Bad model.",

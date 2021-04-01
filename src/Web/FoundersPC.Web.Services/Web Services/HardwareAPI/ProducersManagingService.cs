@@ -56,5 +56,34 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             return responseMessage;
         }
+
+        public async Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken)
+        {
+            // todo: logger
+            if (producer is null) throw new ArgumentNullException(nameof(producer));
+            if (id < 1) throw new ArgumentOutOfRangeException(nameof(id));
+
+            using var client = _clientFactory.CreateClient("Update producer client");
+
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, managerToken, _baseAddresses.HardwareApiBaseAddress);
+
+            var responseMessage = await client.PutAsJsonAsync<ProducerUpdateDto>($"Producers/{id}", producer);
+
+            return responseMessage.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> DeleteProducerAsync(int producerId, string managerToken)
+        {
+            // todo: logger
+            if (producerId < 1) throw new ArgumentOutOfRangeException(nameof(producerId));
+
+            using var client = _clientFactory.CreateClient("Update producer client");
+
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, managerToken, _baseAddresses.HardwareApiBaseAddress);
+
+            var responseMessage = await client.DeleteAsync($"Producers/{producerId}");
+
+            return responseMessage.IsSuccessStatusCode;
+        }
     }
 }

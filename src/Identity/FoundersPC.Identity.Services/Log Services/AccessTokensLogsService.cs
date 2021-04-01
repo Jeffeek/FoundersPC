@@ -71,11 +71,11 @@ namespace FoundersPC.Identity.Services.Log_Services
             return await _unitOfWork.SaveChangesAsync() > 0;
         }
 
-        // 88 - length of the token
+        // 64 - length of the token
         public async Task<bool> LogAsync(string token)
         {
             if (token == null
-                || token.Length != 88)
+                || token.Length != 64)
             {
                 _logger.LogWarning(token is null
                                        ? $"{nameof(AccessTokensLogsService)}: Log: token was null"

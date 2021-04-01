@@ -1,0 +1,276 @@
+04/01/2021 16:06:20 Identity server started..
+04/01/2021 16:06:20 Identity server HostBuilder created
+04/01/2021 16:06:21 Host built
+04/01/2021 16:06:22 Now listening on: "https://localhost:3000"
+04/01/2021 16:06:22 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:06:22 Hosting environment: "Development"
+04/01/2021 16:06:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:06:46 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:06:46 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2059.9062 ms
+04/01/2021 16:31:45 Identity server started..
+04/01/2021 16:31:45 Identity server HostBuilder created
+04/01/2021 16:31:46 Host built
+04/01/2021 16:33:34 Identity server started..
+04/01/2021 16:33:34 Identity server HostBuilder created
+04/01/2021 16:33:34 Host built
+04/01/2021 16:33:35 Now listening on: "https://localhost:3000"
+04/01/2021 16:33:35 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:33:35 Hosting environment: "Development"
+04/01/2021 16:33:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:34:27 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:34:27 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 17785.4030 ms
+04/01/2021 16:43:24 Identity server started..
+04/01/2021 16:43:24 Identity server HostBuilder created
+04/01/2021 16:43:24 Host built
+04/01/2021 16:43:25 Now listening on: "https://localhost:3000"
+04/01/2021 16:43:25 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:43:25 Hosting environment: "Development"
+04/01/2021 16:43:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:43:44 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:43:44 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 8867.4720 ms
+04/01/2021 16:46:42 Identity server started..
+04/01/2021 16:46:42 Identity server HostBuilder created
+04/01/2021 16:46:43 Host built
+04/01/2021 16:46:43 Now listening on: "https://localhost:3000"
+04/01/2021 16:46:43 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:46:43 Hosting environment: "Development"
+04/01/2021 16:46:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:46:55 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:46:56 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1976.5246 ms
+04/01/2021 16:47:15 HTTP "GET" "/FoundersPCIdentity/ByEmail/ilyushin_misha@mail.ru" responded 404 in 1.0921 ms
+04/01/2021 16:49:24 Identity server started..
+04/01/2021 16:49:24 Identity server HostBuilder created
+04/01/2021 16:49:24 Host built
+04/01/2021 16:49:25 Now listening on: "https://localhost:3000"
+04/01/2021 16:49:25 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:49:25 Hosting environment: "Development"
+04/01/2021 16:49:25 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:49:30 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 500 in 25.3703 ms
+System.InvalidOperationException: The constraint reference 'symbol' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 16:49:30 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'symbol' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 16:50:04 Identity server started..
+04/01/2021 16:50:04 Identity server HostBuilder created
+04/01/2021 16:50:05 Host built
+04/01/2021 16:50:05 Now listening on: "https://localhost:3000"
+04/01/2021 16:50:05 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:50:05 Hosting environment: "Development"
+04/01/2021 16:50:05 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:50:29 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 500 in 26.0805 ms
+System.InvalidOperationException: The constraint reference 'symbol' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 16:50:29 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'symbol' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.ParameterPolicyFactory.Create(RoutePatternParameterPart parameter, RoutePatternParameterPolicyReference reference)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.<AddNode>g__Transition|26_0(DfaNode next, <>c__DisplayClass26_0& )
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 16:53:14 Identity server started..
+04/01/2021 16:53:14 Identity server HostBuilder created
+04/01/2021 16:53:14 Host built
+04/01/2021 16:53:15 Now listening on: "https://localhost:3000"
+04/01/2021 16:53:15 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:53:15 Hosting environment: "Development"
+04/01/2021 16:53:15 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:54:43 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:55:17 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 62751.8586 ms
+04/01/2021 16:55:52 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:55:52 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 4277.3504 ms
+04/01/2021 16:55:59 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:55:59 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 19.2004 ms
+04/01/2021 16:56:16 HTTP "GET" "/FoundersPCIdentity//Users" responded 404 in 0.2827 ms
+04/01/2021 16:56:29 Application is shutting down...
+04/01/2021 16:56:54 Identity server started..
+04/01/2021 16:56:55 Identity server HostBuilder created
+04/01/2021 16:56:55 Host built
+04/01/2021 16:56:56 Now listening on: "https://localhost:3000"
+04/01/2021 16:56:56 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:56:56 Hosting environment: "Development"
+04/01/2021 16:56:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:57:05 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:57:06 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2012.2813 ms
+04/01/2021 16:57:07 HTTP "GET" "/FoundersPCIdentity//Users/" responded 404 in 0.1874 ms
+04/01/2021 16:57:42 Application is shutting down...
+04/01/2021 16:58:06 Identity server started..
+04/01/2021 16:58:06 Identity server HostBuilder created
+04/01/2021 16:58:07 Host built
+04/01/2021 16:58:08 Now listening on: "https://localhost:3000"
+04/01/2021 16:58:08 Application started. Press Ctrl+C to shut down.
+04/01/2021 16:58:08 Hosting environment: "Development"
+04/01/2021 16:58:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 16:58:19 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 16:58:20 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1983.3914 ms
+04/01/2021 16:58:22 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 178.9046 ms
+04/01/2021 16:58:39 HTTP "GET" "/FoundersPCIdentity/ByEmail/ilyushin_misha@mail.ru" responded 404 in 0.2405 ms
+04/01/2021 16:59:00 Application is shutting down...
+04/01/2021 17:00:02 Identity server started..
+04/01/2021 17:00:02 Identity server HostBuilder created
+04/01/2021 17:00:03 Host built
+04/01/2021 17:00:04 Now listening on: "https://localhost:3000"
+04/01/2021 17:00:04 Application started. Press Ctrl+C to shut down.
+04/01/2021 17:00:04 Hosting environment: "Development"
+04/01/2021 17:00:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 17:00:11 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 17:00:11 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1995.0826 ms
+04/01/2021 17:00:13 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 178.8114 ms
+04/01/2021 17:00:33 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 9330.8239 ms
+04/01/2021 17:00:52 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 8.6305 ms
+04/01/2021 17:02:20 Identity server started..
+04/01/2021 17:02:21 Identity server HostBuilder created
+04/01/2021 17:02:21 Host built
+04/01/2021 17:02:22 Now listening on: "https://localhost:3000"
+04/01/2021 17:02:22 Application started. Press Ctrl+C to shut down.
+04/01/2021 17:02:22 Hosting environment: "Development"
+04/01/2021 17:02:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 17:02:28 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 17:02:29 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1937.9597 ms
+04/01/2021 17:02:39 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 4421.7863 ms
+04/01/2021 17:02:58 Successful sending an email to: ilyushin_misha@mail.ru
+04/01/2021 17:02:58 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Password" responded 200 in 3058.3629 ms
+04/01/2021 17:02:58 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 7.4596 ms
+04/01/2021 17:03:20 Successful sending an email to: ilyushin_misha@mail.ru
+04/01/2021 17:03:20 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Password" responded 200 in 1070.2666 ms
+04/01/2021 17:03:20 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 8.8222 ms
+04/01/2021 17:03:37 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Notifications" responded 200 in 14.2937 ms
+04/01/2021 17:03:38 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 4.9166 ms
+04/01/2021 17:03:49 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Notifications" responded 200 in 7.9917 ms
+04/01/2021 17:03:49 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 6.2418 ms
+04/01/2021 17:04:07 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Login" responded 200 in 31.3852 ms
+04/01/2021 17:04:07 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 5.5054 ms
+04/01/2021 17:04:19 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Login" responded 200 in 10.9789 ms
+04/01/2021 17:04:19 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 4.5384 ms
+04/01/2021 17:05:11 Identity server started..
+04/01/2021 17:05:12 Identity server HostBuilder created
+04/01/2021 17:05:12 Host built
+04/01/2021 17:05:13 Now listening on: "https://localhost:3000"
+04/01/2021 17:05:13 Application started. Press Ctrl+C to shut down.
+04/01/2021 17:05:13 Hosting environment: "Development"
+04/01/2021 17:05:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 17:05:36 SignInIdentityController: user with email or login = JeffDefaultUser entered the service
+04/01/2021 17:05:37 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 17:05:38 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2980.2932 ms
+04/01/2021 17:05:40 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 403 in 81.3540 ms
+04/01/2021 17:07:11 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 403 in 29.5912 ms
+04/01/2021 17:07:51 Identity server started..
+04/01/2021 17:07:51 Identity server HostBuilder created
+04/01/2021 17:07:52 Host built
+04/01/2021 17:07:52 Now listening on: "https://localhost:3000"
+04/01/2021 17:07:52 Application started. Press Ctrl+C to shut down.
+04/01/2021 17:07:52 Hosting environment: "Development"
+04/01/2021 17:07:52 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 17:08:56 Identity server started..
+04/01/2021 17:08:56 Identity server HostBuilder created
+04/01/2021 17:08:57 Host built
+04/01/2021 17:08:57 Now listening on: "https://localhost:3000"
+04/01/2021 17:08:57 Application started. Press Ctrl+C to shut down.
+04/01/2021 17:08:57 Hosting environment: "Development"
+04/01/2021 17:08:57 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 17:09:07 SignInIdentityController: user with email or login = JeffDefaultUser entered the service
+04/01/2021 17:09:08 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 17:09:09 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 3039.4326 ms
+04/01/2021 17:09:25 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 139.4418 ms
+04/01/2021 17:10:03 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Notifications" responded 200 in 50.6740 ms
+04/01/2021 17:10:05 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 7.4922 ms
+04/01/2021 17:10:13 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Notifications" responded 200 in 10.5524 ms
+04/01/2021 17:10:13 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 8.4681 ms
+04/01/2021 17:10:21 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Notifications" responded 200 in 10.3488 ms
+04/01/2021 17:10:21 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 5.5374 ms
+04/01/2021 17:10:29 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Login" responded 200 in 34.8769 ms
+04/01/2021 17:10:29 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 4.7204 ms
+04/01/2021 17:10:52 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Login" responded 200 in 11.4582 ms
+04/01/2021 17:10:52 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 4.4318 ms
+04/01/2021 17:11:11 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 17:11:11 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Password" responded 200 in 940.3760 ms
+04/01/2021 17:11:11 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 7.1654 ms
+04/01/2021 17:11:28 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 17:11:28 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Password" responded 200 in 1036.9683 ms
+04/01/2021 17:11:28 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 4.5119 ms

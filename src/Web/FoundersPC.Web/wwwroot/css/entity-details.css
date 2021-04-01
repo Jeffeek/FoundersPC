@@ -1,0 +1,10 @@
+﻿.details-info {
+    display: flex;
+    margin-top: 10%;
+    box-shadow: 20px 20px 200px #044d50 !important;
+              }
+
+.details-wrapper
+{
+    color: white;
+}
