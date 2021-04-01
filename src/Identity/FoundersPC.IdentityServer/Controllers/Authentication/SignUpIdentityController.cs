@@ -68,7 +68,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        IsRegistrationSuccessful = true,
                        ResponseException = null,
                        Role = ApplicationRoles.DefaultUser,
-                       JwtToken = token.GetToken()
+                       //JwtToken = token.GetToken()
                    };
         }
 

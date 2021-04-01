@@ -1,4 +1,6 @@
-﻿namespace FoundersPC.RequestResponseShared.Response.Authentication
+﻿using FoundersPC.ApplicationShared;
+
+namespace FoundersPC.RequestResponseShared.Response.Authentication
 {
     public class UserLoginResponse
     {
@@ -14,6 +16,6 @@
 
         public string Role { get; set; } = null;
 
-        public string JwtToken { get; set; } = null;
+        public string JwtToken { get; set; }
     }
 }

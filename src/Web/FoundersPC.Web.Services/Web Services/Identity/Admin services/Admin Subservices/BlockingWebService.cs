@@ -225,7 +225,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
         {
             if (id < 1) return false;
 
-            var client = _clientFactory.CreateClient("Make user inactive client");
+            using var client = _clientFactory.CreateClient("Make user inactive client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -266,7 +266,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
         {
             if (email is null) return false;
 
-            var client = _clientFactory.CreateClient("Make user inactive client");
+            using var client = _clientFactory.CreateClient("Make user inactive client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,

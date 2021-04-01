@@ -899,3 +899,862 @@ System.Net.Http.HttpRequestException: Response status code does not indicate suc
 04/01/2021 18:50:34 HTTP "GET" "/Home/Pricing" responded 200 in 0.6357 ms 112 
 04/01/2021 18:51:40 HTTP "GET" "/Home/Pricing" responded 200 in 126.7353 ms 107 
 04/01/2021 18:51:41 HTTP "GET" "/Home/Pricing" responded 200 in 0.7787 ms 107 
+04/01/2021 19:01:37 Web server started.. 1 
+04/01/2021 19:01:37 Web server HostBuilder created 1 
+04/01/2021 19:02:29 Web server started.. 1 
+04/01/2021 19:02:29 Web server HostBuilder created 1 
+04/01/2021 19:04:56 Web server started.. 1 
+04/01/2021 19:04:56 Web server HostBuilder created 1 
+04/01/2021 19:05:19 Web server started.. 1 
+04/01/2021 19:05:19 Web server HostBuilder created 1 
+04/01/2021 19:06:00 Web server started.. 1 
+04/01/2021 19:06:00 Web server HostBuilder created 1 
+04/01/2021 19:07:27 Web server started.. 1 
+04/01/2021 19:07:27 Web server HostBuilder created 1 
+04/01/2021 19:09:51 Web server started.. 1 
+04/01/2021 19:09:51 Web server HostBuilder created 1 
+04/01/2021 19:10:40 Web server started.. 1 
+04/01/2021 19:10:40 Web server HostBuilder created 1 
+04/01/2021 19:12:15 Web server started.. 1 
+04/01/2021 19:12:16 Web server HostBuilder created 1 
+04/01/2021 19:14:45 Web server started.. 1 
+04/01/2021 19:14:45 Web server HostBuilder created 1 
+04/01/2021 19:29:19 Web server started.. 1 
+04/01/2021 19:29:19 Web server HostBuilder created 1 
+04/01/2021 19:29:24 Host built 1 
+04/01/2021 19:29:24 Now listening on: "https://localhost:9000" 1 
+04/01/2021 19:29:24 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 19:29:24 Hosting environment: "Development" 1 
+04/01/2021 19:29:24 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 19:29:27 An unhandled exception has occurred while executing the request. 4 
+System.InvalidOperationException: No authentication handler is registered for the scheme 'Cookies'. The registered schemes are: Bearer. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("Cookies",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 17
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 19:30:11 Web server started.. 1 
+04/01/2021 19:30:11 Web server HostBuilder created 1 
+04/01/2021 19:30:14 Host built 1 
+04/01/2021 19:30:15 Now listening on: "https://localhost:9000" 1 
+04/01/2021 19:30:15 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 19:30:15 Hosting environment: "Development" 1 
+04/01/2021 19:30:15 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 19:30:18 HTTP "GET" "/" responded 200 in 217.2425 ms 11 
+04/01/2021 19:30:19 HTTP "GET" "/Authentication/SignIn" responded 200 in 237.9745 ms 7 
+04/01/2021 19:30:21 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 4 
+04/01/2021 19:30:21 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 4 
+04/01/2021 19:30:23 Received HTTP response headers after 2129.8663ms - 200 9 
+04/01/2021 19:30:23 End processing HTTP request after 2141.3382ms - 200 9 
+04/01/2021 19:30:37 HTTP "POST" "/Authentication/SignIn" responded 302 in 16260.8046 ms 9 
+04/01/2021 19:30:37 HTTP "GET" "/" responded 200 in 1.2883 ms 12 
+04/01/2021 19:30:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.2999 ms 5 
+04/01/2021 19:30:44 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 7 
+04/01/2021 19:30:44 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 7 
+04/01/2021 19:30:44 Received HTTP response headers after 47.3487ms - 200 6 
+04/01/2021 19:30:44 End processing HTTP request after 49.1768ms - 200 6 
+04/01/2021 19:30:48 HTTP "POST" "/Authentication/SignIn" responded 302 in 4051.3416 ms 6 
+04/01/2021 19:30:48 HTTP "GET" "/" responded 200 in 0.6424 ms 7 
+04/01/2021 19:30:53 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.5645 ms 4 
+04/01/2021 19:30:54 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 4 
+04/01/2021 19:30:54 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 4 
+04/01/2021 19:30:54 Received HTTP response headers after 28.3567ms - 200 9 
+04/01/2021 19:30:54 End processing HTTP request after 30.1508ms - 200 9 
+04/01/2021 19:30:54 HTTP "POST" "/Authentication/SignIn" responded 302 in 31.9240 ms 9 
+04/01/2021 19:30:54 HTTP "GET" "/" responded 200 in 0.6876 ms 4 
+04/01/2021 19:30:55 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.8417 ms 12 
+04/01/2021 19:30:56 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 11 
+04/01/2021 19:30:56 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 11 
+04/01/2021 19:30:56 Received HTTP response headers after 14.7585ms - 200 9 
+04/01/2021 19:30:56 End processing HTTP request after 16.3031ms - 200 9 
+04/01/2021 19:30:56 HTTP "POST" "/Authentication/SignIn" responded 302 in 18.4038 ms 9 
+04/01/2021 19:30:56 HTTP "GET" "/" responded 200 in 0.5597 ms 16 
+04/01/2021 19:31:07 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.8494 ms 4 
+04/01/2021 19:31:11 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 7 
+04/01/2021 19:31:11 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 7 
+04/01/2021 19:31:11 Received HTTP response headers after 13.3727ms - 200 9 
+04/01/2021 19:31:11 End processing HTTP request after 14.7679ms - 200 9 
+04/01/2021 19:31:11 HTTP "POST" "/Authentication/SignIn" responded 302 in 16.7897 ms 9 
+04/01/2021 19:31:11 HTTP "GET" "/" responded 200 in 0.8975 ms 5 
+04/01/2021 19:36:43 Web server started.. 1 
+04/01/2021 19:36:43 Web server HostBuilder created 1 
+04/01/2021 19:36:44 Host built 1 
+04/01/2021 19:36:44 Now listening on: "https://localhost:9000" 1 
+04/01/2021 19:36:44 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 19:36:44 Hosting environment: "Development" 1 
+04/01/2021 19:36:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 19:36:47 HTTP "GET" "/" responded 200 in 213.4471 ms 5 
+04/01/2021 19:36:48 HTTP "GET" "/Authentication/SignIn" responded 200 in 236.2650 ms 11 
+04/01/2021 19:36:49 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 13 
+04/01/2021 19:36:49 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 13 
+04/01/2021 19:36:51 Received HTTP response headers after 2048.9689ms - 200 6 
+04/01/2021 19:36:51 End processing HTTP request after 2061.3903ms - 200 6 
+04/01/2021 19:36:52 HTTP "POST" "/Authentication/SignIn" responded 500 in 2257.1372 ms 6 
+System.InvalidOperationException: Each parameter in constructor 'Void .ctor(FoundersPC.ApplicationShared.JwtConfiguration)' on type 'FoundersPC.ApplicationShared.JwtUserToken' must bind to an object property or field on deserialization. Each parameter name must match with a property or field on the object. The match can be case-insensitive.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ConstructorParameterIncompleteBinding(ConstructorInfo constructorInfo, Type parentType)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonConverter jsonConverter, Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonReaderState& readerState, Boolean isFinalBlock, ReadOnlySpan`1 buffer, JsonSerializerOptions options, ReadStack& state, JsonConverter converterBase)
+   at System.Text.Json.JsonSerializer.ReadAsync[TValue](Stream utf8Json, Type returnType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, Encoding sourceEncoding, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 91
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 120
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 19:36:52 An unhandled exception has occurred while executing the request. 6 
+System.InvalidOperationException: Each parameter in constructor 'Void .ctor(FoundersPC.ApplicationShared.JwtConfiguration)' on type 'FoundersPC.ApplicationShared.JwtUserToken' must bind to an object property or field on deserialization. Each parameter name must match with a property or field on the object. The match can be case-insensitive.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ConstructorParameterIncompleteBinding(ConstructorInfo constructorInfo, Type parentType)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonConverter jsonConverter, Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonReaderState& readerState, Boolean isFinalBlock, ReadOnlySpan`1 buffer, JsonSerializerOptions options, ReadStack& state, JsonConverter converterBase)
+   at System.Text.Json.JsonSerializer.ReadAsync[TValue](Stream utf8Json, Type returnType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, Encoding sourceEncoding, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 91
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 120
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 19:38:16 Web server started.. 1 
+04/01/2021 19:38:16 Web server HostBuilder created 1 
+04/01/2021 19:38:16 Host built 1 
+04/01/2021 19:38:17 Now listening on: "https://localhost:9000" 1 
+04/01/2021 19:38:17 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 19:38:17 Hosting environment: "Development" 1 
+04/01/2021 19:38:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 19:38:19 HTTP "GET" "/" responded 200 in 234.4036 ms 4 
+04/01/2021 19:38:21 HTTP "GET" "/Authentication/SignIn" responded 200 in 246.9923 ms 11 
+04/01/2021 19:38:38 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 4 
+04/01/2021 19:38:38 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 4 
+04/01/2021 19:39:27 Received HTTP response headers after 49150.3169ms - 200 9 
+04/01/2021 19:39:27 End processing HTTP request after 49161.0692ms - 200 9 
+04/01/2021 19:40:10 HTTP "POST" "/Authentication/SignIn" responded 500 in 108857.1515 ms 9 
+System.InvalidOperationException: Each parameter in constructor 'Void .ctor(FoundersPC.ApplicationShared.JwtConfiguration)' on type 'FoundersPC.ApplicationShared.JwtUserToken' must bind to an object property or field on deserialization. Each parameter name must match with a property or field on the object. The match can be case-insensitive.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ConstructorParameterIncompleteBinding(ConstructorInfo constructorInfo, Type parentType)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonConverter jsonConverter, Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonReaderState& readerState, Boolean isFinalBlock, ReadOnlySpan`1 buffer, JsonSerializerOptions options, ReadStack& state, JsonConverter converterBase)
+   at System.Text.Json.JsonSerializer.ReadAsync[TValue](Stream utf8Json, Type returnType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, Encoding sourceEncoding, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 91
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 120
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 19:40:10 An unhandled exception has occurred while executing the request. 9 
+System.InvalidOperationException: Each parameter in constructor 'Void .ctor(FoundersPC.ApplicationShared.JwtConfiguration)' on type 'FoundersPC.ApplicationShared.JwtUserToken' must bind to an object property or field on deserialization. Each parameter name must match with a property or field on the object. The match can be case-insensitive.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ConstructorParameterIncompleteBinding(ConstructorInfo constructorInfo, Type parentType)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonConverter jsonConverter, Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonReaderState& readerState, Boolean isFinalBlock, ReadOnlySpan`1 buffer, JsonSerializerOptions options, ReadStack& state, JsonConverter converterBase)
+   at System.Text.Json.JsonSerializer.ReadAsync[TValue](Stream utf8Json, Type returnType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, Encoding sourceEncoding, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 91
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 120
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 19:43:30 Web server started.. 1 
+04/01/2021 19:43:30 Web server HostBuilder created 1 
+04/01/2021 19:43:31 Host built 1 
+04/01/2021 19:43:31 Now listening on: "https://localhost:9000" 1 
+04/01/2021 19:43:31 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 19:43:31 Hosting environment: "Development" 1 
+04/01/2021 19:43:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 19:43:34 HTTP "GET" "/" responded 200 in 230.5279 ms 4 
+04/01/2021 19:43:35 HTTP "GET" "/Authentication/SignIn" responded 200 in 238.1512 ms 4 
+04/01/2021 19:43:53 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 15 
+04/01/2021 19:43:53 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 15 
+04/01/2021 19:44:16 Received HTTP response headers after 22914.2607ms - 200 11 
+04/01/2021 19:44:16 End processing HTTP request after 22927.2555ms - 200 11 
+04/01/2021 19:45:05 HTTP "POST" "/Authentication/SignIn" responded 302 in 88904.5292 ms 11 
+04/01/2021 19:45:05 HTTP "GET" "/" responded 200 in 1.4923 ms 24 
+04/01/2021 19:45:10 HTTP "GET" "/Authentication/SignIn" responded 200 in 4.6784 ms 21 
+04/01/2021 19:45:16 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 21 
+04/01/2021 19:45:16 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 21 
+04/01/2021 19:45:19 Received HTTP response headers after 3806.44ms - 200 19 
+04/01/2021 19:45:19 End processing HTTP request after 3809.3248ms - 200 19 
+04/01/2021 19:45:23 HTTP "POST" "/Authentication/SignIn" responded 302 in 11208.9051 ms 19 
+04/01/2021 19:45:23 HTTP "GET" "/" responded 200 in 0.8734 ms 9 
+04/01/2021 19:45:27 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.2893 ms 22 
+04/01/2021 19:45:31 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 24 
+04/01/2021 19:45:31 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 24 
+04/01/2021 19:45:31 Received HTTP response headers after 28.1532ms - 200 19 
+04/01/2021 19:45:31 End processing HTTP request after 29.849ms - 200 19 
+04/01/2021 19:45:31 HTTP "POST" "/Authentication/SignIn" responded 302 in 31.7531 ms 19 
+04/01/2021 19:45:31 HTTP "GET" "/" responded 200 in 1.2163 ms 9 
+04/01/2021 20:14:21 Web server started.. 1 
+04/01/2021 20:14:21 Web server HostBuilder created 1 
+04/01/2021 20:14:22 Host built 1 
+04/01/2021 20:14:23 Application startup exception 1 
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsManager`1.Get(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.get_Value()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+04/01/2021 20:14:23 Error when tried to launch the Web server app 1 
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsManager`1.Get(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.get_Value()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at FoundersPC.Web.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Program.cs:line 38
+04/01/2021 20:15:00 Web server started.. 1 
+04/01/2021 20:15:06 Web server HostBuilder created 1 
+04/01/2021 20:16:28 Host built 1 
+04/01/2021 20:16:38 Application startup exception 1 
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsManager`1.Get(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.get_Value()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+04/01/2021 20:17:42 Web server started.. 1 
+04/01/2021 20:17:42 Web server HostBuilder created 1 
+04/01/2021 20:17:43 Host built 1 
+04/01/2021 20:17:47 Now listening on: "https://localhost:9000" 1 
+04/01/2021 20:17:47 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 20:17:47 Hosting environment: "Development" 1 
+04/01/2021 20:17:47 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 20:17:49 HTTP "GET" "/" responded 200 in 170.3510 ms 4 
+04/01/2021 20:17:50 HTTP "GET" "/Authentication/SignIn" responded 500 in 165.9386 ms 4 
+System.InvalidOperationException: Unable to resolve service for type 'FoundersPC.ApplicationShared.JwtConfiguration' while attempting to activate 'FoundersPC.Web.Controllers.AuthenticationController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method18(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 20:17:50 An unhandled exception has occurred while executing the request. 4 
+System.InvalidOperationException: Unable to resolve service for type 'FoundersPC.ApplicationShared.JwtConfiguration' while attempting to activate 'FoundersPC.Web.Controllers.AuthenticationController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method18(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 20:18:38 Web server started.. 1 
+04/01/2021 20:18:38 Web server HostBuilder created 1 
+04/01/2021 20:18:39 Host built 1 
+04/01/2021 20:18:39 Now listening on: "https://localhost:9000" 1 
+04/01/2021 20:18:39 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 20:18:39 Hosting environment: "Development" 1 
+04/01/2021 20:18:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 20:18:42 HTTP "GET" "/" responded 200 in 169.2448 ms 5 
+04/01/2021 20:18:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 239.4508 ms 4 
+04/01/2021 20:18:44 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 5 
+04/01/2021 20:18:44 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 5 
+04/01/2021 20:18:47 Received HTTP response headers after 2142.8217ms - 200 7 
+04/01/2021 20:18:47 End processing HTTP request after 2154.5659ms - 200 7 
+04/01/2021 20:18:47 HTTP "POST" "/Authentication/SignIn" responded 302 in 2264.0564 ms 7 
+04/01/2021 20:18:47 HTTP "GET" "/" responded 200 in 2.5544 ms 5 
+04/01/2021 20:18:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 6 
+04/01/2021 20:18:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 6 
+04/01/2021 20:18:49 Received HTTP response headers after 119.9235ms - 500 7 
+04/01/2021 20:18:49 End processing HTTP request after 121.746ms - 500 7 
+04/01/2021 20:18:49 HTTP "GET" "/Admin/UsersTable" responded 500 in 274.6916 ms 7 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetAllUsersAsync(String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 67
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 56
+   at FoundersPC.Web.Controllers.Administration.AdminController.UsersTable() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 74
+   at lambda_method45(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 20:18:50 An unhandled exception has occurred while executing the request. 7 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetAllUsersAsync(String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 67
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 56
+   at FoundersPC.Web.Controllers.Administration.AdminController.UsersTable() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 74
+   at lambda_method45(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 20:19:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru 5 
+04/01/2021 20:19:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru 5 
+04/01/2021 20:19:10 Received HTTP response headers after 101.7898ms - 500 7 
+04/01/2021 20:19:10 End processing HTTP request after 103.8949ms - 500 7 
+04/01/2021 20:19:10 HTTP "GET" "/Account" responded 500 in 180.6064 ms 7 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetUserByEmailAsync(String email, String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 54
+   at FoundersPC.Web.Controllers.AccountController.Profile() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AccountController.cs:line 54
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 20:19:10 An unhandled exception has occurred while executing the request. 7 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetUserByEmailAsync(String email, String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 54
+   at FoundersPC.Web.Controllers.AccountController.Profile() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AccountController.cs:line 54
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 20:19:18 Application is shutting down... 2 
+04/01/2021 20:20:08 Web server started.. 1 
+04/01/2021 20:20:08 Web server HostBuilder created 1 
+04/01/2021 20:20:09 Host built 1 
+04/01/2021 20:20:09 Now listening on: "https://localhost:9000" 1 
+04/01/2021 20:20:09 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 20:20:09 Hosting environment: "Development" 1 
+04/01/2021 20:20:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 20:20:12 HTTP "GET" "/" responded 200 in 193.9231 ms 13 
+04/01/2021 20:20:13 HTTP "GET" "/Authentication/SignIn" responded 200 in 251.1738 ms 6 
+04/01/2021 20:20:15 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 8 
+04/01/2021 20:20:15 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 8 
+04/01/2021 20:20:17 Received HTTP response headers after 2242.9378ms - 200 11 
+04/01/2021 20:20:17 End processing HTTP request after 2255.7479ms - 200 11 
+04/01/2021 20:20:17 HTTP "POST" "/Authentication/SignIn" responded 302 in 2375.9826 ms 11 
+04/01/2021 20:20:17 HTTP "GET" "/" responded 200 in 3.2799 ms 4 
+04/01/2021 20:20:47 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:20:47 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:20:47 Received HTTP response headers after 122.8503ms - 500 11 
+04/01/2021 20:20:47 End processing HTTP request after 126.9402ms - 500 11 
+04/01/2021 20:20:47 HTTP "GET" "/Admin/UsersTable" responded 500 in 27793.7943 ms 11 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetAllUsersAsync(String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 67
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 56
+   at FoundersPC.Web.Controllers.Administration.AdminController.UsersTable() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 74
+   at lambda_method45(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 20:20:47 An unhandled exception has occurred while executing the request. 11 
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetAllUsersAsync(String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 67
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUsersAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 56
+   at FoundersPC.Web.Controllers.Administration.AdminController.UsersTable() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 74
+   at lambda_method45(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 20:21:12 Application is shutting down... 2 
+04/01/2021 20:22:45 Web server started.. 1 
+04/01/2021 20:22:45 Web server HostBuilder created 1 
+04/01/2021 20:22:46 Host built 1 
+04/01/2021 20:22:46 Now listening on: "https://localhost:9000" 1 
+04/01/2021 20:22:46 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 20:22:46 Hosting environment: "Development" 1 
+04/01/2021 20:22:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 20:22:49 HTTP "GET" "/" responded 200 in 171.5657 ms 11 
+04/01/2021 20:22:52 HTTP "GET" "/Authentication/SignIn" responded 200 in 248.6823 ms 8 
+04/01/2021 20:22:53 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 5 
+04/01/2021 20:22:53 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 5 
+04/01/2021 20:22:55 Received HTTP response headers after 2110.0827ms - 200 6 
+04/01/2021 20:22:55 End processing HTTP request after 2120.9952ms - 200 6 
+04/01/2021 20:22:55 HTTP "POST" "/Authentication/SignIn" responded 302 in 2238.4791 ms 4 
+04/01/2021 20:22:55 HTTP "GET" "/" responded 200 in 2.6450 ms 4 
+04/01/2021 20:23:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:23:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:23:01 Received HTTP response headers after 193.7873ms - 200 6 
+04/01/2021 20:23:01 End processing HTTP request after 195.3473ms - 200 6 
+04/01/2021 20:23:01 HTTP "GET" "/Admin/UsersTable" responded 200 in 4131.5408 ms 6 
+04/01/2021 20:23:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru 16 
+04/01/2021 20:23:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru 16 
+04/01/2021 20:23:06 Received HTTP response headers after 32.7565ms - 200 10 
+04/01/2021 20:23:06 End processing HTTP request after 34.5727ms - 200 10 
+04/01/2021 20:23:06 HTTP "GET" "/Account" responded 200 in 93.3058 ms 10 
+04/01/2021 20:23:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:23:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:23:08 Received HTTP response headers after 12.6228ms - 200 6 
+04/01/2021 20:23:08 End processing HTTP request after 14.3052ms - 200 6 
+04/01/2021 20:23:08 HTTP "GET" "/Admin/UsersTable" responded 200 in 18.1418 ms 6 
+04/01/2021 20:23:20 HTTP "GET" "/" responded 200 in 0.8106 ms 11 
+04/01/2021 20:23:23 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:23:23 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:23:23 Received HTTP response headers after 11.9076ms - 200 10 
+04/01/2021 20:23:23 End processing HTTP request after 29.8575ms - 200 10 
+04/01/2021 20:23:23 HTTP "GET" "/Admin/UsersTable" responded 200 in 42.4745 ms 10 
+04/01/2021 20:23:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru 12 
+04/01/2021 20:23:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru 12 
+04/01/2021 20:23:24 Received HTTP response headers after 10.9164ms - 200 9 
+04/01/2021 20:23:24 End processing HTTP request after 15.2664ms - 200 9 
+04/01/2021 20:23:24 HTTP "GET" "/Account" responded 200 in 19.4154 ms 9 
+04/01/2021 20:23:54 Web server started.. 1 
+04/01/2021 20:23:54 Web server HostBuilder created 1 
+04/01/2021 20:23:55 Host built 1 
+04/01/2021 20:23:56 Now listening on: "https://localhost:9000" 1 
+04/01/2021 20:23:56 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 20:23:56 Hosting environment: "Development" 1 
+04/01/2021 20:23:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 20:23:58 HTTP "GET" "/" responded 200 in 196.0503 ms 8 
+04/01/2021 20:24:19 HTTP "GET" "/Authentication/SignIn" responded 200 in 254.8705 ms 4 
+04/01/2021 20:24:20 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 14 
+04/01/2021 20:24:20 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 14 
+04/01/2021 20:24:22 Received HTTP response headers after 2245.5039ms - 200 10 
+04/01/2021 20:24:22 End processing HTTP request after 2256.7854ms - 200 10 
+04/01/2021 20:24:22 HTTP "POST" "/Authentication/SignIn" responded 302 in 2397.7444 ms 10 
+04/01/2021 20:24:22 HTTP "GET" "/" responded 200 in 3.7356 ms 5 
+04/01/2021 20:24:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:24:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:24:25 Received HTTP response headers after 206.364ms - 200 21 
+04/01/2021 20:24:25 End processing HTTP request after 207.9978ms - 200 21 
+04/01/2021 20:24:25 HTTP "GET" "/Admin/UsersTable" responded 200 in 289.9845 ms 21 
+04/01/2021 20:24:37 BlockingWebService: block user with id = 0. Error 17 
+04/01/2021 20:24:37 HTTP "GET" "/Admin/BlockUser/5" responded 302 in 14.4023 ms 17 
+04/01/2021 20:24:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:24:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:24:37 Received HTTP response headers after 16.4085ms - 200 10 
+04/01/2021 20:24:37 End processing HTTP request after 18.2621ms - 200 10 
+04/01/2021 20:24:37 HTTP "GET" "/Admin/UsersTable" responded 200 in 22.9748 ms 10 
+04/01/2021 20:24:42 BlockingWebService: block user with id = 0. Error 8 
+04/01/2021 20:24:42 HTTP "GET" "/Admin/BlockUser/5" responded 302 in 1.8266 ms 8 
+04/01/2021 20:24:42 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:24:42 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:24:42 Received HTTP response headers after 12.7199ms - 200 10 
+04/01/2021 20:24:42 End processing HTTP request after 14.1694ms - 200 10 
+04/01/2021 20:24:42 HTTP "GET" "/Admin/UsersTable" responded 200 in 16.6373 ms 10 
+04/01/2021 20:25:49 Web server started.. 1 
+04/01/2021 20:25:49 Web server HostBuilder created 1 
+04/01/2021 20:25:49 Host built 1 
+04/01/2021 20:25:50 Now listening on: "https://localhost:9000" 1 
+04/01/2021 20:25:50 Application started. Press Ctrl+C to shut down. 1 
+04/01/2021 20:25:50 Hosting environment: "Development" 1 
+04/01/2021 20:25:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web" 1 
+04/01/2021 20:25:52 HTTP "GET" "/" responded 200 in 193.5336 ms 4 
+04/01/2021 20:25:54 HTTP "GET" "/Authentication/SignIn" responded 200 in 251.1517 ms 4 
+04/01/2021 20:25:55 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 8 
+04/01/2021 20:25:55 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 8 
+04/01/2021 20:25:57 Received HTTP response headers after 2113.8217ms - 200 6 
+04/01/2021 20:25:57 End processing HTTP request after 2124.7195ms - 200 6 
+04/01/2021 20:25:57 HTTP "POST" "/Authentication/SignIn" responded 302 in 2236.8160 ms 6 
+04/01/2021 20:25:57 HTTP "GET" "/" responded 200 in 2.5290 ms 8 
+04/01/2021 20:26:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:00 Received HTTP response headers after 197.6387ms - 200 9 
+04/01/2021 20:26:00 End processing HTTP request after 200.1217ms - 200 9 
+04/01/2021 20:26:00 HTTP "GET" "/Admin/UsersTable" responded 200 in 282.8531 ms 9 
+04/01/2021 20:26:01 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 15 
+04/01/2021 20:26:01 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 15 
+04/01/2021 20:26:03 Received HTTP response headers after 1769.4647ms - 200 6 
+04/01/2021 20:26:03 End processing HTTP request after 1771.3889ms - 200 6 
+04/01/2021 20:26:03 BlockingWebService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 6 
+04/01/2021 20:26:03 HTTP "GET" "/Admin/BlockUser/5" responded 302 in 1787.5936 ms 6 
+04/01/2021 20:26:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:26:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:26:03 Received HTTP response headers after 10.1209ms - 200 6 
+04/01/2021 20:26:03 End processing HTTP request after 11.6651ms - 200 6 
+04/01/2021 20:26:03 HTTP "GET" "/Admin/UsersTable" responded 200 in 16.4640 ms 6 
+04/01/2021 20:26:05 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 16 
+04/01/2021 20:26:05 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 16 
+04/01/2021 20:26:06 Received HTTP response headers after 921.2895ms - 200 9 
+04/01/2021 20:26:06 End processing HTTP request after 923.1661ms - 200 9 
+04/01/2021 20:26:06 BlockingWebService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+04/01/2021 20:26:06 HTTP "GET" "/Admin/UnblockUser/5" responded 302 in 932.4959 ms 9 
+04/01/2021 20:26:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 13 
+04/01/2021 20:26:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 13 
+04/01/2021 20:26:06 Received HTTP response headers after 9.9898ms - 200 6 
+04/01/2021 20:26:06 End processing HTTP request after 12.1076ms - 200 6 
+04/01/2021 20:26:06 HTTP "GET" "/Admin/UsersTable" responded 200 in 14.5607 ms 6 
+04/01/2021 20:26:12 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 5 
+04/01/2021 20:26:12 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 5 
+04/01/2021 20:26:13 Received HTTP response headers after 976.7233ms - 200 10 
+04/01/2021 20:26:13 End processing HTTP request after 978.6956ms - 200 10 
+04/01/2021 20:26:13 BlockingWebService: block user: user with id = 5 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 5 was not blocked at this byIdRequest. 10 
+04/01/2021 20:26:13 HTTP "GET" "/Admin/BlockUser/5" responded 302 in 981.4289 ms 10 
+04/01/2021 20:26:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:26:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:26:13 Received HTTP response headers after 4.6188ms - 200 9 
+04/01/2021 20:26:13 End processing HTTP request after 5.8379ms - 200 9 
+04/01/2021 20:26:13 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.2583 ms 9 
+04/01/2021 20:26:14 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 16 
+04/01/2021 20:26:14 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 16 
+04/01/2021 20:26:14 Received HTTP response headers after 8.4666ms - 200 9 
+04/01/2021 20:26:14 End processing HTTP request after 11.771ms - 200 9 
+04/01/2021 20:26:14 BlockingWebService: block user: user with id = 1 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 1 was not blocked at this byIdRequest. 9 
+04/01/2021 20:26:14 HTTP "GET" "/Admin/BlockUser/1" responded 302 in 14.3293 ms 9 
+04/01/2021 20:26:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 16 
+04/01/2021 20:26:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 16 
+04/01/2021 20:26:14 Received HTTP response headers after 4.6387ms - 200 6 
+04/01/2021 20:26:14 End processing HTTP request after 6.6357ms - 200 6 
+04/01/2021 20:26:14 HTTP "GET" "/Admin/UsersTable" responded 200 in 9.1121 ms 6 
+04/01/2021 20:26:15 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 5 
+04/01/2021 20:26:15 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 5 
+04/01/2021 20:26:16 Received HTTP response headers after 955.5154ms - 200 9 
+04/01/2021 20:26:16 End processing HTTP request after 958.0819ms - 200 9 
+04/01/2021 20:26:16 BlockingWebService: unblock user: user with id = 5 was unblocked by ilyushin_misha@mail.ru 9 
+04/01/2021 20:26:16 HTTP "GET" "/Admin/UnblockUser/5" responded 302 in 962.1116 ms 9 
+04/01/2021 20:26:16 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:26:16 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 4 
+04/01/2021 20:26:16 Received HTTP response headers after 4.666ms - 200 6 
+04/01/2021 20:26:16 End processing HTTP request after 6.0377ms - 200 6 
+04/01/2021 20:26:16 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.4424 ms 6 
+04/01/2021 20:26:19 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 16 
+04/01/2021 20:26:19 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 16 
+04/01/2021 20:26:20 Received HTTP response headers after 963.5386ms - 200 10 
+04/01/2021 20:26:20 End processing HTTP request after 965.3324ms - 200 10 
+04/01/2021 20:26:20 BlockingWebService: block user: user with id = 4 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 4 was not blocked at this byIdRequest. 10 
+04/01/2021 20:26:20 HTTP "GET" "/Admin/BlockUser/4" responded 302 in 968.5666 ms 10 
+04/01/2021 20:26:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 16 
+04/01/2021 20:26:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 16 
+04/01/2021 20:26:20 Received HTTP response headers after 4.5193ms - 200 10 
+04/01/2021 20:26:20 End processing HTTP request after 6.0717ms - 200 10 
+04/01/2021 20:26:20 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.7077 ms 10 
+04/01/2021 20:26:21 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 5 
+04/01/2021 20:26:21 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 5 
+04/01/2021 20:26:22 Received HTTP response headers after 1026.9249ms - 200 6 
+04/01/2021 20:26:22 End processing HTTP request after 1029.6422ms - 200 6 
+04/01/2021 20:26:22 BlockingWebService: unblock user: user with id = 4 was unblocked by ilyushin_misha@mail.ru 6 
+04/01/2021 20:26:22 HTTP "GET" "/Admin/UnblockUser/4" responded 302 in 1031.9472 ms 6 
+04/01/2021 20:26:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 11 
+04/01/2021 20:26:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 11 
+04/01/2021 20:26:22 Received HTTP response headers after 4.6623ms - 200 10 
+04/01/2021 20:26:22 End processing HTTP request after 6.2826ms - 200 10 
+04/01/2021 20:26:22 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.8588 ms 10 
+04/01/2021 20:26:29 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 11 
+04/01/2021 20:26:29 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ById 11 
+04/01/2021 20:26:30 Received HTTP response headers after 1006.718ms - 200 9 
+04/01/2021 20:26:30 End processing HTTP request after 1008.382ms - 200 9 
+04/01/2021 20:26:30 BlockingWebService: block user: user with id = 4 was not blocked by ilyushin_misha@mail.ru. Error = User with id = 4 was not blocked at this byIdRequest. 9 
+04/01/2021 20:26:30 HTTP "GET" "/Admin/BlockUser/4" responded 302 in 1021.5849 ms 9 
+04/01/2021 20:26:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:26:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 5 
+04/01/2021 20:26:30 Received HTTP response headers after 4.2969ms - 200 10 
+04/01/2021 20:26:30 End processing HTTP request after 6.8077ms - 200 10 
+04/01/2021 20:26:30 HTTP "GET" "/Admin/UsersTable" responded 200 in 13.8299 ms 10 
+04/01/2021 20:26:32 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.3440 ms 14 
+04/01/2021 20:26:32 HTTP "GET" "/" responded 200 in 0.7142 ms 5 
+04/01/2021 20:26:33 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.5296 ms 14 
+04/01/2021 20:26:37 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 15 
+04/01/2021 20:26:37 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 15 
+04/01/2021 20:26:37 Received HTTP response headers after 15.1503ms - 200 6 
+04/01/2021 20:26:37 End processing HTTP request after 16.9407ms - 200 6 
+04/01/2021 20:26:37 HTTP "POST" "/Authentication/SignIn" responded 302 in 19.9118 ms 6 
+04/01/2021 20:26:37 HTTP "GET" "/Error/401" responded 200 in 8.8011 ms 8 
+04/01/2021 20:26:46 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.4580 ms 13 
+04/01/2021 20:26:47 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 13 
+04/01/2021 20:26:47 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 13 
+04/01/2021 20:26:47 Received HTTP response headers after 11.6536ms - 200 6 
+04/01/2021 20:26:47 End processing HTTP request after 13.3577ms - 200 6 
+04/01/2021 20:26:47 HTTP "POST" "/Authentication/SignIn" responded 302 in 16.1290 ms 6 
+04/01/2021 20:26:47 HTTP "GET" "/" responded 200 in 1.1324 ms 15 
+04/01/2021 20:26:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:49 Received HTTP response headers after 4.3392ms - 200 10 
+04/01/2021 20:26:49 End processing HTTP request after 6.6907ms - 200 10 
+04/01/2021 20:26:49 HTTP "GET" "/Admin/UsersTable" responded 200 in 10.1751 ms 10 
+04/01/2021 20:26:50 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 13 
+04/01/2021 20:26:50 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ById 13 
+04/01/2021 20:26:51 Received HTTP response headers after 1109.5398ms - 200 6 
+04/01/2021 20:26:51 End processing HTTP request after 1111.423ms - 200 6 
+04/01/2021 20:26:51 BlockingWebService: unblock user: user with id = 4 was unblocked by ilyushin_misha@mail.ru 6 
+04/01/2021 20:26:51 HTTP "GET" "/Admin/UnblockUser/4" responded 302 in 1115.2047 ms 6 
+04/01/2021 20:26:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:51 Received HTTP response headers after 4.0737ms - 200 6 
+04/01/2021 20:26:51 End processing HTTP request after 6.159ms - 200 6 
+04/01/2021 20:26:51 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.6218 ms 6 
+04/01/2021 20:26:53 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:53 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users 8 
+04/01/2021 20:26:53 Received HTTP response headers after 4.9709ms - 200 19 
+04/01/2021 20:26:53 End processing HTTP request after 6.6629ms - 200 19 
+04/01/2021 20:26:53 HTTP "GET" "/Admin/UsersTable" responded 200 in 8.9331 ms 19 
+04/01/2021 20:26:54 HTTP "GET" "/Authentication/LogOut" responded 302 in 0.8758 ms 8 
+04/01/2021 20:26:54 HTTP "GET" "/" responded 200 in 0.6217 ms 15 
+04/01/2021 20:26:55 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.6830 ms 14 
+04/01/2021 20:26:59 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 13 
+04/01/2021 20:26:59 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn 13 
+04/01/2021 20:26:59 Received HTTP response headers after 8.5875ms - 200 9 
+04/01/2021 20:26:59 End processing HTTP request after 11.0257ms - 200 9 
+04/01/2021 20:26:59 HTTP "POST" "/Authentication/SignIn" responded 302 in 13.8552 ms 9 
+04/01/2021 20:26:59 HTTP "GET" "/" responded 200 in 0.7148 ms 8 
+04/01/2021 20:27:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com 8 
+04/01/2021 20:27:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com 8 
+04/01/2021 20:27:05 Received HTTP response headers after 26.2447ms - 200 6 
+04/01/2021 20:27:05 End processing HTTP request after 28.2491ms - 200 6 
+04/01/2021 20:27:05 HTTP "GET" "/Account" responded 200 in 83.3492 ms 6 

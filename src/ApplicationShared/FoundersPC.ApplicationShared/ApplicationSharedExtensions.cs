@@ -25,7 +25,7 @@ namespace FoundersPC.ApplicationShared
 
             if (jwtConfigService is null) throw new Exception();
 
-            if (!(jwtConfigService.ImplementationInstance is JwtConfiguration service)) throw new Exception();
+            if (!(jwtConfigService.ImplementationInstance is JwtConfiguration service)) throw new Exception("Bearer settings middleware not found");
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,

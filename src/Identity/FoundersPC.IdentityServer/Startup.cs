@@ -29,9 +29,8 @@ namespace FoundersPC.IdentityServer
                 .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json",
                              false,
                              true)
-                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\JwtSettings.json",
-                             false,
-                             true)
+                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                             false)
                 .AddConfiguration(configuration, false);
 
             Configuration = builder.Build();

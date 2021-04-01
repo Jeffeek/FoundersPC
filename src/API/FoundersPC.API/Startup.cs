@@ -26,9 +26,8 @@ namespace FoundersPC.API
             var builder = new ConfigurationBuilder();
 
             builder
-                .AddJsonFile($"{Directory.GetCurrentDirectory()}\\JwtSettings.json",
-                             false,
-                             true)
+                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                             false)
                 .AddConfiguration(configuration, false);
 
             Configuration = builder.Build();
@@ -39,18 +38,6 @@ namespace FoundersPC.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors(options =>
-            //                 {
-            //                     options.AddPolicy("WebClientPolicy",
-            //                                       builder =>
-            //                                       {
-            //                                           builder.WithOrigins("http://localhost:9000")
-            //                                                  .AllowAnyMethod()
-            //                                                  .AllowAnyHeader()
-            //                                                  .AllowCredentials();
-            //                                       });
-            //                 });
-
             services.AddLogging(config => config.AddSerilog(Log.Logger));
 
             services.AddControllers();

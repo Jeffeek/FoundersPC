@@ -274,3 +274,358 @@ System.InvalidOperationException: The constraint reference 'symbol' could not be
 04/01/2021 17:11:28 Successful sending an email to: ilyushinmisha@yandex.ru
 04/01/2021 17:11:28 HTTP "PUT" "/FoundersPCIdentity/Users/SettingsChange/Password" responded 200 in 1036.9683 ms
 04/01/2021 17:11:28 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 4.5119 ms
+04/01/2021 19:29:19 Identity server started..
+04/01/2021 19:29:19 Identity server HostBuilder created
+04/01/2021 19:29:24 Host built
+04/01/2021 19:29:24 Now listening on: "https://localhost:3000"
+04/01/2021 19:29:24 Application started. Press Ctrl+C to shut down.
+04/01/2021 19:29:24 Hosting environment: "Development"
+04/01/2021 19:29:24 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 19:30:11 Identity server started..
+04/01/2021 19:30:11 Identity server HostBuilder created
+04/01/2021 19:30:14 Host built
+04/01/2021 19:30:15 Now listening on: "https://localhost:3000"
+04/01/2021 19:30:15 Application started. Press Ctrl+C to shut down.
+04/01/2021 19:30:15 Hosting environment: "Development"
+04/01/2021 19:30:15 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 19:30:23 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:30:23 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1973.4688 ms
+04/01/2021 19:30:44 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:30:44 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 41.7225 ms
+04/01/2021 19:30:54 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:30:54 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 22.5964 ms
+04/01/2021 19:30:56 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:30:56 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 11.1832 ms
+04/01/2021 19:31:11 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:31:11 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 11.1755 ms
+04/01/2021 19:36:43 Identity server started..
+04/01/2021 19:36:43 Identity server HostBuilder created
+04/01/2021 19:36:44 Host built
+04/01/2021 19:36:44 Now listening on: "https://localhost:3000"
+04/01/2021 19:36:44 Application started. Press Ctrl+C to shut down.
+04/01/2021 19:36:44 Hosting environment: "Development"
+04/01/2021 19:36:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 19:36:51 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:36:51 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1883.1134 ms
+04/01/2021 19:38:16 Identity server started..
+04/01/2021 19:38:16 Identity server HostBuilder created
+04/01/2021 19:38:16 Host built
+04/01/2021 19:38:17 Now listening on: "https://localhost:3000"
+04/01/2021 19:38:17 Application started. Press Ctrl+C to shut down.
+04/01/2021 19:38:17 Hosting environment: "Development"
+04/01/2021 19:38:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 19:38:48 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:39:27 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 48970.2043 ms
+04/01/2021 19:43:30 Identity server started..
+04/01/2021 19:43:30 Identity server HostBuilder created
+04/01/2021 19:43:31 Host built
+04/01/2021 19:43:31 Now listening on: "https://localhost:3000"
+04/01/2021 19:43:31 Application started. Press Ctrl+C to shut down.
+04/01/2021 19:43:31 Hosting environment: "Development"
+04/01/2021 19:43:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 19:44:04 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:44:16 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 22728.8065 ms
+04/01/2021 19:45:19 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:45:19 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 3791.4296 ms
+04/01/2021 19:45:31 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 19:45:31 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 26.2746 ms
+04/01/2021 20:14:21 Identity server started..
+04/01/2021 20:14:21 Identity server HostBuilder created
+04/01/2021 20:14:22 Host built
+04/01/2021 20:14:23 Now listening on: "https://localhost:3000"
+04/01/2021 20:14:23 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:14:23 Hosting environment: "Development"
+04/01/2021 20:14:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:15:00 Identity server started..
+04/01/2021 20:15:03 Identity server HostBuilder created
+04/01/2021 20:15:10 Host built
+04/01/2021 20:15:17 Now listening on: "https://localhost:3000"
+04/01/2021 20:15:17 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:15:17 Hosting environment: "Development"
+04/01/2021 20:15:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:17:42 Identity server started..
+04/01/2021 20:17:42 Identity server HostBuilder created
+04/01/2021 20:17:43 Host built
+04/01/2021 20:17:46 Now listening on: "https://localhost:3000"
+04/01/2021 20:17:46 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:17:46 Hosting environment: "Development"
+04/01/2021 20:17:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:18:38 Identity server started..
+04/01/2021 20:18:38 Identity server HostBuilder created
+04/01/2021 20:18:39 Host built
+04/01/2021 20:18:39 Now listening on: "https://localhost:3000"
+04/01/2021 20:18:39 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:18:39 Hosting environment: "Development"
+04/01/2021 20:18:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:18:46 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 20:18:47 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1955.7835 ms
+04/01/2021 20:18:49 HTTP "GET" "/FoundersPCIdentity/Users" responded 500 in 3.9239 ms
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 20:18:49 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 20:19:10 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 500 in 0.8890 ms
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 20:19:10 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 20:20:08 Identity server started..
+04/01/2021 20:20:08 Identity server HostBuilder created
+04/01/2021 20:20:09 Host built
+04/01/2021 20:20:09 Now listening on: "https://localhost:3000"
+04/01/2021 20:20:09 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:20:09 Hosting environment: "Development"
+04/01/2021 20:20:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:20:16 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 20:20:17 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2061.6087 ms
+04/01/2021 20:20:47 HTTP "GET" "/FoundersPCIdentity/Users" responded 500 in 4.1085 ms
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/01/2021 20:20:47 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/01/2021 20:21:07 Application is shutting down...
+04/01/2021 20:22:45 Identity server started..
+04/01/2021 20:22:45 Identity server HostBuilder created
+04/01/2021 20:22:46 Host built
+04/01/2021 20:22:46 Now listening on: "https://localhost:3000"
+04/01/2021 20:22:46 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:22:46 Hosting environment: "Development"
+04/01/2021 20:22:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:22:55 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 20:22:55 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1952.8722 ms
+04/01/2021 20:23:01 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 179.2824 ms
+04/01/2021 20:23:06 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 25.6799 ms
+04/01/2021 20:23:08 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 7.9977 ms
+04/01/2021 20:23:23 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 3.9315 ms
+04/01/2021 20:23:24 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 9.0787 ms
+04/01/2021 20:23:54 Identity server started..
+04/01/2021 20:23:54 Identity server HostBuilder created
+04/01/2021 20:23:55 Host built
+04/01/2021 20:23:55 Now listening on: "https://localhost:3000"
+04/01/2021 20:23:55 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:23:55 Hosting environment: "Development"
+04/01/2021 20:23:55 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:24:21 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 20:24:22 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2075.8989 ms
+04/01/2021 20:24:25 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 184.1058 ms
+04/01/2021 20:24:37 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 11.2442 ms
+04/01/2021 20:24:42 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 11.0287 ms
+04/01/2021 20:25:49 Identity server started..
+04/01/2021 20:25:49 Identity server HostBuilder created
+04/01/2021 20:25:49 Host built
+04/01/2021 20:25:50 Now listening on: "https://localhost:3000"
+04/01/2021 20:25:50 Application started. Press Ctrl+C to shut down.
+04/01/2021 20:25:50 Hosting environment: "Development"
+04/01/2021 20:25:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/01/2021 20:25:57 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 20:25:57 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1948.9806 ms
+04/01/2021 20:26:00 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 184.4867 ms
+04/01/2021 20:26:03 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 20:26:03 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 1760.2308 ms
+04/01/2021 20:26:03 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 5.5413 ms
+04/01/2021 20:26:06 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 20:26:06 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Unblock/ById" responded 200 in 915.4321 ms
+04/01/2021 20:26:06 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 7.5855 ms
+04/01/2021 20:26:13 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 20:26:13 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 974.2814 ms
+04/01/2021 20:26:13 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 3.1418 ms
+04/01/2021 20:26:14 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 6.4564 ms
+04/01/2021 20:26:14 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 2.9968 ms
+04/01/2021 20:26:16 Successful sending an email to: ilyushinmisha@yandex.ru
+04/01/2021 20:26:16 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Unblock/ById" responded 200 in 951.4900 ms
+04/01/2021 20:26:16 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 3.0119 ms
+04/01/2021 20:26:20 Successful sending an email to: mishamine26@gmail.com
+04/01/2021 20:26:20 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 961.5951 ms
+04/01/2021 20:26:20 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 3.1597 ms
+04/01/2021 20:26:22 Successful sending an email to: mishamine26@gmail.com
+04/01/2021 20:26:22 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Unblock/ById" responded 200 in 1025.1090 ms
+04/01/2021 20:26:22 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 2.9393 ms
+04/01/2021 20:26:30 Successful sending an email to: mishamine26@gmail.com
+04/01/2021 20:26:30 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 1005.0472 ms
+04/01/2021 20:26:30 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 2.9695 ms
+04/01/2021 20:26:37 SignInIdentityController: user with email or login = JeffManager entered the service
+04/01/2021 20:26:37 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 13.5669 ms
+04/01/2021 20:26:47 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/01/2021 20:26:47 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 10.1160 ms
+04/01/2021 20:26:49 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 2.6110 ms
+04/01/2021 20:26:51 Successful sending an email to: mishamine26@gmail.com
+04/01/2021 20:26:51 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Unblock/ById" responded 200 in 1108.2358 ms
+04/01/2021 20:26:51 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 2.6606 ms
+04/01/2021 20:26:53 HTTP "GET" "/FoundersPCIdentity/Users" responded 200 in 3.0496 ms
+04/01/2021 20:26:59 SignInIdentityController: user with email or login = JeffManager entered the service
+04/01/2021 20:26:59 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 7.1587 ms
+04/01/2021 20:27:05 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com" responded 200 in 15.4287 ms

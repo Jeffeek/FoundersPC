@@ -20,7 +20,7 @@ namespace FoundersPC.Web.Controllers.Administration
         public AdminController(IAdminWebService adminWebService) => _adminWebService = adminWebService;
 
         [Route("BlockUser/{id:int}")]
-        public async Task<ActionResult> BlockUser([FromQuery] int id)
+        public async Task<ActionResult> BlockUser([FromRoute] int id)
         {
             await _adminWebService.BlockUserByIdAsync(id, GetJwtToken());
 
@@ -28,7 +28,7 @@ namespace FoundersPC.Web.Controllers.Administration
         }
 
         [Route("UnblockUser/{id:int}")]
-        public async Task<ActionResult> UnblockUser([FromQuery] int id)
+        public async Task<ActionResult> UnblockUser([FromRoute] int id)
         {
             await _adminWebService.UnblockUserByIdAsync(id, GetJwtToken());
 
@@ -36,7 +36,7 @@ namespace FoundersPC.Web.Controllers.Administration
         }
 
         [Route("MakeUserInactive/{id:int}")]
-        public async Task<ActionResult> MakeUserInactive([FromQuery] int id)
+        public async Task<ActionResult> MakeUserInactive([FromRoute] int id)
         {
             await _adminWebService.MakeUserInactiveByIdAsync(id, GetJwtToken());
 

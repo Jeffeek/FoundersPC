@@ -119,7 +119,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                 throw new
                     ArgumentException($"{nameof(model.RawPassword)} was not equal to {nameof(model.RawPasswordConfirm)}");
 
-            var client = _clientFactory.CreateClient("Sign Up new manager client");
+            using var client = _clientFactory.CreateClient("Sign Up new manager client");
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
                                                         _baseAddresses.IdentityApiBaseAddress);

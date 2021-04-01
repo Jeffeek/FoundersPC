@@ -3,12 +3,14 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,8 +25,7 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IAuthenticationWebService _authenticationWebService;
 
-        public AuthenticationController(IAuthenticationWebService authenticationWebService) =>
-            _authenticationWebService = authenticationWebService;
+        public AuthenticationController(IAuthenticationWebService authenticationWebService) => _authenticationWebService = authenticationWebService;
 
         #region ForgotPassword
 
