@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Producers")]
@@ -28,8 +28,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get()
         {
@@ -38,8 +36,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _producerService.GetAllProducersAsync());
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [HttpGet("{id}")]
         public async Task<ActionResult<ProducerReadDto>> Get(int? id)
         {
@@ -52,8 +48,7 @@ namespace FoundersPC.API.Controllers.V1
             return producer == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(producer);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [HttpPut("{id}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] ProducerUpdateDto producer)
         {
@@ -66,8 +61,7 @@ namespace FoundersPC.API.Controllers.V1
             return result ? Json(producer) : ResponseResultsHelper.UpdateError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] ProducerInsertDto producer)
         {
@@ -80,8 +74,7 @@ namespace FoundersPC.API.Controllers.V1
             return insertResult ? Json(producer) : ResponseResultsHelper.InsertError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete([FromRoute] int? id)
         {

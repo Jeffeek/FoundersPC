@@ -10,7 +10,6 @@ using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,13 +18,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
+    [AllowAnonymous]
     [Route("Authentication")]
     [Controller]
     public class AuthenticationController : Controller
     {
         private readonly IAuthenticationWebService _authenticationWebService;
 
-        public AuthenticationController(IAuthenticationWebService authenticationWebService) => _authenticationWebService = authenticationWebService;
+        public AuthenticationController(IAuthenticationWebService authenticationWebService) =>
+            _authenticationWebService = authenticationWebService;
 
         #region ForgotPassword
 
@@ -91,12 +92,12 @@ namespace FoundersPC.Web.Controllers
         #endregion
 
         [Route("LogOut")]
-        [Authorize]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
         public async Task<ActionResult> LogOutAsync()
         {
             if (!User.Identity?.IsAuthenticated ?? false) return Unauthorized();
 
-            RemoveJwtTokenInCookie();
+            RemoveJwtTokenFromCookie();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Index", "Home");
@@ -136,7 +137,7 @@ namespace FoundersPC.Web.Controllers
 
         private void SetupJwtTokenInCookie(string token)
         {
-            RemoveJwtTokenInCookie();
+            RemoveJwtTokenFromCookie();
 
             HttpContext.Response.Cookies.Append("token",
                                                 token,
@@ -164,7 +165,7 @@ namespace FoundersPC.Web.Controllers
                                           new ClaimsPrincipal(identity));
         }
 
-        private void RemoveJwtTokenInCookie()
+        private void RemoveJwtTokenFromCookie()
         {
             if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
         }

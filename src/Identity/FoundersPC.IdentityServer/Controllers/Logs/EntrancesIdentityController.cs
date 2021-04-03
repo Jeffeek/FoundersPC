@@ -9,8 +9,6 @@ using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Logs.Entrances;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,8 +18,7 @@ namespace FoundersPC.IdentityServer.Controllers.Logs
 {
     [Route("FoundersPCIdentity/UsersEntrances")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-               Roles = ApplicationRoles.Administrator)]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     public class EntrancesIdentityController : Controller
     {
         private readonly IMapper _mapper;
@@ -36,7 +33,8 @@ namespace FoundersPC.IdentityServer.Controllers.Logs
 
         [HttpGet]
         public async Task<IEnumerable<UserEntranceLogReadDto>> Get() =>
-            _mapper.Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<UserEntranceLogReadDto>>(await _usersEntrancesService.GetAllAsync());
+            _mapper.Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<UserEntranceLogReadDto>>(await _usersEntrancesService
+                .GetAllAsync());
 
         [Route("{id:int}")]
         [HttpGet]
@@ -53,7 +51,8 @@ namespace FoundersPC.IdentityServer.Controllers.Logs
             await _usersEntrancesService.GetAllUserEntrances(userEmail);
 
         [HttpGet("Between")]
-        public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>> GetUsersEntrancesBetween([FromQuery(Name = "Start")] string dateStart,
+        public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>> GetUsersEntrancesBetween(
+            [FromQuery(Name = "Start")] string dateStart,
             [FromQuery(Name = "Finish")] string dateFinish)
         {
             if (!ModelState.IsValid) return BadRequest();

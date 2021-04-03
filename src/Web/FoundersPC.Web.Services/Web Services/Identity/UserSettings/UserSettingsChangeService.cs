@@ -129,7 +129,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         }
 
         public async Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model,
-            string token)
+                                                                                  string token)
         {
             if (model is null)
             {

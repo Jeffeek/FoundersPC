@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
@@ -18,8 +17,8 @@ namespace FoundersPC.Identity.Services.Log_Services
 {
     public class UsersEntrancesService : IUsersEntrancesService
     {
-        private readonly ILogger<UsersEntrancesService> _logger;
         private readonly IEmailService _emailService;
+        private readonly ILogger<UsersEntrancesService> _logger;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
@@ -36,11 +35,11 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllAsync() =>
             _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(await _unitOfWork
-                .UsersEntrancesLogsRepository.GetAllAsync());
+                                                                                               .UsersEntrancesLogsRepository.GetAllAsync());
 
         public async Task<UserEntranceLogReadDto> GetByIdAsync(int id) =>
             _mapper.Map<UserEntranceLog, UserEntranceLogReadDto>(await _unitOfWork.UsersEntrancesLogsRepository
-                                                                     .GetByIdAsync(id));
+                                                                                  .GetByIdAsync(id));
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetEntrancesBetweenAsync(DateTime start, DateTime finish)
         {
@@ -95,8 +94,7 @@ namespace FoundersPC.Identity.Services.Log_Services
                 return false;
             }
 
-            if (user.SendMessageOnEntrance)
-                await _emailService.SendEntranceNotificationAsync(user.Email);
+            if (user.SendMessageOnEntrance) await _emailService.SendEntranceNotificationAsync(user.Email);
 
             var log = new UserEntranceLog
                       {

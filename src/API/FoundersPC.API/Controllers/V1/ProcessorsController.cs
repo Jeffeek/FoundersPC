@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.API.Dto;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Processors")]
@@ -32,8 +32,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get()
@@ -43,8 +41,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _cpuService.GetAllCPUsAsync());
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<CPUReadDto>> Get(int? id)
@@ -58,8 +54,7 @@ namespace FoundersPC.API.Controllers.V1
             return cpu == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(cpu);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] CPUInsertDto cpu)
@@ -73,8 +68,7 @@ namespace FoundersPC.API.Controllers.V1
             return insertResult ? Json(cpu) : ResponseResultsHelper.InsertError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] CPUUpdateDto cpu)
@@ -89,8 +83,7 @@ namespace FoundersPC.API.Controllers.V1
             return result ? Json(cpu) : ResponseResultsHelper.UpdateError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)

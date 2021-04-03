@@ -5,7 +5,6 @@ using AutoMapper;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,12 +13,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.Web.Controllers.API
 {
     [Route("Manager/Producers")]
-    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme,
-               Roles = ApplicationRoles.Manager)]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
     public class ProducersController : Controller
     {
-        private readonly IProducersManagingService _producersManagingService;
         private readonly IMapper _mapper;
+        private readonly IProducersManagingService _producersManagingService;
 
         public ProducersController(IProducersManagingService producersManagingService, IMapper mapper)
         {

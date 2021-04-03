@@ -35,7 +35,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                          DeliveryFormat = SmtpDeliveryFormat.International,
                                                          Credentials =
                                                              new NetworkCredential(_botConfiguration.MailAddress,
-                                                                 _botConfiguration.Password)
+                                                                                   _botConfiguration.Password)
                                                      });
         }
 
@@ -78,7 +78,10 @@ namespace FoundersPC.Identity.Services.EmailServices
 
             foreach (var email in emails)
             {
-                var sendResult = await SendToAsync(email, subject, content, html);
+                var sendResult = await SendToAsync(email,
+                                                   subject,
+                                                   content,
+                                                   html);
                 sendResults.Add(sendResult);
             }
 

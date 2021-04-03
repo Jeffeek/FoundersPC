@@ -31,11 +31,11 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAsync() =>
             _mapper.Map<IEnumerable<AccessTokenLog>, IEnumerable<AccessTokenLogReadDto>>(await _unitOfWork
-                .AccessTokensLogsRepository.GetAllAsync());
+                                                                                             .AccessTokensLogsRepository.GetAllAsync());
 
         public async Task<AccessTokenLogReadDto> GetByIdAsync(int id) =>
             _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
-                                                                   .GetByIdAsync(id));
+                                                                                .GetByIdAsync(id));
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetUsagesBetweenAsync(DateTime start, DateTime finish)
         {

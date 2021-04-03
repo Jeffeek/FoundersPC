@@ -17,8 +17,8 @@ namespace FoundersPC.Identity.Services.User_Services
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private readonly ILogger<AuthenticationService> _logger;
         private readonly IEmailService _emailService;
+        private readonly ILogger<AuthenticationService> _logger;
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;

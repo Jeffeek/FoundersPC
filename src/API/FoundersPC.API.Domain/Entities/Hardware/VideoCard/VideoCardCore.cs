@@ -74,7 +74,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(VideoCardCore other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -90,7 +90,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
                    && ArchitectureTitle == other.ArchitectureTitle;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -100,7 +100,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
             return Equals((VideoCardCore)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var hashCode = new HashCode();

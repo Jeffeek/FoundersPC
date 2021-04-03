@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
@@ -8,8 +7,6 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Users.Settings
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [Route("FoundersPCIdentity/Users/SettingsChange")]
     [ApiController]
     public class ChangeSettingsController : ControllerBase
@@ -36,8 +33,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword([FromBody] ChangePasswordRequest request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
+            if (!ModelState.IsValid) return BadRequest();
 
             var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
 

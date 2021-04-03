@@ -5,7 +5,6 @@ using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
 using FoundersPC.ApplicationShared;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -63,27 +62,7 @@ namespace FoundersPC.API
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
-            services.AddAuthorization(config =>
-                                      {
-                                          config.AddPolicy("Changeable",
-                                                           builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles
-                                                                                     .Administrator,
-                                                                                 ApplicationRoles.Manager)
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults
-                                                                                 .AuthenticationScheme)
-                                                                             .Build());
-
-                                          config.AddPolicy("Readable",
-                                                           builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles
-                                                                                     .Administrator,
-                                                                                 ApplicationRoles.Manager,
-                                                                                 ApplicationRoles.DefaultUser)
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults
-                                                                                 .AuthenticationScheme)
-                                                                             .Build());
-                                      });
+            services.AddBearerAuthorizationPolicies();
 
             services.AddApiVersioning(options =>
                                       {

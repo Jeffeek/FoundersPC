@@ -5,7 +5,6 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,6 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
+    [AllowAnonymous]
     [Route("FoundersPCIdentity/Authentication")]
     public class SignUpIdentityController : Controller
     {
@@ -30,7 +30,6 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _registrationService = registrationService;
         }
 
-        [AllowAnonymous]
         [Route("SignUp")]
         [HttpPost]
         public async Task<ActionResult<UserSignUpResponse>> SignUpUser([FromBody] UserSignUpRequest request)
@@ -68,11 +67,11 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        IsRegistrationSuccessful = true,
                        ResponseException = null,
                        Role = ApplicationRoles.DefaultUser,
-                       //JwtToken = token.GetToken()
+                       JwtToken = token.GetToken()
                    };
         }
 
-        [Authorize(Policy = "AdminPolicy")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [Route("NewManager")]
         [HttpPost]
         public async Task<ActionResult<UserSignUpResponse>> RegisterManager([FromBody] UserSignUpRequest request)

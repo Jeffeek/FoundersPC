@@ -25,17 +25,17 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
 
         #region Implementation of IHDDService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<HDDReadDto>> GetAllHDDsAsync() =>
             _mapper.Map<IEnumerable<HDD>, IEnumerable<HDDReadDto>>(await _unitOfWorkHardwareAPI
                                                                          .HDDsRepository
                                                                          .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<HDDReadDto> GetHDDByIdAsync(int hddId) =>
             _mapper.Map<HDD, HDDReadDto>(await _unitOfWorkHardwareAPI.HDDsRepository.GetByIdAsync(hddId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateHDDAsync(HDDInsertDto hdd)
         {
             var mappedHDD = _mapper.Map<HDDInsertDto, HDD>(hdd);
@@ -49,7 +49,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateHDDAsync(int id, HDDUpdateDto hdd)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.HDDsRepository.GetByIdAsync(id);
@@ -64,7 +64,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteHDDAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.HDDsRepository.DeleteAsync(id);

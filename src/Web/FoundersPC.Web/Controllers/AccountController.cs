@@ -4,6 +4,7 @@ using System;
 using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
@@ -16,7 +17,7 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.Web.Controllers
 {
     [Route("Account")]
-    [Authorize]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     public class AccountController : Controller
     {
         private readonly ILogger<AccountController> _logger;

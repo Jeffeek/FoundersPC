@@ -9,8 +9,7 @@ namespace FoundersPC.ApplicationShared
 {
     public static class HttpContextExtensions
     {
-        public static string GetIpAddress(this HttpContext httpContext) =>
-            httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
+        public static string GetIpAddress(this HttpContext httpContext) => httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
 
         public static (string Email, string Role) ParseJwtUserTokenCredentials(this HttpContext httpContext) =>
             (httpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),

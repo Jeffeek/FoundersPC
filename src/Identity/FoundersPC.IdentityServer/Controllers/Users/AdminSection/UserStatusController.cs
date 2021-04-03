@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿#region Using namespaces
+
 using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
@@ -11,23 +9,21 @@ using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inacti
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Blocking;
 using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Inactivity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-               Roles = ApplicationRoles.Administrator)]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [Route("FoundersPCIdentity/Users/StatusChange")]
     [ApiController]
     public class UserStatusController : Controller
     {
         private readonly IAdminService _adminService;
 
-        public UserStatusController(IAdminService adminService)
-        {
-            _adminService = adminService;
-        }
+        public UserStatusController(IAdminService adminService) => _adminService = adminService;
 
         [HttpPut("Block/ById")]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByIdRequest byIdRequest)

@@ -17,11 +17,13 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 {
     public class UsersEntrancesService : IUsersEntrancesService
     {
-        private readonly IHttpClientFactory _httpClientFactory;
         private readonly MicroservicesBaseAddresses _baseAddresses;
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<UsersEntrancesService> _logger;
 
-        public UsersEntrancesService(IHttpClientFactory httpClientFactory, MicroservicesBaseAddresses baseAddresses, ILogger<UsersEntrancesService> logger)
+        public UsersEntrancesService(IHttpClientFactory httpClientFactory,
+                                     MicroservicesBaseAddresses baseAddresses,
+                                     ILogger<UsersEntrancesService> logger)
         {
             _httpClientFactory = httpClientFactory;
             _baseAddresses = baseAddresses;
@@ -39,7 +41,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             using var client = _httpClientFactory.CreateClient("Get all users entrances client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, adminToken, $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
 
             var responseMessage = await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>("");
 
@@ -57,17 +61,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             using var client = _httpClientFactory.CreateClient($"Get user entrance with id = {id} client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, adminToken, $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
 
             var responseMessage = await client.GetFromJsonAsync<UserEntranceLogReadDto>($"{id}");
 
             return responseMessage;
         }
 
-        // todo: make new request class for entrances
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesBetweenAsync(DateTime start,
-            DateTime finish,
-            string adminToken)
+                                                                                           DateTime finish,
+                                                                                           string adminToken)
         {
             if (start > finish)
             {
@@ -85,9 +90,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             using var client = _httpClientFactory.CreateClient("Get users entrances between");
 
-            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, adminToken, $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
+            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                    adminToken,
+                                                    $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
 
-            var responseMessage = await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>($"Between?start={start:yyyyMMdd}&finish={finish:yyyyMMdd}");
+            var responseMessage =
+                await
+                    client
+                        .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>($"Between?start={start:yyyyMMdd}&finish={finish:yyyyMMdd}");
 
             return responseMessage;
         }
@@ -103,7 +113,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             using var client = _httpClientFactory.CreateClient($"Get all user entrances with id = {userId} client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, adminToken, $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
 
             var responseMessage = await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>($"ById/{userId}");
 
@@ -121,7 +133,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             using var client = _httpClientFactory.CreateClient($"Get all user entrances with email = {userEmail} client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, adminToken, $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        $"{_baseAddresses.IdentityApiBaseAddress}UsersEntrances/");
 
             var responseMessage = await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>($"User/ByEmail/{userEmail}");
 

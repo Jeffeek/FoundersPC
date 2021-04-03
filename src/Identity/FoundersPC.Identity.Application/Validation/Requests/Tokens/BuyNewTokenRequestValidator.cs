@@ -1,5 +1,9 @@
-﻿using FluentValidation;
+﻿#region Using namespaces
+
+using FluentValidation;
 using FoundersPC.RequestResponseShared.Request.Tokens;
+
+#endregion
 
 namespace FoundersPC.Identity.Application.Validation.Requests.Tokens
 {

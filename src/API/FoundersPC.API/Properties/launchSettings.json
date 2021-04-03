@@ -1,37 +1,37 @@
 {
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "https://localhost:4000",
-      "sslPort": 4000
+  "iisSettings" : {
+    "windowsAuthentication" : false,
+    "anonymousAuthentication" : true,
+    "iis" : {
+      "applicationUrl" : "https://localhost:4000",
+      "sslPort" : 4000
     },
-    "iisExpress": {
-      "applicationUrl": "https://localhost:4000",
-      "sslPort": 0
+    "iisExpress" : {
+      "applicationUrl" : "https://localhost:4000",
+      "sslPort" : 0
     }
   },
-  "$schema": "http://json.schemastore.org/launchsettings.json",
-  "profiles": {
-    "IIS Express": {
-      "commandName": "Project",
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+  "$schema" : "http://json.schemastore.org/launchsettings.json",
+  "profiles" : {
+    "IIS Express" : {
+      "commandName" : "Project",
+      "launchUrl" : "swagger",
+      "environmentVariables" : {
+        "ASPNETCORE_ENVIRONMENT" : "Development"
       },
-      "use64Bit": true,
-      "applicationUrl": "https://localhost:4000"
+      "use64Bit" : true,
+      "applicationUrl" : "https://localhost:4000"
     },
-    "FoundersPC.API": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+    "FoundersPC.API" : {
+      "commandName" : "IISExpress",
+      "launchBrowser" : true,
+      "launchUrl" : "swagger",
+      "environmentVariables" : {
+        "ASPNETCORE_ENVIRONMENT" : "Development"
       },
-      "dotnetRunMessages": "true",
-      "use64Bit": true,
-      "applicationUrl": "https://localhost:4000"
+      "dotnetRunMessages" : "true",
+      "use64Bit" : true,
+      "applicationUrl" : "https://localhost:4000"
     }
   }
 }

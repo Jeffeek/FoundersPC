@@ -100,12 +100,12 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             var expirationDate = now.AddMonths(type switch
                                                {
-                                                   TokenType.Low => 2,
-                                                   TokenType.Medium => 6,
-                                                   TokenType.High => 12,
-                                                   TokenType.Ultra => 60,
+                                                   TokenType.Low         => 2,
+                                                   TokenType.Medium      => 6,
+                                                   TokenType.High        => 12,
+                                                   TokenType.Ultra       => 60,
                                                    TokenType.Unstoppable => 1200,
-                                                   _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+                                                   _                     => throw new ArgumentOutOfRangeException(nameof(type), type, null)
                                                });
 
             return expirationDate;

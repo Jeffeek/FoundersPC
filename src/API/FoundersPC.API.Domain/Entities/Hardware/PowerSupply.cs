@@ -61,7 +61,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(PowerSupply other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -78,7 +78,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
                    && PFC == other.PFC;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -88,7 +88,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             return Equals((PowerSupply)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var hashCode = new HashCode();

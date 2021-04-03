@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿#region Using namespaces
+
+using AutoMapper;
+
+#endregion
 
 namespace FoundersPC.API.Dto.Mapping
 {

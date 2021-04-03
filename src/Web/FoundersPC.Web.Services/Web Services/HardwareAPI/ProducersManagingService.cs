@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -105,9 +104,11 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             using var client = _clientFactory.CreateClient("Update producer client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, managerToken, _baseAddresses.HardwareApiBaseAddress);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        managerToken,
+                                                        _baseAddresses.HardwareApiBaseAddress);
 
-            var responseMessage = await client.PutAsJsonAsync<ProducerUpdateDto>($"Producers/{id}", producer);
+            var responseMessage = await client.PutAsJsonAsync($"Producers/{id}", producer);
 
             return responseMessage.IsSuccessStatusCode;
         }
@@ -131,7 +132,9 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             using var client = _clientFactory.CreateClient("Update producer client");
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, managerToken, _baseAddresses.HardwareApiBaseAddress);
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        managerToken,
+                                                        _baseAddresses.HardwareApiBaseAddress);
 
             var responseMessage = await client.DeleteAsync($"Producers/{producerId}");
 

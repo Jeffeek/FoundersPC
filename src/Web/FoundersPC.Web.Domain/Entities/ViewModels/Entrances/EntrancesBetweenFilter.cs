@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region Using namespaces
+
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Web.Domain.Entities.ViewModels.Entrances
 {

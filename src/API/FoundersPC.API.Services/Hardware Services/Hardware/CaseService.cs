@@ -25,17 +25,17 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
         #region Implementation of ICaseService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<CaseReadDto>> GetAllCasesAsync() =>
             _mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
                                                                            .CasesRepository
                                                                            .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<CaseReadDto> GetCaseByIdAsync(int caseId) =>
             _mapper.Map<Case, CaseReadDto>(await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(caseId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateCaseAsync(CaseInsertDto @case)
         {
             var mappedCase = _mapper.Map<CaseInsertDto, Case>(@case);
@@ -49,7 +49,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(id);
@@ -64,7 +64,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteCaseAsync(int id)
         {
             var deleteResult = await _unitOfWorkHardwareAPI.CasesRepository.DeleteAsync(id);

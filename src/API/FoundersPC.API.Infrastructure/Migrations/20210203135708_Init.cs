@@ -19,8 +19,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       MarketLaunch =
                                                           table.Column<DateTime>("datetime2", nullable : true),
                                                       Title = table.Column<string>("nvarchar(50)",
-                                                          maxLength : 50,
-                                                          nullable : false),
+                                                                                   maxLength : 50,
+                                                                                   nullable : false),
                                                       MicroArchitecture =
                                                           table.Column<string>("nvarchar(30)",
                                                                                maxLength : 30,
@@ -28,8 +28,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       L2CachePerCore = table.Column<int>("int", nullable : false),
                                                       L3CachePerCore = table.Column<int>("int", nullable : false),
                                                       Socket = table.Column<string>("nvarchar(10)",
-                                                          maxLength : 10,
-                                                          nullable : false)
+                                                                                    maxLength : 10,
+                                                                                    nullable : false)
                                                   },
                                          constraints : table => { table.PrimaryKey("PK_ProcessorCores", x => x.Id); });
 
@@ -39,17 +39,17 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       ShortName = table.Column<string>("nvarchar(20)",
-                                                          maxLength : 20,
-                                                          nullable : true),
+                                                                                       maxLength : 20,
+                                                                                       nullable : true),
                                                       FullName = table.Column<string>("nvarchar(100)",
-                                                          maxLength : 100,
-                                                          nullable : false),
+                                                                                      maxLength : 100,
+                                                                                      nullable : false),
                                                       Country = table.Column<string>("nvarchar(50)",
-                                                          maxLength : 50,
-                                                          nullable : true),
+                                                                                     maxLength : 50,
+                                                                                     nullable : true),
                                                       Website = table.Column<string>("nvarchar(100)",
-                                                          maxLength : 100,
-                                                          nullable : true),
+                                                                                     maxLength : 100,
+                                                                                     nullable : true),
                                                       FoundationDate =
                                                           table.Column<DateTime>("datetime2", nullable : true)
                                                   },
@@ -61,8 +61,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       Title = table.Column<string>("nvarchar(30)",
-                                                          maxLength : 30,
-                                                          nullable : true),
+                                                                                   maxLength : 30,
+                                                                                   nullable : true),
                                                       TechProcess = table.Column<int>("int", nullable : false),
                                                       MaxResolution =
                                                           table.Column<string>("nvarchar(20)",
@@ -70,11 +70,11 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                                                nullable : false),
                                                       MonitorsSupport = table.Column<int>("int", nullable : false),
                                                       Interface = table.Column<string>("nvarchar(30)",
-                                                          maxLength : 30,
-                                                          nullable : false),
+                                                                                       maxLength : 30,
+                                                                                       nullable : false),
                                                       Frequency = table.Column<int>("int",
-                                                          maxLength : 5,
-                                                          nullable : false),
+                                                                                    maxLength : 5,
+                                                                                    nullable : false),
                                                       DirectX_Version =
                                                           table.Column<int>("int", maxLength : 3, nullable : false),
                                                       SLI_Crossfire = table.Column<bool>("bit", nullable : false),
@@ -89,23 +89,23 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       Type = table.Column<string>("nvarchar(3)",
-                                                          maxLength : 3,
-                                                          nullable : false),
+                                                                                  maxLength : 3,
+                                                                                  nullable : false),
                                                       MaxMotherboardSize =
                                                           table.Column<string>("nvarchar(20)",
                                                                                maxLength : 20,
                                                                                nullable : false),
                                                       Material = table.Column<string>("nvarchar(50)",
-                                                          maxLength : 50,
-                                                          nullable : false),
+                                                                                      maxLength : 50,
+                                                                                      nullable : false),
                                                       WindowMaterial =
                                                           table.Column<string>("nvarchar(50)",
                                                                                maxLength : 50,
                                                                                nullable : false),
                                                       TransparentWindow = table.Column<bool>("bit", nullable : false),
                                                       Color = table.Column<string>("nvarchar(50)",
-                                                          maxLength : 50,
-                                                          nullable : false),
+                                                                                   maxLength : 50,
+                                                                                   nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
                                                       MarketLaunch =
                                                           table.Column<DateTime>("datetime2", nullable : true)
@@ -134,8 +134,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                           table.Column<DateTime>("datetime2", nullable : true),
                                                       Factor = table.Column<double>("float", nullable : false),
                                                       Interface = table.Column<string>("nvarchar(20)",
-                                                          maxLength : 20,
-                                                          nullable : false),
+                                                                                       maxLength : 20,
+                                                                                       nullable : false),
                                                       Volume = table.Column<int>("int", nullable : false)
                                                   },
                                          constraints : table =>
@@ -155,8 +155,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       Socket = table.Column<string>("nvarchar(10)",
-                                                          maxLength : 10,
-                                                          nullable : false),
+                                                                                    maxLength : 10,
+                                                                                    nullable : false),
                                                       Factor = table.Column<double>("float", nullable : false),
                                                       RAMSupport =
                                                           table.Column<string>("nvarchar(6)",
@@ -164,8 +164,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                                                nullable : false),
                                                       RAMSlots = table.Column<int>("int", nullable : false),
                                                       RAMMode = table.Column<string>("nvarchar(2)",
-                                                          maxLength : 2,
-                                                          nullable : false),
+                                                                                     maxLength : 2,
+                                                                                     nullable : false),
                                                       SLI_Crossfire = table.Column<bool>("bit", nullable : false),
                                                       AudioSupport =
                                                           table.Column<string>("nvarchar(20)",
@@ -233,8 +233,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       TDP = table.Column<int>("int", nullable : false),
                                                       ProcessorCoreId = table.Column<int>("int", nullable : false),
                                                       Name = table.Column<string>("nvarchar(20)",
-                                                          maxLength : 20,
-                                                          nullable : false),
+                                                                                  maxLength : 20,
+                                                                                  nullable : false),
                                                       MaxRamSpeed = table.Column<int>("int", nullable : false),
                                                       Cores = table.Column<int>("int", nullable : false),
                                                       Threads = table.Column<int>("int", nullable : false),
@@ -282,8 +282,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                                                maxLength : 5,
                                                                                nullable : false),
                                                       Timings = table.Column<string>("nvarchar(8)",
-                                                          maxLength : 8,
-                                                          nullable : false),
+                                                                                     maxLength : 8,
+                                                                                     nullable : false),
                                                       Voltage = table.Column<double>("float", nullable : false),
                                                       XMP = table.Column<bool>("bit", nullable : false),
                                                       ECC = table.Column<bool>("bit", nullable : false),
@@ -320,8 +320,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                           table.Column<DateTime>("datetime2", nullable : true),
                                                       Factor = table.Column<double>("float", nullable : false),
                                                       Interface = table.Column<string>("nvarchar(20)",
-                                                          maxLength : 20,
-                                                          nullable : false),
+                                                                                       maxLength : 20,
+                                                                                       nullable : false),
                                                       Volume = table.Column<int>("int", nullable : false)
                                                   },
                                          constraints : table =>

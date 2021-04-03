@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
 using Microsoft.AspNetCore.Authorization;
@@ -27,7 +28,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
             _mapper = mapper;
         }
 
-        [Authorize(Policy = "AdministratorPolicy")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("ById/{id:int}")]
         public async Task<ActionResult<UserEntityReadDto>> Get([FromRoute] int id)
         {
@@ -38,7 +39,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
             return _mapper.Map<UserEntityReadDto, UserEntityReadDto>(user);
         }
 
-        [Authorize(Policy = "AuthenticatedUserPolicy")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
         [HttpGet("ByEmail/{email}")]
         public async Task<ActionResult<UserEntityReadDto>> Get([FromRoute] string email)
         {
@@ -48,6 +49,10 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
                                       error = "email can't be null or empty"
                                   });
 
+            var (jwtEmail, jwtRole) = HttpContext.ParseJwtUserTokenCredentials();
+
+            if (jwtRole is not ApplicationRoles.Administrator && email != jwtEmail) return Unauthorized();
+
             var user = await _usersInformationService.FindUserByEmailAsync(email);
 
             if (user is null) return NotFound();
@@ -55,7 +60,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
             return _mapper.Map<UserEntityReadDto, UserEntityReadDto>(user);
         }
 
-        [Authorize(Policy = "AdministratorPolicy")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
         public async Task<IEnumerable<UserEntityReadDto>> Get()
         {

@@ -55,10 +55,7 @@ const trailUpdate = () =>
     }
 };
 let start = setInterval(() => slide("increase"), interval);
-document.querySelectorAll(".container-slider svg").forEach(cur =>
-{
-    cur.addEventListener("click", () => cur.classList.contains("next-price-card") ? slide("increase") : slide("decrease"));
-});
+document.querySelectorAll(".container-slider svg").forEach(cur => { cur.addEventListener("click", () => cur.classList.contains("next-price-card") ? slide("increase") : slide("decrease")); });
 const clickCheck = (e) =>
 {
     clearInterval(start);

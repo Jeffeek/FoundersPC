@@ -39,7 +39,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken);
 
         /// <summary>
-        ///     Blocks user with id = <paramref name="id" />
+        ///     Blocks user with id = <paramref name="id"/>
         /// </summary>
         /// <param name="id">Id of user to block</param>
         /// <param name="adminToken">JWT token</param>
@@ -47,7 +47,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> BlockUserByIdAsync(int id, string adminToken);
 
         /// <summary>
-        ///     Blocks user with email = <paramref name="email" />
+        ///     Blocks user with email = <paramref name="email"/>
         /// </summary>
         /// <param name="email">Email of user to block</param>
         /// <param name="adminToken">JWT token</param>
@@ -55,7 +55,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> BlockUserByEmailAsync(string email, string adminToken);
 
         /// <summary>
-        ///     Unblocks user with id = <paramref name="id" />
+        ///     Unblocks user with id = <paramref name="id"/>
         /// </summary>
         /// <param name="id">Id of user to unblock</param>
         /// <param name="adminToken">JWT token</param>
@@ -63,7 +63,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> UnblockUserByIdAsync(int id, string adminToken);
 
         /// <summary>
-        ///     Unblocks user with email = <paramref name="email" />
+        ///     Unblocks user with email = <paramref name="email"/>
         /// </summary>
         /// <param name="email">email of user to unblock</param>
         /// <param name="adminToken">JWT token</param>
@@ -71,7 +71,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> UnblockUserByEmailAsync(string email, string adminToken);
 
         /// <summary>
-        ///     Makes user inactive (removes from system) by <paramref name="id" />
+        ///     Makes user inactive (removes from system) by <paramref name="id"/>
         /// </summary>
         /// <param name="id">Id of user to remove</param>
         /// <param name="adminToken">JWT token</param>
@@ -79,7 +79,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken);
 
         /// <summary>
-        ///     Makes user inactive (removes from system) by <paramref name="email" />
+        ///     Makes user inactive (removes from system) by <paramref name="email"/>
         /// </summary>
         /// <param name="email">Email of user to remove</param>
         /// <param name="adminToken">JWT token</param>
@@ -87,14 +87,14 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken);
 
         /// <summary>
-        /// Gets all entrances to website
+        ///     Gets all entrances to website
         /// </summary>
         /// <param name="adminToken">JWT token</param>
         /// <returns>Entrances</returns>
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken);
 
         /// <summary>
-        /// Gets entrance by id
+        ///     Gets entrance by id
         /// </summary>
         /// <param name="id">Id of entrance</param>
         /// <param name="adminToken">JWT token</param>
@@ -102,7 +102,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken);
 
         /// <summary>
-        /// Gets all USER'S entrances
+        ///     Gets all USER'S entrances
         /// </summary>
         /// <param name="userId">User's id which entrances to require</param>
         /// <param name="adminToken">JWT token</param>
@@ -110,7 +110,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesAsync(int userId, string adminToken);
 
         /// <summary>
-        /// Gets all entrances between <paramref name="start"/> and <paramref name="finish"/>
+        ///     Gets all entrances between <paramref name="start"/> and <paramref name="finish"/>
         /// </summary>
         /// <param name="start">Start date to grab</param>
         /// <param name="finish">Finish/end date to grab</param>
@@ -121,7 +121,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
                                                                               string adminToken);
 
         /// <summary>
-        /// Register new manager with specific <paramref name="model"/>
+        ///     Register new manager with specific <paramref name="model"/>
         /// </summary>
         /// <param name="model">View model of Sign Up</param>
         /// <param name="adminToken">JWT token</param>
@@ -129,7 +129,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken);
 
         /// <summary>
-        /// Register new manager with specific <paramref name="model"/>
+        ///     Register new manager with specific <paramref name="model"/>
         /// </summary>
         /// <param name="email">Email of new manager</param>
         /// <param name="rawPassword">Password of new manager</param>

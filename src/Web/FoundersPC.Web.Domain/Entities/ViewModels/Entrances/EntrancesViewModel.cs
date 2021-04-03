@@ -1,9 +1,9 @@
-﻿using System;
+﻿#region Using namespaces
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+
+#endregion
 
 namespace FoundersPC.Web.Domain.Entities.ViewModels.Entrances
 {

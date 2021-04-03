@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
+    [AllowAnonymous]
     [Route("FoundersPCIdentity/Authentication")]
     public class ForgotPasswordController : Controller
     {
@@ -25,7 +26,6 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _logger = logger;
         }
 
-        [AllowAnonymous]
         [Route("ForgotPassword")]
         [HttpPost]
         public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword([FromBody] UserForgotPasswordRequest request)

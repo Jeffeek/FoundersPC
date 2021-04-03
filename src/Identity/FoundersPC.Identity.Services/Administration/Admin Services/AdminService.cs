@@ -3,14 +3,12 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.Identity.Services.Encryption_Services;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -20,8 +18,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
     public class AdminService : IAdminService
     {
         private readonly IApiAccessUsersTokensService _accessUsersTokensService;
-        private readonly ILogger<AdminService> _logger;
         private readonly IEmailService _emailService;
+        private readonly ILogger<AdminService> _logger;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public AdminService(IEmailService emailService,
@@ -61,7 +59,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             if (sendNotification)
                 await _emailService.SendBlockNotificationAsync(user.Email,
-                                                              "You've been blocked, you can't be unblocked.");
+                                                               "You've been blocked, you can't be unblocked.");
 
             user.IsActive = false;
 
@@ -156,7 +154,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             {
                 if (block)
                     await _emailService.SendBlockNotificationAsync(user.Email,
-                                                                  "You've been BLOCKED, you can be unblocked. Contact the administrator for reasons");
+                                                                   "You've been BLOCKED, you can be unblocked. Contact the administrator for reasons");
                 else
                     await _emailService.SendUnBlockNotificationAsync(user.Email, "You've been UNBLOCKED.");
             }

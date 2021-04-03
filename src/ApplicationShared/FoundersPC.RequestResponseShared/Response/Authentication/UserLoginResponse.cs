@@ -1,6 +1,4 @@
-﻿using FoundersPC.ApplicationShared;
-
-namespace FoundersPC.RequestResponseShared.Response.Authentication
+﻿namespace FoundersPC.RequestResponseShared.Response.Authentication
 {
     public class UserLoginResponse
     {

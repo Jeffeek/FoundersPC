@@ -6,8 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
 using FoundersPC.Identity.Domain.Entities.Logs;
-using FoundersPC.Identity.Domain.Entities.Tokens;
-using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;

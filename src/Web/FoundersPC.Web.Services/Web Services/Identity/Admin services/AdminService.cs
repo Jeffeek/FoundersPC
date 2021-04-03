@@ -53,18 +53,20 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Users information
 
-        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => await _usersInformationService.GetAllUsersAsync(adminToken);
+        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) =>
+            await _usersInformationService.GetAllUsersAsync(adminToken);
 
-        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetUserByIdAsync(id, adminToken);
+        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) =>
+            await _usersInformationService.GetUserByIdAsync(id, adminToken);
 
-        public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken) => await _usersInformationService.GetUserByEmailAsync(email, adminToken);
+        public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken) =>
+            await _usersInformationService.GetUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Block user
 
-        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) =>
-            await _blockingService.BlockUserByIdAsync(id, adminToken);
+        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) => await _blockingService.BlockUserByIdAsync(id, adminToken);
 
         public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) =>
             await _blockingService.BlockUserByEmailAsync(email, adminToken);
@@ -93,15 +95,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Users entrances
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) => await _usersEntrancesService.GetAllEntrancesAsync(adminToken);
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) =>
+            await _usersEntrancesService.GetAllEntrancesAsync(adminToken);
 
-        public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) => await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
+        public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) =>
+            await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
         public async Task<IEnumerable<UserEntranceLogReadDto>>
-            GetAllUserEntrancesAsync(int userId, string adminToken) => await _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
+            GetAllUserEntrancesAsync(int userId, string adminToken) =>
+            await _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
 
         public async Task<IEnumerable<UserEntranceLogReadDto>>
-            GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) => await _usersEntrancesService.GetAllEntrancesBetweenAsync(start, finish, adminToken);
+            GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
+            await _usersEntrancesService.GetAllEntrancesBetweenAsync(start, finish, adminToken);
 
         #endregion
 

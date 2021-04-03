@@ -14,7 +14,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
     public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>, IMotherboardsRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public MotherboardsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IMotherboardsRepositoryAsync
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
             return motherboard;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<Motherboard>> GetAllAsync()
         {
             return await Context.Set<Motherboard>()

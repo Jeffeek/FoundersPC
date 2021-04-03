@@ -18,9 +18,9 @@ namespace FoundersPC.Identity.Services.User_Services
 {
     public class RegistrationService : IRegistrationService
     {
+        private readonly IEmailService _emailService;
         private readonly PasswordEncryptorService _encryptorService;
         private readonly ILogger<RegistrationService> _logger;
-        private readonly IEmailService _emailService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWorkUsersIdentity;
 
         public RegistrationService(IUnitOfWorkUsersIdentity unitOfWorkUsersIdentity,

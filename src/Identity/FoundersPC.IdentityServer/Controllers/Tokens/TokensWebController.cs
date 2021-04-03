@@ -2,11 +2,11 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.RequestResponseShared.Response.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
     public class TokensWebController : Controller
@@ -29,6 +28,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             _accessTokensReservationService = accessTokensReservationService;
         }
 
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
         [Route("User/{email}")]
         public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
@@ -44,6 +44,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             return Json(tokens);
         }
 
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
         [HttpPost]
         [Route("Reserve")]
         public async Task<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)

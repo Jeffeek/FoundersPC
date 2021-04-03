@@ -14,12 +14,12 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
 {
     public class VideoCardCoresRepository : GenericRepositoryAsync<VideoCardCore>, IVideoCardCoresRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public VideoCardCoresRepository(FoundersPCHardwareContext context) : base(context) { }
 
         #region Implementation of IVideoCardCoresRepositoryAsync
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<VideoCardCore>> GetAllAsync()
         {
             return await Context.Set<VideoCardCore>()

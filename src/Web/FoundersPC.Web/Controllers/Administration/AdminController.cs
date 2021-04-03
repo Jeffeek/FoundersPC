@@ -1,8 +1,8 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Net;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Entrances;
@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.Web.Controllers.Administration
 {
     // todo: split admin controller into several controllers
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [Route("Admin")]
     public class AdminController : Controller
     {
@@ -63,25 +63,6 @@ namespace FoundersPC.Web.Controllers.Administration
             return token;
         }
 
-        #region Redirection to view
-
-        [Route("UsersTable")]
-        public async Task<ActionResult> UsersTable()
-        {
-            var token = GetJwtToken();
-
-            if (token is null) throw new CookieException();
-
-            var users = await _adminWebService.GetAllUsersAsync(token);
-
-            return View(users);
-        }
-
-        [Route("RegisterManager")]
-        public ActionResult RegisterManager() => View();
-
-        #endregion
-
         [Route("")]
         public async Task<ActionResult> Entrances()
         {
@@ -91,7 +72,7 @@ namespace FoundersPC.Web.Controllers.Administration
 
             var entrances = await _adminWebService.GetAllEntrancesAsync(token);
 
-            var viewModel = new EntrancesViewModel()
+            var viewModel = new EntrancesViewModel
                             {
                                 BetweenFilter = new EntrancesBetweenFilter(),
                                 Entrances = entrances,
@@ -111,7 +92,7 @@ namespace FoundersPC.Web.Controllers.Administration
 
             var entrances = await _adminWebService.GetAllUserEntrancesAsync(userId, token);
 
-            var viewModel = new EntrancesViewModel()
+            var viewModel = new EntrancesViewModel
                             {
                                 BetweenFilter = new EntrancesBetweenFilter(),
                                 Entrances = entrances,
@@ -136,7 +117,7 @@ namespace FoundersPC.Web.Controllers.Administration
                                                                                viewModel.BetweenFilter.Finish,
                                                                                token);
 
-            var newViewModel = new EntrancesViewModel()
+            var newViewModel = new EntrancesViewModel
                                {
                                    BetweenFilter = viewModel.BetweenFilter,
                                    Entrances = entrances,
@@ -145,5 +126,24 @@ namespace FoundersPC.Web.Controllers.Administration
 
             return View("Entrances", newViewModel);
         }
+
+        #region Redirection to view
+
+        [Route("UsersTable")]
+        public async Task<ActionResult> UsersTable()
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            var users = await _adminWebService.GetAllUsersAsync(token);
+
+            return View(users);
+        }
+
+        [Route("RegisterManager")]
+        public ActionResult RegisterManager() => View();
+
+        #endregion
     }
 }

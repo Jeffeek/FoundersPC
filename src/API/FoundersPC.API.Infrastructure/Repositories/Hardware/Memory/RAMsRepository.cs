@@ -14,7 +14,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
     public class RAMsRepository : GenericRepositoryAsync<RAM>, IRAMsRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public RAMsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IRAMsRepositoryAsync
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
             return ram;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<RAM>> GetAllAsync()
         {
             return await Context.Set<RAM>()

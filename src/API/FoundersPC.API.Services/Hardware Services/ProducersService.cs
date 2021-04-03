@@ -23,18 +23,18 @@ namespace FoundersPC.API.Services.Hardware_Services
             _mapper = mapper;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
             _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                 .ProducersRepository
-                                                                                 .GetAllAsync());
+                                                                                   .ProducersRepository
+                                                                                   .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
             _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository
                                                                                .GetByIdAsync(producerId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateProducerAsync(ProducerInsertDto producer)
         {
             var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
@@ -48,7 +48,7 @@ namespace FoundersPC.API.Services.Hardware_Services
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProducersRepository.GetByIdAsync(id);
@@ -61,7 +61,7 @@ namespace FoundersPC.API.Services.Hardware_Services
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteProducerAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.ProducersRepository.DeleteAsync(id);
