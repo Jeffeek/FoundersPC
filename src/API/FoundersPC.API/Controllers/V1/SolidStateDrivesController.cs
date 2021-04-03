@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.API.Dto;
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/SolidStateDrives")]
@@ -25,15 +25,15 @@ namespace FoundersPC.API.Controllers.V1
         private readonly IMapper _mapper;
         private readonly ISSDService _ssdService;
 
-        public SolidStateDrivesController(ISSDService ssdService, IMapper mapper, ILogger<SolidStateDrivesController> logger)
+        public SolidStateDrivesController(ISSDService ssdService,
+                                          IMapper mapper,
+                                          ILogger<SolidStateDrivesController> logger)
         {
             _ssdService = ssdService;
             _mapper = mapper;
             _logger = logger;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SSDReadDto>>> Get()
@@ -43,8 +43,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _ssdService.GetAllSSDsAsync());
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<SSDReadDto>> Get(int? id)
@@ -58,8 +56,7 @@ namespace FoundersPC.API.Controllers.V1
             return ssd == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(ssd);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] SSDUpdateDto ssd)
@@ -74,8 +71,7 @@ namespace FoundersPC.API.Controllers.V1
             return result ? Json(ssd) : ResponseResultsHelper.UpdateError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] SSDInsertDto ssd)
@@ -89,8 +85,7 @@ namespace FoundersPC.API.Controllers.V1
             return insertResult ? Json(ssd) : ResponseResultsHelper.InsertError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)

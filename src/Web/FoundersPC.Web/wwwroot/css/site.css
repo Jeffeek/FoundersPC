@@ -206,29 +206,6 @@ body
 
 /*Floating label v2 end*/
 
-
-/*Button animate*/
-
-.btn-upper-animate
-{
-    -webkit-transition: all ease-in-out 300ms;
-    border-radius: 5px;
-    box-shadow: 0rem 0.1rem 0.05rem 0rem #ffffff;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all ease-in-out 300ms;
-}
-
-.btn-upper-animate:hover
-{
-    -webkit-transform: translate(0px, -6px) scale(1.1);
-    box-shadow: 0rem 0.5rem 0.6rem 0rem #acacac;
-    transform: translate(0px, -6px) scale(1.1);
-}
-
-/*Button animate end*/
-
 .icon
 {
     fill: rgb(255, 255, 255);

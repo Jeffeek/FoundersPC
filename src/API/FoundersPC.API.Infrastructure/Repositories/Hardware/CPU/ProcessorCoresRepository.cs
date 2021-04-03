@@ -14,12 +14,12 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.CPU
 {
     public class ProcessorCoresRepository : GenericRepositoryAsync<ProcessorCore>, IProcessorCoresRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public ProcessorCoresRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IProcessorCoresRepositoryAsync
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<ProcessorCore>> GetAllAsync()
         {
             return await Context.Set<ProcessorCore>()

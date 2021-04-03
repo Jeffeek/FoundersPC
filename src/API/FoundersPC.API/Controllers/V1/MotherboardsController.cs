@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.API.Dto;
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Motherboards")]
@@ -24,15 +24,15 @@ namespace FoundersPC.API.Controllers.V1
         private readonly IMapper _mapper;
         private readonly IMotherboardService _motherboardService;
 
-        public MotherboardsController(IMotherboardService service, IMapper mapper, ILogger<MotherboardsController> logger)
+        public MotherboardsController(IMotherboardService service,
+                                      IMapper mapper,
+                                      ILogger<MotherboardsController> logger)
         {
             _motherboardService = service;
             _mapper = mapper;
             _logger = logger;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MotherboardReadDto>>> Get()
@@ -42,8 +42,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _motherboardService.GetAllMotherboardsAsync());
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<MotherboardReadDto>> Get(int? id)
@@ -54,11 +52,12 @@ namespace FoundersPC.API.Controllers.V1
 
             var motherboardReadDto = await _motherboardService.GetMotherboardByIdAsync(id.Value);
 
-            return motherboardReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(motherboardReadDto);
+            return motherboardReadDto == null
+                       ? ResponseResultsHelper.NotFoundByIdResult(id.Value)
+                       : Json(motherboardReadDto);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] MotherboardUpdateDto motherboard)
@@ -73,8 +72,7 @@ namespace FoundersPC.API.Controllers.V1
             return result ? Json(motherboard) : ResponseResultsHelper.UpdateError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] MotherboardInsertDto motherboard)
@@ -88,8 +86,7 @@ namespace FoundersPC.API.Controllers.V1
             return insertResult ? Json(motherboard) : ResponseResultsHelper.InsertError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)

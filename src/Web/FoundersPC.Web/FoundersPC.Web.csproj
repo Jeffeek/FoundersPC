@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Web.Application\FoundersPC.Web.Application.csproj" />
@@ -41,13 +42,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
-    <Folder Include="Pages\" />
+    <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
+    <None Include="wwwroot\js\space-invaders.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
-    <None Include="wwwroot\js\space-invaders.js" />
+    <Folder Include="Areas\Producers\" />
   </ItemGroup>
 
 </Project>

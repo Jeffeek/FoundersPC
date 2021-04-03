@@ -14,7 +14,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
     public class CasesRepository : GenericRepositoryAsync<Case>, ICasesRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public CasesRepository(FoundersPCHardwareContext context) : base(context) { }
 
         #region Implementation of ICasesRepositoryAsync
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
             return @case;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<Case>> GetAllAsync()
         {
             return await Context.Set<Case>()

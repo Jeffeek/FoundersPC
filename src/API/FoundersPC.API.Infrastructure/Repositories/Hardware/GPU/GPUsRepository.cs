@@ -13,7 +13,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
 {
     public class GPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.VideoCard.GPU>, IGPUsRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public GPUsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IGPUsRepositoryAsync
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
             return gpu;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>> GetAllAsync()
         {
             return await Context

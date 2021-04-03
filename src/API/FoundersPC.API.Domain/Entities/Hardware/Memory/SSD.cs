@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware.Memory
 {
     [Index(nameof(Id))]
-    public class SSD : HardwareEntityBase, IEquatable<SSD>, ISSD
+    public class SSD : HardwareEntityBase, IEquatable<SSD>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Factor")]
@@ -50,7 +49,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(SSD other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -64,7 +63,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
                    && Interface == other.Interface;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -74,7 +73,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
             return Equals((SSD)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode() => HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
 
         #endregion

@@ -2,8 +2,10 @@
 
 using System.Net;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Entities.ViewModels.Entrances;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,45 +13,45 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers.Administration
 {
-    // todo: add manager service
-    [Authorize(Roles = "Administrator")]
+    // todo: split admin controller into several controllers
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [Route("Admin")]
     public class AdminController : Controller
     {
-        private readonly IAdminService _adminService;
+        private readonly IAdminWebService _adminWebService;
 
-        public AdminController(IAdminService adminService) => _adminService = adminService;
+        public AdminController(IAdminWebService adminWebService) => _adminWebService = adminWebService;
 
-        [Route("BlockUser")]
-        public async Task<ActionResult> BlockUser([FromQuery] int id)
+        [Route("BlockUser/{id:int}")]
+        public async Task<ActionResult> BlockUser([FromRoute] int id)
         {
-            await _adminService.BlockUserByIdAsync(id, GetJwtToken());
+            await _adminWebService.BlockUserByIdAsync(id, GetJwtToken());
 
             return RedirectToAction("UsersTable", "Admin");
         }
 
-        [Route("UnblockUser")]
-        public async Task<ActionResult> UnblockUser([FromQuery] int id)
+        [Route("UnblockUser/{id:int}")]
+        public async Task<ActionResult> UnblockUser([FromRoute] int id)
         {
-            await _adminService.UnblockUserByIdAsync(id, GetJwtToken());
+            await _adminWebService.UnblockUserByIdAsync(id, GetJwtToken());
 
             return RedirectToAction("UsersTable", "Admin");
         }
 
-        [Route("MakeUserInactive")]
-        public async Task<ActionResult> MakeUserInactive([FromQuery] int id)
+        [Route("MakeUserInactive/{id:int}")]
+        public async Task<ActionResult> MakeUserInactive([FromRoute] int id)
         {
-            await _adminService.MakeUserInactiveByIdAsync(id, GetJwtToken());
+            await _adminWebService.MakeUserInactiveByIdAsync(id, GetJwtToken());
 
             return RedirectToAction("UsersTable", "Admin");
         }
 
-        [HttpPost]
+        [Route("RegisterManager")]
         public async Task<ActionResult> RegisterManager([FromForm] SignUpViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            var result = await _adminService.RegisterNewManagerAsync(model, GetJwtToken());
+            var result = await _adminWebService.RegisterNewManagerAsync(model, GetJwtToken());
 
             return result ? Ok() : Problem();
         }
@@ -61,9 +63,72 @@ namespace FoundersPC.Web.Controllers.Administration
             return token;
         }
 
+        [Route("")]
+        public async Task<ActionResult> Entrances()
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            var entrances = await _adminWebService.GetAllEntrancesAsync(token);
+
+            var viewModel = new EntrancesViewModel
+                            {
+                                BetweenFilter = new EntrancesBetweenFilter(),
+                                Entrances = entrances,
+                                IsDatePickerRequired = true
+                            };
+
+            return View("Entrances", viewModel);
+        }
+
+        // todo: change view to not display datetime picker / or not
+        [Route("User/{userId:int}")]
+        public async Task<ActionResult> UserEntrances([FromRoute] int userId)
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            var entrances = await _adminWebService.GetAllUserEntrancesAsync(userId, token);
+
+            var viewModel = new EntrancesViewModel
+                            {
+                                BetweenFilter = new EntrancesBetweenFilter(),
+                                Entrances = entrances,
+                                IsDatePickerRequired = false
+                            };
+
+            return View("Entrances", viewModel);
+        }
+
+        [Route("Between")]
+        public async Task<ActionResult> EntrancesBetween([FromForm] EntrancesViewModel viewModel)
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            if (viewModel.BetweenFilter is null) return BadRequest();
+
+            if (viewModel.BetweenFilter.Start > viewModel.BetweenFilter.Finish) return BadRequest();
+
+            var entrances = await _adminWebService.GetAllEntrancesBetweenAsync(viewModel.BetweenFilter.Start,
+                                                                               viewModel.BetweenFilter.Finish,
+                                                                               token);
+
+            var newViewModel = new EntrancesViewModel
+                               {
+                                   BetweenFilter = viewModel.BetweenFilter,
+                                   Entrances = entrances,
+                                   IsDatePickerRequired = true
+                               };
+
+            return View("Entrances", newViewModel);
+        }
+
         #region Redirection to view
 
-        [HttpGet]
         [Route("UsersTable")]
         public async Task<ActionResult> UsersTable()
         {
@@ -71,15 +136,13 @@ namespace FoundersPC.Web.Controllers.Administration
 
             if (token is null) throw new CookieException();
 
-            var users = await _adminService.GetAllUsersAsync(token);
+            var users = await _adminWebService.GetAllUsersAsync(token);
 
             return View(users);
         }
 
-        [HttpGet]
+        [Route("RegisterManager")]
         public ActionResult RegisterManager() => View();
-
-        //public ActionResult Entrances() => View();
 
         #endregion
     }

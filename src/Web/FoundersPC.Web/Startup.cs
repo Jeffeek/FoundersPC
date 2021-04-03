@@ -1,12 +1,11 @@
 #region Using namespaces
 
-using System;
+using System.IO;
 using FoundersPC.Web.Application;
+using FoundersPC.Web.Application.Middleware;
 using FoundersPC.Web.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,7 +17,15 @@ namespace FoundersPC.Web
 {
     public sealed class Startup
     {
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration)
+        {
+            var cfgBuilder = new ConfigurationBuilder();
+            cfgBuilder.AddConfiguration(configuration)
+                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                                   false);
+
+            Configuration = cfgBuilder.Build();
+        }
 
         private IConfiguration Configuration { get; }
 
@@ -31,22 +38,16 @@ namespace FoundersPC.Web
 
             services.AddHttpClient();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                    .AddCookie(options =>
-                               {
-                                   options.LoginPath = new PathString("/Authentication/SignIn");
-                                   options.AccessDeniedPath = new PathString("/Shared/Forbidden");
-                                   options.LogoutPath = "/Authentication/SignIn";
-                                   options.ExpireTimeSpan = TimeSpan.FromDays(30);
-                               });
+            services.AddScoped<CookieCheckMiddleware>();
 
-            services.AddAuthorization();
+            services.AddCookieSecureAuthentication();
+
+            services.AddCookieAuthorizationPolicies();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -56,26 +57,28 @@ namespace FoundersPC.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error/{0}");
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseMiddleware<CookieCheckMiddleware>();
+
             app.UseSerilogRequestLogging();
 
             app.UseRouting();
+
+            app.UseStatusCodePagesWithRedirects("/Error/{0}");
 
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
                              {
-                                 endpoints.MapControllerRoute("default",
-                                                              "{controller=Home}/{action=Index}");
-
                                  endpoints.MapDefaultControllerRoute();
+                                 endpoints.MapControllers();
                              });
         }
     }

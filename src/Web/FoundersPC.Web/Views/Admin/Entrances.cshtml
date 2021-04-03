@@ -1,0 +1,91 @@
+﻿@model FoundersPC.Web.Domain.Entities.ViewModels.Entrances.EntrancesViewModel
+
+@{
+    ViewData["Title"] = "Entrances";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+@section Styles {
+    <link
+        href='~/lib/bootstrap/css/bootstrap-datetimepicker-build.css'
+        rel='stylesheet'>
+}
+
+
+}
+
+<h1>Entrances</h1>
+
+@if (Model.IsDatePickerRequired) {
+    <form
+        asp-action='EntrancesBetween'
+        asp-controller='Admin'>
+        <div
+            class="date input-group"
+            data-provide="datepicker">
+            <input
+                asp-for='BetweenFilter.Start'
+                class="form-control"
+                max="@(DateTime.Now.ToShortDateString())"
+                min="2021-01-01"
+                required
+                type="date">
+        </div>
+
+        <div
+            class="date input-group"
+            data-provide="datepicker">
+            <input
+                asp-for='BetweenFilter.Finish'
+                class="form-control"
+                max="@(DateTime.Now.ToShortDateString())"
+                min="2021-01-01"
+                type="date">
+        </div>
+
+        <input
+            class='btn btn-outline-info'
+            type='submit'
+            value='Filter by date'>
+    </form>
+}
+
+
+<table
+    class='table'>
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            USER ID
+        </th>
+        <th>
+            ENTRANCE
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Entrances) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entrance)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    <script
+        src='~/lib/bootstrap/js/bootstrap-datetimepicker.js'></script>
+    <script
+        src='~/lib/moment/js/moment.min.js'></script>
+}

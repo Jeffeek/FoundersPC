@@ -23,10 +23,29 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
                          .Include(user => user.Role)
                          .ToListAsync();
 
-        public async Task<UserEntity> GetByAsync(Expression<Func<UserEntity, bool>> predicate) =>
-            await Context.Set<UserEntity>()
-                         .Include(user => user.Role)
-                         .FirstOrDefaultAsync(predicate);
+        public async Task<UserEntity> GetUserByAsync(Expression<Func<UserEntity, bool>> predicate)
+        {
+            var user = await Context.Set<UserEntity>().FirstOrDefaultAsync(predicate);
+
+            if (user is null) return null;
+
+            await Context.Entry(user).Reference(x => x.Role).LoadAsync();
+            await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
+
+            return user;
+        }
+
+        public async Task<UserEntity> GetUserByEmailAsync(string userEmail)
+        {
+            var user = await Context.Set<UserEntity>().FirstOrDefaultAsync(x => x.Email == userEmail);
+
+            if (user is null) return null;
+
+            await Context.Entry(user).Reference(x => x.Role).LoadAsync();
+            await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
+
+            return user;
+        }
 
         public override async Task<UserEntity> GetByIdAsync(int id)
         {
@@ -36,7 +55,6 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 
             await Context.Entry(user).Reference(x => x.Role).LoadAsync();
             await Context.Entry(user).Collection(x => x.Tokens).LoadAsync();
-            await Context.Entry(user).Collection(x => x.Entrances).LoadAsync();
 
             return user;
         }

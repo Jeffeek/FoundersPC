@@ -5,10 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Validation\Requests\Administration\Manager\**" />
+    <EmbeddedResource Remove="Validation\Requests\Administration\Manager\**" />
+    <None Remove="Validation\Requests\Administration\Manager\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Interfaces\Services\Encryption Services\" />
-    <Folder Include="Validation\Requests\Administration\Manager\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +30,6 @@
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RepositoryShared\FoundersPC.RepositoryShared.csproj" />
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.WebIdentityShared\FoundersPC.WebIdentityShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Identity.Domain\FoundersPC.Identity.Domain.csproj" />
   </ItemGroup>
 

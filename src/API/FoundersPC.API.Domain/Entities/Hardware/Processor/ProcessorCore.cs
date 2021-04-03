@@ -53,7 +53,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(ProcessorCore other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -67,7 +67,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
                    && Socket == other.Socket;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -77,8 +77,14 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
             return Equals((ProcessorCore)obj);
         }
 
-        /// <inheritdoc />
-        public override int GetHashCode() => HashCode.Combine(MarketLaunch, Title, MicroArchitecture, L2CachePerCore, L3CachePerCore, Socket);
+        /// <inheritdoc/>
+        public override int GetHashCode() =>
+            HashCode.Combine(MarketLaunch,
+                             Title,
+                             MicroArchitecture,
+                             L2CachePerCore,
+                             L3CachePerCore,
+                             Socket);
 
         #endregion
     }

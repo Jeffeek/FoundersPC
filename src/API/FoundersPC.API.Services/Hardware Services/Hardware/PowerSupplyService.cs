@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
@@ -18,8 +18,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         private readonly IUnitOfWorkHardwareAPI _unitOfWorkHardwareAPI;
 
         public PowerSupplyService(IMapper mapper,
-                                  IUnitOfWorkHardwareAPI uow
-        )
+                                  IUnitOfWorkHardwareAPI uow)
         {
             _mapper = mapper;
             _unitOfWorkHardwareAPI = uow;
@@ -27,24 +26,25 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
         #region Implementation of IPowerSupplyService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync() =>
             _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
                                                                                          .PowerSuppliersRepository
                                                                                          .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId) =>
             _mapper.Map<PowerSupply, PowerSupplyReadDto>(await _unitOfWorkHardwareAPI
                                                                .PowerSuppliersRepository
                                                                .GetByIdAsync(powerSupplyId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreatePowerSupplyAsync(PowerSupplyInsertDto powerSupply)
         {
             var mappedPowerSupply = _mapper.Map<PowerSupplyInsertDto, PowerSupply>(powerSupply);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.AnyAsync(x => x.Equals(mappedPowerSupply));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.PowerSuppliersRepository.AnyAsync(x => x.Equals(mappedPowerSupply));
 
             if (entityAlreadyExists) return false;
 
@@ -53,7 +53,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdatePowerSupplyAsync(int id, PowerSupplyUpdateDto powerSupply)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.GetByIdAsync(id);
@@ -68,7 +68,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeletePowerSupplyAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.DeleteAsync(id);

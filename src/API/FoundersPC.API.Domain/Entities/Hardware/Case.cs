@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware
 {
     [Index(nameof(Id))]
-    public class Case : HardwareEntityBase, ICase, IEquatable<Case>
+    public class Case : HardwareEntityBase, IEquatable<Case>
     {
         [Column("WindowMaterial")]
         [MinLength(3)]
@@ -81,7 +80,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(Case other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -99,7 +98,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
                    && Weight.Equals(other.Weight ?? 0);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -109,8 +108,14 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             return Equals((Case)obj);
         }
 
-        /// <inheritdoc />
-        public override int GetHashCode() => HashCode.Combine(Type, MaxMotherboardSize, Material, WindowMaterial, TransparentWindow, Color);
+        /// <inheritdoc/>
+        public override int GetHashCode() =>
+            HashCode.Combine(Type,
+                             MaxMotherboardSize,
+                             Material,
+                             WindowMaterial,
+                             TransparentWindow,
+                             Color);
 
         #endregion
     }

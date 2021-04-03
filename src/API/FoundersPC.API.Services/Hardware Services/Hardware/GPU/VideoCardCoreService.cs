@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
+using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
@@ -25,23 +25,24 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
 
         #region Implementation of IVideoCardCoreService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<VideoCardCoreReadDto>> GetAllVideoCardCoresAsync() =>
             _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                             .VideoCardCoresRepository
-                                                                                             .GetAllAsync());
+                                                                                           .VideoCardCoresRepository
+                                                                                           .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<VideoCardCoreReadDto> GetVideoCardCoreByIdAsync(int videoCardCoreId) =>
             _mapper.Map<VideoCardCore, VideoCardCoreReadDto>(await _unitOfWorkHardwareAPI.VideoCardCoresRepository
                                                                                          .GetByIdAsync(videoCardCoreId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore)
         {
             var mappedVideoCardCore = _mapper.Map<VideoCardCoreInsertDto, VideoCardCore>(videoCardCore);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.AnyAsync(x => x.Equals(mappedVideoCardCore));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.VideoCardCoresRepository.AnyAsync(x => x.Equals(mappedVideoCardCore));
 
             if (entityAlreadyExists) return false;
 
@@ -50,7 +51,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateVideoCardCoreAsync(int id, VideoCardCoreUpdateDto videoCardCore)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.GetByIdAsync(id);
@@ -65,7 +66,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteVideoCardCoreAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.DeleteAsync(id);

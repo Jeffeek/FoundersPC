@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
     <ProjectReference Include="..\FoundersPC.API.Application\FoundersPC.API.Application.csproj" />
     <ProjectReference Include="..\FoundersPC.API.Infrastructure\FoundersPC.API.Infrastructure.csproj" />

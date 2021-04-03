@@ -16,7 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.WebIdentityShared\FoundersPC.WebIdentityShared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
@@ -23,20 +23,23 @@ namespace FoundersPC.API.Services.Hardware_Services
             _mapper = mapper;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
-            _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI.ProducersRepository
-                                                                                                         .GetAllAsync());
+            _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
+                                                                                   .ProducersRepository
+                                                                                   .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
-            _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository.GetByIdAsync(producerId));
+            _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository
+                                                                               .GetByIdAsync(producerId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateProducerAsync(ProducerInsertDto producer)
         {
             var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.ProducersRepository.AnyAsync(x => x.Equals(mappedProducer));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.ProducersRepository.AnyAsync(x => x.Equals(mappedProducer));
 
             if (entityAlreadyExists) return false;
 
@@ -45,7 +48,7 @@ namespace FoundersPC.API.Services.Hardware_Services
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProducersRepository.GetByIdAsync(id);
@@ -58,7 +61,7 @@ namespace FoundersPC.API.Services.Hardware_Services
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteProducerAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.ProducersRepository.DeleteAsync(id);

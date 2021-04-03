@@ -1,10 +1,12 @@
 ﻿#region Using namespaces
 
 using AutoMapper;
-using FoundersPC.Identity.Application.DTO;
+using FoundersPC.Identity.Domain.Entities.Logs;
+using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Domain.Entities.Users;
+using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.Authentication;
-using FoundersPC.WebIdentityShared;
 
 #endregion
 
@@ -14,14 +16,12 @@ namespace FoundersPC.Identity.Application.Mappings
     {
         public MappingStartup()
         {
-            CreateMap<RoleEntity, RoleEntityReadDto>().ReverseMap();
-            CreateMap<UserEntity, UserEntityReadDto>().ReverseMap();
-
-            CreateMap<UserEntityReadDto, ApplicationUser>()
-                .ForMember(dest => dest.Role,
-                           source => source.MapFrom(x => x.Role.RoleTitle));
-
-            CreateMap<UserEntranceLogReadDto, ApplicationUserEntrance>();
+            CreateMap<ApiAccessUserToken, ApiAccessUserTokenReadDto>();
+            CreateMap<RoleEntity, RoleEntityReadDto>();
+            CreateMap<UserEntity, UserEntityReadDto>();
+            CreateMap<ChangeNotificationsRequest, UserNotificationsSettings>().ReverseMap();
+            CreateMap<UserEntranceLog, UserEntranceLogReadDto>();
+            CreateMap<AccessTokenLog, AccessTokenLogReadDto>();
 
             CreateMap<UserEntityReadDto, UserLoginResponse>()
                 .ForMember(dest => dest.IsUserBlocked,

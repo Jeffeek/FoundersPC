@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 {
     [Index(nameof(Id))]
-    public class GPU : HardwareEntityBase, IEquatable<GPU>, IGPU
+    public class GPU : HardwareEntityBase, IEquatable<GPU>
     {
         [ForeignKey(nameof(GraphicsProcessorId))]
         public VideoCardCore Core { get; set; }
@@ -93,7 +92,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(GPU other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -113,7 +112,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
                    && DisplayPort == other.DisplayPort;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -123,7 +122,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
             return Equals((GPU)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var hashCode = new HashCode();

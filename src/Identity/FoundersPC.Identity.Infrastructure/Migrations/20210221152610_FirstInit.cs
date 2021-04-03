@@ -16,7 +16,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                                   {
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
-                                                      RoleTitle = table.Column<string>("nvarchar(max)", nullable : false)
+                                                      RoleTitle = table.Column<string>("nvarchar(max)",
+                                                                                       nullable : false)
                                                   },
                                          constraints : table => { table.PrimaryKey("PK_Roles", x => x.Id); });
 
@@ -25,13 +26,29 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                                   {
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
-                                                      Login = table.Column<string>("nvarchar(30)", maxLength : 30, nullable : true),
-                                                      RegistrationDate = table.Column<DateTime>("datetime2", nullable : false),
+                                                      Login =
+                                                          table.Column<string>("nvarchar(30)",
+                                                                               maxLength : 30,
+                                                                               nullable : true),
+                                                      RegistrationDate =
+                                                          table.Column<DateTime>("datetime2", nullable : false),
                                                       RoleId = table.Column<int>("int", nullable : false),
-                                                      IsActive = table.Column<bool>("bit", nullable : false, defaultValue : true),
-                                                      IsBlocked = table.Column<bool>("bit", nullable : false, defaultValue : false),
-                                                      Email = table.Column<string>("nvarchar(128)", maxLength : 128, nullable : false),
-                                                      HashedPassword = table.Column<string>("nvarchar(128)", maxLength : 128, nullable : false)
+                                                      IsActive =
+                                                          table.Column<bool>("bit",
+                                                                             nullable : false,
+                                                                             defaultValue : true),
+                                                      IsBlocked =
+                                                          table.Column<bool>("bit",
+                                                                             nullable : false,
+                                                                             defaultValue : false),
+                                                      Email =
+                                                          table.Column<string>("nvarchar(128)",
+                                                                               maxLength : 128,
+                                                                               nullable : false),
+                                                      HashedPassword =
+                                                          table.Column<string>("nvarchar(128)",
+                                                                               maxLength : 128,
+                                                                               nullable : false)
                                                   },
                                          constraints : table =>
                                                        {

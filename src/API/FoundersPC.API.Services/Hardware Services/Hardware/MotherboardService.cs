@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
@@ -18,8 +18,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         private readonly IUnitOfWorkHardwareAPI _unitOfWorkHardwareAPI;
 
         public MotherboardService(IMapper mapper,
-                                  IUnitOfWorkHardwareAPI uow
-        )
+                                  IUnitOfWorkHardwareAPI uow)
         {
             _mapper = mapper;
             _unitOfWorkHardwareAPI = uow;
@@ -27,24 +26,25 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
         #region Implementation of IMotherboardService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<MotherboardReadDto>> GetAllMotherboardsAsync() =>
             _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
                                                                                          .MotherboardsRepository
                                                                                          .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId) =>
             _mapper.Map<Motherboard, MotherboardReadDto>(await _unitOfWorkHardwareAPI
                                                                .MotherboardsRepository
                                                                .GetByIdAsync(motherboardId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateMotherboardAsync(MotherboardInsertDto motherboard)
         {
             var mappedMotherboard = _mapper.Map<MotherboardInsertDto, Motherboard>(motherboard);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.MotherboardsRepository.AnyAsync(x => x.Equals(mappedMotherboard));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.MotherboardsRepository.AnyAsync(x => x.Equals(mappedMotherboard));
 
             if (entityAlreadyExists) return false;
 
@@ -53,7 +53,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateMotherboardAsync(int id, MotherboardUpdateDto motherboard)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.MotherboardsRepository.GetByIdAsync(id);
@@ -68,7 +68,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteMotherboardAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.MotherboardsRepository.DeleteAsync(id);

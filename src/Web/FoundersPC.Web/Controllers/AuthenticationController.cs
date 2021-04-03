@@ -3,10 +3,11 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -17,25 +18,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
+    [AllowAnonymous]
+    [Route("Authentication")]
     [Controller]
     public class AuthenticationController : Controller
     {
-        private readonly IIdentityAuthenticationService _authenticationService;
-        private readonly IMapper _mapper;
+        private readonly IAuthenticationWebService _authenticationWebService;
 
-        public AuthenticationController(IMapper mapper,
-                                        IIdentityAuthenticationService authenticationService
-        )
-        {
-            _authenticationService = authenticationService;
-            _mapper = mapper;
-            _authenticationService = authenticationService;
-        }
+        public AuthenticationController(IAuthenticationWebService authenticationWebService) =>
+            _authenticationWebService = authenticationWebService;
 
         #region ForgotPassword
 
+        [Route("ForgotPassword")]
         [HttpPost]
-        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<ActionResult> ForgotPassword([FromForm] ForgotPasswordViewModel model)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Bad email validation",
@@ -45,24 +42,15 @@ namespace FoundersPC.Web.Controllers
                                          nameof(ForgotPasswordViewModel));
 
             var forgotPasswordResponse =
-                await _authenticationService.ForgotPasswordAsync(model);
+                await _authenticationWebService.ForgotPasswordAsync(model);
 
-            if (forgotPasswordResponse is null)
-                return ValidationProblem("Server returned null object",
-                                         nameof(forgotPasswordResponse),
-                                         400,
-                                         "Error",
-                                         nameof(UserForgotPasswordResponse));
+            if (forgotPasswordResponse is null) return UnprocessableEntity();
 
-            if (!forgotPasswordResponse.IsUserExists)
-                return NotFound(new
-                                {
-                                    error = $"User with email = {model.Email} does not exists in our database"
-                                });
+            if (!forgotPasswordResponse.IsUserExists) return NotFound();
 
             if (!forgotPasswordResponse.IsConfirmationMailSent)
                 return Problem(forgotPasswordResponse.Error,
-                               statusCode : 401,
+                               statusCode : 500,
                                title : "Email send error");
 
             return View("SignIn");
@@ -72,8 +60,10 @@ namespace FoundersPC.Web.Controllers
 
         #region SignUp
 
+        [Route("SignUp")]
+        [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
+        public async Task<IActionResult> SignUpAsync([FromForm] SignUpViewModel signUpModel)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Bad validation/model",
@@ -82,14 +72,9 @@ namespace FoundersPC.Web.Controllers
                                          "Error",
                                          nameof(SignUpViewModel));
 
-            var registrationResponse = await _authenticationService.SignUpAsync(signUpModel);
+            var registrationResponse = await _authenticationWebService.SignUpAsync(signUpModel);
 
-            if (registrationResponse is null)
-                return Problem("Deserialize error",
-                               nameof(registrationResponse),
-                               StatusCodes.Status500InternalServerError,
-                               "Response error",
-                               nameof(UserSignUpResponse));
+            if (registrationResponse is null) return UnprocessableEntity();
 
             if (!registrationResponse.IsRegistrationSuccessful)
                 return Problem("Registration not successful",
@@ -98,7 +83,7 @@ namespace FoundersPC.Web.Controllers
                                "Not acceptable registration",
                                nameof(UserSignUpResponse));
 
-            await SetupSessionCookieAsync(registrationResponse.Email, registrationResponse.Role);
+            await SetupDefaultCookieAsync(registrationResponse.Email, registrationResponse.Role);
             SetupJwtTokenInCookie(registrationResponse.JwtToken);
 
             return RedirectToAction("Index", "Home");
@@ -106,12 +91,13 @@ namespace FoundersPC.Web.Controllers
 
         #endregion
 
-        [Authorize]
+        [Route("LogOut")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
         public async Task<ActionResult> LogOutAsync()
         {
-            if (!User.Identity?.IsAuthenticated ?? false) return RedirectToAction("Index", "Home");
+            if (!User.Identity?.IsAuthenticated ?? false) return Unauthorized();
 
-            RemoveJwtTokenInCookie();
+            RemoveJwtTokenFromCookie();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Index", "Home");
@@ -119,32 +105,27 @@ namespace FoundersPC.Web.Controllers
 
         #region SignIn
 
+        [Route("SignIn")]
+        [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> SignInAsync(SignInViewModel model)
+        public async Task<IActionResult> SignInAsync([FromForm] SignInViewModel model)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Not valid credentials. Bad model.",
                                          nameof(model),
-                                         400,
+                                         StatusCodes.Status422UnprocessableEntity,
                                          "Error",
                                          nameof(SignInViewModel));
 
-            var signInResponse = await _authenticationService.SignInAsync(model);
+            var signInResponse = await _authenticationWebService.SignInAsync(model);
 
-            if (signInResponse == null)
-                return Problem("Deserialize error",
-                               nameof(signInResponse),
-                               StatusCodes.Status500InternalServerError,
-                               "Response error",
-                               nameof(UserLoginResponse));
+            if (signInResponse == null) return UnprocessableEntity();
 
-            if (!signInResponse.IsUserExists)
-                return NotFound(new
-                                {
-                                    error = "User not exists"
-                                });
+            if (!signInResponse.IsUserExists) NotFound();
 
-            await SetupSessionCookieAsync(signInResponse.Email, signInResponse.Role);
+            if (!signInResponse.IsUserActive || signInResponse.IsUserBlocked) return Unauthorized();
+
+            await SetupDefaultCookieAsync(signInResponse.Email, signInResponse.Role);
             SetupJwtTokenInCookie(signInResponse.JwtToken);
 
             return RedirectToAction("Index", "Home");
@@ -156,7 +137,7 @@ namespace FoundersPC.Web.Controllers
 
         private void SetupJwtTokenInCookie(string token)
         {
-            RemoveJwtTokenInCookie();
+            RemoveJwtTokenFromCookie();
 
             HttpContext.Response.Cookies.Append("token",
                                                 token,
@@ -168,7 +149,7 @@ namespace FoundersPC.Web.Controllers
                                                 });
         }
 
-        private async Task SetupSessionCookieAsync(string email, string role)
+        private async Task SetupDefaultCookieAsync(string email, string role)
         {
             var claims = new List<Claim>
                          {
@@ -184,7 +165,7 @@ namespace FoundersPC.Web.Controllers
                                           new ClaimsPrincipal(identity));
         }
 
-        private void RemoveJwtTokenInCookie()
+        private void RemoveJwtTokenFromCookie()
         {
             if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
         }
@@ -193,14 +174,26 @@ namespace FoundersPC.Web.Controllers
 
         #region Redirection
 
+        [Route("SignIn")]
         [HttpGet]
-        public ActionResult SignIn() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
+        public ActionResult SignIn() =>
+            User.Identity?.IsAuthenticated ?? false
+                ? View("Error", new ErrorViewModel("You are already authenticated"))
+                : View();
 
+        [Route("SignUp")]
         [HttpGet]
-        public IActionResult SignUp() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
+        public IActionResult SignUp() =>
+            User.Identity?.IsAuthenticated ?? false
+                ? View("Error", new ErrorViewModel("You are already authenticated"))
+                : View();
 
+        [Route("ForgotPassword")]
         [HttpGet]
-        public IActionResult ForgotPassword() => User.Identity?.IsAuthenticated ?? false ? View("Forbidden") : View();
+        public IActionResult ForgotPassword() =>
+            User.Identity?.IsAuthenticated ?? false
+                ? View("Error", new ErrorViewModel("You are already authenticated"))
+                : View();
 
         #endregion
     }

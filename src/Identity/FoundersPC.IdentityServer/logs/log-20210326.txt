@@ -1,0 +1,484 @@
+03/26/2021 18:19:54 Identity server started..
+03/26/2021 18:19:54 Identity server HostBuilder created
+03/26/2021 18:19:55 Host built
+03/26/2021 18:20:09 Identity server started..
+03/26/2021 18:20:10 Identity server HostBuilder created
+03/26/2021 18:20:10 Host built
+03/26/2021 18:20:33 Identity server started..
+03/26/2021 18:20:33 Identity server HostBuilder created
+03/26/2021 18:20:44 Host built
+03/26/2021 18:20:55 Now listening on: "https://localhost:3000"
+03/26/2021 18:20:55 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:20:55 Hosting environment: "Development"
+03/26/2021 18:20:55 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:22:30 Identity server started..
+03/26/2021 18:22:30 Identity server HostBuilder created
+03/26/2021 18:22:31 Host built
+03/26/2021 18:22:31 Now listening on: "https://localhost:3000"
+03/26/2021 18:22:31 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:22:31 Hosting environment: "Development"
+03/26/2021 18:22:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:22:52 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru and wrote password not exist.
+03/26/2021 18:22:52 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1596.1426 ms
+03/26/2021 18:23:03 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:23:04 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 428.2973 ms
+03/26/2021 18:23:06 HTTP "GET" "/FoundersPCIdentity/Users" responded 404 in 0.1181 ms
+03/26/2021 18:24:34 Identity server started..
+03/26/2021 18:24:34 Identity server HostBuilder created
+03/26/2021 18:24:35 Host built
+03/26/2021 18:24:35 Now listening on: "https://localhost:3000"
+03/26/2021 18:24:35 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:24:35 Hosting environment: "Development"
+03/26/2021 18:24:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:24:42 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:24:43 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1864.3705 ms
+03/26/2021 18:25:00 HTTP "GET" "/FoundersPCIdentity/Users" responded 404 in 0.9000 ms
+03/26/2021 18:26:10 Identity server started..
+03/26/2021 18:26:10 Identity server HostBuilder created
+03/26/2021 18:26:11 Host built
+03/26/2021 18:26:11 Now listening on: "https://localhost:3000"
+03/26/2021 18:26:11 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:26:11 Hosting environment: "Development"
+03/26/2021 18:26:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:26:17 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:26:18 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1944.5862 ms
+03/26/2021 18:27:36 Identity server started..
+03/26/2021 18:27:36 Identity server HostBuilder created
+03/26/2021 18:27:36 Host built
+03/26/2021 18:27:37 Now listening on: "https://localhost:3000"
+03/26/2021 18:27:37 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:27:37 Hosting environment: "Development"
+03/26/2021 18:27:37 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:27:45 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:27:45 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1934.2467 ms
+03/26/2021 18:27:49 HTTP "GET" "/FoundersPCIdentity/Users" responded 404 in 0.9714 ms
+03/26/2021 18:29:50 Identity server started..
+03/26/2021 18:29:50 Identity server HostBuilder created
+03/26/2021 18:29:51 Host built
+03/26/2021 18:29:51 Now listening on: "https://localhost:3000"
+03/26/2021 18:29:51 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:29:51 Hosting environment: "Development"
+03/26/2021 18:29:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:29:58 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:29:58 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1899.4597 ms
+03/26/2021 18:30:30 Identity server started..
+03/26/2021 18:30:30 Identity server HostBuilder created
+03/26/2021 18:30:30 Host built
+03/26/2021 18:30:31 Now listening on: "https://localhost:3000"
+03/26/2021 18:30:31 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:30:31 Hosting environment: "Development"
+03/26/2021 18:30:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:30:38 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:30:38 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1951.9841 ms
+03/26/2021 18:30:45 HTTP "GET" "/FoundersPCIdentity/Users" responded 404 in 0.8090 ms
+03/26/2021 18:31:41 Identity server started..
+03/26/2021 18:31:55 Identity server started..
+03/26/2021 18:31:55 Identity server HostBuilder created
+03/26/2021 18:31:56 Host built
+03/26/2021 18:31:56 Now listening on: "https://localhost:3000"
+03/26/2021 18:31:56 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:31:56 Hosting environment: "Development"
+03/26/2021 18:31:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:32:03 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:32:03 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1948.6293 ms
+03/26/2021 18:32:25 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 4299.6390 ms
+03/26/2021 18:32:45 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 12.6458 ms
+03/26/2021 18:32:46 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 10.2711 ms
+03/26/2021 18:32:49 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 18.7072 ms
+03/26/2021 18:32:56 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Login" responded 200 in 53.0368 ms
+03/26/2021 18:32:56 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 3.0916 ms
+03/26/2021 18:33:21 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Login" responded 200 in 11.0042 ms
+03/26/2021 18:33:21 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 2.9253 ms
+03/26/2021 18:33:26 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Login" responded 200 in 8.5449 ms
+03/26/2021 18:33:27 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 2.4324 ms
+03/26/2021 18:33:32 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Login" responded 200 in 5.4497 ms
+03/26/2021 18:33:32 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 2.7892 ms
+03/26/2021 18:33:38 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Notifications" responded 500 in 47.8335 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ChangeNotificationsRequest -> UserNotificationsSettings
+FoundersPC.RequestResponseShared.Request.ChangeSettings.ChangeNotificationsRequest -> FoundersPC.Identity.Application.DTO.UserNotificationsSettings
+   at lambda_method246(Closure , ChangeNotificationsRequest , UserNotificationsSettings , ResolutionContext )
+   at FoundersPC.IdentityServer.Controllers.User.Settings.UserChangeSettingsIdentityController.ChangeNotifications(ChangeNotificationsRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\User\Settings\UserChangeSettingsIdentityController.cs:line 122
+   at lambda_method241(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/26/2021 18:33:38 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ChangeNotificationsRequest -> UserNotificationsSettings
+FoundersPC.RequestResponseShared.Request.ChangeSettings.ChangeNotificationsRequest -> FoundersPC.Identity.Application.DTO.UserNotificationsSettings
+   at lambda_method246(Closure , ChangeNotificationsRequest , UserNotificationsSettings , ResolutionContext )
+   at FoundersPC.IdentityServer.Controllers.User.Settings.UserChangeSettingsIdentityController.ChangeNotifications(ChangeNotificationsRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\User\Settings\UserChangeSettingsIdentityController.cs:line 122
+   at lambda_method241(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/26/2021 18:33:43 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 2.4868 ms
+03/26/2021 18:33:47 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 2.5318 ms
+03/26/2021 18:33:50 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 5.5422 ms
+03/26/2021 18:35:21 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Notifications" responded 500 in 39.3198 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ChangeNotificationsRequest -> UserNotificationsSettings
+FoundersPC.RequestResponseShared.Request.ChangeSettings.ChangeNotificationsRequest -> FoundersPC.Identity.Application.DTO.UserNotificationsSettings
+   at lambda_method246(Closure , ChangeNotificationsRequest , UserNotificationsSettings , ResolutionContext )
+   at FoundersPC.IdentityServer.Controllers.User.Settings.UserChangeSettingsIdentityController.ChangeNotifications(ChangeNotificationsRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\User\Settings\UserChangeSettingsIdentityController.cs:line 122
+   at lambda_method241(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/26/2021 18:35:21 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ChangeNotificationsRequest -> UserNotificationsSettings
+FoundersPC.RequestResponseShared.Request.ChangeSettings.ChangeNotificationsRequest -> FoundersPC.Identity.Application.DTO.UserNotificationsSettings
+   at lambda_method246(Closure , ChangeNotificationsRequest , UserNotificationsSettings , ResolutionContext )
+   at FoundersPC.IdentityServer.Controllers.User.Settings.UserChangeSettingsIdentityController.ChangeNotifications(ChangeNotificationsRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\User\Settings\UserChangeSettingsIdentityController.cs:line 122
+   at lambda_method241(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/26/2021 18:39:17 Identity server started..
+03/26/2021 18:39:17 Identity server HostBuilder created
+03/26/2021 18:39:18 Host built
+03/26/2021 18:39:18 Now listening on: "https://localhost:3000"
+03/26/2021 18:39:18 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:39:18 Hosting environment: "Development"
+03/26/2021 18:39:18 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:39:25 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:39:26 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1892.9645 ms
+03/26/2021 18:39:29 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 150.3577 ms
+03/26/2021 18:39:31 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 22.7743 ms
+03/26/2021 18:40:57 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Notifications" responded 200 in 72949.8962 ms
+03/26/2021 18:40:57 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 8.1856 ms
+03/26/2021 18:41:02 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 6.3614 ms
+03/26/2021 18:41:05 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 3.0514 ms
+03/26/2021 18:41:18 HTTP "PUT" "/FoundersPCIdentity/User/Settings/Change/Notifications" responded 200 in 2884.8964 ms
+03/26/2021 18:41:18 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 2.8757 ms
+03/26/2021 18:41:31 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 4.5261 ms
+03/26/2021 18:41:44 HTTP "PUT" "/FoundersPCIdentity/Users/Block/By/Id" responded 404 in 0.2217 ms
+03/26/2021 18:41:44 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 5.1364 ms
+03/26/2021 18:41:50 HTTP "PUT" "/FoundersPCIdentity/Users/Block/By/Id" responded 404 in 0.0476 ms
+03/26/2021 18:41:50 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6009 ms
+03/26/2021 18:41:55 HTTP "PUT" "/FoundersPCIdentity/Users/Block/By/Id" responded 404 in 0.0193 ms
+03/26/2021 18:41:55 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4180 ms
+03/26/2021 18:42:45 HTTP "PUT" "/FoundersPCIdentity/Users/Block/By/Id" responded 404 in 0.0188 ms
+03/26/2021 18:45:26 Identity server started..
+03/26/2021 18:45:26 Identity server HostBuilder created
+03/26/2021 18:45:26 Host built
+03/26/2021 18:45:27 Now listening on: "https://localhost:3000"
+03/26/2021 18:45:27 Application started. Press Ctrl+C to shut down.
+03/26/2021 18:45:27 Hosting environment: "Development"
+03/26/2021 18:45:27 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 18:45:33 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 18:45:34 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1920.3557 ms
+03/26/2021 18:45:36 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 150.2405 ms
+03/26/2021 18:46:07 Successful sending an email to: manager@disposeamail.com
+03/26/2021 18:46:07 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 5844.9095 ms
+03/26/2021 18:46:09 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 10.5996 ms
+03/26/2021 18:46:13 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.1328 ms
+03/26/2021 18:46:16 Successful sending an email to: manager@disposeamail.com
+03/26/2021 18:46:16 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 812.7233 ms
+03/26/2021 18:46:16 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 5.6286 ms
+03/26/2021 18:46:21 Successful sending an email to: manager@disposeamail.com
+03/26/2021 18:46:21 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 899.1544 ms
+03/26/2021 18:46:21 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.9741 ms
+03/26/2021 18:46:26 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 7.9903 ms
+03/26/2021 18:46:26 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.3133 ms
+03/26/2021 18:46:27 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 8.3267 ms
+03/26/2021 18:46:27 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.8377 ms
+03/26/2021 18:46:28 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 10.4484 ms
+03/26/2021 18:46:28 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6072 ms
+03/26/2021 18:46:29 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 8.4742 ms
+03/26/2021 18:46:29 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6315 ms
+03/26/2021 18:46:30 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 9.5373 ms
+03/26/2021 18:46:30 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6974 ms
+03/26/2021 18:46:31 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 7.1069 ms
+03/26/2021 18:46:31 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.9392 ms
+03/26/2021 18:46:34 Successful sending an email to: mishamine26@gmail.com
+03/26/2021 18:46:34 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 810.1851 ms
+03/26/2021 18:46:34 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.9360 ms
+03/26/2021 18:46:35 Successful sending an email to: mishamine26@gmail.com
+03/26/2021 18:46:35 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 710.6531 ms
+03/26/2021 18:46:35 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.0508 ms
+03/26/2021 18:46:40 Successful sending an email to: ilyushinmisha@yandex.ru
+03/26/2021 18:46:40 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 823.4869 ms
+03/26/2021 18:46:40 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6707 ms
+03/26/2021 18:46:42 Successful sending an email to: mishamine26@gmail.com
+03/26/2021 18:46:42 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 800.3446 ms
+03/26/2021 18:46:42 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5586 ms
+03/26/2021 18:46:44 Successful sending an email to: mishamine26@gmail.com
+03/26/2021 18:46:44 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 700.1996 ms
+03/26/2021 18:46:44 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.6339 ms
+03/26/2021 18:46:45 Successful sending an email to: ilyushinmisha@yandex.ru
+03/26/2021 18:46:45 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 868.3901 ms
+03/26/2021 18:46:45 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.5402 ms
+03/26/2021 18:46:47 Successful sending an email to: manager@disposeamail.com
+03/26/2021 18:46:47 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 715.8308 ms
+03/26/2021 18:46:47 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.4061 ms
+03/26/2021 18:47:03 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.2732 ms
+03/26/2021 18:48:02 HTTP "GET" "/FoundersPCIdentity/Cases" responded 404 in 0.1543 ms
+03/26/2021 19:12:05 Identity server started..
+03/26/2021 19:12:05 Identity server HostBuilder created
+03/26/2021 19:12:06 Host built
+03/26/2021 19:12:07 Now listening on: "https://localhost:3000"
+03/26/2021 19:12:07 Application started. Press Ctrl+C to shut down.
+03/26/2021 19:12:07 Hosting environment: "Development"
+03/26/2021 19:12:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 19:49:28 Identity server started..
+03/26/2021 19:49:28 Identity server HostBuilder created
+03/26/2021 19:49:28 Host built
+03/26/2021 19:49:29 Now listening on: "https://localhost:3000"
+03/26/2021 19:49:29 Application started. Press Ctrl+C to shut down.
+03/26/2021 19:49:29 Hosting environment: "Development"
+03/26/2021 19:49:29 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 19:49:36 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 19:49:36 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1894.5945 ms
+03/26/2021 19:50:19 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 19:50:19 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 45.9586 ms
+03/26/2021 19:50:30 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 127.2985 ms
+03/26/2021 19:52:25 Identity server started..
+03/26/2021 19:52:25 Identity server HostBuilder created
+03/26/2021 19:52:25 Host built
+03/26/2021 19:52:26 Now listening on: "https://localhost:3000"
+03/26/2021 19:52:26 Application started. Press Ctrl+C to shut down.
+03/26/2021 19:52:26 Hosting environment: "Development"
+03/26/2021 19:52:26 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 19:52:32 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 19:52:32 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1913.1508 ms
+03/26/2021 20:04:16 Identity server started..
+03/26/2021 20:04:16 Identity server HostBuilder created
+03/26/2021 20:04:17 Host built
+03/26/2021 20:04:17 Now listening on: "https://localhost:3000"
+03/26/2021 20:04:17 Application started. Press Ctrl+C to shut down.
+03/26/2021 20:04:17 Hosting environment: "Development"
+03/26/2021 20:04:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 20:04:27 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru5 and wrote password not exist.
+03/26/2021 20:04:27 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1498.3882 ms
+03/26/2021 20:04:46 ForgotPasswordController: Forgot Password request with email = ilyushin_misha@mail.ru5
+03/26/2021 20:04:46 HTTP "POST" "/FoundersPCIdentity/Authentication/ForgotPassword" responded 500 in 121.4556 ms
+System.Data.NoNullAllowedException: user with email = ilyushin_misha@mail.ru5 is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 120
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 36
+   at lambda_method25(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/26/2021 20:04:46 An unhandled exception has occurred while executing the request.
+System.Data.NoNullAllowedException: user with email = ilyushin_misha@mail.ru5 is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 120
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 36
+   at lambda_method25(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/26/2021 20:06:16 Identity server started..
+03/26/2021 20:06:17 Identity server HostBuilder created
+03/26/2021 20:06:17 Host built
+03/26/2021 20:06:18 Now listening on: "https://localhost:3000"
+03/26/2021 20:06:18 Application started. Press Ctrl+C to shut down.
+03/26/2021 20:06:18 Hosting environment: "Development"
+03/26/2021 20:06:18 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 20:06:47 ForgotPasswordController: Forgot Password request with email = ilyushin_misha@mail.ru5
+03/26/2021 20:07:04 HTTP "POST" "/FoundersPCIdentity/Authentication/ForgotPassword" responded 500 in 23953.4352 ms
+System.Data.NoNullAllowedException: user with email = ilyushin_misha@mail.ru5 is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 120
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 35
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/26/2021 20:07:04 An unhandled exception has occurred while executing the request.
+System.Data.NoNullAllowedException: user with email = ilyushin_misha@mail.ru5 is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 120
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 35
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/26/2021 20:09:22 Identity server started..
+03/26/2021 20:09:22 Identity server HostBuilder created
+03/26/2021 20:09:23 Host built
+03/26/2021 20:09:23 Now listening on: "https://localhost:3000"
+03/26/2021 20:09:23 Application started. Press Ctrl+C to shut down.
+03/26/2021 20:09:23 Hosting environment: "Development"
+03/26/2021 20:09:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+03/26/2021 20:09:33 ForgotPasswordController: Forgot Password request with email = ilyushin_misha@mail.ru5
+03/26/2021 20:09:34 HTTP "POST" "/FoundersPCIdentity/Authentication/ForgotPassword" responded 500 in 1397.5238 ms
+System.Data.NoNullAllowedException: user with email = ilyushin_misha@mail.ru5 is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 120
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 35
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+03/26/2021 20:09:34 An unhandled exception has occurred while executing the request.
+System.Data.NoNullAllowedException: user with email = ilyushin_misha@mail.ru5 is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 120
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 35
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+03/26/2021 20:09:53 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+03/26/2021 20:09:54 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 605.7883 ms
+03/26/2021 20:09:56 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 129.2803 ms
+03/26/2021 20:10:04 Successful sending an email to: manager@disposeamail.com
+03/26/2021 20:10:04 HTTP "DELETE" "/FoundersPCIdentity/Admin/Users/Inactive/By/Id" responded 200 in 1822.8118 ms
+03/26/2021 20:10:04 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 10.6854 ms
+03/26/2021 20:10:11 HTTP "DELETE" "/FoundersPCIdentity/Admin/Users/Inactive/By/Id" responded 200 in 10.0951 ms
+03/26/2021 20:10:11 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.2258 ms
+03/26/2021 20:10:14 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 17.8335 ms
+03/26/2021 20:10:14 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6856 ms
+03/26/2021 20:10:24 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.8873 ms
+03/26/2021 20:10:32 Successful sending an email to: ilyushinmisha@yandex.ru
+03/26/2021 20:10:32 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Block/By/Id" responded 200 in 894.9933 ms
+03/26/2021 20:10:32 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6009 ms
+03/26/2021 20:10:35 Successful sending an email to: ilyushinmisha@yandex.ru
+03/26/2021 20:10:35 HTTP "PUT" "/FoundersPCIdentity/Admin/Users/Unblock/By/Id" responded 200 in 796.7372 ms
+03/26/2021 20:10:35 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 3.5922 ms
+03/26/2021 20:10:40 HTTP "GET" "/FoundersPCIdentity/User/Settings/OverallInformation/ilyushin_misha@mail.ru" responded 200 in 18.7239 ms
+03/26/2021 20:10:48 HTTP "GET" "/FoundersPCIdentity/Admin/Users" responded 200 in 2.6789 ms

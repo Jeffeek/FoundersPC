@@ -16,7 +16,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                   {
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true),
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true),
                                                       Title = table.Column<string>("nvarchar(50)",
                                                                                    maxLength : 50,
                                                                                    nullable : false),
@@ -71,7 +72,9 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       Interface = table.Column<string>("nvarchar(30)",
                                                                                        maxLength : 30,
                                                                                        nullable : false),
-                                                      Frequency = table.Column<int>("int", maxLength : 5, nullable : false),
+                                                      Frequency = table.Column<int>("int",
+                                                                                    maxLength : 5,
+                                                                                    nullable : false),
                                                       DirectX_Version =
                                                           table.Column<int>("int", maxLength : 3, nullable : false),
                                                       SLI_Crossfire = table.Column<bool>("bit", nullable : false),
@@ -104,7 +107,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                                                    maxLength : 50,
                                                                                    nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true)
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true)
                                                   },
                                          constraints : table =>
                                                        {
@@ -126,7 +130,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       BufferSize = table.Column<int>("int", nullable : false),
                                                       Noise = table.Column<int>("int", nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true),
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true),
                                                       Factor = table.Column<double>("float", nullable : false),
                                                       Interface = table.Column<string>("nvarchar(20)",
                                                                                        maxLength : 20,
@@ -174,7 +179,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                                                maxLength : 12,
                                                                                nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true)
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true)
                                                   },
                                          constraints : table =>
                                                        {
@@ -205,7 +211,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       Certificate80PLUS = table.Column<bool>("bit", nullable : false),
                                                       PFC = table.Column<bool>("bit", nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true)
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true)
                                                   },
                                          constraints : table =>
                                                        {
@@ -239,17 +246,19 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       L3Cache = table.Column<int>("int", nullable : false),
                                                       IntegratedGraphics = table.Column<bool>("bit", nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true)
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true)
                                                   },
                                          constraints : table =>
                                                        {
                                                            table.PrimaryKey("PK_Processors", x => x.Id);
 
-                                                           table.ForeignKey("FK_Processors_ProcessorCores_ProcessorCoreId",
-                                                                            x => x.ProcessorCoreId,
-                                                                            "ProcessorCores",
-                                                                            "Id",
-                                                                            onDelete : ReferentialAction.Cascade);
+                                                           table
+                                                               .ForeignKey("FK_Processors_ProcessorCores_ProcessorCoreId",
+                                                                           x => x.ProcessorCoreId,
+                                                                           "ProcessorCores",
+                                                                           "Id",
+                                                                           onDelete : ReferentialAction.Cascade);
 
                                                            table.ForeignKey("FK_Processors_Producers_ProducerId",
                                                                             x => x.ProducerId,
@@ -280,17 +289,19 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       ECC = table.Column<bool>("bit", nullable : false),
                                                       PCIndex = table.Column<int>("int", nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true)
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true)
                                                   },
                                          constraints : table =>
                                                        {
                                                            table.PrimaryKey("PK_RandomAccessMemory", x => x.Id);
 
-                                                           table.ForeignKey("FK_RandomAccessMemory_Producers_ProducerId",
-                                                                            x => x.ProducerId,
-                                                                            "Producers",
-                                                                            "Id",
-                                                                            onDelete : ReferentialAction.Cascade);
+                                                           table
+                                                               .ForeignKey("FK_RandomAccessMemory_Producers_ProducerId",
+                                                                           x => x.ProducerId,
+                                                                           "Producers",
+                                                                           "Id",
+                                                                           onDelete : ReferentialAction.Cascade);
                                                        });
 
             migrationBuilder.CreateTable("SolidStateDrives",
@@ -305,7 +316,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       SequentialRead = table.Column<int>("int", nullable : false),
                                                       SequentialRecording = table.Column<int>("int", nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true),
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true),
                                                       Factor = table.Column<double>("float", nullable : false),
                                                       Interface = table.Column<string>("nvarchar(20)",
                                                                                        maxLength : 20,
@@ -345,7 +357,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                       HDMI = table.Column<int>("int", nullable : false),
                                                       DisplayPort = table.Column<int>("int", nullable : false),
                                                       ProducerId = table.Column<int>("int", nullable : false),
-                                                      MarketLaunch = table.Column<DateTime>("datetime2", nullable : true)
+                                                      MarketLaunch =
+                                                          table.Column<DateTime>("datetime2", nullable : true)
                                                   },
                                          constraints : table =>
                                                        {
@@ -357,11 +370,12 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                                             "Id",
                                                                             onDelete : ReferentialAction.Cascade);
 
-                                                           table.ForeignKey("FK_VideoCards_VideoCardCores_GraphicsProcessorId",
-                                                                            x => x.GraphicsProcessorId,
-                                                                            "VideoCardCores",
-                                                                            "Id",
-                                                                            onDelete : ReferentialAction.Cascade);
+                                                           table
+                                                               .ForeignKey("FK_VideoCards_VideoCardCores_GraphicsProcessorId",
+                                                                           x => x.GraphicsProcessorId,
+                                                                           "VideoCardCores",
+                                                                           "Id",
+                                                                           onDelete : ReferentialAction.Cascade);
                                                        });
 
             migrationBuilder.CreateIndex("IX_Cases_Id",

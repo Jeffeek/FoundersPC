@@ -30,8 +30,7 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
                                              IPowerSuppliersRepositoryAsync powerSuppliersRepository,
                                              ISSDsRepositoryAsync ssdsRepository,
                                              IRAMsRepositoryAsync ramsRepository,
-                                             ILogger<UnitOfWorkHardwareHardwareAPI> logger
-        )
+                                             ILogger<UnitOfWorkHardwareHardwareAPI> logger)
         {
             _context = context;
             ProcessorsRepository = processorsRepository;
@@ -50,40 +49,40 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
 
         #region Implementation of IUnitOfWork
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public ICPUsRepositoryAsync ProcessorsRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IProducersRepositoryAsync ProducersRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IProcessorCoresRepositoryAsync ProcessorCoresRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IGPUsRepositoryAsync VideoCardsRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IVideoCardCoresRepositoryAsync VideoCardCoresRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public ICasesRepositoryAsync CasesRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IHDDsRepositoryAsync HDDsRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IMotherboardsRepositoryAsync MotherboardsRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IPowerSuppliersRepositoryAsync PowerSuppliersRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public ISSDsRepositoryAsync SSDsRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IRAMsRepositoryAsync RAMsRepository { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<int> SaveChangesAsync()
         {
             _logger.LogInformation("Save changes");

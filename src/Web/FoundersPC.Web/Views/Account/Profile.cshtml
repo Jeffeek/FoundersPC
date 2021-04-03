@@ -1,0 +1,579 @@
+﻿@using System.Security.Claims
+@model FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings.AccountSettingsViewModel
+
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+@section Styles {
+    <link
+        href="~/css/account.css"
+        rel="stylesheet"/>
+}}
+
+<div
+    class='mt-5 rounded shadow text-light'
+    id='main-container'>
+<div>
+<div
+    class='p-3'>
+    <h4
+        class='text-center'>
+        @User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType)
+    </h4>
+</div>
+<ul
+    class='mb-3 nav nav-justified nav-pills'
+    id='pills-tab'
+    role='tablist'>
+<li
+    class='my-3 nav-item'
+    role='presentation'>
+    <a
+        aria-controls='account'
+        aria-selected='true'
+        class='active nav-link'
+        data-bs-target='#account'
+        data-bs-toggle='pill'
+        id='pills-account-tab'
+        role='tab'>
+        <svg
+            class='icon'
+            fill='#FFFFFF'
+            viewBox='0 0 26 26'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path
+                d='M4.5,21.3c0-1.8,2.7-3.4,5.7-4c0,0,0.9-0.5,0.7-1.4c-0.9-1.1-1.1-2.3-1.1-2.3c-0.2-0.1-0.4-0.2-0.5-0.4c-0.3-0.4-0.6-1.4-0.6-2.1c0.1-0.7,0.3-0.5,0.3-0.6C8.3,9.1,8.6,7.2,9.3,5.9c1.5-2.7,4.8-1.9,5.3-0.9c3.1-0.6,3,4.3,2.6,5.6c0,0,0.3,0.1,0.2,1.2c-0.1,1.2-1.1,2-1.1,2c0,0.3-0.4,1.3-1.1,2.2c-0.5,1.1,0.6,1.4,0.6,1.4c2.9,0.6,5.6,2.2,5.6,4c0,0.1-2.7,3.7-8.5,3.7S4.5,21.5,4.5,21.3z'
+                fill='#FFFFFF'/>
+            <path
+                d='M13 1A12 12 0 1 0 13 25A12 12 0 1 0 13 1Z'
+                fill='none'
+                stroke='#FFFFFF'
+                stroke-width='2'/>
+        </svg>
+        <span
+            class='align-self-center mx-2'>
+            Account
+        </span>
+    </a>
+</li>
+<li
+    class='my-3 nav-item'
+    role='presentation'>
+    <a
+        aria-selected='false'
+        class='nav-link'
+        data-bs-target='#password'
+        data-bs-toggle='pill'
+        id='pills-password-tab'
+        role='tab'>
+        <svg
+            class='icon'
+            fill='#FFFFFF'
+            height='26'
+            viewBox='0 0 26 26'
+            width='26'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path
+                d='M19.5,9V7.917C19.5,4.229,17.783,1.5,13,1.5 S6.5,4.257,6.5,7.917V9'
+                fill='none'
+                stroke='#FFFFFF'
+                stroke-width='3'/>
+            <path
+                d='M21,10H5c-1.656,0-3,1.344-3,3v10c0,1.656,1.344,3,3,3h16c1.656,0,3-1.344,3-3V13C24,11.344,22.656,10,21,10 z M7,20c-1.104,0-2-0.896-2-2c0-1.105,0.896-2,2-2s2,0.895,2,2C9,19.104,8.104,20,7,20z M13,20c-1.104,0-2-0.896-2-2 c0-1.105,0.896-2,2-2s2,0.895,2,2C15,19.104,14.104,20,13,20z M19,20c-1.104,0-2-0.896-2-2c0-1.105,0.896-2,2-2s2,0.895,2,2 C21,19.104,20.104,20,19,20z'
+                fill='#FFFFFF'/>
+        </svg>
+        <span
+            class='align-self-center mx-2'>
+            Password
+        </span>
+    </a>
+</li>
+<li
+    class='my-3 nav-item'
+    role='presentation'>
+    <a
+        aria-controls='security'
+        aria-selected='true'
+        class='nav-link'
+        data-bs-target='#security'
+        data-bs-toggle='pill'
+        id='pills-security-tab'
+        role='tab'>
+        <svg
+            class='icon'
+            fill='#FFFFFF'
+            height='26'
+            viewBox='0 0 26 26'
+            width='26'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path
+                d='M23.633,5.028c-0.2-0.227-0.481-0.358-0.777-0.366c-2.295-0.06-5.199-2.514-7.119-3.477 c-1.186-0.593-1.968-0.984-2.557-1.087C13.12,0.09,13.06,0.084,13,0.084s-0.12,0.006-0.179,0.015 c-0.589,0.103-1.372,0.494-2.556,1.087C8.344,2.148,5.44,4.603,3.144,4.662C2.849,4.67,2.567,4.802,2.367,5.028 C2.165,5.254,2.061,5.555,2.076,5.862c0.494,10.023,4.088,16.226,10.396,19.831c0.164,0.093,0.346,0.141,0.528,0.141 s0.364-0.048,0.528-0.141c6.308-3.605,9.902-9.808,10.396-19.831C23.939,5.555,23.835,5.254,23.633,5.028z'
+                fill='#FFFFFF'/>
+        </svg>
+        <span
+            class='align-self-center mx-2'>
+            Security
+        </span>
+    </a>
+</li>
+<li
+    class='my-3 nav-item'
+    role='presentation'>
+    <a
+        aria-controls='application'
+        aria-selected='true'
+        class='nav-link'
+        data-bs-target='#application'
+        data-bs-toggle='pill'
+        id='pills-application-tab'
+        role='tab'>
+        <svg
+            class='icon'
+            fill='#FFFFFF'
+            height='26'
+            viewBox='0 0 26 26'
+            width='26'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path
+                d='M25,1H1C0.447,1,0,1.448,0,2v3h26V2C26,1.448,25.553,1,25,1z'
+                fill='#FFFFFF'/>
+            <path
+                d='M1 4H25V24H1z'
+                fill='none'
+                stroke='#FFFFFF'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'/>
+            <path
+                d='M5.583 12.979c-.147 0-.22-.073-.22-.22l.005-4.177H4.382c-.084 0-.147-.01-.188-.031C4.152 8.529 4.131 8.477 4.131 8.393V7.879c0-.077.01-.145.032-.204.02-.059.077-.11.167-.152l.923-.388c.119-.056.229-.091.33-.105.101-.014.212-.021.33-.021h.838c.16 0 .241.081.241.241L7 12.759c0 .077-.013.133-.037.168-.025.035-.083.052-.173.052H5.583zM19.583 12.979c-.147 0-.22-.073-.22-.22l.005-4.177h-.985c-.084 0-.147-.01-.188-.031-.042-.021-.063-.073-.063-.157V7.879c0-.077.01-.145.032-.204.02-.059.077-.11.167-.152l.923-.388c.119-.056.229-.091.33-.105.101-.014.212-.021.33-.021h.838c.16 0 .241.081.241.241L21 12.759c0 .077-.013.133-.037.168-.025.035-.083.052-.173.052H19.583zM12.959 13.063c-.372 0-.691-.049-.958-.148-.267-.099-.489-.233-.666-.401-.176-.168-.316-.36-.418-.576-.103-.216-.179-.441-.229-.675-.051-.234-.084-.467-.1-.698-.015-.231-.022-.448-.022-.652 0-.132.007-.298.022-.499.015-.201.05-.413.104-.635.053-.222.133-.444.238-.666.105-.222.246-.42.423-.594.176-.174.396-.316.657-.427.261-.111.577-.167.949-.167.552 0 .992.096 1.318.288.327.192.576.434.747.724.171.291.282.612.333.963.051.351.076.688.076 1.012 0 .18-.007.382-.022.607-.015.225-.051.455-.108.689s-.139.462-.248.684c-.108.222-.253.42-.436.594-.183.174-.409.314-.679.419C13.67 13.01 13.343 13.063 12.959 13.063zM12.959 8.122c-.198 0-.358.048-.481.145-.123.097-.22.228-.293.394-.072.166-.119.363-.144.592-.024.229-.036.476-.036.741 0 .253.012.494.036.723.024.229.07.428.139.597.069.169.167.303.293.402.126.1.288.149.486.149.21 0 .382-.044.518-.131.135-.088.239-.213.315-.375.075-.163.127-.36.157-.592.03-.232.045-.49.045-.773 0-.296-.013-.559-.04-.791-.027-.232-.078-.428-.153-.588-.075-.16-.18-.282-.315-.366S13.175 8.122 12.959 8.122z'
+                fill='#FFFFFF'/>
+            <g
+                fill='#FFFFFF'>
+                <path
+                    d='M12.583 20.979c-.147 0-.22-.073-.22-.22l.005-4.177h-.985c-.084 0-.147-.01-.188-.031-.042-.021-.063-.073-.063-.157v-.513c0-.077.01-.145.032-.204.02-.059.077-.11.167-.152l.923-.388c.119-.056.229-.091.33-.105.101-.014.212-.021.33-.021h.838c.16 0 .241.081.241.241L14 20.759c0 .077-.013.133-.037.168-.025.035-.083.052-.173.052H12.583zM5.959 21.063c-.372 0-.691-.049-.958-.148-.267-.099-.489-.233-.666-.401-.176-.168-.316-.36-.418-.576-.103-.216-.179-.441-.229-.675-.051-.234-.084-.467-.1-.698-.015-.231-.022-.448-.022-.652 0-.132.007-.298.022-.499.015-.201.05-.413.104-.635.053-.222.133-.444.238-.666.105-.222.246-.42.423-.594.176-.174.396-.316.657-.427s.577-.167.949-.167c.552 0 .992.096 1.318.288.327.192.576.434.747.724.171.291.282.612.333.963.051.351.076.688.076 1.012 0 .18-.007.382-.022.607-.015.225-.051.455-.108.689s-.139.462-.248.684c-.108.222-.253.42-.436.594-.183.174-.409.314-.679.419C6.67 21.01 6.343 21.063 5.959 21.063zM5.959 16.122c-.198 0-.358.048-.481.145-.123.097-.22.228-.293.394-.072.166-.119.363-.144.592-.024.229-.036.476-.036.741 0 .253.012.494.036.723.024.229.07.428.139.597.069.169.167.303.293.402.126.1.288.149.486.149.21 0 .382-.044.518-.131.135-.088.239-.213.315-.375.075-.163.127-.36.157-.592.03-.232.045-.49.045-.773 0-.296-.013-.559-.04-.791s-.078-.428-.153-.588c-.075-.16-.18-.282-.315-.366C6.351 16.165 6.175 16.122 5.959 16.122zM19.959 21.063c-.372 0-.691-.049-.958-.148-.267-.099-.489-.233-.666-.401-.176-.168-.316-.36-.418-.576-.103-.216-.179-.441-.229-.675-.051-.234-.084-.467-.1-.698-.015-.231-.022-.448-.022-.652 0-.132.007-.298.022-.499.015-.201.05-.413.104-.635.053-.222.133-.444.238-.666.105-.222.246-.42.423-.594.176-.174.396-.316.657-.427.261-.111.577-.167.949-.167.552 0 .992.096 1.318.288.327.192.576.434.747.724.171.291.282.612.333.963.051.351.076.688.076 1.012 0 .18-.007.382-.022.607-.015.225-.051.455-.108.689-.057.234-.139.462-.248.684-.108.222-.253.42-.436.594-.183.174-.409.314-.679.419C20.67 21.01 20.343 21.063 19.959 21.063zM19.959 16.122c-.198 0-.358.048-.481.145-.123.097-.22.228-.293.394-.072.166-.119.363-.144.592-.024.229-.036.476-.036.741 0 .253.012.494.036.723.024.229.07.428.139.597.069.169.167.303.293.402.126.1.288.149.486.149.21 0 .382-.044.518-.131.135-.088.239-.213.315-.375.075-.163.127-.36.157-.592.03-.232.045-.49.045-.773 0-.296-.013-.559-.04-.791-.027-.232-.078-.428-.153-.588-.075-.16-.18-.282-.315-.366C20.351 16.165 20.175 16.122 19.959 16.122z'
+                    fill='#FFFFFF'/>
+            </g>
+        </svg>
+        <span
+            class='align-self-center mx-2'>
+            Application
+        </span>
+    </a>
+</li>
+<li
+    class='my-3 nav-item'
+    role='presentation'>
+    <a
+        aria-controls='notification'
+        aria-selected='false'
+        class='nav-link'
+        data-bs-target='#notification'
+        data-bs-toggle='pill'
+        id='pills-notification-tab'
+        role='tab'>
+        <svg
+            class='icon'
+            fill='#FFFFFF'
+            viewBox='0 0 26 26'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path
+                d='M19,13c0-0.9,0-4.1,0-5c0-3.3-2.7-6-6-6C9.7,2,7,4.7,7,8c0,0.9,0,4.1,0,5c0,0.8-5,4.8-5,6c0,1.7,4.4,3,11,3c6.6,0,11-1.3,11-3C24,17.8,19,13.8,19,13z'
+                fill='#FFFFFF'/>
+            <path
+                d='M14 1c0-.6-.4-1-1-1s-1 .4-1 1c0 .2 0 .8 0 1 0 .2 0 .8 0 1 0 .6.4 1 1 1s1-.4 1-1c0-.2 0-.8 0-1C14 1.8 14 1.2 14 1zM13 23.1c-.6 0-1.2 0-1.7 0C11.1 23.4 11 23.6 11 24c0 1.1.9 2 2 2s2-.9 2-2c0-.4-.1-.6-.3-.9C14.2 23.1 13.6 23.1 13 23.1z'
+                fill='#FFFFFF'/>
+        </svg>
+        <span
+            class='align-self-center mx-2'>
+            Notification
+        </span>
+    </a>
+</li>
+<li
+    class='my-3 nav-item'
+    role='presentation'>
+    <a
+        aria-controls='tokens'
+        aria-selected='true'
+        class='nav-link'
+        data-bs-target='#tokens'
+        data-bs-toggle='pill'
+        id='pills-tokens-tab'
+        role='tab'>
+        <svg
+            class='icon'
+            fill='#FFFFFF'
+            height='26'
+            viewBox='0 0 26 26'
+            width='26'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path
+                d='M25.636,8.056l-1.682-1.682C23.42,6.814,22.746,7.089,22,7.089c-1.706,0-3.089-1.383-3.089-3.089 c0-0.746,0.274-1.42,0.715-1.954l-1.659-1.659c-0.389-0.391-1.024-0.391-1.414-0.001l-2.773,2.773 c0.077,0.023,0.15,0.058,0.212,0.119l0.34,0.34c0.195,0.195,0.195,0.512,0,0.707c-0.098,0.098-0.226,0.146-0.354,0.146 s-0.256-0.049-0.354-0.146l-0.34-0.34c-0.062-0.062-0.096-0.135-0.119-0.212L0.354,16.584c-0.389,0.39-0.389,1.025,0.001,1.415 l1.656,1.656C2.549,19.197,3.238,18.911,4,18.911c1.706,0,3.089,1.383,3.089,3.089c0,0.762-0.286,1.451-0.744,1.989l1.679,1.679 c0.39,0.39,1.024,0.39,1.414,0l12.779-12.779c-0.035-0.021-0.073-0.039-0.104-0.07l-0.34-0.34c-0.195-0.195-0.195-0.512,0-0.707 s0.512-0.195,0.707,0l0.34,0.34c0.031,0.031,0.049,0.068,0.069,0.105l2.747-2.747C26.026,9.079,26.026,8.444,25.636,8.056z M16.028,6.023c-0.098,0.098-0.226,0.146-0.354,0.146s-0.256-0.049-0.354-0.146l-0.34-0.34c-0.195-0.195-0.195-0.512,0-0.707 s0.512-0.195,0.707,0l0.34,0.34C16.224,5.512,16.224,5.828,16.028,6.023z M17.727,7.723c-0.098,0.098-0.226,0.146-0.354,0.146 S17.117,7.82,17.02,7.723l-0.34-0.34c-0.195-0.195-0.195-0.512,0-0.707s0.512-0.195,0.707,0l0.34,0.34 C17.922,7.211,17.922,7.527,17.727,7.723z M19.424,9.421c-0.098,0.098-0.226,0.146-0.354,0.146s-0.256-0.049-0.354-0.146l-0.34-0.34 c-0.195-0.195-0.195-0.512,0-0.707s0.512-0.195,0.707,0l0.34,0.34C19.619,8.909,19.619,9.226,19.424,9.421z M21.121,11.12 c-0.098,0.097-0.226,0.146-0.354,0.146s-0.257-0.049-0.354-0.146l-0.339-0.34c-0.194-0.196-0.194-0.513,0.001-0.708 c0.195-0.193,0.513-0.194,0.708,0.001l0.339,0.34C21.316,10.608,21.316,10.925,21.121,11.12z'
+                fill='#FFFFFF'/>
+        </svg>
+        <span
+            class='align-self-center mx-2'>
+            Tokens
+        </span>
+    </a>
+</li>
+</ul>
+</div>
+<div
+    class='p-4 p-md-5 tab-content'
+    id='pills-tabContent'>
+<div
+    aria-labelledby='pills-account-tab'
+    class='active fade show tab-pane'
+    id='account'
+    role='tabpanel'>
+    <h3
+        class='mb-4'>
+        Account Information
+    </h3>
+    <div
+        class='row'>
+        <div
+            class='col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-3 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0'>
+            <div
+                class='form-floating'>
+                <input
+                    asp-for='AccountInformationViewModel.Email'
+                    class='bg-dark form-control text-white'
+                    readonly
+                    type='email'/>
+                <label
+                    asp-for='AccountInformationViewModel.Email'
+                    class='form-label'>
+                    Email
+                </label>
+            </div>
+        </div>
+        <div
+            class='col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 mt-xs-10 my-lg-3 my-md-3 my-sm-3 my-xl-0 my-xxl-0'>
+            <div
+                class='form-floating'>
+                <input
+                    asp-for='AccountInformationViewModel.Role'
+                    class='bg-dark form-control text-white'
+                    readonly
+                    type='text'/>
+                <label
+                    asp-for='AccountInformationViewModel.Role'
+                    class='form-label'>
+                    Role
+                </label>
+            </div>
+        </div>
+        <div
+            class='col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3'>
+            <div
+                class='form-floating'>
+                <input
+                    asp-for='AccountInformationViewModel.Login'
+                    class='bg-dark form-control text-white'
+                    id='formLogin'
+                    readonly
+                    type='text'/>
+                <label
+                    asp-for='AccountInformationViewModel.Login'
+                    class='form-label'>
+                    Login
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div
+    aria-labelledby='password-tab'
+    class='fade tab-pane'
+    id='password'
+    role='tabpanel'>
+    <form
+        asp-action='ChangePassword'
+        asp-controller='Account'
+        method='post'>
+        <h3
+            class='mb-4'>
+            Password Settings
+        </h3>
+        <div
+            asp-validation-summary='All'>
+        </div>
+        <div
+            class='row'>
+            <div
+                class='col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3'>
+                <div
+                    class='form-floating'>
+                    <input
+                        asp-for='PasswordSettingsViewModel.OldPassword'
+                        class='bg-dark form-control text-white'
+                        maxlength='30'
+                        minlength='6'
+                        placeholder='Old password'
+                        type='password'>
+                    <label
+                        asp-for='PasswordSettingsViewModel.OldPassword'>
+                        Old password
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div
+            class='row'>
+            <div
+                class='col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3'>
+                <div
+                    class='form-floating'>
+                    <input
+                        asp-for='PasswordSettingsViewModel.NewPassword'
+                        class='bg-dark form-control text-white'
+                        maxlength='30'
+                        minlength='6'
+                        placeholder='New password'
+                        type='password'>
+                    <label>New password</label>
+                </div>
+            </div>
+            <div
+                class='col-lg-6 col-md-6 col-sm-11 col-xl-6 col-xxl-6 my-3'>
+                <div
+                    class='form-floating'>
+                    <input
+                        asp-for='PasswordSettingsViewModel.NewPasswordConfirm'
+                        class='bg-dark form-control text-white'
+                        maxlength='30'
+                        minlength='6'
+                        placeholder='Confirm new password'
+                        type='password'>
+                    <label
+                        asp-for='PasswordSettingsViewModel.NewPasswordConfirm'>
+                        Confirm new password
+                    </label>
+                    <span
+                        asp-validation-for='PasswordSettingsViewModel.NewPasswordConfirm'>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div
+            class='mt-3'>
+            <input
+                class='btn btn-primary'
+                type='submit'
+                value='Update'>
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby='security-tab'
+    class='fade tab-pane'
+    id='security'
+    role='tabpanel'>
+    <form
+        asp-action='ChangeLogin'
+        asp-controller='Account'
+        method='post'>
+        <h3
+            class='mb-4'>
+            Security Settings
+        </h3>
+        <div
+            asp-validation-summary='All'>
+        </div>
+        <div
+            class='row'>
+            <div
+                class='col-md-6'>
+                <div
+                    class='form-floating'>
+                    <input
+                        asp-for='LoginSettingsViewModel.NewLogin'
+                        class='bg-dark form-control text-white'
+                        maxlength='30'
+                        minlength='6'
+                        placeholder='New login'
+                        type='text'>
+                    <label
+                        asp-for='LoginSettingsViewModel.NewLogin'
+                        class='form-label'>
+                        New login
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div
+            class='mt-3'>
+            <input
+                class='btn btn-primary'
+                type='submit'
+                value='Update'>
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby='application-tab'
+    class='fade tab-pane'
+    id='application'
+    role='tabpanel'>
+    <form
+        asp-action=''
+        asp-controller=''
+        method='post'>
+        <h3
+            class='mb-4'>
+            Application Settings
+        </h3>
+        <div
+            class='row'>
+            <div
+                class='col-md-6'>
+                <div
+                    class='form-group'>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <input
+                class='btn btn-primary'
+                type='submit'
+                value='Update'>
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby='notification-tab'
+    class='fade tab-pane'
+    id='notification'
+    role='tabpanel'>
+    <form
+        asp-action='ChangeNotifications'
+        asp-controller='Account'
+        method='post'>
+        <h3>Notification Settings</h3>
+        <div
+            class='form-check form-switch mt-4'>
+            <input
+                asp-for='NotificationsSettingsViewModel.SendNotificationOnEntrance'
+                class='form-check-input'
+                type='checkbox'/>
+            <label
+                asp-for='NotificationsSettingsViewModel.SendNotificationOnEntrance'
+                class='form-label text-light'>
+            </label>
+        </div>
+        <div
+            class='form-check form-switch mt-2'>
+            <input
+                asp-for='NotificationsSettingsViewModel.SendNotificationOnUsingAPI'
+                class='form-check-input'
+                type='checkbox'/>
+            <label
+                asp-for='NotificationsSettingsViewModel.SendNotificationOnUsingAPI'
+                class='form-label text-light'>
+            </label>
+        </div>
+        <div
+            class='mt-3'>
+            <input
+                class='btn btn-primary'
+                type='submit'
+                value='Update'>
+        </div>
+    </form>
+</div>
+<div
+    aria-labelledby='notification-tab'
+    class='fade tab-pane'
+    id='tokens'
+    role='tabpanel'>
+    <h3
+        class='mb-4'>
+        API Access Tokens
+    </h3>
+    <div
+        class='my-custom-scrollbar table-wrapper-scroll-y'>
+        <table
+            class='table table-dark table-hover'>
+            <thead>
+            <tr
+                class='border-5'>
+                <th
+                    class='sticky-top'
+                    scope='col'>
+                    Id
+                </th>
+                <th
+                    class='sticky-top'
+                    scope='col'>
+                    Token
+                </th>
+                <th
+                    class='sticky-top'
+                    scope='col'>
+                    Start evaluation
+                </th>
+                <th
+                    class='sticky-top'
+                    scope='col'>
+                    Finish evaluation
+                </th>
+                <th
+                    class='sticky-top'
+                    scope='col'>
+                    IsAvailable
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach (var token in Model.TokensViewModel.Tokens) {
+                    <tr>
+                        <th
+                            scope="row">
+                            @token.Id
+                        </th>
+                        <td>@token.HashedToken</td>
+                        <td>@token.StartEvaluationDate</td>
+                        <td>@token.ExpirationDate</td>
+                        <td>
+                            @if (token.IsBlocked
+                                 || token.ExpirationDate >= DateTime.Now) {
+                                <input
+                                    class="form-check-inline"
+                                    disabled
+                                    type="checkbox">
+                            } else {
+                                <input
+                                    checked
+                                    class="form-check-inline"
+                                    disabled
+                                    type="checkbox">
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+
+
+@section Scripts
+{
+    <script
+        src='~/lib/jquery-validation/dist/jquery.validate.min.js'></script>
+    <script
+        src='~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'></script>
+}

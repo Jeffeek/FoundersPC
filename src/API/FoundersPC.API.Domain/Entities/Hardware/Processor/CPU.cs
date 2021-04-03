@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware.Processor
 {
     [Index(nameof(Id))]
-    public class CPU : HardwareEntityBase, IEquatable<CPU>, ICPU
+    public class CPU : HardwareEntityBase, IEquatable<CPU>
     {
         [ForeignKey(nameof(ProcessorCoreId))]
         public ProcessorCore Core { get; set; }
@@ -88,7 +87,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(CPU other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -110,7 +109,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
                    && IntegratedGraphics == other.IntegratedGraphics;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -120,7 +119,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
             return Equals((CPU)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var hashCode = new HashCode();

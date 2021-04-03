@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.API.Domain.Entities.Hardware.Processor;
+using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
@@ -25,23 +25,24 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
 
         #region Implementation of IProcessorCoreService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync() =>
             _mapper.Map<IEnumerable<ProcessorCore>, IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                             .ProcessorCoresRepository.GetAllAsync());
+                                                                                           .ProcessorCoresRepository.GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId) =>
             _mapper.Map<ProcessorCore, ProcessorCoreReadDto>(await _unitOfWorkHardwareAPI
                                                                    .ProcessorCoresRepository
                                                                    .GetByIdAsync(cpuCoreId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateProcessorCoreAsync(ProcessorCoreInsertDto cpuCore)
         {
             var mappedCpuCore = _mapper.Map<ProcessorCoreInsertDto, ProcessorCore>(cpuCore);
 
-            var entityAlreadyExists = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.AnyAsync(x => x.Equals(mappedCpuCore));
+            var entityAlreadyExists =
+                await _unitOfWorkHardwareAPI.ProcessorCoresRepository.AnyAsync(x => x.Equals(mappedCpuCore));
 
             if (entityAlreadyExists) return false;
 
@@ -50,7 +51,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateProcessorCoreAsync(int id, ProcessorCoreUpdateDto cpuCore)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.GetByIdAsync(id);
@@ -65,7 +66,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteProcessorCoreAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.DeleteAsync(id);

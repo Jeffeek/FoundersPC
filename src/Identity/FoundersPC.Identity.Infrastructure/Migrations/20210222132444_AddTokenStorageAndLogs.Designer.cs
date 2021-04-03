@@ -139,7 +139,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.Property<bool>("IsBlocked")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Login")
+                    b.Property<string>("SignIn")
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 

@@ -12,10 +12,8 @@
 
         public string Email { get; set; } = null;
 
-        public string Login { get; set; } = null;
-
         public string Role { get; set; } = null;
 
-        public string JwtToken { get; set; } = null;
+        public string JwtToken { get; set; }
     }
 }

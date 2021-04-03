@@ -1,10 +1,10 @@
 #region Using namespaces
 
+using System.IO;
 using FoundersPC.API.Application;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
 using FoundersPC.ApplicationShared;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -20,25 +20,23 @@ namespace FoundersPC.API
 {
     public sealed class Startup
     {
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration)
+        {
+            var builder = new ConfigurationBuilder();
+
+            builder
+                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                             false)
+                .AddConfiguration(configuration, false);
+
+            Configuration = builder.Build();
+        }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors(options =>
-            //                 {
-            //                     options.AddPolicy("WebClientPolicy",
-            //                                       builder =>
-            //                                       {
-            //                                           builder.WithOrigins("http://localhost:9000")
-            //                                                  .AllowAnyMethod()
-            //                                                  .AllowAnyHeader()
-            //                                                  .AllowCredentials();
-            //                                       });
-            //                 });
-
             services.AddLogging(config => config.AddSerilog(Log.Logger));
 
             services.AddControllers();
@@ -64,23 +62,7 @@ namespace FoundersPC.API
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
-            services.AddAuthorization(config =>
-                                      {
-                                          config.AddPolicy("Changeable",
-                                                           builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
-                                                                                          ApplicationRoles.Manager.ToString())
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-                                                                             .Build());
-
-                                          config.AddPolicy("Readable",
-                                                           builder => builder.RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Administrator.ToString(),
-                                                                                          ApplicationRoles.Manager.ToString(),
-                                                                                          ApplicationRoles.DefaultUser.ToString())
-                                                                             .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
-                                                                             .Build());
-                                      });
+            services.AddBearerAuthorizationPolicies();
 
             services.AddApiVersioning(options =>
                                       {

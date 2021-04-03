@@ -11,12 +11,14 @@
         href="~/css/animations.css"
         rel="stylesheet">
 }
+
+
 }
 
 <div
-    class="sidenav">
+    class='sidenav'>
     <div
-        class="login-main-text">
+        class='login-main-text'>
         <h2>
             FoundersPC
             <br> Manager Registration Page
@@ -25,88 +27,91 @@
     </div>
 </div>
 <div
-    class="main">
+    class='main'>
     <div
-        class="col-md-9 col-sm-12
-               mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-4 mt-4">
+        class='col-md-9 col-sm-12
+               mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-4 mt-4'>
         <div
-            class="register-form">
+            class='register-form'>
             <form
-                asp-action="SignUp"
-                asp-controller="Authentication"
-                method="post">
+                asp-action='RegisterManager'
+                asp-controller='Admin'
+                method='post'>
                 <div
-                    asp-validation-summary="ModelOnly"
-                    class="text-danger">
+                    asp-validation-summary='ModelOnly'
+                    class='text-danger'>
                 </div>
                 <div
-                    class="mb-3">
+                    class='mb-3'>
                     <div
-                        class="form-label-group
-                               mb-1">
+                        class='form-label-group
+                               mb-1'>
                         <input
-                            asp-for="Email"
-                            class="bg-dark
+                            asp-for='Email'
+                            class='bg-dark
                                    form-control
-                                   text-light"
-                            placeholder="email@example.com"
-                            type="email">
+                                   text-light'
+                            placeholder='email@example.com'
+                            type='email'>
                         <label
-                            asp-for="Email">
+                            asp-for='Email'>
                             Email
                         </label>
                     </div>
                     <span
-                        asp-validation-for="Email"
-                        class="text-danger
-                               d-block">
+                        asp-validation-for='Email'
+                        class='text-danger
+                               d-block'>
                     </span>
                 </div>
 
                 <div
-                    class="mb-3">
+                    class='mb-3'>
                     <div
-                        class="form-label-group
+                        class='form-label-group
                            input-group
-                           mb-1">
+                           mb-1'>
                         <input
-                            asp-for="RawPassword"
-                            class="bg-dark
+                            asp-for='RawPassword'
+                            class='bg-dark
                                    form-control
-                                   text-light"
-                            id="inputPassword"
-                            placeholder="Password"
-                            type="password">
+                                   text-light'
+                            id='inputPassword'
+                            placeholder='Password'
+                            type='password'>
                         <label
-                            asp-for="RawPassword">
+                            asp-for='RawPassword'>
                         </label>
                         <div
-                            class="d-flex">
+                            class='d-flex'>
                             <div
-                                class="d-flex"
-                                id="img-generate-password">
+                                class='d-flex'
+                                id='img-generate-password'>
                                 <a
-                                    class="align-items-center btn btn-outline-warning d-flex">
+                                    class='align-items-center btn btn-outline-warning d-flex'>
                                     <svg
-                                        class="icon icon-reset"
-                                        viewBox="0 0 24 24">
+                                        class='icon icon-reset'
+                                        viewBox='0 0 24 24'
+                                        xmlns='http://www.w3.org/2000/svg'
+                                        xmlns:xlink='http://www.w3.org/1999/xlink'>
                                         <path
-                                            d="M2 2L4.9394531 4.9394531C3.1262684 6.7482143 2 9.2427079 2 12C2 17.514 6.486 22 12 22C17.514 22 22 17.514 22 12C22 6.486 17.514 2 12 2L12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20C7.589 20 4 16.411 4 12C4 9.7940092 4.9004767 7.7972757 6.3496094 6.3496094L9 9L9 2L2 2 z">
-                                        </path>
+                                            clip-rule='evenodd'
+                                            d='M20,12c0,4.418-3.582,8-8,8s-8-3.582-8-8s3.582-8,8-8 c1.114,0,2.169,0.237,3.132,0.649l-2.504,2.674l7.493-0.25L19.485,0l-2.21,2.361C15.709,1.499,13.915,1,12,1C5.925,1,1,5.925,1,12 s4.925,11,11,11s11-4.925,11-11H20z'
+                                            fill-rule='evenodd'/>
                                     </svg>
                                 </a>
                             </div>
                             <div
-                                class="d-flex"
-                                id="btn-hide">
+                                class='d-flex'
+                                id='btn-hide'>
                                 <a
-                                    class="align-items-center btn btn-outline-info d-flex">
+                                    class='align-items-center btn btn-outline-info d-flex'>
                                     <svg
-                                        class="icon icon-eye"
-                                        viewBox="0 0 50 50">
+                                        class='icon icon-eye'
+                                        viewBox='0 0 50 50'>
                                         <path
-                                            d="M23.986328 9C12.666705 9 2.6928719 16.845918 0.046875 27.126953 A 1.5002454 1.5002454 0 0 0 2.953125 27.873047C5.2331281 19.014082 14.065951 12 23.986328 12C33.906705 12 42.767507 19.01655 45.046875 27.873047 A 1.5002454 1.5002454 0 0 0 47.953125 27.126953C45.306493 16.84345 35.305951 9 23.986328 9 z M 24.001953 17C18.681885 17 14.337891 21.343999 14.337891 26.664062C14.337891 31.984127 18.681885 36.330078 24.001953 36.330078C29.322021 36.330078 33.667969 31.984126 33.667969 26.664062C33.667969 21.343999 29.322021 17 24.001953 17 z"
-                                            id="eye-pass-path">
+                                            d='M23.986328 9C12.666705 9 2.6928719 16.845918 0.046875 27.126953 A 1.5002454 1.5002454 0 0 0 2.953125 27.873047C5.2331281 19.014082 14.065951 12 23.986328 12C33.906705 12 42.767507 19.01655 45.046875 27.873047 A 1.5002454 1.5002454 0 0 0 47.953125 27.126953C45.306493 16.84345 35.305951 9 23.986328 9 z M 24.001953 17C18.681885 17 14.337891 21.343999 14.337891 26.664062C14.337891 31.984127 18.681885 36.330078 24.001953 36.330078C29.322021 36.330078 33.667969 31.984126 33.667969 26.664062C33.667969 21.343999 29.322021 17 24.001953 17 z'
+                                            id='eye-pass-path'>
                                         </path>
                                     </svg>
                                 </a>
@@ -114,40 +119,40 @@
                         </div>
                     </div>
                     <span
-                        asp-validation-for="RawPassword"
-                        class="d-block text-danger">
+                        asp-validation-for='RawPassword'
+                        class='d-block text-danger'>
                     </span>
                 </div>
                 <div
-                    class="mb-3">
+                    class='mb-3'>
                     <div
-                        class="form-label-group
+                        class='form-label-group
                                input-group
-                               mb-1">
+                               mb-1'>
                         <input
-                            asp-for="RawPasswordConfirm"
-                            class="bg-dark
+                            asp-for='RawPasswordConfirm'
+                            class='bg-dark
                                    form-control
-                                   text-light"
-                            id="inputPasswordConfirm"
-                            placeholder="Password Confirm"
-                            type="password">
+                                   text-light'
+                            id='inputPasswordConfirm'
+                            placeholder='Password Confirm'
+                            type='password'>
                         <label
-                            asp-for="RawPasswordConfirm">
+                            asp-for='RawPasswordConfirm'>
                         </label>
                         <div
-                            class="d-flex">
+                            class='d-flex'>
                             <div
-                                class="d-flex"
-                                id="btn-hide-confirm">
+                                class='d-flex'
+                                id='btn-hide-confirm'>
                                 <a
-                                    class="btn btn-outline-info d-flex input-group-text">
+                                    class='btn btn-outline-info d-flex input-group-text'>
                                     <svg
-                                        class="icon icon-eye"
-                                        viewBox="0 0 50 50">
+                                        class='icon icon-eye'
+                                        viewBox='0 0 50 50'>
                                         <path
-                                            d="M23.986328 9C12.666705 9 2.6928719 16.845918 0.046875 27.126953 A 1.5002454 1.5002454 0 0 0 2.953125 27.873047C5.2331281 19.014082 14.065951 12 23.986328 12C33.906705 12 42.767507 19.01655 45.046875 27.873047 A 1.5002454 1.5002454 0 0 0 47.953125 27.126953C45.306493 16.84345 35.305951 9 23.986328 9 z M 24.001953 17C18.681885 17 14.337891 21.343999 14.337891 26.664062C14.337891 31.984127 18.681885 36.330078 24.001953 36.330078C29.322021 36.330078 33.667969 31.984126 33.667969 26.664062C33.667969 21.343999 29.322021 17 24.001953 17 z"
-                                            id="eye-confirm-pass-path">
+                                            d='M23.986328 9C12.666705 9 2.6928719 16.845918 0.046875 27.126953 A 1.5002454 1.5002454 0 0 0 2.953125 27.873047C5.2331281 19.014082 14.065951 12 23.986328 12C33.906705 12 42.767507 19.01655 45.046875 27.873047 A 1.5002454 1.5002454 0 0 0 47.953125 27.126953C45.306493 16.84345 35.305951 9 23.986328 9 z M 24.001953 17C18.681885 17 14.337891 21.343999 14.337891 26.664062C14.337891 31.984127 18.681885 36.330078 24.001953 36.330078C29.322021 36.330078 33.667969 31.984126 33.667969 26.664062C33.667969 21.343999 29.322021 17 24.001953 17 z'
+                                            id='eye-confirm-pass-path'>
                                         </path>
                                     </svg>
                                 </a>
@@ -155,33 +160,34 @@
                         </div>
                     </div>
                     <span
-                        asp-validation-for="RawPasswordConfirm"
-                        class="text-danger
-                               d-block">
+                        asp-validation-for='RawPasswordConfirm'
+                        class='text-danger
+                               d-block'>
                     </span>
                 </div>
                 <hr
-                    class="hr-runner"/>
+                    class='hr-runner'/>
                 <div
-                    class="form-group">
+                    class='form-group'>
                     <input
-                        class="btn btn-success btn-upper-animate"
-                        type="submit"
-                        value="Register manager">
+                        class='btn btn-success btn-upper-animate'
+                        type='submit'
+                        value='Register manager'>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
+
 @section Scripts
 {
     <script
-        src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        src='~/lib/jquery-validation/dist/jquery.validate.js'></script>
     <script
-        src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+        src='~/lib/jquery-validation/dist/additional-methods.js'></script>
     <script
-        src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        src='~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'></script>
     <script>
         $(document).
             ready(
@@ -202,10 +208,9 @@
                                                    ? 'text'
                                                    : 'password';
                                 passwordShowHidePath.setAttribute(
-                                    'd'
-                                    , isHided
-                                      ? eye
-                                      : eyeHide);
+                                    'd', isHided
+                                         ? eyeHide
+                                         : eye);
                             });
                     $('#btn-hide-confirm').
                         click(
@@ -216,10 +221,9 @@
                                                           ? 'text'
                                                           : 'password';
                                 passwordConfirmShowHidePath.setAttribute(
-                                    'd'
-                                    , isHided
-                                      ? eye
-                                      : eyeHide);
+                                    'd', isHided
+                                         ? eyeHide
+                                         : eye);
                             });
                     $('#img-generate-password').
                         click(

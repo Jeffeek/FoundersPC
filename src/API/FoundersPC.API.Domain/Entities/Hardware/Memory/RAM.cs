@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware.Memory
 {
     [Index(nameof(Id))]
-    public class RAM : HardwareEntityBase, IEquatable<RAM>, IRAM
+    public class RAM : HardwareEntityBase, IEquatable<RAM>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("MemoryType")]
@@ -62,7 +61,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(RAM other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -78,7 +77,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
                    && PCIndex == other.PCIndex;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -88,8 +87,16 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
             return Equals((RAM)obj);
         }
 
-        /// <inheritdoc />
-        public override int GetHashCode() => HashCode.Combine(MemoryType, Frequency, CASLatency, Timings, Voltage, XMP, ECC, PCIndex);
+        /// <inheritdoc/>
+        public override int GetHashCode() =>
+            HashCode.Combine(MemoryType,
+                             Frequency,
+                             CASLatency,
+                             Timings,
+                             Voltage,
+                             XMP,
+                             ECC,
+                             PCIndex);
 
         #endregion
     }

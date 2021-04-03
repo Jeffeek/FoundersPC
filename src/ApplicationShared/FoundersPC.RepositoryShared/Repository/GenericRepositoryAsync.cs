@@ -19,9 +19,9 @@ namespace FoundersPC.RepositoryShared.Repository
 
         public virtual async Task<T> AddAsync(T entity)
         {
-            await Context.Set<T>().AddAsync(entity);
+            var result = await Context.Set<T>().AddAsync(entity);
 
-            return entity;
+            return result.Entity;
         }
 
         // override to include ref data

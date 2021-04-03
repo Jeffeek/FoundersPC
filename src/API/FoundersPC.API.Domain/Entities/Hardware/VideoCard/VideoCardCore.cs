@@ -4,14 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using FoundersPC.RepositoryShared.Identity;
 
 #endregion
 
 namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 {
-    public class VideoCardCore : IdentityItem, IEquatable<VideoCardCore>, IVideoCardCore
+    public class VideoCardCore : IdentityItem, IEquatable<VideoCardCore>
     {
         public ICollection<GPU> VideoCards { get; set; }
 
@@ -75,7 +74,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(VideoCardCore other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -91,7 +90,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
                    && ArchitectureTitle == other.ArchitectureTitle;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -101,7 +100,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.VideoCard
             return Equals((VideoCardCore)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var hashCode = new HashCode();

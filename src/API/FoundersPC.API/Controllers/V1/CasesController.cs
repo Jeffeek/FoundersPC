@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.API.Dto;
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,10 +15,11 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.API.Controllers.V1
 {
     //[EnableCors(PolicyName = "WebClientPolicy")]
-    [Authorize]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Cases")]
+    // todo: add token in parameters to check the input token
     public class CasesController : Controller
     {
         private readonly ICaseService _caseService;
@@ -33,8 +34,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get()
@@ -44,8 +43,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _caseService.GetAllCasesAsync());
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<CaseReadDto>> Get(int? id)
@@ -59,11 +56,10 @@ namespace FoundersPC.API.Controllers.V1
             return @case == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(@case);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] CaseUpdateDto @case)
+        public async Task<ActionResult> Update([FromRoute] int? id, [FromBody] CaseUpdateDto @case)
         {
             if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 
@@ -78,8 +74,7 @@ namespace FoundersPC.API.Controllers.V1
             return Json(@case);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] CaseInsertDto @case)
@@ -95,11 +90,10 @@ namespace FoundersPC.API.Controllers.V1
             return Json(@case);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> Delete([FromRoute] int? id)
         {
             if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
 

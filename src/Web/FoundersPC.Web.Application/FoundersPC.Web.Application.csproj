@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.WebIdentityShared\FoundersPC.WebIdentityShared.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj" />
     <ProjectReference Include="..\FoundersPC.Web.Domain\FoundersPC.Web.Domain.csproj" />
   </ItemGroup>
 

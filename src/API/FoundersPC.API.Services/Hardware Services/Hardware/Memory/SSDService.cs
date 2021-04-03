@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.API.Application;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Domain.Entities.Hardware.Memory;
+using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 
 #endregion
@@ -25,17 +25,17 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
 
         #region Implementation of ISSDService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<SSDReadDto>> GetAllSSDsAsync() =>
             _mapper.Map<IEnumerable<SSD>, IEnumerable<SSDReadDto>>(await _unitOfWorkHardwareAPI
                                                                          .SSDsRepository
                                                                          .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<SSDReadDto> GetSSDByIdAsync(int ssdId) =>
             _mapper.Map<SSD, SSDReadDto>(await _unitOfWorkHardwareAPI.SSDsRepository.GetByIdAsync(ssdId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateSSDAsync(SSDInsertDto ssd)
         {
             var mappedSSD = _mapper.Map<SSDInsertDto, SSD>(ssd);
@@ -48,7 +48,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateSSDAsync(int id, SSDUpdateDto ssd)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.SSDsRepository.GetByIdAsync(id);
@@ -63,7 +63,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteSSDAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.SSDsRepository.DeleteAsync(id);

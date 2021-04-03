@@ -46,7 +46,10 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                                   {
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
-                                                      HashedToken = table.Column<string>("nvarchar(88)", maxLength : 88, nullable : false)
+                                                      HashedToken =
+                                                          table.Column<string>("nvarchar(88)",
+                                                                               maxLength : 88,
+                                                                               nullable : false)
                                                   },
                                          constraints : table => table.PrimaryKey("PK_ApiTokens", x => x.Id));
 

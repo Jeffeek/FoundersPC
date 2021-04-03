@@ -28,7 +28,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("Color")
                                      .IsRequired()
@@ -106,7 +107,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<int>("BufferSize")
                                      .HasColumnType("int")
@@ -160,7 +162,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("CASLatency")
                                      .IsRequired()
@@ -226,7 +229,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<double>("Factor")
                                      .HasColumnType("float")
@@ -282,7 +286,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("AudioSupport")
                                      .IsRequired()
@@ -366,7 +371,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<bool?>("CPU4PIN")
                                      .HasColumnType("bit")
@@ -432,7 +438,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<int>("Cores")
                                      .HasColumnType("int")
@@ -516,7 +523,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<int>("L2CachePerCore")
                                      .HasColumnType("int")
@@ -560,7 +568,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("Country")
                                      .HasMaxLength(50)
@@ -601,7 +610,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<int>("AdditionalPower")
                                      .HasColumnType("int")
@@ -684,7 +694,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
+                                                    SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("ArchitectureTitle")
                                      .IsRequired()
@@ -849,7 +860,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("Producer");
                                 });
 
-            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Processor.ProcessorCore", b => { b.Navigation("Processors"); });
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Processor.ProcessorCore",
+                                b => { b.Navigation("Processors"); });
 
             modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.Producer",
                                 b =>
@@ -871,7 +883,8 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                     b.Navigation("VideoCards");
                                 });
 
-            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.VideoCard.VideoCardCore", b => { b.Navigation("VideoCards"); });
+            modelBuilder.Entity("FoundersPC.API.Domain.Entities.Hardware.VideoCard.VideoCardCore",
+                                b => { b.Navigation("VideoCards"); });
             #pragma warning restore 612, 618
         }
     }

@@ -6,12 +6,12 @@ using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Settings;
 using FoundersPC.Identity.Services.Administration.Admin_Services;
-using FoundersPC.Identity.Services.Administration.Manager_Services;
 using FoundersPC.Identity.Services.EmailServices;
 using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.Identity.Services.Log_Services;
 using FoundersPC.Identity.Services.Token_Services;
 using FoundersPC.Identity.Services.User_Services;
+using FoundersPC.Identity.Services.User_Services.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -23,10 +23,12 @@ namespace FoundersPC.Identity.Services
     {
         public static void AddUsersIdentityServices(this IServiceCollection services)
         {
-            services.AddScoped<IUserRegistrationService, UserRegistrationService>();
+            services.AddScoped<IApiAccessTokensReservationService, ApiAccessTokenReservationService>();
+            services.AddScoped<IRegistrationService, RegistrationService>();
             services.AddScoped<IUsersInformationService, UsersInformationService>();
-            services.AddScoped<IManagerService, ManagerService>();
             services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IUserSettingsService, UserSettingsService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
         }
 
         public static void AddEncryptionServices(this IServiceCollection services)
@@ -46,10 +48,11 @@ namespace FoundersPC.Identity.Services
             services.AddScoped<IApiAccessUsersTokensService, ApiAccessUsersTokensService>();
         }
 
-        public static void AddBotEmailConfigurationAndService(this IServiceCollection services, IConfiguration configuration)
+        public static void AddBotEmailConfigurationAndService(this IServiceCollection services,
+                                                              IConfiguration configuration)
         {
             services.AddSingleton(new EmailBotConfiguration(configuration));
-            services.AddScoped<IMailService, MailService>();
+            services.AddScoped<IEmailService, EmailService>();
         }
     }
 }

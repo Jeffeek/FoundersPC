@@ -13,7 +13,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
 {
-    public class ApiAccessUsersTokensRepository : GenericRepositoryAsync<ApiAccessUserToken>, IApiAccessUsersTokensRepository
+    public class ApiAccessUsersTokensRepository : GenericRepositoryAsync<ApiAccessUserToken>,
+                                                  IApiAccessUsersTokensRepository
     {
         public ApiAccessUsersTokensRepository(FoundersPCUsersContext context) : base(context) { }
 

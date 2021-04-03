@@ -1,9 +1,9 @@
 ﻿namespace FoundersPC.ApplicationShared
 {
-    public enum ApplicationRoles : byte
+    public static class ApplicationRoles
     {
-        Administrator = 1,
-        Manager = 2,
-        DefaultUser = 3
+        public const string Administrator = "Administrator";
+        public const string Manager = "Manager";
+        public const string DefaultUser = "DefaultUser";
     }
 }

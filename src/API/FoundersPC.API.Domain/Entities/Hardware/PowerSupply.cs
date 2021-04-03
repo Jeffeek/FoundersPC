@@ -4,7 +4,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Common.Base;
-using FoundersPC.API.Domain.Common.Interfaces.Hardware;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Domain.Entities.Hardware
 {
     [Index(nameof(Id))]
-    public class PowerSupply : HardwareEntityBase, IPowerSupply, IEquatable<PowerSupply>
+    public class PowerSupply : HardwareEntityBase, IEquatable<PowerSupply>
     {
         [Range(50, 10000)]
         [Column("Power")]
@@ -62,7 +61,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(PowerSupply other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -79,7 +78,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
                    && PFC == other.PFC;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -89,7 +88,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             return Equals((PowerSupply)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var hashCode = new HashCode();
