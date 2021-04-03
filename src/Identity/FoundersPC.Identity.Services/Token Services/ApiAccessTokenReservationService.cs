@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Tokens;
+using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
@@ -14,34 +15,47 @@ using FoundersPC.RequestResponseShared.Request.Tokens;
 
 namespace FoundersPC.Identity.Services.Token_Services
 {
-    // todo: inject
-    // todo: add mail service to throw token into email
     public class ApiAccessTokenReservationService : IApiAccessTokensReservationService
     {
-        private readonly IMailService _mailService;
+        private readonly IEmailService _emailService;
         private readonly TokenEncryptorService _tokenEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessTokenReservationService(IUnitOfWorkUsersIdentity unitOfWork,
                                                 TokenEncryptorService tokenEncryptorService,
-                                                IMailService mailService)
+                                                IEmailService emailService)
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
-            _mailService = mailService;
+            _emailService = emailService;
         }
 
         public async Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
         {
-            var tokenStartEvaluation = DateTime.Now;
-            var tokenLifetime = GetTheExpirationDate(type);
-
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             if (user is null)
                 throw new
                     NotSupportedException($"{nameof(ApiAccessTokenReservationService)}: Reserve new token: user with email = {userEmail} not found");
 
+            return await ReserveNewTokenAsync(user, type);
+        }
+
+        public async Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type)
+        {
+            var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
+
+            if (user is null)
+                throw new
+                    NotSupportedException($"{nameof(ApiAccessTokenReservationService)}: Reserve new token: user with id = {userId} not found");
+
+            return await ReserveNewTokenAsync(user, type);
+        }
+
+        private async Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(UserEntity user, TokenType type)
+        {
+            var tokenStartEvaluation = DateTime.Now;
+            var tokenLifetime = GetTheExpirationDate(type);
             var newHashedToken = _tokenEncryptorService.CreateToken();
 
             var newToken = new ApiAccessUserToken
@@ -59,9 +73,12 @@ namespace FoundersPC.Identity.Services.Token_Services
             var saveChangesResult = await _unitOfWork.SaveChangesAsync() > 0;
 
             // todo: maybe throw exception
+            // or not..
+            // fuck it. idk & idc
+            // ok.
             if (!saveChangesResult) return null;
 
-            await _mailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
+            await _emailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
 
             return new ApiAccessUserTokenReadDto
                    {
@@ -83,12 +100,12 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             var expirationDate = now.AddMonths(type switch
                                                {
-                                                   TokenType.Low => 2,
-                                                   TokenType.Medium => 6,
-                                                   TokenType.High => 12,
-                                                   TokenType.Ultra => 60,
+                                                   TokenType.Low         => 2,
+                                                   TokenType.Medium      => 6,
+                                                   TokenType.High        => 12,
+                                                   TokenType.Ultra       => 60,
                                                    TokenType.Unstoppable => 1200,
-                                                   _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+                                                   _                     => throw new ArgumentOutOfRangeException(nameof(type), type, null)
                                                });
 
             return expirationDate;

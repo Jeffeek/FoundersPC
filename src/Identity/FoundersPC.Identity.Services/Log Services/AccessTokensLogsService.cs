@@ -31,11 +31,11 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAsync() =>
             _mapper.Map<IEnumerable<AccessTokenLog>, IEnumerable<AccessTokenLogReadDto>>(await _unitOfWork
-                .AccessTokensLogsRepository.GetAllAsync());
+                                                                                             .AccessTokensLogsRepository.GetAllAsync());
 
         public async Task<AccessTokenLogReadDto> GetByIdAsync(int id) =>
             _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
-                                                                   .GetByIdAsync(id));
+                                                                                .GetByIdAsync(id));
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetUsagesBetweenAsync(DateTime start, DateTime finish)
         {
@@ -71,11 +71,11 @@ namespace FoundersPC.Identity.Services.Log_Services
             return await _unitOfWork.SaveChangesAsync() > 0;
         }
 
-        // 88 - length of the token
+        // 64 - length of the token
         public async Task<bool> LogAsync(string token)
         {
             if (token == null
-                || token.Length != 88)
+                || token.Length != 64)
             {
                 _logger.LogWarning(token is null
                                        ? $"{nameof(AccessTokensLogsService)}: Log: token was null"

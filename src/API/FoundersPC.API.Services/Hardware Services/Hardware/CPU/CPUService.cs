@@ -22,20 +22,20 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
             _mapper = mapper;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync() =>
             _mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor.CPU>, IEnumerable<CPUReadDto>>(await
                 _unitOfWorkHardwareAPI
                     .ProcessorsRepository
                     .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) =>
             _mapper.Map<Domain.Entities.Hardware.Processor.CPU, CPUReadDto>(await _unitOfWorkHardwareAPI
-                                                                                .ProcessorsRepository
-                                                                                .GetByIdAsync(cpuId));
+                                                                                  .ProcessorsRepository
+                                                                                  .GetByIdAsync(cpuId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateCPUAsync(CPUInsertDto cpu)
         {
             var mappedCpu = _mapper.Map<CPUInsertDto, Domain.Entities.Hardware.Processor.CPU>(cpu);
@@ -50,7 +50,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateCPUAsync(int id, CPUUpdateDto cpu)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProcessorsRepository.GetByIdAsync(id);
@@ -65,7 +65,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteCPUAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.ProcessorsRepository.DeleteAsync(id);

@@ -19,6 +19,10 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 
         Task<IEnumerable<UserEntranceLogReadDto>> GetEntrancesInAsync(DateTime date);
 
+        Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(int userId);
+
+        Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(string userEmail);
+
         Task<bool> LogAsync(int userId);
     }
 }

@@ -14,6 +14,6 @@
 
         public string Role { get; set; } = null;
 
-        public string JwtToken { get; set; } = null;
+        public string JwtToken { get; set; }
     }
 }

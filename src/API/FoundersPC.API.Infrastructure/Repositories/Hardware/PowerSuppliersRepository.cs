@@ -14,7 +14,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
     public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupply>, IPowerSuppliersRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public PowerSuppliersRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IPowerSuppliersRepositoryAsync
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
             return powerSupply;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<PowerSupply>> GetAllAsync()
         {
             return await Context.Set<PowerSupply>()

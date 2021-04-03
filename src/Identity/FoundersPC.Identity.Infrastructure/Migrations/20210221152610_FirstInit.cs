@@ -17,7 +17,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                                       Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       RoleTitle = table.Column<string>("nvarchar(max)",
-                                                          nullable : false)
+                                                                                       nullable : false)
                                                   },
                                          constraints : table => { table.PrimaryKey("PK_Roles", x => x.Id); });
 

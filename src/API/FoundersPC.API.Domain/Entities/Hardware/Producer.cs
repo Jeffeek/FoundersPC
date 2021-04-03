@@ -69,7 +69,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(Producer other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -82,7 +82,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
                    && Nullable.Equals(FoundationDate, other.FoundationDate);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -92,8 +92,13 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             return Equals((Producer)obj);
         }
 
-        /// <inheritdoc />
-        public override int GetHashCode() => HashCode.Combine(ShortName, FullName, Country, Website, FoundationDate);
+        /// <inheritdoc/>
+        public override int GetHashCode() =>
+            HashCode.Combine(ShortName,
+                             FullName,
+                             Country,
+                             Website,
+                             FoundationDate);
 
         #endregion
     }

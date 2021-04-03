@@ -20,7 +20,7 @@ namespace FoundersPC.API.Application.Validation.Producer
             RuleFor(x => x.FullName)
                 .NotNull()
                 .NotEmpty()
-                .MinimumLength(100)
+                .MinimumLength(2)
                 .MinimumLength(2)
                 .When(x => x != null);
 

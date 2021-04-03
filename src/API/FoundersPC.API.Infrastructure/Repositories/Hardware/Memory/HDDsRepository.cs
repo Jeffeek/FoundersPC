@@ -14,7 +14,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
     public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public HDDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IHDDsRepositoryAsync
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
             return hdd;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<HDD>> GetAllAsync()
         {
             return await Context.Set<HDD>()

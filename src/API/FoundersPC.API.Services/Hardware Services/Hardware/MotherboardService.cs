@@ -26,19 +26,19 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
         #region Implementation of IMotherboardService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<MotherboardReadDto>> GetAllMotherboardsAsync() =>
             _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
-                .MotherboardsRepository
-                .GetAllAsync());
+                                                                                         .MotherboardsRepository
+                                                                                         .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId) =>
             _mapper.Map<Motherboard, MotherboardReadDto>(await _unitOfWorkHardwareAPI
                                                                .MotherboardsRepository
                                                                .GetByIdAsync(motherboardId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateMotherboardAsync(MotherboardInsertDto motherboard)
         {
             var mappedMotherboard = _mapper.Map<MotherboardInsertDto, Motherboard>(motherboard);
@@ -53,7 +53,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateMotherboardAsync(int id, MotherboardUpdateDto motherboard)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.MotherboardsRepository.GetByIdAsync(id);
@@ -68,7 +68,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteMotherboardAsync(int id)
         {
             var result = await _unitOfWorkHardwareAPI.MotherboardsRepository.DeleteAsync(id);

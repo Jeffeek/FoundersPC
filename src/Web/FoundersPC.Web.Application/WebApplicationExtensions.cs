@@ -3,6 +3,8 @@
 using System;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using FoundersPC.API.Dto.Mapping;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application.Mappings;
 using FoundersPC.Web.Application.Validation.AccountSettings;
 using Microsoft.AspNetCore.Authentication;
@@ -19,6 +21,7 @@ namespace FoundersPC.Web.Application
         public static void AddWebApplicationMappings(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingStartup));
+            services.AddAutoMapper(typeof(HardwareApiDtoMapping));
         }
 
         public static void AddValidators(this IServiceCollection services)
@@ -56,13 +59,49 @@ namespace FoundersPC.Web.Application
                                                     {
                                                         OnRedirectToAccessDenied =
                                                             context =>
-                                                                context.HttpContext
-                                                                       .ForbidAsync(CookieAuthenticationDefaults
-                                                                           .AuthenticationScheme)
+                                                                context.HttpContext.ForbidAsync(CookieAuthenticationDefaults
+                                                                    .AuthenticationScheme)
                                                     };
 
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
                                });
+        }
+
+        public static void AddCookieAuthorizationPolicies(this IServiceCollection services)
+        {
+            services.AddAuthorization(configuration =>
+                                      {
+                                          configuration.AddPolicy(ApplicationAuthorizationPolicies.AdministratorPolicy,
+                                                                  builder =>
+                                                                  {
+                                                                      builder.AddAuthenticationSchemes(CookieAuthenticationDefaults
+                                                                                 .AuthenticationScheme)
+                                                                             .RequireAuthenticatedUser()
+                                                                             .RequireRole(ApplicationRoles.Administrator)
+                                                                             .Build();
+                                                                  });
+                                          configuration.AddPolicy(ApplicationAuthorizationPolicies.EmployeePolicy,
+                                                                  builder =>
+                                                                  {
+                                                                      builder.AddAuthenticationSchemes(CookieAuthenticationDefaults
+                                                                                 .AuthenticationScheme)
+                                                                             .RequireAuthenticatedUser()
+                                                                             .RequireRole(ApplicationRoles.Manager,
+                                                                                          ApplicationRoles.Administrator)
+                                                                             .Build();
+                                                                  });
+                                          configuration.AddPolicy(ApplicationAuthorizationPolicies.AuthenticatedPolicy,
+                                                                  builder =>
+                                                                  {
+                                                                      builder.AddAuthenticationSchemes(CookieAuthenticationDefaults
+                                                                                 .AuthenticationScheme)
+                                                                             .RequireAuthenticatedUser()
+                                                                             .RequireRole(ApplicationRoles.DefaultUser,
+                                                                                          ApplicationRoles.Administrator,
+                                                                                          ApplicationRoles.Manager)
+                                                                             .Build();
+                                                                  });
+                                      });
         }
     }
 }

@@ -1,5 +1,6 @@
 #region Using namespaces
 
+using System.IO;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Middleware;
 using FoundersPC.Web.Services;
@@ -16,7 +17,15 @@ namespace FoundersPC.Web
 {
     public sealed class Startup
     {
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration)
+        {
+            var cfgBuilder = new ConfigurationBuilder();
+            cfgBuilder.AddConfiguration(configuration)
+                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                                   false);
+
+            Configuration = cfgBuilder.Build();
+        }
 
         private IConfiguration Configuration { get; }
 
@@ -33,13 +42,12 @@ namespace FoundersPC.Web
 
             services.AddCookieSecureAuthentication();
 
-            services.AddAuthorization();
+            services.AddCookieAuthorizationPolicies();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

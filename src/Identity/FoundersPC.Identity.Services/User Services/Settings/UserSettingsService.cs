@@ -17,47 +17,74 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 {
     public class UserSettingsService : IUserSettingsService
     {
+        private readonly IEmailService _emailService;
         private readonly ILogger<UserSettingsService> _logger;
-        private readonly IMailService _mailService;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public UserSettingsService(IUnitOfWorkUsersIdentity unitOfWork,
                                    ILogger<UserSettingsService> logger,
                                    PasswordEncryptorService passwordEncryptorService,
-                                   IMailService mailService)
+                                   IEmailService emailService)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
             _passwordEncryptorService = passwordEncryptorService;
-            _mailService = mailService;
+            _emailService = emailService;
         }
 
         #region Change password
 
         #region Private part
 
-        // todo: logger
         private async Task<bool> ChangePasswordToAsync(UserEntity user, string oldPassword, string newPassword)
         {
-            if (user is null) throw new ArgumentNullException(nameof(user));
-            if (newPassword is null) throw new ArgumentNullException(nameof(newPassword));
-            if (oldPassword is null) throw new ArgumentNullException(nameof(oldPassword));
+            if (user is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(user)} was null");
+
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            if (newPassword is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(newPassword)} was null");
+
+                throw new ArgumentNullException(nameof(newPassword));
+            }
+
+            if (oldPassword is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(oldPassword)} was null");
+
+                throw new ArgumentNullException(nameof(oldPassword));
+            }
 
             var oldHashedPassword = _passwordEncryptorService.EncryptPassword(oldPassword);
 
-            if (!oldHashedPassword.Equals(user.HashedPassword, StringComparison.Ordinal))
-                throw new
-                    ArgumentException($"Old password in hash is not equal to database's hashed password for user with id = {user.Id}",
-                                      nameof(oldPassword));
+            if (oldHashedPassword.Equals(user.HashedPassword, StringComparison.Ordinal))
+                return await ChangePasswordToAsync(user, newPassword);
 
-            return await ChangePasswordToAsync(user, newPassword);
+            _logger.LogWarning($"Old password in hash is not equal to database's hashed password for user with id = {user.Id}");
+
+            return false;
         }
 
         private async Task<bool> ChangePasswordToAsync(UserEntity user, string newPassword)
         {
-            if (user is null) throw new ArgumentNullException(nameof(user));
-            if (newPassword is null) throw new ArgumentNullException(nameof(newPassword));
+            if (user is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(user)} was null");
+
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            if (newPassword is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(newPassword)} was null");
+
+                throw new ArgumentNullException(nameof(newPassword));
+            }
 
             var hashedNewPassword = _passwordEncryptorService.EncryptPassword(newPassword);
 
@@ -67,7 +94,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             if (!updateResult) return false;
 
-            await _mailService.SendNewPasswordAsync(user.Email, newPassword);
+            await _emailService.SendNewPasswordAsync(user.Email, "new password");
 
             return await _unitOfWork.SaveChangesAsync() > 0;
         }

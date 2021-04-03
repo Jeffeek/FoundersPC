@@ -8,9 +8,10 @@ using FoundersPC.RequestResponseShared.Request.Tokens;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 {
-    // todo: add variation with user id
     public interface IApiAccessTokensReservationService
     {
         Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type);
+
+        Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type);
     }
 }

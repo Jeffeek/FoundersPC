@@ -87,7 +87,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(CPU other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -109,7 +109,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
                    && IntegratedGraphics == other.IntegratedGraphics;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -119,7 +119,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Processor
             return Equals((CPU)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             var hashCode = new HashCode();

@@ -13,7 +13,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.CPU
 {
     public class CPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.Processor.CPU>, ICPUsRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public CPUsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of ICPUsRepositoryAsync
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.CPU
             return cpu;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>> GetAllAsync()
         {
             return await Context

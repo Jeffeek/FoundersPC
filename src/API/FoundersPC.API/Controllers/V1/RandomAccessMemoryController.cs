@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Dto;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FoundersPC.ApplicationShared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/RandomAccessMemory")]
@@ -34,8 +34,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RAMReadDto>>> Get()
@@ -45,8 +43,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _ramService.GetAllRAMsAsync());
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Readable")]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<RAMReadDto>> Get(int? id)
@@ -60,8 +56,7 @@ namespace FoundersPC.API.Controllers.V1
             return ram == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(ram);
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] RAMUpdateDto ram)
@@ -76,8 +71,7 @@ namespace FoundersPC.API.Controllers.V1
             return result ? Json(ram) : ResponseResultsHelper.UpdateError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] RAMInsertDto ram)
@@ -91,8 +85,7 @@ namespace FoundersPC.API.Controllers.V1
             return insertResult ? Json(ram) : ResponseResultsHelper.InsertError();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme,
-                   Policy = "Changeable")]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
         [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)

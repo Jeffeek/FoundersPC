@@ -17,20 +17,20 @@ namespace FoundersPC.Identity.Services.User_Services
 {
     public class AuthenticationService : IAuthenticationService
     {
+        private readonly IEmailService _emailService;
         private readonly ILogger<AuthenticationService> _logger;
-        private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly PasswordEncryptorService _passwordEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public AuthenticationService(ILogger<AuthenticationService> logger,
-                                     IMailService mailService,
+                                     IEmailService emailService,
                                      IUnitOfWorkUsersIdentity unitOfWork,
                                      PasswordEncryptorService passwordEncryptorService,
                                      IMapper mapper)
         {
             _logger = logger;
-            _mailService = mailService;
+            _emailService = emailService;
             _unitOfWork = unitOfWork;
             _passwordEncryptorService = passwordEncryptorService;
             _mapper = mapper;

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
+    [AllowAnonymous]
     [Route("FoundersPCIdentity/Authentication")]
     public class ForgotPasswordController : Controller
     {
@@ -26,8 +28,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
         [Route("ForgotPassword")]
         [HttpPost]
-        public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword(
-            [FromBody] UserForgotPasswordRequest request)
+        public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword([FromBody] UserForgotPasswordRequest request)
         {
             if (!ModelState.IsValid) return UnprocessableEntity();
 

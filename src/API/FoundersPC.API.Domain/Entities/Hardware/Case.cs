@@ -80,7 +80,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public bool Equals(Case other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -98,7 +98,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
                    && Weight.Equals(other.Weight ?? 0);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -108,9 +108,14 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             return Equals((Case)obj);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override int GetHashCode() =>
-            HashCode.Combine(Type, MaxMotherboardSize, Material, WindowMaterial, TransparentWindow, Color);
+            HashCode.Combine(Type,
+                             MaxMotherboardSize,
+                             Material,
+                             WindowMaterial,
+                             TransparentWindow,
+                             Color);
 
         #endregion
     }

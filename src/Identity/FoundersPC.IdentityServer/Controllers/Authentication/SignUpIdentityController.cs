@@ -5,6 +5,7 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
+    [AllowAnonymous]
     [Route("FoundersPCIdentity/Authentication")]
     public class SignUpIdentityController : Controller
     {
@@ -30,7 +32,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
         [Route("SignUp")]
         [HttpPost]
-        public async Task<ActionResult<UserSignUpResponse>> Register([FromBody] UserSignUpRequest request)
+        public async Task<ActionResult<UserSignUpResponse>> SignUpUser([FromBody] UserSignUpRequest request)
         {
             if (!ModelState.IsValid) UnprocessableEntity();
 
@@ -67,6 +69,29 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        Role = ApplicationRoles.DefaultUser,
                        JwtToken = token.GetToken()
                    };
+        }
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        [Route("NewManager")]
+        [HttpPost]
+        public async Task<ActionResult<UserSignUpResponse>> RegisterManager([FromBody] UserSignUpRequest request)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            var result = await _registrationService.RegisterManagerAsync(request.Email, request.Password);
+
+            var response = new UserSignUpResponse
+                           {
+                               Email = request.Email,
+                               Role = ApplicationRoles.Manager,
+                               IsRegistrationSuccessful = result
+                           };
+
+            if (result) return response;
+
+            response.ResponseException = "Not successful registration. Check logs";
+
+            return response;
         }
     }
 }

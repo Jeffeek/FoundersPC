@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
 using Microsoft.AspNetCore.Authorization;
@@ -14,18 +15,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
+    [AllowAnonymous]
     [Route("Pricing")]
-    // todo: make service
     public class PricingController : Controller
     {
         private readonly ITokenReservationWebService _tokenReservationService;
 
-        public PricingController(ITokenReservationWebService tokenReservationService) =>
-            _tokenReservationService = tokenReservationService;
+        public PricingController(ITokenReservationWebService tokenReservationService) => _tokenReservationService = tokenReservationService;
 
-        [Authorize]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
         [Route("Buy/{tokenType}")]
-        public async Task<IActionResult> Buy(string tokenType)
+        public async Task<IActionResult> Buy([FromRoute] string tokenType)
         {
             if (tokenType is null) return BadRequest();
 
@@ -48,7 +48,7 @@ namespace FoundersPC.Web.Controllers
 
             if (result is null || !result.IsBuyingSuccessful) return RedirectToAction("ServerErrorIndex", "Error");
 
-            return RedirectToAction("Profile", "AccountSettings");
+            return RedirectToAction("Profile", "Account");
         }
     }
 }

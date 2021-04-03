@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
@@ -17,6 +18,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
+    [AllowAnonymous]
     [Route("Authentication")]
     [Controller]
     public class AuthenticationController : Controller
@@ -30,7 +32,7 @@ namespace FoundersPC.Web.Controllers
 
         [Route("ForgotPassword")]
         [HttpPost]
-        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<ActionResult> ForgotPassword([FromForm] ForgotPasswordViewModel model)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Bad email validation",
@@ -61,7 +63,7 @@ namespace FoundersPC.Web.Controllers
         [Route("SignUp")]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> SignUpAsync(SignUpViewModel signUpModel)
+        public async Task<IActionResult> SignUpAsync([FromForm] SignUpViewModel signUpModel)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Bad validation/model",
@@ -90,12 +92,12 @@ namespace FoundersPC.Web.Controllers
         #endregion
 
         [Route("LogOut")]
-        [Authorize]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
         public async Task<ActionResult> LogOutAsync()
         {
             if (!User.Identity?.IsAuthenticated ?? false) return Unauthorized();
 
-            RemoveJwtTokenInCookie();
+            RemoveJwtTokenFromCookie();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Index", "Home");
@@ -106,7 +108,7 @@ namespace FoundersPC.Web.Controllers
         [Route("SignIn")]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> SignInAsync(SignInViewModel model)
+        public async Task<IActionResult> SignInAsync([FromForm] SignInViewModel model)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem("Not valid credentials. Bad model.",
@@ -135,7 +137,7 @@ namespace FoundersPC.Web.Controllers
 
         private void SetupJwtTokenInCookie(string token)
         {
-            RemoveJwtTokenInCookie();
+            RemoveJwtTokenFromCookie();
 
             HttpContext.Response.Cookies.Append("token",
                                                 token,
@@ -163,7 +165,7 @@ namespace FoundersPC.Web.Controllers
                                           new ClaimsPrincipal(identity));
         }
 
-        private void RemoveJwtTokenInCookie()
+        private void RemoveJwtTokenFromCookie()
         {
             if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
         }

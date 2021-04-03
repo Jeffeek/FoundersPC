@@ -2,7 +2,7 @@ const slider = document.querySelector(".pricing-slider");
 const trail = document.querySelector(".price-trail").querySelectorAll("div");
 let value = 0;
 let trailValue = 0;
-let interval = 5000;
+let interval = 60000;
 const slide = (condition) =>
 {
     clearInterval(start);
@@ -55,10 +55,7 @@ const trailUpdate = () =>
     }
 };
 let start = setInterval(() => slide("increase"), interval);
-document.querySelectorAll(".container-slider svg").forEach(cur =>
-{
-    cur.addEventListener("click", () => cur.classList.contains("next-price-card") ? slide("increase") : slide("decrease"));
-});
+document.querySelectorAll(".container-slider svg").forEach(cur => { cur.addEventListener("click", () => cur.classList.contains("next-price-card") ? slide("increase") : slide("decrease")); });
 const clickCheck = (e) =>
 {
     clearInterval(start);

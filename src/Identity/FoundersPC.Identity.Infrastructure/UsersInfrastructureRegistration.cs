@@ -44,12 +44,12 @@ namespace FoundersPC.Identity.Infrastructure
         {
             services.AddDbContext<FoundersPCUsersContext>(options =>
                                                               options.UseSqlServer(configuration
-                                                                      .GetConnectionString("FoundersPC_Users"),
-                                                                  b =>
-                                                                      b.MigrationsAssembly(typeof(
-                                                                              FoundersPCUsersContext)
-                                                                          .Assembly
-                                                                          .FullName)));
+                                                                                       .GetConnectionString("FoundersPC_Users"),
+                                                                                   b =>
+                                                                                       b.MigrationsAssembly(typeof(
+                                                                                               FoundersPCUsersContext)
+                                                                                           .Assembly
+                                                                                           .FullName)));
         }
     }
 }

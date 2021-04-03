@@ -1,9 +1,8 @@
 ﻿#region Using namespaces
 
+using FoundersPC.Identity.Dto;
 
 #endregion
-
-using FoundersPC.Identity.Dto;
 
 namespace FoundersPC.RequestResponseShared.Response.Tokens
 {

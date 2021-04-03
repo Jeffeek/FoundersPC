@@ -472,3 +472,10 @@ html
 {
     opacity: 1 !important;
 }
+
+.price-card-illustration div .display-1
+{
+    box-shadow: var(--bs-dark) 5px 7px 50px;
+    display: inline-flex;
+    z-index: 101;
+}

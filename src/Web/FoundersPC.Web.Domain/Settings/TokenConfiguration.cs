@@ -10,7 +10,6 @@ namespace FoundersPC.Web.Domain.Settings
     {
         public string HashTokenKey;
 
-        public TokenConfiguration(IConfiguration configuration) =>
-            HashTokenKey = configuration["TokenConfiguration:HashTokenKey"];
+        public TokenConfiguration(IConfiguration configuration) => HashTokenKey = configuration["TokenConfiguration:HashTokenKey"];
     }
 }

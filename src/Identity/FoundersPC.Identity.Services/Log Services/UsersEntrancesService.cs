@@ -17,29 +17,29 @@ namespace FoundersPC.Identity.Services.Log_Services
 {
     public class UsersEntrancesService : IUsersEntrancesService
     {
+        private readonly IEmailService _emailService;
         private readonly ILogger<UsersEntrancesService> _logger;
-        private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public UsersEntrancesService(IUnitOfWorkUsersIdentity unitOfWork,
-                                     IMailService mailService,
+                                     IEmailService emailService,
                                      ILogger<UsersEntrancesService> logger,
                                      IMapper mapper)
         {
             _unitOfWork = unitOfWork;
-            _mailService = mailService;
+            _emailService = emailService;
             _logger = logger;
             _mapper = mapper;
         }
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllAsync() =>
             _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(await _unitOfWork
-                .UsersEntrancesLogsRepository.GetAllAsync());
+                                                                                               .UsersEntrancesLogsRepository.GetAllAsync());
 
         public async Task<UserEntranceLogReadDto> GetByIdAsync(int id) =>
             _mapper.Map<UserEntranceLog, UserEntranceLogReadDto>(await _unitOfWork.UsersEntrancesLogsRepository
-                                                                     .GetByIdAsync(id));
+                                                                                  .GetByIdAsync(id));
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetEntrancesBetweenAsync(DateTime start, DateTime finish)
         {
@@ -55,6 +55,34 @@ namespace FoundersPC.Identity.Services.Log_Services
             return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(logs);
         }
 
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(int userId)
+        {
+            if (userId < 1)
+            {
+                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrances)}:{nameof(userId)} was less than 1");
+
+                throw new ArgumentOutOfRangeException(nameof(userId));
+            }
+
+            var userEntrances = await _unitOfWork.UsersEntrancesLogsRepository.GetUserEntrancesAsync(userId);
+
+            return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(userEntrances);
+        }
+
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(string userEmail)
+        {
+            if (userEmail is null)
+            {
+                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrances)}:{nameof(userEmail)} was null");
+
+                throw new ArgumentNullException(nameof(userEmail));
+            }
+
+            var userEntrances = await _unitOfWork.UsersEntrancesLogsRepository.GetUserEntrancesAsync(userEmail);
+
+            return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(userEntrances);
+        }
+
         public async Task<bool> LogAsync(int userId)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
@@ -66,7 +94,7 @@ namespace FoundersPC.Identity.Services.Log_Services
                 return false;
             }
 
-            if (user.SendMessageOnEntrance) await _mailService.SendEntranceNotificationAsync(user.Email);
+            if (user.SendMessageOnEntrance) await _emailService.SendEntranceNotificationAsync(user.Email);
 
             var log = new UserEntranceLog
                       {

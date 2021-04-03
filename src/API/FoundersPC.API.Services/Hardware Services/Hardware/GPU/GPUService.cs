@@ -24,20 +24,20 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
 
         #region Implementation of IGPUService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<GPUReadDto>> GetAllGPUsAsync() =>
             _mapper.Map<IEnumerable<Domain.Entities.Hardware.VideoCard.GPU>, IEnumerable<GPUReadDto>>(await
                 _unitOfWorkHardwareAPI
                     .VideoCardsRepository
                     .GetAllAsync());
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<GPUReadDto> GetGPUByIdAsync(int gpuId) =>
             _mapper.Map<Domain.Entities.Hardware.VideoCard.GPU, GPUReadDto>(await _unitOfWorkHardwareAPI
-                                                                                .VideoCardsRepository
-                                                                                .GetByIdAsync(gpuId));
+                                                                                  .VideoCardsRepository
+                                                                                  .GetByIdAsync(gpuId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> CreateGPUAsync(GPUInsertDto gpu)
         {
             var mappedGPU = _mapper.Map<GPUInsertDto, Domain.Entities.Hardware.VideoCard.GPU>(gpu);
@@ -52,7 +52,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> UpdateGPUAsync(int id, GPUUpdateDto gpu)
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.VideoCardsRepository.GetByIdAsync(id);
@@ -67,7 +67,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> DeleteGPUAsync(int id)
         {
             var removeResult = await _unitOfWorkHardwareAPI.VideoCardsRepository.DeleteAsync(id);

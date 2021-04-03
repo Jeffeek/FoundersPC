@@ -8,6 +8,7 @@ using FoundersPC.Web.Application.Interfaces.Services.Pricing;
 using FoundersPC.Web.Services.Web_Services;
 using FoundersPC.Web.Services.Web_Services.HardwareAPI;
 using FoundersPC.Web.Services.Web_Services.Identity.Admin_services;
+using FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Subservices;
 using FoundersPC.Web.Services.Web_Services.Identity.Authentication;
 using FoundersPC.Web.Services.Web_Services.Identity.Tokens;
 using FoundersPC.Web.Services.Web_Services.Identity.UserSettings;
@@ -27,12 +28,11 @@ namespace FoundersPC.Web.Services
             services.AddScoped<ITokenReservationWebService, TokenReservationWebService>();
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
             services.AddScoped<IBlockingWebService, BlockingWebService>();
-            services.AddScoped<IAuthenticationWebService, AuthenticationWebService>();
-            services.AddScoped<IUserSettingsWebService, UserSettingsWebService>();
-            services.AddScoped<IUserSettingsChangeWebService, UserSettingsChangeWebService>();
+            services.AddScoped<IAuthenticationWebService, AuthenticationService>();
+            services.AddScoped<IUserSettingsChangeWebService, UserSettingsChangeService>();
             services.AddScoped<IHardwareApiService, HardwareApiService>();
-            services.AddScoped<IUsersInformationWebService, UsersInformationWebService>();
-            services.AddScoped<IAdminWebService, AdminWebService>();
+            services.AddScoped<IUsersInformationService, UsersInformationService>();
+            services.AddScoped<IAdminWebService, AdminService>();
         }
     }
 }

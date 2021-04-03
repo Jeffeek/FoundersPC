@@ -14,12 +14,12 @@ namespace FoundersPC.API.Infrastructure.Repositories
 {
     public class ProducersRepository : GenericRepositoryAsync<Producer>, IProducersRepositoryAsync
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public ProducersRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
 
         #region Implementation of IProducersRepositoryAsync
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<Producer>> GetAllWithHardwareAsync()
         {
             return await Context.Set<Producer>()

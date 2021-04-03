@@ -13,5 +13,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.HardwareApi
         Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync(string managerToken);
 
         Task<ProducerReadDto> GetProducerByIdAsync(int id, string managerToken);
+
+        Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken);
+
+        Task<bool> DeleteProducerAsync(int producerId, string managerToken);
     }
 }
