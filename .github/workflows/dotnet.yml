@@ -1,0 +1,27 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: [windows-latest, ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup-msbuild
+      uses: microsoft/setup-msbuild@v1
+      
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1.0.5
+      
+    - name: Restore Nuget package
+      run: nuget restore FoundersPC.sln
+      
+    - name: Build Solution
+      run: msbuild FoundersPC.sln
