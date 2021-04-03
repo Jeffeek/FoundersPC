@@ -64,6 +64,7 @@ namespace FoundersPC.IdentityServer
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
+            // todo: use policy in controllers!!!
             services.AddAuthorization(configuration =>
                                       {
                                           configuration.AddPolicy("AdministratorPolicy",

@@ -3,10 +3,12 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -34,13 +36,10 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword([FromBody] ChangePasswordRequest request)
         {
-            if (!TryValidateModel(request))
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-            var (email, role) = ParseJwtUserTokenCredentials();
+            var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
 
             if (email is null)
                 return new BadRequestObjectResult(new AccountSettingsChangeResponse
@@ -66,15 +65,15 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin([FromBody] ChangeLoginRequest request)
         {
-            if (!TryValidateModel(request))
+            if (!ModelState.IsValid)
                 return BadRequest(new
                                   {
                                       error = "Bad model"
                                   });
 
-            var credentials = ParseJwtUserTokenCredentials();
+            var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
 
-            if (credentials.Email is null)
+            if (email is null)
                 return new BadRequestObjectResult(new AccountSettingsChangeResponse
                                                   {
                                                       Email = "Not found",
@@ -83,11 +82,11 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
                                                       Error = "Token not valid. Email address not found"
                                                   });
 
-            var result = await _settingsService.ChangeLoginToAsync(credentials.Email, request.NewLogin);
+            var result = await _settingsService.ChangeLoginToAsync(email, request.NewLogin);
 
             return new AccountSettingsChangeResponse
                    {
-                       Email = credentials.Email,
+                       Email = email,
                        Operation = "SignIn changing",
                        Successful = result
                    };
@@ -97,13 +96,13 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         [HttpPut]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications([FromBody] ChangeNotificationsRequest request)
         {
-            if (!TryValidateModel(request))
+            if (!ModelState.IsValid)
                 return BadRequest(new
                                   {
                                       error = "Bad model"
                                   });
-            //todo: cont.gettoken
-            var (email, role) = ParseJwtUserTokenCredentials();
+
+            var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
 
             if (email is null)
                 return BadRequest(new
@@ -124,9 +123,5 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
                        Email = email
                    };
         }
-
-        private (string Email, string Role) ParseJwtUserTokenCredentials() =>
-            (HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType),
-             HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType));
     }
 }

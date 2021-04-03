@@ -37,27 +37,54 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
         #region Private part
 
-        // todo: logger
         private async Task<bool> ChangePasswordToAsync(UserEntity user, string oldPassword, string newPassword)
         {
-            if (user is null) throw new ArgumentNullException(nameof(user));
-            if (newPassword is null) throw new ArgumentNullException(nameof(newPassword));
-            if (oldPassword is null) throw new ArgumentNullException(nameof(oldPassword));
+            if (user is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(user)} was null");
+
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            if (newPassword is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(newPassword)} was null");
+
+                throw new ArgumentNullException(nameof(newPassword));
+            }
+
+            if (oldPassword is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(oldPassword)} was null");
+
+                throw new ArgumentNullException(nameof(oldPassword));
+            }
 
             var oldHashedPassword = _passwordEncryptorService.EncryptPassword(oldPassword);
 
-            if (!oldHashedPassword.Equals(user.HashedPassword, StringComparison.Ordinal))
-                throw new
-                    ArgumentException($"Old password in hash is not equal to database's hashed password for user with id = {user.Id}",
-                                      nameof(oldPassword));
+            if (oldHashedPassword.Equals(user.HashedPassword, StringComparison.Ordinal))
+                return await ChangePasswordToAsync(user, newPassword);
 
-            return await ChangePasswordToAsync(user, newPassword);
+            _logger.LogWarning($"Old password in hash is not equal to database's hashed password for user with id = {user.Id}");
+
+            return false;
         }
 
         private async Task<bool> ChangePasswordToAsync(UserEntity user, string newPassword)
         {
-            if (user is null) throw new ArgumentNullException(nameof(user));
-            if (newPassword is null) throw new ArgumentNullException(nameof(newPassword));
+            if (user is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(user)} was null");
+
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            if (newPassword is null)
+            {
+                _logger.LogError($"{nameof(UserSettingsService)}:{nameof(ChangePasswordToAsync)}:{nameof(newPassword)} was null");
+
+                throw new ArgumentNullException(nameof(newPassword));
+            }
 
             var hashedNewPassword = _passwordEncryptorService.EncryptPassword(newPassword);
 
@@ -67,7 +94,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             if (!updateResult) return false;
 
-            await _emailService.SendNewPasswordAsync(user.Email, newPassword);
+            await _emailService.SendNewPasswordAsync(user.Email, "new password");
 
             return await _unitOfWork.SaveChangesAsync() > 0;
         }

@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using AutoMapper;
+using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Dto;
@@ -19,6 +20,8 @@ namespace FoundersPC.Identity.Application.Mappings
             CreateMap<RoleEntity, RoleEntityReadDto>();
             CreateMap<UserEntity, UserEntityReadDto>();
             CreateMap<ChangeNotificationsRequest, UserNotificationsSettings>().ReverseMap();
+            CreateMap<UserEntranceLog, UserEntranceLogReadDto>();
+            CreateMap<AccessTokenLog, AccessTokenLogReadDto>();
 
             CreateMap<UserEntityReadDto, UserLoginResponse>()
                 .ForMember(dest => dest.IsUserBlocked,

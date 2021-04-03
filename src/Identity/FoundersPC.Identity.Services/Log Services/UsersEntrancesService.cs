@@ -58,8 +58,12 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(int userId)
         {
-            // todo: logger
-            if (userId < 1) throw new ArgumentOutOfRangeException(nameof(userId));
+            if (userId < 1)
+            {
+                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrances)}:{nameof(userId)} was less than 1");
+
+                throw new ArgumentOutOfRangeException(nameof(userId));
+            }
 
             var userEntrances = await _unitOfWork.UsersEntrancesLogsRepository.GetUserEntrancesAsync(userId);
 
@@ -68,8 +72,12 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(string userEmail)
         {
-            // todo: logger
-            if (userEmail is null) throw new ArgumentNullException(nameof(userEmail));
+            if (userEmail is null)
+            {
+                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrances)}:{nameof(userEmail)} was null");
+
+                throw new ArgumentNullException(nameof(userEmail));
+            }
 
             var userEntrances = await _unitOfWork.UsersEntrancesLogsRepository.GetUserEntrancesAsync(userEmail);
 

@@ -1,0 +1,76 @@
+﻿@model FoundersPC.Web.Domain.Entities.ViewModels.Entrances.EntrancesViewModel
+
+@{
+    ViewData["Title"] = "Entrances";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @section Styles {
+        <link rel='stylesheet' href='~/lib/bootstrap/css/bootstrap-datetimepicker-build.css'>
+    }
+}
+
+<h1>Entrances</h1>
+
+@if (Model.IsDatePickerRequired) {
+    <form
+        asp-controller='Admin'
+        asp-action='EntrancesBetween'>
+        <div class="input-group date" data-provide="datepicker">
+            <input
+                asp-for='BetweenFilter.Start'
+                required
+                type="date" 
+                class="form-control"
+                min="2021-01-01"
+                max="@(DateTime.Now.ToShortDateString())">
+        </div>
+
+        <div class="input-group date" data-provide="datepicker">
+            <input
+                asp-for='BetweenFilter.Finish'
+                type="date" 
+                class="form-control"
+                min="2021-01-01"
+                max="@(DateTime.Now.ToShortDateString())">
+        </div>
+
+        <input type='submit' value='Filter by date' class='btn btn-outline-info'>
+    </form>
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                USER ID
+            </th>
+            <th>
+                ENTRANCE
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Entrances) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entrance)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src='~/lib/bootstrap/js/bootstrap-datetimepicker.js'></script>
+    <script src='~/lib/moment/js/moment.min.js'></script>
+}

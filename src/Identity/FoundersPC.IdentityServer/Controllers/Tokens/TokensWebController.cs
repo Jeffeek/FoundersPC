@@ -44,7 +44,6 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             return Json(tokens);
         }
 
-        // todo: validator for request
         [HttpPost]
         [Route("Reserve")]
         public async Task<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)

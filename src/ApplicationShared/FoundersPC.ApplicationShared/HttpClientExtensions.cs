@@ -66,6 +66,15 @@ namespace FoundersPC.ApplicationShared
                                                                 string baseAddress = null)
         {
             client.PrepareJsonRequest(baseAddress);
+            client.PrepareRequestWithAuthentication(authScheme, token);
+        }
+
+        public static void PrepareRequestWithAuthentication(this HttpClient client,
+                                                            string authScheme,
+                                                            string token,
+                                                            string baseAddress = null)
+        {
+            if (baseAddress is not null) client.BaseAddress = new Uri(baseAddress);
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(authScheme, token);
         }
     }

@@ -1,9 +1,11 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Net;
 using System.Threading.Tasks;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Entities.ViewModels.Entrances;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers.Administration
 {
+    // todo: split admin controller into several controllers
     [Authorize(Roles = "Administrator")]
     [Route("Admin")]
     public class AdminController : Controller
@@ -44,7 +47,6 @@ namespace FoundersPC.Web.Controllers.Administration
         }
 
         [Route("RegisterManager")]
-        [HttpPost]
         public async Task<ActionResult> RegisterManager([FromForm] SignUpViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -63,7 +65,6 @@ namespace FoundersPC.Web.Controllers.Administration
 
         #region Redirection to view
 
-        [HttpGet]
         [Route("UsersTable")]
         public async Task<ActionResult> UsersTable()
         {
@@ -77,11 +78,72 @@ namespace FoundersPC.Web.Controllers.Administration
         }
 
         [Route("RegisterManager")]
-        [HttpGet]
         public ActionResult RegisterManager() => View();
 
-        //public ActionResult Entrances() => View();
-
         #endregion
+
+        [Route("")]
+        public async Task<ActionResult> Entrances()
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            var entrances = await _adminWebService.GetAllEntrancesAsync(token);
+
+            var viewModel = new EntrancesViewModel()
+                            {
+                                BetweenFilter = new EntrancesBetweenFilter(),
+                                Entrances = entrances,
+                                IsDatePickerRequired = true
+                            };
+
+            return View("Entrances", viewModel);
+        }
+
+        // todo: change view to not display datetime picker / or not
+        [Route("User/{userId:int}")]
+        public async Task<ActionResult> UserEntrances([FromRoute] int userId)
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            var entrances = await _adminWebService.GetAllUserEntrancesAsync(userId, token);
+
+            var viewModel = new EntrancesViewModel()
+                            {
+                                BetweenFilter = new EntrancesBetweenFilter(),
+                                Entrances = entrances,
+                                IsDatePickerRequired = false
+                            };
+
+            return View("Entrances", viewModel);
+        }
+
+        [Route("Between")]
+        public async Task<ActionResult> EntrancesBetween([FromForm] EntrancesViewModel viewModel)
+        {
+            var token = GetJwtToken();
+
+            if (token is null) throw new CookieException();
+
+            if (viewModel.BetweenFilter is null) return BadRequest();
+
+            if (viewModel.BetweenFilter.Start > viewModel.BetweenFilter.Finish) return BadRequest();
+
+            var entrances = await _adminWebService.GetAllEntrancesBetweenAsync(viewModel.BetweenFilter.Start,
+                                                                               viewModel.BetweenFilter.Finish,
+                                                                               token);
+
+            var newViewModel = new EntrancesViewModel()
+                               {
+                                   BetweenFilter = viewModel.BetweenFilter,
+                                   Entrances = entrances,
+                                   IsDatePickerRequired = true
+                               };
+
+            return View("Entrances", newViewModel);
+        }
     }
 }

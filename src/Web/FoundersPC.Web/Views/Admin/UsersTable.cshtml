@@ -181,6 +181,31 @@
                                         </svg>
                                     }
                                 </a>
+                                <a
+                                    asp-controller='Admin'
+                                    asp-action='UserEntrances'
+                                    asp-route-userId='@user.Id'
+                                    class='btn btn-outline-info simple-popup d-flex'>
+                                    <span
+                                        class='popuptext'>
+                                        Entrances
+                                    </span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 32 32"
+                                        fill="#FFFFFF"
+                                        class='icon'>
+                                        <path
+                                            fill="none"
+                                            stroke="#FFFFFF"
+                                            stroke-width="2"
+                                            d="M16 28L16 14.375M12 17.375L16 13.375 20 17.375"/>
+                                        <path
+                                            d="M13,25.539C8.947,24.262,6,20.469,6,16c0-5.514,4.486-10,10-10s10,4.486,10,10c0,4.469-2.947,8.262-7,9.539v2.066c5.167-1.337,9-6.026,9-11.605c0-6.617-5.383-12-12-12S4,9.383,4,16c0,5.579,3.833,10.268,9,11.605V25.539z"
+                                            fill="#FFFFFF"/>
+                                    </svg>
+                                </a>
                             </div>
                         </td>
                     </tr>
