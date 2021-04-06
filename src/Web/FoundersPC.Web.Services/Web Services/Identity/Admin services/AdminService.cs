@@ -8,6 +8,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
@@ -24,7 +25,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
     {
         public AdminService(IUsersInformationService usersInformationService,
                             IHttpClientFactory clientFactory,
-                            MicroservicesBaseAddresses baseAddresses,
                             ILogger<AdminService> logger,
                             IMapper mapper,
                             IBlockingWebService blockingService,
@@ -32,7 +32,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
-            _baseAddresses = baseAddresses;
             _logger = logger;
             _mapper = mapper;
             _blockingService = blockingService;
@@ -41,7 +40,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region DI
 
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<AdminService> _logger;
         private readonly IMapper _mapper;
@@ -128,7 +126,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             using var client = _clientFactory.CreateClient("Sign Up new manager client");
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        _baseAddresses.IdentityApiBaseAddress);
+                                                        MicroservicesUrls.IdentityServer);
 
             var requestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 

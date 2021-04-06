@@ -7,6 +7,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -18,16 +19,13 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
     // todo: implement CRUD
     public class ProducersManagingService : IProducersManagingService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<ProducersManagingService> _logger;
 
         public ProducersManagingService(IHttpClientFactory clientFactory,
-                                        MicroservicesBaseAddresses baseAddresses,
                                         ILogger<ProducersManagingService> logger)
         {
             _clientFactory = clientFactory;
-            _baseAddresses = baseAddresses;
             _logger = logger;
         }
 
@@ -44,7 +42,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.GetFromJsonAsync<IEnumerable<ProducerReadDto>>("Producers");
 
@@ -71,7 +69,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.GetFromJsonAsync<ProducerReadDto>($"Producers/{id}");
 
@@ -106,7 +104,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.PutAsJsonAsync($"Producers/{id}", producer);
 
@@ -134,7 +132,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.DeleteAsync($"Producers/{producerId}");
 

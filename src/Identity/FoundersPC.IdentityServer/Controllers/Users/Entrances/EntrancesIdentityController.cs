@@ -2,11 +2,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
 using Microsoft.AspNetCore.Authorization;
@@ -14,9 +13,9 @@ using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
-namespace FoundersPC.IdentityServer.Controllers.Logs
+namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
 {
-    [Route("FoundersPCIdentity/UsersEntrances")]
+    [Route("FoundersPCIdentity/Users")]
     [ApiController]
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     public class EntrancesIdentityController : Controller
@@ -31,43 +30,28 @@ namespace FoundersPC.IdentityServer.Controllers.Logs
             _usersEntrancesService = usersEntrancesService;
         }
 
-        [HttpGet]
+        [HttpGet("Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> Get() =>
             _mapper.Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<UserEntranceLogReadDto>>(await _usersEntrancesService
                 .GetAllAsync());
 
-        [Route("{id:int}")]
-        [HttpGet]
+        [HttpGet("Entrances/{id}")]
         public async Task<UserEntranceLogReadDto> Get([FromRoute] int id) => await _usersEntrancesService.GetByIdAsync(id);
 
-        [Route("ById/{userId:int}")]
-        [HttpGet]
+        [HttpGet("ById/{userId}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int userId) =>
             await _usersEntrancesService.GetAllUserEntrances(userId);
 
-        [Route("ByEmail/{userEmail}")]
-        [HttpGet]
+        [HttpGet("ByEmail/{userEmail}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] string userEmail) =>
             await _usersEntrancesService.GetAllUserEntrances(userEmail);
 
-        [HttpGet("Between")]
+        [HttpGet("Entrances/Between")]
         public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>> GetUsersEntrancesBetween(
-            [FromQuery(Name = "Start")] string dateStart,
-            [FromQuery(Name = "Finish")] string dateFinish)
+            [FromQuery(Name = "Start")] DateTime start,
+            [FromQuery(Name = "Finish")] DateTime finish)
         {
             if (!ModelState.IsValid) return BadRequest();
-
-            if (!DateTime.TryParseExact(dateStart,
-                                        "yyyyMMdd",
-                                        CultureInfo.InvariantCulture,
-                                        DateTimeStyles.AdjustToUniversal,
-                                        out var start)
-                || !DateTime.TryParseExact(dateFinish,
-                                           "yyyyMMdd",
-                                           CultureInfo.InvariantCulture,
-                                           DateTimeStyles.AdjustToUniversal,
-                                           out var finish))
-                return BadRequest();
 
             var entrances = await _usersEntrancesService.GetEntrancesBetweenAsync(start, finish);
 

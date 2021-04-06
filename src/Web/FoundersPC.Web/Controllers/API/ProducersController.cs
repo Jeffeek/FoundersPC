@@ -3,7 +3,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -14,16 +15,13 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 {
     public class HardwareApiService : IHardwareApiService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<HardwareApiService> _logger;
 
         public HardwareApiService(IHttpClientFactory clientFactory,
-                                  MicroservicesBaseAddresses baseAddresses,
                                   ILogger<HardwareApiService> logger)
         {
             _clientFactory = clientFactory;
-            _baseAddresses = baseAddresses;
             _logger = logger;
         }
 
@@ -47,7 +45,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
-                                                        _baseAddresses.IdentityApiBaseAddress);
+                                                        MicroservicesUrls.IdentityServer);
 
             var request = await client.GetAsync(entityType);
 

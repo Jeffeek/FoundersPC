@@ -2,7 +2,7 @@
 
 using System.Net;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Entrances;
@@ -63,7 +63,7 @@ namespace FoundersPC.Web.Controllers.Administration
             return token;
         }
 
-        [Route("")]
+        [Route("Entrances")]
         public async Task<ActionResult> Entrances()
         {
             var token = GetJwtToken();
@@ -82,8 +82,7 @@ namespace FoundersPC.Web.Controllers.Administration
             return View("Entrances", viewModel);
         }
 
-        // todo: change view to not display datetime picker / or not
-        [Route("User/{userId:int}")]
+        [Route("User/{userId:int}/Entrances")]
         public async Task<ActionResult> UserEntrances([FromRoute] int userId)
         {
             var token = GetJwtToken();
@@ -102,7 +101,7 @@ namespace FoundersPC.Web.Controllers.Administration
             return View("Entrances", viewModel);
         }
 
-        [Route("Between")]
+        [Route("Entrances/Between")]
         public async Task<ActionResult> EntrancesBetween([FromForm] EntrancesViewModel viewModel)
         {
             var token = GetJwtToken();
@@ -121,7 +120,7 @@ namespace FoundersPC.Web.Controllers.Administration
                                {
                                    BetweenFilter = viewModel.BetweenFilter,
                                    Entrances = entrances,
-                                   IsDatePickerRequired = true
+                                   IsDatePickerRequired = false
                                };
 
             return View("Entrances", newViewModel);

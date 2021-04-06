@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,15 +17,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
     public class UsersInformationService : IUsersInformationService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public UsersInformationService(IHttpClientFactory httpClientFactory,
-                                       MicroservicesBaseAddresses baseAddresses)
-        {
-            _httpClientFactory = httpClientFactory;
-            _baseAddresses = baseAddresses;
-        }
+        public UsersInformationService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
 
         public async Task<UserEntityReadDto> GetUserByIdAsync(int userId, string token)
         {
@@ -34,7 +29,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/");
 
             var request = await client.GetFromJsonAsync<UserEntityReadDto>($"ById/{userId}");
 
@@ -49,7 +44,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/");
 
             var request = await client.GetFromJsonAsync<UserEntityReadDto>($"ByEmail/{email}");
 
@@ -62,7 +57,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}");
+                                                        $"{MicroservicesUrls.IdentityServer}");
 
             var request = await client.GetFromJsonAsync<IEnumerable<UserEntityReadDto>>("Users");
 

@@ -6,6 +6,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
@@ -19,18 +20,15 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 {
     public class UserSettingsChangeService : IUserSettingsChangeWebService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<UserSettingsChangeService> _logger;
         private readonly IMapper _mapper;
 
         public UserSettingsChangeService(IHttpClientFactory httpClientFactory,
-                                         MicroservicesBaseAddresses baseAddresses,
                                          IMapper mapper,
                                          ILogger<UserSettingsChangeService> logger)
         {
             _httpClientFactory = httpClientFactory;
-            _baseAddresses = baseAddresses;
             _mapper = mapper;
             _logger = logger;
         }
@@ -76,7 +74,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             using var client = _httpClientFactory.CreateClient("Change password client");
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/SettingsChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/SettingsChange/");
 
             var mappedModel = _mapper.Map<PasswordSettingsViewModel, ChangePasswordRequest>(model);
 
@@ -116,7 +114,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             using var client = _httpClientFactory.CreateClient("Change password client");
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/SettingsChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/SettingsChange/");
 
             var mappedModel = _mapper.Map<SecuritySettingsViewModel, ChangeLoginRequest>(model);
 
@@ -148,7 +146,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             using var client = _httpClientFactory.CreateClient("Change password client");
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/SettingsChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/SettingsChange/");
 
             var mappedModel = _mapper.Map<NotificationsSettingsViewModel, ChangeNotificationsRequest>(model);
 

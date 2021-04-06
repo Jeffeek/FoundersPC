@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.ApplicationShared
+﻿namespace FoundersPC.ApplicationShared.ApplicationConstants
 {
     public static class ApplicationRoles
     {

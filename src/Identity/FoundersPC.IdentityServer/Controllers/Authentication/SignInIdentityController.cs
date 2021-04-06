@@ -2,7 +2,7 @@
 
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.Jwt;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;

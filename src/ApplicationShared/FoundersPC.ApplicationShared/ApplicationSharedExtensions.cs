@@ -2,6 +2,8 @@
 
 using System;
 using System.Linq;
+using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

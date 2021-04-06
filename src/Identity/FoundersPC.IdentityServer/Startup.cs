@@ -27,7 +27,7 @@ namespace FoundersPC.IdentityServer
                 .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json",
                              false,
                              true)
-                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\Jwt\\JwtSettings.json",
                              false)
                 .AddConfiguration(configuration, false);
 
@@ -39,6 +39,8 @@ namespace FoundersPC.IdentityServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(config => config.AddSerilog(Log.Logger));
+
             services.AddBotEmailConfigurationAndService(Configuration);
 
             services.AddControllers();

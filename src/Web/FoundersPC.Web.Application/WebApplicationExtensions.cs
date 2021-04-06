@@ -4,7 +4,7 @@ using System;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.API.Dto.Mapping;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Mappings;
 using FoundersPC.Web.Application.Validation.AccountSettings;
 using Microsoft.AspNetCore.Authentication;

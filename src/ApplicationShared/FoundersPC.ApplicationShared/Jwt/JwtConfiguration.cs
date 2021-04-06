@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
-namespace FoundersPC.ApplicationShared
+namespace FoundersPC.ApplicationShared.Jwt
 {
     public class JwtConfiguration
     {

@@ -21,7 +21,7 @@ namespace FoundersPC.Web
         {
             var cfgBuilder = new ConfigurationBuilder();
             cfgBuilder.AddConfiguration(configuration)
-                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\Jwt\\JwtSettings.json",
                                    false);
 
             Configuration = cfgBuilder.Build();
@@ -31,6 +31,8 @@ namespace FoundersPC.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(config => config.AddSerilog(Log.Logger));
+
             services.AddMicroservices(Configuration);
 
             services.AddWebApplicationMappings();
