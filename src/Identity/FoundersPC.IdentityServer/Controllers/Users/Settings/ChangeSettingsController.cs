@@ -30,9 +30,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
             _settingsService = settingsService;
         }
 
-        [Route("Password")]
-        [HttpPut]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword([FromBody] ChangePasswordRequest request)
+        [HttpPut("Password")]
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword(
+            [FromBody] ChangePasswordRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -58,9 +58,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
                    };
         }
 
-        [Route("Login")]
-        [HttpPut]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin([FromBody] ChangeLoginRequest request)
+        [HttpPut("Login")]
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin(
+            [FromBody] ChangeLoginRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new
@@ -89,9 +89,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
                    };
         }
 
-        [Route("Notifications")]
-        [HttpPut]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications([FromBody] ChangeNotificationsRequest request)
+        [HttpPut("Notifications")]
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(
+            [FromBody] ChangeNotificationsRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new

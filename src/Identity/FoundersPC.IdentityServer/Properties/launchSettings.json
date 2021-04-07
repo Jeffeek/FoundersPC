@@ -1,41 +1,40 @@
 {
-  "iisSettings" : {
-    "windowsAuthentication" : false,
-    "anonymousAuthentication" : true,
-    "iis" : {
-      "applicationUrl" : "https://localhost:3000",
-      "sslPort" : 0
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "https://localhost:3000",
+      "sslPort": 0
     },
-    "iisExpress" : {
-      "applicationUrl" : "https://localhost:3000",
-      "sslPort" : 0
+    "iisExpress": {
+      "applicationUrl": "https://localhost:3000",
+      "sslPort": 0
     }
   },
-  "ConnectionStrings" : {
-    "FoundersPC.Users" :
-      "Data Source=DESKTOP-1MKQIKU;Initial Catalog=FoundersPC.Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+  "ConnectionStrings": {
+    "FoundersPC.Users": "Data Source=DESKTOP-1MKQIKU;Initial Catalog=FoundersPC.Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
   },
-  "$schema" : "http://json.schemastore.org/launchsettings.json",
-  "profiles" : {
-    "IIS Express" : {
-      "commandName" : "Project",
-      "launchBrowser" : true,
-      "launchUrl" : "swagger",
-      "environmentVariables" : {
-        "ASPNETCORE_ENVIRONMENT" : "Development"
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "use64Bit" : true,
-      "applicationUrl" : "https://localhost:3000"
+      "use64Bit": true,
+      "applicationUrl": "https://localhost:3000"
     },
-    "FoundersPC.IdentityServer" : {
-      "commandName" : "Project",
-      "launchUrl" : "swagger",
-      "environmentVariables" : {
-        "ASPNETCORE_ENVIRONMENT" : "Development"
+    "FoundersPC.IdentityServer": {
+      "commandName": "Project",
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "dotnetRunMessages" : "true",
-      "use64Bit" : true,
-      "applicationUrl" : "https://localhost:3000"
+      "dotnetRunMessages": "true",
+      "use64Bit": true,
+      "applicationUrl": "https://localhost:3000"
     }
   }
 }

@@ -37,7 +37,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
 
             if (user is null) return NotFound();
 
-            return _mapper.Map<UserEntityReadDto, UserEntityReadDto>(user);
+            return user;
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
@@ -58,16 +58,26 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
 
             if (user is null) return NotFound();
 
-            return _mapper.Map<UserEntityReadDto, UserEntityReadDto>(user);
+            return user;
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet]
+        [HttpGet(Order = 1)]
         public async Task<IEnumerable<UserEntityReadDto>> Get()
         {
             var users = await _usersInformationService.GetAllUsersAsync();
 
-            return _mapper.Map<IEnumerable<UserEntityReadDto>, IEnumerable<UserEntityReadDto>>(users);
+            return users;
+        }
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        [HttpGet(Order = 0)]
+        public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination([FromQuery(Name = "Page")] int pageNumber = 1,
+                                                                            [FromQuery(Name = "Size")] int pageSize = 10)
+        {
+            var takenUsers = await _usersInformationService.GetPaginateableAsync(pageNumber, pageSize);
+
+            return takenUsers;
         }
     }
 }

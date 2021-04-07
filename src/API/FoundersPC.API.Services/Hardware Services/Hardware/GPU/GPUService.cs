@@ -34,8 +34,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
         /// <inheritdoc/>
         public async Task<GPUReadDto> GetGPUByIdAsync(int gpuId) =>
             _mapper.Map<Domain.Entities.Hardware.VideoCard.GPU, GPUReadDto>(await _unitOfWorkHardwareAPI
-                                                                                  .VideoCardsRepository
-                                                                                  .GetByIdAsync(gpuId));
+                                                                                .VideoCardsRepository
+                                                                                .GetByIdAsync(gpuId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateGPUAsync(GPUInsertDto gpu)

@@ -21,7 +21,8 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly ITokenReservationWebService _tokenReservationService;
 
-        public PricingController(ITokenReservationWebService tokenReservationService) => _tokenReservationService = tokenReservationService;
+        public PricingController(ITokenReservationWebService tokenReservationService) =>
+            _tokenReservationService = tokenReservationService;
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
         [Route("Buy/{tokenType}")]
@@ -29,7 +30,8 @@ namespace FoundersPC.Web.Controllers
         {
             if (tokenType is null) return BadRequest();
 
-            var isValidTokenType = Enum.GetNames<TokenType>().Contains(tokenType);
+            var isValidTokenType = Enum.GetNames<TokenType>()
+                                       .Contains(tokenType);
 
             if (!isValidTokenType) BadRequest();
 

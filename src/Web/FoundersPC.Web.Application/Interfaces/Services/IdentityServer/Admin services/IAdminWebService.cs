@@ -23,6 +23,15 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken);
 
         /// <summary>
+        ///     Returns users from database from <paramref name="pageNumber"/>
+        /// </summary>
+        /// <param name="pageNumber">Current page</param>
+        /// <param name="pageSize">Max entities to show</param>
+        /// <param name="adminToken">JWT token</param>
+        /// <returns></returns>
+        Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken);
+
+        /// <summary>
         ///     Returns user with specified identification
         /// </summary>
         /// <param name="id"></param>
@@ -129,7 +138,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken);
 
         /// <summary>
-        ///     Register new manager with specific <paramref name="model"/>
+        ///     Register new manager with specific <paramref name="email"/> and <paramref name="rawPassword"/>
         /// </summary>
         /// <param name="email">Email of new manager</param>
         /// <param name="rawPassword">Password of new manager</param>

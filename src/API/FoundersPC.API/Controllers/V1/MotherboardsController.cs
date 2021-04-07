@@ -33,7 +33,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MotherboardReadDto>>> Get()
         {
@@ -42,7 +41,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _motherboardService.GetAllMotherboardsAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<MotherboardReadDto>> Get(int? id)
         {
@@ -58,8 +56,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPut("{id}", Order = 0)]
+        [HttpPut("{id}")]
         public async Task<ActionResult> Update(int? id, [FromBody] MotherboardUpdateDto motherboard)
         {
             if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
@@ -73,7 +70,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] MotherboardInsertDto motherboard)
         {
@@ -87,7 +83,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)
         {

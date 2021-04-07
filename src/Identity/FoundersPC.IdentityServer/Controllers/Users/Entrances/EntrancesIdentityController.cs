@@ -32,11 +32,13 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
 
         [HttpGet("Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> Get() =>
-            _mapper.Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<UserEntranceLogReadDto>>(await _usersEntrancesService
-                .GetAllAsync());
+            _mapper.Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<UserEntranceLogReadDto>>(await
+                _usersEntrancesService
+                    .GetAllAsync());
 
         [HttpGet("Entrances/{id}")]
-        public async Task<UserEntranceLogReadDto> Get([FromRoute] int id) => await _usersEntrancesService.GetByIdAsync(id);
+        public async Task<UserEntranceLogReadDto> Get([FromRoute] int id) =>
+            await _usersEntrancesService.GetByIdAsync(id);
 
         [HttpGet("ById/{userId}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int userId) =>
@@ -47,9 +49,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
             await _usersEntrancesService.GetAllUserEntrances(userEmail);
 
         [HttpGet("Entrances/Between")]
-        public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>> GetUsersEntrancesBetween(
-            [FromQuery(Name = "Start")] DateTime start,
-            [FromQuery(Name = "Finish")] DateTime finish)
+        public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>>
+            GetUsersEntrancesBetween([FromQuery(Name = "Start")] DateTime start,
+                                     [FromQuery(Name = "Finish")] DateTime finish)
         {
             if (!ModelState.IsValid) return BadRequest();
 

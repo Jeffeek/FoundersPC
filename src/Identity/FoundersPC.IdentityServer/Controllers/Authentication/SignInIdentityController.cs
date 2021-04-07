@@ -40,15 +40,14 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _logger = logger;
         }
 
-        [Route("SignIn")]
-        [HttpPost]
+        [HttpPost("SignIn")]
         public async Task<ActionResult<UserLoginResponse>> SignIn([FromBody] UserSignInRequest request)
         {
             if (!ModelState.IsValid) return UnprocessableEntity();
 
             var user =
                 await _authenticationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail,
-                                                                                    request.Password);
+                    request.Password);
 
             if (user is null)
             {

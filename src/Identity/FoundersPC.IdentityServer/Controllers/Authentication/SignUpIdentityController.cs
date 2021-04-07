@@ -31,8 +31,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _registrationService = registrationService;
         }
 
-        [Route("SignUp")]
-        [HttpPost]
+        [HttpPost("SignUp")]
         public async Task<ActionResult<UserSignUpResponse>> SignUpUser([FromBody] UserSignUpRequest request)
         {
             if (!ModelState.IsValid) UnprocessableEntity();

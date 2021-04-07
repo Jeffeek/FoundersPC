@@ -94,7 +94,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             if (!updateResult) return false;
 
-            await _emailService.SendNewPasswordAsync(user.Email, "new password");
+            await _emailService.SendNewPasswordAsync(user.Email, "*********");
 
             return await _unitOfWork.SaveChangesAsync() > 0;
         }

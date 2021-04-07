@@ -5,6 +5,7 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
 using FoundersPC.Identity.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -64,7 +65,7 @@ namespace FoundersPC.IdentityServer
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
-            services.AddBearerAuthorizationPolicies();
+            services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
 
             services.AddSwaggerGen(c => c.SwaggerDoc("v1",
                                                      new OpenApiInfo

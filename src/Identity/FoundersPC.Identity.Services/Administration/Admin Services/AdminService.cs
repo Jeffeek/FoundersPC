@@ -103,6 +103,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         private async Task<bool> BlockAllUserTokensAsync(int userId)
         {
             var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
+
             foreach (var token in userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now))
                 await _accessUsersTokensService.BlockAsync(token.Id);
 

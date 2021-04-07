@@ -32,7 +32,9 @@ namespace FoundersPC.Identity.Services.Encryption_Services
                 throw new ArgumentOutOfRangeException(nameof(length));
 
             var guid = Guid.NewGuid();
-            var guidPass = guid.ToString().Replace("-", String.Empty);
+
+            var guidPass = guid.ToString()
+                               .Replace("-", String.Empty);
 
             return guidPass.Substring(0, length);
         }

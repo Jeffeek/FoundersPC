@@ -19,7 +19,6 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Cases")]
-    // todo: add token in parameters to check the input token
     public class CasesController : Controller
     {
         private readonly ICaseService _caseService;
@@ -34,7 +33,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get()
         {
@@ -43,43 +41,36 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _caseService.GetAllCasesAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CaseReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<CaseReadDto>> Get(int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var @case = await _caseService.GetCaseByIdAsync(id);
 
-            var @case = await _caseService.GetCaseByIdAsync(id.Value);
-
-            return @case == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(@case);
+            return @case == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(@case);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update([FromRoute] int? id, [FromBody] CaseUpdateDto @case)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] CaseUpdateDto @case)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
-
-            var result = await _caseService.UpdateCaseAsync(id.Value, @case);
+            var result = await _caseService.UpdateCaseAsync(id, @case);
 
             if (!result) return ResponseResultsHelper.UpdateError();
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
             return Json(@case);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] CaseInsertDto @case)
         {
-            if (!TryValidateModel(@case)) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
             var insertResult = await _caseService.CreateCaseAsync(@case);
 
@@ -91,21 +82,18 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete([FromRoute] int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            var readCase = await _caseService.GetCaseByIdAsync(id);
 
-            var readCase = await _caseService.GetCaseByIdAsync(id.Value);
+            if (readCase == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readCase == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _caseService.DeleteCaseAsync(id.Value);
+            var result = await _caseService.DeleteCaseAsync(id);
 
             if (!result) return ResponseResultsHelper.DeleteError();
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            _logger.LogForModelDelete(HttpContext, id);
 
             return Json(readCase);
         }

@@ -16,7 +16,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 {
-    // todo: implement CRUD
     public class ProducersManagingService : IProducersManagingService
     {
         private readonly IHttpClientFactory _clientFactory;
@@ -78,7 +77,6 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         public async Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken)
         {
-            // todo: logger
             if (producer is null)
             {
                 _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(UpdateProducerAsync)}:{nameof(producer)} was null");
@@ -113,7 +111,6 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         public async Task<bool> DeleteProducerAsync(int producerId, string managerToken)
         {
-            // todo: logger
             if (producerId < 1)
             {
                 _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(DeleteProducerAsync)}:{nameof(producerId)} was < 1");
@@ -128,13 +125,40 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(managerToken));
             }
 
-            using var client = _clientFactory.CreateClient("Update producer client");
+            using var client = _clientFactory.CreateClient("Delete producer client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
             var responseMessage = await client.DeleteAsync($"Producers/{producerId}");
+
+            return responseMessage.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken)
+        {
+            if (producer is null)
+            {
+                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(CreateProducerAsync)}:{nameof(producer)} was null");
+
+                throw new ArgumentNullException(nameof(producer));
+            }
+
+            if (managerToken is null)
+            {
+                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(CreateProducerAsync)}:{nameof(managerToken)} was null");
+
+                throw new ArgumentOutOfRangeException(nameof(managerToken));
+            }
+
+            using var client = _clientFactory.CreateClient("Create producer client");
+
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        managerToken,
+                                                        MicroservicesUrls.APIServer);
+
+            var responseMessage = await client.PostAsJsonAsync("Producers", producer);
 
             return responseMessage.IsSuccessStatusCode;
         }

@@ -17,5 +17,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.HardwareApi
         Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken);
 
         Task<bool> DeleteProducerAsync(int producerId, string managerToken);
+
+        Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken);
     }
 }

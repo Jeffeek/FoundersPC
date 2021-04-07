@@ -72,6 +72,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             }
 
             using var client = _httpClientFactory.CreateClient("Change password client");
+
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
                                                         $"{MicroservicesUrls.IdentityServer}Users/SettingsChange/");
@@ -112,6 +113,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             }
 
             using var client = _httpClientFactory.CreateClient("Change password client");
+
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
                                                         $"{MicroservicesUrls.IdentityServer}Users/SettingsChange/");
@@ -127,7 +129,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         }
 
         public async Task<AccountSettingsChangeResponse> ChangeNotificationsAsync(NotificationsSettingsViewModel model,
-                                                                                  string token)
+            string token)
         {
             if (model is null)
             {
@@ -144,6 +146,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             }
 
             using var client = _httpClientFactory.CreateClient("Change password client");
+
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
                                                         $"{MicroservicesUrls.IdentityServer}Users/SettingsChange/");

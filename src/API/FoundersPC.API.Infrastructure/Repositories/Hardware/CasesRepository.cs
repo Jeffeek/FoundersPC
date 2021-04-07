@@ -21,11 +21,14 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
         public override async Task<Case> GetByIdAsync(int id)
         {
-            var @case = await Context.Set<Case>().FindAsync(id);
+            var @case = await Context.Set<Case>()
+                                     .FindAsync(id);
 
             if (@case is null) return null;
 
-            await Context.Entry(@case).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(@case)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return @case;
         }

@@ -14,6 +14,7 @@ namespace FoundersPC.Web.Application.Middleware
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             var authenticateResult = await context.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
             if (!authenticateResult.Succeeded)
             {
                 await Task.Run(() => next(context));

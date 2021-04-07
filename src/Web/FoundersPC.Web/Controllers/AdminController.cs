@@ -1,19 +1,22 @@
 ﻿#region Using namespaces
 
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.Identity.Dto;
+using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
 using FoundersPC.Web.Domain.Entities.ViewModels.Entrances;
+using FoundersPC.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
-namespace FoundersPC.Web.Controllers.Administration
+namespace FoundersPC.Web.Controllers
 {
-    // todo: split admin controller into several controllers
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [Route("Admin")]
     public class AdminController : Controller
@@ -22,51 +25,51 @@ namespace FoundersPC.Web.Controllers.Administration
 
         public AdminController(IAdminWebService adminWebService) => _adminWebService = adminWebService;
 
-        [Route("BlockUser/{id:int}")]
-        public async Task<ActionResult> BlockUser([FromRoute] int id)
-        {
-            await _adminWebService.BlockUserByIdAsync(id, GetJwtToken());
+        #region Users Table
 
-            return RedirectToAction("UsersTable", "Admin");
+        [Route("UsersTable")]
+        public async Task<ActionResult> UsersTable([FromQuery] int pageNumber)
+        {
+            var token = HttpContext.GetJwtTokenFromCookie();
+
+            if (token is null) throw new CookieException();
+
+            var users = (await _adminWebService.GetPaginateableUsersAsync(pageNumber, 2, token)).ToArray();
+
+            var indexModel = new IndexViewModel<UserEntityReadDto>()
+                             {
+                                 Models = users,
+                                 Page = new PageViewModel(pageNumber, users.Length > 0)
+                             };
+
+            return View("UsersTable", indexModel);
         }
 
-        [Route("UnblockUser/{id:int}")]
-        public async Task<ActionResult> UnblockUser([FromRoute] int id)
-        {
-            await _adminWebService.UnblockUserByIdAsync(id, GetJwtToken());
+        #endregion
 
-            return RedirectToAction("UsersTable", "Admin");
-        }
+        #region Register Manager
 
-        [Route("MakeUserInactive/{id:int}")]
-        public async Task<ActionResult> MakeUserInactive([FromRoute] int id)
-        {
-            await _adminWebService.MakeUserInactiveByIdAsync(id, GetJwtToken());
-
-            return RedirectToAction("UsersTable", "Admin");
-        }
-
-        [Route("RegisterManager")]
+        [HttpPost("RegisterManager")]
         public async Task<ActionResult> RegisterManager([FromForm] SignUpViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            var result = await _adminWebService.RegisterNewManagerAsync(model, GetJwtToken());
+            var result = await _adminWebService.RegisterNewManagerAsync(model, HttpContext.GetJwtTokenFromCookie());
 
             return result ? Ok() : Problem();
         }
 
-        private string GetJwtToken()
-        {
-            HttpContext.Request.Cookies.TryGetValue("token", out var token);
+        [Route("RegisterManager")]
+        public ActionResult RegisterManager() => View();
 
-            return token;
-        }
+        #endregion
+
+        #region Entrances
 
         [Route("Entrances")]
         public async Task<ActionResult> Entrances()
         {
-            var token = GetJwtToken();
+            var token = HttpContext.GetJwtTokenFromCookie();
 
             if (token is null) throw new CookieException();
 
@@ -85,7 +88,7 @@ namespace FoundersPC.Web.Controllers.Administration
         [Route("User/{userId:int}/Entrances")]
         public async Task<ActionResult> UserEntrances([FromRoute] int userId)
         {
-            var token = GetJwtToken();
+            var token = HttpContext.GetJwtTokenFromCookie();
 
             if (token is null) throw new CookieException();
 
@@ -104,7 +107,7 @@ namespace FoundersPC.Web.Controllers.Administration
         [Route("Entrances/Between")]
         public async Task<ActionResult> EntrancesBetween([FromForm] EntrancesViewModel viewModel)
         {
-            var token = GetJwtToken();
+            var token = HttpContext.GetJwtTokenFromCookie();
 
             if (token is null) throw new CookieException();
 
@@ -126,22 +129,33 @@ namespace FoundersPC.Web.Controllers.Administration
             return View("Entrances", newViewModel);
         }
 
-        #region Redirection to view
+        #endregion
 
-        [Route("UsersTable")]
-        public async Task<ActionResult> UsersTable()
+        #region Change Users Statuses
+
+        [Route("BlockUser/{id:int}")]
+        public async Task<ActionResult> BlockUser([FromRoute] int id)
         {
-            var token = GetJwtToken();
+            await _adminWebService.BlockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
-            if (token is null) throw new CookieException();
-
-            var users = await _adminWebService.GetAllUsersAsync(token);
-
-            return View(users);
+            return RedirectToAction("UsersTable", "Admin");
         }
 
-        [Route("RegisterManager")]
-        public ActionResult RegisterManager() => View();
+        [Route("UnblockUser/{id:int}")]
+        public async Task<ActionResult> UnblockUser([FromRoute] int id)
+        {
+            await _adminWebService.UnblockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
+
+        [Route("MakeUserInactive/{id:int}")]
+        public async Task<ActionResult> MakeUserInactive([FromRoute] int id)
+        {
+            await _adminWebService.MakeUserInactiveByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
 
         #endregion
     }

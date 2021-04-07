@@ -1,6 +1,9 @@
 ﻿#region Using namespaces
 
+using System;
+using System.Net.Http;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,6 +18,7 @@ namespace FoundersPC.API.Application.Middleware
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             var authenticateResult = await context.AuthenticateAsync(JwtBearerDefaults.AuthenticationScheme);
+
             if (!authenticateResult.Succeeded)
             {
                 await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
@@ -22,16 +26,53 @@ namespace FoundersPC.API.Application.Middleware
                 return;
             }
 
-            var isRequestByEmployee = context.User.IsInRole(ApplicationRoles.Administrator)
-                                      || context.User.IsInRole(ApplicationRoles.Manager);
+            if (authenticateResult.Principal is null)
+            {
+                await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
 
-            if (isRequestByEmployee) await next(context);
+                return;
+            }
+
+            var isRequestByEmployee = authenticateResult.Principal.IsInRole(ApplicationRoles.Administrator)
+                                      || authenticateResult.Principal.IsInRole(ApplicationRoles.Manager);
+
+            if (isRequestByEmployee)
+            {
+                await next(context);
+
+                return;
+            }
 
             var isRequestWithToken = context.Request.Headers.TryGetValue("HARDWARE-ACCESS-TOKEN", out var result);
 
-            if (!isRequestWithToken) await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
+            if (!isRequestWithToken || result.Count == 0)
+            {
+                await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
 
-            // todo: send request to identity server to check the token
+                return;
+            }
+
+            using var client = new HttpClient();
+
+            var authorizationToken = context.Request.Headers["Authorization"][0]
+                                     ?? throw new
+                                         Exception($"{nameof(AccessTokenValidatorMiddleware)}: Authorization header not found");
+
+            authorizationToken = authorizationToken.Replace($"{JwtBearerDefaults.AuthenticationScheme} ", String.Empty);
+
+            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                    authorizationToken,
+                                                    $"{MicroservicesUrls.IdentityServer}Tokens/Check/");
+
+            var response = await client.GetAsync(result[0]);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
+
+                return;
+            }
+
             await next(context);
         }
     }

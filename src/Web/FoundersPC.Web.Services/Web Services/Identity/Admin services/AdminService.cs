@@ -54,6 +54,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) =>
             await _usersInformationService.GetAllUsersAsync(adminToken);
 
+        /// <inheritdoc />
+        public Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken) =>
+            _usersInformationService.GetPaginateableUsersAsync(pageNumber, pageSize, adminToken);
+
         public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) =>
             await _usersInformationService.GetUserByIdAsync(id, adminToken);
 
@@ -64,7 +68,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Block user
 
-        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) => await _blockingService.BlockUserByIdAsync(id, adminToken);
+        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) =>
+            await _blockingService.BlockUserByIdAsync(id, adminToken);
 
         public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) =>
             await _blockingService.BlockUserByEmailAsync(email, adminToken);
@@ -116,14 +121,17 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             if (model is null)
                 throw
                     new ArgumentNullException(nameof(model));
+
             if (model.Email is null) throw new ArgumentNullException(nameof(model.Email));
             if (model.RawPassword is null) throw new ArgumentNullException(nameof(model.RawPassword));
             if (model.RawPasswordConfirm is null) throw new ArgumentNullException(nameof(model.RawPasswordConfirm));
+
             if (!model.RawPassword.Equals(model.RawPasswordConfirm, StringComparison.Ordinal))
                 throw new
                     ArgumentException($"{nameof(model.RawPassword)} was not equal to {nameof(model.RawPasswordConfirm)}");
 
             using var client = _clientFactory.CreateClient("Sign Up new manager client");
+
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
                                                         MicroservicesUrls.IdentityServer);

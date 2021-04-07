@@ -45,7 +45,8 @@ namespace FoundersPC.Web.Controllers
         public IActionResult ServerErrorIndex() => View("Error", new ErrorViewModel(500, "Server error :("));
 
         [Route("UnprocessableIndex")]
-        public IActionResult UnprocessableIndex() => View("Error", new ErrorViewModel(422, "Unprocessable operation or object :("));
+        public IActionResult UnprocessableIndex() =>
+            View("Error", new ErrorViewModel(422, "Unprocessable operation or object :("));
 
         [Route("{statusCode:int?}")]
         public IActionResult Error(int? statusCode) =>

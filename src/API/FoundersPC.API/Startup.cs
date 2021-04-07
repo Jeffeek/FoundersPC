@@ -6,6 +6,7 @@ using FoundersPC.API.Application.Middleware;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
 using FoundersPC.ApplicationShared;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -62,7 +63,7 @@ namespace FoundersPC.API
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
-            services.AddBearerAuthorizationPolicies();
+            services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
 
             services.AddApiVersioning(options =>
                                       {

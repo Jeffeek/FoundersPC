@@ -32,7 +32,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GPUReadDto>>> Get()
         {
@@ -41,7 +40,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _gpuService.GetAllGPUsAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<GPUReadDto>> Get(int? id)
         {
@@ -55,7 +53,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] GPUUpdateDto gpu)
         {
@@ -70,7 +67,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] GPUInsertDto gpu)
         {
@@ -84,7 +80,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)
         {

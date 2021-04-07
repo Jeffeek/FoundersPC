@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -62,6 +63,22 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             var request = await client.GetFromJsonAsync<IEnumerable<UserEntityReadDto>>("Users");
 
             return request;
+        }
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string token)
+        {
+            if (pageNumber <= 0 || pageSize <= 0) return Enumerable.Empty<UserEntityReadDto>();
+
+            if (token is null) throw new ArgumentNullException(nameof(token));
+
+            using var client = _httpClientFactory.CreateClient("Get users");
+
+            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, MicroservicesUrls.IdentityServer);
+
+            var result = await client.GetFromJsonAsync<IEnumerable<UserEntityReadDto>>($"Users?Page={pageNumber}&Size={pageSize}");
+
+            return result;
         }
     }
 }

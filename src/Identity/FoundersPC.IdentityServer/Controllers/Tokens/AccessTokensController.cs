@@ -16,21 +16,20 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
     [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
-    public class TokensWebController : Controller
+    public class AccessTokensController : Controller
     {
         private readonly IApiAccessTokensReservationService _accessTokensReservationService;
         private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
 
-        public TokensWebController(IApiAccessUsersTokensService apiAccessUsersTokensService,
-                                   IApiAccessTokensReservationService accessTokensReservationService)
+        public AccessTokensController(IApiAccessUsersTokensService apiAccessUsersTokensService,
+                                      IApiAccessTokensReservationService accessTokensReservationService)
         {
             _apiAccessUsersTokensService = apiAccessUsersTokensService;
             _accessTokensReservationService = accessTokensReservationService;
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet]
-        [Route("User/{email}")]
+        [HttpGet("User/{email}")]
         public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
         {
             var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
@@ -45,8 +44,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-        [HttpPost]
-        [Route("Reserve")]
+        [HttpPost("Reserve")]
         public async Task<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -66,6 +64,20 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
                        IsBuyingSuccessful = true,
                        Token = newTokenResult
                    };
+        }
+
+        // todo: use cors
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
+        [HttpGet("Check/{token:length(64)}")]
+        public async Task<ActionResult> CheckTokenForUsability([FromRoute] string token)
+        {
+            if (token is null || token.Length != 64) return BadRequest();
+
+            var checkTokenResult = await _apiAccessUsersTokensService.CanMakeRequestAsync(token);
+
+            if (!checkTokenResult) return Forbid();
+
+            return Ok();
         }
     }
 }

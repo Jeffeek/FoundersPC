@@ -125,7 +125,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
         }
 
         [HttpPut("UnBlock/ByEmail")]
-        public async Task<ActionResult<UnblockUserResponse>> UnBlockUser([FromBody] UnblockUserByEmailRequest byEmailRequest)
+        public async Task<ActionResult<UnblockUserResponse>> UnBlockUser(
+            [FromBody] UnblockUserByEmailRequest byEmailRequest)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new
@@ -152,7 +153,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
         }
 
         [HttpDelete("MakeInactive/ByEmail")]
-        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByEmailRequest request)
+        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(
+            [FromBody] MakeUserInactiveByEmailRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
 
@@ -167,7 +169,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
         }
 
         [HttpDelete("MakeInactive/ById")]
-        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByIdRequest request)
+        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(
+            [FromBody] MakeUserInactiveByIdRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
 

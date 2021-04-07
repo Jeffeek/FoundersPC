@@ -39,6 +39,13 @@ namespace FoundersPC.ApplicationShared
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(authScheme, token);
         }
 
+        public static void AddApiAccessTokenInHeader(this HttpClient client, string token)
+        {
+            if (token is null || token.Length != 64) throw new ArgumentException(nameof(token));
+
+            client.DefaultRequestHeaders.Add("HARDWARE-ACCESS-TOKEN", token);
+        }
+
         #region Delete As Json Async
 
         public static async Task<HttpResponseMessage>

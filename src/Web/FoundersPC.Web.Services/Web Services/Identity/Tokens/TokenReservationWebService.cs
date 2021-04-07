@@ -20,7 +20,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public TokenReservationWebService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
+        public TokenReservationWebService(IHttpClientFactory httpClientFactory) =>
+            _httpClientFactory = httpClientFactory;
 
         public async Task<BuyNewTokenResponse> ReserveNewTokenAsync(TokenType type,
                                                                     string userEmail,

@@ -34,7 +34,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RAMReadDto>>> Get()
         {
@@ -43,7 +42,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _ramService.GetAllRAMsAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<RAMReadDto>> Get(int? id)
         {
@@ -57,7 +55,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPut("{id}", Order = 0)]
         public async Task<ActionResult> Update(int? id, [FromBody] RAMUpdateDto ram)
         {
@@ -72,7 +69,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] RAMInsertDto ram)
         {
@@ -86,7 +82,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)
         {

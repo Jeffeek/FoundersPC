@@ -21,11 +21,14 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
         public override async Task<PowerSupply> GetByIdAsync(int id)
         {
-            var powerSupply = await Context.Set<PowerSupply>().FindAsync(id);
+            var powerSupply = await Context.Set<PowerSupply>()
+                                           .FindAsync(id);
 
             if (powerSupply is null) return null;
 
-            await Context.Entry(powerSupply).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(powerSupply)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return powerSupply;
         }
