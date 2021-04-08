@@ -19,5 +19,7 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         Task<UserEntityReadDto> GetUserByIdAsync(int id);
 
         Task<UserEntityReadDto> FindUserByEmailAsync(string email);
+
+        Task<IEnumerable<UserEntityReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10);
     }
 }

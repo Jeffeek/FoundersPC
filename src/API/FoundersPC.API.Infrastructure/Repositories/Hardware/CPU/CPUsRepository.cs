@@ -20,12 +20,18 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.CPU
 
         public override async Task<Domain.Entities.Hardware.Processor.CPU> GetByIdAsync(int id)
         {
-            var cpu = await Context.Set<Domain.Entities.Hardware.Processor.CPU>().FindAsync(id);
+            var cpu = await Context.Set<Domain.Entities.Hardware.Processor.CPU>()
+                                   .FindAsync(id);
 
             if (cpu is null) return null;
 
-            await Context.Entry(cpu).Reference(x => x.Producer).LoadAsync();
-            await Context.Entry(cpu).Reference(x => x.Core).LoadAsync();
+            await Context.Entry(cpu)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
+
+            await Context.Entry(cpu)
+                         .Reference(x => x.Core)
+                         .LoadAsync();
 
             return cpu;
         }

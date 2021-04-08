@@ -1,7 +1,8 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.Jwt;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
@@ -30,8 +31,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _registrationService = registrationService;
         }
 
-        [Route("SignUp")]
-        [HttpPost]
+        [HttpPost("SignUp")]
         public async Task<ActionResult<UserSignUpResponse>> SignUpUser([FromBody] UserSignUpRequest request)
         {
             if (!ModelState.IsValid) UnprocessableEntity();

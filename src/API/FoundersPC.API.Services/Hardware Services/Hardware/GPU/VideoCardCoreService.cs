@@ -28,13 +28,13 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.GPU
         /// <inheritdoc/>
         public async Task<IEnumerable<VideoCardCoreReadDto>> GetAllVideoCardCoresAsync() =>
             _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                           .VideoCardCoresRepository
-                                                                                           .GetAllAsync());
+                .VideoCardCoresRepository
+                .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<VideoCardCoreReadDto> GetVideoCardCoreByIdAsync(int videoCardCoreId) =>
             _mapper.Map<VideoCardCore, VideoCardCoreReadDto>(await _unitOfWorkHardwareAPI.VideoCardCoresRepository
-                                                                                         .GetByIdAsync(videoCardCoreId));
+                                                                 .GetByIdAsync(videoCardCoreId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore)

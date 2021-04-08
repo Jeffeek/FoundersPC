@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Blocking;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inactivity;
 using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking;
@@ -20,16 +21,13 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 {
     public class BlockingWebService : IBlockingWebService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<BlockingWebService> _logger;
 
         public BlockingWebService(ILogger<BlockingWebService> logger,
-                                  MicroservicesBaseAddresses baseAddresses,
                                   IHttpClientFactory clientFactory)
         {
             _logger = logger;
-            _baseAddresses = baseAddresses;
             _clientFactory = clientFactory;
         }
 
@@ -46,7 +44,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/StatusChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
 
             var blockModel = new BlockUserByIdRequest
                              {
@@ -93,7 +91,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/StatusChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
 
             var unblockModel = new UnblockUserByIdRequest
                                {
@@ -140,7 +138,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/StatusChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
 
             var blockModel = new BlockUserByEmailRequest
                              {
@@ -187,7 +185,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/StatusChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
 
             var unblockModel = new UnblockUserByEmailRequest
                                {
@@ -229,7 +227,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/StatusChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
 
             var requestModel = new MakeUserInactiveByIdRequest
                                {
@@ -270,7 +268,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Users/StatusChange/");
+                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
 
             var requestModel = new MakeUserInactiveByEmailRequest
                                {

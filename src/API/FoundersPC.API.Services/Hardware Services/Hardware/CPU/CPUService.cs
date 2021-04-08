@@ -32,8 +32,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         /// <inheritdoc/>
         public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) =>
             _mapper.Map<Domain.Entities.Hardware.Processor.CPU, CPUReadDto>(await _unitOfWorkHardwareAPI
-                                                                                  .ProcessorsRepository
-                                                                                  .GetByIdAsync(cpuId));
+                                                                                .ProcessorsRepository
+                                                                                .GetByIdAsync(cpuId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateCPUAsync(CPUInsertDto cpu)

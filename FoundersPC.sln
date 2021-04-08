@@ -51,7 +51,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.RepositoryShared
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.API.Dto", "src\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj", "{CE530F3A-086D-4ED7-BB4B-44A31E9D6FBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.Identity.Dto", "src\ApplicationShared\FoundersPC.Identity.Dto\FoundersPC.Identity.Dto.csproj", "{F3099473-6AA4-44D2-8799-8E6333EDB0F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Identity.Dto", "src\ApplicationShared\FoundersPC.Identity.Dto\FoundersPC.Identity.Dto.csproj", "{F3099473-6AA4-44D2-8799-8E6333EDB0F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

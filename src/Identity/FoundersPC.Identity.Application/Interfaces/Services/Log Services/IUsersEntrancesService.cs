@@ -23,6 +23,8 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(string userEmail);
 
+        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrances(int pageNumber, int pageSize);
+
         Task<bool> LogAsync(int userId);
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FoundersPC.Identity.Dto.UserEntityReadDto>
+﻿@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.UserEntityReadDto>
 
 @{
     ViewBag.Title = "title";
@@ -7,48 +7,40 @@
     <link
         href="~/css/table.css"
         rel="stylesheet"/>
-}
-
-
-}
+}}
 
 <div
     class='mt-5 table-wrapper'>
 <div
-    class='p-2 table-title'>
-    <div
-        class='row'>
-        <div>
-            <a
-                asp-action='RegisterManager'
-                asp-controller='Admin'
-                class='btn btn-outline-success d-flex'>
-                <svg
-                    class='icon'
-                    fill='#FFFFFF'
-                    height='32'
-                    viewBox='0 0 32 32'
-                    width='32'
-                    xmlns='http://www.w3.org/2000/svg'
-                    xmlns:xlink='http://www.w3.org/1999/xlink'>
-                    <path
-                        d='M16 11L16 21M11 16L21 16M16 4A12 12 0 1 0 16 28 12 12 0 1 0 16 4z'
-                        fill='none'
-                        stroke='#FFFFFF'
-                        stroke-width='2'/>
-                </svg>
-                <span
-                    class='mx-2 text-light'>
-                    Add new manager
-                </span>
-            </a>
-        </div>
-    </div>
+    class='table-title'>
+    <a
+        asp-action='RegisterManager'
+        asp-controller='Admin'
+        class='btn btn-outline-success d-flex'>
+        <svg
+            class='icon'
+            fill='#FFFFFF'
+            height='32'
+            viewBox='0 0 32 32'
+            width='32'
+            xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path
+                d='M16 11L16 21M11 16L21 16M16 4A12 12 0 1 0 16 28 12 12 0 1 0 16 4z'
+                fill='none'
+                stroke='#FFFFFF'
+                stroke-width='2'/>
+        </svg>
+        <span
+            class='mx-2 text-light'>
+            Add new manager
+        </span>
+    </a>
 </div>
 <div
-    class='table-responsive'>
+    class='table-responsive-lg table-responsive-md table-responsive-sm table-responsive-xl table-responsive-xxl'>
     <table
-        class='mt-5 table table-dark table-hover'>
+        class='mt-5 table table-dark table-hover text-center'>
         <thead>
         <tr>
             <th>Id</th>
@@ -63,7 +55,7 @@
         </thead>
         <tbody>
         @{
-            foreach (var user in Model) {
+            foreach (var user in Model.Models) {
                 <tr
                     class=@if (!user.IsActive) { @Html.Raw("text-danger") }>
                     <th>@user.Id</th>
@@ -73,11 +65,9 @@
                     <th>@user.Role.RoleTitle</th>
                     <th>
                         <div
-                            class="form-check">
+                            class="align-items-center d-flex form-check justify-content-center">
                             <input
-                                @if (user.IsActive) {
-                                    @Html.Raw("checked")
-                                }
+                                aria-checked='@user.IsActive'
                                 class="form-check-input"
                                 disabled
                                 type="checkbox">
@@ -85,11 +75,9 @@
                     </th>
                     <th>
                         <div
-                            class="form-check">
+                            class="align-items-center d-flex form-check justify-content-center">
                             <input
-                                @if (user.IsBlocked) {
-                                    @Html.Raw("checked")
-                                }
+                                aria-checked='@user.IsBlocked'
                                 class="form-check-input"
                                 disabled
                                 type="checkbox">
@@ -213,6 +201,33 @@
         }
         </tbody>
     </table>
+    <nav>
+        <ul
+            class="justify-content-center pagination">
+            <li
+                class='page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))'>
+                <a
+                    aria-disabled='@(!Model.Page.HasPreviousPage)'
+                    asp-action='UsersTable'
+                    asp-controller='Admin'
+                    asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
+                    class="bg-light page-link">
+                    Previous
+                </a>
+            </li>
+            <li
+                class='page-item @(Html.Raw(Model.Page.HasNextPage ? String.Empty : "disabled"))'>
+                <a
+                    aria-disabled='@(!Model.Page.HasNextPage)'
+                    asp-action='UsersTable'
+                    asp-controller='Admin'
+                    asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
+                    class="bg-light page-link">
+                    Next
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>
 </div>
 

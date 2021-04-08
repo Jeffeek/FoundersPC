@@ -34,5 +34,20 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
                                        && log.RequestDateTime.Month == date.Month
                                        && log.RequestDateTime.Day == date.Day)
                          .ToListAsync();
+
+        /// <inheritdoc/>
+        public async Task<AccessTokenLog> GetLastTokenUsageAsync(int apiAccessTokenId) =>
+            await Context.Set<AccessTokenLog>()
+                         .Where(x => x.ApiAccessUsersTokenId == apiAccessTokenId)
+                         .OrderBy(x => x.Id)
+                         .LastOrDefaultAsync();
+
+        /// <inheritdoc/>
+        public async Task<AccessTokenLog> GetLastTokenUsageAsync(string apiAccessToken) =>
+            await Context.Set<AccessTokenLog>()
+                         .Include(x => x.ApiAccessToken)
+                         .Where(x => x.ApiAccessToken.HashedToken == apiAccessToken)
+                         .OrderBy(x => x.Id)
+                         .LastOrDefaultAsync();
     }
 }

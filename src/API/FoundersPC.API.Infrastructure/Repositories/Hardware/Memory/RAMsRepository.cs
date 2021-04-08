@@ -21,11 +21,14 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 
         public override async Task<RAM> GetByIdAsync(int id)
         {
-            var ram = await Context.Set<RAM>().FindAsync(id);
+            var ram = await Context.Set<RAM>()
+                                   .FindAsync(id);
 
             if (ram is null) return null;
 
-            await Context.Entry(ram).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(ram)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return ram;
         }

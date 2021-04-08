@@ -21,11 +21,14 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 
         public override async Task<HDD> GetByIdAsync(int id)
         {
-            var hdd = await Context.Set<HDD>().FindAsync(id);
+            var hdd = await Context.Set<HDD>()
+                                   .FindAsync(id);
 
             if (hdd is null) return null;
 
-            await Context.Entry(hdd).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(hdd)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return hdd;
         }

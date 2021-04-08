@@ -31,11 +31,11 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAsync() =>
             _mapper.Map<IEnumerable<AccessTokenLog>, IEnumerable<AccessTokenLogReadDto>>(await _unitOfWork
-                                                                                             .AccessTokensLogsRepository.GetAllAsync());
+                .AccessTokensLogsRepository.GetAllAsync());
 
         public async Task<AccessTokenLogReadDto> GetByIdAsync(int id) =>
             _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
-                                                                                .GetByIdAsync(id));
+                                                                   .GetByIdAsync(id));
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetUsagesBetweenAsync(DateTime start, DateTime finish)
         {
@@ -50,6 +50,16 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             return _mapper.Map<IEnumerable<AccessTokenLog>, IEnumerable<AccessTokenLogReadDto>>(logs);
         }
+
+        /// <inheritdoc/>
+        public async Task<AccessTokenLogReadDto> GetLastTokenUsageAsync(int apiAccessTokenId) =>
+            _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
+                                                                   .GetLastTokenUsageAsync(apiAccessTokenId));
+
+        /// <inheritdoc/>
+        public async Task<AccessTokenLogReadDto> GetLastTokenUsageAsync(string apiAccessToken) =>
+            _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
+                                                                   .GetLastTokenUsageAsync(apiAccessToken));
 
         public async Task<bool> LogAsync(int tokenId)
         {

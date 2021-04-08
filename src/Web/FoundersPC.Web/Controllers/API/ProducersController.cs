@@ -3,7 +3,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,8 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers.API
 {
-    [Route("Manager/Producers")]
-    [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+    [Route("HardwareApiManaging/Producers")]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.EmployeePolicy)]
     public class ProducersController : Controller
     {
         private readonly IMapper _mapper;
@@ -25,7 +25,7 @@ namespace FoundersPC.Web.Controllers.API
             _mapper = mapper;
         }
 
-        [Route("Table")]
+        [HttpGet("Table")]
         public async Task<ActionResult> Table()
         {
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
@@ -35,8 +35,7 @@ namespace FoundersPC.Web.Controllers.API
             return View("ProducersTable", producers);
         }
 
-        [HttpGet]
-        [Route("Edit/{id:int}")]
+        [HttpGet("Edit/{id:int:min(1)}")]
         public async Task<ActionResult> Edit(int id)
         {
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
@@ -48,8 +47,7 @@ namespace FoundersPC.Web.Controllers.API
             return View("Edit", producerUpdate);
         }
 
-        [Route("Edit/{id:int}")]
-        [HttpPost]
+        [HttpPost("Edit/{id:int:min(1)}")]
         public async Task<ActionResult> Edit([FromRoute] int id, ProducerUpdateDto producer)
         {
             HttpContext.Request.Cookies.TryGetValue("token", out var token);
@@ -59,8 +57,7 @@ namespace FoundersPC.Web.Controllers.API
             return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("Table");
         }
 
-        [HttpGet]
-        [Route("Remove/{id:int}")]
+        [HttpGet("Remove/{id:int:min(1)}")]
         public async Task<ActionResult> Remove([FromRoute] int id)
         {
             HttpContext.Request.Cookies.TryGetValue("token", out var token);

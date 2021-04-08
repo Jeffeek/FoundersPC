@@ -28,7 +28,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         /// <inheritdoc/>
         public async Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync() =>
             _mapper.Map<IEnumerable<ProcessorCore>, IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                           .ProcessorCoresRepository.GetAllAsync());
+                .ProcessorCoresRepository.GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId) =>

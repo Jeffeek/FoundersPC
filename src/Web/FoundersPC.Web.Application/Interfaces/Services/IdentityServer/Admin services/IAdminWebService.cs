@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
-using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Common.Authentication;
 
 #endregion
 
@@ -21,6 +21,15 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
         Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken);
+
+        /// <summary>
+        ///     Returns users from database from <paramref name="pageNumber"/>
+        /// </summary>
+        /// <param name="pageNumber">Current page</param>
+        /// <param name="pageSize">Max entities to show</param>
+        /// <param name="adminToken">JWT token</param>
+        /// <returns></returns>
+        Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken);
 
         /// <summary>
         ///     Returns user with specified identification
@@ -94,6 +103,18 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken);
 
         /// <summary>
+        ///     Gets entrances to website by pagination
+        /// </summary>
+        /// <param name="pageSize">Max size of page</param>
+        /// <param name="adminToken">JWT token</param>
+        /// <param name="pageNumber">Page to load</param>
+        /// <returns>Entrances</returns>
+        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableUsersEntrancesAsync(
+            int pageNumber,
+            int pageSize,
+            string adminToken);
+
+        /// <summary>
         ///     Gets entrance by id
         /// </summary>
         /// <param name="id">Id of entrance</param>
@@ -129,7 +150,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken);
 
         /// <summary>
-        ///     Register new manager with specific <paramref name="model"/>
+        ///     Register new manager with specific <paramref name="email"/> and <paramref name="rawPassword"/>
         /// </summary>
         /// <param name="email">Email of new manager</param>
         /// <param name="rawPassword">Password of new manager</param>

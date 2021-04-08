@@ -3,8 +3,8 @@
 using AutoMapper;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
-using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
-using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Common.AccountSettings;
+using FoundersPC.Web.Domain.Common.Authentication;
 
 #endregion
 

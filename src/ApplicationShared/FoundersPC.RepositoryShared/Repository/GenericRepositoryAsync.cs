@@ -19,7 +19,8 @@ namespace FoundersPC.RepositoryShared.Repository
 
         public virtual async Task<T> AddAsync(T entity)
         {
-            var result = await Context.Set<T>().AddAsync(entity);
+            var result = await Context.Set<T>()
+                                      .AddAsync(entity);
 
             return result.Entity;
         }
@@ -27,21 +28,28 @@ namespace FoundersPC.RepositoryShared.Repository
         // override to include ref data
         public virtual async Task<T> GetByIdAsync(int id)
         {
-            var entity = await Context.Set<T>().FindAsync(id);
+            var entity = await Context.Set<T>()
+                                      .FindAsync(id);
 
             return entity;
         }
 
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
-            await Context.Set<T>().LoadAsync();
+            await Context.Set<T>()
+                         .LoadAsync();
 
-            return await Context.Set<T>().ToListAsync();
+            return await Context.Set<T>()
+                                .ToListAsync();
         }
 
-        public virtual async Task<bool> AnyAsync(T entity) => await Context.Set<T>().AnyAsync(x => x.Equals(entity));
+        public virtual async Task<bool> AnyAsync(T entity) =>
+            await Context.Set<T>()
+                         .AnyAsync(x => x.Equals(entity));
 
-        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) => await Context.Set<T>().AnyAsync(predicate);
+        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) =>
+            await Context.Set<T>()
+                         .AnyAsync(predicate);
 
         public virtual async Task<bool> UpdateAsync(T entity)
         {
@@ -49,14 +57,16 @@ namespace FoundersPC.RepositoryShared.Repository
 
             if (entry == null) return false;
 
-            await Task.Run(() => Context.Entry(entity).State = EntityState.Modified);
+            await Task.Run(() => Context.Entry(entity)
+                                        .State = EntityState.Modified);
 
             return true;
         }
 
         public virtual async Task<bool> DeleteAsync(T entity)
         {
-            var result = await Task.Run(() => Context.Set<T>().Remove(entity));
+            var result = await Task.Run(() => Context.Set<T>()
+                                                     .Remove(entity));
 
             return result != null;
         }
@@ -73,9 +83,11 @@ namespace FoundersPC.RepositoryShared.Repository
         [Obsolete]
         public virtual async Task<IQueryable<T>> GetAllAsQueryable()
         {
-            await Context.Set<T>().LoadAsync();
+            await Context.Set<T>()
+                         .LoadAsync();
 
-            return Context.Set<T>().AsQueryable();
+            return Context.Set<T>()
+                          .AsQueryable();
         }
     }
 }

@@ -15,5 +15,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Repositories.Logs
         Task<IEnumerable<AccessTokenLog>> GetUsagesBetweenAsync(DateTime start, DateTime finish);
 
         Task<IEnumerable<AccessTokenLog>> GetUsagesInAsync(DateTime date);
+
+        Task<AccessTokenLog> GetLastTokenUsageAsync(int apiAccessTokenId);
+
+        Task<AccessTokenLog> GetLastTokenUsageAsync(string apiAccessToken);
     }
 }

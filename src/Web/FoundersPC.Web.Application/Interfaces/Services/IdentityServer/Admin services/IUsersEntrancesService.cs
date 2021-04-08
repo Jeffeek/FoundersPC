@@ -13,6 +13,11 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
     {
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken);
 
+        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(
+            int pageNumber,
+            int pageSize,
+            string adminToken);
+
         Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken);
 
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesBetweenAsync(DateTime start,

@@ -35,7 +35,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                          DeliveryFormat = SmtpDeliveryFormat.International,
                                                          Credentials =
                                                              new NetworkCredential(_botConfiguration.MailAddress,
-                                                                                   _botConfiguration.Password)
+                                                                 _botConfiguration.Password)
                                                      });
         }
 
@@ -82,6 +82,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                    subject,
                                                    content,
                                                    html);
+
                 sendResults.Add(sendResult);
             }
 

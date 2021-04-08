@@ -23,8 +23,10 @@ namespace FoundersPC.Identity.Application
                     .AddFluentValidation(cfg =>
                                          {
                                              cfg.AutomaticValidationEnabled = true;
+
                                              cfg.RegisterValidatorsFromAssemblyContaining<
                                                  UserForgotPasswordRequestValidator>();
+
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
         }

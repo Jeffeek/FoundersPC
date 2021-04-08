@@ -46,8 +46,4 @@
     <None Include="wwwroot\js\space-invaders.js" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Producers\" />
-  </ItemGroup>
-
 </Project>

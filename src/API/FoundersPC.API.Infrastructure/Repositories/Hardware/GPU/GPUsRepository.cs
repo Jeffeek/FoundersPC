@@ -20,12 +20,18 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
 
         public override async Task<Domain.Entities.Hardware.VideoCard.GPU> GetByIdAsync(int id)
         {
-            var gpu = await Context.Set<Domain.Entities.Hardware.VideoCard.GPU>().FindAsync(id);
+            var gpu = await Context.Set<Domain.Entities.Hardware.VideoCard.GPU>()
+                                   .FindAsync(id);
 
             if (gpu is null) return null;
 
-            await Context.Entry(gpu).Reference(x => x.Producer).LoadAsync();
-            await Context.Entry(gpu).Reference(x => x.Core).LoadAsync();
+            await Context.Entry(gpu)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
+
+            await Context.Entry(gpu)
+                         .Reference(x => x.Core)
+                         .LoadAsync();
 
             return gpu;
         }

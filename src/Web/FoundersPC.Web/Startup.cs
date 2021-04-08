@@ -1,9 +1,11 @@
 #region Using namespaces
 
 using System.IO;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Middleware;
 using FoundersPC.Web.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,8 +22,9 @@ namespace FoundersPC.Web
         public Startup(IConfiguration configuration)
         {
             var cfgBuilder = new ConfigurationBuilder();
+
             cfgBuilder.AddConfiguration(configuration)
-                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\Jwt\\JwtSettings.json",
                                    false);
 
             Configuration = cfgBuilder.Build();
@@ -31,6 +34,8 @@ namespace FoundersPC.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(config => config.AddSerilog(Log.Logger));
+
             services.AddMicroservices(Configuration);
 
             services.AddWebApplicationMappings();
@@ -42,7 +47,7 @@ namespace FoundersPC.Web
 
             services.AddCookieSecureAuthentication();
 
-            services.AddCookieAuthorizationPolicies();
+            services.AddAuthorizationPolicies(CookieAuthenticationDefaults.AuthenticationScheme);
 
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddControllersWithViews();

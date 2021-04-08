@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,7 +15,6 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.API.Controllers.V1
 {
     [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-    [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/HardDrives")]
     [Route("HardwareApi/HDDs")]
@@ -32,7 +31,6 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<HDDReadDto>>> Get()
         {
@@ -41,7 +39,6 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _hddService.GetAllHDDsAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpGet("{id}")]
         public async Task<ActionResult<HDDReadDto>> Get(int? id)
         {
@@ -54,8 +51,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPost("{id}", Order = 0)]
+        [HttpPost("{id}")]
         public async Task<ActionResult> Update(int? id, [FromBody] HDDUpdateDto hdd)
         {
             if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
@@ -69,7 +65,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] HDDInsertDto hdd)
         {
@@ -83,7 +78,6 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int? id)
         {

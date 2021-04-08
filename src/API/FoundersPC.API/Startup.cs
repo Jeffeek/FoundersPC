@@ -2,9 +2,11 @@
 
 using System.IO;
 using FoundersPC.API.Application;
+using FoundersPC.API.Application.Middleware;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
 using FoundersPC.ApplicationShared;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +27,7 @@ namespace FoundersPC.API
             var builder = new ConfigurationBuilder();
 
             builder
-                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\Jwt\\JwtSettings.json",
                              false)
                 .AddConfiguration(configuration, false);
 
@@ -34,7 +36,6 @@ namespace FoundersPC.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLogging(config => config.AddSerilog(Log.Logger));
@@ -62,7 +63,7 @@ namespace FoundersPC.API
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
-            services.AddBearerAuthorizationPolicies();
+            services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
 
             services.AddApiVersioning(options =>
                                       {
@@ -77,6 +78,8 @@ namespace FoundersPC.API
                                                                      Title = "FoundersPC.API",
                                                                      Version = "v1.0"
                                                                  }));
+
+            services.AddScoped<AccessTokenValidatorMiddleware>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -94,6 +97,7 @@ namespace FoundersPC.API
 
             app.UseRouting();
 
+            app.UseMiddleware<AccessTokenValidatorMiddleware>();
             //app.UseCors("WebClientPolicy");
 
             app.UseSerilogRequestLogging();
