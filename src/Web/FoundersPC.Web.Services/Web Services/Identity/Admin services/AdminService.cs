@@ -13,7 +13,7 @@ using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
-using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Common.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
@@ -54,8 +54,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) =>
             await _usersInformationService.GetAllUsersAsync(adminToken);
 
-        /// <inheritdoc />
-        public Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken) =>
+        /// <inheritdoc/>
+        public Task<IEnumerable<UserEntityReadDto>>
+            GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken) =>
             _usersInformationService.GetPaginateableUsersAsync(pageNumber, pageSize, adminToken);
 
         public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) =>
@@ -100,6 +101,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) =>
             await _usersEntrancesService.GetAllEntrancesAsync(adminToken);
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<UserEntranceLogReadDto>>
+            GetPaginateableUsersEntrancesAsync(int pageNumber, int pageSize, string adminToken) =>
+            await _usersEntrancesService.GetPaginateableEntrancesAsync(pageNumber, pageSize, adminToken);
 
         public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) =>
             await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);

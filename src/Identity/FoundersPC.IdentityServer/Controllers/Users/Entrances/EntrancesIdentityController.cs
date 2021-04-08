@@ -30,23 +30,28 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
             _usersEntrancesService = usersEntrancesService;
         }
 
-        [HttpGet("Entrances")]
+        [HttpGet("Entrances", Order = 1)]
         public async Task<IEnumerable<UserEntranceLogReadDto>> Get() =>
-            _mapper.Map<IEnumerable<UserEntranceLogReadDto>, IEnumerable<UserEntranceLogReadDto>>(await
-                _usersEntrancesService
-                    .GetAllAsync());
+            await _usersEntrancesService
+                .GetAllAsync();
 
-        [HttpGet("Entrances/{id}")]
+        [HttpGet("Entrances/{id:int:min(1)}")]
         public async Task<UserEntranceLogReadDto> Get([FromRoute] int id) =>
             await _usersEntrancesService.GetByIdAsync(id);
 
-        [HttpGet("ById/{userId}/Entrances")]
+        [HttpGet("ById/{userId:int:min(1)}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int userId) =>
             await _usersEntrancesService.GetAllUserEntrances(userId);
 
         [HttpGet("ByEmail/{userEmail}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] string userEmail) =>
             await _usersEntrancesService.GetAllUserEntrances(userEmail);
+
+        [HttpGet("Entrances", Order = 0)]
+        public async Task<IEnumerable<UserEntranceLogReadDto>>
+            GetPaginateableUserEntrances([FromQuery(Name = "Page")] int pageNumber = 1,
+                                         [FromQuery(Name = "Size")] int pageSize = 10) =>
+            await _usersEntrancesService.GetPaginateableEntrances(pageNumber, pageSize);
 
         [HttpGet("Entrances/Between")]
         public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>>

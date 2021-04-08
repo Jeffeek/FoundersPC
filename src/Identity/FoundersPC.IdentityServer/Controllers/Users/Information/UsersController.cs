@@ -9,12 +9,14 @@ using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Users.Information
 {
+    [EnableCors("WebPolicy")]
     [ApiController]
     [Route("FoundersPCIdentity/Users")]
     public class UsersController : Controller
@@ -30,7 +32,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet("ById/{id:int}")]
+        [HttpGet("ById/{id:int:min(1)}")]
         public async Task<ActionResult<UserEntityReadDto>> Get([FromRoute] int id)
         {
             var user = await _usersInformationService.GetUserByIdAsync(id);
@@ -72,8 +74,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(Order = 0)]
-        public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                            [FromQuery(Name = "Size")] int pageSize = 10)
+        public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination(
+            [FromQuery(Name = "Page")] int pageNumber = 1,
+            [FromQuery(Name = "Size")] int pageSize = 10)
         {
             var takenUsers = await _usersInformationService.GetPaginateableAsync(pageNumber, pageSize);
 

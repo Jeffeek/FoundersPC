@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared.Collections;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Users;
@@ -80,5 +81,15 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 
             return user.Entrances;
         }
+
+        #region Implementation of IPaginateableRepository<UserEntranceLog>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<UserEntranceLog>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await Context.Set<UserEntranceLog>()
+                         .Paginate(pageNumber, pageSize)
+                         .ToListAsync();
+
+        #endregion
     }
 }

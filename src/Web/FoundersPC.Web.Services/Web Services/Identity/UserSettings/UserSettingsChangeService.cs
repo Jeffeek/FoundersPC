@@ -10,7 +10,7 @@ using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.ChangeSettings;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
-using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
+using FoundersPC.Web.Domain.Common.AccountSettings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 

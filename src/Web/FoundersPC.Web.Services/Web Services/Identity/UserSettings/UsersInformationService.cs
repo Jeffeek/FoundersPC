@@ -65,8 +65,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             return request;
         }
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string token)
+        /// <inheritdoc/>
+        public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(
+            int pageNumber,
+            int pageSize,
+            string token)
         {
             if (pageNumber <= 0 || pageSize <= 0) return Enumerable.Empty<UserEntityReadDto>();
 
@@ -74,9 +77,13 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             using var client = _httpClientFactory.CreateClient("Get users");
 
-            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme, token, MicroservicesUrls.IdentityServer);
+            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                    token,
+                                                    MicroservicesUrls.IdentityServer);
 
-            var result = await client.GetFromJsonAsync<IEnumerable<UserEntityReadDto>>($"Users?Page={pageNumber}&Size={pageSize}");
+            var result =
+                await client
+                    .GetFromJsonAsync<IEnumerable<UserEntityReadDto>>($"Users?Page={pageNumber}&Size={pageSize}");
 
             return result;
         }

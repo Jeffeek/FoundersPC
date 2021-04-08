@@ -8,12 +8,14 @@ using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.RequestResponseShared.Response.Tokens;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
+    [EnableCors("WebPolicy")]
     [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
     public class AccessTokensController : Controller
@@ -66,7 +68,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
                    };
         }
 
-        // todo: use cors
+        [EnableCors("TokenCheckPolicy")]
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
         [HttpGet("Check/{token:length(64)}")]
         public async Task<ActionResult> CheckTokenForUsability([FromRoute] string token)

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Entities.ViewModels.Entrances
+namespace FoundersPC.Web.Domain.Common.Entrances
 {
     public class EntrancesBetweenFilter
     {

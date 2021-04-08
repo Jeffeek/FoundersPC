@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿#region Using namespaces
 
-namespace FoundersPC.Web.Models
+using System.Collections.Generic;
+
+#endregion
+
+namespace FoundersPC.Web.Domain.Common
 {
     public class IndexViewModel<T> where T : class
     {

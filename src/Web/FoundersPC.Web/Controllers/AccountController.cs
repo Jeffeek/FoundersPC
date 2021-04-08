@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
-using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
+using FoundersPC.Web.Domain.Common.AccountSettings;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Entities.ViewModels.Authentication
+namespace FoundersPC.Web.Domain.Common.Authentication
 {
     public class SignUpViewModel
     {

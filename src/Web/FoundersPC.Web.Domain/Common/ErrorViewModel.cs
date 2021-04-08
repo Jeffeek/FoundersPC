@@ -1,4 +1,4 @@
-namespace FoundersPC.Web.Models
+namespace FoundersPC.Web.Domain.Common
 {
     public class ErrorViewModel
     {

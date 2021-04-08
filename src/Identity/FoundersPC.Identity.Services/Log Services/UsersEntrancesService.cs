@@ -83,6 +83,12 @@ namespace FoundersPC.Identity.Services.Log_Services
             return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(userEntrances);
         }
 
+        /// <inheritdoc/>
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrances(int pageNumber, int pageSize) =>
+            _mapper.Map<IEnumerable<UserEntranceLog>,
+                IEnumerable<UserEntranceLogReadDto>
+            >(await _unitOfWork.UsersEntrancesLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
+
         public async Task<bool> LogAsync(int userId)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);

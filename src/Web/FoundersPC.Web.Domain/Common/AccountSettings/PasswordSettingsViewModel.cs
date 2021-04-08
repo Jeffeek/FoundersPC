@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings
+namespace FoundersPC.Web.Domain.Common.AccountSettings
 {
     public class PasswordSettingsViewModel
     {

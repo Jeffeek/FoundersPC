@@ -1,6 +1,6 @@
 ﻿#region Using namespaces
 
-using FoundersPC.Web.Models;
+using FoundersPC.Web.Domain.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

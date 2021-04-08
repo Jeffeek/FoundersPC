@@ -1,17 +1,15 @@
-﻿using System;
-
-namespace FoundersPC.Web.Models
+﻿namespace FoundersPC.Web.Domain.Common
 {
     public class PageViewModel
     {
-        public int CurrentPageNumber { get; }
-
         public PageViewModel(int currentPageNumber, bool hasNextPage)
         {
             CurrentPageNumber = currentPageNumber;
             HasPreviousPage = CurrentPageNumber > 1;
             HasNextPage = hasNextPage;
         }
+
+        public int CurrentPageNumber { get; }
 
         public bool HasPreviousPage { get; }
 

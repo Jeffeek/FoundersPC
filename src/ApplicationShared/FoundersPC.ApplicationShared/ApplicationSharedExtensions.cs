@@ -56,7 +56,8 @@ namespace FoundersPC.ApplicationShared
                                                                   {
                                                                       builder.AddAuthenticationSchemes(scheme)
                                                                              .RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Administrator)
+                                                                             .RequireRole(ApplicationRoles
+                                                                                 .Administrator)
                                                                              .Build();
                                                                   });
 

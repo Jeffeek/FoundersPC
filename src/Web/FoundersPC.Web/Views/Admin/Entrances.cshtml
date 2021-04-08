@@ -1,5 +1,5 @@
 ﻿@using System.Globalization
-@model FoundersPC.Web.Domain.Entities.ViewModels.Entrances.EntrancesViewModel
+@model FoundersPC.Web.Domain.Common.Entrances.EntrancesViewModel
 
 @{
     ViewData["Title"] = "Entrances";
@@ -8,10 +8,7 @@
     <link
         href='~/css/table.css'
         rel='stylesheet'>
-}
-
-
-}
+}}
 
 <div
     class='table-wrapper'>
@@ -72,7 +69,7 @@
             </thead>
             <tbody>
             @{
-                foreach (var entrance in Model.Entrances) {
+                foreach (var entrance in Model.IndexEntrances.Models) {
                     <tr>
                         <td>
                             @entrance.Id
@@ -88,5 +85,36 @@
             }
             </tbody>
         </table>
+        @{
+            if (Model.IsPaginationRequired) {
+                <nav>
+                    <ul
+                        class="justify-content-center pagination">
+                        <li
+                            class="page-item @(Html.Raw(Model.IndexEntrances.Page.HasPreviousPage ? String.Empty : "disabled"))">
+                            <a
+                                aria-disabled='@(!Model.IndexEntrances.Page.HasPreviousPage)'
+                                asp-action='Entrances'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='@(Model.IndexEntrances.Page.CurrentPageNumber - 1)'
+                                class="bg-light page-link">
+                                Previous
+                            </a>
+                        </li>
+                        <li
+                            class="page-item @(Html.Raw(Model.IndexEntrances.Page.HasNextPage ? String.Empty : "disabled"))">
+                            <a
+                                aria-disabled='@(!Model.IndexEntrances.Page.HasNextPage)'
+                                asp-action='Entrances'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='@(Model.IndexEntrances.Page.CurrentPageNumber + 1)'
+                                class="bg-light page-link">
+                                Next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            }
+        }
     </div>
 </div>

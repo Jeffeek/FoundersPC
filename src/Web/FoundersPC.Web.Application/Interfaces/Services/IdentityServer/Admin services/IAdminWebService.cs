@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
-using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Common.Authentication;
 
 #endregion
 
@@ -101,6 +101,18 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="adminToken">JWT token</param>
         /// <returns>Entrances</returns>
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken);
+
+        /// <summary>
+        ///     Gets entrances to website by pagination
+        /// </summary>
+        /// <param name="pageSize">Max size of page</param>
+        /// <param name="adminToken">JWT token</param>
+        /// <param name="pageNumber">Page to load</param>
+        /// <returns>Entrances</returns>
+        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableUsersEntrancesAsync(
+            int pageNumber,
+            int pageSize,
+            string adminToken);
 
         /// <summary>
         ///     Gets entrance by id

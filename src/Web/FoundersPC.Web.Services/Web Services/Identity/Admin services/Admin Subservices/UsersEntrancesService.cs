@@ -48,6 +48,29 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
             return responseMessage;
         }
 
+        /// <inheritdoc/>
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(
+            int pageNumber,
+            int pageSize,
+            string adminToken)
+        {
+            if (pageNumber <= 0) throw new ArgumentOutOfRangeException(nameof(pageNumber));
+            if (pageSize <= 0) throw new ArgumentOutOfRangeException(nameof(pageSize));
+
+            using var client = _httpClientFactory.CreateClient("Get users entrances client by paging");
+
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        adminToken,
+                                                        $"{MicroservicesUrls.IdentityServer}Users/");
+
+            var responseMessage =
+                await client
+                    .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
+                    >($"Entrances?Page={pageNumber}&Size={pageSize}");
+
+            return responseMessage;
+        }
+
         public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken)
         {
             if (adminToken is null)
@@ -101,8 +124,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
             return responseMessage;
         }
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByIdAsync(
-            int userId,
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByIdAsync(int userId,
             string adminToken)
         {
             if (adminToken is null)
@@ -124,8 +146,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
             return responseMessage;
         }
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByEmailAsync(
-            string userEmail,
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByEmailAsync(string userEmail,
             string adminToken)
         {
             if (adminToken is null)

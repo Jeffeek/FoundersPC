@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿#region Using namespaces
+
+using System.Collections.Generic;
 using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.RepositoryShared.Repository
 {

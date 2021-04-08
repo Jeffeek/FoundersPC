@@ -80,7 +80,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 
         #region Implementation of IPaginateableRepository<UserEntity>
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<UserEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await Context.Set<UserEntity>()
                          .Paginate(pageNumber, pageSize)
