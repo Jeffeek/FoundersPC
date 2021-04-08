@@ -8,11 +8,12 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
-using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Common.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
@@ -24,7 +25,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
     {
         public AdminService(IUsersInformationService usersInformationService,
                             IHttpClientFactory clientFactory,
-                            MicroservicesBaseAddresses baseAddresses,
                             ILogger<AdminService> logger,
                             IMapper mapper,
                             IBlockingWebService blockingService,
@@ -32,7 +32,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
-            _baseAddresses = baseAddresses;
             _logger = logger;
             _mapper = mapper;
             _blockingService = blockingService;
@@ -41,7 +40,6 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region DI
 
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<AdminService> _logger;
         private readonly IMapper _mapper;
@@ -56,6 +54,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) =>
             await _usersInformationService.GetAllUsersAsync(adminToken);
 
+        /// <inheritdoc/>
+        public Task<IEnumerable<UserEntityReadDto>>
+            GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken) =>
+            _usersInformationService.GetPaginateableUsersAsync(pageNumber, pageSize, adminToken);
+
         public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) =>
             await _usersInformationService.GetUserByIdAsync(id, adminToken);
 
@@ -66,7 +69,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Block user
 
-        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) => await _blockingService.BlockUserByIdAsync(id, adminToken);
+        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) =>
+            await _blockingService.BlockUserByIdAsync(id, adminToken);
 
         public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) =>
             await _blockingService.BlockUserByEmailAsync(email, adminToken);
@@ -98,6 +102,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) =>
             await _usersEntrancesService.GetAllEntrancesAsync(adminToken);
 
+        /// <inheritdoc/>
+        public async Task<IEnumerable<UserEntranceLogReadDto>>
+            GetPaginateableUsersEntrancesAsync(int pageNumber, int pageSize, string adminToken) =>
+            await _usersEntrancesService.GetPaginateableEntrancesAsync(pageNumber, pageSize, adminToken);
+
         public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) =>
             await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
@@ -118,17 +127,20 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             if (model is null)
                 throw
                     new ArgumentNullException(nameof(model));
+
             if (model.Email is null) throw new ArgumentNullException(nameof(model.Email));
             if (model.RawPassword is null) throw new ArgumentNullException(nameof(model.RawPassword));
             if (model.RawPasswordConfirm is null) throw new ArgumentNullException(nameof(model.RawPasswordConfirm));
+
             if (!model.RawPassword.Equals(model.RawPasswordConfirm, StringComparison.Ordinal))
                 throw new
                     ArgumentException($"{nameof(model.RawPassword)} was not equal to {nameof(model.RawPasswordConfirm)}");
 
             using var client = _clientFactory.CreateClient("Sign Up new manager client");
+
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        _baseAddresses.IdentityApiBaseAddress);
+                                                        MicroservicesUrls.IdentityServer);
 
             var requestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 

@@ -21,11 +21,14 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 
         public override async Task<Motherboard> GetByIdAsync(int id)
         {
-            var motherboard = await Context.Set<Motherboard>().FindAsync(id);
+            var motherboard = await Context.Set<Motherboard>()
+                                           .FindAsync(id);
 
             if (motherboard is null) return null;
 
-            await Context.Entry(motherboard).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(motherboard)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return motherboard;
         }

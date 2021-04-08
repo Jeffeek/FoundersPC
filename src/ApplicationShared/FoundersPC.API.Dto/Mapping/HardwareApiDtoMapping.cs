@@ -10,37 +10,59 @@ namespace FoundersPC.API.Dto.Mapping
     {
         public HardwareApiDtoMapping()
         {
-            CreateMap<ProducerReadDto, ProducerUpdateDto>().ReverseMap();
+            CreateMap<ProducerReadDto, ProducerUpdateDto>()
+                .ReverseMap();
+
             CreateMap<ProducerReadDto, ProducerInsertDto>();
 
-            CreateMap<CaseReadDto, CaseUpdateDto>().ReverseMap();
+            CreateMap<CaseReadDto, CaseUpdateDto>()
+                .ReverseMap();
+
             CreateMap<CaseReadDto, CaseInsertDto>();
 
-            CreateMap<GPUReadDto, GPUUpdateDto>().ReverseMap();
+            CreateMap<GPUReadDto, GPUUpdateDto>()
+                .ReverseMap();
+
             CreateMap<GPUReadDto, GPUInsertDto>();
 
-            CreateMap<HDDReadDto, HDDUpdateDto>().ReverseMap();
+            CreateMap<HDDReadDto, HDDUpdateDto>()
+                .ReverseMap();
+
             CreateMap<HDDReadDto, HDDInsertDto>();
 
-            CreateMap<MotherboardReadDto, MotherboardUpdateDto>().ReverseMap();
+            CreateMap<MotherboardReadDto, MotherboardUpdateDto>()
+                .ReverseMap();
+
             CreateMap<MotherboardReadDto, MotherboardInsertDto>();
 
-            CreateMap<PowerSupplyReadDto, PowerSupplyUpdateDto>().ReverseMap();
+            CreateMap<PowerSupplyReadDto, PowerSupplyUpdateDto>()
+                .ReverseMap();
+
             CreateMap<PowerSupplyReadDto, PowerSupplyInsertDto>();
 
-            CreateMap<CPUReadDto, CPUUpdateDto>().ReverseMap();
+            CreateMap<CPUReadDto, CPUUpdateDto>()
+                .ReverseMap();
+
             CreateMap<CPUReadDto, CPUInsertDto>();
 
-            CreateMap<RAMUpdateDto, RAMUpdateDto>().ReverseMap();
+            CreateMap<RAMUpdateDto, RAMUpdateDto>()
+                .ReverseMap();
+
             CreateMap<RAMReadDto, RAMInsertDto>();
 
-            CreateMap<SSDReadDto, SSDUpdateDto>().ReverseMap();
+            CreateMap<SSDReadDto, SSDUpdateDto>()
+                .ReverseMap();
+
             CreateMap<SSDReadDto, SSDInsertDto>();
 
-            CreateMap<ProcessorCoreReadDto, ProcessorCoreUpdateDto>().ReverseMap();
+            CreateMap<ProcessorCoreReadDto, ProcessorCoreUpdateDto>()
+                .ReverseMap();
+
             CreateMap<ProcessorCoreReadDto, ProcessorCoreInsertDto>();
 
-            CreateMap<VideoCardCoreReadDto, VideoCardCoreUpdateDto>().ReverseMap();
+            CreateMap<VideoCardCoreReadDto, VideoCardCoreUpdateDto>()
+                .ReverseMap();
+
             CreateMap<VideoCardCoreReadDto, VideoCardCoreInsertDto>();
         }
     }

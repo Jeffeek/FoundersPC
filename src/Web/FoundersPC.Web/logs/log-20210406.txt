@@ -1,0 +1,649 @@
+04/06/2021 14:34:33 Web server started..
+04/06/2021 14:34:33 Web server HostBuilder created
+04/06/2021 14:34:34 Host built
+04/06/2021 14:34:34 Now listening on: "https://localhost:9000"
+04/06/2021 14:34:34 Application started. Press Ctrl+C to shut down.
+04/06/2021 14:34:34 Hosting environment: "Development"
+04/06/2021 14:34:34 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 14:34:37 HTTP "GET" "/" responded 200 in 181.1715 ms
+04/06/2021 14:34:42 HTTP "GET" "/Authentication/SignIn" responded 200 in 231.2676 ms
+04/06/2021 14:34:49 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 14:34:49 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 14:34:51 Received HTTP response headers after 2240.6351ms - 200
+04/06/2021 14:34:51 End processing HTTP request after 2253.1472ms - 200
+04/06/2021 14:34:51 HTTP "POST" "/Authentication/SignIn" responded 302 in 2375.2545 ms
+04/06/2021 14:34:51 HTTP "GET" "/" responded 200 in 3.1843 ms
+04/06/2021 14:58:44 Web server started..
+04/06/2021 14:58:44 Web server HostBuilder created
+04/06/2021 14:58:45 Host built
+04/06/2021 14:58:45 Now listening on: "https://localhost:9000"
+04/06/2021 14:58:45 Application started. Press Ctrl+C to shut down.
+04/06/2021 14:58:45 Hosting environment: "Development"
+04/06/2021 14:58:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 14:58:50 HTTP "GET" "/" responded 200 in 172.5504 ms
+04/06/2021 14:58:51 HTTP "GET" "/Authentication/SignIn" responded 200 in 237.7502 ms
+04/06/2021 14:58:53 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 14:58:53 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 14:58:55 Received HTTP response headers after 2065.7995ms - 200
+04/06/2021 14:58:55 End processing HTTP request after 2077.0391ms - 200
+04/06/2021 14:58:55 HTTP "POST" "/Authentication/SignIn" responded 302 in 2180.0730 ms
+04/06/2021 14:58:55 HTTP "GET" "/" responded 200 in 2.9520 ms
+04/06/2021 14:58:58 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 14:58:58 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 14:58:58 Received HTTP response headers after 181.4855ms - 200
+04/06/2021 14:58:58 End processing HTTP request after 183.1494ms - 200
+04/06/2021 14:58:58 HTTP "GET" "/Admin/UsersTable" responded 200 in 267.9183 ms
+04/06/2021 14:59:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/06/2021 14:59:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/06/2021 14:59:00 Received HTTP response headers after 36.9102ms - 200
+04/06/2021 14:59:00 End processing HTTP request after 38.5313ms - 200
+04/06/2021 14:59:00 HTTP "GET" "/Account" responded 200 in 95.8789 ms
+04/06/2021 14:59:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 14:59:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 14:59:01 Received HTTP response headers after 37.2146ms - 200
+04/06/2021 14:59:01 End processing HTTP request after 38.7985ms - 200
+04/06/2021 14:59:01 HTTP "GET" "/Admin" responded 200 in 145.5451 ms
+04/06/2021 15:00:36 Web server started..
+04/06/2021 15:00:36 Web server HostBuilder created
+04/06/2021 15:00:37 Host built
+04/06/2021 15:00:38 Now listening on: "https://localhost:9000"
+04/06/2021 15:00:38 Application started. Press Ctrl+C to shut down.
+04/06/2021 15:00:38 Hosting environment: "Development"
+04/06/2021 15:00:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 15:00:40 HTTP "GET" "/" responded 200 in 171.6908 ms
+04/06/2021 15:00:46 HTTP "GET" "/Authentication/SignIn" responded 200 in 242.6433 ms
+04/06/2021 15:00:51 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 15:00:51 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 15:00:53 Received HTTP response headers after 2124.5058ms - 200
+04/06/2021 15:00:53 End processing HTTP request after 2135.8493ms - 200
+04/06/2021 15:00:53 HTTP "POST" "/Authentication/SignIn" responded 302 in 2238.6861 ms
+04/06/2021 15:00:53 HTTP "GET" "/" responded 200 in 3.1364 ms
+04/06/2021 17:40:06 Web server started..
+04/06/2021 17:40:06 Web server HostBuilder created
+04/06/2021 17:40:07 Host built
+04/06/2021 17:40:07 Now listening on: "https://localhost:9000"
+04/06/2021 17:40:07 Application started. Press Ctrl+C to shut down.
+04/06/2021 17:40:07 Hosting environment: "Development"
+04/06/2021 17:40:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 17:40:10 HTTP "GET" "/" responded 200 in 173.8456 ms
+04/06/2021 17:40:11 HTTP "GET" "/Authentication/SignIn" responded 200 in 231.2060 ms
+04/06/2021 17:40:13 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:40:13 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:40:15 Received HTTP response headers after 2096.9443ms - 200
+04/06/2021 17:40:15 End processing HTTP request after 2108.4994ms - 200
+04/06/2021 17:40:15 HTTP "POST" "/Authentication/SignIn" responded 302 in 2214.7252 ms
+04/06/2021 17:40:15 HTTP "GET" "/" responded 200 in 2.9301 ms
+04/06/2021 17:40:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:40:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:40:17 Received HTTP response headers after 187.4731ms - 200
+04/06/2021 17:40:17 End processing HTTP request after 189.1605ms - 200
+04/06/2021 17:40:17 HTTP "GET" "/Admin" responded 200 in 226.1250 ms
+04/06/2021 17:44:07 Web server started..
+04/06/2021 17:44:07 Web server HostBuilder created
+04/06/2021 17:44:08 Host built
+04/06/2021 17:44:08 Now listening on: "https://localhost:9000"
+04/06/2021 17:44:08 Application started. Press Ctrl+C to shut down.
+04/06/2021 17:44:08 Hosting environment: "Development"
+04/06/2021 17:44:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 17:44:11 HTTP "GET" "/" responded 200 in 190.2164 ms
+04/06/2021 17:44:12 HTTP "GET" "/Authentication/SignIn" responded 200 in 239.4683 ms
+04/06/2021 17:44:16 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:44:16 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:44:18 Received HTTP response headers after 2034.8628ms - 200
+04/06/2021 17:44:18 End processing HTTP request after 2046.8919ms - 200
+04/06/2021 17:44:18 HTTP "POST" "/Authentication/SignIn" responded 302 in 2151.3301 ms
+04/06/2021 17:44:18 HTTP "GET" "/" responded 200 in 3.0223 ms
+04/06/2021 17:44:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:44:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:44:21 Received HTTP response headers after 187.497ms - 200
+04/06/2021 17:44:21 End processing HTTP request after 189.163ms - 200
+04/06/2021 17:44:21 HTTP "GET" "/Admin" responded 200 in 227.9912 ms
+04/06/2021 17:45:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:45:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:45:01 Received HTTP response headers after 40.5437ms - 200
+04/06/2021 17:45:01 End processing HTTP request after 42.2729ms - 200
+04/06/2021 17:45:05 HTTP "GET" "/Admin" responded 200 in 3378.3992 ms
+04/06/2021 17:45:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:45:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:45:30 Received HTTP response headers after 28.3241ms - 200
+04/06/2021 17:45:30 End processing HTTP request after 29.9129ms - 200
+04/06/2021 17:45:31 HTTP "GET" "/Admin" responded 200 in 194.5011 ms
+04/06/2021 17:45:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:45:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:45:56 Received HTTP response headers after 18.0377ms - 200
+04/06/2021 17:45:56 End processing HTTP request after 19.6706ms - 200
+04/06/2021 17:45:56 HTTP "GET" "/Admin" responded 200 in 155.2921 ms
+04/06/2021 17:46:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:46:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:46:12 Received HTTP response headers after 10.4697ms - 200
+04/06/2021 17:46:12 End processing HTTP request after 12.1554ms - 200
+04/06/2021 17:46:12 HTTP "GET" "/Admin" responded 200 in 129.2223 ms
+04/06/2021 17:47:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:47:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:47:26 Received HTTP response headers after 47.9129ms - 200
+04/06/2021 17:47:26 End processing HTTP request after 49.4914ms - 200
+04/06/2021 17:47:27 HTTP "GET" "/Admin" responded 200 in 175.1844 ms
+04/06/2021 17:47:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:47:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:47:40 Received HTTP response headers after 7.0633ms - 200
+04/06/2021 17:47:40 End processing HTTP request after 9.0816ms - 200
+04/06/2021 17:47:40 HTTP "GET" "/Admin" responded 200 in 130.2341 ms
+04/06/2021 17:48:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:48:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:48:20 Received HTTP response headers after 12.2605ms - 200
+04/06/2021 17:48:20 End processing HTTP request after 13.9691ms - 200
+04/06/2021 17:48:20 HTTP "GET" "/Admin" responded 200 in 134.5260 ms
+04/06/2021 17:48:32 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:48:32 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:48:32 Received HTTP response headers after 9.1683ms - 200
+04/06/2021 17:48:32 End processing HTTP request after 11.4866ms - 200
+04/06/2021 17:48:33 HTTP "GET" "/Admin" responded 200 in 131.1419 ms
+04/06/2021 17:48:54 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:48:54 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:48:54 Received HTTP response headers after 14.2502ms - 200
+04/06/2021 17:48:54 End processing HTTP request after 15.7019ms - 200
+04/06/2021 17:48:54 HTTP "GET" "/Admin" responded 200 in 144.8874 ms
+04/06/2021 17:49:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210401&finish=20210405
+04/06/2021 17:49:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210401&finish=20210405
+04/06/2021 17:49:27 Received HTTP response headers after 49.1027ms - 200
+04/06/2021 17:49:27 End processing HTTP request after 51.0233ms - 200
+04/06/2021 17:49:27 HTTP "POST" "/Admin/Between" responded 200 in 66.3598 ms
+04/06/2021 17:49:35 HTTP "POST" "/Admin/Between" responded 302 in 3.3612 ms
+04/06/2021 17:49:35 HTTP "GET" "/Error/400" responded 200 in 9.6924 ms
+04/06/2021 17:51:22 Web server started..
+04/06/2021 17:51:22 Web server HostBuilder created
+04/06/2021 17:51:22 Host built
+04/06/2021 17:51:23 Now listening on: "https://localhost:9000"
+04/06/2021 17:51:23 Application started. Press Ctrl+C to shut down.
+04/06/2021 17:51:23 Hosting environment: "Development"
+04/06/2021 17:51:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 17:51:25 HTTP "GET" "/" responded 200 in 180.3990 ms
+04/06/2021 17:51:52 HTTP "GET" "/Authentication/SignIn" responded 200 in 233.3657 ms
+04/06/2021 17:51:54 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:51:54 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:51:56 Received HTTP response headers after 2099.7135ms - 200
+04/06/2021 17:51:56 End processing HTTP request after 2111.0659ms - 200
+04/06/2021 17:51:56 HTTP "POST" "/Authentication/SignIn" responded 302 in 2215.9046 ms
+04/06/2021 17:51:56 HTTP "GET" "/" responded 200 in 3.6330 ms
+04/06/2021 17:51:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:51:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:51:58 Received HTTP response headers after 185.5592ms - 200
+04/06/2021 17:51:58 End processing HTTP request after 187.384ms - 200
+04/06/2021 17:51:58 HTTP "GET" "/Admin" responded 200 in 225.2982 ms
+04/06/2021 17:52:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210403&finish=20210406
+04/06/2021 17:52:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210403&finish=20210406
+04/06/2021 17:52:03 Received HTTP response headers after 30.4652ms - 200
+04/06/2021 17:52:03 End processing HTTP request after 32.1573ms - 200
+04/06/2021 17:52:03 HTTP "POST" "/Admin/Between" responded 200 in 46.1510 ms
+04/06/2021 17:52:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:52:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:52:06 Received HTTP response headers after 12.2943ms - 200
+04/06/2021 17:52:06 End processing HTTP request after 13.9426ms - 200
+04/06/2021 17:52:06 HTTP "GET" "/Admin" responded 200 in 21.1280 ms
+04/06/2021 17:52:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210403&finish=20210406
+04/06/2021 17:52:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210403&finish=20210406
+04/06/2021 17:52:08 Received HTTP response headers after 5.978ms - 200
+04/06/2021 17:52:08 End processing HTTP request after 8.2198ms - 200
+04/06/2021 17:52:08 HTTP "POST" "/Admin/Between" responded 200 in 13.2054 ms
+04/06/2021 17:52:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:52:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:52:10 Received HTTP response headers after 7.244ms - 200
+04/06/2021 17:52:10 End processing HTTP request after 8.8814ms - 200
+04/06/2021 17:52:10 HTTP "GET" "/Admin" responded 200 in 11.5094 ms
+04/06/2021 17:52:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210403&finish=20210406
+04/06/2021 17:52:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/Between?start=20210403&finish=20210406
+04/06/2021 17:52:11 Received HTTP response headers after 5.4098ms - 200
+04/06/2021 17:52:11 End processing HTTP request after 7.1034ms - 200
+04/06/2021 17:52:11 HTTP "POST" "/Admin/Between" responded 200 in 9.7806 ms
+04/06/2021 17:52:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:52:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:52:14 Received HTTP response headers after 7.0473ms - 200
+04/06/2021 17:52:14 End processing HTTP request after 8.7017ms - 200
+04/06/2021 17:52:14 HTTP "GET" "/Admin" responded 200 in 12.0633 ms
+04/06/2021 17:53:05 Web server started..
+04/06/2021 17:53:05 Web server HostBuilder created
+04/06/2021 17:53:06 Host built
+04/06/2021 17:53:06 Now listening on: "https://localhost:9000"
+04/06/2021 17:53:06 Application started. Press Ctrl+C to shut down.
+04/06/2021 17:53:06 Hosting environment: "Development"
+04/06/2021 17:53:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 17:53:09 HTTP "GET" "/" responded 200 in 168.7449 ms
+04/06/2021 17:53:10 HTTP "GET" "/Authentication/SignIn" responded 200 in 230.4231 ms
+04/06/2021 17:53:11 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:53:11 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:53:14 Received HTTP response headers after 2070.9501ms - 200
+04/06/2021 17:53:14 End processing HTTP request after 2082.2165ms - 200
+04/06/2021 17:53:14 HTTP "POST" "/Authentication/SignIn" responded 302 in 2186.7527 ms
+04/06/2021 17:53:14 HTTP "GET" "/" responded 200 in 3.2466 ms
+04/06/2021 17:53:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:53:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:53:15 Received HTTP response headers after 181.0158ms - 200
+04/06/2021 17:53:15 End processing HTTP request after 182.7441ms - 200
+04/06/2021 17:53:15 HTTP "GET" "/Admin/UsersTable" responded 200 in 272.1479 ms
+04/06/2021 17:53:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/ById/1
+04/06/2021 17:53:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/ById/1
+04/06/2021 17:53:19 Received HTTP response headers after 38.4044ms - 200
+04/06/2021 17:53:19 End processing HTTP request after 40.0616ms - 200
+04/06/2021 17:53:19 HTTP "GET" "/Admin/User/1/Entrances" responded 200 in 57.7028 ms
+04/06/2021 17:53:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/ById/17
+04/06/2021 17:53:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/ById/17
+04/06/2021 17:53:22 Received HTTP response headers after 17.1282ms - 200
+04/06/2021 17:53:22 End processing HTTP request after 18.7794ms - 200
+04/06/2021 17:53:22 HTTP "GET" "/Admin/User/17/Entrances" responded 200 in 22.9426 ms
+04/06/2021 17:53:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/ById/18
+04/06/2021 17:53:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/ById/18
+04/06/2021 17:53:25 Received HTTP response headers after 11.793ms - 200
+04/06/2021 17:53:25 End processing HTTP request after 13.3084ms - 200
+04/06/2021 17:53:25 HTTP "GET" "/Admin/User/18/Entrances" responded 200 in 15.7365 ms
+04/06/2021 17:53:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:53:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/UsersEntrances/
+04/06/2021 17:53:27 Received HTTP response headers after 32.792ms - 200
+04/06/2021 17:53:27 End processing HTTP request after 34.6439ms - 200
+04/06/2021 17:53:27 HTTP "GET" "/Admin/Entrances" responded 200 in 53.6275 ms
+04/06/2021 17:53:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:53:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:53:40 Received HTTP response headers after 8.4686ms - 200
+04/06/2021 17:53:40 End processing HTTP request after 10.9753ms - 200
+04/06/2021 17:53:40 HTTP "GET" "/Admin/UsersTable" responded 200 in 13.8508 ms
+04/06/2021 17:55:05 Web server started..
+04/06/2021 17:55:06 Web server HostBuilder created
+04/06/2021 17:55:06 Host built
+04/06/2021 17:55:07 Now listening on: "https://localhost:9000"
+04/06/2021 17:55:07 Application started. Press Ctrl+C to shut down.
+04/06/2021 17:55:07 Hosting environment: "Development"
+04/06/2021 17:55:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 17:55:09 HTTP "GET" "/" responded 200 in 168.0161 ms
+04/06/2021 17:55:10 HTTP "GET" "/Authentication/SignIn" responded 200 in 232.3296 ms
+04/06/2021 17:55:12 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:55:12 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 17:55:14 Received HTTP response headers after 2112.0087ms - 200
+04/06/2021 17:55:14 End processing HTTP request after 2124.0328ms - 200
+04/06/2021 17:55:14 HTTP "POST" "/Authentication/SignIn" responded 302 in 2230.1785 ms
+04/06/2021 17:55:14 HTTP "GET" "/" responded 200 in 2.8431 ms
+04/06/2021 17:55:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:15 Received HTTP response headers after 178.8683ms - 200
+04/06/2021 17:55:15 End processing HTTP request after 180.78ms - 200
+04/06/2021 17:55:15 HTTP "GET" "/Admin/UsersTable" responded 200 in 254.7412 ms
+04/06/2021 17:55:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:20 Received HTTP response headers after 17.5539ms - 200
+04/06/2021 17:55:20 End processing HTTP request after 19.1324ms - 200
+04/06/2021 17:55:20 HTTP "GET" "/Admin/UsersTable" responded 200 in 23.9185 ms
+04/06/2021 17:55:43 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:43 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:43 Received HTTP response headers after 13.3767ms - 200
+04/06/2021 17:55:43 End processing HTTP request after 14.9819ms - 200
+04/06/2021 17:55:46 HTTP "GET" "/Admin/UsersTable" responded 200 in 3115.7860 ms
+04/06/2021 17:55:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:55:48 Received HTTP response headers after 6.8958ms - 200
+04/06/2021 17:55:48 End processing HTTP request after 8.5513ms - 200
+04/06/2021 17:55:48 HTTP "GET" "/Admin/UsersTable" responded 200 in 11.7048 ms
+04/06/2021 17:56:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:56:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:56:11 Received HTTP response headers after 36.3328ms - 200
+04/06/2021 17:56:11 End processing HTTP request after 38.1576ms - 200
+04/06/2021 17:56:11 HTTP "GET" "/Admin/UsersTable" responded 200 in 247.1531 ms
+04/06/2021 17:56:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:56:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:56:14 Received HTTP response headers after 9.5216ms - 200
+04/06/2021 17:56:14 End processing HTTP request after 10.9401ms - 200
+04/06/2021 17:56:14 HTTP "GET" "/Admin/UsersTable" responded 200 in 14.4444 ms
+04/06/2021 17:56:39 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:56:39 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:56:39 Received HTTP response headers after 13.7281ms - 200
+04/06/2021 17:56:39 End processing HTTP request after 15.0358ms - 200
+04/06/2021 17:56:39 HTTP "GET" "/Admin/UsersTable" responded 200 in 159.6331 ms
+04/06/2021 17:58:39 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:58:39 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 17:58:39 Received HTTP response headers after 17.7878ms - 200
+04/06/2021 17:58:39 End processing HTTP request after 19.4927ms - 200
+04/06/2021 17:58:39 HTTP "GET" "/Admin/UsersTable" responded 200 in 24.0729 ms
+04/06/2021 22:05:06 Web server started..
+04/06/2021 22:05:06 Web server HostBuilder created
+04/06/2021 22:05:06 Host built
+04/06/2021 22:05:07 Now listening on: "https://localhost:9000"
+04/06/2021 22:05:07 Application started. Press Ctrl+C to shut down.
+04/06/2021 22:05:07 Hosting environment: "Development"
+04/06/2021 22:05:07 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 22:05:10 HTTP "GET" "/" responded 200 in 183.6896 ms
+04/06/2021 22:05:11 HTTP "GET" "/Authentication/SignIn" responded 200 in 248.6814 ms
+04/06/2021 22:05:13 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:05:13 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:05:13 Received HTTP response headers after 301.8454ms - 500
+04/06/2021 22:05:13 End processing HTTP request after 313.658ms - 500
+04/06/2021 22:05:13 Request from AuthenticationService, Sign In: to Identity server returned a server error : StatusCode: InternalServerError
+04/06/2021 22:05:13 HTTP "POST" "/Authentication/SignIn" responded 500 in 513.6192 ms
+System.Text.Json.JsonException: 'S' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: 'S' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonConverter jsonConverter, Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonReaderState& readerState, Boolean isFinalBlock, ReadOnlySpan`1 buffer, JsonSerializerOptions options, ReadStack& state, JsonConverter converterBase)
+   at System.Text.Json.JsonSerializer.ReadAsync[TValue](Stream utf8Json, Type returnType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, Encoding sourceEncoding, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 89
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 121
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/06/2021 22:05:13 An unhandled exception has occurred while executing the request.
+System.Text.Json.JsonException: 'S' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: 'S' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonConverter jsonConverter, Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadCore[TValue](JsonReaderState& readerState, Boolean isFinalBlock, ReadOnlySpan`1 buffer, JsonSerializerOptions options, ReadStack& state, JsonConverter converterBase)
+   at System.Text.Json.JsonSerializer.ReadAsync[TValue](Stream utf8Json, Type returnType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, Encoding sourceEncoding, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 89
+   at FoundersPC.Web.Controllers.AuthenticationController.SignInAsync(SignInViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 121
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 19
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/06/2021 22:05:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.1664 ms
+04/06/2021 22:06:49 Web server started..
+04/06/2021 22:06:50 Web server HostBuilder created
+04/06/2021 22:06:50 Host built
+04/06/2021 22:06:51 Now listening on: "https://localhost:9000"
+04/06/2021 22:06:51 Application started. Press Ctrl+C to shut down.
+04/06/2021 22:06:51 Hosting environment: "Development"
+04/06/2021 22:06:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 22:06:53 HTTP "GET" "/" responded 200 in 168.9029 ms
+04/06/2021 22:06:55 HTTP "GET" "/Authentication/SignIn" responded 200 in 237.5541 ms
+04/06/2021 22:06:56 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:06:56 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:06:58 Received HTTP response headers after 2051.782ms - 200
+04/06/2021 22:06:58 End processing HTTP request after 2063.0618ms - 200
+04/06/2021 22:06:58 HTTP "POST" "/Authentication/SignIn" responded 302 in 2170.8329 ms
+04/06/2021 22:06:58 HTTP "GET" "/" responded 200 in 2.7847 ms
+04/06/2021 22:07:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity//Users/Entrances
+04/06/2021 22:07:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity//Users/Entrances
+04/06/2021 22:07:00 Received HTTP response headers after 17.3059ms - 404
+04/06/2021 22:07:00 End processing HTTP request after 19.1888ms - 404
+04/06/2021 22:07:00 HTTP "GET" "/Admin/Entrances" responded 500 in 158.1586 ms
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Subservices.UsersEntrancesService.GetAllEntrancesAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\Admin Subservices\UsersEntrancesService.cs:line 46
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllEntrancesAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 97
+   at FoundersPC.Web.Controllers.Administration.AdminController.Entrances() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 74
+   at lambda_method45(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/06/2021 22:07:00 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Subservices.UsersEntrancesService.GetAllEntrancesAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\Admin Subservices\UsersEntrancesService.cs:line 46
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllEntrancesAsync(String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 97
+   at FoundersPC.Web.Controllers.Administration.AdminController.Entrances() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 74
+   at lambda_method45(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 40
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/06/2021 22:07:59 Web server started..
+04/06/2021 22:07:59 Web server HostBuilder created
+04/06/2021 22:08:00 Host built
+04/06/2021 22:08:00 Now listening on: "https://localhost:9000"
+04/06/2021 22:08:00 Application started. Press Ctrl+C to shut down.
+04/06/2021 22:08:00 Hosting environment: "Development"
+04/06/2021 22:08:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 22:08:03 HTTP "GET" "/" responded 200 in 173.8897 ms
+04/06/2021 22:08:04 HTTP "GET" "/Authentication/SignIn" responded 200 in 230.6311 ms
+04/06/2021 22:08:06 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:08:06 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:08:08 Received HTTP response headers after 2078.2518ms - 200
+04/06/2021 22:08:08 End processing HTTP request after 2090.2656ms - 200
+04/06/2021 22:08:08 HTTP "POST" "/Authentication/SignIn" responded 302 in 2196.3393 ms
+04/06/2021 22:08:08 HTTP "GET" "/" responded 200 in 3.0518 ms
+04/06/2021 22:08:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances
+04/06/2021 22:08:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances
+04/06/2021 22:08:10 Received HTTP response headers after 187.9354ms - 200
+04/06/2021 22:08:10 End processing HTTP request after 189.4478ms - 200
+04/06/2021 22:08:10 HTTP "GET" "/Admin/Entrances" responded 200 in 228.2592 ms
+04/06/2021 22:08:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:08:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:08:14 Received HTTP response headers after 39.1406ms - 200
+04/06/2021 22:08:14 End processing HTTP request after 40.8488ms - 200
+04/06/2021 22:08:14 HTTP "GET" "/Admin/UsersTable" responded 200 in 103.3929 ms
+04/06/2021 22:08:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/4/Entrances
+04/06/2021 22:08:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/4/Entrances
+04/06/2021 22:08:16 Received HTTP response headers after 211.0823ms - 500
+04/06/2021 22:08:16 End processing HTTP request after 212.8045ms - 500
+04/06/2021 22:08:16 HTTP "GET" "/Admin/User/4/Entrances" responded 500 in 343.2748 ms
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Subservices.UsersEntrancesService.GetAllUserEntrancesByIdAsync(Int32 userId, String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\Admin Subservices\UsersEntrancesService.cs:line 118
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUserEntrancesAsync(Int32 userId, String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 104
+   at FoundersPC.Web.Controllers.Administration.AdminController.UserEntrances(Int32 userId) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 94
+   at lambda_method73(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/06/2021 22:08:16 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Subservices.UsersEntrancesService.GetAllUserEntrancesByIdAsync(Int32 userId, String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\Admin Subservices\UsersEntrancesService.cs:line 118
+   at FoundersPC.Web.Services.Web_Services.Identity.Admin_services.AdminService.GetAllUserEntrancesAsync(Int32 userId, String adminToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Admin services\AdminService.cs:line 104
+   at FoundersPC.Web.Controllers.Administration.AdminController.UserEntrances(Int32 userId) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\Administration\AdminController.cs:line 94
+   at lambda_method73(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 40
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/06/2021 22:10:05 Web server started..
+04/06/2021 22:10:05 Web server HostBuilder created
+04/06/2021 22:10:05 Host built
+04/06/2021 22:10:06 Now listening on: "https://localhost:9000"
+04/06/2021 22:10:06 Application started. Press Ctrl+C to shut down.
+04/06/2021 22:10:06 Hosting environment: "Development"
+04/06/2021 22:10:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 22:10:08 HTTP "GET" "/" responded 200 in 181.2171 ms
+04/06/2021 22:10:09 HTTP "GET" "/Authentication/SignIn" responded 200 in 246.4706 ms
+04/06/2021 22:10:10 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:10:10 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:10:12 Received HTTP response headers after 2065.6028ms - 200
+04/06/2021 22:10:12 End processing HTTP request after 2075.8686ms - 200
+04/06/2021 22:10:12 HTTP "POST" "/Authentication/SignIn" responded 302 in 2181.0621 ms
+04/06/2021 22:10:12 HTTP "GET" "/" responded 200 in 3.0352 ms
+04/06/2021 22:10:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:10:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:10:15 Received HTTP response headers after 176.4264ms - 200
+04/06/2021 22:10:15 End processing HTTP request after 178.4713ms - 200
+04/06/2021 22:10:15 HTTP "GET" "/Admin/UsersTable" responded 200 in 254.6130 ms
+04/06/2021 22:10:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/1/Entrances
+04/06/2021 22:10:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/1/Entrances
+04/06/2021 22:11:14 Web server started..
+04/06/2021 22:11:14 Web server HostBuilder created
+04/06/2021 22:11:15 Host built
+04/06/2021 22:11:16 Now listening on: "https://localhost:9000"
+04/06/2021 22:11:16 Application started. Press Ctrl+C to shut down.
+04/06/2021 22:11:16 Hosting environment: "Development"
+04/06/2021 22:11:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 22:11:18 HTTP "GET" "/" responded 200 in 211.8707 ms
+04/06/2021 22:11:19 HTTP "GET" "/Authentication/SignIn" responded 200 in 231.2687 ms
+04/06/2021 22:11:20 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:11:20 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:11:22 Received HTTP response headers after 2058.5003ms - 200
+04/06/2021 22:11:22 End processing HTTP request after 2070.2574ms - 200
+04/06/2021 22:11:22 HTTP "POST" "/Authentication/SignIn" responded 302 in 2176.9543 ms
+04/06/2021 22:11:22 HTTP "GET" "/" responded 200 in 3.6703 ms
+04/06/2021 22:11:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:11:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:11:24 Received HTTP response headers after 180.2909ms - 200
+04/06/2021 22:11:24 End processing HTTP request after 182.188ms - 200
+04/06/2021 22:11:24 HTTP "GET" "/Admin/UsersTable" responded 200 in 256.8565 ms
+04/06/2021 22:11:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/1/Entrances
+04/06/2021 22:11:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/1/Entrances
+04/06/2021 22:12:17 Web server started..
+04/06/2021 22:12:17 Web server HostBuilder created
+04/06/2021 22:12:18 Host built
+04/06/2021 22:12:19 Now listening on: "https://localhost:9000"
+04/06/2021 22:12:19 Application started. Press Ctrl+C to shut down.
+04/06/2021 22:12:19 Hosting environment: "Development"
+04/06/2021 22:12:19 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 22:12:21 HTTP "GET" "/" responded 200 in 193.7352 ms
+04/06/2021 22:12:25 HTTP "GET" "/Authentication/SignIn" responded 200 in 228.9609 ms
+04/06/2021 22:12:26 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:12:26 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:12:28 Received HTTP response headers after 2094.3317ms - 200
+04/06/2021 22:12:28 End processing HTTP request after 2105.6907ms - 200
+04/06/2021 22:12:28 HTTP "POST" "/Authentication/SignIn" responded 302 in 2210.0513 ms
+04/06/2021 22:12:28 HTTP "GET" "/" responded 200 in 2.7747 ms
+04/06/2021 22:12:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:12:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:12:30 Received HTTP response headers after 181.5991ms - 200
+04/06/2021 22:12:30 End processing HTTP request after 183.2911ms - 200
+04/06/2021 22:12:30 HTTP "GET" "/Admin/UsersTable" responded 200 in 262.4773 ms
+04/06/2021 22:12:32 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/1/Entrances
+04/06/2021 22:12:32 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/1/Entrances
+04/06/2021 22:12:32 Received HTTP response headers after 37.5752ms - 200
+04/06/2021 22:12:32 End processing HTTP request after 39.0625ms - 200
+04/06/2021 22:12:32 HTTP "GET" "/Admin/User/1/Entrances" responded 200 in 56.3891 ms
+04/06/2021 22:12:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:12:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users
+04/06/2021 22:12:34 Received HTTP response headers after 9.4345ms - 200
+04/06/2021 22:12:34 End processing HTTP request after 11.0757ms - 200
+04/06/2021 22:12:34 HTTP "GET" "/Admin/UsersTable" responded 200 in 16.2246 ms
+04/06/2021 22:12:35 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/5/Entrances
+04/06/2021 22:12:35 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/5/Entrances
+04/06/2021 22:12:35 Received HTTP response headers after 15.9592ms - 200
+04/06/2021 22:12:35 End processing HTTP request after 17.5065ms - 200
+04/06/2021 22:12:35 HTTP "GET" "/Admin/User/5/Entrances" responded 200 in 21.1876 ms
+04/06/2021 22:15:18 Web server started..
+04/06/2021 22:15:18 Web server HostBuilder created
+04/06/2021 22:15:19 Host built
+04/06/2021 22:15:20 Now listening on: "https://localhost:9000"
+04/06/2021 22:15:20 Application started. Press Ctrl+C to shut down.
+04/06/2021 22:15:20 Hosting environment: "Development"
+04/06/2021 22:15:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/06/2021 22:15:22 HTTP "GET" "/" responded 200 in 194.5154 ms
+04/06/2021 22:15:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 244.9630 ms
+04/06/2021 22:15:24 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:15:24 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/06/2021 22:15:27 Received HTTP response headers after 2119.9927ms - 200
+04/06/2021 22:15:27 End processing HTTP request after 2130.9821ms - 200
+04/06/2021 22:15:27 HTTP "POST" "/Authentication/SignIn" responded 302 in 2237.8614 ms
+04/06/2021 22:15:27 HTTP "GET" "/" responded 200 in 3.2380 ms
+04/06/2021 22:15:28 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances
+04/06/2021 22:15:28 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances
+04/06/2021 22:15:28 Received HTTP response headers after 190.962ms - 200
+04/06/2021 22:15:28 End processing HTTP request after 192.5222ms - 200
+04/06/2021 22:15:28 HTTP "GET" "/Admin/Entrances" responded 200 in 230.2618 ms
+04/06/2021 22:15:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-03T00:00:00&Finish=2021-04-06T00:00:00
+04/06/2021 22:15:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-03T00:00:00&Finish=2021-04-06T00:00:00

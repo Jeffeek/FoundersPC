@@ -1,0 +1,450 @@
+04/08/2021 21:12:41 Identity server started..
+04/08/2021 21:12:41 Identity server HostBuilder created
+04/08/2021 21:12:42 Host built
+04/08/2021 21:12:43 Now listening on: "https://localhost:3000"
+04/08/2021 21:12:43 Application started. Press Ctrl+C to shut down.
+04/08/2021 21:12:43 Hosting environment: "Development"
+04/08/2021 21:12:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 21:12:53 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 21:12:54 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2225.3053 ms
+04/08/2021 21:12:56 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 500 in 87.6700 ms
+System.InvalidOperationException: Endpoint FoundersPC.IdentityServer.Controllers.Users.Information.UsersController.GetWithPagination (FoundersPC.IdentityServer) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/08/2021 21:12:56 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Endpoint FoundersPC.IdentityServer.Controllers.Users.Information.UsersController.GetWithPagination (FoundersPC.IdentityServer) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/08/2021 21:13:19 Application is shutting down...
+04/08/2021 21:14:18 Identity server started..
+04/08/2021 21:14:18 Identity server HostBuilder created
+04/08/2021 21:14:19 Host built
+04/08/2021 21:14:19 Now listening on: "https://localhost:3000"
+04/08/2021 21:14:19 Application started. Press Ctrl+C to shut down.
+04/08/2021 21:14:19 Hosting environment: "Development"
+04/08/2021 21:14:19 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 21:14:28 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 21:14:28 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2131.5552 ms
+04/08/2021 21:14:30 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 500 in 90.7781 ms
+System.InvalidOperationException: Endpoint FoundersPC.IdentityServer.Controllers.Users.Information.UsersController.GetWithPagination (FoundersPC.IdentityServer) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/08/2021 21:14:30 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Endpoint FoundersPC.IdentityServer.Controllers.Users.Information.UsersController.GetWithPagination (FoundersPC.IdentityServer) contains CORS metadata, but a middleware was not found that supports CORS.
+Configure your application startup by adding app.UseCors() inside the call to Configure(..) in the application startup code. The call to app.UseCors() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingCorsMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/08/2021 21:14:54 Application is shutting down...
+04/08/2021 21:16:45 Identity server started..
+04/08/2021 21:16:45 Identity server HostBuilder created
+04/08/2021 21:16:46 Host built
+04/08/2021 21:16:46 Now listening on: "https://localhost:3000"
+04/08/2021 21:16:46 Application started. Press Ctrl+C to shut down.
+04/08/2021 21:16:46 Hosting environment: "Development"
+04/08/2021 21:16:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 21:16:53 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 21:16:53 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2002.2006 ms
+04/08/2021 21:17:01 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 21:17:27 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 40.9761 ms
+04/08/2021 21:17:34 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 11.9843 ms
+04/08/2021 21:18:24 Identity server started..
+04/08/2021 21:18:45 Identity server started..
+04/08/2021 21:18:46 Identity server HostBuilder created
+04/08/2021 21:18:46 Host built
+04/08/2021 21:18:47 Now listening on: "https://localhost:3000"
+04/08/2021 21:18:47 Application started. Press Ctrl+C to shut down.
+04/08/2021 21:18:47 Hosting environment: "Development"
+04/08/2021 21:18:47 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 21:18:54 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 21:18:54 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2097.5655 ms
+04/08/2021 21:18:56 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 21:18:56 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 21:18:56 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 202.5199 ms
+04/08/2021 21:19:05 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 36.4887 ms
+04/08/2021 21:19:15 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 35.3247 ms
+04/08/2021 21:20:56 Identity server started..
+04/08/2021 21:20:56 Identity server HostBuilder created
+04/08/2021 21:20:57 Host built
+04/08/2021 21:20:58 Now listening on: "https://localhost:3000"
+04/08/2021 21:20:58 Application started. Press Ctrl+C to shut down.
+04/08/2021 21:20:58 Hosting environment: "Development"
+04/08/2021 21:20:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 21:21:21 SignInIdentityController: user with email or login = DefaultUser and wrote password not exist.
+04/08/2021 21:21:21 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1557.7858 ms
+04/08/2021 21:21:28 SignInIdentityController: user with email or login = DefaultUserJeff and wrote password not exist.
+04/08/2021 21:21:28 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 35.2152 ms
+04/08/2021 21:21:37 SignInIdentityController: user with email or login = DefaultJeffeek and wrote password not exist.
+04/08/2021 21:21:37 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 21.9494 ms
+04/08/2021 21:21:46 SignInIdentityController: user with email or login = JeffDefaultUser entered the service
+04/08/2021 21:21:46 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 446.0859 ms
+04/08/2021 21:21:48 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 125.6416 ms
+04/08/2021 21:22:00 Successful sending an email to: ilyushinmisha@yandex.ru
+04/08/2021 21:22:00 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 2187.5223 ms
+04/08/2021 21:22:00 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 9.1984 ms
+04/08/2021 21:23:12 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushinmisha@yandex.ru" responded 200 in 33.5796 ms
+04/08/2021 21:24:43 HTTP "GET" "/FoundersPCIdentity/Tokens/Check/4A5ED43B16EC8357AF889323D746D4CBD0B3C728BC3741A0316461D784D4E964" responded 500 in 155.7297 ms
+System.InvalidOperationException: Queries performing 'LastOrDefault' operation must have a deterministic sort order. Rewrite the query to apply an 'OrderBy' clause on the sequence before calling 'LastOrDefault'.
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLastOrDefault(ShapedQueryExpression source, LambdaExpression predicate, Type returnType, Boolean returnDefault)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.LastOrDefaultAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at FoundersPC.Identity.Infrastructure.Repositories.Logs.AccessTokensLogsRepository.GetLastTokenUsageAsync(Int32 apiAccessTokenId) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Logs\AccessTokensLogsRepository.cs:line 40
+   at FoundersPC.Identity.Services.Token_Services.ApiAccessUsersTokensService.CanMakeRequestAsync(ApiAccessUserToken token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Token Services\ApiAccessUsersTokensService.cs:line 116
+   at FoundersPC.Identity.Services.Token_Services.ApiAccessUsersTokensService.CanMakeRequestAsync(String token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Token Services\ApiAccessUsersTokensService.cs:line 102
+   at FoundersPC.IdentityServer.Controllers.Tokens.AccessTokensController.CheckTokenForUsability(String token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Tokens\AccessTokensController.cs:line 78
+   at lambda_method276(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/08/2021 21:24:43 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Queries performing 'LastOrDefault' operation must have a deterministic sort order. Rewrite the query to apply an 'OrderBy' clause on the sequence before calling 'LastOrDefault'.
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLastOrDefault(ShapedQueryExpression source, LambdaExpression predicate, Type returnType, Boolean returnDefault)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.LastOrDefaultAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at FoundersPC.Identity.Infrastructure.Repositories.Logs.AccessTokensLogsRepository.GetLastTokenUsageAsync(Int32 apiAccessTokenId) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Logs\AccessTokensLogsRepository.cs:line 40
+   at FoundersPC.Identity.Services.Token_Services.ApiAccessUsersTokensService.CanMakeRequestAsync(ApiAccessUserToken token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Token Services\ApiAccessUsersTokensService.cs:line 116
+   at FoundersPC.Identity.Services.Token_Services.ApiAccessUsersTokensService.CanMakeRequestAsync(String token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Token Services\ApiAccessUsersTokensService.cs:line 102
+   at FoundersPC.IdentityServer.Controllers.Tokens.AccessTokensController.CheckTokenForUsability(String token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Tokens\AccessTokensController.cs:line 78
+   at lambda_method276(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/08/2021 21:26:55 HTTP "GET" "/FoundersPCIdentity/Tokens/Check/4A5ED43B16EC8357AF889323D746D4CBD0B3C728BC3741A0316461D784D4E964" responded 500 in 55086.5168 ms
+System.InvalidOperationException: Queries performing 'LastOrDefault' operation must have a deterministic sort order. Rewrite the query to apply an 'OrderBy' clause on the sequence before calling 'LastOrDefault'.
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.TranslateLastOrDefault(ShapedQueryExpression source, LambdaExpression predicate, Type returnType, Boolean returnDefault)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.LastOrDefaultAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at FoundersPC.Identity.Infrastructure.Repositories.Logs.AccessTokensLogsRepository.GetLastTokenUsageAsync(Int32 apiAccessTokenId) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Infrastructure\Repositories\Logs\AccessTokensLogsRepository.cs:line 40
+   at FoundersPC.Identity.Services.Token_Services.ApiAccessUsersTokensService.CanMakeRequestAsync(ApiAccessUserToken token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Token Services\ApiAccessUsersTokensService.cs:line 116
+   at FoundersPC.Identity.Services.Token_Services.ApiAccessUsersTokensService.CanMakeRequestAsync(String token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\Token Services\ApiAccessUsersTokensService.cs:line 102
+   at FoundersPC.IdentityServer.Controllers.Tokens.AccessTokensController.CheckTokenForUsability(String token) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Tokens\AccessTokensController.cs:line 78
+   at lambda_method276(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/08/2021 21:33:21 Identity server started..
+04/08/2021 21:33:21 Identity server HostBuilder created
+04/08/2021 21:33:22 Host built
+04/08/2021 21:33:23 Now listening on: "https://localhost:3000"
+04/08/2021 21:33:23 Application started. Press Ctrl+C to shut down.
+04/08/2021 21:33:23 Hosting environment: "Development"
+04/08/2021 21:33:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 21:33:55 HTTP "GET" "/FoundersPCIdentity/Tokens/Check/4A5ED43B16EC8357AF889323D746D4CBD0B3C728BC3741A0316461D784D4E964" responded 200 in 19517.6905 ms
+04/08/2021 21:34:09 Application is shutting down...
+04/08/2021 22:49:36 Identity server started..
+04/08/2021 22:49:36 Identity server HostBuilder created
+04/08/2021 22:49:37 Host built
+04/08/2021 22:49:37 Now listening on: "https://localhost:3000"
+04/08/2021 22:49:37 Application started. Press Ctrl+C to shut down.
+04/08/2021 22:49:37 Hosting environment: "Development"
+04/08/2021 22:49:37 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 22:49:44 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 22:49:44 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1896.6077 ms
+04/08/2021 22:49:47 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:49:47 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:49:47 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 182.8011 ms
+04/08/2021 22:49:49 HTTP "GET" "/FoundersPCIdentity/Users/ById/1/Entrances" responded 200 in 30.3499 ms
+04/08/2021 22:50:02 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:50:02 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:50:02 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 18.4022 ms
+04/08/2021 22:50:12 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 5.1951 ms
+04/08/2021 22:51:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 10.3509 ms
+04/08/2021 22:51:40 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:51:40 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:51:40 HTTP "GET" "/FoundersPCIdentity/Users?Page=2&Size=10" responded 200 in 8.4689 ms
+04/08/2021 22:51:42 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.1529 ms
+04/08/2021 22:51:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 3.0123 ms
+04/08/2021 22:52:25 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.7097 ms
+04/08/2021 22:52:28 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.9104 ms
+04/08/2021 22:52:30 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.7244 ms
+04/08/2021 22:52:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 3.1405 ms
+04/08/2021 22:52:34 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.5980 ms
+04/08/2021 22:52:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.7160 ms
+04/08/2021 22:52:36 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.6783 ms
+04/08/2021 22:52:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.6573 ms
+04/08/2021 22:52:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 4.7047 ms
+04/08/2021 22:52:39 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.5225 ms
+04/08/2021 22:52:39 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.6211 ms
+04/08/2021 22:52:40 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.4832 ms
+04/08/2021 22:52:40 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 3.0757 ms
+04/08/2021 22:52:40 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.4626 ms
+04/08/2021 22:52:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.3037 ms
+04/08/2021 22:52:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.2025 ms
+04/08/2021 22:52:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.3104 ms
+04/08/2021 22:52:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 3.2485 ms
+04/08/2021 22:52:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.2658 ms
+04/08/2021 22:52:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.5653 ms
+04/08/2021 22:52:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 3.0729 ms
+04/08/2021 22:52:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.5415 ms
+04/08/2021 22:52:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.1663 ms
+04/08/2021 22:52:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 3.6483 ms
+04/08/2021 22:52:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 1.9880 ms
+04/08/2021 22:52:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.4058 ms
+04/08/2021 22:52:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.1259 ms
+04/08/2021 22:52:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.2555 ms
+04/08/2021 22:52:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.0761 ms
+04/08/2021 22:52:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.2466 ms
+04/08/2021 22:52:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.0842 ms
+04/08/2021 22:52:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances" responded 200 in 2.8350 ms
+04/08/2021 22:57:30 Identity server started..
+04/08/2021 22:57:30 Identity server HostBuilder created
+04/08/2021 22:57:31 Host built
+04/08/2021 22:57:31 Now listening on: "https://localhost:3000"
+04/08/2021 22:57:31 Application started. Press Ctrl+C to shut down.
+04/08/2021 22:57:31 Hosting environment: "Development"
+04/08/2021 22:57:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 22:57:37 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 22:57:38 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1887.1672 ms
+04/08/2021 22:57:40 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:57:40 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:57:40 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 182.6325 ms
+04/08/2021 22:57:41 HTTP "GET" "/FoundersPCIdentity/Users/ById/4/Entrances" responded 200 in 26.6971 ms
+04/08/2021 22:57:53 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 27.8071 ms
+04/08/2021 22:57:55 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:57:55 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 22:57:55 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 18.1082 ms
+04/08/2021 22:57:59 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 2.9626 ms
+04/08/2021 22:58:01 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 2.5682 ms
+04/08/2021 22:58:02 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.9386 ms
+04/08/2021 22:58:03 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 2.7460 ms
+04/08/2021 22:58:03 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.6933 ms
+04/08/2021 22:58:04 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 2.5741 ms
+04/08/2021 22:58:04 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 2.7377 ms
+04/08/2021 22:59:01 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 9.0080 ms
+04/08/2021 22:59:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 6.5413 ms
+04/08/2021 23:01:47 Identity server started..
+04/08/2021 23:02:08 Identity server started..
+04/08/2021 23:02:08 Identity server HostBuilder created
+04/08/2021 23:02:09 Host built
+04/08/2021 23:02:09 Now listening on: "https://localhost:3000"
+04/08/2021 23:02:09 Application started. Press Ctrl+C to shut down.
+04/08/2021 23:02:09 Hosting environment: "Development"
+04/08/2021 23:02:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 23:02:18 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 23:02:18 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1953.1879 ms
+04/08/2021 23:02:43 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:02:43 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:02:46 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 22461.5728 ms
+04/08/2021 23:03:40 Identity server started..
+04/08/2021 23:03:40 Identity server HostBuilder created
+04/08/2021 23:03:41 Host built
+04/08/2021 23:03:41 Now listening on: "https://localhost:3000"
+04/08/2021 23:03:41 Application started. Press Ctrl+C to shut down.
+04/08/2021 23:03:41 Hosting environment: "Development"
+04/08/2021 23:03:41 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 23:03:52 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 23:03:52 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1942.7010 ms
+04/08/2021 23:03:54 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:03:54 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:03:54 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 147.8197 ms
+04/08/2021 23:03:57 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:03:57 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:03:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 17.4578 ms
+04/08/2021 23:03:58 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 4.8963 ms
+04/08/2021 23:04:00 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.8653 ms
+04/08/2021 23:04:01 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 2.8183 ms
+04/08/2021 23:04:02 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 2.8315 ms
+04/08/2021 23:04:03 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 2.6864 ms
+04/08/2021 23:04:05 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 2.7354 ms
+04/08/2021 23:04:06 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 2.9939 ms
+04/08/2021 23:04:07 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.6600 ms
+04/08/2021 23:04:08 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 2.9241 ms
+04/08/2021 23:04:09 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.7038 ms
+04/08/2021 23:04:12 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 2.7271 ms
+04/08/2021 23:04:13 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 2.4779 ms
+04/08/2021 23:04:14 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 3.5052 ms
+04/08/2021 23:04:15 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=10&Size=10" responded 200 in 2.8225 ms
+04/08/2021 23:04:17 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 2.7173 ms
+04/08/2021 23:04:18 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 2.5312 ms
+04/08/2021 23:04:18 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=13&Size=10" responded 200 in 2.6725 ms
+04/08/2021 23:04:19 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=14&Size=10" responded 200 in 2.7661 ms
+04/08/2021 23:04:20 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=15&Size=10" responded 200 in 2.3804 ms
+04/08/2021 23:04:20 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=16&Size=10" responded 200 in 2.4208 ms
+04/08/2021 23:04:21 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=17&Size=10" responded 200 in 2.5112 ms
+04/08/2021 23:04:22 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=18&Size=10" responded 200 in 2.5653 ms
+04/08/2021 23:04:23 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 2.7063 ms
+04/08/2021 23:04:24 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=20&Size=10" responded 200 in 2.5281 ms
+04/08/2021 23:04:29 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 2.3561 ms
+04/08/2021 23:04:30 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=18&Size=10" responded 200 in 2.4998 ms
+04/08/2021 23:04:30 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 2.5701 ms
+04/08/2021 23:04:31 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=20&Size=10" responded 200 in 3.8554 ms
+04/08/2021 23:04:32 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 3.3012 ms
+04/08/2021 23:04:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=18&Size=10" responded 200 in 2.4619 ms
+04/08/2021 23:04:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=17&Size=10" responded 200 in 2.4918 ms
+04/08/2021 23:04:34 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=16&Size=10" responded 200 in 3.6063 ms
+04/08/2021 23:04:34 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=15&Size=10" responded 200 in 2.2806 ms
+04/08/2021 23:04:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=14&Size=10" responded 200 in 2.2213 ms
+04/08/2021 23:04:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=13&Size=10" responded 200 in 2.3956 ms
+04/08/2021 23:04:36 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 2.4362 ms
+04/08/2021 23:04:36 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 6.3445 ms
+04/08/2021 23:04:37 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=10&Size=10" responded 200 in 2.6557 ms
+04/08/2021 23:04:37 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 2.3150 ms
+04/08/2021 23:04:37 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 2.2791 ms
+04/08/2021 23:04:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 2.4010 ms
+04/08/2021 23:04:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.6339 ms
+04/08/2021 23:04:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 2.2945 ms
+04/08/2021 23:04:39 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.1991 ms
+04/08/2021 23:04:39 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 2.6576 ms
+04/08/2021 23:04:39 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 2.2755 ms
+04/08/2021 23:04:40 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 3.4317 ms
+04/08/2021 23:04:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 2.3962 ms
+04/08/2021 23:04:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 2.0342 ms
+04/08/2021 23:04:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.3547 ms
+04/08/2021 23:04:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 2.5159 ms
+04/08/2021 23:04:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.4170 ms
+04/08/2021 23:04:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 2.1417 ms
+04/08/2021 23:04:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 2.4626 ms
+04/08/2021 23:04:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 2.3346 ms
+04/08/2021 23:04:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=10&Size=10" responded 200 in 2.3664 ms
+04/08/2021 23:04:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 2.3986 ms
+04/08/2021 23:04:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 2.0356 ms
+04/08/2021 23:04:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=13&Size=10" responded 200 in 2.3293 ms
+04/08/2021 23:04:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=14&Size=10" responded 200 in 2.2612 ms
+04/08/2021 23:04:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=15&Size=10" responded 200 in 2.2274 ms
+04/08/2021 23:04:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=16&Size=10" responded 200 in 2.8157 ms
+04/08/2021 23:04:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=17&Size=10" responded 200 in 2.3324 ms
+04/08/2021 23:04:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=18&Size=10" responded 200 in 2.2516 ms
+04/08/2021 23:04:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 2.3817 ms
+04/08/2021 23:04:45 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=20&Size=10" responded 200 in 2.3399 ms
+04/08/2021 23:04:47 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 2.2488 ms
+04/08/2021 23:04:48 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=18&Size=10" responded 200 in 2.2990 ms
+04/08/2021 23:04:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=17&Size=10" responded 200 in 2.4017 ms
+04/08/2021 23:04:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=16&Size=10" responded 200 in 2.3736 ms
+04/08/2021 23:04:51 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=15&Size=10" responded 200 in 2.4216 ms
+04/08/2021 23:04:51 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=14&Size=10" responded 200 in 2.3423 ms
+04/08/2021 23:04:51 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=13&Size=10" responded 200 in 2.2569 ms
+04/08/2021 23:04:52 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 2.0554 ms
+04/08/2021 23:04:52 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 2.3083 ms
+04/08/2021 23:04:52 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=10&Size=10" responded 200 in 2.2207 ms
+04/08/2021 23:04:52 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 2.7215 ms
+04/08/2021 23:04:53 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 2.2757 ms
+04/08/2021 23:04:53 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 2.3090 ms
+04/08/2021 23:04:53 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.4667 ms
+04/08/2021 23:04:53 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 2.3946 ms
+04/08/2021 23:04:54 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.5961 ms
+04/08/2021 23:04:54 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 2.9425 ms
+04/08/2021 23:04:55 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.1582 ms
+04/08/2021 23:04:55 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 2.2237 ms
+04/08/2021 23:04:55 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.3547 ms
+04/08/2021 23:04:56 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 2.3986 ms
+04/08/2021 23:04:56 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 2.7099 ms
+04/08/2021 23:04:56 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 2.3066 ms
+04/08/2021 23:04:56 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=10&Size=10" responded 200 in 2.2873 ms
+04/08/2021 23:04:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 2.2774 ms
+04/08/2021 23:04:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 2.3428 ms
+04/08/2021 23:04:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=13&Size=10" responded 200 in 2.7555 ms
+04/08/2021 23:04:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=14&Size=10" responded 200 in 2.3815 ms
+04/08/2021 23:04:58 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=15&Size=10" responded 200 in 2.3033 ms
+04/08/2021 23:05:08 HTTP "GET" "/FoundersPCIdentity/Users/Entrances/Between?Start=2021-03-29T00:00:00&Finish=2021-04-07T00:00:00" responded 200 in 18.1103 ms
+04/08/2021 23:07:43 Identity server started..
+04/08/2021 23:07:43 Identity server HostBuilder created
+04/08/2021 23:07:44 Host built
+04/08/2021 23:07:44 Now listening on: "https://localhost:3000"
+04/08/2021 23:07:44 Application started. Press Ctrl+C to shut down.
+04/08/2021 23:07:44 Hosting environment: "Development"
+04/08/2021 23:07:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/08/2021 23:08:02 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/08/2021 23:08:02 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1899.4408 ms
+04/08/2021 23:08:59 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:08:59 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:08:59 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 194.6778 ms
+04/08/2021 23:09:01 HTTP "GET" "/FoundersPCIdentity/Users/ById/1/Entrances" responded 200 in 29.7949 ms
+04/08/2021 23:09:22 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:09:22 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:09:22 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 20.4118 ms
+04/08/2021 23:09:24 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:09:24 The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+04/08/2021 23:09:24 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 6.8445 ms
+04/08/2021 23:09:24 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 3.5699 ms
+04/08/2021 23:09:25 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 2.4746 ms
+04/08/2021 23:09:26 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 2.6299 ms
+04/08/2021 23:09:27 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.6440 ms
+04/08/2021 23:09:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-05T00:00:00&Finish=2021-04-08T00:00:00" responded 200 in 12.2957 ms

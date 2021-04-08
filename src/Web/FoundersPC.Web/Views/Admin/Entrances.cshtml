@@ -1,91 +1,120 @@
-﻿@model FoundersPC.Web.Domain.Entities.ViewModels.Entrances.EntrancesViewModel
+﻿@using System.Globalization
+@model FoundersPC.Web.Domain.Common.Entrances.EntrancesViewModel
 
 @{
     ViewData["Title"] = "Entrances";
     Layout = "~/Views/Shared/_Layout.cshtml";
 @section Styles {
     <link
-        href='~/lib/bootstrap/css/bootstrap-datetimepicker-build.css'
+        href='~/css/table.css'
         rel='stylesheet'>
-}
+}}
 
-
-}
-
-<h1>Entrances</h1>
-
-@if (Model.IsDatePickerRequired) {
-    <form
-        asp-action='EntrancesBetween'
-        asp-controller='Admin'>
-        <div
-            class="date input-group"
-            data-provide="datepicker">
-            <input
-                asp-for='BetweenFilter.Start'
-                class="form-control"
-                max="@(DateTime.Now.ToShortDateString())"
-                min="2021-01-01"
-                required
-                type="date">
-        </div>
-
-        <div
-            class="date input-group"
-            data-provide="datepicker">
-            <input
-                asp-for='BetweenFilter.Finish'
-                class="form-control"
-                max="@(DateTime.Now.ToShortDateString())"
-                min="2021-01-01"
-                type="date">
-        </div>
-
-        <input
-            class='btn btn-outline-info'
-            type='submit'
-            value='Filter by date'>
-    </form>
-}
-
-
-<table
-    class='table'>
-    <thead>
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            USER ID
-        </th>
-        <th>
-            ENTRANCE
-        </th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model.Entrances) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Entrance)
-            </td>
-        </tr>
+<div
+    class='table-wrapper'>
+    @{
+        if (Model.IsDatePickerRequired) {
+            <div
+                class="p-2 table-title">
+                <div
+                    class="container-fluid">
+                    <form
+                        asp-action='EntrancesBetween'
+                        asp-controller='Admin'>
+                        <div
+                            class="form-group input-group">
+                            <input
+                                asp-for='BetweenFilter.Start'
+                                class="bg-secondary form-control text-light"
+                                max="@(DateTime.Now.ToString("yyyy-MM-dd"))"
+                                min="2021-01-01"
+                                placeholder="Date"
+                                required
+                                type="date"
+                                value='@(DateTime.Now.ToString("yyyy-MM-dd"))'>
+                            <input
+                                asp-for='BetweenFilter.Finish'
+                                class="bg-secondary form-control text-light"
+                                max="@(DateTime.Now.ToString("yyyy-MM-dd"))"
+                                min="2021-01-01"
+                                required
+                                type="date"
+                                value='@(DateTime.Now.ToString("yyyy-MM-dd"))'>
+                            <input
+                                class='btn btn-outline-primary text-light'
+                                type='submit'
+                                value='Filter by date'>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        }
     }
-    </tbody>
-</table>
-
-
-@section Scripts {
-    <script
-        src='~/lib/bootstrap/js/bootstrap-datetimepicker.js'></script>
-    <script
-        src='~/lib/moment/js/moment.min.js'></script>
-}
+    <div
+        class='table-responsive text-center'>
+        <table
+            class='table table-dark table-hover'>
+            <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    UserId
+                </th>
+                <th>
+                    Entrance Datetime
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach (var entrance in Model.IndexEntrances.Models) {
+                    <tr>
+                        <td>
+                            @entrance.Id
+                        </td>
+                        <td>
+                            @entrance.UserId
+                        </td>
+                        <td>
+                            @entrance.Entrance.ToString("f", CultureInfo.InvariantCulture)
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+        @{
+            if (Model.IsPaginationRequired) {
+                <nav>
+                    <ul
+                        class="justify-content-center pagination">
+                        <li
+                            class="page-item @(Html.Raw(Model.IndexEntrances.Page.HasPreviousPage ? String.Empty : "disabled"))">
+                            <a
+                                aria-disabled='@(!Model.IndexEntrances.Page.HasPreviousPage)'
+                                asp-action='Entrances'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='@(Model.IndexEntrances.Page.CurrentPageNumber - 1)'
+                                class="bg-light page-link">
+                                Previous
+                            </a>
+                        </li>
+                        <li
+                            class="page-item @(Html.Raw(Model.IndexEntrances.Page.HasNextPage ? String.Empty : "disabled"))">
+                            <a
+                                aria-disabled='@(!Model.IndexEntrances.Page.HasNextPage)'
+                                asp-action='Entrances'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='@(Model.IndexEntrances.Page.CurrentPageNumber + 1)'
+                                class="bg-light page-link">
+                                Next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            }
+        }
+    </div>
+</div>

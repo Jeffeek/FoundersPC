@@ -5,7 +5,6 @@ using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_servic
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
-using FoundersPC.Web.Services.Web_Services;
 using FoundersPC.Web.Services.Web_Services.HardwareAPI;
 using FoundersPC.Web.Services.Web_Services.Identity.Admin_services;
 using FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Subservices;
@@ -23,7 +22,6 @@ namespace FoundersPC.Web.Services
     {
         public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton(new MicroservicesBaseAddresses(configuration));
             services.AddScoped<IProducersManagingService, ProducersManagingService>();
             services.AddScoped<ITokenReservationWebService, TokenReservationWebService>();
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();

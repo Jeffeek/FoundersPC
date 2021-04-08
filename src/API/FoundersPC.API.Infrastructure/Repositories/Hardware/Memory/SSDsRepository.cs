@@ -21,11 +21,14 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 
         public override async Task<SSD> GetByIdAsync(int id)
         {
-            var ssd = await Context.Set<SSD>().FindAsync(id);
+            var ssd = await Context.Set<SSD>()
+                                   .FindAsync(id);
 
             if (ssd is null) return null;
 
-            await Context.Entry(ssd).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(ssd)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return ssd;
         }

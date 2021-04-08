@@ -15,5 +15,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         Task<UserEntityReadDto> GetUserByEmailAsync(string email, string token);
 
         Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string token);
+
+        Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string token);
     }
 }

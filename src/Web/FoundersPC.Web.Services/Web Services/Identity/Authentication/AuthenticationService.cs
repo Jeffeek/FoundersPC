@@ -9,10 +9,11 @@ using System.Security.Authentication;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
-using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
+using FoundersPC.Web.Domain.Common.Authentication;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -21,18 +22,15 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 {
     public class AuthenticationService : IAuthenticationWebService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<AuthenticationService> _logger;
         private readonly IMapper _mapper;
 
         public AuthenticationService(IHttpClientFactory httpClientFactory,
-                                     MicroservicesBaseAddresses baseAddresses,
                                      IMapper mapper,
                                      ILogger<AuthenticationService> logger)
         {
             _httpClientFactory = httpClientFactory;
-            _baseAddresses = baseAddresses;
             _mapper = mapper;
             _logger = logger;
         }
@@ -74,7 +72,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             using var client = _httpClientFactory.CreateClient("Sign In client");
-            client.PrepareJsonRequest($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
@@ -132,7 +130,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             using var client = _httpClientFactory.CreateClient("Sign Up client");
-            client.PrepareJsonRequest($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
@@ -182,7 +180,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             using var client = _httpClientFactory.CreateClient("Forgot password client");
-            client.PrepareJsonRequest($"{_baseAddresses.IdentityApiBaseAddress}Authentication/");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
 
             var mappedRequestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);
 

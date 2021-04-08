@@ -2,11 +2,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
-using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
@@ -99,29 +97,32 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> CanMakeRequestAsync(string token)
         {
-            var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
-            var accessTokenLog = allLogs.SingleOrDefault(log => log.ApiAccessToken.HashedToken == token);
-
-            return CanMakeRequestAsync(accessTokenLog);
+            return await CanMakeRequestAsync(tokenEntity);
         }
 
         public async Task<bool> CanMakeRequestAsync(int tokenId)
         {
-            var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(tokenId);
 
-            var accessTokenLog = allLogs.SingleOrDefault(log => log.ApiAccessToken.Id == tokenId);
-
-            return CanMakeRequestAsync(accessTokenLog);
+            return await CanMakeRequestAsync(tokenEntity);
         }
 
-        private bool CanMakeRequestAsync(AccessTokenLog tokenLog)
+        private async Task<bool> CanMakeRequestAsync(ApiAccessUserToken token)
         {
-            if (tokenLog is null) return false;
+            if (token is null) return false;
 
-            if (tokenLog.ApiAccessToken.IsBlocked) return false;
+            var lastUsageLog = await _unitOfWork.AccessTokensLogsRepository.GetLastTokenUsageAsync(token.Id);
 
-            return DateTime.Now.Ticks - tokenLog.RequestDateTime.Ticks >= 594530547;
+            if (lastUsageLog is null) return true;
+
+            var now = DateTime.Now;
+
+            return !token.IsBlocked
+                   && token.ExpirationDate > now
+                   && now.Ticks - lastUsageLog.RequestDateTime.Ticks
+                   >= TimeSpan.TicksPerMinute; // the request to API can be made 1 time per 1 minute
         }
 
         #endregion

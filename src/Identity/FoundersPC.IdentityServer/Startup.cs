@@ -2,9 +2,11 @@
 
 using System.IO;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
 using FoundersPC.Identity.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,7 +29,7 @@ namespace FoundersPC.IdentityServer
                 .AddJsonFile($"{Directory.GetCurrentDirectory()}\\EmailBotConfiguration.json",
                              false,
                              true)
-                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\JwtSettings.json",
+                .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\Jwt\\JwtSettings.json",
                              false)
                 .AddConfiguration(configuration, false);
 
@@ -39,6 +41,8 @@ namespace FoundersPC.IdentityServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(config => config.AddSerilog(Log.Logger));
+
             services.AddBotEmailConfigurationAndService(Configuration);
 
             services.AddControllers();
@@ -62,7 +66,28 @@ namespace FoundersPC.IdentityServer
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
-            services.AddBearerAuthorizationPolicies();
+            services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
+
+            services.AddCors(options =>
+                             {
+                                 options.AddPolicy("WebPolicy",
+                                                   config =>
+                                                       config.AllowCredentials()
+                                                             .WithOrigins("https://localhost:9000")
+                                                             .AllowAnyMethod()
+                                                             .Build());
+
+                                 options.AddPolicy("TokenCheckPolicy",
+                                                   config =>
+                                                       config.WithOrigins(MicroservicesUrls.APIServer)
+                                                             .WithMethods("GET")
+                                                             .AllowCredentials()
+                                                             .WithHeaders("HARDWARE-ACCESS-TOKEN",
+                                                                          "Authentication")
+                                                             .Build());
+
+                                 //options.DefaultPolicyName = "WebPolicy";
+                             });
 
             services.AddSwaggerGen(c => c.SwaggerDoc("v1",
                                                      new OpenApiInfo
@@ -85,11 +110,12 @@ namespace FoundersPC.IdentityServer
 
             app.UseSerilogRequestLogging();
 
-            //app.UseCors("WebClientPolicy");
-
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("WebPolicy");
+            app.UseCors("TokenCheckPolicy");
 
             app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
         }
