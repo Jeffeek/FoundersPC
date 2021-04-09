@@ -344,3 +344,4 @@ src/Identity/FoundersPC.IdentityServer/EmailBotConfiguration.json
 src/Identity/FoundersPC.IdentityServer/JwtSettings.json
 src/Identity/FoundersPC.API/JwtSettings.json
 src/ApplicationShared/FoundersPC.ApplicationShared/JwtSettings.json
+src/ApplicationShared/FoundersPC.ApplicationShared/Jwt/JwtSettings.json
