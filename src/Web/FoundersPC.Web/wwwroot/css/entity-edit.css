@@ -9,3 +9,9 @@
 {
     color: white;
 }
+
+.btn-apply {
+    margin: 20px 0px 15px 0px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid;
+           }

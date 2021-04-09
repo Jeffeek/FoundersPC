@@ -1,8 +1,8 @@
-﻿@model FoundersPC.API.Dto.ProducerUpdateDto
+﻿@model FoundersPC.API.Dto.ProducerInsertDto
 
 @{
-    ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "title";
+    Layout = "_Layout";
 @section Styles {
     <link
         href="~/css/neon-btn-styles.css"
@@ -14,14 +14,14 @@
 
 <h1
     class='mt-4 text-center text-light'>
-    Edit Producer Page
+    Add Producer Page
 </h1>
 <div
     class='mt-5 row'>
     <div
         class="col-12 col-md-12 col-sm-12 col-xl-12 col-xxl-12">
         <form
-            asp-action='Edit'
+            asp-action='Create'
             asp-controller='Producers'
             class="d-flex flex-column justify-content-center"
             method='post'>

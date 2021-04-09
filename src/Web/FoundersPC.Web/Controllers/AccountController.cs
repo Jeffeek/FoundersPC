@@ -5,6 +5,7 @@ using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Common.AccountSettings;
@@ -36,7 +37,6 @@ namespace FoundersPC.Web.Controllers
         public async Task<IActionResult> Profile()
         {
             var emailInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
-            Request.Cookies.TryGetValue("token", out var jwtToken);
 
             if (emailInCookie is null)
             {
@@ -45,14 +45,7 @@ namespace FoundersPC.Web.Controllers
                 throw new CookieException();
             }
 
-            if (jwtToken is null)
-            {
-                _logger.LogError($"Jwt cookie not found. ConnectionId: {HttpContext.Connection.Id}");
-
-                throw new CookieException();
-            }
-
-            var information = await _usersInformationService.GetUserByEmailAsync(emailInCookie, jwtToken);
+            var information = await _usersInformationService.GetUserByEmailAsync(emailInCookie, HttpContext.GetJwtTokenFromCookie());
 
             if (information is null) return RedirectToPagePermanent("Forbidden");
 
@@ -96,12 +89,8 @@ namespace FoundersPC.Web.Controllers
         {
             if (!TryValidateModel(request.PasswordSettingsViewModel)) return RedirectToPage("Error");
 
-            HttpContext.Request.Cookies.TryGetValue("token", out var token);
-
-            if (token is null) return BadRequest();
-
             var response = await _settingsChangeWebService.ChangePasswordAsync(request.PasswordSettingsViewModel,
-                                                                               token);
+                                                                               HttpContext.GetJwtTokenFromCookie());
 
             if (response is null) return BadRequest();
 
@@ -116,12 +105,8 @@ namespace FoundersPC.Web.Controllers
         {
             if (!TryValidateModel(request.LoginSettingsViewModel)) return RedirectToPage("Error");
 
-            HttpContext.Request.Cookies.TryGetValue("token", out var token);
-
-            if (token is null) return BadRequest();
-
             var response = await _settingsChangeWebService.ChangeLoginAsync(request.LoginSettingsViewModel,
-                                                                            token);
+                                                                            HttpContext.GetJwtTokenFromCookie());
 
             if (response is null) return BadRequest();
 
@@ -136,13 +121,9 @@ namespace FoundersPC.Web.Controllers
         {
             if (!TryValidateModel(request.NotificationsSettingsViewModel)) return RedirectToPage("Error");
 
-            HttpContext.Request.Cookies.TryGetValue("token", out var token);
-
-            if (token is null) return BadRequest();
-
             var response =
                 await _settingsChangeWebService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
-                                                                         token);
+                                                                         HttpContext.GetJwtTokenFromCookie());
 
             if (response is null) return BadRequest();
 

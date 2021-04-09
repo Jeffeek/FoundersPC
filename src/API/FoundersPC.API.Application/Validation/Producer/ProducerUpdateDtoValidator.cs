@@ -21,7 +21,7 @@ namespace FoundersPC.API.Application.Validation.Producer
                 .NotNull()
                 .NotEmpty()
                 .MinimumLength(2)
-                .MinimumLength(2)
+                .MaximumLength(2)
                 .When(x => x != null);
 
             RuleFor(x => x.ShortName)
