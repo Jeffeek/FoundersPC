@@ -6,7 +6,7 @@ using FoundersPC.API.Dto.Base.Interfaces;
 
 namespace FoundersPC.API.Dto
 {
-    public class RAMUpdateDto : IProducerIdentiable
+    public class RAMUpdateDto : IProducerIdentifiable
     {
         public string MemoryType { get; set; }
 

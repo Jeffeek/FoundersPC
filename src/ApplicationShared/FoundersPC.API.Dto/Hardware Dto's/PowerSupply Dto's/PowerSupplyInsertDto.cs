@@ -6,7 +6,7 @@ using FoundersPC.API.Dto.Base.Interfaces;
 
 namespace FoundersPC.API.Dto
 {
-    public class PowerSupplyInsertDto : IProducerIdentiable
+    public class PowerSupplyInsertDto : IProducerIdentifiable
     {
         public int Power { get; set; }
 

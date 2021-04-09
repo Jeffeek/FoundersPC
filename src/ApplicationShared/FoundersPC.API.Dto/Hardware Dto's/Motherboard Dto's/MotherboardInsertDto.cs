@@ -6,7 +6,7 @@ using FoundersPC.API.Dto.Base.Interfaces;
 
 namespace FoundersPC.API.Dto
 {
-    public class MotherboardInsertDto : IProducerIdentiable
+    public class MotherboardInsertDto : IProducerIdentifiable
     {
         public string Socket { get; set; }
 

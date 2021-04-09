@@ -6,7 +6,7 @@ using FoundersPC.API.Dto.Base.Interfaces;
 
 namespace FoundersPC.API.Dto
 {
-    public class GPUInsertDto : IProducerIdentiable
+    public class GPUInsertDto : IProducerIdentifiable
     {
         public int AdditionalPower { get; set; }
 

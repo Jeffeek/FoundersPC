@@ -6,7 +6,7 @@ using FoundersPC.API.Dto.Base.Interfaces;
 
 namespace FoundersPC.API.Dto
 {
-    public class CPUInsertDto : IProducerIdentiable
+    public class CPUInsertDto : IProducerIdentifiable
     {
         public int TDP { get; set; }
 

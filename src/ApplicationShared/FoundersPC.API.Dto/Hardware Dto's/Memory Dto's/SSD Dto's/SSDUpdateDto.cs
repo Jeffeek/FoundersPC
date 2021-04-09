@@ -6,7 +6,7 @@ using FoundersPC.API.Dto.Base.Interfaces;
 
 namespace FoundersPC.API.Dto
 {
-    public class SSDUpdateDto : IProducerIdentiable
+    public class SSDUpdateDto : IProducerIdentifiable
     {
         public double Factor { get; set; }
 

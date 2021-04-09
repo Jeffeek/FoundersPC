@@ -7,6 +7,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.Tokens;
+using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -37,16 +38,12 @@ namespace FoundersPC.Web.Controllers
 
             var userEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-            HttpContext.Request.Cookies.TryGetValue("token", out var jwtToken);
-
             if (userEmail is null) return RedirectToAction("LogOut", "Authentication");
-
-            if (jwtToken is null) throw new CookieException();
 
             var result =
                 await _tokenReservationService.ReserveNewTokenAsync(Enum.Parse<TokenType>(tokenType),
                                                                     userEmail,
-                                                                    jwtToken);
+                                                                    HttpContext.GetJwtTokenFromCookie());
 
             if (result is null || !result.IsBuyingSuccessful) return RedirectToAction("ServerErrorIndex", "Error");
 
