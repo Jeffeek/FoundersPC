@@ -101,3 +101,28 @@ a:hover .icon-eye path
     transform-origin: center;
     transition: ease-in-out;
 }
+
+.btn.btn-neon {
+    margin: 8px 0px 0px 8px;
+    border: 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 10px 5px 10px;
+}
+
+@media screen and (min-width: 400px)
+{
+    .btn.btn-neon 
+    {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) 
+{
+    .btn.btn-neon 
+    {
+        
+        font-size: 0.8rem;
+    }
+}
