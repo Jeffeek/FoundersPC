@@ -95,7 +95,8 @@ namespace FoundersPC.Web.Controllers
         [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
         public async Task<ActionResult> LogOutAsync()
         {
-            if (!User.Identity?.IsAuthenticated ?? false) return Unauthorized();
+            if (!User.Identity?.IsAuthenticated ?? false)
+                return Unauthorized();
 
             RemoveJwtTokenFromCookie();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

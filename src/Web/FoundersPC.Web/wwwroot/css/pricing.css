@@ -1,28 +1,15 @@
-html
+@media only screen and (min-width: 1200px)
 {
-    overflow: hidden;
+    html
+    {
+        overflow: hidden;
+    }
 }
 
 .container
 {
     max-width: none;
     padding: 0;
-}
-
-@media only screen and (max-width: 992px)
-{
-    html
-    {
-        font-size: 57%;
-    }
-}
-
-@media only screen and (max-width: 1200px)
-{
-    body
-    {
-        padding: 0;
-    }
 }
 
 .container-slider
@@ -34,17 +21,9 @@ html
     font-size: 62.5%;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
     padding: 0;
     position: relative;
-}
-
-@media only screen and (max-width: 1200px)
-{
-    .container-slider
-    {
-        border-radius: 0;
-    }
+    overflow-x: hidden;
 }
 
 .pricing-slider
@@ -62,6 +41,16 @@ html
     {
         height: 100vh;
     }
+
+    .container-slider
+    {
+        border-radius: 0;
+    }
+
+    body
+    {
+        padding: 0;
+    }
 }
 
 .pricing-slider .price-box
@@ -70,18 +59,8 @@ html
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     height: 100%;
-    overflow: hidden;
     position: relative;
     width: 100%;
-}
-
-@media only screen and (max-width: 768px)
-{
-    .pricing-slider .price-box
-    {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-    }
 }
 
 .pricing-slider .price-box .bg
@@ -98,26 +77,6 @@ html
     width: 55%;
 }
 
-@media only screen and (max-width: 992px)
-{
-    .pricing-slider .price-box .bg
-    {
-        width: 65%;
-    }
-}
-
-@media only screen and (max-width: 768px)
-{
-    .pricing-slider .price-box .bg
-    {
-        bottom: 0;
-        height: 54%;
-        left: 0;
-        transform: skewX(0deg);
-        width: 100%;
-    }
-}
-
 .pricing-slider .price-box .bg::before
 {
     background-color: inherit;
@@ -131,16 +90,6 @@ html
     width: 100%;
 }
 
-@media only screen and (max-width: 768px)
-{
-    .pricing-slider .price-box .bg::before
-    {
-        bottom: 0;
-        transform: skewX(0deg);
-        width: 120%;
-    }
-}
-
 .pricing-slider .price-box .details
 {
     grid-column: 1/span 1;
@@ -148,18 +97,6 @@ html
     padding: 5rem;
     padding-left: 10rem;
     z-index: 100;
-}
-
-@media only screen and (max-width: 768px)
-{
-    .pricing-slider .price-box .details
-    {
-        grid-column: -1;
-        grid-row: 2/span 1;
-        padding: 2rem;
-        text-align: center;
-        transform: translateY(-9rem);
-    }
 }
 
 .pricing-slider .price-box .details h1
@@ -176,14 +113,6 @@ html
     font-size: 1.3rem;
     margin-bottom: 2rem;
     margin-right: 5rem;
-}
-
-@media only screen and (max-width: 992px)
-{
-    .pricing-slider .price-box .details p
-    {
-        margin-right: 0;
-    }
 }
 
 .pricing-slider .price-box .details a
@@ -325,18 +254,6 @@ html
     justify-self: center;
 }
 
-@media only screen and (max-width: 768px)
-{
-    .pricing-slider .price-card-illustration
-    {
-        align-items: center;
-        display: flex;
-        grid-column: -1;
-        grid-row: 1/span 1;
-        justify-content: center;
-    }
-}
-
 .pricing-slider .price-card-illustration div
 {
     background-color: #f07;
@@ -353,6 +270,21 @@ html
     {
         height: 20rem;
         width: 15rem;
+    }
+
+    .pricing-slider .price-box .details p
+    {
+        margin-right: 0;
+    }
+
+    .pricing-slider .price-box .bg
+    {
+        width: 65%;
+    }
+
+    html
+    {
+        font-size: 57%;
     }
 }
 
@@ -395,15 +327,6 @@ html
     width: 4rem;
 }
 
-@media only screen and (max-width: 768px)
-{
-    .prev-price-card,
-    .next-price-card
-    {
-        display: none;
-    }
-}
-
 .prev-price-card:hover,
 .next-price-card:hover
 {
@@ -444,6 +367,66 @@ html
         bottom: 13%;
         width: 90%;
     }
+
+    .price-box
+    {
+        display: flex;
+        justify-items: center;
+    }
+
+    .price-trail div
+    {
+        padding: 1rem;
+    }
+
+    .prev-price-card,
+    .next-price-card
+    {
+        display: none;
+    }
+
+    .pricing-slider .price-box .bg::before
+    {
+        bottom: 0;
+        transform: skewX(0deg);
+        width: 120%;
+    }
+
+    .pricing-slider .price-card-illustration
+    {
+        align-items: center;
+        display: flex;
+        grid-column: -1;
+        grid-row: 1/span 1;
+        justify-content: center;
+    }
+
+    .pricing-slider .price-box
+    {
+        display: grid;
+        grid-template-columns: max-content;
+/*         grid-template-columns: 1fr;*/
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .pricing-slider .price-box .details
+    {
+        grid-column: -1;
+        grid-row: 2/span 1;
+        padding: 2rem;
+        text-align: center;
+        transform: translateY(-9rem);
+
+    }
+
+    .pricing-slider .price-box .bg
+    {
+        bottom: 0;
+        height: 54%;
+        left: 0;
+        transform: skewX(0deg);
+        width: 100%;
+    }
 }
 
 .price-trail div
@@ -458,14 +441,6 @@ html
 .price-trail div:hover
 {
     opacity: 0.35;
-}
-
-@media only screen and (max-width: 768px)
-{
-    .price-trail div
-    {
-        padding: 1rem;
-    }
 }
 
 .price-trail-active

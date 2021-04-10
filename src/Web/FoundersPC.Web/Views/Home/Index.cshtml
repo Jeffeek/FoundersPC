@@ -1,10 +1,20 @@
-﻿@{
+﻿@using FoundersPC.ApplicationShared
+@using FoundersPC.ApplicationShared.ApplicationConstants
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@section Styles {
+    <link
+        href="~/css/pricing.css"
+        rel="stylesheet">
+    <link
+        href="~/css/neon-btn-styles.css"
+        rel="stylesheet">
+}}
 
 @{
-    if (User.Identity?.IsAuthenticated ?? false) {
+    if ((User.Identity?.IsAuthenticated ?? false)
+        && User.IsInRole(ApplicationRoles.Administrator, ApplicationRoles.Manager)) {
         <ul>
             <li
                 class="list-group-item">
@@ -17,6 +27,15 @@
             </li>
         </ul>
     } else {
-        <h1>NOT AUTHORIZED</h1>
+        
     }
-}
+
+@section Scripts
+ {
+     <script
+         src='~/lib/GSAP/js/gsap-latest-beta.min.js'></script>
+     <script
+         src='~/lib/GSAP/js/CSSRulePlugin3.min.js'></script>
+     <script
+         src='~/js/pricing.js'></script>
+ }}

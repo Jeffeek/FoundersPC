@@ -1,0 +1,151 @@
+04/10/2021 08:23:08 Web server started..
+04/10/2021 08:23:10 Web server HostBuilder created
+04/10/2021 08:29:40 Web server started..
+04/10/2021 08:29:40 Web server HostBuilder created
+04/10/2021 08:29:42 Host built
+04/10/2021 08:29:43 Now listening on: "https://localhost:9000"
+04/10/2021 08:29:43 Application started. Press Ctrl+C to shut down.
+04/10/2021 08:29:43 Hosting environment: "Development"
+04/10/2021 08:29:43 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 08:29:44 HTTP "GET" "/" responded 200 in 604.9808 ms
+04/10/2021 08:29:57 HTTP "GET" "/Authentication/SignIn" responded 200 in 420.0253 ms
+04/10/2021 08:30:00 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/10/2021 08:30:00 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/10/2021 08:30:03 Received HTTP response headers after 3187.4519ms - 200
+04/10/2021 08:30:03 End processing HTTP request after 3204.7187ms - 200
+04/10/2021 08:30:03 HTTP "POST" "/Authentication/SignIn" responded 302 in 3367.4353 ms
+04/10/2021 08:30:03 HTTP "GET" "/" responded 200 in 4.1533 ms
+04/10/2021 08:30:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:30:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:30:06 Received HTTP response headers after 248.2696ms - 200
+04/10/2021 08:30:06 End processing HTTP request after 253.0064ms - 200
+04/10/2021 08:30:07 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 434.8145 ms
+04/10/2021 08:30:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/10/2021 08:30:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/10/2021 08:30:11 Received HTTP response headers after 58.8796ms - 200
+04/10/2021 08:30:11 End processing HTTP request after 62.1472ms - 200
+04/10/2021 08:30:11 HTTP "GET" "/Account" responded 200 in 149.0340 ms
+04/10/2021 08:30:21 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:30:21 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:30:21 Received HTTP response headers after 36.816ms - 200
+04/10/2021 08:30:21 End processing HTTP request after 40.3795ms - 200
+04/10/2021 08:30:21 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 48.6456 ms
+04/10/2021 08:30:24 HTTP "GET" "/Admin/RegisterManager" responded 200 in 32.6491 ms
+04/10/2021 08:30:31 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:30:31 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:30:31 Received HTTP response headers after 33.7239ms - 200
+04/10/2021 08:30:31 End processing HTTP request after 38.5962ms - 200
+04/10/2021 08:30:31 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 45.7428 ms
+04/10/2021 08:30:42 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/2/Entrances
+04/10/2021 08:30:42 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/2/Entrances
+04/10/2021 08:30:42 Received HTTP response headers after 71.5659ms - 200
+04/10/2021 08:30:42 End processing HTTP request after 76.4907ms - 200
+04/10/2021 08:30:42 HTTP "GET" "/Admin/User/2/Entrances" responded 200 in 114.2454 ms
+04/10/2021 08:30:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/3/Entrances
+04/10/2021 08:30:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/3/Entrances
+04/10/2021 08:30:44 Received HTTP response headers after 45.792ms - 200
+04/10/2021 08:30:44 End processing HTTP request after 49.0983ms - 200
+04/10/2021 08:30:44 HTTP "GET" "/Admin/User/3/Entrances" responded 200 in 53.7682 ms
+04/10/2021 08:30:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/4/Entrances
+04/10/2021 08:30:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/4/Entrances
+04/10/2021 08:30:48 Received HTTP response headers after 39.0689ms - 200
+04/10/2021 08:30:48 End processing HTTP request after 42.5196ms - 200
+04/10/2021 08:30:48 HTTP "GET" "/Admin/User/4/Entrances" responded 200 in 46.4017 ms
+04/10/2021 08:30:52 HTTP "GET" "/Home/Pricing" responded 200 in 22.6367 ms
+04/10/2021 08:30:58 HTTP "GET" "/" responded 200 in 1.3914 ms
+04/10/2021 08:31:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:31:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 08:31:05 Received HTTP response headers after 32.3085ms - 200
+04/10/2021 08:31:05 End processing HTTP request after 35.1474ms - 200
+04/10/2021 08:31:05 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 38.9454 ms
+04/10/2021 08:31:17 HTTP "GET" "/Authentication/LogOut" responded 302 in 11.1411 ms
+04/10/2021 08:31:17 HTTP "GET" "/" responded 200 in 2.3045 ms
+04/10/2021 08:31:26 Application is shutting down...
+04/10/2021 08:46:15 Web server started..
+04/10/2021 08:46:15 Web server HostBuilder created
+04/10/2021 08:46:16 Host built
+04/10/2021 08:46:17 Now listening on: "https://localhost:9000"
+04/10/2021 08:46:17 Application started. Press Ctrl+C to shut down.
+04/10/2021 08:46:17 Hosting environment: "Development"
+04/10/2021 08:46:17 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 08:46:18 HTTP "GET" "/" responded 200 in 342.6682 ms
+04/10/2021 08:48:00 HTTP "GET" "/" responded 200 in 41.3265 ms
+04/10/2021 08:48:54 HTTP "GET" "/" responded 200 in 4677.7004 ms
+04/10/2021 08:52:12 HTTP "GET" "/Home/Pricing" responded 200 in 45.3346 ms
+04/10/2021 08:52:28 HTTP "GET" "/" responded 200 in 15.4267 ms
+04/10/2021 08:52:34 HTTP "GET" "/Home/Pricing" responded 200 in 16.5509 ms
+04/10/2021 08:52:35 HTTP "GET" "/" responded 200 in 15.8197 ms
+04/10/2021 08:52:39 HTTP "GET" "/" responded 200 in 15.4649 ms
+04/10/2021 08:54:15 HTTP "GET" "/Home/Pricing" responded 200 in 18.3388 ms
+04/10/2021 08:54:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 370.2679 ms
+04/10/2021 08:54:35 HTTP "GET" "/Home/Pricing" responded 200 in 16.6998 ms
+04/10/2021 08:55:48 HTTP "GET" "/" responded 200 in 34.1045 ms
+04/10/2021 08:57:03 HTTP "GET" "/" responded 200 in 30.4728 ms
+04/10/2021 09:00:10 HTTP "GET" "/" responded 200 in 18.5336 ms
+04/10/2021 09:00:24 HTTP "GET" "/" responded 200 in 20.5319 ms
+04/10/2021 09:02:24 HTTP "GET" "/" responded 200 in 23.4333 ms
+04/10/2021 09:02:43 HTTP "GET" "/" responded 200 in 16.1896 ms
+04/10/2021 09:03:20 HTTP "GET" "/" responded 200 in 12.8354 ms
+04/10/2021 09:04:34 Web server started..
+04/10/2021 09:04:34 Web server HostBuilder created
+04/10/2021 09:04:36 Host built
+04/10/2021 09:04:36 Now listening on: "https://localhost:9000"
+04/10/2021 09:04:36 Application started. Press Ctrl+C to shut down.
+04/10/2021 09:04:36 Hosting environment: "Development"
+04/10/2021 09:04:36 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 09:04:38 HTTP "GET" "/" responded 200 in 326.6926 ms
+04/10/2021 09:15:31 HTTP "GET" "/" responded 200 in 24.3486 ms
+04/10/2021 09:17:06 HTTP "GET" "/" responded 200 in 16.8572 ms
+04/10/2021 09:17:12 HTTP "GET" "/" responded 200 in 25.4316 ms
+04/10/2021 09:18:11 HTTP "GET" "/" responded 200 in 18.0093 ms
+04/10/2021 09:18:37 HTTP "GET" "/" responded 200 in 40.1197 ms
+04/10/2021 09:19:19 Web server started..
+04/10/2021 09:19:19 Web server HostBuilder created
+04/10/2021 09:19:20 Host built
+04/10/2021 09:19:21 Now listening on: "https://localhost:9000"
+04/10/2021 09:19:21 Application started. Press Ctrl+C to shut down.
+04/10/2021 09:19:21 Hosting environment: "Development"
+04/10/2021 09:19:21 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 09:19:22 HTTP "GET" "/" responded 200 in 337.3515 ms
+04/10/2021 09:20:25 HTTP "GET" "/" responded 200 in 19.2057 ms
+04/10/2021 09:20:42 HTTP "GET" "/" responded 200 in 15.9005 ms
+04/10/2021 09:21:00 HTTP "GET" "/" responded 200 in 15.6615 ms
+04/10/2021 09:22:53 HTTP "GET" "/" responded 200 in 17.6154 ms
+04/10/2021 09:23:56 HTTP "GET" "/" responded 200 in 33.5301 ms
+04/10/2021 09:25:05 HTTP "GET" "/" responded 200 in 23.1156 ms
+04/10/2021 09:25:53 HTTP "GET" "/" responded 200 in 15.7769 ms
+04/10/2021 09:27:01 HTTP "GET" "/" responded 200 in 20.7095 ms
+04/10/2021 09:27:14 HTTP "GET" "/" responded 200 in 16.7445 ms
+04/10/2021 09:27:32 HTTP "GET" "/" responded 200 in 15.4367 ms
+04/10/2021 09:28:06 HTTP "GET" "/" responded 200 in 16.5996 ms
+04/10/2021 09:28:08 HTTP "GET" "/" responded 200 in 14.5264 ms
+04/10/2021 09:28:12 HTTP "GET" "/Home/Pricing" responded 200 in 42.0538 ms
+04/10/2021 09:28:16 HTTP "GET" "/" responded 200 in 14.8004 ms
+04/10/2021 09:29:08 HTTP "GET" "/" responded 200 in 13.8244 ms
+04/10/2021 09:29:39 HTTP "GET" "/" responded 200 in 16.4009 ms
+04/10/2021 09:29:41 HTTP "GET" "/" responded 200 in 14.4491 ms
+04/10/2021 09:29:53 HTTP "GET" "/" responded 200 in 16.4191 ms
+04/10/2021 09:30:30 HTTP "GET" "/" responded 200 in 16.0730 ms
+04/10/2021 09:30:33 HTTP "GET" "/" responded 200 in 13.3370 ms
+04/10/2021 09:30:46 HTTP "GET" "/" responded 200 in 15.8593 ms
+04/10/2021 09:31:41 HTTP "GET" "/" responded 200 in 16.5820 ms
+04/10/2021 09:33:13 HTTP "GET" "/" responded 200 in 16.2135 ms
+04/10/2021 09:33:23 HTTP "GET" "/" responded 200 in 19.7937 ms
+04/10/2021 09:33:43 HTTP "GET" "/" responded 200 in 13.9987 ms
+04/10/2021 09:34:16 HTTP "GET" "/" responded 200 in 15.6388 ms
+04/10/2021 09:34:38 HTTP "GET" "/" responded 200 in 16.2277 ms
+04/10/2021 09:35:21 HTTP "GET" "/" responded 200 in 25.9883 ms
+04/10/2021 09:36:45 HTTP "GET" "/" responded 200 in 19.5979 ms
+04/10/2021 09:37:42 HTTP "GET" "/" responded 200 in 16.9953 ms
+04/10/2021 09:37:45 HTTP "GET" "/" responded 200 in 20.1051 ms
+04/10/2021 09:38:49 Web server started..
+04/10/2021 09:38:49 Web server HostBuilder created
+04/10/2021 09:38:51 Host built
+04/10/2021 09:38:51 Now listening on: "https://localhost:9000"
+04/10/2021 09:38:51 Application started. Press Ctrl+C to shut down.
+04/10/2021 09:38:51 Hosting environment: "Development"
+04/10/2021 09:38:51 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 09:38:53 HTTP "GET" "/" responded 200 in 346.2676 ms
+04/10/2021 09:44:53 HTTP "GET" "/" responded 200 in 4012.8214 ms
+04/10/2021 09:45:43 HTTP "GET" "/" responded 200 in 231.0112 ms
+04/10/2021 09:45:47 HTTP "GET" "/Home/Pricing" responded 200 in 24.2166 ms

@@ -1,0 +1,26 @@
+04/10/2021 08:23:08 Identity server started..
+04/10/2021 08:23:08 Identity server HostBuilder created
+04/10/2021 08:29:40 Identity server started..
+04/10/2021 08:29:40 Identity server HostBuilder created
+04/10/2021 08:29:42 Host built
+04/10/2021 08:29:43 Now listening on: "https://localhost:3000"
+04/10/2021 08:29:43 Application started. Press Ctrl+C to shut down.
+04/10/2021 08:29:43 Hosting environment: "Development"
+04/10/2021 08:29:43 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/10/2021 08:29:45 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET FoundersPCIdentity/Users/Entrances" for actions - FoundersPC.IdentityServer.Controllers.Users.Entrances.EntrancesIdentityController.Get (FoundersPC.IdentityServer),FoundersPC.IdentityServer.Controllers.Users.Entrances.EntrancesIdentityController.GetPaginateableUserEntrances (FoundersPC.IdentityServer). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/10/2021 08:30:02 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/10/2021 08:30:03 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 3036.3408 ms
+04/10/2021 08:30:06 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 237.9525 ms
+04/10/2021 08:30:11 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 53.6220 ms
+04/10/2021 08:30:21 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 34.4211 ms
+04/10/2021 08:30:31 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 30.7745 ms
+04/10/2021 08:30:42 HTTP "GET" "/FoundersPCIdentity/Users/ById/2/Entrances" responded 200 in 55.3067 ms
+04/10/2021 08:30:44 HTTP "GET" "/FoundersPCIdentity/Users/ById/3/Entrances" responded 200 in 39.2331 ms
+04/10/2021 08:30:48 HTTP "GET" "/FoundersPCIdentity/Users/ById/4/Entrances" responded 200 in 28.6756 ms
+04/10/2021 08:31:05 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 29.9159 ms
