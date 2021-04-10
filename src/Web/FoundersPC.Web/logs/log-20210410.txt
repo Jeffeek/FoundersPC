@@ -149,3 +149,518 @@
 04/10/2021 09:44:53 HTTP "GET" "/" responded 200 in 4012.8214 ms
 04/10/2021 09:45:43 HTTP "GET" "/" responded 200 in 231.0112 ms
 04/10/2021 09:45:47 HTTP "GET" "/Home/Pricing" responded 200 in 24.2166 ms
+04/10/2021 19:03:22 Web server started..
+04/10/2021 19:03:22 Web server HostBuilder created
+04/10/2021 19:03:23 Host built
+04/10/2021 19:03:23 Now listening on: "https://localhost:9000"
+04/10/2021 19:03:23 Application started. Press Ctrl+C to shut down.
+04/10/2021 19:03:23 Hosting environment: "Development"
+04/10/2021 19:03:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 19:03:27 HTTP "GET" "/" responded 200 in 211.2410 ms
+04/10/2021 19:04:41 HTTP "GET" "/" responded 200 in 3535.7600 ms
+04/10/2021 19:04:41 HTTP "GET" "/images/hero-back-illustration.svg" responded 302 in 3.9241 ms
+04/10/2021 19:04:41 HTTP "GET" "/images/cta-illustration.svg" responded 302 in 3.6643 ms
+04/10/2021 19:04:41 HTTP "GET" "/images/hero-top-illustration.svg" responded 302 in 3.6215 ms
+04/10/2021 19:04:41 HTTP "GET" "/images/pricing-illustration.svg" responded 302 in 2.4248 ms
+04/10/2021 19:04:41 HTTP "GET" "/Error/404" responded 200 in 14.7628 ms
+04/10/2021 19:04:41 HTTP "GET" "/Error/404" responded 200 in 4.1845 ms
+04/10/2021 19:04:41 HTTP "GET" "/Error/404" responded 200 in 2.3799 ms
+04/10/2021 19:04:41 HTTP "GET" "/Error/404" responded 200 in 2.3676 ms
+04/10/2021 19:06:08 HTTP "GET" "/" responded 200 in 233.9746 ms
+04/10/2021 19:06:08 HTTP "GET" "/images/hero-back-illustration.svg" responded 302 in 0.8326 ms
+04/10/2021 19:06:08 HTTP "GET" "/images/hero-top-illustration.svg" responded 302 in 0.1868 ms
+04/10/2021 19:06:08 HTTP "GET" "/images/pricing-illustration.svg" responded 302 in 1.7845 ms
+04/10/2021 19:06:08 HTTP "GET" "/images/cta-illustration.svg" responded 302 in 0.7625 ms
+04/10/2021 19:06:08 HTTP "GET" "/Error/404" responded 200 in 15.9600 ms
+04/10/2021 19:06:08 HTTP "GET" "/Error/404" responded 200 in 1.3098 ms
+04/10/2021 19:06:08 HTTP "GET" "/Error/404" responded 200 in 1.3632 ms
+04/10/2021 19:06:08 HTTP "GET" "/Error/404" responded 200 in 1.8444 ms
+04/10/2021 19:06:08 HTTP "GET" "/Error/404" responded 200 in 0.9535 ms
+04/10/2021 19:06:08 HTTP "GET" "/Error/404" responded 200 in 1.1889 ms
+04/10/2021 19:06:08 HTTP "GET" "/Error/404" responded 200 in 1.3902 ms
+04/10/2021 19:06:13 HTTP "GET" "/" responded 200 in 181.6727 ms
+04/10/2021 19:06:26 HTTP "GET" "/" responded 200 in 1.3294 ms
+04/10/2021 19:07:51 Web server started..
+04/10/2021 19:07:51 Web server HostBuilder created
+04/10/2021 19:07:51 Host built
+04/10/2021 19:07:52 Now listening on: "https://localhost:9000"
+04/10/2021 19:07:52 Application started. Press Ctrl+C to shut down.
+04/10/2021 19:07:52 Hosting environment: "Development"
+04/10/2021 19:07:52 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 19:07:54 HTTP "GET" "/" responded 200 in 208.1156 ms
+04/10/2021 19:07:54 HTTP "GET" "/images/cta-illustration.svg" responded 302 in 5.6898 ms
+04/10/2021 19:07:54 HTTP "GET" "/images/hero-top-illustration.svg" responded 302 in 5.7130 ms
+04/10/2021 19:07:54 HTTP "GET" "/images/hero-back-illustration.svg" responded 302 in 5.6485 ms
+04/10/2021 19:07:54 HTTP "GET" "/images/pricing-illustration.svg" responded 302 in 5.6357 ms
+04/10/2021 19:07:54 HTTP "GET" "/Error/404" responded 200 in 17.0622 ms
+04/10/2021 19:07:54 HTTP "GET" "/Error/404" responded 200 in 3.4471 ms
+04/10/2021 19:07:54 HTTP "GET" "/Error/404" responded 200 in 2.0930 ms
+04/10/2021 19:07:54 HTTP "GET" "/Error/404" responded 200 in 2.0329 ms
+04/10/2021 19:09:29 HTTP "GET" "/" responded 200 in 3172.8666 ms
+04/10/2021 19:09:29 HTTP "GET" "/images/hero-back-illustration.svg" responded 302 in 0.1721 ms
+04/10/2021 19:09:29 HTTP "GET" "/images/hero-top-illustration.svg" responded 302 in 0.4221 ms
+04/10/2021 19:09:29 HTTP "GET" "/images/pricing-illustration.svg" responded 302 in 0.0602 ms
+04/10/2021 19:09:29 HTTP "GET" "/images/cta-illustration.svg" responded 302 in 3.0465 ms
+04/10/2021 19:09:29 HTTP "GET" "/Error/404" responded 200 in 1.0695 ms
+04/10/2021 19:09:29 HTTP "GET" "/Error/404" responded 200 in 2.2485 ms
+04/10/2021 19:09:29 HTTP "GET" "/Error/404" responded 200 in 1.3402 ms
+04/10/2021 19:09:29 HTTP "GET" "/Error/404" responded 200 in 1.9967 ms
+04/10/2021 19:09:29 HTTP "GET" "/Error/404" responded 200 in 1.2140 ms
+04/10/2021 19:09:29 HTTP "GET" "/Error/404" responded 200 in 1.5161 ms
+04/10/2021 19:09:29 HTTP "GET" "/Error/404" responded 200 in 1.7799 ms
+04/10/2021 19:14:15 Web server started..
+04/10/2021 19:14:16 Web server HostBuilder created
+04/10/2021 19:14:16 Host built
+04/10/2021 19:14:17 Now listening on: "https://localhost:9000"
+04/10/2021 19:14:17 Application started. Press Ctrl+C to shut down.
+04/10/2021 19:14:17 Hosting environment: "Development"
+04/10/2021 19:14:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 19:14:19 HTTP "GET" "/" responded 200 in 198.0123 ms
+04/10/2021 19:14:22 HTTP "GET" "/css/~/img/home/hero-back-illustration.svg" responded 302 in 8.3783 ms
+04/10/2021 19:14:22 HTTP "GET" "/css/~/img/home/cta-illustration.svg" responded 302 in 1.9784 ms
+04/10/2021 19:14:22 HTTP "GET" "/css/~/img/home/hero-top-illustration.svg" responded 302 in 8.5896 ms
+04/10/2021 19:14:22 HTTP "GET" "/css/~/img/home/pricing-illustration.svg" responded 302 in 6.6393 ms
+04/10/2021 19:14:22 HTTP "GET" "/Error/404" responded 200 in 17.1101 ms
+04/10/2021 19:14:22 HTTP "GET" "/Error/404" responded 200 in 2.9850 ms
+04/10/2021 19:14:22 HTTP "GET" "/Error/404" responded 200 in 2.3587 ms
+04/10/2021 19:14:22 HTTP "GET" "/Error/404" responded 200 in 2.4248 ms
+04/10/2021 19:17:11 HTTP "GET" "/" responded 200 in 3736.0054 ms
+04/10/2021 19:17:11 HTTP "GET" "/css/~/img/home/pricing-illustration.svg" responded 302 in 0.2302 ms
+04/10/2021 19:17:11 HTTP "GET" "/css/~/img/home/hero-back-illustration.svg" responded 302 in 0.1082 ms
+04/10/2021 19:17:11 HTTP "GET" "/css/~/img/home/cta-illustration.svg" responded 302 in 0.3619 ms
+04/10/2021 19:17:11 HTTP "GET" "/css/~/img/home/hero-top-illustration.svg" responded 302 in 0.0579 ms
+04/10/2021 19:17:11 HTTP "GET" "/Error/404" responded 200 in 1.3901 ms
+04/10/2021 19:17:11 HTTP "GET" "/Error/404" responded 200 in 1.8560 ms
+04/10/2021 19:17:11 HTTP "GET" "/Error/404" responded 200 in 1.5820 ms
+04/10/2021 19:17:11 HTTP "GET" "/Error/404" responded 200 in 4.5435 ms
+04/10/2021 19:17:11 HTTP "GET" "/Error/404" responded 200 in 4.7905 ms
+04/10/2021 19:17:11 HTTP "GET" "/Error/404" responded 200 in 4.1997 ms
+04/10/2021 19:17:11 HTTP "GET" "/Error/404" responded 200 in 1.1288 ms
+04/10/2021 19:18:33 HTTP "GET" "/" responded 200 in 4.0815 ms
+04/10/2021 19:18:33 HTTP "GET" "/css/~/img/home/pricing-illustration.svg" responded 302 in 0.0453 ms
+04/10/2021 19:18:33 HTTP "GET" "/css/~/img/home/hero-top-illustration.svg" responded 302 in 0.4054 ms
+04/10/2021 19:18:33 HTTP "GET" "/css/~/img/home/hero-back-illustration.svg" responded 302 in 0.1254 ms
+04/10/2021 19:18:33 HTTP "GET" "/css/~/img/home/cta-illustration.svg" responded 302 in 0.1352 ms
+04/10/2021 19:18:33 HTTP "GET" "/Error/404" responded 200 in 1.9976 ms
+04/10/2021 19:18:33 HTTP "GET" "/Error/404" responded 200 in 1.3171 ms
+04/10/2021 19:18:33 HTTP "GET" "/Error/404" responded 200 in 1.4567 ms
+04/10/2021 19:18:33 HTTP "GET" "/Error/404" responded 200 in 1.0719 ms
+04/10/2021 19:18:33 HTTP "GET" "/Error/404" responded 200 in 2.2595 ms
+04/10/2021 19:18:33 HTTP "GET" "/Error/404" responded 200 in 1.0800 ms
+04/10/2021 19:18:33 HTTP "GET" "/Error/404" responded 200 in 1.2179 ms
+04/10/2021 19:18:53 HTTP "GET" "/" responded 200 in 0.7778 ms
+04/10/2021 19:18:53 HTTP "GET" "/css/~/img/home/cta-illustration.svg" responded 302 in 0.1464 ms
+04/10/2021 19:18:53 HTTP "GET" "/css/~/img/home/hero-top-illustration.svg" responded 302 in 0.1171 ms
+04/10/2021 19:18:53 HTTP "GET" "/css/~/img/home/hero-back-illustration.svg" responded 302 in 0.0765 ms
+04/10/2021 19:18:54 HTTP "GET" "/css/~/img/home/pricing-illustration.svg" responded 302 in 3.6451 ms
+04/10/2021 19:18:54 HTTP "GET" "/Error/404" responded 200 in 1.1019 ms
+04/10/2021 19:18:54 HTTP "GET" "/Error/404" responded 200 in 1.0117 ms
+04/10/2021 19:18:54 HTTP "GET" "/Error/404" responded 200 in 0.6856 ms
+04/10/2021 19:18:54 HTTP "GET" "/Error/404" responded 200 in 1.3421 ms
+04/10/2021 19:18:54 HTTP "GET" "/Error/404" responded 200 in 1.0738 ms
+04/10/2021 19:18:54 HTTP "GET" "/Error/404" responded 200 in 28.1451 ms
+04/10/2021 19:18:54 HTTP "GET" "/Error/404" responded 200 in 28.0024 ms
+04/10/2021 19:19:50 HTTP "GET" "/" responded 200 in 1.2845 ms
+04/10/2021 19:19:50 HTTP "GET" "/css/~/img/home/hero-back-illustration.svg" responded 302 in 0.1674 ms
+04/10/2021 19:19:50 HTTP "GET" "/css/~/img/home/pricing-illustration.svg" responded 302 in 0.0385 ms
+04/10/2021 19:19:50 HTTP "GET" "/css/~/img/home/hero-top-illustration.svg" responded 302 in 1.4766 ms
+04/10/2021 19:19:50 HTTP "GET" "/css/~/img/home/cta-illustration.svg" responded 302 in 0.1776 ms
+04/10/2021 19:19:50 HTTP "GET" "/Error/404" responded 200 in 6.5982 ms
+04/10/2021 19:19:50 HTTP "GET" "/Error/404" responded 200 in 7.0161 ms
+04/10/2021 19:19:50 HTTP "GET" "/Error/404" responded 200 in 9.7769 ms
+04/10/2021 19:19:50 HTTP "GET" "/Error/404" responded 200 in 9.4175 ms
+04/10/2021 19:20:02 HTTP "GET" "/css/~/img/home/cta-illustration.svg" responded 302 in 0.1537 ms
+04/10/2021 19:20:02 HTTP "GET" "/Error/404" responded 200 in 1.2360 ms
+04/10/2021 19:20:03 HTTP "GET" "/css/~/img/home/hero-back-illustration.svg" responded 302 in 0.1647 ms
+04/10/2021 19:20:03 HTTP "GET" "/Error/404" responded 200 in 0.8302 ms
+04/10/2021 19:20:04 HTTP "GET" "/css/~/img/home/hero-top-illustration.svg" responded 302 in 0.0995 ms
+04/10/2021 19:20:04 HTTP "GET" "/Error/404" responded 200 in 1.0718 ms
+04/10/2021 19:20:05 HTTP "GET" "/css/~/img/home/pricing-illustration.svg" responded 302 in 0.1560 ms
+04/10/2021 19:20:05 HTTP "GET" "/Error/404" responded 200 in 0.9939 ms
+04/10/2021 19:21:04 HTTP "GET" "/" responded 200 in 0.7376 ms
+04/10/2021 19:22:10 HTTP "GET" "/" responded 200 in 3.7785 ms
+04/10/2021 19:22:15 HTTP "GET" "/" responded 200 in 0.8789 ms
+04/10/2021 19:22:25 HTTP "GET" "/" responded 200 in 0.8687 ms
+04/10/2021 19:22:30 HTTP "GET" "/" responded 200 in 0.8612 ms
+04/10/2021 19:24:17 HTTP "GET" "/" responded 200 in 3.5169 ms
+04/10/2021 19:28:10 HTTP "GET" "/Home/Pricing" responded 200 in 20.5363 ms
+04/10/2021 19:28:19 HTTP "GET" "/" responded 200 in 0.7611 ms
+04/10/2021 19:29:59 HTTP "GET" "/" responded 200 in 5.8377 ms
+04/10/2021 19:31:09 HTTP "GET" "/" responded 200 in 210.0738 ms
+04/10/2021 19:31:09 HTTP "GET" "/dist/images/feature-icon-01.svg" responded 302 in 0.0722 ms
+04/10/2021 19:31:09 HTTP "GET" "/dist/images/feature-icon-03.svg" responded 302 in 0.1577 ms
+04/10/2021 19:31:09 HTTP "GET" "/dist/images/feature-icon-04.svg" responded 302 in 0.0593 ms
+04/10/2021 19:31:09 HTTP "GET" "/dist/images/feature-icon-06.svg" responded 302 in 0.0205 ms
+04/10/2021 19:31:09 HTTP "GET" "/dist/images/feature-icon-05.svg" responded 302 in 0.0533 ms
+04/10/2021 19:31:09 HTTP "GET" "/dist/images/feature-icon-02.svg" responded 302 in 0.0327 ms
+04/10/2021 19:31:09 HTTP "GET" "/Error/404" responded 200 in 1.7315 ms
+04/10/2021 19:31:09 HTTP "GET" "/Error/404" responded 200 in 1.1546 ms
+04/10/2021 19:31:09 HTTP "GET" "/Error/404" responded 200 in 9.0965 ms
+04/10/2021 19:31:09 HTTP "GET" "/Error/404" responded 200 in 4.5151 ms
+04/10/2021 19:31:09 HTTP "GET" "/Error/404" responded 200 in 9.2789 ms
+04/10/2021 19:31:09 HTTP "GET" "/Error/404" responded 200 in 9.1932 ms
+04/10/2021 19:31:13 HTTP "GET" "/" responded 200 in 1.1446 ms
+04/10/2021 19:31:13 HTTP "GET" "/dist/images/feature-icon-02.svg" responded 302 in 0.9491 ms
+04/10/2021 19:31:13 HTTP "GET" "/dist/images/feature-icon-01.svg" responded 302 in 0.0365 ms
+04/10/2021 19:31:13 HTTP "GET" "/dist/images/feature-icon-04.svg" responded 302 in 0.0511 ms
+04/10/2021 19:31:13 HTTP "GET" "/dist/images/feature-icon-03.svg" responded 302 in 0.2119 ms
+04/10/2021 19:31:13 HTTP "GET" "/dist/images/feature-icon-06.svg" responded 302 in 0.0251 ms
+04/10/2021 19:31:13 HTTP "GET" "/dist/images/feature-icon-05.svg" responded 302 in 0.0194 ms
+04/10/2021 19:31:13 HTTP "GET" "/Error/404" responded 200 in 0.7472 ms
+04/10/2021 19:31:13 HTTP "GET" "/Error/404" responded 200 in 0.6490 ms
+04/10/2021 19:31:13 HTTP "GET" "/Error/404" responded 200 in 1.0563 ms
+04/10/2021 19:31:13 HTTP "GET" "/Error/404" responded 200 in 13.0220 ms
+04/10/2021 19:31:13 HTTP "GET" "/Error/404" responded 200 in 13.0221 ms
+04/10/2021 19:31:13 HTTP "GET" "/Error/404" responded 200 in 10.4893 ms
+04/10/2021 19:32:06 HTTP "GET" "/" responded 200 in 126.1458 ms
+04/10/2021 19:33:09 HTTP "GET" "/" responded 200 in 0.7825 ms
+04/10/2021 19:33:10 HTTP "GET" "/" responded 200 in 0.7233 ms
+04/10/2021 19:33:12 HTTP "GET" "/" responded 200 in 0.8504 ms
+04/10/2021 19:34:15 HTTP "GET" "/" responded 200 in 9.0690 ms
+04/10/2021 19:34:50 HTTP "GET" "/" responded 200 in 0.7478 ms
+04/10/2021 19:36:45 HTTP "GET" "/" responded 200 in 140.6301 ms
+04/10/2021 19:36:51 HTTP "GET" "/" responded 200 in 0.7601 ms
+04/10/2021 19:36:54 HTTP "GET" "/" responded 200 in 0.7832 ms
+04/10/2021 19:37:04 HTTP "GET" "/" responded 200 in 2.2396 ms
+04/10/2021 19:38:59 Web server started..
+04/10/2021 19:38:59 Web server HostBuilder created
+04/10/2021 19:39:00 Host built
+04/10/2021 19:39:00 Now listening on: "https://localhost:9000"
+04/10/2021 19:39:00 Application started. Press Ctrl+C to shut down.
+04/10/2021 19:39:00 Hosting environment: "Development"
+04/10/2021 19:39:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 19:39:02 HTTP "GET" "/" responded 200 in 254.1279 ms
+04/10/2021 19:39:14 HTTP "GET" "/" responded 200 in 3.5760 ms
+04/10/2021 19:39:28 HTTP "GET" "/" responded 200 in 1.0030 ms
+04/10/2021 19:40:30 HTTP "GET" "/" responded 200 in 3142.1707 ms
+04/10/2021 19:42:32 Web server started..
+04/10/2021 19:42:32 Web server HostBuilder created
+04/10/2021 19:42:33 Host built
+04/10/2021 19:42:33 Now listening on: "https://localhost:9000"
+04/10/2021 19:42:33 Application started. Press Ctrl+C to shut down.
+04/10/2021 19:42:33 Hosting environment: "Development"
+04/10/2021 19:42:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 19:42:35 HTTP "GET" "/" responded 200 in 260.0173 ms
+04/10/2021 19:42:51 HTTP "GET" "/" responded 200 in 3.0954 ms
+04/10/2021 19:42:55 HTTP "GET" "/" responded 200 in 1.3269 ms
+04/10/2021 19:51:11 Web server started..
+04/10/2021 19:51:11 Web server HostBuilder created
+04/10/2021 19:51:12 Host built
+04/10/2021 19:51:12 Now listening on: "https://localhost:9000"
+04/10/2021 19:51:12 Application started. Press Ctrl+C to shut down.
+04/10/2021 19:51:12 Hosting environment: "Development"
+04/10/2021 19:51:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 19:51:18 HTTP "GET" "/" responded 200 in 3325.4572 ms
+04/10/2021 19:52:34 HTTP "GET" "/" responded 200 in 10.8230 ms
+04/10/2021 19:52:37 HTTP "GET" "/" responded 200 in 1.3139 ms
+04/10/2021 19:53:00 HTTP "GET" "/" responded 200 in 1.1041 ms
+04/10/2021 19:53:02 HTTP "GET" "/" responded 200 in 1.0701 ms
+04/10/2021 19:53:15 HTTP "GET" "/" responded 200 in 1.2089 ms
+04/10/2021 19:53:16 HTTP "GET" "/" responded 200 in 1.4377 ms
+04/10/2021 19:53:51 HTTP "GET" "/" responded 200 in 1.1332 ms
+04/10/2021 19:53:55 HTTP "GET" "/" responded 200 in 0.9914 ms
+04/10/2021 19:53:57 HTTP "GET" "/" responded 200 in 1.0241 ms
+04/10/2021 19:54:47 HTTP "GET" "/Authentication/SignIn" responded 200 in 264.2658 ms
+04/10/2021 19:55:51 HTTP "GET" "/" responded 200 in 2.4386 ms
+04/10/2021 19:55:57 HTTP "GET" "/" responded 200 in 0.7903 ms
+04/10/2021 19:56:44 HTTP "GET" "/" responded 200 in 2.8801 ms
+04/10/2021 19:56:48 HTTP "GET" "/" responded 200 in 0.8243 ms
+04/10/2021 19:59:35 HTTP "GET" "/Authentication/SignIn" responded 200 in 4.9020 ms
+04/10/2021 19:59:47 HTTP "GET" "/Home/Pricing" responded 200 in 14.1159 ms
+04/10/2021 20:00:48 HTTP "GET" "/" responded 200 in 0.9545 ms
+04/10/2021 20:01:20 Web server started..
+04/10/2021 20:01:21 Web server HostBuilder created
+04/10/2021 20:01:21 Host built
+04/10/2021 20:01:22 Now listening on: "https://localhost:9000"
+04/10/2021 20:01:22 Application started. Press Ctrl+C to shut down.
+04/10/2021 20:01:22 Hosting environment: "Development"
+04/10/2021 20:01:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/10/2021 20:01:24 HTTP "GET" "/" responded 200 in 205.5633 ms
+04/10/2021 20:01:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 254.0518 ms
+04/10/2021 20:01:31 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/10/2021 20:01:31 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/10/2021 20:01:33 Received HTTP response headers after 2415.6018ms - 200
+04/10/2021 20:01:33 End processing HTTP request after 2427.8672ms - 200
+04/10/2021 20:01:33 HTTP "POST" "/Authentication/SignIn" responded 302 in 2543.5932 ms
+04/10/2021 20:01:33 HTTP "GET" "/" responded 200 in 3.5775 ms
+04/10/2021 20:01:36 HTTP "GET" "/" responded 200 in 1.2752 ms
+04/10/2021 20:01:41 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/10/2021 20:01:41 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/10/2021 20:01:42 Received HTTP response headers after 166.8196ms - 200
+04/10/2021 20:01:42 End processing HTTP request after 169.0125ms - 200
+04/10/2021 20:01:42 HTTP "GET" "/Account" responded 200 in 289.6249 ms
+04/10/2021 20:02:09 HTTP "GET" "/Home/SpaceInvaders" responded 200 in 2990.7521 ms
+04/10/2021 20:02:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/10/2021 20:02:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/10/2021 20:02:48 Received HTTP response headers after 58.4144ms - 200
+04/10/2021 20:02:48 End processing HTTP request after 61.1432ms - 200
+04/10/2021 20:02:48 HTTP "GET" "/Account" responded 200 in 67.6081 ms
+04/10/2021 20:02:55 HTTP "GET" "/" responded 200 in 1.0881 ms
+04/10/2021 20:03:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 20:03:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/10/2021 20:03:15 Received HTTP response headers after 104.9786ms - 200
+04/10/2021 20:03:15 End processing HTTP request after 107.3528ms - 200
+04/10/2021 20:03:15 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 142.1009 ms
+04/10/2021 20:04:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/10/2021 20:04:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/10/2021 20:04:02 Received HTTP response headers after 42.0665ms - 200
+04/10/2021 20:04:02 End processing HTTP request after 45.0017ms - 200
+04/10/2021 20:04:02 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 81.9522 ms
+04/10/2021 20:04:16 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-07T00:00:00&Finish=2021-04-10T00:00:00
+04/10/2021 20:04:16 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-07T00:00:00&Finish=2021-04-10T00:00:00
+04/10/2021 20:04:16 Received HTTP response headers after 20.8173ms - 200
+04/10/2021 20:04:16 End processing HTTP request after 23.7674ms - 200
+04/10/2021 20:04:16 HTTP "POST" "/Admin/Entrances/Between" responded 200 in 41.3066 ms
+04/10/2021 20:04:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/10/2021 20:04:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/10/2021 20:04:20 Received HTTP response headers after 5.503ms - 200
+04/10/2021 20:04:20 End processing HTTP request after 8.0878ms - 200
+04/10/2021 20:04:21 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 12.8140 ms
+04/10/2021 20:04:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/10/2021 20:04:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/10/2021 20:04:25 Received HTTP response headers after 5.2605ms - 200
+04/10/2021 20:04:25 End processing HTTP request after 7.5312ms - 200
+04/10/2021 20:04:25 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 10.4872 ms
+04/10/2021 20:04:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/10/2021 20:04:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/10/2021 20:04:26 Received HTTP response headers after 7.199ms - 200
+04/10/2021 20:04:26 End processing HTTP request after 10.8321ms - 200
+04/10/2021 20:04:26 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 14.3290 ms
+04/10/2021 20:04:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/10/2021 20:04:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/10/2021 20:04:27 Received HTTP response headers after 5.4913ms - 200
+04/10/2021 20:04:27 End processing HTTP request after 9.1444ms - 200
+04/10/2021 20:04:27 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 14.8179 ms
+04/10/2021 20:04:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/10/2021 20:04:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/10/2021 20:04:27 Received HTTP response headers after 5.0462ms - 200
+04/10/2021 20:04:27 End processing HTTP request after 7.9218ms - 200
+04/10/2021 20:04:27 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 11.1274 ms
+04/10/2021 20:04:28 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/10/2021 20:04:28 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/10/2021 20:04:28 Received HTTP response headers after 5.0225ms - 200
+04/10/2021 20:04:28 End processing HTTP request after 8.5961ms - 200
+04/10/2021 20:04:28 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 12.9319 ms
+04/10/2021 20:04:28 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/10/2021 20:04:28 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/10/2021 20:04:28 Received HTTP response headers after 4.9414ms - 200
+04/10/2021 20:04:28 End processing HTTP request after 7.0436ms - 200
+04/10/2021 20:04:28 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 10.4712 ms
+04/10/2021 20:04:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/10/2021 20:04:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/10/2021 20:04:29 Received HTTP response headers after 4.6744ms - 200
+04/10/2021 20:04:29 End processing HTTP request after 8.3449ms - 200
+04/10/2021 20:04:29 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 12.5995 ms
+04/10/2021 20:04:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/10/2021 20:04:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/10/2021 20:04:29 Received HTTP response headers after 4.665ms - 200
+04/10/2021 20:04:29 End processing HTTP request after 8.0029ms - 200
+04/10/2021 20:04:29 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 12.2859 ms
+04/10/2021 20:04:58 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-01T00:00:00&Finish=2021-04-10T00:00:00
+04/10/2021 20:04:58 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-01T00:00:00&Finish=2021-04-10T00:00:00
+04/10/2021 20:04:58 Received HTTP response headers after 16.8474ms - 200
+04/10/2021 20:04:58 End processing HTTP request after 19.5811ms - 200
+04/10/2021 20:04:58 HTTP "POST" "/Admin/Entrances/Between" responded 200 in 25.9741 ms
+04/10/2021 20:05:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/10/2021 20:05:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/10/2021 20:05:06 Received HTTP response headers after 12.5821ms - 200
+04/10/2021 20:05:06 End processing HTTP request after 15.5567ms - 200
+04/10/2021 20:05:06 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 18.8301 ms
+04/10/2021 20:05:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/10/2021 20:05:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/10/2021 20:05:13 Received HTTP response headers after 10.9236ms - 200
+04/10/2021 20:05:13 End processing HTTP request after 13.6675ms - 200
+04/10/2021 20:05:13 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 16.3210 ms
+04/10/2021 20:05:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:14 Received HTTP response headers after 5.0625ms - 200
+04/10/2021 20:05:14 End processing HTTP request after 7.7922ms - 200
+04/10/2021 20:05:14 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 10.9282 ms
+04/10/2021 20:05:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/10/2021 20:05:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/10/2021 20:05:15 Received HTTP response headers after 4.8365ms - 200
+04/10/2021 20:05:15 End processing HTTP request after 7.0047ms - 200
+04/10/2021 20:05:15 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 9.8479 ms
+04/10/2021 20:05:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/10/2021 20:05:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/10/2021 20:05:15 Received HTTP response headers after 4.9193ms - 200
+04/10/2021 20:05:15 End processing HTTP request after 7.3278ms - 200
+04/10/2021 20:05:15 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 11.5772 ms
+04/10/2021 20:05:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/10/2021 20:05:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/10/2021 20:05:17 Received HTTP response headers after 4.9572ms - 200
+04/10/2021 20:05:17 End processing HTTP request after 7.5668ms - 200
+04/10/2021 20:05:17 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 11.1022 ms
+04/10/2021 20:05:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:17 Received HTTP response headers after 6.1487ms - 200
+04/10/2021 20:05:17 End processing HTTP request after 9.6148ms - 200
+04/10/2021 20:05:17 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 12.7137 ms
+04/10/2021 20:05:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/10/2021 20:05:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/10/2021 20:05:17 Received HTTP response headers after 5.2078ms - 200
+04/10/2021 20:05:17 End processing HTTP request after 8.7148ms - 200
+04/10/2021 20:05:17 HTTP "GET" "/Admin/Entrances?pageNumber=11" responded 200 in 11.7676 ms
+04/10/2021 20:05:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/10/2021 20:05:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/10/2021 20:05:17 Received HTTP response headers after 4.7303ms - 200
+04/10/2021 20:05:17 End processing HTTP request after 7.9257ms - 200
+04/10/2021 20:05:17 HTTP "GET" "/Admin/Entrances?pageNumber=12" responded 200 in 12.0059 ms
+04/10/2021 20:05:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/10/2021 20:05:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/10/2021 20:05:18 Received HTTP response headers after 5.5313ms - 200
+04/10/2021 20:05:18 End processing HTTP request after 8.0433ms - 200
+04/10/2021 20:05:18 HTTP "GET" "/Admin/Entrances?pageNumber=13" responded 200 in 12.1963 ms
+04/10/2021 20:05:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/10/2021 20:05:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/10/2021 20:05:18 Received HTTP response headers after 5.7045ms - 200
+04/10/2021 20:05:18 End processing HTTP request after 8.54ms - 200
+04/10/2021 20:05:18 HTTP "GET" "/Admin/Entrances?pageNumber=14" responded 200 in 13.0044 ms
+04/10/2021 20:05:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/10/2021 20:05:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/10/2021 20:05:18 Received HTTP response headers after 4.6302ms - 200
+04/10/2021 20:05:18 End processing HTTP request after 6.9632ms - 200
+04/10/2021 20:05:18 HTTP "GET" "/Admin/Entrances?pageNumber=15" responded 200 in 9.8525 ms
+04/10/2021 20:05:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=16&Size=10
+04/10/2021 20:05:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=16&Size=10
+04/10/2021 20:05:18 Received HTTP response headers after 4.6882ms - 200
+04/10/2021 20:05:18 End processing HTTP request after 7.1796ms - 200
+04/10/2021 20:05:18 HTTP "GET" "/Admin/Entrances?pageNumber=16" responded 200 in 11.5343 ms
+04/10/2021 20:05:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/10/2021 20:05:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/10/2021 20:05:19 Received HTTP response headers after 5.046ms - 200
+04/10/2021 20:05:19 End processing HTTP request after 7.2962ms - 200
+04/10/2021 20:05:19 HTTP "GET" "/Admin/Entrances?pageNumber=15" responded 200 in 13.4746 ms
+04/10/2021 20:05:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/10/2021 20:05:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/10/2021 20:05:19 Received HTTP response headers after 4.7262ms - 200
+04/10/2021 20:05:19 End processing HTTP request after 7.9065ms - 200
+04/10/2021 20:05:19 HTTP "GET" "/Admin/Entrances?pageNumber=14" responded 200 in 13.7782 ms
+04/10/2021 20:05:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/10/2021 20:05:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/10/2021 20:05:20 Received HTTP response headers after 4.4624ms - 200
+04/10/2021 20:05:20 End processing HTTP request after 6.7724ms - 200
+04/10/2021 20:05:20 HTTP "GET" "/Admin/Entrances?pageNumber=13" responded 200 in 9.6662 ms
+04/10/2021 20:05:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/10/2021 20:05:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/10/2021 20:05:20 Received HTTP response headers after 4.5622ms - 200
+04/10/2021 20:05:20 End processing HTTP request after 7.1352ms - 200
+04/10/2021 20:05:20 HTTP "GET" "/Admin/Entrances?pageNumber=12" responded 200 in 10.1574 ms
+04/10/2021 20:05:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/10/2021 20:05:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/10/2021 20:05:22 Received HTTP response headers after 4.5175ms - 200
+04/10/2021 20:05:22 End processing HTTP request after 7.0597ms - 200
+04/10/2021 20:05:22 HTTP "GET" "/Admin/Entrances?pageNumber=11" responded 200 in 10.3056 ms
+04/10/2021 20:05:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:22 Received HTTP response headers after 4.834ms - 200
+04/10/2021 20:05:22 End processing HTTP request after 7.6357ms - 200
+04/10/2021 20:05:22 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 11.3256 ms
+04/10/2021 20:05:46 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-08T00:00:00&Finish=2021-04-10T00:00:00
+04/10/2021 20:05:46 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-08T00:00:00&Finish=2021-04-10T00:00:00
+04/10/2021 20:05:46 Received HTTP response headers after 5.8189ms - 200
+04/10/2021 20:05:46 End processing HTTP request after 8.5082ms - 200
+04/10/2021 20:05:46 HTTP "POST" "/Admin/Entrances/Between" responded 200 in 12.0519 ms
+04/10/2021 20:05:58 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:58 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/10/2021 20:05:58 Received HTTP response headers after 4.622ms - 200
+04/10/2021 20:05:58 End processing HTTP request after 7.1602ms - 200
+04/10/2021 20:05:58 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 9.7496 ms
+04/10/2021 20:06:35 HTTP "GET" "/" responded 200 in 3.8130 ms
+04/10/2021 20:06:36 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/10/2021 20:06:36 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/10/2021 20:06:39 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.1512 ms
+04/10/2021 20:06:39 HTTP "GET" "/" responded 200 in 0.9165 ms
+04/10/2021 20:06:41 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 500 in 4187.2295 ms
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:4000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.HardwareAPI.ProducersManagingService.GetAllProducersAsync(String managerToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\HardwareAPI\ProducersManagingService.cs:line 46
+   at FoundersPC.Web.Controllers.HardwareApiCRUD.ProducersController.Table() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\HardwareApiCRUD\ProducersController.cs:line 56
+   at lambda_method112(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/10/2021 20:06:41 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:4000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.HardwareAPI.ProducersManagingService.GetAllProducersAsync(String managerToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\HardwareAPI\ProducersManagingService.cs:line 46
+   at FoundersPC.Web.Controllers.HardwareApiCRUD.ProducersController.Table() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\HardwareApiCRUD\ProducersController.cs:line 56
+   at lambda_method112(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/10/2021 20:06:43 HTTP "GET" "/" responded 200 in 0.8678 ms
+04/10/2021 20:06:45 HTTP "GET" "/" responded 200 in 1.0175 ms
+04/10/2021 20:06:51 HTTP "GET" "/" responded 200 in 0.8635 ms
+04/10/2021 20:06:54 HTTP "GET" "/" responded 200 in 0.8227 ms
+04/10/2021 20:07:00 HTTP "GET" "/" responded 200 in 0.8269 ms
+04/10/2021 20:07:04 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.4528 ms
+04/10/2021 20:09:56 HTTP "GET" "/" responded 200 in 4.9433 ms
+04/10/2021 20:09:59 HTTP "GET" "/" responded 200 in 0.8178 ms
