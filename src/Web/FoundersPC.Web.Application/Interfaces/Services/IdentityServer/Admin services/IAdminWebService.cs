@@ -109,8 +109,7 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="adminToken">JWT token</param>
         /// <param name="pageNumber">Page to load</param>
         /// <returns>Entrances</returns>
-        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableUsersEntrancesAsync(
-            int pageNumber,
+        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableUsersEntrancesAsync(int pageNumber,
             int pageSize,
             string adminToken);
 

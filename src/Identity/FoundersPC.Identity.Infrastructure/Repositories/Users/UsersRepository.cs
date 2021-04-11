@@ -4,10 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared.Collections;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Users;
 using FoundersPC.Identity.Domain.Entities.Users;
-using FoundersPC.Identity.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +15,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 {
     public class UsersRepository : GenericRepositoryAsync<UserEntity>, IUsersRepository
     {
-        public UsersRepository(FoundersPCUsersContext context) : base(context) { }
+        public UsersRepository(DbContext context) : base(context) { }
 
         public override async Task<IEnumerable<UserEntity>> GetAllAsync() =>
             await Context.Set<UserEntity>()
@@ -82,10 +80,9 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 
         /// <inheritdoc/>
         public async Task<IEnumerable<UserEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
-            await Context.Set<UserEntity>()
-                         .Paginate(pageNumber, pageSize)
-                         .Include(x => x.Role)
-                         .ToListAsync();
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.Role)
+                  .ToListAsync();
 
         #endregion
     }

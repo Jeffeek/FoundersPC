@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Dto;
@@ -114,5 +115,17 @@ namespace FoundersPC.Identity.Services.Log_Services
 
             return await _unitOfWork.SaveChangesAsync() > 0;
         }
+
+        #region Implementation of IPaginateableService<AccessTokenLogReadDto>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAsync(
+            int pageNumber = 1,
+            int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<AccessTokenLog>,
+                IEnumerable<AccessTokenLogReadDto>
+            >(await _unitOfWork.AccessTokensLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
+
+        #endregion
     }
 }

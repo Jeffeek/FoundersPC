@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.CPU;
-using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +13,19 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.CPU
     public class CPUsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.Processor.CPU>, ICPUsRepositoryAsync
     {
         /// <inheritdoc/>
-        public CPUsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+        public CPUsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+
+        #region Implementation of IPaginateableRepository<CPU>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<Domain.Entities.Hardware.Processor.CPU>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.Producer)
+                  .Include(x => x.Core)
+                  .ToListAsync();
+
+        #endregion
 
         #region Implementation of ICPUsRepositoryAsync
 

@@ -49,8 +49,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(
-            int pageNumber,
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(int pageNumber,
             int pageSize,
             string adminToken)
         {

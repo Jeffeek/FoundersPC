@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-    [EnableCors("WebPolicy")]
     [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
     public class AccessTokensController : Controller
@@ -30,6 +29,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             _accessTokensReservationService = accessTokensReservationService;
         }
 
+        [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("User/{email}")]
         public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
@@ -45,6 +45,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             return Json(tokens);
         }
 
+        [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
         [HttpPost("Reserve")]
         public async Task<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)
@@ -68,8 +69,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
                    };
         }
 
-        [EnableCors("TokenCheckPolicy")]
-        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
+        [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [HttpGet("Check/{token:length(64)}")]
         public async Task<ActionResult> CheckTokenForUsability([FromRoute] string token)
         {

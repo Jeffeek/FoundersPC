@@ -51,7 +51,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
         public async Task<IEnumerable<UserEntranceLogReadDto>>
             GetPaginateableUserEntrances([FromQuery(Name = "Page")] int pageNumber = 1,
                                          [FromQuery(Name = "Size")] int pageSize = 10) =>
-            await _usersEntrancesService.GetPaginateableEntrances(pageNumber, pageSize);
+            await _usersEntrancesService.GetPaginateableAsync(pageNumber, pageSize);
 
         [HttpGet("Entrances/Between")]
         public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>>

@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/VideoCards")]
@@ -23,12 +21,10 @@ namespace FoundersPC.API.Controllers.V1
     {
         private readonly IGPUService _gpuService;
         private readonly ILogger<VideoCardsController> _logger;
-        private readonly IMapper _mapper;
 
-        public VideoCardsController(IGPUService service, IMapper mapper, ILogger<VideoCardsController> logger)
+        public VideoCardsController(IGPUService service, ILogger<VideoCardsController> logger)
         {
             _gpuService = service;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -40,28 +36,25 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _gpuService.GetAllGPUsAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<GPUReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<GPUReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id);
 
-            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id.Value);
-
-            return gpuReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(gpuReadDto);
+            return gpuReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(gpuReadDto);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] GPUUpdateDto gpu)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] GPUUpdateDto gpu)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _gpuService.UpdateGPUAsync(id.Value, gpu);
+            var result = await _gpuService.UpdateGPUAsync(id, gpu);
 
             return result ? Json(gpu) : ResponseResultsHelper.UpdateError();
         }
@@ -80,18 +73,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id);
 
-            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id.Value);
+            if (gpuReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (gpuReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _gpuService.DeleteGPUAsync(id.Value);
+            var result = await _gpuService.DeleteGPUAsync(id);
 
             return result ? Json(gpuReadDto) : ResponseResultsHelper.DeleteError();
         }

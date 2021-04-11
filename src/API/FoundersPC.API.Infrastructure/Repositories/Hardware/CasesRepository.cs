@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +14,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
     public class CasesRepository : GenericRepositoryAsync<Case>, ICasesRepositoryAsync
     {
         /// <inheritdoc/>
-        public CasesRepository(FoundersPCHardwareContext context) : base(context) { }
+        public CasesRepository(DbContext context) : base(context) { }
+
+        #region Implementation of IPaginateableRepository<Case>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<Case>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.Producer)
+                  .ToListAsync();
+
+        #endregion
 
         #region Implementation of ICasesRepositoryAsync
 

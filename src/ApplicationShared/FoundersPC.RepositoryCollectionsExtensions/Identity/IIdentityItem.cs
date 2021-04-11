@@ -1,4 +1,4 @@
-﻿namespace FoundersPC.RepositoryShared.Identity
+﻿namespace FoundersPC.IdentityEntities.Identity
 {
     public interface IIdentityItem
     {

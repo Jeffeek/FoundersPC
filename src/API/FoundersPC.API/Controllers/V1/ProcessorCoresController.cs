@@ -13,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [Route("HardwareApi/ProcessorCores")]
     [Route("HardwareApi/CPUCores")]
@@ -37,16 +36,14 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _service.GetAllProcessorCoresAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ProcessorCoreReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<ProcessorCoreReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var cpuCore = await _service.GetProcessorCoreByIdAsync(id);
 
-            var cpuCore = await _service.GetProcessorCoreByIdAsync(id.Value);
-
-            return cpuCore == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(cpuCore);
+            return cpuCore == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(cpuCore);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
@@ -65,32 +62,29 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] ProcessorCoreUpdateDto cpuCore)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] ProcessorCoreUpdateDto cpuCore)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult("null");
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _service.UpdateProcessorCoreAsync(id.Value, cpuCore);
+            var result = await _service.UpdateProcessorCoreAsync(id, cpuCore);
 
             return result ? Json(cpuCore) : ResponseResultsHelper.UpdateError();
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult("null");
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readCpuCore = await _service.GetProcessorCoreByIdAsync(id);
 
-            var readCpuCore = await _service.GetProcessorCoreByIdAsync(id.Value);
+            if (readCpuCore == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readCpuCore == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _service.DeleteProcessorCoreAsync(id.Value);
+            var result = await _service.DeleteProcessorCoreAsync(id);
 
             return result ? Json(readCpuCore) : ResponseResultsHelper.DeleteError();
         }

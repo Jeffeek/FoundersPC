@@ -9,6 +9,12 @@
         name='viewport'/>
     <title>@ViewData["Title"]</title>
     <link
+        href='https://fonts.gstatic.com'
+        rel='preconnect'>
+    <link
+        href='https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap'
+        rel='stylesheet'>
+    <link
         href='~/lib/bootstrap/css/bootstrap.css'
         rel='stylesheet'/>
     <link
@@ -240,52 +246,123 @@
                         role="button">
                         Account
                     </a>
-                    <ul
-                        aria-labelledby="navbarDropdown"
-                        class="dropdown-menu dropdown-menu-dark">
-                        <li>
-                            <a
-                                asp-action="Profile"
-                                asp-controller="Account"
-                                class="btn dropdown-item text-center text-info">
-                                Settings
-                            </a>
-                        </li>
+                    <div
+                        class="dropdown-menu dropdown-menu-dark text-center text-light">
+                        <a
+                            asp-action='Profile'
+                            asp-controller='Account'
+                            class="dropdown-item">
+                            Settings
+                        </a>
                         @{
                             if (User.IsInRole(ApplicationRoles.Administrator)) {
-                                <li>
+                                <a
+                                    class="dropdown dropdown-item submenu">
+                                    Admin Tools
+                                </a>
+                                <div
+                                    class="dropdown-menu dropdown-menu-dark">
                                     <a
-                                        asp-action="UsersTable"
-                                        asp-controller="Admin"
+                                        asp-action='UsersTable'
+                                        asp-controller='Admin'
                                         asp-route-pageNumber='1'
-                                        class="btn dropdown-item text-center text-info">
-                                        Users
+                                        class="dropdown-item">
+                                        Users Table
                                     </a>
-                                </li>
-                                <li>
                                     <a
-                                        asp-action="Entrances"
-                                        asp-controller="Admin"
+                                        asp-action='Entrances'
+                                        asp-controller='Admin'
                                         asp-route-pageNumber='1'
-                                        class="btn dropdown-item text-center text-info">
-                                        Entrances
+                                        class="dropdown-item">
+                                        Entrances Table
                                     </a>
-                                </li>
+                                </div>
+                            } else if (User.IsInRole(ApplicationRoles.Manager)) {
+                                <a
+                                    class="dropdown-item submenu">
+                                    Manager Tools
+                                </a>
+                                <div
+                                    class="dropdown-menu dropdown-menu-dark">
+                                    <a
+                                        class="dropdown-item">
+                                        Cases Table
+                                    </a>
+                                    <a
+                                        class="dropdown-item">
+                                        Power Supplies Table
+                                    </a>
+                                    <a
+                                        class="dropdown-item">
+                                        Motherboards Table
+                                    </a>
+                                    <a
+                                        asp-action='Table'
+                                        asp-controller='Producers'
+                                        class="dropdown-item">
+                                        Producers Table
+                                    </a>
+                                    <a
+                                        class='dropdown-item submenu'>
+                                        Memory
+                                    </a>
+                                    <div
+                                        class="dropdown-menu dropdown-menu-dark">
+                                        <a
+                                            class="dropdown-item">
+                                            Hard Drives Table
+                                        </a>
+                                        <a
+                                            class="dropdown-item">
+                                            SSDs Table
+                                        </a>
+                                        <a
+                                            class="dropdown-item">
+                                            RAMs Table
+                                        </a>
+                                    </div>
+                                    <a
+                                        class='dropdown-item submenu'>
+                                        CPU
+                                    </a>
+                                    <div
+                                        class="dropdown-menu dropdown-menu-dark">
+                                        <a
+                                            class="dropdown-item">
+                                            CPUs Table
+                                        </a>
+                                        <a
+                                            class="dropdown-item">
+                                            CPU Cores Table
+                                        </a>
+                                    </div>
+                                    <a
+                                        class='dropdown-item submenu'>
+                                        GPU
+                                    </a>
+                                    <div
+                                        class="dropdown-menu dropdown-menu-dark">
+                                        <a
+                                            class="dropdown-item">
+                                            GRU Cores Table
+                                        </a>
+                                        <a
+                                            class="dropdown-item">
+                                            GPUs Table
+                                        </a>
+                                    </div>
+                                </div>
                             }
                         }
-                        <li>
-                            <hr
-                                class="hr-runner"/>
-                        </li>
-                        <li>
-                            <a
-                                asp-action="LogOut"
-                                asp-controller="Authentication"
-                                class="dropdown-item text-center text-danger">
-                                Logout
-                            </a>
-                        </li>
-                    </ul>
+                        <hr
+                            class='hr-runner'/>
+                        <a
+                            asp-action="LogOut"
+                            asp-controller="Authentication"
+                            class="dropdown-item text-center text-danger">
+                            Logout
+                        </a>
+                    </div>
                 </li>
             } else {
                 <li

@@ -1,9 +1,7 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -54,17 +52,18 @@ namespace FoundersPC.API.Application.Middleware
 
             using var client = new HttpClient();
 
-            var authorizationToken = context.Request.Headers["Authorization"][0]
-                                     ?? throw new
-                                         Exception($"{nameof(AccessTokenValidatorMiddleware)}: Authorization header not found");
+            // JWT authorization is not need
+            //var authorizationToken = context.Request.Headers["Authorization"][0]
+            //                         ?? throw new
+            //                             Exception($"{nameof(AccessTokenValidatorMiddleware)}: Authorization header not found");
 
-            authorizationToken = authorizationToken.Replace($"{JwtBearerDefaults.AuthenticationScheme} ", String.Empty);
+            //authorizationToken = authorizationToken.Replace($"{JwtBearerDefaults.AuthenticationScheme} ", String.Empty);
 
-            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                    authorizationToken,
-                                                    $"{MicroservicesUrls.IdentityServer}Tokens/Check/");
+            //client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+            //                                        authorizationToken,
+            //                                        $"{MicroservicesUrls.IdentityServer}Tokens/Check/");
 
-            var response = await client.GetAsync(result[0]);
+            var response = await client.GetAsync($"{MicroservicesUrls.IdentityServer}Tokens/Check/{result[0]}");
 
             if (!response.IsSuccessStatusCode)
             {

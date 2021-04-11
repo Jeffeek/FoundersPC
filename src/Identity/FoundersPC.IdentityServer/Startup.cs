@@ -47,13 +47,13 @@ namespace FoundersPC.IdentityServer
 
             services.AddControllers();
 
+            services.AddFoundersPCUsersContext(Configuration);
+
             services.AddUsersRepository();
             services.AddApiAccessTokensRepositories();
             services.AddUsersAndTokenLogsRepositories();
 
             services.AddUsersIdentityUnitOfWork();
-
-            services.AddFoundersPCUsersContext(Configuration);
 
             services.AddEncryptionServices();
             services.AddLogsServices();
@@ -70,23 +70,19 @@ namespace FoundersPC.IdentityServer
 
             services.AddCors(options =>
                              {
-                                 options.AddPolicy("WebPolicy",
+                                 options.AddPolicy(ApplicationCorsPolicies.WebClientPolicy,
                                                    config =>
                                                        config.AllowCredentials()
                                                              .WithOrigins("https://localhost:9000")
                                                              .AllowAnyMethod()
                                                              .Build());
 
-                                 options.AddPolicy("TokenCheckPolicy",
+                                 options.AddPolicy(ApplicationCorsPolicies.TokenCheckPolicy,
                                                    config =>
                                                        config.WithOrigins(MicroservicesUrls.APIServer)
                                                              .WithMethods("GET")
-                                                             .AllowCredentials()
-                                                             .WithHeaders("HARDWARE-ACCESS-TOKEN",
-                                                                          "Authentication")
+                                                             .WithHeaders("HARDWARE-ACCESS-TOKEN")
                                                              .Build());
-
-                                 //options.DefaultPolicyName = "WebPolicy";
                              });
 
             services.AddSwaggerGen(c => c.SwaggerDoc("v1",

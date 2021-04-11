@@ -30,6 +30,7 @@
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RepositoryShared\FoundersPC.RepositoryShared.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ServicesShared\FoundersPC.ServicesShared.csproj" />
     <ProjectReference Include="..\FoundersPC.Identity.Domain\FoundersPC.Identity.Domain.csproj" />
   </ItemGroup>
 

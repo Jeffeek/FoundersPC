@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 {
     [Route("HardwareApiManaging/Producers")]
-    [Authorize(Policy = ApplicationAuthorizationPolicies.EmployeePolicy)]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
     public class ProducersController : Controller
     {
         private readonly IMapper _mapper;
@@ -30,7 +30,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 
         [HttpGet]
         public ActionResult Create() =>
-            View(new ProducerInsertDto()
+            View(new ProducerInsertDto
                  {
                      Country = String.Empty,
                      FoundationDate = null,
@@ -61,7 +61,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet("Edit/{id:int:min(1)}")]
         public async Task<ActionResult> Edit([FromRoute] int id)
         {
-            var producer = await _producersManagingService.GetProducerByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+            var producer =
+                await _producersManagingService.GetProducerByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             var producerUpdate = _mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer);
 
@@ -71,7 +72,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpPost("Edit/{id:int:min(1)}")]
         public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProducerUpdateDto producer)
         {
-            var result = await _producersManagingService.UpdateProducerAsync(id, producer, HttpContext.GetJwtTokenFromCookie());
+            var result =
+                await _producersManagingService.UpdateProducerAsync(id, producer, HttpContext.GetJwtTokenFromCookie());
 
             return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("Table");
         }

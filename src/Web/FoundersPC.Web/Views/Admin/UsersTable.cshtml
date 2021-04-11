@@ -40,7 +40,7 @@
 <div
     class='table-responsive-lg table-responsive-md table-responsive-sm table-responsive-xl table-responsive-xxl'>
     <table
-        class='mt-5 table table-dark table-hover text-center'>
+        class='mt-5 table table-bordered table-hover text-center text-light'>
         <thead>
         <tr>
             <th>Id</th>
@@ -129,7 +129,7 @@
                             </a>
                             <a
                                 class="btn @if (user.IsActive) { @Html.Raw("btn-outline-danger") } else { @Html.Raw("btn-outline-dark disabled") } d-flex mx-3 simple-popup"
-                                href=@{ if (user.IsActive) { @Url.Action("MakeUserInactive", "Admin", new { id = user.Id }) } else { @Html.Raw("#"); } }>
+                                href=@{ if (user.IsActive) { @Url.Action("MakeUserInactive", "Admin", new { id = user.Id }) } else { @Html.Raw("#") } }>
                                 <span
                                     class="popuptext">
                                     @{
@@ -203,7 +203,7 @@
     </table>
     <nav>
         <ul
-            class="justify-content-center pagination">
+            class='justify-content-center pagination'>
             <li
                 class='page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))'>
                 <a
@@ -211,7 +211,7 @@
                     asp-action='UsersTable'
                     asp-controller='Admin'
                     asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
-                    class="bg-light page-link">
+                    class='bg-light page-link'>
                     Previous
                 </a>
             </li>
@@ -222,7 +222,7 @@
                     asp-action='UsersTable'
                     asp-controller='Admin'
                     asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
-                    class="bg-light page-link">
+                    class='bg-light page-link'>
                     Next
                 </a>
             </li>

@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Processors")]
@@ -23,12 +21,10 @@ namespace FoundersPC.API.Controllers.V1
     {
         private readonly ICPUService _cpuService;
         private readonly ILogger<ProcessorsController> _logger;
-        private readonly IMapper _mapper;
 
-        public ProcessorsController(ICPUService service, IMapper mapper, ILogger<ProcessorsController> logger)
+        public ProcessorsController(ICPUService service, ILogger<ProcessorsController> logger)
         {
             _cpuService = service;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -40,16 +36,14 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _cpuService.GetAllCPUsAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CPUReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<CPUReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var cpu = await _cpuService.GetCPUByIdAsync(id);
 
-            var cpu = await _cpuService.GetCPUByIdAsync(id.Value);
-
-            return cpu == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(cpu);
+            return cpu == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(cpu);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
@@ -66,32 +60,29 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] CPUUpdateDto cpu)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] CPUUpdateDto cpu)
         {
-            if (!id.HasValue) return ResponseResultsHelper.UpdateError();
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _cpuService.UpdateCPUAsync(id.Value, cpu);
+            var result = await _cpuService.UpdateCPUAsync(id, cpu);
 
             return result ? Json(cpu) : ResponseResultsHelper.UpdateError();
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readCpu = await _cpuService.GetCPUByIdAsync(id);
 
-            var readCpu = await _cpuService.GetCPUByIdAsync(id.Value);
+            if (readCpu == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readCpu == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _cpuService.DeleteCPUAsync(id.Value);
+            var result = await _cpuService.DeleteCPUAsync(id);
 
             return result ? Json(readCpu) : ResponseResultsHelper.DeleteError();
         }

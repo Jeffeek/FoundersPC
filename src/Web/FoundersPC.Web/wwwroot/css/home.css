@@ -310,7 +310,8 @@ h6
     transform: rotateZ(45deg) scale(1.5);
 }
 
-.hero-figure-box-02 {
+.hero-figure-box-02
+{
     -webkit-transform: rotateZ(-45deg);
     background: linear-gradient(to left top, #1ffabf, rgba(2, 112, 215, 0));
     height: 50.5%;
@@ -447,7 +448,7 @@ h6
     width: 3.03%;
 }
 
-@media (max-width: 600px)
+@media (max-width: 992px)
 {
     .hero-cta
     {
@@ -473,9 +474,14 @@ h6
     {
         display: none;
     }
+
+    div.hero-figure.anime-element
+    {
+        margin-right: 5rem;
+    }
 }
 
-@media (min-width: 576px)
+@media (min-width: 992px)
 {
     .hero
     {
@@ -522,7 +528,7 @@ h6
 
     div.hero-figure.anime-element
     {
-        margin-right: 21rem;
+        margin-right: 20rem;
     }
 }
 
@@ -642,8 +648,8 @@ h6
 
 .cta
 {
-    text-align: center;
     align-self: self-end;
+    text-align: center;
 }
 
 .cta .section-inner
@@ -768,7 +774,8 @@ p.hero-paragraph
     font-size: 1.5rem;
 }
 
-body{
+body
+{
     background: #242830;
     margin-bottom: 0px;
 }

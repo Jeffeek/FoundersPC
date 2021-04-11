@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 #endregion
 
-namespace FoundersPC.RepositoryShared.Identity
+namespace FoundersPC.IdentityEntities.Identity
 {
     public abstract class IdentityItem : IIdentityItem
     {

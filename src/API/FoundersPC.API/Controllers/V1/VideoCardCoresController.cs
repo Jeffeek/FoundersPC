@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/VideoCardCores")]
@@ -22,15 +20,12 @@ namespace FoundersPC.API.Controllers.V1
     public class VideoCardCoresController : Controller
     {
         private readonly ILogger<VideoCardCoresController> _logger;
-        private readonly IMapper _mapper;
         private readonly IVideoCardCoreService _videoCardCoreService;
 
         public VideoCardCoresController(IVideoCardCoreService service,
-                                        IMapper mapper,
                                         ILogger<VideoCardCoresController> logger)
         {
             _videoCardCoreService = service;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -42,28 +37,25 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _videoCardCoreService.GetAllVideoCardCoresAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CaseReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<CaseReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult("null");
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id);
 
-            var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id.Value);
-
-            return readDto == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(readDto);
+            return readDto == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(readDto);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] VideoCardCoreUpdateDto videoCardCore)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] VideoCardCoreUpdateDto videoCardCore)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _videoCardCoreService.UpdateVideoCardCoreAsync(id.Value, videoCardCore);
+            var result = await _videoCardCoreService.UpdateVideoCardCoreAsync(id, videoCardCore);
 
             return result ? Json(videoCardCore) : ResponseResultsHelper.UpdateError();
         }
@@ -82,18 +74,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id);
 
-            var readDto = await _videoCardCoreService.GetVideoCardCoreByIdAsync(id.Value);
+            if (readDto == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readDto == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _videoCardCoreService.DeleteVideoCardCoreAsync(id.Value);
+            var result = await _videoCardCoreService.DeleteVideoCardCoreAsync(id);
 
             return result ? Json(readDto) : ResponseResultsHelper.DeleteError();
         }

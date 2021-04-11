@@ -4,11 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared.Collections;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Users;
-using FoundersPC.Identity.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +16,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 {
     public class UsersEntrancesLogsRepository : GenericRepositoryAsync<UserEntranceLog>, IUsersEntrancesLogsRepository
     {
-        public UsersEntrancesLogsRepository(FoundersPCUsersContext context) : base(context) { }
+        public UsersEntrancesLogsRepository(DbContext context) : base(context) { }
 
         public override async Task<IEnumerable<UserEntranceLog>> GetAllAsync() =>
             await Context.Set<UserEntranceLog>()
@@ -86,9 +84,10 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 
         /// <inheritdoc/>
         public async Task<IEnumerable<UserEntranceLog>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
-            await Context.Set<UserEntranceLog>()
-                         .Paginate(pageNumber, pageSize)
-                         .ToListAsync();
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.User)
+                  .ThenInclude(x => x.Role)
+                  .ToListAsync();
 
         #endregion
     }

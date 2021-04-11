@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,22 +13,18 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Motherboards")]
     public class MotherboardsController : Controller
     {
         private readonly ILogger<MotherboardsController> _logger;
-        private readonly IMapper _mapper;
         private readonly IMotherboardService _motherboardService;
 
         public MotherboardsController(IMotherboardService service,
-                                      IMapper mapper,
                                       ILogger<MotherboardsController> logger)
         {
             _motherboardService = service;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -41,30 +36,27 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _motherboardService.GetAllMotherboardsAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<MotherboardReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<MotherboardReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
-
-            var motherboardReadDto = await _motherboardService.GetMotherboardByIdAsync(id.Value);
+            var motherboardReadDto = await _motherboardService.GetMotherboardByIdAsync(id);
 
             return motherboardReadDto == null
-                       ? ResponseResultsHelper.NotFoundByIdResult(id.Value)
+                       ? ResponseResultsHelper.NotFoundByIdResult(id)
                        : Json(motherboardReadDto);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Update(int? id, [FromBody] MotherboardUpdateDto motherboard)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] MotherboardUpdateDto motherboard)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _motherboardService.UpdateMotherboardAsync(id.Value, motherboard);
+            var result = await _motherboardService.UpdateMotherboardAsync(id, motherboard);
 
             return result ? Json(motherboard) : ResponseResultsHelper.UpdateError();
         }
@@ -83,18 +75,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var motherboardReadDto = await _motherboardService.GetMotherboardByIdAsync(id);
 
-            var motherboardReadDto = await _motherboardService.GetMotherboardByIdAsync(id.Value);
+            if (motherboardReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (motherboardReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _motherboardService.DeleteMotherboardAsync(id.Value);
+            var result = await _motherboardService.DeleteMotherboardAsync(id);
 
             return result ? Json(motherboardReadDto) : ResponseResultsHelper.DeleteError();
         }

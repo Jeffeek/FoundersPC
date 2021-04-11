@@ -84,7 +84,7 @@ namespace FoundersPC.Identity.Services.Log_Services
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrances(int pageNumber, int pageSize) =>
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableAsync(int pageNumber, int pageSize) =>
             _mapper.Map<IEnumerable<UserEntranceLog>,
                 IEnumerable<UserEntranceLogReadDto>
             >(await _unitOfWork.UsersEntrancesLogsRepository.GetPaginateableAsync(pageNumber, pageSize));

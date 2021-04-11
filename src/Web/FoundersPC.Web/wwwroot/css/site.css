@@ -1,4 +1,10 @@
-﻿html
+﻿*
+{
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 0.05rem;
+}
+
+html
 {
     font-size: 14px;
 }

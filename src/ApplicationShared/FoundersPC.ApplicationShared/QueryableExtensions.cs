@@ -2,13 +2,13 @@
 
 using System;
 using System.Linq;
-using FoundersPC.RepositoryShared.Identity;
+using FoundersPC.IdentityEntities.Identity;
 
 #endregion
 
-namespace FoundersPC.ApplicationShared.Collections
+namespace FoundersPC.ApplicationShared
 {
-    public static class CollectionsExtensions
+    public static class QueryableExtensions
     {
         public static IQueryable<T> Paginate<T>(this IQueryable<T> source, int pageNumber, int pageSize)
             where T : IIdentityItem

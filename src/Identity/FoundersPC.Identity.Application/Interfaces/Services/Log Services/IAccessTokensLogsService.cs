@@ -4,12 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+using FoundersPC.ServicesShared;
 
 #endregion
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 {
-    public interface IAccessTokensLogsService
+    public interface IAccessTokensLogsService : IPaginateableService<AccessTokenLogReadDto>
     {
         Task<IEnumerable<AccessTokenLogReadDto>> GetAllAsync();
 

@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FoundersPC.RepositoryShared\FoundersPC.RepositoryShared.csproj" />
+    <ProjectReference Include="..\FoundersPC.RepositoryCollectionsExtensions\FoundersPC.IdentityEntities.csproj" />
   </ItemGroup>
 
 </Project>

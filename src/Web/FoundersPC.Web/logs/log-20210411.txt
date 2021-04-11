@@ -1,0 +1,1600 @@
+04/11/2021 00:04:45 Web server started..
+04/11/2021 00:04:45 Web server HostBuilder created
+04/11/2021 00:04:46 Host built
+04/11/2021 00:06:34 Web server started..
+04/11/2021 00:06:34 Web server HostBuilder created
+04/11/2021 00:06:47 Host built
+04/11/2021 00:07:03 Now listening on: "https://localhost:9000"
+04/11/2021 00:07:03 Application started. Press Ctrl+C to shut down.
+04/11/2021 00:07:03 Hosting environment: "Development"
+04/11/2021 00:07:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 00:07:23 HTTP "GET" "/" responded 200 in 5306.3377 ms
+04/11/2021 00:09:49 Web server started..
+04/11/2021 00:09:50 Web server HostBuilder created
+04/11/2021 00:09:50 Host built
+04/11/2021 00:09:51 Now listening on: "https://localhost:9000"
+04/11/2021 00:09:51 Application started. Press Ctrl+C to shut down.
+04/11/2021 00:09:51 Hosting environment: "Development"
+04/11/2021 00:09:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 00:09:55 HTTP "GET" "/" responded 200 in 233.7172 ms
+04/11/2021 00:10:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 259.6127 ms
+04/11/2021 00:10:29 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 00:10:29 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 00:10:32 Received HTTP response headers after 2260.1356ms - 200
+04/11/2021 00:10:32 End processing HTTP request after 2272.0744ms - 200
+04/11/2021 00:10:32 HTTP "POST" "/Authentication/SignIn" responded 302 in 2386.2941 ms
+04/11/2021 00:10:32 HTTP "GET" "/" responded 200 in 3.9804 ms
+04/11/2021 00:10:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 00:10:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 00:10:51 Received HTTP response headers after 162.3432ms - 200
+04/11/2021 00:10:51 End processing HTTP request after 164.6003ms - 200
+04/11/2021 00:10:51 HTTP "GET" "/Account" responded 200 in 284.7430 ms
+04/11/2021 00:10:55 HTTP "GET" "/" responded 200 in 1.4221 ms
+04/11/2021 00:10:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:10:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:10:59 Received HTTP response headers after 53.8948ms - 200
+04/11/2021 00:10:59 End processing HTTP request after 56.0532ms - 200
+04/11/2021 00:10:59 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 84.8260 ms
+04/11/2021 00:11:01 HTTP "GET" "/" responded 200 in 0.9767 ms
+04/11/2021 00:11:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:11:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:11:04 Received HTTP response headers after 72.6823ms - 200
+04/11/2021 00:11:04 End processing HTTP request after 74.9634ms - 200
+04/11/2021 00:11:04 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 103.8379 ms
+04/11/2021 00:11:43 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:11:43 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:11:43 Received HTTP response headers after 20.699ms - 200
+04/11/2021 00:11:43 End processing HTTP request after 23.1462ms - 200
+04/11/2021 00:11:46 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 3415.5491 ms
+04/11/2021 00:12:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:12:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:12:11 Received HTTP response headers after 20.8819ms - 200
+04/11/2021 00:12:11 End processing HTTP request after 23.5257ms - 200
+04/11/2021 00:12:12 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 243.1449 ms
+04/11/2021 00:12:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:12:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:12:13 Received HTTP response headers after 8.3617ms - 200
+04/11/2021 00:12:13 End processing HTTP request after 11.1552ms - 200
+04/11/2021 00:12:13 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 14.9673 ms
+04/11/2021 00:12:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:12:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:12:44 Received HTTP response headers after 21.2524ms - 200
+04/11/2021 00:12:44 End processing HTTP request after 23.4434ms - 200
+04/11/2021 00:12:44 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 187.8170 ms
+04/11/2021 00:13:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:13:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:13:09 Received HTTP response headers after 12.617ms - 200
+04/11/2021 00:13:09 End processing HTTP request after 14.7538ms - 200
+04/11/2021 00:13:09 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 167.3864 ms
+04/11/2021 00:16:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:16:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:16:30 Received HTTP response headers after 38.5143ms - 200
+04/11/2021 00:16:30 End processing HTTP request after 40.5818ms - 200
+04/11/2021 00:16:30 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 46.2811 ms
+04/11/2021 00:17:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:17:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:17:03 Received HTTP response headers after 21.4612ms - 200
+04/11/2021 00:17:03 End processing HTTP request after 23.4637ms - 200
+04/11/2021 00:17:03 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 28.4070 ms
+04/11/2021 00:17:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:17:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:17:41 Received HTTP response headers after 13.617ms - 200
+04/11/2021 00:17:41 End processing HTTP request after 15.5655ms - 200
+04/11/2021 00:17:41 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 18.6774 ms
+04/11/2021 00:17:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:17:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:17:51 Received HTTP response headers after 11.1403ms - 200
+04/11/2021 00:17:51 End processing HTTP request after 13.1089ms - 200
+04/11/2021 00:17:51 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 15.8273 ms
+04/11/2021 00:18:31 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:18:31 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:18:31 Received HTTP response headers after 28.8811ms - 200
+04/11/2021 00:18:31 End processing HTTP request after 31.001ms - 200
+04/11/2021 00:18:31 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 36.7096 ms
+04/11/2021 00:19:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:19:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:19:12 Received HTTP response headers after 42.4149ms - 200
+04/11/2021 00:19:12 End processing HTTP request after 44.9885ms - 200
+04/11/2021 00:19:12 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 50.7281 ms
+04/11/2021 00:19:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:19:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:19:51 Received HTTP response headers after 15.1109ms - 200
+04/11/2021 00:19:51 End processing HTTP request after 18.643ms - 200
+04/11/2021 00:19:52 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 306.2524 ms
+04/11/2021 00:20:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:20:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:20:03 Received HTTP response headers after 5.8107ms - 200
+04/11/2021 00:20:03 End processing HTTP request after 8.0888ms - 200
+04/11/2021 00:20:04 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 130.4781 ms
+04/11/2021 00:20:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:20:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:20:13 Received HTTP response headers after 7.4157ms - 200
+04/11/2021 00:20:13 End processing HTTP request after 10.6746ms - 200
+04/11/2021 00:20:13 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 143.3843 ms
+04/11/2021 00:21:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:21:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 00:21:26 Received HTTP response headers after 34.8171ms - 200
+04/11/2021 00:21:26 End processing HTTP request after 37.0722ms - 200
+04/11/2021 00:21:26 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 41.6465 ms
+04/11/2021 00:21:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 00:21:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 00:21:37 Received HTTP response headers after 16.1063ms - 200
+04/11/2021 00:21:37 End processing HTTP request after 18.6121ms - 200
+04/11/2021 00:21:37 HTTP "GET" "/Account" responded 200 in 24.5521 ms
+04/11/2021 00:21:57 HTTP "GET" "/Home/Pricing" responded 200 in 15.6571 ms
+04/11/2021 00:22:00 HTTP "GET" "/" responded 200 in 0.8992 ms
+04/11/2021 00:24:12 HTTP "GET" "/" responded 200 in 6.3591 ms
+04/11/2021 00:24:15 HTTP "GET" "/" responded 200 in 1.1522 ms
+04/11/2021 00:25:34 HTTP "GET" "/" responded 200 in 196.1637 ms
+04/11/2021 00:25:45 HTTP "GET" "/" responded 200 in 1.1546 ms
+04/11/2021 00:26:45 HTTP "GET" "/" responded 200 in 6.4118 ms
+04/11/2021 00:26:48 HTTP "GET" "/" responded 200 in 0.8236 ms
+04/11/2021 00:31:34 HTTP "GET" "/" responded 200 in 7.4613 ms
+04/11/2021 00:32:42 HTTP "GET" "/" responded 200 in 13.2676 ms
+04/11/2021 00:34:30 HTTP "GET" "/" responded 200 in 135.9701 ms
+04/11/2021 00:34:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:34:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 00:34:40 Received HTTP response headers after 78.2057ms - 200
+04/11/2021 00:34:40 End processing HTTP request after 80.3505ms - 200
+04/11/2021 00:34:40 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 83.6262 ms
+04/11/2021 00:34:45 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 00:34:45 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 00:34:45 Received HTTP response headers after 14.275ms - 200
+04/11/2021 00:34:45 End processing HTTP request after 16.9675ms - 200
+04/11/2021 00:34:45 HTTP "GET" "/Account" responded 200 in 22.5626 ms
+04/11/2021 00:34:50 HTTP "GET" "/" responded 200 in 0.7978 ms
+04/11/2021 00:36:41 HTTP "GET" "/" responded 200 in 151.3320 ms
+04/11/2021 00:37:13 HTTP "GET" "/" responded 200 in 159.0170 ms
+04/11/2021 00:38:19 HTTP "GET" "/" responded 200 in 1.0376 ms
+04/11/2021 00:38:30 HTTP "GET" "/" responded 200 in 0.7779 ms
+04/11/2021 00:38:44 HTTP "GET" "/" responded 200 in 0.8355 ms
+04/11/2021 00:38:57 HTTP "GET" "/" responded 200 in 0.9525 ms
+04/11/2021 00:39:15 HTTP "GET" "/" responded 200 in 0.7749 ms
+04/11/2021 00:39:25 HTTP "GET" "/" responded 200 in 0.7883 ms
+04/11/2021 00:39:46 HTTP "GET" "/Home/Pricing" responded 200 in 3.3347 ms
+04/11/2021 14:04:36 Web server started..
+04/11/2021 14:04:36 Web server HostBuilder created
+04/11/2021 14:04:37 Host built
+04/11/2021 14:04:38 Now listening on: "https://localhost:9000"
+04/11/2021 14:04:38 Application started. Press Ctrl+C to shut down.
+04/11/2021 14:04:38 Hosting environment: "Development"
+04/11/2021 14:04:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 14:04:41 HTTP "GET" "/" responded 200 in 223.1404 ms
+04/11/2021 14:08:51 HTTP "GET" "/" responded 200 in 3421.3905 ms
+04/11/2021 14:09:07 HTTP "GET" "/" responded 200 in 1.2443 ms
+04/11/2021 14:10:01 HTTP "GET" "/" responded 200 in 221.6155 ms
+04/11/2021 14:10:05 HTTP "GET" "/" responded 200 in 1.8850 ms
+04/11/2021 14:10:23 HTTP "GET" "/" responded 200 in 1.0788 ms
+04/11/2021 14:11:18 HTTP "GET" "/" responded 200 in 8.0329 ms
+04/11/2021 14:11:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 261.9786 ms
+04/11/2021 14:12:05 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 14:12:05 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 14:12:07 Received HTTP response headers after 2398.6786ms - 200
+04/11/2021 14:12:07 End processing HTTP request after 2411.1679ms - 200
+04/11/2021 14:12:08 HTTP "POST" "/Authentication/SignIn" responded 302 in 2549.3341 ms
+04/11/2021 14:12:08 HTTP "GET" "/" responded 200 in 3.1145 ms
+04/11/2021 14:12:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 14:12:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 14:12:11 Received HTTP response headers after 214.7973ms - 200
+04/11/2021 14:12:11 End processing HTTP request after 216.8888ms - 200
+04/11/2021 14:12:11 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 317.9612 ms
+04/11/2021 14:12:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:12:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:12:15 Received HTTP response headers after 42.1652ms - 200
+04/11/2021 14:12:15 End processing HTTP request after 44.2307ms - 200
+04/11/2021 14:12:15 HTTP "GET" "/Account" responded 200 in 105.1921 ms
+04/11/2021 14:12:39 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:12:39 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:12:39 Received HTTP response headers after 26.81ms - 200
+04/11/2021 14:12:39 End processing HTTP request after 29.1802ms - 200
+04/11/2021 14:12:39 HTTP "GET" "/Account" responded 200 in 33.8496 ms
+04/11/2021 14:12:47 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:12:47 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:12:47 Received HTTP response headers after 11.0547ms - 200
+04/11/2021 14:12:47 End processing HTTP request after 13.9267ms - 200
+04/11/2021 14:12:47 HTTP "GET" "/Account" responded 200 in 20.6083 ms
+04/11/2021 14:13:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:13:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:13:01 Received HTTP response headers after 8.0142ms - 200
+04/11/2021 14:13:01 End processing HTTP request after 10.9781ms - 200
+04/11/2021 14:13:01 HTTP "GET" "/Account" responded 200 in 14.3832 ms
+04/11/2021 14:13:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 14:13:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 14:13:25 Received HTTP response headers after 16.6139ms - 200
+04/11/2021 14:13:25 End processing HTTP request after 19.2853ms - 200
+04/11/2021 14:13:25 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 24.3587 ms
+04/11/2021 14:14:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:14:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:14:13 Received HTTP response headers after 21.6917ms - 200
+04/11/2021 14:14:13 End processing HTTP request after 23.9092ms - 200
+04/11/2021 14:14:13 HTTP "GET" "/Account" responded 200 in 35.1663 ms
+04/11/2021 14:14:18 HTTP "GET" "/" responded 200 in 0.9259 ms
+04/11/2021 14:14:48 HTTP "GET" "/Authentication/SignIn" responded 200 in 12.4005 ms
+04/11/2021 14:15:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:15:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 14:15:17 Received HTTP response headers after 25.082ms - 200
+04/11/2021 14:15:17 End processing HTTP request after 27.2062ms - 200
+04/11/2021 14:15:17 HTTP "GET" "/Account" responded 200 in 30.8292 ms
+04/11/2021 14:15:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 14:15:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 14:15:20 Received HTTP response headers after 17.9843ms - 200
+04/11/2021 14:15:20 End processing HTTP request after 20.2354ms - 200
+04/11/2021 14:15:20 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 25.6413 ms
+04/11/2021 14:15:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 14:15:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 14:15:22 Received HTTP response headers after 21.7192ms - 200
+04/11/2021 14:15:22 End processing HTTP request after 25.1428ms - 200
+04/11/2021 14:15:22 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 49.7358 ms
+04/11/2021 14:15:43 HTTP "GET" "/" responded 200 in 1.1235 ms
+04/11/2021 14:17:11 HTTP "GET" "/" responded 200 in 1.1078 ms
+04/11/2021 14:19:46 Web server started..
+04/11/2021 14:19:47 Web server HostBuilder created
+04/11/2021 14:19:47 Host built
+04/11/2021 14:19:48 Now listening on: "https://localhost:9000"
+04/11/2021 14:19:48 Application started. Press Ctrl+C to shut down.
+04/11/2021 14:19:48 Hosting environment: "Development"
+04/11/2021 14:19:48 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 14:19:50 HTTP "GET" "/" responded 200 in 211.9161 ms
+04/11/2021 14:19:52 HTTP "GET" "/Authentication/SignIn" responded 200 in 254.3901 ms
+04/11/2021 14:19:54 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 14:19:54 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 14:19:56 Received HTTP response headers after 2248.1804ms - 200
+04/11/2021 14:19:56 End processing HTTP request after 2261.0425ms - 200
+04/11/2021 14:19:56 HTTP "POST" "/Authentication/SignIn" responded 302 in 2371.9446 ms
+04/11/2021 14:19:56 HTTP "GET" "/" responded 200 in 4.4745 ms
+04/11/2021 14:23:24 Web server started..
+04/11/2021 14:23:24 Web server HostBuilder created
+04/11/2021 14:23:25 Host built
+04/11/2021 14:23:26 Now listening on: "https://localhost:9000"
+04/11/2021 14:23:26 Application started. Press Ctrl+C to shut down.
+04/11/2021 14:23:26 Hosting environment: "Development"
+04/11/2021 14:23:26 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 14:23:28 HTTP "GET" "/" responded 200 in 216.1508 ms
+04/11/2021 14:23:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 258.8811 ms
+04/11/2021 14:23:31 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 14:23:31 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 14:23:33 Received HTTP response headers after 2234.6929ms - 200
+04/11/2021 14:23:33 End processing HTTP request after 2246.6104ms - 200
+04/11/2021 14:23:33 HTTP "POST" "/Authentication/SignIn" responded 302 in 2356.9510 ms
+04/11/2021 14:23:33 HTTP "GET" "/" responded 200 in 2.8942 ms
+04/11/2021 14:25:17 HTTP "GET" "/" responded 200 in 3210.3770 ms
+04/11/2021 14:27:09 HTTP "GET" "/" responded 200 in 220.5964 ms
+04/11/2021 14:30:53 HTTP "GET" "/" responded 200 in 169.8168 ms
+04/11/2021 14:33:20 HTTP "GET" "/" responded 200 in 157.2714 ms
+04/11/2021 14:35:39 HTTP "GET" "/" responded 200 in 157.4572 ms
+04/11/2021 14:36:04 HTTP "GET" "/" responded 200 in 174.3878 ms
+04/11/2021 14:37:20 HTTP "GET" "/" responded 200 in 149.3743 ms
+04/11/2021 14:43:33 HTTP "GET" "/" responded 200 in 182.8996 ms
+04/11/2021 14:44:46 HTTP "GET" "/" responded 200 in 138.7885 ms
+04/11/2021 14:45:42 HTTP "GET" "/" responded 200 in 0.9303 ms
+04/11/2021 14:46:13 HTTP "GET" "/" responded 200 in 126.1871 ms
+04/11/2021 14:46:50 HTTP "GET" "/" responded 200 in 126.7646 ms
+04/11/2021 14:49:13 HTTP "GET" "/" responded 200 in 124.2760 ms
+04/11/2021 14:49:15 HTTP "GET" "/" responded 200 in 1.1975 ms
+04/11/2021 14:50:28 HTTP "GET" "/" responded 200 in 154.0627 ms
+04/11/2021 14:51:13 HTTP "GET" "/" responded 200 in 125.6897 ms
+04/11/2021 14:51:37 HTTP "GET" "/" responded 200 in 145.2763 ms
+04/11/2021 14:52:00 HTTP "GET" "/" responded 200 in 141.6960 ms
+04/11/2021 14:52:13 HTTP "GET" "/" responded 200 in 124.4017 ms
+04/11/2021 14:53:50 HTTP "GET" "/" responded 200 in 134.0450 ms
+04/11/2021 14:56:13 HTTP "GET" "/" responded 200 in 141.9272 ms
+04/11/2021 14:56:53 HTTP "GET" "/" responded 200 in 133.6569 ms
+04/11/2021 14:57:43 HTTP "GET" "/" responded 200 in 137.6281 ms
+04/11/2021 14:57:55 HTTP "GET" "/" responded 200 in 136.6681 ms
+04/11/2021 14:58:27 HTTP "GET" "/" responded 200 in 134.7652 ms
+04/11/2021 14:58:58 HTTP "GET" "/" responded 200 in 129.0494 ms
+04/11/2021 14:59:16 HTTP "GET" "/" responded 200 in 121.7508 ms
+04/11/2021 15:00:16 HTTP "GET" "/" responded 200 in 119.8150 ms
+04/11/2021 15:00:31 HTTP "GET" "/" responded 200 in 123.4538 ms
+04/11/2021 15:00:52 HTTP "GET" "/" responded 200 in 121.0039 ms
+04/11/2021 15:01:59 HTTP "GET" "/" responded 200 in 178.9490 ms
+04/11/2021 15:12:46 HTTP "GET" "/" responded 200 in 136.0773 ms
+04/11/2021 15:13:23 HTTP "GET" "/" responded 200 in 1.0065 ms
+04/11/2021 15:17:18 HTTP "GET" "/" responded 200 in 145.0674 ms
+04/11/2021 15:18:15 HTTP "GET" "/" responded 200 in 121.5590 ms
+04/11/2021 15:18:35 HTTP "GET" "/" responded 200 in 129.8543 ms
+04/11/2021 15:20:13 HTTP "GET" "/" responded 200 in 2.9664 ms
+04/11/2021 15:20:20 HTTP "GET" "/" responded 200 in 0.7170 ms
+04/11/2021 15:20:36 HTTP "GET" "/" responded 200 in 0.9305 ms
+04/11/2021 15:22:09 HTTP "GET" "/" responded 200 in 3.1487 ms
+04/11/2021 15:22:24 HTTP "GET" "/" responded 200 in 0.8805 ms
+04/11/2021 15:22:32 HTTP "GET" "/" responded 200 in 0.8694 ms
+04/11/2021 15:22:51 HTTP "GET" "/" responded 200 in 0.7669 ms
+04/11/2021 15:23:04 HTTP "GET" "/" responded 200 in 0.6765 ms
+04/11/2021 15:23:21 HTTP "GET" "/" responded 200 in 0.7782 ms
+04/11/2021 15:25:10 HTTP "GET" "/" responded 200 in 4.0798 ms
+04/11/2021 15:25:40 HTTP "GET" "/" responded 200 in 0.7147 ms
+04/11/2021 15:25:58 HTTP "GET" "/" responded 200 in 0.7209 ms
+04/11/2021 15:26:15 HTTP "GET" "/" responded 200 in 0.7695 ms
+04/11/2021 15:26:16 HTTP "GET" "/" responded 200 in 1.2068 ms
+04/11/2021 15:29:22 HTTP "GET" "/" responded 200 in 3.9789 ms
+04/11/2021 15:29:56 HTTP "GET" "/" responded 200 in 0.7473 ms
+04/11/2021 15:32:16 HTTP "GET" "/" responded 200 in 4.4998 ms
+04/11/2021 15:33:35 HTTP "GET" "/" responded 200 in 0.6764 ms
+04/11/2021 15:33:52 HTTP "GET" "/" responded 200 in 0.7038 ms
+04/11/2021 15:34:41 HTTP "GET" "/" responded 200 in 0.7847 ms
+04/11/2021 15:34:53 HTTP "GET" "/" responded 200 in 0.7102 ms
+04/11/2021 15:35:36 HTTP "GET" "/" responded 200 in 0.9682 ms
+04/11/2021 15:35:42 HTTP "GET" "/" responded 200 in 0.7998 ms
+04/11/2021 15:36:30 HTTP "GET" "/" responded 200 in 0.6444 ms
+04/11/2021 15:36:33 HTTP "GET" "/" responded 200 in 0.7485 ms
+04/11/2021 15:37:05 HTTP "GET" "/" responded 200 in 0.6163 ms
+04/11/2021 15:37:23 HTTP "GET" "/" responded 200 in 0.6776 ms
+04/11/2021 15:38:23 HTTP "GET" "/" responded 200 in 0.7621 ms
+04/11/2021 15:38:54 HTTP "GET" "/" responded 200 in 0.9704 ms
+04/11/2021 15:41:19 HTTP "GET" "/" responded 200 in 2.8445 ms
+04/11/2021 15:41:51 HTTP "GET" "/" responded 200 in 0.7828 ms
+04/11/2021 15:41:53 HTTP "GET" "/" responded 200 in 0.6618 ms
+04/11/2021 15:42:06 HTTP "GET" "/" responded 200 in 0.8403 ms
+04/11/2021 15:43:52 HTTP "GET" "/" responded 200 in 0.7315 ms
+04/11/2021 15:44:48 HTTP "GET" "/" responded 200 in 2.4280 ms
+04/11/2021 15:46:07 HTTP "GET" "/" responded 200 in 210.8964 ms
+04/11/2021 15:46:44 HTTP "GET" "/" responded 200 in 2.9663 ms
+04/11/2021 15:46:45 HTTP "GET" "/" responded 200 in 0.8958 ms
+04/11/2021 15:47:03 HTTP "GET" "/" responded 200 in 0.7738 ms
+04/11/2021 15:47:28 HTTP "GET" "/" responded 200 in 0.8055 ms
+04/11/2021 15:47:43 HTTP "GET" "/" responded 200 in 0.7563 ms
+04/11/2021 15:48:30 HTTP "GET" "/" responded 200 in 0.7517 ms
+04/11/2021 15:48:42 HTTP "GET" "/" responded 200 in 0.9219 ms
+04/11/2021 15:48:57 HTTP "GET" "/" responded 200 in 0.7264 ms
+04/11/2021 15:49:03 HTTP "GET" "/" responded 200 in 0.6653 ms
+04/11/2021 15:49:04 HTTP "GET" "/" responded 200 in 0.8208 ms
+04/11/2021 15:49:26 HTTP "GET" "/" responded 200 in 0.7643 ms
+04/11/2021 15:49:52 HTTP "GET" "/" responded 200 in 131.3159 ms
+04/11/2021 15:50:21 HTTP "GET" "/" responded 200 in 127.1363 ms
+04/11/2021 15:50:37 HTTP "GET" "/" responded 200 in 125.0462 ms
+04/11/2021 15:50:51 HTTP "GET" "/" responded 200 in 0.8940 ms
+04/11/2021 15:51:02 HTTP "GET" "/" responded 200 in 0.8235 ms
+04/11/2021 15:51:14 HTTP "GET" "/" responded 200 in 0.7070 ms
+04/11/2021 15:53:06 HTTP "GET" "/" responded 200 in 0.8801 ms
+04/11/2021 15:53:43 HTTP "GET" "/" responded 200 in 0.9195 ms
+04/11/2021 15:56:45 HTTP "GET" "/" responded 200 in 144.8759 ms
+04/11/2021 15:57:11 HTTP "GET" "/" responded 200 in 133.2198 ms
+04/11/2021 15:57:34 HTTP "GET" "/" responded 200 in 146.6734 ms
+04/11/2021 15:58:01 HTTP "GET" "/" responded 200 in 0.8099 ms
+04/11/2021 15:58:25 HTTP "GET" "/Home/Pricing" responded 200 in 13.9600 ms
+04/11/2021 15:59:50 HTTP "GET" "/" responded 200 in 0.8906 ms
+04/11/2021 16:00:04 HTTP "GET" "/" responded 200 in 0.9510 ms
+04/11/2021 16:24:21 Web server started..
+04/11/2021 16:24:21 Web server HostBuilder created
+04/11/2021 16:24:22 Host built
+04/11/2021 16:24:22 Now listening on: "https://localhost:9000"
+04/11/2021 16:24:22 Application started. Press Ctrl+C to shut down.
+04/11/2021 16:24:22 Hosting environment: "Development"
+04/11/2021 16:24:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 16:24:25 HTTP "GET" "/" responded 200 in 207.7155 ms
+04/11/2021 16:24:28 HTTP "GET" "/Authentication/SignIn" responded 200 in 255.2238 ms
+04/11/2021 16:24:29 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:24:29 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:24:32 Received HTTP response headers after 2293.9437ms - 200
+04/11/2021 16:24:32 End processing HTTP request after 2306.7432ms - 200
+04/11/2021 16:24:32 HTTP "POST" "/Authentication/SignIn" responded 302 in 2420.9959 ms
+04/11/2021 16:24:32 HTTP "GET" "/" responded 200 in 1.9918 ms
+04/11/2021 16:25:48 HTTP "GET" "/" responded 200 in 3239.9677 ms
+04/11/2021 16:25:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:25:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:25:53 Received HTTP response headers after 265.9356ms - 200
+04/11/2021 16:25:53 End processing HTTP request after 268.431ms - 200
+04/11/2021 16:25:53 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 360.8966 ms
+04/11/2021 16:25:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:25:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:25:55 Received HTTP response headers after 40.7704ms - 200
+04/11/2021 16:25:55 End processing HTTP request after 42.8974ms - 200
+04/11/2021 16:25:55 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 74.2719 ms
+04/11/2021 16:25:58 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:25:58 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:25:58 Received HTTP response headers after 24.2697ms - 200
+04/11/2021 16:25:58 End processing HTTP request after 26.4594ms - 200
+04/11/2021 16:25:58 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 34.1541 ms
+04/11/2021 16:25:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:25:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:25:59 Received HTTP response headers after 8.4263ms - 200
+04/11/2021 16:25:59 End processing HTTP request after 10.9023ms - 200
+04/11/2021 16:25:59 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 14.2810 ms
+04/11/2021 16:26:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:26:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:26:00 Received HTTP response headers after 7.8438ms - 200
+04/11/2021 16:26:00 End processing HTTP request after 11.581ms - 200
+04/11/2021 16:26:00 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 14.7008 ms
+04/11/2021 16:26:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:26:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:26:01 Received HTTP response headers after 5.3139ms - 200
+04/11/2021 16:26:01 End processing HTTP request after 7.5233ms - 200
+04/11/2021 16:26:01 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 11.6439 ms
+04/11/2021 16:30:58 Web server started..
+04/11/2021 16:30:58 Web server HostBuilder created
+04/11/2021 16:30:59 Host built
+04/11/2021 16:30:59 Now listening on: "https://localhost:9000"
+04/11/2021 16:30:59 Application started. Press Ctrl+C to shut down.
+04/11/2021 16:30:59 Hosting environment: "Development"
+04/11/2021 16:30:59 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 16:31:01 HTTP "GET" "/" responded 200 in 273.9642 ms
+04/11/2021 16:31:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:31:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:31:08 Received HTTP response headers after 1861.2274ms - 500
+04/11/2021 16:31:08 End processing HTTP request after 1873.8533ms - 500
+04/11/2021 16:31:08 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 500 in 2253.4986 ms
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetPaginateableUsersAsync(Int32 pageNumber, Int32 pageSize, String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 84
+   at FoundersPC.Web.Controllers.AdminController.UsersTable(Int32 pageNumber) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AdminController.cs:line 37
+   at lambda_method20(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/11/2021 16:31:08 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.UserSettings.UsersInformationService.GetPaginateableUsersAsync(Int32 pageNumber, Int32 pageSize, String token) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\UserSettings\UsersInformationService.cs:line 84
+   at FoundersPC.Web.Controllers.AdminController.UsersTable(Int32 pageNumber) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AdminController.cs:line 37
+   at lambda_method20(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/11/2021 16:38:32 Web server started..
+04/11/2021 16:38:32 Web server HostBuilder created
+04/11/2021 16:38:33 Host built
+04/11/2021 16:38:33 Now listening on: "https://localhost:9000"
+04/11/2021 16:38:33 Application started. Press Ctrl+C to shut down.
+04/11/2021 16:38:33 Hosting environment: "Development"
+04/11/2021 16:38:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 16:38:36 HTTP "GET" "/" responded 200 in 219.8530 ms
+04/11/2021 16:38:37 HTTP "GET" "/Authentication/SignIn" responded 200 in 249.9596 ms
+04/11/2021 16:38:39 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:38:39 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:38:41 Received HTTP response headers after 2275.1866ms - 200
+04/11/2021 16:38:41 End processing HTTP request after 2288.68ms - 200
+04/11/2021 16:38:41 HTTP "POST" "/Authentication/SignIn" responded 302 in 2407.2184 ms
+04/11/2021 16:38:41 HTTP "GET" "/" responded 200 in 2.4574 ms
+04/11/2021 16:38:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:38:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:38:44 Received HTTP response headers after 219.3908ms - 200
+04/11/2021 16:38:44 End processing HTTP request after 222.1139ms - 200
+04/11/2021 16:38:44 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 304.7119 ms
+04/11/2021 16:38:46 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:38:46 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:38:46 Received HTTP response headers after 39.7379ms - 200
+04/11/2021 16:38:46 End processing HTTP request after 43.0636ms - 200
+04/11/2021 16:38:46 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 74.0669 ms
+04/11/2021 16:38:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:38:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:38:48 Received HTTP response headers after 22.0142ms - 200
+04/11/2021 16:38:48 End processing HTTP request after 25.3795ms - 200
+04/11/2021 16:38:48 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 30.8748 ms
+04/11/2021 16:38:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:38:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:38:49 Received HTTP response headers after 8.3014ms - 200
+04/11/2021 16:38:49 End processing HTTP request after 10.8482ms - 200
+04/11/2021 16:38:49 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 14.3801 ms
+04/11/2021 16:38:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:38:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:38:50 Received HTTP response headers after 5.6934ms - 200
+04/11/2021 16:38:50 End processing HTTP request after 8.1006ms - 200
+04/11/2021 16:38:50 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 13.6496 ms
+04/11/2021 16:38:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:38:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:38:51 Received HTTP response headers after 5.4019ms - 200
+04/11/2021 16:38:51 End processing HTTP request after 9.3579ms - 200
+04/11/2021 16:38:51 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 13.1314 ms
+04/11/2021 16:38:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:38:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:38:51 Received HTTP response headers after 5.4347ms - 200
+04/11/2021 16:38:51 End processing HTTP request after 7.5779ms - 200
+04/11/2021 16:38:51 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 10.3443 ms
+04/11/2021 16:38:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:38:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:38:52 Received HTTP response headers after 5.2858ms - 200
+04/11/2021 16:38:52 End processing HTTP request after 7.6861ms - 200
+04/11/2021 16:38:52 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 11.5383 ms
+04/11/2021 16:38:53 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:38:53 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:38:53 Received HTTP response headers after 5.6974ms - 200
+04/11/2021 16:38:53 End processing HTTP request after 8.414ms - 200
+04/11/2021 16:38:53 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 13.3941 ms
+04/11/2021 16:38:54 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:38:54 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:38:54 Received HTTP response headers after 5.4843ms - 200
+04/11/2021 16:38:54 End processing HTTP request after 7.8007ms - 200
+04/11/2021 16:38:54 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 11.0989 ms
+04/11/2021 16:38:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:38:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:38:55 Received HTTP response headers after 5.0661ms - 200
+04/11/2021 16:38:55 End processing HTTP request after 7.8866ms - 200
+04/11/2021 16:38:55 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 11.6463 ms
+04/11/2021 16:38:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:38:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:38:55 Received HTTP response headers after 6.1164ms - 200
+04/11/2021 16:38:55 End processing HTTP request after 8.5515ms - 200
+04/11/2021 16:38:55 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 11.9251 ms
+04/11/2021 16:38:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:38:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:38:55 Received HTTP response headers after 5.8252ms - 200
+04/11/2021 16:38:55 End processing HTTP request after 9.7142ms - 200
+04/11/2021 16:38:55 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 13.7969 ms
+04/11/2021 16:38:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:38:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:38:56 Received HTTP response headers after 5.1199ms - 200
+04/11/2021 16:38:56 End processing HTTP request after 8.8402ms - 200
+04/11/2021 16:38:56 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 12.7160 ms
+04/11/2021 16:38:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:38:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:38:56 Received HTTP response headers after 5.3815ms - 200
+04/11/2021 16:38:56 End processing HTTP request after 8.0237ms - 200
+04/11/2021 16:38:56 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 12.4311 ms
+04/11/2021 16:38:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:38:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:38:57 Received HTTP response headers after 5.9733ms - 200
+04/11/2021 16:38:57 End processing HTTP request after 8.6374ms - 200
+04/11/2021 16:38:57 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 13.6024 ms
+04/11/2021 16:38:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:38:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:38:57 Received HTTP response headers after 7.1291ms - 200
+04/11/2021 16:38:57 End processing HTTP request after 9.2918ms - 200
+04/11/2021 16:38:57 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 13.8280 ms
+04/11/2021 16:38:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:38:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:38:57 Received HTTP response headers after 6.1163ms - 200
+04/11/2021 16:38:57 End processing HTTP request after 8.9727ms - 200
+04/11/2021 16:38:57 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 13.9862 ms
+04/11/2021 16:38:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:38:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:38:59 Received HTTP response headers after 4.8028ms - 200
+04/11/2021 16:38:59 End processing HTTP request after 7.3282ms - 200
+04/11/2021 16:38:59 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 10.0038 ms
+04/11/2021 16:38:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:38:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:38:59 Received HTTP response headers after 4.8022ms - 200
+04/11/2021 16:38:59 End processing HTTP request after 7.8046ms - 200
+04/11/2021 16:38:59 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 13.5308 ms
+04/11/2021 16:39:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:39:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:39:00 Received HTTP response headers after 7.8724ms - 200
+04/11/2021 16:39:00 End processing HTTP request after 12.0408ms - 200
+04/11/2021 16:39:00 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 14.8555 ms
+04/11/2021 16:39:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:39:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:39:00 Received HTTP response headers after 4.732ms - 200
+04/11/2021 16:39:00 End processing HTTP request after 7.1101ms - 200
+04/11/2021 16:39:00 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 11.6145 ms
+04/11/2021 16:39:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:39:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:39:01 Received HTTP response headers after 5.4829ms - 200
+04/11/2021 16:39:01 End processing HTTP request after 7.8532ms - 200
+04/11/2021 16:39:01 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 10.6845 ms
+04/11/2021 16:39:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:39:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:39:01 Received HTTP response headers after 6.3965ms - 200
+04/11/2021 16:39:01 End processing HTTP request after 8.6157ms - 200
+04/11/2021 16:39:01 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 12.5280 ms
+04/11/2021 16:39:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:39:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:39:02 Received HTTP response headers after 6.441ms - 200
+04/11/2021 16:39:02 End processing HTTP request after 8.806ms - 200
+04/11/2021 16:39:02 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 13.3921 ms
+04/11/2021 16:39:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:39:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:39:02 Received HTTP response headers after 4.7077ms - 200
+04/11/2021 16:39:02 End processing HTTP request after 6.9768ms - 200
+04/11/2021 16:39:02 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 11.3175 ms
+04/11/2021 16:39:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:39:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:39:02 Received HTTP response headers after 4.9692ms - 200
+04/11/2021 16:39:02 End processing HTTP request after 7.5909ms - 200
+04/11/2021 16:39:02 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 11.3824 ms
+04/11/2021 16:39:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:39:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:39:03 Received HTTP response headers after 4.968ms - 200
+04/11/2021 16:39:03 End processing HTTP request after 7.3389ms - 200
+04/11/2021 16:39:03 HTTP "GET" "/Admin/Entrances?pageNumber=11" responded 200 in 10.5825 ms
+04/11/2021 16:39:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/11/2021 16:39:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/11/2021 16:39:03 Received HTTP response headers after 10.1368ms - 200
+04/11/2021 16:39:03 End processing HTTP request after 12.3954ms - 200
+04/11/2021 16:39:03 HTTP "GET" "/Admin/Entrances?pageNumber=12" responded 200 in 15.1834 ms
+04/11/2021 16:39:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/11/2021 16:39:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/11/2021 16:39:04 Received HTTP response headers after 5.1272ms - 200
+04/11/2021 16:39:04 End processing HTTP request after 7.489ms - 200
+04/11/2021 16:39:04 HTTP "GET" "/Admin/Entrances?pageNumber=13" responded 200 in 13.8775 ms
+04/11/2021 16:39:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/11/2021 16:39:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/11/2021 16:39:04 Received HTTP response headers after 4.8342ms - 200
+04/11/2021 16:39:04 End processing HTTP request after 7.1647ms - 200
+04/11/2021 16:39:04 HTTP "GET" "/Admin/Entrances?pageNumber=14" responded 200 in 9.9812 ms
+04/11/2021 16:39:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/11/2021 16:39:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/11/2021 16:39:04 Received HTTP response headers after 9.7878ms - 200
+04/11/2021 16:39:04 End processing HTTP request after 15.3291ms - 200
+04/11/2021 16:39:04 HTTP "GET" "/Admin/Entrances?pageNumber=15" responded 200 in 18.4546 ms
+04/11/2021 16:39:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=16&Size=10
+04/11/2021 16:39:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=16&Size=10
+04/11/2021 16:39:05 Received HTTP response headers after 4.9848ms - 200
+04/11/2021 16:39:05 End processing HTTP request after 7.9004ms - 200
+04/11/2021 16:39:05 HTTP "GET" "/Admin/Entrances?pageNumber=16" responded 200 in 11.8654 ms
+04/11/2021 16:39:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=17&Size=10
+04/11/2021 16:39:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=17&Size=10
+04/11/2021 16:39:05 Received HTTP response headers after 4.543ms - 200
+04/11/2021 16:39:05 End processing HTTP request after 7.0944ms - 200
+04/11/2021 16:39:05 HTTP "GET" "/Admin/Entrances?pageNumber=17" responded 200 in 9.6607 ms
+04/11/2021 16:39:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=18&Size=10
+04/11/2021 16:39:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=18&Size=10
+04/11/2021 16:39:06 Received HTTP response headers after 6.1371ms - 200
+04/11/2021 16:39:06 End processing HTTP request after 8.8313ms - 200
+04/11/2021 16:39:06 HTTP "GET" "/Admin/Entrances?pageNumber=18" responded 200 in 13.0567 ms
+04/11/2021 16:39:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:06 Received HTTP response headers after 4.7323ms - 200
+04/11/2021 16:39:06 End processing HTTP request after 8.5788ms - 200
+04/11/2021 16:39:06 HTTP "GET" "/Admin/Entrances?pageNumber=19" responded 200 in 11.7340 ms
+04/11/2021 16:39:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:06 Received HTTP response headers after 4.667ms - 200
+04/11/2021 16:39:06 End processing HTTP request after 7.3293ms - 200
+04/11/2021 16:39:06 HTTP "GET" "/Admin/Entrances?pageNumber=20" responded 200 in 10.4325 ms
+04/11/2021 16:39:07 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:07 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:07 Received HTTP response headers after 4.4633ms - 200
+04/11/2021 16:39:07 End processing HTTP request after 6.702ms - 200
+04/11/2021 16:39:07 HTTP "GET" "/Admin/Entrances?pageNumber=21" responded 200 in 9.2955 ms
+04/11/2021 16:39:07 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:08 Received HTTP response headers after 6.2024ms - 200
+04/11/2021 16:39:08 End processing HTTP request after 8.6997ms - 200
+04/11/2021 16:39:08 HTTP "GET" "/Admin/Entrances?pageNumber=20" responded 200 in 12.9035 ms
+04/11/2021 16:39:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:08 Received HTTP response headers after 5.6077ms - 200
+04/11/2021 16:39:08 End processing HTTP request after 8.31ms - 200
+04/11/2021 16:39:08 HTTP "GET" "/Admin/Entrances?pageNumber=19" responded 200 in 11.6570 ms
+04/11/2021 16:39:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=18&Size=10
+04/11/2021 16:39:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=18&Size=10
+04/11/2021 16:39:08 Received HTTP response headers after 7.0447ms - 200
+04/11/2021 16:39:08 End processing HTTP request after 10.7868ms - 200
+04/11/2021 16:39:08 HTTP "GET" "/Admin/Entrances?pageNumber=18" responded 200 in 14.1299 ms
+04/11/2021 16:39:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:09 Received HTTP response headers after 4.7168ms - 200
+04/11/2021 16:39:09 End processing HTTP request after 8.1375ms - 200
+04/11/2021 16:39:09 HTTP "GET" "/Admin/Entrances?pageNumber=19" responded 200 in 11.9898 ms
+04/11/2021 16:39:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:09 Received HTTP response headers after 4.6028ms - 200
+04/11/2021 16:39:09 End processing HTTP request after 7.1721ms - 200
+04/11/2021 16:39:09 HTTP "GET" "/Admin/Entrances?pageNumber=20" responded 200 in 9.4922 ms
+04/11/2021 16:39:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:09 Received HTTP response headers after 4.3758ms - 200
+04/11/2021 16:39:09 End processing HTTP request after 6.7589ms - 200
+04/11/2021 16:39:09 HTTP "GET" "/Admin/Entrances?pageNumber=21" responded 200 in 9.4889 ms
+04/11/2021 16:39:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:10 Received HTTP response headers after 4.3288ms - 200
+04/11/2021 16:39:10 End processing HTTP request after 6.7344ms - 200
+04/11/2021 16:39:10 HTTP "GET" "/Admin/Entrances?pageNumber=20" responded 200 in 9.4705 ms
+04/11/2021 16:39:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:10 Received HTTP response headers after 5.3376ms - 200
+04/11/2021 16:39:10 End processing HTTP request after 7.7125ms - 200
+04/11/2021 16:39:10 HTTP "GET" "/Admin/Entrances?pageNumber=19" responded 200 in 11.4704 ms
+04/11/2021 16:39:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:11 Received HTTP response headers after 5.838ms - 200
+04/11/2021 16:39:11 End processing HTTP request after 8.4061ms - 200
+04/11/2021 16:39:11 HTTP "GET" "/Admin/Entrances?pageNumber=20" responded 200 in 11.0124 ms
+04/11/2021 16:39:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:11 Received HTTP response headers after 5.5868ms - 200
+04/11/2021 16:39:11 End processing HTTP request after 8.2006ms - 200
+04/11/2021 16:39:11 HTTP "GET" "/Admin/Entrances?pageNumber=21" responded 200 in 11.6526 ms
+04/11/2021 16:39:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=22&Size=10
+04/11/2021 16:39:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=22&Size=10
+04/11/2021 16:39:12 Received HTTP response headers after 4.5534ms - 200
+04/11/2021 16:39:12 End processing HTTP request after 6.9833ms - 200
+04/11/2021 16:39:12 HTTP "GET" "/Admin/Entrances?pageNumber=22" responded 200 in 13.2360 ms
+04/11/2021 16:39:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:15 Received HTTP response headers after 5.0703ms - 200
+04/11/2021 16:39:15 End processing HTTP request after 10.2987ms - 200
+04/11/2021 16:39:15 HTTP "GET" "/Admin/Entrances?pageNumber=21" responded 200 in 13.8110 ms
+04/11/2021 16:39:16 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:16 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:16 Received HTTP response headers after 5.177ms - 200
+04/11/2021 16:39:16 End processing HTTP request after 7.5881ms - 200
+04/11/2021 16:39:16 HTTP "GET" "/Admin/Entrances?pageNumber=20" responded 200 in 10.7394 ms
+04/11/2021 16:39:16 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:16 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:16 Received HTTP response headers after 4.3957ms - 200
+04/11/2021 16:39:16 End processing HTTP request after 6.8921ms - 200
+04/11/2021 16:39:16 HTTP "GET" "/Admin/Entrances?pageNumber=21" responded 200 in 9.4895 ms
+04/11/2021 16:39:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=22&Size=10
+04/11/2021 16:39:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=22&Size=10
+04/11/2021 16:39:17 Received HTTP response headers after 4.2655ms - 200
+04/11/2021 16:39:17 End processing HTTP request after 6.9606ms - 200
+04/11/2021 16:39:17 HTTP "GET" "/Admin/Entrances?pageNumber=22" responded 200 in 9.5142 ms
+04/11/2021 16:39:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=21&Size=10
+04/11/2021 16:39:18 Received HTTP response headers after 5.7456ms - 200
+04/11/2021 16:39:18 End processing HTTP request after 8.2625ms - 200
+04/11/2021 16:39:18 HTTP "GET" "/Admin/Entrances?pageNumber=21" responded 200 in 11.7112 ms
+04/11/2021 16:39:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=20&Size=10
+04/11/2021 16:39:19 Received HTTP response headers after 4.706ms - 200
+04/11/2021 16:39:19 End processing HTTP request after 7.335ms - 200
+04/11/2021 16:39:19 HTTP "GET" "/Admin/Entrances?pageNumber=20" responded 200 in 10.4046 ms
+04/11/2021 16:39:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=19&Size=10
+04/11/2021 16:39:19 Received HTTP response headers after 4.6064ms - 200
+04/11/2021 16:39:19 End processing HTTP request after 8.4862ms - 200
+04/11/2021 16:39:19 HTTP "GET" "/Admin/Entrances?pageNumber=19" responded 200 in 10.9619 ms
+04/11/2021 16:39:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=18&Size=10
+04/11/2021 16:39:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=18&Size=10
+04/11/2021 16:39:20 Received HTTP response headers after 5.8991ms - 200
+04/11/2021 16:39:20 End processing HTTP request after 8.3104ms - 200
+04/11/2021 16:39:20 HTTP "GET" "/Admin/Entrances?pageNumber=18" responded 200 in 10.9862 ms
+04/11/2021 16:39:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=17&Size=10
+04/11/2021 16:39:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=17&Size=10
+04/11/2021 16:39:20 Received HTTP response headers after 5.5635ms - 200
+04/11/2021 16:39:20 End processing HTTP request after 7.9198ms - 200
+04/11/2021 16:39:20 HTTP "GET" "/Admin/Entrances?pageNumber=17" responded 200 in 10.8509 ms
+04/11/2021 16:39:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=16&Size=10
+04/11/2021 16:39:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=16&Size=10
+04/11/2021 16:39:20 Received HTTP response headers after 4.3317ms - 200
+04/11/2021 16:39:20 End processing HTTP request after 6.7747ms - 200
+04/11/2021 16:39:20 HTTP "GET" "/Admin/Entrances?pageNumber=16" responded 200 in 9.4664 ms
+04/11/2021 16:39:21 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/11/2021 16:39:21 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/11/2021 16:39:21 Received HTTP response headers after 4.9573ms - 200
+04/11/2021 16:39:21 End processing HTTP request after 8.4863ms - 200
+04/11/2021 16:39:21 HTTP "GET" "/Admin/Entrances?pageNumber=15" responded 200 in 12.1145 ms
+04/11/2021 16:39:21 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/11/2021 16:39:21 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/11/2021 16:39:21 Received HTTP response headers after 4.661ms - 200
+04/11/2021 16:39:21 End processing HTTP request after 7.3593ms - 200
+04/11/2021 16:39:21 HTTP "GET" "/Admin/Entrances?pageNumber=14" responded 200 in 10.0773 ms
+04/11/2021 16:39:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/11/2021 16:39:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/11/2021 16:39:22 Received HTTP response headers after 5.6624ms - 200
+04/11/2021 16:39:22 End processing HTTP request after 8.1792ms - 200
+04/11/2021 16:39:22 HTTP "GET" "/Admin/Entrances?pageNumber=13" responded 200 in 10.8213 ms
+04/11/2021 16:39:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/11/2021 16:39:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/11/2021 16:39:22 Received HTTP response headers after 4.6036ms - 200
+04/11/2021 16:39:22 End processing HTTP request after 6.9871ms - 200
+04/11/2021 16:39:22 HTTP "GET" "/Admin/Entrances?pageNumber=12" responded 200 in 9.5139 ms
+04/11/2021 16:39:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:39:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:39:22 Received HTTP response headers after 4.517ms - 200
+04/11/2021 16:39:22 End processing HTTP request after 7.0582ms - 200
+04/11/2021 16:39:22 HTTP "GET" "/Admin/Entrances?pageNumber=11" responded 200 in 9.6513 ms
+04/11/2021 16:39:23 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:39:23 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:39:23 Received HTTP response headers after 4.6437ms - 200
+04/11/2021 16:39:23 End processing HTTP request after 7.336ms - 200
+04/11/2021 16:39:23 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 9.8315 ms
+04/11/2021 16:39:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:39:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:39:24 Received HTTP response headers after 4.3964ms - 200
+04/11/2021 16:39:24 End processing HTTP request after 6.6126ms - 200
+04/11/2021 16:39:24 HTTP "GET" "/Admin/Entrances?pageNumber=11" responded 200 in 9.8232 ms
+04/11/2021 16:39:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/11/2021 16:39:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/11/2021 16:39:24 Received HTTP response headers after 4.4142ms - 200
+04/11/2021 16:39:24 End processing HTTP request after 7.9674ms - 200
+04/11/2021 16:39:24 HTTP "GET" "/Admin/Entrances?pageNumber=12" responded 200 in 11.9338 ms
+04/11/2021 16:39:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/11/2021 16:39:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=13&Size=10
+04/11/2021 16:39:25 Received HTTP response headers after 4.868ms - 200
+04/11/2021 16:39:25 End processing HTTP request after 7.2537ms - 200
+04/11/2021 16:39:25 HTTP "GET" "/Admin/Entrances?pageNumber=13" responded 200 in 12.4783 ms
+04/11/2021 16:39:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/11/2021 16:39:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=14&Size=10
+04/11/2021 16:39:25 Received HTTP response headers after 4.2019ms - 200
+04/11/2021 16:39:25 End processing HTTP request after 6.5494ms - 200
+04/11/2021 16:39:25 HTTP "GET" "/Admin/Entrances?pageNumber=14" responded 200 in 9.4267 ms
+04/11/2021 16:39:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/11/2021 16:39:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=15&Size=10
+04/11/2021 16:39:25 Received HTTP response headers after 4.8138ms - 200
+04/11/2021 16:39:25 End processing HTTP request after 7.1555ms - 200
+04/11/2021 16:39:25 HTTP "GET" "/Admin/Entrances?pageNumber=15" responded 200 in 9.8514 ms
+04/11/2021 16:40:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:40:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:40:56 Received HTTP response headers after 55.5757ms - 200
+04/11/2021 16:40:56 End processing HTTP request after 57.8926ms - 200
+04/11/2021 16:40:56 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 64.2398 ms
+04/11/2021 16:40:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/5/Entrances
+04/11/2021 16:40:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/5/Entrances
+04/11/2021 16:40:57 Received HTTP response headers after 23.7389ms - 200
+04/11/2021 16:40:57 End processing HTTP request after 26.2856ms - 200
+04/11/2021 16:40:57 HTTP "GET" "/Admin/User/5/Entrances" responded 200 in 33.6987 ms
+04/11/2021 16:41:15 HTTP "GET" "/Admin/RegisterManager" responded 200 in 24.3981 ms
+04/11/2021 16:41:59 HTTP "GET" "/Admin/RegisterManager" responded 200 in 3265.9540 ms
+04/11/2021 16:42:06 HTTP "GET" "/Admin/RegisterManager" responded 200 in 218.1509 ms
+04/11/2021 16:42:57 HTTP "GET" "/Admin/RegisterManager" responded 200 in 5.6030 ms
+04/11/2021 16:43:49 HTTP "GET" "/Admin/RegisterManager" responded 200 in 4.3813 ms
+04/11/2021 16:54:23 Web server started..
+04/11/2021 16:54:23 Web server HostBuilder created
+04/11/2021 16:54:24 Host built
+04/11/2021 16:54:24 Now listening on: "https://localhost:9000"
+04/11/2021 16:54:24 Application started. Press Ctrl+C to shut down.
+04/11/2021 16:54:24 Hosting environment: "Development"
+04/11/2021 16:54:24 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 16:54:29 HTTP "GET" "/" responded 200 in 209.0016 ms
+04/11/2021 16:54:34 HTTP "GET" "/Authentication/SignIn" responded 200 in 247.9128 ms
+04/11/2021 16:54:39 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:54:39 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:54:41 Received HTTP response headers after 2171.3926ms - 200
+04/11/2021 16:54:41 End processing HTTP request after 2183.898ms - 200
+04/11/2021 16:54:41 HTTP "POST" "/Authentication/SignIn" responded 302 in 2291.6382 ms
+04/11/2021 16:54:41 HTTP "GET" "/" responded 200 in 2.6522 ms
+04/11/2021 16:54:47 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:54:47 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:54:47 Received HTTP response headers after 215.6109ms - 200
+04/11/2021 16:54:47 End processing HTTP request after 218.3066ms - 200
+04/11/2021 16:54:47 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 299.7729 ms
+04/11/2021 16:54:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:54:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:54:50 Received HTTP response headers after 18.4561ms - 200
+04/11/2021 16:54:50 End processing HTTP request after 20.8842ms - 200
+04/11/2021 16:54:50 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 26.3624 ms
+04/11/2021 16:58:18 Web server started..
+04/11/2021 16:58:18 Web server HostBuilder created
+04/11/2021 16:58:19 Host built
+04/11/2021 16:58:20 Now listening on: "https://localhost:9000"
+04/11/2021 16:58:20 Application started. Press Ctrl+C to shut down.
+04/11/2021 16:58:20 Hosting environment: "Development"
+04/11/2021 16:58:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 16:58:22 HTTP "GET" "/" responded 200 in 233.4488 ms
+04/11/2021 16:58:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 263.5681 ms
+04/11/2021 16:58:28 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:58:28 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 16:58:30 Received HTTP response headers after 2219.0344ms - 200
+04/11/2021 16:58:30 End processing HTTP request after 2233.0762ms - 200
+04/11/2021 16:58:30 HTTP "POST" "/Authentication/SignIn" responded 302 in 2351.0188 ms
+04/11/2021 16:58:30 HTTP "GET" "/" responded 200 in 2.5196 ms
+04/11/2021 16:58:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:58:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 16:58:34 Received HTTP response headers after 207.5241ms - 200
+04/11/2021 16:58:34 End processing HTTP request after 209.8694ms - 200
+04/11/2021 16:58:34 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 296.8666 ms
+04/11/2021 16:58:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:58:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:58:37 Received HTTP response headers after 39.5551ms - 200
+04/11/2021 16:58:37 End processing HTTP request after 41.6663ms - 200
+04/11/2021 16:58:37 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 72.5140 ms
+04/11/2021 16:58:45 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:58:45 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:58:45 Received HTTP response headers after 23.9028ms - 200
+04/11/2021 16:58:45 End processing HTTP request after 26.3329ms - 200
+04/11/2021 16:58:45 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 34.3062 ms
+04/11/2021 16:58:46 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:58:46 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:58:46 Received HTTP response headers after 8.9092ms - 200
+04/11/2021 16:58:46 End processing HTTP request after 11.6143ms - 200
+04/11/2021 16:58:46 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 15.0416 ms
+04/11/2021 16:58:46 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:58:46 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:58:46 Received HTTP response headers after 7.0749ms - 200
+04/11/2021 16:58:46 End processing HTTP request after 9.819ms - 200
+04/11/2021 16:58:46 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 13.0786 ms
+04/11/2021 16:58:47 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:58:47 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:58:47 Received HTTP response headers after 5.5828ms - 200
+04/11/2021 16:58:47 End processing HTTP request after 9.9985ms - 200
+04/11/2021 16:58:47 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 12.9167 ms
+04/11/2021 16:58:47 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:58:47 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:58:47 Received HTTP response headers after 5.5788ms - 200
+04/11/2021 16:58:47 End processing HTTP request after 8.6736ms - 200
+04/11/2021 16:58:47 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 15.7310 ms
+04/11/2021 16:58:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:58:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:58:48 Received HTTP response headers after 5.8561ms - 200
+04/11/2021 16:58:48 End processing HTTP request after 8.6406ms - 200
+04/11/2021 16:58:48 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 11.8753 ms
+04/11/2021 16:58:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:58:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:58:49 Received HTTP response headers after 5.0859ms - 200
+04/11/2021 16:58:49 End processing HTTP request after 8.5328ms - 200
+04/11/2021 16:58:49 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 11.6142 ms
+04/11/2021 16:58:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:58:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:58:49 Received HTTP response headers after 8.468ms - 200
+04/11/2021 16:58:49 End processing HTTP request after 12.9981ms - 200
+04/11/2021 16:58:49 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 16.1632 ms
+04/11/2021 16:58:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:58:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:58:50 Received HTTP response headers after 5.1857ms - 200
+04/11/2021 16:58:50 End processing HTTP request after 7.2743ms - 200
+04/11/2021 16:58:50 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 10.7789 ms
+04/11/2021 16:58:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:58:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:58:50 Received HTTP response headers after 4.978ms - 200
+04/11/2021 16:58:50 End processing HTTP request after 8.5256ms - 200
+04/11/2021 16:58:50 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 12.1115 ms
+04/11/2021 16:58:51 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:51 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:51 Received HTTP response headers after 5.4829ms - 200
+04/11/2021 16:58:51 End processing HTTP request after 7.6104ms - 200
+04/11/2021 16:58:51 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 10.3265 ms
+04/11/2021 16:58:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:52 Received HTTP response headers after 5.7705ms - 200
+04/11/2021 16:58:52 End processing HTTP request after 8.4538ms - 200
+04/11/2021 16:58:52 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 10.9479 ms
+04/11/2021 16:58:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:52 Received HTTP response headers after 5.1219ms - 200
+04/11/2021 16:58:52 End processing HTTP request after 7.6124ms - 200
+04/11/2021 16:58:52 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 12.7473 ms
+04/11/2021 16:58:53 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:58:53 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:58:53 Received HTTP response headers after 8.6765ms - 200
+04/11/2021 16:58:53 End processing HTTP request after 11.3017ms - 200
+04/11/2021 16:58:53 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 14.4553 ms
+04/11/2021 16:58:53 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:58:53 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:58:53 Received HTTP response headers after 5.2344ms - 200
+04/11/2021 16:58:53 End processing HTTP request after 7.5629ms - 200
+04/11/2021 16:58:53 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 13.0108 ms
+04/11/2021 16:58:53 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:58:53 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:58:53 Received HTTP response headers after 5.577ms - 200
+04/11/2021 16:58:53 End processing HTTP request after 8.06ms - 200
+04/11/2021 16:58:53 HTTP "GET" "/Admin/Entrances?pageNumber=11" responded 200 in 10.7526 ms
+04/11/2021 16:58:54 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:58:54 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:58:54 Received HTTP response headers after 6.112ms - 200
+04/11/2021 16:58:54 End processing HTTP request after 8.5612ms - 200
+04/11/2021 16:58:54 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 11.9939 ms
+04/11/2021 16:58:54 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:58:54 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:58:54 Received HTTP response headers after 4.7851ms - 200
+04/11/2021 16:58:54 End processing HTTP request after 7.3105ms - 200
+04/11/2021 16:58:54 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 10.0931 ms
+04/11/2021 16:58:54 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:54 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:54 Received HTTP response headers after 5.1192ms - 200
+04/11/2021 16:58:54 End processing HTTP request after 7.9228ms - 200
+04/11/2021 16:58:55 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 12.2067 ms
+04/11/2021 16:58:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:55 Received HTTP response headers after 5.1501ms - 200
+04/11/2021 16:58:55 End processing HTTP request after 10.2643ms - 200
+04/11/2021 16:58:55 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 16.7701 ms
+04/11/2021 16:58:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:55 Received HTTP response headers after 5.2343ms - 200
+04/11/2021 16:58:55 End processing HTTP request after 8.0587ms - 200
+04/11/2021 16:58:55 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 13.3721 ms
+04/11/2021 16:58:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:58:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:58:56 Received HTTP response headers after 5.5038ms - 200
+04/11/2021 16:58:56 End processing HTTP request after 8.7504ms - 200
+04/11/2021 16:58:56 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 13.1543 ms
+04/11/2021 16:58:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:58:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:58:56 Received HTTP response headers after 5.1947ms - 200
+04/11/2021 16:58:56 End processing HTTP request after 7.6726ms - 200
+04/11/2021 16:58:56 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 10.7709 ms
+04/11/2021 16:58:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:58:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:58:57 Received HTTP response headers after 6.6694ms - 200
+04/11/2021 16:58:57 End processing HTTP request after 9.4154ms - 200
+04/11/2021 16:58:57 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 13.2223 ms
+04/11/2021 16:58:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:57 Received HTTP response headers after 6.6912ms - 200
+04/11/2021 16:58:57 End processing HTTP request after 9.0012ms - 200
+04/11/2021 16:58:57 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 13.0904 ms
+04/11/2021 16:58:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:57 Received HTTP response headers after 9.2984ms - 200
+04/11/2021 16:58:57 End processing HTTP request after 11.7851ms - 200
+04/11/2021 16:58:57 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 15.5510 ms
+04/11/2021 16:58:57 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:57 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:57 Received HTTP response headers after 5.773ms - 200
+04/11/2021 16:58:57 End processing HTTP request after 8.3333ms - 200
+04/11/2021 16:58:57 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 11.9796 ms
+04/11/2021 16:58:58 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:58:58 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:58:58 Received HTTP response headers after 8.8485ms - 200
+04/11/2021 16:58:58 End processing HTTP request after 12.6518ms - 200
+04/11/2021 16:58:58 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 15.6011 ms
+04/11/2021 16:58:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:58:59 Received HTTP response headers after 5.0381ms - 200
+04/11/2021 16:58:59 End processing HTTP request after 9.0815ms - 200
+04/11/2021 16:58:59 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 13.1549 ms
+04/11/2021 16:58:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:58:59 Received HTTP response headers after 4.5582ms - 200
+04/11/2021 16:58:59 End processing HTTP request after 7.1987ms - 200
+04/11/2021 16:58:59 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 10.0859 ms
+04/11/2021 16:58:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:58:59 Received HTTP response headers after 5.6923ms - 200
+04/11/2021 16:58:59 End processing HTTP request after 8.3034ms - 200
+04/11/2021 16:58:59 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 12.0019 ms
+04/11/2021 16:59:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:59:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:59:00 Received HTTP response headers after 4.6455ms - 200
+04/11/2021 16:59:00 End processing HTTP request after 7.1479ms - 200
+04/11/2021 16:59:00 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 10.4161 ms
+04/11/2021 16:59:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:59:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:59:00 Received HTTP response headers after 4.25ms - 200
+04/11/2021 16:59:00 End processing HTTP request after 6.7963ms - 200
+04/11/2021 16:59:00 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 9.4961 ms
+04/11/2021 16:59:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:59:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:59:00 Received HTTP response headers after 4.7768ms - 200
+04/11/2021 16:59:00 End processing HTTP request after 8.175ms - 200
+04/11/2021 16:59:00 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 11.9508 ms
+04/11/2021 16:59:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:59:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:59:00 Received HTTP response headers after 4.4304ms - 200
+04/11/2021 16:59:00 End processing HTTP request after 6.9018ms - 200
+04/11/2021 16:59:00 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 9.7105 ms
+04/11/2021 16:59:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:59:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:59:00 Received HTTP response headers after 6.405ms - 200
+04/11/2021 16:59:00 End processing HTTP request after 9.8059ms - 200
+04/11/2021 16:59:00 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 13.7716 ms
+04/11/2021 16:59:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:59:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=2&Size=10
+04/11/2021 16:59:01 Received HTTP response headers after 4.7232ms - 200
+04/11/2021 16:59:01 End processing HTTP request after 7.2217ms - 200
+04/11/2021 16:59:01 HTTP "GET" "/Admin/Entrances?pageNumber=2" responded 200 in 9.8572 ms
+04/11/2021 16:59:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:59:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=3&Size=10
+04/11/2021 16:59:01 Received HTTP response headers after 4.3925ms - 200
+04/11/2021 16:59:01 End processing HTTP request after 7.3122ms - 200
+04/11/2021 16:59:01 HTTP "GET" "/Admin/Entrances?pageNumber=3" responded 200 in 10.3654 ms
+04/11/2021 16:59:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:59:01 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=4&Size=10
+04/11/2021 16:59:01 Received HTTP response headers after 5.0419ms - 200
+04/11/2021 16:59:01 End processing HTTP request after 8.3753ms - 200
+04/11/2021 16:59:01 HTTP "GET" "/Admin/Entrances?pageNumber=4" responded 200 in 11.6542 ms
+04/11/2021 16:59:01 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:59:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=5&Size=10
+04/11/2021 16:59:02 Received HTTP response headers after 4.8511ms - 200
+04/11/2021 16:59:02 End processing HTTP request after 7.6645ms - 200
+04/11/2021 16:59:02 HTTP "GET" "/Admin/Entrances?pageNumber=5" responded 200 in 10.7879 ms
+04/11/2021 16:59:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:59:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:59:02 Received HTTP response headers after 5.3238ms - 200
+04/11/2021 16:59:02 End processing HTTP request after 7.6872ms - 200
+04/11/2021 16:59:02 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 11.3187 ms
+04/11/2021 16:59:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:02 Received HTTP response headers after 6.8805ms - 200
+04/11/2021 16:59:02 End processing HTTP request after 9.8163ms - 200
+04/11/2021 16:59:02 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 13.1856 ms
+04/11/2021 16:59:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:02 Received HTTP response headers after 6.4981ms - 200
+04/11/2021 16:59:02 End processing HTTP request after 9.5135ms - 200
+04/11/2021 16:59:02 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 13.1325 ms
+04/11/2021 16:59:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:02 Received HTTP response headers after 4.5907ms - 200
+04/11/2021 16:59:02 End processing HTTP request after 6.7493ms - 200
+04/11/2021 16:59:02 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 10.0963 ms
+04/11/2021 16:59:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:59:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:59:03 Received HTTP response headers after 4.6419ms - 200
+04/11/2021 16:59:03 End processing HTTP request after 7.1424ms - 200
+04/11/2021 16:59:03 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 9.7849 ms
+04/11/2021 16:59:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:03 Received HTTP response headers after 4.8025ms - 200
+04/11/2021 16:59:03 End processing HTTP request after 7.5893ms - 200
+04/11/2021 16:59:03 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 10.3278 ms
+04/11/2021 16:59:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:03 Received HTTP response headers after 5.6712ms - 200
+04/11/2021 16:59:03 End processing HTTP request after 8.603ms - 200
+04/11/2021 16:59:03 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 11.9539 ms
+04/11/2021 16:59:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:03 Received HTTP response headers after 4.5044ms - 200
+04/11/2021 16:59:03 End processing HTTP request after 6.8451ms - 200
+04/11/2021 16:59:03 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 10.3298 ms
+04/11/2021 16:59:03 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:59:03 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/11/2021 16:59:03 Received HTTP response headers after 4.4642ms - 200
+04/11/2021 16:59:03 End processing HTTP request after 6.9178ms - 200
+04/11/2021 16:59:03 HTTP "GET" "/Admin/Entrances?pageNumber=6" responded 200 in 10.8377 ms
+04/11/2021 16:59:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:04 Received HTTP response headers after 6.0805ms - 200
+04/11/2021 16:59:04 End processing HTTP request after 9.9175ms - 200
+04/11/2021 16:59:04 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 13.3846 ms
+04/11/2021 16:59:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:04 Received HTTP response headers after 4.8123ms - 200
+04/11/2021 16:59:04 End processing HTTP request after 8.1113ms - 200
+04/11/2021 16:59:04 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 12.1859 ms
+04/11/2021 16:59:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:04 Received HTTP response headers after 5.9145ms - 200
+04/11/2021 16:59:04 End processing HTTP request after 9.9496ms - 200
+04/11/2021 16:59:04 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 13.2381 ms
+04/11/2021 16:59:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:59:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:59:05 Received HTTP response headers after 4.2799ms - 200
+04/11/2021 16:59:05 End processing HTTP request after 6.6926ms - 200
+04/11/2021 16:59:05 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 9.1927 ms
+04/11/2021 16:59:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:59:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=11&Size=10
+04/11/2021 16:59:05 Received HTTP response headers after 6.4638ms - 200
+04/11/2021 16:59:05 End processing HTTP request after 9.1271ms - 200
+04/11/2021 16:59:05 HTTP "GET" "/Admin/Entrances?pageNumber=11" responded 200 in 12.6333 ms
+04/11/2021 16:59:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:59:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=10&Size=10
+04/11/2021 16:59:05 Received HTTP response headers after 4.4486ms - 200
+04/11/2021 16:59:05 End processing HTTP request after 8.3741ms - 200
+04/11/2021 16:59:05 HTTP "GET" "/Admin/Entrances?pageNumber=10" responded 200 in 11.5964 ms
+04/11/2021 16:59:05 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:05 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/11/2021 16:59:05 Received HTTP response headers after 4.3267ms - 200
+04/11/2021 16:59:05 End processing HTTP request after 6.6838ms - 200
+04/11/2021 16:59:05 HTTP "GET" "/Admin/Entrances?pageNumber=9" responded 200 in 9.2667 ms
+04/11/2021 16:59:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=8&Size=10
+04/11/2021 16:59:06 Received HTTP response headers after 4.5085ms - 200
+04/11/2021 16:59:06 End processing HTTP request after 7.2521ms - 200
+04/11/2021 16:59:06 HTTP "GET" "/Admin/Entrances?pageNumber=8" responded 200 in 11.3238 ms
+04/11/2021 16:59:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/11/2021 16:59:06 Received HTTP response headers after 4.2973ms - 200
+04/11/2021 16:59:06 End processing HTTP request after 6.4659ms - 200
+04/11/2021 16:59:06 HTTP "GET" "/Admin/Entrances?pageNumber=7" responded 200 in 9.5465 ms
+04/11/2021 16:59:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-11T00:00:00&Finish=2021-04-11T00:00:00
+04/11/2021 16:59:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-11T00:00:00&Finish=2021-04-11T00:00:00
+04/11/2021 16:59:10 Received HTTP response headers after 22.2242ms - 200
+04/11/2021 16:59:10 End processing HTTP request after 24.7503ms - 200
+04/11/2021 16:59:10 HTTP "POST" "/Admin/Entrances/Between" responded 200 in 55.3513 ms
+04/11/2021 16:59:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:59:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 16:59:14 Received HTTP response headers after 4.7219ms - 200
+04/11/2021 16:59:14 End processing HTTP request after 8.2425ms - 200
+04/11/2021 16:59:14 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 11.4600 ms
+04/11/2021 16:59:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-01T00:00:00&Finish=2021-04-11T00:00:00
+04/11/2021 16:59:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-01T00:00:00&Finish=2021-04-11T00:00:00
+04/11/2021 16:59:17 Received HTTP response headers after 8.8471ms - 200
+04/11/2021 16:59:17 End processing HTTP request after 11.5478ms - 200
+04/11/2021 16:59:17 HTTP "POST" "/Admin/Entrances/Between" responded 200 in 15.2421 ms
+04/11/2021 16:59:30 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.9177 ms
+04/11/2021 16:59:30 HTTP "GET" "/" responded 200 in 0.7999 ms
+04/11/2021 16:59:31 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.4672 ms
+04/11/2021 16:59:33 HTTP "GET" "/" responded 200 in 0.9381 ms
+04/11/2021 17:05:55 Web server started..
+04/11/2021 17:05:55 Web server HostBuilder created
+04/11/2021 17:05:56 Host built
+04/11/2021 17:15:31 Web server started..
+04/11/2021 17:15:31 Web server HostBuilder created
+04/11/2021 17:15:44 Host built
+04/11/2021 17:15:44 Now listening on: "https://localhost:9000"
+04/11/2021 17:15:44 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:15:44 Hosting environment: "Development"
+04/11/2021 17:15:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:15:47 HTTP "GET" "/" responded 200 in 216.4625 ms
+04/11/2021 17:15:51 HTTP "GET" "/Authentication/SignIn" responded 200 in 254.4563 ms
+04/11/2021 17:15:52 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:15:52 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:20:08 Web server started..
+04/11/2021 17:20:08 Web server HostBuilder created
+04/11/2021 17:20:09 Host built
+04/11/2021 17:20:10 Now listening on: "https://localhost:9000"
+04/11/2021 17:20:10 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:20:10 Hosting environment: "Development"
+04/11/2021 17:20:10 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:20:12 HTTP "GET" "/" responded 200 in 208.2123 ms
+04/11/2021 17:20:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 243.2832 ms
+04/11/2021 17:20:20 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:20:20 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:22:57 Web server started..
+04/11/2021 17:22:57 Web server HostBuilder created
+04/11/2021 17:22:58 Host built
+04/11/2021 17:22:58 Now listening on: "https://localhost:9000"
+04/11/2021 17:22:58 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:22:58 Hosting environment: "Development"
+04/11/2021 17:22:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:23:01 HTTP "GET" "/" responded 200 in 211.0790 ms
+04/11/2021 17:23:02 HTTP "GET" "/Authentication/SignIn" responded 200 in 252.0360 ms
+04/11/2021 17:23:03 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:23:03 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:23:06 Received HTTP response headers after 2231.3775ms - 200
+04/11/2021 17:23:06 End processing HTTP request after 2245.1899ms - 200
+04/11/2021 17:23:06 HTTP "POST" "/Authentication/SignIn" responded 302 in 2370.0942 ms
+04/11/2021 17:23:06 HTTP "GET" "/" responded 200 in 2.5142 ms
+04/11/2021 17:23:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 17:23:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 17:23:19 Received HTTP response headers after 206.1046ms - 200
+04/11/2021 17:23:19 End processing HTTP request after 208.1549ms - 200
+04/11/2021 17:23:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 17:23:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 17:23:27 Received HTTP response headers after 55.4701ms - 200
+04/11/2021 17:23:27 End processing HTTP request after 57.4869ms - 200
+04/11/2021 17:23:34 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 17:23:34 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 17:23:34 Received HTTP response headers after 22.8415ms - 200
+04/11/2021 17:23:34 End processing HTTP request after 25.2377ms - 200
+04/11/2021 17:23:57 Web server started..
+04/11/2021 17:23:57 Web server HostBuilder created
+04/11/2021 17:23:58 Host built
+04/11/2021 17:23:58 Now listening on: "https://localhost:9000"
+04/11/2021 17:23:58 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:23:58 Hosting environment: "Development"
+04/11/2021 17:23:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:24:01 HTTP "GET" "/" responded 200 in 196.0277 ms
+04/11/2021 17:24:03 HTTP "GET" "/Authentication/SignIn" responded 200 in 252.8353 ms
+04/11/2021 17:24:04 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:24:04 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:24:06 Received HTTP response headers after 2287.7731ms - 200
+04/11/2021 17:24:06 End processing HTTP request after 2299.623ms - 200
+04/11/2021 17:24:06 HTTP "POST" "/Authentication/SignIn" responded 302 in 2409.0577 ms
+04/11/2021 17:24:06 HTTP "GET" "/" responded 200 in 2.3543 ms
+04/11/2021 17:24:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 17:24:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 17:24:08 Received HTTP response headers after 220.3528ms - 200
+04/11/2021 17:24:08 End processing HTTP request after 222.4328ms - 200
+04/11/2021 17:24:09 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 309.8887 ms
+04/11/2021 17:24:21 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 17:24:21 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 17:24:21 Received HTTP response headers after 41.5402ms - 200
+04/11/2021 17:24:21 End processing HTTP request after 43.7406ms - 200
+04/11/2021 17:24:21 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 75.9434 ms
+04/11/2021 17:27:57 Web server started..
+04/11/2021 17:27:58 Web server HostBuilder created
+04/11/2021 17:27:58 Host built
+04/11/2021 17:27:59 Now listening on: "https://localhost:9000"
+04/11/2021 17:27:59 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:27:59 Hosting environment: "Development"
+04/11/2021 17:27:59 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:28:02 HTTP "GET" "/" responded 200 in 233.1288 ms
+04/11/2021 17:31:14 HTTP "GET" "/Authentication/SignIn" responded 200 in 242.2414 ms
+04/11/2021 17:31:36 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 20.3117 ms
+04/11/2021 17:31:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.4543 ms
+04/11/2021 17:31:50 HTTP "GET" "/Authentication/SignUp" responded 200 in 22.2714 ms
+04/11/2021 17:31:58 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.4745 ms
+04/11/2021 17:32:05 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.7313 ms
+04/11/2021 17:32:07 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.1245 ms
+04/11/2021 17:32:29 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:32:29 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:32:32 Received HTTP response headers after 2198.0302ms - 200
+04/11/2021 17:32:32 End processing HTTP request after 2209.4605ms - 200
+04/11/2021 17:32:32 HTTP "POST" "/Authentication/SignIn" responded 302 in 2321.3093 ms
+04/11/2021 17:32:32 HTTP "GET" "/" responded 200 in 1.2502 ms
+04/11/2021 17:32:36 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.9128 ms
+04/11/2021 17:32:36 HTTP "GET" "/" responded 200 in 0.9880 ms
+04/11/2021 17:32:36 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.3608 ms
+04/11/2021 17:32:41 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:32:41 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:32:41 Received HTTP response headers after 51.5625ms - 200
+04/11/2021 17:32:41 End processing HTTP request after 54.1447ms - 200
+04/11/2021 17:32:41 HTTP "POST" "/Authentication/SignIn" responded 302 in 58.0627 ms
+04/11/2021 17:32:41 HTTP "GET" "/" responded 200 in 0.8053 ms
+04/11/2021 17:35:09 HTTP "GET" "/" responded 200 in 3218.1092 ms
+04/11/2021 17:35:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com
+04/11/2021 17:35:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com
+04/11/2021 17:35:12 Received HTTP response headers after 139.6419ms - 200
+04/11/2021 17:35:12 End processing HTTP request after 142.2875ms - 200
+04/11/2021 17:35:12 HTTP "GET" "/Account" responded 200 in 254.6244 ms
+04/11/2021 17:35:15 HTTP "GET" "/" responded 200 in 1.0530 ms
+04/11/2021 17:35:34 HTTP "GET" "/" responded 200 in 231.8045 ms
+04/11/2021 17:35:50 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/11/2021 17:35:50 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/11/2021 17:35:55 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 500 in 4218.4344 ms
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:4000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.HardwareAPI.ProducersManagingService.GetAllProducersAsync(String managerToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\HardwareAPI\ProducersManagingService.cs:line 46
+   at FoundersPC.Web.Controllers.HardwareApiCRUD.ProducersController.Table() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\HardwareApiCRUD\ProducersController.cs:line 56
+   at lambda_method100(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/11/2021 17:35:55 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:4000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsyncCore[T](Task`1 taskResponse, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.HardwareAPI.ProducersManagingService.GetAllProducersAsync(String managerToken) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\HardwareAPI\ProducersManagingService.cs:line 46
+   at FoundersPC.Web.Controllers.HardwareApiCRUD.ProducersController.Table() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\HardwareApiCRUD\ProducersController.cs:line 56
+   at lambda_method100(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/11/2021 17:36:50 Web server started..
+04/11/2021 17:36:50 Web server HostBuilder created
+04/11/2021 17:36:51 Host built
+04/11/2021 17:36:51 Now listening on: "https://localhost:9000"
+04/11/2021 17:36:51 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:36:51 Hosting environment: "Development"
+04/11/2021 17:36:51 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:36:54 HTTP "GET" "/" responded 200 in 203.2916 ms
+04/11/2021 17:36:55 HTTP "GET" "/Authentication/SignIn" responded 200 in 247.1247 ms
+04/11/2021 17:37:00 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:37:00 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:37:02 Received HTTP response headers after 2109.1398ms - 200
+04/11/2021 17:37:02 End processing HTTP request after 2123.7135ms - 200
+04/11/2021 17:37:02 HTTP "POST" "/Authentication/SignIn" responded 302 in 2238.2020 ms
+04/11/2021 17:37:02 HTTP "GET" "/" responded 200 in 3.0331 ms
+04/11/2021 17:37:08 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/11/2021 17:37:08 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/11/2021 17:37:09 Received HTTP response headers after 1887.1763ms - 200
+04/11/2021 17:37:09 End processing HTTP request after 1890.1079ms - 200
+04/11/2021 17:37:09 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 1931.3780 ms
+04/11/2021 17:37:28 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/5
+04/11/2021 17:37:28 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/5
+04/11/2021 17:37:28 Received HTTP response headers after 159.674ms - 200
+04/11/2021 17:37:28 End processing HTTP request after 161.9128ms - 200
+04/11/2021 17:37:28 HTTP "GET" "/HardwareApiManaging/Producers/Edit/5" responded 200 in 195.5780 ms
+04/11/2021 17:37:33 HTTP "GET" "/HardwareApiManaging/Producers" responded 200 in 71.5016 ms
+04/11/2021 17:38:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/11/2021 17:38:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers
+04/11/2021 17:38:54 Received HTTP response headers after 55.2303ms - 200
+04/11/2021 17:38:54 End processing HTTP request after 57.6119ms - 200
+04/11/2021 17:38:57 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 3127.2866 ms
+04/11/2021 17:40:14 Web server started..
+04/11/2021 17:40:14 Web server HostBuilder created
+04/11/2021 17:40:15 Host built
+04/11/2021 17:40:16 Now listening on: "https://localhost:9000"
+04/11/2021 17:40:16 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:40:16 Hosting environment: "Development"
+04/11/2021 17:40:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:40:18 HTTP "GET" "/" responded 200 in 198.3327 ms
+04/11/2021 17:40:20 HTTP "GET" "/Authentication/SignIn" responded 200 in 249.9581 ms
+04/11/2021 17:40:27 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:40:27 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:40:29 Received HTTP response headers after 2179.1275ms - 200
+04/11/2021 17:40:29 End processing HTTP request after 2191.0703ms - 200
+04/11/2021 17:40:29 HTTP "POST" "/Authentication/SignIn" responded 302 in 2310.7362 ms
+04/11/2021 17:40:29 HTTP "GET" "/" responded 200 in 2.5475 ms
+04/11/2021 17:42:56 Web server started..
+04/11/2021 17:42:57 Web server HostBuilder created
+04/11/2021 17:42:57 Host built
+04/11/2021 17:42:58 Now listening on: "https://localhost:9000"
+04/11/2021 17:42:58 Application started. Press Ctrl+C to shut down.
+04/11/2021 17:42:58 Hosting environment: "Development"
+04/11/2021 17:42:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 17:43:00 HTTP "GET" "/" responded 200 in 206.3040 ms
+04/11/2021 17:43:02 HTTP "GET" "/Authentication/SignIn" responded 200 in 247.3507 ms
+04/11/2021 17:43:06 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:43:06 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 17:43:08 Received HTTP response headers after 2222.042ms - 200
+04/11/2021 17:43:08 End processing HTTP request after 2233.8198ms - 200
+04/11/2021 17:43:08 HTTP "POST" "/Authentication/SignIn" responded 302 in 2348.6732 ms
+04/11/2021 17:43:08 HTTP "GET" "/" responded 200 in 2.3140 ms
+04/11/2021 17:43:14 HTTP "GET" "/Error/NotFound" responded 200 in 10.2217 ms
+04/11/2021 17:43:26 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 4.9155 ms
+04/11/2021 19:17:11 Web server started..
+04/11/2021 19:17:11 Web server HostBuilder created
+04/11/2021 19:17:12 Host built
+04/11/2021 19:17:13 Now listening on: "https://localhost:9000"
+04/11/2021 19:17:13 Application started. Press Ctrl+C to shut down.
+04/11/2021 19:17:13 Hosting environment: "Development"
+04/11/2021 19:17:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/11/2021 19:17:15 HTTP "GET" "/" responded 200 in 205.2441 ms
+04/11/2021 19:17:17 HTTP "GET" "/Authentication/SignIn" responded 200 in 275.3273 ms
+04/11/2021 19:17:19 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 19:17:19 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/11/2021 19:17:22 Received HTTP response headers after 2449.3177ms - 200
+04/11/2021 19:17:22 End processing HTTP request after 2461.865ms - 200
+04/11/2021 19:17:22 HTTP "POST" "/Authentication/SignIn" responded 302 in 2595.1496 ms
+04/11/2021 19:17:22 HTTP "GET" "/" responded 200 in 2.9820 ms
+04/11/2021 19:17:38 HTTP "GET" "/" responded 200 in 3439.6967 ms
+04/11/2021 19:17:43 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 19:17:43 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/11/2021 19:17:44 Received HTTP response headers after 174.4138ms - 200
+04/11/2021 19:17:44 End processing HTTP request after 176.7076ms - 200
+04/11/2021 19:17:44 HTTP "GET" "/Account" responded 200 in 303.2565 ms
+04/11/2021 19:17:48 HTTP "GET" "/Home/Pricing" responded 200 in 16.1947 ms
+04/11/2021 19:17:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 19:17:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/11/2021 19:17:56 Received HTTP response headers after 106.7995ms - 200
+04/11/2021 19:17:56 End processing HTTP request after 109.1845ms - 200
+04/11/2021 19:17:56 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 144.3123 ms
+04/11/2021 19:18:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 19:18:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/11/2021 19:18:02 Received HTTP response headers after 33.7493ms - 200
+04/11/2021 19:18:02 End processing HTTP request after 35.9616ms - 200
+04/11/2021 19:18:02 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 69.3583 ms
+04/11/2021 19:18:14 HTTP "GET" "/" responded 200 in 0.8664 ms
+04/11/2021 19:18:20 HTTP "GET" "/Authentication/LogOut" responded 302 in 7.6318 ms
+04/11/2021 19:18:20 HTTP "GET" "/" responded 200 in 1.2085 ms
+04/11/2021 19:18:22 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.7576 ms
+04/11/2021 19:22:15 HTTP "GET" "/Authentication/SignIn" responded 200 in 5.0851 ms
+04/11/2021 19:22:18 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.0411 ms
+04/11/2021 19:22:21 HTTP "GET" "/Authentication/SignUp" responded 200 in 22.1526 ms
+04/11/2021 19:22:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.3710 ms
+04/11/2021 19:22:23 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 16.6791 ms
+04/11/2021 19:24:18 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 4.9706 ms
+04/11/2021 19:24:20 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 2.3527 ms
+04/11/2021 19:24:27 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.1289 ms
+04/11/2021 19:24:48 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.0137 ms
+04/11/2021 19:24:50 HTTP "GET" "/Authentication/SignIn" responded 200 in 0.9607 ms
+04/11/2021 19:25:29 HTTP "GET" "/Authentication/SignIn" responded 200 in 7.8478 ms
+04/11/2021 19:25:31 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.1379 ms
+04/11/2021 19:26:06 HTTP "GET" "/Authentication/SignIn" responded 200 in 0.8975 ms
+04/11/2021 19:26:24 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.4397 ms
+04/11/2021 19:26:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.9873 ms
+04/11/2021 19:26:57 HTTP "GET" "/Authentication/SignIn" responded 200 in 10.1603 ms
+04/11/2021 19:26:58 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.1016 ms
+04/11/2021 19:28:09 HTTP "GET" "/Authentication/SignIn" responded 200 in 7.5332 ms
+04/11/2021 19:28:19 HTTP "GET" "/Authentication/SignIn" responded 200 in 0.9484 ms
+04/11/2021 19:28:21 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.0213 ms
+04/11/2021 19:28:23 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 0.9531 ms
+04/11/2021 19:28:24 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.0850 ms
+04/11/2021 19:28:25 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.2716 ms
+04/11/2021 19:30:26 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.8204 ms
+04/11/2021 19:30:28 HTTP "GET" "/Authentication/SignUp" responded 200 in 0.9908 ms
+04/11/2021 19:30:29 HTTP "GET" "/Authentication/SignIn" responded 200 in 0.9896 ms
+04/11/2021 19:30:30 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.6667 ms
+04/11/2021 19:30:32 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.1140 ms
+04/11/2021 19:30:33 HTTP "GET" "/Authentication/SignUp" responded 200 in 0.9954 ms
+04/11/2021 19:31:45 HTTP "GET" "/Authentication/SignUp" responded 200 in 293.5785 ms
+04/11/2021 19:31:46 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.1913 ms
+04/11/2021 19:32:20 HTTP "GET" "/Authentication/SignUp" responded 200 in 190.3079 ms
+04/11/2021 19:32:48 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.8823 ms
+04/11/2021 19:32:50 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.8901 ms
+04/11/2021 19:32:51 HTTP "GET" "/Authentication/SignUp" responded 200 in 0.9940 ms
+04/11/2021 19:33:47 HTTP "GET" "/Authentication/SignUp" responded 200 in 0.8578 ms
+04/11/2021 19:34:46 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.6525 ms
+04/11/2021 19:34:48 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.0875 ms
+04/11/2021 19:35:43 HTTP "GET" "/Authentication/SignUp" responded 200 in 141.3194 ms
+04/11/2021 19:35:45 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.1655 ms
+04/11/2021 19:36:13 HTTP "GET" "/Authentication/SignUp" responded 200 in 139.4114 ms
+04/11/2021 19:37:40 HTTP "GET" "/Authentication/SignUp" responded 200 in 8.4678 ms
+04/11/2021 19:37:42 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.2229 ms
+04/11/2021 19:38:55 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.1037 ms
+04/11/2021 19:38:56 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.1777 ms
+04/11/2021 19:39:11 HTTP "GET" "/Authentication/SignUp" responded 200 in 0.8800 ms
+04/11/2021 19:39:54 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.1811 ms
+04/11/2021 19:42:12 HTTP "GET" "/Authentication/SignUp" responded 200 in 7.2256 ms
+04/11/2021 19:43:35 HTTP "GET" "/Authentication/SignIn" responded 200 in 15.2735 ms
+04/11/2021 19:43:38 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 0.8377 ms
+04/11/2021 19:43:39 HTTP "GET" "/Authentication/SignIn" responded 200 in 0.8918 ms
+04/11/2021 19:43:43 HTTP "GET" "/Authentication/SignUp" responded 200 in 0.9467 ms
+04/11/2021 19:43:45 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.9507 ms
+04/11/2021 19:43:46 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 0.7427 ms
+04/11/2021 19:44:21 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 117.0673 ms
+04/11/2021 19:44:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 0.9148 ms
+04/11/2021 19:44:28 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.6955 ms
+04/11/2021 19:45:00 HTTP "GET" "/Authentication/SignUp" responded 200 in 191.5521 ms
+04/11/2021 19:45:06 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.3367 ms
+04/11/2021 19:45:11 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.0326 ms
+04/11/2021 19:45:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 0.8001 ms
+04/11/2021 19:45:19 HTTP "GET" "/Authentication/SignUp" responded 200 in 1.0446 ms
+04/11/2021 19:47:04 HTTP "GET" "/Authentication/SignIn" responded 200 in 7.1831 ms
+04/11/2021 19:47:09 HTTP "GET" "/" responded 200 in 1.1317 ms
+04/11/2021 19:50:28 HTTP "GET" "/" responded 200 in 9.0890 ms
+04/11/2021 19:50:42 HTTP "GET" "/" responded 200 in 0.5341 ms
+04/11/2021 19:50:44 HTTP "GET" "/" responded 200 in 0.3972 ms
+04/11/2021 19:52:41 HTTP "GET" "/" responded 200 in 9.5279 ms
+04/11/2021 19:53:24 HTTP "GET" "/" responded 200 in 0.6648 ms
+04/11/2021 19:53:55 HTTP "GET" "/" responded 200 in 0.6221 ms
+04/11/2021 19:54:05 HTTP "GET" "/" responded 200 in 0.4983 ms
+04/11/2021 19:55:07 HTTP "GET" "/" responded 200 in 7.5989 ms
+04/11/2021 19:55:11 HTTP "GET" "/" responded 200 in 0.4941 ms
+04/11/2021 19:55:31 HTTP "GET" "/" responded 200 in 0.6620 ms
+04/11/2021 19:56:46 HTTP "GET" "/" responded 200 in 9.2955 ms
+04/11/2021 19:56:50 HTTP "GET" "/" responded 200 in 0.5649 ms
+04/11/2021 19:57:15 HTTP "GET" "/" responded 200 in 0.4027 ms
+04/11/2021 19:58:17 HTTP "GET" "/" responded 200 in 0.5770 ms
+04/11/2021 19:58:20 HTTP "GET" "/" responded 200 in 0.4644 ms
+04/11/2021 19:58:25 HTTP "GET" "/" responded 200 in 0.5552 ms
+04/11/2021 19:58:47 HTTP "GET" "/" responded 200 in 0.4430 ms
+04/11/2021 19:59:22 HTTP "GET" "/" responded 200 in 0.5902 ms
+04/11/2021 19:59:25 HTTP "GET" "/" responded 200 in 0.4858 ms
+04/11/2021 19:59:34 HTTP "GET" "/" responded 200 in 0.5261 ms
+04/11/2021 20:00:26 HTTP "GET" "/" responded 200 in 11.3123 ms
+04/11/2021 20:00:30 HTTP "GET" "/" responded 200 in 0.7059 ms
+04/11/2021 20:02:44 HTTP "GET" "/" responded 200 in 10.4507 ms
+04/11/2021 20:02:58 HTTP "GET" "/" responded 200 in 0.4358 ms
+04/11/2021 20:03:10 HTTP "GET" "/" responded 200 in 0.5330 ms
+04/11/2021 20:03:46 HTTP "GET" "/" responded 200 in 0.4747 ms
+04/11/2021 20:04:15 HTTP "GET" "/Home/Pricing" responded 200 in 3.0869 ms
+04/11/2021 20:04:23 HTTP "GET" "/" responded 200 in 3.7711 ms

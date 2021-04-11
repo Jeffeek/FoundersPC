@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/PowerSupplies")]
@@ -22,15 +20,12 @@ namespace FoundersPC.API.Controllers.V1
     public class PowerSuppliesController : Controller
     {
         private readonly ILogger<PowerSuppliesController> _logger;
-        private readonly IMapper _mapper;
         private readonly IPowerSupplyService _powerSupplyService;
 
         public PowerSuppliesController(IPowerSupplyService service,
-                                       IMapper mapper,
                                        ILogger<PowerSuppliesController> logger)
         {
             _powerSupplyService = service;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -42,30 +37,27 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _powerSupplyService.GetAllPowerSuppliesAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<PowerSupplyReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<PowerSupplyReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
-
-            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id.Value);
+            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id);
 
             return powerSupplyReadDto == null
-                       ? ResponseResultsHelper.NotFoundByIdResult(id.Value)
+                       ? ResponseResultsHelper.NotFoundByIdResult(id)
                        : Json(powerSupplyReadDto);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] PowerSupplyUpdateDto powerSupply)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] PowerSupplyUpdateDto powerSupply)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _powerSupplyService.UpdatePowerSupplyAsync(id.Value, powerSupply);
+            var result = await _powerSupplyService.UpdatePowerSupplyAsync(id, powerSupply);
 
             return result ? Json(powerSupply) : ResponseResultsHelper.UpdateError();
         }
@@ -84,18 +76,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id);
 
-            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id.Value);
+            if (powerSupplyReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (powerSupplyReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _powerSupplyService.DeletePowerSupplyAsync(id.Value);
+            var result = await _powerSupplyService.DeletePowerSupplyAsync(id);
 
             return result ? Json(powerSupplyReadDto) : ResponseResultsHelper.DeleteError();
         }

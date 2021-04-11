@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +14,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
     public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupply>, IPowerSuppliersRepositoryAsync
     {
         /// <inheritdoc/>
-        public PowerSuppliersRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+        public PowerSuppliersRepository(DbContext repositoryContext) : base(repositoryContext) { }
+
+        #region Implementation of IPaginateableRepository<PowerSupply>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<PowerSupply>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.Producer)
+                  .ToListAsync();
+
+        #endregion
 
         #region Implementation of IPowerSuppliersRepositoryAsync
 

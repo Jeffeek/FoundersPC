@@ -30,13 +30,10 @@ namespace FoundersPC.Web.Controllers
         [Route("UsersTable")]
         public async Task<ActionResult> UsersTable([FromQuery] int pageNumber)
         {
-            var token = HttpContext.GetJwtTokenFromCookie();
-
-            if (token is null) throw new CookieException();
-
             var users = (await _adminWebService.GetPaginateableUsersAsync(pageNumber,
                                                                           FoundersPCConstants.PageSize,
-                                                                          token)).ToArray();
+                                                                          HttpContext.GetJwtTokenFromCookie()))
+                .ToArray();
 
             var indexModel = new IndexViewModel<UserEntityReadDto>
                              {
@@ -72,14 +69,11 @@ namespace FoundersPC.Web.Controllers
         [Route("Entrances")]
         public async Task<ActionResult> Entrances([FromQuery] int pageNumber)
         {
-            var token = HttpContext.GetJwtTokenFromCookie();
-
-            if (token is null) throw new CookieException();
-
             var entrances =
                 (await _adminWebService.GetPaginateableUsersEntrancesAsync(pageNumber,
                                                                            FoundersPCConstants.PageSize,
-                                                                           token)).ToArray();
+                                                                           HttpContext.GetJwtTokenFromCookie()))
+                .ToArray();
 
             var viewModel = new EntrancesViewModel
                             {
@@ -98,7 +92,6 @@ namespace FoundersPC.Web.Controllers
             return View("Entrances", viewModel);
         }
 
-        // todo: make really paging
         [Route("User/{userId:int}/Entrances")]
         public async Task<ActionResult> UserEntrances([FromRoute] int userId)
         {
@@ -110,7 +103,7 @@ namespace FoundersPC.Web.Controllers
 
             var viewModel = new EntrancesViewModel
                             {
-                                BetweenFilter = new EntrancesBetweenFilter(),
+                                BetweenFilter = null,
                                 IndexEntrances = new IndexViewModel<UserEntranceLogReadDto>
                                                  {
                                                      Models = entrances,

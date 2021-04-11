@@ -60,6 +60,7 @@ namespace FoundersPC.API
             //
             services.AddValidators();
 
+            // todo убрать жвт. нахер он тут? данный апп вообще должен зависеть только от одного: РЕКВЕСТ ТОКЕН, НЕ ЖВТ
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 
@@ -72,6 +73,7 @@ namespace FoundersPC.API
                                           options.ReportApiVersions = true;
                                       });
 
+            // todo: убрать сваггер
             services.AddSwaggerGen(options => options.SwaggerDoc("v1",
                                                                  new OpenApiInfo
                                                                  {
@@ -97,10 +99,9 @@ namespace FoundersPC.API
 
             app.UseRouting();
 
-            app.UseMiddleware<AccessTokenValidatorMiddleware>();
-            //app.UseCors("WebClientPolicy");
-
             app.UseSerilogRequestLogging();
+
+            app.UseMiddleware<AccessTokenValidatorMiddleware>();
 
             app.UseAuthentication();
             app.UseAuthorization();

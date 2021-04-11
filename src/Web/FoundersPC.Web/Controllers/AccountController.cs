@@ -45,7 +45,8 @@ namespace FoundersPC.Web.Controllers
                 throw new CookieException();
             }
 
-            var information = await _usersInformationService.GetUserByEmailAsync(emailInCookie, HttpContext.GetJwtTokenFromCookie());
+            var information =
+                await _usersInformationService.GetUserByEmailAsync(emailInCookie, HttpContext.GetJwtTokenFromCookie());
 
             if (information is null) return RedirectToPagePermanent("Forbidden");
 

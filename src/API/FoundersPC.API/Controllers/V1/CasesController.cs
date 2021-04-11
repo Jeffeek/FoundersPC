@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,8 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    //[EnableCors(PolicyName = "WebClientPolicy")]
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Cases")]
@@ -23,13 +20,11 @@ namespace FoundersPC.API.Controllers.V1
     {
         private readonly ICaseService _caseService;
         private readonly ILogger<CasesController> _logger;
-        private readonly IMapper _mapper;
 
-        public CasesController(ICaseService service, IMapper mapper, ILogger<CasesController> logger)
+        public CasesController(ICaseService service, ILogger<CasesController> logger)
         {
             _logger = logger;
             _caseService = service;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -42,7 +37,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [HttpGet("{id:int:min(1)}")]
-        public async Task<ActionResult<CaseReadDto>> Get(int id)
+        public async Task<ActionResult<CaseReadDto>> Get([FromRoute] int id)
         {
             _logger.LogForModelRead(HttpContext, id);
 

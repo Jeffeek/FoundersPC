@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Tokens;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Users;
-using FoundersPC.Identity.Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 #endregion
 
@@ -12,11 +12,11 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 {
     public class UnitOfWorkUsersIdentity : IUnitOfWorkUsersIdentity
     {
-        private readonly FoundersPCUsersContext _context;
+        private readonly DbContext _context;
 
         public UnitOfWorkUsersIdentity(IUsersRepository usersRepository,
                                        IRolesRepository rolesRepository,
-                                       FoundersPCUsersContext context,
+                                       DbContext context,
                                        IAccessTokensLogsRepository accessTokensLogsRepository,
                                        IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
                                        IApiAccessUsersTokensRepository apiAccessUsersTokensRepository)

@@ -17,7 +17,7 @@ namespace FoundersPC.Web.Application.Middleware
 
             if (!authenticateResult.Succeeded)
             {
-                await Task.Run(() => next(context));
+                await next(context);
 
                 return;
             }
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Application.Middleware
                 return;
             }
 
-            await Task.Run(() => next(context));
+            await next(context);
         }
     }
 }

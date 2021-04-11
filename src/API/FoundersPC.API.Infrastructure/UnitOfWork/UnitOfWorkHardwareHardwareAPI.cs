@@ -5,7 +5,6 @@ using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.CPU;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
-using FoundersPC.API.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -18,7 +17,7 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
         private readonly DbContext _context;
         private readonly ILogger<UnitOfWorkHardwareHardwareAPI> _logger;
 
-        public UnitOfWorkHardwareHardwareAPI(FoundersPCHardwareContext context,
+        public UnitOfWorkHardwareHardwareAPI(DbContext context,
                                              ICPUsRepositoryAsync processorsRepository,
                                              IProducersRepositoryAsync producersRepository,
                                              IProcessorCoresRepositoryAsync processorCoresRepository,

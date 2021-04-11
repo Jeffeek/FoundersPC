@@ -7,5 +7,6 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU
 {
-    public interface IVideoCardCoresRepositoryAsync : IRepositoryAsync<VideoCardCore> { }
+    public interface IVideoCardCoresRepositoryAsync : IRepositoryAsync<VideoCardCore>,
+                                                      IPaginateableRepository<VideoCardCore> { }
 }

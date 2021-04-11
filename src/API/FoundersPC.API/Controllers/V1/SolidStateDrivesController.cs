@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/SolidStateDrives")]
@@ -22,15 +20,12 @@ namespace FoundersPC.API.Controllers.V1
     public class SolidStateDrivesController : Controller
     {
         private readonly ILogger<SolidStateDrivesController> _logger;
-        private readonly IMapper _mapper;
         private readonly ISSDService _ssdService;
 
         public SolidStateDrivesController(ISSDService ssdService,
-                                          IMapper mapper,
                                           ILogger<SolidStateDrivesController> logger)
         {
             _ssdService = ssdService;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -42,28 +37,25 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _ssdService.GetAllSSDsAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<SSDReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<SSDReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var ssd = await _ssdService.GetSSDByIdAsync(id);
 
-            var ssd = await _ssdService.GetSSDByIdAsync(id.Value);
-
-            return ssd == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(ssd);
+            return ssd == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(ssd);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] SSDUpdateDto ssd)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] SSDUpdateDto ssd)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _ssdService.UpdateSSDAsync(id.Value, ssd);
+            var result = await _ssdService.UpdateSSDAsync(id, ssd);
 
             return result ? Json(ssd) : ResponseResultsHelper.UpdateError();
         }
@@ -82,18 +74,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readSSD = await _ssdService.GetSSDByIdAsync(id);
 
-            var readSSD = await _ssdService.GetSSDByIdAsync(id.Value);
+            if (readSSD == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readSSD == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _ssdService.DeleteSSDAsync(id.Value);
+            var result = await _ssdService.DeleteSSDAsync(id);
 
             return result ? Json(readSSD) : ResponseResultsHelper.DeleteError();
         }

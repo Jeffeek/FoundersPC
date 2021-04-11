@@ -13,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Producers")]
@@ -36,20 +35,18 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _producerService.GetAllProducersAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ProducerReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<ProducerReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var producer = await _producerService.GetProducerByIdAsync(id);
 
-            var producer = await _producerService.GetProducerByIdAsync(id.Value);
-
-            return producer == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(producer);
+            return producer == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(producer);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}")]
+        [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] ProducerUpdateDto producer)
         {
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
@@ -75,18 +72,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete([FromRoute] int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readProducer = await _producerService.GetProducerByIdAsync(id);
 
-            var readProducer = await _producerService.GetProducerByIdAsync(id.Value);
+            if (readProducer == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readProducer == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _producerService.DeleteProducerAsync(id.Value);
+            var result = await _producerService.DeleteProducerAsync(id);
 
             return result ? Json(readProducer) : ResponseResultsHelper.DeleteError();
         }

@@ -8,7 +8,6 @@ using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.Identity.Services.Encryption_Services;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -19,16 +18,13 @@ namespace FoundersPC.Identity.Services.Token_Services
     {
         private readonly ILogger<ApiAccessUsersTokensService> _logger;
         private readonly IMapper _mapper;
-        private readonly TokenEncryptorService _tokenEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork,
-                                           TokenEncryptorService tokenEncryptorService,
                                            IMapper mapper,
                                            ILogger<ApiAccessUsersTokensService> logger)
         {
             _unitOfWork = unitOfWork;
-            _tokenEncryptorService = tokenEncryptorService;
             _mapper = mapper;
             _logger = logger;
         }

@@ -66,8 +66,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(
-            int pageNumber,
+        public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber,
             int pageSize,
             string token)
         {

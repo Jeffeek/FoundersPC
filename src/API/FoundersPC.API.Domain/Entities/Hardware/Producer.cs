@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.API.Domain.Entities.Hardware.Processor;
 using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
-using FoundersPC.RepositoryShared.Identity;
+using FoundersPC.IdentityEntities.Identity;
 using Microsoft.EntityFrameworkCore;
 
 #endregion

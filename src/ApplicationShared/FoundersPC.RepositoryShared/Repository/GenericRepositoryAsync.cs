@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
+using FoundersPC.IdentityEntities.Identity;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 namespace FoundersPC.RepositoryShared.Repository
 {
-    public abstract class GenericRepositoryAsync<T> where T : class, IEquatable<T>
+    public abstract class GenericRepositoryAsync<T> : IRepositoryAsync<T> where T : class, IEquatable<T>, IIdentityItem
     {
         protected readonly DbContext Context;
 
@@ -89,5 +91,9 @@ namespace FoundersPC.RepositoryShared.Repository
             return Context.Set<T>()
                           .AsQueryable();
         }
+
+        protected IQueryable<T> GetPaginateableInternal(int pageNumber = 1, int pageSize = 10) =>
+            Context.Set<T>()
+                   .Paginate(pageNumber, pageSize);
     }
 }

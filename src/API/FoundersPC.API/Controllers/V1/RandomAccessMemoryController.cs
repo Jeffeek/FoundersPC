@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/RandomAccessMemory")]
@@ -22,15 +20,12 @@ namespace FoundersPC.API.Controllers.V1
     public class RandomAccessMemoryController : Controller
     {
         private readonly ILogger<RandomAccessMemoryController> _logger;
-        private readonly IMapper _mapper;
         private readonly IRAMService _ramService;
 
         public RandomAccessMemoryController(IRAMService ramService,
-                                            IMapper mapper,
                                             ILogger<RandomAccessMemoryController> logger)
         {
             _ramService = ramService;
-            _mapper = mapper;
             _logger = logger;
         }
 
@@ -42,28 +37,25 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _ramService.GetAllRAMsAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<RAMReadDto>> Get(int? id)
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<RAMReadDto>> Get([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelRead(HttpContext, id);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            var ram = await _ramService.GetRAMByIdAsync(id);
 
-            var ram = await _ramService.GetRAMByIdAsync(id.Value);
-
-            return ram == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(ram);
+            return ram == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(ram);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] RAMUpdateDto ram)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] RAMUpdateDto ram)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
             if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _ramService.UpdateRAMAsync(id.Value, ram);
+            var result = await _ramService.UpdateRAMAsync(id, ram);
 
             return result ? Json(ram) : ResponseResultsHelper.UpdateError();
         }
@@ -82,18 +74,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readRAM = await _ramService.GetRAMByIdAsync(id);
 
-            var readRAM = await _ramService.GetRAMByIdAsync(id.Value);
+            if (readRAM == null) return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readRAM == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _ramService.DeleteRAMAsync(id.Value);
+            var result = await _ramService.DeleteRAMAsync(id);
 
             return result ? Json(readRAM) : ResponseResultsHelper.DeleteError();
         }

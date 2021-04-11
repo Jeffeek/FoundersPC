@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +14,16 @@ namespace FoundersPC.API.Infrastructure.Repositories
     public class ProducersRepository : GenericRepositoryAsync<Producer>, IProducersRepositoryAsync
     {
         /// <inheritdoc/>
-        public ProducersRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+        public ProducersRepository(DbContext repositoryContext) : base(repositoryContext) { }
+
+        #region Implementation of IPaginateableRepository<Producer>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<Producer>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await GetPaginateableInternal(pageNumber, pageSize)
+                .ToListAsync();
+
+        #endregion
 
         #region Implementation of IProducersRepositoryAsync
 

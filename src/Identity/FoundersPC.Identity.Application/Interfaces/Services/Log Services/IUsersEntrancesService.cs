@@ -4,12 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+using FoundersPC.ServicesShared;
 
 #endregion
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 {
-    public interface IUsersEntrancesService
+    public interface IUsersEntrancesService : IPaginateableService<UserEntranceLogReadDto>
     {
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllAsync();
 
@@ -22,8 +23,6 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(int userId);
 
         Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(string userEmail);
-
-        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrances(int pageNumber, int pageSize);
 
         Task<bool> LogAsync(int userId);
     }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
 using FoundersPC.API.Domain.Entities.Hardware.Memory;
-using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +14,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
     public class SSDsRepository : GenericRepositoryAsync<SSD>, ISSDsRepositoryAsync
     {
         /// <inheritdoc/>
-        public SSDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+        public SSDsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+
+        #region Implementation of IPaginateableRepository<SSD>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<SSD>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.Producer)
+                  .ToListAsync();
+
+        #endregion
 
         #region Implementation of ISSDsRepositoryAsync
 
