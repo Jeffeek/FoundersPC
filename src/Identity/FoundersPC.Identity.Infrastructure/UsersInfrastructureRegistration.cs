@@ -43,13 +43,14 @@ namespace FoundersPC.Identity.Infrastructure
         public static void AddFoundersPCUsersContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<DbContext, FoundersPCUsersContext>(options => options.UseSqlServer(configuration
-                                                                             .GetConnectionString("FoundersPC_Users"),
-                                                                         b =>
-                                                                             b.MigrationsAssembly(typeof(
-                                                                                     FoundersPCUsersContext
-                                                                                 )
-                                                                                 .Assembly
-                                                                                 .FullName)));
+                                                                                                         .GetConnectionString("FoundersPC_Users"),
+                                                                                                     b =>
+                                                                                                         b.MigrationsAssembly(typeof
+                                                                                                                                  (
+                                                                                                                                  FoundersPCUsersContext
+                                                                                                                                  )
+                                                                                                                              .Assembly
+                                                                                                                              .FullName)));
         }
     }
 }

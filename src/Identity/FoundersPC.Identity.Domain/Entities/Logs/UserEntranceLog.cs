@@ -25,8 +25,11 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
 
         public bool Equals(UserEntranceLog other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+            if (ReferenceEquals(null, other))
+                return false;
+
+            if (ReferenceEquals(this, other))
+                return true;
 
             return UserId == other.UserId
                    && Entrance.Equals(other.Entrance);
@@ -34,13 +37,19 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != GetType()) return false;
+            if (ReferenceEquals(null, obj))
+                return false;
+
+            if (ReferenceEquals(this, obj))
+                return true;
+
+            if (obj.GetType() != GetType())
+                return false;
 
             return Equals((UserEntranceLog)obj);
         }
 
-        public override int GetHashCode() => HashCode.Combine(UserId, Entrance);
+        public override int GetHashCode() =>
+            HashCode.Combine(UserId, Entrance);
     }
 }

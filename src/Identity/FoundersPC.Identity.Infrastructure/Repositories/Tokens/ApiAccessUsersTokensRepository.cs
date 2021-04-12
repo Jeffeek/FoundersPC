@@ -32,7 +32,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
             var user = await Context.Set<UserEntity>()
                                     .FindAsync(userId);
 
-            if (user is null) return null;
+            if (user is null)
+                return null;
 
             await Context.Entry(user)
                          .Collection(x => x.Tokens)
@@ -43,12 +44,14 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
 
         public async Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(string userEmail)
         {
-            if (userEmail is null) return null;
+            if (userEmail is null)
+                return null;
 
             var user = await Context.Set<UserEntity>()
                                     .FirstOrDefaultAsync(x => x.Email == userEmail);
 
-            if (user is null) return null;
+            if (user is null)
+                return null;
 
             await Context.Entry(user)
                          .Collection(x => x.Tokens)

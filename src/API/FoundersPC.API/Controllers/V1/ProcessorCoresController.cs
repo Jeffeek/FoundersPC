@@ -50,7 +50,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] ProcessorCoreInsertDto cpuCore)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -65,7 +66,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] ProcessorCoreUpdateDto cpuCore)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelUpdate(HttpContext, id);
 
@@ -82,7 +84,8 @@ namespace FoundersPC.API.Controllers.V1
 
             var readCpuCore = await _service.GetProcessorCoreByIdAsync(id);
 
-            if (readCpuCore == null) return ResponseResultsHelper.NotFoundByIdResult(id);
+            if (readCpuCore == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
             var result = await _service.DeleteProcessorCoreAsync(id);
 

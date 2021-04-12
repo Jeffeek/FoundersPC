@@ -17,7 +17,8 @@ namespace FoundersPC.RepositoryShared.Repository
     {
         protected readonly DbContext Context;
 
-        protected GenericRepositoryAsync(DbContext context) => Context = context;
+        protected GenericRepositoryAsync(DbContext context) =>
+            Context = context;
 
         public virtual async Task<T> AddAsync(T entity)
         {
@@ -57,7 +58,8 @@ namespace FoundersPC.RepositoryShared.Repository
         {
             var entry = Context.Entry(entity);
 
-            if (entry == null) return false;
+            if (entry == null)
+                return false;
 
             await Task.Run(() => Context.Entry(entity)
                                         .State = EntityState.Modified);
@@ -77,7 +79,8 @@ namespace FoundersPC.RepositoryShared.Repository
         {
             var entity = await GetByIdAsync(id);
 
-            if (entity == null) return false;
+            if (entity == null)
+                return false;
 
             return await DeleteAsync(entity);
         }

@@ -58,7 +58,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
             GetUsersEntrancesBetween([FromQuery(Name = "Start")] DateTime start,
                                      [FromQuery(Name = "Finish")] DateTime finish)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var entrances = await _usersEntrancesService.GetEntrancesBetweenAsync(start, finish);
 

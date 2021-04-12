@@ -50,7 +50,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         [HttpPost("Reserve")]
         public async Task<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var newTokenResult =
                 await _accessTokensReservationService.ReserveNewTokenAsync(request.UserEmail, request.TokenType);
@@ -73,11 +74,14 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         [HttpGet("Check/{token:length(64)}")]
         public async Task<ActionResult> CheckTokenForUsability([FromRoute] string token)
         {
-            if (token is null || token.Length != 64) return BadRequest();
+            if (token is null
+                || token.Length != 64)
+                return BadRequest();
 
             var checkTokenResult = await _apiAccessUsersTokensService.CanMakeRequestAsync(token);
 
-            if (!checkTokenResult) return Forbid();
+            if (!checkTokenResult)
+                return Forbid();
 
             return Ok();
         }

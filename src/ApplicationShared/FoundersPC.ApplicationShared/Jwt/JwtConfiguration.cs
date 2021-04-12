@@ -19,14 +19,16 @@ namespace FoundersPC.ApplicationShared.Jwt
         {
             get
             {
-                if (_configuration is null) throw new NotSupportedException();
+                if (_configuration is null)
+                    throw new NotSupportedException();
 
                 return _configuration;
             }
 
             private set
             {
-                if (_configuration is not null) return;
+                if (_configuration is not null)
+                    return;
 
                 _configuration = value;
             }
@@ -51,6 +53,7 @@ namespace FoundersPC.ApplicationShared.Jwt
                             };
         }
 
-        public SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
+        public SymmetricSecurityKey GetSymmetricSecurityKey() =>
+            new(Encoding.ASCII.GetBytes(Key));
     }
 }

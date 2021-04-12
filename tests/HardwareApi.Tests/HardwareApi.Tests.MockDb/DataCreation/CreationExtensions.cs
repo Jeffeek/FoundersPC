@@ -8,11 +8,13 @@ namespace HardwareApi.Tests.MockAbstractions.DataCreation
 {
     public static class CreationExtensions
     {
-        private static readonly Random Random;
+        private readonly static Random Random;
 
-        static CreationExtensions() => Random = new Random();
+        static CreationExtensions() =>
+            Random = new Random();
 
-        public static int RandomInt(int min = Int32.MinValue, int max = Int32.MaxValue) => Random.Next(min, max);
+        public static int RandomInt(int min = Int32.MinValue, int max = Int32.MaxValue) =>
+            Random.Next(min, max);
 
         public static int? GetRandomNullableInt(int min = 1, int max = 1000) =>
             Random.Next(-100, 100) > 0 ? Random.Next(min, max) : null;

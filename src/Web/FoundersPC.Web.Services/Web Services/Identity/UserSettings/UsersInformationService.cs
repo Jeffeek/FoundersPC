@@ -20,31 +20,34 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public UsersInformationService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
+        public UsersInformationService(IHttpClientFactory httpClientFactory) =>
+            _httpClientFactory = httpClientFactory;
 
-        public async Task<UserEntityReadDto> GetUserByIdAsync(int userId, string token)
+        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken)
         {
-            if (userId < 1) return null;
+            if (id < 1)
+                return null;
 
             using var client = _httpClientFactory.CreateClient("User by id client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        token,
+                                                        adminToken,
                                                         $"{MicroservicesUrls.IdentityServer}Users/");
 
-            var request = await client.GetFromJsonAsync<UserEntityReadDto>($"ById/{userId}");
+            var request = await client.GetFromJsonAsync<UserEntityReadDto>($"ById/{id}");
 
             return request;
         }
 
-        public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string token)
+        public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken)
         {
-            if (email is null) throw new ArgumentNullException(nameof(email));
+            if (email is null)
+                throw new ArgumentNullException(nameof(email));
 
             using var client = _httpClientFactory.CreateClient("User by email client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        token,
+                                                        adminToken,
                                                         $"{MicroservicesUrls.IdentityServer}Users/");
 
             var request = await client.GetFromJsonAsync<UserEntityReadDto>($"ByEmail/{email}");
@@ -52,12 +55,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             return request;
         }
 
-        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string token)
+        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken)
         {
             using var client = _httpClientFactory.CreateClient("UsersTable client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        token,
+                                                        adminToken,
                                                         $"{MicroservicesUrls.IdentityServer}");
 
             var request = await client.GetFromJsonAsync<IEnumerable<UserEntityReadDto>>("Users");
@@ -67,17 +70,20 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
         /// <inheritdoc/>
         public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber,
-            int pageSize,
-            string token)
+                                                                                    int pageSize,
+                                                                                    string adminToken)
         {
-            if (pageNumber <= 0 || pageSize <= 0) return Enumerable.Empty<UserEntityReadDto>();
+            if (pageNumber <= 0
+                || pageSize <= 0)
+                return Enumerable.Empty<UserEntityReadDto>();
 
-            if (token is null) throw new ArgumentNullException(nameof(token));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             using var client = _httpClientFactory.CreateClient("Get users");
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                    token,
+                                                    adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
             var result =

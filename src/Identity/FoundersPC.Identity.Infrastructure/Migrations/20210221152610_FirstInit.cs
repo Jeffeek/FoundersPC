@@ -14,52 +14,52 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             migrationBuilder.CreateTable("Roles",
                                          table => new
                                                   {
-                                                      Id = table.Column<int>("int", nullable : false)
+                                                      Id = table.Column<int>("int", nullable :false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       RoleTitle = table.Column<string>("nvarchar(max)",
-                                                          nullable : false)
+                                                                                       nullable :false)
                                                   },
-                                         constraints : table => { table.PrimaryKey("PK_Roles", x => x.Id); });
+                                         constraints :table => { table.PrimaryKey("PK_Roles", x => x.Id); });
 
             migrationBuilder.CreateTable("Users",
                                          table => new
                                                   {
-                                                      Id = table.Column<int>("int", nullable : false)
+                                                      Id = table.Column<int>("int", nullable :false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       Login =
                                                           table.Column<string>("nvarchar(30)",
-                                                                               maxLength : 30,
-                                                                               nullable : true),
+                                                                               maxLength :30,
+                                                                               nullable :true),
                                                       RegistrationDate =
-                                                          table.Column<DateTime>("datetime2", nullable : false),
-                                                      RoleId = table.Column<int>("int", nullable : false),
+                                                          table.Column<DateTime>("datetime2", nullable :false),
+                                                      RoleId = table.Column<int>("int", nullable :false),
                                                       IsActive =
                                                           table.Column<bool>("bit",
-                                                                             nullable : false,
-                                                                             defaultValue : true),
+                                                                             nullable :false,
+                                                                             defaultValue :true),
                                                       IsBlocked =
                                                           table.Column<bool>("bit",
-                                                                             nullable : false,
-                                                                             defaultValue : false),
+                                                                             nullable :false,
+                                                                             defaultValue :false),
                                                       Email =
                                                           table.Column<string>("nvarchar(128)",
-                                                                               maxLength : 128,
-                                                                               nullable : false),
+                                                                               maxLength :128,
+                                                                               nullable :false),
                                                       HashedPassword =
                                                           table.Column<string>("nvarchar(128)",
-                                                                               maxLength : 128,
-                                                                               nullable : false)
+                                                                               maxLength :128,
+                                                                               nullable :false)
                                                   },
-                                         constraints : table =>
-                                                       {
-                                                           table.PrimaryKey("PK_Users", x => x.Id);
+                                         constraints :table =>
+                                                      {
+                                                          table.PrimaryKey("PK_Users", x => x.Id);
 
-                                                           table.ForeignKey("FK_Users_Roles_RoleId",
-                                                                            x => x.RoleId,
-                                                                            "Roles",
-                                                                            "Id",
-                                                                            onDelete : ReferentialAction.Restrict);
-                                                       });
+                                                          table.ForeignKey("FK_Users_Roles_RoleId",
+                                                                           x => x.RoleId,
+                                                                           "Roles",
+                                                                           "Id",
+                                                                           onDelete :ReferentialAction.Restrict);
+                                                      });
 
             migrationBuilder.CreateIndex("IX_Users_Id",
                                          "Users",

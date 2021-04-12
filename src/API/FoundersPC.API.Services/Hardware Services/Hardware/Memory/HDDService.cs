@@ -42,7 +42,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
 
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.HDDsRepository.AnyAsync(x => x.Equals(mappedHDD));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.HDDsRepository.AddAsync(mappedHDD);
 
@@ -54,12 +55,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.HDDsRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(hdd, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.HDDsRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -69,7 +72,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var removeResult = await _unitOfWorkHardwareAPI.HDDsRepository.DeleteAsync(id);
 
-            if (!removeResult) return false;
+            if (!removeResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

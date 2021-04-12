@@ -76,7 +76,8 @@ namespace FoundersPC.Identity.Services.Token_Services
             // or not..
             // fuck it. idk & idc
             // ok.
-            if (!saveChangesResult) return null;
+            if (!saveChangesResult)
+                return null;
 
             await _emailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
 

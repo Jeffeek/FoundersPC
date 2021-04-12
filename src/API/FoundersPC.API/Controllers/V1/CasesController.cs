@@ -50,11 +50,13 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] CaseUpdateDto @case)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             var result = await _caseService.UpdateCaseAsync(id, @case);
 
-            if (!result) return ResponseResultsHelper.UpdateError();
+            if (!result)
+                return ResponseResultsHelper.UpdateError();
 
             _logger.LogForModelUpdate(HttpContext, id);
 
@@ -65,11 +67,13 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] CaseInsertDto @case)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             var insertResult = await _caseService.CreateCaseAsync(@case);
 
-            if (!insertResult) return ResponseResultsHelper.InsertError();
+            if (!insertResult)
+                return ResponseResultsHelper.InsertError();
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -82,11 +86,13 @@ namespace FoundersPC.API.Controllers.V1
         {
             var readCase = await _caseService.GetCaseByIdAsync(id);
 
-            if (readCase == null) return ResponseResultsHelper.NotFoundByIdResult(id);
+            if (readCase == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
             var result = await _caseService.DeleteCaseAsync(id);
 
-            if (!result) return ResponseResultsHelper.DeleteError();
+            if (!result)
+                return ResponseResultsHelper.DeleteError();
 
             _logger.LogForModelDelete(HttpContext, id);
 

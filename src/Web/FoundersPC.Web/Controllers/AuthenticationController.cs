@@ -44,14 +44,16 @@ namespace FoundersPC.Web.Controllers
             var forgotPasswordResponse =
                 await _authenticationWebService.ForgotPasswordAsync(model);
 
-            if (forgotPasswordResponse is null) return UnprocessableEntity();
+            if (forgotPasswordResponse is null)
+                return UnprocessableEntity();
 
-            if (!forgotPasswordResponse.IsUserExists) return NotFound();
+            if (!forgotPasswordResponse.IsUserExists)
+                return NotFound();
 
             if (!forgotPasswordResponse.IsConfirmationMailSent)
                 return Problem(forgotPasswordResponse.Error,
-                               statusCode : 500,
-                               title : "Email send error");
+                               statusCode :500,
+                               title :"Email send error");
 
             return View("SignIn");
         }
@@ -74,7 +76,8 @@ namespace FoundersPC.Web.Controllers
 
             var registrationResponse = await _authenticationWebService.SignUpAsync(signUpModel);
 
-            if (registrationResponse is null) return UnprocessableEntity();
+            if (registrationResponse is null)
+                return UnprocessableEntity();
 
             if (!registrationResponse.IsRegistrationSuccessful)
                 return Problem("Registration not successful",
@@ -120,11 +123,15 @@ namespace FoundersPC.Web.Controllers
 
             var signInResponse = await _authenticationWebService.SignInAsync(model);
 
-            if (signInResponse == null) return UnprocessableEntity();
+            if (signInResponse == null)
+                return UnprocessableEntity();
 
-            if (!signInResponse.IsUserExists) NotFound();
+            if (!signInResponse.IsUserExists)
+                NotFound();
 
-            if (!signInResponse.IsUserActive || signInResponse.IsUserBlocked) return Unauthorized();
+            if (!signInResponse.IsUserActive
+                || signInResponse.IsUserBlocked)
+                return Unauthorized();
 
             await SetupDefaultCookieAsync(signInResponse.Email, signInResponse.Role);
             SetupJwtTokenInCookie(signInResponse.JwtToken);
@@ -168,7 +175,8 @@ namespace FoundersPC.Web.Controllers
 
         private void RemoveJwtTokenFromCookie()
         {
-            if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
+            if (HttpContext.Request.Cookies.ContainsKey("token"))
+                HttpContext.Response.Cookies.Delete("token");
         }
 
         #endregion

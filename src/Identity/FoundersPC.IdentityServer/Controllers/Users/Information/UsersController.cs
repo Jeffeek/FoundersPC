@@ -37,7 +37,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
         {
             var user = await _usersInformationService.GetUserByIdAsync(id);
 
-            if (user is null) return NotFound();
+            if (user is null)
+                return NotFound();
 
             return user;
         }
@@ -54,11 +55,14 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
 
             var (jwtEmail, jwtRole) = HttpContext.ParseJwtUserTokenCredentials();
 
-            if (jwtRole is not ApplicationRoles.Administrator && email != jwtEmail) return Unauthorized();
+            if (jwtRole is not ApplicationRoles.Administrator
+                && email != jwtEmail)
+                return Unauthorized();
 
             var user = await _usersInformationService.FindUserByEmailAsync(email);
 
-            if (user is null) return NotFound();
+            if (user is null)
+                return NotFound();
 
             return user;
         }

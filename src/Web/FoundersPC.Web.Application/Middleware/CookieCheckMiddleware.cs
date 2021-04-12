@@ -25,7 +25,8 @@ namespace FoundersPC.Web.Application.Middleware
             context.Request.Cookies.TryGetValue("token", out var jwtCookieAuthentication);
             context.Request.Cookies.TryGetValue("user_cred", out var defaultCookieAuthentication);
 
-            if (jwtCookieAuthentication is null || defaultCookieAuthentication is null)
+            if (jwtCookieAuthentication is null
+                || defaultCookieAuthentication is null)
             {
                 context.Response.Cookies.Delete("cookie");
                 context.Response.Cookies.Delete("user_cred");

@@ -92,7 +92,8 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             await _emailService.SendNewPasswordAsync(user.Email, "*********");
 
@@ -119,11 +120,13 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
         public async Task<bool> GenerateAndChangePasswordToAsync(int userId)
         {
-            if (userId < 1) throw new ArgumentOutOfRangeException(nameof(userId));
+            if (userId < 1)
+                throw new ArgumentOutOfRangeException(nameof(userId));
 
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 
-            if (user is null) throw new NoNullAllowedException($"user with id = {userId} is not found");
+            if (user is null)
+                throw new NoNullAllowedException($"user with id = {userId} is not found");
 
             var newPassword = _passwordEncryptorService.GeneratePassword(10);
 
@@ -133,18 +136,21 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
+            if (updateResult)
+                return await _unitOfWork.SaveChangesAsync() > 0;
 
             return false;
         }
 
         public async Task<bool> GenerateAndChangePasswordToAsync(string userEmail)
         {
-            if (userEmail is null) throw new ArgumentNullException(nameof(userEmail));
+            if (userEmail is null)
+                throw new ArgumentNullException(nameof(userEmail));
 
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
-            if (user is null) throw new NoNullAllowedException($"user with email = {userEmail} is not found");
+            if (user is null)
+                throw new NoNullAllowedException($"user with email = {userEmail} is not found");
 
             var newPassword = _passwordEncryptorService.GeneratePassword(10);
 
@@ -154,7 +160,8 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
+            if (updateResult)
+                return await _unitOfWork.SaveChangesAsync() > 0;
 
             return false;
         }
@@ -190,7 +197,8 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
+            if (updateResult)
+                return await _unitOfWork.SaveChangesAsync() > 0;
 
             _logger.LogError($"{nameof(UsersInformationService)}: change login: update result was unsuccessful");
 
@@ -266,7 +274,8 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
+            if (updateResult)
+                return await _unitOfWork.SaveChangesAsync() > 0;
 
             _logger.LogError($"{nameof(UsersInformationService)}: change notifications: update result was null");
 

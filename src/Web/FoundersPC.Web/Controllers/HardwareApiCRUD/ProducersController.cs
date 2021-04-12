@@ -45,7 +45,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var insertResult =
                 await _producersManagingService.CreateProducerAsync(producer, HttpContext.GetJwtTokenFromCookie());
 
-            if (insertResult) return RedirectToAction("Table");
+            if (insertResult)
+                return RedirectToAction("Table");
 
             return Problem();
         }

@@ -32,11 +32,12 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAsync() =>
             _mapper.Map<IEnumerable<AccessTokenLog>, IEnumerable<AccessTokenLogReadDto>>(await _unitOfWork
-                .AccessTokensLogsRepository.GetAllAsync());
+                                                                                               .AccessTokensLogsRepository
+                                                                                               .GetAllAsync());
 
         public async Task<AccessTokenLogReadDto> GetByIdAsync(int id) =>
             _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
-                                                                   .GetByIdAsync(id));
+                                                                                .GetByIdAsync(id));
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetUsagesBetweenAsync(DateTime start, DateTime finish)
         {
@@ -55,20 +56,22 @@ namespace FoundersPC.Identity.Services.Log_Services
         /// <inheritdoc/>
         public async Task<AccessTokenLogReadDto> GetLastTokenUsageAsync(int apiAccessTokenId) =>
             _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
-                                                                   .GetLastTokenUsageAsync(apiAccessTokenId));
+                                                                                .GetLastTokenUsageAsync(apiAccessTokenId));
 
         /// <inheritdoc/>
         public async Task<AccessTokenLogReadDto> GetLastTokenUsageAsync(string apiAccessToken) =>
             _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
-                                                                   .GetLastTokenUsageAsync(apiAccessToken));
+                                                                                .GetLastTokenUsageAsync(apiAccessToken));
 
         public async Task<bool> LogAsync(int tokenId)
         {
-            if (tokenId <= 0) return false;
+            if (tokenId <= 0)
+                return false;
 
             var token = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(tokenId);
 
-            if (token == null) return false;
+            if (token == null)
+                return false;
 
             var newLog = new AccessTokenLog
                          {
@@ -119,12 +122,12 @@ namespace FoundersPC.Identity.Services.Log_Services
         #region Implementation of IPaginateableService<AccessTokenLogReadDto>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAsync(
-            int pageNumber = 1,
-            int pageSize = FoundersPCConstants.PageSize) =>
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAsync(int pageNumber = 1,
+                                                                                   int pageSize =
+                                                                                       FoundersPCConstants.PageSize) =>
             _mapper.Map<IEnumerable<AccessTokenLog>,
                 IEnumerable<AccessTokenLogReadDto>
-            >(await _unitOfWork.AccessTokensLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
+                >(await _unitOfWork.AccessTokensLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
 
         #endregion
     }

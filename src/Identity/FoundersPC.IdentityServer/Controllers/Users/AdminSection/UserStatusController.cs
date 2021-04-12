@@ -23,7 +23,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
     {
         private readonly IAdminService _adminService;
 
-        public UserStatusController(IAdminService adminService) => _adminService = adminService;
+        public UserStatusController(IAdminService adminService) =>
+            _adminService = adminService;
 
         [HttpPut("Block/ById")]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByIdRequest byIdRequest)
@@ -156,7 +157,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(
             [FromBody] MakeUserInactiveByEmailRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var result = await _adminService.MakeUserInactiveAsync(request.UserEmail);
 
@@ -172,7 +174,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive(
             [FromBody] MakeUserInactiveByIdRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var result = await _adminService.MakeUserInactiveAsync(request.UserId);
 

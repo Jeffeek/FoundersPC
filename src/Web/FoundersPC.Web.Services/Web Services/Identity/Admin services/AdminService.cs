@@ -104,15 +104,19 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         /// <inheritdoc/>
         public async Task<IEnumerable<UserEntranceLogReadDto>>
-            GetPaginateableUsersEntrancesAsync(int pageNumber, int pageSize, string adminToken) =>
+            GetPaginateableEntrancesAsync(int pageNumber, int pageSize, string adminToken) =>
             await _usersEntrancesService.GetPaginateableEntrancesAsync(pageNumber, pageSize, adminToken);
 
         public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) =>
             await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
         public async Task<IEnumerable<UserEntranceLogReadDto>>
-            GetAllUserEntrancesAsync(int userId, string adminToken) =>
+            GetAllUserEntrancesByIdAsync(int userId, string adminToken) =>
             await _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
+
+        public async Task<IEnumerable<UserEntranceLogReadDto>>
+            GetAllUserEntrancesByEmailAsync(string userEmail, string adminToken) =>
+            await _usersEntrancesService.GetAllUserEntrancesByEmailAsync(userEmail, adminToken);
 
         public async Task<IEnumerable<UserEntranceLogReadDto>>
             GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
@@ -128,9 +132,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                 throw
                     new ArgumentNullException(nameof(model));
 
-            if (model.Email is null) throw new ArgumentNullException(nameof(model.Email));
-            if (model.RawPassword is null) throw new ArgumentNullException(nameof(model.RawPassword));
-            if (model.RawPasswordConfirm is null) throw new ArgumentNullException(nameof(model.RawPasswordConfirm));
+            if (model.Email is null)
+                throw new ArgumentNullException(nameof(model.Email));
+
+            if (model.RawPassword is null)
+                throw new ArgumentNullException(nameof(model.RawPassword));
+
+            if (model.RawPasswordConfirm is null)
+                throw new ArgumentNullException(nameof(model.RawPasswordConfirm));
 
             if (!model.RawPassword.Equals(model.RawPasswordConfirm, StringComparison.Ordinal))
                 throw new
@@ -146,7 +155,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             var messageResponse = await client.PostAsJsonAsync("Admin/NewManager", requestModel);
 
-            if (!messageResponse.IsSuccessStatusCode) return false;
+            if (!messageResponse.IsSuccessStatusCode)
+                return false;
 
             var messageContent = await messageResponse.Content.ReadFromJsonAsync<UserSignUpResponse>();
 
@@ -157,7 +167,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                 throw new NoNullAllowedException();
             }
 
-            if (messageContent.IsRegistrationSuccessful) return true;
+            if (messageContent.IsRegistrationSuccessful)
+                return true;
 
             _logger.LogError($"{nameof(AdminService)}: Register manager with email = {model.Email}. Registration unsuccessful: {messageContent.ResponseException}");
 

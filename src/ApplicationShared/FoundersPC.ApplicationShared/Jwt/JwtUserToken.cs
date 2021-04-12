@@ -14,7 +14,8 @@ namespace FoundersPC.ApplicationShared.Jwt
     {
         private readonly JwtConfiguration _configuration;
 
-        public JwtUserToken(JwtConfiguration configuration) => _configuration = configuration;
+        public JwtUserToken(JwtConfiguration configuration) =>
+            _configuration = configuration;
 
         public string Email { get; init; }
 

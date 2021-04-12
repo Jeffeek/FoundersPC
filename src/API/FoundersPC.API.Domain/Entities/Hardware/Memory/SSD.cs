@@ -52,8 +52,11 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
         /// <inheritdoc/>
         public bool Equals(SSD other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+            if (ReferenceEquals(null, other))
+                return false;
+
+            if (ReferenceEquals(this, other))
+                return true;
 
             return MicroScheme == other.MicroScheme
                    && SequentialRead == other.SequentialRead
@@ -66,15 +69,21 @@ namespace FoundersPC.API.Domain.Entities.Hardware.Memory
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != GetType()) return false;
+            if (ReferenceEquals(null, obj))
+                return false;
+
+            if (ReferenceEquals(this, obj))
+                return true;
+
+            if (obj.GetType() != GetType())
+                return false;
 
             return Equals((SSD)obj);
         }
 
         /// <inheritdoc/>
-        public override int GetHashCode() => HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
+        public override int GetHashCode() =>
+            HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
 
         #endregion
     }

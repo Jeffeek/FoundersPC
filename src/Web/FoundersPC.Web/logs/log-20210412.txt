@@ -1,0 +1,109 @@
+04/12/2021 10:24:11 Web server started..
+04/12/2021 10:24:11 Web server HostBuilder created
+04/12/2021 10:24:14 Host built
+04/12/2021 10:24:15 Now listening on: "https://localhost:9000"
+04/12/2021 10:24:15 Application started. Press Ctrl+C to shut down.
+04/12/2021 10:24:15 Hosting environment: "Development"
+04/12/2021 10:24:15 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/12/2021 10:24:17 HTTP "GET" "/" responded 200 in 498.1740 ms
+04/12/2021 10:24:33 HTTP "GET" "/" responded 200 in 5.2737 ms
+04/12/2021 10:24:43 HTTP "GET" "/Home/Pricing" responded 200 in 146.3481 ms
+04/12/2021 10:24:47 HTTP "GET" "/" responded 200 in 1.4613 ms
+04/12/2021 10:25:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 311.8238 ms
+04/12/2021 10:25:02 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/12/2021 10:25:02 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/12/2021 10:25:05 Received HTTP response headers after 2985.5915ms - 200
+04/12/2021 10:25:05 End processing HTTP request after 2999.8776ms - 200
+04/12/2021 10:25:05 HTTP "POST" "/Authentication/SignIn" responded 302 in 3142.5037 ms
+04/12/2021 10:25:05 HTTP "GET" "/" responded 200 in 2.3967 ms
+04/12/2021 10:25:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/12/2021 10:25:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/12/2021 10:25:12 Received HTTP response headers after 291.7522ms - 200
+04/12/2021 10:25:12 End processing HTTP request after 296.7018ms - 200
+04/12/2021 10:25:13 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 440.2552 ms
+04/12/2021 10:25:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/2/Entrances
+04/12/2021 10:25:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ById/2/Entrances
+04/12/2021 10:25:27 Received HTTP response headers after 57.1574ms - 200
+04/12/2021 10:25:27 End processing HTTP request after 61.9768ms - 200
+04/12/2021 10:25:27 HTTP "GET" "/Admin/User/2/Entrances" responded 200 in 103.9117 ms
+04/12/2021 10:25:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/12/2021 10:25:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/12/2021 10:25:30 Received HTTP response headers after 85.3364ms - 200
+04/12/2021 10:25:30 End processing HTTP request after 90.795ms - 200
+04/12/2021 10:25:30 HTTP "GET" "/Admin/Entrances?pageNumber=1" responded 200 in 115.5616 ms
+04/12/2021 11:54:40 Web server started..
+04/12/2021 11:54:40 Web server HostBuilder created
+04/12/2021 11:54:41 Host built
+04/12/2021 11:54:41 Now listening on: "https://localhost:9000"
+04/12/2021 11:54:41 Application started. Press Ctrl+C to shut down.
+04/12/2021 11:54:41 Hosting environment: "Development"
+04/12/2021 11:54:41 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/12/2021 11:54:42 HTTP "GET" "/" responded 200 in 271.5552 ms
+04/12/2021 11:55:29 Web server started..
+04/12/2021 11:55:29 Web server HostBuilder created
+04/12/2021 11:55:30 Host built
+04/12/2021 11:55:31 Now listening on: "https://localhost:9000"
+04/12/2021 11:55:31 Application started. Press Ctrl+C to shut down.
+04/12/2021 11:55:31 Hosting environment: "Development"
+04/12/2021 11:55:31 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/12/2021 11:55:32 HTTP "GET" "/" responded 200 in 296.0562 ms
+04/12/2021 11:55:52 HTTP "GET" "/" responded 200 in 3.8059 ms
+04/12/2021 11:56:02 HTTP "GET" "/" responded 200 in 0.8955 ms
+04/12/2021 11:56:09 HTTP "GET" "/" responded 200 in 1.5139 ms
+04/12/2021 11:56:11 HTTP "GET" "/" responded 200 in 1.4322 ms
+04/12/2021 11:56:14 HTTP "GET" "/" responded 200 in 0.8371 ms
+04/12/2021 11:56:23 HTTP "GET" "/" responded 200 in 0.7091 ms
+04/12/2021 11:56:25 HTTP "GET" "/" responded 200 in 1.2801 ms
+04/12/2021 11:56:30 HTTP "GET" "/" responded 200 in 0.6908 ms
+04/12/2021 11:57:20 HTTP "GET" "/Home/Pricing" responded 200 in 46.2645 ms
+04/12/2021 11:57:29 HTTP "GET" "/Home/Pricing" responded 200 in 4.6364 ms
+04/12/2021 11:57:33 HTTP "GET" "/" responded 200 in 0.8951 ms
+04/12/2021 11:57:34 HTTP "GET" "/Authentication/LogOut" responded 302 in 254.0583 ms
+04/12/2021 11:57:34 HTTP "GET" "/" responded 200 in 1.0627 ms
+04/12/2021 11:57:36 HTTP "GET" "/Authentication/SignIn" responded 200 in 106.4966 ms
+04/12/2021 11:57:40 HTTP "GET" "/" responded 200 in 0.7547 ms
+04/12/2021 12:00:12 HTTP "GET" "/Home/Pricing" responded 200 in 10.1710 ms
+04/12/2021 12:00:22 HTTP "GET" "/Authentication/SignIn" responded 200 in 5.9550 ms
+04/12/2021 12:00:27 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 25.7377 ms
+04/12/2021 12:00:31 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.7687 ms
+04/12/2021 12:00:33 HTTP "GET" "/Authentication/SignUp" responded 200 in 24.4867 ms
+04/12/2021 12:00:36 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.6851 ms
+04/12/2021 12:00:49 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/12/2021 12:00:49 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/12/2021 12:00:52 Received HTTP response headers after 2969.854ms - 200
+04/12/2021 12:00:52 End processing HTTP request after 2986.9451ms - 200
+04/12/2021 12:00:52 HTTP "POST" "/Authentication/SignIn" responded 302 in 3149.2264 ms
+04/12/2021 12:00:52 HTTP "GET" "/" responded 200 in 2.1050 ms
+04/12/2021 12:00:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/12/2021 12:00:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/12/2021 12:00:55 Received HTTP response headers after 287.3431ms - 200
+04/12/2021 12:00:55 End processing HTTP request after 292.3667ms - 200
+04/12/2021 12:00:55 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 396.8205 ms
+04/12/2021 12:01:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/12/2021 12:01:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/12/2021 12:01:11 Received HTTP response headers after 77.5583ms - 200
+04/12/2021 12:01:11 End processing HTTP request after 83.2307ms - 200
+04/12/2021 12:01:11 HTTP "GET" "/Account" responded 200 in 161.0955 ms
+04/12/2021 12:18:36 Web server started..
+04/12/2021 12:18:36 Web server HostBuilder created
+04/12/2021 12:18:37 Host built
+04/12/2021 12:18:38 Now listening on: "https://localhost:9000"
+04/12/2021 12:18:38 Application started. Press Ctrl+C to shut down.
+04/12/2021 12:18:38 Hosting environment: "Development"
+04/12/2021 12:18:38 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/12/2021 12:18:39 HTTP "GET" "/" responded 200 in 285.3634 ms
+04/12/2021 12:18:46 HTTP "GET" "/Authentication/LogOut" responded 302 in 199.8195 ms
+04/12/2021 12:18:46 HTTP "GET" "/" responded 200 in 2.8574 ms
+04/12/2021 12:18:47 HTTP "GET" "/Authentication/SignIn" responded 200 in 100.8364 ms
+04/12/2021 12:18:48 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/12/2021 12:18:48 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/12/2021 12:18:51 Received HTTP response headers after 2588.5767ms - 200
+04/12/2021 12:18:51 End processing HTTP request after 2605.2588ms - 200
+04/12/2021 12:18:51 HTTP "POST" "/Authentication/SignIn" responded 302 in 2728.6736 ms
+04/12/2021 12:18:51 HTTP "GET" "/" responded 200 in 0.8077 ms
+04/12/2021 12:18:55 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/12/2021 12:18:55 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/12/2021 12:18:56 Received HTTP response headers after 254.5095ms - 200
+04/12/2021 12:18:56 End processing HTTP request after 261.1364ms - 200
+04/12/2021 12:18:56 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 350.1083 ms
+04/12/2021 12:19:52 HTTP "GET" "/" responded 200 in 2.0589 ms

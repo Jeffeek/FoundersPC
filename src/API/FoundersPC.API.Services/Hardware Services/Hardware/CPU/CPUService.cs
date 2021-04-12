@@ -25,15 +25,15 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         /// <inheritdoc/>
         public async Task<IEnumerable<CPUReadDto>> GetAllCPUsAsync() =>
             _mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor.CPU>, IEnumerable<CPUReadDto>>(await
-                _unitOfWorkHardwareAPI
-                    .ProcessorsRepository
-                    .GetAllAsync());
+                                                                                                          _unitOfWorkHardwareAPI
+                                                                                                              .ProcessorsRepository
+                                                                                                              .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<CPUReadDto> GetCPUByIdAsync(int cpuId) =>
             _mapper.Map<Domain.Entities.Hardware.Processor.CPU, CPUReadDto>(await _unitOfWorkHardwareAPI
-                                                                                .ProcessorsRepository
-                                                                                .GetByIdAsync(cpuId));
+                                                                                  .ProcessorsRepository
+                                                                                  .GetByIdAsync(cpuId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateCPUAsync(CPUInsertDto cpu)
@@ -43,7 +43,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.ProcessorsRepository.AnyAsync(x => x.Equals(mappedCpu));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.ProcessorsRepository.AddAsync(mappedCpu);
 
@@ -55,12 +56,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProcessorsRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(cpu, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.ProcessorsRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -70,7 +73,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         {
             var removeResult = await _unitOfWorkHardwareAPI.ProcessorsRepository.DeleteAsync(id);
 
-            if (!removeResult) return false;
+            if (!removeResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

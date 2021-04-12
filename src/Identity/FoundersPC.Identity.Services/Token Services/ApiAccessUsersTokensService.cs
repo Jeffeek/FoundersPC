@@ -33,7 +33,8 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
 
-            if (tokens is null) return null;
+            if (tokens is null)
+                return null;
 
             return _mapper.Map<IEnumerable<ApiAccessUserToken>,
                 IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
@@ -43,7 +44,8 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
 
-            if (tokens is null) return null;
+            if (tokens is null)
+                return null;
 
             return _mapper.Map<IEnumerable<ApiAccessUserToken>,
                 IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
@@ -73,7 +75,8 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
@@ -82,7 +85,8 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
@@ -107,11 +111,13 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         private async Task<bool> CanMakeRequestAsync(ApiAccessUserToken token)
         {
-            if (token is null) return false;
+            if (token is null)
+                return false;
 
             var lastUsageLog = await _unitOfWork.AccessTokensLogsRepository.GetLastTokenUsageAsync(token.Id);
 
-            if (lastUsageLog is null) return true;
+            if (lastUsageLog is null)
+                return true;
 
             var now = DateTime.Now;
 
@@ -136,7 +142,8 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return await BlockAsync(tokenEntity);
         }
@@ -145,14 +152,16 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return await BlockAsync(tokenEntity);
         }
 
         private async Task<bool> BlockAsync(ApiAccessUserToken token)
         {
-            if (token.IsBlocked) return false;
+            if (token.IsBlocked)
+                return false;
 
             token.IsBlocked = false;
             token.ExpirationDate = DateTime.Now;

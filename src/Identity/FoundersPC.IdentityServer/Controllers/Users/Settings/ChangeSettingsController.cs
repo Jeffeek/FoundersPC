@@ -34,7 +34,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword(
             [FromBody] ChangePasswordRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
 

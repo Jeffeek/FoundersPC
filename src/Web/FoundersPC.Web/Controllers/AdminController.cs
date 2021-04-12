@@ -23,7 +23,8 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IAdminWebService _adminWebService;
 
-        public AdminController(IAdminWebService adminWebService) => _adminWebService = adminWebService;
+        public AdminController(IAdminWebService adminWebService) =>
+            _adminWebService = adminWebService;
 
         #region Users Table
 
@@ -52,7 +53,8 @@ namespace FoundersPC.Web.Controllers
         [HttpPost("RegisterManager")]
         public async Task<ActionResult> RegisterManager([FromForm] SignUpViewModel model)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var result = await _adminWebService.RegisterNewManagerAsync(model, HttpContext.GetJwtTokenFromCookie());
 
@@ -60,7 +62,8 @@ namespace FoundersPC.Web.Controllers
         }
 
         [Route("RegisterManager")]
-        public ActionResult RegisterManager() => View();
+        public ActionResult RegisterManager() =>
+            View();
 
         #endregion
 
@@ -70,9 +73,9 @@ namespace FoundersPC.Web.Controllers
         public async Task<ActionResult> Entrances([FromQuery] int pageNumber)
         {
             var entrances =
-                (await _adminWebService.GetPaginateableUsersEntrancesAsync(pageNumber,
-                                                                           FoundersPCConstants.PageSize,
-                                                                           HttpContext.GetJwtTokenFromCookie()))
+                (await _adminWebService.GetPaginateableEntrancesAsync(pageNumber,
+                                                                      FoundersPCConstants.PageSize,
+                                                                      HttpContext.GetJwtTokenFromCookie()))
                 .ToArray();
 
             var viewModel = new EntrancesViewModel
@@ -97,9 +100,10 @@ namespace FoundersPC.Web.Controllers
         {
             var token = HttpContext.GetJwtTokenFromCookie();
 
-            if (token is null) throw new CookieException();
+            if (token is null)
+                throw new CookieException();
 
-            var entrances = await _adminWebService.GetAllUserEntrancesAsync(userId, token);
+            var entrances = await _adminWebService.GetAllUserEntrancesByIdAsync(userId, token);
 
             var viewModel = new EntrancesViewModel
                             {
@@ -122,11 +126,14 @@ namespace FoundersPC.Web.Controllers
         {
             var token = HttpContext.GetJwtTokenFromCookie();
 
-            if (token is null) throw new CookieException();
+            if (token is null)
+                throw new CookieException();
 
-            if (viewModel.BetweenFilter is null) return BadRequest();
+            if (viewModel.BetweenFilter is null)
+                return BadRequest();
 
-            if (viewModel.BetweenFilter.Start > viewModel.BetweenFilter.Finish) return BadRequest();
+            if (viewModel.BetweenFilter.Start > viewModel.BetweenFilter.Finish)
+                return BadRequest();
 
             var entrances = await _adminWebService.GetAllEntrancesBetweenAsync(viewModel.BetweenFilter.Start,
                                                                                viewModel.BetweenFilter.Finish,

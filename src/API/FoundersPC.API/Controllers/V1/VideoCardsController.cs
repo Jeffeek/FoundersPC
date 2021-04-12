@@ -50,7 +50,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] GPUUpdateDto gpu)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelUpdate(HttpContext, id);
 
@@ -63,7 +64,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] GPUInsertDto gpu)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -80,7 +82,8 @@ namespace FoundersPC.API.Controllers.V1
 
             var gpuReadDto = await _gpuService.GetGPUByIdAsync(id);
 
-            if (gpuReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id);
+            if (gpuReadDto == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
             var result = await _gpuService.DeleteGPUAsync(id);
 

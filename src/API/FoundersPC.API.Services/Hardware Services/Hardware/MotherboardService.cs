@@ -29,8 +29,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc/>
         public async Task<IEnumerable<MotherboardReadDto>> GetAllMotherboardsAsync() =>
             _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
-                .MotherboardsRepository
-                .GetAllAsync());
+                                                                                         .MotherboardsRepository
+                                                                                         .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId) =>
@@ -46,7 +46,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.MotherboardsRepository.AnyAsync(x => x.Equals(mappedMotherboard));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.MotherboardsRepository.AddAsync(mappedMotherboard);
 
@@ -58,12 +59,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.MotherboardsRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(motherboard, dataBaseEntity);
             var result = await _unitOfWorkHardwareAPI.MotherboardsRepository.UpdateAsync(dataBaseEntity);
 
-            if (!result) return false;
+            if (!result)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -73,7 +76,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var result = await _unitOfWorkHardwareAPI.MotherboardsRepository.DeleteAsync(id);
 
-            if (!result) return false;
+            if (!result)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

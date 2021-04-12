@@ -27,7 +27,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
             var user = await Context.Set<UserEntity>()
                                     .FirstOrDefaultAsync(predicate);
 
-            if (user is null) return null;
+            if (user is null)
+                return null;
 
             await Context.Entry(user)
                          .Reference(x => x.Role)
@@ -45,7 +46,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
             var user = await Context.Set<UserEntity>()
                                     .FirstOrDefaultAsync(x => x.Email == userEmail);
 
-            if (user is null) return null;
+            if (user is null)
+                return null;
 
             await Context.Entry(user)
                          .Reference(x => x.Role)
@@ -63,7 +65,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
             var user = await Context.Set<UserEntity>()
                                     .FindAsync(id);
 
-            if (user is null) return null;
+            if (user is null)
+                return null;
 
             await Context.Entry(user)
                          .Reference(x => x.Role)

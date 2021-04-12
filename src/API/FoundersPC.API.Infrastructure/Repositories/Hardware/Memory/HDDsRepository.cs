@@ -33,7 +33,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
             var hdd = await Context.Set<HDD>()
                                    .FindAsync(id);
 
-            if (hdd is null) return null;
+            if (hdd is null)
+                return null;
 
             await Context.Entry(hdd)
                          .Reference(x => x.Producer)

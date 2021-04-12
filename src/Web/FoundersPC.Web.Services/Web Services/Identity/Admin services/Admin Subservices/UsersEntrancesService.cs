@@ -50,11 +50,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
         /// <inheritdoc/>
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(int pageNumber,
-            int pageSize,
-            string adminToken)
+                                                                                             int pageSize,
+                                                                                             string adminToken)
         {
-            if (pageNumber <= 0) throw new ArgumentOutOfRangeException(nameof(pageNumber));
-            if (pageSize <= 0) throw new ArgumentOutOfRangeException(nameof(pageSize));
+            if (pageNumber <= 0)
+                throw new ArgumentOutOfRangeException(nameof(pageNumber));
+
+            if (pageSize <= 0)
+                throw new ArgumentOutOfRangeException(nameof(pageSize));
 
             using var client = _httpClientFactory.CreateClient("Get users entrances client by paging");
 
@@ -65,7 +68,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
             var responseMessage =
                 await client
                     .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
-                    >($"Entrances?Page={pageNumber}&Size={pageSize}");
+                        >($"Entrances?Page={pageNumber}&Size={pageSize}");
 
             return responseMessage;
         }
@@ -91,8 +94,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
         }
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesBetweenAsync(DateTime start,
-            DateTime finish,
-            string adminToken)
+                                                                                           DateTime finish,
+                                                                                           string adminToken)
         {
             if (start > finish)
             {
@@ -118,13 +121,13 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
                 await
                     client
                         .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
-                        >($"Between?Start={start:s}&Finish={finish:s}");
+                            >($"Between?Start={start:s}&Finish={finish:s}");
 
             return responseMessage;
         }
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByIdAsync(int userId,
-            string adminToken)
+                                                                                            string adminToken)
         {
             if (adminToken is null)
             {
@@ -146,7 +149,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
         }
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByEmailAsync(string userEmail,
-            string adminToken)
+                                                                                               string adminToken)
         {
             if (adminToken is null)
             {

@@ -48,7 +48,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] HDDUpdateDto hdd)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelUpdate(HttpContext, id);
 
@@ -61,7 +62,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] HDDInsertDto hdd)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -78,7 +80,8 @@ namespace FoundersPC.API.Controllers.V1
 
             var hddReadDto = await _hddService.GetHDDByIdAsync(id);
 
-            if (hddReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id);
+            if (hddReadDto == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
             var result = await _hddService.DeleteHDDAsync(id);
 

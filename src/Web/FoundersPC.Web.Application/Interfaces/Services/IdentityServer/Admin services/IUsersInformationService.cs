@@ -10,12 +10,36 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
 {
     public interface IUsersInformationService
     {
-        Task<UserEntityReadDto> GetUserByIdAsync(int userId, string token);
+        /// <summary>
+        ///     Returns user with specified identification
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="adminToken">JWT token</param>
+        /// <returns></returns>
+        Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken);
 
-        Task<UserEntityReadDto> GetUserByEmailAsync(string email, string token);
+        /// <summary>
+        ///     Returns user with specified identification
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="adminToken">JWT token</param>
+        /// <returns></returns>
+        Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken);
 
-        Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string token);
+        /// <summary>
+        ///     Returns all users from database
+        /// </summary>
+        /// <param name="adminToken">JWT token</param>
+        /// <returns></returns>
+        Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken);
 
-        Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string token);
+        /// <summary>
+        ///     Returns users from database from <paramref name="pageNumber"/>
+        /// </summary>
+        /// <param name="pageNumber">Current page</param>
+        /// <param name="pageSize">Max entities to show</param>
+        /// <param name="adminToken">JWT token</param>
+        /// <returns></returns>
+        Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken);
     }
 }

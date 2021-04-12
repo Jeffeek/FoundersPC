@@ -33,7 +33,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
             var @case = await Context.Set<Case>()
                                      .FindAsync(id);
 
-            if (@case is null) return null;
+            if (@case is null)
+                return null;
 
             await Context.Entry(@case)
                          .Reference(x => x.Producer)

@@ -33,7 +33,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
             var ram = await Context.Set<RAM>()
                                    .FindAsync(id);
 
-            if (ram is null) return null;
+            if (ram is null)
+                return null;
 
             await Context.Entry(ram)
                          .Reference(x => x.Producer)

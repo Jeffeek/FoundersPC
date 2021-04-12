@@ -62,7 +62,7 @@ namespace FoundersPC.Web.Application
                                                             context =>
                                                                 context.HttpContext
                                                                        .ForbidAsync(CookieAuthenticationDefaults
-                                                                           .AuthenticationScheme)
+                                                                                        .AuthenticationScheme)
                                                     };
 
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);

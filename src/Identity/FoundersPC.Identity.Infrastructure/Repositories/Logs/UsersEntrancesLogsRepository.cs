@@ -29,7 +29,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
             var entrance = await Context.Set<UserEntranceLog>()
                                         .FindAsync(id);
 
-            if (entrance is null) return null;
+            if (entrance is null)
+                return null;
 
             Context.Entry(entrance)
                    .Reference(x => x.User);
@@ -57,7 +58,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
             var user = await Context.Set<UserEntity>()
                                     .FindAsync(userId);
 
-            if (user is null) return null;
+            if (user is null)
+                return null;
 
             await Context.Entry(user)
                          .Collection(x => x.Entrances)
@@ -71,7 +73,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
             var user = await Context.Set<UserEntity>()
                                     .SingleOrDefaultAsync(x => x.Email == userEmail);
 
-            if (user is null) return null;
+            if (user is null)
+                return null;
 
             await Context.Entry(user)
                          .Collection(x => x.Entrances)

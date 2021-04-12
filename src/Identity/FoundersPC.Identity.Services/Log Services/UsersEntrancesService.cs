@@ -35,11 +35,12 @@ namespace FoundersPC.Identity.Services.Log_Services
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllAsync() =>
             _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(await _unitOfWork
-                .UsersEntrancesLogsRepository.GetAllAsync());
+                                                                                                 .UsersEntrancesLogsRepository
+                                                                                                 .GetAllAsync());
 
         public async Task<UserEntranceLogReadDto> GetByIdAsync(int id) =>
             _mapper.Map<UserEntranceLog, UserEntranceLogReadDto>(await _unitOfWork.UsersEntrancesLogsRepository
-                                                                     .GetByIdAsync(id));
+                                                                                  .GetByIdAsync(id));
 
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetEntrancesBetweenAsync(DateTime start, DateTime finish)
         {
@@ -87,7 +88,7 @@ namespace FoundersPC.Identity.Services.Log_Services
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableAsync(int pageNumber, int pageSize) =>
             _mapper.Map<IEnumerable<UserEntranceLog>,
                 IEnumerable<UserEntranceLogReadDto>
-            >(await _unitOfWork.UsersEntrancesLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
+                >(await _unitOfWork.UsersEntrancesLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
 
         public async Task<bool> LogAsync(int userId)
         {
@@ -100,7 +101,8 @@ namespace FoundersPC.Identity.Services.Log_Services
                 return false;
             }
 
-            if (user.SendMessageOnEntrance) await _emailService.SendEntranceNotificationAsync(user.Email);
+            if (user.SendMessageOnEntrance)
+                await _emailService.SendEntranceNotificationAsync(user.Email);
 
             var log = new UserEntranceLog
                       {

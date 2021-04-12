@@ -33,7 +33,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
             var motherboard = await Context.Set<Motherboard>()
                                            .FindAsync(id);
 
-            if (motherboard is null) return null;
+            if (motherboard is null)
+                return null;
 
             await Context.Entry(motherboard)
                          .Reference(x => x.Producer)

@@ -33,7 +33,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
             var powerSupply = await Context.Set<PowerSupply>()
                                            .FindAsync(id);
 
-            if (powerSupply is null) return null;
+            if (powerSupply is null)
+                return null;
 
             await Context.Entry(powerSupply)
                          .Reference(x => x.Producer)

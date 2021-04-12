@@ -42,7 +42,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
 
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.RAMsRepository.AnyAsync(x => x.Equals(mappedRAM));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.RAMsRepository.AddAsync(mappedRAM);
 
@@ -54,12 +55,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.RAMsRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(ram, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.RAMsRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -69,7 +72,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var removeResult = await _unitOfWorkHardwareAPI.RAMsRepository.DeleteAsync(id);
 
-            if (!removeResult) return false;
+            if (!removeResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

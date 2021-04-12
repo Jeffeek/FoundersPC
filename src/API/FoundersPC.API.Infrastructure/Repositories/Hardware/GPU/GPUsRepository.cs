@@ -34,7 +34,8 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.GPU
             var gpu = await Context.Set<Domain.Entities.Hardware.VideoCard.GPU>()
                                    .FindAsync(id);
 
-            if (gpu is null) return null;
+            if (gpu is null)
+                return null;
 
             await Context.Entry(gpu)
                          .Reference(x => x.Producer)

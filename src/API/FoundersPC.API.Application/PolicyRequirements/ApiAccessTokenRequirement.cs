@@ -8,7 +8,8 @@ namespace FoundersPC.API.Application.PolicyRequirements
 {
     public class ApiAccessTokenRequirement : IAuthorizationRequirement
     {
-        public ApiAccessTokenRequirement(string token) => Token = token;
+        public ApiAccessTokenRequirement(string token) =>
+            Token = token;
 
         public string Token { get; set; }
     }

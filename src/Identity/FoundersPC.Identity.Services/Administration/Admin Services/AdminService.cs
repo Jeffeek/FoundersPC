@@ -51,11 +51,14 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         private async Task<bool> MakeUserInactiveAsync(UserEntity user, bool sendNotification)
         {
-            if (user is null) return false;
+            if (user is null)
+                return false;
 
-            if (!user.IsActive) return false;
+            if (!user.IsActive)
+                return false;
 
-            if (user.Role.RoleTitle == ApplicationRoles.Administrator) return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator)
+                return false;
 
             if (sendNotification)
                 await _emailService.SendBlockNotificationAsync(user.Email,
@@ -65,7 +68,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
+            if (updateResult)
+                return await _unitOfWork.SaveChangesAsync() > 0;
 
             return false;
         }
@@ -82,9 +86,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var changeStatusResult = await ChangeUserBlockStatusAsync(user, true, sendNotification);
 
-            if (!changeStatusResult) return false;
+            if (!changeStatusResult)
+                return false;
 
-            if (!blockAllTokens) return true;
+            if (!blockAllTokens)
+                return true;
 
             return await BlockAllUserTokensAsync(user.Id);
         }
@@ -95,7 +101,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         {
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
-            if (user is null) return false;
+            if (user is null)
+                return false;
 
             return await BlockUserAsync(user.Id);
         }
@@ -143,11 +150,14 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         /// <returns></returns>
         private async Task<bool> ChangeUserBlockStatusAsync(UserEntity user, bool block, bool sendNotification)
         {
-            if (user is null) return false;
+            if (user is null)
+                return false;
 
-            if (!user.IsActive) return false;
+            if (!user.IsActive)
+                return false;
 
-            if (user.Role.RoleTitle == ApplicationRoles.Administrator) return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator)
+                return false;
 
             user.IsBlocked = block;
 
@@ -162,7 +172,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWork.SaveChangesAsync() > 0;
         }
@@ -171,9 +182,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         #region Block API token
 
-        public async Task<bool> BlockAPITokenAsync(int tokenId) => await _accessUsersTokensService.BlockAsync(tokenId);
+        public async Task<bool> BlockAPITokenAsync(int tokenId) =>
+            await _accessUsersTokensService.BlockAsync(tokenId);
 
-        public async Task<bool> BlockAPITokenAsync(string token) => await _accessUsersTokensService.BlockAsync(token);
+        public async Task<bool> BlockAPITokenAsync(string token) =>
+            await _accessUsersTokensService.BlockAsync(token);
 
         #endregion
     }

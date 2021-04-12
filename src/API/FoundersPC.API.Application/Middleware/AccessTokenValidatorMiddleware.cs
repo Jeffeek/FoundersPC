@@ -43,7 +43,8 @@ namespace FoundersPC.API.Application.Middleware
 
             var isRequestWithToken = context.Request.Headers.TryGetValue("HARDWARE-ACCESS-TOKEN", out var result);
 
-            if (!isRequestWithToken || result.Count == 0)
+            if (!isRequestWithToken
+                || result.Count == 0)
             {
                 await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
 

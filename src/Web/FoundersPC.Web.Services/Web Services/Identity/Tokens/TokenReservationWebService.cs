@@ -27,7 +27,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
                                                                     string userEmail,
                                                                     string userJwtToken)
         {
-            if (userJwtToken is null) throw new ArgumentNullException(nameof(userJwtToken));
+            if (userJwtToken is null)
+                throw new ArgumentNullException(nameof(userJwtToken));
 
             using var client = _httpClientFactory.CreateClient("New api access token reservation client");
 

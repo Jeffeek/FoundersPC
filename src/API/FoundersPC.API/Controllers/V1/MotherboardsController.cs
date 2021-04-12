@@ -52,7 +52,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] MotherboardUpdateDto motherboard)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelUpdate(HttpContext, id);
 
@@ -65,7 +66,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] MotherboardInsertDto motherboard)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -82,7 +84,8 @@ namespace FoundersPC.API.Controllers.V1
 
             var motherboardReadDto = await _motherboardService.GetMotherboardByIdAsync(id);
 
-            if (motherboardReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id);
+            if (motherboardReadDto == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
             var result = await _motherboardService.DeleteMotherboardAsync(id);
 

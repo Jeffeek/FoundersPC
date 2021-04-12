@@ -34,7 +34,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         [HttpPost("SignUp")]
         public async Task<ActionResult<UserSignUpResponse>> SignUpUser([FromBody] UserSignUpRequest request)
         {
-            if (!ModelState.IsValid) UnprocessableEntity();
+            if (!ModelState.IsValid)
+                UnprocessableEntity();
 
             _logger.LogInformation($"{nameof(SignUpIdentityController)}: Registration request with email = {request.Email}");
 
@@ -76,7 +77,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         [HttpPost]
         public async Task<ActionResult<UserSignUpResponse>> RegisterManager([FromBody] UserSignUpRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var result = await _registrationService.RegisterManagerAsync(request.Email, request.Password);
 
@@ -87,7 +89,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                                IsRegistrationSuccessful = result
                            };
 
-            if (result) return response;
+            if (result)
+                return response;
 
             response.ResponseException = "Not successful registration. Check logs";
 

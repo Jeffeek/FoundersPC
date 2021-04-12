@@ -55,7 +55,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             var blockUserRequest = await client.PutAsJsonAsync("Block/ById", blockModel);
 
-            if (!blockUserRequest.IsSuccessStatusCode) return false;
+            if (!blockUserRequest.IsSuccessStatusCode)
+                return false;
 
             var blockingResultModel = await blockUserRequest.Content.ReadFromJsonAsync<BlockUserResponse>();
 
@@ -102,7 +103,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             var unblockUserRequest = await client.PutAsJsonAsync("Unblock/ById", unblockModel);
 
-            if (!unblockUserRequest.IsSuccessStatusCode) return false;
+            if (!unblockUserRequest.IsSuccessStatusCode)
+                return false;
 
             var unblockingResultModel = await unblockUserRequest.Content.ReadFromJsonAsync<UnblockUserResponse>();
 
@@ -149,7 +151,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             var blockUserRequest = await client.PutAsJsonAsync("Block/ByEmail", blockModel);
 
-            if (!blockUserRequest.IsSuccessStatusCode) return false;
+            if (!blockUserRequest.IsSuccessStatusCode)
+                return false;
 
             var blockingResultModel = await blockUserRequest.Content.ReadFromJsonAsync<BlockUserResponse>();
 
@@ -196,7 +199,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             var unblockUserRequest = await client.PutAsJsonAsync("Unblock/ByEmail", unblockModel);
 
-            if (!unblockUserRequest.IsSuccessStatusCode) return false;
+            if (!unblockUserRequest.IsSuccessStatusCode)
+                return false;
 
             var unblockingResultModel = await unblockUserRequest.Content.ReadFromJsonAsync<UnblockUserResponse>();
 
@@ -221,7 +225,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
         public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken)
         {
-            if (id < 1) return false;
+            if (id < 1)
+                return false;
 
             using var client = _clientFactory.CreateClient("Make user inactive client");
 
@@ -237,7 +242,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             var request = await client.DeleteAsJsonAsync("MakeInactive/ById", requestModel);
 
-            if (request.IsSuccessStatusCode) return false;
+            if (request.IsSuccessStatusCode)
+                return false;
 
             var contentResult = await request.Content.ReadFromJsonAsync<MakeUserInactiveResponse>();
 
@@ -262,7 +268,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
         public async Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken)
         {
-            if (email is null) return false;
+            if (email is null)
+                return false;
 
             using var client = _clientFactory.CreateClient("Make user inactive client");
 
@@ -278,7 +285,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Admin_Sub
 
             var request = await client.DeleteAsJsonAsync("MakeInactive/ByEmail", requestModel);
 
-            if (request.IsSuccessStatusCode) return false;
+            if (request.IsSuccessStatusCode)
+                return false;
 
             var contentResult = await request.Content.ReadFromJsonAsync<MakeUserInactiveResponse>();
 

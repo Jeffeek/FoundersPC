@@ -28,23 +28,28 @@ namespace FoundersPC.Web.Controllers
         [Route("Buy/{tokenType}")]
         public async Task<IActionResult> Buy([FromRoute] string tokenType)
         {
-            if (tokenType is null) return BadRequest();
+            if (tokenType is null)
+                return BadRequest();
 
             var isValidTokenType = Enum.GetNames<TokenType>()
                                        .Contains(tokenType);
 
-            if (!isValidTokenType) BadRequest();
+            if (!isValidTokenType)
+                BadRequest();
 
             var userEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-            if (userEmail is null) return RedirectToAction("LogOut", "Authentication");
+            if (userEmail is null)
+                return RedirectToAction("LogOut", "Authentication");
 
             var result =
                 await _tokenReservationService.ReserveNewTokenAsync(Enum.Parse<TokenType>(tokenType),
                                                                     userEmail,
                                                                     HttpContext.GetJwtTokenFromCookie());
 
-            if (result is null || !result.IsBuyingSuccessful) return RedirectToAction("ServerErrorIndex", "Error");
+            if (result is null
+                || !result.IsBuyingSuccessful)
+                return RedirectToAction("ServerErrorIndex", "Error");
 
             return RedirectToAction("Profile", "Account");
         }

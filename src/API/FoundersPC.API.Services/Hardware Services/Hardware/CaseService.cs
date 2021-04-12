@@ -42,7 +42,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.CasesRepository.AnyAsync(x => x.Equals(mappedCase));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.CasesRepository.AddAsync(mappedCase);
 
@@ -54,12 +55,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(@case, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.CasesRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -69,7 +72,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var deleteResult = await _unitOfWorkHardwareAPI.CasesRepository.DeleteAsync(id);
 
-            if (!deleteResult) return false;
+            if (!deleteResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

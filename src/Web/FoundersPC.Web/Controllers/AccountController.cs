@@ -48,7 +48,8 @@ namespace FoundersPC.Web.Controllers
             var information =
                 await _usersInformationService.GetUserByEmailAsync(emailInCookie, HttpContext.GetJwtTokenFromCookie());
 
-            if (information is null) return RedirectToPagePermanent("Forbidden");
+            if (information is null)
+                return RedirectToPagePermanent("Forbidden");
 
             var settings = new AccountSettingsViewModel
                            {
@@ -88,14 +89,17 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangePassword([FromForm] AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.PasswordSettingsViewModel)) return RedirectToPage("Error");
+            if (!TryValidateModel(request.PasswordSettingsViewModel))
+                return RedirectToPage("Error");
 
             var response = await _settingsChangeWebService.ChangePasswordAsync(request.PasswordSettingsViewModel,
                                                                                HttpContext.GetJwtTokenFromCookie());
 
-            if (response is null) return BadRequest();
+            if (response is null)
+                return BadRequest();
 
-            if (!response.Successful) return RedirectToPage("Error");
+            if (!response.Successful)
+                return RedirectToPage("Error");
 
             return RedirectToAction("Profile", "Account");
         }
@@ -104,14 +108,17 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangeLogin([FromForm] AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.LoginSettingsViewModel)) return RedirectToPage("Error");
+            if (!TryValidateModel(request.LoginSettingsViewModel))
+                return RedirectToPage("Error");
 
             var response = await _settingsChangeWebService.ChangeLoginAsync(request.LoginSettingsViewModel,
                                                                             HttpContext.GetJwtTokenFromCookie());
 
-            if (response is null) return BadRequest();
+            if (response is null)
+                return BadRequest();
 
-            if (!response.Successful) return RedirectToPage("Error");
+            if (!response.Successful)
+                return RedirectToPage("Error");
 
             return RedirectToAction("Profile", "Account");
         }
@@ -120,15 +127,18 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangeNotifications([FromForm] AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.NotificationsSettingsViewModel)) return RedirectToPage("Error");
+            if (!TryValidateModel(request.NotificationsSettingsViewModel))
+                return RedirectToPage("Error");
 
             var response =
                 await _settingsChangeWebService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
                                                                          HttpContext.GetJwtTokenFromCookie());
 
-            if (response is null) return BadRequest();
+            if (response is null)
+                return BadRequest();
 
-            if (!response.Successful) return RedirectToPage("Error");
+            if (!response.Successful)
+                return RedirectToPage("Error");
 
             return RedirectToAction("Profile", "Account");
         }

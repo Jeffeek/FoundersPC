@@ -51,7 +51,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] SSDUpdateDto ssd)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelUpdate(HttpContext, id);
 
@@ -64,7 +65,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] SSDInsertDto ssd)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -81,7 +83,8 @@ namespace FoundersPC.API.Controllers.V1
 
             var readSSD = await _ssdService.GetSSDByIdAsync(id);
 
-            if (readSSD == null) return ResponseResultsHelper.NotFoundByIdResult(id);
+            if (readSSD == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
             var result = await _ssdService.DeleteSSDAsync(id);
 

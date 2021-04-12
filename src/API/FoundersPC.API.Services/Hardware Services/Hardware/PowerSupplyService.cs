@@ -29,8 +29,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc/>
         public async Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync() =>
             _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
-                .PowerSuppliersRepository
-                .GetAllAsync());
+                                                                                         .PowerSuppliersRepository
+                                                                                         .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId) =>
@@ -46,7 +46,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.PowerSuppliersRepository.AnyAsync(x => x.Equals(mappedPowerSupply));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.PowerSuppliersRepository.AddAsync(mappedPowerSupply);
 
@@ -58,12 +59,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(powerSupply, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -73,7 +76,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var result = await _unitOfWorkHardwareAPI.PowerSuppliersRepository.DeleteAsync(id);
 
-            if (!result) return false;
+            if (!result)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

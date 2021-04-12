@@ -28,7 +28,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         /// <inheritdoc/>
         public async Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync() =>
             _mapper.Map<IEnumerable<ProcessorCore>, IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
-                .ProcessorCoresRepository.GetAllAsync());
+                                                                                             .ProcessorCoresRepository
+                                                                                             .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId) =>
@@ -44,7 +45,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.ProcessorCoresRepository.AnyAsync(x => x.Equals(mappedCpuCore));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.ProcessorCoresRepository.AddAsync(mappedCpuCore);
 
@@ -56,12 +58,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(cpuCore, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -71,7 +75,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.CPU
         {
             var removeResult = await _unitOfWorkHardwareAPI.ProcessorCoresRepository.DeleteAsync(id);
 
-            if (!removeResult) return false;
+            if (!removeResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
