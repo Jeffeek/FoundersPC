@@ -37,7 +37,7 @@ namespace FoundersPC.Identity.Services.User_Services
         }
 
         public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndHashedPasswordAsync(string emailOrLogin,
-                                                                                          string hashedPassword)
+            string hashedPassword)
         {
             if (emailOrLogin is null)
             {
@@ -69,7 +69,7 @@ namespace FoundersPC.Identity.Services.User_Services
         }
 
         public async Task<UserEntityReadDto> FindUserByEmailOrLoginAndPasswordAsync(string emailOrLogin,
-                                                                                    string password)
+            string password)
         {
             if (emailOrLogin is null)
             {

@@ -8,6 +8,7 @@ using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,7 +25,8 @@ namespace FoundersPC.Web.Controllers
         public PricingController(ITokenReservationWebService tokenReservationService) =>
             _tokenReservationService = tokenReservationService;
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy,
+                   AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
         [Route("Buy/{tokenType}")]
         public async Task<IActionResult> Buy([FromRoute] string tokenType)
         {

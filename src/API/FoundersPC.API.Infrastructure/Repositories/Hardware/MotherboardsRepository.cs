@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>, IMotherboardsRepositoryAsync
+    public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>,
+                                          IMotherboardsRepositoryAsync
     {
         /// <inheritdoc/>
         public MotherboardsRepository(DbContext repositoryContext) : base(repositoryContext) { }

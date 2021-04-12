@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
-    public class RAMsRepository : GenericRepositoryAsync<RAM>, IRAMsRepositoryAsync
+    public class RAMsRepository : GenericRepositoryAsync<RAM>, IRAMsRepositoryAsync, IPaginateableRepository<RAM>
     {
         /// <inheritdoc/>
         public RAMsRepository(DbContext repositoryContext) : base(repositoryContext) { }

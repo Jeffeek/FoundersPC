@@ -50,7 +50,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
 
             var user =
                 await _authenticationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail,
-                                                                                    request.Password);
+                    request.Password);
 
             if (user is null)
             {

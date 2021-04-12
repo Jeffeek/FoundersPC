@@ -10,6 +10,7 @@ using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_servic
 using FoundersPC.Web.Domain.Common;
 using FoundersPC.Web.Domain.Common.Authentication;
 using FoundersPC.Web.Domain.Common.Entrances;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,23 +18,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Controllers
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy,
+               AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
     [Route("Admin")]
     public class AdminController : Controller
     {
-        private readonly IAdminWebService _adminWebService;
+        private readonly IAdminService _adminService;
 
-        public AdminController(IAdminWebService adminWebService) =>
-            _adminWebService = adminWebService;
+        public AdminController(IAdminService adminService) => _adminService = adminService;
 
         #region Users Table
 
         [Route("UsersTable")]
         public async Task<ActionResult> UsersTable([FromQuery] int pageNumber)
         {
-            var users = (await _adminWebService.GetPaginateableUsersAsync(pageNumber,
-                                                                          FoundersPCConstants.PageSize,
-                                                                          HttpContext.GetJwtTokenFromCookie()))
+            var users = (await _adminService.GetPaginateableUsersAsync(pageNumber,
+                                                                       FoundersPCConstants.PageSize,
+                                                                       HttpContext.GetJwtTokenFromCookie()))
                 .ToArray();
 
             var indexModel = new IndexViewModel<UserEntityReadDto>
@@ -56,14 +57,13 @@ namespace FoundersPC.Web.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var result = await _adminWebService.RegisterNewManagerAsync(model, HttpContext.GetJwtTokenFromCookie());
+            var result = await _adminService.RegisterNewManagerAsync(model, HttpContext.GetJwtTokenFromCookie());
 
             return result ? Ok() : Problem();
         }
 
         [Route("RegisterManager")]
-        public ActionResult RegisterManager() =>
-            View();
+        public ActionResult RegisterManager() => View("RegisterManagerPage");
 
         #endregion
 
@@ -73,9 +73,9 @@ namespace FoundersPC.Web.Controllers
         public async Task<ActionResult> Entrances([FromQuery] int pageNumber)
         {
             var entrances =
-                (await _adminWebService.GetPaginateableEntrancesAsync(pageNumber,
-                                                                      FoundersPCConstants.PageSize,
-                                                                      HttpContext.GetJwtTokenFromCookie()))
+                (await _adminService.GetPaginateableEntrancesAsync(pageNumber,
+                                                                   FoundersPCConstants.PageSize,
+                                                                   HttpContext.GetJwtTokenFromCookie()))
                 .ToArray();
 
             var viewModel = new EntrancesViewModel
@@ -92,7 +92,7 @@ namespace FoundersPC.Web.Controllers
                                 IsPaginationRequired = true
                             };
 
-            return View("Entrances", viewModel);
+            return View("EntrancesTable", viewModel);
         }
 
         [Route("User/{userId:int}/Entrances")]
@@ -103,7 +103,7 @@ namespace FoundersPC.Web.Controllers
             if (token is null)
                 throw new CookieException();
 
-            var entrances = await _adminWebService.GetAllUserEntrancesByIdAsync(userId, token);
+            var entrances = await _adminService.GetAllUserEntrancesByIdAsync(userId, token);
 
             var viewModel = new EntrancesViewModel
                             {
@@ -117,7 +117,7 @@ namespace FoundersPC.Web.Controllers
                                 IsPaginationRequired = false
                             };
 
-            return View("Entrances", viewModel);
+            return View("EntrancesTable", viewModel);
         }
 
         // todo: make really paging
@@ -135,9 +135,9 @@ namespace FoundersPC.Web.Controllers
             if (viewModel.BetweenFilter.Start > viewModel.BetweenFilter.Finish)
                 return BadRequest();
 
-            var entrances = await _adminWebService.GetAllEntrancesBetweenAsync(viewModel.BetweenFilter.Start,
-                                                                               viewModel.BetweenFilter.Finish,
-                                                                               token);
+            var entrances = await _adminService.GetAllEntrancesBetweenAsync(viewModel.BetweenFilter.Start,
+                                                                            viewModel.BetweenFilter.Finish,
+                                                                            token);
 
             var newViewModel = new EntrancesViewModel
                                {
@@ -151,7 +151,7 @@ namespace FoundersPC.Web.Controllers
                                    IsPaginationRequired = false
                                };
 
-            return View("Entrances", newViewModel);
+            return View("EntrancesTable", newViewModel);
         }
 
         #endregion
@@ -161,7 +161,7 @@ namespace FoundersPC.Web.Controllers
         [Route("BlockUser/{id:int}")]
         public async Task<ActionResult> BlockUser([FromRoute] int id)
         {
-            await _adminWebService.BlockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+            await _adminService.BlockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             return RedirectToAction("UsersTable", "Admin");
         }
@@ -169,7 +169,7 @@ namespace FoundersPC.Web.Controllers
         [Route("UnblockUser/{id:int}")]
         public async Task<ActionResult> UnblockUser([FromRoute] int id)
         {
-            await _adminWebService.UnblockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+            await _adminService.UnblockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             return RedirectToAction("UsersTable", "Admin");
         }
@@ -177,7 +177,7 @@ namespace FoundersPC.Web.Controllers
         [Route("MakeUserInactive/{id:int}")]
         public async Task<ActionResult> MakeUserInactive([FromRoute] int id)
         {
-            await _adminWebService.MakeUserInactiveByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+            await _adminService.MakeUserInactiveByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             return RedirectToAction("UsersTable", "Admin");
         }

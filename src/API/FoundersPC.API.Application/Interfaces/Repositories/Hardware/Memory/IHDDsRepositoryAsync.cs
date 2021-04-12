@@ -7,5 +7,6 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory
 {
-    public interface IHDDsRepositoryAsync : IRepositoryAsync<HDD>, IPaginateableRepository<HDD> { }
+    public interface IHDDsRepositoryAsync : IRepositoryAsync<HDD>,
+                                            IPaginateableRepository<HDD> { }
 }

@@ -13,6 +13,7 @@ using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using FoundersPC.Web.Domain.Common.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -21,20 +22,20 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 {
-    public class AdminService : IAdminWebService
+    public class AdminService : IAdminService
     {
         public AdminService(IUsersInformationService usersInformationService,
                             IHttpClientFactory clientFactory,
                             ILogger<AdminService> logger,
                             IMapper mapper,
-                            IBlockingWebService blockingService,
+                            IUserStatusService userStatusService,
                             IUsersEntrancesService usersEntrancesService)
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
             _logger = logger;
             _mapper = mapper;
-            _blockingService = blockingService;
+            _userStatusService = userStatusService;
             _usersEntrancesService = usersEntrancesService;
         }
 
@@ -44,7 +45,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         private readonly ILogger<AdminService> _logger;
         private readonly IMapper _mapper;
         private readonly IUsersInformationService _usersInformationService;
-        private readonly IBlockingWebService _blockingService;
+        private readonly IUserStatusService _userStatusService;
         private readonly IUsersEntrancesService _usersEntrancesService;
 
         #endregion
@@ -70,30 +71,30 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region Block user
 
         public async Task<bool> BlockUserByIdAsync(int id, string adminToken) =>
-            await _blockingService.BlockUserByIdAsync(id, adminToken);
+            await _userStatusService.BlockUserByIdAsync(id, adminToken);
 
         public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) =>
-            await _blockingService.BlockUserByEmailAsync(email, adminToken);
+            await _userStatusService.BlockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Unblock user
 
         public async Task<bool> UnblockUserByIdAsync(int id, string adminToken) =>
-            await _blockingService.UnblockUserByIdAsync(id, adminToken);
+            await _userStatusService.UnblockUserByIdAsync(id, adminToken);
 
         public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken) =>
-            await _blockingService.UnblockUserByEmailAsync(email, adminToken);
+            await _userStatusService.UnblockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Make user inactive
 
         public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) =>
-            await _blockingService.MakeUserInactiveByIdAsync(id, adminToken);
+            await _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
 
         public async Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) =>
-            await _blockingService.MakeUserInactiveByEmailAsync(email, adminToken);
+            await _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
 
         #endregion
 
@@ -183,6 +184,31 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                                               RawPasswordConfirm = rawPassword
                                           },
                                           adminToken);
+
+        #endregion
+
+        #region UsersAccessTokensLogs
+
+        /// <inheritdoc/>
+        public Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsAsync(string adminToken) =>
+            throw new NotImplementedException();
+
+        /// <inheritdoc/>
+        public Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(
+            int pageNumber,
+            int pageSize,
+            string adminToken) =>
+            throw new NotImplementedException();
+
+        /// <inheritdoc/>
+        public Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsByUserId(int userId, string adminToken) =>
+            throw new NotImplementedException();
+
+        /// <inheritdoc/>
+        public Task<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogsByUserEmail(
+            string userEmail,
+            string adminToken) =>
+            throw new NotImplementedException();
 
         #endregion
     }

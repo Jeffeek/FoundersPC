@@ -6,9 +6,9 @@ using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Services.Hardware_Services;
 using FoundersPC.API.Services.Hardware_Services.Hardware;
-using FoundersPC.API.Services.Hardware_Services.Hardware.CPU;
-using FoundersPC.API.Services.Hardware_Services.Hardware.GPU;
 using FoundersPC.API.Services.Hardware_Services.Hardware.Memory;
+using FoundersPC.API.Services.Hardware_Services.Hardware.Processor;
+using FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion

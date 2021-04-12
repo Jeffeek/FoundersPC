@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class CasesRepository : GenericRepositoryAsync<Case>, ICasesRepositoryAsync
+    public class CasesRepository : GenericRepositoryAsync<Case>,
+                                   ICasesRepositoryAsync
     {
         /// <inheritdoc/>
         public CasesRepository(DbContext context) : base(context) { }

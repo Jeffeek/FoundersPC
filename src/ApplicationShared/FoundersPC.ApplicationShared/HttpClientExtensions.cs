@@ -54,7 +54,7 @@ namespace FoundersPC.ApplicationShared
 
         #region Delete As Json Async
 
-        public async static Task<HttpResponseMessage>
+        public static async Task<HttpResponseMessage>
             DeleteAsJsonAsync<T>(this HttpClient httpClient, string requestUri, T data) =>
             await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Delete, requestUri)
                                        {
@@ -62,7 +62,7 @@ namespace FoundersPC.ApplicationShared
                                                                         typeof(T))
                                        });
 
-        public async static Task<HttpResponseMessage>
+        public static async Task<HttpResponseMessage>
             DeleteAsJsonAsync<T>(this HttpClient httpClient,
                                  string requestUri,
                                  T data,
@@ -74,7 +74,7 @@ namespace FoundersPC.ApplicationShared
                                        },
                                        cancellationToken);
 
-        public async static Task<HttpResponseMessage>
+        public static async Task<HttpResponseMessage>
             DeleteAsJsonAsync<T>(this HttpClient httpClient, Uri requestUri, T data) =>
             await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Delete, requestUri)
                                        {
@@ -82,7 +82,7 @@ namespace FoundersPC.ApplicationShared
                                                                         typeof(T))
                                        });
 
-        public async static Task<HttpResponseMessage> DeleteAsJsonAsync<T>(this HttpClient httpClient,
+        public static async Task<HttpResponseMessage> DeleteAsJsonAsync<T>(this HttpClient httpClient,
                                                                            Uri requestUri,
                                                                            T data,
                                                                            CancellationToken cancellationToken) =>

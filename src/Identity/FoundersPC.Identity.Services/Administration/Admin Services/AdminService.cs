@@ -33,6 +33,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             _logger = logger;
         }
 
+        // todo: implement logger
+
         #region Make user inactive
 
         public async Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true)
@@ -75,6 +77,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         }
 
         #endregion
+
+        // todo: implement logger
 
         #region Block / Unblock user
 
@@ -182,11 +186,9 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         #region Block API token
 
-        public async Task<bool> BlockAPITokenAsync(int tokenId) =>
-            await _accessUsersTokensService.BlockAsync(tokenId);
+        public async Task<bool> BlockAPITokenAsync(int tokenId) => await _accessUsersTokensService.BlockAsync(tokenId);
 
-        public async Task<bool> BlockAPITokenAsync(string token) =>
-            await _accessUsersTokensService.BlockAsync(token);
+        public async Task<bool> BlockAPITokenAsync(string token) => await _accessUsersTokensService.BlockAsync(token);
 
         #endregion
     }

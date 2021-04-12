@@ -7,6 +7,7 @@ using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 
 #endregion
 
@@ -24,13 +25,24 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             _unitOfWorkHardwareAPI = uow;
         }
 
+        #region Implementation of IPaginateableService<MotherboardReadDto>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<MotherboardReadDto>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
+                .MotherboardsRepository
+                .GetPaginateableAsync(pageNumber, pageSize));
+
+        #endregion
+
         #region Implementation of IMotherboardService
 
         /// <inheritdoc/>
         public async Task<IEnumerable<MotherboardReadDto>> GetAllMotherboardsAsync() =>
             _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                         .MotherboardsRepository
-                                                                                         .GetAllAsync());
+                .MotherboardsRepository
+                .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId) =>

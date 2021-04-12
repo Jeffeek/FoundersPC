@@ -19,5 +19,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.HardwareApi
         Task<bool> DeleteProducerAsync(int producerId, string managerToken);
 
         Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken);
+
+        Task<IEnumerable<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
+                                                                         int pageSize,
+                                                                         string managerToken);
     }
 }

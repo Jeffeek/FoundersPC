@@ -8,6 +8,7 @@ using FoundersPC.Identity.Dto;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 {
+    // todo: maybe separate by ISP
     public interface IApiAccessUsersTokensService
     {
         Task<bool> IsTokenBlockedAsync(string token);
@@ -26,8 +27,8 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 
         Task<bool> BlockAsync(int id);
 
-        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId);
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(int userId);
 
-        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail);
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(string userEmail);
     }
 }

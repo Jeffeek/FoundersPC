@@ -9,7 +9,8 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Tokens
 {
-    public interface IApiAccessUsersTokensRepository : IRepositoryAsync<ApiAccessUserToken>
+    public interface IApiAccessUsersTokensRepository : IRepositoryAsync<ApiAccessUserToken>,
+                                                       IPaginateableRepository<ApiAccessUserToken>
     {
         Task<ApiAccessUserToken> GetByTokenAsync(string token);
 

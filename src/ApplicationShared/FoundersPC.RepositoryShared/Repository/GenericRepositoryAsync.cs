@@ -17,8 +17,7 @@ namespace FoundersPC.RepositoryShared.Repository
     {
         protected readonly DbContext Context;
 
-        protected GenericRepositoryAsync(DbContext context) =>
-            Context = context;
+        protected GenericRepositoryAsync(DbContext context) => Context = context;
 
         public virtual async Task<T> AddAsync(T entity)
         {

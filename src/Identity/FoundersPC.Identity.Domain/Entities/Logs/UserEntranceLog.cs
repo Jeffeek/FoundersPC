@@ -49,7 +49,6 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
             return Equals((UserEntranceLog)obj);
         }
 
-        public override int GetHashCode() =>
-            HashCode.Combine(UserId, Entrance);
+        public override int GetHashCode() => HashCode.Combine(UserId, Entrance);
     }
 }

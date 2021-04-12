@@ -20,20 +20,31 @@ namespace FoundersPC.API.Controllers.V1
     public class ProcessorCoresController : Controller
     {
         private readonly ILogger<ProcessorCoresController> _logger;
-        private readonly IProcessorCoreService _service;
+        private readonly IProcessorCoreService _processorCoreService;
 
-        public ProcessorCoresController(IProcessorCoreService service, ILogger<ProcessorCoresController> logger)
+        public ProcessorCoresController(IProcessorCoreService processorCoreService,
+                                        ILogger<ProcessorCoresController> logger)
         {
-            _service = service;
+            _processorCoreService = processorCoreService;
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet(Order = 1)]
         public async Task<ActionResult<IEnumerable<ProcessorCoreReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
 
-            return Json(await _service.GetAllProcessorCoresAsync());
+            return Json(await _processorCoreService.GetAllProcessorCoresAsync());
+        }
+
+        [HttpGet(Order = 0)]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable(
+            [FromQuery(Name = "Page")] int pageNumber = 1,
+            [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        {
+            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
+
+            return Json(await _processorCoreService.GetPaginateableAsync(pageNumber, pageSize));
         }
 
         [HttpGet("{id:int:min(1)}")]
@@ -41,7 +52,7 @@ namespace FoundersPC.API.Controllers.V1
         {
             _logger.LogForModelRead(HttpContext, id);
 
-            var cpuCore = await _service.GetProcessorCoreByIdAsync(id);
+            var cpuCore = await _processorCoreService.GetProcessorCoreByIdAsync(id);
 
             return cpuCore == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(cpuCore);
         }
@@ -55,7 +66,7 @@ namespace FoundersPC.API.Controllers.V1
 
             _logger.LogForModelInsert(HttpContext);
 
-            var insertResult = await _service.CreateProcessorCoreAsync(cpuCore);
+            var insertResult = await _processorCoreService.CreateProcessorCoreAsync(cpuCore);
 
             return insertResult
                        ? Json(cpuCore)
@@ -71,7 +82,7 @@ namespace FoundersPC.API.Controllers.V1
 
             _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _service.UpdateProcessorCoreAsync(id, cpuCore);
+            var result = await _processorCoreService.UpdateProcessorCoreAsync(id, cpuCore);
 
             return result ? Json(cpuCore) : ResponseResultsHelper.UpdateError();
         }
@@ -82,12 +93,12 @@ namespace FoundersPC.API.Controllers.V1
         {
             _logger.LogForModelDelete(HttpContext, id);
 
-            var readCpuCore = await _service.GetProcessorCoreByIdAsync(id);
+            var readCpuCore = await _processorCoreService.GetProcessorCoreByIdAsync(id);
 
             if (readCpuCore == null)
                 return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            var result = await _service.DeleteProcessorCoreAsync(id);
+            var result = await _processorCoreService.DeleteProcessorCoreAsync(id);
 
             return result ? Json(readCpuCore) : ResponseResultsHelper.DeleteError();
         }

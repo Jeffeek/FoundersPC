@@ -162,5 +162,30 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             return responseMessage.IsSuccessStatusCode;
         }
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
+            int pageSize,
+            string managerToken)
+        {
+            if (managerToken is null)
+            {
+                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetPaginateableProducersAsync)}:{nameof(managerToken)} was null");
+
+                throw new ArgumentOutOfRangeException(nameof(managerToken));
+            }
+
+            using var client = _clientFactory.CreateClient("Producers getter client");
+
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        managerToken,
+                                                        MicroservicesUrls.APIServer);
+
+            var responseMessage =
+                await client
+                    .GetFromJsonAsync<IEnumerable<ProducerReadDto>>($"Producers?Page={pageNumber}&Size={pageSize}");
+
+            return responseMessage;
+        }
     }
 }

@@ -23,8 +23,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.AdminSection
     {
         private readonly IAdminService _adminService;
 
-        public UserStatusController(IAdminService adminService) =>
-            _adminService = adminService;
+        public UserStatusController(IAdminService adminService) => _adminService = adminService;
 
         [HttpPut("Block/ById")]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByIdRequest byIdRequest)

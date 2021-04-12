@@ -7,6 +7,7 @@ using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 
 #endregion
 
@@ -26,8 +27,8 @@ namespace FoundersPC.API.Services.Hardware_Services
         /// <inheritdoc/>
         public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
             _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                   .ProducersRepository
-                                                                                   .GetAllAsync());
+                                                                                 .ProducersRepository
+                                                                                 .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
@@ -74,5 +75,17 @@ namespace FoundersPC.API.Services.Hardware_Services
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
+
+        #region Implementation of IPaginateableService<ProducerReadDto>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<ProducerReadDto>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
+                                                                                 .ProducersRepository
+                                                                                 .GetPaginateableAsync(pageNumber,
+                                                                                     pageSize));
+
+        #endregion
     }
 }

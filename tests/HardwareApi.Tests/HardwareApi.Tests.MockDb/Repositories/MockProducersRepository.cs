@@ -20,8 +20,7 @@ namespace HardwareApi.Tests.MockAbstractions.Repositories
         #region Implementation of IProducersRepositoryAsync
 
         /// <inheritdoc/>
-        public Task<IEnumerable<Producer>> GetAllWithHardwareAsync() =>
-            throw new NotImplementedException();
+        public Task<IEnumerable<Producer>> GetAllWithHardwareAsync() => throw new NotImplementedException();
 
         #endregion
 

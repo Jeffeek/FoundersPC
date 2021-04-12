@@ -53,7 +53,6 @@ namespace FoundersPC.ApplicationShared.Jwt
                             };
         }
 
-        public SymmetricSecurityKey GetSymmetricSecurityKey() =>
-            new(Encoding.ASCII.GetBytes(Key));
+        public SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
     }
 }

@@ -1,12 +1,15 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
+using FoundersPC.Web.Domain.Common;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +18,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 {
     [Route("HardwareApiManaging/Producers")]
-    [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy,
+               AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
     public class ProducersController : Controller
     {
         private readonly IMapper _mapper;
@@ -52,11 +56,20 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         }
 
         [HttpGet("Table")]
-        public async Task<ActionResult> Table()
+        public async Task<ActionResult> Table([FromQuery] int pageNumber = 1)
         {
-            var producers = await _producersManagingService.GetAllProducersAsync(HttpContext.GetJwtTokenFromCookie());
+            var producers = (await _producersManagingService.GetPaginateableProducersAsync(pageNumber,
+                                 FoundersPCConstants.PageSize,
+                                 HttpContext.GetJwtTokenFromCookie())).ToArray();
 
-            return View("Table", producers);
+            var indexModel = new IndexViewModel<ProducerReadDto>
+                             {
+                                 Models = producers,
+                                 Page = new PageViewModel(pageNumber,
+                                                          producers.Length == FoundersPCConstants.PageSize)
+                             };
+
+            return View("Table", indexModel);
         }
 
         [HttpGet("Edit/{id:int:min(1)}")]

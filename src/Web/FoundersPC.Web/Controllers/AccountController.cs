@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application;
-using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.User;
 using FoundersPC.Web.Domain.Common.AccountSettings;
 using Microsoft.AspNetCore.Authorization;

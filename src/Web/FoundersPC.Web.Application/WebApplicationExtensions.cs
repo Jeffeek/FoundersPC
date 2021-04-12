@@ -6,7 +6,6 @@ using FluentValidation.AspNetCore;
 using FoundersPC.API.Dto.Mapping;
 using FoundersPC.Web.Application.Mappings;
 using FoundersPC.Web.Application.Validation.AccountSettings;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,18 +51,9 @@ namespace FoundersPC.Web.Application
                                                         SameSite = SameSiteMode.Strict
                                                     };
 
-                                   options.LoginPath = new PathString("/Authentication/SignIn");
-                                   options.AccessDeniedPath = new PathString("/Shared/Forbidden");
-                                   options.LogoutPath = "/Authentication/SignIn";
-
-                                   options.Events = new CookieAuthenticationEvents
-                                                    {
-                                                        OnRedirectToAccessDenied =
-                                                            context =>
-                                                                context.HttpContext
-                                                                       .ForbidAsync(CookieAuthenticationDefaults
-                                                                                        .AuthenticationScheme)
-                                                    };
+                                   options.LoginPath = "/Authentication/SignIn";
+                                   options.AccessDeniedPath = "/Error/403";
+                                   options.LogoutPath = "/Authentication/SignOut";
 
                                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
                                });

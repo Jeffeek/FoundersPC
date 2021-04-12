@@ -1,10 +1,11 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.CPU;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU;
 using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Processor;
+using FoundersPC.API.Application.Interfaces.Repositories.Hardware.VideoCard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -90,12 +91,14 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
             try
             {
                 saveChangesResult = await _context.SaveChangesAsync();
-                _logger.LogInformation("Successful save changes");
+                _logger.LogInformation($"Successful save changes in {nameof(UnitOfWorkHardwareHardwareAPI)}");
             }
-            catch
+            catch (Exception e)
             {
+                _logger.LogError(e,
+                                 $"Error occured when tried to make save changes in {nameof(UnitOfWorkHardwareHardwareAPI)}");
+
                 saveChangesResult = -1;
-                _logger.LogError("Save changes ended with error");
             }
 
             return saveChangesResult;

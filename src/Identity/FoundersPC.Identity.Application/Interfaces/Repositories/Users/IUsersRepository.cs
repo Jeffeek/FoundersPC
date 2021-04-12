@@ -10,7 +10,8 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Users
 {
-    public interface IUsersRepository : IRepositoryAsync<UserEntity>, IPaginateableRepository<UserEntity>
+    public interface IUsersRepository : IRepositoryAsync<UserEntity>,
+                                        IPaginateableRepository<UserEntity>
     {
         Task<UserEntity> GetUserByAsync(Expression<Func<UserEntity, bool>> predicate);
 

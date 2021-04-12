@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupply>, IPowerSuppliersRepositoryAsync
+    public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupply>,
+                                            IPowerSuppliersRepositoryAsync
     {
         /// <inheritdoc/>
         public PowerSuppliersRepository(DbContext repositoryContext) : base(repositoryContext) { }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
-    public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync
+    public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync, IPaginateableRepository<HDD>
     {
         /// <inheritdoc/>
         public HDDsRepository(DbContext repositoryContext) : base(repositoryContext) { }

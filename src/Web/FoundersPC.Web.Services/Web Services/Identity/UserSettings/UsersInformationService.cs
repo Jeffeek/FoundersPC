@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
-using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 #endregion
@@ -20,8 +20,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public UsersInformationService(IHttpClientFactory httpClientFactory) =>
-            _httpClientFactory = httpClientFactory;
+        public UsersInformationService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
 
         public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken)
         {
@@ -70,8 +69,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
         /// <inheritdoc/>
         public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber,
-                                                                                    int pageSize,
-                                                                                    string adminToken)
+            int pageSize,
+            string adminToken)
         {
             if (pageNumber <= 0
                 || pageSize <= 0)

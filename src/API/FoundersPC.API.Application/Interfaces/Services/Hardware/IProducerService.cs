@@ -3,12 +3,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Dto;
+using FoundersPC.ServicesShared;
 
 #endregion
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
-    public interface IProducerService
+    public interface IProducerService : IPaginateableService<ProducerReadDto>
     {
         Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync();
 

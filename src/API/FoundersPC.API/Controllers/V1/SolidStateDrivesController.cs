@@ -29,12 +29,22 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet(Order = 1)]
         public async Task<ActionResult<IEnumerable<SSDReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
 
             return Json(await _ssdService.GetAllSSDsAsync());
+        }
+
+        [HttpGet(Order = 0)]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable(
+            [FromQuery(Name = "Page")] int pageNumber = 1,
+            [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        {
+            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
+
+            return Json(await _ssdService.GetPaginateableAsync(pageNumber, pageSize));
         }
 
         [HttpGet("{id:int:min(1)}")]

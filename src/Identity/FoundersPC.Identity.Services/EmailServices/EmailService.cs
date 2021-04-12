@@ -35,7 +35,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                          DeliveryFormat = SmtpDeliveryFormat.International,
                                                          Credentials =
                                                              new NetworkCredential(_botConfiguration.MailAddress,
-                                                                                   _botConfiguration.Password)
+                                                                 _botConfiguration.Password)
                                                      });
         }
 
@@ -44,7 +44,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                             string content = "",
                                             bool html = false)
         {
-            if (email == null)
+            if (email is null)
             {
                 _logger.LogError($"{nameof(EmailService)}: email was null when tried to send message");
 

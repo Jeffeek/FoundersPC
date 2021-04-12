@@ -34,7 +34,23 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         [HttpGet("User/{email}")]
         public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
         {
-            var tokens = await _apiAccessUsersTokensService.GetUserTokens(email);
+            var tokens = await _apiAccessUsersTokensService.GetUserTokensAsync(email);
+
+            if (tokens is null)
+                return BadRequest(new
+                                  {
+                                      error = "No user with this email"
+                                  });
+
+            return Json(tokens);
+        }
+
+        [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        [HttpGet("User/{id:int:min(1)}")]
+        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
+        {
+            var tokens = await _apiAccessUsersTokensService.GetUserTokensAsync(id);
 
             if (tokens is null)
                 return BadRequest(new

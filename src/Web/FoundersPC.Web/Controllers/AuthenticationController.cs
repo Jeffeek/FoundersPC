@@ -52,8 +52,8 @@ namespace FoundersPC.Web.Controllers
 
             if (!forgotPasswordResponse.IsConfirmationMailSent)
                 return Problem(forgotPasswordResponse.Error,
-                               statusCode :500,
-                               title :"Email send error");
+                               statusCode : 500,
+                               title : "Email send error");
 
             return View("SignIn");
         }
@@ -95,7 +95,8 @@ namespace FoundersPC.Web.Controllers
         #endregion
 
         [Route("LogOut")]
-        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy,
+                   AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
         public async Task<ActionResult> LogOutAsync()
         {
             if (!User.Identity?.IsAuthenticated ?? false)

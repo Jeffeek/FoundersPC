@@ -18,14 +18,12 @@ namespace HardwareApi.Tests.MockAbstractions.Contexts
 
         public DbContextOptions<FoundersPCHardwareContext> Options { get; }
 
-        public FoundersPCHardwareContext Context =>
-            _context ??= new FoundersPCHardwareContext(Options);
+        public FoundersPCHardwareContext Context => _context ??= new FoundersPCHardwareContext(Options);
 
         #region IDisposable
 
         /// <inheritdoc/>
-        public void Dispose() =>
-            _context?.Dispose();
+        public void Dispose() => _context?.Dispose();
 
         #endregion
     }

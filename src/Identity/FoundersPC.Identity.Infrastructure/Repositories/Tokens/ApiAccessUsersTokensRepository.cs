@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Tokens;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Domain.Entities.Users;
@@ -59,5 +60,17 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
 
             return user.Tokens;
         }
+
+        #region Implementation of IPaginateableRepository<ApiAccessUserToken>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<ApiAccessUserToken>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await Context.Set<ApiAccessUserToken>()
+                         .Paginate(pageNumber, pageSize)
+                         .Include(x => x.User)
+                         .ToListAsync();
+
+        #endregion
     }
 }

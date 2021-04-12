@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
-    public class SSDsRepository : GenericRepositoryAsync<SSD>, ISSDsRepositoryAsync
+    public class SSDsRepository : GenericRepositoryAsync<SSD>, ISSDsRepositoryAsync, IPaginateableRepository<SSD>
     {
         /// <inheritdoc/>
         public SSDsRepository(DbContext repositoryContext) : base(repositoryContext) { }
