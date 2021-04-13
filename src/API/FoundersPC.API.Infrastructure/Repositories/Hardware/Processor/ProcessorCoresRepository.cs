@@ -2,8 +2,8 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Processor;
-using FoundersPC.API.Domain.Entities.Hardware.Processor;
+using FoundersPC.API.Application.Interfaces.Repositories.Processor;
+using FoundersPC.API.Domain.Entities.Processor;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 

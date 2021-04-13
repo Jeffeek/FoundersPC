@@ -3,8 +3,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.API.Application.Interfaces.Services;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
-using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Domain.Entities;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;

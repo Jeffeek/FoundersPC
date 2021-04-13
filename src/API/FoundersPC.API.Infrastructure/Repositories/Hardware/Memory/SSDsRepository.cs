@@ -2,8 +2,8 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Hardware.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories.Memory;
+using FoundersPC.API.Domain.Entities.Memory;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 

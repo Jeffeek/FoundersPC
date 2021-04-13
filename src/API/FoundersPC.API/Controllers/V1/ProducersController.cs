@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FoundersPC.API.Application.Interfaces.Services;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;

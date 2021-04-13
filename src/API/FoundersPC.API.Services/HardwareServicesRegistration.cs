@@ -1,5 +1,6 @@
 ﻿#region Using namespaces
 
+using FoundersPC.API.Application.Interfaces.Services;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;

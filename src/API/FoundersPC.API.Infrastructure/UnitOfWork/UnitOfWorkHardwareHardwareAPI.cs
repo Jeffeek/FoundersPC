@@ -2,10 +2,10 @@
 
 using System;
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Processor;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.VideoCard;
+using FoundersPC.API.Application.Interfaces.Repositories;
+using FoundersPC.API.Application.Interfaces.Repositories.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories.Processor;
+using FoundersPC.API.Application.Interfaces.Repositories.VideoCard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

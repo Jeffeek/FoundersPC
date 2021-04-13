@@ -1,10 +1,10 @@
 ﻿#region Using namespaces
 
 using AutoMapper;
-using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.API.Domain.Entities.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Hardware.Processor;
-using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
+using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Memory;
+using FoundersPC.API.Domain.Entities.Processor;
+using FoundersPC.API.Domain.Entities.VideoCard;
 using FoundersPC.API.Dto;
 
 #endregion

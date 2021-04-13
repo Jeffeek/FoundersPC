@@ -2,8 +2,8 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.VideoCard;
-using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
+using FoundersPC.API.Application.Interfaces.Repositories.VideoCard;
+using FoundersPC.API.Domain.Entities.VideoCard;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 

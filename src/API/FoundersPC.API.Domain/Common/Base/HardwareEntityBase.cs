@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Domain.Entities;
 using FoundersPC.IdentityEntities.Identity;
 
 #endregion
