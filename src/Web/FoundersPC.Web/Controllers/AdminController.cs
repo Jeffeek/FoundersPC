@@ -156,6 +156,42 @@ namespace FoundersPC.Web.Controllers
 
         #endregion
 
+        #region Access Tokens Usages
+
+        [Route("TokensLogs")]
+        public async Task<ActionResult> TokensLogs([FromQuery] int pageNumber)
+        {
+            var logs =
+                (await _adminService.GetPaginateableAccessTokensLogsAsync(pageNumber,
+                                                                          FoundersPCConstants.PageSize,
+                                                                          HttpContext.GetJwtTokenFromCookie()))
+                .ToArray();
+
+            var viewModel = new IndexViewModel<AccessTokenLogReadDto>
+                            {
+                                Models = logs,
+                                Page = new PageViewModel(pageNumber, logs.Length == FoundersPCConstants.PageSize)
+                            };
+
+            return View("TokensLogsTable", viewModel);
+        }
+
+        [Route("User/{userId:int}/TokensLogs")]
+        public async Task<ActionResult> UserTokensLogs([FromRoute] int userId)
+        {
+            var logs = await _adminService.GetAllAccessTokensLogsByUserId(userId, HttpContext.GetJwtTokenFromCookie());
+
+            var viewModel = new IndexViewModel<AccessTokenLogReadDto>
+                            {
+                                Models = logs,
+                                Page = new PageViewModel(1, false)
+                            };
+
+            return View("TokensLogsTable", viewModel);
+        }
+
+        #endregion
+
         #region Change Users Statuses
 
         [Route("BlockUser/{id:int}")]

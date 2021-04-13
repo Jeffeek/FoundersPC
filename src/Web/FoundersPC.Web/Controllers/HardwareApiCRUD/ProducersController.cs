@@ -59,8 +59,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         public async Task<ActionResult> Table([FromQuery] int pageNumber = 1)
         {
             var producers = (await _producersManagingService.GetPaginateableProducersAsync(pageNumber,
-                                 FoundersPCConstants.PageSize,
-                                 HttpContext.GetJwtTokenFromCookie())).ToArray();
+                                                                                           FoundersPCConstants.PageSize,
+                                                                                           HttpContext.GetJwtTokenFromCookie())).ToArray();
 
             var indexModel = new IndexViewModel<ProducerReadDto>
                              {

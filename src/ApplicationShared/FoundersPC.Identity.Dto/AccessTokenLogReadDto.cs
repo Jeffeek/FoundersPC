@@ -12,6 +12,8 @@ namespace FoundersPC.Identity.Dto
 
         public int UserId { get; set; }
 
+        public int TokenId { get; set; }
+
         public DateTime RequestDateTime { get; set; }
     }
 }

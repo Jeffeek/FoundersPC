@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
-namespace FoundersPC.IdentityServer.Controllers.Users.Information
+namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [EnableCors("WebPolicy")]
     [ApiController]
@@ -78,9 +78,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Information
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(Order = 0)]
-        public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination(
-            [FromQuery(Name = "Page")] int pageNumber = 1,
-            [FromQuery(Name = "Size")] int pageSize = 10)
+        public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination([FromQuery(Name = "Page")] int pageNumber = 1,
+                                                                            [FromQuery(Name = "Size")] int pageSize = 10)
         {
             var takenUsers = await _usersInformationService.GetPaginateableAsync(pageNumber, pageSize);
 

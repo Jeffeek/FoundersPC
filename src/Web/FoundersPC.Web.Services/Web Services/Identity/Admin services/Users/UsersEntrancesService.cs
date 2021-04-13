@@ -49,10 +49,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(
-            int pageNumber,
-            int pageSize,
-            string adminToken)
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(int pageNumber,
+                                                                                             int pageSize,
+                                                                                             string adminToken)
         {
             if (pageNumber <= 0)
                 throw new ArgumentOutOfRangeException(nameof(pageNumber));
@@ -94,10 +93,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return responseMessage;
         }
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesBetweenAsync(
-            DateTime start,
-            DateTime finish,
-            string adminToken)
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesBetweenAsync(DateTime start,
+                                                                                           DateTime finish,
+                                                                                           string adminToken)
         {
             if (start > finish)
             {
@@ -128,9 +126,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return responseMessage;
         }
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByIdAsync(
-            int userId,
-            string adminToken)
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByIdAsync(int userId,
+                                                                                            string adminToken)
         {
             if (adminToken is null)
             {
@@ -151,9 +148,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return responseMessage;
         }
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByEmailAsync(
-            string userEmail,
-            string adminToken)
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesByEmailAsync(string userEmail,
+                                                                                               string adminToken)
         {
             if (adminToken is null)
             {

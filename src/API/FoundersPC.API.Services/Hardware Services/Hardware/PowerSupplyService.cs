@@ -31,8 +31,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         public async Task<IEnumerable<PowerSupplyReadDto>>
             GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
             _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
-                .PowerSuppliersRepository
-                .GetPaginateableAsync(pageNumber, pageSize));
+                                                                                         .PowerSuppliersRepository
+                                                                                         .GetPaginateableAsync(pageNumber, pageSize));
 
         #endregion
 
@@ -41,8 +41,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc/>
         public async Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync() =>
             _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
-                .PowerSuppliersRepository
-                .GetAllAsync());
+                                                                                         .PowerSuppliersRepository
+                                                                                         .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId) =>

@@ -28,7 +28,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
 
         /// <inheritdoc/>
         public async Task<IEnumerable<ProcessorCoreReadDto>> GetPaginateableAsync(int pageNumber = 1,
-            int pageSize = FoundersPCConstants.PageSize) =>
+                                                                                  int pageSize = FoundersPCConstants.PageSize) =>
             _mapper.Map<IEnumerable<ProcessorCore>,
                 IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
                                                          .ProcessorCoresRepository
@@ -41,8 +41,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
         /// <inheritdoc/>
         public async Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync() =>
             _mapper.Map<IEnumerable<ProcessorCore>, IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
-                .ProcessorCoresRepository
-                .GetAllAsync());
+                                                                                             .ProcessorCoresRepository
+                                                                                             .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId) =>

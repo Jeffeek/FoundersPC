@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Tokens;
@@ -15,8 +16,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-    [Route("FoundersPCIdentity/Tokens")]
+    [Microsoft.AspNetCore.Components.Route("FoundersPCIdentity/Tokens")]
     [ApiController]
+    [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
     public class AccessTokensController : Controller
     {
         private readonly IApiAccessTokensReservationService _accessTokensReservationService;
@@ -29,7 +31,6 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             _accessTokensReservationService = accessTokensReservationService;
         }
 
-        [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("User/{email}")]
         public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
@@ -45,7 +46,6 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             return Json(tokens);
         }
 
-        [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("User/{id:int:min(1)}")]
         public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
@@ -61,7 +61,6 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
             return Json(tokens);
         }
 
-        [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
         [HttpPost("Reserve")]
         public async Task<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)
@@ -87,8 +86,10 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
+        [AllowAnonymous]
         [HttpGet("Check/{token:length(64)}")]
-        public async Task<ActionResult> CheckTokenForUsability([FromRoute] string token)
+        public async Task<ActionResult> CheckTokenForUsability([FromRoute] string token,
+                                                               [FromServices] IAccessTokensLogsService logsService)
         {
             if (token is null
                 || token.Length != 64)
@@ -98,6 +99,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
             if (!checkTokenResult)
                 return Forbid();
+
+            await logsService.LogAsync(token);
 
             return Ok();
         }

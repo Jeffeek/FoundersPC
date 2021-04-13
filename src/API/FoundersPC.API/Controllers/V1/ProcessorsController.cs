@@ -16,7 +16,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Processors")]
-    [Route("HardwareApi/Cpus")]
+    [Route("HardwareApi/CPUs")]
     public class ProcessorsController : Controller
     {
         private readonly ICPUService _cpuService;
@@ -28,7 +28,7 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [HttpGet(Order = 1)]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<CPUReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
@@ -36,10 +36,9 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _cpuService.GetAllCPUsAsync());
         }
 
-        [HttpGet(Order = 0)]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable(
-            [FromQuery(Name = "Page")] int pageNumber = 1,
-            [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
+                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
         {
             _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
 

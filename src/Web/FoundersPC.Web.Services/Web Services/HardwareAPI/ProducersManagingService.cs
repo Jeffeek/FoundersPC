@@ -165,8 +165,8 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         /// <inheritdoc/>
         public async Task<IEnumerable<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
-            int pageSize,
-            string managerToken)
+                                                                                      int pageSize,
+                                                                                      string managerToken)
         {
             if (managerToken is null)
             {

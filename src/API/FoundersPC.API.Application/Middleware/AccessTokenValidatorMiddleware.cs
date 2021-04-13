@@ -17,63 +17,38 @@ namespace FoundersPC.API.Application.Middleware
         {
             var authenticateResult = await context.AuthenticateAsync(JwtBearerDefaults.AuthenticationScheme);
 
-            if (!authenticateResult.Succeeded)
+            if (authenticateResult.Succeeded && authenticateResult.Principal is not null)
             {
-                await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
+                var isRequestByEmployee = authenticateResult.Principal.IsInRole(ApplicationRoles.Administrator)
+                                          || authenticateResult.Principal.IsInRole(ApplicationRoles.Manager);
 
-                return;
+                if (isRequestByEmployee)
+                    await next(context);
             }
-
-            if (authenticateResult.Principal is null)
+            else
             {
-                await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
+                var isRequestWithToken = context.Request.Headers.TryGetValue("HARDWARE-ACCESS-TOKEN", out var result);
 
-                return;
-            }
+                if (!isRequestWithToken || result.Count == 0)
+                {
+                    await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
 
-            var isRequestByEmployee = authenticateResult.Principal.IsInRole(ApplicationRoles.Administrator)
-                                      || authenticateResult.Principal.IsInRole(ApplicationRoles.Manager);
+                    return;
+                }
 
-            if (isRequestByEmployee)
-            {
+                using var client = new HttpClient();
+
+                var response = await client.GetAsync($"{MicroservicesUrls.IdentityServer}Tokens/Check/{result[0]}");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
+
+                    return;
+                }
+
                 await next(context);
-
-                return;
             }
-
-            var isRequestWithToken = context.Request.Headers.TryGetValue("HARDWARE-ACCESS-TOKEN", out var result);
-
-            if (!isRequestWithToken
-                || result.Count == 0)
-            {
-                await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
-
-                return;
-            }
-
-            using var client = new HttpClient();
-
-            // JWT authorization is not need
-            //var authorizationToken = context.Request.Headers["Authorization"][0]
-            //                         ?? throw new
-            //                             Exception($"{nameof(AccessTokenValidatorMiddleware)}: Authorization header not found");
-
-            //authorizationToken = authorizationToken.Replace($"{JwtBearerDefaults.AuthenticationScheme} ", String.Empty);
-
-            //client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-            //                                        authorizationToken,
-            //                                        $"{MicroservicesUrls.IdentityServer}Tokens/Check/");
-
-            var response = await client.GetAsync($"{MicroservicesUrls.IdentityServer}Tokens/Check/{result[0]}");
-
-            if (!response.IsSuccessStatusCode)
-            {
-                await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
-
-                return;
-            }
-
-            await next(context);
         }
     }
 }

@@ -22,8 +22,7 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly ITokenReservationWebService _tokenReservationService;
 
-        public PricingController(ITokenReservationWebService tokenReservationService) =>
-            _tokenReservationService = tokenReservationService;
+        public PricingController(ITokenReservationWebService tokenReservationService) => _tokenReservationService = tokenReservationService;
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy,
                    AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]

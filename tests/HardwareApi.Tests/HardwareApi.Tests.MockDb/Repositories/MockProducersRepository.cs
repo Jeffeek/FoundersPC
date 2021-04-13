@@ -27,8 +27,7 @@ namespace HardwareApi.Tests.MockAbstractions.Repositories
         #region Implementation of IPaginateableRepository<Producer>
 
         /// <inheritdoc/>
-        public Task<IEnumerable<Producer>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
-            throw new NotImplementedException();
+        public Task<IEnumerable<Producer>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) => throw new NotImplementedException();
 
         #endregion
     }

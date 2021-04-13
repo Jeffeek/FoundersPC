@@ -39,196 +39,226 @@
 </div>
 <div
     class='table-responsive-lg table-responsive-md table-responsive-sm table-responsive-xl table-responsive-xxl'>
-    <table
-        class='mt-5 table table-bordered table-hover text-center text-light'>
-        <thead>
-        <tr
-            class='table-title'>
-            <th>Id</th>
-            <th>Login</th>
-            <th>Email</th>
-            <th>Registration date</th>
-            <th>Role</th>
-            <th>IsActive</th>
-            <th>IsBlocked</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        @{
-            foreach (var user in Model.Models) {
-                <tr
-                    class=@if (!user.IsActive) { @Html.Raw("text-danger") }>
-                    <th>@user.Id</th>
-                    <th>@user.Login</th>
-                    <th>@user.Email</th>
-                    <th>@user.RegistrationDate.ToLongDateString()</th>
-                    <th>@user.Role.RoleTitle</th>
-                    <th>
-                        <div
-                            class="align-items-center d-flex form-check justify-content-center">
-                            <input
-                                aria-checked='@user.IsActive'
-                                class="form-check-input"
-                                disabled
-                                type="checkbox">
-                        </div>
-                    </th>
-                    <th>
-                        <div
-                            class="align-items-center d-flex form-check justify-content-center">
-                            <input
-                                aria-checked='@user.IsBlocked'
-                                class="form-check-input"
-                                disabled
-                                type="checkbox">
-                        </div>
-                    </th>
-                    <td>
-                        <div
-                            class="d-flex">
-                            <a
-                                class="btn btn-outline-warning d-flex simple-popup @if (!user.IsActive) { @Html.Raw("disabled") }"
-                                href=@{ if (user.IsBlocked) { @Url.Action("UnblockUser", "Admin", new { id = user.Id }) } else { @Url.Action("BlockUser", "Admin", new { id = user.Id }) } }>
-                                <span
-                                    class="popuptext">
-                                    @{
-                                        if (user.IsBlocked) {
-                                            @("UNBLOCK")
-                                        } else {
-                                            @("BLOCK")
-                                        }
+<table
+    class='mt-5 table table-bordered table-hover text-center text-light'>
+    <thead>
+    <tr
+        class='table-title'>
+        <th>Id</th>
+        <th>Login</th>
+        <th>Email</th>
+        <th>Registration date</th>
+        <th>Role</th>
+        <th>IsActive</th>
+        <th>IsBlocked</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        foreach (var user in Model.Models) {
+            <tr
+                class=@if (!user.IsActive) { @Html.Raw("text-danger") }>
+                <th>@user.Id</th>
+                <th>@user.Login</th>
+                <th>@user.Email</th>
+                <th>@user.RegistrationDate.ToLongDateString()</th>
+                <th>@user.Role.RoleTitle</th>
+                <th>
+                    <div
+                        class="align-items-center d-flex form-check justify-content-center">
+                        <input
+                            aria-checked='@user.IsActive'
+                            class="form-check-input"
+                            disabled
+                            type="checkbox">
+                    </div>
+                </th>
+                <th>
+                    <div
+                        class="align-items-center d-flex form-check justify-content-center">
+                        <input
+                            aria-checked='@user.IsBlocked'
+                            class="form-check-input"
+                            disabled
+                            type="checkbox">
+                    </div>
+                </th>
+                <td>
+                    <div
+                        class="d-flex justify-content-around">
+                        <a
+                            class="btn btn-outline-warning d-flex simple-popup @if (!user.IsActive) { @Html.Raw("disabled") }"
+                            href=@{ if (user.IsBlocked) { @Url.Action("UnblockUser", "Admin", new { id = user.Id }) } else { @Url.Action("BlockUser", "Admin", new { id = user.Id }) } }>
+                            <span
+                                class="popuptext">
+                                @{
+                                    if (user.IsBlocked) {
+                                        @("UNBLOCK")
+                                    } else {
+                                        @("BLOCK")
                                     }
-                                </span>
+                                }
+                            </span>
+                            <svg
+                                class="icon"
+                                fill="#FFFFFF"
+                                viewBox="0 0 30 30"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                @if (!user.IsBlocked) {
+                                    <path
+                                        d="M15 4A11 11 0 1 0 15 26 11 11 0 1 0 15 4zM7.222 7.222L22.778 22.778"
+                                        fill="none"
+                                        stroke="#FFFFFF"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"/>
+                                } else {
+                                    <path
+                                        d="M12 1L12 2M17 3L16 4M7 3L8 4"
+                                        fill="none"
+                                        stroke="#FFFFFF"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"/>
+                                    <path
+                                        d="M25.688,16.911c-0.63-0.874-1.856-0.947-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l4.718-4.718c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218L11.004,14.397c0,0-1.755-3.303-2.635-4.184C6.834,8.679,4.484,8.547,3.701,9.33L3.286,9.745c-0.366,0.366-0.366,0.958,0,1.324l2.113,2.113l1.152,4.843c0.31,1.301,0.974,2.491,1.92,3.437l4.243,4.243c1.706,1.706,4.471,1.706,6.177,0l1.214-1.214l0,0l5.335-5.335C26.037,18.559,26.182,17.596,25.688,16.911z"
+                                        fill="#FFFFFF"/>
+                                }
+                            </svg>
+                        </a>
+                        <a
+                            class="btn @if (user.IsActive) { @Html.Raw("btn-outline-danger") } else { @Html.Raw("btn-outline-dark disabled") } d-flex simple-popup"
+                            href=@{ if (user.IsActive) { @Url.Action("MakeUserInactive", "Admin", new { id = user.Id }) } else { @Html.Raw("#") } }>
+                            <span
+                                class="popuptext">
+                                @{
+                                    if (user.IsActive) {
+                                        @Html.Raw("Make user INACTIVE")
+                                    } else {
+                                        @Html.Raw("User is already INACTIVE")
+                                    }
+                                }
+                            </span>
+                            @if (user.IsActive) {
                                 <svg
                                     class="icon"
                                     fill="#FFFFFF"
                                     viewBox="0 0 30 30"
                                     xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    @if (!user.IsBlocked) {
-                                        <path
-                                            d="M15 4A11 11 0 1 0 15 26 11 11 0 1 0 15 4zM7.222 7.222L22.778 22.778"
-                                            fill="none"
-                                            stroke="#FFFFFF"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"/>
-                                    } else {
-                                        <path
-                                            d="M12 1L12 2M17 3L16 4M7 3L8 4"
-                                            fill="none"
-                                            stroke="#FFFFFF"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"/>
-                                        <path
-                                            d="M25.688,16.911c-0.63-0.874-1.856-0.947-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l4.718-4.718c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218L11.004,14.397c0,0-1.755-3.303-2.635-4.184C6.834,8.679,4.484,8.547,3.701,9.33L3.286,9.745c-0.366,0.366-0.366,0.958,0,1.324l2.113,2.113l1.152,4.843c0.31,1.301,0.974,2.491,1.92,3.437l4.243,4.243c1.706,1.706,4.471,1.706,6.177,0l1.214-1.214l0,0l5.335-5.335C26.037,18.559,26.182,17.596,25.688,16.911z"
-                                            fill="#FFFFFF"/>
-                                    }
+                                    <path
+                                        d="M15 23A2 2 0 1 0 15 27 2 2 0 1 0 15 23zM24 4A2 2 0 1 0 24 8 2 2 0 1 0 24 4zM6 4A2 2 0 1 0 6 8 2 2 0 1 0 6 4z"
+                                        fill="#FFFFFF"/>
+                                    <path
+                                        d="M24.388,4.038C24.388,4.038,19.602,3,15,3S5.612,4.038,5.612,4.038L4,6v6c0,10.398,10.021,14.745,10.021,14.745h1.957C15.979,26.745,26,22.398,26,12V6L24.388,4.038z"
+                                        fill="#FFFFFF"/>
                                 </svg>
-                            </a>
-                            <a
-                                class="btn @if (user.IsActive) { @Html.Raw("btn-outline-danger") } else { @Html.Raw("btn-outline-dark disabled") } d-flex mx-3 simple-popup"
-                                href=@{ if (user.IsActive) { @Url.Action("MakeUserInactive", "Admin", new { id = user.Id }) } else { @Html.Raw("#") } }>
-                                <span
-                                    class="popuptext">
-                                    @{
-                                        if (user.IsActive) {
-                                            @Html.Raw("Make user INACTIVE")
-                                        } else {
-                                            @Html.Raw("User is already INACTIVE")
-                                        }
-                                    }
-                                </span>
-                                @if (user.IsActive) {
-                                    <svg
-                                        class="icon"
-                                        fill="#FFFFFF"
-                                        viewBox="0 0 30 30"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path
-                                            d="M15 23A2 2 0 1 0 15 27 2 2 0 1 0 15 23zM24 4A2 2 0 1 0 24 8 2 2 0 1 0 24 4zM6 4A2 2 0 1 0 6 8 2 2 0 1 0 6 4z"
-                                            fill="#FFFFFF"/>
-                                        <path
-                                            d="M24.388,4.038C24.388,4.038,19.602,3,15,3S5.612,4.038,5.612,4.038L4,6v6c0,10.398,10.021,14.745,10.021,14.745h1.957C15.979,26.745,26,22.398,26,12V6L24.388,4.038z"
-                                            fill="#FFFFFF"/>
-                                    </svg>
-                                } else {
-                                    <svg
-                                        class="icon"
-                                        fill="#FFFFFF"
-                                        viewBox="0 0 32 32"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path
-                                            d="M23 27H11c-1.1 0-2-.9-2-2V8h16v17C25 26.1 24.1 27 23 27zM27 8L7 8M14 8V6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2M17 23L17 12M21 23L21 12M13 23L13 12"
-                                            fill="none"
-                                            stroke="#FFFFFF"
-                                            stroke-width="2"/>
-                                    </svg>
-                                }
-                            </a>
-                            <a
-                                asp-action='UserEntrances'
-                                asp-controller='Admin'
-                                asp-route-userId='@user.Id'
-                                class="btn btn-outline-info d-flex simple-popup">
-                                <span
-                                    class='popuptext'>
-                                    Entrances
-                                </span>
+                            } else {
                                 <svg
-                                    class='icon'
+                                    class="icon"
                                     fill="#FFFFFF"
                                     viewBox="0 0 32 32"
                                     xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <path
-                                        d="M16 28L16 14.375M12 17.375L16 13.375 20 17.375"
+                                        d="M23 27H11c-1.1 0-2-.9-2-2V8h16v17C25 26.1 24.1 27 23 27zM27 8L7 8M14 8V6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2M17 23L17 12M21 23L21 12M13 23L13 12"
                                         fill="none"
                                         stroke="#FFFFFF"
                                         stroke-width="2"/>
-                                    <path
-                                        d="M13,25.539C8.947,24.262,6,20.469,6,16c0-5.514,4.486-10,10-10s10,4.486,10,10c0,4.469-2.947,8.262-7,9.539v2.066c5.167-1.337,9-6.026,9-11.605c0-6.617-5.383-12-12-12S4,9.383,4,16c0,5.579,3.833,10.268,9,11.605V25.539z"
-                                        fill="#FFFFFF"/>
                                 </svg>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            }
+                            }
+                        </a>
+                        <a
+                            asp-action='UserEntrances'
+                            asp-controller='Admin'
+                            asp-route-userId='@user.Id'
+                            class="btn btn-outline-info d-flex simple-popup">
+                            <span
+                                class='popuptext'>
+                                Entrances
+                            </span>
+                            <svg
+                                class='icon'
+                                fill="#FFFFFF"
+                                viewBox="0 0 32 32"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path
+                                    d="M16 28L16 14.375M12 17.375L16 13.375 20 17.375"
+                                    fill="none"
+                                    stroke="#FFFFFF"
+                                    stroke-width="2"/>
+                                <path
+                                    d="M13,25.539C8.947,24.262,6,20.469,6,16c0-5.514,4.486-10,10-10s10,4.486,10,10c0,4.469-2.947,8.262-7,9.539v2.066c5.167-1.337,9-6.026,9-11.605c0-6.617-5.383-12-12-12S4,9.383,4,16c0,5.579,3.833,10.268,9,11.605V25.539z"
+                                    fill="#FFFFFF"/>
+                            </svg>
+                        </a>
+                        <a
+                            asp-action='UserTokensLogs'
+                            asp-controller='Admin'
+                            asp-route-userId='@user.Id'
+                            class="btn btn-outline-info d-flex simple-popup">
+                            <span
+                                class='popuptext'>
+                                Tokens Usages
+                            </span>
+                            <svg
+                                class='icon'
+                                viewBox="0 0 40 40"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path
+                                    d="M10.803,34.096C11.255,33.495,11.5,32.766,11.5,32c0-1.93-1.57-3.5-3.5-3.5 c-0.766,0-1.495,0.245-2.096,0.697L1.707,25L25,1.707l4.197,4.197C28.745,6.505,28.5,7.234,28.5,8c0,1.93,1.57,3.5,3.5,3.5 c0.766,0,1.495-0.245,2.096-0.697L38.293,15L15,38.293L10.803,34.096z"
+                                    fill="#f5ce85"/>
+                                <path
+                                    d="M25,2.414l3.553,3.553C28.192,6.576,28,7.273,28,8c0,2.206,1.794,4,4,4 c0.727,0,1.424-0.192,2.033-0.553L37.586,15L15,37.586l-3.553-3.553C11.808,33.424,12,32.727,12,32c0-2.206-1.794-4-4-4 c-0.727,0-1.424,0.192-2.033,0.553L2.414,25L25,2.414 M25,1L1,25l4.879,4.879C6.422,29.336,7.172,29,8,29c1.657,0,3,1.343,3,3 c0,0.828-0.336,1.578-0.879,2.121L15,39l24-24l-4.879-4.879C33.578,10.664,32.828,11,32,11c-1.657,0-3-1.343-3-3 c0-0.828,0.336-1.578,0.879-2.121L25,1L25,1z"
+                                    fill="#967a44"/>
+                                <g>
+                                    <path
+                                        d="M19.258 22.5L15.414 22.5 17.705 19.45 16.48 15.806 20.123 17.03 23.185 14.749 23.173 18.583 26.303 20.812 22.636 21.962 21.485 25.629z"
+                                        fill="#f78f8f"/>
+                                    <path
+                                        d="M22.682,15.747l-0.008,2.576l-0.002,0.518l0.422,0.3l2.1,1.494l-2.458,0.771l-0.498,0.156 l-0.156,0.498l-0.771,2.458l-1.494-2.1L19.516,22H19h-2.585l1.532-2.039l0.316-0.421l-0.168-0.499l-0.82-2.441l2.441,0.82 l0.496,0.167l0.42-0.313L22.682,15.747 M23.687,13.75l-3.654,2.723l-4.348-1.461l1.461,4.348L14.413,23H19l2.661,3.739l1.374-4.378 l4.378-1.374l-3.739-2.661L23.687,13.75L23.687,13.75z"
+                                        fill="#c74343"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </td>
+            </tr>
         }
-        </tbody>
-    </table>
-    <nav>
-        <ul
-            class='justify-content-center pagination'>
-            <li
-                class='page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))'>
-                <a
-                    aria-disabled='@(!Model.Page.HasPreviousPage)'
-                    asp-action='UsersTable'
-                    asp-controller='Admin'
-                    asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
-                    class='bg-light page-link'>
-                    Previous
-                </a>
-            </li>
-            <li
-                class='page-item @(Html.Raw(Model.Page.HasNextPage ? String.Empty : "disabled"))'>
-                <a
-                    aria-disabled='@(!Model.Page.HasNextPage)'
-                    asp-action='UsersTable'
-                    asp-controller='Admin'
-                    asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
-                    class='bg-light page-link'>
-                    Next
-                </a>
-            </li>
-        </ul>
-    </nav>
+    }
+    </tbody>
+</table>
+<nav>
+    <ul
+        class='justify-content-center pagination'>
+        <li
+            class='page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))'>
+            <a
+                aria-disabled='@(!Model.Page.HasPreviousPage)'
+                asp-action='UsersTable'
+                asp-controller='Admin'
+                asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
+                class='bg-light page-link'>
+                Previous
+            </a>
+        </li>
+        <li
+            class='page-item @(Html.Raw(Model.Page.HasNextPage ? String.Empty : "disabled"))'>
+            <a
+                aria-disabled='@(!Model.Page.HasNextPage)'
+                asp-action='UsersTable'
+                asp-controller='Admin'
+                asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
+                class='bg-light page-link'>
+                Next
+            </a>
+        </li>
+    </ul>
+</nav>
 </div>
 </div>
 

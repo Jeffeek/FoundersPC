@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
-namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
+namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [Route("FoundersPCIdentity/Users")]
     [ApiController]
@@ -36,8 +36,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Entrances
                 .GetAllAsync();
 
         [HttpGet("Entrances/{id:int:min(1)}")]
-        public async Task<UserEntranceLogReadDto> Get([FromRoute] int id) =>
-            await _usersEntrancesService.GetByIdAsync(id);
+        public async Task<UserEntranceLogReadDto> Get([FromRoute] int id) => await _usersEntrancesService.GetByIdAsync(id);
 
         [HttpGet("ById/{userId:int:min(1)}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int userId) =>

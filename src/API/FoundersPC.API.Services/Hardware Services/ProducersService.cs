@@ -27,8 +27,8 @@ namespace FoundersPC.API.Services.Hardware_Services
         /// <inheritdoc/>
         public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
             _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                 .ProducersRepository
-                                                                                 .GetAllAsync());
+                                                                                   .ProducersRepository
+                                                                                   .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
@@ -82,9 +82,9 @@ namespace FoundersPC.API.Services.Hardware_Services
         public async Task<IEnumerable<ProducerReadDto>>
             GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
             _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                 .ProducersRepository
-                                                                                 .GetPaginateableAsync(pageNumber,
-                                                                                     pageSize));
+                                                                                   .ProducersRepository
+                                                                                   .GetPaginateableAsync(pageNumber,
+                                                                                                         pageSize));
 
         #endregion
     }

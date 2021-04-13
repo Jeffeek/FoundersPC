@@ -10,8 +10,7 @@ namespace FoundersPC.ApplicationShared
 {
     public static class HttpContextExtensions
     {
-        public static string GetIpAddress(this HttpContext httpContext) =>
-            httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
+        public static string GetIpAddress(this HttpContext httpContext) => httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
 
         public static bool IsInRole(this ClaimsPrincipal claims, params string[] roles) => roles.Any(claims.IsInRole);
 

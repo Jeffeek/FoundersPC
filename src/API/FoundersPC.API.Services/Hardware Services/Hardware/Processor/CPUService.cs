@@ -87,7 +87,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
         public async Task<IEnumerable<CPUReadDto>>
             GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
             _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWorkHardwareAPI.ProcessorsRepository
-                                                                       .GetPaginateableAsync(pageNumber, pageSize));
+                                                                                               .GetPaginateableAsync(pageNumber, pageSize));
 
         #endregion
     }

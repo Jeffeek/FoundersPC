@@ -13,6 +13,7 @@ using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
+using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Tokens;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using FoundersPC.Web.Domain.Common.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -29,7 +30,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                             ILogger<AdminService> logger,
                             IMapper mapper,
                             IUserStatusService userStatusService,
-                            IUsersEntrancesService usersEntrancesService)
+                            IUsersEntrancesService usersEntrancesService,
+                            IUsersAccessTokensLogsService accessTokensLogsService)
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
@@ -37,6 +39,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _mapper = mapper;
             _userStatusService = userStatusService;
             _usersEntrancesService = usersEntrancesService;
+            _accessTokensLogsService = accessTokensLogsService;
         }
 
         #region DI
@@ -47,21 +50,20 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         private readonly IUsersInformationService _usersInformationService;
         private readonly IUserStatusService _userStatusService;
         private readonly IUsersEntrancesService _usersEntrancesService;
+        private readonly IUsersAccessTokensLogsService _accessTokensLogsService;
 
         #endregion
 
         #region Users information
 
-        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) =>
-            await _usersInformationService.GetAllUsersAsync(adminToken);
+        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => await _usersInformationService.GetAllUsersAsync(adminToken);
 
         /// <inheritdoc/>
         public Task<IEnumerable<UserEntityReadDto>>
             GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken) =>
             _usersInformationService.GetPaginateableUsersAsync(pageNumber, pageSize, adminToken);
 
-        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) =>
-            await _usersInformationService.GetUserByIdAsync(id, adminToken);
+        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetUserByIdAsync(id, adminToken);
 
         public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken) =>
             await _usersInformationService.GetUserByEmailAsync(email, adminToken);
@@ -70,28 +72,23 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Block user
 
-        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) =>
-            await _userStatusService.BlockUserByIdAsync(id, adminToken);
+        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) => await _userStatusService.BlockUserByIdAsync(id, adminToken);
 
-        public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) =>
-            await _userStatusService.BlockUserByEmailAsync(email, adminToken);
+        public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) => await _userStatusService.BlockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Unblock user
 
-        public async Task<bool> UnblockUserByIdAsync(int id, string adminToken) =>
-            await _userStatusService.UnblockUserByIdAsync(id, adminToken);
+        public async Task<bool> UnblockUserByIdAsync(int id, string adminToken) => await _userStatusService.UnblockUserByIdAsync(id, adminToken);
 
-        public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken) =>
-            await _userStatusService.UnblockUserByEmailAsync(email, adminToken);
+        public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken) => await _userStatusService.UnblockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Make user inactive
 
-        public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) =>
-            await _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
+        public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => await _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
 
         public async Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) =>
             await _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
@@ -190,25 +187,23 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region UsersAccessTokensLogs
 
         /// <inheritdoc/>
-        public Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsAsync(string adminToken) =>
-            throw new NotImplementedException();
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsAsync(string adminToken) =>
+            await _accessTokensLogsService.GetAllAccessTokensLogsAsync(adminToken);
 
         /// <inheritdoc/>
-        public Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(
-            int pageNumber,
-            int pageSize,
-            string adminToken) =>
-            throw new NotImplementedException();
+        public async Task<IEnumerable<AccessTokenLogReadDto>>
+            GetPaginateableAccessTokensLogsAsync(int pageNumber, int pageSize, string adminToken) =>
+            await _accessTokensLogsService.GetPaginateableAccessTokensLogsAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsByUserId(int userId, string adminToken) =>
-            throw new NotImplementedException();
+        public async Task<IEnumerable<AccessTokenLogReadDto>>
+            GetAllAccessTokensLogsByUserId(int userId, string adminToken) =>
+            await _accessTokensLogsService.GetAllAccessTokensLogsByUserId(userId, adminToken);
 
         /// <inheritdoc/>
-        public Task<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogsByUserEmail(
-            string userEmail,
-            string adminToken) =>
-            throw new NotImplementedException();
+        public async Task<IEnumerable<AccessTokenLogReadDto>>
+            GetAllUserAccessTokensLogsByUserEmail(string userEmail, string adminToken) =>
+            await _accessTokensLogsService.GetAllUserAccessTokensLogsByUserEmail(userEmail, adminToken);
 
         #endregion
     }

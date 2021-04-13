@@ -24,6 +24,10 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 
         Task<AccessTokenLogReadDto> GetLastTokenUsageAsync(string apiAccessToken);
 
+        Task<IEnumerable<AccessTokenLogReadDto>> GetUserTokenUsagesByUserIdAsync(int userId);
+
+        Task<IEnumerable<AccessTokenLogReadDto>> GetUserTokenUsagesByUserEmailAsync(string userEmail);
+
         Task<bool> LogAsync(int tokenId);
 
         Task<bool> LogAsync(string token);

@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 #endregion
 
-namespace FoundersPC.IdentityServer.Controllers.Users.Settings
+namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [Route("FoundersPCIdentity/Users/SettingsChange")]
@@ -31,8 +31,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         }
 
         [HttpPut("Password")]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword(
-            [FromBody] ChangePasswordRequest request)
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword([FromBody] ChangePasswordRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -60,8 +59,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         }
 
         [HttpPut("Login")]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin(
-            [FromBody] ChangeLoginRequest request)
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin([FromBody] ChangeLoginRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new
@@ -91,8 +89,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users.Settings
         }
 
         [HttpPut("Notifications")]
-        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications(
-            [FromBody] ChangeNotificationsRequest request)
+        public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications([FromBody] ChangeNotificationsRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new

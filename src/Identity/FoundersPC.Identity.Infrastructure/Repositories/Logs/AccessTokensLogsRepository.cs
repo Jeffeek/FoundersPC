@@ -50,6 +50,21 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
                          .OrderBy(x => x.Id)
                          .LastOrDefaultAsync();
 
+        /// <inheritdoc/>
+        public async Task<IEnumerable<AccessTokenLog>> GetUserTokenUsagesByUserIdAsync(int userId) =>
+            await Context.Set<AccessTokenLog>()
+                         .Include(x => x.ApiAccessToken)
+                         .Where(x => x.ApiAccessToken.UserId == userId)
+                         .ToListAsync();
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<AccessTokenLog>> GetUserTokenUsagesByUserEmailAsync(string userEmail) =>
+            await Context.Set<AccessTokenLog>()
+                         .Include(x => x.ApiAccessToken)
+                         .ThenInclude(x => x.User)
+                         .Where(x => x.ApiAccessToken.User.Email == userEmail)
+                         .ToListAsync();
+
         #region Implementation of IPaginateableRepository<AccessTokenLog>
 
         /// <inheritdoc/>

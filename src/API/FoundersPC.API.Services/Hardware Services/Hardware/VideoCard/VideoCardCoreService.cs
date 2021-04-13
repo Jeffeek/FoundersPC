@@ -30,8 +30,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
         public async Task<IEnumerable<VideoCardCoreReadDto>>
             GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
             _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
-                .VideoCardCoresRepository
-                .GetPaginateableAsync(pageNumber, pageSize));
+                                                                                             .VideoCardCoresRepository
+                                                                                             .GetPaginateableAsync(pageNumber, pageSize));
 
         #endregion
 
@@ -40,13 +40,13 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
         /// <inheritdoc/>
         public async Task<IEnumerable<VideoCardCoreReadDto>> GetAllVideoCardCoresAsync() =>
             _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
-                .VideoCardCoresRepository
-                .GetAllAsync());
+                                                                                             .VideoCardCoresRepository
+                                                                                             .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<VideoCardCoreReadDto> GetVideoCardCoreByIdAsync(int videoCardCoreId) =>
             _mapper.Map<VideoCardCore, VideoCardCoreReadDto>(await _unitOfWorkHardwareAPI.VideoCardCoresRepository
-                                                                 .GetByIdAsync(videoCardCoreId));
+                                                                                         .GetByIdAsync(videoCardCoreId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore)

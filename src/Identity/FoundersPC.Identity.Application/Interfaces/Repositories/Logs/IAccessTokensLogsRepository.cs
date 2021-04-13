@@ -20,5 +20,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Repositories.Logs
         Task<AccessTokenLog> GetLastTokenUsageAsync(int apiAccessTokenId);
 
         Task<AccessTokenLog> GetLastTokenUsageAsync(string apiAccessToken);
+
+        Task<IEnumerable<AccessTokenLog>> GetUserTokenUsagesByUserIdAsync(int userId);
+
+        Task<IEnumerable<AccessTokenLog>> GetUserTokenUsagesByUserEmailAsync(string userEmail);
     }
 }
