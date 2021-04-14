@@ -30,7 +30,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             _usersEntrancesService = usersEntrancesService;
         }
 
-        [HttpGet("Entrances", Order = 1)]
+        [HttpGet("Entrances/All")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> Get() =>
             await _usersEntrancesService
                 .GetAllAsync();
@@ -46,7 +46,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] string userEmail) =>
             await _usersEntrancesService.GetAllUserEntrances(userEmail);
 
-        [HttpGet("Entrances", Order = 0)]
+        [HttpGet("Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>>
             GetPaginateableUserEntrances([FromQuery(Name = "Page")] int pageNumber = 1,
                                          [FromQuery(Name = "Size")] int pageSize = 10) =>

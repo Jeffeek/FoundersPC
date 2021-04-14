@@ -1,4 +1,5 @@
 ﻿@using System.Globalization
+@using System
 @model FoundersPC.Web.Domain.Common.Entrances.EntrancesViewModel
 
 @{
@@ -73,7 +74,7 @@
             </thead>
             <tbody>
             @{
-                foreach (var entrance in Model.IndexEntrances.Models) {
+                foreach (var entrance in Model.IndexModel.Models) {
                     <tr>
                         <td>
                             @entrance.Id
@@ -90,28 +91,28 @@
             </tbody>
         </table>
         @{
-            if (Model.IsPaginationRequired) {
+            if (Model.IndexModel.IsPaginationNeeded) {
                 <nav>
                     <ul
                         class="justify-content-center pagination">
                         <li
-                            class="page-item @(Html.Raw(Model.IndexEntrances.Page.HasPreviousPage ? String.Empty : "disabled"))">
+                            class="page-item @(Html.Raw(Model.IndexModel.Page.HasPreviousPage ? String.Empty : "disabled"))">
                             <a
-                                aria-disabled='@(!Model.IndexEntrances.Page.HasPreviousPage)'
-                                asp-action='Entrances'
+                                aria-disabled='@(!Model.IndexModel.Page.HasPreviousPage)'
+                                asp-action='EntrancesTable'
                                 asp-controller='Admin'
-                                asp-route-pageNumber='@(Model.IndexEntrances.Page.CurrentPageNumber - 1)'
+                                asp-route-pageNumber='@(Model.IndexModel.Page.CurrentPageNumber - 1)'
                                 class="bg-light page-link">
                                 Previous
                             </a>
                         </li>
                         <li
-                            class="page-item @(Html.Raw(Model.IndexEntrances.Page.HasNextPage ? String.Empty : "disabled"))">
+                            class="page-item @(Html.Raw(Model.IndexModel.Page.HasNextPage ? String.Empty : "disabled"))">
                             <a
-                                aria-disabled='@(!Model.IndexEntrances.Page.HasNextPage)'
-                                asp-action='Entrances'
+                                aria-disabled='@(!Model.IndexModel.Page.HasNextPage)'
+                                asp-action='EntrancesTable'
                                 asp-controller='Admin'
-                                asp-route-pageNumber='@(Model.IndexEntrances.Page.CurrentPageNumber + 1)'
+                                asp-route-pageNumber='@(Model.IndexModel.Page.CurrentPageNumber + 1)'
                                 class="bg-light page-link">
                                 Next
                             </a>

@@ -10,15 +10,19 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
 {
     public interface IUsersAccessTokensLogsService
     {
-        Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsAsync(string adminToken);
+        Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsAsync(string adminToken);
 
         Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(int pageNumber,
                                                                                       int pageSize,
                                                                                       string adminToken);
 
-        Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsByUserId(int userId, string adminToken);
+        Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserIdAsync(int userId, string adminToken);
 
-        Task<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogsByUserEmail(string userEmail,
-                                                                                       string adminToken);
+        Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserEmailAsync(string userEmail,
+                                                                                     string adminToken);
+
+        Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken);
+
+        Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken);
     }
 }

@@ -12,9 +12,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 {
     public interface IAccessTokensLogsService : IPaginateableService<AccessTokenLogReadDto>
     {
-        Task<IEnumerable<AccessTokenLogReadDto>> GetAllAsync();
+        Task<IEnumerable<AccessTokenLogReadDto>> GetAllTokensLogsAsync();
 
-        Task<AccessTokenLogReadDto> GetByIdAsync(int id);
+        Task<AccessTokenLogReadDto> GetTokenLogByIdAsync(int id);
 
         Task<IEnumerable<AccessTokenLogReadDto>> GetUsagesBetweenAsync(DateTime start, DateTime finish);
 
@@ -23,6 +23,10 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
         Task<AccessTokenLogReadDto> GetLastTokenUsageAsync(int apiAccessTokenId);
 
         Task<AccessTokenLogReadDto> GetLastTokenUsageAsync(string apiAccessToken);
+
+        Task<IEnumerable<AccessTokenLogReadDto>> GetTokenLogsAsync(int tokenId);
+
+        Task<IEnumerable<AccessTokenLogReadDto>> GetTokenLogsAsync(string token);
 
         Task<IEnumerable<AccessTokenLogReadDto>> GetUserTokenUsagesByUserIdAsync(int userId);
 

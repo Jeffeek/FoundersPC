@@ -260,28 +260,30 @@
                                     class="dropdown dropdown-item submenu">
                                     Admin Tools
                                 </a>
-                                <div
-                                    class="dropdown-menu dropdown-menu-dark">
-                                    <a
-                                        asp-action='UsersTable'
-                                        asp-controller='Admin'
-                                        asp-route-pageNumber='1'
-                                        class="dropdown-item">
+                                <div class="dropdown-menu dropdown-menu-dark">
+                                    <a asp-action='UsersTable'
+                                       asp-controller='Admin'
+                                       asp-route-pageNumber='1'
+                                       class="dropdown-item">
                                         Users Table
                                     </a>
-                                    <a
-                                        asp-action='Entrances'
-                                        asp-controller='Admin'
-                                        asp-route-pageNumber='1'
-                                        class="dropdown-item">
+                                    <a asp-action='EntrancesTable'
+                                       asp-controller='Admin'
+                                       asp-route-pageNumber='1'
+                                       class="dropdown-item">
                                         Entrances Table
                                     </a>
-                                    <a
-                                        asp-action='TokensLogs'
-                                        asp-controller='Admin'
-                                        asp-route-pageNumber='1'
-                                        class="dropdown-item">
+                                    <a asp-action='TokensLogsTable'
+                                       asp-controller='Admin'
+                                       asp-route-pageNumber='1'
+                                       class="dropdown-item">
                                         Tokens Usages Table
+                                    </a>
+                                    <a asp-action='TokensTable'
+                                       asp-controller='Admin'
+                                       asp-route-pageNumber='1'
+                                       class="dropdown-item">
+                                        Tokens Table
                                     </a>
                                 </div>
                             } else if (User.IsInRole(ApplicationRoles.Manager)) {

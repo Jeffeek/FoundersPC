@@ -43,7 +43,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                                         adminToken,
                                                         $"{MicroservicesUrls.IdentityServer}Users/");
 
-            var responseMessage = await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>("Entrances");
+            var responseMessage = await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>("Entrances/All");
 
             return responseMessage;
         }

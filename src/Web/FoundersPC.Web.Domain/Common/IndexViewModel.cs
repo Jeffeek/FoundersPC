@@ -11,5 +11,7 @@ namespace FoundersPC.Web.Domain.Common
         public PageViewModel Page { get; set; }
 
         public IEnumerable<T> Models { get; set; }
+
+        public bool IsPaginationNeeded { get; set; }
     }
 }

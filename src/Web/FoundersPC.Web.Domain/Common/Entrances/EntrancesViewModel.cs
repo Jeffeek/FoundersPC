@@ -10,10 +10,8 @@ namespace FoundersPC.Web.Domain.Common.Entrances
     {
         public bool IsDatePickerRequired { get; set; } = true;
 
-        public bool IsPaginationRequired { get; set; } = true;
-
-        public IndexViewModel<UserEntranceLogReadDto> IndexEntrances { get; set; }
-
         public EntrancesBetweenFilter BetweenFilter { get; set; }
+
+        public IndexViewModel<UserEntranceLogReadDto> IndexModel { get; set; }
     }
 }

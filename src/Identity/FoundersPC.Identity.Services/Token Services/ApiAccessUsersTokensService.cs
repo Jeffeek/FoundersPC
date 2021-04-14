@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Dto;
@@ -52,6 +53,12 @@ namespace FoundersPC.Identity.Services.Token_Services
         }
 
         #region IsTokenBlocked
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetAllTokensAsync() =>
+            _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(await _unitOfWork.ApiAccessUsersTokensRepository
+                                                                         .GetAllAsync());
 
         public async Task<bool> IsTokenBlockedAsync(string token)
         {
@@ -135,7 +142,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             if (token is null)
             {
-                _logger.LogError($"{nameof(ApiAccessUsersTokensService)}: token was null when tried to block");
+                _logger.LogError($"{nameof(ApiAccessUsersTokensService)}: string token was null when tried to block");
 
                 throw new ArgumentNullException(nameof(token));
             }
@@ -163,11 +170,21 @@ namespace FoundersPC.Identity.Services.Token_Services
             if (token.IsBlocked)
                 return false;
 
-            token.IsBlocked = false;
+            token.IsBlocked = true;
             token.ExpirationDate = DateTime.Now;
 
             return await _unitOfWork.ApiAccessUsersTokensRepository.UpdateAsync(token);
         }
+
+        #endregion
+
+        #region Implementation of IPaginateableService<ApiAccessUserTokenReadDto>
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(await _unitOfWork.ApiAccessUsersTokensRepository
+                                                                         .GetPaginateableAsync(pageNumber, pageSize));
 
         #endregion
     }

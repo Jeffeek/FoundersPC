@@ -21,7 +21,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public UsersAccessTokensLogsService(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
 
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsAsync(string adminToken)
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsAsync(string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
@@ -31,7 +31,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     $"{MicroservicesUrls.IdentityServer}Tokens/");
 
-            return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>("Logs");
+            return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>("Logs/All");
         }
 
         /// <inheritdoc/>
@@ -51,8 +51,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                        .GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs?Page={pageNumber}&Size={pageSize}");
         }
 
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsByUserId(int userId,
-                                                                                             string adminToken)
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserIdAsync(int userId,
+                                                                                               string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
@@ -65,8 +65,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
             return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs/User/ById/{userId}");
         }
 
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogsByUserEmail(string userEmail,
-                                                                                                    string adminToken)
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserEmailAsync(string userEmail,
+                                                                                                  string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
@@ -77,6 +77,35 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     $"{MicroservicesUrls.IdentityServer}Tokens/");
 
             return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs/User/ByEmail/{userEmail}");
+        }
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken)
+        {
+            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+
+            using var client = _clientFactory.CreateClient();
+
+            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                    adminToken,
+                                                    $"{MicroservicesUrls.IdentityServer}Tokens/");
+
+            return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs/Token/ById/{tokenId}");
+        }
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken)
+        {
+            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (token is null) throw new ArgumentNullException(nameof(token));
+
+            using var client = _clientFactory.CreateClient();
+
+            client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                    adminToken,
+                                                    $"{MicroservicesUrls.IdentityServer}Tokens/");
+
+            return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs/Token/ByToken/{token}");
         }
     }
 }

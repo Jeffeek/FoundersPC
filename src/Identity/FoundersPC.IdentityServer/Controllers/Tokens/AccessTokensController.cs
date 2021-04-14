@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-    [Microsoft.AspNetCore.Components.Route("FoundersPCIdentity/Tokens")]
+    [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
     [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
     public class AccessTokensController : Controller
@@ -84,6 +84,41 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
                        Token = newTokenResult
                    };
         }
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        [HttpPut("Block/ById/{tokenId:int:min(1)}")]
+        public async Task<ActionResult> BlockTokenByTokenId([FromRoute] int tokenId)
+        {
+            var tokenBlockingResult = await _apiAccessUsersTokensService.BlockAsync(tokenId);
+
+            if (tokenBlockingResult)
+                return Ok();
+
+            return Problem();
+        }
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        [HttpPut("Block/ByToken/{token:length(64)}")]
+        public async Task<ActionResult> BlockTokenByTokenString([FromRoute] int token)
+        {
+            var tokenBlockingResult = await _apiAccessUsersTokensService.BlockAsync(token);
+
+            if (tokenBlockingResult)
+                return Ok();
+
+            return Problem();
+        }
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        [HttpGet]
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetPaginateableTokens([FromQuery(Name = "Page")] int pageNumber,
+                                                                                        [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize) =>
+            await _apiAccessUsersTokensService.GetPaginateableAsync(pageNumber, pageSize);
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        [HttpGet("All")]
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetAll() =>
+            await _apiAccessUsersTokensService.GetAllTokensAsync();
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [AllowAnonymous]

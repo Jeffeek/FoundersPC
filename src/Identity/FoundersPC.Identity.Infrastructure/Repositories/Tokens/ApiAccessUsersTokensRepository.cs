@@ -24,9 +24,38 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
                          .ThenInclude(user => user.Role)
                          .ToListAsync();
 
-        public async Task<ApiAccessUserToken> GetByTokenAsync(string token) =>
-            await Context.Set<ApiAccessUserToken>()
-                         .FirstOrDefaultAsync(x => x.HashedToken == token);
+        public async Task<ApiAccessUserToken> GetByTokenAsync(string token)
+        {
+            var tokenEntity = await Context.Set<ApiAccessUserToken>()
+                                           .FirstOrDefaultAsync(x => x.HashedToken == token);
+
+            if (tokenEntity is null) return null;
+
+            await Context.Entry(tokenEntity)
+                         .Collection(x => x.UsagesLogs)
+                         .LoadAsync();
+
+            return tokenEntity;
+        }
+
+        #region Overrides of GenericRepositoryAsync<ApiAccessUserToken>
+
+        /// <inheritdoc />
+        public override async Task<ApiAccessUserToken> GetByIdAsync(int id)
+        {
+            var tokenEntity = await Context.Set<ApiAccessUserToken>()
+                                           .FindAsync(id);
+
+            if (tokenEntity is null) return null;
+
+            await Context.Entry(tokenEntity)
+                         .Collection(x => x.UsagesLogs)
+                         .LoadAsync();
+
+            return tokenEntity;
+        }
+
+        #endregion
 
         public async Task<IEnumerable<ApiAccessUserToken>> GetAllUserTokens(int userId)
         {
@@ -64,8 +93,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
         #region Implementation of IPaginateableRepository<ApiAccessUserToken>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<ApiAccessUserToken>>
-            GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<ApiAccessUserToken>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await Context.Set<ApiAccessUserToken>()
                          .Paginate(pageNumber, pageSize)
                          .Include(x => x.User)

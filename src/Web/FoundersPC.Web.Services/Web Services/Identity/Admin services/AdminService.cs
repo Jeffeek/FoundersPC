@@ -31,7 +31,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                             IMapper mapper,
                             IUserStatusService userStatusService,
                             IUsersEntrancesService usersEntrancesService,
-                            IUsersAccessTokensLogsService accessTokensLogsService)
+                            IUsersAccessTokensLogsService accessTokensLogsService,
+                            IUsersAccessTokensService tokensService)
         {
             _usersInformationService = usersInformationService;
             _clientFactory = clientFactory;
@@ -40,6 +41,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _userStatusService = userStatusService;
             _usersEntrancesService = usersEntrancesService;
             _accessTokensLogsService = accessTokensLogsService;
+            _tokensService = tokensService;
         }
 
         #region DI
@@ -51,6 +53,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         private readonly IUserStatusService _userStatusService;
         private readonly IUsersEntrancesService _usersEntrancesService;
         private readonly IUsersAccessTokensLogsService _accessTokensLogsService;
+        private readonly IUsersAccessTokensService _tokensService;
 
         #endregion
 
@@ -187,8 +190,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region UsersAccessTokensLogs
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllAccessTokensLogsAsync(string adminToken) =>
-            await _accessTokensLogsService.GetAllAccessTokensLogsAsync(adminToken);
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsAsync(string adminToken) =>
+            await _accessTokensLogsService.GetAccessTokensLogsAsync(adminToken);
 
         /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>>
@@ -197,13 +200,41 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>>
-            GetAllAccessTokensLogsByUserId(int userId, string adminToken) =>
-            await _accessTokensLogsService.GetAllAccessTokensLogsByUserId(userId, adminToken);
+            GetAccessTokensLogsByUserIdAsync(int userId, string adminToken) =>
+            await _accessTokensLogsService.GetAccessTokensLogsByUserIdAsync(userId, adminToken);
 
         /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>>
-            GetAllUserAccessTokensLogsByUserEmail(string userEmail, string adminToken) =>
-            await _accessTokensLogsService.GetAllUserAccessTokensLogsByUserEmail(userEmail, adminToken);
+            GetAccessTokensLogsByUserEmailAsync(string userEmail, string adminToken) =>
+            await _accessTokensLogsService.GetAccessTokensLogsByUserEmailAsync(userEmail, adminToken);
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken) =>
+            await _accessTokensLogsService.GetAccessTokensLogsByTokenIdAsync(tokenId, adminToken);
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken) =>
+            await _accessTokensLogsService.GetAccessTokensLogsByTokenAsync(token, adminToken);
+
+        #endregion
+
+        #region UsersAccessTokensService
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) =>
+            await _tokensService.GetAllUsersAccessTokensAsync(adminToken);
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken) =>
+            await _tokensService.GetPaginateableTokensAsync(pageNumber, pageSize, adminToken);
+
+        /// <inheritdoc />
+        public async Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) =>
+            await _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
+
+        /// <inheritdoc />
+        public async Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) =>
+            await _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
 
         #endregion
     }

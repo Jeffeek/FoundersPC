@@ -29,6 +29,7 @@ namespace FoundersPC.Web.Services
             services.AddScoped<ITokenReservationWebService, TokenReservationWebService>();
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
             services.AddScoped<IUsersAccessTokensLogsService, UsersAccessTokensLogsService>();
+            services.AddScoped<IUsersAccessTokensService, UsersAccessTokensService>();
             services.AddScoped<IUserStatusService, UserStatusService>();
             services.AddScoped<IAuthenticationWebService, AuthenticationService>();
             services.AddScoped<IUserSettingsChangeWebService, UserSettingsChangeService>();

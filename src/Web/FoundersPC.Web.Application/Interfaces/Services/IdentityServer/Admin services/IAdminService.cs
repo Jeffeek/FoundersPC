@@ -15,7 +15,8 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
     public interface IAdminService : IUserStatusService,
                                      IUsersEntrancesService,
                                      IUsersInformationService,
-                                     IUsersAccessTokensLogsService
+                                     IUsersAccessTokensLogsService,
+                                     IUsersAccessTokensService
     {
         /// <summary>
         ///     Register new manager with specific <paramref name="model"/>

@@ -1,9 +1,11 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.IdentityEntities.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +37,8 @@ namespace FoundersPC.Identity.Domain.Entities.Tokens
         [DefaultValue(true)]
         [Required]
         public bool IsBlocked { get; set; }
+
+        public ICollection<AccessTokenLog> UsagesLogs { get; set; }
 
         public bool Equals(ApiAccessUserToken other)
         {

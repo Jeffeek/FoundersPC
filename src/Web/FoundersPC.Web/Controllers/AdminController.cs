@@ -41,7 +41,8 @@ namespace FoundersPC.Web.Controllers
                              {
                                  Models = users,
                                  Page = new PageViewModel(pageNumber,
-                                                          users.Length == FoundersPCConstants.PageSize)
+                                                          users.Length == FoundersPCConstants.PageSize),
+                                 IsPaginationNeeded = true
                              };
 
             return View("UsersTable", indexModel);
@@ -70,7 +71,7 @@ namespace FoundersPC.Web.Controllers
         #region Entrances
 
         [Route("Entrances")]
-        public async Task<ActionResult> Entrances([FromQuery] int pageNumber)
+        public async Task<ActionResult> EntrancesTable([FromQuery] int pageNumber)
         {
             var entrances =
                 (await _adminService.GetPaginateableEntrancesAsync(pageNumber,
@@ -81,15 +82,13 @@ namespace FoundersPC.Web.Controllers
             var viewModel = new EntrancesViewModel
                             {
                                 BetweenFilter = new EntrancesBetweenFilter(),
-                                IndexEntrances = new IndexViewModel<UserEntranceLogReadDto>
-                                                 {
-                                                     Models = entrances,
-                                                     Page = new PageViewModel(pageNumber,
-                                                                              entrances.Length
-                                                                              == FoundersPCConstants.PageSize)
-                                                 },
                                 IsDatePickerRequired = true,
-                                IsPaginationRequired = true
+                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                             {
+                                                 IsPaginationNeeded = true,
+                                                 Models = entrances,
+                                                 Page = new PageViewModel(pageNumber, entrances.Length == FoundersPCConstants.PageSize)
+                                             }
                             };
 
             return View("EntrancesTable", viewModel);
@@ -108,13 +107,13 @@ namespace FoundersPC.Web.Controllers
             var viewModel = new EntrancesViewModel
                             {
                                 BetweenFilter = null,
-                                IndexEntrances = new IndexViewModel<UserEntranceLogReadDto>
-                                                 {
-                                                     Models = entrances,
-                                                     Page = new PageViewModel(1, false)
-                                                 },
                                 IsDatePickerRequired = false,
-                                IsPaginationRequired = false
+                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                             {
+                                                 IsPaginationNeeded = false,
+                                                 Models = entrances,
+                                                 Page = new PageViewModel(1, false)
+                                             }
                             };
 
             return View("EntrancesTable", viewModel);
@@ -139,16 +138,16 @@ namespace FoundersPC.Web.Controllers
                                                                             viewModel.BetweenFilter.Finish,
                                                                             token);
 
-            var newViewModel = new EntrancesViewModel
+            var newViewModel = new EntrancesViewModel()
                                {
                                    BetweenFilter = viewModel.BetweenFilter,
-                                   IndexEntrances = new IndexViewModel<UserEntranceLogReadDto>
-                                                    {
-                                                        Models = entrances,
-                                                        Page = new PageViewModel(1, false)
-                                                    },
                                    IsDatePickerRequired = false,
-                                   IsPaginationRequired = false
+                                   IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                                {
+                                                    Models = entrances,
+                                                    IsPaginationNeeded = false,
+                                                    Page = new PageViewModel(1, false)
+                                                }
                                };
 
             return View("EntrancesTable", newViewModel);
@@ -156,10 +155,10 @@ namespace FoundersPC.Web.Controllers
 
         #endregion
 
-        #region Access Tokens Usages
+        #region Access Tokens Logs
 
         [Route("TokensLogs")]
-        public async Task<ActionResult> TokensLogs([FromQuery] int pageNumber)
+        public async Task<ActionResult> TokensLogsTable([FromQuery] int pageNumber)
         {
             var logs =
                 (await _adminService.GetPaginateableAccessTokensLogsAsync(pageNumber,
@@ -170,7 +169,8 @@ namespace FoundersPC.Web.Controllers
             var viewModel = new IndexViewModel<AccessTokenLogReadDto>
                             {
                                 Models = logs,
-                                Page = new PageViewModel(pageNumber, logs.Length == FoundersPCConstants.PageSize)
+                                Page = new PageViewModel(pageNumber, logs.Length == FoundersPCConstants.PageSize),
+                                IsPaginationNeeded = true
                             };
 
             return View("TokensLogsTable", viewModel);
@@ -179,15 +179,87 @@ namespace FoundersPC.Web.Controllers
         [Route("User/{userId:int}/TokensLogs")]
         public async Task<ActionResult> UserTokensLogs([FromRoute] int userId)
         {
-            var logs = await _adminService.GetAllAccessTokensLogsByUserId(userId, HttpContext.GetJwtTokenFromCookie());
+            var logs = await _adminService.GetAccessTokensLogsByUserIdAsync(userId, HttpContext.GetJwtTokenFromCookie());
 
             var viewModel = new IndexViewModel<AccessTokenLogReadDto>
                             {
                                 Models = logs,
-                                Page = new PageViewModel(1, false)
+                                Page = new PageViewModel(1, false),
+                                IsPaginationNeeded = false
                             };
 
             return View("TokensLogsTable", viewModel);
+        }
+
+        [Route("TokensLogs/ByTokenId/{tokenId:int:min(1)}")]
+        public async Task<ActionResult> TokenLogs([FromRoute] int tokenId)
+        {
+            var logs =
+                (await _adminService.GetAccessTokensLogsByTokenIdAsync(tokenId,
+                                                                       HttpContext.GetJwtTokenFromCookie()))
+                .ToArray();
+
+            var viewModel = new IndexViewModel<AccessTokenLogReadDto>
+                            {
+                                Models = logs,
+                                Page = new PageViewModel(1, false),
+                                IsPaginationNeeded = false
+                            };
+
+            return View("TokensLogsTable", viewModel);
+        }
+
+        [Route("TokensLogs/ByToken/{token:length(64)}")]
+        public async Task<ActionResult> TokenLogs([FromRoute] string token)
+        {
+            var logs =
+                (await _adminService.GetAccessTokensLogsByTokenAsync(token,
+                                                                     HttpContext.GetJwtTokenFromCookie()))
+                .ToArray();
+
+            var viewModel = new IndexViewModel<AccessTokenLogReadDto>
+                            {
+                                Models = logs,
+                                Page = new PageViewModel(1, false),
+                                IsPaginationNeeded = false
+                            };
+
+            return View("TokensLogsTable", viewModel);
+        }
+
+        #endregion
+
+        #region Access Tokens
+
+        [Route("Tokens")]
+        public async Task<ActionResult> TokensTable([FromQuery] int pageNumber)
+        {
+            var tokens =
+                (await _adminService.GetPaginateableTokensAsync(pageNumber,
+                                                                FoundersPCConstants.PageSize,
+                                                                HttpContext.GetJwtTokenFromCookie()))
+                .ToArray();
+
+            var viewModel = new IndexViewModel<ApiAccessUserTokenReadDto>
+                            {
+                                Models = tokens,
+                                Page = new PageViewModel(pageNumber,
+                                                         tokens.Length == FoundersPCConstants.PageSize),
+                                IsPaginationNeeded = true
+                            };
+
+            return View("TokensTable", viewModel);
+        }
+
+        [Route("Tokens/Block/{tokenId:int:min(1)}")]
+        public async Task<ActionResult> BlockToken([FromRoute] int tokenId)
+        {
+            var blockResult = await _adminService.BlockTokenByIdAsync(tokenId, HttpContext.GetJwtTokenFromCookie());
+
+            if (blockResult)
+                return await TokensTable(1);
+
+            return BadRequest();
         }
 
         #endregion

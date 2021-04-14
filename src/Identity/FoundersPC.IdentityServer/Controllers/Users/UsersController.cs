@@ -21,19 +21,13 @@ namespace FoundersPC.IdentityServer.Controllers.Users
     [Route("FoundersPCIdentity/Users")]
     public class UsersController : Controller
     {
-        private readonly IMapper _mapper;
         private readonly IUsersInformationService _usersInformationService;
 
-        public UsersController(IUsersInformationService usersInformationService,
-                               IMapper mapper)
-        {
-            _usersInformationService = usersInformationService;
-            _mapper = mapper;
-        }
+        public UsersController(IUsersInformationService usersInformationService) => _usersInformationService = usersInformationService;
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("ById/{id:int:min(1)}")]
-        public async Task<ActionResult<UserEntityReadDto>> Get([FromRoute] int id)
+        public async Task<ActionResult<UserEntityReadDto>> GetById([FromRoute] int id)
         {
             var user = await _usersInformationService.GetUserByIdAsync(id);
 
@@ -45,7 +39,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
         [HttpGet("ByEmail/{email}")]
-        public async Task<ActionResult<UserEntityReadDto>> Get([FromRoute] string email)
+        public async Task<ActionResult<UserEntityReadDto>> GetByEmail([FromRoute] string email)
         {
             if (String.IsNullOrEmpty(email))
                 return BadRequest(new
@@ -68,8 +62,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet(Order = 1)]
-        public async Task<IEnumerable<UserEntityReadDto>> Get()
+        [HttpGet("All")]
+        public async Task<IEnumerable<UserEntityReadDto>> GetAll()
         {
             var users = await _usersInformationService.GetAllUsersAsync();
 
@@ -77,9 +71,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet(Order = 0)]
+        [HttpGet]
         public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                            [FromQuery(Name = "Size")] int pageSize = 10)
+                                                                            [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
         {
             var takenUsers = await _usersInformationService.GetPaginateableAsync(pageNumber, pageSize);
 
