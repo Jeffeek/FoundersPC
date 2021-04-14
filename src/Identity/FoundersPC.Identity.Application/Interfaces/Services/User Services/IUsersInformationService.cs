@@ -3,12 +3,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+using FoundersPC.ServicesShared;
 
 #endregion
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 {
-    public interface IUsersInformationService
+    public interface IUsersInformationService : IPaginateableService<UserEntityReadDto>
     {
         Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync();
 

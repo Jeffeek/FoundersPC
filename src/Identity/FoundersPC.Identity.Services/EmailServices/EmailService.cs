@@ -44,7 +44,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                             string content = "",
                                             bool html = false)
         {
-            if (email == null)
+            if (email is null)
             {
                 _logger.LogError($"{nameof(EmailService)}: email was null when tried to send message");
 
@@ -82,6 +82,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                    subject,
                                                    content,
                                                    html);
+
                 sendResults.Add(sendResult);
             }
 

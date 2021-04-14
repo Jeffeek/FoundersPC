@@ -19,9 +19,19 @@ namespace FoundersPC.Identity.Application.Mappings
             CreateMap<ApiAccessUserToken, ApiAccessUserTokenReadDto>();
             CreateMap<RoleEntity, RoleEntityReadDto>();
             CreateMap<UserEntity, UserEntityReadDto>();
-            CreateMap<ChangeNotificationsRequest, UserNotificationsSettings>().ReverseMap();
+
+            CreateMap<ChangeNotificationsRequest, UserNotificationsSettings>()
+                .ReverseMap();
+
             CreateMap<UserEntranceLog, UserEntranceLogReadDto>();
-            CreateMap<AccessTokenLog, AccessTokenLogReadDto>();
+
+            CreateMap<AccessTokenLog, AccessTokenLogReadDto>()
+                .ForMember(dest => dest.UserId,
+                           source => source
+                               .MapFrom(x => x.ApiAccessToken.UserId))
+                .ForMember(dest => dest.TokenId,
+                           source => source
+                               .MapFrom(x => x.ApiAccessUsersTokenId));
 
             CreateMap<UserEntityReadDto, UserLoginResponse>()
                 .ForMember(dest => dest.IsUserBlocked,

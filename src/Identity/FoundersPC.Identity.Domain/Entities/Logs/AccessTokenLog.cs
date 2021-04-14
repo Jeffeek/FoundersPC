@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.Identity.Domain.Entities.Tokens;
-using FoundersPC.RepositoryShared.Identity;
+using FoundersPC.IdentityEntities.Identity;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -25,8 +25,11 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
 
         public bool Equals(AccessTokenLog other)
         {
-            if (other is null) return false;
-            if (ReferenceEquals(this, other)) return true;
+            if (other is null)
+                return false;
+
+            if (ReferenceEquals(this, other))
+                return true;
 
             return ApiAccessUsersTokenId == other.ApiAccessUsersTokenId
                    && RequestDateTime.Equals(other.RequestDateTime);
@@ -34,9 +37,14 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != GetType()) return false;
+            if (ReferenceEquals(null, obj))
+                return false;
+
+            if (ReferenceEquals(this, obj))
+                return true;
+
+            if (obj.GetType() != GetType())
+                return false;
 
             return Equals((AccessTokenLog)obj);
         }

@@ -26,11 +26,11 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _logger = logger;
         }
 
-        [Route("ForgotPassword")]
-        [HttpPost]
+        [HttpPost("ForgotPassword")]
         public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword([FromBody] UserForgotPasswordRequest request)
         {
-            if (!ModelState.IsValid) return UnprocessableEntity();
+            if (!ModelState.IsValid)
+                return UnprocessableEntity();
 
             _logger.LogInformation($"{nameof(ForgotPasswordController)}: Forgot Password request with email = {request.Email}");
 

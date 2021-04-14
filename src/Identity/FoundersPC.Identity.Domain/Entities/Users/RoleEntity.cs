@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using FoundersPC.Identity.Domain.Common.Interfaces;
-using FoundersPC.RepositoryShared.Identity;
+using FoundersPC.IdentityEntities.Identity;
 
 #endregion
 

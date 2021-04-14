@@ -7,6 +7,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -15,19 +16,15 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 {
-    // todo: implement CRUD
     public class ProducersManagingService : IProducersManagingService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<ProducersManagingService> _logger;
 
         public ProducersManagingService(IHttpClientFactory clientFactory,
-                                        MicroservicesBaseAddresses baseAddresses,
                                         ILogger<ProducersManagingService> logger)
         {
             _clientFactory = clientFactory;
-            _baseAddresses = baseAddresses;
             _logger = logger;
         }
 
@@ -44,7 +41,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.GetFromJsonAsync<IEnumerable<ProducerReadDto>>("Producers");
 
@@ -71,7 +68,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.GetFromJsonAsync<ProducerReadDto>($"Producers/{id}");
 
@@ -80,7 +77,6 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         public async Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken)
         {
-            // todo: logger
             if (producer is null)
             {
                 _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(UpdateProducerAsync)}:{nameof(producer)} was null");
@@ -106,7 +102,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.PutAsJsonAsync($"Producers/{id}", producer);
 
@@ -115,7 +111,6 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         public async Task<bool> DeleteProducerAsync(int producerId, string managerToken)
         {
-            // todo: logger
             if (producerId < 1)
             {
                 _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(DeleteProducerAsync)}:{nameof(producerId)} was < 1");
@@ -130,15 +125,67 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(managerToken));
             }
 
-            using var client = _clientFactory.CreateClient("Update producer client");
+            using var client = _clientFactory.CreateClient("Delete producer client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
-                                                        _baseAddresses.HardwareApiBaseAddress);
+                                                        MicroservicesUrls.APIServer);
 
             var responseMessage = await client.DeleteAsync($"Producers/{producerId}");
 
             return responseMessage.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken)
+        {
+            if (producer is null)
+            {
+                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(CreateProducerAsync)}:{nameof(producer)} was null");
+
+                throw new ArgumentNullException(nameof(producer));
+            }
+
+            if (managerToken is null)
+            {
+                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(CreateProducerAsync)}:{nameof(managerToken)} was null");
+
+                throw new ArgumentOutOfRangeException(nameof(managerToken));
+            }
+
+            using var client = _clientFactory.CreateClient("Create producer client");
+
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        managerToken,
+                                                        MicroservicesUrls.APIServer);
+
+            var responseMessage = await client.PostAsJsonAsync("Producers", producer);
+
+            return responseMessage.IsSuccessStatusCode;
+        }
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
+                                                                                      int pageSize,
+                                                                                      string managerToken)
+        {
+            if (managerToken is null)
+            {
+                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetPaginateableProducersAsync)}:{nameof(managerToken)} was null");
+
+                throw new ArgumentOutOfRangeException(nameof(managerToken));
+            }
+
+            using var client = _clientFactory.CreateClient("Producers getter client");
+
+            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
+                                                        managerToken,
+                                                        MicroservicesUrls.APIServer);
+
+            var responseMessage =
+                await client
+                    .GetFromJsonAsync<IEnumerable<ProducerReadDto>>($"Producers?Page={pageNumber}&Size={pageSize}");
+
+            return responseMessage;
         }
     }
 }

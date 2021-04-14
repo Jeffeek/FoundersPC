@@ -12,7 +12,8 @@ namespace FoundersPC.Identity.Services.Encryption_Services
     {
         public string EncryptPassword(string rawPassword)
         {
-            if (rawPassword is null) throw new ArgumentNullException(nameof(rawPassword));
+            if (rawPassword is null)
+                throw new ArgumentNullException(nameof(rawPassword));
 
             var passwordBytes = Encoding.ASCII.GetBytes(rawPassword);
 
@@ -20,7 +21,9 @@ namespace FoundersPC.Identity.Services.Encryption_Services
             var hashedInputBytes = hash.ComputeHash(passwordBytes);
 
             var hashedInputStringBuilder = new StringBuilder(128);
-            foreach (var b in hashedInputBytes) hashedInputStringBuilder.Append(b.ToString("X2"));
+
+            foreach (var b in hashedInputBytes)
+                hashedInputStringBuilder.Append(b.ToString("X2"));
 
             return hashedInputStringBuilder.ToString();
         }
@@ -32,7 +35,9 @@ namespace FoundersPC.Identity.Services.Encryption_Services
                 throw new ArgumentOutOfRangeException(nameof(length));
 
             var guid = Guid.NewGuid();
-            var guidPass = guid.ToString().Replace("-", String.Empty);
+
+            var guidPass = guid.ToString()
+                               .Replace("-", String.Empty);
 
             return guidPass.Substring(0, length);
         }

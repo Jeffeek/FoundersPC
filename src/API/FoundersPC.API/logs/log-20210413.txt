@@ -1,0 +1,578 @@
+04/13/2021 13:50:48 HARDWARE API started..
+04/13/2021 13:50:48 HARDWARE API HostBuilder created
+04/13/2021 13:50:49 Host built
+04/13/2021 13:50:50 Now listening on: "https://localhost:4000"
+04/13/2021 13:50:50 Application started. Press Ctrl+C to shut down.
+04/13/2021 13:50:50 Hosting environment: "Development"
+04/13/2021 13:50:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/13/2021 13:53:28 HTTP "GET" "/HardwareApi/Producers/10" responded 403 in 70.8122 ms
+04/13/2021 13:55:30 HTTP "GET" "/HardwareApi/Producers/10" responded 403 in 6.6002 ms
+04/13/2021 14:02:21 HARDWARE API started..
+04/13/2021 14:02:21 HARDWARE API HostBuilder created
+04/13/2021 14:02:22 Host built
+04/13/2021 14:02:23 Now listening on: "https://localhost:4000"
+04/13/2021 14:02:23 Application started. Press Ctrl+C to shut down.
+04/13/2021 14:02:23 Hosting environment: "Development"
+04/13/2021 14:02:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/13/2021 14:04:13 ProducersController: request for reading with id = 10 (one) by Unknown, IPv4 : ::1
+04/13/2021 14:04:15 HTTP "GET" "/HardwareApi/Producers/10" responded 200 in 83362.7860 ms
+04/13/2021 14:04:26 HTTP "GET" "/HardwareApi/Producers/10" responded 403 in 8453.8796 ms
+04/13/2021 14:04:35 HTTP "GET" "/HardwareApi/Producers/10" responded 403 in 22.4227 ms
+04/13/2021 14:04:37 HTTP "GET" "/HardwareApi/Producers/10" responded 403 in 12.3896 ms
+04/13/2021 14:04:47 HTTP "GET" "/HardwareApi/Producers/10" responded 403 in 10.0806 ms
+04/13/2021 14:05:08 ProducersController: request for reading with id = 10 (one) by Unknown, IPv4 : ::1
+04/13/2021 14:05:08 HTTP "GET" "/HardwareApi/Producers/10" responded 200 in 3116.8234 ms
+04/13/2021 14:05:16 HTTP "GET" "/HardwareApi/Cases/10" responded 403 in 9.9544 ms
+04/13/2021 14:05:30 HTTP "GET" "/HardwareApi/Cases/10" responded 403 in 9.8196 ms
+04/13/2021 14:05:45 HTTP "GET" "/HardwareApi/Producers" responded 403 in 14.5545 ms
+04/13/2021 14:05:51 HTTP "GET" "/HardwareApi/Producers" responded 403 in 13.6145 ms
+04/13/2021 14:05:53 HTTP "GET" "/HardwareApi/Producers" responded 403 in 10.0319 ms
+04/13/2021 14:05:54 HTTP "GET" "/HardwareApi/Producers" responded 403 in 10.6822 ms
+04/13/2021 14:05:54 HTTP "GET" "/HardwareApi/Producers" responded 403 in 12.6434 ms
+04/13/2021 14:06:04 HTTP "GET" "/HardwareApi/Producers" responded 403 in 9.4525 ms
+04/13/2021 14:06:10 ProducersController: request for reading page: 1, size: 10 by Unknown, IPv4 : ::1
+04/13/2021 14:06:10 HTTP "GET" "/HardwareApi/Producers" responded 200 in 80.4331 ms
+04/13/2021 14:07:46 HARDWARE API started..
+04/13/2021 14:07:46 HARDWARE API HostBuilder created
+04/13/2021 14:07:46 Host built
+04/13/2021 14:07:46 Now listening on: "https://localhost:4000"
+04/13/2021 14:07:46 Application started. Press Ctrl+C to shut down.
+04/13/2021 14:07:46 Hosting environment: "Development"
+04/13/2021 14:07:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/13/2021 14:08:00 ProducersController: request for reading (all) by Unknown, IPv4 : ::1
+04/13/2021 14:08:01 HTTP "GET" "/HardwareApi/Producers" responded 200 in 4471.1451 ms
+04/13/2021 14:08:19 HTTP "GET" "/HardwareApi/Producers?Page=5" responded 403 in 65.1048 ms
+04/13/2021 14:08:44 HTTP "GET" "/HardwareApi/Producers?Page=5" responded 403 in 21.5376 ms
+04/13/2021 14:08:58 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=15" responded 403 in 7.8379 ms
+04/13/2021 14:08:59 ProducersController: request for reading (all) by Unknown, IPv4 : ::1
+04/13/2021 14:09:00 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=15" responded 200 in 46.5851 ms
+04/13/2021 14:10:45 Application is shutting down...
+04/13/2021 14:12:19 HARDWARE API started..
+04/13/2021 14:12:19 HARDWARE API HostBuilder created
+04/13/2021 14:12:20 Host built
+04/13/2021 14:12:21 Now listening on: "https://localhost:4000"
+04/13/2021 14:12:21 Application started. Press Ctrl+C to shut down.
+04/13/2021 14:12:21 Hosting environment: "Development"
+04/13/2021 14:12:21 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/13/2021 14:12:36 ProducersController: request for reading (all) by Unknown, IPv4 : ::1
+04/13/2021 14:12:37 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=15" responded 200 in 4010.9565 ms
+04/13/2021 14:19:56 HARDWARE API started..
+04/13/2021 14:19:56 HARDWARE API HostBuilder created
+04/13/2021 14:19:57 Host built
+04/13/2021 14:19:58 Now listening on: "https://localhost:4000"
+04/13/2021 14:19:58 Application started. Press Ctrl+C to shut down.
+04/13/2021 14:19:58 Hosting environment: "Development"
+04/13/2021 14:19:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/13/2021 14:20:12 ProducersController: request for reading page: 1, size: 15 by Unknown, IPv4 : ::1
+04/13/2021 14:20:13 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=15" responded 200 in 4100.7249 ms
+04/13/2021 14:20:27 HTTP "GET" "/HardwareApi/Producers" responded 403 in 95.3380 ms
+04/13/2021 14:22:50 ProducersController: request for reading page: 0, size: 0 by Unknown, IPv4 : ::1
+04/13/2021 14:22:51 HTTP "GET" "/HardwareApi/Producers" responded 500 in 392.8240 ms
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'pageNumber')
+   at FoundersPC.ApplicationShared.QueryableExtensions.Paginate[T](IQueryable`1 source, Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\ApplicationShared\FoundersPC.ApplicationShared\QueryableExtensions.cs:line 17
+   at FoundersPC.RepositoryShared.Repository.GenericRepositoryAsync`1.GetPaginateableInternal(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\ApplicationShared\FoundersPC.RepositoryShared\Repository\GenericRepositoryAsync.cs:line 98
+   at FoundersPC.API.Infrastructure.Repositories.ProducersRepository.GetPaginateableAsync(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Infrastructure\Repositories\ProducersRepository.cs:line 23
+   at FoundersPC.API.Services.Hardware_Services.ProducersService.GetPaginateableAsync(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\ProducersService.cs:line 84
+   at FoundersPC.API.Controllers.V1.ProducersController.GetPaginateable(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\ProducersController.cs:line 43
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 50
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/13/2021 14:22:51 An unhandled exception has occurred while executing the request.
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'pageNumber')
+   at FoundersPC.ApplicationShared.QueryableExtensions.Paginate[T](IQueryable`1 source, Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\ApplicationShared\FoundersPC.ApplicationShared\QueryableExtensions.cs:line 17
+   at FoundersPC.RepositoryShared.Repository.GenericRepositoryAsync`1.GetPaginateableInternal(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\ApplicationShared\FoundersPC.RepositoryShared\Repository\GenericRepositoryAsync.cs:line 98
+   at FoundersPC.API.Infrastructure.Repositories.ProducersRepository.GetPaginateableAsync(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Infrastructure\Repositories\ProducersRepository.cs:line 23
+   at FoundersPC.API.Services.Hardware_Services.ProducersService.GetPaginateableAsync(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\ProducersService.cs:line 84
+   at FoundersPC.API.Controllers.V1.ProducersController.GetPaginateable(Int32 pageNumber, Int32 pageSize) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\ProducersController.cs:line 43
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 50
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/13/2021 14:23:27 HTTP "GET" "/HardwareApi/Producers" responded 403 in 36.2679 ms
+04/13/2021 14:33:36 HARDWARE API started..
+04/13/2021 14:33:37 HARDWARE API HostBuilder created
+04/13/2021 14:33:37 Host built
+04/13/2021 14:33:37 Application startup exception
+System.InvalidOperationException: The following errors occurred with attribute routing information:
+
+Error 1:
+Attribute routes with the same name 'GetAllHDD' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HardDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HDDs/All'
+
+Error 2:
+Attribute routes with the same name 'GetHDDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HardDrives'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HDDs'
+
+Error 3:
+Attribute routes with the same name 'GetAllPSUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies/Name'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PSUs/Name'
+
+Error 4:
+Attribute routes with the same name 'GetPSUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PSUs'
+
+Error 5:
+Attribute routes with the same name 'GetAllProcessorCors' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores/All'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/CPUCores/All'
+
+Error 6:
+Attribute routes with the same name 'GetProcessorCorsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUCores'
+
+Error 7:
+Attribute routes with the same name 'GetCPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/Processors'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUs'
+
+Error 8:
+Attribute routes with the same name 'GetAllRAMs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory/All'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RAMs/All'
+
+Error 9:
+Attribute routes with the same name 'GetRAMsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RAMs'
+
+Error 10:
+Attribute routes with the same name 'GetAllSSDs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SSDs/All'
+
+Error 11:
+Attribute routes with the same name 'GetSSDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SSDs'
+
+Error 12:
+Attribute routes with the same name 'GetAllGPUCores' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUCores/All'
+
+Error 13:
+Attribute routes with the same name 'GetGPUCoresAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUCores'
+
+Error 14:
+Attribute routes with the same name 'GetAllGPUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCards/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUs/All'
+
+Error 15:
+Attribute routes with the same name 'GetGPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCards'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUs'
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModelFactory.Flatten[TResult](ApplicationModel application, Func`5 flattener)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorBuilder.Build(ApplicationModel application)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.<>c__DisplayClass11_0.<Subscribe>b__0()
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource..ctor(ControllerActionEndpointDataSourceIdProvider dataSourceIdProvider, IActionDescriptorCollectionProvider actions, ActionEndpointFactory endpointFactory, OrderedEndpointsSequenceProvider orderSequence)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+   at FoundersPC.API.Startup.<>c.<Configure>b__5_1(IEndpointRouteBuilder endpoints) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at FoundersPC.API.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.Extensions.DependencyInjection.AutoRegisterMiddleware.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+04/13/2021 14:33:37 Error when tried to launch the HARDWARE API app
+System.InvalidOperationException: The following errors occurred with attribute routing information:
+
+Error 1:
+Attribute routes with the same name 'GetAllHDD' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HardDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HDDs/All'
+
+Error 2:
+Attribute routes with the same name 'GetHDDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HardDrives'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HDDs'
+
+Error 3:
+Attribute routes with the same name 'GetAllPSUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies/Name'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PSUs/Name'
+
+Error 4:
+Attribute routes with the same name 'GetPSUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PSUs'
+
+Error 5:
+Attribute routes with the same name 'GetAllProcessorCors' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores/All'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/CPUCores/All'
+
+Error 6:
+Attribute routes with the same name 'GetProcessorCorsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUCores'
+
+Error 7:
+Attribute routes with the same name 'GetCPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/Processors'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUs'
+
+Error 8:
+Attribute routes with the same name 'GetAllRAMs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory/All'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RAMs/All'
+
+Error 9:
+Attribute routes with the same name 'GetRAMsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RAMs'
+
+Error 10:
+Attribute routes with the same name 'GetAllSSDs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SSDs/All'
+
+Error 11:
+Attribute routes with the same name 'GetSSDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SSDs'
+
+Error 12:
+Attribute routes with the same name 'GetAllGPUCores' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUCores/All'
+
+Error 13:
+Attribute routes with the same name 'GetGPUCoresAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUCores'
+
+Error 14:
+Attribute routes with the same name 'GetAllGPUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCards/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUs/All'
+
+Error 15:
+Attribute routes with the same name 'GetGPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCards'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUs'
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModelFactory.Flatten[TResult](ApplicationModel application, Func`5 flattener)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorBuilder.Build(ApplicationModel application)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.<>c__DisplayClass11_0.<Subscribe>b__0()
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource..ctor(ControllerActionEndpointDataSourceIdProvider dataSourceIdProvider, IActionDescriptorCollectionProvider actions, ActionEndpointFactory endpointFactory, OrderedEndpointsSequenceProvider orderSequence)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+   at FoundersPC.API.Startup.<>c.<Configure>b__5_1(IEndpointRouteBuilder endpoints) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at FoundersPC.API.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.Extensions.DependencyInjection.AutoRegisterMiddleware.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at FoundersPC.API.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Program.cs:line 36
+04/13/2021 14:48:06 HARDWARE API started..
+04/13/2021 14:48:06 HARDWARE API HostBuilder created
+04/13/2021 14:48:06 Host built
+04/13/2021 14:48:06 Application startup exception
+System.InvalidOperationException: The following errors occurred with attribute routing information:
+
+Error 1:
+Attribute routes with the same name 'GetAllHDD' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HardDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HDDs/All'
+
+Error 2:
+Attribute routes with the same name 'GetHDDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HardDrives'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HDDs'
+
+Error 3:
+Attribute routes with the same name 'GetAllPSUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies/Name'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PSUs/Name'
+
+Error 4:
+Attribute routes with the same name 'GetPSUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PSUs'
+
+Error 5:
+Attribute routes with the same name 'GetAllProcessorCors' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores/All'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/CPUCores/All'
+
+Error 6:
+Attribute routes with the same name 'GetProcessorCorsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUCores'
+
+Error 7:
+Attribute routes with the same name 'GetCPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/Processors'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUs'
+
+Error 8:
+Attribute routes with the same name 'GetAllRAMs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory/All'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RAMs/All'
+
+Error 9:
+Attribute routes with the same name 'GetRAMsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RAMs'
+
+Error 10:
+Attribute routes with the same name 'GetAllSSDs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SSDs/All'
+
+Error 11:
+Attribute routes with the same name 'GetSSDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SSDs'
+
+Error 12:
+Attribute routes with the same name 'GetAllGPUCores' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUCores/All'
+
+Error 13:
+Attribute routes with the same name 'GetGPUCoresAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUCores'
+
+Error 14:
+Attribute routes with the same name 'GetAllGPUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCards/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUs/All'
+
+Error 15:
+Attribute routes with the same name 'GetGPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCards'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUs'
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModelFactory.Flatten[TResult](ApplicationModel application, Func`5 flattener)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorBuilder.Build(ApplicationModel application)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.<>c__DisplayClass11_0.<Subscribe>b__0()
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource..ctor(ControllerActionEndpointDataSourceIdProvider dataSourceIdProvider, IActionDescriptorCollectionProvider actions, ActionEndpointFactory endpointFactory, OrderedEndpointsSequenceProvider orderSequence)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+   at FoundersPC.API.Startup.<>c.<Configure>b__5_1(IEndpointRouteBuilder endpoints) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at FoundersPC.API.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.Extensions.DependencyInjection.AutoRegisterMiddleware.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+04/13/2021 14:48:06 Error when tried to launch the HARDWARE API app
+System.InvalidOperationException: The following errors occurred with attribute routing information:
+
+Error 1:
+Attribute routes with the same name 'GetAllHDD' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HardDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/HDDs/All'
+
+Error 2:
+Attribute routes with the same name 'GetHDDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HardDrives'
+Action: 'FoundersPC.API.Controllers.V1.HardDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/HDDs'
+
+Error 3:
+Attribute routes with the same name 'GetAllPSUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies/Name'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.Get (FoundersPC.API)' - Template: 'HardwareApi/PSUs/Name'
+
+Error 4:
+Attribute routes with the same name 'GetPSUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PowerSupplies'
+Action: 'FoundersPC.API.Controllers.V1.PowerSuppliesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/PSUs'
+
+Error 5:
+Attribute routes with the same name 'GetAllProcessorCors' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores/All'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/CPUCores/All'
+
+Error 6:
+Attribute routes with the same name 'GetProcessorCorsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/ProcessorCores'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUCores'
+
+Error 7:
+Attribute routes with the same name 'GetCPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/Processors'
+Action: 'FoundersPC.API.Controllers.V1.ProcessorsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/CPUs'
+
+Error 8:
+Attribute routes with the same name 'GetAllRAMs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory/All'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Get (FoundersPC.API)' - Template: 'HardwareApi/RAMs/All'
+
+Error 9:
+Attribute routes with the same name 'GetRAMsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RandomAccessMemory'
+Action: 'FoundersPC.API.Controllers.V1.RandomAccessMemoryController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/RAMs'
+
+Error 10:
+Attribute routes with the same name 'GetAllSSDs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives/All'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.Get (FoundersPC.API)' - Template: 'HardwareApi/SSDs/All'
+
+Error 11:
+Attribute routes with the same name 'GetSSDsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SolidStateDrives'
+Action: 'FoundersPC.API.Controllers.V1.SolidStateDrivesController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/SSDs'
+
+Error 12:
+Attribute routes with the same name 'GetAllGPUCores' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUCores/All'
+
+Error 13:
+Attribute routes with the same name 'GetGPUCoresAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCardCores'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardCoresController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUCores'
+
+Error 14:
+Attribute routes with the same name 'GetAllGPUs' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/VideoCards/All'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.Get (FoundersPC.API)' - Template: 'HardwareApi/GPUs/All'
+
+Error 15:
+Attribute routes with the same name 'GetGPUsAsPart' must have the same template:
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/VideoCards'
+Action: 'FoundersPC.API.Controllers.V1.VideoCardsController.GetPaginateable (FoundersPC.API)' - Template: 'HardwareApi/GPUs'
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModelFactory.Flatten[TResult](ApplicationModel application, Func`5 flattener)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorBuilder.Build(ApplicationModel application)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.<>c__DisplayClass11_0.<Subscribe>b__0()
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource..ctor(ControllerActionEndpointDataSourceIdProvider dataSourceIdProvider, IActionDescriptorCollectionProvider actions, ActionEndpointFactory endpointFactory, OrderedEndpointsSequenceProvider orderSequence)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+   at FoundersPC.API.Startup.<>c.<Configure>b__5_1(IEndpointRouteBuilder endpoints) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+   at FoundersPC.API.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 110
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.Extensions.DependencyInjection.AutoRegisterMiddleware.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at FoundersPC.API.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API\Program.cs:line 36
+04/13/2021 14:48:23 HARDWARE API started..
+04/13/2021 14:48:23 HARDWARE API HostBuilder created
+04/13/2021 14:48:24 Host built
+04/13/2021 14:49:08 HARDWARE API started..
+04/13/2021 14:49:08 HARDWARE API HostBuilder created
+04/13/2021 14:49:09 Host built
+04/13/2021 14:49:44 HARDWARE API started..
+04/13/2021 14:49:44 HARDWARE API HostBuilder created
+04/13/2021 14:49:45 Host built
+04/13/2021 14:52:29 HARDWARE API started..
+04/13/2021 14:52:29 HARDWARE API HostBuilder created
+04/13/2021 14:52:30 Host built
+04/13/2021 14:52:30 Now listening on: "https://localhost:4000"
+04/13/2021 14:52:30 Application started. Press Ctrl+C to shut down.
+04/13/2021 14:52:30 Hosting environment: "Development"
+04/13/2021 14:52:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/13/2021 14:52:35 Application is shutting down...
+04/13/2021 14:52:48 HARDWARE API started..
+04/13/2021 14:52:48 HARDWARE API HostBuilder created
+04/13/2021 14:52:49 Host built
+04/13/2021 14:52:50 Now listening on: "https://localhost:4000"
+04/13/2021 14:52:50 Application started. Press Ctrl+C to shut down.
+04/13/2021 14:52:50 Hosting environment: "Development"
+04/13/2021 14:52:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/13/2021 14:52:54 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 65.6714 ms
+04/13/2021 14:52:54 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 65.6700 ms
+04/13/2021 14:53:38 HTTP "GET" "/HardwareApi/Motherboards/All" responded 403 in 2.0690 ms

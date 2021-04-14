@@ -3,12 +3,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Dto;
+using FoundersPC.ServicesShared;
 
 #endregion
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
-    public interface ICaseService
+    public interface ICaseService : IPaginateableService<CaseReadDto>
     {
         Task<IEnumerable<CaseReadDto>> GetAllCasesAsync();
 

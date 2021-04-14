@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.Tokens;
 using FoundersPC.RequestResponseShared.Response.Tokens;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
@@ -17,27 +18,22 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
 {
     public class TokenReservationWebService : ITokenReservationWebService
     {
-        private readonly MicroservicesBaseAddresses _baseAddresses;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public TokenReservationWebService(IHttpClientFactory httpClientFactory,
-                                          MicroservicesBaseAddresses baseAddresses)
-        {
-            _httpClientFactory = httpClientFactory;
-            _baseAddresses = baseAddresses;
-        }
+        public TokenReservationWebService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
 
         public async Task<BuyNewTokenResponse> ReserveNewTokenAsync(TokenType type,
                                                                     string userEmail,
                                                                     string userJwtToken)
         {
-            if (userJwtToken is null) throw new ArgumentNullException(nameof(userJwtToken));
+            if (userJwtToken is null)
+                throw new ArgumentNullException(nameof(userJwtToken));
 
             using var client = _httpClientFactory.CreateClient("New api access token reservation client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         userJwtToken,
-                                                        $"{_baseAddresses.IdentityApiBaseAddress}Tokens/");
+                                                        $"{MicroservicesUrls.IdentityServer}Tokens/");
 
             var requestModel = new BuyNewTokenRequest
                                {

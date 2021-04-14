@@ -1,7 +1,8 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.Jwt;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.Request.Authentication;
 using FoundersPC.RequestResponseShared.Response.Authentication;
@@ -30,11 +31,11 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _registrationService = registrationService;
         }
 
-        [Route("SignUp")]
-        [HttpPost]
+        [HttpPost("SignUp")]
         public async Task<ActionResult<UserSignUpResponse>> SignUpUser([FromBody] UserSignUpRequest request)
         {
-            if (!ModelState.IsValid) UnprocessableEntity();
+            if (!ModelState.IsValid)
+                UnprocessableEntity();
 
             _logger.LogInformation($"{nameof(SignUpIdentityController)}: Registration request with email = {request.Email}");
 
@@ -76,7 +77,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         [HttpPost]
         public async Task<ActionResult<UserSignUpResponse>> RegisterManager([FromBody] UserSignUpRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var result = await _registrationService.RegisterManagerAsync(request.Email, request.Password);
 
@@ -87,7 +89,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                                IsRegistrationSuccessful = result
                            };
 
-            if (result) return response;
+            if (result)
+                return response;
 
             response.ResponseException = "Not successful registration. Check logs";
 

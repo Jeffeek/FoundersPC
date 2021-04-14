@@ -3,13 +3,18 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RepositoryShared.Repository;
+using FoundersPC.ServicesShared;
 
 #endregion
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 {
-    public interface IApiAccessUsersTokensService
+    // todo: maybe separate by ISP
+    public interface IApiAccessUsersTokensService : IPaginateableService<ApiAccessUserTokenReadDto>
     {
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetAllTokensAsync();
+
         Task<bool> IsTokenBlockedAsync(string token);
 
         Task<bool> IsTokenActiveAsync(string token);
@@ -26,8 +31,8 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 
         Task<bool> BlockAsync(int id);
 
-        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId);
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(int userId);
 
-        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail);
+        Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(string userEmail);
     }
 }

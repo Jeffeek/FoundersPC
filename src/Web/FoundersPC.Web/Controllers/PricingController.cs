@@ -2,12 +2,13 @@
 
 using System;
 using System.Linq;
-using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Request.Tokens;
+using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,30 +24,33 @@ namespace FoundersPC.Web.Controllers
 
         public PricingController(ITokenReservationWebService tokenReservationService) => _tokenReservationService = tokenReservationService;
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy,
+                   AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
         [Route("Buy/{tokenType}")]
         public async Task<IActionResult> Buy([FromRoute] string tokenType)
         {
-            if (tokenType is null) return BadRequest();
+            if (tokenType is null)
+                return BadRequest();
 
-            var isValidTokenType = Enum.GetNames<TokenType>().Contains(tokenType);
+            var isValidTokenType = Enum.GetNames<TokenType>()
+                                       .Contains(tokenType);
 
-            if (!isValidTokenType) BadRequest();
+            if (!isValidTokenType)
+                BadRequest();
 
             var userEmail = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
 
-            HttpContext.Request.Cookies.TryGetValue("token", out var jwtToken);
-
-            if (userEmail is null) return RedirectToAction("LogOut", "Authentication");
-
-            if (jwtToken is null) throw new CookieException();
+            if (userEmail is null)
+                return RedirectToAction("LogOut", "Authentication");
 
             var result =
                 await _tokenReservationService.ReserveNewTokenAsync(Enum.Parse<TokenType>(tokenType),
                                                                     userEmail,
-                                                                    jwtToken);
+                                                                    HttpContext.GetJwtTokenFromCookie());
 
-            if (result is null || !result.IsBuyingSuccessful) return RedirectToAction("ServerErrorIndex", "Error");
+            if (result is null
+                || !result.IsBuyingSuccessful)
+                return RedirectToAction("ServerErrorIndex", "Error");
 
             return RedirectToAction("Profile", "Account");
         }

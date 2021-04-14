@@ -1,4 +1,4 @@
-a.navbar-brand
+﻿a.navbar-brand
 {
     text-align: center;
     white-space: normal;
@@ -9,4 +9,37 @@ a.navbar-brand
 {
     height: 3rem;
     width: 3rem;
+}
+
+.dropdown-menu .dropdown-menu
+{
+    left: 100%;
+    top: auto;
+    transform: translateY(-2rem);
+}
+
+.dropdown-item + .dropdown-menu
+{
+    display: none;
+}
+
+.dropdown-item.submenu::after
+{
+    content: '▸';
+    display: inline-block;
+}
+
+.dropdown-item:hover + .dropdown-menu,
+.dropdown-menu:hover
+{
+    display: block;
+}
+
+@media display and (max-width: 992px)
+{
+    .dropdown-item + .dropdown-menu,
+    .dropdown-menu
+    {
+        display: block;
+    }
 }

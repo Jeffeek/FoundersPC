@@ -6,7 +6,7 @@ using FoundersPC.API.Dto.Base.Interfaces;
 
 namespace FoundersPC.API.Dto
 {
-    public class HDDUpdateDto : IProducerIdentiable
+    public class HDDUpdateDto : IProducerIdentifiable
     {
         public int HeadSpeed { get; set; }
 

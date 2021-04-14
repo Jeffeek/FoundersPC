@@ -2,9 +2,8 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
-using FoundersPC.API.Domain.Entities.Hardware;
-using FoundersPC.API.Infrastructure.Contexts;
+using FoundersPC.API.Application.Interfaces.Repositories;
+using FoundersPC.API.Domain.Entities;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,20 +11,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>, IMotherboardsRepositoryAsync
+    public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>,
+                                          IMotherboardsRepositoryAsync
     {
         /// <inheritdoc/>
-        public MotherboardsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+        public MotherboardsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+
+        #region Implementation of IPaginateableRepository<Motherboard>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<Motherboard>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.Producer)
+                  .ToListAsync();
+
+        #endregion
 
         #region Implementation of IMotherboardsRepositoryAsync
 
         public override async Task<Motherboard> GetByIdAsync(int id)
         {
-            var motherboard = await Context.Set<Motherboard>().FindAsync(id);
+            var motherboard = await Context.Set<Motherboard>()
+                                           .FindAsync(id);
 
-            if (motherboard is null) return null;
+            if (motherboard is null)
+                return null;
 
-            await Context.Entry(motherboard).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(motherboard)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return motherboard;
         }

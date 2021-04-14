@@ -1,0 +1,247 @@
+04/12/2021 10:24:11 Identity server started..
+04/12/2021 10:24:11 Identity server HostBuilder created
+04/12/2021 10:24:15 Host built
+04/12/2021 10:24:16 Now listening on: "https://localhost:3000"
+04/12/2021 10:24:16 Application started. Press Ctrl+C to shut down.
+04/12/2021 10:24:16 Hosting environment: "Development"
+04/12/2021 10:24:16 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 10:24:18 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET FoundersPCIdentity/Users/Entrances" for actions - FoundersPC.IdentityServer.Controllers.Users.Entrances.EntrancesIdentityController.Get (FoundersPC.IdentityServer),FoundersPC.IdentityServer.Controllers.Users.Entrances.EntrancesIdentityController.GetPaginateableUserEntrances (FoundersPC.IdentityServer). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/12/2021 10:25:04 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 10:25:05 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2873.6948 ms
+04/12/2021 10:25:12 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 279.7871 ms
+04/12/2021 10:25:27 HTTP "GET" "/FoundersPCIdentity/Users/ById/2/Entrances" responded 200 in 52.2500 ms
+04/12/2021 10:25:30 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 69.9999 ms
+04/12/2021 11:54:40 Identity server started..
+04/12/2021 11:54:40 Identity server HostBuilder created
+04/12/2021 11:54:41 Host built
+04/12/2021 11:54:42 Now listening on: "https://localhost:3000"
+04/12/2021 11:54:42 Application started. Press Ctrl+C to shut down.
+04/12/2021 11:54:42 Hosting environment: "Development"
+04/12/2021 11:54:42 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 11:54:43 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET FoundersPCIdentity/Users/Entrances" for actions - FoundersPC.IdentityServer.Controllers.Users.Entrances.EntrancesIdentityController.Get (FoundersPC.IdentityServer),FoundersPC.IdentityServer.Controllers.Users.Entrances.EntrancesIdentityController.GetPaginateableUserEntrances (FoundersPC.IdentityServer). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/12/2021 11:55:29 Identity server started..
+04/12/2021 11:55:29 Identity server HostBuilder created
+04/12/2021 11:55:31 Host built
+04/12/2021 11:55:31 Now listening on: "https://localhost:3000"
+04/12/2021 11:55:31 Application started. Press Ctrl+C to shut down.
+04/12/2021 11:55:31 Hosting environment: "Development"
+04/12/2021 11:55:31 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 12:00:52 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 12:00:52 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2726.8172 ms
+04/12/2021 12:00:55 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 264.7807 ms
+04/12/2021 12:01:11 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 54.5849 ms
+04/12/2021 12:18:36 Identity server started..
+04/12/2021 12:18:36 Identity server HostBuilder created
+04/12/2021 12:18:38 Host built
+04/12/2021 12:18:38 Now listening on: "https://localhost:3000"
+04/12/2021 12:18:38 Application started. Press Ctrl+C to shut down.
+04/12/2021 12:18:38 Hosting environment: "Development"
+04/12/2021 12:18:38 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 12:18:51 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 12:18:51 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2364.4848 ms
+04/12/2021 12:18:56 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 242.9740 ms
+04/12/2021 16:26:35 Identity server started..
+04/12/2021 16:26:35 Identity server HostBuilder created
+04/12/2021 16:26:36 Host built
+04/12/2021 16:26:37 Now listening on: "https://localhost:3000"
+04/12/2021 16:26:37 Application started. Press Ctrl+C to shut down.
+04/12/2021 16:26:37 Hosting environment: "Development"
+04/12/2021 16:26:37 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 16:28:00 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 16:28:01 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2002.9602 ms
+04/12/2021 16:28:09 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 197.9219 ms
+04/12/2021 16:28:19 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 30.2887 ms
+04/12/2021 16:28:24 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 9.1281 ms
+04/12/2021 16:28:37 HTTP "GET" "/FoundersPCIdentity/Users/ById/4/Entrances" responded 200 in 23.3162 ms
+04/12/2021 16:28:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 20.4577 ms
+04/12/2021 16:29:12 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 13.2121 ms
+04/12/2021 17:12:14 Identity server started..
+04/12/2021 17:12:14 Identity server HostBuilder created
+04/12/2021 17:12:15 Host built
+04/12/2021 17:12:16 Now listening on: "https://localhost:3000"
+04/12/2021 17:12:16 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:12:16 Hosting environment: "Development"
+04/12/2021 17:12:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:12:23 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:12:23 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2010.0036 ms
+04/12/2021 17:12:26 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 203.3129 ms
+04/12/2021 17:12:30 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 31.1780 ms
+04/12/2021 17:12:31 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 16.3183 ms
+04/12/2021 17:12:31 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 6.4149 ms
+04/12/2021 17:12:32 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 3.6230 ms
+04/12/2021 17:12:32 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 4.8342 ms
+04/12/2021 17:12:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 4.6856 ms
+04/12/2021 17:12:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 6.5229 ms
+04/12/2021 17:12:34 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 3.7956 ms
+04/12/2021 17:12:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 9.9148 ms
+04/12/2021 17:12:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=10&Size=10" responded 200 in 3.9506 ms
+04/12/2021 17:12:36 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 3.8234 ms
+04/12/2021 17:12:36 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 3.6219 ms
+04/12/2021 17:12:37 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=13&Size=10" responded 200 in 3.5896 ms
+04/12/2021 17:12:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=14&Size=10" responded 200 in 3.6338 ms
+04/12/2021 17:12:38 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=15&Size=10" responded 200 in 5.9003 ms
+04/12/2021 17:12:39 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=16&Size=10" responded 200 in 3.7553 ms
+04/12/2021 17:12:40 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=17&Size=10" responded 200 in 3.6192 ms
+04/12/2021 17:12:40 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=18&Size=10" responded 200 in 3.1634 ms
+04/12/2021 17:12:40 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 3.0752 ms
+04/12/2021 17:12:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=20&Size=10" responded 200 in 3.6299 ms
+04/12/2021 17:12:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=21&Size=10" responded 200 in 3.6539 ms
+04/12/2021 17:12:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=22&Size=10" responded 200 in 3.3296 ms
+04/12/2021 17:12:42 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=23&Size=10" responded 200 in 3.2758 ms
+04/12/2021 17:12:46 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=22&Size=10" responded 200 in 3.6233 ms
+04/12/2021 17:12:47 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=21&Size=10" responded 200 in 3.4798 ms
+04/12/2021 17:12:47 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=20&Size=10" responded 200 in 3.3508 ms
+04/12/2021 17:12:48 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=19&Size=10" responded 200 in 3.4994 ms
+04/12/2021 17:12:48 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=18&Size=10" responded 200 in 3.9308 ms
+04/12/2021 17:12:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=17&Size=10" responded 200 in 3.6562 ms
+04/12/2021 17:12:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=16&Size=10" responded 200 in 3.3358 ms
+04/12/2021 17:12:50 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=15&Size=10" responded 200 in 3.2806 ms
+04/12/2021 17:12:50 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=14&Size=10" responded 200 in 3.0745 ms
+04/12/2021 17:12:51 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=13&Size=10" responded 200 in 3.0470 ms
+04/12/2021 17:12:52 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 2.9760 ms
+04/12/2021 17:12:52 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 3.4015 ms
+04/12/2021 17:12:53 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=10&Size=10" responded 200 in 3.6566 ms
+04/12/2021 17:12:54 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 3.1063 ms
+04/12/2021 17:12:54 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 3.8295 ms
+04/12/2021 17:12:54 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 3.2178 ms
+04/12/2021 17:12:54 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 2.9472 ms
+04/12/2021 17:12:55 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 3.0735 ms
+04/12/2021 17:12:55 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 3.0113 ms
+04/12/2021 17:12:56 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 3.0322 ms
+04/12/2021 17:12:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 3.0413 ms
+04/12/2021 17:12:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 3.1606 ms
+04/12/2021 17:12:57 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 3.2547 ms
+04/12/2021 17:12:58 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 3.0695 ms
+04/12/2021 17:12:59 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 2.9511 ms
+04/12/2021 17:13:17 Application is shutting down...
+04/12/2021 17:26:01 Identity server started..
+04/12/2021 17:26:01 Identity server HostBuilder created
+04/12/2021 17:26:02 Host built
+04/12/2021 17:26:02 Now listening on: "https://localhost:3000"
+04/12/2021 17:26:02 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:26:02 Hosting environment: "Development"
+04/12/2021 17:26:02 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:26:15 SignInIdentityController: user with email or login = JeffManager entered the service
+04/12/2021 17:26:15 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:26:15 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2055.5633 ms
+04/12/2021 17:26:25 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com" responded 200 in 140.9101 ms
+04/12/2021 17:28:18 Identity server started..
+04/12/2021 17:28:18 Identity server HostBuilder created
+04/12/2021 17:28:19 Host built
+04/12/2021 17:28:19 Now listening on: "https://localhost:3000"
+04/12/2021 17:28:19 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:28:19 Hosting environment: "Development"
+04/12/2021 17:28:19 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:28:27 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:28:27 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:28:27 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2043.4278 ms
+04/12/2021 17:32:47 Identity server started..
+04/12/2021 17:32:47 Identity server HostBuilder created
+04/12/2021 17:32:48 Host built
+04/12/2021 17:32:49 Now listening on: "https://localhost:3000"
+04/12/2021 17:32:49 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:32:49 Hosting environment: "Development"
+04/12/2021 17:32:49 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:33:11 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:33:11 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:33:11 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2101.0972 ms
+04/12/2021 17:36:07 Identity server started..
+04/12/2021 17:36:07 Identity server HostBuilder created
+04/12/2021 17:36:08 Host built
+04/12/2021 17:36:08 Now listening on: "https://localhost:3000"
+04/12/2021 17:36:08 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:36:08 Hosting environment: "Development"
+04/12/2021 17:36:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:36:16 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:36:16 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:36:16 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2040.9261 ms
+04/12/2021 17:38:59 Identity server started..
+04/12/2021 17:38:59 Identity server HostBuilder created
+04/12/2021 17:39:00 Host built
+04/12/2021 17:39:00 Now listening on: "https://localhost:3000"
+04/12/2021 17:39:00 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:39:00 Hosting environment: "Development"
+04/12/2021 17:39:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:39:07 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:39:07 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:39:07 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2178.6470 ms
+04/12/2021 17:44:48 Identity server started..
+04/12/2021 17:44:48 Identity server HostBuilder created
+04/12/2021 17:44:49 Host built
+04/12/2021 17:44:50 Now listening on: "https://localhost:3000"
+04/12/2021 17:44:50 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:44:50 Hosting environment: "Development"
+04/12/2021 17:44:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:44:56 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:44:57 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:44:57 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2044.1761 ms
+04/12/2021 17:46:19 Identity server started..
+04/12/2021 17:46:19 Identity server HostBuilder created
+04/12/2021 17:46:20 Host built
+04/12/2021 17:46:20 Now listening on: "https://localhost:3000"
+04/12/2021 17:46:20 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:46:20 Hosting environment: "Development"
+04/12/2021 17:46:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:47:27 SignInIdentityController: user with email or login = JeffManager entered the service
+04/12/2021 17:47:27 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:47:27 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1944.0462 ms
+04/12/2021 17:51:28 Identity server started..
+04/12/2021 17:51:28 Identity server HostBuilder created
+04/12/2021 17:51:28 Host built
+04/12/2021 17:51:29 Now listening on: "https://localhost:3000"
+04/12/2021 17:51:29 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:51:29 Hosting environment: "Development"
+04/12/2021 17:51:29 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 17:51:36 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:51:36 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:51:37 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1990.1820 ms
+04/12/2021 17:51:39 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 165.1416 ms
+04/12/2021 17:51:56 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 95.9787 ms
+04/12/2021 17:52:28 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 83.5875 ms
+04/12/2021 17:59:26 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 17:59:26 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 17:59:26 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 73.4584 ms
+04/12/2021 18:24:16 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 75.1015 ms
+04/12/2021 18:24:19 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 7.6261 ms
+04/12/2021 18:24:28 SignInIdentityController: user with email or login = JeffManager entered the service
+04/12/2021 18:24:28 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 18:24:28 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 12.0709 ms
+04/12/2021 18:55:52 Identity server started..
+04/12/2021 18:55:52 Identity server HostBuilder created
+04/12/2021 18:55:53 Host built
+04/12/2021 18:55:54 Now listening on: "https://localhost:3000"
+04/12/2021 18:55:54 Application started. Press Ctrl+C to shut down.
+04/12/2021 18:55:54 Hosting environment: "Development"
+04/12/2021 18:55:54 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 18:56:07 SignInIdentityController: user with email or login = JeffManager entered the service
+04/12/2021 18:56:07 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 18:56:07 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1991.9179 ms
+04/12/2021 19:01:38 Identity server started..
+04/12/2021 19:01:39 Identity server HostBuilder created
+04/12/2021 19:01:39 Host built
+04/12/2021 19:01:40 Now listening on: "https://localhost:3000"
+04/12/2021 19:01:40 Application started. Press Ctrl+C to shut down.
+04/12/2021 19:01:40 Hosting environment: "Development"
+04/12/2021 19:01:40 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/12/2021 19:01:46 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/12/2021 19:01:47 Successful save changes in UnitOfWorkUsersIdentity
+04/12/2021 19:01:47 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2066.5742 ms
+04/12/2021 19:01:50 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 197.2637 ms
+04/12/2021 19:01:53 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 29.8365 ms
+04/12/2021 19:02:04 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 7.9307 ms
+04/12/2021 19:05:07 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 9.1548 ms
+04/12/2021 19:05:09 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 9.0053 ms
+04/12/2021 19:05:26 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.1628 ms
+04/12/2021 19:05:52 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 5.6772 ms

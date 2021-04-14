@@ -2,10 +2,9 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/PowerSupplies")]
@@ -22,20 +20,16 @@ namespace FoundersPC.API.Controllers.V1
     public class PowerSuppliesController : Controller
     {
         private readonly ILogger<PowerSuppliesController> _logger;
-        private readonly IMapper _mapper;
         private readonly IPowerSupplyService _powerSupplyService;
 
         public PowerSuppliesController(IPowerSupplyService service,
-                                       IMapper mapper,
                                        ILogger<PowerSuppliesController> logger)
         {
             _powerSupplyService = service;
-            _mapper = mapper;
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<PowerSupplyReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
@@ -43,42 +37,47 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _powerSupplyService.GetAllPowerSuppliesAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<PowerSupplyReadDto>> Get(int? id)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
+                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            return Json(await _powerSupplyService.GetPaginateableAsync(pageNumber, pageSize));
+        }
 
-            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id.Value);
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<PowerSupplyReadDto>> Get([FromRoute] int id)
+        {
+            _logger.LogForModelRead(HttpContext, id);
+
+            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id);
 
             return powerSupplyReadDto == null
-                       ? ResponseResultsHelper.NotFoundByIdResult(id.Value)
+                       ? ResponseResultsHelper.NotFoundByIdResult(id)
                        : Json(powerSupplyReadDto);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] PowerSupplyUpdateDto powerSupply)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] PowerSupplyUpdateDto powerSupply)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _powerSupplyService.UpdatePowerSupplyAsync(id.Value, powerSupply);
+            var result = await _powerSupplyService.UpdatePowerSupplyAsync(id, powerSupply);
 
             return result ? Json(powerSupply) : ResponseResultsHelper.UpdateError();
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] PowerSupplyInsertDto powerSupply)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -88,19 +87,17 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id);
 
-            var powerSupplyReadDto = await _powerSupplyService.GetPowerSupplyByIdAsync(id.Value);
+            if (powerSupplyReadDto == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (powerSupplyReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _powerSupplyService.DeletePowerSupplyAsync(id.Value);
+            var result = await _powerSupplyService.DeletePowerSupplyAsync(id);
 
             return result ? Json(powerSupplyReadDto) : ResponseResultsHelper.DeleteError();
         }

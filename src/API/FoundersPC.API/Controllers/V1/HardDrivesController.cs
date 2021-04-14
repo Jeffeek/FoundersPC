@@ -2,10 +2,9 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,8 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-    [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/HardDrives")]
     [Route("HardwareApi/HDDs")]
@@ -23,17 +20,14 @@ namespace FoundersPC.API.Controllers.V1
     {
         private readonly IHDDService _hddService;
         private readonly ILogger<HardDrivesController> _logger;
-        private readonly IMapper _mapper;
 
-        public HardDrivesController(IHDDService hddService, IMapper mapper, ILogger<HardDrivesController> logger)
+        public HardDrivesController(IHDDService hddService, ILogger<HardDrivesController> logger)
         {
             _hddService = hddService;
-            _mapper = mapper;
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<HDDReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
@@ -41,39 +35,44 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _hddService.GetAllHDDsAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<HDDReadDto>> Get(int? id)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
+                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
-            var hddReadDto = await _hddService.GetHDDByIdAsync(id.Value);
+            return Json(await _hddService.GetPaginateableAsync(pageNumber, pageSize));
+        }
 
-            return hddReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(hddReadDto);
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<HDDReadDto>> Get([FromRoute] int id)
+        {
+            _logger.LogForModelRead(HttpContext, id);
+            var hddReadDto = await _hddService.GetHDDByIdAsync(id);
+
+            return hddReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(hddReadDto);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPost("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] HDDUpdateDto hdd)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] HDDUpdateDto hdd)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _hddService.UpdateHDDAsync(id.Value, hdd);
+            var result = await _hddService.UpdateHDDAsync(id, hdd);
 
             return result ? Json(hdd) : ResponseResultsHelper.UpdateError();
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] HDDInsertDto hdd)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -83,19 +82,17 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var hddReadDto = await _hddService.GetHDDByIdAsync(id);
 
-            var hddReadDto = await _hddService.GetHDDByIdAsync(id.Value);
+            if (hddReadDto == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (hddReadDto == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _hddService.DeleteHDDAsync(id.Value);
+            var result = await _hddService.DeleteHDDAsync(id);
 
             return result ? Json(hddReadDto) : ResponseResultsHelper.DeleteError();
         }

@@ -13,10 +13,11 @@ namespace FoundersPC.Web.Application.Middleware
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
-            var result = await context.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            if (!result.Succeeded)
+            var authenticateResult = await context.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            if (!authenticateResult.Succeeded)
             {
-                await Task.Run(() => next(context));
+                await next(context);
 
                 return;
             }
@@ -24,7 +25,8 @@ namespace FoundersPC.Web.Application.Middleware
             context.Request.Cookies.TryGetValue("token", out var jwtCookieAuthentication);
             context.Request.Cookies.TryGetValue("user_cred", out var defaultCookieAuthentication);
 
-            if (jwtCookieAuthentication is null || defaultCookieAuthentication is null)
+            if (jwtCookieAuthentication is null
+                || defaultCookieAuthentication is null)
             {
                 context.Response.Cookies.Delete("cookie");
                 context.Response.Cookies.Delete("user_cred");
@@ -37,7 +39,7 @@ namespace FoundersPC.Web.Application.Middleware
                 return;
             }
 
-            await Task.Run(() => next(context));
+            await next(context);
         }
     }
 }

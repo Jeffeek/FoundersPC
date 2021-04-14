@@ -2,7 +2,7 @@
 
 using System.Threading.Tasks;
 using FoundersPC.RequestResponseShared.Response.ChangeSettings;
-using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
+using FoundersPC.Web.Domain.Common.AccountSettings;
 
 #endregion
 

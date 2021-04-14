@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using FluentValidation;
-using FoundersPC.Web.Domain.Entities.ViewModels.AccountSettings;
+using FoundersPC.Web.Domain.Common.AccountSettings;
 
 #endregion
 

@@ -1,15 +1,15 @@
 ﻿#region Using namespaces
 
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.CPU;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories;
+using FoundersPC.API.Application.Interfaces.Repositories.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories.Processor;
+using FoundersPC.API.Application.Interfaces.Repositories.VideoCard;
 using FoundersPC.API.Infrastructure.Contexts;
 using FoundersPC.API.Infrastructure.Repositories;
 using FoundersPC.API.Infrastructure.Repositories.Hardware;
-using FoundersPC.API.Infrastructure.Repositories.Hardware.CPU;
-using FoundersPC.API.Infrastructure.Repositories.Hardware.GPU;
 using FoundersPC.API.Infrastructure.Repositories.Hardware.Memory;
+using FoundersPC.API.Infrastructure.Repositories.Hardware.Processor;
+using FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -43,15 +43,16 @@ namespace FoundersPC.API.Infrastructure
 
         public static void AddFoundersPCHardwareContext(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<FoundersPCHardwareContext>(options =>
-                                                                 options.UseSqlServer(configuration
-                                                                                          .GetConnectionString("FoundersPC_Hardware"),
-                                                                                      b =>
-                                                                                          b.MigrationsAssembly(typeof(
-                                                                                                  FoundersPCHardwareContext
-                                                                                              )
-                                                                                              .Assembly
-                                                                                              .FullName)));
+            services.AddDbContext<DbContext, FoundersPCHardwareContext>(options =>
+                                                                            options.UseSqlServer(configuration
+                                                                                                     .GetConnectionString("FoundersPC_Hardware"),
+                                                                                                 b =>
+                                                                                                     b.MigrationsAssembly(typeof
+                                                                                                         (
+                                                                                                             FoundersPCHardwareContext
+                                                                                                         )
+                                                                                                         .Assembly
+                                                                                                         .FullName)));
         }
     }
 }

@@ -16,13 +16,6 @@ namespace FoundersPC.API.Controllers
                 StatusCode = (int)HttpStatusCode.NotFound
             };
 
-        public static ActionResult BadRequestWithIdResult(object obj = null) =>
-            new ContentResult
-            {
-                Content = $"Monkey did a bad request.. {obj} - is not right!",
-                StatusCode = (int)HttpStatusCode.BadRequest
-            };
-
         public static ActionResult UpdateError(string description =
                                                    "Error happened when server tried to update the model") =>
             new ObjectResult(new ProblemDetails

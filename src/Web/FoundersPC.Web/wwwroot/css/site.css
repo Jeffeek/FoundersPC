@@ -1,4 +1,10 @@
-﻿html
+﻿*
+{
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: 0.05rem;
+}
+
+html
 {
     font-size: 14px;
 }
@@ -36,7 +42,7 @@ html
 
 body
 {
-    background: #323232;
+    background: #1d2026;
     margin-bottom: 60px;
 }
 
@@ -212,4 +218,9 @@ body
     height: 1.5rem;
     position: relative;
     width: 2rem;
+}
+
+.box-shadow-fill
+{
+    box-shadow: 20px 20px 200px #044d50 !important;
 }

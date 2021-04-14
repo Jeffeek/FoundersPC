@@ -2,9 +2,8 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Hardware.Memory;
-using FoundersPC.API.Infrastructure.Contexts;
+using FoundersPC.API.Application.Interfaces.Repositories.Memory;
+using FoundersPC.API.Domain.Entities.Memory;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,20 +11,34 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
-    public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync
+    public class HDDsRepository : GenericRepositoryAsync<HDD>, IHDDsRepositoryAsync, IPaginateableRepository<HDD>
     {
         /// <inheritdoc/>
-        public HDDsRepository(FoundersPCHardwareContext repositoryContext) : base(repositoryContext) { }
+        public HDDsRepository(DbContext repositoryContext) : base(repositoryContext) { }
+
+        #region Implementation of IPaginateableRepository<HDD>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<HDD>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+            await GetPaginateableInternal(pageNumber, pageSize)
+                  .Include(x => x.Producer)
+                  .ToListAsync();
+
+        #endregion
 
         #region Implementation of IHDDsRepositoryAsync
 
         public override async Task<HDD> GetByIdAsync(int id)
         {
-            var hdd = await Context.Set<HDD>().FindAsync(id);
+            var hdd = await Context.Set<HDD>()
+                                   .FindAsync(id);
 
-            if (hdd is null) return null;
+            if (hdd is null)
+                return null;
 
-            await Context.Entry(hdd).Reference(x => x.Producer).LoadAsync();
+            await Context.Entry(hdd)
+                         .Reference(x => x.Producer)
+                         .LoadAsync();
 
             return hdd;
         }

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
-using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Domain.Entities;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 
 #endregion
 
@@ -22,6 +23,17 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
             _unitOfWorkHardwareAPI = unitOfWorkHardwareAPI;
             _mapper = mapper;
         }
+
+        #region Implementation of IPaginateableService<CaseReadDto>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<CaseReadDto>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
+                                                                           .CasesRepository
+                                                                           .GetPaginateableAsync(pageNumber, pageSize));
+
+        #endregion
 
         #region Implementation of ICaseService
 
@@ -42,7 +54,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.CasesRepository.AnyAsync(x => x.Equals(mappedCase));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.CasesRepository.AddAsync(mappedCase);
 
@@ -54,12 +67,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(@case, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.CasesRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -69,7 +84,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         {
             var deleteResult = await _unitOfWorkHardwareAPI.CasesRepository.DeleteAsync(id);
 
-            if (!deleteResult) return false;
+            if (!deleteResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

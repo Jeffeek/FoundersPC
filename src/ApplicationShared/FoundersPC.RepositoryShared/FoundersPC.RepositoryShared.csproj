@@ -8,4 +8,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
+    <ProjectReference Include="..\FoundersPC.RepositoryCollectionsExtensions\FoundersPC.IdentityEntities.csproj" />
+  </ItemGroup>
+
 </Project>

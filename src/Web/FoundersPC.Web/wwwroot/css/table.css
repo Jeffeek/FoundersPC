@@ -7,12 +7,18 @@
 
 .table-title
 {
-    background: #252525;
+    background: transparent;
     color: rgb(197, 197, 197);
+    vertical-align: middle;
 }
 
 .table-title .btn
 {
     border-radius: 50px;
     font-size: 14px;
+}
+
+table.table-hover tr:hover
+{
+    color: #b0e0e6;
 }

@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using FoundersPC.Identity.Domain.Common.Interfaces;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
-using FoundersPC.RepositoryShared.Identity;
+using FoundersPC.IdentityEntities.Identity;
 using Microsoft.EntityFrameworkCore;
 
 #endregion

@@ -49,6 +49,22 @@ namespace FoundersPC.API.Application.Validation.Hardware.Case
                 .NotNull()
                 .NotEmpty()
                 .MaximumLength(100);
+
+            RuleFor(x => x.Width)
+                .GreaterThan(0)
+                .When(x => x.Width is not null);
+
+            RuleFor(x => x.Depth)
+                .GreaterThan(0)
+                .When(x => x.Depth is not null);
+
+            RuleFor(x => x.Height)
+                .GreaterThan(0)
+                .When(x => x.Height is not null);
+
+            RuleFor(x => x.Weight)
+                .GreaterThan(0)
+                .When(x => x.Weight is not null);
         }
     }
 }

@@ -14,6 +14,8 @@ namespace FoundersPC.Web.Controllers
 
         public IActionResult Pricing() => View("Pricing");
 
+        public IActionResult Privacy() => View("Privacy");
+
         public ActionResult SpaceInvaders() => View("Space-Invaders/SpaceInvaders");
     }
 }

@@ -1,0 +1,209 @@
+04/12/2021 17:28:18 HARDWARE API started..
+04/12/2021 17:28:18 HARDWARE API HostBuilder created
+04/12/2021 17:28:19 Host built
+04/12/2021 17:28:20 Now listening on: "https://localhost:4000"
+04/12/2021 17:28:20 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:28:20 Hosting environment: "Development"
+04/12/2021 17:28:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/12/2021 17:32:48 HARDWARE API started..
+04/12/2021 17:32:48 HARDWARE API HostBuilder created
+04/12/2021 17:32:49 Host built
+04/12/2021 17:32:50 Now listening on: "https://localhost:4000"
+04/12/2021 17:32:50 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:32:50 Hosting environment: "Development"
+04/12/2021 17:32:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/12/2021 17:36:07 HARDWARE API started..
+04/12/2021 17:36:07 HARDWARE API HostBuilder created
+04/12/2021 17:36:08 Host built
+04/12/2021 17:36:08 Now listening on: "https://localhost:4000"
+04/12/2021 17:36:08 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:36:08 Hosting environment: "Development"
+04/12/2021 17:36:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/12/2021 17:38:59 HARDWARE API started..
+04/12/2021 17:38:59 HARDWARE API HostBuilder created
+04/12/2021 17:39:00 Host built
+04/12/2021 17:39:00 Now listening on: "https://localhost:4000"
+04/12/2021 17:39:00 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:39:00 Hosting environment: "Development"
+04/12/2021 17:39:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/12/2021 17:44:48 HARDWARE API started..
+04/12/2021 17:44:48 HARDWARE API HostBuilder created
+04/12/2021 17:44:49 Host built
+04/12/2021 17:44:50 Now listening on: "https://localhost:4000"
+04/12/2021 17:44:50 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:44:50 Hosting environment: "Development"
+04/12/2021 17:44:50 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/12/2021 17:46:18 HARDWARE API started..
+04/12/2021 17:46:19 HARDWARE API HostBuilder created
+04/12/2021 17:46:19 Host built
+04/12/2021 17:46:20 Now listening on: "https://localhost:4000"
+04/12/2021 17:46:20 Application started. Press Ctrl+C to shut down.
+04/12/2021 17:46:20 Hosting environment: "Development"
+04/12/2021 17:46:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/12/2021 17:47:34 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 17:47:36 HTTP "GET" "/HardwareApi/Producers" responded 200 in 1735.7824 ms
+04/12/2021 17:47:54 ProducersController: request for reading (all) by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 17:47:54 HTTP "GET" "/HardwareApi/Producers" responded 200 in 36.3385 ms
+04/12/2021 17:47:56 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 17:47:56 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 137.5522 ms
+04/12/2021 17:48:45 ProducersController: request for reading with id = 1 (one) by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 17:48:45 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 14.5785 ms
+04/12/2021 18:55:52 HARDWARE API started..
+04/12/2021 18:55:52 HARDWARE API HostBuilder created
+04/12/2021 18:55:53 Host built
+04/12/2021 18:55:54 Now listening on: "https://localhost:4000"
+04/12/2021 18:55:54 Application started. Press Ctrl+C to shut down.
+04/12/2021 18:55:54 Hosting environment: "Development"
+04/12/2021 18:55:54 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/12/2021 18:56:16 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:17 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 1813.0569 ms
+04/12/2021 18:56:24 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:24 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 37.6975 ms
+04/12/2021 18:56:26 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:26 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 19.5181 ms
+04/12/2021 18:56:27 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:27 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 5.1792 ms
+04/12/2021 18:56:28 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:28 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.2678 ms
+04/12/2021 18:56:28 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:28 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 6.4310 ms
+04/12/2021 18:56:29 ProducersController: request for reading page: 7, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:29 HTTP "GET" "/HardwareApi/Producers?Page=7&Size=10" responded 200 in 4.7595 ms
+04/12/2021 18:56:31 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:31 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 4.6578 ms
+04/12/2021 18:56:36 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:36 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.5207 ms
+04/12/2021 18:56:37 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:56:37 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 5.5906 ms
+04/12/2021 18:57:46 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:57:46 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.4360 ms
+04/12/2021 18:57:54 ProducersController: request for reading with id = 42 (one) by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:57:54 HTTP "GET" "/HardwareApi/Producers/42" responded 200 in 50.1077 ms
+04/12/2021 18:58:02 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:58:02 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 9.0113 ms
+04/12/2021 18:58:47 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:58:47 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 4.4425 ms
+04/12/2021 18:58:52 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:58:52 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 11.4565 ms
+04/12/2021 18:58:53 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:58:53 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 4.5551 ms
+04/12/2021 18:58:54 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:58:54 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.4084 ms
+04/12/2021 18:59:00 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:00 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.3482 ms
+04/12/2021 18:59:30 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:30 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 6.8660 ms
+04/12/2021 18:59:30 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:30 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 4.3212 ms
+04/12/2021 18:59:31 ProducersController: request for reading page: 7, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:31 HTTP "GET" "/HardwareApi/Producers?Page=7&Size=10" responded 200 in 4.4721 ms
+04/12/2021 18:59:33 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:33 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 4.2276 ms
+04/12/2021 18:59:34 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:34 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.3017 ms
+04/12/2021 18:59:34 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:34 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.1530 ms
+04/12/2021 18:59:35 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:35 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 4.1369 ms
+04/12/2021 18:59:35 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:35 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 4.2921 ms
+04/12/2021 18:59:36 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:36 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 4.2173 ms
+04/12/2021 18:59:37 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:37 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 4.3840 ms
+04/12/2021 18:59:38 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:38 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 12.4466 ms
+04/12/2021 18:59:40 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:40 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 6.0034 ms
+04/12/2021 18:59:41 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:41 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 4.4753 ms
+04/12/2021 18:59:42 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:42 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.3904 ms
+04/12/2021 18:59:42 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:42 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 3.9446 ms
+04/12/2021 18:59:43 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:43 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 3.9108 ms
+04/12/2021 18:59:43 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:43 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 17.7074 ms
+04/12/2021 18:59:44 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:44 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.2961 ms
+04/12/2021 18:59:44 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:44 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 4.0826 ms
+04/12/2021 18:59:45 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:45 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.1782 ms
+04/12/2021 18:59:45 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:45 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.3727 ms
+04/12/2021 18:59:46 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:46 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 4.2654 ms
+04/12/2021 18:59:47 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:47 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.1586 ms
+04/12/2021 18:59:47 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:47 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 3.8573 ms
+04/12/2021 18:59:48 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:48 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 3.7530 ms
+04/12/2021 18:59:48 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:48 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 3.8960 ms
+04/12/2021 18:59:49 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:49 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.3753 ms
+04/12/2021 18:59:49 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:49 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.1035 ms
+04/12/2021 18:59:50 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:50 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.1775 ms
+04/12/2021 18:59:50 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:50 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 3.9301 ms
+04/12/2021 18:59:51 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:51 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 3.7499 ms
+04/12/2021 18:59:51 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:51 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.7994 ms
+04/12/2021 18:59:51 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:51 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 3.9228 ms
+04/12/2021 18:59:52 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:52 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.1667 ms
+04/12/2021 18:59:52 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:52 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.0277 ms
+04/12/2021 18:59:53 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:53 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.0008 ms
+04/12/2021 18:59:53 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:53 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.1843 ms
+04/12/2021 18:59:53 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:53 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.0830 ms
+04/12/2021 18:59:54 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:54 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 3.9731 ms
+04/12/2021 18:59:54 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:54 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 3.8672 ms
+04/12/2021 18:59:54 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:54 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.1172 ms
+04/12/2021 18:59:55 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:55 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.1606 ms
+04/12/2021 18:59:55 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:55 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 3.9481 ms
+04/12/2021 18:59:55 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:55 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 4.0384 ms
+04/12/2021 18:59:56 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:56 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 3.8042 ms
+04/12/2021 18:59:56 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:56 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 3.6606 ms
+04/12/2021 18:59:58 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:58 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 4.0416 ms
+04/12/2021 18:59:58 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:58 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 4.4312 ms
+04/12/2021 18:59:59 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 18:59:59 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 3.8928 ms
+04/12/2021 19:00:00 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 19:00:00 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 3.6965 ms
+04/12/2021 19:00:00 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 19:00:00 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 3.9783 ms
+04/12/2021 19:00:01 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 19:00:01 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 3.9194 ms
+04/12/2021 19:00:01 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 19:00:01 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 4.0545 ms
+04/12/2021 19:00:02 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/12/2021 19:00:02 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 3.8905 ms
+04/12/2021 19:00:34 Application is shutting down...
+04/12/2021 19:01:39 HARDWARE API started..
+04/12/2021 19:01:39 HARDWARE API HostBuilder created
+04/12/2021 19:01:39 Host built
+04/12/2021 19:01:40 Now listening on: "https://localhost:4000"
+04/12/2021 19:01:40 Application started. Press Ctrl+C to shut down.
+04/12/2021 19:01:40 Hosting environment: "Development"
+04/12/2021 19:01:40 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"

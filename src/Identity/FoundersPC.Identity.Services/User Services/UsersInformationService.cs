@@ -36,7 +36,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
         public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync() =>
             _mapper.Map<IEnumerable<UserEntity>, IEnumerable<UserEntityReadDto>>(await _unitOfWork.UsersRepository
-                                                                                     .GetAllAsync());
+                                                                                                  .GetAllAsync());
 
         public async Task<IEnumerable<UserEntityReadDto>> GetAllActiveUsersAsync() =>
             _mapper.Map<IEnumerable<UserEntity>,
@@ -50,7 +50,8 @@ namespace FoundersPC.Identity.Services.User_Services
 
         public async Task<UserEntityReadDto> GetUserByIdAsync(int id)
         {
-            if (id < 0) throw new ArgumentOutOfRangeException(nameof(id), "Id must be greater than 0");
+            if (id < 0)
+                throw new ArgumentOutOfRangeException(nameof(id), "Id must be greater than 0");
 
             return _mapper.Map<UserEntity, UserEntityReadDto>(await _unitOfWork.UsersRepository.GetByIdAsync(id));
         }
@@ -68,5 +69,12 @@ namespace FoundersPC.Identity.Services.User_Services
 
             return user is null ? null : _mapper.Map<UserEntity, UserEntityReadDto>(user);
         }
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableAsync(int pageNumber = 1,
+                                                                               int pageSize = 10) =>
+            _mapper.Map<IEnumerable<UserEntity>,
+                IEnumerable<UserEntityReadDto>>(await _unitOfWork.UsersRepository
+                                                                 .GetPaginateableAsync(pageNumber, pageSize));
     }
 }

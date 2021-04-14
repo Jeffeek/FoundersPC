@@ -1,11 +1,11 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.CPU;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
-using FoundersPC.API.Infrastructure.Contexts;
+using FoundersPC.API.Application.Interfaces.Repositories;
+using FoundersPC.API.Application.Interfaces.Repositories.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories.Processor;
+using FoundersPC.API.Application.Interfaces.Repositories.VideoCard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -18,7 +18,7 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
         private readonly DbContext _context;
         private readonly ILogger<UnitOfWorkHardwareHardwareAPI> _logger;
 
-        public UnitOfWorkHardwareHardwareAPI(FoundersPCHardwareContext context,
+        public UnitOfWorkHardwareHardwareAPI(DbContext context,
                                              ICPUsRepositoryAsync processorsRepository,
                                              IProducersRepositoryAsync producersRepository,
                                              IProcessorCoresRepositoryAsync processorCoresRepository,
@@ -91,12 +91,14 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
             try
             {
                 saveChangesResult = await _context.SaveChangesAsync();
-                _logger.LogInformation("Successful save changes");
+                _logger.LogInformation($"Successful save changes in {nameof(UnitOfWorkHardwareHardwareAPI)}");
             }
-            catch
+            catch (Exception e)
             {
+                _logger.LogError(e,
+                                 $"Error occured when tried to make save changes in {nameof(UnitOfWorkHardwareHardwareAPI)}");
+
                 saveChangesResult = -1;
-                _logger.LogError("Save changes ended with error");
             }
 
             return saveChangesResult;

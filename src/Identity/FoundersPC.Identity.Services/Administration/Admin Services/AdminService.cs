@@ -3,7 +3,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
@@ -33,6 +33,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
             _logger = logger;
         }
 
+        // todo: implement logger
+
         #region Make user inactive
 
         public async Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true)
@@ -51,11 +53,14 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         private async Task<bool> MakeUserInactiveAsync(UserEntity user, bool sendNotification)
         {
-            if (user is null) return false;
+            if (user is null)
+                return false;
 
-            if (!user.IsActive) return false;
+            if (!user.IsActive)
+                return false;
 
-            if (user.Role.RoleTitle == ApplicationRoles.Administrator) return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator)
+                return false;
 
             if (sendNotification)
                 await _emailService.SendBlockNotificationAsync(user.Email,
@@ -65,12 +70,15 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult) return await _unitOfWork.SaveChangesAsync() > 0;
+            if (updateResult)
+                return await _unitOfWork.SaveChangesAsync() > 0;
 
             return false;
         }
 
         #endregion
+
+        // todo: implement logger
 
         #region Block / Unblock user
 
@@ -82,9 +90,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var changeStatusResult = await ChangeUserBlockStatusAsync(user, true, sendNotification);
 
-            if (!changeStatusResult) return false;
+            if (!changeStatusResult)
+                return false;
 
-            if (!blockAllTokens) return true;
+            if (!blockAllTokens)
+                return true;
 
             return await BlockAllUserTokensAsync(user.Id);
         }
@@ -95,7 +105,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         {
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
-            if (user is null) return false;
+            if (user is null)
+                return false;
 
             return await BlockUserAsync(user.Id);
         }
@@ -103,6 +114,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         private async Task<bool> BlockAllUserTokensAsync(int userId)
         {
             var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
+
             foreach (var token in userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now))
                 await _accessUsersTokensService.BlockAsync(token.Id);
 
@@ -142,11 +154,14 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         /// <returns></returns>
         private async Task<bool> ChangeUserBlockStatusAsync(UserEntity user, bool block, bool sendNotification)
         {
-            if (user is null) return false;
+            if (user is null)
+                return false;
 
-            if (!user.IsActive) return false;
+            if (!user.IsActive)
+                return false;
 
-            if (user.Role.RoleTitle == ApplicationRoles.Administrator) return false;
+            if (user.Role.RoleTitle == ApplicationRoles.Administrator)
+                return false;
 
             user.IsBlocked = block;
 
@@ -161,7 +176,8 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWork.SaveChangesAsync() > 0;
         }

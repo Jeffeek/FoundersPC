@@ -17,8 +17,7 @@ namespace FoundersPC.IdentityServer
         public static async Task Main(string[] args)
         {
             var loggerConfiguration = new ConfigurationBuilder()
-                                      .SetBasePath(Directory.GetCurrentDirectory())
-                                      .AddJsonFile("LoggerConfiguration.json")
+                                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\LoggerConfiguration.json")
                                       .Build();
 
             var logger = new LoggerConfiguration()

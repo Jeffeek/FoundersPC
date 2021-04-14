@@ -3,12 +3,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Dto;
+using FoundersPC.ServicesShared;
 
 #endregion
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware.GPU
 {
-    public interface IVideoCardCoreService
+    public interface IVideoCardCoreService : IPaginateableService<VideoCardCoreReadDto>
     {
         Task<IEnumerable<VideoCardCoreReadDto>> GetAllVideoCardCoresAsync();
 

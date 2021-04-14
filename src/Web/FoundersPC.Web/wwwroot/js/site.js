@@ -5,4 +5,12 @@ const randomInt = (min, max) =>
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-const randomString = (length = 6) => (Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).substring(0, length);
+const randomString = (length = 6) =>
+{
+    let result = "";
+    while (result.length < length)
+    {
+        result += Math.random().toString(36).slice(2);
+    }
+    return result;
+};

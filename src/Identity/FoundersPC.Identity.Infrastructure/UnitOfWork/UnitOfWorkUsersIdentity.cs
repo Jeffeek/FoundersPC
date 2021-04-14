@@ -1,10 +1,12 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Logs;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Tokens;
 using FoundersPC.Identity.Application.Interfaces.Repositories.Users;
-using FoundersPC.Identity.Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -12,16 +14,19 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 {
     public class UnitOfWorkUsersIdentity : IUnitOfWorkUsersIdentity
     {
-        private readonly FoundersPCUsersContext _context;
+        private readonly DbContext _context;
+        private readonly ILogger<UnitOfWorkUsersIdentity> _logger;
 
         public UnitOfWorkUsersIdentity(IUsersRepository usersRepository,
                                        IRolesRepository rolesRepository,
-                                       FoundersPCUsersContext context,
+                                       DbContext context,
                                        IAccessTokensLogsRepository accessTokensLogsRepository,
                                        IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
-                                       IApiAccessUsersTokensRepository apiAccessUsersTokensRepository)
+                                       IApiAccessUsersTokensRepository apiAccessUsersTokensRepository,
+                                       ILogger<UnitOfWorkUsersIdentity> logger)
         {
             _context = context;
+            _logger = logger;
             AccessTokensLogsRepository = accessTokensLogsRepository;
             UsersEntrancesLogsRepository = usersEntrancesLogsRepository;
             ApiAccessUsersTokensRepository = apiAccessUsersTokensRepository;
@@ -46,9 +51,13 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
             try
             {
                 saveChangesResult = await _context.SaveChangesAsync();
+                _logger.LogInformation($"Successful save changes in {nameof(UnitOfWorkUsersIdentity)}");
             }
-            catch
+            catch (Exception e)
             {
+                _logger.LogError(e,
+                                 $"Error occured when tried to make save changes in {nameof(UnitOfWorkUsersIdentity)}");
+
                 saveChangesResult = -1;
             }
 

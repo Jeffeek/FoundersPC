@@ -3,11 +3,11 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
-using FoundersPC.Web.Domain.Entities.ViewModels.Authentication;
-using FoundersPC.Web.Models;
+using FoundersPC.Web.Domain.Common;
+using FoundersPC.Web.Domain.Common.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -25,8 +25,7 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IAuthenticationWebService _authenticationWebService;
 
-        public AuthenticationController(IAuthenticationWebService authenticationWebService) =>
-            _authenticationWebService = authenticationWebService;
+        public AuthenticationController(IAuthenticationWebService authenticationWebService) => _authenticationWebService = authenticationWebService;
 
         #region ForgotPassword
 
@@ -44,9 +43,11 @@ namespace FoundersPC.Web.Controllers
             var forgotPasswordResponse =
                 await _authenticationWebService.ForgotPasswordAsync(model);
 
-            if (forgotPasswordResponse is null) return UnprocessableEntity();
+            if (forgotPasswordResponse is null)
+                return UnprocessableEntity();
 
-            if (!forgotPasswordResponse.IsUserExists) return NotFound();
+            if (!forgotPasswordResponse.IsUserExists)
+                return NotFound();
 
             if (!forgotPasswordResponse.IsConfirmationMailSent)
                 return Problem(forgotPasswordResponse.Error,
@@ -74,7 +75,8 @@ namespace FoundersPC.Web.Controllers
 
             var registrationResponse = await _authenticationWebService.SignUpAsync(signUpModel);
 
-            if (registrationResponse is null) return UnprocessableEntity();
+            if (registrationResponse is null)
+                return UnprocessableEntity();
 
             if (!registrationResponse.IsRegistrationSuccessful)
                 return Problem("Registration not successful",
@@ -92,10 +94,12 @@ namespace FoundersPC.Web.Controllers
         #endregion
 
         [Route("LogOut")]
-        [Authorize(Policy = ApplicationAuthorizationPolicies.DefaultUserPolicy)]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy,
+                   AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
         public async Task<ActionResult> LogOutAsync()
         {
-            if (!User.Identity?.IsAuthenticated ?? false) return Unauthorized();
+            if (!User.Identity?.IsAuthenticated ?? false)
+                return Unauthorized();
 
             RemoveJwtTokenFromCookie();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -119,11 +123,15 @@ namespace FoundersPC.Web.Controllers
 
             var signInResponse = await _authenticationWebService.SignInAsync(model);
 
-            if (signInResponse == null) return UnprocessableEntity();
+            if (signInResponse == null)
+                return UnprocessableEntity();
 
-            if (!signInResponse.IsUserExists) NotFound();
+            if (!signInResponse.IsUserExists)
+                NotFound();
 
-            if (!signInResponse.IsUserActive || signInResponse.IsUserBlocked) return Unauthorized();
+            if (!signInResponse.IsUserActive
+                || signInResponse.IsUserBlocked)
+                return Unauthorized();
 
             await SetupDefaultCookieAsync(signInResponse.Email, signInResponse.Role);
             SetupJwtTokenInCookie(signInResponse.JwtToken);
@@ -167,7 +175,8 @@ namespace FoundersPC.Web.Controllers
 
         private void RemoveJwtTokenFromCookie()
         {
-            if (HttpContext.Request.Cookies.ContainsKey("token")) HttpContext.Response.Cookies.Delete("token");
+            if (HttpContext.Request.Cookies.ContainsKey("token"))
+                HttpContext.Response.Cookies.Delete("token");
         }
 
         #endregion

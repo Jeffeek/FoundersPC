@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Hardware.Memory;
+using FoundersPC.API.Domain.Entities.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 
 #endregion
 
@@ -22,6 +23,17 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             _unitOfWorkHardwareAPI = unitOfWorkHardwareAPI;
             _mapper = mapper;
         }
+
+        #region Implementation of IPaginateableService<HDDReadDto>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<HDDReadDto>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<HDD>, IEnumerable<HDDReadDto>>(await _unitOfWorkHardwareAPI
+                                                                         .HDDsRepository
+                                                                         .GetPaginateableAsync(pageNumber, pageSize));
+
+        #endregion
 
         #region Implementation of IHDDService
 
@@ -42,7 +54,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
 
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.HDDsRepository.AnyAsync(x => x.Equals(mappedHDD));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.HDDsRepository.AddAsync(mappedHDD);
 
@@ -54,12 +67,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.HDDsRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(hdd, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.HDDsRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -69,7 +84,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var removeResult = await _unitOfWorkHardwareAPI.HDDsRepository.DeleteAsync(id);
 
-            if (!removeResult) return false;
+            if (!removeResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

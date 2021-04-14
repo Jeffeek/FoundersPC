@@ -1,11 +1,13 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Users;
-using FoundersPC.RepositoryShared.Identity;
+using FoundersPC.IdentityEntities.Identity;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -36,10 +38,15 @@ namespace FoundersPC.Identity.Domain.Entities.Tokens
         [Required]
         public bool IsBlocked { get; set; }
 
+        public ICollection<AccessTokenLog> UsagesLogs { get; set; }
+
         public bool Equals(ApiAccessUserToken other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+            if (ReferenceEquals(null, other))
+                return false;
+
+            if (ReferenceEquals(this, other))
+                return true;
 
             return UserId == other.UserId
                    && StartEvaluationDate.Equals(other.StartEvaluationDate)
@@ -49,9 +56,14 @@ namespace FoundersPC.Identity.Domain.Entities.Tokens
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != GetType()) return false;
+            if (ReferenceEquals(null, obj))
+                return false;
+
+            if (ReferenceEquals(this, obj))
+                return true;
+
+            if (obj.GetType() != GetType())
+                return false;
 
             return Equals((ApiAccessUserToken)obj);
         }

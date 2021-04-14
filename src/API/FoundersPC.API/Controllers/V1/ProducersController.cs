@@ -2,9 +2,10 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FoundersPC.API.Application.Interfaces.Services;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,7 +14,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/Producers")]
@@ -28,7 +28,7 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<ProducerReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
@@ -36,23 +36,31 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _producerService.GetAllProducersAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ProducerReadDto>> Get(int? id)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber,
+                                                                                  [FromQuery(Name = "Size")] int pageSize)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            return Json(await _producerService.GetPaginateableAsync(pageNumber, pageSize));
+        }
 
-            var producer = await _producerService.GetProducerByIdAsync(id.Value);
+        [HttpGet("{id:int:min(1)}", Name = "GetProducerById")]
+        public async Task<ActionResult<ProducerReadDto>> Get([FromRoute] int id)
+        {
+            _logger.LogForModelRead(HttpContext, id);
 
-            return producer == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(producer);
+            var producer = await _producerService.GetProducerByIdAsync(id);
+
+            return producer == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(producer);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id}")]
+        [HttpPut("{id:int:min(1)}")]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] ProducerUpdateDto producer)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelUpdate(HttpContext, id);
 
@@ -65,7 +73,8 @@ namespace FoundersPC.API.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] ProducerInsertDto producer)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -75,18 +84,17 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete([FromRoute] int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readProducer = await _producerService.GetProducerByIdAsync(id);
 
-            var readProducer = await _producerService.GetProducerByIdAsync(id.Value);
+            if (readProducer == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readProducer == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _producerService.DeleteProducerAsync(id.Value);
+            var result = await _producerService.DeleteProducerAsync(id);
 
             return result ? Json(readProducer) : ResponseResultsHelper.DeleteError();
         }

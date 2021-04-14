@@ -1,4 +1,4 @@
-﻿@model FoundersPC.Web.Domain.Entities.ViewModels.Authentication.SignInViewModel
+﻿@model FoundersPC.Web.Domain.Common.Authentication.SignInViewModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,6 +9,9 @@
     <link
         href="~/css/animations.css"
         rel="stylesheet">
+    <link
+        href='~/css/neon-btn-styles.css'
+        rel='stylesheet'>
 }
 
 
@@ -17,17 +20,17 @@
     class='sidenav'>
     <div
         class='login-main-text'>
-        <h2>
+        <h1>
             FoundersPC
-            <br> LogIn Page
-        </h2>
+            <br> Sign In Page
+        </h1>
         <p>SignInAsync from here to access the API.</p>
     </div>
 </div>
 <div
     class='main'>
     <div
-        class='col-md-8 col-sm-12 mt-3'>
+        class='col-md-12 col-sm-12 col-xl-10 col-xxl-10 mt-3 mt-md-3 mt-sm-3 mt-xl-0 mt-xxl-0'>
         <div
             class='login-form'>
             <form
@@ -105,9 +108,9 @@
                     </span>
                 </div>
                 <div
-                    class='form-group'>
+                    class='d-flex form-group justify-content-center'>
                     <input
-                        class='btn btn-outline-primary'
+                        class='btn btn-neon'
                         type='submit'
                         value='Sign In'>
                 </div>
@@ -120,7 +123,8 @@
                     <a
                         asp-action='ForgotPassword'
                         asp-controller='Authentication'
-                        class='btn btn-outline-warning'>
+                        class='btn btn-outline-warning'
+                        style='width: 200px'>
                         Forgot password
                     </a>
                 </div>
@@ -129,7 +133,8 @@
                     <a
                         asp-action='SignUp'
                         asp-controller='Authentication'
-                        class='btn btn-outline-info'>
+                        class='btn btn-outline-info'
+                        style='width: 200px'>
                         Don't have an account
                     </a>
                 </div>
@@ -141,12 +146,6 @@
 
 @section Scripts
 {
-    <script
-        src='~/lib/jquery-validation/dist/jquery.validate.js'></script>
-    <script
-        src='~/lib/jquery-validation/dist/additional-methods.js'></script>
-    <script
-        src='~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'></script>
     <script>
         $(document).
             ready(

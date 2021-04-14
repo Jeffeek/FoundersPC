@@ -2,6 +2,8 @@
 
 using System;
 using System.Linq;
+using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,9 +25,10 @@ namespace FoundersPC.ApplicationShared
         {
             var jwtConfigService = services.FirstOrDefault(x => x.ServiceType == typeof(JwtConfiguration));
 
-            if (jwtConfigService is null) throw new Exception();
+            if (jwtConfigService is null)
+                throw new Exception();
 
-            if (!(jwtConfigService.ImplementationInstance is JwtConfiguration service))
+            if (jwtConfigService.ImplementationInstance is not JwtConfiguration service)
                 throw new Exception("Bearer settings middleware not found");
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -45,55 +48,42 @@ namespace FoundersPC.ApplicationShared
                                   });
         }
 
-        public static void AddBearerAuthorizationPolicies(this IServiceCollection services)
+        public static void AddAuthorizationPolicies(this IServiceCollection services, string scheme)
         {
             services.AddAuthorization(configuration =>
                                       {
                                           configuration.AddPolicy(ApplicationAuthorizationPolicies.AdministratorPolicy,
-                                                                  builder =>
-                                                                  {
-                                                                      builder.AddAuthenticationSchemes(JwtBearerDefaults
-                                                                                 .AuthenticationScheme)
-                                                                             .RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Administrator)
-                                                                             .Build();
-                                                                  });
+                                                                  builder => builder.AddAuthenticationSchemes(scheme)
+                                                                                    .RequireAuthenticatedUser()
+                                                                                    .RequireRole(ApplicationRoles
+                                                                                                     .Administrator)
+                                                                                    .Build());
+
                                           configuration.AddPolicy(ApplicationAuthorizationPolicies.ManagerPolicy,
-                                                                  builder =>
-                                                                  {
-                                                                      builder.AddAuthenticationSchemes(JwtBearerDefaults
-                                                                                 .AuthenticationScheme)
-                                                                             .RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Manager)
-                                                                             .Build();
-                                                                  });
+                                                                  builder => builder.AddAuthenticationSchemes(scheme)
+                                                                                    .RequireAuthenticatedUser()
+                                                                                    .RequireRole(ApplicationRoles
+                                                                                                     .Manager)
+                                                                                    .Build());
+
                                           configuration.AddPolicy(ApplicationAuthorizationPolicies.DefaultUserPolicy,
-                                                                  builder =>
-                                                                  {
-                                                                      builder.AddAuthenticationSchemes(JwtBearerDefaults
-                                                                                 .AuthenticationScheme)
-                                                                             .RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.DefaultUser)
-                                                                             .Build();
-                                                                  });
+                                                                  builder => builder.AddAuthenticationSchemes(scheme)
+                                                                                    .RequireAuthenticatedUser()
+                                                                                    .RequireRole(ApplicationRoles
+                                                                                                     .DefaultUser)
+                                                                                    .Build());
+
                                           configuration.AddPolicy(ApplicationAuthorizationPolicies.EmployeePolicy,
-                                                                  builder =>
-                                                                  {
-                                                                      builder.AddAuthenticationSchemes(JwtBearerDefaults
-                                                                                 .AuthenticationScheme)
-                                                                             .RequireAuthenticatedUser()
-                                                                             .RequireRole(ApplicationRoles.Administrator,
-                                                                                          ApplicationRoles.Manager)
-                                                                             .Build();
-                                                                  });
+                                                                  builder => builder.AddAuthenticationSchemes(scheme)
+                                                                                    .RequireAuthenticatedUser()
+                                                                                    .RequireRole(ApplicationRoles.Administrator,
+                                                                                                 ApplicationRoles.Manager)
+                                                                                    .Build());
+
                                           configuration.AddPolicy(ApplicationAuthorizationPolicies.AuthenticatedPolicy,
-                                                                  builder =>
-                                                                  {
-                                                                      builder.AddAuthenticationSchemes(JwtBearerDefaults
-                                                                                 .AuthenticationScheme)
-                                                                             .RequireAuthenticatedUser()
-                                                                             .Build();
-                                                                  });
+                                                                  builder => builder.AddAuthenticationSchemes(scheme)
+                                                                                    .RequireAuthenticatedUser()
+                                                                                    .Build());
                                       });
         }
     }

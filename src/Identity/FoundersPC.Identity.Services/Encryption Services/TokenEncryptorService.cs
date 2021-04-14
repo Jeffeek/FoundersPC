@@ -19,7 +19,9 @@ namespace FoundersPC.Identity.Services.Encryption_Services
             var hashedInputBytes = hash.ComputeHash(tokenBytes);
 
             var hashedInputStringBuilder = new StringBuilder(64);
-            foreach (var tokenByte in hashedInputBytes) hashedInputStringBuilder.Append(tokenByte.ToString("X2"));
+
+            foreach (var tokenByte in hashedInputBytes)
+                hashedInputStringBuilder.Append(tokenByte.ToString("X2"));
 
             return hashedInputStringBuilder.ToString();
         }

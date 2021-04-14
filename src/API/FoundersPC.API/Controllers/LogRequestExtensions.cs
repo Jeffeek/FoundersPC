@@ -34,5 +34,13 @@ namespace FoundersPC.API.Controllers
         {
             logger.LogInformation($"{typeof(T).Name}: request for reading (all) by {httpContext.User.Identity?.Name ?? "Unknown"}, IPv4 : {httpContext.GetIpAddress()}");
         }
+
+        public static void LogForPaginateableModelsRead<T>(this ILogger<T> logger,
+                                                           HttpContext httpContext,
+                                                           int page,
+                                                           int size)
+        {
+            logger.LogInformation($"{typeof(T).Name}: request for reading page: {page}, size: {size} by {httpContext.User.Identity?.Name ?? "Unknown"}, IPv4 : {httpContext.GetIpAddress()}");
+        }
     }
 }

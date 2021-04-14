@@ -1,10 +1,10 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.CPU;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.GPU;
-using FoundersPC.API.Application.Interfaces.Repositories.Hardware.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories;
+using FoundersPC.API.Application.Interfaces.Repositories.Memory;
+using FoundersPC.API.Application.Interfaces.Repositories.Processor;
+using FoundersPC.API.Application.Interfaces.Repositories.VideoCard;
 
 #endregion
 

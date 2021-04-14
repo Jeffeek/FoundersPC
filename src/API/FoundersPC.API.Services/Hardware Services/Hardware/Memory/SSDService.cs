@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Hardware.Memory;
+using FoundersPC.API.Domain.Entities.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 
 #endregion
 
@@ -22,6 +23,17 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             _unitOfWorkHardwareAPI = unitOfWorkHardwareAPI;
             _mapper = mapper;
         }
+
+        #region Implementation of IPaginateableService<SSDReadDto>
+
+        /// <inheritdoc/>
+        public async Task<IEnumerable<SSDReadDto>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<SSD>, IEnumerable<SSDReadDto>>(await _unitOfWorkHardwareAPI
+                                                                         .SSDsRepository
+                                                                         .GetPaginateableAsync(pageNumber, pageSize));
+
+        #endregion
 
         #region Implementation of ISSDService
 
@@ -41,7 +53,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
             var mappedSSD = _mapper.Map<SSDInsertDto, SSD>(ssd);
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.SSDsRepository.AnyAsync(x => x.Equals(mappedSSD));
 
-            if (entityAlreadyExists) return false;
+            if (entityAlreadyExists)
+                return false;
 
             await _unitOfWorkHardwareAPI.SSDsRepository.AddAsync(mappedSSD);
 
@@ -53,12 +66,14 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var dataBaseEntity = await _unitOfWorkHardwareAPI.SSDsRepository.GetByIdAsync(id);
 
-            if (dataBaseEntity == null) return false;
+            if (dataBaseEntity == null)
+                return false;
 
             _mapper.Map(ssd, dataBaseEntity);
             var updateResult = await _unitOfWorkHardwareAPI.SSDsRepository.UpdateAsync(dataBaseEntity);
 
-            if (!updateResult) return false;
+            if (!updateResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }
@@ -68,7 +83,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         {
             var removeResult = await _unitOfWorkHardwareAPI.SSDsRepository.DeleteAsync(id);
 
-            if (!removeResult) return false;
+            if (!removeResult)
+                return false;
 
             return await _unitOfWorkHardwareAPI.SaveChangesAsync() > 0;
         }

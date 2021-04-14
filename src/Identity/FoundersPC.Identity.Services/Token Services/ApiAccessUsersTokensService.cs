@@ -2,15 +2,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
-using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.Identity.Services.Encryption_Services;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -21,41 +19,46 @@ namespace FoundersPC.Identity.Services.Token_Services
     {
         private readonly ILogger<ApiAccessUsersTokensService> _logger;
         private readonly IMapper _mapper;
-        private readonly TokenEncryptorService _tokenEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessUsersTokensService(IUnitOfWorkUsersIdentity unitOfWork,
-                                           TokenEncryptorService tokenEncryptorService,
                                            IMapper mapper,
                                            ILogger<ApiAccessUsersTokensService> logger)
         {
             _unitOfWork = unitOfWork;
-            _tokenEncryptorService = tokenEncryptorService;
             _mapper = mapper;
             _logger = logger;
         }
 
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(int userId)
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(int userId)
         {
             var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
 
-            if (tokens is null) return null;
+            if (tokens is null)
+                return null;
 
             return _mapper.Map<IEnumerable<ApiAccessUserToken>,
                 IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
         }
 
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokens(string userEmail)
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetUserTokensAsync(string userEmail)
         {
             var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
 
-            if (tokens is null) return null;
+            if (tokens is null)
+                return null;
 
             return _mapper.Map<IEnumerable<ApiAccessUserToken>,
                 IEnumerable<ApiAccessUserTokenReadDto>>(tokens);
         }
 
         #region IsTokenBlocked
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetAllTokensAsync() =>
+            _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(await _unitOfWork.ApiAccessUsersTokensRepository
+                                                                         .GetAllAsync());
 
         public async Task<bool> IsTokenBlockedAsync(string token)
         {
@@ -79,7 +82,8 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
@@ -88,7 +92,8 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return tokenEntity.ExpirationDate >= DateTime.Now && tokenEntity.ExpirationDate <= DateTime.Now;
         }
@@ -99,29 +104,34 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> CanMakeRequestAsync(string token)
         {
-            var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
-            var accessTokenLog = allLogs.SingleOrDefault(log => log.ApiAccessToken.HashedToken == token);
-
-            return CanMakeRequestAsync(accessTokenLog);
+            return await CanMakeRequestAsync(tokenEntity);
         }
 
         public async Task<bool> CanMakeRequestAsync(int tokenId)
         {
-            var allLogs = await _unitOfWork.AccessTokensLogsRepository.GetAllAsync();
+            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(tokenId);
 
-            var accessTokenLog = allLogs.SingleOrDefault(log => log.ApiAccessToken.Id == tokenId);
-
-            return CanMakeRequestAsync(accessTokenLog);
+            return await CanMakeRequestAsync(tokenEntity);
         }
 
-        private bool CanMakeRequestAsync(AccessTokenLog tokenLog)
+        private async Task<bool> CanMakeRequestAsync(ApiAccessUserToken token)
         {
-            if (tokenLog is null) return false;
+            if (token is null)
+                return false;
 
-            if (tokenLog.ApiAccessToken.IsBlocked) return false;
+            var lastUsageLog = await _unitOfWork.AccessTokensLogsRepository.GetLastTokenUsageAsync(token.Id);
 
-            return DateTime.Now.Ticks - tokenLog.RequestDateTime.Ticks >= 594530547;
+            if (lastUsageLog is null)
+                return true;
+
+            var now = DateTime.Now;
+
+            return !token.IsBlocked
+                   && token.ExpirationDate > now
+                   && now.Ticks - lastUsageLog.RequestDateTime.Ticks
+                   >= TimeSpan.TicksPerMinute; // the request to API can be made 1 time per 1 minute
         }
 
         #endregion
@@ -132,14 +142,15 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             if (token is null)
             {
-                _logger.LogError($"{nameof(ApiAccessUsersTokensService)}: token was null when tried to block");
+                _logger.LogError($"{nameof(ApiAccessUsersTokensService)}: string token was null when tried to block");
 
                 throw new ArgumentNullException(nameof(token));
             }
 
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return await BlockAsync(tokenEntity);
         }
@@ -148,20 +159,32 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
 
-            if (tokenEntity is null) return false;
+            if (tokenEntity is null)
+                return false;
 
             return await BlockAsync(tokenEntity);
         }
 
         private async Task<bool> BlockAsync(ApiAccessUserToken token)
         {
-            if (token.IsBlocked) return false;
+            if (token.IsBlocked)
+                return false;
 
-            token.IsBlocked = false;
+            token.IsBlocked = true;
             token.ExpirationDate = DateTime.Now;
 
             return await _unitOfWork.ApiAccessUsersTokensRepository.UpdateAsync(token);
         }
+
+        #endregion
+
+        #region Implementation of IPaginateableService<ApiAccessUserTokenReadDto>
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
+            _mapper.Map<IEnumerable<ApiAccessUserToken>,
+                IEnumerable<ApiAccessUserTokenReadDto>>(await _unitOfWork.ApiAccessUsersTokensRepository
+                                                                         .GetPaginateableAsync(pageNumber, pageSize));
 
         #endregion
     }

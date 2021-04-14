@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RepositoryShared\FoundersPC.RepositoryShared.csproj" />
+    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ServicesShared\FoundersPC.ServicesShared.csproj" />
     <ProjectReference Include="..\FoundersPC.API.Domain\FoundersPC.API.Domain.csproj" />
   </ItemGroup>
 

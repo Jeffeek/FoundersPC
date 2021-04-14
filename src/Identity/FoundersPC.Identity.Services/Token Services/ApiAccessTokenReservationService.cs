@@ -10,6 +10,8 @@ using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.RequestResponseShared.Request.Tokens;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 #endregion
 
@@ -18,16 +20,19 @@ namespace FoundersPC.Identity.Services.Token_Services
     public class ApiAccessTokenReservationService : IApiAccessTokensReservationService
     {
         private readonly IEmailService _emailService;
+        private readonly ILogger<ApiAccessTokenReservationService> _logger;
         private readonly TokenEncryptorService _tokenEncryptorService;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public ApiAccessTokenReservationService(IUnitOfWorkUsersIdentity unitOfWork,
                                                 TokenEncryptorService tokenEncryptorService,
-                                                IEmailService emailService)
+                                                IEmailService emailService,
+                                                ILogger<ApiAccessTokenReservationService> logger)
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
             _emailService = emailService;
+            _logger = logger;
         }
 
         public async Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
@@ -72,11 +77,12 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             var saveChangesResult = await _unitOfWork.SaveChangesAsync() > 0;
 
-            // todo: maybe throw exception
-            // or not..
-            // fuck it. idk & idc
-            // ok.
-            if (!saveChangesResult) return null;
+            if (!saveChangesResult)
+            {
+                _logger.LogWarning($"Database not saved changes when tried to reserve new access token. UserId = {user.Id}");
+
+                throw new DbUpdateException($"Database not saved changes when tried to reserve new access token. UserId = {user.Id}");
+            }
 
             await _emailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
 

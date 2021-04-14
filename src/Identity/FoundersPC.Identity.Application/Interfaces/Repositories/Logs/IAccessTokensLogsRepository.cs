@@ -10,10 +10,19 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.Identity.Application.Interfaces.Repositories.Logs
 {
-    public interface IAccessTokensLogsRepository : IRepositoryAsync<AccessTokenLog>
+    public interface IAccessTokensLogsRepository : IRepositoryAsync<AccessTokenLog>,
+                                                   IPaginateableRepository<AccessTokenLog>
     {
         Task<IEnumerable<AccessTokenLog>> GetUsagesBetweenAsync(DateTime start, DateTime finish);
 
         Task<IEnumerable<AccessTokenLog>> GetUsagesInAsync(DateTime date);
+
+        Task<AccessTokenLog> GetLastTokenUsageAsync(int apiAccessTokenId);
+
+        Task<AccessTokenLog> GetLastTokenUsageAsync(string apiAccessToken);
+
+        Task<IEnumerable<AccessTokenLog>> GetUserTokenUsagesByUserIdAsync(int userId);
+
+        Task<IEnumerable<AccessTokenLog>> GetUserTokenUsagesByUserEmailAsync(string userEmail);
     }
 }

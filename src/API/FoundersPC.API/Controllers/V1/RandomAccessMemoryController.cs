@@ -2,10 +2,9 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers.V1
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/RandomAccessMemory")]
@@ -22,20 +20,16 @@ namespace FoundersPC.API.Controllers.V1
     public class RandomAccessMemoryController : Controller
     {
         private readonly ILogger<RandomAccessMemoryController> _logger;
-        private readonly IMapper _mapper;
         private readonly IRAMService _ramService;
 
         public RandomAccessMemoryController(IRAMService ramService,
-                                            IMapper mapper,
                                             ILogger<RandomAccessMemoryController> logger)
         {
             _ramService = ramService;
-            _mapper = mapper;
             _logger = logger;
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<RAMReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
@@ -43,40 +37,45 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _ramService.GetAllRAMsAsync());
         }
 
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<RAMReadDto>> Get(int? id)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
+                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
 
-            _logger.LogForModelRead(HttpContext, id.Value);
+            return Json(await _ramService.GetPaginateableAsync(pageNumber, pageSize));
+        }
 
-            var ram = await _ramService.GetRAMByIdAsync(id.Value);
+        [HttpGet("{id:int:min(1)}")]
+        public async Task<ActionResult<RAMReadDto>> Get([FromRoute] int id)
+        {
+            _logger.LogForModelRead(HttpContext, id);
 
-            return ram == null ? ResponseResultsHelper.NotFoundByIdResult(id.Value) : Json(ram);
+            var ram = await _ramService.GetRAMByIdAsync(id);
+
+            return ram == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(ram);
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpPut("{id}", Order = 0)]
-        public async Task<ActionResult> Update(int? id, [FromBody] RAMUpdateDto ram)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] RAMUpdateDto ram)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
-            _logger.LogForModelUpdate(HttpContext, id.Value);
+            _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _ramService.UpdateRAMAsync(id.Value, ram);
+            var result = await _ramService.UpdateRAMAsync(id, ram);
 
             return result ? Json(ram) : ResponseResultsHelper.UpdateError();
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
         [HttpPost]
         public async Task<ActionResult> Insert([FromBody] RAMInsertDto ram)
         {
-            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
 
             _logger.LogForModelInsert(HttpContext);
 
@@ -86,19 +85,17 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [ApiVersion("1.0", Deprecated = false)]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int? id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
-            if (!id.HasValue) return ResponseResultsHelper.BadRequestWithIdResult();
+            _logger.LogForModelDelete(HttpContext, id);
 
-            _logger.LogForModelDelete(HttpContext, id.Value);
+            var readRAM = await _ramService.GetRAMByIdAsync(id);
 
-            var readRAM = await _ramService.GetRAMByIdAsync(id.Value);
+            if (readRAM == null)
+                return ResponseResultsHelper.NotFoundByIdResult(id);
 
-            if (readRAM == null) return ResponseResultsHelper.NotFoundByIdResult(id.Value);
-
-            var result = await _ramService.DeleteRAMAsync(id.Value);
+            var result = await _ramService.DeleteRAMAsync(id);
 
             return result ? Json(readRAM) : ResponseResultsHelper.DeleteError();
         }
