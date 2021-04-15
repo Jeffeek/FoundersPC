@@ -25,9 +25,9 @@ namespace FoundersPC.Identity.Services.Token_Services
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public AccessTokenReservationService(IUnitOfWorkUsersIdentity unitOfWork,
-                                                TokenEncryptorService tokenEncryptorService,
-                                                IEmailService emailService,
-                                                ILogger<AccessTokenReservationService> logger)
+                                             TokenEncryptorService tokenEncryptorService,
+                                             IEmailService emailService,
+                                             ILogger<AccessTokenReservationService> logger)
         {
             _unitOfWork = unitOfWork;
             _tokenEncryptorService = tokenEncryptorService;
@@ -35,6 +35,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             _logger = logger;
         }
 
+        /// <exception cref="T:System.NotSupportedException">Reserve new token: user with email = {userEmail} not found.</exception>
         public async Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
         {
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
@@ -46,6 +47,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             return await ReserveNewTokenAsync(user, type);
         }
 
+        /// <exception cref="T:System.NotSupportedException">Reserve new token: user with id = {userId} not found.</exception>
         public async Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
@@ -100,7 +102,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         // this method calculates the expiration date, it bases on TokenType.
         // Numbers are months.
         // Why ENDLESS is just 1200 month? I don't know, it's a 100 years probably O_O
-        private DateTime GetTheExpirationDate(TokenType type)
+        private static DateTime GetTheExpirationDate(TokenType type)
         {
             var now = DateTime.Now;
 

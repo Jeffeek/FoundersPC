@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region Using namespaces
+
+using System;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using Microsoft.Extensions.Logging;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.Token_Services
 {
@@ -22,6 +23,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             _unitOfWork = unitOfWork;
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="token"/> is <see langword="null"/></exception>
         public async Task<bool> BlockAsync(string token)
         {
             if (token is null)

@@ -34,6 +34,11 @@ namespace FoundersPC.Identity.Services.User_Services
             _emailService = emailService;
         }
 
+        /// <exception cref="T:System.Data.NoNullAllowedException">No role found</exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="predicate"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
         public async Task<bool> RegisterDefaultUserAsync(string email, string password)
         {
             var defaultUserRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())
@@ -51,6 +56,11 @@ namespace FoundersPC.Identity.Services.User_Services
             return await RegisterAsync(email, password, defaultUserRole);
         }
 
+        /// <exception cref="T:System.Data.NoNullAllowedException">No role found</exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="predicate"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
         public async Task<bool> RegisterManagerAsync(string email, string password)
         {
             var managerRole = (await _unitOfWorkUsersIdentity.RolesRepository.GetAllAsync())

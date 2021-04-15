@@ -396,3 +396,394 @@
 04/15/2021 19:03:42 HTTP "GET" "/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 200 in 211.2225 ms
 04/15/2021 19:04:14 HTTP "GET" "/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 200 in 27.0183 ms
 04/15/2021 19:04:19 HTTP "GET" "/FoundersPCIdentity/Tokens/Logs/Token/ById/2" responded 200 in 23.2692 ms
+04/15/2021 22:58:07 Identity server started..
+04/15/2021 22:58:07 Identity server HostBuilder created
+04/15/2021 22:58:07 Error when tried to launch the Identity server app
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at FoundersPC.IdentityServer.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Program.cs:line 34
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+04/15/2021 23:00:13 Identity server started..
+04/15/2021 23:00:17 Identity server HostBuilder created
+04/15/2021 23:03:08 Error when tried to launch the Identity server app
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at FoundersPC.IdentityServer.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Program.cs:line 43
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+04/15/2021 23:10:30 Identity server started..
+04/15/2021 23:10:30 Identity server HostBuilder created
+04/15/2021 23:10:35 Error when tried to launch the Identity server app
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at FoundersPC.IdentityServer.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Program.cs:line 43
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+04/15/2021 23:17:10 Identity server started..
+04/15/2021 23:17:10 Identity server HostBuilder created
+04/15/2021 23:17:11 Error when tried to launch the Identity server app
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at FoundersPC.IdentityServer.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Program.cs:line 43
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+04/15/2021 23:18:43 Identity server started..
+04/15/2021 23:18:43 Identity server HostBuilder created
+04/15/2021 23:18:44 Error when tried to launch the Identity server app
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.) (Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessTokensRequestsService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at FoundersPC.IdentityServer.Program.Main(String[] args) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Program.cs:line 43
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.Token_Services.IAccessUsersTokensService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Token_Services.AccessUsersTokensService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: FoundersPC.Identity.Application.Interfaces.Services.User_Services.IAdminService Lifetime: Scoped ImplementationType: FoundersPC.Identity.Services.Administration.Admin_Services.AdminService': Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.Logger`1[FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService]' while attempting to activate 'FoundersPC.Identity.Services.Token_Services.AccessTokensRequestsService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)<---
+
+04/15/2021 23:20:22 Identity server started..
+04/15/2021 23:20:22 Identity server HostBuilder created
+04/15/2021 23:20:23 Host built
+04/15/2021 23:20:23 Now listening on: "https://localhost:3000"
+04/15/2021 23:20:23 Application started. Press Ctrl+C to shut down.
+04/15/2021 23:20:23 Hosting environment: "Development"
+04/15/2021 23:20:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/15/2021 23:20:31 Application is shutting down...
+04/15/2021 23:21:01 Identity server started..
+04/15/2021 23:21:02 Identity server HostBuilder created
+04/15/2021 23:21:02 Host built
+04/15/2021 23:21:03 Now listening on: "https://localhost:3000"
+04/15/2021 23:21:03 Application started. Press Ctrl+C to shut down.
+04/15/2021 23:21:03 Hosting environment: "Development"
+04/15/2021 23:21:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/15/2021 23:21:04 Application is shutting down...
+04/15/2021 23:21:29 Identity server started..
+04/15/2021 23:21:29 Identity server HostBuilder created
+04/15/2021 23:21:29 Host built
+04/15/2021 23:21:30 Now listening on: "https://localhost:3000"
+04/15/2021 23:21:30 Application started. Press Ctrl+C to shut down.
+04/15/2021 23:21:30 Hosting environment: "Development"
+04/15/2021 23:21:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/15/2021 23:21:37 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/15/2021 23:21:37 Successful save changes in UnitOfWorkUsersIdentity
+04/15/2021 23:21:37 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1982.5444 ms
+04/15/2021 23:21:40 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 216.7298 ms
+04/15/2021 23:21:44 HTTP "GET" "/FoundersPCIdentity/Tokens/Logs?Page=1&Size=10" responded 200 in 41.0574 ms
+04/15/2021 23:21:47 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 27.9115 ms
+04/15/2021 23:21:48 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 11.0873 ms
+04/15/2021 23:21:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 5.2213 ms
+04/15/2021 23:21:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 4.2217 ms
+04/15/2021 23:21:50 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=12&Size=10" responded 200 in 4.3194 ms
+04/15/2021 23:21:52 HTTP "GET" "/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 200 in 23.4401 ms
+04/15/2021 23:21:59 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 27.6550 ms
+04/15/2021 23:22:05 Successful save changes in UnitOfWorkUsersIdentity
+04/15/2021 23:22:07 Successful sending an email to: ilyushin_misha@mail.ru
+04/15/2021 23:22:07 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 1831.4524 ms
+04/15/2021 23:22:07 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 7.4062 ms
+04/15/2021 23:22:29 Successful save changes in UnitOfWorkUsersIdentity
+04/15/2021 23:22:29 Successful sending an email to: ilyushin_misha@mail.ru
+04/15/2021 23:22:29 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 852.1846 ms
+04/15/2021 23:22:29 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru" responded 200 in 6.0191 ms
+04/15/2021 23:23:07 SignInIdentityController: user with email or login = JeffManager entered the service
+04/15/2021 23:23:07 Successful save changes in UnitOfWorkUsersIdentity
+04/15/2021 23:23:07 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 26.1379 ms
+04/15/2021 23:23:15 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com" responded 200 in 9.1843 ms
+04/15/2021 23:23:23 Successful save changes in UnitOfWorkUsersIdentity
+04/15/2021 23:23:24 Successful sending an email to: mishamine26@gmail.com
+04/15/2021 23:23:24 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 849.9162 ms
+04/15/2021 23:23:24 HTTP "GET" "/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com" responded 200 in 7.1971 ms

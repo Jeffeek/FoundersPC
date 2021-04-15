@@ -7,7 +7,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Validation.Hardware.Case
 {
-    public class CaseInsertDtoValidation : AbstractValidator<CaseInsertDto>
+    internal class CaseInsertDtoValidation : AbstractValidator<CaseInsertDto>
     {
         public CaseInsertDtoValidation()
         {

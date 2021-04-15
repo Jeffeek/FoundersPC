@@ -8,10 +8,7 @@
     <link
         href="~/css/table.css"
         rel="stylesheet"/>
-}
-
-
-}
+}}
 
 <div
     class='mt-5 table-wrapper'>
@@ -238,13 +235,13 @@
 </table>
 @{
     if (Model.IsPaginationNeeded) {
-        <pager 
-            class="pager-container d-flex justify-content-center"
-            asp-action="UsersTable" 
+        <pager
+            asp-action="UsersTable"
             asp-controller="Admin"
-            param-page-number='pageNumber'
-            list="@Model.PagedList" 
-            options="@PagedListRenderOptions.Bootstrap4Full" />
+            class="d-flex justify-content-center pager-container"
+            list="@Model.PagedList"
+            options="@PagedListRenderOptions.Bootstrap4Full"
+            param-page-number='pageNumber'/>
     }
 }
 </div>

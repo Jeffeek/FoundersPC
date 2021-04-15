@@ -15,7 +15,8 @@ namespace FoundersPC.ApplicationShared.Jwt
 
         private JwtConfiguration() { }
 
-        public static JwtConfiguration Configuration
+        /// <exception cref="T:System.NotSupportedException" accessor="get">Inner JWT configuration was null.</exception>
+        internal static JwtConfiguration Configuration
         {
             get
             {
@@ -42,6 +43,9 @@ namespace FoundersPC.ApplicationShared.Jwt
 
         public int HoursToExpire { get; private init; }
 
+        /// <exception cref="T:System.OverflowException"><paramref name="configuration[JwtSettings:HoursToExpire]" /> represents a number less than <see cref="F:System.Int32.MinValue" /> or greater than <see cref="F:System.Int32.MaxValue" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="configuration[JwtSettings:HoursToExpire]" /> is <see langword="null" />.</exception>
+        /// <exception cref="T:System.FormatException"><paramref name="configuration[JwtSettings:HoursToExpire]" /> is not in the correct format.</exception>
         public static void Initialize(IConfiguration configuration)
         {
             Configuration = new JwtConfiguration
@@ -53,6 +57,10 @@ namespace FoundersPC.ApplicationShared.Jwt
                             };
         }
 
-        public SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="Key" /> is <see langword="null" />.</exception>
+        /// <exception cref="T:System.Text.EncoderFallbackException">A fallback occurred (for more information, see Character Encoding in .NET)
+        ///  -and-
+        ///  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+        internal SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
     }
 }

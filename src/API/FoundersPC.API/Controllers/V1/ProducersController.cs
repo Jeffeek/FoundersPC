@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Services;
-using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Authorization;
@@ -45,7 +44,7 @@ namespace FoundersPC.API.Controllers.V1
             return Json(await _producerService.GetPaginateableAsync(pageNumber, pageSize));
         }
 
-        [HttpGet("{id:int:min(1)}", Name = "GetProducerById")]
+        [HttpGet("{id:int:min(1)}")]
         public async Task<ActionResult<ProducerReadDto>> Get([FromRoute] int id)
         {
             _logger.LogForModelRead(HttpContext, id);

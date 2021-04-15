@@ -66,16 +66,13 @@ namespace FoundersPC.Identity.Services.Log_Services
             _mapper.Map<AccessTokenLog, AccessTokenLogReadDto>(await _unitOfWork.AccessTokensLogsRepository
                                                                                 .GetLastTokenUsageAsync(apiAccessToken));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetTokenLogsAsync(int tokenId) =>
             GetTokenLogsAsync(await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(tokenId));
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetTokenLogsAsync(string token) =>
             GetTokenLogsAsync(await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token));
-
-        private IEnumerable<AccessTokenLogReadDto> GetTokenLogsAsync(ApiAccessUserToken token) =>
-            _mapper.Map<IEnumerable<AccessTokenLog>, IEnumerable<AccessTokenLogReadDto>>(token?.UsagesLogs ?? Enumerable.Empty<AccessTokenLog>());
 
         /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetUserTokenUsagesByUserIdAsync(int userId) =>
@@ -161,5 +158,8 @@ namespace FoundersPC.Identity.Services.Log_Services
         }
 
         #endregion
+
+        private IEnumerable<AccessTokenLogReadDto> GetTokenLogsAsync(ApiAccessUserToken token) =>
+            _mapper.Map<IEnumerable<AccessTokenLog>, IEnumerable<AccessTokenLogReadDto>>(token?.UsagesLogs ?? Enumerable.Empty<AccessTokenLog>());
     }
 }

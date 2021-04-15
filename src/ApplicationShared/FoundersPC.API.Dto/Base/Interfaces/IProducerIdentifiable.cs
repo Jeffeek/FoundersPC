@@ -1,6 +1,6 @@
 ﻿namespace FoundersPC.API.Dto.Base.Interfaces
 {
-    public interface IProducerIdentifiable
+    internal interface IProducerIdentifiable
     {
         int ProducerId { get; set; }
     }

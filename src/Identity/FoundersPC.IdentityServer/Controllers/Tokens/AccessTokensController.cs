@@ -113,13 +113,13 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
         public async Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokens([FromQuery(Name = "Page")] int pageNumber,
-                                                                                                [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize) =>
+                                                                                             [FromQuery(Name = "Size")] int pageSize =
+                                                                                                 FoundersPCConstants.PageSize) =>
             await _accessUsersTokensService.GetPaginateableAsync(pageNumber, pageSize);
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("All")]
-        public async Task<IEnumerable<AccessUserTokenReadDto>> GetAll() =>
-            await _accessUsersTokensService.GetAllTokensAsync();
+        public async Task<IEnumerable<AccessUserTokenReadDto>> GetAll() => await _accessUsersTokensService.GetAllTokensAsync();
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [AllowAnonymous]

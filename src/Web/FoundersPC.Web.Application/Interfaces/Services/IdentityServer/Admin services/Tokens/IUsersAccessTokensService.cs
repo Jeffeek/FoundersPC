@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿#region Using namespaces
+
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Response.Pagination;
+
+#endregion
 
 namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Tokens
 {

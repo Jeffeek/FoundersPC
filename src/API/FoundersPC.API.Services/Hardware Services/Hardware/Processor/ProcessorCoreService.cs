@@ -9,7 +9,6 @@ using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Response.Pagination;
-using FoundersPC.ServicesShared;
 
 #endregion
 

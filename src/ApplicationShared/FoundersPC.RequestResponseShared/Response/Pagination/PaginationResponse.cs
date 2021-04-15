@@ -1,8 +1,8 @@
-﻿using System;
+﻿#region Using namespaces
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.RequestResponseShared.Response.Pagination
 {
@@ -16,10 +16,10 @@ namespace FoundersPC.RequestResponseShared.Response.Pagination
 
         #region Implementation of IPaginationResponse<T>
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public int TotalItemsCount { get; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public IEnumerable<T> Items { get; }
 
         #endregion

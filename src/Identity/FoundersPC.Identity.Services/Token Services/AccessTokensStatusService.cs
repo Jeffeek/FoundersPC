@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region Using namespaces
+
+using System;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
-using FoundersPC.Identity.Domain.Entities.Tokens;
-using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using Microsoft.Extensions.Logging;
+
+#endregion
 
 namespace FoundersPC.Identity.Services.Token_Services
 {
     public class AccessTokensStatusService : IAccessTokensTokensStatusService
     {
-        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
         private readonly ILogger<AccessTokensStatusService> _logger;
+        private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public AccessTokensStatusService(IUnitOfWorkUsersIdentity unitOfWork,
                                          ILogger<AccessTokensStatusService> logger)

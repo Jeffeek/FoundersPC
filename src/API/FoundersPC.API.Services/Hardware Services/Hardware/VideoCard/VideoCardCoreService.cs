@@ -37,7 +37,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.CountAsync();
 
-            return new PaginationResponse<VideoCardCoreReadDto>(items,totalItemsCount);
+            return new PaginationResponse<VideoCardCoreReadDto>(items, totalItemsCount);
         }
 
         #endregion

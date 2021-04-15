@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RepositoryShared.Repository;
 using FoundersPC.ServicesShared;
 
 #endregion

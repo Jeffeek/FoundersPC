@@ -61,8 +61,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region Users information
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) =>
-            await _usersInformationService.GetAllUsersAsync(adminToken);
+        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => await _usersInformationService.GetAllUsersAsync(adminToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<UserEntityReadDto>>
@@ -70,8 +69,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _usersInformationService.GetPaginateableUsersAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) =>
-            await _usersInformationService.GetUserByIdAsync(id, adminToken);
+        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetUserByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
         public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken) =>
@@ -82,32 +80,27 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region Block user
 
         /// <inheritdoc/>
-        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) =>
-            await _userStatusService.BlockUserByIdAsync(id, adminToken);
+        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) => await _userStatusService.BlockUserByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) =>
-            await _userStatusService.BlockUserByEmailAsync(email, adminToken);
+        public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) => await _userStatusService.BlockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Unblock user
 
         /// <inheritdoc/>
-        public async Task<bool> UnblockUserByIdAsync(int id, string adminToken) =>
-            await _userStatusService.UnblockUserByIdAsync(id, adminToken);
+        public async Task<bool> UnblockUserByIdAsync(int id, string adminToken) => await _userStatusService.UnblockUserByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken) =>
-            await _userStatusService.UnblockUserByEmailAsync(email, adminToken);
+        public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken) => await _userStatusService.UnblockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Make user inactive
 
         /// <inheritdoc/>
-        public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) =>
-            await _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
+        public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => await _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
         public async Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) =>
@@ -232,11 +225,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             GetAccessTokensLogsByUserEmailAsync(string userEmail, string adminToken) =>
             await _accessTokensLogsService.GetAccessTokensLogsByUserEmailAsync(userEmail, adminToken);
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken) =>
             await _accessTokensLogsService.GetAccessTokensLogsByTokenIdAsync(tokenId, adminToken);
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken) =>
             await _accessTokensLogsService.GetAccessTokensLogsByTokenAsync(token, adminToken);
 
@@ -244,19 +237,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region UsersAccessTokensService
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<AccessUserTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) =>
             await _tokensService.GetAllUsersAccessTokensAsync(adminToken);
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken) =>
             await _tokensService.GetPaginateableTokensAsync(pageNumber, pageSize, adminToken);
 
-        /// <inheritdoc />
-        public async Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) =>
-            await _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
+        /// <inheritdoc/>
+        public async Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) => await _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) =>
             await _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
 

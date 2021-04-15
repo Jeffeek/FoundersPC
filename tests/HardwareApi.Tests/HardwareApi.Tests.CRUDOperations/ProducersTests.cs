@@ -27,7 +27,7 @@ namespace HardwareApi.Tests.CRUDOperations
         private IUnitOfWorkHardwareAPI _unitOfWork;
 
         [OneTimeSetUp]
-        public async Task Setup()
+        public async Task SetupAsync()
         {
             var options = new DbContextOptionsBuilder<FoundersPCHardwareContext>()
                           .UseInMemoryDatabase("InMem")

@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Dto;
@@ -12,7 +11,6 @@ using FoundersPC.Web.Domain.Common;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PagedList.Core;
 
 #endregion
 

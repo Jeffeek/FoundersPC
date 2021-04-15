@@ -9,7 +9,6 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.RequestResponseShared.Response.Pagination;
 using Microsoft.Extensions.Logging;
 

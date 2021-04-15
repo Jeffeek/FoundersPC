@@ -40,7 +40,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
 
         #region Overrides of GenericRepositoryAsync<ApiAccessUserToken>
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override async Task<ApiAccessUserToken> GetByIdAsync(int id)
         {
             var tokenEntity = await Context.Set<ApiAccessUserToken>()

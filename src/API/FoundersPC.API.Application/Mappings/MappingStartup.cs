@@ -11,7 +11,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Mappings
 {
-    public class MappingStartup : Profile
+    internal class MappingStartup : Profile
     {
         public MappingStartup()
         {

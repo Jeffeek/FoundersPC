@@ -41,11 +41,11 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 
         [HttpGet("ById/{userId:int:min(1)}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int userId) =>
-            await _usersEntrancesService.GetAllUserEntrances(userId);
+            await _usersEntrancesService.GetAllUserEntrancesAsync(userId);
 
         [HttpGet("ByEmail/{userEmail}/Entrances")]
         public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] string userEmail) =>
-            await _usersEntrancesService.GetAllUserEntrances(userEmail);
+            await _usersEntrancesService.GetAllUserEntrancesAsync(userEmail);
 
         [HttpGet("Entrances")]
         public async Task<IPaginationResponse<UserEntranceLogReadDto>>

@@ -19,10 +19,10 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 
         public UnitOfWorkUsersIdentity(IUsersRepository usersRepository,
                                        IRolesRepository rolesRepository,
-                                       DbContext context,
                                        IAccessTokensLogsRepository accessTokensLogsRepository,
                                        IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
                                        IApiAccessUsersTokensRepository apiAccessUsersTokensRepository,
+                                       DbContext context,
                                        ILogger<UnitOfWorkUsersIdentity> logger)
         {
             _context = context;

@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿#region Using namespaces
+
+using System.Collections.Generic;
+
+#endregion
 
 namespace FoundersPC.RequestResponseShared.Response.Pagination
 {

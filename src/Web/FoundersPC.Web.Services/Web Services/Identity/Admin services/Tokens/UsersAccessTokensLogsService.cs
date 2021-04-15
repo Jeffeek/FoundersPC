@@ -80,7 +80,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
             return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs/User/ByEmail/{userEmail}");
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
@@ -94,7 +94,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
             return await client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs/Token/ById/{tokenId}");
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));

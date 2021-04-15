@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;

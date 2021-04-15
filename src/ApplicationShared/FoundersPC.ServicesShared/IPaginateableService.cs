@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.RequestResponseShared.Response.Pagination;

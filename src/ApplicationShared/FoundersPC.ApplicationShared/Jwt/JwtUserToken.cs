@@ -20,6 +20,13 @@ namespace FoundersPC.ApplicationShared.Jwt
 
         public string Role { get; init; }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="Key" /> is <see langword="null" />.</exception>
+        /// <exception cref="T:System.Text.EncoderFallbackException">A fallback occurred (for more information, see Character Encoding in .NET)
+        ///  -and-
+        ///  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+        /// <exception cref="T:System.ArgumentException">If 'expires' &lt;= 'notbefore'.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">The resulting <see cref="T:System.DateTime" /> is less than <see cref="F:System.DateTime.MinValue" /> or greater than <see cref="F:System.DateTime.MaxValue" />.</exception>
+        /// <exception cref="T:Microsoft.IdentityModel.Tokens.SecurityTokenEncryptionFailedException">both <see cref="P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.SigningCredentials" /> and <see cref="P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.InnerToken" /> are set.</exception>
         public string GetToken()
         {
             var claims = new List<Claim>

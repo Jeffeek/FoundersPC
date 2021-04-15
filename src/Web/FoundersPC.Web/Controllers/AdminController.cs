@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
@@ -39,7 +38,10 @@ namespace FoundersPC.Web.Controllers
 
             var indexModel = new IndexViewModel<UserEntityReadDto>
                              {
-                                 PagedList = new StaticPagedList<UserEntityReadDto>(paginationResponse.Items, pageNumber, FoundersPCConstants.PageSize, paginationResponse.TotalItemsCount),
+                                 PagedList = new StaticPagedList<UserEntityReadDto>(paginationResponse.Items,
+                                                                                    pageNumber,
+                                                                                    FoundersPCConstants.PageSize,
+                                                                                    paginationResponse.TotalItemsCount),
                                  IsPaginationNeeded = true
                              };
 
@@ -108,10 +110,13 @@ namespace FoundersPC.Web.Controllers
                             {
                                 BetweenFilter = new EntrancesBetweenFilter(),
                                 IsDatePickerRequired = true,
-                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>
                                              {
                                                  IsPaginationNeeded = true,
-                                                 PagedList = new StaticPagedList<UserEntranceLogReadDto>(paginationResponse.Items, pageNumber, FoundersPCConstants.PageSize, paginationResponse.TotalItemsCount)
+                                                 PagedList = new StaticPagedList<UserEntranceLogReadDto>(paginationResponse.Items,
+                                                                                                         pageNumber,
+                                                                                                         FoundersPCConstants.PageSize,
+                                                                                                         paginationResponse.TotalItemsCount)
                                              }
                             };
 
@@ -129,7 +134,7 @@ namespace FoundersPC.Web.Controllers
                             {
                                 BetweenFilter = null,
                                 IsDatePickerRequired = false,
-                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>
                                              {
                                                  IsPaginationNeeded = false,
                                                  PagedList = new StaticPagedList<UserEntranceLogReadDto>(entrances, 1, length, length)
@@ -154,11 +159,11 @@ namespace FoundersPC.Web.Controllers
 
             var length = entrances.Length == 0 ? 1 : entrances.Length;
 
-            var newViewModel = new EntrancesViewModel()
+            var newViewModel = new EntrancesViewModel
                                {
                                    BetweenFilter = viewModel.BetweenFilter,
                                    IsDatePickerRequired = false,
-                                   IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                   IndexModel = new IndexViewModel<UserEntranceLogReadDto>
                                                 {
                                                     PagedList = new StaticPagedList<UserEntranceLogReadDto>(entrances, 1, length, length),
                                                     IsPaginationNeeded = false
@@ -182,7 +187,10 @@ namespace FoundersPC.Web.Controllers
 
             var viewModel = new IndexViewModel<AccessTokenLogReadDto>
                             {
-                                PagedList = new StaticPagedList<AccessTokenLogReadDto>(logs.Items, pageNumber, FoundersPCConstants.PageSize, logs.TotalItemsCount),
+                                PagedList = new StaticPagedList<AccessTokenLogReadDto>(logs.Items,
+                                                                                       pageNumber,
+                                                                                       FoundersPCConstants.PageSize,
+                                                                                       logs.TotalItemsCount),
                                 IsPaginationNeeded = true
                             };
 
@@ -257,7 +265,10 @@ namespace FoundersPC.Web.Controllers
 
             var viewModel = new IndexViewModel<AccessUserTokenReadDto>
                             {
-                                PagedList = new StaticPagedList<AccessUserTokenReadDto>(tokens.Items, pageNumber, FoundersPCConstants.PageSize, tokens.TotalItemsCount),
+                                PagedList = new StaticPagedList<AccessUserTokenReadDto>(tokens.Items,
+                                                                                        pageNumber,
+                                                                                        FoundersPCConstants.PageSize,
+                                                                                        tokens.TotalItemsCount),
                                 IsPaginationNeeded = true
                             };
 

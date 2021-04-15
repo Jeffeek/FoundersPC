@@ -1,9 +1,9 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -12,16 +12,15 @@ using FoundersPC.RequestResponseShared.Response.Pagination;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
+#endregion
+
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 {
     public class UsersAccessTokensService : IUsersAccessTokensService
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        public UsersAccessTokensService(IHttpClientFactory clientFactory)
-        {
-            _clientFactory = clientFactory;
-        }
+        public UsersAccessTokensService(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
 
         public async Task<IEnumerable<AccessUserTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken)
         {

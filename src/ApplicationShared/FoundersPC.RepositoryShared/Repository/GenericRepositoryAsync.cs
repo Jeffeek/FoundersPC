@@ -36,6 +36,7 @@ namespace FoundersPC.RepositoryShared.Repository
             return entity;
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> is <see langword="null" />.</exception>
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             await Context.Set<T>()
@@ -45,14 +46,17 @@ namespace FoundersPC.RepositoryShared.Repository
                                 .ToListAsync();
         }
 
-        public virtual async Task<bool> AnyAsync(T entity) =>
-            await Context.Set<T>()
-                         .AnyAsync(x => x.Equals(entity));
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> or <paramref name="predicate" /> is <see langword="null" />.</exception>
+        public virtual Task<bool> AnyAsync(T entity) =>
+            Context.Set<T>()
+                   .AnyAsync(x => x.Equals(entity));
 
-        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) =>
-            await Context.Set<T>()
-                         .AnyAsync(predicate);
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> or <paramref name="predicate" /> is <see langword="null" />.</exception>
+        public virtual Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) =>
+            Context.Set<T>()
+                   .AnyAsync(predicate);
 
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter is <see langword="null" />.</exception>
         public virtual async Task<bool> UpdateAsync(T entity)
         {
             var entry = Context.Entry(entity);
@@ -66,6 +70,7 @@ namespace FoundersPC.RepositoryShared.Repository
             return true;
         }
 
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter is <see langword="null" />.</exception>
         public virtual async Task<bool> DeleteAsync(T entity)
         {
             var result = await Task.Run(() => Context.Set<T>()
@@ -74,6 +79,7 @@ namespace FoundersPC.RepositoryShared.Repository
             return result != null;
         }
 
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter is <see langword="null" />.</exception>
         public virtual async Task<bool> DeleteAsync(int id)
         {
             var entity = await GetByIdAsync(id);
@@ -84,19 +90,10 @@ namespace FoundersPC.RepositoryShared.Repository
             return await DeleteAsync(entity);
         }
 
-        [Obsolete]
-        public virtual async Task<IQueryable<T>> GetAllAsQueryable()
-        {
-            await Context.Set<T>()
-                         .LoadAsync();
-
-            return Context.Set<T>()
-                          .AsQueryable();
-        }
-
-        public virtual async Task<int> CountAsync() =>
-            await Context.Set<T>()
-                         .CountAsync();
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> is <see langword="null" />.</exception>
+        public virtual Task<int> CountAsync() =>
+            Context.Set<T>()
+                   .CountAsync();
 
         protected IQueryable<T> GetPaginateableInternal(int pageNumber = 1, int pageSize = 10) =>
             Context.Set<T>()

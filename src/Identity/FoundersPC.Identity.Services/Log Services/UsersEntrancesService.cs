@@ -57,11 +57,12 @@ namespace FoundersPC.Identity.Services.Log_Services
             return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(logs);
         }
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(int userId)
+        /// <exception cref="T:System.ArgumentOutOfRangeException">userId was below bounds</exception>
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesAsync(int userId)
         {
             if (userId < 1)
             {
-                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrances)}:{nameof(userId)} was less than 1");
+                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrancesAsync)}:{nameof(userId)} was less than 1");
 
                 throw new ArgumentOutOfRangeException(nameof(userId));
             }
@@ -71,11 +72,12 @@ namespace FoundersPC.Identity.Services.Log_Services
             return _mapper.Map<IEnumerable<UserEntranceLog>, IEnumerable<UserEntranceLogReadDto>>(userEntrances);
         }
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrances(string userEmail)
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="userEmail"/> is <see langword="null"/></exception>
+        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllUserEntrancesAsync(string userEmail)
         {
             if (userEmail is null)
             {
-                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrances)}:{nameof(userEmail)} was null");
+                _logger.LogError($"{nameof(UsersEntrancesService)}:{nameof(GetAllUserEntrancesAsync)}:{nameof(userEmail)} was null");
 
                 throw new ArgumentNullException(nameof(userEmail));
             }

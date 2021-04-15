@@ -21,6 +21,7 @@ namespace FoundersPC.Identity.Services.EmailServices
         private readonly EmailBotConfiguration _botConfiguration;
         private readonly ILogger<IEmailService> _logger;
 
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="port" /> cannot be less than zero.</exception>
         public EmailService(EmailBotConfiguration botConfiguration, ILogger<EmailService> logger)
         {
             _botConfiguration = botConfiguration;
@@ -39,6 +40,7 @@ namespace FoundersPC.Identity.Services.EmailServices
                                                      });
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="email"/> is <see langword="null"/></exception>
         public async Task<bool> SendToAsync(string email,
                                             string subject = "Unnamed",
                                             string content = "",
@@ -69,6 +71,7 @@ namespace FoundersPC.Identity.Services.EmailServices
             return false;
         }
 
+        /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
         public async Task<bool> SendToManyAsync(IEnumerable<string> emails,
                                                 string subject = "Unnamed",
                                                 string content = "",
@@ -89,21 +92,24 @@ namespace FoundersPC.Identity.Services.EmailServices
             return sendResults.All(x => x);
         }
 
-        public async Task<bool> SendEntranceNotificationAsync(string email)
+        /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
+        public Task<bool> SendEntranceNotificationAsync(string email)
         {
             var content = $"You've been entered to FoundersPC API at {DateTime.Now}";
 
-            return await SendToAsync(email, "Entrance", content);
+            return SendToAsync(email, "Entrance", content);
         }
 
-        public async Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
+        /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
+        public Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
         {
             var content =
                 $"Thanks for registration in our service!{(subject == null ? String.Empty : $"{Environment.NewLine}{subject}")}";
 
-            return await SendToAsync(email, "Registration Notification", content);
+            return SendToAsync(email, "Registration Notification", content);
         }
 
+        /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
         public Task<bool> SendAPIAccessTokenAsync(string email, string token)
         {
             var content =
@@ -112,26 +118,29 @@ namespace FoundersPC.Identity.Services.EmailServices
             return SendToAsync(email, "API Access Token", content);
         }
 
-        public async Task<bool> SendNewPasswordAsync(string email, string password)
+        /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
+        public Task<bool> SendNewPasswordAsync(string email, string password)
         {
             var content = $"Congrats! You've changed your password to {password}. Use it to get access to our site!";
 
-            return await SendToAsync(email, "Password Change", content);
+            return SendToAsync(email, "Password Change", content);
         }
 
-        public async Task<bool> SendBlockNotificationAsync(string email, string reason = null)
+        /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
+        public Task<bool> SendBlockNotificationAsync(string email, string reason = null)
         {
             var content =
                 $"You've banned in out service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
 
-            return await SendToAsync(email, "Your account was blocked", content);
+            return SendToAsync(email, "Your account was blocked", content);
         }
 
-        public async Task<bool> SendUnBlockNotificationAsync(string email, string reason = null)
+        /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
+        public Task<bool> SendUnBlockNotificationAsync(string email, string reason = null)
         {
-            var content = "You've UnBanned in out service.";
+            const string content = "You've UnBanned in our service.";
 
-            return await SendToAsync(email, "Your account was UNBLOCKED", content);
+            return SendToAsync(email, "Your account was UNBLOCKED", content);
         }
     }
 }

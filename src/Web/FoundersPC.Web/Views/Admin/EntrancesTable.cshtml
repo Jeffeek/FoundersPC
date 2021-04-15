@@ -1,5 +1,4 @@
 ﻿@using System.Globalization
-@using System
 @using PagedList.Core.Mvc
 @model FoundersPC.Web.Domain.Common.Entrances.EntrancesViewModel
 
@@ -10,10 +9,7 @@
     <link
         href='~/css/table.css'
         rel='stylesheet'>
-}
-
-
-}
+}}
 
 <div
     class='table-wrapper'>
@@ -93,13 +89,13 @@
         </table>
         @{
             if (Model.IndexModel.IsPaginationNeeded) {
-                <pager 
-                    class="pager-container d-flex justify-content-center"
-                    asp-action="EntrancesTable" 
+                <pager
+                    asp-action="EntrancesTable"
                     asp-controller="Admin"
-                    param-page-number='pageNumber'
-                    list="@Model.IndexModel.PagedList" 
-                    options="@PagedListRenderOptions.Bootstrap4Full" />
+                    class="d-flex justify-content-center pager-container"
+                    list="@Model.IndexModel.PagedList"
+                    options="@PagedListRenderOptions.Bootstrap4Full"
+                    param-page-number='pageNumber'/>
             }
         }
     </div>

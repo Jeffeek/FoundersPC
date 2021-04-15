@@ -2095,3 +2095,124 @@ Actual value was 0.
 04/15/2021 19:04:19 HTTP "GET" "/Admin/TokensLogsTable/ByTokenId/2" responded 200 in 50.7382 ms
 04/15/2021 19:04:27 HTTP "GET" "/" responded 200 in 0.8050 ms
 04/15/2021 19:04:35 Application is shutting down...
+04/15/2021 22:58:06 Web server started..
+04/15/2021 22:58:07 Web server HostBuilder created
+04/15/2021 22:58:07 Host built
+04/15/2021 23:00:11 Web server started..
+04/15/2021 23:00:11 Web server HostBuilder created
+04/15/2021 23:00:19 Host built
+04/15/2021 23:00:26 Now listening on: "https://localhost:9000"
+04/15/2021 23:00:26 Application started. Press Ctrl+C to shut down.
+04/15/2021 23:00:26 Hosting environment: "Development"
+04/15/2021 23:00:26 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/15/2021 23:00:40 HTTP "GET" "/" responded 200 in 5995.6843 ms
+04/15/2021 23:21:29 Web server started..
+04/15/2021 23:21:29 Web server HostBuilder created
+04/15/2021 23:21:29 Host built
+04/15/2021 23:21:30 Now listening on: "https://localhost:9000"
+04/15/2021 23:21:30 Application started. Press Ctrl+C to shut down.
+04/15/2021 23:21:30 Hosting environment: "Development"
+04/15/2021 23:21:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/15/2021 23:21:32 HTTP "GET" "/" responded 200 in 183.4755 ms
+04/15/2021 23:21:33 HTTP "GET" "/Authentication/SignIn" responded 200 in 241.1802 ms
+04/15/2021 23:21:35 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/15/2021 23:21:35 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/15/2021 23:21:37 Received HTTP response headers after 2152.1178ms - 200
+04/15/2021 23:21:37 End processing HTTP request after 2163.5111ms - 200
+04/15/2021 23:21:37 HTTP "POST" "/Authentication/SignIn" responded 302 in 2269.6253 ms
+04/15/2021 23:21:37 HTTP "GET" "/" responded 200 in 3.4736 ms
+04/15/2021 23:21:40 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/15/2021 23:21:40 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/15/2021 23:21:40 Received HTTP response headers after 230.8743ms - 200
+04/15/2021 23:21:40 End processing HTTP request after 233.1897ms - 200
+04/15/2021 23:21:40 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 340.5894 ms
+04/15/2021 23:21:44 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens/Logs?Page=1&Size=10
+04/15/2021 23:21:44 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens/Logs?Page=1&Size=10
+04/15/2021 23:21:44 Received HTTP response headers after 47.5954ms - 200
+04/15/2021 23:21:44 End processing HTTP request after 49.6685ms - 200
+04/15/2021 23:21:44 HTTP "GET" "/Admin/TokensLogsTable?pageNumber=1" responded 200 in 70.7133 ms
+04/15/2021 23:21:47 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/15/2021 23:21:47 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=1&Size=10
+04/15/2021 23:21:47 Received HTTP response headers after 33.2292ms - 200
+04/15/2021 23:21:47 End processing HTTP request after 35.4256ms - 200
+04/15/2021 23:21:47 HTTP "GET" "/Admin/EntrancesTable?pageNumber=1" responded 200 in 67.3378 ms
+04/15/2021 23:21:48 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/15/2021 23:21:48 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=6&Size=10
+04/15/2021 23:21:48 Received HTTP response headers after 17.2812ms - 200
+04/15/2021 23:21:48 End processing HTTP request after 20.4771ms - 200
+04/15/2021 23:21:48 HTTP "GET" "/Admin/EntrancesTable?pageNumber=6" responded 200 in 23.4355 ms
+04/15/2021 23:21:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/15/2021 23:21:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=7&Size=10
+04/15/2021 23:21:49 Received HTTP response headers after 6.9147ms - 200
+04/15/2021 23:21:49 End processing HTTP request after 9.4229ms - 200
+04/15/2021 23:21:49 HTTP "GET" "/Admin/EntrancesTable?pageNumber=7" responded 200 in 13.1756 ms
+04/15/2021 23:21:49 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/15/2021 23:21:49 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=9&Size=10
+04/15/2021 23:21:49 Received HTTP response headers after 7.4565ms - 200
+04/15/2021 23:21:49 End processing HTTP request after 10.7689ms - 200
+04/15/2021 23:21:49 HTTP "GET" "/Admin/EntrancesTable?pageNumber=9" responded 200 in 13.1956 ms
+04/15/2021 23:21:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/15/2021 23:21:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/Entrances?Page=12&Size=10
+04/15/2021 23:21:50 Received HTTP response headers after 6.0261ms - 200
+04/15/2021 23:21:50 End processing HTTP request after 8.2045ms - 200
+04/15/2021 23:21:50 HTTP "GET" "/Admin/EntrancesTable?pageNumber=12" responded 200 in 10.8363 ms
+04/15/2021 23:21:52 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/15/2021 23:21:52 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/15/2021 23:21:52 Received HTTP response headers after 25.6664ms - 200
+04/15/2021 23:21:52 End processing HTTP request after 27.8737ms - 200
+04/15/2021 23:21:52 HTTP "GET" "/Admin/TokensTable?pageNumber=1" responded 200 in 51.3701 ms
+04/15/2021 23:21:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/15/2021 23:21:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/15/2021 23:21:59 Received HTTP response headers after 32.7735ms - 200
+04/15/2021 23:21:59 End processing HTTP request after 35.2285ms - 200
+04/15/2021 23:21:59 HTTP "GET" "/Account" responded 200 in 80.4831 ms
+04/15/2021 23:22:03 HTTP "GET" "/Home/Pricing" responded 200 in 10.4982 ms
+04/15/2021 23:22:05 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/15/2021 23:22:05 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/15/2021 23:22:07 Received HTTP response headers after 1846.5801ms - 200
+04/15/2021 23:22:07 End processing HTTP request after 1848.6655ms - 200
+04/15/2021 23:22:07 HTTP "GET" "/Pricing/Buy/Low" responded 302 in 1863.4197 ms
+04/15/2021 23:22:07 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/15/2021 23:22:07 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/15/2021 23:22:07 Received HTTP response headers after 9.6568ms - 200
+04/15/2021 23:22:07 End processing HTTP request after 11.7696ms - 200
+04/15/2021 23:22:07 HTTP "GET" "/Account" responded 200 in 15.8721 ms
+04/15/2021 23:22:26 HTTP "GET" "/Home/Pricing" responded 200 in 2.1747 ms
+04/15/2021 23:22:29 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/15/2021 23:22:29 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/15/2021 23:22:29 Received HTTP response headers after 864.7285ms - 200
+04/15/2021 23:22:29 End processing HTTP request after 866.9287ms - 200
+04/15/2021 23:22:29 HTTP "GET" "/Pricing/Buy/Unstoppable" responded 302 in 869.6983 ms
+04/15/2021 23:22:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/15/2021 23:22:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/ilyushin_misha@mail.ru
+04/15/2021 23:22:29 Received HTTP response headers after 7.5606ms - 200
+04/15/2021 23:22:29 End processing HTTP request after 10.9609ms - 200
+04/15/2021 23:22:29 HTTP "GET" "/Account" responded 200 in 18.1307 ms
+04/15/2021 23:22:44 HTTP "GET" "/Home/Privacy" responded 200 in 8.6303 ms
+04/15/2021 23:22:52 HTTP "GET" "/" responded 200 in 0.6967 ms
+04/15/2021 23:22:55 HTTP "GET" "/Home/Pricing" responded 200 in 0.6358 ms
+04/15/2021 23:23:01 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.6196 ms
+04/15/2021 23:23:01 HTTP "GET" "/" responded 200 in 0.5181 ms
+04/15/2021 23:23:02 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.3506 ms
+04/15/2021 23:23:07 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/15/2021 23:23:07 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/15/2021 23:23:07 Received HTTP response headers after 29.297ms - 200
+04/15/2021 23:23:07 End processing HTTP request after 31.6024ms - 200
+04/15/2021 23:23:07 HTTP "POST" "/Authentication/SignIn" responded 302 in 35.1771 ms
+04/15/2021 23:23:07 HTTP "GET" "/" responded 200 in 1.0393 ms
+04/15/2021 23:23:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com
+04/15/2021 23:23:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com
+04/15/2021 23:23:15 Received HTTP response headers after 11.1451ms - 200
+04/15/2021 23:23:15 End processing HTTP request after 14.0406ms - 200
+04/15/2021 23:23:15 HTTP "GET" "/Account" responded 200 in 17.5998 ms
+04/15/2021 23:23:20 HTTP "GET" "/Home/Pricing" responded 200 in 0.6726 ms
+04/15/2021 23:23:23 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/15/2021 23:23:23 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/15/2021 23:23:24 Received HTTP response headers after 854.2006ms - 200
+04/15/2021 23:23:24 End processing HTTP request after 857.107ms - 200
+04/15/2021 23:23:24 HTTP "GET" "/Pricing/Buy/Unstoppable" responded 302 in 860.8642 ms
+04/15/2021 23:23:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com
+04/15/2021 23:23:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ByEmail/mishamine26@gmail.com
+04/15/2021 23:23:24 Received HTTP response headers after 10.1675ms - 200
+04/15/2021 23:23:24 End processing HTTP request after 13.3476ms - 200
+04/15/2021 23:23:24 HTTP "GET" "/Account" responded 200 in 19.1671 ms

@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using System.Collections.Generic;
 using PagedList.Core;
 
 #endregion
