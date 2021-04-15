@@ -71,7 +71,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
                 throw new ArgumentNullException(nameof(token));
             }
 
-            using var client = _httpClientFactory.CreateClient("Change password client");
+            var client = _httpClientFactory.CreateClient("Change password client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
@@ -112,7 +112,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
                 throw new ArgumentNullException(nameof(token));
             }
 
-            using var client = _httpClientFactory.CreateClient("Change password client");
+            var client = _httpClientFactory.CreateClient("Change password client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,
@@ -145,7 +145,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
                 throw new ArgumentNullException(nameof(token));
             }
 
-            using var client = _httpClientFactory.CreateClient("Change password client");
+            var client = _httpClientFactory.CreateClient("Change password client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         token,

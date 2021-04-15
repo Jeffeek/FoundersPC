@@ -94,6 +94,10 @@ namespace FoundersPC.RepositoryShared.Repository
                           .AsQueryable();
         }
 
+        public virtual async Task<int> CountAsync() =>
+            await Context.Set<T>()
+                         .CountAsync();
+
         protected IQueryable<T> GetPaginateableInternal(int pageNumber = 1, int pageSize = 10) =>
             Context.Set<T>()
                    .Paginate(pageNumber, pageSize);

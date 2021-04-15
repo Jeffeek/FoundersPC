@@ -6,7 +6,7 @@ using System;
 
 namespace FoundersPC.Identity.Dto
 {
-    public class ApiAccessUserTokenReadDto
+    public class AccessUserTokenReadDto
     {
         public int Id { get; set; }
 

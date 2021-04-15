@@ -2,19 +2,19 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 #endregion
 
-namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
+namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 {
     public class UsersInformationService : IUsersInformationService
     {
@@ -27,7 +27,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             if (id < 1)
                 return null;
 
-            using var client = _httpClientFactory.CreateClient("User by id client");
+            var client = _httpClientFactory.CreateClient();
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -43,7 +43,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
             if (email is null)
                 throw new ArgumentNullException(nameof(email));
 
-            using var client = _httpClientFactory.CreateClient("User by email client");
+            var client = _httpClientFactory.CreateClient("User by email client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -56,7 +56,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
         public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken)
         {
-            using var client = _httpClientFactory.CreateClient("UsersTable client");
+            var client = _httpClientFactory.CreateClient("UsersTable client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -68,18 +68,18 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber,
-                                                                                    int pageSize,
-                                                                                    string adminToken)
+        public async Task<IPaginationResponse<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber,
+                                                                                            int pageSize,
+                                                                                            string adminToken)
         {
             if (pageNumber <= 0
                 || pageSize <= 0)
-                return Enumerable.Empty<UserEntityReadDto>();
+                throw new ArgumentOutOfRangeException();
 
             if (adminToken is null)
                 throw new ArgumentNullException(nameof(adminToken));
 
-            using var client = _httpClientFactory.CreateClient("Get users");
+            var client = _httpClientFactory.CreateClient("Get users");
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,
@@ -87,7 +87,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             var result =
                 await client
-                    .GetFromJsonAsync<IEnumerable<UserEntityReadDto>>($"Users?Page={pageNumber}&Size={pageSize}");
+                    .GetFromJsonAsync<PaginationResponse<UserEntityReadDto>>($"Users?Page={pageNumber}&Size={pageSize}");
 
             return result;
         }

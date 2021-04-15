@@ -1,4 +1,5 @@
-﻿@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.ApiAccessUserTokenReadDto>
+﻿@using PagedList.Core.Mvc
+@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.AccessUserTokenReadDto>
 
 @{
     ViewBag.Title = "title";
@@ -25,7 +26,7 @@
             </thead>
             <tbody>
                 @{
-                    foreach (var token in Model.Models)
+                    foreach (var token in Model.PagedList)
                     {
                         <tr class=@if (!token.IsActive) { @Html.Raw("text-danger") }>
                             <th>@token.Id</th>
@@ -72,26 +73,14 @@
                                             viewBox="0 0 30 30"
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            @if (!token.IsBlocked) {
-                                                <path
+                                            <path
                                                     d="M15 4A11 11 0 1 0 15 26 11 11 0 1 0 15 4zM7.222 7.222L22.778 22.778"
                                                     fill="none"
                                                     stroke="#FFFFFF"
                                                     stroke-linecap="round"
                                                     stroke-linejoin="round"
                                                     stroke-width="2"/>
-                                            } else {
-                                                <path
-                                                    d="M12 1L12 2M17 3L16 4M7 3L8 4"
-                                                    fill="none"
-                                                    stroke="#FFFFFF"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"/>
-                                                <path
-                                                    d="M25.688,16.911c-0.63-0.874-1.856-0.947-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l4.718-4.718c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218L11.004,14.397c0,0-1.755-3.303-2.635-4.184C6.834,8.679,4.484,8.547,3.701,9.33L3.286,9.745c-0.366,0.366-0.366,0.958,0,1.324l2.113,2.113l1.152,4.843c0.31,1.301,0.974,2.491,1.92,3.437l4.243,4.243c1.706,1.706,4.471,1.706,6.177,0l1.214-1.214l0,0l5.335-5.335C26.037,18.559,26.182,17.596,25.688,16.911z"
-                                                    fill="#FFFFFF"/>
-                                            }
+
                                         </svg>
                                     </a>
                                     <a asp-action='TokenLogs'
@@ -127,28 +116,12 @@
         @{
             if (Model.IsPaginationNeeded)
             {
-                <nav>
-                    <ul class="justify-content-center pagination">
-                        <li class="page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))">
-                            <a aria-disabled='@(!Model.Page.HasPreviousPage)'
-                               asp-action='TokensTable'
-                               asp-controller='Admin'
-                               asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
-                               class="bg-light page-link">
-                                Previous
-                            </a>
-                        </li>
-                        <li class="page-item @(Html.Raw(Model.Page.HasNextPage ? String.Empty : "disabled"))">
-                            <a aria-disabled='@(!Model.Page.HasNextPage)'
-                               asp-action='TokensTable'
-                               asp-controller='Admin'
-                               asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
-                               class="bg-light page-link">
-                                Next
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <pager class="pager-container d-flex justify-content-center"
+                       asp-action="TokensTable"
+                       asp-controller="Admin"
+                       param-page-number='pageNumber'
+                       list="@Model.PagedList"
+                       options="@PagedListRenderOptions.Bootstrap4Full" />
             }
         }
     </div>

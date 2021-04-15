@@ -9,6 +9,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -85,10 +86,15 @@ namespace FoundersPC.Identity.Services.Log_Services
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableAsync(int pageNumber, int pageSize) =>
-            _mapper.Map<IEnumerable<UserEntranceLog>,
-                IEnumerable<UserEntranceLogReadDto>
-            >(await _unitOfWork.UsersEntrancesLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
+        public async Task<IPaginationResponse<UserEntranceLogReadDto>> GetPaginateableAsync(int pageNumber, int pageSize)
+        {
+            var items = _mapper.Map<IEnumerable<UserEntranceLog>,
+                IEnumerable<UserEntranceLogReadDto>>(await _unitOfWork.UsersEntrancesLogsRepository.GetPaginateableAsync(pageNumber, pageSize));
+
+            var totalItemsCount = await _unitOfWork.UsersEntrancesLogsRepository.CountAsync();
+
+            return new PaginationResponse<UserEntranceLogReadDto>(items, totalItemsCount);
+        }
 
         public async Task<bool> LogAsync(int userId)
         {

@@ -8,6 +8,7 @@ using AutoMapper;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,7 +48,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             await _usersEntrancesService.GetAllUserEntrances(userEmail);
 
         [HttpGet("Entrances")]
-        public async Task<IEnumerable<UserEntranceLogReadDto>>
+        public async Task<IPaginationResponse<UserEntranceLogReadDto>>
             GetPaginateableUserEntrances([FromQuery(Name = "Page")] int pageNumber = 1,
                                          [FromQuery(Name = "Size")] int pageSize = 10) =>
             await _usersEntrancesService.GetPaginateableAsync(pageNumber, pageSize);

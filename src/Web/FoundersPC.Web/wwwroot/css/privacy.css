@@ -1,12 +1,12 @@
 ﻿.icon-alien path
 {
     fill: white;
-    transition: 2s ease-in-out;
 }
 
 .icon-alien:hover path
 {
-    animation: alien-animation 2s infinite;
+    animation: alien-animation 0.2s infinite;
+    animation-direction: alternate;
 }
 
 @keyframes alien-animation
@@ -16,9 +16,18 @@
         fill: white;
     }
 
+    16% {
+        fill: #FFFD84;
+    }
+
     33%
     {
         fill: yellow;
+    }
+
+    42% 
+    {
+        fill: #FFD039
     }
 
     50%
@@ -26,9 +35,19 @@
         fill: orange;
     }
 
+    60% 
+    {
+        fill: #FF7C00
+    }
+
     76%
     {
         fill: orangered;
+    }
+
+    87% 
+    {
+        fill: #A43900;
     }
 
     100%

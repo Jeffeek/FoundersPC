@@ -11,6 +11,7 @@ using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -147,11 +148,17 @@ namespace FoundersPC.Identity.Services.Log_Services
         #region Implementation of IPaginateableService<AccessTokenLogReadDto>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAsync(int pageNumber = 1,
-                                                                                   int pageSize = FoundersPCConstants.PageSize) =>
-            _mapper.Map<IEnumerable<AccessTokenLog>,
+        public async Task<IPaginationResponse<AccessTokenLogReadDto>> GetPaginateableAsync(int pageNumber = 1,
+                                                                                           int pageSize = FoundersPCConstants.PageSize)
+        {
+            var items = _mapper.Map<IEnumerable<AccessTokenLog>,
                 IEnumerable<AccessTokenLogReadDto>>(await _unitOfWork.AccessTokensLogsRepository
                                                                      .GetPaginateableAsync(pageNumber, pageSize));
+
+            var totalItemsCount = await _unitOfWork.AccessTokensLogsRepository.CountAsync();
+
+            return new PaginationResponse<AccessTokenLogReadDto>(items, totalItemsCount);
+        }
 
         #endregion
     }

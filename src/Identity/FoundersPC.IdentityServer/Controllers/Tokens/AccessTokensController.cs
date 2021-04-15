@@ -7,6 +7,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.Request.Tokens;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using FoundersPC.RequestResponseShared.Response.Tokens;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -21,21 +22,21 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
     [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
     public class AccessTokensController : Controller
     {
-        private readonly IApiAccessTokensReservationService _accessTokensReservationService;
-        private readonly IApiAccessUsersTokensService _apiAccessUsersTokensService;
+        private readonly IAccessTokensReservationService _accessTokensReservationService;
+        private readonly IAccessUsersTokensService _accessUsersTokensService;
 
-        public AccessTokensController(IApiAccessUsersTokensService apiAccessUsersTokensService,
-                                      IApiAccessTokensReservationService accessTokensReservationService)
+        public AccessTokensController(IAccessUsersTokensService accessUsersTokensService,
+                                      IAccessTokensReservationService accessTokensReservationService)
         {
-            _apiAccessUsersTokensService = apiAccessUsersTokensService;
+            _accessUsersTokensService = accessUsersTokensService;
             _accessTokensReservationService = accessTokensReservationService;
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("User/{email}")]
-        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
+        public async Task<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
         {
-            var tokens = await _apiAccessUsersTokensService.GetUserTokensAsync(email);
+            var tokens = await _accessUsersTokensService.GetUserTokensAsync(email);
 
             if (tokens is null)
                 return BadRequest(new
@@ -48,9 +49,9 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("User/{id:int:min(1)}")]
-        public async Task<ActionResult<IEnumerable<ApiAccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
+        public async Task<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
         {
-            var tokens = await _apiAccessUsersTokensService.GetUserTokensAsync(id);
+            var tokens = await _accessUsersTokensService.GetUserTokensAsync(id);
 
             if (tokens is null)
                 return BadRequest(new
@@ -89,7 +90,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         [HttpPut("Block/ById/{tokenId:int:min(1)}")]
         public async Task<ActionResult> BlockTokenByTokenId([FromRoute] int tokenId)
         {
-            var tokenBlockingResult = await _apiAccessUsersTokensService.BlockAsync(tokenId);
+            var tokenBlockingResult = await _accessUsersTokensService.BlockAsync(tokenId);
 
             if (tokenBlockingResult)
                 return Ok();
@@ -101,7 +102,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         [HttpPut("Block/ByToken/{token:length(64)}")]
         public async Task<ActionResult> BlockTokenByTokenString([FromRoute] int token)
         {
-            var tokenBlockingResult = await _apiAccessUsersTokensService.BlockAsync(token);
+            var tokenBlockingResult = await _accessUsersTokensService.BlockAsync(token);
 
             if (tokenBlockingResult)
                 return Ok();
@@ -111,14 +112,14 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetPaginateableTokens([FromQuery(Name = "Page")] int pageNumber,
-                                                                                        [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize) =>
-            await _apiAccessUsersTokensService.GetPaginateableAsync(pageNumber, pageSize);
+        public async Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokens([FromQuery(Name = "Page")] int pageNumber,
+                                                                                                [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize) =>
+            await _accessUsersTokensService.GetPaginateableAsync(pageNumber, pageSize);
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet("All")]
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetAll() =>
-            await _apiAccessUsersTokensService.GetAllTokensAsync();
+        public async Task<IEnumerable<AccessUserTokenReadDto>> GetAll() =>
+            await _accessUsersTokensService.GetAllTokensAsync();
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [AllowAnonymous]
@@ -130,7 +131,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
                 || token.Length != 64)
                 return BadRequest();
 
-            var checkTokenResult = await _apiAccessUsersTokensService.CanMakeRequestAsync(token);
+            var checkTokenResult = await _accessUsersTokensService.CanMakeRequestAsync(token);
 
             if (!checkTokenResult)
                 return Forbid();

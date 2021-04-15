@@ -8,6 +8,7 @@ using FoundersPC.API.Domain.Entities.VideoCard;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 
 #endregion
 
@@ -27,11 +28,17 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
         #region Implementation of IPaginateableService<VideoCardCoreReadDto>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<VideoCardCoreReadDto>>
-            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
-            _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                             .VideoCardCoresRepository
-                                                                                             .GetPaginateableAsync(pageNumber, pageSize));
+        public async Task<IPaginationResponse<VideoCardCoreReadDto>>
+            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
+        {
+            var items = _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
+                                                                                                         .VideoCardCoresRepository
+                                                                                                         .GetPaginateableAsync(pageNumber, pageSize));
+
+            var totalItemsCount = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.CountAsync();
+
+            return new PaginationResponse<VideoCardCoreReadDto>(items,totalItemsCount);
+        }
 
         #endregion
 

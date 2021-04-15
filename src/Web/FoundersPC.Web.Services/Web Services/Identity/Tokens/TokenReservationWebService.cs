@@ -29,7 +29,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
             if (userJwtToken is null)
                 throw new ArgumentNullException(nameof(userJwtToken));
 
-            using var client = _httpClientFactory.CreateClient("New api access token reservation client");
+            var client = _httpClientFactory.CreateClient("New api access token reservation client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         userJwtToken,

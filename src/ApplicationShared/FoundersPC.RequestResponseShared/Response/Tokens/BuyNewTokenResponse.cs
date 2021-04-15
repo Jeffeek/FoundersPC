@@ -10,6 +10,6 @@ namespace FoundersPC.RequestResponseShared.Response.Tokens
     {
         public bool IsBuyingSuccessful { get; set; } = false;
 
-        public ApiAccessUserTokenReadDto Token { get; set; } = null;
+        public AccessUserTokenReadDto Token { get; set; } = null;
     }
 }

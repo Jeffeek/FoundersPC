@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -37,7 +38,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 throw new ArgumentNullException(nameof(adminToken));
             }
 
-            using var client = _httpClientFactory.CreateClient("Get all users entrances client");
+            var client = _httpClientFactory.CreateClient("Get all users entrances client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -49,9 +50,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(int pageNumber,
-                                                                                             int pageSize,
-                                                                                             string adminToken)
+        public async Task<IPaginationResponse<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(int pageNumber,
+                                                                                                     int pageSize,
+                                                                                                     string adminToken)
         {
             if (pageNumber <= 0)
                 throw new ArgumentOutOfRangeException(nameof(pageNumber));
@@ -59,7 +60,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             if (pageSize <= 0)
                 throw new ArgumentOutOfRangeException(nameof(pageSize));
 
-            using var client = _httpClientFactory.CreateClient("Get users entrances client by paging");
+            var client = _httpClientFactory.CreateClient("Get users entrances client by paging");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -67,8 +68,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
             var responseMessage =
                 await client
-                    .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
-                    >($"Entrances?Page={pageNumber}&Size={pageSize}");
+                    .GetFromJsonAsync<PaginationResponse<UserEntranceLogReadDto>>($"Entrances?Page={pageNumber}&Size={pageSize}");
 
             return responseMessage;
         }
@@ -82,7 +82,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 throw new ArgumentNullException(nameof(adminToken));
             }
 
-            using var client = _httpClientFactory.CreateClient($"Get user entrance with id = {id} client");
+            var client = _httpClientFactory.CreateClient($"Get user entrance with id = {id} client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -111,7 +111,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 throw new ArgumentNullException(nameof(adminToken));
             }
 
-            using var client = _httpClientFactory.CreateClient("Get users entrances between");
+            var client = _httpClientFactory.CreateClient("Get users entrances between");
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,
@@ -136,7 +136,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 throw new ArgumentNullException(nameof(adminToken));
             }
 
-            using var client = _httpClientFactory.CreateClient($"Get all user entrances with id = {userId} client");
+            var client = _httpClientFactory.CreateClient($"Get all user entrances with id = {userId} client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -158,7 +158,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 throw new ArgumentNullException(nameof(adminToken));
             }
 
-            using var client =
+            var client =
                 _httpClientFactory.CreateClient($"Get all user entrances with email = {userEmail} client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,

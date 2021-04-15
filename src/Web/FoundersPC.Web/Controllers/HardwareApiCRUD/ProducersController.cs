@@ -12,6 +12,7 @@ using FoundersPC.Web.Domain.Common;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PagedList.Core;
 
 #endregion
 
@@ -58,16 +59,11 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet("Table")]
         public async Task<ActionResult> Table([FromQuery] int pageNumber = 1)
         {
-            var producers = (await _producersManagingService.GetPaginateableProducersAsync(pageNumber,
-                                                                                           FoundersPCConstants.PageSize,
-                                                                                           HttpContext.GetJwtTokenFromCookie())).ToArray();
+            var producers = await _producersManagingService.GetPaginateableProducersAsync(pageNumber,
+                                                                                          FoundersPCConstants.PageSize,
+                                                                                          HttpContext.GetJwtTokenFromCookie());
 
-            var indexModel = new IndexViewModel<ProducerReadDto>
-                             {
-                                 Models = producers,
-                                 Page = new PageViewModel(pageNumber,
-                                                          producers.Length == FoundersPCConstants.PageSize)
-                             };
+            var indexModel = new IndexViewModel<ProducerReadDto>();
 
             return View("Table", indexModel);
         }

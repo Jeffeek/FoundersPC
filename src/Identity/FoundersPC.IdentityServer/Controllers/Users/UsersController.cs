@@ -8,6 +8,7 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -72,12 +73,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
-        public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                            [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
-        {
-            var takenUsers = await _usersInformationService.GetPaginateableAsync(pageNumber, pageSize);
-
-            return takenUsers;
-        }
+        public async Task<IPaginationResponse<UserEntityReadDto>> Get([FromQuery(Name = "Page")] int pageNumber = 1,
+                                                                      [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize) =>
+            await _usersInformationService.GetPaginateableAsync(pageNumber, pageSize);
     }
 }

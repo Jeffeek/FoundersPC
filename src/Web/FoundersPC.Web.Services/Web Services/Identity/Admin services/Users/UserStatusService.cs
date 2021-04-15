@@ -40,7 +40,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Block user client");
+            var client = _clientFactory.CreateClient("Block user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -88,7 +88,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Block user client");
+            var client = _clientFactory.CreateClient("Block user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -136,7 +136,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Unblock user client");
+            var client = _clientFactory.CreateClient("Unblock user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -184,7 +184,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Unblock user client");
+            var client = _clientFactory.CreateClient("Unblock user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -228,7 +228,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             if (id < 1)
                 return false;
 
-            using var client = _clientFactory.CreateClient("Make user inactive client");
+            var client = _clientFactory.CreateClient("Make user inactive client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -271,7 +271,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             if (email is null)
                 return false;
 
-            using var client = _clientFactory.CreateClient("Make user inactive client");
+            var client = _clientFactory.CreateClient("Make user inactive client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,

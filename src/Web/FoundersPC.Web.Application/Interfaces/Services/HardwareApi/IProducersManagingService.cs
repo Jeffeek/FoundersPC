@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 
 #endregion
 
@@ -20,8 +21,8 @@ namespace FoundersPC.Web.Application.Interfaces.Services.HardwareApi
 
         Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken);
 
-        Task<IEnumerable<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
-                                                                         int pageSize,
-                                                                         string managerToken);
+        Task<IPaginationResponse<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
+                                                                                 int pageSize,
+                                                                                 string managerToken);
     }
 }

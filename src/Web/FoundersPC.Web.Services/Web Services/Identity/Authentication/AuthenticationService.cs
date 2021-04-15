@@ -71,7 +71,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                 throw new ArgumentNullException(nameof(model.RawPassword));
             }
 
-            using var client = _httpClientFactory.CreateClient("Sign In client");
+            var client = _httpClientFactory.CreateClient("Sign In client");
             client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
@@ -129,7 +129,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                 throw new ArgumentNullException(nameof(model.RawPassword));
             }
 
-            using var client = _httpClientFactory.CreateClient("Sign Up client");
+            var client = _httpClientFactory.CreateClient("Sign Up client");
             client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
@@ -179,7 +179,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                 throw new ArgumentNullException(nameof(model.Email));
             }
 
-            using var client = _httpClientFactory.CreateClient("Forgot password client");
+            var client = _httpClientFactory.CreateClient("Forgot password client");
             client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
 
             var mappedRequestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);

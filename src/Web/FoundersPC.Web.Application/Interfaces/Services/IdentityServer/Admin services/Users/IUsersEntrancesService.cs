@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 
 #endregion
 
@@ -25,9 +26,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="adminToken">JWT token</param>
         /// <param name="pageNumber">Page to load</param>
         /// <returns>Entrances</returns>
-        Task<IEnumerable<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(int pageNumber,
-                                                                                int pageSize,
-                                                                                string adminToken);
+        Task<IPaginationResponse<UserEntranceLogReadDto>> GetPaginateableEntrancesAsync(int pageNumber,
+                                                                                        int pageSize,
+                                                                                        string adminToken);
 
         /// <summary>
         ///     Gets entrance by id

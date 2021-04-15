@@ -10,6 +10,7 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Log_Services
 {
+    // TODO ISP maybe..
     public interface IAccessTokensLogsService : IPaginateableService<AccessTokenLogReadDto>
     {
         Task<IEnumerable<AccessTokenLogReadDto>> GetAllTokensLogsAsync();

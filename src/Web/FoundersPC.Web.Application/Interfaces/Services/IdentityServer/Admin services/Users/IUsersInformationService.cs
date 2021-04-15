@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 
 #endregion
 
@@ -40,6 +41,6 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         /// <param name="pageSize">Max entities to show</param>
         /// <param name="adminToken">JWT token</param>
         /// <returns></returns>
-        Task<IEnumerable<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken);
+        Task<IPaginationResponse<UserEntityReadDto>> GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken);
     }
 }

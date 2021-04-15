@@ -8,6 +8,7 @@ using FoundersPC.API.Domain.Entities.Processor;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 
 #endregion
 
@@ -84,10 +85,15 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
         #region Implementation of IPaginateableService<CPUReadDto>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<CPUReadDto>>
-            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
-            _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWorkHardwareAPI.ProcessorsRepository
-                                                                                               .GetPaginateableAsync(pageNumber, pageSize));
+        public async Task<IPaginationResponse<CPUReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
+        {
+            var items = _mapper.Map<IEnumerable<CPU>, IEnumerable<CPUReadDto>>(await _unitOfWorkHardwareAPI.ProcessorsRepository
+                                                                                   .GetPaginateableAsync(pageNumber, pageSize));
+
+            var totalItemsCount = await _unitOfWorkHardwareAPI.ProcessorsRepository.CountAsync();
+
+            return new PaginationResponse<CPUReadDto>(items, totalItemsCount);
+        }
 
         #endregion
     }

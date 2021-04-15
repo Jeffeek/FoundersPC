@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -37,7 +38,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(managerToken));
             }
 
-            using var client = _clientFactory.CreateClient("Producers getter client");
+            var client = _clientFactory.CreateClient("Producers getter client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
@@ -64,7 +65,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(id));
             }
 
-            using var client = _clientFactory.CreateClient("Producer getter client");
+            var client = _clientFactory.CreateClient("Producer getter client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
@@ -98,7 +99,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(managerToken));
             }
 
-            using var client = _clientFactory.CreateClient("Update producer client");
+            var client = _clientFactory.CreateClient("Update producer client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
@@ -125,7 +126,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(managerToken));
             }
 
-            using var client = _clientFactory.CreateClient("Delete producer client");
+            var client = _clientFactory.CreateClient("Delete producer client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
@@ -152,7 +153,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(managerToken));
             }
 
-            using var client = _clientFactory.CreateClient("Create producer client");
+            var client = _clientFactory.CreateClient("Create producer client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
@@ -164,9 +165,9 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
-                                                                                      int pageSize,
-                                                                                      string managerToken)
+        public async Task<IPaginationResponse<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
+                                                                                              int pageSize,
+                                                                                              string managerToken)
         {
             if (managerToken is null)
             {
@@ -175,7 +176,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(managerToken));
             }
 
-            using var client = _clientFactory.CreateClient("Producers getter client");
+            var client = _clientFactory.CreateClient("Producers getter client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         managerToken,
@@ -183,7 +184,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
             var responseMessage =
                 await client
-                    .GetFromJsonAsync<IEnumerable<ProducerReadDto>>($"Producers?Page={pageNumber}&Size={pageSize}");
+                    .GetFromJsonAsync<IPaginationResponse<ProducerReadDto>>($"Producers?Page={pageNumber}&Size={pageSize}");
 
             return responseMessage;
         }

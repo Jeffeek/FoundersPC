@@ -8,10 +8,10 @@ using FoundersPC.RequestResponseShared.Request.Tokens;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 {
-    public interface IApiAccessTokensReservationService
+    public interface IAccessTokensReservationService
     {
-        Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type);
+        Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type);
 
-        Task<ApiAccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type);
+        Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type);
     }
 }

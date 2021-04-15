@@ -1,4 +1,5 @@
-﻿@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.AccessTokenLogReadDto>
+﻿@using PagedList.Core.Mvc
+@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.AccessTokenLogReadDto>
 
 @{
     ViewBag.Title = "title";
@@ -26,7 +27,7 @@
             </thead>
             <tbody>
                 @{
-                    foreach (var log in Model.Models)
+                    foreach (var log in Model.PagedList)
                     {
                         <tr>
                             <th>@log.Id</th>
@@ -41,28 +42,12 @@
         @{
             if (Model.IsPaginationNeeded)
             {
-                <nav>
-                    <ul class="justify-content-center pagination">
-                        <li class="page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))">
-                            <a aria-disabled='@(!Model.Page.HasPreviousPage)'
-                               asp-action='TokensLogsTable'
-                               asp-controller='Admin'
-                               asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
-                               class="bg-light page-link">
-                                Previous
-                            </a>
-                        </li>
-                        <li class="page-item @(Html.Raw(Model.Page.HasNextPage ? String.Empty : "disabled"))">
-                            <a aria-disabled='@(!Model.Page.HasNextPage)'
-                               asp-action='TokensLogsTable'
-                               asp-controller='Admin'
-                               asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
-                               class="bg-light page-link">
-                                Next
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <pager class="pager-container d-flex justify-content-center"
+                       asp-action="TokensLogsTable"
+                       asp-controller="Admin"
+                       param-page-number='pageNumber'
+                       list="@Model.PagedList"
+                       options="@PagedListRenderOptions.Bootstrap4Full" />
             }
         }
     </div>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,8 +26,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAll() => await _accessTokensLogsService.GetAllTokensLogsAsync();
 
         [HttpGet]
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableLogs([FromQuery(Name = "Page")] int pageNumber,
-                                                                                  [FromQuery(Name = "Size")] int pageSize) =>
+        public async Task<IPaginationResponse<AccessTokenLogReadDto>> GetPaginateableLogs([FromQuery(Name = "Page")] int pageNumber,
+                                                                                          [FromQuery(Name = "Size")] int pageSize) =>
             await _accessTokensLogsService.GetPaginateableAsync(pageNumber, pageSize);
 
         [HttpGet("Token/ById/{tokenId:int:min(1)}")]

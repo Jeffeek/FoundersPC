@@ -60,8 +60,6 @@ namespace FoundersPC.API
             //
             services.AddValidators();
 
-            // todo убрать жвт. нахер он тут? данный апп вообще должен зависеть только от одного: РЕКВЕСТ ТОКЕН, НЕ ЖВТ
-            // для роли, чел..
             services.AddJwtSettings(Configuration);
             services.AddBearerAuthenticationWithSettings();
 

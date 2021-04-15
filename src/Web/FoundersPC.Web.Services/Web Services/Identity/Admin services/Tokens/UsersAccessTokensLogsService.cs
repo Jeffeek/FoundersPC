@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -25,7 +26,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
-            using var client = _clientFactory.CreateClient();
+            var client = _clientFactory.CreateClient();
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,
@@ -35,20 +36,20 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(int pageNumber,
-                                                                                                   int pageSize,
-                                                                                                   string adminToken)
+        public async Task<IPaginationResponse<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(int pageNumber,
+            int pageSize,
+            string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
-            using var client = _clientFactory.CreateClient();
+            var client = _clientFactory.CreateClient();
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,
                                                     $"{MicroservicesUrls.IdentityServer}Tokens/");
 
             return await client
-                       .GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"Logs?Page={pageNumber}&Size={pageSize}");
+                       .GetFromJsonAsync<PaginationResponse<AccessTokenLogReadDto>>($"Logs?Page={pageNumber}&Size={pageSize}");
         }
 
         public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserIdAsync(int userId,
@@ -56,7 +57,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
-            using var client = _clientFactory.CreateClient();
+            var client = _clientFactory.CreateClient();
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,
@@ -70,7 +71,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
-            using var client = _clientFactory.CreateClient();
+            var client = _clientFactory.CreateClient();
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,
@@ -84,7 +85,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
-            using var client = _clientFactory.CreateClient();
+            var client = _clientFactory.CreateClient();
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,
@@ -99,7 +100,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
             if (token is null) throw new ArgumentNullException(nameof(token));
 
-            using var client = _clientFactory.CreateClient();
+            var client = _clientFactory.CreateClient();
 
             client.PrepareRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                     adminToken,

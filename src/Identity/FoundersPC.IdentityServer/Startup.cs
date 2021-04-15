@@ -57,7 +57,7 @@ namespace FoundersPC.IdentityServer
 
             services.AddEncryptionServices();
             services.AddLogsServices();
-            services.AddTokenServices();
+            services.AddAccessTokensServices();
             services.AddUsersIdentityServices();
 
             services.AddMappings();

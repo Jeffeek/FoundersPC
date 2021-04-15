@@ -8,6 +8,7 @@ using FoundersPC.API.Domain.Entities.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.RequestResponseShared.Response.Pagination;
 
 #endregion
 
@@ -27,11 +28,16 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         #region Implementation of IPaginateableService<HDDReadDto>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<HDDReadDto>>
-            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize) =>
-            _mapper.Map<IEnumerable<HDD>, IEnumerable<HDDReadDto>>(await _unitOfWorkHardwareAPI
-                                                                         .HDDsRepository
-                                                                         .GetPaginateableAsync(pageNumber, pageSize));
+        public async Task<IPaginationResponse<HDDReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
+        {
+            var items = _mapper.Map<IEnumerable<HDD>, IEnumerable<HDDReadDto>>(await _unitOfWorkHardwareAPI
+                                                                                     .HDDsRepository
+                                                                                     .GetPaginateableAsync(pageNumber, pageSize));
+
+            var totalItemsCount = await _unitOfWorkHardwareAPI.HDDsRepository.CountAsync();
+
+            return new PaginationResponse<HDDReadDto>(items, totalItemsCount);
+        }
 
         #endregion
 

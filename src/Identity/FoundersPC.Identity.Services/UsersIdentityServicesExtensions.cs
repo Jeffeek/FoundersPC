@@ -23,12 +23,20 @@ namespace FoundersPC.Identity.Services
     {
         public static void AddUsersIdentityServices(this IServiceCollection services)
         {
-            services.AddScoped<IApiAccessTokensReservationService, ApiAccessTokenReservationService>();
             services.AddScoped<IRegistrationService, RegistrationService>();
             services.AddScoped<IUsersInformationService, UsersInformationService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IUserSettingsService, UserSettingsService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+        }
+
+        public static void AddAccessTokensServices(this IServiceCollection services)
+        {
+            services.AddScoped<IAccessTokensReservationService, AccessTokenReservationService>();
+            services.AddScoped<IAccessTokensBlockingService, AccessTokensBlockingService>();
+            services.AddScoped<IAccessTokensRequestsService, AccessTokensRequestsService>();
+            services.AddScoped<IAccessTokensTokensStatusService, AccessTokensStatusService>();
+            services.AddScoped<IAccessUsersTokensService, AccessUsersTokensService>();
         }
 
         public static void AddEncryptionServices(this IServiceCollection services)
@@ -41,11 +49,6 @@ namespace FoundersPC.Identity.Services
         {
             services.AddScoped<IAccessTokensLogsService, AccessTokensLogsService>();
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
-        }
-
-        public static void AddTokenServices(this IServiceCollection services)
-        {
-            services.AddScoped<IApiAccessUsersTokensService, ApiAccessUsersTokensService>();
         }
 
         public static void AddBotEmailConfigurationAndService(this IServiceCollection services,

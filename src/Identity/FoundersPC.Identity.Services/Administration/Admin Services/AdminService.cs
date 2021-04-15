@@ -17,14 +17,14 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 {
     public class AdminService : IAdminService
     {
-        private readonly IApiAccessUsersTokensService _accessUsersTokensService;
+        private readonly IAccessUsersTokensService _accessUsersTokensService;
         private readonly IEmailService _emailService;
         private readonly ILogger<AdminService> _logger;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public AdminService(IEmailService emailService,
                             IUnitOfWorkUsersIdentity unitOfWork,
-                            IApiAccessUsersTokensService accessUsersTokensService,
+                            IAccessUsersTokensService accessUsersTokensService,
                             ILogger<AdminService> logger)
         {
             _emailService = emailService;
@@ -186,9 +186,9 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         #region Block API token
 
-        public async Task<bool> BlockAPITokenAsync(int tokenId) => await _accessUsersTokensService.BlockAsync(tokenId);
+        public async Task<bool> BlockAccessTokenAsync(int tokenId) => await _accessUsersTokensService.BlockAsync(tokenId);
 
-        public async Task<bool> BlockAPITokenAsync(string token) => await _accessUsersTokensService.BlockAsync(token);
+        public async Task<bool> BlockAccessTokenAsync(string token) => await _accessUsersTokensService.BlockAsync(token);
 
         #endregion
     }
