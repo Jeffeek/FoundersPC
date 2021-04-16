@@ -4,10 +4,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.ChangeSettings;
-using FoundersPC.RequestResponseShared.Response.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.ChangeSettings;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,8 +17,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-    [Route("FoundersPCIdentity/Users/SettingsChange")]
     [ApiController]
+    [Route(IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint)]
     public class ChangeSettingsController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -30,7 +31,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             _settingsService = settingsService;
         }
 
-        [HttpPut("Password")]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.Password)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword([FromBody] ChangePasswordRequest request)
         {
             if (!ModelState.IsValid)
@@ -58,7 +59,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut("Login")]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.Login)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin([FromBody] ChangeLoginRequest request)
         {
             if (!ModelState.IsValid)
@@ -88,7 +89,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut("Notifications")]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.Notifications)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications([FromBody] ChangeNotificationsRequest request)
         {
             if (!ModelState.IsValid)

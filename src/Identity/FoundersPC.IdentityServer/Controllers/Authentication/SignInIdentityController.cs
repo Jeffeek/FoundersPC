@@ -2,12 +2,13 @@
 
 using System.Threading.Tasks;
 using AutoMapper;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.ApplicationShared.Jwt;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.Authentication;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [EnableCors(PolicyName = "WebPolicy")]
     [AllowAnonymous]
     [ApiController]
-    [Route("FoundersPCIdentity/Authentication")]
+    [Route(IdentityServerRoutes.Authentication.Endpoint)]
     public class SignInIdentityController : ControllerBase
     {
         private readonly IAuthenticationService _authenticationService;
@@ -42,7 +43,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _logger = logger;
         }
 
-        [HttpPost("SignIn")]
+        [HttpPost(IdentityServerRoutes.Authentication.SignIn)]
         public async Task<ActionResult<UserLoginResponse>> SignIn([FromBody] UserSignInRequest request)
         {
             if (!ModelState.IsValid)

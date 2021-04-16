@@ -9,7 +9,7 @@ using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Encryption_Services;
-using FoundersPC.RequestResponseShared.Request.Tokens;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

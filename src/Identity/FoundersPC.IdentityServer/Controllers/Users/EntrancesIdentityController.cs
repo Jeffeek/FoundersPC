@@ -6,9 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Response.Pagination;
+using FoundersPC.RequestResponseShared.Pagination;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +17,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Users
 {
-    [Route("FoundersPCIdentity/Users")]
     [ApiController]
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+    [Route(IdentityServerRoutes.Users.Entrances.EntrancesEndpoint)]
     public class EntrancesIdentityController : Controller
     {
         private readonly IMapper _mapper;
@@ -31,29 +32,29 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             _usersEntrancesService = usersEntrancesService;
         }
 
-        [HttpGet("Entrances/All")]
-        public async Task<IEnumerable<UserEntranceLogReadDto>> Get() =>
+        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.All)]
+        public async ValueTask<IEnumerable<UserEntranceLogReadDto>> Get() =>
             await _usersEntrancesService
                 .GetAllAsync();
 
-        [HttpGet("Entrances/{id:int:min(1)}")]
-        public async Task<UserEntranceLogReadDto> Get([FromRoute] int id) => await _usersEntrancesService.GetByIdAsync(id);
+        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.ById)]
+        public async ValueTask<UserEntranceLogReadDto> Get([FromRoute] int id) => await _usersEntrancesService.GetByIdAsync(id);
 
-        [HttpGet("ById/{userId:int:min(1)}/Entrances")]
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int userId) =>
-            await _usersEntrancesService.GetAllUserEntrancesAsync(userId);
+        [HttpGet(IdentityServerRoutes.Users.Entrances.User.ByUserId)]
+        public async ValueTask<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int id) =>
+            await _usersEntrancesService.GetAllUserEntrancesAsync(id);
 
-        [HttpGet("ByEmail/{userEmail}/Entrances")]
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] string userEmail) =>
-            await _usersEntrancesService.GetAllUserEntrancesAsync(userEmail);
+        [HttpGet(IdentityServerRoutes.Users.Entrances.User.ByUserEmail)]
+        public async ValueTask<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] string email) =>
+            await _usersEntrancesService.GetAllUserEntrancesAsync(email);
 
-        [HttpGet("Entrances")]
-        public async Task<IPaginationResponse<UserEntranceLogReadDto>>
+        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.InnerEntrancesEndpoint)]
+        public async ValueTask<IPaginationResponse<UserEntranceLogReadDto>>
             GetPaginateableUserEntrances([FromQuery(Name = "Page")] int pageNumber = 1,
                                          [FromQuery(Name = "Size")] int pageSize = 10) =>
             await _usersEntrancesService.GetPaginateableAsync(pageNumber, pageSize);
 
-        [HttpGet("Entrances/Between")]
+        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.Between)]
         public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>>
             GetUsersEntrancesBetween([FromQuery(Name = "Start")] DateTime start,
                                      [FromQuery(Name = "Finish")] DateTime finish)

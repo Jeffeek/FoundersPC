@@ -9,7 +9,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.RequestResponseShared.Response.Pagination;
+using FoundersPC.RequestResponseShared.Pagination;
 using Microsoft.Extensions.Logging;
 
 #endregion

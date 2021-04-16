@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.RequestResponseShared.Response.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.ChangeSettings;
 using FoundersPC.Web.Domain.Common.AccountSettings;
 
 #endregion

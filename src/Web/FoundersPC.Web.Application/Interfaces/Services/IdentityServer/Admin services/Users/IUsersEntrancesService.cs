@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Response.Pagination;
+using FoundersPC.RequestResponseShared.Pagination;
 
 #endregion
 

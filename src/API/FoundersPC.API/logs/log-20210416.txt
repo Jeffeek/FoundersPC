@@ -1,0 +1,259 @@
+04/16/2021 16:09:02 HARDWARE API started..
+04/16/2021 16:09:02 HARDWARE API HostBuilder created
+04/16/2021 16:09:03 Host built
+04/16/2021 16:09:04 Now listening on: "https://localhost:4000"
+04/16/2021 16:09:04 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:09:04 Hosting environment: "Development"
+04/16/2021 16:09:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:09:07 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET HardwareApi/Cases/All" for actions - FoundersPC.API.Controllers.V1.CasesController.Get (FoundersPC.API),FoundersPC.API.Controllers.V1.ProcessorCoresController.Get (FoundersPC.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/16/2021 16:09:07 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 71.0371 ms
+04/16/2021 16:09:07 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 71.0384 ms
+04/16/2021 16:10:24 Application is shutting down...
+04/16/2021 16:12:27 HARDWARE API started..
+04/16/2021 16:12:27 HARDWARE API HostBuilder created
+04/16/2021 16:12:28 Host built
+04/16/2021 16:12:28 Now listening on: "https://localhost:4000"
+04/16/2021 16:12:28 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:12:28 Hosting environment: "Development"
+04/16/2021 16:12:28 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:12:34 An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST " for actions - FoundersPC.API.Controllers.V1.CasesController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.HardDrivesController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.MotherboardsController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.PowerSuppliesController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.ProcessorCoresController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.ProcessorsController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.ProducersController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.RandomAccessMemoryController.Insert (FoundersPC.API),FoundersPC.API.Controllers.V1.SolidStateDrivesController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.VideoCardCoresController.Create (FoundersPC.API),FoundersPC.API.Controllers.V1.VideoCardsController.Create (FoundersPC.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/16/2021 16:12:34 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 74.4088 ms
+04/16/2021 16:12:34 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 74.4064 ms
+04/16/2021 16:12:58 Application is shutting down...
+04/16/2021 16:13:28 HARDWARE API started..
+04/16/2021 16:13:29 HARDWARE API HostBuilder created
+04/16/2021 16:13:29 Host built
+04/16/2021 16:13:30 Now listening on: "https://localhost:4000"
+04/16/2021 16:13:30 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:13:30 Hosting environment: "Development"
+04/16/2021 16:13:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:13:32 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 87.1055 ms
+04/16/2021 16:13:32 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 87.1060 ms
+04/16/2021 16:17:44 HARDWARE API started..
+04/16/2021 16:17:44 HARDWARE API HostBuilder created
+04/16/2021 16:17:44 Host built
+04/16/2021 16:17:45 Now listening on: "https://localhost:4000"
+04/16/2021 16:17:45 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:17:45 Hosting environment: "Development"
+04/16/2021 16:17:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:17:46 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 54.0820 ms
+04/16/2021 16:17:46 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 81.8528 ms
+04/16/2021 16:17:51 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.3553 ms
+04/16/2021 16:17:51 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 1.4890 ms
+04/16/2021 16:18:09 HTTP "GET" "/favicon.ico" responded 403 in 0.0892 ms
+04/16/2021 16:26:38 HARDWARE API started..
+04/16/2021 16:26:38 HARDWARE API HostBuilder created
+04/16/2021 16:26:39 Host built
+04/16/2021 16:26:39 Now listening on: "https://localhost:4000"
+04/16/2021 16:26:39 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:26:39 Hosting environment: "Development"
+04/16/2021 16:26:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:26:42 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 64.5026 ms
+04/16/2021 16:26:42 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 64.5029 ms
+04/16/2021 16:27:01 Application is shutting down...
+04/16/2021 16:28:32 HARDWARE API started..
+04/16/2021 16:28:32 HARDWARE API HostBuilder created
+04/16/2021 16:28:32 Host built
+04/16/2021 16:28:33 Now listening on: "https://localhost:4000"
+04/16/2021 16:28:33 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:28:33 Hosting environment: "Development"
+04/16/2021 16:28:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:28:36 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 69.8810 ms
+04/16/2021 16:28:36 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 69.8806 ms
+04/16/2021 16:28:53 HTTP "GET" "/HardwareApi/Cases/All" responded 403 in 1.6681 ms
+04/16/2021 16:30:45 HARDWARE API started..
+04/16/2021 16:30:45 HARDWARE API HostBuilder created
+04/16/2021 16:30:46 Host built
+04/16/2021 16:30:46 Now listening on: "https://localhost:4000"
+04/16/2021 16:30:46 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:30:46 Hosting environment: "Development"
+04/16/2021 16:30:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:30:51 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 62.2718 ms
+04/16/2021 16:30:51 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.1979 ms
+04/16/2021 16:30:56 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 1.4899 ms
+04/16/2021 16:30:56 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.1693 ms
+04/16/2021 16:30:56 HTTP "GET" "/swagger/swagger-ui.css.map" responded 403 in 0.0463 ms
+04/16/2021 16:31:27 HARDWARE API started..
+04/16/2021 16:31:27 HARDWARE API HostBuilder created
+04/16/2021 16:31:27 Host built
+04/16/2021 16:31:28 Now listening on: "https://localhost:4000"
+04/16/2021 16:31:28 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:31:28 Hosting environment: "Development"
+04/16/2021 16:31:28 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:31:31 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 59.3901 ms
+04/16/2021 16:31:31 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.1113 ms
+04/16/2021 16:32:25 HARDWARE API started..
+04/16/2021 16:32:25 HARDWARE API HostBuilder created
+04/16/2021 16:32:26 Host built
+04/16/2021 16:32:26 Now listening on: "https://localhost:4000"
+04/16/2021 16:32:26 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:32:26 Hosting environment: "Development"
+04/16/2021 16:32:26 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:32:29 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 58.4549 ms
+04/16/2021 16:32:29 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.3953 ms
+04/16/2021 16:32:43 HARDWARE API started..
+04/16/2021 16:32:43 HARDWARE API HostBuilder created
+04/16/2021 16:32:44 Host built
+04/16/2021 16:32:44 Now listening on: "https://localhost:4000"
+04/16/2021 16:32:44 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:32:44 Hosting environment: "Development"
+04/16/2021 16:32:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:32:47 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 83.4742 ms
+04/16/2021 16:32:47 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.1027 ms
+04/16/2021 16:33:23 HARDWARE API started..
+04/16/2021 16:33:23 HARDWARE API HostBuilder created
+04/16/2021 16:33:24 Host built
+04/16/2021 16:33:24 Now listening on: "https://localhost:4000"
+04/16/2021 16:33:24 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:33:24 Hosting environment: "Development"
+04/16/2021 16:33:24 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:33:27 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 58.4855 ms
+04/16/2021 16:33:27 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.1356 ms
+04/16/2021 16:34:58 HARDWARE API started..
+04/16/2021 16:34:58 HARDWARE API HostBuilder created
+04/16/2021 16:34:59 Host built
+04/16/2021 16:35:00 Now listening on: "https://localhost:4000"
+04/16/2021 16:35:00 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:35:00 Hosting environment: "Development"
+04/16/2021 16:35:00 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:35:04 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 62.6190 ms
+04/16/2021 16:35:04 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.0844 ms
+04/16/2021 16:36:15 HTTP "GET" "/HardwareApi/Cases?Page=5&Size=10" responded 500 in 4174.9730 ms
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:3000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 46
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/16/2021 16:36:15 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:3000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 46
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/16/2021 16:36:31 Application is shutting down...
+04/16/2021 16:36:54 HARDWARE API started..
+04/16/2021 16:36:55 HARDWARE API HostBuilder created
+04/16/2021 16:36:55 Host built
+04/16/2021 16:36:56 Now listening on: "https://localhost:4000"
+04/16/2021 16:36:56 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:36:56 Hosting environment: "Development"
+04/16/2021 16:36:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:37:33 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 31850.9537 ms
+04/16/2021 16:37:34 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 15398.5495 ms
+04/16/2021 16:38:30 HTTP "GET" "/HardwareApi/Cases?Page=5&Size=10" responded 500 in 16776.5800 ms
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:3000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 46
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/16/2021 16:38:30 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (localhost:3000)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 46
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/16/2021 16:39:55 HARDWARE API started..
+04/16/2021 16:39:55 HARDWARE API HostBuilder created
+04/16/2021 16:39:56 Host built
+04/16/2021 16:39:56 Now listening on: "https://localhost:4000"
+04/16/2021 16:39:56 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:39:56 Hosting environment: "Development"
+04/16/2021 16:39:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:39:57 Application is shutting down...
+04/16/2021 16:41:12 HARDWARE API started..
+04/16/2021 16:41:12 HARDWARE API HostBuilder created
+04/16/2021 16:41:13 Host built
+04/16/2021 16:41:13 Now listening on: "https://localhost:4000"
+04/16/2021 16:41:13 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:41:13 Hosting environment: "Development"
+04/16/2021 16:41:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/16/2021 16:41:54 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 38041.3691 ms
+04/16/2021 16:41:54 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 26359.3334 ms
+04/16/2021 16:43:14 CasesController: request for reading page: 5, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/16/2021 16:43:31 HTTP "GET" "/HardwareApi/Cases?Page=5&Size=10" responded 200 in 73114.4185 ms
+04/16/2021 16:43:52 CasesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/16/2021 16:43:52 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 5413.4894 ms
+04/16/2021 16:44:09 CasesController: request for reading page: 2, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/16/2021 16:44:09 HTTP "GET" "/HardwareApi/Cases?Page=2&Size=10" responded 200 in 25.8687 ms
+04/16/2021 16:44:21 CasesController: request for reading page: 3, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/16/2021 16:44:21 HTTP "GET" "/HardwareApi/Cases?Page=3&Size=10" responded 200 in 5.7619 ms
+04/16/2021 16:44:31 CasesController: request for reading page: 4, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/16/2021 16:44:31 HTTP "GET" "/HardwareApi/Cases?Page=4&Size=10" responded 200 in 5.6974 ms

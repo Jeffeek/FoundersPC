@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,7 +17,7 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("HardwareApi/Cases")]
+    [Route(HardwareApiRoutes.Cases)]
     public class CasesController : Controller
     {
         private readonly ICaseService _caseService;
@@ -28,8 +30,8 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [HttpGet("All")]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get()
+        [HttpGet(ApplicationRestAddons.All)]
+        public async ValueTask<ActionResult<IEnumerable<CaseReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
 
@@ -37,16 +39,17 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        public async ValueTask<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery] PaginationRequest request)
         {
-            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
+            if (!ModelState.IsValid) return BadRequest();
 
-            return Json(await _caseService.GetPaginateableAsync(pageNumber, pageSize));
+            _logger.LogForPaginateableModelsRead(HttpContext, request.PageNumber, request.PageSize);
+
+            return Json(await _caseService.GetPaginateableAsync(request.PageNumber, request.PageSize));
         }
 
-        [HttpGet("{id:int:min(1)}")]
-        public async Task<ActionResult<CaseReadDto>> Get([FromRoute] int id)
+        [HttpGet(ApplicationRestAddons.GetById)]
+        public async ValueTask<ActionResult<CaseReadDto>> Get([FromRoute] int id)
         {
             _logger.LogForModelRead(HttpContext, id);
 
@@ -56,8 +59,8 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id:int:min(1)}")]
-        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] CaseUpdateDto @case)
+        [HttpPut(ApplicationRestAddons.Update)]
+        public async ValueTask<ActionResult> Update([FromRoute] int id, [FromBody] CaseUpdateDto @case)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem(ModelState);
@@ -73,8 +76,8 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPost]
-        public async Task<ActionResult> Insert([FromBody] CaseInsertDto @case)
+        [HttpPost(ApplicationRestAddons.Create)]
+        public async ValueTask<ActionResult> Create([FromBody] CaseInsertDto @case)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem(ModelState);
@@ -90,8 +93,8 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id:int:min(1)}")]
-        public async Task<ActionResult> Delete([FromRoute] int id)
+        [HttpDelete(ApplicationRestAddons.Delete)]
+        public async ValueTask<ActionResult> Delete([FromRoute] int id)
         {
             var readCase = await _caseService.GetCaseByIdAsync(id);
 

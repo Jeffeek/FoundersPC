@@ -2,7 +2,7 @@
 
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.Tokens;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
 
 #endregion
 

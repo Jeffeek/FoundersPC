@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.RequestResponseShared.Response.Pagination;
+using FoundersPC.RequestResponseShared.Pagination;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;

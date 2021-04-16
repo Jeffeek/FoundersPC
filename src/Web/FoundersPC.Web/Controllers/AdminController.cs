@@ -30,7 +30,7 @@ namespace FoundersPC.Web.Controllers
         #region Users Table
 
         [Route("UsersTable")]
-        public async Task<ActionResult> UsersTable([FromQuery] int pageNumber)
+        public async Task<ActionResult> UsersTable([FromQuery] int pageNumber = 1)
         {
             var paginationResponse = await _adminService.GetPaginateableUsersAsync(pageNumber,
                                                                                    FoundersPCConstants.PageSize,
@@ -99,7 +99,7 @@ namespace FoundersPC.Web.Controllers
         #region Entrances
 
         [Route("EntrancesTable")]
-        public async Task<ActionResult> EntrancesTable([FromQuery] int pageNumber)
+        public async Task<ActionResult> EntrancesTable([FromQuery] int pageNumber = 1)
         {
             var paginationResponse =
                 await _adminService.GetPaginateableEntrancesAsync(pageNumber,
@@ -178,7 +178,7 @@ namespace FoundersPC.Web.Controllers
         #region Access Tokens Logs
 
         [Route("TokensLogsTable")]
-        public async Task<ActionResult> TokensLogsTable([FromQuery] int pageNumber)
+        public async Task<ActionResult> TokensLogsTable([FromQuery] int pageNumber = 1)
         {
             var logs =
                 await _adminService.GetPaginateableAccessTokensLogsAsync(pageNumber,
@@ -256,7 +256,7 @@ namespace FoundersPC.Web.Controllers
         #region Access Tokens
 
         [Route("TokensTable")]
-        public async Task<ActionResult> TokensTable([FromQuery] int pageNumber)
+        public async Task<ActionResult> TokensTable([FromQuery] int pageNumber = 1)
         {
             var tokens =
                 await _adminService.GetPaginateableTokensAsync(pageNumber,

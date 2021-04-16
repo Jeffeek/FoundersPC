@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.API.Controllers
 {
-    public static class LogRequestExtensions
+    internal static class LogRequestExtensions
     {
         public static void LogForModelUpdate<T>(this ILogger<T> logger, HttpContext httpContext, int modelId)
         {

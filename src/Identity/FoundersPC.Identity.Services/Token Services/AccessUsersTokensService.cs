@@ -8,8 +8,8 @@ using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.RequestResponseShared.Request.Tokens;
-using FoundersPC.RequestResponseShared.Response.Pagination;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
+using FoundersPC.RequestResponseShared.Pagination;
 using Microsoft.Extensions.Logging;
 
 #endregion

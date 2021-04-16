@@ -3,12 +3,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.Tokens;
-using FoundersPC.RequestResponseShared.Response.Pagination;
-using FoundersPC.RequestResponseShared.Response.Tokens;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Tokens;
+using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +19,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-    [Route("FoundersPCIdentity/Tokens")]
     [ApiController]
     [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
+    [Route(IdentityServerRoutes.Tokens.Endpoint)]
     public class AccessTokensController : Controller
     {
         private readonly IAccessTokensReservationService _accessTokensReservationService;
@@ -33,8 +35,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet("User/{email}")]
-        public async Task<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
+        [HttpGet(IdentityServerRoutes.Tokens.User.UserTokensByUserEmail)]
+        public async ValueTask<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
         {
             var tokens = await _accessUsersTokensService.GetUserTokensAsync(email);
 
@@ -48,8 +50,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet("User/{id:int:min(1)}")]
-        public async Task<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
+        [HttpGet(IdentityServerRoutes.Tokens.User.UserTokensByUserId)]
+        public async ValueTask<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
         {
             var tokens = await _accessUsersTokensService.GetUserTokensAsync(id);
 
@@ -63,8 +65,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-        [HttpPost("Reserve")]
-        public async Task<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)
+        [HttpPost(IdentityServerRoutes.Tokens.ReserveNewToken)]
+        public async ValueTask<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -87,10 +89,10 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpPut("Block/ById/{tokenId:int:min(1)}")]
-        public async Task<ActionResult> BlockTokenByTokenId([FromRoute] int tokenId)
+        [HttpPut(IdentityServerRoutes.Tokens.Block.BlockTokenByTokenId)]
+        public async ValueTask<ActionResult> BlockTokenByTokenId([FromRoute] int id)
         {
-            var tokenBlockingResult = await _accessUsersTokensService.BlockAsync(tokenId);
+            var tokenBlockingResult = await _accessUsersTokensService.BlockAsync(id);
 
             if (tokenBlockingResult)
                 return Ok();
@@ -99,8 +101,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpPut("Block/ByToken/{token:length(64)}")]
-        public async Task<ActionResult> BlockTokenByTokenString([FromRoute] int token)
+        [HttpPut(IdentityServerRoutes.Tokens.Block.BlockTokenByToken)]
+        public async ValueTask<ActionResult> BlockTokenByTokenString([FromRoute] int token)
         {
             var tokenBlockingResult = await _accessUsersTokensService.BlockAsync(token);
 
@@ -112,20 +114,19 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
-        public async Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokens([FromQuery(Name = "Page")] int pageNumber,
-                                                                                             [FromQuery(Name = "Size")] int pageSize =
-                                                                                                 FoundersPCConstants.PageSize) =>
-            await _accessUsersTokensService.GetPaginateableAsync(pageNumber, pageSize);
+        public async ValueTask<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokens([FromQuery] PaginationRequest request) =>
+            await _accessUsersTokensService.GetPaginateableAsync(request.PageNumber, request.PageSize);
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet("All")]
-        public async Task<IEnumerable<AccessUserTokenReadDto>> GetAll() => await _accessUsersTokensService.GetAllTokensAsync();
+        [HttpGet(ApplicationRestAddons.All)]
+        public async ValueTask<IEnumerable<AccessUserTokenReadDto>> GetAll() =>
+            await _accessUsersTokensService.GetAllTokensAsync();
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [AllowAnonymous]
-        [HttpGet("Check/{token:length(64)}")]
-        public async Task<ActionResult> CheckTokenForUsability([FromRoute] string token,
-                                                               [FromServices] IAccessTokensLogsService logsService)
+        [HttpGet(IdentityServerRoutes.Tokens.CheckToken)]
+        public async ValueTask<ActionResult> CheckTokenForUsability([FromRoute] string token,
+                                                                    [FromServices] IAccessTokensLogsService logsService)
         {
             if (token is null
                 || token.Length != 64)

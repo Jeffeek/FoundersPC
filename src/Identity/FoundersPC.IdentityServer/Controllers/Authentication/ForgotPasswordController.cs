@@ -1,9 +1,10 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
-using FoundersPC.RequestResponseShared.Request.Authentication;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,7 +14,7 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
     [AllowAnonymous]
-    [Route("FoundersPCIdentity/Authentication")]
+    [Route(IdentityServerRoutes.Authentication.Endpoint)]
     public class ForgotPasswordController : Controller
     {
         private readonly ILogger<ForgotPasswordController> _logger;
@@ -26,7 +27,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _logger = logger;
         }
 
-        [HttpPost("ForgotPassword")]
+        [HttpPost(IdentityServerRoutes.Authentication.ForgotPassword)]
         public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword([FromBody] UserForgotPasswordRequest request)
         {
             if (!ModelState.IsValid)

@@ -2,10 +2,11 @@
 
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.ApplicationShared.Jwt;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
-using FoundersPC.RequestResponseShared.Request.Authentication;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,7 +16,7 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
     [AllowAnonymous]
-    [Route("FoundersPCIdentity/Authentication")]
+    [Route(IdentityServerRoutes.Authentication.Endpoint)]
     public class SignUpIdentityController : Controller
     {
         private readonly JwtConfiguration _jwtConfiguration;
@@ -31,8 +32,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _registrationService = registrationService;
         }
 
-        [HttpPost("SignUp")]
-        public async Task<ActionResult<UserSignUpResponse>> SignUpUser([FromBody] UserSignUpRequest request)
+        [HttpPost(IdentityServerRoutes.Authentication.SignUp)]
+        public async Task<ActionResult<UserSignUpResponse>> SignUp([FromBody] UserSignUpRequest request)
         {
             if (!ModelState.IsValid)
                 UnprocessableEntity();
@@ -73,9 +74,9 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [Route("NewManager")]
         [HttpPost]
-        public async Task<ActionResult<UserSignUpResponse>> RegisterManager([FromBody] UserSignUpRequest request)
+        [Route(IdentityServerRoutes.Authentication.SignUpManager)]
+        public async Task<ActionResult<UserSignUpResponse>> SignUpManager([FromBody] UserSignUpRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest();

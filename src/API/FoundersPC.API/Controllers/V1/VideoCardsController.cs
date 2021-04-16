@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,8 +17,8 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("HardwareApi/VideoCards")]
     [Route("HardwareApi/GPUs")]
+    [Route(HardwareApiRoutes.VideoCards)]
     public class VideoCardsController : Controller
     {
         private readonly IGPUService _gpuService;
@@ -28,7 +30,7 @@ namespace FoundersPC.API.Controllers.V1
             _logger = logger;
         }
 
-        [HttpGet("All")]
+        [HttpGet(ApplicationRestAddons.All)]
         public async Task<ActionResult<IEnumerable<GPUReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
@@ -37,15 +39,16 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery] PaginationRequest request)
         {
-            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
+            if (!ModelState.IsValid) return BadRequest();
 
-            return Json(await _gpuService.GetPaginateableAsync(pageNumber, pageSize));
+            _logger.LogForPaginateableModelsRead(HttpContext, request.PageNumber, request.PageSize);
+
+            return Json(await _gpuService.GetPaginateableAsync(request.PageNumber, request.PageSize));
         }
 
-        [HttpGet("{id:int:min(1)}")]
+        [HttpGet(ApplicationRestAddons.GetById)]
         public async Task<ActionResult<GPUReadDto>> Get([FromRoute] int id)
         {
             _logger.LogForModelRead(HttpContext, id);
@@ -56,7 +59,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id:int:min(1)}")]
+        [HttpPut(ApplicationRestAddons.Update)]
         public async Task<ActionResult> Update([FromRoute] int id, [FromBody] GPUUpdateDto gpu)
         {
             if (!ModelState.IsValid)
@@ -70,8 +73,8 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPost]
-        public async Task<ActionResult> Insert([FromBody] GPUInsertDto gpu)
+        [HttpPost(ApplicationRestAddons.Create)]
+        public async Task<ActionResult> Create([FromBody] GPUInsertDto gpu)
         {
             if (!ModelState.IsValid)
                 return ValidationProblem(ModelState);
@@ -84,7 +87,7 @@ namespace FoundersPC.API.Controllers.V1
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id:int:min(1)}")]
+        [HttpDelete(ApplicationRestAddons.Delete)]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {
             _logger.LogForModelDelete(HttpContext, id);

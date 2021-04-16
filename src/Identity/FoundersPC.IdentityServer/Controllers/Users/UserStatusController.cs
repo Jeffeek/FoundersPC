@@ -3,12 +3,13 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Blocking;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inactivity;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Blocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Inactivity;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Blocking;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Inactivity;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Unblocking;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Administration.Admin.Users.Blocking;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Administration.Admin.Users.Inactivity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,16 +17,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Users
 {
-    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-    [Route("FoundersPCIdentity/Users/StatusChange")]
     [ApiController]
+    [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+    [Route(IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint)]
     public class UserStatusController : Controller
     {
         private readonly IAdminService _adminService;
 
         public UserStatusController(IAdminService adminService) => _adminService = adminService;
 
-        [HttpPut("Block/ById")]
+        [HttpPut(IdentityServerRoutes.Users.Status.Block.ByUserId)]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByIdRequest byIdRequest)
         {
             if (!ModelState.IsValid)
@@ -57,7 +58,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut("Block/ByEmail")]
+        [HttpPut(IdentityServerRoutes.Users.Status.Block.ByUserEmail)]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByEmailRequest byEmailRequest)
         {
             if (!ModelState.IsValid)
@@ -92,7 +93,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut("UnBlock/ById")]
+        [HttpPut(IdentityServerRoutes.Users.Status.Unblock.ByUserId)]
         public async Task<ActionResult<UnblockUserResponse>> UnBlockUser([FromBody] UnblockUserByIdRequest byIdRequest)
         {
             if (!ModelState.IsValid)
@@ -124,7 +125,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut("UnBlock/ByEmail")]
+        [HttpPut(IdentityServerRoutes.Users.Status.Unblock.ByUserEmail)]
         public async Task<ActionResult<UnblockUserResponse>> UnBlockUser([FromBody] UnblockUserByEmailRequest byEmailRequest)
         {
             if (!ModelState.IsValid)
@@ -151,7 +152,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpDelete("MakeInactive/ByEmail")]
+        [HttpDelete(IdentityServerRoutes.Users.Status.MakeInactive.ByUserEmail)]
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByEmailRequest request)
         {
             if (!ModelState.IsValid)
@@ -167,7 +168,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpDelete("MakeInactive/ById")]
+        [HttpDelete(IdentityServerRoutes.Users.Status.MakeInactive.ByUserId)]
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByIdRequest request)
         {
             if (!ModelState.IsValid)

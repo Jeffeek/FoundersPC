@@ -5,8 +5,8 @@ using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.ChangeSettings;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
 
 #endregion
 

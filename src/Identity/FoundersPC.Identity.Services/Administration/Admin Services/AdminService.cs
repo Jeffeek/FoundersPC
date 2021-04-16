@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -116,10 +117,12 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         {
             var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
 
-            foreach (var token in userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now))
-                await _accessUsersTokensService.BlockAsync(token.Id);
+            var blockingResults = new List<bool>();
 
-            return await _unitOfWork.SaveChangesAsync() > 0;
+            foreach (var token in userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now))
+                blockingResults.Add(await _accessUsersTokensService.BlockAsync(token.Id));
+
+            return blockingResults.All(x => x);
         }
 
         #endregion

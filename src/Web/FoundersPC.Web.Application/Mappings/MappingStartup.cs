@@ -1,8 +1,8 @@
 ﻿#region Using namespaces
 
 using AutoMapper;
-using FoundersPC.RequestResponseShared.Request.Authentication;
-using FoundersPC.RequestResponseShared.Request.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.ChangeSettings;
 using FoundersPC.Web.Domain.Common.AccountSettings;
 using FoundersPC.Web.Domain.Common.Authentication;
 
