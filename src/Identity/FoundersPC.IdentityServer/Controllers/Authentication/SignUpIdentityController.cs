@@ -73,8 +73,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                    };
         }
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpPost]
+        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [Route(IdentityServerRoutes.Authentication.SignUpManager)]
         public async Task<ActionResult<UserSignUpResponse>> SignUpManager([FromBody] UserSignUpRequest request)
         {

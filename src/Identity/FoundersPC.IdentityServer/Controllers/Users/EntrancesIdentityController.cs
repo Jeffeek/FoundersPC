@@ -19,7 +19,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [ApiController]
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-    [Route(IdentityServerRoutes.Users.Entrances.EntrancesEndpoint)]
+    [Route(IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint)]
     public class EntrancesIdentityController : Controller
     {
         private readonly IMapper _mapper;
@@ -32,29 +32,29 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             _usersEntrancesService = usersEntrancesService;
         }
 
-        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.All)]
+        [HttpGet(ApplicationRestAddons.All)]
         public async ValueTask<IEnumerable<UserEntranceLogReadDto>> Get() =>
             await _usersEntrancesService
                 .GetAllAsync();
 
-        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.ById)]
+        [HttpGet(ApplicationRestAddons.GetById)]
         public async ValueTask<UserEntranceLogReadDto> Get([FromRoute] int id) => await _usersEntrancesService.GetByIdAsync(id);
 
-        [HttpGet(IdentityServerRoutes.Users.Entrances.User.ByUserId)]
+        [HttpGet(IdentityServerRoutes.Logs.UsersEntrances.ByUserId)]
         public async ValueTask<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int id) =>
             await _usersEntrancesService.GetAllUserEntrancesAsync(id);
 
-        [HttpGet(IdentityServerRoutes.Users.Entrances.User.ByUserEmail)]
+        [HttpGet(IdentityServerRoutes.Logs.UsersEntrances.ByUserEmail)]
         public async ValueTask<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] string email) =>
             await _usersEntrancesService.GetAllUserEntrancesAsync(email);
 
-        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.InnerEntrancesEndpoint)]
+        [HttpGet]
         public async ValueTask<IPaginationResponse<UserEntranceLogReadDto>>
             GetPaginateableUserEntrances([FromQuery(Name = "Page")] int pageNumber = 1,
                                          [FromQuery(Name = "Size")] int pageSize = 10) =>
             await _usersEntrancesService.GetPaginateableAsync(pageNumber, pageSize);
 
-        [HttpGet(IdentityServerRoutes.Users.Entrances.GetEntrances.Between)]
+        [HttpGet(IdentityServerRoutes.Logs.UsersEntrances.Between)]
         public async Task<ActionResult<IEnumerable<UserEntranceLogReadDto>>>
             GetUsersEntrancesBetween([FromQuery(Name = "Start")] DateTime start,
                                      [FromQuery(Name = "Finish")] DateTime finish)

@@ -31,7 +31,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             _settingsService = settingsService;
         }
 
-        [HttpPut(IdentityServerRoutes.Users.SettingsChange.Password)]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.PasswordChange)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword([FromBody] ChangePasswordRequest request)
         {
             if (!ModelState.IsValid)
@@ -59,7 +59,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut(IdentityServerRoutes.Users.SettingsChange.Login)]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.LoginChange)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin([FromBody] ChangeLoginRequest request)
         {
             if (!ModelState.IsValid)
@@ -89,7 +89,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut(IdentityServerRoutes.Users.SettingsChange.Notifications)]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.NotificationsChange)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications([FromBody] ChangeNotificationsRequest request)
         {
             if (!ModelState.IsValid)

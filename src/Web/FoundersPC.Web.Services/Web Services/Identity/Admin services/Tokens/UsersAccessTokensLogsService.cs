@@ -67,7 +67,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            return client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Tokens.Logs.LogsEndpoint}/{ApplicationRestAddons.All}");
+            return client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}/{ApplicationRestAddons.All}");
         }
 
         #region Docs
@@ -116,7 +116,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     MicroservicesUrls.IdentityServer);
 
             return await client
-                       .GetFromJsonAsync<PaginationResponse<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Tokens.Logs.LogsEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                       .GetFromJsonAsync<PaginationResponse<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
         }
 
         #region Docs
@@ -166,7 +166,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            return client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Tokens.Logs.LogsEndpoint}/{IdentityServerRoutes.BuildRouteById(IdentityServerRoutes.Tokens.Logs.LogsByUser.LogsByUserId, userId)}");
+            return client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}/{IdentityServerRoutes.BuildRouteById(IdentityServerRoutes.Tokens.Logs.LogsByUser.LogsByUserId, userId)}");
         }
 
         #region Docs
@@ -216,7 +216,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            return client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Tokens.Logs.LogsEndpoint}/{IdentityServerRoutes.BuildRouteByEmail(IdentityServerRoutes.Tokens.Logs.LogsByUser.LogsByUserEmail, userEmail)}");
+            return client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}/{IdentityServerRoutes.BuildRouteByEmail(IdentityServerRoutes.Logs.TokenUsages.ByUserEmail, userEmail)}");
         }
 
         #region Docs

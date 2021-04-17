@@ -35,7 +35,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet(IdentityServerRoutes.Tokens.User.UserTokensByUserEmail)]
+        [HttpGet(IdentityServerRoutes.Tokens.ByUserEmail)]
         public async ValueTask<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
         {
             var tokens = await _accessUsersTokensService.GetUserTokensAsync(email);
@@ -50,7 +50,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet(IdentityServerRoutes.Tokens.User.UserTokensByUserId)]
+        [HttpGet(IdentityServerRoutes.Tokens.ByUserId)]
         public async ValueTask<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
         {
             var tokens = await _accessUsersTokensService.GetUserTokensAsync(id);
@@ -89,7 +89,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpPut(IdentityServerRoutes.Tokens.Block.BlockTokenByTokenId)]
+        [HttpPut(IdentityServerRoutes.Tokens.BlockByTokenId)]
         public async ValueTask<ActionResult> BlockTokenByTokenId([FromRoute] int id)
         {
             var tokenBlockingResult = await _accessUsersTokensService.BlockAsync(id);
@@ -101,7 +101,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpPut(IdentityServerRoutes.Tokens.Block.BlockTokenByToken)]
+        [HttpPut(IdentityServerRoutes.Tokens.BlockByTokenString)]
         public async ValueTask<ActionResult> BlockTokenByTokenString([FromRoute] int token)
         {
             var tokenBlockingResult = await _accessUsersTokensService.BlockAsync(token);

@@ -58,121 +58,89 @@ namespace FoundersPC.ApplicationShared.ApplicationConstants.Routes
 
             public const string CheckToken = "Check" + "/" + Token;
 
-            public static class User
-            {
-                public const string UserEndpoint = "User";
+            public const string ByUserId = "ByUserId" + "/" + Id;
 
-                public const string UserTokensByUserId = UserEndpoint + "/" + Id;
+            public const string ByUserEmail = "ByUserEmail" + "/" + Email;
 
-                public const string UserTokensByUserEmail = UserEndpoint + "/" + Email;
-            }
+            public const string BlockByTokenString = "BlockByTokenString" + "/" + Token;
 
-            public static class Block
-            {
-                public const string BlockEndpoint = "Block";
-
-                public const string BlockTokenByTokenId = BlockEndpoint + "/" + "ById" + "/" + Id;
-
-                public const string BlockTokenByToken = BlockEndpoint + "/" + "ByToken" + "/" + Token;
-            }
-
-            public static class Logs
-            {
-                public const string LogsEndpoint = Endpoint + "/" + "Logs";
-
-                public static class LogsByToken
-                {
-                    public const string LogsByTokenId = "ByTokenId" + "/" + Id;
-
-                    public const string LogsByTokenString = "ByToken" + "/" + Token;
-                }
-
-                public static class LogsByUser
-                {
-                    public const string LogsByUserId = "ByUserId" + "/" + Id;
-
-                    public const string LogsByUserEmail = "ByUserEmail" + "/" + Email;
-                }
-            }
+            public const string BlockByTokenId = "BlockByTokenId" + "/" + Id;
         }
 
         public static class Users
         {
-            public const string UsersEndpoint = Base + "/" + "Users";
+            public const string Endpoint = Base + "/" + "Users";
 
-            public static class Get
+            public const string ByUserId = Id;
+
+            public const string ByUserEmail = Email;
+
+            public static class StatusChange
             {
-                public const string ById = "ById" + "/" + Id;
-
-                public const string ByEmail = "ByEmail" + "/" + Email;
-            }
-
-            public static class SettingsChange
-            {
-                public const string SettingsChangeEndpoint = UsersEndpoint + "/" + "SettingsChange";
-
-                public const string Password = "Password";
-
-                public const string Login = "Login";
-
-                public const string Notifications = "Notifications";
-            }
-
-            public static class Entrances
-            {
-                public const string EntrancesEndpoint = UsersEndpoint;
-
-                public static class GetEntrances
-                {
-                    public const string InnerEntrancesEndpoint = "Entrances";
-
-                    public const string All = InnerEntrancesEndpoint + "/" + "All";
-
-                    public const string ById = InnerEntrancesEndpoint + "/" + Id;
-
-                    public const string Between = InnerEntrancesEndpoint + "/" + "Between";
-
-                    public static string BuildBetweenQuery(DateTime left, DateTime right) => Between + $"?Start={left:s}&Finish={right:s}";
-                }
-
-                public static class User
-                {
-                    public const string ByUserId = "ById" + "/" + Id + "/" + "Entrances";
-
-                    public const string ByUserEmail = "ByEmail" + "/" + Email + "/" + "Entrances";
-                }
-            }
-
-            public static class Status
-            {
-                public const string UserChangeStatusEndpoint = UsersEndpoint + "/" + "StatusChange";
+                public const string StatusEndpoint = Endpoint + "/" + "StatusChange";
 
                 public static class Block
                 {
-                    public const string BlockEndpoint = "Block";
+                    public const string BlockByUserId = Id;
 
-                    public const string ByUserId = BlockEndpoint + "/" + "ById";
-
-                    public const string ByUserEmail = BlockEndpoint + "/" + "ByEmail";
+                    public const string BlockByUserEmail = Email;
                 }
 
                 public static class Unblock
                 {
-                    public const string UnblockEndpoint = "UnBlock";
+                    public const string UnblockByUserId = Id;
 
-                    public const string ByUserId = UnblockEndpoint + "/" + "ById";
-
-                    public const string ByUserEmail = UnblockEndpoint + "/" + "ByEmail";
+                    public const string UnblockByUserEmail = Email;
                 }
 
                 public static class MakeInactive
                 {
-                    public const string MakeInactiveEndpoint = "MakeInactive";
+                    public const string MakeInactiveByUserId = Id;
 
-                    public const string ByUserId = MakeInactiveEndpoint + "/" + "ById";
-
-                    public const string ByUserEmail = MakeInactiveEndpoint + "/" + "ByEmail";
+                    public const string MakeInactiveByUserEmail = Email;
                 }
+            }
+
+            public static class SettingsChange
+            {
+                public const string SettingsChangeEndpoint = Endpoint + "/" + "Settings";
+
+                public const string PasswordChange = "Password";
+
+                public const string LoginChange = "Login";
+
+                public const string NotificationsChange = "Notifications";
+            }
+        }
+
+        public static class Logs
+        {
+            public const string LogsEndpoint = Base + "/" + "Logs";
+
+            public static class UsersEntrances
+            {
+                public const string UsersEntrancesEndpoint = LogsEndpoint + "/" + "UsersEntrances";
+
+                public const string ByUserId = "ByUserId" + "/" + Id;
+
+                public const string ByUserEmail = "ByUserEmail" + "/" + Email;
+
+                public const string Between = "Between";
+            }
+
+            public static class TokenUsages
+            {
+                public const string TokenUsagesEndpoint = LogsEndpoint + "/" + "TokenUsages";
+
+                public const string ByUserId = "ByUserId" + "/" + Id;
+
+                public const string ByUserEmail = "ByUserEmail" + "/" + Email;
+
+                public const string ByTokenId = "ByTokenId" + "/" + Id;
+                
+                public const string ByTokenString = "ByTokenId" + "/" + Token;
+
+                public const string Between = "Between";
             }
         }
 

@@ -19,14 +19,14 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [ApiController]
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-    [Route(IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint)]
+    [Route(IdentityServerRoutes.Users.StatusChange.StatusEndpoint)]
     public class UserStatusController : Controller
     {
         private readonly IAdminService _adminService;
 
         public UserStatusController(IAdminService adminService) => _adminService = adminService;
 
-        [HttpPut(IdentityServerRoutes.Users.Status.Block.ByUserId)]
+        [HttpPut(IdentityServerRoutes.Users.StatusChange.Block.BlockByUserId)]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByIdRequest byIdRequest)
         {
             if (!ModelState.IsValid)
@@ -58,7 +58,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut(IdentityServerRoutes.Users.Status.Block.ByUserEmail)]
+        [HttpPut(IdentityServerRoutes.Users.StatusChange.Block.BlockByUserEmail)]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByEmailRequest byEmailRequest)
         {
             if (!ModelState.IsValid)
@@ -93,7 +93,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut(IdentityServerRoutes.Users.Status.Unblock.ByUserId)]
+        [HttpPut(IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserId)]
         public async Task<ActionResult<UnblockUserResponse>> UnBlockUser([FromBody] UnblockUserByIdRequest byIdRequest)
         {
             if (!ModelState.IsValid)
@@ -125,7 +125,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut(IdentityServerRoutes.Users.Status.Unblock.ByUserEmail)]
+        [HttpPut(IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserEmail)]
         public async Task<ActionResult<UnblockUserResponse>> UnBlockUser([FromBody] UnblockUserByEmailRequest byEmailRequest)
         {
             if (!ModelState.IsValid)
@@ -152,7 +152,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpDelete(IdentityServerRoutes.Users.Status.MakeInactive.ByUserEmail)]
+        [HttpDelete(IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserId)]
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByEmailRequest request)
         {
             if (!ModelState.IsValid)
@@ -168,7 +168,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpDelete(IdentityServerRoutes.Users.Status.MakeInactive.ByUserId)]
+        [HttpDelete(IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserEmail)]
         public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByIdRequest request)
         {
             if (!ModelState.IsValid)

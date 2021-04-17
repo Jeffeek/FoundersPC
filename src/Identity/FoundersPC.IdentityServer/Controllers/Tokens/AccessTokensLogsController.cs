@@ -17,7 +17,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [ApiController]
-    [Route(IdentityServerRoutes.Tokens.Logs.LogsEndpoint)]
+    [Route(IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint)]
     public class AccessTokensLogsController : Controller
     {
         private readonly IAccessTokensLogsService _accessTokensLogsService;
@@ -40,20 +40,20 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         public async ValueTask<ActionResult<AccessTokenLogReadDto>> Get([FromRoute] int id) =>
             await _accessTokensLogsService.GetTokenLogByIdAsync(id);
 
-        [HttpGet(IdentityServerRoutes.Tokens.Logs.LogsByToken.LogsByTokenId)]
-        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsForTokenById([FromRoute] int id) =>
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenId)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsByTokenId([FromRoute] int id) =>
             await _accessTokensLogsService.GetTokenLogsAsync(id);
 
-        [HttpGet(IdentityServerRoutes.Tokens.Logs.LogsByToken.LogsByTokenString)]
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenString)]
         public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsForTokenByStringToken([FromRoute] int token) =>
             await _accessTokensLogsService.GetTokenLogsAsync(token);
 
-        [HttpGet(IdentityServerRoutes.Tokens.Logs.LogsByUser.LogsByUserId)]
-        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogs([FromRoute] int id) =>
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByUserId)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserId([FromRoute] int id) =>
             await _accessTokensLogsService.GetUserTokenUsagesByUserIdAsync(id);
 
-        [HttpGet(IdentityServerRoutes.Tokens.Logs.LogsByUser.LogsByUserEmail)]
-        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogs([FromRoute] string email) =>
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByUserEmail)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserEmail([FromRoute] string email) =>
             await _accessTokensLogsService.GetUserTokenUsagesByUserEmailAsync(email);
     }
 }

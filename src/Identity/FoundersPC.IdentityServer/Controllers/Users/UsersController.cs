@@ -20,7 +20,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [EnableCors("WebPolicy")]
     [ApiController]
-    [Route(IdentityServerRoutes.Users.UsersEndpoint)]
+    [Route(IdentityServerRoutes.Users.Endpoint)]
     public class UsersController : Controller
     {
         private readonly IUsersInformationService _usersInformationService;
@@ -28,7 +28,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         public UsersController(IUsersInformationService usersInformationService) => _usersInformationService = usersInformationService;
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet(IdentityServerRoutes.Users.Get.ById)]
+        [HttpGet(IdentityServerRoutes.Users.ByUserId)]
         public async ValueTask<ActionResult<UserEntityReadDto>> GetById([FromRoute] int id)
         {
             var user = await _usersInformationService.GetUserByIdAsync(id);
@@ -40,7 +40,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-        [HttpGet(IdentityServerRoutes.Users.Get.ByEmail)]
+        [HttpGet(IdentityServerRoutes.Users.ByUserEmail)]
         public async ValueTask<ActionResult<UserEntityReadDto>> GetByEmail([FromRoute] string email)
         {
             if (String.IsNullOrEmpty(email))
