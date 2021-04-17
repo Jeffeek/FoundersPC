@@ -7,6 +7,6 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.VideoCard
 {
-    public interface IVideoCardCoresRepositoryAsync : IRepositoryAsync<VideoCardCore>,
-                                                      IPaginateableRepository<VideoCardCore> { }
+    public interface IVideoCardCoresRepositoryAsync : IRepositoryAsync<VideoCardCoreEntity>,
+                                                      IPaginateableRepository<VideoCardCoreEntity> { }
 }

@@ -15,105 +15,105 @@ namespace FoundersPC.API.Application.Mappings
     {
         public MappingStartup()
         {
-            #region Producer Mapping
+            #region ProducerEntity Mapping
 
-            CreateMap<Producer, ProducerReadDto>()
+            CreateMap<ProducerEntity, ProducerReadDto>()
                 .ReverseMap();
 
-            CreateMap<Producer, ProducerInsertDto>()
+            CreateMap<ProducerEntity, ProducerInsertDto>()
                 .ReverseMap();
 
-            CreateMap<Producer, ProducerUpdateDto>()
-                .ReverseMap();
-
-            #endregion
-
-            #region Case Mapping
-
-            CreateMap<Case, CaseReadDto>()
-                .ReverseMap();
-
-            CreateMap<Case, CaseInsertDto>()
-                .ReverseMap();
-
-            CreateMap<Case, CaseUpdateDto>()
+            CreateMap<ProducerEntity, ProducerUpdateDto>()
                 .ReverseMap();
 
             #endregion
 
-            #region GPU Mapping
+            #region CaseEntity Mapping
 
-            CreateMap<GPU, GPUReadDto>()
+            CreateMap<CaseEntity, CaseReadDto>()
                 .ReverseMap();
 
-            CreateMap<GPU, GPUInsertDto>()
+            CreateMap<CaseEntity, CaseInsertDto>()
                 .ReverseMap();
 
-            CreateMap<GPU, GPUUpdateDto>()
-                .ReverseMap();
-
-            #endregion
-
-            #region HDD Mapping
-
-            CreateMap<HDD, HDDReadDto>()
-                .ReverseMap();
-
-            CreateMap<HDD, HDDInsertDto>()
-                .ReverseMap();
-
-            CreateMap<HDD, HDDUpdateDto>()
+            CreateMap<CaseEntity, CaseUpdateDto>()
                 .ReverseMap();
 
             #endregion
 
-            #region Motherboard Mapping
+            #region VideoCardEntity Mapping
 
-            CreateMap<Motherboard, MotherboardReadDto>()
+            CreateMap<VideoCardEntity, VideoCardReadDto>()
                 .ReverseMap();
 
-            CreateMap<Motherboard, MotherboardInsertDto>()
+            CreateMap<VideoCardEntity, VideoCardInsertDto>()
                 .ReverseMap();
 
-            CreateMap<Motherboard, MotherboardUpdateDto>()
-                .ReverseMap();
-
-            #endregion
-
-            #region PowerSupply Mapping
-
-            CreateMap<PowerSupply, PowerSupplyReadDto>()
-                .ReverseMap();
-
-            CreateMap<PowerSupply, PowerSupplyInsertDto>()
-                .ReverseMap();
-
-            CreateMap<PowerSupply, PowerSupplyUpdateDto>()
+            CreateMap<VideoCardEntity, VideoCardUpdateDto>()
                 .ReverseMap();
 
             #endregion
 
-            #region CPU Mapping
+            #region HardDriveDiskEntity Mapping
 
-            CreateMap<CPU, CPUReadDto>();
-            CreateMap<CPU, CPUInsertDto>();
-            CreateMap<CPU, CPUUpdateDto>();
+            CreateMap<HardDriveDiskEntity, HardDriveDiskReadDto>()
+                .ReverseMap();
 
-            #endregion
+            CreateMap<HardDriveDiskEntity, HardDriveDiskInsertDto>()
+                .ReverseMap();
 
-            #region RAM Mapping
-
-            CreateMap<RAM, RAMReadDto>();
-            CreateMap<RAM, RAMInsertDto>();
-            CreateMap<RAM, RAMUpdateDto>();
+            CreateMap<HardDriveDiskEntity, HardDriveDiskUpdateDto>()
+                .ReverseMap();
 
             #endregion
 
-            #region SSD Mapping
+            #region MotherboardEntity Mapping
 
-            CreateMap<SSD, SSDReadDto>();
-            CreateMap<SSD, SSDInsertDto>();
-            CreateMap<SSD, SSDUpdateDto>();
+            CreateMap<MotherboardEntity, MotherboardReadDto>()
+                .ReverseMap();
+
+            CreateMap<MotherboardEntity, MotherboardInsertDto>()
+                .ReverseMap();
+
+            CreateMap<MotherboardEntity, MotherboardUpdateDto>()
+                .ReverseMap();
+
+            #endregion
+
+            #region PowerSupplyEntity Mapping
+
+            CreateMap<PowerSupplyEntity, PowerSupplyReadDto>()
+                .ReverseMap();
+
+            CreateMap<PowerSupplyEntity, PowerSupplyInsertDto>()
+                .ReverseMap();
+
+            CreateMap<PowerSupplyEntity, PowerSupplyUpdateDto>()
+                .ReverseMap();
+
+            #endregion
+
+            #region ProcessorEntity Mapping
+
+            CreateMap<ProcessorEntity, ProcessorReadDto>();
+            CreateMap<ProcessorEntity, ProcessorInsertDto>();
+            CreateMap<ProcessorEntity, ProcessorUpdateDto>();
+
+            #endregion
+
+            #region RandomAccessMemoryEntity Mapping
+
+            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryReadDto>();
+            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryInsertDto>();
+            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryUpdateDto>();
+
+            #endregion
+
+            #region SolidStateDriveEntity Mapping
+
+            CreateMap<SolidStateDriveEntity, SolidStateDriveReadDto>();
+            CreateMap<SolidStateDriveEntity, SolidStateDriveInsertDto>();
+            CreateMap<SolidStateDriveEntity, SolidStateDriveUpdateDto>();
 
             #endregion
 
@@ -125,11 +125,11 @@ namespace FoundersPC.API.Application.Mappings
 
             #endregion
 
-            #region VideoCardCore Mapping
+            #region VideoCardCoreEntity Mapping
 
-            CreateMap<VideoCardCore, VideoCardCoreReadDto>();
-            CreateMap<VideoCardCore, VideoCardCoreInsertDto>();
-            CreateMap<VideoCardCore, VideoCardCoreUpdateDto>();
+            CreateMap<VideoCardCoreEntity, VideoCardCoreReadDto>();
+            CreateMap<VideoCardCoreEntity, VideoCardCoreInsertDto>();
+            CreateMap<VideoCardCoreEntity, VideoCardCoreUpdateDto>();
 
             #endregion
         }

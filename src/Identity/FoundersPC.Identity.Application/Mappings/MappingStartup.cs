@@ -16,7 +16,7 @@ namespace FoundersPC.Identity.Application.Mappings
     {
         public MappingStartup()
         {
-            CreateMap<ApiAccessUserToken, AccessUserTokenReadDto>();
+            CreateMap<AccessTokenEntity, AccessUserTokenReadDto>();
             CreateMap<RoleEntity, RoleEntityReadDto>();
             CreateMap<UserEntity, UserEntityReadDto>();
 
@@ -28,7 +28,7 @@ namespace FoundersPC.Identity.Application.Mappings
             CreateMap<AccessTokenLog, AccessTokenLogReadDto>()
                 .ForMember(dest => dest.UserId,
                            source => source
-                               .MapFrom(x => x.ApiAccessToken.UserId))
+                               .MapFrom(x => x.AccessTokenEntity.UserId))
                 .ForMember(dest => dest.TokenId,
                            source => source
                                .MapFrom(x => x.ApiAccessUsersTokenId));

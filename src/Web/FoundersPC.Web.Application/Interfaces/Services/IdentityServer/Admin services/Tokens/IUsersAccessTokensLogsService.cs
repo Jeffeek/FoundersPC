@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 
 #endregion
 

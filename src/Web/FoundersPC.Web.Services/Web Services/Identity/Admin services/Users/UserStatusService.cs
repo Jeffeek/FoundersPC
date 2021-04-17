@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using System.Data;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -34,7 +33,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -61,9 +61,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">User was null after parsing.</exception>
 
         #endregion
 
@@ -89,7 +89,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                  UserId = id
                              };
 
-            var blockUserRequest = await client.PutAsJsonAsync($"{IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint}/{IdentityServerRoutes.Users.Status.Block.ByUserId}", blockModel);
+            var blockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Block.BlockByUserId}",
+                                          blockModel);
 
             if (!blockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -100,7 +103,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: block user: {nameof(blockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(blockingResultModel));
+                return false;
             }
 
             if (blockingResultModel.IsBlockingSuccessful)
@@ -117,7 +120,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -144,9 +148,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">Blocking result parsing was null.</exception>
 
         #endregion
 
@@ -172,7 +176,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                  UserEmail = email
                              };
 
-            var blockUserRequest = await client.PutAsJsonAsync($"{IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint}/{IdentityServerRoutes.Users.Status.Block.ByUserEmail}", blockModel);
+            var blockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Block.BlockByUserEmail}",
+                                          blockModel);
 
             if (!blockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -183,7 +190,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: block user: {nameof(blockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(blockingResultModel));
+                return false;
             }
 
             if (blockingResultModel.IsBlockingSuccessful)
@@ -200,7 +207,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -227,8 +235,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">Parsing error.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
 
         #endregion
@@ -255,7 +263,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserId = id
                                };
 
-            var unblockUserRequest = await client.PutAsJsonAsync($"{IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint}/{IdentityServerRoutes.Users.Status.Unblock.ByUserId}", unblockModel);
+            var unblockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserId}",
+                                          unblockModel);
 
             if (!unblockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -266,7 +277,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: unblock user: {nameof(unblockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(unblockingResultModel));
+                return false;
             }
 
             if (unblockingResultModel.IsUnblockingSuccessful)
@@ -283,7 +294,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -310,9 +322,9 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">Parsing error.</exception>
 
         #endregion
 
@@ -338,7 +350,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserEmail = email
                                };
 
-            var unblockUserRequest = await client.PutAsJsonAsync($"{IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint}/{IdentityServerRoutes.Users.Status.Unblock.ByUserEmail}", unblockModel);
+            var unblockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserEmail}",
+                                          unblockModel);
 
             if (!unblockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -349,7 +364,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: unblock user: {nameof(unblockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(unblockingResultModel));
+                return false;
             }
 
             if (unblockingResultModel.IsUnblockingSuccessful)
@@ -366,7 +381,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -393,12 +409,21 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
-        /// <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout.</exception>
-        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">.NET Core and .NET 5.0 and later only: The request failed due to timeout.</exception>
-        /// <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.</exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">Parsing error.</exception>
+        /// <exception cref="T:System.Net.Http.HttpRequestException">
+        ///     The request failed due to an underlying issue such as network
+        ///     connectivity, DNS failure, server certificate validation or timeout.
+        /// </exception>
+        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">
+        ///     .NET Core and .NET 5.0 and later only: The request
+        ///     failed due to timeout.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        ///     The request message was already sent by the
+        ///     <see cref="T:System.Net.Http.HttpClient"/> instance.
+        /// </exception>
 
         #endregion
 
@@ -419,7 +444,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserId = id
                                };
 
-            var request = await client.DeleteAsJsonAsync($"{IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint}/{IdentityServerRoutes.Users.Status.MakeInactive.ByUserId}", requestModel);
+            var request =
+                await
+                    client.DeleteAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserId}",
+                                             requestModel);
 
             if (request.IsSuccessStatusCode)
                 return false;
@@ -430,7 +458,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: Make user inactive with id = {id}. Response deserialize error");
 
-                throw new NoNullAllowedException();
+                return false;
             }
 
             if (!contentResult.IsUserMadeInactiveSuccessful)
@@ -447,7 +475,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -474,12 +503,21 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">Parsing error.</exception>
-        /// <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout.</exception>
-        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">.NET Core and .NET 5.0 and later only: The request failed due to timeout.</exception>
-        /// <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.</exception>
+        /// <exception cref="T:System.Net.Http.HttpRequestException">
+        ///     The request failed due to an underlying issue such as network
+        ///     connectivity, DNS failure, server certificate validation or timeout.
+        /// </exception>
+        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">
+        ///     .NET Core and .NET 5.0 and later only: The request
+        ///     failed due to timeout.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        ///     The request message was already sent by the
+        ///     <see cref="T:System.Net.Http.HttpClient"/> instance.
+        /// </exception>
 
         #endregion
 
@@ -500,7 +538,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserEmail = email
                                };
 
-            var request = await client.DeleteAsJsonAsync($"{IdentityServerRoutes.Users.Status.UserChangeStatusEndpoint}/{IdentityServerRoutes.Users.Status.MakeInactive.ByUserEmail}", requestModel);
+            var request =
+                await
+                    client.DeleteAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserEmail}",
+                                             requestModel);
 
             if (request.IsSuccessStatusCode)
                 return false;
@@ -511,7 +552,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: Make user inactive with email = {email}. Response deserialize error");
 
-                throw new NoNullAllowedException();
+                return false;
             }
 
             if (!contentResult.IsUserMadeInactiveSuccessful)

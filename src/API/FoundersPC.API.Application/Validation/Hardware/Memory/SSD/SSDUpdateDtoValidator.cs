@@ -7,7 +7,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Validation.Hardware.Memory.SSD
 {
-    public class SSDUpdateDtoValidator : AbstractValidator<SSDUpdateDto>
+    public class SSDUpdateDtoValidator : AbstractValidator<SolidStateDriveUpdateDto>
     {
         public SSDUpdateDtoValidator()
         {

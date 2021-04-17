@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="Exceptions\" />
     <Folder Include="Interfaces\Services\Encryption Services\" />
   </ItemGroup>
 

@@ -9,9 +9,9 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories
 {
-    public interface IProducersRepositoryAsync : IRepositoryAsync<Producer>,
-                                                 IPaginateableRepository<Producer>
+    public interface IProducersRepositoryAsync : IRepositoryAsync<ProducerEntity>,
+                                                 IPaginateableRepository<ProducerEntity>
     {
-        Task<IEnumerable<Producer>> GetAllWithHardwareAsync();
+        Task<IEnumerable<ProducerEntity>> GetAllWithHardwareAsync();
     }
 }

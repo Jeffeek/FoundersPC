@@ -24,16 +24,16 @@ namespace FoundersPC.API.Infrastructure
         public static void AddHardwareRepositories(this IServiceCollection services)
         {
             services.AddScoped<IProducersRepositoryAsync, ProducersRepository>();
-            services.AddScoped<ICPUsRepositoryAsync, CPUsRepository>();
+            services.AddScoped<IProcessorsRepositoryAsync, ProcessorsRepository>();
             services.AddScoped<IProcessorCoresRepositoryAsync, ProcessorCoresRepository>();
-            services.AddScoped<IGPUsRepositoryAsync, GPUsRepository>();
+            services.AddScoped<IVideoCardsRepositoryAsync, VideoCardsRepository>();
             services.AddScoped<IVideoCardCoresRepositoryAsync, VideoCardCoresRepository>();
             services.AddScoped<ICasesRepositoryAsync, CasesRepository>();
-            services.AddScoped<IHDDsRepositoryAsync, HDDsRepository>();
+            services.AddScoped<IHardDrivesRepositoryAsync, HardDrivesRepository>();
             services.AddScoped<IMotherboardsRepositoryAsync, MotherboardsRepository>();
             services.AddScoped<IPowerSuppliersRepositoryAsync, PowerSuppliersRepository>();
-            services.AddScoped<IRAMsRepositoryAsync, RAMsRepository>();
-            services.AddScoped<ISSDsRepositoryAsync, SSDsRepository>();
+            services.AddScoped<IRandomAccessMemoryRepositoryAsync, RandomAccessMemoryRepository>();
+            services.AddScoped<ISolidStateDrivesRepositoryAsync, SolidStateDrivesRepository>();
         }
 
         public static void AddHardwareUnitOfWork(this IServiceCollection services)

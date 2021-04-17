@@ -7,7 +7,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Validation.Hardware.CPU
 {
-    public class CPUUpdateDtoValidator : AbstractValidator<CPUUpdateDto>
+    public class CPUUpdateDtoValidator : AbstractValidator<ProcessorUpdateDto>
     {
         public CPUUpdateDtoValidator()
         {

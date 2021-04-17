@@ -36,7 +36,7 @@ namespace FoundersPC.API.Application.Validation.Hardware.Motherboard
                 .NotEmpty()
                 .MinimumLength(4)
                 .MaximumLength(7)
-                .Matches(x => "DDR\\d(\\w+)?");
+                .Matches(_ => "DDR\\d(\\w+)?");
 
             RuleFor(x => x.AudioSupport)
                 .NotNull()

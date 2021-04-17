@@ -30,19 +30,19 @@ namespace FoundersPC.API.Dto.Mapping
 
             #region GPU
 
-            CreateMap<GPUReadDto, GPUUpdateDto>()
+            CreateMap<VideoCardReadDto, VideoCardUpdateDto>()
                 .ReverseMap();
 
-            CreateMap<GPUReadDto, GPUInsertDto>();
+            CreateMap<VideoCardReadDto, VideoCardInsertDto>();
 
             #endregion
 
             #region HDD
 
-            CreateMap<HDDReadDto, HDDUpdateDto>()
+            CreateMap<HardDriveDiskReadDto, HardDriveDiskUpdateDto>()
                 .ReverseMap();
 
-            CreateMap<HDDReadDto, HDDInsertDto>();
+            CreateMap<HardDriveDiskReadDto, HardDriveDiskInsertDto>();
 
             #endregion
 
@@ -66,28 +66,28 @@ namespace FoundersPC.API.Dto.Mapping
 
             #region CPU
 
-            CreateMap<CPUReadDto, CPUUpdateDto>()
+            CreateMap<ProcessorReadDto, ProcessorUpdateDto>()
                 .ReverseMap();
 
-            CreateMap<CPUReadDto, CPUInsertDto>();
+            CreateMap<ProcessorReadDto, ProcessorInsertDto>();
 
             #endregion
 
             #region RAM
 
-            CreateMap<RAMUpdateDto, RAMUpdateDto>()
+            CreateMap<RandomAccessMemoryUpdateDto, RandomAccessMemoryUpdateDto>()
                 .ReverseMap();
 
-            CreateMap<RAMReadDto, RAMInsertDto>();
+            CreateMap<RandomAccessMemoryReadDto, RandomAccessMemoryInsertDto>();
 
             #endregion
 
             #region SSD
 
-            CreateMap<SSDReadDto, SSDUpdateDto>()
+            CreateMap<SolidStateDriveReadDto, SolidStateDriveUpdateDto>()
                 .ReverseMap();
 
-            CreateMap<SSDReadDto, SSDInsertDto>();
+            CreateMap<SolidStateDriveReadDto, SolidStateDriveInsertDto>();
 
             #endregion
 

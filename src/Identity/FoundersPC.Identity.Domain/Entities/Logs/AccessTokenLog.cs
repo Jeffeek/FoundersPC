@@ -15,7 +15,7 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
     public class AccessTokenLog : IdentityItem, IEquatable<AccessTokenLog>
     {
         [ForeignKey(nameof(ApiAccessUsersTokenId))]
-        public ApiAccessUserToken ApiAccessToken { get; set; }
+        public AccessTokenEntity AccessTokenEntity { get; set; }
 
         [Required]
         public int ApiAccessUsersTokenId { get; set; }
@@ -43,10 +43,7 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
             if (ReferenceEquals(this, obj))
                 return true;
 
-            if (obj.GetType() != GetType())
-                return false;
-
-            return Equals((AccessTokenLog)obj);
+            return obj.GetType() == GetType() && Equals((AccessTokenLog)obj);
         }
 
         public override int GetHashCode() => HashCode.Combine(ApiAccessUsersTokenId, RequestDateTime);

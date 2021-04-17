@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FoundersPC.API.Infrastructure.Migrations
 {
+    // ReSharper disable once InconsistentNaming
+    // ReSharper disable once UnusedType.Global
+    // ReSharper disable once IdentifierTypo
     public partial class RemoveEntityBaseFromCPUcore : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +21,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                         "SolidStateDrives");
 
             migrationBuilder.DropColumn("MarketLaunch",
-                                        "RandomAccessMemory");
+                                        "RandomAccessMemoryEntity");
 
             migrationBuilder.DropColumn("MarketLaunch",
                                         "Processors");
@@ -53,7 +56,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                defaultValue : "");
 
             migrationBuilder.AddColumn<string>("Title",
-                                               "RandomAccessMemory",
+                                               "RandomAccessMemoryEntity",
                                                "nvarchar(100)",
                                                maxLength : 100,
                                                nullable : false,
@@ -155,7 +158,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                         "SolidStateDrives");
 
             migrationBuilder.DropColumn("Title",
-                                        "RandomAccessMemory");
+                                        "RandomAccessMemoryEntity");
 
             migrationBuilder.DropColumn("Title",
                                         "PowerSupplies");
@@ -200,7 +203,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                  nullable : true);
 
             migrationBuilder.AddColumn<DateTime>("MarketLaunch",
-                                                 "RandomAccessMemory",
+                                                 "RandomAccessMemoryEntity",
                                                  "datetime2",
                                                  nullable : true);
 

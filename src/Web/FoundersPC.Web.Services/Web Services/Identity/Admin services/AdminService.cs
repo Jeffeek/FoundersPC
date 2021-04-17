@@ -13,7 +13,7 @@ using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
 using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Tokens;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
@@ -62,7 +62,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region Users information
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => await _usersInformationService.GetAllUsersAsync(adminToken);
+        public Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => _usersInformationService.GetAllUsersAsync(adminToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<UserEntityReadDto>>
@@ -73,8 +73,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => _usersInformationService.GetUserByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken) =>
-            _usersInformationService.GetUserByEmailAsync(email, adminToken);
+        public Task<UserEntityReadDto> GetUserByEmailAsync(string email, string jwtToken) => _usersInformationService.GetUserByEmailAsync(email, jwtToken);
 
         #endregion
 
@@ -104,16 +103,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         public Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) =>
-            _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
+        public Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) => _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Users entrances
 
         /// <inheritdoc/>
-        public Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) =>
-            _usersEntrancesService.GetAllEntrancesAsync(adminToken);
+        public Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) => _usersEntrancesService.GetAllEntrancesAsync(adminToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<UserEntranceLogReadDto>>
@@ -121,8 +118,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _usersEntrancesService.GetPaginateableEntrancesAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) =>
-            _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
+        public Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) => _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
         public Task<IEnumerable<UserEntranceLogReadDto>>
@@ -147,7 +143,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
         /// <exception cref="T:System.ArgumentException">RawPassword != RawPasswordConfirm.</exception>
         /// <exception cref="T:System.Data.NoNullAllowedException">Response deserialize error.</exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -174,7 +171,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         public async Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken)
         {
             if (model is null)
@@ -202,7 +200,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             var requestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
-            var messageResponse = await client.PostAsJsonAsync($"{IdentityServerRoutes.Authentication.Endpoint}/{IdentityServerRoutes.Authentication.SignUpManager}", requestModel);
+            var messageResponse =
+                await
+                    client.PostAsJsonAsync($"{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/{IdentityServerRoutes.Authentication.SignUpManager}",
+                                           requestModel);
 
             if (!messageResponse.IsSuccessStatusCode)
                 return false;
@@ -281,12 +282,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _tokensService.GetPaginateableTokensAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) =>
-            _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
+        public Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) => _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) =>
-            _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
+        public Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) => _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
 
         #endregion
     }

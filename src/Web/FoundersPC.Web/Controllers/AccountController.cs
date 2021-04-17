@@ -1,9 +1,8 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Net;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
@@ -36,14 +35,7 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> Profile()
         {
-            var emailInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
-
-            if (emailInCookie is null)
-            {
-                _logger.LogError($"Email cookie not found. ConnectionId: {HttpContext.Connection.Id}");
-
-                throw new CookieException();
-            }
+            var (emailInCookie, _) = HttpContext.ParseCredentials();
 
             var information =
                 await _usersInformationService.GetUserByEmailAsync(emailInCookie, HttpContext.GetJwtTokenFromCookie());

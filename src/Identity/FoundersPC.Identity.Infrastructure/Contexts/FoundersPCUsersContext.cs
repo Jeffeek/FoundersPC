@@ -17,7 +17,7 @@ namespace FoundersPC.Identity.Infrastructure.Contexts
 
         public DbSet<RoleEntity> Roles { get; set; }
 
-        public DbSet<ApiAccessUserToken> UsersTokens { get; set; }
+        public DbSet<AccessTokenEntity> UsersTokens { get; set; }
 
         public DbSet<AccessTokenLog> TokenAccessLogs { get; set; }
     }

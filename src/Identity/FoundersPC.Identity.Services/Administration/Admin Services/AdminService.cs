@@ -115,7 +115,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         private async Task<bool> BlockAllUserTokensAsync(int userId)
         {
-            var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
+            var userTokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userId);
 
             var blockingResults = new List<bool>();
 
@@ -188,11 +188,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         #endregion
 
-        #region Block API token
+        #region Block API tokenEntity
 
-        public async Task<bool> BlockAccessTokenAsync(int tokenId) => await _accessUsersTokensService.BlockAsync(tokenId);
+        public Task<bool> BlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.BlockAsync(tokenId);
 
-        public async Task<bool> BlockAccessTokenAsync(string token) => await _accessUsersTokensService.BlockAsync(token);
+        public Task<bool> BlockAccessTokenAsync(string token) => _accessUsersTokensService.BlockAsync(token);
 
         #endregion
     }

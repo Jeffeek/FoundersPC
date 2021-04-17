@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 
 #endregion
 
@@ -23,9 +23,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
         ///     Returns user with specified identification
         /// </summary>
         /// <param name="email"></param>
-        /// <param name="adminToken">JWT token</param>
+        /// <param name="jwtToken">JWT token</param>
         /// <returns></returns>
-        Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken);
+        Task<UserEntityReadDto> GetUserByEmailAsync(string email, string jwtToken);
 
         /// <summary>
         ///     Returns all users from database

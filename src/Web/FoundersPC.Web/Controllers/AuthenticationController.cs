@@ -157,7 +157,7 @@ namespace FoundersPC.Web.Controllers
                                                 });
         }
 
-        private async Task SetupDefaultCookieAsync(string email, string role)
+        private Task SetupDefaultCookieAsync(string email, string role)
         {
             var claims = new List<Claim>
                          {
@@ -169,8 +169,8 @@ namespace FoundersPC.Web.Controllers
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                                          new ClaimsPrincipal(identity));
+            return HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                                           new ClaimsPrincipal(identity));
         }
 
         private void RemoveJwtTokenFromCookie()

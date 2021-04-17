@@ -7,7 +7,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Validation.Hardware.CPU
 {
-    public class CPUInsertDtoValidator : AbstractValidator<CPUInsertDto>
+    public class CPUInsertDtoValidator : AbstractValidator<ProcessorInsertDto>
     {
         public CPUInsertDtoValidator()
         {

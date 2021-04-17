@@ -11,44 +11,44 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class MotherboardsRepository : GenericRepositoryAsync<Motherboard>,
+    public class MotherboardsRepository : GenericRepositoryAsync<MotherboardEntity>,
                                           IMotherboardsRepositoryAsync
     {
         /// <inheritdoc/>
         public MotherboardsRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of IPaginateableRepository<Motherboard>
+        #region Implementation of IPaginateableRepository<MotherboardEntity>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<Motherboard>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<MotherboardEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
-                  .Include(x => x.Producer)
+                  .Include(x => x.ProducerEntity)
                   .ToListAsync();
 
         #endregion
 
         #region Implementation of IMotherboardsRepositoryAsync
 
-        public override async Task<Motherboard> GetByIdAsync(int id)
+        public override async Task<MotherboardEntity> GetByIdAsync(int id)
         {
-            var motherboard = await Context.Set<Motherboard>()
+            var motherboard = await Context.Set<MotherboardEntity>()
                                            .FindAsync(id);
 
             if (motherboard is null)
                 return null;
 
             await Context.Entry(motherboard)
-                         .Reference(x => x.Producer)
+                         .Reference(x => x.ProducerEntity)
                          .LoadAsync();
 
             return motherboard;
         }
 
         /// <inheritdoc/>
-        public override async Task<IEnumerable<Motherboard>> GetAllAsync()
+        public override async Task<IEnumerable<MotherboardEntity>> GetAllAsync()
         {
-            return await Context.Set<Motherboard>()
-                                .Include(motherboard => motherboard.Producer)
+            return await Context.Set<MotherboardEntity>()
+                                .Include(motherboard => motherboard.ProducerEntity)
                                 .ToListAsync();
         }
 

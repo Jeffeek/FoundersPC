@@ -8,13 +8,13 @@ using FoundersPC.API.Domain.Entities;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 
 #endregion
 
 namespace FoundersPC.API.Services.Hardware_Services
 {
-    public class ProducersService : IProducerService
+    public class ProducersService : IProducersService
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWorkHardwareAPI _unitOfWorkHardwareAPI;
@@ -27,19 +27,19 @@ namespace FoundersPC.API.Services.Hardware_Services
 
         /// <inheritdoc/>
         public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
-            _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                   .ProducersRepository
-                                                                                   .GetAllAsync());
+            _mapper.Map<IEnumerable<ProducerEntity>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
+                                                                                         .ProducersRepository
+                                                                                         .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
-            _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository
-                                                                               .GetByIdAsync(producerId));
+            _mapper.Map<ProducerEntity, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository
+                                                                                     .GetByIdAsync(producerId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateProducerAsync(ProducerInsertDto producer)
         {
-            var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
+            var mappedProducer = _mapper.Map<ProducerInsertDto, ProducerEntity>(producer);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.ProducersRepository.AnyAsync(x => x.Equals(mappedProducer));
@@ -80,13 +80,13 @@ namespace FoundersPC.API.Services.Hardware_Services
         #region Implementation of IPaginateableService<ProducerReadDto>
 
         /// <inheritdoc/>
-        public async Task<IPaginationResponse<ProducerReadDto>>
-            GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
+        public async Task<IPaginationResponse<ProducerReadDto>> GetPaginateableAsync(int pageNumber = 1,
+                                                                                     int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                               .ProducersRepository
-                                                                                               .GetPaginateableAsync(pageNumber,
-                                                                                                   pageSize));
+            var items = _mapper.Map<IEnumerable<ProducerEntity>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
+                                                                                                     .ProducersRepository
+                                                                                                     .GetPaginateableAsync(pageNumber,
+                                                                                                         pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.ProducersRepository.CountAsync();
 

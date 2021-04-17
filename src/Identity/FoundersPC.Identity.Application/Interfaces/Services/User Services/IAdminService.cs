@@ -9,14 +9,14 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
     public interface IAdminService : IUserStatusChangeService
     {
         /// <summary>
-        ///     Blocking API token by id
+        ///     Blocking API tokenEntity by id
         /// </summary>
         /// <param name="tokenId"></param>
         /// <returns></returns>
         Task<bool> BlockAccessTokenAsync(int tokenId);
 
         /// <summary>
-        ///     Blocking API token by token itself
+        ///     Blocking API tokenEntity by tokenEntity itself
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>

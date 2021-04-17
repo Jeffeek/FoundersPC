@@ -656,7 +656,7 @@ main
 .container
 {
     max-width: 100%;
-    padding: 0px 0px 0px 0px;
+    padding: 0 0 0 0;
     width: 100%;
 }
 

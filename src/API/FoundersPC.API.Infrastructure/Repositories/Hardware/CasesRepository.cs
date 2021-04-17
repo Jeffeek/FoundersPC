@@ -11,44 +11,44 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class CasesRepository : GenericRepositoryAsync<Case>,
+    public class CasesRepository : GenericRepositoryAsync<CaseEntity>,
                                    ICasesRepositoryAsync
     {
         /// <inheritdoc/>
         public CasesRepository(DbContext context) : base(context) { }
 
-        #region Implementation of IPaginateableRepository<Case>
+        #region Implementation of IPaginateableRepository<CaseEntity>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<Case>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<CaseEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
-                  .Include(x => x.Producer)
+                  .Include(x => x.ProducerEntity)
                   .ToListAsync();
 
         #endregion
 
         #region Implementation of ICasesRepositoryAsync
 
-        public override async Task<Case> GetByIdAsync(int id)
+        public override async Task<CaseEntity> GetByIdAsync(int id)
         {
-            var @case = await Context.Set<Case>()
+            var @case = await Context.Set<CaseEntity>()
                                      .FindAsync(id);
 
             if (@case is null)
                 return null;
 
             await Context.Entry(@case)
-                         .Reference(x => x.Producer)
+                         .Reference(x => x.ProducerEntity)
                          .LoadAsync();
 
             return @case;
         }
 
         /// <inheritdoc/>
-        public override async Task<IEnumerable<Case>> GetAllAsync()
+        public override async Task<IEnumerable<CaseEntity>> GetAllAsync()
         {
-            return await Context.Set<Case>()
-                                .Include(@case => @case.Producer)
+            return await Context.Set<CaseEntity>()
+                                .Include(@case => @case.ProducerEntity)
                                 .ToListAsync();
         }
 

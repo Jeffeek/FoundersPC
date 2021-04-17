@@ -123,6 +123,10 @@ namespace FoundersPC.Web.Controllers
             return View("EntrancesTable", viewModel);
         }
 
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
         [Route("User/{userId:int}/Entrances")]
         public async Task<ActionResult> UserEntrances([FromRoute] int userId)
         {
@@ -144,6 +148,10 @@ namespace FoundersPC.Web.Controllers
             return View("EntrancesTable", viewModel);
         }
 
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
         [Route("Entrances/Between")]
         public async Task<ActionResult> EntrancesBetween([FromForm] EntrancesViewModel viewModel)
         {
@@ -197,6 +205,10 @@ namespace FoundersPC.Web.Controllers
             return View("TokensLogsTable", viewModel);
         }
 
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
         [Route("User/{userId:int:min(1)}/TokensLogsTable")]
         public async Task<ActionResult> UserTokensLogs([FromRoute] int userId)
         {
@@ -213,6 +225,11 @@ namespace FoundersPC.Web.Controllers
             return View("TokensLogsTable", viewModel);
         }
 
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is <see langword="null"/>.</exception>
         [Route("TokensLogsTable/ByTokenId/{tokenId:int:min(1)}")]
         public async Task<ActionResult> TokenLogs([FromRoute] int tokenId)
         {
@@ -232,6 +249,10 @@ namespace FoundersPC.Web.Controllers
             return View("TokensLogsTable", viewModel);
         }
 
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
         [Route("TokensLogsTable/ByToken/{token:length(64)}")]
         public async Task<ActionResult> TokenLogs([FromRoute] string token)
         {
@@ -281,7 +302,7 @@ namespace FoundersPC.Web.Controllers
             var blockResult = await _adminService.BlockTokenByIdAsync(tokenId, HttpContext.GetJwtTokenFromCookie());
 
             if (blockResult)
-                return await TokensTable(1);
+                return await TokensTable();
 
             return BadRequest();
         }

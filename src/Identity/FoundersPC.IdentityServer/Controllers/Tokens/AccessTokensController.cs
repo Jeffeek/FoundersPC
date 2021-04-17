@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.Token_Services;
 using FoundersPC.Identity.Dto;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
 using FoundersPC.RequestResponseShared.IdentityServer.Response.Tokens;
-using FoundersPC.RequestResponseShared.Pagination;
 using FoundersPC.RequestResponseShared.Pagination.Requests;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
     [ApiController]
     [EnableCors(ApplicationCorsPolicies.WebClientPolicy)]
-    [Route(IdentityServerRoutes.Tokens.Endpoint)]
+    [Route(IdentityServerRoutes.Tokens.TokensEndpoint)]
+    [ModelValidation]
     public class AccessTokensController : Controller
     {
         private readonly IAccessTokensReservationService _accessTokensReservationService;
@@ -68,9 +70,6 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         [HttpPost(IdentityServerRoutes.Tokens.ReserveNewToken)]
         public async ValueTask<ActionResult<BuyNewTokenResponse>> ReserveNewToken([FromBody] BuyNewTokenRequest request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
             var newTokenResult =
                 await _accessTokensReservationService.ReserveNewTokenAsync(request.UserEmail, request.TokenType);
 
@@ -119,8 +118,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(ApplicationRestAddons.All)]
-        public async ValueTask<IEnumerable<AccessUserTokenReadDto>> GetAll() =>
-            await _accessUsersTokensService.GetAllTokensAsync();
+        public async ValueTask<IEnumerable<AccessUserTokenReadDto>> GetAll() => await _accessUsersTokensService.GetAllTokensAsync();
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [AllowAnonymous]

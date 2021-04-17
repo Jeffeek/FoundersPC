@@ -1,5 +1,9 @@
-﻿using FluentValidation;
+﻿#region Using namespaces
+
+using FluentValidation;
 using FoundersPC.RequestResponseShared.Pagination.Requests;
+
+#endregion
 
 namespace FoundersPC.API.Application.Validation.Filtering
 {

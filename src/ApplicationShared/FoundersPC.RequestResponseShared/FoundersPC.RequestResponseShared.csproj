@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="IdentityServer\Request\Administration\Manager\" />
     <Folder Include="IdentityServer\Response\Administration\Manager\" />
-    <Folder Include="Pagination\Response\" />
   </ItemGroup>
 
   <ItemGroup>

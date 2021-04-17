@@ -11,6 +11,7 @@ using FoundersPC.Web.Domain.Common;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PagedList.Core;
 
 #endregion
 
@@ -49,21 +50,28 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                 await _producersManagingService.CreateProducerAsync(producer, HttpContext.GetJwtTokenFromCookie());
 
             if (insertResult)
-                return RedirectToAction("Table");
+                return RedirectToAction("ProducersTable");
 
             return Problem();
         }
 
         [HttpGet("Table")]
-        public async Task<ActionResult> Table([FromQuery] int pageNumber = 1)
+        public async Task<ActionResult> ProducersTable([FromQuery] int pageNumber = 1)
         {
             var producers = await _producersManagingService.GetPaginateableProducersAsync(pageNumber,
                                                                                           FoundersPCConstants.PageSize,
                                                                                           HttpContext.GetJwtTokenFromCookie());
 
-            var indexModel = new IndexViewModel<ProducerReadDto>();
+            var indexModel = new IndexViewModel<ProducerReadDto>
+                             {
+                                 IsPaginationNeeded = true,
+                                 PagedList = new StaticPagedList<ProducerReadDto>(producers.Items,
+                                                                                  pageNumber,
+                                                                                  FoundersPCConstants.PageSize,
+                                                                                  producers.TotalItemsCount)
+                             };
 
-            return View("Table", indexModel);
+            return View("ProducersTable", indexModel);
         }
 
         [HttpGet("Edit/{id:int:min(1)}")]
@@ -74,7 +82,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 
             var producerUpdate = _mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer);
 
-            return View("Edit", producerUpdate);
+            return View("ProducerEdit", producerUpdate);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
@@ -83,7 +91,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var result =
                 await _producersManagingService.UpdateProducerAsync(id, producer, HttpContext.GetJwtTokenFromCookie());
 
-            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("Table");
+            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("ProducersTable");
         }
 
         [HttpGet("Remove/{id:int:min(1)}")]
@@ -91,7 +99,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         {
             var result = await _producersManagingService.DeleteProducerAsync(id, HttpContext.GetJwtTokenFromCookie());
 
-            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("Table");
+            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("ProducersTable");
         }
     }
 }

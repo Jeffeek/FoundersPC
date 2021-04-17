@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,17 +20,12 @@ namespace FoundersPC.IdentityServer.Controllers.Users
     [ApiController]
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [Route(IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint)]
+    [ModelValidation]
     public class EntrancesIdentityController : Controller
     {
-        private readonly IMapper _mapper;
         private readonly IUsersEntrancesService _usersEntrancesService;
 
-        public EntrancesIdentityController(IMapper mapper,
-                                           IUsersEntrancesService usersEntrancesService)
-        {
-            _mapper = mapper;
-            _usersEntrancesService = usersEntrancesService;
-        }
+        public EntrancesIdentityController(IUsersEntrancesService usersEntrancesService) => _usersEntrancesService = usersEntrancesService;
 
         [HttpGet(ApplicationRestAddons.All)]
         public async ValueTask<IEnumerable<UserEntranceLogReadDto>> Get() =>
@@ -59,12 +54,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             GetUsersEntrancesBetween([FromQuery(Name = "Start")] DateTime start,
                                      [FromQuery(Name = "Finish")] DateTime finish)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
             var entrances = await _usersEntrancesService.GetEntrancesBetweenAsync(start, finish);
 
-            return Ok(entrances ?? Enumerable.Empty<UserEntranceLogReadDto>());
+            return Json(entrances ?? Enumerable.Empty<UserEntranceLogReadDto>());
         }
     }
 }

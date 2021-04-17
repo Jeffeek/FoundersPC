@@ -23,10 +23,10 @@ const initiateDEC = () =>
     value === 0 ? value = 80 : value -= 20;
     trailUpdate();
 };
-const move = (S, T) =>
+const move = (s, t) =>
 {
-    slider.style.transform = `translateX(-${S}%)`;
-    trail[T].classList.add("price-trail-active");
+    slider.style.transform = `translateX(-${s}%)`;
+    trail[t].classList.add("price-trail-active");
 };
 const tl = gsap.timeline({ defaults : { duration : 0.6, ease : "power2.inOut" } });
 tl.from(".bg", { x : "-100%", opacity : 0 }).from("p", { opacity : 0 }, "-=0.3").from("h1", { opacity : 0, y : "30px" }, "-=0.3").from(".container-pricing-slider a", { opacity : 0, y : "-40px" }, "-=0.8");

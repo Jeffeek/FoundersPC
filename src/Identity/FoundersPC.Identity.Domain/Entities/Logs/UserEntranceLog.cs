@@ -43,10 +43,7 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
             if (ReferenceEquals(this, obj))
                 return true;
 
-            if (obj.GetType() != GetType())
-                return false;
-
-            return Equals((UserEntranceLog)obj);
+            return obj.GetType() == GetType() && Equals((UserEntranceLog)obj);
         }
 
         public override int GetHashCode() => HashCode.Combine(UserId, Entrance);

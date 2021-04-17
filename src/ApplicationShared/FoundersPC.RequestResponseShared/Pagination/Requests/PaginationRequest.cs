@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region Using namespaces
+
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 namespace FoundersPC.RequestResponseShared.Pagination.Requests
 {
@@ -20,11 +19,11 @@ namespace FoundersPC.RequestResponseShared.Pagination.Requests
 
         #region Implementation of IPaginationRequest
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         [FromQuery(Name = "Page")]
         public int PageNumber { get; set; }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         [FromQuery(Name = "Size")]
         public int PageSize { get; set; }
 

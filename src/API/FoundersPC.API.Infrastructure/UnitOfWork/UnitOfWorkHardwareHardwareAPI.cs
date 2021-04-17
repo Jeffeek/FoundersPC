@@ -19,17 +19,17 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
         private readonly ILogger<UnitOfWorkHardwareHardwareAPI> _logger;
 
         public UnitOfWorkHardwareHardwareAPI(DbContext context,
-                                             ICPUsRepositoryAsync processorsRepository,
+                                             IProcessorsRepositoryAsync processorsRepository,
                                              IProducersRepositoryAsync producersRepository,
                                              IProcessorCoresRepositoryAsync processorCoresRepository,
-                                             IGPUsRepositoryAsync videoCardsRepository,
+                                             IVideoCardsRepositoryAsync videoCardsRepository,
                                              IVideoCardCoresRepositoryAsync videoCardCoresRepository,
                                              ICasesRepositoryAsync casesRepository,
-                                             IHDDsRepositoryAsync hddsRepository,
+                                             IHardDrivesRepositoryAsync hardDriveDisksRepository,
                                              IMotherboardsRepositoryAsync motherboardsRepository,
                                              IPowerSuppliersRepositoryAsync powerSuppliersRepository,
-                                             ISSDsRepositoryAsync ssdsRepository,
-                                             IRAMsRepositoryAsync ramsRepository,
+                                             ISolidStateDrivesRepositoryAsync solidStateDrivesRepository,
+                                             IRandomAccessMemoryRepositoryAsync ramsRepository,
                                              ILogger<UnitOfWorkHardwareHardwareAPI> logger)
         {
             _context = context;
@@ -39,18 +39,18 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
             VideoCardsRepository = videoCardsRepository;
             VideoCardCoresRepository = videoCardCoresRepository;
             CasesRepository = casesRepository;
-            HDDsRepository = hddsRepository;
+            HardDrivesRepository = hardDriveDisksRepository;
             MotherboardsRepository = motherboardsRepository;
             PowerSuppliersRepository = powerSuppliersRepository;
-            SSDsRepository = ssdsRepository;
-            RAMsRepository = ramsRepository;
+            SolidStateDrivesRepository = solidStateDrivesRepository;
+            RandomAccessMemoryRepository = ramsRepository;
             _logger = logger;
         }
 
         #region Implementation of IUnitOfWork
 
         /// <inheritdoc/>
-        public ICPUsRepositoryAsync ProcessorsRepository { get; }
+        public IProcessorsRepositoryAsync ProcessorsRepository { get; }
 
         /// <inheritdoc/>
         public IProducersRepositoryAsync ProducersRepository { get; }
@@ -59,7 +59,7 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
         public IProcessorCoresRepositoryAsync ProcessorCoresRepository { get; }
 
         /// <inheritdoc/>
-        public IGPUsRepositoryAsync VideoCardsRepository { get; }
+        public IVideoCardsRepositoryAsync VideoCardsRepository { get; }
 
         /// <inheritdoc/>
         public IVideoCardCoresRepositoryAsync VideoCardCoresRepository { get; }
@@ -68,7 +68,7 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
         public ICasesRepositoryAsync CasesRepository { get; }
 
         /// <inheritdoc/>
-        public IHDDsRepositoryAsync HDDsRepository { get; }
+        public IHardDrivesRepositoryAsync HardDrivesRepository { get; }
 
         /// <inheritdoc/>
         public IMotherboardsRepositoryAsync MotherboardsRepository { get; }
@@ -77,16 +77,16 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
         public IPowerSuppliersRepositoryAsync PowerSuppliersRepository { get; }
 
         /// <inheritdoc/>
-        public ISSDsRepositoryAsync SSDsRepository { get; }
+        public ISolidStateDrivesRepositoryAsync SolidStateDrivesRepository { get; }
 
         /// <inheritdoc/>
-        public IRAMsRepositoryAsync RAMsRepository { get; }
+        public IRandomAccessMemoryRepositoryAsync RandomAccessMemoryRepository { get; }
 
         /// <inheritdoc/>
         public async Task<int> SaveChangesAsync()
         {
             _logger.LogInformation("Save changes");
-            var saveChangesResult = 0;
+            int saveChangesResult;
 
             try
             {
@@ -96,7 +96,7 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
             catch (Exception e)
             {
                 _logger.LogError(e,
-                                 $"Error occured when tried to make save changes in {nameof(UnitOfWorkHardwareHardwareAPI)}");
+                                 $"Error happened when tried to make save changes in {nameof(UnitOfWorkHardwareHardwareAPI)}");
 
                 saveChangesResult = -1;
             }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard
 {
-    public class VideoCardCoresRepository : GenericRepositoryAsync<VideoCardCore>,
+    public class VideoCardCoresRepository : GenericRepositoryAsync<VideoCardCoreEntity>,
                                             IVideoCardCoresRepositoryAsync
     {
         /// <inheritdoc/>
@@ -20,9 +20,9 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard
         #region Implementation of IVideoCardCoresRepositoryAsync
 
         /// <inheritdoc/>
-        public override async Task<IEnumerable<VideoCardCore>> GetAllAsync()
+        public override async Task<IEnumerable<VideoCardCoreEntity>> GetAllAsync()
         {
-            return await Context.Set<VideoCardCore>()
+            return await Context.Set<VideoCardCoreEntity>()
                                 .Include(videoCardCore =>
                                              videoCardCore.VideoCards)
                                 .ToListAsync();
@@ -30,10 +30,10 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard
 
         #endregion
 
-        #region Implementation of IPaginateableRepository<VideoCardCore>
+        #region Implementation of IPaginateableRepository<VideoCardCoreEntity>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<VideoCardCore>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<VideoCardCoreEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
                   .Include(x => x.VideoCards)
                   .ToListAsync();

@@ -14,7 +14,7 @@
 
 .container-slider
 {
-    border-radius: 0rem;
+    border-radius: 0;
     box-sizing: border-box;
     color: white;
     font-size: 62.5%;
@@ -387,7 +387,7 @@
     .pricing-slider .price-box .bg::before
     {
         bottom: 0;
-        transform: skewX(0deg);
+        transform: skewX(0);
         width: 120%;
     }
 
@@ -422,7 +422,7 @@
         bottom: 0;
         height: 54%;
         left: 0;
-        transform: skewX(0deg);
+        transform: skewX(0);
         width: 100%;
     }
 }

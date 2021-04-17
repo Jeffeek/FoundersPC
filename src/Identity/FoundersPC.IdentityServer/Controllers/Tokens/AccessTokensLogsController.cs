@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Pagination;
 using FoundersPC.RequestResponseShared.Pagination.Requests;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [ApiController]
     [Route(IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint)]
+    [ModelValidation]
     public class AccessTokensLogsController : Controller
     {
         private readonly IAccessTokensLogsService _accessTokensLogsService;
@@ -25,24 +27,17 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
         public AccessTokensLogsController(IAccessTokensLogsService accessTokensLogsService) => _accessTokensLogsService = accessTokensLogsService;
 
         [HttpGet(ApplicationRestAddons.All)]
-        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAll() =>
-            await _accessTokensLogsService.GetAllTokensLogsAsync();
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAll() => await _accessTokensLogsService.GetAllTokensLogsAsync();
 
         [HttpGet]
-        public async ValueTask<ActionResult<IPaginationResponse<AccessTokenLogReadDto>>> GetPaginateableLogs([FromQuery] PaginationRequest request)
-        {
-            if (!ModelState.IsValid) return BadRequest();
-
-            return Ok(await _accessTokensLogsService.GetPaginateableAsync(request.PageNumber, request.PageSize));
-        }
+        public async ValueTask<ActionResult<IPaginationResponse<AccessTokenLogReadDto>>> GetPaginateableLogs([FromQuery] PaginationRequest request) =>
+            Json(await _accessTokensLogsService.GetPaginateableAsync(request.PageNumber, request.PageSize));
 
         [HttpGet(ApplicationRestAddons.GetById)]
-        public async ValueTask<ActionResult<AccessTokenLogReadDto>> Get([FromRoute] int id) =>
-            await _accessTokensLogsService.GetTokenLogByIdAsync(id);
+        public async ValueTask<ActionResult<AccessTokenLogReadDto>> Get([FromRoute] int id) => await _accessTokensLogsService.GetTokenLogByIdAsync(id);
 
         [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenId)]
-        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsByTokenId([FromRoute] int id) =>
-            await _accessTokensLogsService.GetTokenLogsAsync(id);
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsByTokenId([FromRoute] int id) => await _accessTokensLogsService.GetTokenLogsAsync(id);
 
         [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenString)]
         public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsForTokenByStringToken([FromRoute] int token) =>

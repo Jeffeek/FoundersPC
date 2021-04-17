@@ -9,7 +9,7 @@ using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.Extensions.Logging;
 
 #endregion
@@ -45,30 +45,30 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<IEnumerable<AccessUserTokenReadDto>> GetUserTokensAsync(int userId)
         {
-            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
+            var tokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userId);
 
             if (tokens is null)
                 return null;
 
-            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
+            return _mapper.Map<IEnumerable<AccessTokenEntity>,
                 IEnumerable<AccessUserTokenReadDto>>(tokens);
         }
 
         public async Task<IEnumerable<AccessUserTokenReadDto>> GetUserTokensAsync(string userEmail)
         {
-            var tokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userEmail);
+            var tokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userEmail);
 
             if (tokens is null)
                 return null;
 
-            return _mapper.Map<IEnumerable<ApiAccessUserToken>,
+            return _mapper.Map<IEnumerable<AccessTokenEntity>,
                 IEnumerable<AccessUserTokenReadDto>>(tokens);
         }
 
         /// <inheritdoc/>
         public async Task<IEnumerable<AccessUserTokenReadDto>> GetAllTokensAsync() =>
-            _mapper.Map<IEnumerable<ApiAccessUserToken>,
-                IEnumerable<AccessUserTokenReadDto>>(await _unitOfWork.ApiAccessUsersTokensRepository
+            _mapper.Map<IEnumerable<AccessTokenEntity>,
+                IEnumerable<AccessUserTokenReadDto>>(await _unitOfWork.AccessTokensRepository
                                                                       .GetAllAsync());
 
         #region Implementation of IPaginateableService<AccessUserTokenReadDto>
@@ -77,11 +77,11 @@ namespace FoundersPC.Identity.Services.Token_Services
         public async Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableAsync(int pageNumber = 1,
                                                                                             int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<ApiAccessUserToken>,
-                IEnumerable<AccessUserTokenReadDto>>(await _unitOfWork.ApiAccessUsersTokensRepository
+            var items = _mapper.Map<IEnumerable<AccessTokenEntity>,
+                IEnumerable<AccessUserTokenReadDto>>(await _unitOfWork.AccessTokensRepository
                                                                       .GetPaginateableAsync(pageNumber, pageSize));
 
-            var totalItemsCount = await _unitOfWork.ApiAccessUsersTokensRepository.CountAsync();
+            var totalItemsCount = await _unitOfWork.AccessTokensRepository.CountAsync();
 
             return new PaginationResponse<AccessUserTokenReadDto>(items, totalItemsCount);
         }
@@ -127,12 +127,10 @@ namespace FoundersPC.Identity.Services.Token_Services
         #region Implementation of IAccessTokensReservationService
 
         /// <inheritdoc/>
-        public Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type) =>
-            _reservationService.ReserveNewTokenAsync(userEmail, type);
+        public Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type) => _reservationService.ReserveNewTokenAsync(userEmail, type);
 
         /// <inheritdoc/>
-        public Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type) =>
-            _reservationService.ReserveNewTokenAsync(userId, type);
+        public Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type) => _reservationService.ReserveNewTokenAsync(userId, type);
 
         #endregion
     }

@@ -21,7 +21,7 @@ namespace FoundersPC.Identity.Services.EmailServices
         private readonly EmailBotConfiguration _botConfiguration;
         private readonly ILogger<IEmailService> _logger;
 
-        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="port" /> cannot be less than zero.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="port"/> cannot be less than zero.</exception>
         public EmailService(EmailBotConfiguration botConfiguration, ILogger<EmailService> logger)
         {
             _botConfiguration = botConfiguration;
@@ -113,7 +113,7 @@ namespace FoundersPC.Identity.Services.EmailServices
         public Task<bool> SendAPIAccessTokenAsync(string email, string token)
         {
             var content =
-                $"This is your token for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not restore it";
+                $"This is your tokenEntity for getting access to our API: {token}{Environment.NewLine}Don't lose it, we will not restore it";
 
             return SendToAsync(email, "API Access Token", content);
         }

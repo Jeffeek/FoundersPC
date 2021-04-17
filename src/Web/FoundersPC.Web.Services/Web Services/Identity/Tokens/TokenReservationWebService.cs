@@ -26,7 +26,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="userJwtToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -53,8 +54,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
-        /// <exception cref="T:System.Net.WebException">When tried to reserve token and send request to identity server, it returned a bad status code.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Net.WebException">
+        ///     When tried to reserve token and send request to identity server, it
+        ///     returned a bad status code.
+        /// </exception>
 
         #endregion
 
@@ -77,7 +82,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Tokens
                                    UserEmail = userEmail
                                };
 
-            var responseMessage = await client.PostAsJsonAsync($"{IdentityServerRoutes.Tokens.Endpoint}/{IdentityServerRoutes.Tokens.ReserveNewToken}", requestModel);
+            var responseMessage = await client.PostAsJsonAsync($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{IdentityServerRoutes.Tokens.ReserveNewToken}",
+                                                               requestModel);
 
             if (!responseMessage.IsSuccessStatusCode)
                 throw new

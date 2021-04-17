@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.ApplicationShared.Jwt;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
@@ -21,7 +22,8 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
     [EnableCors(PolicyName = "WebPolicy")]
     [AllowAnonymous]
     [ApiController]
-    [Route(IdentityServerRoutes.Authentication.Endpoint)]
+    [Route(IdentityServerRoutes.Authentication.AuthenticationEndpoint)]
+    [ModelValidation]
     public class SignInIdentityController : ControllerBase
     {
         private readonly IAuthenticationService _authenticationService;
@@ -43,12 +45,31 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _logger = logger;
         }
 
+        #region Docs
+
+        /// <exception cref="T:Microsoft.IdentityModel.Tokens.SecurityTokenEncryptionFailedException">
+        ///     both
+        ///     <see cref="P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.SigningCredentials"/> and
+        ///     <see cref="P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.InnerToken"/> are set.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">Key is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.Text.EncoderFallbackException">
+        ///     A fallback occurred (for more information, see Character Encoding in .NET)
+        ///     -and-
+        ///     <see cref="P:System.Text.Encoding.EncoderFallback"/> is set to <see cref="T:System.Text.EncoderExceptionFallback"/>
+        ///     .
+        /// </exception>
+        /// <exception cref="T:System.ArgumentException">If 'expires' &lt;= 'notbefore'.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">
+        ///     The resulting <see cref="T:System.DateTime"/> is less than
+        ///     <see cref="F:System.DateTime.MinValue"/> or greater than <see cref="F:System.DateTime.MaxValue"/>.
+        /// </exception>
+
+        #endregion
+
         [HttpPost(IdentityServerRoutes.Authentication.SignIn)]
         public async Task<ActionResult<UserLoginResponse>> SignIn([FromBody] UserSignInRequest request)
         {
-            if (!ModelState.IsValid)
-                return UnprocessableEntity();
-
             var user =
                 await _authenticationService.FindUserByEmailOrLoginAndPasswordAsync(request.LoginOrEmail,
                                                                                     request.Password);

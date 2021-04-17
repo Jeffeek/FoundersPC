@@ -35,26 +35,32 @@ namespace FoundersPC.Identity.Services.Token_Services
             _logger = logger;
         }
 
-        /// <exception cref="T:System.NotSupportedException">Reserve new token: user with email = {userEmail} not found.</exception>
+        /// <exception cref="T:System.NotSupportedException">
+        ///     Reserve new tokenEntity: user with <paramref name="userEmail"/> not
+        ///     found.
+        /// </exception>
         public async Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
         {
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             if (user is null)
                 throw new
-                    NotSupportedException($"{nameof(AccessTokenReservationService)}: Reserve new token: user with email = {userEmail} not found");
+                    NotSupportedException($"{nameof(AccessTokenReservationService)}: Reserve new tokenEntity: user with email = {userEmail} not found");
 
             return await ReserveNewTokenAsync(user, type);
         }
 
-        /// <exception cref="T:System.NotSupportedException">Reserve new token: user with id = {userId} not found.</exception>
+        /// <exception cref="T:System.NotSupportedException">
+        ///     Reserve new tokenEntity: user with <paramref name="userId"/> not
+        ///     found.
+        /// </exception>
         public async Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 
             if (user is null)
                 throw new
-                    NotSupportedException($"{nameof(AccessTokenReservationService)}: Reserve new token: user with id = {userId} not found");
+                    NotSupportedException($"{nameof(AccessTokenReservationService)}: Reserve new tokenEntity: user with id = {userId} not found");
 
             return await ReserveNewTokenAsync(user, type);
         }
@@ -65,7 +71,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             var tokenLifetime = GetTheExpirationDate(type);
             var newHashedToken = _tokenEncryptorService.CreateToken();
 
-            var newToken = new ApiAccessUserToken
+            var newToken = new AccessTokenEntity
                            {
                                ExpirationDate = tokenLifetime,
                                IsBlocked = false,
@@ -75,15 +81,15 @@ namespace FoundersPC.Identity.Services.Token_Services
                                HashedToken = newHashedToken
                            };
 
-            var entity = await _unitOfWork.ApiAccessUsersTokensRepository.AddAsync(newToken);
+            var entity = await _unitOfWork.AccessTokensRepository.AddAsync(newToken);
 
             var saveChangesResult = await _unitOfWork.SaveChangesAsync() > 0;
 
             if (!saveChangesResult)
             {
-                _logger.LogWarning($"Database not saved changes when tried to reserve new access token. UserId = {user.Id}");
+                _logger.LogWarning($"Database not saved changes when tried to reserve new access tokenEntity. UserId = {user.Id}");
 
-                throw new DbUpdateException($"Database not saved changes when tried to reserve new access token. UserId = {user.Id}");
+                throw new DbUpdateException($"Database not saved changes when tried to reserve new access tokenEntity. UserId = {user.Id}");
             }
 
             await _emailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);

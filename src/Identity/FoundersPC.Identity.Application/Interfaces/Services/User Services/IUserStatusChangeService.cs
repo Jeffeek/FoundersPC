@@ -8,6 +8,8 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
 {
     public interface IUserStatusChangeService
     {
+        #region Docs
+
         /// <summary>
         ///     Blocking the user account by id with all tokens he had
         /// </summary>
@@ -15,7 +17,12 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         /// <param name="blockAllTokens"></param>
         /// <param name="sendNotification"></param>
         /// <returns></returns>
+
+        #endregion
+
         Task<bool> BlockUserAsync(int userId, bool blockAllTokens = true, bool sendNotification = true);
+
+        #region Docs
 
         /// <summary>
         ///     Blocking the user account by email with all tokens he had
@@ -24,7 +31,12 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         /// <param name="blockAllTokens"></param>
         /// <param name="sendNotification"></param>
         /// <returns></returns>
+
+        #endregion
+
         Task<bool> BlockUserAsync(string userEmail, bool blockAllTokens = true, bool sendNotification = true);
+
+        #region Docs
 
         /// <summary>
         ///     Unblocking the user account by id
@@ -32,7 +44,12 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         /// <param name="userId"></param>
         /// <param name="sendNotification"></param>
         /// <returns></returns>
+
+        #endregion
+
         Task<bool> UnBlockUserAsync(int userId, bool sendNotification = true);
+
+        #region Docs
 
         /// <summary>
         ///     Unblocking the user account by email
@@ -40,7 +57,12 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         /// <param name="userEmail"></param>
         /// <param name="sendNotification"></param>
         /// <returns></returns>
+
+        #endregion
+
         Task<bool> UnBlockUserAsync(string userEmail, bool sendNotification = true);
+
+        #region Docs
 
         /// <summary>
         ///     Makes user inactive ('removes') from database
@@ -48,7 +70,12 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         /// <param name="userId"></param>
         /// <param name="sendNotification"></param>
         /// <returns></returns>
+
+        #endregion
+
         Task<bool> MakeUserInactiveAsync(int userId, bool sendNotification = true);
+
+        #region Docs
 
         /// <summary>
         ///     Makes user inactive ('removes') from database
@@ -56,6 +83,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.User_Services
         /// <param name="userEmail"></param>
         /// <param name="sendNotification"></param>
         /// <returns></returns>
+
+        #endregion
+
         Task<bool> MakeUserInactiveAsync(string userEmail, bool sendNotification = true);
     }
 }

@@ -9,7 +9,7 @@ using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Dto;
 using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.Extensions.Logging;
 
 #endregion

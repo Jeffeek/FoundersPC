@@ -28,12 +28,12 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             if (token is null)
             {
-                _logger.LogError($"{nameof(AccessUsersTokensService)}: string token was null when tried to block");
+                _logger.LogError($"{nameof(AccessUsersTokensService)}: string tokenEntity was null when tried to block");
 
                 throw new ArgumentNullException(nameof(token));
             }
 
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
+            var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByTokenAsync(token);
 
             if (tokenEntity is null)
                 return false;
@@ -43,7 +43,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> BlockAsync(int id)
         {
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
+            var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByIdAsync(id);
 
             if (tokenEntity is null)
                 return false;
@@ -51,15 +51,14 @@ namespace FoundersPC.Identity.Services.Token_Services
             return await BlockAsync(tokenEntity);
         }
 
-        private async Task<bool> BlockAsync(ApiAccessUserToken token)
+        private async Task<bool> BlockAsync(AccessTokenEntity tokenEntity)
         {
-            if (token.IsBlocked)
+            if (tokenEntity.IsBlocked)
                 return false;
 
-            token.IsBlocked = true;
-            token.ExpirationDate = DateTime.Now;
+            tokenEntity.IsBlocked = true;
 
-            return await _unitOfWork.ApiAccessUsersTokensRepository.UpdateAsync(token) && await _unitOfWork.SaveChangesAsync() > 0;
+            return await _unitOfWork.AccessTokensRepository.UpdateAsync(tokenEntity) && await _unitOfWork.SaveChangesAsync() > 0;
         }
     }
 }

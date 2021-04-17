@@ -36,7 +36,12 @@ namespace FoundersPC.RepositoryShared.Repository
             return entity;
         }
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> is <see langword="null" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is <see langword="null"/>.</exception>
+
+        #endregion
+
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             await Context.Set<T>()
@@ -46,23 +51,44 @@ namespace FoundersPC.RepositoryShared.Repository
                                 .ToListAsync();
         }
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> or <paramref name="predicate" /> is <see langword="null" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="predicate"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
+
+        #endregion
+
         public virtual Task<bool> AnyAsync(T entity) =>
             Context.Set<T>()
                    .AnyAsync(x => x.Equals(entity));
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> or <paramref name="predicate" /> is <see langword="null" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="predicate"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
+
+        #endregion
+
         public virtual Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) =>
             Context.Set<T>()
                    .AnyAsync(predicate);
 
-        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter is <see langword="null" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> parameter is <see langword="null"/>.</exception>
+
+        #endregion
+
         public virtual async Task<bool> UpdateAsync(T entity)
         {
             var entry = Context.Entry(entity);
 
-            if (entry == null)
-                return false;
+            if (entry is null)
+                Context.Attach(entity);
 
             await Task.Run(() => Context.Entry(entity)
                                         .State = EntityState.Modified);
@@ -70,7 +96,12 @@ namespace FoundersPC.RepositoryShared.Repository
             return true;
         }
 
-        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter is <see langword="null" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> parameter is <see langword="null"/>.</exception>
+
+        #endregion
+
         public virtual async Task<bool> DeleteAsync(T entity)
         {
             var result = await Task.Run(() => Context.Set<T>()
@@ -79,7 +110,12 @@ namespace FoundersPC.RepositoryShared.Repository
             return result != null;
         }
 
-        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter is <see langword="null" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> parameter is <see langword="null"/>.</exception>
+
+        #endregion
+
         public virtual async Task<bool> DeleteAsync(int id)
         {
             var entity = await GetByIdAsync(id);
@@ -90,10 +126,25 @@ namespace FoundersPC.RepositoryShared.Repository
             return await DeleteAsync(entity);
         }
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> is <see langword="null" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is <see langword="null"/>.</exception>
+
+        #endregion
+
         public virtual Task<int> CountAsync() =>
             Context.Set<T>()
                    .CountAsync();
+
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentOutOfRangeException">pageNumber or pageSize was below or equal to 0.</exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="keySelector"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
+
+        #endregion
 
         protected IQueryable<T> GetPaginateableInternal(int pageNumber = 1, int pageSize = 10) =>
             Context.Set<T>()

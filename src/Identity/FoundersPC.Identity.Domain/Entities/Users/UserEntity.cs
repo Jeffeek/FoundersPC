@@ -47,7 +47,7 @@ namespace FoundersPC.Identity.Domain.Entities.Users
         [ForeignKey(nameof(RoleId))]
         public RoleEntity Role { get; set; }
 
-        public ICollection<ApiAccessUserToken> Tokens { get; set; }
+        public ICollection<AccessTokenEntity> Tokens { get; set; }
 
         public ICollection<UserEntranceLog> Entrances { get; set; }
 

@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -26,7 +26,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -53,7 +54,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
 
         #endregion
 
@@ -67,13 +69,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            return client.GetFromJsonAsync<IEnumerable<AccessUserTokenReadDto>>($"{IdentityServerRoutes.Tokens.Endpoint}/{ApplicationRestAddons.All}");
+            return client.GetFromJsonAsync<IEnumerable<AccessUserTokenReadDto>>($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{ApplicationRestAddons.All}");
         }
 
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -100,7 +103,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
 
         #endregion
 
@@ -114,16 +118,30 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            return await client.GetFromJsonAsync<PaginationResponse<AccessUserTokenReadDto>>($"{IdentityServerRoutes.Tokens.Endpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+            return
+                await
+                    client
+                        .GetFromJsonAsync<PaginationResponse<AccessUserTokenReadDto>
+                        >($"{IdentityServerRoutes.Tokens.TokensEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
         }
 
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout.</exception>
-        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">.NET Core and .NET 5.0 and later only: The request failed due to timeout.</exception>
-        /// <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> must be an absolute URI or <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> must be set.</exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.Net.Http.HttpRequestException">
+        ///     The request failed due to an underlying issue such as network
+        ///     connectivity, DNS failure, server certificate validation or timeout.
+        /// </exception>
+        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">
+        ///     .NET Core and .NET 5.0 and later only: The request
+        ///     failed due to timeout.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        ///     The <paramref name="requestUri"/> must be an absolute URI or
+        ///     <see cref="P:System.Net.Http.HttpClient.BaseAddress"/> must be set.
+        /// </exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -150,8 +168,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
-        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">
+        ///     A time-out occurred. For more information
+        ///     about time-outs, see the Remarks section.
+        /// </exception>
         /// <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
 
         #endregion
@@ -166,7 +188,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            var requestResult = await client.PutAsync($"{IdentityServerRoutes.BuildRouteById(IdentityServerRoutes.Tokens.Block.BlockTokenByTokenId, tokenId)}", null!);
+            var requestResult =
+                await
+                    client.PutAsync($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{IdentityServerRoutes.BuildRouteById(IdentityServerRoutes.Tokens.BlockByTokenId, tokenId)}",
+                                    null!);
 
             return requestResult.IsSuccessStatusCode;
         }
@@ -174,7 +199,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -201,11 +227,24 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
-        /// <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout.</exception>
-        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">.NET Core and .NET 5.0 and later only: The request failed due to timeout.</exception>
-        /// <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> must be an absolute URI or <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> must be set.</exception>
-        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Net.Http.HttpRequestException">
+        ///     The request failed due to an underlying issue such as network
+        ///     connectivity, DNS failure, server certificate validation or timeout.
+        /// </exception>
+        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">
+        ///     .NET Core and .NET 5.0 and later only: The request
+        ///     failed due to timeout.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        ///     The <paramref name="requestUri"/> must be an absolute URI or
+        ///     <see cref="P:System.Net.Http.HttpClient.BaseAddress"/> must be set.
+        /// </exception>
+        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">
+        ///     A time-out occurred. For more information
+        ///     about time-outs, see the Remarks section.
+        /// </exception>
         /// <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
 
         #endregion
@@ -220,7 +259,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            var requestResult = await client.PutAsync($"{IdentityServerRoutes.BuildRouteForToken(IdentityServerRoutes.Tokens.Block.BlockTokenByToken, token)}", null!);
+            var requestResult =
+                await
+                    client.PutAsync($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{IdentityServerRoutes.BuildRouteForToken(IdentityServerRoutes.Tokens.BlockByTokenString, token)}",
+                                    null!);
 
             return requestResult.IsSuccessStatusCode;
         }

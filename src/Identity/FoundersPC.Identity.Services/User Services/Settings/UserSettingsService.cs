@@ -118,6 +118,25 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
         #region Generate and change
 
+        /// <exception cref="T:System.ArgumentOutOfRangeException">userId &lt; 1.</exception>
+        /// <exception cref="T:System.Data.NoNullAllowedException">User with id = <paramref name="userId"/> not found.</exception>
+        /// <exception cref="T:System.Reflection.TargetInvocationException">
+        ///     The algorithm was used with Federal Information
+        ///     Processing Standards (FIPS) mode enabled, but is not FIPS compatible.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">rawPassword is <see langword="null"/></exception>
+        /// <exception cref="T:System.ObjectDisposedException">The object has already been disposed.</exception>
+        /// <exception cref="T:System.Text.EncoderFallbackException">
+        ///     A fallback occurred (for more information, see Character Encoding in .NET)
+        ///     -and-
+        ///     <see cref="P:System.Text.Encoding.EncoderFallback"/> is set to <see cref="T:System.Text.EncoderExceptionFallback"/>
+        ///     .
+        /// </exception>
+        /// <exception cref="T:System.FormatException">
+        ///     format includes an unsupported specifier. Supported
+        ///     format specifiers are listed in the Remarks section.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentException">oldValue is the empty string ("").</exception>
         public async Task<bool> GenerateAndChangePasswordToAsync(int userId)
         {
             if (userId < 1)
@@ -142,6 +161,25 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
             return false;
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="userEmail"/> is <see langword="null"/></exception>
+        /// <exception cref="T:System.Data.NoNullAllowedException">User with email = <paramref name="userEmail"/> not found.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Condition.</exception>
+        /// <exception cref="T:System.ArgumentException">oldValue is the empty string ("").</exception>
+        /// <exception cref="T:System.Reflection.TargetInvocationException">
+        ///     The algorithm was used with Federal Information
+        ///     Processing Standards (FIPS) mode enabled, but is not FIPS compatible.
+        /// </exception>
+        /// <exception cref="T:System.ObjectDisposedException">The object has already been disposed.</exception>
+        /// <exception cref="T:System.Text.EncoderFallbackException">
+        ///     A fallback occurred (for more information, see Character Encoding in .NET)
+        ///     -and-
+        ///     <see cref="P:System.Text.Encoding.EncoderFallback"/> is set to <see cref="T:System.Text.EncoderExceptionFallback"/>
+        ///     .
+        /// </exception>
+        /// <exception cref="T:System.FormatException">
+        ///     format includes an unsupported specifier. Supported
+        ///     format specifiers are listed in the Remarks section.
+        /// </exception>
         public async Task<bool> GenerateAndChangePasswordToAsync(string userEmail)
         {
             if (userEmail is null)
@@ -205,6 +243,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
             return false;
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="userEmail"/> is <see langword="null"/></exception>
         public async Task<bool> ChangeLoginToAsync(string userEmail, string newLogin)
         {
             if (userEmail is null)
@@ -226,6 +265,8 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
             return await ChangeLoginToAsync(user, newLogin);
         }
 
+        /// <exception cref="T:System.ArgumentOutOfRangeException">User id &lt; 1.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="newLogin"/> is <see langword="null"/></exception>
         public async Task<bool> ChangeLoginToAsync(int userId, string newLogin)
         {
             if (userId < 1)
@@ -251,6 +292,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
         #region Change notifications
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="userEmail"/> is <see langword="null"/></exception>
         public async Task<bool> ChangeNotificationsToAsync(string userEmail, UserNotificationsSettings settings)
         {
             if (userEmail is null)
@@ -282,6 +324,7 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
             return false;
         }
 
+        /// <exception cref="T:System.ArgumentOutOfRangeException">User Id &lt; 1.</exception>
         public async Task<bool> ChangeNotificationsToAsync(int userId,
                                                            bool notificationOnEntrance,
                                                            bool notificationOnApiRequest)

@@ -2,6 +2,7 @@
 
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
 using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
@@ -14,7 +15,8 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
     [AllowAnonymous]
-    [Route(IdentityServerRoutes.Authentication.Endpoint)]
+    [Route(IdentityServerRoutes.Authentication.AuthenticationEndpoint)]
+    [ModelValidation]
     public class ForgotPasswordController : Controller
     {
         private readonly ILogger<ForgotPasswordController> _logger;
@@ -30,9 +32,6 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
         [HttpPost(IdentityServerRoutes.Authentication.ForgotPassword)]
         public async Task<ActionResult<UserForgotPasswordResponse>> ForgotPassword([FromBody] UserForgotPasswordRequest request)
         {
-            if (!ModelState.IsValid)
-                return UnprocessableEntity();
-
             _logger.LogInformation($"{nameof(ForgotPasswordController)}: Forgot Password request with email = {request.Email}");
 
             var changePasswordResult =

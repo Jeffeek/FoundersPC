@@ -51,6 +51,18 @@ namespace FoundersPC.Identity.Services
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.OverflowException">
+        ///     <paramref name="s"/> represents a number less than
+        ///     <see cref="F:System.Int32.MinValue"/> or greater than <see cref="F:System.Int32.MaxValue"/>.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="s"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.FormatException"><paramref name="s"/> is not in the correct format.</exception>
+        /// <exception cref="T:System.Collections.Generic.KeyNotFoundException">Password:Key</exception>
+
+        #endregion
+
         public static void AddBotEmailConfigurationAndService(this IServiceCollection services,
                                                               IConfiguration configuration)
         {

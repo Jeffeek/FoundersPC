@@ -1,15 +1,15 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Pagination;
 using FoundersPC.RequestResponseShared.Pagination.Requests;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +20,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [EnableCors("WebPolicy")]
     [ApiController]
-    [Route(IdentityServerRoutes.Users.Endpoint)]
+    [Route(IdentityServerRoutes.Users.UsersEndpoint)]
+    [ModelValidation]
     public class UsersController : Controller
     {
         private readonly IUsersInformationService _usersInformationService;
@@ -43,13 +44,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         [HttpGet(IdentityServerRoutes.Users.ByUserEmail)]
         public async ValueTask<ActionResult<UserEntityReadDto>> GetByEmail([FromRoute] string email)
         {
-            if (String.IsNullOrEmpty(email))
-                return BadRequest(new
-                                  {
-                                      error = "email can't be null or empty"
-                                  });
-
-            var (jwtEmail, jwtRole) = HttpContext.ParseJwtUserTokenCredentials();
+            var (jwtEmail, jwtRole) = HttpContext.ParseCredentials();
 
             if (jwtRole is not ApplicationRoles.Administrator
                 && email != jwtEmail)
@@ -74,11 +69,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
-        public async ValueTask<ActionResult<IPaginationResponse<UserEntityReadDto>>> Get([FromQuery] PaginationRequest request)
-        {
-            if (!ModelState.IsValid) return BadRequest();
-
-            return Json(await _usersInformationService.GetPaginateableAsync(request.PageNumber, request.PageSize));
-        }
+        public async ValueTask<ActionResult<IPaginationResponse<UserEntityReadDto>>> Get([FromQuery] PaginationRequest request) =>
+            Json(await _usersInformationService.GetPaginateableAsync(request.PageNumber, request.PageSize));
     }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.ApplicationShared.Jwt;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
 using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
@@ -16,7 +17,8 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.IdentityServer.Controllers.Authentication
 {
     [AllowAnonymous]
-    [Route(IdentityServerRoutes.Authentication.Endpoint)]
+    [Route(IdentityServerRoutes.Authentication.AuthenticationEndpoint)]
+    [ModelValidation]
     public class SignUpIdentityController : Controller
     {
         private readonly JwtConfiguration _jwtConfiguration;
@@ -32,12 +34,31 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
             _registrationService = registrationService;
         }
 
+        #region Docs
+
+        /// <exception cref="T:Microsoft.IdentityModel.Tokens.SecurityTokenEncryptionFailedException">
+        ///     both
+        ///     <see cref="P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.SigningCredentials"/> and
+        ///     <see cref="P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.InnerToken"/> are set.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">Key is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.Text.EncoderFallbackException">
+        ///     A fallback occurred (for more information, see Character Encoding in .NET)
+        ///     -and-
+        ///     <see cref="P:System.Text.Encoding.EncoderFallback"/> is set to <see cref="T:System.Text.EncoderExceptionFallback"/>
+        ///     .
+        /// </exception>
+        /// <exception cref="T:System.ArgumentException">If 'expires' &lt;= 'notbefore'.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">
+        ///     The resulting <see cref="T:System.DateTime"/> is less than
+        ///     <see cref="F:System.DateTime.MinValue"/> or greater than <see cref="F:System.DateTime.MaxValue"/>.
+        /// </exception>
+
+        #endregion
+
         [HttpPost(IdentityServerRoutes.Authentication.SignUp)]
         public async Task<ActionResult<UserSignUpResponse>> SignUp([FromBody] UserSignUpRequest request)
         {
-            if (!ModelState.IsValid)
-                UnprocessableEntity();
-
             _logger.LogInformation($"{nameof(SignUpIdentityController)}: Registration request with email = {request.Email}");
 
             var result = await _registrationService.RegisterDefaultUserAsync(request.Email, request.Password);

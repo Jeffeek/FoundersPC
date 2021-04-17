@@ -7,7 +7,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Validation.Hardware.Memory.HDD
 {
-    public class HDDUpdateDtoValidator : AbstractValidator<HDDUpdateDto>
+    public class HDDUpdateDtoValidator : AbstractValidator<HardDriveDiskUpdateDto>
     {
         public HDDUpdateDtoValidator()
         {

@@ -1,16 +1,18 @@
 #region Using namespaces
 
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Text.Json;
 using FoundersPC.API.Application;
 using FoundersPC.API.Application.Middleware;
 using FoundersPC.API.Infrastructure;
 using FoundersPC.API.Services;
 using FoundersPC.ApplicationShared;
+using FoundersPC.ApplicationShared.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,14 +26,29 @@ namespace FoundersPC.API
 {
     public sealed class Startup
     {
-        /// <exception cref="T:System.IO.IOException">The directory specified by <paramref name="path" /> is read-only.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.IO.IOException">The directory specified by <paramref name="path"/> is read-only.</exception>
         /// <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission.</exception>
         /// <exception cref="T:System.IO.DirectoryNotFoundException">The specified path was not found.</exception>
-        /// <exception cref="T:System.Security.SecurityException">.NET Framework only: The caller does not have the required permissions.</exception>
-        /// <exception cref="T:System.ArgumentException"><paramref name="path" /> is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters with the  <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="path" /> is <see langword="null" />.</exception>
-        /// <exception cref="T:System.IO.PathTooLongException">The specified path, file name, or both exceed the system-defined maximum length. For more information, see the <see cref="T:System.IO.PathTooLongException" /> topic.</exception>
-        /// <exception cref="T:System.NotSupportedException"><paramref name="path" /> is in an invalid format.</exception>
+        /// <exception cref="T:System.Security.SecurityException">
+        ///     .NET Framework only: The caller does not have the required
+        ///     permissions.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentException">
+        ///     <paramref name="path"/> is a zero-length string, contains only white
+        ///     space, or contains one or more invalid characters. You can query for invalid characters with the
+        ///     <see cref="M:System.IO.Path.GetInvalidPathChars"/> method.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.IO.PathTooLongException">
+        ///     The specified path, file name, or both exceed the system-defined
+        ///     maximum length. For more information, see the <see cref="T:System.IO.PathTooLongException"/> topic.
+        /// </exception>
+        /// <exception cref="T:System.NotSupportedException"><paramref name="path"/> is in an invalid format.</exception>
+
+        #endregion
+
         public Startup(IConfiguration configuration)
         {
             var builder = new ConfigurationBuilder();
@@ -46,16 +63,33 @@ namespace FoundersPC.API
 
         public IConfiguration Configuration { get; }
 
-        /// <exception cref="T:System.OverflowException"><paramref name="configuration[JwtSettings:HoursToExpire]" /> represents a number less than <see cref="F:System.Int32.MinValue" /> or greater than <see cref="F:System.Int32.MaxValue" />.</exception>
+        #region Docs
+
+        /// <exception cref="T:System.OverflowException">
+        ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> represents a
+        ///     number less than <see cref="F:System.Int32.MinValue"/> or greater than <see cref="F:System.Int32.MaxValue"/>.
+        /// </exception>
         /// <exception cref="T:System.Data.NoNullAllowedException">Condition.</exception>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="configuration[JwtSettings:HoursToExpire]" /> is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
         /// <exception cref="T:System.TypeInitializationException">Bearer settings middleware not found</exception>
         /// <exception cref="T:System.NotSupportedException">Inner JWT configuration was null.</exception>
-        /// <exception cref="T:System.FormatException"><paramref name="configuration[JwtSettings:HoursToExpire]" /> is not in the correct format.</exception>
-        /// <exception cref="T:System.Text.EncoderFallbackException">A fallback occurred (for more information, see Character Encoding in .NET)
-        ///  -and-
-        ///  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
-        /// <exception cref="T:System.ArgumentException"><paramref name="value" /> is equal to <see cref="F:System.Double.NaN" />.</exception>
+        /// <exception cref="T:System.FormatException">
+        ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> is not in the
+        ///     correct format.
+        /// </exception>
+        /// <exception cref="T:System.Text.EncoderFallbackException">
+        ///     A fallback occurred (for more information, see Character Encoding in .NET)
+        ///     -and-
+        ///     <see cref="P:System.Text.Encoding.EncoderFallback"/> is set to <see cref="T:System.Text.EncoderExceptionFallback"/>
+        ///     .
+        /// </exception>
+        /// <exception cref="T:System.ArgumentException"><paramref name="value"/> is equal to <see cref="F:System.Double.NaN"/>.</exception>
+
+        #endregion
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLogging(config => config.AddSerilog(Log.Logger));
@@ -101,7 +135,18 @@ namespace FoundersPC.API
                                                                  }));
 
             services.AddScoped<AccessTokenValidatorMiddleware>();
+            services.AddScoped<ModelValidationAttribute>();
         }
+
+        #region Docs
+
+        /// <exception cref="T:System.NotSupportedException">
+        ///     There is no compatible
+        ///     <see cref="System.Text.Json.Serialization.JsonConverter"/> for <typeparamref name="TValue"/> or its serializable
+        ///     members.
+        /// </exception>
+
+        #endregion
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -124,6 +169,22 @@ namespace FoundersPC.API
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseExceptionHandler(config =>
+                                    {
+                                        config.Run(async context =>
+                                                   {
+                                                       context.Response.StatusCode = 500;
+                                                       context.Response.ContentType = "application/json";
+                                                       var error = context.Features.Get<IExceptionHandlerFeature>();
+
+                                                       if (error != null)
+                                                       {
+                                                           var ex = error.Error;
+                                                           await context.Response.WriteAsync(JsonSerializer.Serialize(ex));
+                                                       }
+                                                   });
+                                    });
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }

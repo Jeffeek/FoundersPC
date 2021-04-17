@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -33,7 +33,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -60,7 +61,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
 
         #endregion
 
@@ -79,7 +81,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                                         adminToken,
                                                         MicroservicesUrls.IdentityServer);
 
-            var responseMessage = await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>($"{IdentityServerRoutes.Users.Entrances.EntrancesEndpoint}/{IdentityServerRoutes.Users.Entrances.GetEntrances.All}");
+            var responseMessage =
+                await
+                    client
+                        .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
+                        >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{ApplicationRestAddons.All}");
 
             return responseMessage;
         }
@@ -88,7 +94,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         /// <inheritdoc/>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Condition.</exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -115,7 +122,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
 
         #endregion
@@ -138,7 +146,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
             var responseMessage =
                 await client
-                    .GetFromJsonAsync<PaginationResponse<UserEntranceLogReadDto>>($"{IdentityServerRoutes.Users.Entrances.EntrancesEndpoint}/{IdentityServerRoutes.Users.Entrances.GetEntrances.InnerEntrancesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                    .GetFromJsonAsync<PaginationResponse<UserEntranceLogReadDto>
+                    >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
 
             return responseMessage;
         }
@@ -146,7 +155,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -173,8 +183,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
-        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">
+        ///     A time-out occurred. For more information
+        ///     about time-outs, see the Remarks section.
+        /// </exception>
         /// <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
 
         #endregion
@@ -194,7 +208,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                                         adminToken,
                                                         MicroservicesUrls.IdentityServer);
 
-            var responseMessage = await client.GetFromJsonAsync<UserEntranceLogReadDto>(IdentityServerRoutes.BuildRouteById($"{IdentityServerRoutes.Users.Entrances.EntrancesEndpoint}/{IdentityServerRoutes.Users.Entrances.GetEntrances.ById}", id));
+            var responseMessage =
+                await
+                    client.GetFromJsonAsync<UserEntranceLogReadDto>(IdentityServerRoutes
+                                                                        .BuildRouteById($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.ByUserId}",
+                                                                                        id));
 
             return responseMessage;
         }
@@ -202,7 +220,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="start"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -229,7 +248,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
 
         #endregion
 
@@ -260,7 +280,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             var responseMessage =
                 await
                     client
-                        .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>($"{IdentityServerRoutes.Users.Entrances.EntrancesEndpoint}/{IdentityServerRoutes.Users.Entrances.GetEntrances.BuildBetweenQuery(start, finish)}");
+                        .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
+                        >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.Between}{IdentityServerRoutes.BuildRouteForBetween(start, finish)}");
 
             return responseMessage;
         }
@@ -268,7 +289,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -295,8 +317,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
-        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">
+        ///     A time-out occurred. For more information
+        ///     about time-outs, see the Remarks section.
+        /// </exception>
         /// <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
 
         #endregion
@@ -318,7 +344,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                                         MicroservicesUrls.IdentityServer);
 
             var responseMessage =
-                await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>(IdentityServerRoutes.BuildRouteById($"{IdentityServerRoutes.Users.Entrances.EntrancesEndpoint}/{IdentityServerRoutes.Users.Entrances.User.ByUserId}", userId));
+                await
+                    client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>(IdentityServerRoutes
+                                                                                     .BuildRouteById($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.ByUserId}",
+                                                                                                     userId));
 
             return responseMessage;
         }
@@ -326,7 +355,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -353,8 +383,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
-        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">A time-out occurred. For more information about time-outs, see the Remarks section.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">
+        ///     A time-out occurred. For more information
+        ///     about time-outs, see the Remarks section.
+        /// </exception>
         /// <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
 
         #endregion
@@ -377,7 +411,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                                         MicroservicesUrls.IdentityServer);
 
             var responseMessage =
-                await client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>(IdentityServerRoutes.BuildRouteByEmail($"{IdentityServerRoutes.Users.Entrances.EntrancesEndpoint}/{IdentityServerRoutes.Users.Entrances.User.ByUserEmail}", userEmail));
+                await
+                    client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>(IdentityServerRoutes
+                                                                                     .BuildRouteByEmail($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.ByUserEmail}",
+                                                                                                        userEmail));
 
             return responseMessage;
         }

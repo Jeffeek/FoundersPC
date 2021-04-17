@@ -49,7 +49,7 @@ namespace FoundersPC.API.Domain.Entities.Processor
         [Required]
         public string Title { get; set; }
 
-        public ICollection<CPU> Processors { get; set; }
+        public ICollection<ProcessorEntity> Processors { get; set; }
 
         #region Equality members
 

@@ -7,7 +7,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Validation.Hardware.GPU
 {
-    public class GPUUpdateDtoValidator : AbstractValidator<GPUUpdateDto>
+    public class GPUUpdateDtoValidator : AbstractValidator<VideoCardUpdateDto>
     {
         public GPUUpdateDtoValidator()
         {

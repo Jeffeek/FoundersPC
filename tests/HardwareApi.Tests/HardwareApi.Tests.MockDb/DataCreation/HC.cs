@@ -14,7 +14,7 @@ namespace HardwareApi.Tests.MockAbstractions.DataCreation
     {
         public static int Count = 10;
 
-        public static Producer CreateProducer() =>
+        public static ProducerEntity CreateProducer() =>
             new()
             {
                 Country = R.GetRandomString(0, 8),
@@ -34,15 +34,15 @@ namespace HardwareApi.Tests.MockAbstractions.DataCreation
                               : null
             };
 
-        public static IEnumerable<Producer> CreateProducers() =>
+        public static IEnumerable<ProducerEntity> CreateProducers() =>
             Enumerable.Range(0, Count)
                       .Select(_ => CreateProducer());
 
-        public static Case CreateCase(IEnumerable<Producer> producers)
+        public static CaseEntity CreateCase(IEnumerable<ProducerEntity> producers)
         {
-            var enumerable = producers as Producer[] ?? producers.ToArray();
+            var enumerable = producers as ProducerEntity[] ?? producers.ToArray();
 
-            return new Case
+            return new CaseEntity
                    {
                        Color = R.GetRandomString(),
                        Depth = R.GetRandomNullableInt(),
@@ -63,34 +63,34 @@ namespace HardwareApi.Tests.MockAbstractions.DataCreation
                    };
         }
 
-        public static IEnumerable<Case> CreateCases(IEnumerable<Producer> producers)
+        public static IEnumerable<CaseEntity> CreateCases(IEnumerable<ProducerEntity> producers)
         {
-            var enumerable = producers as Producer[] ?? producers.ToArray();
+            var enumerable = producers as ProducerEntity[] ?? producers.ToArray();
 
             return Enumerable.Range(0, 10)
                              .Select(_ => CreateCase(enumerable));
         }
 
-        public static HDD CreateHDD(IEnumerable<Producer> producers)
+        public static HardDriveDiskEntity CreateHDD(IEnumerable<ProducerEntity> producers)
         {
-            var enumerable = producers as Producer[] ?? producers.ToArray();
+            var enumerable = producers as ProducerEntity[] ?? producers.ToArray();
 
-            return new HDD
+            return new HardDriveDiskEntity
                    {
                        BufferSize = R.RandomInt(30, 5000),
                        Factor = R.OneOf(2.5, 3.5),
                        HeadSpeed = R.OneOf(5400, 7200),
                        Interface = R.OneOf("SATA", "M.2"),
                        Noise = R.RandomInt(20, 100),
-                       Producer = R.OneOf(enumerable),
+                       ProducerEntity = R.OneOf(enumerable),
                        Title = R.GetRandomString(),
                        Volume = R.RandomInt(60, 10000)
                    };
         }
 
-        public static IEnumerable<HDD> CreateHDDs(IEnumerable<Producer> producers)
+        public static IEnumerable<HardDriveDiskEntity> CreateHDDs(IEnumerable<ProducerEntity> producers)
         {
-            var enumerable = producers as Producer[] ?? producers.ToArray();
+            var enumerable = producers as ProducerEntity[] ?? producers.ToArray();
 
             return Enumerable.Range(0, Count)
                              .Select(_ => CreateHDD(enumerable));

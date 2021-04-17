@@ -37,7 +37,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -64,7 +65,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
 
         #endregion
 
@@ -114,8 +116,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             var mappedModel = _mapper.Map<PasswordSettingsViewModel, ChangePasswordRequest>(model);
 
-            var changePasswordRequest = await client.PutAsJsonAsync($"{IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint}/{IdentityServerRoutes.Users.SettingsChange.Password}",
-                                                                    mappedModel);
+            var changePasswordRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint}/{IdentityServerRoutes.Users.SettingsChange.PasswordChange}",
+                                          mappedModel);
 
             var responseContent =
                 await changePasswordRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
@@ -126,7 +130,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -153,7 +158,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
 
         #endregion
 
@@ -189,8 +195,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             var mappedModel = _mapper.Map<SecuritySettingsViewModel, ChangeLoginRequest>(model);
 
-            var changeLoginRequest = await client.PutAsJsonAsync($"{IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint}/{IdentityServerRoutes.Users.SettingsChange.Login}",
-                                                                 mappedModel);
+            var changeLoginRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint}/{IdentityServerRoutes.Users.SettingsChange.LoginChange}",
+                                          mappedModel);
 
             var responseContent = await changeLoginRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();
 
@@ -200,7 +208,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         #region Docs
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -227,7 +236,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
 
         #endregion
 
@@ -256,8 +266,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.UserSettings
 
             var mappedModel = _mapper.Map<NotificationsSettingsViewModel, ChangeNotificationsRequest>(model);
 
-            var changeNotificationsRequest = await client.PutAsJsonAsync($"{IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint}/{IdentityServerRoutes.Users.SettingsChange.Notifications}",
-                                                                         mappedModel);
+            var changeNotificationsRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint}/{IdentityServerRoutes.Users.SettingsChange.NotificationsChange}",
+                                          mappedModel);
 
             var responseContent =
                 await changeNotificationsRequest.Content.ReadFromJsonAsync<AccountSettingsChangeResponse>();

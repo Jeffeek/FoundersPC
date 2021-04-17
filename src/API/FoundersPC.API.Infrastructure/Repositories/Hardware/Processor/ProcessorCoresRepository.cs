@@ -12,8 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Processor
 {
     public class ProcessorCoresRepository : GenericRepositoryAsync<ProcessorCore>,
-                                            IProcessorCoresRepositoryAsync,
-                                            IPaginateableRepository<ProcessorCore>
+                                            IProcessorCoresRepositoryAsync
     {
         /// <inheritdoc/>
         public ProcessorCoresRepository(DbContext repositoryContext) : base(repositoryContext) { }

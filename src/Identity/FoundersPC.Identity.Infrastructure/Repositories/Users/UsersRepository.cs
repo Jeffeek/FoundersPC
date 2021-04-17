@@ -17,10 +17,28 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
     {
         public UsersRepository(DbContext context) : base(context) { }
 
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="navigationPropertyPath"/>
+        ///     is <see langword="null"/>.
+        /// </exception>
+
+        #endregion
+
         public override async Task<IEnumerable<UserEntity>> GetAllAsync() =>
             await Context.Set<UserEntity>()
                          .Include(user => user.Role)
                          .ToListAsync();
+
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="predicate"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
+
+        #endregion
 
         public async Task<UserEntity> GetUserByAsync(Expression<Func<UserEntity, bool>> predicate)
         {
@@ -40,6 +58,15 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 
             return user;
         }
+
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="predicate"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
+
+        #endregion
 
         public async Task<UserEntity> GetUserByEmailAsync(string userEmail)
         {
@@ -81,7 +108,17 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Users
 
         #region Implementation of IPaginateableRepository<UserEntity>
 
+        #region Docs
+
         /// <inheritdoc/>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="navigationPropertyPath"/>
+        ///     is <see langword="null"/>.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">pageNumber or pageSize was below or equal to 0.</exception>
+
+        #endregion
+
         public async Task<IEnumerable<UserEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
                   .Include(x => x.Role)

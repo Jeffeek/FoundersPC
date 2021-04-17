@@ -1,8 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.RequestResponseShared.Pagination;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 
 #endregion
 

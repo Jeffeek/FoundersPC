@@ -26,14 +26,14 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> IsTokenBlockedAsync(string token)
         {
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
+            var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByTokenAsync(token);
 
             return tokenEntity is not null && tokenEntity.IsBlocked;
         }
 
         public async Task<bool> IsTokenBlockedAsync(int id)
         {
-            var token = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
+            var token = await _unitOfWork.AccessTokensRepository.GetByIdAsync(id);
 
             return token is not null && token.IsBlocked;
         }
@@ -44,7 +44,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> IsTokenActiveAsync(string token)
         {
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
+            var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByTokenAsync(token);
 
             if (tokenEntity is null)
                 return false;
@@ -54,7 +54,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> IsTokenActiveAsync(int id)
         {
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(id);
+            var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByIdAsync(id);
 
             if (tokenEntity is null)
                 return false;

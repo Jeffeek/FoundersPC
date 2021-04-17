@@ -7,7 +7,7 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.Validation.Hardware.Memory.RAM
 {
-    public class RAMUpdateDtoValidator : AbstractValidator<RAMUpdateDto>
+    public class RAMUpdateDtoValidator : AbstractValidator<RandomAccessMemoryUpdateDto>
     {
         public RAMUpdateDtoValidator()
         {

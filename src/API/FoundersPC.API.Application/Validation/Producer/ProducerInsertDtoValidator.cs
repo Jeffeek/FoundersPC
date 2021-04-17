@@ -28,7 +28,7 @@ namespace FoundersPC.API.Application.Validation.Producer
                 .MaximumLength(20);
 
             RuleFor(x => x.Website)
-                .Matches(x => "^https?://")
+                .Matches(_ => "^https?://")
                 .When(x => x != null)
                 .MaximumLength(100)
                 .When(x => x != null);

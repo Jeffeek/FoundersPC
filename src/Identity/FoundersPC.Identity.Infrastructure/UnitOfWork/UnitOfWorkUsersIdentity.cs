@@ -21,7 +21,7 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
                                        IRolesRepository rolesRepository,
                                        IAccessTokensLogsRepository accessTokensLogsRepository,
                                        IUsersEntrancesLogsRepository usersEntrancesLogsRepository,
-                                       IApiAccessUsersTokensRepository apiAccessUsersTokensRepository,
+                                       IAccessTokensRepository accessTokensRepository,
                                        DbContext context,
                                        ILogger<UnitOfWorkUsersIdentity> logger)
         {
@@ -29,7 +29,7 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
             _logger = logger;
             AccessTokensLogsRepository = accessTokensLogsRepository;
             UsersEntrancesLogsRepository = usersEntrancesLogsRepository;
-            ApiAccessUsersTokensRepository = apiAccessUsersTokensRepository;
+            AccessTokensRepository = accessTokensRepository;
             UsersRepository = usersRepository;
             RolesRepository = rolesRepository;
         }
@@ -38,7 +38,7 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
 
         public IUsersEntrancesLogsRepository UsersEntrancesLogsRepository { get; }
 
-        public IApiAccessUsersTokensRepository ApiAccessUsersTokensRepository { get; }
+        public IAccessTokensRepository AccessTokensRepository { get; }
 
         public IUsersRepository UsersRepository { get; }
 
@@ -56,7 +56,7 @@ namespace FoundersPC.Identity.Infrastructure.UnitOfWork
             catch (Exception e)
             {
                 _logger.LogError(e,
-                                 $"Error occured when tried to make save changes in {nameof(UnitOfWorkUsersIdentity)}");
+                                 $"Error happened when tried to make save changes in {nameof(UnitOfWorkUsersIdentity)}");
 
                 saveChangesResult = -1;
             }

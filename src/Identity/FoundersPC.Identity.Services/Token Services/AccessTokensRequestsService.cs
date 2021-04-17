@@ -25,32 +25,32 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public async Task<bool> CanMakeRequestAsync(string token)
         {
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByTokenAsync(token);
+            var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByTokenAsync(token);
 
             return await CanMakeRequestAsync(tokenEntity);
         }
 
         public async Task<bool> CanMakeRequestAsync(int tokenId)
         {
-            var tokenEntity = await _unitOfWork.ApiAccessUsersTokensRepository.GetByIdAsync(tokenId);
+            var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByIdAsync(tokenId);
 
             return await CanMakeRequestAsync(tokenEntity);
         }
 
-        private async Task<bool> CanMakeRequestAsync(ApiAccessUserToken token)
+        private async Task<bool> CanMakeRequestAsync(AccessTokenEntity tokenEntity)
         {
-            if (token is null)
+            if (tokenEntity is null)
                 return false;
 
-            var lastUsageLog = await _unitOfWork.AccessTokensLogsRepository.GetLastTokenUsageAsync(token.Id);
+            var lastUsageLog = await _unitOfWork.AccessTokensLogsRepository.GetLastTokenUsageAsync(tokenEntity.Id);
 
             if (lastUsageLog is null)
                 return true;
 
             var now = DateTime.Now;
 
-            return !token.IsBlocked
-                   && token.ExpirationDate > now
+            return !tokenEntity.IsBlocked
+                   && tokenEntity.ExpirationDate > now
                    && now.Ticks - lastUsageLog.RequestDateTime.Ticks
                    >= TimeSpan.TicksPerMinute; // the request to API can be made 1 time per 1 minute
         }

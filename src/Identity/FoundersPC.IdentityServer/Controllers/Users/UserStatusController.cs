@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Blocking;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Inactivity;
@@ -20,6 +21,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
     [ApiController]
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [Route(IdentityServerRoutes.Users.StatusChange.StatusEndpoint)]
+    [ModelValidation]
     public class UserStatusController : Controller
     {
         private readonly IAdminService _adminService;
@@ -29,18 +31,6 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         [HttpPut(IdentityServerRoutes.Users.StatusChange.Block.BlockByUserId)]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByIdRequest byIdRequest)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
-
-            if (byIdRequest.UserId < 1)
-                return BadRequest(new
-                                  {
-                                      error = $"Bad id. Id was {byIdRequest.UserId}, expected > 1"
-                                  });
-
             var blockUserResult = await _adminService.BlockUserAsync(byIdRequest.UserId);
 
             if (blockUserResult)
@@ -61,18 +51,6 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         [HttpPut(IdentityServerRoutes.Users.StatusChange.Block.BlockByUserEmail)]
         public async Task<ActionResult<BlockUserResponse>> BlockUser([FromBody] BlockUserByEmailRequest byEmailRequest)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
-
-            if (byEmailRequest.UserEmail is null)
-                return BadRequest(new
-                                  {
-                                      error = "Bad email. Id was was, expected not null"
-                                  });
-
             var blockUserResult =
                 await _adminService.BlockUserAsync(byEmailRequest.UserEmail,
                                                    byEmailRequest.BlockUserTokens,
@@ -96,18 +74,6 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         [HttpPut(IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserId)]
         public async Task<ActionResult<UnblockUserResponse>> UnBlockUser([FromBody] UnblockUserByIdRequest byIdRequest)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
-
-            if (byIdRequest.UserId < 1)
-                return BadRequest(new
-                                  {
-                                      error = $"Bad id. Id was {byIdRequest.UserId}, expected > 1"
-                                  });
-
             var unblockUserResult = await _adminService.UnBlockUserAsync(byIdRequest.UserId);
 
             if (unblockUserResult)
@@ -128,12 +94,6 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         [HttpPut(IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserEmail)]
         public async Task<ActionResult<UnblockUserResponse>> UnBlockUser([FromBody] UnblockUserByEmailRequest byEmailRequest)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
-
             var blockUserResult = await _adminService.UnBlockUserAsync(byEmailRequest.UserEmail,
                                                                        byEmailRequest.SendNotificationToUserViaEmail);
 
@@ -153,12 +113,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         }
 
         [HttpDelete(IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserId)]
-        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByEmailRequest request)
+        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByIdRequest request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
-            var result = await _adminService.MakeUserInactiveAsync(request.UserEmail);
+            var result = await _adminService.MakeUserInactiveAsync(request.UserId);
 
             return new MakeUserInactiveResponse
                    {
@@ -169,12 +126,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         }
 
         [HttpDelete(IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserEmail)]
-        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByIdRequest request)
+        public async Task<ActionResult<MakeUserInactiveResponse>> MakeUserInactive([FromBody] MakeUserInactiveByEmailRequest request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
-            var result = await _adminService.MakeUserInactiveAsync(request.UserId);
+            var result = await _adminService.MakeUserInactiveAsync(request.UserEmail);
 
             return new MakeUserInactiveResponse
                    {

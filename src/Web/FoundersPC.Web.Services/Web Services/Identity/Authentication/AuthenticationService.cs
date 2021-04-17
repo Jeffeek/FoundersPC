@@ -39,7 +39,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         #region Sign In
 
         /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">When model is unprocessable.</exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -66,7 +67,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.ArgumentNullException">model is <see langword="null"/></exception>
         public Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword)
         {
@@ -80,7 +82,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         }
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -107,7 +110,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">When model is unprocessable.</exception>
         public async Task<UserLoginResponse> SignInAsync(SignInViewModel model)
         {
@@ -133,7 +137,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             var client = _httpClientFactory.CreateClient("Sign In client");
-            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.Endpoint}/");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/");
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
@@ -158,7 +162,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         /// <exception cref="T:System.Security.Authentication.AuthenticationException">When model is unprocessable.</exception>
         /// <exception cref="T:System.ArgumentNullException">model is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -185,7 +190,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         public Task<UserSignUpResponse> SignUpAsync(string email, string rawPassword)
         {
             var signUpModel = new SignUpViewModel
@@ -198,7 +204,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         }
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -225,7 +232,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.Security.Authentication.AuthenticationException">When model is unprocessable.</exception>
         public async Task<UserSignUpResponse> SignUpAsync(SignUpViewModel model)
         {
@@ -251,7 +259,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             var client = _httpClientFactory.CreateClient("Sign Up client");
-            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.Endpoint}/");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/");
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
@@ -276,7 +284,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         /// <exception cref="T:System.ArgumentNullException">model is <see langword="null"/></exception>
         /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">UnprocessableEntity.</exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -303,7 +312,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         public Task<UserForgotPasswordResponse> ForgotPasswordAsync(string email)
         {
             var forgotPasswordModel = new ForgotPasswordViewModel
@@ -315,7 +325,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         }
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.UriFormatException">Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
@@ -342,7 +353,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
         ///     -or-
         ///     There is an invalid character sequence in uriString.
         ///     -or-
-        ///     The MS-DOS path specified in uriString must start with c:\\.</exception>
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">UnprocessableEntity.</exception>
         public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordViewModel model)
         {
@@ -361,7 +373,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
             }
 
             var client = _httpClientFactory.CreateClient("Forgot password client");
-            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.Endpoint}/");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/");
 
             var mappedRequestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);
 

@@ -71,7 +71,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                     b.ToTable("UserEntranceLog");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken",
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.AccessTokenEntity",
                                 b =>
                                 {
                                     b.Property<int>("Id")
@@ -192,14 +192,14 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.AccessTokenLog",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken",
-                                             "ApiAccessToken")
+                                    b.HasOne("FoundersPC.Identity.Domain.Entities.Tokens.AccessTokenEntity",
+                                             "AccessTokenEntity")
                                      .WithMany()
                                      .HasForeignKey("ApiAccessUsersTokenId")
                                      .OnDelete(DeleteBehavior.Cascade)
                                      .IsRequired();
 
-                                    b.Navigation("ApiAccessToken");
+                                    b.Navigation("AccessTokenEntity");
                                 });
 
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.UserEntranceLog",
@@ -214,7 +214,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                     b.Navigation("User");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.ApiAccessUserToken",
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.AccessTokenEntity",
                                 b =>
                                 {
                                     b.HasOne("FoundersPC.Identity.Domain.Entities.Users.UserEntity", "User")
