@@ -10,6 +10,6 @@ namespace FoundersPC.RequestResponseShared.IdentityServer.Response.Tokens
     {
         public bool IsBuyingSuccessful { get; set; } = false;
 
-        public AccessUserTokenReadDto Token { get; set; } = null;
+        public AccessTokenReadDto Token { get; set; } = null;
     }
 }

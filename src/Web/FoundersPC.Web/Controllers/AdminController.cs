@@ -284,12 +284,12 @@ namespace FoundersPC.Web.Controllers
                                                                FoundersPCConstants.PageSize,
                                                                HttpContext.GetJwtTokenFromCookie());
 
-            var viewModel = new IndexViewModel<AccessUserTokenReadDto>
+            var viewModel = new IndexViewModel<AccessTokenReadDto>
                             {
-                                PagedList = new StaticPagedList<AccessUserTokenReadDto>(tokens.Items,
-                                                                                        pageNumber,
-                                                                                        FoundersPCConstants.PageSize,
-                                                                                        tokens.TotalItemsCount),
+                                PagedList = new StaticPagedList<AccessTokenReadDto>(tokens.Items,
+                                                                                    pageNumber,
+                                                                                    FoundersPCConstants.PageSize,
+                                                                                    tokens.TotalItemsCount),
                                 IsPaginationNeeded = true
                             };
 

@@ -303,6 +303,9 @@
                                         Cases Table
                                     </a>
                                     <a
+                                        asp-action='PowerSuppliesTable'
+                                        asp-controller='PowerSupplies'
+                                        asp-route-pageNumber='1'
                                         class="dropdown-item">
                                         Power Supplies Table
                                     </a>
@@ -413,7 +416,6 @@
 <script
     src='~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'></script>
 <script
-    asp-append-version='true'
     src='~/js/site.js'></script>
 @await RenderSectionAsync("Scripts", false)
 </body>

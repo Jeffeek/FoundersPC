@@ -29,6 +29,6 @@ namespace FoundersPC.Identity.Dto
 
         public RoleEntityReadDto Role { get; set; }
 
-        public IEnumerable<AccessUserTokenReadDto> Tokens { get; set; }
+        public IEnumerable<AccessTokenReadDto> Tokens { get; set; }
     }
 }

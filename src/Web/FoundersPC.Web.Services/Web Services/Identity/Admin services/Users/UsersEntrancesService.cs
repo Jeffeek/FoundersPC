@@ -210,7 +210,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
             var responseMessage =
                 await
-                    client.GetFromJsonAsync<UserEntranceLogReadDto>(IdentityServerRoutes
+                    client.GetFromJsonAsync<UserEntranceLogReadDto>(ApplicationRestAddons
                                                                         .BuildRouteById($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.ByUserId}",
                                                                                         id));
 
@@ -345,7 +345,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
             var responseMessage =
                 await
-                    client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>(IdentityServerRoutes
+                    client.GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>>(ApplicationRestAddons
                                                                                      .BuildRouteById($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.ByUserId}",
                                                                                                      userId));
 

@@ -10,8 +10,8 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 {
     public interface IAccessTokensReservationService
     {
-        Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type);
+        Task<AccessTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type);
 
-        Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type);
+        Task<AccessTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type);
     }
 }

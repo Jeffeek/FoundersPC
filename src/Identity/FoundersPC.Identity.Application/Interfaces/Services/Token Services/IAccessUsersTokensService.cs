@@ -9,16 +9,16 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
 {
-    public interface IAccessUsersTokensService : IPaginateableService<AccessUserTokenReadDto>,
+    public interface IAccessUsersTokensService : IPaginateableService<AccessTokenReadDto>,
                                                  IAccessTokensBlockingService,
                                                  IAccessTokensTokensStatusService,
                                                  IAccessTokensRequestsService,
                                                  IAccessTokensReservationService
     {
-        Task<IEnumerable<AccessUserTokenReadDto>> GetAllTokensAsync();
+        Task<IEnumerable<AccessTokenReadDto>> GetAllTokensAsync();
 
-        Task<IEnumerable<AccessUserTokenReadDto>> GetUserTokensAsync(int userId);
+        Task<IEnumerable<AccessTokenReadDto>> GetUserTokensAsync(int userId);
 
-        Task<IEnumerable<AccessUserTokenReadDto>> GetUserTokensAsync(string userEmail);
+        Task<IEnumerable<AccessTokenReadDto>> GetUserTokensAsync(string userEmail);
     }
 }

@@ -70,7 +70,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         {
             if (managerToken is null)
             {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetProducerByIdAsync)}:{nameof(managerToken)} was null");
+                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetAllProducersAsync)}:{nameof(managerToken)} was null");
 
                 throw new ArgumentNullException(nameof(managerToken));
             }
@@ -184,6 +184,11 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         /// </exception>
         /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Id &lt; 1.</exception>
+        /// <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">
+        ///     A time-out occurred. For more information
+        ///     about time-outs, see the Remarks section.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentException">A regular expression parsing error occurred.</exception>
 
         #endregion
 
@@ -216,7 +221,9 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.PutAsJsonAsync($"{HardwareApiRoutes.Producers}/{id}", producer);
+            var responseMessage =
+                await client.PutAsJsonAsync(ApplicationRestAddons.BuildRouteById($"{HardwareApiRoutes.Producers}/{ApplicationRestAddons.Update}", id),
+                                            producer);
 
             return responseMessage.IsSuccessStatusCode;
         }

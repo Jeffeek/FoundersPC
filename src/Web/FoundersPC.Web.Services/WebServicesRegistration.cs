@@ -26,6 +26,7 @@ namespace FoundersPC.Web.Services
         public static void AddMicroservices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IProducersManagingService, ProducersManagingService>();
+            services.AddScoped<IPowerSuppliesManagingService, PowerSuppliesManagingService>();
             services.AddScoped<ITokenReservationWebService, TokenReservationWebService>();
             services.AddScoped<IUsersEntrancesService, UsersEntrancesService>();
             services.AddScoped<IUsersAccessTokensLogsService, UsersAccessTokensLogsService>();

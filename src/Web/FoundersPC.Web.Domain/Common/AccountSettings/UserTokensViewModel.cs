@@ -9,6 +9,6 @@ namespace FoundersPC.Web.Domain.Common.AccountSettings
 {
     public class UserTokensViewModel
     {
-        public IEnumerable<AccessUserTokenReadDto> Tokens { get; set; }
+        public IEnumerable<AccessTokenReadDto> Tokens { get; set; }
     }
 }

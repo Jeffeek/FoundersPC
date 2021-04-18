@@ -38,7 +38,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(IdentityServerRoutes.Tokens.ByUserEmail)]
-        public async ValueTask<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] string email)
+        public async ValueTask<ActionResult<IEnumerable<AccessTokenReadDto>>> GetUserTokens([FromRoute] string email)
         {
             var tokens = await _accessUsersTokensService.GetUserTokensAsync(email);
 
@@ -53,7 +53,7 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(IdentityServerRoutes.Tokens.ByUserId)]
-        public async ValueTask<ActionResult<IEnumerable<AccessUserTokenReadDto>>> GetUserTokens([FromRoute] int id)
+        public async ValueTask<ActionResult<IEnumerable<AccessTokenReadDto>>> GetUserTokens([FromRoute] int id)
         {
             var tokens = await _accessUsersTokensService.GetUserTokensAsync(id);
 
@@ -113,12 +113,12 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
-        public async ValueTask<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokens([FromQuery] PaginationRequest request) =>
+        public async ValueTask<IPaginationResponse<AccessTokenReadDto>> GetPaginateableTokens([FromQuery] PaginationRequest request) =>
             await _accessUsersTokensService.GetPaginateableAsync(request.PageNumber, request.PageSize);
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(ApplicationRestAddons.All)]
-        public async ValueTask<IEnumerable<AccessUserTokenReadDto>> GetAll() => await _accessUsersTokensService.GetAllTokensAsync();
+        public async ValueTask<IEnumerable<AccessTokenReadDto>> GetAll() => await _accessUsersTokensService.GetAllTokensAsync();
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [AllowAnonymous]

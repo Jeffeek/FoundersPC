@@ -9,9 +9,10 @@ namespace FoundersPC.API.Dto
 {
     public class ProducerUpdateDto
     {
+        [StringLength(50)]
         public string ShortName { get; set; }
 
-        [StringLength(50, MinimumLength = 2)]
+        [StringLength(100, MinimumLength = 2)]
         [Required]
         public string FullName { get; set; }
 

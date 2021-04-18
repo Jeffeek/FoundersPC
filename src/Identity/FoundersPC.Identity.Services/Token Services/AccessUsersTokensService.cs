@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -43,47 +44,58 @@ namespace FoundersPC.Identity.Services.Token_Services
             _logger = logger;
         }
 
-        public async Task<IEnumerable<AccessUserTokenReadDto>> GetUserTokensAsync(int userId)
+        public async Task<IEnumerable<AccessTokenReadDto>> GetUserTokensAsync(int userId)
         {
             var tokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userId);
 
-            if (tokens is null)
-                return null;
+            if (tokens is not null)
+                return _mapper.Map<IEnumerable<AccessTokenEntity>,
+                    IEnumerable<AccessTokenReadDto>>(tokens);
 
-            return _mapper.Map<IEnumerable<AccessTokenEntity>,
-                IEnumerable<AccessUserTokenReadDto>>(tokens);
+            _logger.LogWarning($"{nameof(AccessUsersTokensService)} : {nameof(GetUserTokensAsync)} : tokens was null");
+
+            return Enumerable.Empty<AccessTokenReadDto>();
         }
 
-        public async Task<IEnumerable<AccessUserTokenReadDto>> GetUserTokensAsync(string userEmail)
+        public async Task<IEnumerable<AccessTokenReadDto>> GetUserTokensAsync(string userEmail)
         {
             var tokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userEmail);
 
-            if (tokens is null)
-                return null;
+            if (tokens is not null)
+                return _mapper.Map<IEnumerable<AccessTokenEntity>,
+                    IEnumerable<AccessTokenReadDto>>(tokens);
 
-            return _mapper.Map<IEnumerable<AccessTokenEntity>,
-                IEnumerable<AccessUserTokenReadDto>>(tokens);
+            _logger.LogWarning($"{nameof(AccessUsersTokensService)} : {nameof(GetUserTokensAsync)} : tokens was null");
+
+            return Enumerable.Empty<AccessTokenReadDto>();
         }
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessUserTokenReadDto>> GetAllTokensAsync() =>
+        public async Task<IEnumerable<AccessTokenReadDto>> GetAllTokensAsync() =>
             _mapper.Map<IEnumerable<AccessTokenEntity>,
-                IEnumerable<AccessUserTokenReadDto>>(await _unitOfWork.AccessTokensRepository
-                                                                      .GetAllAsync());
+                IEnumerable<AccessTokenReadDto>>(await _unitOfWork.AccessTokensRepository
+                                                                  .GetAllAsync());
 
-        #region Implementation of IPaginateableService<AccessUserTokenReadDto>
+        #region Implementation of IPaginateableService<AccessTokenReadDto>
 
         /// <inheritdoc/>
-        public async Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableAsync(int pageNumber = 1,
-                                                                                            int pageSize = FoundersPCConstants.PageSize)
+        public async Task<IPaginationResponse<AccessTokenReadDto>> GetPaginateableAsync(int pageNumber = 1,
+                                                                                        int pageSize = FoundersPCConstants.PageSize)
         {
             var items = _mapper.Map<IEnumerable<AccessTokenEntity>,
-                IEnumerable<AccessUserTokenReadDto>>(await _unitOfWork.AccessTokensRepository
-                                                                      .GetPaginateableAsync(pageNumber, pageSize));
+                IEnumerable<AccessTokenReadDto>>(await _unitOfWork.AccessTokensRepository
+                                                                  .GetPaginateableAsync(pageNumber, pageSize));
+
+            if (items is null)
+            {
+                _logger.LogWarning($"{nameof(AccessUsersTokensService)} : {nameof(GetPaginateableAsync)} : {nameof(items)} was null");
+
+                items = Enumerable.Empty<AccessTokenReadDto>();
+            }
 
             var totalItemsCount = await _unitOfWork.AccessTokensRepository.CountAsync();
 
-            return new PaginationResponse<AccessUserTokenReadDto>(items, totalItemsCount);
+            return new PaginationResponse<AccessTokenReadDto>(items, totalItemsCount);
         }
 
         #endregion
@@ -127,10 +139,10 @@ namespace FoundersPC.Identity.Services.Token_Services
         #region Implementation of IAccessTokensReservationService
 
         /// <inheritdoc/>
-        public Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type) => _reservationService.ReserveNewTokenAsync(userEmail, type);
+        public Task<AccessTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type) => _reservationService.ReserveNewTokenAsync(userEmail, type);
 
         /// <inheritdoc/>
-        public Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type) => _reservationService.ReserveNewTokenAsync(userId, type);
+        public Task<AccessTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type) => _reservationService.ReserveNewTokenAsync(userId, type);
 
         #endregion
     }

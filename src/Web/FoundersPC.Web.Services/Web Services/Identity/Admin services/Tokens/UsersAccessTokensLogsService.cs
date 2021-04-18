@@ -178,7 +178,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     MicroservicesUrls.IdentityServer);
 
             return
-                client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}/{IdentityServerRoutes.BuildRouteById(IdentityServerRoutes.Logs.TokenUsages.ByUserId, userId)}");
+                client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}/{ApplicationRestAddons.BuildRouteById(IdentityServerRoutes.Logs.TokenUsages.ByUserId, userId)}");
         }
 
         #region Docs
@@ -290,7 +290,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     MicroservicesUrls.IdentityServer);
 
             return
-                client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}/{IdentityServerRoutes.BuildRouteById(IdentityServerRoutes.Logs.TokenUsages.ByTokenId, tokenId)}");
+                client.GetFromJsonAsync<IEnumerable<AccessTokenLogReadDto>>($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}/{ApplicationRestAddons.BuildRouteById(IdentityServerRoutes.Logs.TokenUsages.ByTokenId, tokenId)}");
         }
 
         #region Docs

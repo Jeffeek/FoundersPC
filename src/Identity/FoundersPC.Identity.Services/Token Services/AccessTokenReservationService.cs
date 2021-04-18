@@ -39,7 +39,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         ///     Reserve new tokenEntity: user with <paramref name="userEmail"/> not
         ///     found.
         /// </exception>
-        public async Task<AccessUserTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
+        public async Task<AccessTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type)
         {
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
@@ -54,7 +54,7 @@ namespace FoundersPC.Identity.Services.Token_Services
         ///     Reserve new tokenEntity: user with <paramref name="userId"/> not
         ///     found.
         /// </exception>
-        public async Task<AccessUserTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type)
+        public async Task<AccessTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type)
         {
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 
@@ -65,7 +65,7 @@ namespace FoundersPC.Identity.Services.Token_Services
             return await ReserveNewTokenAsync(user, type);
         }
 
-        private async Task<AccessUserTokenReadDto> ReserveNewTokenAsync(UserEntity user, TokenType type)
+        private async Task<AccessTokenReadDto> ReserveNewTokenAsync(UserEntity user, TokenType type)
         {
             var tokenStartEvaluation = DateTime.Now;
             var tokenLifetime = GetTheExpirationDate(type);
@@ -94,7 +94,7 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             await _emailService.SendAPIAccessTokenAsync(user.Email, newHashedToken);
 
-            return new AccessUserTokenReadDto
+            return new AccessTokenReadDto
                    {
                        ExpirationDate = tokenLifetime,
                        HashedToken = newHashedToken,

@@ -77,7 +77,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
             var request =
                 await
-                    client.GetFromJsonAsync<UserEntityReadDto>(IdentityServerRoutes
+                    client.GetFromJsonAsync<UserEntityReadDto>(ApplicationRestAddons
                                                                    .BuildRouteById($"{IdentityServerRoutes.Users.UsersEndpoint}/{IdentityServerRoutes.Users.ByUserId}",
                                                                                    id));
 

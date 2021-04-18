@@ -11,9 +11,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
 {
     public interface IUsersAccessTokensService
     {
-        Task<IEnumerable<AccessUserTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken);
+        Task<IEnumerable<AccessTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken);
 
-        Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken);
+        Task<IPaginationResponse<AccessTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken);
 
         Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken);
 

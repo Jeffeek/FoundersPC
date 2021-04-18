@@ -16,7 +16,7 @@ namespace FoundersPC.Identity.Application.Mappings
     {
         public MappingStartup()
         {
-            CreateMap<AccessTokenEntity, AccessUserTokenReadDto>();
+            CreateMap<AccessTokenEntity, AccessTokenReadDto>();
             CreateMap<RoleEntity, RoleEntityReadDto>();
             CreateMap<UserEntity, UserEntityReadDto>();
 

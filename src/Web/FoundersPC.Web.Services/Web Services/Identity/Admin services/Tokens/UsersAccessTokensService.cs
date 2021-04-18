@@ -59,7 +59,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         #endregion
 
-        public Task<IEnumerable<AccessUserTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken)
+        public Task<IEnumerable<AccessTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
@@ -69,7 +69,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                                                     adminToken,
                                                     MicroservicesUrls.IdentityServer);
 
-            return client.GetFromJsonAsync<IEnumerable<AccessUserTokenReadDto>>($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{ApplicationRestAddons.All}");
+            return client.GetFromJsonAsync<IEnumerable<AccessTokenReadDto>>($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{ApplicationRestAddons.All}");
         }
 
         #region Docs
@@ -108,7 +108,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         #endregion
 
-        public async Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken)
+        public async Task<IPaginationResponse<AccessTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken)
         {
             if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
 
@@ -121,7 +121,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
             return
                 await
                     client
-                        .GetFromJsonAsync<PaginationResponse<AccessUserTokenReadDto>
+                        .GetFromJsonAsync<PaginationResponse<AccessTokenReadDto>
                         >($"{IdentityServerRoutes.Tokens.TokensEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
         }
 
@@ -190,7 +190,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
             var requestResult =
                 await
-                    client.PutAsync($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{IdentityServerRoutes.BuildRouteById(IdentityServerRoutes.Tokens.BlockByTokenId, tokenId)}",
+                    client.PutAsync($"{IdentityServerRoutes.Tokens.TokensEndpoint}/{ApplicationRestAddons.BuildRouteById(IdentityServerRoutes.Tokens.BlockByTokenId, tokenId)}",
                                     null!);
 
             return requestResult.IsSuccessStatusCode;

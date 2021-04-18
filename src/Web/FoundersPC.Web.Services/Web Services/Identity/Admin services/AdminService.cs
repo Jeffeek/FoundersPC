@@ -274,11 +274,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region UsersAccessTokensService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<AccessUserTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) =>
-            _tokensService.GetAllUsersAccessTokensAsync(adminToken);
+        public Task<IEnumerable<AccessTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) => _tokensService.GetAllUsersAccessTokensAsync(adminToken);
 
         /// <inheritdoc/>
-        public Task<IPaginationResponse<AccessUserTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken) =>
+        public Task<IPaginationResponse<AccessTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken) =>
             _tokensService.GetPaginateableTokensAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>

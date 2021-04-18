@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
@@ -20,6 +21,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
     [Route("HardwareApiManaging/Producers")]
     [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy,
                AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
+    [ModelValidation]
     public class ProducersController : Controller
     {
         private readonly IMapper _mapper;

@@ -3,7 +3,7 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.API.Application.Mappings;
-using FoundersPC.API.Application.Validation.Hardware.Case;
+using FoundersPC.API.Dto.HardwareValidation.Hardware.Case;
 using FoundersPC.API.Dto.Mapping;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -25,7 +25,7 @@ namespace FoundersPC.API.Application
                     .AddFluentValidation(cfg =>
                                          {
                                              cfg.AutomaticValidationEnabled = true;
-                                             cfg.RegisterValidatorsFromAssemblyContaining<CaseInsertDtoValidation>();
+                                             cfg.RegisterValidatorsFromAssemblyContaining<CaseInsertDtoValidator>();
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
         }
