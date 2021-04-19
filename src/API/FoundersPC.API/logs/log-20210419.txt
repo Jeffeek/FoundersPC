@@ -629,3 +629,51 @@ Error Number:53,State:0,Class:20
 04/19/2021 16:51:01 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 5.8999 ms
 04/19/2021 16:51:02 ProducersController: request for reading with id = 2 (one) by mishamine26@gmail.com, IPv4 : ::1
 04/19/2021 16:51:02 HTTP "GET" "/HardwareApi/Producers/2" responded 200 in 5.2190 ms
+04/19/2021 18:41:51 HARDWARE API started..
+04/19/2021 18:41:51 HARDWARE API HostBuilder created
+04/19/2021 18:41:52 Host built
+04/19/2021 18:41:53 Now listening on: "https://localhost:4000"
+04/19/2021 18:41:53 Application started. Press Ctrl+C to shut down.
+04/19/2021 18:41:53 Hosting environment: "Development"
+04/19/2021 18:41:53 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/19/2021 18:42:58 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/19/2021 18:42:59 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 1960.3904 ms
+04/19/2021 19:03:57 HARDWARE API started..
+04/19/2021 19:03:57 HARDWARE API HostBuilder created
+04/19/2021 19:03:58 Host built
+04/19/2021 19:03:59 Now listening on: "https://localhost:4000"
+04/19/2021 19:03:59 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:03:59 Hosting environment: "Development"
+04/19/2021 19:03:59 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/19/2021 19:05:16 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/19/2021 19:05:18 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 2112.9259 ms
+04/19/2021 19:09:19 HARDWARE API started..
+04/19/2021 19:09:19 HARDWARE API HostBuilder created
+04/19/2021 19:09:20 Host built
+04/19/2021 19:09:20 Now listening on: "https://localhost:4000"
+04/19/2021 19:09:20 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:09:20 Hosting environment: "Development"
+04/19/2021 19:09:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/19/2021 19:11:21 HARDWARE API started..
+04/19/2021 19:11:21 HARDWARE API HostBuilder created
+04/19/2021 19:11:22 Host built
+04/19/2021 19:11:23 Now listening on: "https://localhost:4000"
+04/19/2021 19:11:23 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:11:23 Hosting environment: "Development"
+04/19/2021 19:11:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/19/2021 19:12:43 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/19/2021 19:12:44 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 2086.8193 ms
+04/19/2021 19:14:06 HARDWARE API started..
+04/19/2021 19:14:06 HARDWARE API HostBuilder created
+04/19/2021 19:14:07 Host built
+04/19/2021 19:14:08 Now listening on: "https://localhost:4000"
+04/19/2021 19:14:08 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:14:08 Hosting environment: "Development"
+04/19/2021 19:14:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/19/2021 19:15:04 HARDWARE API started..
+04/19/2021 19:15:04 HARDWARE API HostBuilder created
+04/19/2021 19:15:05 Host built
+04/19/2021 19:15:06 Now listening on: "https://localhost:4000"
+04/19/2021 19:15:06 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:15:06 Hosting environment: "Development"
+04/19/2021 19:15:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"

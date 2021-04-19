@@ -11,7 +11,10 @@
     <link
         href="~/css/entity-edit.css"
         rel="stylesheet">
-}}
+}
+
+
+}
 
 <h1
     class='mt-4 text-center text-light'>
@@ -34,25 +37,33 @@
                 class='d-grid'>
                 <div
                     class='row'>
-                    <div class='row'>
-                        <div class='form-group text-light'>
-                            <div class='form-check'>
-                                <input asp-for='IsShortNameEmpty'
+                    <div
+                        class='row'>
+                        <div
+                            class='form-group text-light'>
+                            <div
+                                class='form-check'>
+                                <input
+                                    asp-for='IsShortNameEmpty'
                                     class='form-check-input'
                                     type='checkbox'>
-                                <label class='form-check-label'>
+                                <label
+                                    class='form-check-label'>
                                     I don't know
                                 </label>
                             </div>
-                            <div class='form-label-group ms-3'>
-                                <input asp-for='ShortName'
+                            <div
+                                class='form-label-group ms-3'>
+                                <input
+                                    asp-for='ShortName'
                                     class='bg-dark form-control text-light'
                                     placeholder='Efficiency'
-                                    type='text' />
+                                    type='text'/>
                                 <label>Short Name</label>
                             </div>
                         </div>
-                        <span asp-validation-for='ShortName'
+                        <span
+                            asp-validation-for='ShortName'
                             class='text-danger'>
                         </span>
                     </div>
@@ -97,52 +108,67 @@
                 </div>
                 <div
                     class='row'>
-                    <div class='row'>
-                        <div class='form-group text-light'>
-                            <div class='form-check'>
-                                <input asp-for='IsWebsiteEmpty'
+                    <div
+                        class='row'>
+                        <div
+                            class='form-group text-light'>
+                            <div
+                                class='form-check'>
+                                <input
+                                    asp-for='IsWebsiteEmpty'
                                     class='form-check-input'
                                     type='checkbox'>
-                                <label class='form-check-label'>
+                                <label
+                                    class='form-check-label'>
                                     I don't know
                                 </label>
                             </div>
-                            <div class='form-label-group ms-3'>
-                                <input asp-for='Website'
+                            <div
+                                class='form-label-group ms-3'>
+                                <input
+                                    asp-for='Website'
                                     class='bg-dark form-control text-light'
                                     placeholder='Website'
-                                    type='text' />
+                                    type='text'/>
                                 <label>Website</label>
                             </div>
                         </div>
-                        <span asp-validation-for='Website'
+                        <span
+                            asp-validation-for='Website'
                             class='text-danger'>
                         </span>
                     </div>
                 </div>
                 <div
                     class='row'>
-                    <div class='form-group text-light'>
-                        <div class='form-check'>
-                            <input asp-for='IsFoundationDateEmpty'
+                    <div
+                        class='form-group text-light'>
+                        <div
+                            class='form-check'>
+                            <input
+                                asp-for='IsFoundationDateEmpty'
                                 class='form-check-input'
                                 type='checkbox'>
-                            <label class='form-check-label'>
+                            <label
+                                class='form-check-label'>
                                 I don't know
                             </label>
                         </div>
-                        <div class='form-label-group ms-3'>
-                            <input asp-for='FoundationDate'
+                        <div
+                            class='form-label-group ms-3'>
+                            <input
+                                asp-for='FoundationDate'
                                 class='bg-dark form-control text-light'
-                                placeholder='FoundationDate'
-                                value='@Model.FoundationDate.ToString("yyyy-MM-dd")'
-                                min='@DateTime.Parse("1800-01-01", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd")'
                                 max='@DateTime.Now.ToString("yyyy-MM-dd")'
-                                type='date' />
+                                min='@DateTime.Parse("1800-01-01", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd")'
+                                placeholder='FoundationDate'
+                                type='date'
+                                value='@Model.FoundationDate.ToString("yyyy-MM-dd")'/>
                             <label>Foundation Date</label>
                         </div>
                     </div>
-                    <span asp-validation-for='FoundationDate'
+                    <span
+                        asp-validation-for='FoundationDate'
                         class='text-danger'>
                     </span>
                 </div>

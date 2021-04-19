@@ -95,3 +95,66 @@
 04/19/2021 16:48:53 Successful save changes in UnitOfWorkUsersIdentity
 04/19/2021 16:48:53 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1990.4220 ms
 04/19/2021 16:51:23 HTTP "GET" "/FoundersPCIdentity/Users/mishamine26@gmail.com" responded 200 in 144.4239 ms
+04/19/2021 18:41:51 Identity server started..
+04/19/2021 18:41:51 Identity server HostBuilder created
+04/19/2021 18:41:52 Host built
+04/19/2021 18:41:52 Now listening on: "https://localhost:3000"
+04/19/2021 18:41:52 Application started. Press Ctrl+C to shut down.
+04/19/2021 18:41:52 Hosting environment: "Development"
+04/19/2021 18:41:52 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/19/2021 18:42:01 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/19/2021 18:42:01 Successful save changes in UnitOfWorkUsersIdentity
+04/19/2021 18:42:02 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1959.5708 ms
+04/19/2021 18:42:13 SignInIdentityController: user with email or login = JeffManager entered the service
+04/19/2021 18:42:13 Successful save changes in UnitOfWorkUsersIdentity
+04/19/2021 18:42:13 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 46.0629 ms
+04/19/2021 19:03:57 Identity server started..
+04/19/2021 19:03:57 Identity server HostBuilder created
+04/19/2021 19:03:58 Host built
+04/19/2021 19:03:58 Now listening on: "https://localhost:3000"
+04/19/2021 19:03:58 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:03:58 Hosting environment: "Development"
+04/19/2021 19:03:58 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/19/2021 19:04:09 SignInIdentityController: user with email or login = JeffManager entered the service
+04/19/2021 19:04:09 Successful save changes in UnitOfWorkUsersIdentity
+04/19/2021 19:04:09 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2070.6225 ms
+04/19/2021 19:09:19 Identity server started..
+04/19/2021 19:09:19 Identity server HostBuilder created
+04/19/2021 19:09:20 Host built
+04/19/2021 19:09:20 Now listening on: "https://localhost:3000"
+04/19/2021 19:09:20 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:09:20 Hosting environment: "Development"
+04/19/2021 19:09:20 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/19/2021 19:09:32 SignInIdentityController: user with email or login = JeffManager entered the service
+04/19/2021 19:09:33 Successful save changes in UnitOfWorkUsersIdentity
+04/19/2021 19:09:33 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2088.4684 ms
+04/19/2021 19:11:21 Identity server started..
+04/19/2021 19:11:21 Identity server HostBuilder created
+04/19/2021 19:11:22 Host built
+04/19/2021 19:11:23 Now listening on: "https://localhost:3000"
+04/19/2021 19:11:23 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:11:23 Hosting environment: "Development"
+04/19/2021 19:11:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/19/2021 19:11:35 SignInIdentityController: user with email or login = JeffManager entered the service
+04/19/2021 19:11:35 Successful save changes in UnitOfWorkUsersIdentity
+04/19/2021 19:11:35 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2054.2291 ms
+04/19/2021 19:14:06 Identity server started..
+04/19/2021 19:14:06 Identity server HostBuilder created
+04/19/2021 19:14:07 Host built
+04/19/2021 19:14:08 Now listening on: "https://localhost:3000"
+04/19/2021 19:14:08 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:14:08 Hosting environment: "Development"
+04/19/2021 19:14:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/19/2021 19:14:18 SignInIdentityController: user with email or login = JeffManager entered the service
+04/19/2021 19:14:18 Successful save changes in UnitOfWorkUsersIdentity
+04/19/2021 19:14:18 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2151.4203 ms
+04/19/2021 19:15:04 Identity server started..
+04/19/2021 19:15:04 Identity server HostBuilder created
+04/19/2021 19:15:05 Host built
+04/19/2021 19:15:06 Now listening on: "https://localhost:3000"
+04/19/2021 19:15:06 Application started. Press Ctrl+C to shut down.
+04/19/2021 19:15:06 Hosting environment: "Development"
+04/19/2021 19:15:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/19/2021 19:15:17 SignInIdentityController: user with email or login = JeffManager entered the service
+04/19/2021 19:15:17 Successful save changes in UnitOfWorkUsersIdentity
+04/19/2021 19:15:18 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2085.1325 ms
