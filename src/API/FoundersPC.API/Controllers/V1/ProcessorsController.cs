@@ -19,7 +19,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/CPUs")]
-    [Route(HardwareApiRoutes.Processors)]
+    [Route(HardwareApiRoutes.ProcessorsEndpoint)]
     [ModelValidation]
     public class ProcessorsController : Controller
     {

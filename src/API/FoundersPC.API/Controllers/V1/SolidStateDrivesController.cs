@@ -19,7 +19,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/SSDs")]
-    [Route(HardwareApiRoutes.SolidStateDrives)]
+    [Route(HardwareApiRoutes.SolidStateDrivesEndpoint)]
     [ModelValidation]
     public class SolidStateDrivesController : Controller
     {

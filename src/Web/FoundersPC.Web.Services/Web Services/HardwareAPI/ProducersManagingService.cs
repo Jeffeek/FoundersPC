@@ -81,7 +81,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.GetFromJsonAsync<IEnumerable<ProducerReadDto>>($"{HardwareApiRoutes.Producers}");
+            var responseMessage = await client.GetFromJsonAsync<IEnumerable<ProducerReadDto>>($"{HardwareApiRoutes.ProducersEndpoint}");
 
             return responseMessage;
         }
@@ -145,7 +145,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.GetFromJsonAsync<ProducerReadDto>($"{HardwareApiRoutes.Producers}/{id}");
+            var responseMessage = await client.GetFromJsonAsync<ProducerReadDto>($"{HardwareApiRoutes.ProducersEndpoint}/{id}");
 
             return responseMessage;
         }
@@ -222,7 +222,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         MicroservicesUrls.APIServer);
 
             var responseMessage =
-                await client.PutAsJsonAsync(ApplicationRestAddons.BuildRouteById($"{HardwareApiRoutes.Producers}/{ApplicationRestAddons.Update}", id),
+                await client.PutAsJsonAsync(ApplicationRestAddons.BuildRouteById($"{HardwareApiRoutes.ProducersEndpoint}/{ApplicationRestAddons.Update}", id),
                                             producer);
 
             return responseMessage.IsSuccessStatusCode;
@@ -302,7 +302,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.DeleteAsync($"{HardwareApiRoutes.Producers}/{producerId}");
+            var responseMessage = await client.DeleteAsync($"{HardwareApiRoutes.ProducersEndpoint}/{producerId}");
 
             return responseMessage.IsSuccessStatusCode;
         }
@@ -365,7 +365,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.PostAsJsonAsync(HardwareApiRoutes.Producers, producer);
+            var responseMessage = await client.PostAsJsonAsync(HardwareApiRoutes.ProducersEndpoint, producer);
 
             return responseMessage.IsSuccessStatusCode;
         }
@@ -427,7 +427,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
             var responseMessage =
                 await client
                     .GetFromJsonAsync<PaginationResponse<ProducerReadDto>
-                    >($"{HardwareApiRoutes.Producers}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                    >($"{HardwareApiRoutes.ProducersEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
 
             return responseMessage;
         }

@@ -19,7 +19,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/RAMs")]
-    [Route(HardwareApiRoutes.RandomAccessMemory)]
+    [Route(HardwareApiRoutes.RandomAccessMemoryEndpoint)]
     [ModelValidation]
     public class RandomAccessMemoryController : Controller
     {

@@ -19,7 +19,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/PSUs")]
-    [Route(HardwareApiRoutes.PowerSupplies)]
+    [Route(HardwareApiRoutes.PowerSuppliesEndpoint)]
     [ModelValidation]
     public class PowerSuppliesController : Controller
     {

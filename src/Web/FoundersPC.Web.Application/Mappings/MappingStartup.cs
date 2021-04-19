@@ -1,5 +1,6 @@
 ﻿#region Using namespaces
 
+using System;
 using AutoMapper;
 using FoundersPC.API.Dto;
 using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
@@ -7,6 +8,7 @@ using FoundersPC.RequestResponseShared.IdentityServer.Request.ChangeSettings;
 using FoundersPC.Web.Domain.Common.AccountSettings;
 using FoundersPC.Web.Domain.Common.Authentication;
 using FoundersPC.Web.Domain.Common.Hardware.PowerSupply;
+using FoundersPC.Web.Domain.Common.Hardware.Producers;
 
 #endregion
 
@@ -21,6 +23,7 @@ namespace FoundersPC.Web.Application.Mappings
             CreateMapsForSettingsChangeModels();
 
             CreateMapsForPowerSupply();
+            CreateMapsForProducer();
         }
 
         private void CreateMapsForSettingsChangeModels()
@@ -70,6 +73,37 @@ namespace FoundersPC.Web.Application.Mappings
                 .ForMember(dest => dest.CPU4PIN, source => source.MapFrom(x => x.IsCPU4PINEmpty ? null : new bool?(x.CPU4PIN)))
                 .ForMember(dest => dest.CPU8PIN, source => source.MapFrom(x => x.IsCPU8PINEmpty ? null : new bool?(x.CPU8PIN)))
                 .ForMember(dest => dest.Efficiency, source => source.MapFrom(x => x.IsEfficiencyEmpty ? null : new int?(x.Efficiency)));
+        }
+
+        private void CreateMapsForProducer()
+        {
+            CreateMap<ProducerInsertDtoViewModel, ProducerInsertDto>()
+                .ForMember(dest => dest.FoundationDate,
+                           source => source.MapFrom(x => x.IsFoundationDateEmpty
+                                                             ? null
+                                                             : new DateTime?(x.FoundationDate)))
+                .ForMember(dest => dest.ShortName,
+                           source => source.MapFrom(x => x.IsShortNameEmpty ? null : x.ShortName));
+
+            CreateMap<ProducerInsertDto, ProducerInsertDtoViewModel>()
+                .ForMember(dest => dest.IsFoundationDateEmpty,
+                           source => source.MapFrom(x => x.FoundationDate == null))
+                .ForMember(dest => dest.IsShortNameEmpty,
+                           source => source.MapFrom(x => x.ShortName == null));
+
+            CreateMap<ProducerUpdateDtoViewModel, ProducerUpdateDto>()
+                .ForMember(dest => dest.FoundationDate,
+                           source => source.MapFrom(x => x.IsFoundationDateEmpty
+                                                             ? null
+                                                             : new DateTime?(x.FoundationDate)))
+                .ForMember(dest => dest.ShortName,
+                           source => source.MapFrom(x => x.IsShortNameEmpty ? null : x.ShortName));
+
+            CreateMap<ProducerUpdateDto, ProducerUpdateDtoViewModel>()
+                .ForMember(dest => dest.IsFoundationDateEmpty,
+                           source => source.MapFrom(x => x.FoundationDate == null))
+                .ForMember(dest => dest.IsShortNameEmpty,
+                           source => source.MapFrom(x => x.ShortName == null));
         }
     }
 }

@@ -18,14 +18,14 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiController]
     [Route("HardwareApi/HDDs")]
-    [Route(HardwareApiRoutes.HardDrives)]
+    [Route(HardwareApiRoutes.HardDriveDisksEndpoint)]
     [ModelValidation]
-    public class HardDrivesController : Controller
+    public class HardDriveDisksController : Controller
     {
         private readonly IHardDriveDisksService _hardDriveDisksService;
-        private readonly ILogger<HardDrivesController> _logger;
+        private readonly ILogger<HardDriveDisksController> _logger;
 
-        public HardDrivesController(IHardDriveDisksService hardDriveDisksService, ILogger<HardDrivesController> logger)
+        public HardDriveDisksController(IHardDriveDisksService hardDriveDisksService, ILogger<HardDriveDisksController> logger)
         {
             _hardDriveDisksService = hardDriveDisksService;
             _logger = logger;

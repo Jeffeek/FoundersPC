@@ -19,7 +19,7 @@ namespace FoundersPC.API.Controllers.V1
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
     [Route("HardwareApi/GPUCores")]
-    [Route(HardwareApiRoutes.VideoCardCores)]
+    [Route(HardwareApiRoutes.VideoCardCoresEndpoint)]
     [ModelValidation]
     public class VideoCardCoresController : Controller
     {

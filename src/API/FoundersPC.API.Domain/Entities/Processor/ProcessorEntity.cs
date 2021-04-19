@@ -22,9 +22,9 @@ namespace FoundersPC.API.Domain.Entities.Processor
         [Required]
         public int TDP { get; set; }
 
+        [Column("Series")]
         [MaxLength(15)]
         [MinLength(3)]
-        [Column("Series")]
         [Required]
         public string Series { get; set; }
 

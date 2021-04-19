@@ -18,7 +18,7 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route(HardwareApiRoutes.Producers)]
+    [Route(HardwareApiRoutes.ProducersEndpoint)]
     [ModelValidation]
     public class ProducersController : Controller
     {

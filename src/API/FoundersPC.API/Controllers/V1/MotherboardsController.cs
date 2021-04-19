@@ -18,7 +18,7 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route(HardwareApiRoutes.Motherboards)]
+    [Route(HardwareApiRoutes.MotherboardsEndpoint)]
     [ModelValidation]
     public class MotherboardsController : Controller
     {

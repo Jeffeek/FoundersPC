@@ -81,7 +81,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.GetFromJsonAsync<IEnumerable<PowerSupplyReadDto>>($"{HardwareApiRoutes.PowerSupplies}");
+            var responseMessage = await client.GetFromJsonAsync<IEnumerable<PowerSupplyReadDto>>($"{HardwareApiRoutes.PowerSuppliesEndpoint}");
 
             return responseMessage;
         }
@@ -145,7 +145,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.GetFromJsonAsync<PowerSupplyReadDto>($"{HardwareApiRoutes.PowerSupplies}/{id}");
+            var responseMessage = await client.GetFromJsonAsync<PowerSupplyReadDto>($"{HardwareApiRoutes.PowerSuppliesEndpoint}/{id}");
 
             return responseMessage;
         }
@@ -222,7 +222,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         MicroservicesUrls.APIServer);
 
             var responseMessage =
-                await client.PutAsJsonAsync(ApplicationRestAddons.BuildRouteById($"{HardwareApiRoutes.PowerSupplies}/{ApplicationRestAddons.Update}", id),
+                await client.PutAsJsonAsync(ApplicationRestAddons.BuildRouteById($"{HardwareApiRoutes.PowerSuppliesEndpoint}/{ApplicationRestAddons.Update}", id),
                                             powerSupply);
 
             return responseMessage.IsSuccessStatusCode;
@@ -302,7 +302,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.DeleteAsync($"{HardwareApiRoutes.PowerSupplies}/{powerSupplyId}");
+            var responseMessage = await client.DeleteAsync($"{HardwareApiRoutes.PowerSuppliesEndpoint}/{powerSupplyId}");
 
             return responseMessage.IsSuccessStatusCode;
         }
@@ -365,7 +365,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         managerToken,
                                                         MicroservicesUrls.APIServer);
 
-            var responseMessage = await client.PostAsJsonAsync(HardwareApiRoutes.PowerSupplies, producer);
+            var responseMessage = await client.PostAsJsonAsync(HardwareApiRoutes.PowerSuppliesEndpoint, producer);
 
             return responseMessage.IsSuccessStatusCode;
         }
@@ -427,7 +427,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
             var responseMessage =
                 await client
                     .GetFromJsonAsync<PaginationResponse<PowerSupplyReadDto>
-                    >($"{HardwareApiRoutes.PowerSupplies}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                    >($"{HardwareApiRoutes.PowerSuppliesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
 
             return responseMessage;
         }
