@@ -2,8 +2,8 @@
 
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using FoundersPC.API.Application.HardwareValidation.Hardware.Case;
 using FoundersPC.API.Application.Mappings;
-using FoundersPC.API.Dto.HardwareValidation.Hardware.Case;
 using FoundersPC.API.Dto.Mapping;
 using Microsoft.Extensions.DependencyInjection;
 

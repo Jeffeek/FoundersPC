@@ -1,62 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region Using namespaces
+
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FoundersPC.Web.Domain.Common.Hardware.VideoCardCore
 {
-	public class VideoCardCoreUpdateDtoViewModel
-	{
-		[StringLength(40, MinimumLength = 3)]
-		[Required]
-		public string Type { get; set; }
+    public class VideoCardCoreUpdateDtoViewModel
+    {
+        [Range(5, 48)]
+        [Required]
+        public int TechProcess { get; set; }
 
-		[StringLength(50, MinimumLength = 3)]
-		[Required]
-		public string WindowMaterial { get; set; }
+        [RegularExpression("\\d{3,5}x\\d{3,5}")]
+        [StringLength(20)]
+        [Required]
+        public string MaxResolution { get; set; }
 
-		[StringLength(20, MinimumLength = 3)]
-		[Required]
-		public string MaxMotherboardSize { get; set; }
+        [Range(0, 24)]
+        [Required]
+        public int MonitorsSupport { get; set; }
 
-		[StringLength(50, MinimumLength = 3)]
-		[Required]
-		public string Material { get; set; }
+        [StringLength(30)]
+        [Required]
+        public string ConnectionInterface { get; set; }
 
-		public bool TransparentWindow { get; set; }
+        [StringLength(30)]
+        [Required]
+        public string Codename { get; set; }
 
-		[StringLength(50, MinimumLength = 3)]
-		[Required]
-		public string Color { get; set; }
+        [StringLength(10)]
+        [Required]
+        public string DirectX { get; set; }
 
-		[Range(1, Int32.MaxValue)]
-		public int Depth { get; set; }
+        public bool SLIOrCrossfire { get; set; }
 
-		public bool IsDepthEmpty { get; set; }
+        [StringLength(30)]
+        [Required]
+        public string ArchitectureTitle { get; set; }
 
-		[Range(1, Int32.MaxValue)]
-		public int Height { get; set; }
-
-		public bool IsHeightEmpty { get; set; }
-
-		[StringLength(100, MinimumLength = 1)]
-		[Required]
-		public string Title { get; set; }
-
-		[Range(1, Double.MaxValue)]
-		public double Weight { get; set; }
-
-		public bool IsWeightEmpty { get; set; }
-
-		[Range(1, Int32.MaxValue)]
-		public int Width { get; set; }
-
-		public bool IsWidthEmpty { get; set; }
-
-		[Range(1, Int64.MaxValue)]
-		[Required]
-		public int ProducerId { get; set; }
-	}
+        [StringLength(100, MinimumLength = 1)]
+        [Required]
+        public string Title { get; set; }
+    }
 }

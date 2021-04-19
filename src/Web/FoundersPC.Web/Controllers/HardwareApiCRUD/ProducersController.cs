@@ -9,6 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
+using FoundersPC.Web.Domain.Common.Hardware.Producer;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -36,20 +37,26 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 
         [HttpGet]
         public ActionResult Create() =>
-            View(new ProducerInsertDto
+            View("ProducerCreate",
+                 new ProducerInsertDtoViewModel
                  {
                      Country = String.Empty,
-                     FoundationDate = null,
-                     FullName = String.Empty,
-                     ShortName = String.Empty,
-                     Website = "https://"
+                     FoundationDate = DateTime.Now,
+                     IsFoundationDateEmpty = false,
+                     FullName = "FullName",
+                     IsShortNameEmpty = false,
+                     ShortName = "ShortName",
+                     Website = "https://",
+                     IsWebsiteEmpty = false
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] ProducerInsertDto producer)
+        public async Task<ActionResult> Create([FromForm] ProducerInsertDtoViewModel producer)
         {
+            var dto = _mapper.Map<ProducerInsertDtoViewModel, ProducerInsertDto>(producer);
+
             var insertResult =
-                await _producersManagingService.CreateProducerAsync(producer, HttpContext.GetJwtTokenFromCookie());
+                await _producersManagingService.CreateProducerAsync(dto, HttpContext.GetJwtTokenFromCookie());
 
             if (insertResult)
                 return RedirectToAction("ProducersTable");
@@ -82,16 +89,18 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var producer =
                 await _producersManagingService.GetProducerByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
-            var producerUpdate = _mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer);
+            var viewModel = _mapper.Map<ProducerUpdateDto, ProducerUpdateDtoViewModel>(_mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer));
 
-            return View("ProducerEdit", producerUpdate);
+            return View("ProducerEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProducerUpdateDto producer)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProducerUpdateDtoViewModel producer)
         {
+            var dto = _mapper.Map<ProducerUpdateDtoViewModel, ProducerUpdateDto>(producer);
+
             var result =
-                await _producersManagingService.UpdateProducerAsync(id, producer, HttpContext.GetJwtTokenFromCookie());
+                await _producersManagingService.UpdateProducerAsync(id, dto, HttpContext.GetJwtTokenFromCookie());
 
             return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("ProducersTable");
         }

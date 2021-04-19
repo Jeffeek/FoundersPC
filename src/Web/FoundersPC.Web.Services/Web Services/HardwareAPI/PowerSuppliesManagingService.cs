@@ -222,7 +222,8 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                         MicroservicesUrls.APIServer);
 
             var responseMessage =
-                await client.PutAsJsonAsync(ApplicationRestAddons.BuildRouteById($"{HardwareApiRoutes.PowerSuppliesEndpoint}/{ApplicationRestAddons.Update}", id),
+                await client.PutAsJsonAsync(ApplicationRestAddons.BuildRouteById($"{HardwareApiRoutes.PowerSuppliesEndpoint}/{ApplicationRestAddons.Update}",
+                                                                                 id),
                                             powerSupply);
 
             return responseMessage.IsSuccessStatusCode;

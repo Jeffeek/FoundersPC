@@ -36,7 +36,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 
         [HttpGet]
         public ActionResult Create() =>
-            View(new PowerSupplyInsertDtoViewModel
+            View("PowerSupplyCreate",
+                 new PowerSupplyInsertDtoViewModel
                  {
                      Certificate80PLUS = true,
                      FanDiameter = 120,

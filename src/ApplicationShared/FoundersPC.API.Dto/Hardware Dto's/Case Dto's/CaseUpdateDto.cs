@@ -1,7 +1,5 @@
 ﻿#region Using namespaces
 
-using System;
-using System.ComponentModel.DataAnnotations;
 using FoundersPC.API.Dto.Base.Interfaces;
 
 #endregion

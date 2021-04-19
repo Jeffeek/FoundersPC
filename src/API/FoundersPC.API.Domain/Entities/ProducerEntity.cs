@@ -53,6 +53,7 @@ namespace FoundersPC.API.Domain.Entities
         [MinLength(3)]
         [DataType(DataType.Text)]
         [Column("Country")]
+        [Required]
         public string Country { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

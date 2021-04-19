@@ -29,7 +29,6 @@ namespace FoundersPC.Web.Application
                                          {
                                              cfg.AutomaticValidationEnabled = true;
                                              cfg.RegisterValidatorsFromAssemblyContaining<PasswordSettingsViewModelValidator>();
-                                             //cfg.RegisterValidatorsFromAssemblyContaining<CaseInsertDtoValidator>();
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
         }
