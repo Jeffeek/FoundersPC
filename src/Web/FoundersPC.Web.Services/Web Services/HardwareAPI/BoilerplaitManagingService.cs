@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -80,12 +81,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         public async Task<IEnumerable<TReadDto>> GetAllAsync(string managerToken)
         {
-            if (managerToken is null)
-            {
-                _logger.LogError($"{_serviceName} :{nameof(GetAllAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentNullException(nameof(managerToken));
-            }
+            CheckManagerToken(managerToken);
 
             var client = _clientFactory.CreateClient();
 
@@ -137,12 +133,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         public async Task<TReadDto> GetByIdAsync(int id, string managerToken)
         {
-            if (managerToken is null)
-            {
-                _logger.LogError($"{_serviceName}:{nameof(GetByIdAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentOutOfRangeException(nameof(managerToken));
-            }
+            CheckManagerToken(managerToken);
 
             if (id < 1)
             {
@@ -220,12 +211,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(id));
             }
 
-            if (managerToken is null)
-            {
-                _logger.LogError($"{_serviceName}:{nameof(UpdateAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentNullException(nameof(managerToken));
-            }
+            CheckManagerToken(managerToken);
 
             var client = _clientFactory.CreateClient();
 
@@ -302,12 +288,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentOutOfRangeException(nameof(id));
             }
 
-            if (managerToken is null)
-            {
-                _logger.LogError($"{_serviceName}:{nameof(DeleteAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentNullException(nameof(managerToken));
-            }
+            CheckManagerToken(managerToken);
 
             var client = _clientFactory.CreateClient();
 
@@ -365,12 +346,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                 throw new ArgumentNullException(nameof(entity));
             }
 
-            if (managerToken is null)
-            {
-                _logger.LogError($"{_serviceName}:{nameof(CreateAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentNullException(nameof(managerToken));
-            }
+            CheckManagerToken(managerToken);
 
             var client = _clientFactory.CreateClient();
 
@@ -424,12 +400,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                                                                               int pageSize,
                                                                               string managerToken)
         {
-            if (managerToken is null)
-            {
-                _logger.LogError($"{_serviceName}:{nameof(GetPaginateableAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentNullException(nameof(managerToken));
-            }
+            CheckManagerToken(managerToken);
 
             var client = _clientFactory.CreateClient();
 
@@ -442,6 +413,16 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
                     .GetFromJsonAsync<PaginationResponse<TReadDto>>($"{_apiRoute}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
 
             return responseMessage;
+        }
+
+        private void CheckManagerToken(string managerToken, [CallerMemberName] string method = null)
+        {
+            if (managerToken is not null)
+                return;
+
+            _logger.LogError($"{_serviceName}:{method}:{nameof(managerToken)} was null");
+
+            throw new ArgumentNullException(nameof(managerToken));
         }
     }
 }

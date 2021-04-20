@@ -21,8 +21,8 @@ namespace FoundersPC.Web.Application.Interfaces.Services.HardwareApi
 
         Task<bool> CreateHardDriveDiskAsync(HardDriveDiskInsertDto hardDriveDisk, string managerToken);
 
-        Task<IPaginationResponse<CaseReadDto>> GetPaginateableHardDriveDisksAsync(int pageNumber,
-                                                                                  int pageSize,
-                                                                                  string managerToken);
+        Task<IPaginationResponse<HardDriveDiskReadDto>> GetPaginateableHardDriveDisksAsync(int pageNumber,
+                                                                                           int pageSize,
+                                                                                           string managerToken);
     }
 }

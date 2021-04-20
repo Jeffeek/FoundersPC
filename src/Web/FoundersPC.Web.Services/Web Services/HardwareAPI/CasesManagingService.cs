@@ -16,7 +16,8 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
     public class CasesManagingService : BoilerplaitManagingService<CaseInsertDto, CaseReadDto, CaseUpdateDto>,
                                         ICasesManagingService
     {
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is <see langword="null"/>.</exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> is <see langword="null" />.</exception>
         public CasesManagingService(IHttpClientFactory clientFactory,
                                     ILogger<CasesManagingService> logger) : base(clientFactory,
                                                                                  logger,
@@ -25,19 +26,24 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         #region Implementation of ICasesManagingService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<CaseReadDto>> GetAllCasesAsync(string managerToken) => GetAllAsync(managerToken);
+        public Task<IEnumerable<CaseReadDto>> GetAllCasesAsync(string managerToken) =>
+            GetAllAsync(managerToken);
 
         /// <inheritdoc/>
-        public Task<CaseReadDto> GetCaseByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
+        public Task<CaseReadDto> GetCaseByIdAsync(int id, string managerToken) =>
+            GetByIdAsync(id, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case, string managerToken) => UpdateAsync(id, @case, managerToken);
+        public Task<bool> UpdateCaseAsync(int id, CaseUpdateDto @case, string managerToken) =>
+            UpdateAsync(id, @case, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> DeleteCaseAsync(int caseId, string managerToken) => DeleteAsync(caseId, managerToken);
+        public Task<bool> DeleteCaseAsync(int caseId, string managerToken) =>
+            DeleteAsync(caseId, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> CreateCaseAsync(CaseInsertDto @case, string managerToken) => CreateAsync(@case, managerToken);
+        public Task<bool> CreateCaseAsync(CaseInsertDto @case, string managerToken) =>
+            CreateAsync(@case, managerToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<CaseReadDto>> GetPaginateableCasesAsync(int pageNumber, int pageSize, string managerToken) =>
