@@ -1,14 +1,15 @@
 ﻿"use strict";
-$(document).ready(function ()
-{
-    indeterminate();
-
-    function indeterminate()
+$(document).
+    ready(function ()
     {
-        const checkBoxes = $('input[indeterminate="True"][type="checkbox"]');
-        for (let i = 0; i < checkBoxes.length; i++)
+        indeterminate();
+
+        function indeterminate()
         {
-            $(checkBoxes[i]).prop("indeterminate", true);
+            const checkBoxes = $('input[indeterminate="True"][type="checkbox"]');
+            for (let i = 0; i < checkBoxes.length; i++)
+            {
+                $(checkBoxes[i]).prop("indeterminate", true);
+            }
         }
-    }
-});
+    });

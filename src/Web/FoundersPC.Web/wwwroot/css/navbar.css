@@ -26,7 +26,8 @@
 .dropdown-item.submenu::after
 {
     content: '▸';
-    display: inline-block;
+    display: inline-flex;
+    justify-self: flex-end;
 }
 
 .dropdown-item:hover + .dropdown-menu,

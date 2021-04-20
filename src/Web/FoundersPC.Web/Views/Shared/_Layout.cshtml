@@ -1,4 +1,5 @@
 ﻿@using FoundersPC.ApplicationShared.ApplicationConstants
+@using FoundersPC.ApplicationShared
 <!DOCTYPE html>
 <html>
 <head>
@@ -291,7 +292,7 @@
                                         Tokens Table
                                     </a>
                                 </div>
-                            } else if (User.IsInRole(ApplicationRoles.Manager)) {
+                            } if (User.IsInRole(ApplicationRoles.Manager, ApplicationRoles.Administrator)) {
                                 <a
                                     class="dropdown-item submenu">
                                     Manager Tools
@@ -299,6 +300,8 @@
                                 <div
                                     class="dropdown-menu dropdown-menu-dark">
                                     <a
+                                        asp-action='CasesTable'
+                                        asp-controller='Cases'
                                         class="dropdown-item">
                                         Cases Table
                                     </a>
@@ -309,6 +312,8 @@
                                         Power Supplies Table
                                     </a>
                                     <a
+                                        asp-action='MotherboardsTable'
+                                        asp-controller='Motherboards'
                                         class="dropdown-item">
                                         Motherboards Table
                                     </a>
@@ -325,14 +330,20 @@
                                     <div
                                         class="dropdown-menu dropdown-menu-dark">
                                         <a
+                                            asp-action='HardDriveDisksTable'
+                                            asp-controller='HardDriveDisks'
                                             class="dropdown-item">
                                             Hard Drives Table
                                         </a>
                                         <a
+                                            asp-action='SolidStateDrivesTable'
+                                            asp-controller='SolidStateDrives'
                                             class="dropdown-item">
                                             SSDs Table
                                         </a>
                                         <a
+                                            asp-action='RandomAccessMemoryTable'
+                                            asp-controller='RandomAccessMemory'
                                             class="dropdown-item">
                                             RAMs Table
                                         </a>
@@ -344,10 +355,14 @@
                                     <div
                                         class="dropdown-menu dropdown-menu-dark">
                                         <a
+                                            asp-action='ProcessorsTable'
+                                            asp-controller='Processors'
                                             class="dropdown-item">
                                             CPUs Table
                                         </a>
                                         <a
+                                            asp-action='ProcessorCoresTable'
+                                            asp-controller='ProcessorCores'
                                             class="dropdown-item">
                                             CPU Cores Table
                                         </a>
@@ -359,10 +374,14 @@
                                     <div
                                         class="dropdown-menu dropdown-menu-dark">
                                         <a
+                                            asp-action='VideoCardCoresTable'
+                                            asp-controller='VideoCardCores'
                                             class="dropdown-item">
-                                            GRU Cores Table
+                                            GPU Cores Table
                                         </a>
                                         <a
+                                            asp-action='VideoCardsTable'
+                                            asp-controller='VideoCards'
                                             class="dropdown-item">
                                             GPUs Table
                                         </a>

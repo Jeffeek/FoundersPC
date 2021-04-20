@@ -55,7 +55,7 @@ namespace FoundersPC.Web
         {
             services.AddLogging(config => config.AddSerilog(Log.Logger));
 
-            services.AddMicroservices(Configuration);
+            services.AddMicroservices();
 
             services.AddWebApplicationMappings();
             services.AddValidators();
@@ -68,7 +68,6 @@ namespace FoundersPC.Web
 
             services.AddAuthorizationPolicies(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddControllersWithViews();
         }
 
@@ -81,7 +80,22 @@ namespace FoundersPC.Web
             }
             else
             {
-                app.UseExceptionHandler("/Error/{0}");
+                app.UseExceptionHandler(config =>
+                                        {
+                                            config.Run(async context =>
+                                                       {
+                                                           var statusCode = 400;
+                                                           var error = context.Features.Get<IExceptionHandlerFeature>();
+
+                                                           if (error != null)
+                                                               statusCode = 500;
+
+                                                           context.Response.StatusCode = statusCode;
+                                                           context.Response.Redirect($"/Error/{statusCode}");
+                                                           await context.Response.CompleteAsync();
+                                                       });
+                                        });
+
                 app.UseHsts();
             }
 
@@ -98,22 +112,6 @@ namespace FoundersPC.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseExceptionHandler(config =>
-                                    {
-                                        config.Run(async context =>
-                                                   {
-                                                       var statusCode = 400;
-                                                       var error = context.Features.Get<IExceptionHandlerFeature>();
-
-                                                       if (error != null)
-                                                           statusCode = 500;
-
-                                                       context.Response.StatusCode = statusCode;
-                                                       context.Response.Redirect($"/Error/{statusCode}");
-                                                       await context.Response.CompleteAsync();
-                                                   });
-                                    });
 
             app.UseEndpoints(endpoints =>
                              {

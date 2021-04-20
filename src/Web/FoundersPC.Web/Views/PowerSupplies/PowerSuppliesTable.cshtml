@@ -19,39 +19,37 @@
         class='p-2 table-title'>
         <div
             class='row'>
-            <div>
-                <a
-                    asp-action='Create'
-                    asp-controller='PowerSupplies'
-                    class='btn btn-outline-success d-flex'>
-                    <svg
-                        class='icon'
-                        fill='#FFFFFF'
-                        height='32'
-                        viewBox='0 0 32 32'
-                        width='32'
-                        xmlns='http://www.w3.org/2000/svg'
-                        xmlns:xlink='http://www.w3.org/1999/xlink'>
-                        <path
-                            d='M16 11L16 21M11 16L21 16M16 4A12 12 0 1 0 16 28 12 12 0 1 0 16 4z'
-                            fill='none'
-                            stroke='#FFFFFF'
-                            stroke-width='2'/>
-                    </svg>
-                    <span
-                        class='mx-2 text-light'>
-                        Add new power supply
-                    </span>
-                </a>
-            </div>
+            <a
+                asp-action='Create'
+                asp-controller='PowerSupplies'
+                class='btn btn-outline-success d-flex'>
+                <svg
+                    class='icon'
+                    fill='#FFFFFF'
+                    height='32'
+                    viewBox='0 0 32 32'
+                    width='32'
+                    xmlns='http://www.w3.org/2000/svg'
+                    xmlns:xlink='http://www.w3.org/1999/xlink'>
+                    <path
+                        d='M16 11L16 21M11 16L21 16M16 4A12 12 0 1 0 16 28 12 12 0 1 0 16 4z'
+                        fill='none'
+                        stroke='#FFFFFF'
+                        stroke-width='2'/>
+                </svg>
+                <span
+                    class='mx-2 text-light '>
+                    Add new power supply
+                </span>
+            </a>
         </div>
     </div>
     <div
-        class='table-responsive'>
+        class='table-responsive-xxl'>
         <table
             class='mt-3 table table-bordered table-hover text-light'>
             <thead>
-            <tr class='d-flex justify-content-center align-items-center'>
+            <tr>
                 <th>Id</th>
                 <th>Producer Id</th>
                 <th>Title</th>
@@ -121,49 +119,64 @@
                                     type="checkbox">
                             </div>
                         </th>
-                        <td>
-                            <div class="d-flex">
-                                <a asp-action='Edit'
-                                   asp-controller='PowerSupplies'
-                                   asp-route-id='@powerSupply.Id'
-                                   class="btn btn-outline-warning d-flex mx-3 simple-popup">
-                                    <span class="popuptext">
+                        <td
+                            class='d-inline-flex justify-content-between'>
+                            <div
+                                class="d-flex">
+                                <a
+                                    asp-action='Edit'
+                                    asp-controller='PowerSupplies'
+                                    asp-route-id='@powerSupply.Id'
+                                    class="btn btn-outline-warning d-flex mx-3 simple-popup">
+                                    <span
+                                        class="popuptext">
                                         Edit
                                     </span>
-                                    <svg class='icon'
-                                         viewBox="0 0 48 48"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path d="M42.6,9.1l-3.7-3.7c-0.6-0.6-1.5-0.6-2,0l-1.7,1.7l5.7,5.7l1.7-1.7C43.1,10.5,43.1,9.6,42.6,9.1"
-                                              fill="#e57373" />
-                                        <path d="M38,15.6L12.6,41.1l-5.7-5.7L32.4,10L38,15.6z"
-                                              fill="#ff9800" />
-                                        <path d="M32.4,10l2.8-2.8l5.7,5.7L38,15.6L32.4,10z"
-                                              fill="#b0bec5" />
-                                        <path d="M6.9,35.4L5,43l7.6-1.9L6.9,35.4z"
-                                              fill="#ffc107" />
-                                        <path d="M6,39.2L5,43l3.8-1L6,39.2z"
-                                              fill="#37474f" />
+                                    <svg
+                                        class='icon'
+                                        viewBox="0 0 48 48"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path
+                                            d="M42.6,9.1l-3.7-3.7c-0.6-0.6-1.5-0.6-2,0l-1.7,1.7l5.7,5.7l1.7-1.7C43.1,10.5,43.1,9.6,42.6,9.1"
+                                            fill="#e57373"/>
+                                        <path
+                                            d="M38,15.6L12.6,41.1l-5.7-5.7L32.4,10L38,15.6z"
+                                            fill="#ff9800"/>
+                                        <path
+                                            d="M32.4,10l2.8-2.8l5.7,5.7L38,15.6L32.4,10z"
+                                            fill="#b0bec5"/>
+                                        <path
+                                            d="M6.9,35.4L5,43l7.6-1.9L6.9,35.4z"
+                                            fill="#ffc107"/>
+                                        <path
+                                            d="M6,39.2L5,43l3.8-1L6,39.2z"
+                                            fill="#37474f"/>
                                     </svg>
                                 </a>
                             </div>
-                            <div class="d-flex">
-                                <a asp-action='Remove'
-                                   asp-controller='PowerSupplies'
-                                   asp-route-id='@powerSupply.Id'
-                                   class="btn btn-outline-danger d-flex mx-3 simple-popup">
-                                    <span class="popuptext">
+                            <div
+                                class="d-flex">
+                                <a
+                                    asp-action='Remove'
+                                    asp-controller='PowerSupplies'
+                                    asp-route-id='@powerSupply.Id'
+                                    class="btn btn-outline-danger d-flex mx-3 simple-popup">
+                                    <span
+                                        class="popuptext">
                                         Remove
                                     </span>
-                                    <svg class="icon"
-                                         fill="#FFFFFF"
-                                         viewBox="0 0 32 32"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path d="M23 27H11c-1.1 0-2-.9-2-2V8h16v17C25 26.1 24.1 27 23 27zM27 8L7 8M14 8V6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2M17 23L17 12M21 23L21 12M13 23L13 12"
-                                              fill="none"
-                                              stroke="#FFFFFF"
-                                              stroke-width="2" />
+                                    <svg
+                                        class="icon"
+                                        fill="#FFFFFF"
+                                        viewBox="0 0 32 32"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path
+                                            d="M23 27H11c-1.1 0-2-.9-2-2V8h16v17C25 26.1 24.1 27 23 27zM27 8L7 8M14 8V6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2M17 23L17 12M21 23L21 12M13 23L13 12"
+                                            fill="none"
+                                            stroke="#FFFFFF"
+                                            stroke-width="2"/>
                                     </svg>
                                 </a>
                             </div>

@@ -111,3 +111,34 @@ System.Threading.Tasks.TaskCanceledException: A task was canceled.
 04/20/2021 12:11:17 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 12.1857 ms
 04/20/2021 12:11:51 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 47.5958 ms
 04/20/2021 12:13:12 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 9.6345 ms
+04/20/2021 15:34:03 Identity server started..
+04/20/2021 15:34:03 Identity server HostBuilder created
+04/20/2021 15:34:04 Host built
+04/20/2021 15:34:04 Now listening on: "https://localhost:3000"
+04/20/2021 15:34:04 Application started. Press Ctrl+C to shut down.
+04/20/2021 15:34:04 Hosting environment: "Development"
+04/20/2021 15:34:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 15:35:15 Identity server started..
+04/20/2021 15:35:16 Identity server HostBuilder created
+04/20/2021 15:35:16 Host built
+04/20/2021 15:35:17 Now listening on: "https://localhost:3000"
+04/20/2021 15:35:17 Application started. Press Ctrl+C to shut down.
+04/20/2021 15:35:17 Hosting environment: "Development"
+04/20/2021 15:35:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 15:35:24 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/20/2021 15:35:24 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 15:35:25 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2124.1645 ms
+04/20/2021 15:35:29 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 220.3431 ms
+04/20/2021 15:35:42 SignInIdentityController: user with email or login = JeffManager entered the service
+04/20/2021 15:35:42 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 15:35:42 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 21.3947 ms
+04/20/2021 22:29:15 Identity server started..
+04/20/2021 22:29:15 Identity server HostBuilder created
+04/20/2021 22:29:16 Host built
+04/20/2021 22:29:16 Now listening on: "https://localhost:3000"
+04/20/2021 22:29:16 Application started. Press Ctrl+C to shut down.
+04/20/2021 22:29:16 Hosting environment: "Development"
+04/20/2021 22:29:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 22:29:23 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/20/2021 22:29:23 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 22:29:23 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2010.9744 ms

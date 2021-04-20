@@ -13,47 +13,53 @@
                     interval : 300
                 }),
             e.classList.add("anime-ready"),
-            anime.timeline({ targets : ".hero-figure-box-05" }).add(
-                {
-                    duration : 400,
-                    easing : "easeInOutExpo",
-                    scaleX : [0.05, 0.05],
-                    scaleY : [0, 1],
-                    perspective : "500px",
-                    delay : anime.random(300, 1200)
-                }).add(
-                {
-                    duration : 400,
-                    easing :
-                        "easeInOutExpo",
-                    scaleX : 1
-                }).add({
-                duration : 800,
-                rotateY : "-15deg",
-                rotateX : "8deg",
-                rotateZ : "-1deg"
-            }),
-            anime.timeline(
-                {
-                    targets : ".hero-figure-box-06, .hero-figure-box-07"
-                }).add(
-                {
-                    duration : 400,
-                    easing : "easeInOutExpo",
-                    scaleX : [0.05, 0.05],
-                    scaleY : [0, 1],
-                    perspective : "500px",
-                    delay : anime.random(0, 400)
-                }).add(
-                {
-                    duration : 400,
-                    easing : "easeInOutExpo",
-                    scaleX : 1
-                }).add(
-                {
+            anime.timeline({ targets : ".hero-figure-box-05" }).
+                add(
+                    {
+                        duration : 400,
+                        easing : "easeInOutExpo",
+                        scaleX : [0.05, 0.05],
+                        scaleY : [0, 1],
+                        perspective : "500px",
+                        delay : anime.random(300, 1200)
+                    }).
+                add(
+                    {
+                        duration : 400,
+                        easing :
+                            "easeInOutExpo",
+                        scaleX : 1
+                    }).
+                add({
                     duration : 800,
-                    rotateZ : "20deg"
+                    rotateY : "-15deg",
+                    rotateX : "8deg",
+                    rotateZ : "-1deg"
                 }),
+            anime.timeline(
+                    {
+                        targets : ".hero-figure-box-06, .hero-figure-box-07"
+                    }).
+                add(
+                    {
+                        duration : 400,
+                        easing : "easeInOutExpo",
+                        scaleX : [0.05, 0.05],
+                        scaleY : [0, 1],
+                        perspective : "500px",
+                        delay : anime.random(0, 400)
+                    }).
+                add(
+                    {
+                        duration : 400,
+                        easing : "easeInOutExpo",
+                        scaleX : 1
+                    }).
+                add(
+                    {
+                        duration : 800,
+                        rotateZ : "20deg"
+                    }),
             anime(
                 {
                     targets :

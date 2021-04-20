@@ -1,27 +1,27 @@
 {
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "https://localhost:9000",
-      "sslPort": 0
+  "iisSettings" : {
+    "windowsAuthentication" : false,
+    "anonymousAuthentication" : true,
+    "iis" : {
+      "applicationUrl" : "https://localhost:9000",
+      "sslPort" : 0
     },
-    "iisExpress": {
-      "applicationUrl": "http://localhost:9000",
-      "sslPort": 0
+    "iisExpress" : {
+      "applicationUrl" : "http://localhost:9000",
+      "sslPort" : 0
     }
   },
-  "profiles": {
-    "FoundersPC.Web": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
+  "profiles" : {
+    "FoundersPC.Web" : {
+      "commandName" : "Project",
+      "launchBrowser" : true,
+      "environmentVariables" : {
+        "ASPNETCORE_ENVIRONMENT" : "Development",
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES" : "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
       },
-      "dotnetRunMessages": "true",
-      "use64Bit": true,
-      "applicationUrl": "https://localhost:9000"
+      "dotnetRunMessages" : "true",
+      "use64Bit" : true,
+      "applicationUrl" : "https://localhost:9000"
     }
   }
 }

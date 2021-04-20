@@ -8,7 +8,10 @@
     <link
         href="~/css/account.css"
         rel="stylesheet"/>
-}}
+}
+
+
+}
 
 <div
     class='mt-5 rounded shadow text-light'
@@ -539,12 +542,13 @@
                         <td>@token.HashedToken</td>
                         <td>@token.StartEvaluationDate</td>
                         <td>@token.ExpirationDate</td>
-                        <td class='align-content-center'>
+                        <td
+                            class='align-content-center'>
                             <input
-                                    checked='@(!token.IsBlocked && token.ExpirationDate >= DateTime.Now)'
-                                    class="form-check-inline"
-                                    disabled
-                                    type="checkbox">
+                                checked='@(!token.IsBlocked && token.ExpirationDate >= DateTime.Now)'
+                                class="form-check-inline"
+                                disabled
+                                type="checkbox">
                         </td>
                     </tr>
                 }
