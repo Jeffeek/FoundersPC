@@ -7,6 +7,7 @@ using System.Linq;
 
 #endregion
 
+#nullable enable
 namespace FoundersPC.ApplicationShared.Validation
 {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
@@ -15,11 +16,12 @@ namespace FoundersPC.ApplicationShared.Validation
         private readonly Type _type;
         private readonly IEnumerable _values;
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="values"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="type"/> is <see langword="null"/></exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="values" /> is <see langword="null" /></exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="type" /> is <see langword="null" /></exception>
         /// <exception cref="T:System.OutOfMemoryException">
         ///     The length of the resulting string overflows the maximum allowed length
-        ///     (<see cref="F:System.Int32.MaxValue"/>).
+        ///     (<see cref="F:System.Int32.MaxValue" />).
         /// </exception>
         public ShouldBeInAttribute(Type type, IEnumerable values) : base($"Value should be in {String.Join(',', values)}")
         {
@@ -27,11 +29,12 @@ namespace FoundersPC.ApplicationShared.Validation
             _values = values ?? throw new ArgumentNullException(nameof(values));
         }
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="values"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="type"/> is <see langword="null"/></exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="values" /> is <see langword="null" /></exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="type" /> is <see langword="null" /></exception>
         /// <exception cref="T:System.OutOfMemoryException">
         ///     The length of the resulting string overflows the maximum allowed length
-        ///     (<see cref="F:System.Int32.MaxValue"/>).
+        ///     (<see cref="F:System.Int32.MaxValue" />).
         /// </exception>
         public ShouldBeInAttribute(Type type, params object[] values) : this(type, values.AsEnumerable()) { }
 

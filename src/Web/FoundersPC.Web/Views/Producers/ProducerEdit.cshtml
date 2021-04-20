@@ -11,10 +11,7 @@
     <link
         href="~/css/entity-edit.css"
         rel="stylesheet">
-}
-
-
-}
+}}
 
 <h1
     class='mt-4 text-center text-light'>
@@ -38,38 +35,35 @@
                 <div
                     class='row'>
                     <div
-                        class='row'>
+                        class='form-group text-light'>
                         <div
-                            class='form-group text-light'>
-                            <div
-                                class='form-check'>
-                                <input
-                                    asp-for='IsShortNameEmpty'
-                                    class='form-check-input'
-                                    type='checkbox'>
-                                <label
-                                    class='form-check-label'>
-                                    I don't know
-                                </label>
-                            </div>
-                            <div
-                                class='form-label-group ms-3'>
-                                <input
-                                    asp-for='ShortName'
-                                    class='bg-dark form-control text-light'
-                                    placeholder='ShortName'
-                                    type='text'/>
-                                <label>Short Name</label>
-                            </div>
+                            class='form-check'>
+                            <input
+                                asp-for='IsShortNameEmpty'
+                                class='form-check-input'
+                                type='checkbox'>
+                            <label
+                                class='form-check-label'>
+                                I don't know
+                            </label>
                         </div>
-                        <span
-                            asp-validation-for='ShortName'
-                            class='text-danger'>
-                        </span>
+                        <div
+                            class='form-label-group ms-3'>
+                            <input
+                                asp-for='ShortName'
+                                class='bg-dark form-control text-light'
+                                placeholder='ShortName'
+                                type='text'/>
+                            <label>Short Name</label>
+                        </div>
                     </div>
+                    <span
+                        asp-validation-for='ShortName'
+                        class='text-danger'>
+                    </span>
                 </div>
                 <div
-                    class='row-cols-auto'>
+                    class='row'>
                     <div
                         class='form-label-group'>
                         <div
@@ -109,8 +103,6 @@
                 <div
                     class='row'>
                     <div
-                        class='row'>
-                        <div
                             class='form-group text-light'>
                             <div
                                 class='form-check'>
@@ -137,7 +129,6 @@
                             asp-validation-for='Website'
                             class='text-danger'>
                         </span>
-                    </div>
                 </div>
                 <div
                     class='row'>

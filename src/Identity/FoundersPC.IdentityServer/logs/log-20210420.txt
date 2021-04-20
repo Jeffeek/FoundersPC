@@ -1,0 +1,113 @@
+04/20/2021 09:01:13 Identity server started..
+04/20/2021 09:01:13 Identity server HostBuilder created
+04/20/2021 09:01:14 Host built
+04/20/2021 09:01:16 Now listening on: "https://localhost:3000"
+04/20/2021 09:01:16 Application started. Press Ctrl+C to shut down.
+04/20/2021 09:01:16 Hosting environment: "Development"
+04/20/2021 09:01:16 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 09:01:46 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/20/2021 09:01:46 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 09:01:46 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2843.0959 ms
+04/20/2021 09:01:58 SignInIdentityController: user with email or login = JeffManager and wrote password not exist.
+04/20/2021 09:01:58 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 64.7372 ms
+04/20/2021 09:02:22 SignInIdentityController: user with email or login = Jeffeek entered the service
+04/20/2021 09:02:22 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 09:02:22 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 59.7923 ms
+04/20/2021 09:06:41 Identity server started..
+04/20/2021 09:06:41 Identity server HostBuilder created
+04/20/2021 09:06:41 Host built
+04/20/2021 09:06:41 Application started. Press Ctrl+C to shut down.
+04/20/2021 09:06:41 Hosting environment: "Development"
+04/20/2021 09:06:41 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 09:06:47 Application is shutting down...
+04/20/2021 09:13:28 Identity server started..
+04/20/2021 09:13:29 Identity server HostBuilder created
+04/20/2021 09:13:29 Host built
+04/20/2021 09:13:29 Now listening on: "http://127.0.0.1:30189"
+04/20/2021 09:13:29 Application started. Press Ctrl+C to shut down.
+04/20/2021 09:13:29 Hosting environment: "Development"
+04/20/2021 09:13:29 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 09:20:12 Identity server started..
+04/20/2021 09:20:12 Identity server HostBuilder created
+04/20/2021 09:20:13 Host built
+04/20/2021 09:20:14 Now listening on: "https://localhost:3000"
+04/20/2021 09:20:14 Application started. Press Ctrl+C to shut down.
+04/20/2021 09:20:14 Hosting environment: "Development"
+04/20/2021 09:20:14 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 09:20:18 Application is shutting down...
+04/20/2021 09:21:27 Identity server started..
+04/20/2021 09:21:27 Identity server HostBuilder created
+04/20/2021 09:21:28 Host built
+04/20/2021 09:21:28 Application is shutting down...
+04/20/2021 09:21:28 Unable to start Kestrel.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+04/20/2021 09:21:54 Identity server started..
+04/20/2021 09:21:54 Identity server HostBuilder created
+04/20/2021 09:21:55 Host built
+04/20/2021 09:21:56 Now listening on: "https://localhost:3000"
+04/20/2021 09:21:56 Application started. Press Ctrl+C to shut down.
+04/20/2021 09:21:56 Hosting environment: "Development"
+04/20/2021 09:21:56 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 09:22:05 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/20/2021 09:22:05 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 09:22:05 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2166.3560 ms
+04/20/2021 11:36:48 Identity server started..
+04/20/2021 11:36:48 Identity server HostBuilder created
+04/20/2021 11:36:49 Host built
+04/20/2021 11:36:51 Now listening on: "https://localhost:3000"
+04/20/2021 11:36:51 Application started. Press Ctrl+C to shut down.
+04/20/2021 11:36:51 Hosting environment: "Development"
+04/20/2021 11:36:51 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 11:37:05 SignInIdentityController: user with email or login = Jeffeek entered the service
+04/20/2021 11:37:05 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 11:37:05 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2728.1856 ms
+04/20/2021 11:59:32 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 423.9415 ms
+04/20/2021 12:02:04 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 18.9172 ms
+04/20/2021 12:02:17 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 18.2739 ms
+04/20/2021 12:03:26 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 27.9692 ms
+04/20/2021 12:04:04 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 6.3309 ms
+04/20/2021 12:04:24 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 7.5246 ms
+04/20/2021 12:04:48 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 23.8231 ms
+04/20/2021 12:05:12 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 37.6050 ms
+04/20/2021 12:06:10 Identity server started..
+04/20/2021 12:06:11 Identity server HostBuilder created
+04/20/2021 12:06:12 Host built
+04/20/2021 12:06:13 Now listening on: "https://localhost:3000"
+04/20/2021 12:06:13 Application started. Press Ctrl+C to shut down.
+04/20/2021 12:06:13 Hosting environment: "Development"
+04/20/2021 12:06:13 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/20/2021 12:06:21 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 1996.0077 ms
+04/20/2021 12:06:35 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 74.0257 ms
+04/20/2021 12:06:48 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 31.8951 ms
+04/20/2021 12:08:15 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 35.3214 ms
+04/20/2021 12:08:53 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 14.0371 ms
+04/20/2021 12:09:08 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 12.2667 ms
+04/20/2021 12:09:34 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 14.0789 ms
+04/20/2021 12:09:47 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 25.9110 ms
+04/20/2021 12:09:59 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 13.0822 ms
+04/20/2021 12:10:13 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 7.2701 ms
+04/20/2021 12:10:34 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 41.5397 ms
+04/20/2021 12:10:52 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 12:10:54 Successful sending an email to: ilyushin_misha@mail.ru
+04/20/2021 12:10:54 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 3225.2044 ms
+04/20/2021 12:10:55 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 7.5896 ms
+04/20/2021 12:11:04 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 12:11:06 Successful sending an email to: ilyushin_misha@mail.ru
+04/20/2021 12:11:06 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 1762.6373 ms
+04/20/2021 12:11:06 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 25.8490 ms
+04/20/2021 12:11:08 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 12:11:10 Successful sending an email to: ilyushin_misha@mail.ru
+04/20/2021 12:11:10 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 1767.3711 ms
+04/20/2021 12:11:10 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 7.9319 ms
+04/20/2021 12:11:12 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 12:11:13 Successful sending an email to: ilyushin_misha@mail.ru
+04/20/2021 12:11:13 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 1463.6024 ms
+04/20/2021 12:11:13 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 14.2246 ms
+04/20/2021 12:11:16 Successful save changes in UnitOfWorkUsersIdentity
+04/20/2021 12:11:17 Successful sending an email to: ilyushin_misha@mail.ru
+04/20/2021 12:11:17 HTTP "POST" "/FoundersPCIdentity/Tokens/Reserve" responded 200 in 1400.7568 ms
+04/20/2021 12:11:17 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 12.1857 ms
+04/20/2021 12:11:51 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 47.5958 ms
+04/20/2021 12:13:12 HTTP "GET" "/FoundersPCIdentity/Users/ilyushin_misha@mail.ru" responded 200 in 9.6345 ms

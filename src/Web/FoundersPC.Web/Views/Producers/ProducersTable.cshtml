@@ -51,16 +51,15 @@
         <table
             class='mt-3 table table-bordered table-hover text-light'>
             <thead>
-            <tr>
-                <th>Id</th>
-                <th>Short Name</th>
-                <th>Full Name</th>
-                <th>Country</th>
-                <th>Website</th>
-                <th>Foundation Date</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Short Name</th>
+                    <th>Full Name</th>
+                    <th>Country</th>
+                    <th>Website</th>
+                    <th>Foundation Date</th>
+                    <th>Actions</th>
+                </tr>
             </thead>
             <tbody>
             @{
@@ -72,7 +71,7 @@
                         <th>@producer.Country</th>
                         <th>@producer.Website</th>
                         <th>@(producer.FoundationDate?.ToShortDateString())</th>
-                        <td>
+                        <td class='d-flex flex-row justify-content-center'>
                             <div
                                 class="d-flex">
                                 <a
@@ -107,8 +106,6 @@
                                     </svg>
                                 </a>
                             </div>
-                        </td>
-                        <td>
                             <div
                                 class="d-flex">
                                 <a
