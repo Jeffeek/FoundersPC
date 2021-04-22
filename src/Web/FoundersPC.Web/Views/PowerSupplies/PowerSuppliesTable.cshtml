@@ -1,26 +1,29 @@
-﻿@using PagedList.Core.Mvc
-@using FoundersPC.API.Dto
+﻿@using FoundersPC.API.Dto
+@using PagedList.Core.Mvc
 @model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.API.Dto.PowerSupplyReadDto>
 
 @{
     ViewData["Title"] = "PowerSuppliesTable";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    @section Styles {
-        <link href='~/css/table.css'
-              rel='stylesheet'>
-    }
-}
+@section Styles {
+    <link
+        href='~/css/table.css'
+        rel='stylesheet'>
+}}
 
-<hardware-table asp-controller='PowerSupplies' entity-type=@(typeof(PowerSupplyReadDto)) entities='@(Model.PagedList)' />
+<hardware-table
+    asp-controller='PowerSupplies'
+    entities='@(Model.PagedList)'
+    entity-type='@(typeof(PowerSupplyReadDto))'/>
 @{
-    if (Model.IsPaginationNeeded)
-    {
-        <pager asp-action="PowerSuppliesTable"
-               asp-controller="PowerSupplies"
-               class="d-flex justify-content-center"
-               list="@Model.PagedList"
-               options="@PagedListRenderOptions.Bootstrap4Full"
-               param-page-number='pageNumber' />
+    if (Model.IsPaginationNeeded) {
+        <pager
+            asp-action="PowerSuppliesTable"
+            asp-controller="PowerSupplies"
+            class="d-flex justify-content-center"
+            list="@Model.PagedList"
+            options="@PagedListRenderOptions.Bootstrap4Full"
+            param-page-number='pageNumber'/>
     }
 }
 
@@ -198,5 +201,6 @@
 
 
 @section Scripts {
-    <script src='~/js/indeterminate.js'></script>
+    <script
+        src='~/js/indeterminate.js'></script>
 }

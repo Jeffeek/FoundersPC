@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.SolidStateDrive
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class SolidStateDriveUpdateDtoViewModel
+    public class SolidStateDriveDtoViewModel
     {
         [Required]
         public double Factor { get; set; }

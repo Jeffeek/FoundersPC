@@ -43,12 +43,18 @@ namespace FoundersPC.ApplicationShared.Validation
         /// <inheritdoc/>
         public override bool IsValid(object? value)
         {
-            if (value?.GetType() != _type) return false;
-
-            foreach (var paramValue in _values)
+            try
             {
-                if (paramValue?.GetType() == value?.GetType()) return false;
-                if (paramValue?.Equals(value) ?? false) return true;
+                return _values.Cast<object>()
+                              .Any(paramValue => value?.Equals(paramValue) ?? false);
+            }
+            catch (InvalidCastException invalidCastException)
+            {
+                // TODO: Handle the System.InvalidCastException
+            }
+            catch (ArgumentNullException argumentNullException)
+            {
+                // TODO: Handle the System.ArgumentNullException
             }
 
             return false;

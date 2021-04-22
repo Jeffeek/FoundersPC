@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.ProcessorCore;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("ProcessorCoreCreate",
-                 new ProcessorCoreInsertDtoViewModel
+                 new ProcessorCoreDtoViewModel
                  {
                      Title = String.Empty,
                      Socket = "LGA1151",
@@ -50,9 +50,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] ProcessorCoreInsertDtoViewModel processorCore)
+        public async Task<ActionResult> Create([FromForm] ProcessorCoreDtoViewModel processorCore)
         {
-            var dto = _mapper.Map<ProcessorCoreInsertDtoViewModel, ProcessorCoreInsertDto>(processorCore);
+            var dto = _mapper.Map<ProcessorCoreDtoViewModel, ProcessorCoreInsertDto>(processorCore);
 
             var insertResult =
                 await _processorCoresManagingService.CreateProcessorCoreAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -89,15 +89,15 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                 await _processorCoresManagingService.GetProcessorCoreByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             var viewModel =
-                _mapper.Map<ProcessorCoreUpdateDto, ProcessorCoreUpdateDtoViewModel>(_mapper.Map<ProcessorCoreReadDto, ProcessorCoreUpdateDto>(processorCore));
+                _mapper.Map<ProcessorCoreUpdateDto, ProcessorCoreDtoViewModel>(_mapper.Map<ProcessorCoreReadDto, ProcessorCoreUpdateDto>(processorCore));
 
             return View("ProcessorCoreEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProcessorCoreUpdateDtoViewModel processorCore)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProcessorCoreDtoViewModel processorCore)
         {
-            var dto = _mapper.Map<ProcessorCoreUpdateDtoViewModel, ProcessorCoreUpdateDto>(processorCore);
+            var dto = _mapper.Map<ProcessorCoreDtoViewModel, ProcessorCoreUpdateDto>(processorCore);
 
             var result =
                 await _processorCoresManagingService.UpdateProcessorCoreAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

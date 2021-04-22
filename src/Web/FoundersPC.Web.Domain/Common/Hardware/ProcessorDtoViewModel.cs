@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.Processor
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class ProcessorInsertDtoViewModel
+    public class ProcessorDtoViewModel
     {
         [Range(3, 300)]
         [Required]

@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.ProcessorCore
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class ProcessorCoreInsertDtoViewModel
+    public class ProcessorCoreDtoViewModel
     {
         public DateTime MarketLaunch { get; set; }
 

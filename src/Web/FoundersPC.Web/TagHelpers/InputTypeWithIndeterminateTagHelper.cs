@@ -1,8 +1,9 @@
-﻿using System.Text.Encodings.Web;
-using Microsoft.AspNetCore.Html;
+﻿#region Using namespaces
+
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+
+#endregion
 
 namespace FoundersPC.Web.TagHelpers
 {
@@ -23,7 +24,7 @@ namespace FoundersPC.Web.TagHelpers
 
         #region Overrides of TagHelper
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "div";

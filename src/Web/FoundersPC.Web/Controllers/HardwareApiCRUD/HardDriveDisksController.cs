@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.HardDriveDisk;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("HardDriveDiskCreate",
-                 new HardDriveDiskInsertDtoViewModel
+                 new HardDriveDiskDtoViewModel
                  {
                      BufferSize = 64,
                      Factor = 3.5,
@@ -51,9 +51,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] HardDriveDiskInsertDtoViewModel hardDriveDisk)
+        public async Task<ActionResult> Create([FromForm] HardDriveDiskDtoViewModel hardDriveDisk)
         {
-            var dto = _mapper.Map<HardDriveDiskInsertDtoViewModel, HardDriveDiskInsertDto>(hardDriveDisk);
+            var dto = _mapper.Map<HardDriveDiskDtoViewModel, HardDriveDiskInsertDto>(hardDriveDisk);
 
             var insertResult =
                 await _hardDriveDisksManagingService.CreateHardDriveDiskAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -90,15 +90,15 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                 await _hardDriveDisksManagingService.GetHardDriveDiskByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             var viewModel =
-                _mapper.Map<HardDriveDiskUpdateDto, HardDriveDiskUpdateDtoViewModel>(_mapper.Map<HardDriveDiskReadDto, HardDriveDiskUpdateDto>(hardDriveDisk));
+                _mapper.Map<HardDriveDiskUpdateDto, HardDriveDiskDtoViewModel>(_mapper.Map<HardDriveDiskReadDto, HardDriveDiskUpdateDto>(hardDriveDisk));
 
             return View("HardDriveDiskEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] HardDriveDiskUpdateDtoViewModel hardDriveDisk)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] HardDriveDiskDtoViewModel hardDriveDisk)
         {
-            var dto = _mapper.Map<HardDriveDiskUpdateDtoViewModel, HardDriveDiskUpdateDto>(hardDriveDisk);
+            var dto = _mapper.Map<HardDriveDiskDtoViewModel, HardDriveDiskUpdateDto>(hardDriveDisk);
 
             var result =
                 await _hardDriveDisksManagingService.UpdateHardDriveDiskAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

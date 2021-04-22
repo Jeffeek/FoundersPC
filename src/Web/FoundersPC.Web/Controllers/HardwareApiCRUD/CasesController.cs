@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.Cases;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("CaseCreate",
-                 new CaseInsertDtoViewModel
+                 new CaseDtoViewModel
                  {
                      Color = "White",
                      Depth = 200,
@@ -59,9 +59,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] CaseInsertDtoViewModel @case)
+        public async Task<ActionResult> Create([FromForm] CaseDtoViewModel @case)
         {
-            var dto = _mapper.Map<CaseInsertDtoViewModel, CaseInsertDto>(@case);
+            var dto = _mapper.Map<CaseDtoViewModel, CaseInsertDto>(@case);
 
             var insertResult =
                 await _casesManagingService.CreateCaseAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -97,15 +97,15 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var @case =
                 await _casesManagingService.GetCaseByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
-            var viewModel = _mapper.Map<CaseUpdateDto, CaseUpdateDtoViewModel>(_mapper.Map<CaseReadDto, CaseUpdateDto>(@case));
+            var viewModel = _mapper.Map<CaseUpdateDto, CaseDtoViewModel>(_mapper.Map<CaseReadDto, CaseUpdateDto>(@case));
 
             return View("CaseEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] CaseUpdateDtoViewModel @case)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] CaseDtoViewModel @case)
         {
-            var dto = _mapper.Map<CaseUpdateDtoViewModel, CaseUpdateDto>(@case);
+            var dto = _mapper.Map<CaseDtoViewModel, CaseUpdateDto>(@case);
 
             var result =
                 await _casesManagingService.UpdateCaseAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

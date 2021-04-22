@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.Producer;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("ProducerCreate",
-                 new ProducerInsertDtoViewModel
+                 new ProducerDtoViewModel
                  {
                      Country = String.Empty,
                      FoundationDate = DateTime.Now,
@@ -51,9 +51,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] ProducerInsertDtoViewModel producer)
+        public async Task<ActionResult> Create([FromForm] ProducerDtoViewModel producer)
         {
-            var dto = _mapper.Map<ProducerInsertDtoViewModel, ProducerInsertDto>(producer);
+            var dto = _mapper.Map<ProducerDtoViewModel, ProducerInsertDto>(producer);
 
             var insertResult =
                 await _producersManagingService.CreateProducerAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -89,15 +89,15 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var producer =
                 await _producersManagingService.GetProducerByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
-            var viewModel = _mapper.Map<ProducerUpdateDto, ProducerUpdateDtoViewModel>(_mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer));
+            var viewModel = _mapper.Map<ProducerUpdateDto, ProducerDtoViewModel>(_mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer));
 
             return View("ProducerEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProducerUpdateDtoViewModel producer)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProducerDtoViewModel producer)
         {
-            var dto = _mapper.Map<ProducerUpdateDtoViewModel, ProducerUpdateDto>(producer);
+            var dto = _mapper.Map<ProducerDtoViewModel, ProducerUpdateDto>(producer);
 
             var result =
                 await _producersManagingService.UpdateProducerAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.RandomAccessMemory;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("RandomAccessMemoryCreate",
-                 new RandomAccessMemoryInsertDtoViewModel
+                 new RandomAccessMemoryDtoViewModel
                  {
                      ProducerId = 1,
                      Title = String.Empty,
@@ -52,9 +52,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] RandomAccessMemoryInsertDtoViewModel randomAccessMemory)
+        public async Task<ActionResult> Create([FromForm] RandomAccessMemoryDtoViewModel randomAccessMemory)
         {
-            var dto = _mapper.Map<RandomAccessMemoryInsertDtoViewModel, RandomAccessMemoryInsertDto>(randomAccessMemory);
+            var dto = _mapper.Map<RandomAccessMemoryDtoViewModel, RandomAccessMemoryInsertDto>(randomAccessMemory);
 
             var insertResult =
                 await _randomAccessMemoryManagingService.CreateRandomAccessMemoryAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -91,17 +91,17 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                 await _randomAccessMemoryManagingService.GetRandomAccessMemoryByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             var viewModel =
-                _mapper.Map<RandomAccessMemoryUpdateDto, RandomAccessMemoryUpdateDtoViewModel>(_mapper
-                                                                                                   .Map<RandomAccessMemoryReadDto, RandomAccessMemoryUpdateDto
-                                                                                                   >(randomAccessMemory));
+                _mapper.Map<RandomAccessMemoryUpdateDto, RandomAccessMemoryDtoViewModel>(_mapper
+                                                                                             .Map<RandomAccessMemoryReadDto, RandomAccessMemoryUpdateDto
+                                                                                             >(randomAccessMemory));
 
             return View("RandomAccessMemoryEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] RandomAccessMemoryUpdateDtoViewModel randomAccessMemory)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] RandomAccessMemoryDtoViewModel randomAccessMemory)
         {
-            var dto = _mapper.Map<RandomAccessMemoryUpdateDtoViewModel, RandomAccessMemoryUpdateDto>(randomAccessMemory);
+            var dto = _mapper.Map<RandomAccessMemoryDtoViewModel, RandomAccessMemoryUpdateDto>(randomAccessMemory);
 
             var result =
                 await _randomAccessMemoryManagingService.UpdateRandomAccessMemoryAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

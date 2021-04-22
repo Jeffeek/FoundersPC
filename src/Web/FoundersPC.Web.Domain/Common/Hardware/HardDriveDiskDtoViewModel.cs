@@ -6,9 +6,9 @@ using FoundersPC.ApplicationShared.Validation;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.HardDriveDisk
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class HardDriveDiskInsertDtoViewModel
+    public class HardDriveDiskDtoViewModel
     {
         [ShouldBeIn(typeof(int), 5400, 7200)]
         [Required]
@@ -22,7 +22,6 @@ namespace FoundersPC.Web.Domain.Common.Hardware.HardDriveDisk
         [Required]
         public int Noise { get; set; }
 
-        [ShouldBeIn(typeof(double), 2.5, 3.5)]
         [Required]
         public double Factor { get; set; }
 

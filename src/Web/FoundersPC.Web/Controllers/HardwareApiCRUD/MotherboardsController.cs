@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.Motherboard;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("MotherboardCreate",
-                 new MotherboardInsertDtoViewModel
+                 new MotherboardDtoViewModel
                  {
                      Factor = "ATX",
                      ProducerId = 1,
@@ -56,9 +56,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] MotherboardInsertDtoViewModel motherboard)
+        public async Task<ActionResult> Create([FromForm] MotherboardDtoViewModel motherboard)
         {
-            var dto = _mapper.Map<MotherboardInsertDtoViewModel, MotherboardInsertDto>(motherboard);
+            var dto = _mapper.Map<MotherboardDtoViewModel, MotherboardInsertDto>(motherboard);
 
             var insertResult =
                 await _motherboardsManagingService.CreateMotherboardAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -95,15 +95,15 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                 await _motherboardsManagingService.GetMotherboardByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             var viewModel =
-                _mapper.Map<MotherboardUpdateDto, MotherboardUpdateDtoViewModel>(_mapper.Map<MotherboardReadDto, MotherboardUpdateDto>(motherboard));
+                _mapper.Map<MotherboardUpdateDto, MotherboardDtoViewModel>(_mapper.Map<MotherboardReadDto, MotherboardUpdateDto>(motherboard));
 
             return View("MotherboardEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] MotherboardUpdateDtoViewModel motherboard)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] MotherboardDtoViewModel motherboard)
         {
-            var dto = _mapper.Map<MotherboardUpdateDtoViewModel, MotherboardUpdateDto>(motherboard);
+            var dto = _mapper.Map<MotherboardDtoViewModel, MotherboardUpdateDto>(motherboard);
 
             var result =
                 await _motherboardsManagingService.UpdateMotherboardAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

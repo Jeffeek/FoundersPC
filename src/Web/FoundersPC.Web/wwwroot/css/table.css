@@ -22,3 +22,8 @@ table.table-hover tr:hover
 {
     color: #b0e0e6;
 }
+
+.container
+{
+    max-width: 100%;
+}

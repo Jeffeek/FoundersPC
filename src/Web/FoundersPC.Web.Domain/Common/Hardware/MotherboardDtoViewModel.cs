@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.Motherboard
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class MotherboardUpdateDtoViewModel
+    public class MotherboardDtoViewModel
     {
         [StringLength(10, MinimumLength = 3)]
         [Required]

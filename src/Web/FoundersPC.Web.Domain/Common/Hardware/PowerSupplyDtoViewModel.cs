@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.PowerSupply
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class PowerSupplyUpdateDtoViewModel
+    public class PowerSupplyDtoViewModel
     {
         [Required]
         [Range(50, 10000)]

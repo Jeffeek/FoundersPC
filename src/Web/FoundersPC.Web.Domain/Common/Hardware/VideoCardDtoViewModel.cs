@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.VideoCard
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class VideoCardInsertDtoViewModel
+    public class VideoCardDtoViewModel
     {
         [Range(0, Int32.MaxValue)]
         [Required]

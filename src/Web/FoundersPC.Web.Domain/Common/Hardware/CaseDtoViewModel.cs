@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.Cases
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class CaseInsertDtoViewModel
+    public class CaseDtoViewModel
     {
         [StringLength(40, MinimumLength = 3)]
         [Required]

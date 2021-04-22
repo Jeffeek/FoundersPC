@@ -1,29 +1,34 @@
-﻿using System;
+﻿#region Using namespaces
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text.Encodings.Web;
-using System.Text.Unicode;
-using System.Threading.Tasks;
-using AutoMapper.Internal;
 using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+
+#endregion
 
 namespace FoundersPC.Web.TagHelpers
 {
     [HtmlTargetElement("hardware-table")]
     public class TableTagHelper : TagHelper
     {
-        private readonly IUrlHelperFactory _urlHelper;
         private readonly IActionContextAccessor _actionContextAccessor;
+        private readonly IUrlHelperFactory _urlHelper;
+
+        public TableTagHelper(IUrlHelperFactory urlHelper,
+                              IActionContextAccessor actionContextAccessor)
+        {
+            _urlHelper = urlHelper;
+            _actionContextAccessor = actionContextAccessor;
+        }
 
         [HtmlAttributeName("asp-controller")]
         public string ControllerName { get; set; }
@@ -34,16 +39,9 @@ namespace FoundersPC.Web.TagHelpers
         [HtmlAttributeName("entities")]
         public IEnumerable List { get; set; }
 
-        public TableTagHelper(IUrlHelperFactory urlHelper,
-                              IActionContextAccessor actionContextAccessor)
-        {
-            _urlHelper = urlHelper;
-            _actionContextAccessor = actionContextAccessor;
-        }
-
         #region Overrides of TagHelper
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "div";
@@ -156,13 +154,9 @@ namespace FoundersPC.Web.TagHelpers
                                       ?.GetValue(q);
 
                     if (content is DateTime dt)
-                    {
                         th.InnerHtml.SetContent(dt.ToShortDateString());
-                    }
                     else
-                    {
                         th.InnerHtml.SetContent(content?.ToString() ?? String.Empty);
-                    }
 
                     row.InnerHtml.AppendHtml(th);
                 }

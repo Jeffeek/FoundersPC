@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.RandomAccessMemory
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class RandomAccessMemoryUpdateDtoViewModel
+    public class RandomAccessMemoryDtoViewModel
     {
         [StringLength(15, MinimumLength = 3)]
         [Required]

@@ -9,13 +9,12 @@
     <link
         href='~/css/table.css'
         rel='stylesheet'>
-}
-}
+}}
 
 <hardware-table
     asp-controller='HardDriveDisks'
-    entity-type='@(typeof(HardDriveDiskReadDto))'
-    entities='@(Model.PagedList)'/>
+    entities='@(Model.PagedList)'
+    entity-type='@(typeof(HardDriveDiskReadDto))'/>
 @{
     if (Model.IsPaginationNeeded) {
         <pager

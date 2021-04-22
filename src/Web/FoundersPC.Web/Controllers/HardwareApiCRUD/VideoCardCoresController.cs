@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.VideoCardCore;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("VideoCardCoreCreate",
-                 new VideoCardCoreInsertDtoViewModel
+                 new VideoCardCoreDtoViewModel
                  {
                      Title = String.Empty,
                      SLIOrCrossfire = false,
@@ -49,9 +49,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] VideoCardCoreInsertDtoViewModel videoCardCore)
+        public async Task<ActionResult> Create([FromForm] VideoCardCoreDtoViewModel videoCardCore)
         {
-            var dto = _mapper.Map<VideoCardCoreInsertDtoViewModel, VideoCardCoreInsertDto>(videoCardCore);
+            var dto = _mapper.Map<VideoCardCoreDtoViewModel, VideoCardCoreInsertDto>(videoCardCore);
 
             var insertResult =
                 await _videoCardCoresManagingService.CreateVideoCardCoreAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -88,15 +88,15 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                 await _videoCardCoresManagingService.GetVideoCardCoreByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             var viewModel =
-                _mapper.Map<VideoCardCoreUpdateDto, VideoCardCoreUpdateDtoViewModel>(_mapper.Map<VideoCardCoreReadDto, VideoCardCoreUpdateDto>(videoCardCore));
+                _mapper.Map<VideoCardCoreUpdateDto, VideoCardCoreDtoViewModel>(_mapper.Map<VideoCardCoreReadDto, VideoCardCoreUpdateDto>(videoCardCore));
 
             return View("VideoCardCoreEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] VideoCardCoreUpdateDtoViewModel videoCardCore)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] VideoCardCoreDtoViewModel videoCardCore)
         {
-            var dto = _mapper.Map<VideoCardCoreUpdateDtoViewModel, VideoCardCoreUpdateDto>(videoCardCore);
+            var dto = _mapper.Map<VideoCardCoreDtoViewModel, VideoCardCoreUpdateDto>(videoCardCore);
 
             var result =
                 await _videoCardCoresManagingService.UpdateVideoCardCoreAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

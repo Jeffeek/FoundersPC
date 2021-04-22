@@ -8,7 +8,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.PowerSupply;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -37,7 +37,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("PowerSupplyCreate",
-                 new PowerSupplyInsertDtoViewModel
+                 new PowerSupplyDtoViewModel
                  {
                      Certificate80PLUS = true,
                      FanDiameter = 120,
@@ -55,9 +55,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] PowerSupplyInsertDtoViewModel powerSupply)
+        public async Task<ActionResult> Create([FromForm] PowerSupplyDtoViewModel powerSupply)
         {
-            var dto = _mapper.Map<PowerSupplyInsertDtoViewModel, PowerSupplyInsertDto>(powerSupply);
+            var dto = _mapper.Map<PowerSupplyDtoViewModel, PowerSupplyInsertDto>(powerSupply);
 
             var insertResult =
                 await _powerSuppliesManagingService.CreatePowerSupplyAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -95,15 +95,15 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 
             var producerUpdate = _mapper.Map<PowerSupplyReadDto, PowerSupplyUpdateDto>(powerSupply);
 
-            var viewModel = _mapper.Map<PowerSupplyUpdateDto, PowerSupplyUpdateDtoViewModel>(producerUpdate);
+            var viewModel = _mapper.Map<PowerSupplyUpdateDto, PowerSupplyDtoViewModel>(producerUpdate);
 
             return View("PowerSupplyEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] PowerSupplyUpdateDtoViewModel powerSupply)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] PowerSupplyDtoViewModel powerSupply)
         {
-            var dto = _mapper.Map<PowerSupplyUpdateDtoViewModel, PowerSupplyUpdateDto>(powerSupply);
+            var dto = _mapper.Map<PowerSupplyDtoViewModel, PowerSupplyUpdateDto>(powerSupply);
 
             var result =
                 await _powerSuppliesManagingService.UpdatePowerSupplyAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

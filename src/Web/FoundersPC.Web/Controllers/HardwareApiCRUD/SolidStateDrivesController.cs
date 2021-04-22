@@ -9,7 +9,7 @@ using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
-using FoundersPC.Web.Domain.Common.Hardware.SolidStateDrive;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         [HttpGet]
         public ActionResult Create() =>
             View("SolidStateDriveCreate",
-                 new SolidStateDriveInsertDtoViewModel
+                 new SolidStateDriveDtoViewModel
                  {
                      Factor = 2.5,
                      ProducerId = 1,
@@ -51,9 +51,9 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] SolidStateDriveInsertDtoViewModel solidStateDrive)
+        public async Task<ActionResult> Create([FromForm] SolidStateDriveDtoViewModel solidStateDrive)
         {
-            var dto = _mapper.Map<SolidStateDriveInsertDtoViewModel, SolidStateDriveInsertDto>(solidStateDrive);
+            var dto = _mapper.Map<SolidStateDriveDtoViewModel, SolidStateDriveInsertDto>(solidStateDrive);
 
             var insertResult =
                 await _solidStateDrivesManagingService.CreateSolidStateDriveAsync(dto, HttpContext.GetJwtTokenFromCookie());
@@ -90,17 +90,17 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                 await _solidStateDrivesManagingService.GetSolidStateDriveByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
             var viewModel =
-                _mapper.Map<SolidStateDriveUpdateDto, SolidStateDriveUpdateDtoViewModel>(_mapper
-                                                                                             .Map<SolidStateDriveReadDto, SolidStateDriveUpdateDto
-                                                                                             >(solidStateDrive));
+                _mapper.Map<SolidStateDriveUpdateDto, SolidStateDriveDtoViewModel>(_mapper
+                                                                                       .Map<SolidStateDriveReadDto, SolidStateDriveUpdateDto
+                                                                                       >(solidStateDrive));
 
             return View("SolidStateDriveEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] SolidStateDriveUpdateDtoViewModel solidStateDrive)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] SolidStateDriveDtoViewModel solidStateDrive)
         {
-            var dto = _mapper.Map<SolidStateDriveUpdateDtoViewModel, SolidStateDriveUpdateDto>(solidStateDrive);
+            var dto = _mapper.Map<SolidStateDriveDtoViewModel, SolidStateDriveUpdateDto>(solidStateDrive);
 
             var result =
                 await _solidStateDrivesManagingService.UpdateSolidStateDriveAsync(id, dto, HttpContext.GetJwtTokenFromCookie());

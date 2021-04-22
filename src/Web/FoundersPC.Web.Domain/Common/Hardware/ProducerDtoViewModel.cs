@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 #endregion
 
-namespace FoundersPC.Web.Domain.Common.Hardware.Producer
+namespace FoundersPC.Web.Domain.Common.Hardware
 {
-    public class ProducerInsertDtoViewModel
+    public class ProducerDtoViewModel
     {
         public string ShortName { get; set; }
 
