@@ -58,7 +58,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\HardDriveDisks\" />
     <Folder Include="Views\Motherboards\" />
     <Folder Include="Views\ProcessorCores\" />
     <Folder Include="Views\Processors\" />

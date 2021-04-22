@@ -1,18 +1,315 @@
 ﻿@model FoundersPC.Web.Domain.Common.Hardware.Cases.CaseInsertDtoViewModel
 
 @{
-    Layout = null;
-}
+    Layout = "_Layout";
+@section Styles {
+    <link
+        href="~/css/neon-btn-styles.css"
+        rel="stylesheet">
+    <link
+        href="~/css/entity-edit.css"
+        rel="stylesheet">
+}}
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
+<h1
+    class='mt-4 text-center text-light'>
+    Add Case Page
+</h1>
+<div
+    class='mt-5 row'>
+<div
+    class='col-12 col-md-12 col-sm-12 col-xl-12 col-xxl-12'>
+<form
+    asp-action='Create'
+    asp-controller='Cases'
+    class='d-flex flex-column justify-content-center'
+    method='post'>
+<div
+    asp-validation-summary='ModelOnly'
+    class='text-danger'>
 </div>
-</body>
-</html>
+<div
+    class='d-grid'>
+<div
+    class='row'>
+    <div class='form-label-group'>
+        <div class='input-group'>
+            <input asp-for='ProducerId'
+                   class='bg-dark form-control text-light'>
+            <label>Producer Id</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='ProducerId'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Title'
+                class='bg-dark form-control text-light'>
+            <label>Title</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Title'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-group ms-1 text-light'>
+        <div
+            class='form-check form-check-inline'>
+            <input
+                asp-for='IsDepthEmpty'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                I don't know
+            </label>
+        </div>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Depth'
+                    class='bg-dark form-control text-light'>
+                <label>Depth</label>
+            </div>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Depth'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-group ms-1 text-light'>
+        <div
+            class='form-check form-check-inline'>
+            <input
+                asp-for='IsHeightEmpty'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                I don't know
+            </label>
+        </div>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Height'
+                    class='bg-dark form-control text-light'>
+                <label>Height</label>
+            </div>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Height'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-group ms-1 text-light'>
+        <div
+            class='form-check form-check-inline'>
+            <input
+                asp-for='IsWeightEmpty'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                I don't know
+            </label>
+        </div>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Weight'
+                    class='bg-dark form-control text-light'>
+                <label>Weight</label>
+            </div>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Weight'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-group ms-1 text-light'>
+        <div
+            class='form-check form-check-inline'>
+            <input
+                asp-for='IsWidthEmpty'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                I don't know
+            </label>
+        </div>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Width'
+                    class='bg-dark form-control text-light'>
+                <label>Width</label>
+            </div>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Width'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Type'
+                class='bg-dark form-control text-light'>
+            <label>Type</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Type'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='WindowMaterial'
+                class='bg-dark form-control text-light'>
+            <label>Window Material</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='WindowMaterial'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='MaxMotherboardSize'
+                class='bg-dark form-control text-light'>
+            <label>Max Motherboard Size</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='MaxMotherboardSize'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Material'
+                class='bg-dark form-control text-light'>
+            <label>Material</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Material'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-check ms-3 text-light'>
+        <div
+            class='text-light'>
+            <input
+                asp-for='TransparentWindow'
+                class='form-check-input'
+                type='checkbox'>
+        </div>
+        <label
+            class='form-check-label'>
+            Transparent Window
+        </label>
+    </div>
+    <span
+        asp-validation-for='TransparentWindow'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Color'
+                class='bg-dark form-control text-light'>
+            <label>Color</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Color'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='form-group row'>
+    <input
+        class='btn btn-apply btn-neon neon-green'
+        type='submit'
+        value='Edit'/>
+</div>
+</div>
+</form>
+</div>
+<hr
+    class='hr-runner'/>
+</div>
+<div
+    class='align-items-center d-flex justify-content-center mt-4 text-light'>
+    <a
+        asp-action='CasesTable'
+        asp-controller='Cases'
+        class='btn btn-apply btn-neon neon-yellow'>
+        Back to Table
+    </a>
+</div>

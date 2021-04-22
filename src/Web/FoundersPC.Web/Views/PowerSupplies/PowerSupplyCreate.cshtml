@@ -34,7 +34,7 @@
 <div
     class='row'>
     <div
-        class='form-group ms-1 text-light'>
+        class='form-group text-light'>
         <div
             class='form-check form-check-inline'>
             <input
@@ -47,7 +47,7 @@
             </label>
         </div>
         <div
-            class='form-check ms-3'>
+            class='form-check form-check-inline'>
             <input
                 asp-for='CPU4PIN'
                 class='form-check-input'
@@ -66,7 +66,7 @@
 <div
     class='row'>
     <div
-        class='form-group ms-1 text-light'>
+        class='form-group text-light'>
         <div
             class='form-check form-check-inline'>
             <input
@@ -79,7 +79,7 @@
             </label>
         </div>
         <div
-            class='form-check ms-3'>
+            class='form-check form-check-inline'>
             <input
                 asp-for='CPU8PIN'
                 class='form-check-input'
@@ -96,9 +96,9 @@
     </span>
 </div>
 <div
-    class='row'>
+    class='row mt-3'>
     <div
-        class='ms-1 text-light'>
+        class='text-light'>
         <input
             asp-for='IsModular'
             class='form-check-input'
@@ -113,46 +113,30 @@
         class='text-danger'>
     </span>
 </div>
-<div
-    class='row'>
-    <div
-        class='form-check ms-3 text-light'>
-        <div
-            class='text-light'>
-            <input
-                asp-for='Certificate80PLUS'
-                class='form-check-input'
-                type='checkbox'>
-        </div>
-        <label
-            class='form-check-label'>
+<div class='row'>
+    <div class='text-light'>
+        <input asp-for='Certificate80PLUS'
+               class='form-check-input'
+               type='checkbox'>
+        <label class='form-check-label'>
             Certificate 80PLUS
         </label>
     </div>
-    <span
-        asp-validation-for='Certificate80PLUS'
-        class='text-danger'>
+    <span asp-validation-for='Certificate80PLUS'
+          class='text-danger'>
     </span>
 </div>
-<div
-    class='row'>
-    <div
-        class='form-check ms-3 text-light'>
-        <div
-            class='text-light'>
-            <input
-                asp-for='PFC'
-                class='form-check-input'
-                type='checkbox'>
-        </div>
-        <label
-            class='form-check-label'>
+<div class='row'>
+    <div class='text-light'>
+        <input asp-for='PFC'
+               class='form-check-input'
+               type='checkbox'>
+        <label class='form-check-label'>
             PFC
         </label>
     </div>
-    <span
-        asp-validation-for='PFC'
-        class='text-danger'>
+    <span asp-validation-for='PFC'
+          class='text-danger'>
     </span>
 </div>
 <div
@@ -164,7 +148,7 @@
             <input
                 asp-for='Title'
                 class='bg-dark form-control text-light'
-                placeholder='FoundationDate'>
+                placeholder='Title'>
             <label>Title</label>
         </div>
     </div>
@@ -181,7 +165,8 @@
             class='input-group'>
             <input
                 asp-for='FanDiameter'
-                class='bg-dark form-control text-light'>
+                class='bg-dark form-control text-light'
+                placeholder='Fan Diameter'>
             <label>Fan Diameter</label>
         </div>
     </div>
@@ -199,7 +184,7 @@
             <input
                 asp-for='ProducerId'
                 class='bg-dark form-control text-light'
-                placeholder='FoundationDate'>
+                placeholder='Producer Id'>
             <label>Producer Id</label>
         </div>
     </div>
@@ -217,7 +202,8 @@
             <input
                 asp-for='Power'
                 class='bg-dark form-control text-light'
-                value='@Model.Power'>
+                value='@Model.Power'
+                placeholder='Power'>
             <label>Power</label>
         </div>
     </div>
@@ -242,7 +228,7 @@
             </label>
         </div>
         <div
-            class='form-label-group ms-3'>
+            class='form-label-group'>
             <input
                 asp-for='Efficiency'
                 class='bg-dark form-control text-light'
@@ -265,7 +251,8 @@
             <input
                 asp-for='MotherboardPowering'
                 class='bg-dark form-control text-light'
-                value='@Model.MotherboardPowering'>
+                value='@Model.MotherboardPowering'
+                placeholder='Motherboard Powering'>
             <label>Motherboard Powering</label>
         </div>
     </div>

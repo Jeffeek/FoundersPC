@@ -1,0 +1,71 @@
+04/22/2021 09:17:06 HARDWARE API started..
+04/22/2021 09:17:06 HARDWARE API HostBuilder created
+04/22/2021 09:17:10 Host built
+04/22/2021 09:17:12 Now listening on: "https://localhost:4000"
+04/22/2021 09:17:12 Application started. Press Ctrl+C to shut down.
+04/22/2021 09:17:12 Hosting environment: "Development"
+04/22/2021 09:17:12 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/22/2021 09:22:55 CasesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 09:22:57 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 2429.7675 ms
+04/22/2021 09:23:07 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 09:23:08 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 175.6480 ms
+04/22/2021 09:23:15 ProducersController: request for reading with id = 1 (one) by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 09:23:15 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 72.6266 ms
+04/22/2021 09:23:20 CasesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 09:23:20 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 44.9875 ms
+04/22/2021 09:42:55 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 09:42:55 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 49.4889 ms
+04/22/2021 09:49:16 HARDWARE API started..
+04/22/2021 09:49:16 HARDWARE API HostBuilder created
+04/22/2021 09:49:19 Host built
+04/22/2021 09:49:20 Now listening on: "https://localhost:4000"
+04/22/2021 09:49:20 Application started. Press Ctrl+C to shut down.
+04/22/2021 09:49:20 Hosting environment: "Development"
+04/22/2021 09:49:20 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/22/2021 09:49:25 CasesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 09:49:27 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 2067.8654 ms
+04/22/2021 10:00:59 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 10:00:59 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 122.4444 ms
+04/22/2021 10:06:18 HARDWARE API started..
+04/22/2021 10:06:18 HARDWARE API HostBuilder created
+04/22/2021 10:06:20 Host built
+04/22/2021 10:06:21 Now listening on: "https://localhost:4000"
+04/22/2021 10:06:21 Application started. Press Ctrl+C to shut down.
+04/22/2021 10:06:21 Hosting environment: "Development"
+04/22/2021 10:06:21 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/22/2021 10:06:30 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 10:06:31 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 2036.5966 ms
+04/22/2021 10:21:31 HARDWARE API started..
+04/22/2021 10:21:31 HARDWARE API HostBuilder created
+04/22/2021 10:21:33 Host built
+04/22/2021 10:21:34 Now listening on: "https://localhost:4000"
+04/22/2021 10:21:34 Application started. Press Ctrl+C to shut down.
+04/22/2021 10:21:34 Hosting environment: "Development"
+04/22/2021 10:21:34 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/22/2021 10:21:49 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 10:21:50 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 2176.6925 ms
+04/22/2021 11:58:02 HARDWARE API started..
+04/22/2021 11:58:02 HARDWARE API HostBuilder created
+04/22/2021 11:58:04 Host built
+04/22/2021 11:58:05 Now listening on: "https://localhost:4000"
+04/22/2021 11:58:05 Application started. Press Ctrl+C to shut down.
+04/22/2021 11:58:05 Hosting environment: "Development"
+04/22/2021 11:58:05 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/22/2021 11:58:14 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 403 in 199.0457 ms
+04/22/2021 11:58:28 CasesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 11:58:30 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 1889.0898 ms
+04/22/2021 11:58:45 MotherboardsController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 11:58:45 HTTP "GET" "/HardwareApi/Motherboards?Page=1&Size=10" responded 200 in 94.7607 ms
+04/22/2021 11:58:49 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 11:58:49 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 70.7004 ms
+04/22/2021 12:44:08 HARDWARE API started..
+04/22/2021 12:44:08 HARDWARE API HostBuilder created
+04/22/2021 12:44:11 Host built
+04/22/2021 12:44:12 Now listening on: "https://localhost:4000"
+04/22/2021 12:44:12 Application started. Press Ctrl+C to shut down.
+04/22/2021 12:44:12 Hosting environment: "Development"
+04/22/2021 12:44:12 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/22/2021 12:44:17 CasesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 12:44:18 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 2074.2199 ms
+04/22/2021 12:44:30 HardDriveDisksController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/22/2021 12:44:30 HTTP "GET" "/HardwareApi/HardDriveDisks?Page=1&Size=10" responded 200 in 81.9880 ms

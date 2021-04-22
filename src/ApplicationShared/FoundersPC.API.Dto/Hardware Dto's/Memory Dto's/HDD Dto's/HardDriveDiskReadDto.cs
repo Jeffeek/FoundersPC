@@ -8,6 +8,8 @@ namespace FoundersPC.API.Dto
 {
     public class HardDriveDiskReadDto : IProducerableDto
     {
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public int HeadSpeed { get; set; }
@@ -21,8 +23,6 @@ namespace FoundersPC.API.Dto
         public string Interface { get; set; }
 
         public int Volume { get; set; }
-
-        public int Id { get; set; }
 
         public ProducerReadDto Producer { get; set; }
 

@@ -3,296 +3,214 @@
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
-@section Styles {
-    <link
-        href="~/css/neon-btn-styles.css"
-        rel="stylesheet">
-    <link
-        href="~/css/entity-edit.css"
-        rel="stylesheet">
-}}
+    @section Styles {
+        <link href="~/css/neon-btn-styles.css"
+              rel="stylesheet">
+        <link href="~/css/entity-edit.css"
+              rel="stylesheet">
+    }}
 
-<h1
-    class='mt-4 text-center text-light'>
+<h1 class='mt-4 text-center text-light'>
     Edit Power Supply Page
 </h1>
-<div
-    class='mt-5 row'>
-<div
-    class='col-12 col-md-12 col-sm-12 col-xl-12 col-xxl-12'>
-<form
-    asp-action='Edit'
-    asp-controller='PowerSupplies'
-    class='d-flex flex-column justify-content-center'
-    method='post'>
-<div
-    asp-validation-summary='ModelOnly'
-    class='text-danger'>
-</div>
-<div
-    class='d-grid'>
-<div
-    class='row'>
-    <div
-        class='form-group ms-1 text-light'>
-        <div
-            class='form-check form-check-inline'>
-            <input
-                asp-for='IsCPU4PINEmpty'
-                class='form-check-input'
-                type='checkbox'>
-            <label
-                class='form-check-label'>
-                I don't know
-            </label>
-        </div>
-        <div
-            class='form-check ms-3'>
-            <input
-                asp-for='CPU4PIN'
-                class='form-check-input'
-                type='checkbox'>
-            <label
-                class='form-check-label'>
-                CPU 4PIN
-            </label>
-        </div>
+<div class='mt-5 row'>
+    <div class='col-12 col-md-12 col-sm-12 col-xl-12 col-xxl-12'>
+        <form asp-action='Edit'
+              asp-controller='PowerSupplies'
+              class='d-flex flex-column justify-content-center'
+              method='post'>
+            <div asp-validation-summary='ModelOnly'
+                 class='text-danger'>
+            </div>
+            <div class='d-grid'>
+                <div class='row'>
+                    <div class='form-group text-light'>
+                        <div class='form-check form-check-inline'>
+                            <input asp-for='IsCPU4PINEmpty'
+                                   class='form-check-input'
+                                   type='checkbox'>
+                            <label class='form-check-label'>
+                                I don't know
+                            </label>
+                        </div>
+                        <div class='form-check form-check-inline'>
+                            <input asp-for='CPU4PIN'
+                                   class='form-check-input'
+                                   type='checkbox'>
+                            <label class='form-check-label'>
+                                CPU 4PIN
+                            </label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='CPU4PIN'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='form-group text-light'>
+                        <div class='form-check form-check-inline'>
+                            <input asp-for='IsCPU8PINEmpty'
+                                   class='form-check-input'
+                                   type='checkbox'>
+                            <label class='form-check-label'>
+                                I don't know
+                            </label>
+                        </div>
+                        <div class='form-check form-check-inline'>
+                            <input asp-for='CPU8PIN'
+                                   class='form-check-input'
+                                   type='checkbox'>
+                            <label class='form-check-label'>
+                                CPU 8PIN
+                            </label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='CPU8PIN'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row mt-3'>
+                    <div class='text-light'>
+                        <input asp-for='IsModular'
+                               class='form-check-input'
+                               type='checkbox'>
+                        <label class='form-check-label'>
+                            Is Modular
+                        </label>
+                    </div>
+                    <span asp-validation-for='IsModular'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='text-light'>
+                        <input asp-for='Certificate80PLUS'
+                               class='form-check-input'
+                               type='checkbox'>
+                        <label class='form-check-label'>
+                            Certificate 80PLUS
+                        </label>
+                    </div>
+                    <span asp-validation-for='Certificate80PLUS'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='text-light'>
+                        <input asp-for='PFC'
+                               class='form-check-input'
+                               type='checkbox'>
+                        <label class='form-check-label'>
+                            PFC
+                        </label>
+                    </div>
+                    <span asp-validation-for='PFC'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='form-label-group'>
+                        <div class='input-group'>
+                            <input asp-for='Title'
+                                   class='bg-dark form-control text-light'
+                                   placeholder='Title'>
+                            <label>Title</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='Title'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='form-label-group'>
+                        <div class='input-group'>
+                            <input asp-for='FanDiameter'
+                                   class='bg-dark form-control text-light'
+                                   placeholder='Fan Diameter'>
+                            <label>Fan Diameter</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='FanDiameter'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='form-label-group'>
+                        <div class='input-group'>
+                            <input asp-for='ProducerId'
+                                   class='bg-dark form-control text-light'
+                                   placeholder='Producer Id'>
+                            <label>Producer Id</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='ProducerId'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='form-label-group'>
+                        <div class='input-group'>
+                            <input asp-for='Power'
+                                   class='bg-dark form-control text-light'
+                                   value='@Model.Power'
+                                   placeholder='Power'>
+                            <label>Power</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='Power'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='form-group text-light'>
+                        <div class='form-check'>
+                            <input asp-for='IsEfficiencyEmpty'
+                                   class='form-check-input'
+                                   type='checkbox'>
+                            <label class='form-check-label'>
+                                I don't know
+                            </label>
+                        </div>
+                        <div class='form-label-group'>
+                            <input asp-for='Efficiency'
+                                   class='bg-dark form-control text-light'
+                                   placeholder='Efficiency'
+                                   type='text' />
+                            <label>Efficiency</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='Efficiency'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='row'>
+                    <div class='form-label-group'>
+                        <div class='input-group'>
+                            <input asp-for='MotherboardPowering'
+                                   class='bg-dark form-control text-light'
+                                   value='@Model.MotherboardPowering'
+                                   placeholder='Motherboard Powering'>
+                            <label>Motherboard Powering</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for='MotherboardPowering'
+                          class='text-danger'>
+                    </span>
+                </div>
+                <div class='form-group row'>
+                    <input class='btn btn-apply btn-neon neon-green'
+                           type='submit'
+                           value='Apply' />
+                </div>
+            </div>
+        </form>
     </div>
-    <span
-        asp-validation-for='CPU4PIN'
-        class='text-danger'>
-    </span>
+    <hr class='hr-runner' />
 </div>
-<div
-    class='row'>
-    <div
-        class='form-group ms-1 text-light'>
-        <div
-            class='form-check form-check-inline'>
-            <input
-                asp-for='IsCPU8PINEmpty'
-                class='form-check-input'
-                type='checkbox'>
-            <label
-                class='form-check-label'>
-                I don't know
-            </label>
-        </div>
-        <div
-            class='form-check ms-3'>
-            <input
-                asp-for='CPU8PIN'
-                class='form-check-input'
-                type='checkbox'>
-            <label
-                class='form-check-label'>
-                CPU 8PIN
-            </label>
-        </div>
-    </div>
-    <span
-        asp-validation-for='CPU8PIN'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='ms-1 text-light'>
-        <input
-            asp-for='IsModular'
-            class='form-check-input'
-            type='checkbox'>
-        <label
-            class='form-check-label'>
-            Is Modular
-        </label>
-    </div>
-    <span
-        asp-validation-for='IsModular'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-check ms-3 text-light'>
-        <div
-            class='text-light'>
-            <input
-                asp-for='Certificate80PLUS'
-                class='form-check-input'
-                type='checkbox'>
-        </div>
-        <label
-            class='form-check-label'>
-            Certificate 80PLUS
-        </label>
-    </div>
-    <span
-        asp-validation-for='Certificate80PLUS'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-check ms-3 text-light'>
-        <div
-            class='text-light'>
-            <input
-                asp-for='PFC'
-                class='form-check-input'
-                type='checkbox'>
-        </div>
-        <label
-            class='form-check-label'>
-            PFC
-        </label>
-    </div>
-    <span
-        asp-validation-for='PFC'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-label-group'>
-        <div
-            class='input-group'>
-            <input
-                asp-for='Title'
-                class='bg-dark form-control text-light'
-                placeholder='FoundationDate'>
-            <label>Title</label>
-        </div>
-    </div>
-    <span
-        asp-validation-for='Title'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-label-group'>
-        <div
-            class='input-group'>
-            <input
-                asp-for='FanDiameter'
-                class='bg-dark form-control text-light'>
-            <label>Fan Diameter</label>
-        </div>
-    </div>
-    <span
-        asp-validation-for='FanDiameter'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-label-group'>
-        <div
-            class='input-group'>
-            <input
-                asp-for='ProducerId'
-                class='bg-dark form-control text-light'
-                placeholder='FoundationDate'>
-            <label>Producer Id</label>
-        </div>
-    </div>
-    <span
-        asp-validation-for='ProducerId'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-label-group'>
-        <div
-            class='input-group'>
-            <input
-                asp-for='Power'
-                class='bg-dark form-control text-light'
-                value='@Model.Power'>
-            <label>Power</label>
-        </div>
-    </div>
-    <span
-        asp-validation-for='Power'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-group text-light'>
-        <div
-            class='form-check'>
-            <input
-                asp-for='IsEfficiencyEmpty'
-                class='form-check-input'
-                type='checkbox'>
-            <label
-                class='form-check-label'>
-                I don't know
-            </label>
-        </div>
-        <div
-            class='form-label-group ms-3'>
-            <input
-                asp-for='Efficiency'
-                class='bg-dark form-control text-light'
-                placeholder='Efficiency'
-                type='text'/>
-            <label>Efficiency</label>
-        </div>
-    </div>
-    <span
-        asp-validation-for='Efficiency'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
-        class='form-label-group'>
-        <div
-            class='input-group'>
-            <input
-                asp-for='MotherboardPowering'
-                class='bg-dark form-control text-light'
-                value='@Model.MotherboardPowering'>
-            <label>Motherboard Powering</label>
-        </div>
-    </div>
-    <span
-        asp-validation-for='MotherboardPowering'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='form-group row'>
-    <input
-        class='btn btn-apply btn-neon neon-green'
-        type='submit'
-        value='Save'/>
-</div>
-</div>
-</form>
-</div>
-<hr
-    class='hr-runner'/>
-</div>
-<div
-    class='align-items-center d-flex justify-content-center mt-4 text-light'>
-    <a
-        asp-action='PowerSuppliesTable'
-        asp-controller='PowerSupplies'
-        class='btn btn-apply btn-neon neon-yellow'>
+<div class='align-items-center d-flex justify-content-center mt-4 text-light'>
+    <a asp-action='PowerSuppliesTable'
+       asp-controller='PowerSupplies'
+       class='btn btn-apply btn-neon neon-yellow'>
         Back to Table
     </a>
 </div>
