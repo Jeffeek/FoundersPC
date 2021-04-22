@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Cases\CasesTable.cshtml" />
     <Content Remove="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
   </ItemGroup>
 
@@ -51,8 +52,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Cases\CasesTable.cshtml" />
     <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
     <None Include="wwwroot\js\space-invaders.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\HardDriveDisks\" />
+    <Folder Include="Views\Motherboards\" />
+    <Folder Include="Views\ProcessorCores\" />
+    <Folder Include="Views\Processors\" />
+    <Folder Include="Views\RandomAccessMemory\" />
+    <Folder Include="Views\SolidStateDrives\" />
+    <Folder Include="Views\VideoCardCores\" />
+    <Folder Include="Views\VideoCards\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Cases\CasesTable.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Cases\CasesTable.cshtml" />
   </ItemGroup>
 
 </Project>

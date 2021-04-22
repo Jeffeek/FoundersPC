@@ -59,9 +59,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HardwareApi.Tests.MockAbstr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HardwareApi.Tests.CRUDOperations", "tests\HardwareApi.Tests\HardwareApi.Tests.CRUDOperations\HardwareApi.Tests.CRUDOperations.csproj", "{F2FACB57-6B44-4707-804D-04711BA3DBC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.IdentityEntities", "src\ApplicationShared\FoundersPC.RepositoryCollectionsExtensions\FoundersPC.IdentityEntities.csproj", "{2B9B8630-9A17-4751-BF36-EAF0304CB4C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.IdentityEntities", "src\ApplicationShared\FoundersPC.RepositoryCollectionsExtensions\FoundersPC.IdentityEntities.csproj", "{2B9B8630-9A17-4751-BF36-EAF0304CB4C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.ServicesShared", "src\ApplicationShared\FoundersPC.ServicesShared\FoundersPC.ServicesShared.csproj", "{5C77B670-1758-48D1-BD3D-77493BBEE7A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.ServicesShared", "src\ApplicationShared\FoundersPC.ServicesShared\FoundersPC.ServicesShared.csproj", "{5C77B670-1758-48D1-BD3D-77493BBEE7A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

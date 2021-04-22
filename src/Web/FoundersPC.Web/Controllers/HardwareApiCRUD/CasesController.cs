@@ -99,7 +99,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 
             var viewModel = _mapper.Map<CaseUpdateDto, CaseUpdateDtoViewModel>(_mapper.Map<CaseReadDto, CaseUpdateDto>(@case));
 
-            return View("ProducerEdit", viewModel);
+            return View("CaseEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
