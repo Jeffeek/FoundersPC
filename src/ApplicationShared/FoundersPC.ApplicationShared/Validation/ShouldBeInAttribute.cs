@@ -48,11 +48,11 @@ namespace FoundersPC.ApplicationShared.Validation
                 return _values.Cast<object>()
                               .Any(paramValue => value?.Equals(paramValue) ?? false);
             }
-            catch (InvalidCastException invalidCastException)
+            catch (InvalidCastException)
             {
                 // TODO: Handle the System.InvalidCastException
             }
-            catch (ArgumentNullException argumentNullException)
+            catch (ArgumentNullException)
             {
                 // TODO: Handle the System.ArgumentNullException
             }

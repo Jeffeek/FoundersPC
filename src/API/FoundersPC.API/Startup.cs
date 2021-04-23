@@ -124,6 +124,7 @@ namespace FoundersPC.API
                                           options.AssumeDefaultVersionWhenUnspecified = true;
                                           options.DefaultApiVersion = new ApiVersion(1, 0);
                                           options.ReportApiVersions = true;
+                                          options.RouteConstraintName = "version";
                                       });
 
             // todo: убрать сваггер

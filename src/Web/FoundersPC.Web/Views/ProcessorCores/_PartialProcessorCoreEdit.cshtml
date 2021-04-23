@@ -1,0 +1,125 @@
+﻿@model FoundersPC.Web.Domain.Common.Hardware.ProcessorCoreDtoViewModel
+
+<div
+    class='d-grid'>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Title'
+                    class='bg-dark form-control text-light'>
+                <label>Title</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Title'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-group ms-1 text-light'>
+            <div
+                class='form-check form-check-inline'>
+                <input
+                    asp-for='IsMarketLaunchEmpty'
+                    class='form-check-input'
+                    type='checkbox'>
+                <label
+                    class='form-check-label'>
+                    I don't know
+                </label>
+            </div>
+            <div
+                class='form-label-group ms-3'>
+                <div
+                    class='input-group'>
+                    <input
+                        asp-for='MarketLaunch'
+                        class='bg-dark form-control text-light'
+                        max='@DateTime.Now.ToString("dddd-MM-dd")'
+                        type='date'>
+                    <label>MarketLaunch</label>
+                </div>
+            </div>
+        </div>
+        <span
+            asp-validation-for='MarketLaunch'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='MicroArchitecture'
+                    class='bg-dark form-control text-light'>
+                <label>MicroArchitecture</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='MicroArchitecture'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Socket'
+                    class='bg-dark form-control text-light'>
+                <label>Socket</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Socket'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='L2Cache'
+                    class='bg-dark form-control text-light'>
+                <label>L2 Cache</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='L2Cache'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='L3Cache'
+                    class='bg-dark form-control text-light'>
+                <label>L3 Cache</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='L3Cache'
+            class='text-danger'>
+        </span>
+    </div>
+    <partial
+        name='_ComponentApplyButton'/>
+</div>

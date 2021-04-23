@@ -5,6 +5,27 @@
 <div
     class='row'>
     <div
+        class='form-check ms-3 text-light'>
+        <div
+            class='text-light'>
+            <input
+                asp-for='TransparentWindow'
+                class='form-check-input'
+                type='checkbox'>
+        </div>
+        <label
+            class='form-check-label'>
+            Transparent Window
+        </label>
+    </div>
+    <span
+        asp-validation-for='TransparentWindow'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class="row">
+    <div
         class='form-label-group'>
         <div
             class='input-group'>
@@ -231,27 +252,6 @@
 <div
     class='row'>
     <div
-        class='form-check ms-3 text-light'>
-        <div
-            class='text-light'>
-            <input
-                asp-for='TransparentWindow'
-                class='form-check-input'
-                type='checkbox'>
-        </div>
-        <label
-            class='form-check-label'>
-            Transparent Window
-        </label>
-    </div>
-    <span
-        asp-validation-for='TransparentWindow'
-        class='text-danger'>
-    </span>
-</div>
-<div
-    class='row'>
-    <div
         class='form-label-group'>
         <div
             class='input-group'>
@@ -266,7 +266,6 @@
         class='text-danger'>
     </span>
 </div>
-@{
-    await Html.RenderPartialAsync("_ComponentApplyButton");
-}
+<partial
+    name='_ComponentApplyButton'/>
 </div>

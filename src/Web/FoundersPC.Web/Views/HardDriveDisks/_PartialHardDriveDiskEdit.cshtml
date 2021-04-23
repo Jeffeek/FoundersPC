@@ -10,8 +10,7 @@
                 class='input-group'>
                 <input
                     asp-for='HeadSpeed'
-                    class='bg-dark form-control text-light'
-                    placeholder='Head Speed'>
+                    class='bg-dark form-control text-light'>
                 <label>Head Speed</label>
             </div>
         </div>
@@ -28,8 +27,7 @@
                 class='input-group'>
                 <input
                     asp-for='BufferSize'
-                    class='bg-dark form-control text-light'
-                    placeholder='Buffer Size'>
+                    class='bg-dark form-control text-light'>
                 <label>Buffer Size</label>
             </div>
         </div>
@@ -46,8 +44,7 @@
                 class='input-group'>
                 <input
                     asp-for='Noise'
-                    class='bg-dark form-control text-light'
-                    placeholder='Noise'>
+                    class='bg-dark form-control text-light'>
                 <label>Noise</label>
             </div>
         </div>
@@ -64,9 +61,7 @@
                 class='input-group'>
                 <input
                     asp-for='Factor'
-                    class='bg-dark form-control text-light'
-                    placeholder='Factor'
-                    type='number'>
+                    class='bg-dark form-control text-light'>
                 <label>Factor</label>
             </div>
         </div>
@@ -83,8 +78,7 @@
                 class='input-group'>
                 <input
                     asp-for='Interface'
-                    class='bg-dark form-control text-light'
-                    placeholder='Interface'>
+                    class='bg-dark form-control text-light'>
                 <label>Interface</label>
             </div>
         </div>
@@ -101,8 +95,7 @@
                 class='input-group'>
                 <input
                     asp-for='Volume'
-                    class='bg-dark form-control text-light'
-                    placeholder='Volume'>
+                    class='bg-dark form-control text-light'>
                 <label>Volume</label>
             </div>
         </div>
@@ -119,8 +112,7 @@
                 class='input-group'>
                 <input
                     asp-for='Title'
-                    class='bg-dark form-control text-light'
-                    placeholder='Title'>
+                    class='bg-dark form-control text-light'>
                 <label>Title</label>
             </div>
         </div>
@@ -137,8 +129,7 @@
                 class='input-group'>
                 <input
                     asp-for='ProducerId'
-                    class='bg-dark form-control text-light'
-                    placeholder='Producer Id'>
+                    class='bg-dark form-control text-light'>
                 <label>Producer Id</label>
             </div>
         </div>
@@ -147,7 +138,6 @@
             class='text-danger'>
         </span>
     </div>
-    @{
-        await Html.RenderPartialAsync("_ComponentApplyButton");
-    }
+    <partial
+        name='_ComponentApplyButton'/>
 </div>

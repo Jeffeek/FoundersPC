@@ -9,6 +9,10 @@
   <ItemGroup>
     <Content Remove="Views\Cases\CasesTable.cshtml" />
     <Content Remove="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
+    <Content Remove="Views\ProcessorCores\ProcessorCoresTable.cshtml" />
+    <Content Remove="Views\Processors\ProcessorEdit.cshtml" />
+    <Content Remove="Views\SolidStateDrives\SolidStateDrivesTable.cshtml" />
+    <Content Remove="Views\VideoCardCores\VideoCardCoreCreate.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,17 +58,11 @@
   <ItemGroup>
     <None Include="Views\Cases\CasesTable.cshtml" />
     <None Include="Views\Home\Space-Invaders\SpaceInvaders.cshtml" />
+    <None Include="Views\ProcessorCores\ProcessorCoresTable.cshtml" />
+    <None Include="Views\Processors\ProcessorEdit.cshtml" />
+    <None Include="Views\SolidStateDrives\SolidStateDrivesTable.cshtml" />
+    <None Include="Views\VideoCardCores\VideoCardCoreCreate.cshtml" />
     <None Include="wwwroot\js\space-invaders.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Motherboards\" />
-    <Folder Include="Views\ProcessorCores\" />
-    <Folder Include="Views\Processors\" />
-    <Folder Include="Views\RandomAccessMemory\" />
-    <Folder Include="Views\SolidStateDrives\" />
-    <Folder Include="Views\VideoCardCores\" />
-    <Folder Include="Views\VideoCards\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -73,6 +71,26 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\Cases\CasesTable.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\ProcessorCores\ProcessorCoresTable.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Processors\ProcessorEdit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SolidStateDrives\SolidStateDrivesTable.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\VideoCardCores\VideoCardCoreCreate.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\ProcessorCores\ProcessorCoresTable.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Processors\ProcessorEdit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\SolidStateDrives\SolidStateDrivesTable.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\VideoCardCores\VideoCardCoreCreate.cshtml" />
   </ItemGroup>
 
 </Project>

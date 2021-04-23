@@ -1,0 +1,28 @@
+﻿@using FoundersPC.API.Dto
+@using PagedList.Core.Mvc
+@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.API.Dto.MotherboardReadDto>
+
+@{
+    ViewData["Title"] = "Motherboards Table";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+@section Styles {
+    <link
+        href='~/css/table.css'
+        rel='stylesheet'>
+}}
+
+<hardware-table
+    asp-controller='Motherboards'
+    entities='@(Model.PagedList)'
+    entity-type='@(typeof(MotherboardReadDto))'/>
+@{
+    if (Model.IsPaginationNeeded) {
+        <pager
+            asp-action="MotherboardsTable"
+            asp-controller="Motherboards"
+            class="d-flex justify-content-center"
+            list="@Model.PagedList"
+            options="@PagedListRenderOptions.Bootstrap4Full"
+            param-page-number='pageNumber'/>
+    }
+}

@@ -1,16 +1,4 @@
 {
-  "iisSettings" : {
-    "windowsAuthentication" : false,
-    "anonymousAuthentication" : true,
-    "iis" : {
-      "applicationUrl" : "https://localhost:3000",
-      "sslPort" : 0
-    },
-    "iisExpress" : {
-      "applicationUrl" : "https://localhost:3000",
-      "sslPort" : 0
-    }
-  },
   "$schema" : "http://json.schemastore.org/launchsettings.json",
   "profiles" : {
     "FoundersPC.IdentityServer" : {
