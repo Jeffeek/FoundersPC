@@ -1,0 +1,143 @@
+﻿@model FoundersPC.Web.Domain.Common.Hardware.HardDriveDiskDtoViewModel
+
+<div
+    class='d-grid'>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='HeadSpeed'
+                    class='bg-dark form-control text-light'>
+                <label>Head Speed</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='HeadSpeed'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='BufferSize'
+                    class='bg-dark form-control text-light'>
+                <label>Buffer Size</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='BufferSize'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Noise'
+                    class='bg-dark form-control text-light'>
+                <label>Noise</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Noise'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Factor'
+                    class='bg-dark form-control text-light'>
+                <label>Factor</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Factor'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Interface'
+                    class='bg-dark form-control text-light'>
+                <label>Interface</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Interface'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Volume'
+                    class='bg-dark form-control text-light'>
+                <label>Volume</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Volume'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Title'
+                    class='bg-dark form-control text-light'>
+                <label>Title</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Title'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='ProducerId'
+                    class='bg-dark form-control text-light'>
+                <label>Producer Id</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='ProducerId'
+            class='text-danger'>
+        </span>
+    </div>
+    <partial
+        name='_ComponentApplyButton'/>
+</div>

@@ -1,0 +1,49 @@
+﻿@model FoundersPC.Web.Domain.Common.Hardware.PowerSupplyDtoViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+@section Styles {
+    <link
+        href="~/css/neon-btn-styles.css"
+        rel="stylesheet">
+    <link
+        href="~/css/entity-edit.css"
+        rel="stylesheet">
+}
+
+
+}
+
+<h1
+    class='mt-4 text-center text-light'>
+    Add Power Supply Page
+</h1>
+<div
+    class='mt-5 row'>
+    <div
+        class='col-12 col-md-12 col-sm-12 col-xl-12 col-xxl-12'>
+        <form
+            asp-action='Create'
+            asp-controller='PowerSupplies'
+            class='d-flex flex-column justify-content-center'
+            method='post'>
+            <div
+                asp-validation-summary='ModelOnly'
+                class='text-danger'>
+            </div>
+            @(await Html.PartialAsync("_PartialPowerSupplyEdit", Model))
+        </form>
+    </div>
+    <hr
+        class='hr-runner'/>
+</div>
+<div
+    class='align-items-center d-flex justify-content-center mt-4 text-light'>
+    <a
+        asp-action='PowerSuppliesTable'
+        asp-controller='PowerSupplies'
+        class='btn btn-apply btn-neon neon-yellow'>
+        Back to Table
+    </a>
+</div>

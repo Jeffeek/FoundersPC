@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Dto;
@@ -13,6 +12,7 @@ using FoundersPC.Web.Domain.Common.Entrances;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PagedList.Core;
 
 #endregion
 
@@ -30,23 +30,51 @@ namespace FoundersPC.Web.Controllers
         #region Users Table
 
         [Route("UsersTable")]
-        public async Task<ActionResult> UsersTable([FromQuery] int pageNumber)
+        public async Task<ActionResult> UsersTable([FromQuery] int pageNumber = 1)
         {
-            var users = (await _adminService.GetPaginateableUsersAsync(pageNumber,
-                                                                       FoundersPCConstants.PageSize,
-                                                                       HttpContext.GetJwtTokenFromCookie()))
-                .ToArray();
+            var paginationResponse = await _adminService.GetPaginateableUsersAsync(pageNumber,
+                                                                                   FoundersPCConstants.PageSize,
+                                                                                   HttpContext.GetJwtTokenFromCookie());
 
             var indexModel = new IndexViewModel<UserEntityReadDto>
                              {
-                                 Models = users,
-                                 Page = new PageViewModel(pageNumber,
-                                                          users.Length == FoundersPCConstants.PageSize),
+                                 PagedList = new StaticPagedList<UserEntityReadDto>(paginationResponse.Items,
+                                                                                    pageNumber,
+                                                                                    FoundersPCConstants.PageSize,
+                                                                                    paginationResponse.TotalItemsCount),
                                  IsPaginationNeeded = true
                              };
 
             return View("UsersTable", indexModel);
         }
+
+        #region Change Users Statuses
+
+        [Route("BlockUser/{id:int:min(1)}")]
+        public async Task<ActionResult> BlockUser([FromRoute] int id)
+        {
+            await _adminService.BlockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
+
+        [Route("UnblockUser/{id:int:min(1)}")]
+        public async Task<ActionResult> UnblockUser([FromRoute] int id)
+        {
+            await _adminService.UnblockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
+
+        [Route("MakeUserInactive/{id:int:min(1)}")]
+        public async Task<ActionResult> MakeUserInactive([FromRoute] int id)
+        {
+            await _adminService.MakeUserInactiveByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
+
+            return RedirectToAction("UsersTable", "Admin");
+        }
+
+        #endregion
 
         #endregion
 
@@ -70,83 +98,83 @@ namespace FoundersPC.Web.Controllers
 
         #region Entrances
 
-        [Route("Entrances")]
-        public async Task<ActionResult> EntrancesTable([FromQuery] int pageNumber)
+        [Route("EntrancesTable")]
+        public async Task<ActionResult> EntrancesTable([FromQuery] int pageNumber = 1)
         {
-            var entrances =
-                (await _adminService.GetPaginateableEntrancesAsync(pageNumber,
-                                                                   FoundersPCConstants.PageSize,
-                                                                   HttpContext.GetJwtTokenFromCookie()))
-                .ToArray();
+            var paginationResponse =
+                await _adminService.GetPaginateableEntrancesAsync(pageNumber,
+                                                                  FoundersPCConstants.PageSize,
+                                                                  HttpContext.GetJwtTokenFromCookie());
 
             var viewModel = new EntrancesViewModel
                             {
                                 BetweenFilter = new EntrancesBetweenFilter(),
                                 IsDatePickerRequired = true,
-                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>
                                              {
                                                  IsPaginationNeeded = true,
-                                                 Models = entrances,
-                                                 Page = new PageViewModel(pageNumber, entrances.Length == FoundersPCConstants.PageSize)
+                                                 PagedList = new StaticPagedList<UserEntranceLogReadDto>(paginationResponse.Items,
+                                                                                                         pageNumber,
+                                                                                                         FoundersPCConstants.PageSize,
+                                                                                                         paginationResponse.TotalItemsCount)
                                              }
                             };
 
             return View("EntrancesTable", viewModel);
         }
 
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
         [Route("User/{userId:int}/Entrances")]
         public async Task<ActionResult> UserEntrances([FromRoute] int userId)
         {
-            var token = HttpContext.GetJwtTokenFromCookie();
+            var entrances = (await _adminService.GetAllUserEntrancesByIdAsync(userId, HttpContext.GetJwtTokenFromCookie())).ToArray();
 
-            if (token is null)
-                throw new CookieException();
-
-            var entrances = await _adminService.GetAllUserEntrancesByIdAsync(userId, token);
+            var length = entrances.Length == 0 ? 1 : entrances.Length;
 
             var viewModel = new EntrancesViewModel
                             {
                                 BetweenFilter = null,
                                 IsDatePickerRequired = false,
-                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                IndexModel = new IndexViewModel<UserEntranceLogReadDto>
                                              {
                                                  IsPaginationNeeded = false,
-                                                 Models = entrances,
-                                                 Page = new PageViewModel(1, false)
+                                                 PagedList = new StaticPagedList<UserEntranceLogReadDto>(entrances, 1, length, length)
                                              }
                             };
 
             return View("EntrancesTable", viewModel);
         }
 
-        // todo: make really paging
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
         [Route("Entrances/Between")]
         public async Task<ActionResult> EntrancesBetween([FromForm] EntrancesViewModel viewModel)
         {
-            var token = HttpContext.GetJwtTokenFromCookie();
-
-            if (token is null)
-                throw new CookieException();
-
             if (viewModel.BetweenFilter is null)
                 return BadRequest();
 
             if (viewModel.BetweenFilter.Start > viewModel.BetweenFilter.Finish)
                 return BadRequest();
 
-            var entrances = await _adminService.GetAllEntrancesBetweenAsync(viewModel.BetweenFilter.Start,
-                                                                            viewModel.BetweenFilter.Finish,
-                                                                            token);
+            var entrances = (await _adminService.GetAllEntrancesBetweenAsync(viewModel.BetweenFilter.Start,
+                                                                             viewModel.BetweenFilter.Finish,
+                                                                             HttpContext.GetJwtTokenFromCookie())).ToArray();
 
-            var newViewModel = new EntrancesViewModel()
+            var length = entrances.Length == 0 ? 1 : entrances.Length;
+
+            var newViewModel = new EntrancesViewModel
                                {
                                    BetweenFilter = viewModel.BetweenFilter,
                                    IsDatePickerRequired = false,
-                                   IndexModel = new IndexViewModel<UserEntranceLogReadDto>()
+                                   IndexModel = new IndexViewModel<UserEntranceLogReadDto>
                                                 {
-                                                    Models = entrances,
-                                                    IsPaginationNeeded = false,
-                                                    Page = new PageViewModel(1, false)
+                                                    PagedList = new StaticPagedList<UserEntranceLogReadDto>(entrances, 1, length, length),
+                                                    IsPaginationNeeded = false
                                                 }
                                };
 
@@ -157,41 +185,52 @@ namespace FoundersPC.Web.Controllers
 
         #region Access Tokens Logs
 
-        [Route("TokensLogs")]
-        public async Task<ActionResult> TokensLogsTable([FromQuery] int pageNumber)
+        [Route("TokensLogsTable")]
+        public async Task<ActionResult> TokensLogsTable([FromQuery] int pageNumber = 1)
         {
             var logs =
-                (await _adminService.GetPaginateableAccessTokensLogsAsync(pageNumber,
-                                                                          FoundersPCConstants.PageSize,
-                                                                          HttpContext.GetJwtTokenFromCookie()))
-                .ToArray();
+                await _adminService.GetPaginateableAccessTokensLogsAsync(pageNumber,
+                                                                         FoundersPCConstants.PageSize,
+                                                                         HttpContext.GetJwtTokenFromCookie());
 
             var viewModel = new IndexViewModel<AccessTokenLogReadDto>
                             {
-                                Models = logs,
-                                Page = new PageViewModel(pageNumber, logs.Length == FoundersPCConstants.PageSize),
+                                PagedList = new StaticPagedList<AccessTokenLogReadDto>(logs.Items,
+                                                                                       pageNumber,
+                                                                                       FoundersPCConstants.PageSize,
+                                                                                       logs.TotalItemsCount),
                                 IsPaginationNeeded = true
                             };
 
             return View("TokensLogsTable", viewModel);
         }
 
-        [Route("User/{userId:int}/TokensLogs")]
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
+        [Route("User/{userId:int:min(1)}/TokensLogsTable")]
         public async Task<ActionResult> UserTokensLogs([FromRoute] int userId)
         {
-            var logs = await _adminService.GetAccessTokensLogsByUserIdAsync(userId, HttpContext.GetJwtTokenFromCookie());
+            var logs = (await _adminService.GetAccessTokensLogsByUserIdAsync(userId, HttpContext.GetJwtTokenFromCookie())).ToArray();
+
+            var length = logs.Length == 0 ? 1 : logs.Length;
 
             var viewModel = new IndexViewModel<AccessTokenLogReadDto>
                             {
-                                Models = logs,
-                                Page = new PageViewModel(1, false),
+                                PagedList = new StaticPagedList<AccessTokenLogReadDto>(logs, 1, length, length),
                                 IsPaginationNeeded = false
                             };
 
             return View("TokensLogsTable", viewModel);
         }
 
-        [Route("TokensLogs/ByTokenId/{tokenId:int:min(1)}")]
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is <see langword="null"/>.</exception>
+        [Route("TokensLogsTable/ByTokenId/{tokenId:int:min(1)}")]
         public async Task<ActionResult> TokenLogs([FromRoute] int tokenId)
         {
             var logs =
@@ -199,17 +238,22 @@ namespace FoundersPC.Web.Controllers
                                                                        HttpContext.GetJwtTokenFromCookie()))
                 .ToArray();
 
+            var length = logs.Length == 0 ? 1 : logs.Length;
+
             var viewModel = new IndexViewModel<AccessTokenLogReadDto>
                             {
-                                Models = logs,
-                                Page = new PageViewModel(1, false),
+                                PagedList = new StaticPagedList<AccessTokenLogReadDto>(logs, 1, length, length),
                                 IsPaginationNeeded = false
                             };
 
             return View("TokensLogsTable", viewModel);
         }
 
-        [Route("TokensLogs/ByToken/{token:length(64)}")]
+        /// <exception cref="T:System.OverflowException">
+        ///     The array is multidimensional and contains more than
+        ///     <see cref="F:System.Int32.MaxValue"/> elements.
+        /// </exception>
+        [Route("TokensLogsTable/ByToken/{token:length(64)}")]
         public async Task<ActionResult> TokenLogs([FromRoute] string token)
         {
             var logs =
@@ -217,10 +261,11 @@ namespace FoundersPC.Web.Controllers
                                                                      HttpContext.GetJwtTokenFromCookie()))
                 .ToArray();
 
+            var length = logs.Length == 0 ? 1 : logs.Length;
+
             var viewModel = new IndexViewModel<AccessTokenLogReadDto>
                             {
-                                Models = logs,
-                                Page = new PageViewModel(1, false),
+                                PagedList = new StaticPagedList<AccessTokenLogReadDto>(logs, 1, length, length),
                                 IsPaginationNeeded = false
                             };
 
@@ -231,63 +276,35 @@ namespace FoundersPC.Web.Controllers
 
         #region Access Tokens
 
-        [Route("Tokens")]
-        public async Task<ActionResult> TokensTable([FromQuery] int pageNumber)
+        [Route("TokensTable")]
+        public async Task<ActionResult> TokensTable([FromQuery] int pageNumber = 1)
         {
             var tokens =
-                (await _adminService.GetPaginateableTokensAsync(pageNumber,
-                                                                FoundersPCConstants.PageSize,
-                                                                HttpContext.GetJwtTokenFromCookie()))
-                .ToArray();
+                await _adminService.GetPaginateableTokensAsync(pageNumber,
+                                                               FoundersPCConstants.PageSize,
+                                                               HttpContext.GetJwtTokenFromCookie());
 
-            var viewModel = new IndexViewModel<ApiAccessUserTokenReadDto>
+            var viewModel = new IndexViewModel<AccessTokenReadDto>
                             {
-                                Models = tokens,
-                                Page = new PageViewModel(pageNumber,
-                                                         tokens.Length == FoundersPCConstants.PageSize),
+                                PagedList = new StaticPagedList<AccessTokenReadDto>(tokens.Items,
+                                                                                    pageNumber,
+                                                                                    FoundersPCConstants.PageSize,
+                                                                                    tokens.TotalItemsCount),
                                 IsPaginationNeeded = true
                             };
 
             return View("TokensTable", viewModel);
         }
 
-        [Route("Tokens/Block/{tokenId:int:min(1)}")]
+        [Route("TokensTable/Block/{tokenId:int:min(1)}")]
         public async Task<ActionResult> BlockToken([FromRoute] int tokenId)
         {
             var blockResult = await _adminService.BlockTokenByIdAsync(tokenId, HttpContext.GetJwtTokenFromCookie());
 
             if (blockResult)
-                return await TokensTable(1);
+                return await TokensTable();
 
             return BadRequest();
-        }
-
-        #endregion
-
-        #region Change Users Statuses
-
-        [Route("BlockUser/{id:int}")]
-        public async Task<ActionResult> BlockUser([FromRoute] int id)
-        {
-            await _adminService.BlockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
-
-            return RedirectToAction("UsersTable", "Admin");
-        }
-
-        [Route("UnblockUser/{id:int}")]
-        public async Task<ActionResult> UnblockUser([FromRoute] int id)
-        {
-            await _adminService.UnblockUserByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
-
-            return RedirectToAction("UsersTable", "Admin");
-        }
-
-        [Route("MakeUserInactive/{id:int}")]
-        public async Task<ActionResult> MakeUserInactive([FromRoute] int id)
-        {
-            await _adminService.MakeUserInactiveByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
-
-            return RedirectToAction("UsersTable", "Admin");
         }
 
         #endregion

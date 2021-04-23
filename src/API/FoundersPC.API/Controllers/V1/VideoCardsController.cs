@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,88 +18,131 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("HardwareApi/VideoCards")]
     [Route("HardwareApi/GPUs")]
+    [Route(HardwareApiRoutes.VideoCardsEndpoint)]
+    [ModelValidation]
     public class VideoCardsController : Controller
     {
-        private readonly IGPUService _gpuService;
         private readonly ILogger<VideoCardsController> _logger;
+        private readonly IVideoCardsService _videoCardsService;
 
-        public VideoCardsController(IGPUService service, ILogger<VideoCardsController> logger)
+        public VideoCardsController(IVideoCardsService service, ILogger<VideoCardsController> logger)
         {
-            _gpuService = service;
+            _videoCardsService = service;
             _logger = logger;
         }
 
-        [HttpGet("All")]
-        public async Task<ActionResult<IEnumerable<GPUReadDto>>> Get()
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [HttpGet(ApplicationRestAddons.All)]
+        public async Task<ActionResult<IEnumerable<VideoCardReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
 
-            return Json(await _gpuService.GetAllGPUsAsync());
+            return Json(await _videoCardsService.GetAllVideoCardsAsync());
         }
+
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery] PaginationRequest request)
         {
-            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
+            _logger.LogForPaginateableModelsRead(HttpContext, request.PageNumber, request.PageSize);
 
-            return Json(await _gpuService.GetPaginateableAsync(pageNumber, pageSize));
+            return Json(await _videoCardsService.GetPaginateableAsync(request.PageNumber, request.PageSize));
         }
 
-        [HttpGet("{id:int:min(1)}")]
-        public async Task<ActionResult<GPUReadDto>> Get([FromRoute] int id)
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [HttpGet(ApplicationRestAddons.GetById)]
+        public async Task<ActionResult<VideoCardReadDto>> Get([FromRoute] int id)
         {
             _logger.LogForModelRead(HttpContext, id);
 
-            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id);
+            var gpuReadDto = await _videoCardsService.GetVideoCardByIdAsync(id);
 
             return gpuReadDto == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(gpuReadDto);
         }
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id:int:min(1)}")]
-        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] GPUUpdateDto gpu)
-        {
-            if (!ModelState.IsValid)
-                return ValidationProblem(ModelState);
+        #region Docs
 
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+        [HttpPut(ApplicationRestAddons.Update)]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] VideoCardUpdateDto videoCard)
+        {
             _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _gpuService.UpdateGPUAsync(id, gpu);
+            var result = await _videoCardsService.UpdateVideoCardAsync(id, videoCard);
 
-            return result ? Json(gpu) : ResponseResultsHelper.UpdateError();
+            return result ? Json(videoCard) : ResponseResultsHelper.UpdateError();
         }
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPost]
-        public async Task<ActionResult> Insert([FromBody] GPUInsertDto gpu)
-        {
-            if (!ModelState.IsValid)
-                return ValidationProblem(ModelState);
+        #region Docs
 
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+        [HttpPost(ApplicationRestAddons.Create)]
+        public async Task<ActionResult> Create([FromBody] VideoCardInsertDto videoCard)
+        {
             _logger.LogForModelInsert(HttpContext);
 
-            var insertResult = await _gpuService.CreateGPUAsync(gpu);
+            var insertResult = await _videoCardsService.CreateVideoCardAsync(videoCard);
 
-            return insertResult ? Json(gpu) : ResponseResultsHelper.InsertError();
+            return insertResult ? Json(videoCard) : ResponseResultsHelper.InsertError();
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id:int:min(1)}")]
+        [HttpDelete(ApplicationRestAddons.Delete)]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {
             _logger.LogForModelDelete(HttpContext, id);
 
-            var gpuReadDto = await _gpuService.GetGPUByIdAsync(id);
+            var result = await _videoCardsService.DeleteVideoCardAsync(id);
 
-            if (gpuReadDto == null)
-                return ResponseResultsHelper.NotFoundByIdResult(id);
-
-            var result = await _gpuService.DeleteGPUAsync(id);
-
-            return result ? Json(gpuReadDto) : ResponseResultsHelper.DeleteError();
+            return result ? Ok() : ResponseResultsHelper.DeleteError();
         }
     }
 }

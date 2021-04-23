@@ -1,8 +1,8 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.RequestResponseShared.Request.Tokens;
-using FoundersPC.RequestResponseShared.Response.Tokens;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Tokens;
 
 #endregion
 

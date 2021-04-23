@@ -1,0 +1,28 @@
+﻿@using FoundersPC.API.Dto
+@using PagedList.Core.Mvc
+@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.API.Dto.ProducerReadDto>
+
+@{
+    ViewData["Title"] = "ProducersTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+@section Styles {
+    <link
+        href='~/css/table.css'
+        rel='stylesheet'>
+}}
+
+<hardware-table
+    asp-controller='Producers'
+    entities='@(Model.PagedList)'
+    entity-type='@(typeof(ProducerReadDto))'/>
+@{
+    if (Model.IsPaginationNeeded) {
+        <pager
+            asp-action="ProducersTable"
+            asp-controller="Producers"
+            class="d-flex justify-content-center"
+            list="@Model.PagedList"
+            options="@PagedListRenderOptions.Bootstrap4Full"
+            param-page-number='pageNumber'/>
+    }
+}

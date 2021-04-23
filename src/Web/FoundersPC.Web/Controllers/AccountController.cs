@@ -1,9 +1,8 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Net;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
@@ -36,20 +35,17 @@ namespace FoundersPC.Web.Controllers
 
         public async Task<IActionResult> Profile()
         {
-            var emailInCookie = HttpContext.User.FindFirstValue(ClaimsIdentity.DefaultNameClaimType);
-
-            if (emailInCookie is null)
-            {
-                _logger.LogError($"Email cookie not found. ConnectionId: {HttpContext.Connection.Id}");
-
-                throw new CookieException();
-            }
+            var (emailInCookie, _) = HttpContext.ParseCredentials();
 
             var information =
                 await _usersInformationService.GetUserByEmailAsync(emailInCookie, HttpContext.GetJwtTokenFromCookie());
 
             if (information is null)
+            {
+                _logger.LogWarning("Profile page requested, but information was null. Redirecting..");
+
                 return RedirectToPagePermanent("Forbidden");
+            }
 
             var settings = new AccountSettingsViewModel
                            {
@@ -89,58 +85,67 @@ namespace FoundersPC.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangePassword([FromForm] AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.PasswordSettingsViewModel))
-                return RedirectToPage("Error");
-
             var response = await _settingsChangeWebService.ChangePasswordAsync(request.PasswordSettingsViewModel,
                                                                                HttpContext.GetJwtTokenFromCookie());
 
             if (response is null)
+            {
+                _logger.LogWarning("Response of changing password was null..");
+
                 return BadRequest();
+            }
 
-            if (!response.Successful)
-                return RedirectToPage("Error");
+            if (response.Successful)
+                return RedirectToAction("Profile", "Account");
 
-            return RedirectToAction("Profile", "Account");
+            _logger.LogWarning("Response of changing password was NOT null, but not successful..");
+
+            return RedirectToPage("Error");
         }
 
         [Route("ChangeLogin")]
         [HttpPost]
         public async Task<IActionResult> ChangeLogin([FromForm] AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.LoginSettingsViewModel))
-                return RedirectToPage("Error");
-
             var response = await _settingsChangeWebService.ChangeLoginAsync(request.LoginSettingsViewModel,
                                                                             HttpContext.GetJwtTokenFromCookie());
 
             if (response is null)
+            {
+                _logger.LogWarning("Response of changing login was null..");
+
                 return BadRequest();
+            }
 
-            if (!response.Successful)
-                return RedirectToPage("Error");
+            if (response.Successful)
+                return RedirectToAction("Profile", "Account");
 
-            return RedirectToAction("Profile", "Account");
+            _logger.LogWarning("Response of changing login was NOT null, but not successful..");
+
+            return RedirectToPage("Error");
         }
 
         [Route("ChangeNotifications")]
         [HttpPost]
         public async Task<IActionResult> ChangeNotifications([FromForm] AccountSettingsViewModel request)
         {
-            if (!TryValidateModel(request.NotificationsSettingsViewModel))
-                return RedirectToPage("Error");
-
             var response =
                 await _settingsChangeWebService.ChangeNotificationsAsync(request.NotificationsSettingsViewModel,
                                                                          HttpContext.GetJwtTokenFromCookie());
 
             if (response is null)
+            {
+                _logger.LogWarning("Response of changing notifications was null..");
+
                 return BadRequest();
+            }
 
-            if (!response.Successful)
-                return RedirectToPage("Error");
+            if (response.Successful)
+                return RedirectToAction("Profile", "Account");
 
-            return RedirectToAction("Profile", "Account");
+            _logger.LogWarning("Response of changing notifications was NOT null, but not successful..");
+
+            return RedirectToPage("Error");
         }
     }
 }

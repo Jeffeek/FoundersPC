@@ -7,6 +7,6 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories
 {
-    public interface IPowerSuppliersRepositoryAsync : IRepositoryAsync<PowerSupply>,
-                                                      IPaginateableRepository<PowerSupply> { }
+    public interface IPowerSuppliersRepositoryAsync : IRepositoryAsync<PowerSupplyEntity>,
+                                                      IPaginateableRepository<PowerSupplyEntity> { }
 }

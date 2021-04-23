@@ -1,0 +1,134 @@
+﻿@using System.Globalization
+@model FoundersPC.Web.Domain.Common.Hardware.ProducerDtoViewModel
+
+<div
+    class='d-grid'>
+    <div
+        class='row'>
+        <div
+            class='form-group text-light'>
+            <div
+                class='form-check'>
+                <input
+                    asp-for='IsShortNameEmpty'
+                    class='form-check-input'
+                    type='checkbox'>
+                <label
+                    class='form-check-label'>
+                    I don't know
+                </label>
+            </div>
+            <div
+                class='form-label-group ms-3'>
+                <input
+                    asp-for='ShortName'
+                    class='bg-dark form-control text-light'
+                    type='text'/>
+                <label>Short Name</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='ShortName'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='FullName'
+                    class='bg-dark form-control text-light'
+                    value='@Model.FullName'>
+                <label>Full Name</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='FullName'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-label-group'>
+            <div
+                class='input-group'>
+                <input
+                    asp-for='Country'
+                    class='bg-dark form-control text-light'
+                    value='@Model.Country'>
+                <label>Country</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Country'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-group text-light'>
+            <div
+                class='form-check'>
+                <input
+                    asp-for='IsWebsiteEmpty'
+                    class='form-check-input'
+                    type='checkbox'>
+                <label
+                    class='form-check-label'>
+                    I don't know
+                </label>
+            </div>
+            <div
+                class='form-label-group ms-3'>
+                <input
+                    asp-for='Website'
+                    class='bg-dark form-control text-light'
+                    type='text'/>
+                <label>Website</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='Website'
+            class='text-danger'>
+        </span>
+    </div>
+    <div
+        class='row'>
+        <div
+            class='form-group text-light'>
+            <div
+                class='form-check'>
+                <input
+                    asp-for='IsFoundationDateEmpty'
+                    class='form-check-input'
+                    type='checkbox'>
+                <label
+                    class='form-check-label'>
+                    I don't know
+                </label>
+            </div>
+            <div
+                class='form-label-group ms-3'>
+                <input
+                    asp-for='FoundationDate'
+                    class='bg-dark form-control text-light'
+                    max='@DateTime.Now.ToString("yyyy-MM-dd")'
+                    min='@DateTime.Parse("1800-01-01", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd")'
+                    type='date'
+                    value='@Model.FoundationDate.ToString("yyyy-MM-dd")'/>
+                <label>Foundation Date</label>
+            </div>
+        </div>
+        <span
+            asp-validation-for='FoundationDate'
+            class='text-danger'>
+        </span>
+    </div>
+    <partial
+        name='_ComponentApplyButton'/>
+</div>

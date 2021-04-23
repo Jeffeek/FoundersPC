@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,54 +18,87 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("HardwareApi/Cases")]
+    [Route(HardwareApiRoutes.CasesEndpoint)]
+    [ModelValidation]
     public class CasesController : Controller
     {
-        private readonly ICaseService _caseService;
+        private readonly ICasesService _casesService;
         private readonly ILogger<CasesController> _logger;
 
-        public CasesController(ICaseService service, ILogger<CasesController> logger)
+        public CasesController(ICasesService service, ILogger<CasesController> logger)
         {
             _logger = logger;
-            _caseService = service;
+            _casesService = service;
             _logger = logger;
         }
 
-        [HttpGet("All")]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> Get()
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [HttpGet(ApplicationRestAddons.All)]
+        public async ValueTask<ActionResult<IEnumerable<CaseReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
 
-            return Json(await _caseService.GetAllCasesAsync());
+            return Json(await _casesService.GetAllCasesAsync());
         }
+
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        public async ValueTask<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery] PaginationRequest request)
         {
-            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
+            _logger.LogForPaginateableModelsRead(HttpContext, request.PageNumber, request.PageSize);
 
-            return Json(await _caseService.GetPaginateableAsync(pageNumber, pageSize));
+            return Json(await _casesService.GetPaginateableAsync(request.PageNumber, request.PageSize));
         }
 
-        [HttpGet("{id:int:min(1)}")]
-        public async Task<ActionResult<CaseReadDto>> Get([FromRoute] int id)
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [HttpGet(ApplicationRestAddons.GetById)]
+        public async ValueTask<ActionResult<CaseReadDto>> Get([FromRoute] int id)
         {
             _logger.LogForModelRead(HttpContext, id);
 
-            var @case = await _caseService.GetCaseByIdAsync(id);
+            var @case = await _casesService.GetCaseByIdAsync(id);
 
             return @case == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(@case);
         }
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id:int:min(1)}")]
-        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] CaseUpdateDto @case)
-        {
-            if (!ModelState.IsValid)
-                return ValidationProblem(ModelState);
+        #region Docs
 
-            var result = await _caseService.UpdateCaseAsync(id, @case);
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+        [HttpPut(ApplicationRestAddons.Update)]
+        public async ValueTask<ActionResult> Update([FromRoute] int id, [FromBody] CaseUpdateDto @case)
+        {
+            var result = await _casesService.UpdateCaseAsync(id, @case);
 
             if (!result)
                 return ResponseResultsHelper.UpdateError();
@@ -72,14 +108,20 @@ namespace FoundersPC.API.Controllers.V1
             return Json(@case);
         }
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPost]
-        public async Task<ActionResult> Insert([FromBody] CaseInsertDto @case)
-        {
-            if (!ModelState.IsValid)
-                return ValidationProblem(ModelState);
+        #region Docs
 
-            var insertResult = await _caseService.CreateCaseAsync(@case);
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+        [HttpPost(ApplicationRestAddons.Create)]
+        public async ValueTask<ActionResult> Create([FromBody] CaseInsertDto @case)
+        {
+            var insertResult = await _casesService.CreateCaseAsync(@case);
 
             if (!insertResult)
                 return ResponseResultsHelper.InsertError();
@@ -89,23 +131,27 @@ namespace FoundersPC.API.Controllers.V1
             return Json(@case);
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id:int:min(1)}")]
-        public async Task<ActionResult> Delete([FromRoute] int id)
+        [HttpDelete(ApplicationRestAddons.Delete)]
+        public async ValueTask<ActionResult> Delete([FromRoute] int id)
         {
-            var readCase = await _caseService.GetCaseByIdAsync(id);
-
-            if (readCase == null)
-                return ResponseResultsHelper.NotFoundByIdResult(id);
-
-            var result = await _caseService.DeleteCaseAsync(id);
+            var result = await _casesService.DeleteCaseAsync(id);
 
             if (!result)
                 return ResponseResultsHelper.DeleteError();
 
             _logger.LogForModelDelete(HttpContext, id);
 
-            return Json(readCase);
+            return Ok();
         }
     }
 }

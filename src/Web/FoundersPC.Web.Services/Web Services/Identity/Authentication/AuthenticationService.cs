@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.RequestResponseShared.Request.Authentication;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Authentication;
 using FoundersPC.Web.Domain.Common.Authentication;
 using Microsoft.Extensions.Logging;
@@ -37,7 +38,39 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         #region Sign In
 
-        public async Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword)
+        /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">When model is unprocessable.</exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">model is <see langword="null"/></exception>
+        public Task<UserLoginResponse> SignInAsync(string emailOrLogin, string rawPassword)
         {
             var signInModel = new SignInViewModel
                               {
@@ -45,9 +78,41 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                                   RawPassword = rawPassword
                               };
 
-            return await SignInAsync(signInModel);
+            return SignInAsync(signInModel);
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">When model is unprocessable.</exception>
         public async Task<UserLoginResponse> SignInAsync(SignInViewModel model)
         {
             if (model is null)
@@ -71,12 +136,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                 throw new ArgumentNullException(nameof(model.RawPassword));
             }
 
-            using var client = _httpClientFactory.CreateClient("Sign In client");
-            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
+            var client = _httpClientFactory.CreateClient("Sign In client");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/");
 
             var mappedRequestModel = _mapper.Map<SignInViewModel, UserSignInRequest>(model);
 
-            var responseMessage = await client.PostAsJsonAsync("SignIn", mappedRequestModel);
+            var responseMessage = await client.PostAsJsonAsync($"{IdentityServerRoutes.Authentication.SignIn}", mappedRequestModel);
 
             if (!responseMessage.IsSuccessStatusCode)
             {
@@ -95,7 +160,39 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         #region Sign Up
 
-        public async Task<UserSignUpResponse> SignUpAsync(string email, string rawPassword)
+        /// <exception cref="T:System.Security.Authentication.AuthenticationException">When model is unprocessable.</exception>
+        /// <exception cref="T:System.ArgumentNullException">model is <see langword="null"/></exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        public Task<UserSignUpResponse> SignUpAsync(string email, string rawPassword)
         {
             var signUpModel = new SignUpViewModel
                               {
@@ -103,9 +200,41 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                                   RawPassword = rawPassword
                               };
 
-            return await SignUpAsync(signUpModel);
+            return SignUpAsync(signUpModel);
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Security.Authentication.AuthenticationException">When model is unprocessable.</exception>
         public async Task<UserSignUpResponse> SignUpAsync(SignUpViewModel model)
         {
             if (model is null)
@@ -129,12 +258,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                 throw new ArgumentNullException(nameof(model.RawPassword));
             }
 
-            using var client = _httpClientFactory.CreateClient("Sign Up client");
-            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
+            var client = _httpClientFactory.CreateClient("Sign Up client");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/");
 
             var mappedRequestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
-            var responseMessage = await client.PostAsJsonAsync("SignUp", mappedRequestModel);
+            var responseMessage = await client.PostAsJsonAsync($"{IdentityServerRoutes.Authentication.SignUp}", mappedRequestModel);
 
             if (!responseMessage.IsSuccessStatusCode)
             {
@@ -153,16 +282,80 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
 
         #region Forgot password
 
-        public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(string email)
+        /// <exception cref="T:System.ArgumentNullException">model is <see langword="null"/></exception>
+        /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">UnprocessableEntity.</exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        public Task<UserForgotPasswordResponse> ForgotPasswordAsync(string email)
         {
             var forgotPasswordModel = new ForgotPasswordViewModel
                                       {
                                           Email = email
                                       };
 
-            return await ForgotPasswordAsync(forgotPasswordModel);
+            return ForgotPasswordAsync(forgotPasswordModel);
         }
 
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">UnprocessableEntity.</exception>
         public async Task<UserForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordViewModel model)
         {
             if (model is null)
@@ -179,12 +372,12 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Authentication
                 throw new ArgumentNullException(nameof(model.Email));
             }
 
-            using var client = _httpClientFactory.CreateClient("Forgot password client");
-            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}Authentication/");
+            var client = _httpClientFactory.CreateClient("Forgot password client");
+            client.PrepareJsonRequest($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/");
 
             var mappedRequestModel = _mapper.Map<ForgotPasswordViewModel, UserForgotPasswordRequest>(model);
 
-            var responseMessage = await client.PostAsJsonAsync("ForgotPassword", mappedRequestModel);
+            var responseMessage = await client.PostAsJsonAsync($"{IdentityServerRoutes.Authentication.ForgotPassword}", mappedRequestModel);
 
             if (!responseMessage.IsSuccessStatusCode)
             {

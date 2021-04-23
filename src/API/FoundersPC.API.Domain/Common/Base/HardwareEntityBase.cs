@@ -17,7 +17,7 @@ namespace FoundersPC.API.Domain.Common.Base
         public int ProducerId { get; set; }
 
         [ForeignKey(nameof(ProducerId))]
-        public Producer Producer { get; set; }
+        public ProducerEntity ProducerEntity { get; set; }
 
         [MaxLength(100)]
         [MinLength(0)]

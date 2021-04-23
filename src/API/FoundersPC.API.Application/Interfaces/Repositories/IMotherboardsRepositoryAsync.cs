@@ -8,6 +8,6 @@ using FoundersPC.RepositoryShared.Repository;
 namespace FoundersPC.API.Application.Interfaces.Repositories
 {
     public interface
-        IMotherboardsRepositoryAsync : IRepositoryAsync<Motherboard>,
-                                       IPaginateableRepository<Motherboard> { }
+        IMotherboardsRepositoryAsync : IRepositoryAsync<MotherboardEntity>,
+                                       IPaginateableRepository<MotherboardEntity> { }
 }

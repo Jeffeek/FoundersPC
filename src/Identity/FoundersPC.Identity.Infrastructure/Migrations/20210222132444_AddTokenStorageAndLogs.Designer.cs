@@ -44,7 +44,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.ToTable("TokenAccessLogs");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.ApiAccessToken", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.AccessTokenEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                     b.ToTable("ApiTokens");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.ApiAccessUserToken", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.AccessTokenEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -183,18 +183,18 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
 
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.AccessTokenLog", b =>
                 {
-                    b.HasOne("FoundersPC.Identity.Domain.Entities.ApiAccessUserToken", "ApiAccessToken")
+                    b.HasOne("FoundersPC.Identity.Domain.Entities.AccessTokenEntity", "AccessTokenEntity")
                         .WithMany()
                         .HasForeignKey("ApiAccessUsersTokenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ApiAccessToken");
+                    b.Navigation("AccessTokenEntity");
                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.ApiAccessUserToken", b =>
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.AccessTokenEntity", b =>
                 {
-                    b.HasOne("FoundersPC.Identity.Domain.Entities.ApiAccessToken", "Token")
+                    b.HasOne("FoundersPC.Identity.Domain.Entities.AccessTokenEntity", "Token")
                         .WithMany()
                         .HasForeignKey("ApiAccessTokenId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -20,17 +20,17 @@ namespace FoundersPC.API.Services
     {
         public static void AddHardwareServices(this IServiceCollection services)
         {
-            services.AddScoped<IProducerService, ProducersService>();
-            services.AddScoped<IProcessorCoreService, ProcessorCoreService>();
-            services.AddScoped<ICPUService, CPUService>();
-            services.AddScoped<IVideoCardCoreService, VideoCardCoreService>();
-            services.AddScoped<IGPUService, GPUService>();
-            services.AddScoped<IHDDService, HDDService>();
-            services.AddScoped<ISSDService, SSDService>();
-            services.AddScoped<IRAMService, RAMService>();
-            services.AddScoped<ICaseService, CaseService>();
-            services.AddScoped<IMotherboardService, MotherboardService>();
-            services.AddScoped<IPowerSupplyService, PowerSupplyService>();
+            services.AddScoped<IProducersService, ProducersService>();
+            services.AddScoped<IProcessorCoresService, ProcessorCoresService>();
+            services.AddScoped<IProcessorsService, ProcessorsService>();
+            services.AddScoped<IVideoCardCoresService, VideoCardCoresService>();
+            services.AddScoped<IVideoCardsService, VideoCardsService>();
+            services.AddScoped<IHardDriveDisksService, HardDriveDisksService>();
+            services.AddScoped<ISolidStateDrivesService, SolidStateDrivesService>();
+            services.AddScoped<IRandomAccessMemoryService, RandomAccessMemoryService>();
+            services.AddScoped<ICasesService, CasesService>();
+            services.AddScoped<IMotherboardsService, MotherboardsService>();
+            services.AddScoped<IPowerSuppliesService, PowerSuppliesService>();
         }
     }
 }

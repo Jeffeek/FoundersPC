@@ -1,0 +1,128 @@
+04/17/2021 18:20:12 HARDWARE API started..
+04/17/2021 18:20:12 HARDWARE API HostBuilder created
+04/17/2021 18:20:12 Host built
+04/17/2021 18:20:13 Now listening on: "https://localhost:4000"
+04/17/2021 18:20:13 Application started. Press Ctrl+C to shut down.
+04/17/2021 18:20:13 Hosting environment: "Development"
+04/17/2021 18:20:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 18:20:19 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 87.8034 ms
+04/17/2021 18:20:19 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 87.8040 ms
+04/17/2021 18:30:33 HARDWARE API started..
+04/17/2021 18:30:33 HARDWARE API HostBuilder created
+04/17/2021 18:30:34 Host built
+04/17/2021 18:30:34 Now listening on: "https://localhost:4000"
+04/17/2021 18:30:34 Application started. Press Ctrl+C to shut down.
+04/17/2021 18:30:34 Hosting environment: "Development"
+04/17/2021 18:30:34 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 18:30:38 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 62.8464 ms
+04/17/2021 18:30:38 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 62.8464 ms
+04/17/2021 18:31:02 HTTP "GET" "/HardwareApi/Cases?Page=5&Size=11" responded 403 in 1.4208 ms
+04/17/2021 18:50:28 HARDWARE API started..
+04/17/2021 18:50:28 HARDWARE API HostBuilder created
+04/17/2021 18:50:29 Host built
+04/17/2021 18:50:30 Now listening on: "https://localhost:4000"
+04/17/2021 18:50:30 Application started. Press Ctrl+C to shut down.
+04/17/2021 18:50:30 Hosting environment: "Development"
+04/17/2021 18:50:30 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 18:50:33 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 71.3318 ms
+04/17/2021 18:50:33 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.2452 ms
+04/17/2021 18:51:34 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 18:51:57 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 47235.3515 ms
+04/17/2021 18:57:28 HARDWARE API started..
+04/17/2021 18:57:28 HARDWARE API HostBuilder created
+04/17/2021 18:57:29 Host built
+04/17/2021 18:57:29 Now listening on: "https://localhost:4000"
+04/17/2021 18:57:29 Application started. Press Ctrl+C to shut down.
+04/17/2021 18:57:29 Hosting environment: "Development"
+04/17/2021 18:57:29 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 18:57:33 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 92.7506 ms
+04/17/2021 18:57:33 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.1544 ms
+04/17/2021 18:58:04 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 18:58:05 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 13792.6653 ms
+04/17/2021 19:01:11 HARDWARE API started..
+04/17/2021 19:01:11 HARDWARE API HostBuilder created
+04/17/2021 19:01:12 Host built
+04/17/2021 19:01:13 Now listening on: "https://localhost:4000"
+04/17/2021 19:01:13 Application started. Press Ctrl+C to shut down.
+04/17/2021 19:01:13 Hosting environment: "Development"
+04/17/2021 19:01:13 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 19:01:16 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 64.9222 ms
+04/17/2021 19:01:16 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.5034 ms
+04/17/2021 19:01:29 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:01:56 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 27607.0012 ms
+04/17/2021 19:03:34 HARDWARE API started..
+04/17/2021 19:03:34 HARDWARE API HostBuilder created
+04/17/2021 19:03:35 Host built
+04/17/2021 19:03:35 Now listening on: "https://localhost:4000"
+04/17/2021 19:03:35 Application started. Press Ctrl+C to shut down.
+04/17/2021 19:03:35 Hosting environment: "Development"
+04/17/2021 19:03:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 19:03:39 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 75.5561 ms
+04/17/2021 19:03:39 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.1959 ms
+04/17/2021 19:03:52 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:04:16 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 24674.2865 ms
+04/17/2021 19:07:09 HARDWARE API started..
+04/17/2021 19:07:09 HARDWARE API HostBuilder created
+04/17/2021 19:07:10 Host built
+04/17/2021 19:07:11 Now listening on: "https://localhost:4000"
+04/17/2021 19:07:11 Application started. Press Ctrl+C to shut down.
+04/17/2021 19:07:11 Hosting environment: "Development"
+04/17/2021 19:07:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 19:07:16 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 60.1631 ms
+04/17/2021 19:07:16 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.2044 ms
+04/17/2021 19:07:28 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:07:30 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 1801.0488 ms
+04/17/2021 19:10:03 HARDWARE API started..
+04/17/2021 19:10:04 HARDWARE API HostBuilder created
+04/17/2021 19:10:05 Host built
+04/17/2021 19:10:05 Now listening on: "https://localhost:4000"
+04/17/2021 19:10:05 Application started. Press Ctrl+C to shut down.
+04/17/2021 19:10:05 Hosting environment: "Development"
+04/17/2021 19:10:05 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 19:10:09 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 83.8924 ms
+04/17/2021 19:10:09 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 1.2274 ms
+04/17/2021 19:10:25 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:10:26 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 1781.9355 ms
+04/17/2021 19:14:11 HARDWARE API started..
+04/17/2021 19:14:11 HARDWARE API HostBuilder created
+04/17/2021 19:14:12 Host built
+04/17/2021 19:14:12 Now listening on: "https://localhost:4000"
+04/17/2021 19:14:12 Application started. Press Ctrl+C to shut down.
+04/17/2021 19:14:12 Hosting environment: "Development"
+04/17/2021 19:14:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/17/2021 19:14:17 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 65.5383 ms
+04/17/2021 19:14:17 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 4.2150 ms
+04/17/2021 19:14:27 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:28 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 1774.4116 ms
+04/17/2021 19:14:39 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:39 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 46.0253 ms
+04/17/2021 19:14:40 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:40 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 20.3632 ms
+04/17/2021 19:14:41 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:41 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 7.0744 ms
+04/17/2021 19:14:42 ProducersController: request for reading page: 7, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:42 HTTP "GET" "/HardwareApi/Producers?Page=7&Size=10" responded 200 in 6.2723 ms
+04/17/2021 19:14:44 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:44 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 6.4786 ms
+04/17/2021 19:14:45 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:45 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 6.0373 ms
+04/17/2021 19:14:46 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:46 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 5.3482 ms
+04/17/2021 19:14:47 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:47 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 5.4542 ms
+04/17/2021 19:14:48 ProducersController: request for reading page: 5, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:48 HTTP "GET" "/HardwareApi/Producers?Page=5&Size=10" responded 200 in 5.7317 ms
+04/17/2021 19:14:49 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:49 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 6.8098 ms
+04/17/2021 19:14:50 ProducersController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:50 HTTP "GET" "/HardwareApi/Producers?Page=3&Size=10" responded 200 in 5.4989 ms
+04/17/2021 19:14:51 ProducersController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:51 HTTP "GET" "/HardwareApi/Producers?Page=2&Size=10" responded 200 in 5.7431 ms
+04/17/2021 19:14:53 ProducersController: request for reading with id = 11 (one) by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:14:53 HTTP "GET" "/HardwareApi/Producers/11" responded 200 in 46.2128 ms
+04/17/2021 19:15:05 ProducersController: request for reading page: 6, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:15:05 HTTP "GET" "/HardwareApi/Producers?Page=6&Size=10" responded 200 in 5.3366 ms
+04/17/2021 19:15:06 ProducersController: request for reading page: 7, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:15:06 HTTP "GET" "/HardwareApi/Producers?Page=7&Size=10" responded 200 in 5.7168 ms
+04/17/2021 19:15:07 ProducersController: request for reading page: 4, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/17/2021 19:15:07 HTTP "GET" "/HardwareApi/Producers?Page=4&Size=10" responded 200 in 8.2586 ms

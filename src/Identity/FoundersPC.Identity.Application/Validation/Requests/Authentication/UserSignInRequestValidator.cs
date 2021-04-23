@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using FluentValidation;
-using FoundersPC.RequestResponseShared.Request.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
 
 #endregion
 

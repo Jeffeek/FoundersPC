@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -15,16 +16,17 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Identity.Services.Administration.Admin_Services
 {
+    // TODO: spread into another services
     public class AdminService : IAdminService
     {
-        private readonly IApiAccessUsersTokensService _accessUsersTokensService;
+        private readonly IAccessUsersTokensService _accessUsersTokensService;
         private readonly IEmailService _emailService;
         private readonly ILogger<AdminService> _logger;
         private readonly IUnitOfWorkUsersIdentity _unitOfWork;
 
         public AdminService(IEmailService emailService,
                             IUnitOfWorkUsersIdentity unitOfWork,
-                            IApiAccessUsersTokensService accessUsersTokensService,
+                            IAccessUsersTokensService accessUsersTokensService,
                             ILogger<AdminService> logger)
         {
             _emailService = emailService;
@@ -113,12 +115,14 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         private async Task<bool> BlockAllUserTokensAsync(int userId)
         {
-            var userTokens = await _unitOfWork.ApiAccessUsersTokensRepository.GetAllUserTokens(userId);
+            var userTokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userId);
+
+            var blockingResults = new List<bool>();
 
             foreach (var token in userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now))
-                await _accessUsersTokensService.BlockAsync(token.Id);
+                blockingResults.Add(await _accessUsersTokensService.BlockAsync(token.Id));
 
-            return await _unitOfWork.SaveChangesAsync() > 0;
+            return blockingResults.All(x => x);
         }
 
         #endregion
@@ -184,11 +188,11 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         #endregion
 
-        #region Block API token
+        #region Block API tokenEntity
 
-        public async Task<bool> BlockAPITokenAsync(int tokenId) => await _accessUsersTokensService.BlockAsync(tokenId);
+        public Task<bool> BlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.BlockAsync(tokenId);
 
-        public async Task<bool> BlockAPITokenAsync(string token) => await _accessUsersTokensService.BlockAsync(token);
+        public Task<bool> BlockAccessTokenAsync(string token) => _accessUsersTokensService.BlockAsync(token);
 
         #endregion
     }

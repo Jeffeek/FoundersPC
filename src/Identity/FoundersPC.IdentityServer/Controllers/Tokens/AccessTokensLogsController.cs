@@ -3,8 +3,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.Log_Services;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,40 +16,39 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.IdentityServer.Controllers.Tokens
 {
-    [Route("FoundersPCIdentity/Tokens/Logs")]
     [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
     [ApiController]
+    [Route(IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint)]
+    [ModelValidation]
     public class AccessTokensLogsController : Controller
     {
         private readonly IAccessTokensLogsService _accessTokensLogsService;
 
         public AccessTokensLogsController(IAccessTokensLogsService accessTokensLogsService) => _accessTokensLogsService = accessTokensLogsService;
 
-        [HttpGet("All")]
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAll() => await _accessTokensLogsService.GetAllTokensLogsAsync();
+        [HttpGet(ApplicationRestAddons.All)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAll() => await _accessTokensLogsService.GetAllTokensLogsAsync();
 
         [HttpGet]
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableLogs([FromQuery(Name = "Page")] int pageNumber,
-                                                                                  [FromQuery(Name = "Size")] int pageSize) =>
-            await _accessTokensLogsService.GetPaginateableAsync(pageNumber, pageSize);
+        public async ValueTask<ActionResult<IPaginationResponse<AccessTokenLogReadDto>>> GetPaginateableLogs([FromQuery] PaginationRequest request) =>
+            Json(await _accessTokensLogsService.GetPaginateableAsync(request.PageNumber, request.PageSize));
 
-        [HttpGet("Token/ById/{tokenId:int:min(1)}")]
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetLogsForTokenById([FromRoute] int tokenId) =>
-            await _accessTokensLogsService.GetTokenLogsAsync(tokenId);
+        [HttpGet(ApplicationRestAddons.GetById)]
+        public async ValueTask<ActionResult<AccessTokenLogReadDto>> Get([FromRoute] int id) => await _accessTokensLogsService.GetTokenLogByIdAsync(id);
 
-        [HttpGet("Token/ByToken/{token:length(64)}")]
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetLogsForTokenByStringToken([FromRoute] int token) =>
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenId)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsByTokenId([FromRoute] int id) => await _accessTokensLogsService.GetTokenLogsAsync(id);
+
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenString)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsForTokenByStringToken([FromRoute] int token) =>
             await _accessTokensLogsService.GetTokenLogsAsync(token);
 
-        [HttpGet("{id:int:min(1)}")]
-        public async Task<ActionResult<AccessTokenLogReadDto>> GetByTokenId(int id) => await _accessTokensLogsService.GetTokenLogByIdAsync(id);
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByUserId)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserId([FromRoute] int id) =>
+            await _accessTokensLogsService.GetUserTokenUsagesByUserIdAsync(id);
 
-        [HttpGet("User/ById/{userId:int:min(1)}")]
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogs(int userId) =>
-            await _accessTokensLogsService.GetUserTokenUsagesByUserIdAsync(userId);
-
-        [HttpGet("User/ByEmail/{userEmail}")]
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAllUserAccessTokensLogs(string userEmail) =>
-            await _accessTokensLogsService.GetUserTokenUsagesByUserEmailAsync(userEmail);
+        [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByUserEmail)]
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserEmail([FromRoute] string email) =>
+            await _accessTokensLogsService.GetUserTokenUsagesByUserEmailAsync(email);
     }
 }

@@ -1,0 +1,229 @@
+﻿@model FoundersPC.Web.Domain.Common.Hardware.ProcessorDtoViewModel
+
+<div
+    class='d-grid'>
+<div
+    class='row'>
+    <div
+        class='text-light'>
+        <input
+            asp-for='IntegratedGraphics'
+            class='form-check-input'
+            type='checkbox'>
+        <label
+            class='form-check-label'>
+            Integrated Graphics
+        </label>
+    </div>
+    <span
+        asp-validation-for='IntegratedGraphics'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class="row">
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='TDP'
+                class='bg-dark form-control text-light'>
+            <label>TDP</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='TDP'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Title'
+                class='bg-dark form-control text-light'>
+            <label>Title</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Title'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='MaxRamSpeed'
+                class='bg-dark form-control text-light'>
+            <label>MaxRamSpeed</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='MaxRamSpeed'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Cores'
+                class='bg-dark form-control text-light'>
+            <label>Cores</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Cores'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Threads'
+                class='bg-dark form-control text-light'>
+            <label>Threads</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Threads'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Frequency'
+                class='bg-dark form-control text-light'>
+            <label>Frequency</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Frequency'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='TurboBoostFrequency'
+                class='bg-dark form-control text-light'>
+            <label>Turbo Boost Frequency</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='TurboBoostFrequency'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='TechProcess'
+                class='bg-dark form-control text-light'>
+            <label>Tech Process</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='TechProcess'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='ProcessorCoreId'
+                class='bg-dark form-control text-light'>
+            <label>Processor Core Id</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='ProcessorCoreId'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='ProducerId'
+                class='bg-dark form-control text-light'>
+            <label>Producer Id</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='ProducerId'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='L2Cache'
+                class='bg-dark form-control text-light'>
+            <label>L2 Cache</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='L2Cache'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='L3Cache'
+                class='bg-dark form-control text-light'>
+            <label>L3 Cache</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='L3Cache'
+        class='text-danger'>
+    </span>
+</div>
+<partial
+    name='_ComponentApplyButton'/>
+</div>

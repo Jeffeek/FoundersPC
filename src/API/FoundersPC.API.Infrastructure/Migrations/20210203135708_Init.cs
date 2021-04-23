@@ -267,7 +267,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                                                             onDelete : ReferentialAction.Cascade);
                                                        });
 
-            migrationBuilder.CreateTable("RandomAccessMemory",
+            migrationBuilder.CreateTable("RandomAccessMemoryEntity",
                                          table => new
                                                   {
                                                       Id = table.Column<int>("int", nullable : false)
@@ -427,11 +427,11 @@ namespace FoundersPC.API.Infrastructure.Migrations
                                          "Id");
 
             migrationBuilder.CreateIndex("IX_RandomAccessMemory_Id",
-                                         "RandomAccessMemory",
+                                         "RandomAccessMemoryEntity",
                                          "Id");
 
             migrationBuilder.CreateIndex("IX_RandomAccessMemory_ProducerId",
-                                         "RandomAccessMemory",
+                                         "RandomAccessMemoryEntity",
                                          "ProducerId");
 
             migrationBuilder.CreateIndex("IX_SolidStateDrives_Id",
@@ -467,7 +467,7 @@ namespace FoundersPC.API.Infrastructure.Migrations
 
             migrationBuilder.DropTable("Processors");
 
-            migrationBuilder.DropTable("RandomAccessMemory");
+            migrationBuilder.DropTable("RandomAccessMemoryEntity");
 
             migrationBuilder.DropTable("SolidStateDrives");
 

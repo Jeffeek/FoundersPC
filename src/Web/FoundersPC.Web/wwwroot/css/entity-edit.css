@@ -13,6 +13,10 @@
 .btn-apply
 {
     border: 1px solid;
-    margin: 20px 0px 15px 0px;
+    margin: 20px 0 15px 0;
     padding: 5px 10px 5px 10px;
+}
+
+div.row {
+    margin-top: 1rem !important;
 }

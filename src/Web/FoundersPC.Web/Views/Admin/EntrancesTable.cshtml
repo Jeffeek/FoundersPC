@@ -1,5 +1,5 @@
 ﻿@using System.Globalization
-@using System
+@using PagedList.Core.Mvc
 @model FoundersPC.Web.Domain.Common.Entrances.EntrancesViewModel
 
 @{
@@ -9,10 +9,7 @@
     <link
         href='~/css/table.css'
         rel='stylesheet'>
-}
-
-
-}
+}}
 
 <div
     class='table-wrapper'>
@@ -74,7 +71,7 @@
             </thead>
             <tbody>
             @{
-                foreach (var entrance in Model.IndexModel.Models) {
+                foreach (var entrance in Model.IndexModel.PagedList) {
                     <tr>
                         <td>
                             @entrance.Id
@@ -92,33 +89,13 @@
         </table>
         @{
             if (Model.IndexModel.IsPaginationNeeded) {
-                <nav>
-                    <ul
-                        class="justify-content-center pagination">
-                        <li
-                            class="page-item @(Html.Raw(Model.IndexModel.Page.HasPreviousPage ? String.Empty : "disabled"))">
-                            <a
-                                aria-disabled='@(!Model.IndexModel.Page.HasPreviousPage)'
-                                asp-action='EntrancesTable'
-                                asp-controller='Admin'
-                                asp-route-pageNumber='@(Model.IndexModel.Page.CurrentPageNumber - 1)'
-                                class="bg-light page-link">
-                                Previous
-                            </a>
-                        </li>
-                        <li
-                            class="page-item @(Html.Raw(Model.IndexModel.Page.HasNextPage ? String.Empty : "disabled"))">
-                            <a
-                                aria-disabled='@(!Model.IndexModel.Page.HasNextPage)'
-                                asp-action='EntrancesTable'
-                                asp-controller='Admin'
-                                asp-route-pageNumber='@(Model.IndexModel.Page.CurrentPageNumber + 1)'
-                                class="bg-light page-link">
-                                Next
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <pager
+                    asp-action="EntrancesTable"
+                    asp-controller="Admin"
+                    class="d-flex justify-content-center"
+                    list="@Model.IndexModel.PagedList"
+                    options="@PagedListRenderOptions.Bootstrap4Full"
+                    param-page-number='pageNumber'/>
             }
         }
     </div>

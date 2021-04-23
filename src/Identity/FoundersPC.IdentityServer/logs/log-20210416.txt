@@ -1,0 +1,400 @@
+04/16/2021 16:27:51 Identity server started..
+04/16/2021 16:27:51 Identity server HostBuilder created
+04/16/2021 16:27:52 Host built
+04/16/2021 16:27:52 Now listening on: "https://localhost:3000"
+04/16/2021 16:27:52 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:27:52 Hosting environment: "Development"
+04/16/2021 16:27:52 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 16:28:00 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 16:28:00 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 16:28:00 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2200.7001 ms
+04/16/2021 16:40:15 Identity server started..
+04/16/2021 16:40:15 Identity server HostBuilder created
+04/16/2021 16:40:16 Host built
+04/16/2021 16:40:16 Now listening on: "https://localhost:3000"
+04/16/2021 16:40:16 Application started. Press Ctrl+C to shut down.
+04/16/2021 16:40:16 Hosting environment: "Development"
+04/16/2021 16:40:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 16:40:23 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 16:40:23 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 16:40:23 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2140.5286 ms
+04/16/2021 20:56:06 Identity server started..
+04/16/2021 20:56:07 Identity server HostBuilder created
+04/16/2021 20:56:07 Host built
+04/16/2021 20:56:08 Now listening on: "https://localhost:3000"
+04/16/2021 20:56:08 Application started. Press Ctrl+C to shut down.
+04/16/2021 20:56:08 Hosting environment: "Development"
+04/16/2021 20:56:08 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 20:56:21 HTTP "POST" "/FoundersPCIdentity/SignIn" responded 404 in 26.9546 ms
+04/16/2021 20:59:34 Identity server started..
+04/16/2021 20:59:34 Identity server HostBuilder created
+04/16/2021 20:59:35 Host built
+04/16/2021 20:59:35 Now listening on: "https://localhost:3000"
+04/16/2021 20:59:35 Application started. Press Ctrl+C to shut down.
+04/16/2021 20:59:35 Hosting environment: "Development"
+04/16/2021 20:59:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 20:59:47 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 20:59:47 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 20:59:48 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2104.1759 ms
+04/16/2021 21:40:35 Identity server started..
+04/16/2021 21:40:35 Identity server HostBuilder created
+04/16/2021 21:40:35 Host built
+04/16/2021 21:40:36 Now listening on: "https://localhost:3000"
+04/16/2021 21:40:36 Application started. Press Ctrl+C to shut down.
+04/16/2021 21:40:36 Hosting environment: "Development"
+04/16/2021 21:40:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 21:40:39 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 42.9429 ms
+04/16/2021 21:40:39 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 43.4898 ms
+04/16/2021 21:42:56 Identity server started..
+04/16/2021 21:42:56 Identity server HostBuilder created
+04/16/2021 21:42:57 Host built
+04/16/2021 21:42:57 Now listening on: "https://localhost:3000"
+04/16/2021 21:42:57 Application started. Press Ctrl+C to shut down.
+04/16/2021 21:42:57 Hosting environment: "Development"
+04/16/2021 21:42:57 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 21:43:00 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 41.5683 ms
+04/16/2021 21:43:00 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 43.2193 ms
+04/16/2021 22:49:43 Identity server started..
+04/16/2021 22:49:43 Identity server HostBuilder created
+04/16/2021 22:49:44 Host built
+04/16/2021 22:49:44 Now listening on: "https://localhost:3000"
+04/16/2021 22:49:44 Application started. Press Ctrl+C to shut down.
+04/16/2021 22:49:44 Hosting environment: "Development"
+04/16/2021 22:49:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 22:49:47 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 36.6637 ms
+04/16/2021 22:49:47 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 35.9057 ms
+04/16/2021 22:51:10 Identity server started..
+04/16/2021 22:51:10 Identity server HostBuilder created
+04/16/2021 22:51:11 Host built
+04/16/2021 22:51:11 Now listening on: "https://localhost:3000"
+04/16/2021 22:51:11 Application started. Press Ctrl+C to shut down.
+04/16/2021 22:51:11 Hosting environment: "Development"
+04/16/2021 22:51:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 22:51:14 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 42.8786 ms
+04/16/2021 22:51:14 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 43.3580 ms
+04/16/2021 22:51:19 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 22:51:19 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 22:51:19 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2036.5375 ms
+04/16/2021 22:51:31 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 205.2172 ms
+04/16/2021 22:51:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=2&Size=10" responded 200 in 24.1029 ms
+04/16/2021 22:51:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 7.7853 ms
+04/16/2021 22:51:34 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=4&Size=10" responded 200 in 4.5468 ms
+04/16/2021 22:51:34 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=5&Size=10" responded 200 in 4.5819 ms
+04/16/2021 22:51:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=6&Size=10" responded 200 in 4.0427 ms
+04/16/2021 22:51:35 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 4.7084 ms
+04/16/2021 22:51:36 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=9&Size=10" responded 200 in 4.7214 ms
+04/16/2021 22:51:37 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=7&Size=10" responded 200 in 4.2215 ms
+04/16/2021 22:51:37 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=3&Size=10" responded 200 in 4.7027 ms
+04/16/2021 22:51:41 HTTP "GET" "/FoundersPCIdentity/Users/Entrances/Entrances/Between?Start=2021-04-13T00:00:00&Finish=2021-04-16T00:00:00" responded 404 in 0.1699 ms
+04/16/2021 22:53:31 Identity server started..
+04/16/2021 22:53:31 Identity server HostBuilder created
+04/16/2021 22:53:32 Host built
+04/16/2021 22:53:32 Now listening on: "https://localhost:3000"
+04/16/2021 22:53:32 Application started. Press Ctrl+C to shut down.
+04/16/2021 22:53:32 Hosting environment: "Development"
+04/16/2021 22:53:32 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 22:53:35 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 42.5109 ms
+04/16/2021 22:53:35 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 42.0554 ms
+04/16/2021 22:53:40 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 22:53:40 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 22:53:40 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2007.5807 ms
+04/16/2021 22:53:43 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 206.1467 ms
+04/16/2021 22:53:44 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=8&Size=10" responded 200 in 20.5399 ms
+04/16/2021 22:53:45 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=11&Size=10" responded 200 in 7.0892 ms
+04/16/2021 22:53:49 HTTP "GET" "/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-13T00:00:00&Finish=2021-04-16T00:00:00" responded 200 in 14.1949 ms
+04/16/2021 23:13:04 Identity server started..
+04/16/2021 23:13:04 Identity server HostBuilder created
+04/16/2021 23:13:05 Host built
+04/16/2021 23:13:05 Now listening on: "https://localhost:3000"
+04/16/2021 23:13:05 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:13:05 Hosting environment: "Development"
+04/16/2021 23:13:05 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:13:09 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 48.2101 ms
+04/16/2021 23:13:09 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 48.7699 ms
+04/16/2021 23:13:14 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:13:14 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:13:15 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2054.1370 ms
+04/16/2021 23:13:19 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 213.9865 ms
+04/16/2021 23:13:24 HTTP "GET" "/FoundersPCIdentity/Tokens/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 404 in 0.1354 ms
+04/16/2021 23:13:49 Application is shutting down...
+04/16/2021 23:18:10 Identity server started..
+04/16/2021 23:18:10 Identity server HostBuilder created
+04/16/2021 23:18:11 Host built
+04/16/2021 23:18:11 Now listening on: "https://localhost:3000"
+04/16/2021 23:18:11 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:18:11 Hosting environment: "Development"
+04/16/2021 23:18:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:18:15 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 53.2466 ms
+04/16/2021 23:18:15 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 53.2748 ms
+04/16/2021 23:18:24 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:18:25 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:18:25 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2101.3657 ms
+04/16/2021 23:18:27 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 215.8478 ms
+04/16/2021 23:18:29 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 37.9869 ms
+04/16/2021 23:18:33 HTTP "GET" "/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-06T00:00:00&Finish=2021-04-16T00:00:00" responded 200 in 22.4338 ms
+04/16/2021 23:18:35 HTTP "GET" "/FoundersPCIdentity/Tokens/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 404 in 0.1345 ms
+04/16/2021 23:18:54 Application is shutting down...
+04/16/2021 23:20:40 Identity server started..
+04/16/2021 23:20:41 Identity server HostBuilder created
+04/16/2021 23:20:41 Host built
+04/16/2021 23:20:42 Now listening on: "https://localhost:3000"
+04/16/2021 23:20:42 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:20:42 Hosting environment: "Development"
+04/16/2021 23:20:42 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:20:45 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 46.8733 ms
+04/16/2021 23:20:45 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 46.3189 ms
+04/16/2021 23:20:55 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:20:55 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:20:56 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2023.0793 ms
+04/16/2021 23:20:58 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 213.5821 ms
+04/16/2021 23:21:01 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 38.5195 ms
+04/16/2021 23:21:05 HTTP "GET" "/FoundersPCIdentity/Tokens/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 404 in 0.1306 ms
+04/16/2021 23:21:07 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 14.0635 ms
+04/16/2021 23:21:09 HTTP "GET" "/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 200 in 25.2055 ms
+04/16/2021 23:21:21 HTTP "GET" "/FoundersPCIdentity/Tokens/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 404 in 0.9355 ms
+04/16/2021 23:24:52 Identity server started..
+04/16/2021 23:24:52 Identity server HostBuilder created
+04/16/2021 23:24:53 Host built
+04/16/2021 23:24:53 Now listening on: "https://localhost:3000"
+04/16/2021 23:24:53 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:24:53 Hosting environment: "Development"
+04/16/2021 23:24:53 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:24:56 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 40.1850 ms
+04/16/2021 23:24:56 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 40.7423 ms
+04/16/2021 23:25:01 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:25:01 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:25:01 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2057.7332 ms
+04/16/2021 23:25:04 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 228.6873 ms
+04/16/2021 23:25:07 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 37.5203 ms
+04/16/2021 23:25:10 HTTP "GET" "/FoundersPCIdentity/Tokens/Logs?Page=1&Size=10" responded 404 in 0.1764 ms
+04/16/2021 23:25:23 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 13.4239 ms
+04/16/2021 23:27:45 Identity server started..
+04/16/2021 23:28:01 Identity server started..
+04/16/2021 23:28:02 Identity server HostBuilder created
+04/16/2021 23:28:02 Host built
+04/16/2021 23:28:03 Now listening on: "https://localhost:3000"
+04/16/2021 23:28:03 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:28:03 Hosting environment: "Development"
+04/16/2021 23:28:03 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:28:06 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 45.6292 ms
+04/16/2021 23:28:06 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 45.0725 ms
+04/16/2021 23:28:10 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:28:10 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:28:10 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2036.9246 ms
+04/16/2021 23:28:13 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 215.7284 ms
+04/16/2021 23:28:16 HTTP "GET" "/FoundersPCIdentity/Tokens/Logs?Page=1&Size=10" responded 200 in 38.9249 ms
+04/16/2021 23:28:22 HTTP "GET" "/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 200 in 27.7496 ms
+04/16/2021 23:28:27 HTTP "GET" "/FoundersPCIdentity/Users/Entrances?Page=1&Size=10" responded 200 in 26.6034 ms
+04/16/2021 23:28:29 HTTP "GET" "/FoundersPCIdentity/Users/Entrances/Between?Start=2021-04-14T00:00:00&Finish=2021-04-16T00:00:00" responded 200 in 21.7553 ms
+04/16/2021 23:28:32 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 6.0000 ms
+04/16/2021 23:28:35 HTTP "GET" "/FoundersPCIdentity/Tokens/Logs/ByUserId/1" responded 200 in 14.1396 ms
+04/16/2021 23:28:37 HTTP "GET" "/FoundersPCIdentity/Tokens/Logs/ByUserId/5" responded 200 in 6.5666 ms
+04/16/2021 23:28:44 HTTP "GET" "/FoundersPCIdentity/Users/ById/1/Entrances" responded 200 in 19.0592 ms
+04/16/2021 23:28:49 HTTP "GET" "/FoundersPCIdentity/Users/ById/17/Entrances" responded 200 in 8.7372 ms
+04/16/2021 23:29:15 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/MakeInactive/ById" responded 405 in 0.3969 ms
+04/16/2021 23:29:55 Application is shutting down...
+04/16/2021 23:31:01 Identity server started..
+04/16/2021 23:31:01 Identity server HostBuilder created
+04/16/2021 23:31:02 Host built
+04/16/2021 23:31:02 Now listening on: "https://localhost:3000"
+04/16/2021 23:31:02 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:31:02 Hosting environment: "Development"
+04/16/2021 23:31:02 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:31:05 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 29.5561 ms
+04/16/2021 23:31:05 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.3089 ms
+04/16/2021 23:31:11 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:31:11 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:31:11 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2055.2015 ms
+04/16/2021 23:31:15 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 215.8969 ms
+04/16/2021 23:31:42 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/MakeInactive/ById" responded 405 in 0.5324 ms
+04/16/2021 23:33:27 Identity server started..
+04/16/2021 23:33:27 Identity server HostBuilder created
+04/16/2021 23:33:28 Host built
+04/16/2021 23:33:29 Now listening on: "https://localhost:3000"
+04/16/2021 23:33:29 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:33:29 Hosting environment: "Development"
+04/16/2021 23:33:29 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:33:32 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 54.0719 ms
+04/16/2021 23:33:32 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 53.4957 ms
+04/16/2021 23:33:38 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:33:39 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:33:39 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2099.2647 ms
+04/16/2021 23:33:41 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 220.8344 ms
+04/16/2021 23:33:47 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:33:47 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:33:47 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:33:47 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:33:47 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 1746.9085 ms
+04/16/2021 23:36:03 Identity server started..
+04/16/2021 23:36:03 Identity server HostBuilder created
+04/16/2021 23:36:03 Host built
+04/16/2021 23:36:04 Now listening on: "https://localhost:3000"
+04/16/2021 23:36:04 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:36:04 Hosting environment: "Development"
+04/16/2021 23:36:04 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:36:07 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 35.8573 ms
+04/16/2021 23:36:07 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.5459 ms
+04/16/2021 23:36:13 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:36:13 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:36:14 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2111.2012 ms
+04/16/2021 23:36:16 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 214.0968 ms
+04/16/2021 23:37:30 Successful sending an email to: ilyushinmisha@yandex.ru
+04/16/2021 23:37:42 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:38:13 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:38:37 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:38:47 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:39:07 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 153666.9809 ms
+04/16/2021 23:39:21 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 7.4343 ms
+04/16/2021 23:39:23 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/MakeInactive/ById" responded 405 in 2.5521 ms
+04/16/2021 23:39:42 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 8.7438 ms
+04/16/2021 23:39:43 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 5.0222 ms
+04/16/2021 23:39:48 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4051.2736 ms
+04/16/2021 23:39:52 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1044 ms
+04/16/2021 23:39:52 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.5817 ms
+04/16/2021 23:39:53 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 5.0733 ms
+04/16/2021 23:39:53 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.7847 ms
+04/16/2021 23:39:53 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 7.1562 ms
+04/16/2021 23:39:53 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.6767 ms
+04/16/2021 23:39:54 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9804 ms
+04/16/2021 23:39:54 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9173 ms
+04/16/2021 23:39:54 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.2134 ms
+04/16/2021 23:39:55 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.0701 ms
+04/16/2021 23:39:55 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.0795 ms
+04/16/2021 23:39:55 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9414 ms
+04/16/2021 23:39:56 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.4196 ms
+04/16/2021 23:39:56 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 8.0628 ms
+04/16/2021 23:39:56 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9326 ms
+04/16/2021 23:39:57 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.6798 ms
+04/16/2021 23:39:57 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1484 ms
+04/16/2021 23:39:57 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.2554 ms
+04/16/2021 23:40:01 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/MakeInactive/ById" responded 405 in 0.7470 ms
+04/16/2021 23:42:40 Identity server started..
+04/16/2021 23:42:40 Identity server HostBuilder created
+04/16/2021 23:42:41 Host built
+04/16/2021 23:42:41 Now listening on: "https://localhost:3000"
+04/16/2021 23:42:41 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:42:41 Hosting environment: "Development"
+04/16/2021 23:42:41 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:42:44 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 37.5281 ms
+04/16/2021 23:42:45 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.2506 ms
+04/16/2021 23:42:48 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:42:49 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:42:49 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2035.7839 ms
+04/16/2021 23:42:52 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 212.2935 ms
+04/16/2021 23:42:56 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:42:56 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:42:56 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:42:56 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 1050.2145 ms
+04/16/2021 23:48:40 Identity server started..
+04/16/2021 23:48:40 Identity server HostBuilder created
+04/16/2021 23:48:40 Host built
+04/16/2021 23:48:41 Now listening on: "https://localhost:3000"
+04/16/2021 23:48:41 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:48:41 Hosting environment: "Development"
+04/16/2021 23:48:41 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:48:44 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 37.9164 ms
+04/16/2021 23:48:44 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.3937 ms
+04/16/2021 23:48:48 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:48:49 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:48:49 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2062.6813 ms
+04/16/2021 23:48:52 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 218.8432 ms
+04/16/2021 23:48:57 Successful sending an email to: manager@disposeamail.com
+04/16/2021 23:48:57 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:48:57 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 1248.3759 ms
+04/16/2021 23:49:14 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 7.4136 ms
+04/16/2021 23:49:22 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/MakeInactive/ById" responded 405 in 2.0048 ms
+04/16/2021 23:49:22 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 8.4335 ms
+04/16/2021 23:49:24 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/MakeInactive/ById" responded 405 in 0.7017 ms
+04/16/2021 23:49:24 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.7166 ms
+04/16/2021 23:49:35 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/MakeInactive/ById" responded 405 in 0.0650 ms
+04/16/2021 23:51:44 Identity server started..
+04/16/2021 23:51:44 Identity server HostBuilder created
+04/16/2021 23:51:45 Host built
+04/16/2021 23:51:46 Now listening on: "https://localhost:3000"
+04/16/2021 23:51:46 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:51:46 Hosting environment: "Development"
+04/16/2021 23:51:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:51:48 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 37.3678 ms
+04/16/2021 23:51:48 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 37.8912 ms
+04/16/2021 23:51:53 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:51:53 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:51:54 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2003.2223 ms
+04/16/2021 23:52:00 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 213.6841 ms
+04/16/2021 23:52:03 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:52:03 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:52:03 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 1139.7567 ms
+04/16/2021 23:52:03 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 6.9181 ms
+04/16/2021 23:52:05 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 8.2378 ms
+04/16/2021 23:52:27 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:53:34 Identity server started..
+04/16/2021 23:53:34 Identity server HostBuilder created
+04/16/2021 23:53:34 Host built
+04/16/2021 23:53:35 Now listening on: "https://localhost:3000"
+04/16/2021 23:53:35 Application started. Press Ctrl+C to shut down.
+04/16/2021 23:53:35 Hosting environment: "Development"
+04/16/2021 23:53:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/16/2021 23:53:38 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 404 in 42.1796 ms
+04/16/2021 23:53:38 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 404 in 0.3210 ms
+04/16/2021 23:53:43 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/16/2021 23:53:43 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:53:43 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 2095.3584 ms
+04/16/2021 23:53:45 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 218.1708 ms
+04/16/2021 23:55:07 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:55:22 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:55:41 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/UnBlock/ById" responded 200 in 71461.1166 ms
+04/16/2021 23:56:01 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 6.5583 ms
+04/16/2021 23:56:07 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 8.6741 ms
+04/16/2021 23:56:11 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 5.0370 ms
+04/16/2021 23:56:18 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:56:18 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:18 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 861.3444 ms
+04/16/2021 23:56:18 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.7248 ms
+04/16/2021 23:56:26 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:56:26 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:26 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/UnBlock/ById" responded 200 in 4251.4369 ms
+04/16/2021 23:56:26 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.2891 ms
+04/16/2021 23:56:32 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 7.0404 ms
+04/16/2021 23:56:36 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:56:36 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:36 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 842.4506 ms
+04/16/2021 23:56:36 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9917 ms
+04/16/2021 23:56:38 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:56:38 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:38 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/UnBlock/ById" responded 200 in 999.9346 ms
+04/16/2021 23:56:38 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9614 ms
+04/16/2021 23:56:40 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:56:40 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:40 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 866.7254 ms
+04/16/2021 23:56:40 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.4191 ms
+04/16/2021 23:56:42 Successful sending an email to: tiyon.zeddicus@fineloans.org
+04/16/2021 23:56:42 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:42 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/UnBlock/ById" responded 200 in 823.4024 ms
+04/16/2021 23:56:42 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1031 ms
+04/16/2021 23:56:44 Successful sending an email to: manager@disposeamail.com
+04/16/2021 23:56:44 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:44 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 880.3275 ms
+04/16/2021 23:56:44 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.4588 ms
+04/16/2021 23:56:45 Successful sending an email to: manager@disposeamail.com
+04/16/2021 23:56:45 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:45 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/UnBlock/ById" responded 200 in 893.0682 ms
+04/16/2021 23:56:45 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.5426 ms
+04/16/2021 23:56:47 Successful sending an email to: ilyushinmisha@yandex.ru
+04/16/2021 23:56:47 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:47 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 887.7580 ms
+04/16/2021 23:56:47 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.3176 ms
+04/16/2021 23:56:48 Successful sending an email to: ilyushinmisha@yandex.ru
+04/16/2021 23:56:48 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:48 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/UnBlock/ById" responded 200 in 921.5474 ms
+04/16/2021 23:56:48 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9244 ms
+04/16/2021 23:56:52 Successful sending an email to: mishamine26@gmail.com
+04/16/2021 23:56:52 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:52 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:52 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 869.0940 ms
+04/16/2021 23:56:52 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1378 ms
+04/16/2021 23:56:54 Successful sending an email to: mishamine26@gmail.com
+04/16/2021 23:56:54 Successful save changes in UnitOfWorkUsersIdentity
+04/16/2021 23:56:54 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/UnBlock/ById" responded 200 in 936.3450 ms
+04/16/2021 23:56:54 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.0290 ms
+04/16/2021 23:56:54 HTTP "PUT" "/FoundersPCIdentity/Users/StatusChange/Block/ById" responded 200 in 7.3932 ms
+04/16/2021 23:56:54 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.3613 ms
+04/16/2021 23:56:59 HTTP "GET" "/FoundersPCIdentity/Users/ById/4/Entrances" responded 200 in 20.2404 ms

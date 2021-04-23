@@ -1,0 +1,196 @@
+04/20/2021 09:01:13 HARDWARE API started..
+04/20/2021 09:01:13 HARDWARE API HostBuilder created
+04/20/2021 09:01:16 Host built
+04/20/2021 09:01:17 Now listening on: "https://localhost:4000"
+04/20/2021 09:01:17 Application started. Press Ctrl+C to shut down.
+04/20/2021 09:01:17 Hosting environment: "Development"
+04/20/2021 09:01:17 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/20/2021 09:01:29 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 403 in 266.9944 ms
+04/20/2021 09:02:26 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 09:21:54 HARDWARE API started..
+04/20/2021 09:21:54 HARDWARE API HostBuilder created
+04/20/2021 09:21:56 Host built
+04/20/2021 09:21:57 Now listening on: "https://localhost:4000"
+04/20/2021 09:21:57 Application started. Press Ctrl+C to shut down.
+04/20/2021 09:21:57 Hosting environment: "Development"
+04/20/2021 09:21:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/20/2021 09:22:11 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 09:22:12 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 2084.5748 ms
+04/20/2021 11:36:48 HARDWARE API started..
+04/20/2021 11:36:48 HARDWARE API HostBuilder created
+04/20/2021 11:36:52 Host built
+04/20/2021 11:36:53 Now listening on: "https://localhost:4000"
+04/20/2021 11:36:53 Application started. Press Ctrl+C to shut down.
+04/20/2021 11:36:53 Hosting environment: "Development"
+04/20/2021 11:36:53 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/20/2021 11:37:10 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:37:11 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 2339.0048 ms
+04/20/2021 11:37:16 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:37:16 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 166.2984 ms
+04/20/2021 11:38:08 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:38:08 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 51.7501 ms
+04/20/2021 11:39:01 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:39:01 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 49.7214 ms
+04/20/2021 11:39:13 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:39:13 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 35.2180 ms
+04/20/2021 11:39:25 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:39:25 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 38.0437 ms
+04/20/2021 11:40:17 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:40:17 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 46.4044 ms
+04/20/2021 11:42:17 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:42:17 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 54.5108 ms
+04/20/2021 11:43:20 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:43:20 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 45.5356 ms
+04/20/2021 11:47:39 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:47:39 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 67.7190 ms
+04/20/2021 11:47:43 ProducersController: request for reading with id = 1 (one) by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:47:43 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 57.3501 ms
+04/20/2021 11:48:17 ProducersController: request for reading with id = 1 (one) by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:48:17 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 53.9601 ms
+04/20/2021 11:48:23 ProducersController: request for reading with id = 1 (one) by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:48:23 HTTP "GET" "/HardwareApi/Producers/1" responded 200 in 32.4416 ms
+04/20/2021 11:48:27 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:48:27 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 48.2285 ms
+04/20/2021 11:48:31 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:48:31 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 39.2390 ms
+04/20/2021 11:50:10 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:50:10 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 38.9362 ms
+04/20/2021 11:50:13 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:50:13 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 60.8278 ms
+04/20/2021 11:50:32 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:50:32 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 37.4988 ms
+04/20/2021 11:51:07 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:51:07 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 32.7540 ms
+04/20/2021 11:51:58 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:51:58 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 49.9892 ms
+04/20/2021 11:52:43 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:52:43 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 28.2620 ms
+04/20/2021 11:52:49 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:52:49 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 34.1182 ms
+04/20/2021 11:53:13 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:53:13 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 34.2790 ms
+04/20/2021 11:53:31 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:53:31 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 31.1904 ms
+04/20/2021 11:53:42 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:53:42 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 36.8970 ms
+04/20/2021 11:54:01 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:54:01 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 35.7367 ms
+04/20/2021 11:54:05 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:54:05 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 34.5547 ms
+04/20/2021 11:54:34 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:54:34 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 50.2472 ms
+04/20/2021 11:54:48 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:54:48 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 31.8313 ms
+04/20/2021 11:55:23 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:55:23 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 41.1701 ms
+04/20/2021 11:55:32 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:55:32 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 46.3965 ms
+04/20/2021 11:55:48 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:55:48 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 28.6839 ms
+04/20/2021 11:55:59 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:55:59 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 29.5348 ms
+04/20/2021 11:56:07 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:56:07 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 27.0745 ms
+04/20/2021 11:56:31 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:56:31 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 43.9295 ms
+04/20/2021 11:56:59 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:56:59 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 38.9542 ms
+04/20/2021 11:57:15 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:57:15 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 30.5333 ms
+04/20/2021 11:57:35 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:57:35 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 29.1277 ms
+04/20/2021 11:58:02 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:58:02 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 41.2358 ms
+04/20/2021 11:58:24 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:58:24 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 58.7531 ms
+04/20/2021 11:58:37 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:58:37 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 26.6704 ms
+04/20/2021 11:58:48 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:58:48 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 46.8766 ms
+04/20/2021 11:59:03 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:59:03 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 30.0758 ms
+04/20/2021 11:59:15 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 11:59:15 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 31.0065 ms
+04/20/2021 12:06:10 HARDWARE API started..
+04/20/2021 12:06:11 HARDWARE API HostBuilder created
+04/20/2021 12:06:13 Host built
+04/20/2021 12:06:14 Now listening on: "https://localhost:4000"
+04/20/2021 12:06:14 Application started. Press Ctrl+C to shut down.
+04/20/2021 12:06:14 Hosting environment: "Development"
+04/20/2021 12:06:14 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/20/2021 12:12:33 PowerSuppliesController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:12:34 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 2071.8808 ms
+04/20/2021 12:12:41 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:12:41 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 184.4327 ms
+04/20/2021 12:12:49 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:12:49 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 47.4768 ms
+04/20/2021 12:13:49 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:13:49 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 38.6369 ms
+04/20/2021 12:14:25 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:14:25 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 49.2268 ms
+04/20/2021 12:15:01 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:15:01 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 36.0828 ms
+04/20/2021 12:15:28 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:15:28 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 60.0983 ms
+04/20/2021 12:16:20 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:16:20 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 49.2161 ms
+04/20/2021 12:16:41 ProducersController: request for reading page: 1, size: 10 by ilyushin_misha@mail.ru, IPv4 : ::1
+04/20/2021 12:16:41 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 32.4877 ms
+04/20/2021 15:35:15 HARDWARE API started..
+04/20/2021 15:35:16 HARDWARE API HostBuilder created
+04/20/2021 15:35:16 Host built
+04/20/2021 15:35:17 Now listening on: "https://localhost:4000"
+04/20/2021 15:35:17 Application started. Press Ctrl+C to shut down.
+04/20/2021 15:35:17 Hosting environment: "Development"
+04/20/2021 15:35:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/20/2021 15:35:46 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:35:48 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 2069.8610 ms
+04/20/2021 15:35:54 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:35:54 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 52.2767 ms
+04/20/2021 15:37:01 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:37:01 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 22.9240 ms
+04/20/2021 15:37:03 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:37:03 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 9.6286 ms
+04/20/2021 15:37:37 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:37:37 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 24.2066 ms
+04/20/2021 15:38:01 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:38:01 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 5.3967 ms
+04/20/2021 15:38:16 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:38:16 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 6.3410 ms
+04/20/2021 15:38:33 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:38:33 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 5.7060 ms
+04/20/2021 15:38:41 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:38:41 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 6.1946 ms
+04/20/2021 15:38:53 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:38:53 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 6.1963 ms
+04/20/2021 15:38:54 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:38:54 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 5.9798 ms
+04/20/2021 15:38:58 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:38:58 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 7.1461 ms
+04/20/2021 15:39:06 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:39:06 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 7.4012 ms
+04/20/2021 15:39:07 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:39:07 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 9.8760 ms
+04/20/2021 15:39:35 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:39:35 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 12.6527 ms
+04/20/2021 15:39:50 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:39:50 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 9.3804 ms
+04/20/2021 15:40:32 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:40:33 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 7.7934 ms
+04/20/2021 15:40:50 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:40:50 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 5.6411 ms
+04/20/2021 15:40:52 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:40:52 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 5.1469 ms
+04/20/2021 15:41:04 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:41:04 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 6.3885 ms
+04/20/2021 15:41:35 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:41:35 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 14.0950 ms
+04/20/2021 15:43:54 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/20/2021 15:43:54 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 5.7813 ms
+04/20/2021 22:29:15 HARDWARE API started..
+04/20/2021 22:29:15 HARDWARE API HostBuilder created
+04/20/2021 22:29:16 Host built
+04/20/2021 22:29:16 Now listening on: "https://localhost:4000"
+04/20/2021 22:29:16 Application started. Press Ctrl+C to shut down.
+04/20/2021 22:29:16 Hosting environment: "Development"
+04/20/2021 22:29:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"

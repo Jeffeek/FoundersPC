@@ -1,0 +1,241 @@
+﻿@model FoundersPC.Web.Domain.Common.Hardware.PowerSupplyDtoViewModel
+
+<div
+    class='d-grid'>
+<div
+    class='row'>
+    <div
+        class='form-group text-light'>
+        <div
+            class='form-check form-check-inline'>
+            <input
+                asp-for='IsCPU4PINEmpty'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                I don't know
+            </label>
+        </div>
+        <div
+            class='form-check form-check-inline ms-3'>
+            <input
+                asp-for='CPU4PIN'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                CPU 4PIN
+            </label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='CPU4PIN'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-group text-light'>
+        <div
+            class='form-check form-check-inline'>
+            <input
+                asp-for='IsCPU8PINEmpty'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                I don't know
+            </label>
+        </div>
+        <div
+            class='form-check form-check-inline ms-3'>
+            <input
+                asp-for='CPU8PIN'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                CPU 8PIN
+            </label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='CPU8PIN'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='text-light'>
+        <input
+            asp-for='IsModular'
+            class='form-check-input'
+            type='checkbox'>
+        <label
+            class='form-check-label'>
+            Is Modular
+        </label>
+    </div>
+    <span
+        asp-validation-for='IsModular'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='text-light'>
+        <input
+            asp-for='Certificate80PLUS'
+            class='form-check-input'
+            type='checkbox'>
+        <label
+            class='form-check-label'>
+            Certificate 80PLUS
+        </label>
+    </div>
+    <span
+        asp-validation-for='Certificate80PLUS'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='text-light'>
+        <input
+            asp-for='PFC'
+            class='form-check-input'
+            type='checkbox'>
+        <label
+            class='form-check-label'>
+            PFC
+        </label>
+    </div>
+    <span
+        asp-validation-for='PFC'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Title'
+                class='bg-dark form-control text-light'>
+            <label>Title</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Title'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='FanDiameter'
+                class='bg-dark form-control text-light'>
+            <label>Fan Diameter</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='FanDiameter'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='ProducerId'
+                class='bg-dark form-control text-light'>
+            <label>Producer Id</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='ProducerId'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Power'
+                class='bg-dark form-control text-light'
+                value='@Model.Power'>
+            <label>Power</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Power'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-group text-light'>
+        <div
+            class='form-check'>
+            <input
+                asp-for='IsEfficiencyEmpty'
+                class='form-check-input'
+                type='checkbox'>
+            <label
+                class='form-check-label'>
+                I don't know
+            </label>
+        </div>
+        <div
+            class='form-label-group ms-3'>
+            <input
+                asp-for='Efficiency'
+                class='bg-dark form-control text-light'
+                type='text'/>
+            <label>Efficiency</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Efficiency'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='MotherboardPowering'
+                class='bg-dark form-control text-light'
+                value='@Model.MotherboardPowering'>
+            <label>Motherboard Powering</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='MotherboardPowering'
+        class='text-danger'>
+    </span>
+</div>
+<partial
+    name='_ComponentApplyButton'/>
+</div>

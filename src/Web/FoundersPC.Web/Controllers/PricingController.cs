@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.RequestResponseShared.Request.Tokens;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Tokens;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.Pricing;
 using Microsoft.AspNetCore.Authentication.Cookies;

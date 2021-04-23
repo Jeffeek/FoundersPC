@@ -1,191 +1,46 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.API.Dto;
-using FoundersPC.ApplicationShared;
-using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
 #endregion
 
 namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 {
-    public class ProducersManagingService : IProducersManagingService
+    public class ProducersManagingService : BoilerplaitManagingService<ProducerInsertDto, ProducerReadDto, ProducerUpdateDto>, IProducersManagingService
     {
-        private readonly IHttpClientFactory _clientFactory;
-        private readonly ILogger<ProducersManagingService> _logger;
-
         public ProducersManagingService(IHttpClientFactory clientFactory,
-                                        ILogger<ProducersManagingService> logger)
-        {
-            _clientFactory = clientFactory;
-            _logger = logger;
-        }
+                                        ILogger<ProducersManagingService> logger) : base(clientFactory,
+                                                                                         logger,
+                                                                                         HardwareApiRoutes.ProducersEndpoint) { }
 
-        public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync(string managerToken)
-        {
-            if (managerToken is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetProducerByIdAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentOutOfRangeException(nameof(managerToken));
-            }
-
-            using var client = _clientFactory.CreateClient("Producers getter client");
-
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        managerToken,
-                                                        MicroservicesUrls.APIServer);
-
-            var responseMessage = await client.GetFromJsonAsync<IEnumerable<ProducerReadDto>>("Producers");
-
-            return responseMessage;
-        }
-
-        public async Task<ProducerReadDto> GetProducerByIdAsync(int id, string managerToken)
-        {
-            if (managerToken is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetProducerByIdAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentOutOfRangeException(nameof(managerToken));
-            }
-
-            if (id < 1)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetProducerByIdAsync)}:{nameof(id)} was < 1");
-
-                throw new ArgumentOutOfRangeException(nameof(id));
-            }
-
-            using var client = _clientFactory.CreateClient("Producer getter client");
-
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        managerToken,
-                                                        MicroservicesUrls.APIServer);
-
-            var responseMessage = await client.GetFromJsonAsync<ProducerReadDto>($"Producers/{id}");
-
-            return responseMessage;
-        }
-
-        public async Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken)
-        {
-            if (producer is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(UpdateProducerAsync)}:{nameof(producer)} was null");
-
-                throw new ArgumentNullException(nameof(producer));
-            }
-
-            if (id < 1)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(UpdateProducerAsync)}:{nameof(id)} was < 1");
-
-                throw new ArgumentOutOfRangeException(nameof(id));
-            }
-
-            if (managerToken is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(UpdateProducerAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentOutOfRangeException(nameof(managerToken));
-            }
-
-            using var client = _clientFactory.CreateClient("Update producer client");
-
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        managerToken,
-                                                        MicroservicesUrls.APIServer);
-
-            var responseMessage = await client.PutAsJsonAsync($"Producers/{id}", producer);
-
-            return responseMessage.IsSuccessStatusCode;
-        }
-
-        public async Task<bool> DeleteProducerAsync(int producerId, string managerToken)
-        {
-            if (producerId < 1)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(DeleteProducerAsync)}:{nameof(producerId)} was < 1");
-
-                throw new ArgumentOutOfRangeException(nameof(producerId));
-            }
-
-            if (managerToken is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(DeleteProducerAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentOutOfRangeException(nameof(managerToken));
-            }
-
-            using var client = _clientFactory.CreateClient("Delete producer client");
-
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        managerToken,
-                                                        MicroservicesUrls.APIServer);
-
-            var responseMessage = await client.DeleteAsync($"Producers/{producerId}");
-
-            return responseMessage.IsSuccessStatusCode;
-        }
-
-        public async Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken)
-        {
-            if (producer is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(CreateProducerAsync)}:{nameof(producer)} was null");
-
-                throw new ArgumentNullException(nameof(producer));
-            }
-
-            if (managerToken is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(CreateProducerAsync)}:{nameof(managerToken)} was null");
-
-                throw new ArgumentOutOfRangeException(nameof(managerToken));
-            }
-
-            using var client = _clientFactory.CreateClient("Create producer client");
-
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        managerToken,
-                                                        MicroservicesUrls.APIServer);
-
-            var responseMessage = await client.PostAsJsonAsync("Producers", producer);
-
-            return responseMessage.IsSuccessStatusCode;
-        }
+        #region Implementation of IProducersManagingService
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber,
-                                                                                      int pageSize,
-                                                                                      string managerToken)
-        {
-            if (managerToken is null)
-            {
-                _logger.LogError($"{nameof(ProducersManagingService)}:{nameof(GetPaginateableProducersAsync)}:{nameof(managerToken)} was null");
+        public Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync(string managerToken) => GetAllAsync(managerToken);
 
-                throw new ArgumentOutOfRangeException(nameof(managerToken));
-            }
+        /// <inheritdoc/>
+        public Task<ProducerReadDto> GetProducerByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
 
-            using var client = _clientFactory.CreateClient("Producers getter client");
+        /// <inheritdoc/>
+        public Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken) => UpdateAsync(id, producer, managerToken);
 
-            client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
-                                                        managerToken,
-                                                        MicroservicesUrls.APIServer);
+        /// <inheritdoc/>
+        public Task<bool> DeleteProducerAsync(int producerId, string managerToken) => DeleteAsync(producerId, managerToken);
 
-            var responseMessage =
-                await client
-                    .GetFromJsonAsync<IEnumerable<ProducerReadDto>>($"Producers?Page={pageNumber}&Size={pageSize}");
+        /// <inheritdoc/>
+        public Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken) => CreateAsync(producer, managerToken);
 
-            return responseMessage;
-        }
+        /// <inheritdoc/>
+        public Task<IPaginationResponse<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber, int pageSize, string managerToken) =>
+            GetPaginateableAsync(pageNumber, pageSize, managerToken);
+
+        #endregion
     }
 }

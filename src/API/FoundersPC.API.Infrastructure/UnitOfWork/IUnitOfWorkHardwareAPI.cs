@@ -14,25 +14,25 @@ namespace FoundersPC.API.Infrastructure.UnitOfWork
     {
         IProducersRepositoryAsync ProducersRepository { get; }
 
-        ICPUsRepositoryAsync ProcessorsRepository { get; }
+        IProcessorsRepositoryAsync ProcessorsRepository { get; }
 
         IProcessorCoresRepositoryAsync ProcessorCoresRepository { get; }
 
-        IGPUsRepositoryAsync VideoCardsRepository { get; }
+        IVideoCardsRepositoryAsync VideoCardsRepository { get; }
 
         IVideoCardCoresRepositoryAsync VideoCardCoresRepository { get; }
 
         ICasesRepositoryAsync CasesRepository { get; }
 
-        IHDDsRepositoryAsync HDDsRepository { get; }
+        IHardDrivesRepositoryAsync HardDrivesRepository { get; }
 
         IMotherboardsRepositoryAsync MotherboardsRepository { get; }
 
         IPowerSuppliersRepositoryAsync PowerSuppliersRepository { get; }
 
-        ISSDsRepositoryAsync SSDsRepository { get; }
+        ISolidStateDrivesRepositoryAsync SolidStateDrivesRepository { get; }
 
-        IRAMsRepositoryAsync RAMsRepository { get; }
+        IRandomAccessMemoryRepositoryAsync RandomAccessMemoryRepository { get; }
 
         Task<int> SaveChangesAsync();
     }

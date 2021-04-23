@@ -1,16 +1,16 @@
 ﻿#region Using namespaces
 
-using System.Data;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Blocking;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Inactivity;
-using FoundersPC.RequestResponseShared.Request.Administration.Admin.Users.Unblocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Blocking;
-using FoundersPC.RequestResponseShared.Response.Administration.Admin.Users.Inactivity;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Blocking;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Inactivity;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Administration.Admin.Users.Unblocking;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Administration.Admin.Users.Blocking;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Administration.Admin.Users.Inactivity;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
@@ -31,6 +31,42 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             _clientFactory = clientFactory;
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
+
+        #endregion
+
         public async Task<bool> BlockUserByIdAsync(int id, string adminToken)
         {
             if (id < 1)
@@ -40,11 +76,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Block user client");
+            var client = _clientFactory.CreateClient("Block user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
+                                                        MicroservicesUrls.IdentityServer);
 
             var blockModel = new BlockUserByIdRequest
                              {
@@ -53,7 +89,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                  UserId = id
                              };
 
-            var blockUserRequest = await client.PutAsJsonAsync("Block/ById", blockModel);
+            var blockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Block.BlockByUserId}",
+                                          blockModel);
 
             if (!blockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -64,7 +103,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: block user: {nameof(blockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(blockingResultModel));
+                return false;
             }
 
             if (blockingResultModel.IsBlockingSuccessful)
@@ -79,6 +118,42 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return false;
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
+
+        #endregion
+
         public async Task<bool> BlockUserByEmailAsync(string email, string adminToken)
         {
             if (email is null)
@@ -88,11 +163,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Block user client");
+            var client = _clientFactory.CreateClient("Block user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
+                                                        MicroservicesUrls.IdentityServer);
 
             var blockModel = new BlockUserByEmailRequest
                              {
@@ -101,7 +176,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                  UserEmail = email
                              };
 
-            var blockUserRequest = await client.PutAsJsonAsync("Block/ByEmail", blockModel);
+            var blockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Block.BlockByUserEmail}",
+                                          blockModel);
 
             if (!blockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -112,7 +190,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: block user: {nameof(blockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(blockingResultModel));
+                return false;
             }
 
             if (blockingResultModel.IsBlockingSuccessful)
@@ -127,6 +205,42 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return false;
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
+
+        #endregion
+
         public async Task<bool> UnblockUserByIdAsync(int id, string adminToken)
         {
             if (id < 1)
@@ -136,11 +250,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Unblock user client");
+            var client = _clientFactory.CreateClient("Unblock user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
+                                                        MicroservicesUrls.IdentityServer);
 
             var unblockModel = new UnblockUserByIdRequest
                                {
@@ -149,7 +263,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserId = id
                                };
 
-            var unblockUserRequest = await client.PutAsJsonAsync("Unblock/ById", unblockModel);
+            var unblockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserId}",
+                                          unblockModel);
 
             if (!unblockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -160,7 +277,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: unblock user: {nameof(unblockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(unblockingResultModel));
+                return false;
             }
 
             if (unblockingResultModel.IsUnblockingSuccessful)
@@ -175,6 +292,42 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return false;
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
+
+        #endregion
+
         public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken)
         {
             if (email is null)
@@ -184,11 +337,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 return false;
             }
 
-            using var client = _clientFactory.CreateClient("Unblock user client");
+            var client = _clientFactory.CreateClient("Unblock user client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
+                                                        MicroservicesUrls.IdentityServer);
 
             var unblockModel = new UnblockUserByEmailRequest
                                {
@@ -197,7 +350,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserEmail = email
                                };
 
-            var unblockUserRequest = await client.PutAsJsonAsync("Unblock/ByEmail", unblockModel);
+            var unblockUserRequest =
+                await
+                    client.PutAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.Unblock.UnblockByUserEmail}",
+                                          unblockModel);
 
             if (!unblockUserRequest.IsSuccessStatusCode)
                 return false;
@@ -208,7 +364,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: unblock user: {nameof(unblockingResultModel)} was null after parsing");
 
-                throw new NoNullAllowedException(nameof(unblockingResultModel));
+                return false;
             }
 
             if (unblockingResultModel.IsUnblockingSuccessful)
@@ -223,16 +379,64 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return false;
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.Net.Http.HttpRequestException">
+        ///     The request failed due to an underlying issue such as network
+        ///     connectivity, DNS failure, server certificate validation or timeout.
+        /// </exception>
+        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">
+        ///     .NET Core and .NET 5.0 and later only: The request
+        ///     failed due to timeout.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        ///     The request message was already sent by the
+        ///     <see cref="T:System.Net.Http.HttpClient"/> instance.
+        /// </exception>
+
+        #endregion
+
         public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken)
         {
             if (id < 1)
                 return false;
 
-            using var client = _clientFactory.CreateClient("Make user inactive client");
+            var client = _clientFactory.CreateClient("Make user inactive client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
+                                                        MicroservicesUrls.IdentityServer);
 
             var requestModel = new MakeUserInactiveByIdRequest
                                {
@@ -240,7 +444,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserId = id
                                };
 
-            var request = await client.DeleteAsJsonAsync("MakeInactive/ById", requestModel);
+            var request =
+                await
+                    client.DeleteAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserId}",
+                                             requestModel);
 
             if (request.IsSuccessStatusCode)
                 return false;
@@ -251,7 +458,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: Make user inactive with id = {id}. Response deserialize error");
 
-                throw new NoNullAllowedException();
+                return false;
             }
 
             if (!contentResult.IsUserMadeInactiveSuccessful)
@@ -266,16 +473,64 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             return true;
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.Net.Http.HttpRequestException">
+        ///     The request failed due to an underlying issue such as network
+        ///     connectivity, DNS failure, server certificate validation or timeout.
+        /// </exception>
+        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">
+        ///     .NET Core and .NET 5.0 and later only: The request
+        ///     failed due to timeout.
+        /// </exception>
+        /// <exception cref="T:System.InvalidOperationException">
+        ///     The request message was already sent by the
+        ///     <see cref="T:System.Net.Http.HttpClient"/> instance.
+        /// </exception>
+
+        #endregion
+
         public async Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken)
         {
             if (email is null)
                 return false;
 
-            using var client = _clientFactory.CreateClient("Make user inactive client");
+            var client = _clientFactory.CreateClient("Make user inactive client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
-                                                        $"{MicroservicesUrls.IdentityServer}Users/StatusChange/");
+                                                        MicroservicesUrls.IdentityServer);
 
             var requestModel = new MakeUserInactiveByEmailRequest
                                {
@@ -283,7 +538,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                                    UserEmail = email
                                };
 
-            var request = await client.DeleteAsJsonAsync("MakeInactive/ByEmail", requestModel);
+            var request =
+                await
+                    client.DeleteAsJsonAsync($"{IdentityServerRoutes.Users.StatusChange.StatusEndpoint}/{IdentityServerRoutes.Users.StatusChange.MakeInactive.MakeInactiveByUserEmail}",
+                                             requestModel);
 
             if (request.IsSuccessStatusCode)
                 return false;
@@ -294,7 +552,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             {
                 _logger.LogError($"{nameof(UserStatusService)}: Make user inactive with email = {email}. Response deserialize error");
 
-                throw new NoNullAllowedException();
+                return false;
             }
 
             if (!contentResult.IsUserMadeInactiveSuccessful)

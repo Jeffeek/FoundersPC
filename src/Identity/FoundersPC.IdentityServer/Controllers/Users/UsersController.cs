@@ -1,13 +1,15 @@
 ﻿#region Using namespaces
 
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +20,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [EnableCors("WebPolicy")]
     [ApiController]
-    [Route("FoundersPCIdentity/Users")]
+    [Route(IdentityServerRoutes.Users.UsersEndpoint)]
+    [ModelValidation]
     public class UsersController : Controller
     {
         private readonly IUsersInformationService _usersInformationService;
@@ -26,8 +29,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         public UsersController(IUsersInformationService usersInformationService) => _usersInformationService = usersInformationService;
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet("ById/{id:int:min(1)}")]
-        public async Task<ActionResult<UserEntityReadDto>> GetById([FromRoute] int id)
+        [HttpGet(IdentityServerRoutes.Users.ByUserId)]
+        public async ValueTask<ActionResult<UserEntityReadDto>> GetById([FromRoute] int id)
         {
             var user = await _usersInformationService.GetUserByIdAsync(id);
 
@@ -38,16 +41,10 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-        [HttpGet("ByEmail/{email}")]
-        public async Task<ActionResult<UserEntityReadDto>> GetByEmail([FromRoute] string email)
+        [HttpGet(IdentityServerRoutes.Users.ByUserEmail)]
+        public async ValueTask<ActionResult<UserEntityReadDto>> GetByEmail([FromRoute] string email)
         {
-            if (String.IsNullOrEmpty(email))
-                return BadRequest(new
-                                  {
-                                      error = "email can't be null or empty"
-                                  });
-
-            var (jwtEmail, jwtRole) = HttpContext.ParseJwtUserTokenCredentials();
+            var (jwtEmail, jwtRole) = HttpContext.ParseCredentials();
 
             if (jwtRole is not ApplicationRoles.Administrator
                 && email != jwtEmail)
@@ -62,8 +59,8 @@ namespace FoundersPC.IdentityServer.Controllers.Users
         }
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
-        [HttpGet("All")]
-        public async Task<IEnumerable<UserEntityReadDto>> GetAll()
+        [HttpGet(ApplicationRestAddons.All)]
+        public async ValueTask<IEnumerable<UserEntityReadDto>> GetAll()
         {
             var users = await _usersInformationService.GetAllUsersAsync();
 
@@ -72,12 +69,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet]
-        public async Task<IEnumerable<UserEntityReadDto>> GetWithPagination([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                            [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
-        {
-            var takenUsers = await _usersInformationService.GetPaginateableAsync(pageNumber, pageSize);
-
-            return takenUsers;
-        }
+        public async ValueTask<ActionResult<IPaginationResponse<UserEntityReadDto>>> Get([FromQuery] PaginationRequest request) =>
+            Json(await _usersInformationService.GetPaginateableAsync(request.PageNumber, request.PageSize));
     }
 }

@@ -10,6 +10,16 @@ namespace FoundersPC.ApplicationShared
 {
     public static class QueryableExtensions
     {
+        #region Docs
+
+        /// <exception cref="T:System.ArgumentOutOfRangeException">pageNumber or pageSize was below or equal to 0.</exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="keySelector"/> is
+        ///     <see langword="null"/>.
+        /// </exception>
+
+        #endregion
+
         public static IQueryable<T> Paginate<T>(this IQueryable<T> source, int pageNumber, int pageSize)
             where T : IIdentityItem
         {

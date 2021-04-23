@@ -11,15 +11,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories
 {
-    public class ProducersRepository : GenericRepositoryAsync<Producer>, IProducersRepositoryAsync
+    public class ProducersRepository : GenericRepositoryAsync<ProducerEntity>, IProducersRepositoryAsync
     {
         /// <inheritdoc/>
         public ProducersRepository(DbContext repositoryContext) : base(repositoryContext) { }
 
-        #region Implementation of IPaginateableRepository<Producer>
+        #region Implementation of IPaginateableRepository<ProducerEntity>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<Producer>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">pageNumber or pageSize was below or equal to 0.</exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     source or keySelector is
+        ///     <see langword="null"/>.
+        /// </exception>
+        public async Task<IEnumerable<ProducerEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
                 .ToListAsync();
 
@@ -28,34 +33,39 @@ namespace FoundersPC.API.Infrastructure.Repositories
         #region Implementation of IProducersRepositoryAsync
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<Producer>> GetAllWithHardwareAsync()
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="navigationPropertyPath"/>
+        ///     is <see langword="null"/>.
+        /// </exception>
+        public async Task<IEnumerable<ProducerEntity>> GetAllWithHardwareAsync()
         {
-            return await Context.Set<Producer>()
+            return await Context.Set<ProducerEntity>()
                                 .Include(producer => producer.Motherboards)
-                                .ThenInclude(motherboard => motherboard.Producer)
+                                .ThenInclude(motherboard => motherboard.ProducerEntity)
                                 .Include(producer => producer.PowerSupplies)
-                                .ThenInclude(powerSupply => powerSupply.Producer)
+                                .ThenInclude(powerSupply => powerSupply.ProducerEntity)
                                 .Include(producer => producer.Cases)
-                                .ThenInclude(@case => @case.Producer)
+                                .ThenInclude(@case => @case.ProducerEntity)
                                 .Include(producer => producer.HardDrives)
-                                .ThenInclude(hdd => hdd.Producer)
+                                .ThenInclude(hdd => hdd.ProducerEntity)
                                 .Include(producer => producer.SolidStateDrive)
-                                .ThenInclude(ssd => ssd.Producer)
+                                .ThenInclude(ssd => ssd.ProducerEntity)
                                 .Include(producer => producer.Processors)
-                                .ThenInclude(cpu => cpu.Producer)
+                                .ThenInclude(cpu => cpu.ProducerEntity)
                                 .Include(producer => producer.Processors)
                                 .ThenInclude(cpu => cpu.Core)
                                 .Include(producer => producer.VideoCards)
-                                .ThenInclude(videoCardCore => videoCardCore.Producer)
+                                .ThenInclude(videoCardCore => videoCardCore.ProducerEntity)
                                 .Include(producer => producer.VideoCards)
-                                .ThenInclude(gpu => gpu.Core)
+                                .ThenInclude(gpu => gpu.CoreEntity)
                                 .Include(producer => producer.RandomAccessMemory)
-                                .ThenInclude(ram => ram.Producer)
+                                .ThenInclude(ram => ram.ProducerEntity)
                                 .ToListAsync();
         }
 
-        public override async Task<IEnumerable<Producer>> GetAllAsync() =>
-            await Context.Set<Producer>()
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is <see langword="null"/>.</exception>
+        public override async Task<IEnumerable<ProducerEntity>> GetAllAsync() =>
+            await Context.Set<ProducerEntity>()
                          .ToListAsync();
 
         #endregion

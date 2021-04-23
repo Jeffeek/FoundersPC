@@ -1,0 +1,240 @@
+﻿@model FoundersPC.Web.Domain.Common.Hardware.MotherboardDtoViewModel
+
+<div
+    class='d-grid'>
+<div
+    class='row'>
+    <div
+        class='form-check ms-3 text-light'>
+        <div
+            class='text-light'>
+            <input
+                asp-for='SLIOrCrossfire'
+                class='form-check-input'
+                type='checkbox'>
+        </div>
+        <label
+            class='form-check-label'>
+            SLI Or Crossfire
+        </label>
+    </div>
+    <span
+        asp-validation-for='SLIOrCrossfire'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-check ms-3 text-light'>
+        <div
+            class='text-light'>
+            <input
+                asp-for='PS2Support'
+                class='form-check-input'
+                type='checkbox'>
+        </div>
+        <label
+            class='form-check-label'>
+            PS2 Support
+        </label>
+    </div>
+    <span
+        asp-validation-for='PS2Support'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-check ms-3 text-light'>
+        <div
+            class='text-light'>
+            <input
+                asp-for='WiFiSupport'
+                class='form-check-input'
+                type='checkbox'>
+        </div>
+        <label
+            class='form-check-label'>
+            WiFi Support
+        </label>
+    </div>
+    <span
+        asp-validation-for='WiFiSupport'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class="row">
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='ProducerId'
+                class='bg-dark form-control text-light'>
+            <label>Producer Id</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='ProducerId'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Title'
+                class='bg-dark form-control text-light'>
+            <label>Title</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Title'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='PCIExpressVersion'
+                class='bg-dark form-control text-light'>
+            <label>PCIExpressVersion</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='PCIExpressVersion'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='M2SlotsCount'
+                class='bg-dark form-control text-light'>
+            <label>M2SlotsCount</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='M2SlotsCount'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='AudioSupport'
+                class='bg-dark form-control text-light'>
+            <label>AudioSupport</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='AudioSupport'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='RAMMode'
+                class='bg-dark form-control text-light'>
+            <label>RAMMode</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='RAMMode'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='RAMSlots'
+                class='bg-dark form-control text-light'>
+            <label>RAMSlots</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='RAMSlots'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='RAMSupport'
+                class='bg-dark form-control text-light'>
+            <label>RAMSupport</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='RAMSupport'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Factor'
+                class='bg-dark form-control text-light'>
+            <label>Factor</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Factor'
+        class='text-danger'>
+    </span>
+</div>
+<div
+    class='row'>
+    <div
+        class='form-label-group'>
+        <div
+            class='input-group'>
+            <input
+                asp-for='Socket'
+                class='bg-dark form-control text-light'>
+            <label>Socket</label>
+        </div>
+    </div>
+    <span
+        asp-validation-for='Socket'
+        class='text-danger'>
+    </span>
+</div>
+<partial
+    name='_ComponentApplyButton'/>
+</div>

@@ -8,7 +8,10 @@
     <link
         href="~/css/account.css"
         rel="stylesheet"/>
-}}
+}
+
+
+}
 
 <div
     class='mt-5 rounded shadow text-light'
@@ -500,34 +503,29 @@
         API Access Tokens
     </h3>
     <div
-        class='my-custom-scrollbar table-wrapper-scroll-y'>
+        class='align-middle table-responsive text-center'>
         <table
             class='table table-dark table-hover'>
             <thead>
             <tr
-                class='border-5'>
+                class='border-3 sticky-top'>
                 <th
-                    class='sticky-top'
                     scope='col'>
                     Id
                 </th>
                 <th
-                    class='sticky-top'
                     scope='col'>
                     Token
                 </th>
                 <th
-                    class='sticky-top'
                     scope='col'>
                     Start evaluation
                 </th>
                 <th
-                    class='sticky-top'
                     scope='col'>
                     Finish evaluation
                 </th>
                 <th
-                    class='sticky-top'
                     scope='col'>
                     IsAvailable
                 </th>
@@ -544,20 +542,13 @@
                         <td>@token.HashedToken</td>
                         <td>@token.StartEvaluationDate</td>
                         <td>@token.ExpirationDate</td>
-                        <td>
-                            @if (token.IsBlocked
-                                 || token.ExpirationDate >= DateTime.Now) {
-                                <input
-                                    class="form-check-inline"
-                                    disabled
-                                    type="checkbox">
-                            } else {
-                                <input
-                                    checked
-                                    class="form-check-inline"
-                                    disabled
-                                    type="checkbox">
-                            }
+                        <td
+                            class='align-content-center'>
+                            <input
+                                checked='@(!token.IsBlocked && token.ExpirationDate >= DateTime.Now)'
+                                class="form-check-inline"
+                                disabled
+                                type="checkbox">
                         </td>
                     </tr>
                 }

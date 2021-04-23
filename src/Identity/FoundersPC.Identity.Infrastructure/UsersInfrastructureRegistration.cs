@@ -26,7 +26,7 @@ namespace FoundersPC.Identity.Infrastructure
 
         public static void AddApiAccessTokensRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IApiAccessUsersTokensRepository, ApiAccessUsersTokensRepository>();
+            services.AddScoped<IAccessTokensRepository, AccessTokensRepository>();
         }
 
         public static void AddUsersAndTokenLogsRepositories(this IServiceCollection services)

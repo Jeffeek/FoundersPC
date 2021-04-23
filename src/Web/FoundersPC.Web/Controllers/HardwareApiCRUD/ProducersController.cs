@@ -1,17 +1,19 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Web.Application;
 using FoundersPC.Web.Application.Interfaces.Services.HardwareApi;
 using FoundersPC.Web.Domain.Common;
+using FoundersPC.Web.Domain.Common.Hardware;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PagedList.Core;
 
 #endregion
 
@@ -20,6 +22,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
     [Route("HardwareApiManaging/Producers")]
     [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy,
                AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
+    [ModelValidation]
     public class ProducersController : Controller
     {
         private readonly IMapper _mapper;
@@ -34,42 +37,50 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
 
         [HttpGet]
         public ActionResult Create() =>
-            View(new ProducerInsertDto
+            View("ProducerCreate",
+                 new ProducerDtoViewModel
                  {
                      Country = String.Empty,
-                     FoundationDate = null,
-                     FullName = String.Empty,
-                     ShortName = String.Empty,
-                     Website = "https://"
+                     FoundationDate = DateTime.Now,
+                     IsFoundationDateEmpty = false,
+                     FullName = "FullName",
+                     IsShortNameEmpty = false,
+                     ShortName = "ShortName",
+                     Website = "https://",
+                     IsWebsiteEmpty = false
                  });
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromForm] ProducerInsertDto producer)
+        public async Task<ActionResult> Create([FromForm] ProducerDtoViewModel producer)
         {
+            var dto = _mapper.Map<ProducerDtoViewModel, ProducerInsertDto>(producer);
+
             var insertResult =
-                await _producersManagingService.CreateProducerAsync(producer, HttpContext.GetJwtTokenFromCookie());
+                await _producersManagingService.CreateProducerAsync(dto, HttpContext.GetJwtTokenFromCookie());
 
             if (insertResult)
-                return RedirectToAction("Table");
+                return RedirectToAction("ProducersTable");
 
             return Problem();
         }
 
         [HttpGet("Table")]
-        public async Task<ActionResult> Table([FromQuery] int pageNumber = 1)
+        public async Task<ActionResult> ProducersTable([FromQuery] int pageNumber = 1)
         {
-            var producers = (await _producersManagingService.GetPaginateableProducersAsync(pageNumber,
-                                                                                           FoundersPCConstants.PageSize,
-                                                                                           HttpContext.GetJwtTokenFromCookie())).ToArray();
+            var producers = await _producersManagingService.GetPaginateableProducersAsync(pageNumber,
+                                                                                          FoundersPCConstants.PageSize,
+                                                                                          HttpContext.GetJwtTokenFromCookie());
 
             var indexModel = new IndexViewModel<ProducerReadDto>
                              {
-                                 Models = producers,
-                                 Page = new PageViewModel(pageNumber,
-                                                          producers.Length == FoundersPCConstants.PageSize)
+                                 IsPaginationNeeded = true,
+                                 PagedList = new StaticPagedList<ProducerReadDto>(producers.Items,
+                                                                                  pageNumber,
+                                                                                  FoundersPCConstants.PageSize,
+                                                                                  producers.TotalItemsCount)
                              };
 
-            return View("Table", indexModel);
+            return View("ProducersTable", indexModel);
         }
 
         [HttpGet("Edit/{id:int:min(1)}")]
@@ -78,18 +89,20 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var producer =
                 await _producersManagingService.GetProducerByIdAsync(id, HttpContext.GetJwtTokenFromCookie());
 
-            var producerUpdate = _mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer);
+            var viewModel = _mapper.Map<ProducerUpdateDto, ProducerDtoViewModel>(_mapper.Map<ProducerReadDto, ProducerUpdateDto>(producer));
 
-            return View("Edit", producerUpdate);
+            return View("ProducerEdit", viewModel);
         }
 
         [HttpPost("Edit/{id:int:min(1)}")]
-        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProducerUpdateDto producer)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromForm] ProducerDtoViewModel producer)
         {
-            var result =
-                await _producersManagingService.UpdateProducerAsync(id, producer, HttpContext.GetJwtTokenFromCookie());
+            var dto = _mapper.Map<ProducerDtoViewModel, ProducerUpdateDto>(producer);
 
-            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("Table");
+            var result =
+                await _producersManagingService.UpdateProducerAsync(id, dto, HttpContext.GetJwtTokenFromCookie());
+
+            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("ProducersTable");
         }
 
         [HttpGet("Remove/{id:int:min(1)}")]
@@ -97,7 +110,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         {
             var result = await _producersManagingService.DeleteProducerAsync(id, HttpContext.GetJwtTokenFromCookie());
 
-            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("Table");
+            return !result ? RedirectToAction("ServerErrorIndex", "Error") : RedirectToAction("ProducersTable");
         }
     }
 }

@@ -28,10 +28,7 @@ namespace FoundersPC.Web.Application
                     .AddFluentValidation(cfg =>
                                          {
                                              cfg.AutomaticValidationEnabled = true;
-
-                                             cfg.RegisterValidatorsFromAssemblyContaining<
-                                                 PasswordSettingsViewModelValidator>();
-
+                                             cfg.RegisterValidatorsFromAssemblyContaining<PasswordSettingsViewModelValidator>();
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
         }

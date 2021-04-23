@@ -8,8 +8,6 @@ namespace FoundersPC.API.Dto
 {
     public class ProcessorCoreUpdateDto
     {
-        public int Id { get; set; }
-
         public DateTime? MarketLaunch { get; set; }
 
         public string Title { get; set; }

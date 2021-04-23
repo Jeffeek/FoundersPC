@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.Authentication;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Tokens;
 using FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_services.Users;
@@ -59,74 +61,118 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
         #region Users information
 
-        public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => await _usersInformationService.GetAllUsersAsync(adminToken);
+        /// <inheritdoc/>
+        public Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => _usersInformationService.GetAllUsersAsync(adminToken);
 
         /// <inheritdoc/>
-        public Task<IEnumerable<UserEntityReadDto>>
+        public Task<IPaginationResponse<UserEntityReadDto>>
             GetPaginateableUsersAsync(int pageNumber, int pageSize, string adminToken) =>
             _usersInformationService.GetPaginateableUsersAsync(pageNumber, pageSize, adminToken);
 
-        public async Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => await _usersInformationService.GetUserByIdAsync(id, adminToken);
+        /// <inheritdoc/>
+        public Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => _usersInformationService.GetUserByIdAsync(id, adminToken);
 
-        public async Task<UserEntityReadDto> GetUserByEmailAsync(string email, string adminToken) =>
-            await _usersInformationService.GetUserByEmailAsync(email, adminToken);
+        /// <inheritdoc/>
+        public Task<UserEntityReadDto> GetUserByEmailAsync(string email, string jwtToken) => _usersInformationService.GetUserByEmailAsync(email, jwtToken);
 
         #endregion
 
         #region Block user
 
-        public async Task<bool> BlockUserByIdAsync(int id, string adminToken) => await _userStatusService.BlockUserByIdAsync(id, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> BlockUserByIdAsync(int id, string adminToken) => _userStatusService.BlockUserByIdAsync(id, adminToken);
 
-        public async Task<bool> BlockUserByEmailAsync(string email, string adminToken) => await _userStatusService.BlockUserByEmailAsync(email, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> BlockUserByEmailAsync(string email, string adminToken) => _userStatusService.BlockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Unblock user
 
-        public async Task<bool> UnblockUserByIdAsync(int id, string adminToken) => await _userStatusService.UnblockUserByIdAsync(id, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> UnblockUserByIdAsync(int id, string adminToken) => _userStatusService.UnblockUserByIdAsync(id, adminToken);
 
-        public async Task<bool> UnblockUserByEmailAsync(string email, string adminToken) => await _userStatusService.UnblockUserByEmailAsync(email, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> UnblockUserByEmailAsync(string email, string adminToken) => _userStatusService.UnblockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Make user inactive
 
-        public async Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => await _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
 
-        public async Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) =>
-            await _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) => _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Users entrances
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) =>
-            await _usersEntrancesService.GetAllEntrancesAsync(adminToken);
+        /// <inheritdoc/>
+        public Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) => _usersEntrancesService.GetAllEntrancesAsync(adminToken);
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<UserEntranceLogReadDto>>
+        public Task<IPaginationResponse<UserEntranceLogReadDto>>
             GetPaginateableEntrancesAsync(int pageNumber, int pageSize, string adminToken) =>
-            await _usersEntrancesService.GetPaginateableEntrancesAsync(pageNumber, pageSize, adminToken);
+            _usersEntrancesService.GetPaginateableEntrancesAsync(pageNumber, pageSize, adminToken);
 
-        public async Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) =>
-            await _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
+        /// <inheritdoc/>
+        public Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) => _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>>
+        /// <inheritdoc/>
+        public Task<IEnumerable<UserEntranceLogReadDto>>
             GetAllUserEntrancesByIdAsync(int userId, string adminToken) =>
-            await _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
+            _usersEntrancesService.GetAllUserEntrancesByIdAsync(userId, adminToken);
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>>
+        /// <inheritdoc/>
+        public Task<IEnumerable<UserEntranceLogReadDto>>
             GetAllUserEntrancesByEmailAsync(string userEmail, string adminToken) =>
-            await _usersEntrancesService.GetAllUserEntrancesByEmailAsync(userEmail, adminToken);
+            _usersEntrancesService.GetAllUserEntrancesByEmailAsync(userEmail, adminToken);
 
-        public async Task<IEnumerable<UserEntranceLogReadDto>>
+        /// <inheritdoc/>
+        public Task<IEnumerable<UserEntranceLogReadDto>>
             GetAllEntrancesBetweenAsync(DateTime start, DateTime finish, string adminToken) =>
-            await _usersEntrancesService.GetAllEntrancesBetweenAsync(start, finish, adminToken);
+            _usersEntrancesService.GetAllEntrancesBetweenAsync(start, finish, adminToken);
 
         #endregion
 
         #region Register new manager
 
+        /// <inheritdoc/>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is <see langword="null"/></exception>
+        /// <exception cref="T:System.ArgumentException">RawPassword != RawPasswordConfirm.</exception>
+        /// <exception cref="T:System.Data.NoNullAllowedException">Response deserialize error.</exception>
+        /// <exception cref="T:System.UriFormatException">
+        ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
+        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     uriString is empty.
+        ///     -or-
+        ///     The scheme specified in uriString is not correctly formed. See
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     -or-
+        ///     uriString contains too many slashes.
+        ///     -or-
+        ///     The password specified in uriString is not valid.
+        ///     -or-
+        ///     The host name specified in uriString is not valid.
+        ///     -or-
+        ///     The file name specified in uriString is not valid.
+        ///     -or-
+        ///     The user name specified in uriString is not valid.
+        ///     -or-
+        ///     The host or authority name specified in uriString cannot be terminated by backslashes.
+        ///     -or-
+        ///     The port number specified in uriString is not valid or cannot be parsed.
+        ///     -or-
+        ///     The length of uriString exceeds 65519 characters.
+        ///     -or-
+        ///     The length of the scheme specified in uriString exceeds 1023 characters.
+        ///     -or-
+        ///     There is an invalid character sequence in uriString.
+        ///     -or-
+        ///     The MS-DOS path specified in uriString must start with c:\\.
+        /// </exception>
         public async Task<bool> RegisterNewManagerAsync(SignUpViewModel model, string adminToken)
         {
             if (model is null)
@@ -146,7 +192,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
                 throw new
                     ArgumentException($"{nameof(model.RawPassword)} was not equal to {nameof(model.RawPasswordConfirm)}");
 
-            using var client = _clientFactory.CreateClient("Sign Up new manager client");
+            var client = _clientFactory.CreateClient("Sign Up new manager client");
 
             client.PrepareJsonRequestWithAuthentication(JwtBearerDefaults.AuthenticationScheme,
                                                         adminToken,
@@ -154,7 +200,10 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
 
             var requestModel = _mapper.Map<SignUpViewModel, UserSignUpRequest>(model);
 
-            var messageResponse = await client.PostAsJsonAsync("Admin/NewManager", requestModel);
+            var messageResponse =
+                await
+                    client.PostAsJsonAsync($"{IdentityServerRoutes.Authentication.AuthenticationEndpoint}/{IdentityServerRoutes.Authentication.SignUpManager}",
+                                           requestModel);
 
             if (!messageResponse.IsSuccessStatusCode)
                 return false;
@@ -176,65 +225,66 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             return false;
         }
 
-        public async Task<bool> RegisterNewManagerAsync(string email, string rawPassword, string adminToken) =>
-            await RegisterNewManagerAsync(new SignUpViewModel
-                                          {
-                                              Email = email,
-                                              RawPassword = rawPassword,
-                                              RawPasswordConfirm = rawPassword
-                                          },
-                                          adminToken);
+        /// <inheritdoc/>
+        /// <exception cref="T:System.Data.NoNullAllowedException">Response deserialize error.</exception>
+        /// <exception cref="T:System.ArgumentException">RawPassword != RawPasswordConfirm.</exception>
+        /// <exception cref="T:System.ArgumentNullException">model is <see langword="null"/></exception>
+        public Task<bool> RegisterNewManagerAsync(string email, string rawPassword, string adminToken) =>
+            RegisterNewManagerAsync(new SignUpViewModel
+                                    {
+                                        Email = email,
+                                        RawPassword = rawPassword,
+                                        RawPasswordConfirm = rawPassword
+                                    },
+                                    adminToken);
 
         #endregion
 
         #region UsersAccessTokensLogs
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsAsync(string adminToken) =>
-            await _accessTokensLogsService.GetAccessTokensLogsAsync(adminToken);
+        public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsAsync(string adminToken) =>
+            _accessTokensLogsService.GetAccessTokensLogsAsync(adminToken);
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>>
+        public Task<IPaginationResponse<AccessTokenLogReadDto>>
             GetPaginateableAccessTokensLogsAsync(int pageNumber, int pageSize, string adminToken) =>
-            await _accessTokensLogsService.GetPaginateableAccessTokensLogsAsync(pageNumber, pageSize, adminToken);
+            _accessTokensLogsService.GetPaginateableAccessTokensLogsAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>>
+        public Task<IEnumerable<AccessTokenLogReadDto>>
             GetAccessTokensLogsByUserIdAsync(int userId, string adminToken) =>
-            await _accessTokensLogsService.GetAccessTokensLogsByUserIdAsync(userId, adminToken);
+            _accessTokensLogsService.GetAccessTokensLogsByUserIdAsync(userId, adminToken);
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<AccessTokenLogReadDto>>
+        public Task<IEnumerable<AccessTokenLogReadDto>>
             GetAccessTokensLogsByUserEmailAsync(string userEmail, string adminToken) =>
-            await _accessTokensLogsService.GetAccessTokensLogsByUserEmailAsync(userEmail, adminToken);
+            _accessTokensLogsService.GetAccessTokensLogsByUserEmailAsync(userEmail, adminToken);
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken) =>
-            await _accessTokensLogsService.GetAccessTokensLogsByTokenIdAsync(tokenId, adminToken);
+        /// <inheritdoc/>
+        public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken) =>
+            _accessTokensLogsService.GetAccessTokensLogsByTokenIdAsync(tokenId, adminToken);
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken) =>
-            await _accessTokensLogsService.GetAccessTokensLogsByTokenAsync(token, adminToken);
+        /// <inheritdoc/>
+        public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken) =>
+            _accessTokensLogsService.GetAccessTokensLogsByTokenAsync(token, adminToken);
 
         #endregion
 
         #region UsersAccessTokensService
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) =>
-            await _tokensService.GetAllUsersAccessTokensAsync(adminToken);
+        /// <inheritdoc/>
+        public Task<IEnumerable<AccessTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) => _tokensService.GetAllUsersAccessTokensAsync(adminToken);
 
-        /// <inheritdoc />
-        public async Task<IEnumerable<ApiAccessUserTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken) =>
-            await _tokensService.GetPaginateableTokensAsync(pageNumber, pageSize, adminToken);
+        /// <inheritdoc/>
+        public Task<IPaginationResponse<AccessTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken) =>
+            _tokensService.GetPaginateableTokensAsync(pageNumber, pageSize, adminToken);
 
-        /// <inheritdoc />
-        public async Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) =>
-            await _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) => _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
 
-        /// <inheritdoc />
-        public async Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) =>
-            await _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
+        /// <inheritdoc/>
+        public Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) => _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
 
         #endregion
     }

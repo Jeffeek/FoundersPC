@@ -1,7 +1,7 @@
 ﻿#region Using namespaces
 
 using System.Threading.Tasks;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
 using FoundersPC.Web.Domain.Common.Authentication;
 
 #endregion

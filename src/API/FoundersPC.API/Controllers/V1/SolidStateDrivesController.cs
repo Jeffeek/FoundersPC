@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
+using FoundersPC.RequestResponseShared.Pagination.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,89 +18,132 @@ namespace FoundersPC.API.Controllers.V1
 {
     [ApiVersion("1.0", Deprecated = false)]
     [ApiController]
-    [Route("HardwareApi/SolidStateDrives")]
     [Route("HardwareApi/SSDs")]
+    [Route(HardwareApiRoutes.SolidStateDrivesEndpoint)]
+    [ModelValidation]
     public class SolidStateDrivesController : Controller
     {
         private readonly ILogger<SolidStateDrivesController> _logger;
-        private readonly ISSDService _ssdService;
+        private readonly ISolidStateDrivesService _solidStateDrivesService;
 
-        public SolidStateDrivesController(ISSDService ssdService,
+        public SolidStateDrivesController(ISolidStateDrivesService solidStateDrivesService,
                                           ILogger<SolidStateDrivesController> logger)
         {
-            _ssdService = ssdService;
+            _solidStateDrivesService = solidStateDrivesService;
             _logger = logger;
         }
 
-        [HttpGet("All")]
-        public async Task<ActionResult<IEnumerable<SSDReadDto>>> Get()
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [HttpGet(ApplicationRestAddons.All)]
+        public async Task<ActionResult<IEnumerable<SolidStateDriveReadDto>>> Get()
         {
             _logger.LogForModelsRead(HttpContext);
 
-            return Json(await _ssdService.GetAllSSDsAsync());
+            return Json(await _solidStateDrivesService.GetAllSolidStateDrivesAsync());
         }
+
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery(Name = "Page")] int pageNumber = 1,
-                                                                                  [FromQuery(Name = "Size")] int pageSize = FoundersPCConstants.PageSize)
+        public async Task<ActionResult<IEnumerable<CaseReadDto>>> GetPaginateable([FromQuery] PaginationRequest request)
         {
-            _logger.LogForPaginateableModelsRead(HttpContext, pageNumber, pageSize);
+            _logger.LogForPaginateableModelsRead(HttpContext, request.PageNumber, request.PageSize);
 
-            return Json(await _ssdService.GetPaginateableAsync(pageNumber, pageSize));
+            return Json(await _solidStateDrivesService.GetPaginateableAsync(request.PageNumber, request.PageSize));
         }
 
-        [HttpGet("{id:int:min(1)}")]
-        public async Task<ActionResult<SSDReadDto>> Get([FromRoute] int id)
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [HttpGet(ApplicationRestAddons.GetById)]
+        public async Task<ActionResult<SolidStateDriveReadDto>> Get([FromRoute] int id)
         {
             _logger.LogForModelRead(HttpContext, id);
 
-            var ssd = await _ssdService.GetSSDByIdAsync(id);
+            var ssd = await _solidStateDrivesService.GetSolidStateDriveByIdAsync(id);
 
             return ssd == null ? ResponseResultsHelper.NotFoundByIdResult(id) : Json(ssd);
         }
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPut("{id:int:min(1)}")]
-        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] SSDUpdateDto ssd)
-        {
-            if (!ModelState.IsValid)
-                return ValidationProblem(ModelState);
+        #region Docs
 
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+        [HttpPut(ApplicationRestAddons.Update)]
+        public async Task<ActionResult> Update([FromRoute] int id, [FromBody] SolidStateDriveUpdateDto solidStateDrive)
+        {
             _logger.LogForModelUpdate(HttpContext, id);
 
-            var result = await _ssdService.UpdateSSDAsync(id, ssd);
+            var result = await _solidStateDrivesService.UpdateSolidStateDriveAsync(id, solidStateDrive);
 
-            return result ? Json(ssd) : ResponseResultsHelper.UpdateError();
+            return result ? Json(solidStateDrive) : ResponseResultsHelper.UpdateError();
         }
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpPost]
-        public async Task<ActionResult> Insert([FromBody] SSDInsertDto ssd)
-        {
-            if (!ModelState.IsValid)
-                return ValidationProblem(ModelState);
+        #region Docs
 
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
+        [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
+        [HttpPost(ApplicationRestAddons.Create)]
+        public async Task<ActionResult> Create([FromBody] SolidStateDriveInsertDto solidStateDrive)
+        {
             _logger.LogForModelInsert(HttpContext);
 
-            var insertResult = await _ssdService.CreateSSDAsync(ssd);
+            var insertResult = await _solidStateDrivesService.CreateSolidStateDriveAsync(solidStateDrive);
 
-            return insertResult ? Json(ssd) : ResponseResultsHelper.InsertError();
+            return insertResult ? Json(solidStateDrive) : ResponseResultsHelper.InsertError();
         }
 
+        #region Docs
+
+        /// <exception cref="T:System.Net.Sockets.SocketException">
+        ///     The address family is
+        ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
+        /// </exception>
+
+        #endregion
+
         [Authorize(Policy = ApplicationAuthorizationPolicies.ManagerPolicy)]
-        [HttpDelete("{id:int:min(1)}")]
+        [HttpDelete(ApplicationRestAddons.Delete)]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {
             _logger.LogForModelDelete(HttpContext, id);
 
-            var readSSD = await _ssdService.GetSSDByIdAsync(id);
+            var result = await _solidStateDrivesService.DeleteSolidStateDriveAsync(id);
 
-            if (readSSD == null)
-                return ResponseResultsHelper.NotFoundByIdResult(id);
-
-            var result = await _ssdService.DeleteSSDAsync(id);
-
-            return result ? Json(readSSD) : ResponseResultsHelper.DeleteError();
+            return result ? Ok() : ResponseResultsHelper.DeleteError();
         }
     }
 }

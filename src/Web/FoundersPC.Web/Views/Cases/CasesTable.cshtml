@@ -1,0 +1,28 @@
+﻿@using FoundersPC.API.Dto
+@using PagedList.Core.Mvc
+@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.API.Dto.CaseReadDto>
+
+@{
+    ViewData["Title"] = "CasesTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+@section Styles {
+    <link
+        href='~/css/table.css'
+        rel='stylesheet'>
+}}
+
+<hardware-table
+    asp-controller='Cases'
+    entities='@(Model.PagedList)'
+    entity-type='@(typeof(CaseReadDto))'/>
+@{
+    if (Model.IsPaginationNeeded) {
+        <pager
+            asp-action="CasesTable"
+            asp-controller="Cases"
+            class="d-flex justify-content-center"
+            list="@Model.PagedList"
+            options="@PagedListRenderOptions.Bootstrap4Full"
+            param-page-number='pageNumber'/>
+    }
+}

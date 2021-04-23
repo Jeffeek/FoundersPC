@@ -5,8 +5,8 @@ using FoundersPC.Identity.Domain.Entities.Logs;
 using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.ChangeSettings;
-using FoundersPC.RequestResponseShared.Response.Authentication;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.Authentication;
 
 #endregion
 
@@ -16,7 +16,7 @@ namespace FoundersPC.Identity.Application.Mappings
     {
         public MappingStartup()
         {
-            CreateMap<ApiAccessUserToken, ApiAccessUserTokenReadDto>();
+            CreateMap<AccessTokenEntity, AccessTokenReadDto>();
             CreateMap<RoleEntity, RoleEntityReadDto>();
             CreateMap<UserEntity, UserEntityReadDto>();
 
@@ -28,7 +28,7 @@ namespace FoundersPC.Identity.Application.Mappings
             CreateMap<AccessTokenLog, AccessTokenLogReadDto>()
                 .ForMember(dest => dest.UserId,
                            source => source
-                               .MapFrom(x => x.ApiAccessToken.UserId))
+                               .MapFrom(x => x.AccessTokenEntity.UserId))
                 .ForMember(dest => dest.TokenId,
                            source => source
                                .MapFrom(x => x.ApiAccessUsersTokenId));

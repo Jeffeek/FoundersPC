@@ -4,10 +4,12 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
 using FoundersPC.Identity.Dto;
-using FoundersPC.RequestResponseShared.Request.ChangeSettings;
-using FoundersPC.RequestResponseShared.Response.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Request.ChangeSettings;
+using FoundersPC.RequestResponseShared.IdentityServer.Response.ChangeSettings;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,8 +18,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoundersPC.IdentityServer.Controllers.Users
 {
     [Authorize(Policy = ApplicationAuthorizationPolicies.AuthenticatedPolicy)]
-    [Route("FoundersPCIdentity/Users/SettingsChange")]
     [ApiController]
+    [Route(IdentityServerRoutes.Users.SettingsChange.SettingsChangeEndpoint)]
+    [ModelValidation]
     public class ChangeSettingsController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -30,13 +33,10 @@ namespace FoundersPC.IdentityServer.Controllers.Users
             _settingsService = settingsService;
         }
 
-        [HttpPut("Password")]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.PasswordChange)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangePassword([FromBody] ChangePasswordRequest request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
-            var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
+            var (email, _) = HttpContext.ParseCredentials();
 
             if (email is null)
                 return new BadRequestObjectResult(new AccountSettingsChangeResponse
@@ -58,16 +58,10 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut("Login")]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.LoginChange)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeLogin([FromBody] ChangeLoginRequest request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
-
-            var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
+            var (email, _) = HttpContext.ParseCredentials();
 
             if (email is null)
                 return new BadRequestObjectResult(new AccountSettingsChangeResponse
@@ -88,16 +82,10 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                    };
         }
 
-        [HttpPut("Notifications")]
+        [HttpPut(IdentityServerRoutes.Users.SettingsChange.NotificationsChange)]
         public async Task<ActionResult<AccountSettingsChangeResponse>> ChangeNotifications([FromBody] ChangeNotificationsRequest request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(new
-                                  {
-                                      error = "Bad model"
-                                  });
-
-            var (email, _) = HttpContext.ParseJwtUserTokenCredentials();
+            var (email, _) = HttpContext.ParseCredentials();
 
             if (email is null)
                 return BadRequest(new

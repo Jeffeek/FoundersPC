@@ -1,4 +1,5 @@
-﻿@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.UserEntityReadDto>
+﻿@using PagedList.Core.Mvc
+@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.UserEntityReadDto>
 
 @{
     ViewBag.Title = "title";
@@ -7,10 +8,7 @@
     <link
         href="~/css/table.css"
         rel="stylesheet"/>
-}
-
-
-}
+}}
 
 <div
     class='mt-5 table-wrapper'>
@@ -59,7 +57,7 @@
     </thead>
     <tbody>
     @{
-        foreach (var user in Model.Models) {
+        foreach (var user in Model.PagedList) {
             <tr
                 class=@if (!user.IsActive) { @Html.Raw("text-danger") }>
                 <th>@user.Id</th>
@@ -237,33 +235,13 @@
 </table>
 @{
     if (Model.IsPaginationNeeded) {
-        <nav>
-            <ul
-                class="justify-content-center pagination">
-                <li
-                    class="page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))">
-                    <a
-                        aria-disabled='@(!Model.Page.HasPreviousPage)'
-                        asp-action='UsersTable'
-                        asp-controller='Admin'
-                        asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
-                        class="bg-light page-link">
-                        Previous
-                    </a>
-                </li>
-                <li
-                    class="page-item @(Html.Raw(Model.Page.HasNextPage ? String.Empty : "disabled"))">
-                    <a
-                        aria-disabled='@(!Model.Page.HasNextPage)'
-                        asp-action='UsersTable'
-                        asp-controller='Admin'
-                        asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
-                        class="bg-light page-link">
-                        Next
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <pager
+            asp-action="UsersTable"
+            asp-controller="Admin"
+            class="d-flex justify-content-center"
+            list="@Model.PagedList"
+            options="@PagedListRenderOptions.Bootstrap4Full"
+            param-page-number='pageNumber'/>
     }
 }
 </div>

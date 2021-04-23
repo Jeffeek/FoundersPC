@@ -1,0 +1,1869 @@
+04/18/2021 13:51:45 Web server started..
+04/18/2021 13:51:45 Web server HostBuilder created
+04/18/2021 13:51:46 Host built
+04/18/2021 13:51:46 Now listening on: "https://localhost:9000"
+04/18/2021 13:51:46 Application started. Press Ctrl+C to shut down.
+04/18/2021 13:51:46 Hosting environment: "Development"
+04/18/2021 13:51:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 13:51:50 HTTP "GET" "/" responded 200 in 317.3063 ms
+04/18/2021 13:51:54 HTTP "GET" "/Authentication/SignIn" responded 200 in 237.5975 ms
+04/18/2021 13:51:56 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 13:51:56 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 13:51:58 Received HTTP response headers after 2215.7824ms - 200
+04/18/2021 13:51:58 End processing HTTP request after 2227.9459ms - 200
+04/18/2021 13:51:58 HTTP "POST" "/Authentication/SignIn" responded 302 in 2342.4362 ms
+04/18/2021 13:51:58 HTTP "GET" "/" responded 200 in 3.8053 ms
+04/18/2021 13:52:00 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/18/2021 13:52:00 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/18/2021 13:52:00 Received HTTP response headers after 244.1898ms - 200
+04/18/2021 13:52:00 End processing HTTP request after 246.4358ms - 200
+04/18/2021 13:52:00 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 362.4413 ms
+04/18/2021 13:52:02 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ByUserId
+04/18/2021 13:52:02 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Block/ByUserId
+04/18/2021 13:52:04 Received HTTP response headers after 1929.4896ms - 200
+04/18/2021 13:52:04 End processing HTTP request after 1931.933ms - 200
+04/18/2021 13:52:04 UserStatusService: block user: user with id = 18 was blocked by ilyushin_misha@mail.ru
+04/18/2021 13:52:04 HTTP "GET" "/Admin/BlockUser/18" responded 302 in 1944.2035 ms
+04/18/2021 13:52:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/18/2021 13:52:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/18/2021 13:52:04 Received HTTP response headers after 12.1872ms - 200
+04/18/2021 13:52:04 End processing HTTP request after 14.0158ms - 200
+04/18/2021 13:52:04 HTTP "GET" "/Admin/UsersTable" responded 200 in 20.3811 ms
+04/18/2021 13:52:05 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ByUserId
+04/18/2021 13:52:05 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/StatusChange/Unblock/ByUserId
+04/18/2021 13:52:06 Received HTTP response headers after 993.1602ms - 200
+04/18/2021 13:52:06 End processing HTTP request after 995.7073ms - 200
+04/18/2021 13:52:06 UserStatusService: unblock user: user with id = 18 was unblocked by ilyushin_misha@mail.ru
+04/18/2021 13:52:06 HTTP "GET" "/Admin/UnblockUser/18" responded 302 in 1004.1957 ms
+04/18/2021 13:52:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/18/2021 13:52:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/18/2021 13:52:06 Received HTTP response headers after 10.6645ms - 200
+04/18/2021 13:52:06 End processing HTTP request after 13.607ms - 200
+04/18/2021 13:52:06 HTTP "GET" "/Admin/UsersTable" responded 200 in 16.9794 ms
+04/18/2021 13:53:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:53:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:53:20 Received HTTP response headers after 57.6106ms - 200
+04/18/2021 13:53:20 End processing HTTP request after 59.7537ms - 200
+04/18/2021 13:53:20 HTTP "GET" "/Account" responded 200 in 129.6493 ms
+04/18/2021 13:55:10 Web server started..
+04/18/2021 13:55:10 Web server HostBuilder created
+04/18/2021 13:55:11 Host built
+04/18/2021 13:55:11 Now listening on: "https://localhost:9000"
+04/18/2021 13:55:11 Application started. Press Ctrl+C to shut down.
+04/18/2021 13:55:11 Hosting environment: "Development"
+04/18/2021 13:55:11 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 13:55:14 HTTP "GET" "/" responded 200 in 199.5268 ms
+04/18/2021 13:55:15 HTTP "GET" "/Authentication/SignIn" responded 200 in 247.2337 ms
+04/18/2021 13:55:16 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 13:55:16 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 13:55:18 Received HTTP response headers after 2346.3261ms - 200
+04/18/2021 13:55:18 End processing HTTP request after 2360.1843ms - 200
+04/18/2021 13:55:19 HTTP "POST" "/Authentication/SignIn" responded 302 in 2475.5305 ms
+04/18/2021 13:55:19 HTTP "GET" "/" responded 200 in 3.6139 ms
+04/18/2021 13:55:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:55:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:55:21 Received HTTP response headers after 168.9178ms - 200
+04/18/2021 13:55:21 End processing HTTP request after 171.1856ms - 200
+04/18/2021 13:55:21 HTTP "GET" "/Account" responded 200 in 289.1134 ms
+04/18/2021 13:56:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:56:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:56:25 Received HTTP response headers after 35.8631ms - 200
+04/18/2021 13:56:25 End processing HTTP request after 38.3207ms - 200
+04/18/2021 13:56:29 HTTP "GET" "/Account" responded 200 in 4362.4716 ms
+04/18/2021 13:56:53 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:56:53 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/ilyushin_misha@mail.ru
+04/18/2021 13:56:53 Received HTTP response headers after 34.4717ms - 200
+04/18/2021 13:56:53 End processing HTTP request after 36.9955ms - 200
+04/18/2021 13:56:53 HTTP "GET" "/Account" responded 200 in 357.7519 ms
+04/18/2021 13:57:06 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/18/2021 13:57:06 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/18/2021 13:57:07 Received HTTP response headers after 120.7028ms - 200
+04/18/2021 13:57:07 End processing HTTP request after 123.574ms - 200
+04/18/2021 13:57:07 HTTP "GET" "/Admin/EntrancesTable?pageNumber=1" responded 200 in 183.9767 ms
+04/18/2021 13:57:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=4&Size=10
+04/18/2021 13:57:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=4&Size=10
+04/18/2021 13:57:08 Received HTTP response headers after 12.4044ms - 200
+04/18/2021 13:57:08 End processing HTTP request after 14.8862ms - 200
+04/18/2021 13:57:08 HTTP "GET" "/Admin/EntrancesTable?pageNumber=4" responded 200 in 20.7322 ms
+04/18/2021 13:57:08 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=7&Size=10
+04/18/2021 13:57:08 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=7&Size=10
+04/18/2021 13:57:08 Received HTTP response headers after 7.2639ms - 200
+04/18/2021 13:57:08 End processing HTTP request after 9.8277ms - 200
+04/18/2021 13:57:08 HTTP "GET" "/Admin/EntrancesTable?pageNumber=7" responded 200 in 17.3921 ms
+04/18/2021 13:57:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:09 Received HTTP response headers after 6.4551ms - 200
+04/18/2021 13:57:09 End processing HTTP request after 11.0144ms - 200
+04/18/2021 13:57:09 HTTP "GET" "/Admin/EntrancesTable?pageNumber=10" responded 200 in 13.6788 ms
+04/18/2021 13:57:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=14&Size=10
+04/18/2021 13:57:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=14&Size=10
+04/18/2021 13:57:09 Received HTTP response headers after 6.2839ms - 200
+04/18/2021 13:57:09 End processing HTTP request after 9.2705ms - 200
+04/18/2021 13:57:09 HTTP "GET" "/Admin/EntrancesTable?pageNumber=14" responded 200 in 13.1054 ms
+04/18/2021 13:57:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=16&Size=10
+04/18/2021 13:57:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=16&Size=10
+04/18/2021 13:57:10 Received HTTP response headers after 6.3209ms - 200
+04/18/2021 13:57:10 End processing HTTP request after 8.9796ms - 200
+04/18/2021 13:57:10 HTTP "GET" "/Admin/EntrancesTable?pageNumber=16" responded 200 in 13.7084 ms
+04/18/2021 13:57:10 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=14&Size=10
+04/18/2021 13:57:10 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=14&Size=10
+04/18/2021 13:57:10 Received HTTP response headers after 6.83ms - 200
+04/18/2021 13:57:10 End processing HTTP request after 10.303ms - 200
+04/18/2021 13:57:10 HTTP "GET" "/Admin/EntrancesTable?pageNumber=14" responded 200 in 13.0854 ms
+04/18/2021 13:57:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:11 Received HTTP response headers after 6.3089ms - 200
+04/18/2021 13:57:11 End processing HTTP request after 10.4562ms - 200
+04/18/2021 13:57:11 HTTP "GET" "/Admin/EntrancesTable?pageNumber=10" responded 200 in 13.8691 ms
+04/18/2021 13:57:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=9&Size=10
+04/18/2021 13:57:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=9&Size=10
+04/18/2021 13:57:11 Received HTTP response headers after 6.201ms - 200
+04/18/2021 13:57:11 End processing HTTP request after 9.6009ms - 200
+04/18/2021 13:57:11 HTTP "GET" "/Admin/EntrancesTable?pageNumber=9" responded 200 in 13.5672 ms
+04/18/2021 13:57:11 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=4&Size=10
+04/18/2021 13:57:11 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=4&Size=10
+04/18/2021 13:57:11 Received HTTP response headers after 6.3562ms - 200
+04/18/2021 13:57:11 End processing HTTP request after 10.1955ms - 200
+04/18/2021 13:57:11 HTTP "GET" "/Admin/EntrancesTable?pageNumber=4" responded 200 in 13.1004 ms
+04/18/2021 13:57:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=7&Size=10
+04/18/2021 13:57:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=7&Size=10
+04/18/2021 13:57:12 Received HTTP response headers after 6.5278ms - 200
+04/18/2021 13:57:12 End processing HTTP request after 9.0141ms - 200
+04/18/2021 13:57:12 HTTP "GET" "/Admin/EntrancesTable?pageNumber=7" responded 200 in 12.2494 ms
+04/18/2021 13:57:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=9&Size=10
+04/18/2021 13:57:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=9&Size=10
+04/18/2021 13:57:13 Received HTTP response headers after 9.2187ms - 200
+04/18/2021 13:57:13 End processing HTTP request after 12.0525ms - 200
+04/18/2021 13:57:13 HTTP "GET" "/Admin/EntrancesTable?pageNumber=9" responded 200 in 14.9102 ms
+04/18/2021 13:57:13 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=5&Size=10
+04/18/2021 13:57:13 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=5&Size=10
+04/18/2021 13:57:13 Received HTTP response headers after 6.088ms - 200
+04/18/2021 13:57:13 End processing HTTP request after 8.6922ms - 200
+04/18/2021 13:57:13 HTTP "GET" "/Admin/EntrancesTable?pageNumber=5" responded 200 in 12.4704 ms
+04/18/2021 13:57:14 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=4&Size=10
+04/18/2021 13:57:14 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=4&Size=10
+04/18/2021 13:57:14 Received HTTP response headers after 6.5793ms - 200
+04/18/2021 13:57:14 End processing HTTP request after 9.0277ms - 200
+04/18/2021 13:57:14 HTTP "GET" "/Admin/EntrancesTable?pageNumber=4" responded 200 in 12.7009 ms
+04/18/2021 13:57:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=3&Size=10
+04/18/2021 13:57:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=3&Size=10
+04/18/2021 13:57:15 Received HTTP response headers after 6.0886ms - 200
+04/18/2021 13:57:15 End processing HTTP request after 8.588ms - 200
+04/18/2021 13:57:15 HTTP "GET" "/Admin/EntrancesTable?pageNumber=3" responded 200 in 11.6128 ms
+04/18/2021 13:57:15 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/18/2021 13:57:15 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/18/2021 13:57:15 Received HTTP response headers after 5.9599ms - 200
+04/18/2021 13:57:15 End processing HTTP request after 10.644ms - 200
+04/18/2021 13:57:15 HTTP "GET" "/Admin/EntrancesTable?pageNumber=1" responded 200 in 13.5654 ms
+04/18/2021 13:57:16 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=2&Size=10
+04/18/2021 13:57:16 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=2&Size=10
+04/18/2021 13:57:16 Received HTTP response headers after 15.8604ms - 200
+04/18/2021 13:57:16 End processing HTTP request after 18.4204ms - 200
+04/18/2021 13:57:16 HTTP "GET" "/Admin/EntrancesTable?pageNumber=2" responded 200 in 21.6222 ms
+04/18/2021 13:57:17 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=32&Size=10
+04/18/2021 13:57:17 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=32&Size=10
+04/18/2021 13:57:17 Received HTTP response headers after 6.3062ms - 200
+04/18/2021 13:57:17 End processing HTTP request after 8.5566ms - 200
+04/18/2021 13:57:17 HTTP "GET" "/Admin/EntrancesTable?pageNumber=32" responded 200 in 12.4008 ms
+04/18/2021 13:57:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=29&Size=10
+04/18/2021 13:57:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=29&Size=10
+04/18/2021 13:57:18 Received HTTP response headers after 5.8309ms - 200
+04/18/2021 13:57:18 End processing HTTP request after 8.2844ms - 200
+04/18/2021 13:57:18 HTTP "GET" "/Admin/EntrancesTable?pageNumber=29" responded 200 in 11.8605 ms
+04/18/2021 13:57:19 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=27&Size=10
+04/18/2021 13:57:19 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=27&Size=10
+04/18/2021 13:57:19 Received HTTP response headers after 6.0336ms - 200
+04/18/2021 13:57:19 End processing HTTP request after 9.3959ms - 200
+04/18/2021 13:57:19 HTTP "GET" "/Admin/EntrancesTable?pageNumber=27" responded 200 in 13.0157 ms
+04/18/2021 13:57:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=28&Size=10
+04/18/2021 13:57:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=28&Size=10
+04/18/2021 13:57:20 Received HTTP response headers after 6.4602ms - 200
+04/18/2021 13:57:20 End processing HTTP request after 8.8486ms - 200
+04/18/2021 13:57:20 HTTP "GET" "/Admin/EntrancesTable?pageNumber=28" responded 200 in 11.5761 ms
+04/18/2021 13:57:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=26&Size=10
+04/18/2021 13:57:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=26&Size=10
+04/18/2021 13:57:22 Received HTTP response headers after 6.6006ms - 200
+04/18/2021 13:57:22 End processing HTTP request after 10.158ms - 200
+04/18/2021 13:57:22 HTTP "GET" "/Admin/EntrancesTable?pageNumber=26" responded 200 in 14.0320 ms
+04/18/2021 13:57:23 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=23&Size=10
+04/18/2021 13:57:23 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=23&Size=10
+04/18/2021 13:57:23 Received HTTP response headers after 6.1651ms - 200
+04/18/2021 13:57:23 End processing HTTP request after 8.9872ms - 200
+04/18/2021 13:57:23 HTTP "GET" "/Admin/EntrancesTable?pageNumber=23" responded 200 in 13.3234 ms
+04/18/2021 13:57:24 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=21&Size=10
+04/18/2021 13:57:24 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=21&Size=10
+04/18/2021 13:57:24 Received HTTP response headers after 5.7627ms - 200
+04/18/2021 13:57:24 End processing HTTP request after 8.3947ms - 200
+04/18/2021 13:57:24 HTTP "GET" "/Admin/EntrancesTable?pageNumber=21" responded 200 in 11.3176 ms
+04/18/2021 13:57:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=18&Size=10
+04/18/2021 13:57:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=18&Size=10
+04/18/2021 13:57:25 Received HTTP response headers after 6.862ms - 200
+04/18/2021 13:57:25 End processing HTTP request after 9.5756ms - 200
+04/18/2021 13:57:25 HTTP "GET" "/Admin/EntrancesTable?pageNumber=18" responded 200 in 13.5271 ms
+04/18/2021 13:57:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=16&Size=10
+04/18/2021 13:57:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=16&Size=10
+04/18/2021 13:57:25 Received HTTP response headers after 5.8048ms - 200
+04/18/2021 13:57:25 End processing HTTP request after 8.6347ms - 200
+04/18/2021 13:57:25 HTTP "GET" "/Admin/EntrancesTable?pageNumber=16" responded 200 in 12.9981 ms
+04/18/2021 13:57:25 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=13&Size=10
+04/18/2021 13:57:25 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=13&Size=10
+04/18/2021 13:57:25 Received HTTP response headers after 6.9421ms - 200
+04/18/2021 13:57:25 End processing HTTP request after 10.0971ms - 200
+04/18/2021 13:57:25 HTTP "GET" "/Admin/EntrancesTable?pageNumber=13" responded 200 in 13.4920 ms
+04/18/2021 13:57:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=11&Size=10
+04/18/2021 13:57:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=11&Size=10
+04/18/2021 13:57:26 Received HTTP response headers after 5.9733ms - 200
+04/18/2021 13:57:26 End processing HTTP request after 9.9239ms - 200
+04/18/2021 13:57:26 HTTP "GET" "/Admin/EntrancesTable?pageNumber=11" responded 200 in 13.0523 ms
+04/18/2021 13:57:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:26 Received HTTP response headers after 5.6412ms - 200
+04/18/2021 13:57:26 End processing HTTP request after 8.5724ms - 200
+04/18/2021 13:57:26 HTTP "GET" "/Admin/EntrancesTable?pageNumber=10" responded 200 in 12.0690 ms
+04/18/2021 13:57:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=8&Size=10
+04/18/2021 13:57:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=8&Size=10
+04/18/2021 13:57:27 Received HTTP response headers after 5.7024ms - 200
+04/18/2021 13:57:27 End processing HTTP request after 8.5205ms - 200
+04/18/2021 13:57:27 HTTP "GET" "/Admin/EntrancesTable?pageNumber=8" responded 200 in 11.2978 ms
+04/18/2021 13:57:27 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=5&Size=10
+04/18/2021 13:57:27 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=5&Size=10
+04/18/2021 13:57:27 Received HTTP response headers after 7.2839ms - 200
+04/18/2021 13:57:27 End processing HTTP request after 9.9686ms - 200
+04/18/2021 13:57:27 HTTP "GET" "/Admin/EntrancesTable?pageNumber=5" responded 200 in 14.2693 ms
+04/18/2021 13:57:28 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=7&Size=10
+04/18/2021 13:57:28 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=7&Size=10
+04/18/2021 13:57:28 Received HTTP response headers after 5.7694ms - 200
+04/18/2021 13:57:28 End processing HTTP request after 7.9977ms - 200
+04/18/2021 13:57:28 HTTP "GET" "/Admin/EntrancesTable?pageNumber=7" responded 200 in 11.5969 ms
+04/18/2021 13:57:28 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:28 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=10&Size=10
+04/18/2021 13:57:28 Received HTTP response headers after 5.2852ms - 200
+04/18/2021 13:57:28 End processing HTTP request after 7.7878ms - 200
+04/18/2021 13:57:28 HTTP "GET" "/Admin/EntrancesTable?pageNumber=10" responded 200 in 11.0872 ms
+04/18/2021 13:57:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=13&Size=10
+04/18/2021 13:57:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=13&Size=10
+04/18/2021 13:57:29 Received HTTP response headers after 5.3678ms - 200
+04/18/2021 13:57:29 End processing HTTP request after 7.7419ms - 200
+04/18/2021 13:57:29 HTTP "GET" "/Admin/EntrancesTable?pageNumber=13" responded 200 in 11.0124 ms
+04/18/2021 13:57:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=16&Size=10
+04/18/2021 13:57:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=16&Size=10
+04/18/2021 13:57:29 Received HTTP response headers after 5.6411ms - 200
+04/18/2021 13:57:29 End processing HTTP request after 8.2886ms - 200
+04/18/2021 13:57:29 HTTP "GET" "/Admin/EntrancesTable?pageNumber=16" responded 200 in 10.8401 ms
+04/18/2021 13:57:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=19&Size=10
+04/18/2021 13:57:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=19&Size=10
+04/18/2021 13:57:29 Received HTTP response headers after 6.417ms - 200
+04/18/2021 13:57:29 End processing HTTP request after 8.7096ms - 200
+04/18/2021 13:57:29 HTTP "GET" "/Admin/EntrancesTable?pageNumber=19" responded 200 in 11.8213 ms
+04/18/2021 13:57:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=22&Size=10
+04/18/2021 13:57:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=22&Size=10
+04/18/2021 13:57:30 Received HTTP response headers after 5.1219ms - 200
+04/18/2021 13:57:30 End processing HTTP request after 7.4722ms - 200
+04/18/2021 13:57:30 HTTP "GET" "/Admin/EntrancesTable?pageNumber=22" responded 200 in 10.6607 ms
+04/18/2021 13:57:30 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=25&Size=10
+04/18/2021 13:57:30 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=25&Size=10
+04/18/2021 13:57:30 Received HTTP response headers after 5.8951ms - 200
+04/18/2021 13:57:30 End processing HTTP request after 10.5971ms - 200
+04/18/2021 13:57:30 HTTP "GET" "/Admin/EntrancesTable?pageNumber=25" responded 200 in 13.9235 ms
+04/18/2021 13:57:31 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=28&Size=10
+04/18/2021 13:57:31 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=28&Size=10
+04/18/2021 13:57:31 Received HTTP response headers after 7.214ms - 200
+04/18/2021 13:57:31 End processing HTTP request after 9.6708ms - 200
+04/18/2021 13:57:31 HTTP "GET" "/Admin/EntrancesTable?pageNumber=28" responded 200 in 12.9959 ms
+04/18/2021 13:57:31 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=30&Size=10
+04/18/2021 13:57:31 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=30&Size=10
+04/18/2021 13:57:31 Received HTTP response headers after 7.322ms - 200
+04/18/2021 13:57:31 End processing HTTP request after 11.0146ms - 200
+04/18/2021 13:57:31 HTTP "GET" "/Admin/EntrancesTable?pageNumber=30" responded 200 in 13.9102 ms
+04/18/2021 13:57:32 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=31&Size=10
+04/18/2021 13:57:32 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=31&Size=10
+04/18/2021 13:57:32 Received HTTP response headers after 5.7334ms - 200
+04/18/2021 13:57:32 End processing HTTP request after 8.7039ms - 200
+04/18/2021 13:57:32 HTTP "GET" "/Admin/EntrancesTable?pageNumber=31" responded 200 in 11.8244 ms
+04/18/2021 13:57:32 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=32&Size=10
+04/18/2021 13:57:32 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=32&Size=10
+04/18/2021 13:57:32 Received HTTP response headers after 5.4204ms - 200
+04/18/2021 13:57:32 End processing HTTP request after 10.3298ms - 200
+04/18/2021 13:57:32 HTTP "GET" "/Admin/EntrancesTable?pageNumber=32" responded 200 in 13.5504 ms
+04/18/2021 13:57:33 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=28&Size=10
+04/18/2021 13:57:33 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=28&Size=10
+04/18/2021 13:57:33 Received HTTP response headers after 5.3686ms - 200
+04/18/2021 13:57:33 End processing HTTP request after 8.9116ms - 200
+04/18/2021 13:57:33 HTTP "GET" "/Admin/EntrancesTable?pageNumber=28" responded 200 in 11.4001 ms
+04/18/2021 13:57:41 HTTP "GET" "/Home/Pricing" responded 200 in 15.0231 ms
+04/18/2021 13:57:43 HTTP "GET" "/" responded 200 in 0.6755 ms
+04/18/2021 13:57:45 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.8314 ms
+04/18/2021 13:57:45 HTTP "GET" "/" responded 200 in 0.5394 ms
+04/18/2021 13:57:46 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.0168 ms
+04/18/2021 13:57:49 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 13:57:49 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 13:57:49 Received HTTP response headers after 26.2001ms - 200
+04/18/2021 13:57:49 End processing HTTP request after 28.5848ms - 200
+04/18/2021 13:57:49 HTTP "POST" "/Authentication/SignIn" responded 302 in 32.9391 ms
+04/18/2021 13:57:49 HTTP "GET" "/" responded 200 in 1.3208 ms
+04/18/2021 13:58:26 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:58:26 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:58:28 Received HTTP response headers after 2395.0982ms - 200
+04/18/2021 13:58:28 End processing HTTP request after 2398.8286ms - 200
+04/18/2021 13:58:28 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=1" responded 200 in 2441.3872 ms
+04/18/2021 13:58:30 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=2&Size=10
+04/18/2021 13:58:30 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=2&Size=10
+04/18/2021 13:58:30 Received HTTP response headers after 71.8017ms - 200
+04/18/2021 13:58:30 End processing HTTP request after 74.1143ms - 200
+04/18/2021 13:58:30 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=2" responded 200 in 77.7396 ms
+04/18/2021 13:58:31 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=3&Size=10
+04/18/2021 13:58:31 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=3&Size=10
+04/18/2021 13:58:31 Received HTTP response headers after 26.1399ms - 200
+04/18/2021 13:58:31 End processing HTTP request after 28.4918ms - 200
+04/18/2021 13:58:31 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=3" responded 200 in 32.4428 ms
+04/18/2021 13:58:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=4&Size=10
+04/18/2021 13:58:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=4&Size=10
+04/18/2021 13:58:32 Received HTTP response headers after 8.1551ms - 200
+04/18/2021 13:58:32 End processing HTTP request after 11.3272ms - 200
+04/18/2021 13:58:32 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=4" responded 200 in 14.6955 ms
+04/18/2021 13:58:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=5&Size=10
+04/18/2021 13:58:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=5&Size=10
+04/18/2021 13:58:32 Received HTTP response headers after 7.7026ms - 200
+04/18/2021 13:58:32 End processing HTTP request after 10.4646ms - 200
+04/18/2021 13:58:32 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=5" responded 200 in 12.9595 ms
+04/18/2021 13:58:33 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=6&Size=10
+04/18/2021 13:58:33 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=6&Size=10
+04/18/2021 13:58:33 Received HTTP response headers after 10.1248ms - 200
+04/18/2021 13:58:33 End processing HTTP request after 12.3779ms - 200
+04/18/2021 13:58:33 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=6" responded 200 in 16.2141 ms
+04/18/2021 13:58:33 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:58:33 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:58:33 Received HTTP response headers after 7.5214ms - 200
+04/18/2021 13:58:33 End processing HTTP request after 10.0235ms - 200
+04/18/2021 13:58:33 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 13.2700 ms
+04/18/2021 13:58:35 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=5&Size=10
+04/18/2021 13:58:35 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=5&Size=10
+04/18/2021 13:58:35 Received HTTP response headers after 8.1488ms - 200
+04/18/2021 13:58:35 End processing HTTP request after 10.3487ms - 200
+04/18/2021 13:58:35 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=5" responded 200 in 13.0303 ms
+04/18/2021 13:58:37 HTTP "GET" "/HardwareApiManaging/Producers" responded 200 in 33.4523 ms
+04/18/2021 13:58:53 Start processing HTTP request "POST" https://localhost:4000/HardwareApi/Producers
+04/18/2021 13:58:53 Sending HTTP request "POST" https://localhost:4000/HardwareApi/Producers
+04/18/2021 13:58:54 Received HTTP response headers after 314.0951ms - 200
+04/18/2021 13:58:54 End processing HTTP request after 317.0015ms - 200
+04/18/2021 13:58:54 HTTP "POST" "/HardwareApiManaging/Producers" responded 302 in 327.1975 ms
+04/18/2021 13:58:54 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:58:54 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:58:54 Received HTTP response headers after 7.1648ms - 200
+04/18/2021 13:58:54 End processing HTTP request after 9.2512ms - 200
+04/18/2021 13:58:54 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 12.2562 ms
+04/18/2021 13:58:56 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:58:56 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:58:56 Received HTTP response headers after 7.6441ms - 200
+04/18/2021 13:58:56 End processing HTTP request after 10.1526ms - 200
+04/18/2021 13:58:56 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 15.2530 ms
+04/18/2021 13:58:57 Start processing HTTP request "DELETE" https://localhost:4000/HardwareApi/Producers/65
+04/18/2021 13:58:57 Sending HTTP request "DELETE" https://localhost:4000/HardwareApi/Producers/65
+04/18/2021 13:58:57 Received HTTP response headers after 80.1932ms - 200
+04/18/2021 13:58:57 End processing HTTP request after 84.314ms - 200
+04/18/2021 13:58:57 HTTP "GET" "/HardwareApiManaging/Producers/Remove/65" responded 302 in 93.1261 ms
+04/18/2021 13:58:57 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:58:57 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:58:57 Received HTTP response headers after 8.3011ms - 200
+04/18/2021 13:58:57 End processing HTTP request after 10.8552ms - 200
+04/18/2021 13:58:57 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 15.4150 ms
+04/18/2021 13:58:59 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:58:59 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:58:59 Received HTTP response headers after 8.2814ms - 200
+04/18/2021 13:58:59 End processing HTTP request after 10.2097ms - 200
+04/18/2021 13:58:59 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 13.7636 ms
+04/18/2021 13:59:02 HTTP "GET" "/HardwareApiManaging/Producers" responded 200 in 1.2288 ms
+04/18/2021 13:59:20 Start processing HTTP request "POST" https://localhost:4000/HardwareApi/Producers
+04/18/2021 13:59:20 Sending HTTP request "POST" https://localhost:4000/HardwareApi/Producers
+04/18/2021 13:59:20 Received HTTP response headers after 26.4055ms - 200
+04/18/2021 13:59:20 End processing HTTP request after 29.606ms - 200
+04/18/2021 13:59:20 HTTP "POST" "/HardwareApiManaging/Producers" responded 302 in 34.3161 ms
+04/18/2021 13:59:20 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:59:20 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 13:59:20 Received HTTP response headers after 11.1934ms - 200
+04/18/2021 13:59:20 End processing HTTP request after 14.1431ms - 200
+04/18/2021 13:59:20 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 17.3884 ms
+04/18/2021 13:59:21 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:59:21 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 13:59:21 Received HTTP response headers after 12.3773ms - 200
+04/18/2021 13:59:21 End processing HTTP request after 15.5643ms - 200
+04/18/2021 13:59:21 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 20.5859 ms
+04/18/2021 13:59:23 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 13:59:23 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 13:59:23 Received HTTP response headers after 21.6487ms - 200
+04/18/2021 13:59:23 End processing HTTP request after 23.8632ms - 200
+04/18/2021 13:59:23 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 63.9917 ms
+04/18/2021 13:59:29 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 13:59:29 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 13:59:29 Received HTTP response headers after 43.3788ms - 400
+04/18/2021 13:59:29 End processing HTTP request after 45.7032ms - 400
+04/18/2021 13:59:29 HTTP "POST" "/HardwareApiManaging/Producers/Edit/66" responded 302 in 55.8196 ms
+04/18/2021 13:59:29 HTTP "GET" "/Error/ServerError" responded 200 in 15.3538 ms
+04/18/2021 13:59:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 13:59:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 13:59:32 Received HTTP response headers after 7.6077ms - 200
+04/18/2021 13:59:32 End processing HTTP request after 11.0537ms - 200
+04/18/2021 13:59:32 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 15.1174 ms
+04/18/2021 14:01:17 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:01:17 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:01:17 Received HTTP response headers after 100.807ms - 400
+04/18/2021 14:01:17 End processing HTTP request after 126.4734ms - 400
+04/18/2021 14:04:39 Web server started..
+04/18/2021 14:04:39 Web server HostBuilder created
+04/18/2021 14:04:40 Host built
+04/18/2021 14:04:41 Now listening on: "https://localhost:9000"
+04/18/2021 14:04:41 Application started. Press Ctrl+C to shut down.
+04/18/2021 14:04:41 Hosting environment: "Development"
+04/18/2021 14:04:41 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 14:04:43 HTTP "GET" "/" responded 200 in 215.8481 ms
+04/18/2021 14:04:45 HTTP "GET" "/Authentication/SignIn" responded 200 in 251.8768 ms
+04/18/2021 14:04:51 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:04:51 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:04:53 Received HTTP response headers after 2270.8899ms - 200
+04/18/2021 14:04:53 End processing HTTP request after 2283.048ms - 200
+04/18/2021 14:04:53 HTTP "POST" "/Authentication/SignIn" responded 302 in 2392.7132 ms
+04/18/2021 14:04:53 HTTP "GET" "/" responded 200 in 2.4479 ms
+04/18/2021 14:04:56 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:04:56 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:04:58 Received HTTP response headers after 2113.1941ms - 200
+04/18/2021 14:04:58 End processing HTTP request after 2115.5205ms - 200
+04/18/2021 14:04:58 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=1" responded 200 in 2186.3827 ms
+04/18/2021 14:04:59 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:04:59 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:04:59 Received HTTP response headers after 52.6854ms - 200
+04/18/2021 14:04:59 End processing HTTP request after 54.9861ms - 200
+04/18/2021 14:04:59 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 59.0777 ms
+04/18/2021 14:05:01 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:05:01 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:05:01 Received HTTP response headers after 66.5549ms - 200
+04/18/2021 14:05:01 End processing HTTP request after 68.5162ms - 200
+04/18/2021 14:05:01 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 103.3275 ms
+04/18/2021 14:05:25 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:05:25 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:05:25 Received HTTP response headers after 114.8026ms - 400
+04/18/2021 14:05:25 End processing HTTP request after 117.3421ms - 400
+04/18/2021 14:14:12 Web server started..
+04/18/2021 14:14:13 Web server HostBuilder created
+04/18/2021 14:14:13 Host built
+04/18/2021 14:14:14 Now listening on: "https://localhost:9000"
+04/18/2021 14:14:14 Application started. Press Ctrl+C to shut down.
+04/18/2021 14:14:14 Hosting environment: "Development"
+04/18/2021 14:14:14 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 14:14:22 HTTP "GET" "/" responded 200 in 186.9625 ms
+04/18/2021 14:14:25 HTTP "GET" "/Authentication/SignIn" responded 200 in 279.4790 ms
+04/18/2021 14:14:30 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:14:30 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:14:48 Received HTTP response headers after 18531.3551ms - 200
+04/18/2021 14:14:48 End processing HTTP request after 18544.2833ms - 200
+04/18/2021 14:14:48 HTTP "POST" "/Authentication/SignIn" responded 302 in 18651.9016 ms
+04/18/2021 14:14:48 HTTP "GET" "/" responded 200 in 3.1225 ms
+04/18/2021 14:15:01 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:15:01 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:15:05 Received HTTP response headers after 3971.4276ms - 200
+04/18/2021 14:15:05 End processing HTTP request after 3973.8051ms - 200
+04/18/2021 14:15:05 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=1" responded 200 in 4055.5703 ms
+04/18/2021 14:15:11 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:15:11 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:15:12 Received HTTP response headers after 1814.2094ms - 200
+04/18/2021 14:15:12 End processing HTTP request after 1816.9303ms - 200
+04/18/2021 14:15:12 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 1820.7982 ms
+04/18/2021 14:15:18 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:15:18 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:15:20 Received HTTP response headers after 2102.7125ms - 200
+04/18/2021 14:15:20 End processing HTTP request after 2105.0326ms - 200
+04/18/2021 14:15:20 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 2139.2701 ms
+04/18/2021 14:15:53 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:15:53 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:16:10 Received HTTP response headers after 16295.8184ms - 400
+04/18/2021 14:16:10 End processing HTTP request after 16298.7512ms - 400
+04/18/2021 14:17:08 Web server started..
+04/18/2021 14:17:09 Web server HostBuilder created
+04/18/2021 14:17:09 Host built
+04/18/2021 14:17:10 Now listening on: "https://localhost:9000"
+04/18/2021 14:17:10 Application started. Press Ctrl+C to shut down.
+04/18/2021 14:17:10 Hosting environment: "Development"
+04/18/2021 14:17:10 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 14:17:14 HTTP "GET" "/" responded 200 in 205.0173 ms
+04/18/2021 14:17:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 267.9450 ms
+04/18/2021 14:17:20 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:17:20 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:17:22 Received HTTP response headers after 2272.5184ms - 200
+04/18/2021 14:17:22 End processing HTTP request after 2284.9546ms - 200
+04/18/2021 14:17:22 HTTP "POST" "/Authentication/SignIn" responded 302 in 2392.5055 ms
+04/18/2021 14:17:22 HTTP "GET" "/" responded 200 in 2.5694 ms
+04/18/2021 14:17:26 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:17:26 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:17:28 Received HTTP response headers after 2073.2126ms - 200
+04/18/2021 14:17:28 End processing HTTP request after 2075.3369ms - 200
+04/18/2021 14:17:28 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=1" responded 200 in 2142.2690 ms
+04/18/2021 14:17:30 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:17:30 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:17:30 Received HTTP response headers after 48.6207ms - 200
+04/18/2021 14:17:30 End processing HTTP request after 50.7852ms - 200
+04/18/2021 14:17:30 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 56.0090 ms
+04/18/2021 14:17:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:17:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:17:32 Received HTTP response headers after 73.1187ms - 200
+04/18/2021 14:17:32 End processing HTTP request after 75.1221ms - 200
+04/18/2021 14:17:33 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 113.6661 ms
+04/18/2021 14:17:45 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:17:45 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:17:56 Received HTTP response headers after 10671.9491ms - 200
+04/18/2021 14:17:56 End processing HTTP request after 10674.4752ms - 200
+04/18/2021 14:18:00 HTTP "POST" "/HardwareApiManaging/Producers/Edit/66" responded 302 in 21750.4001 ms
+04/18/2021 14:18:00 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:18:00 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:18:00 Received HTTP response headers after 8.7916ms - 200
+04/18/2021 14:18:00 End processing HTTP request after 10.9646ms - 200
+04/18/2021 14:18:00 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 14.7737 ms
+04/18/2021 14:19:10 Web server started..
+04/18/2021 14:19:10 Web server HostBuilder created
+04/18/2021 14:19:11 Host built
+04/18/2021 14:19:12 Now listening on: "https://localhost:9000"
+04/18/2021 14:19:12 Application started. Press Ctrl+C to shut down.
+04/18/2021 14:19:12 Hosting environment: "Development"
+04/18/2021 14:19:12 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 14:19:14 HTTP "GET" "/" responded 200 in 200.0922 ms
+04/18/2021 14:19:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 273.8466 ms
+04/18/2021 14:19:19 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:19:19 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 14:19:21 Received HTTP response headers after 2251.4392ms - 200
+04/18/2021 14:19:21 End processing HTTP request after 2263.8394ms - 200
+04/18/2021 14:19:21 HTTP "POST" "/Authentication/SignIn" responded 302 in 2381.5974 ms
+04/18/2021 14:19:21 HTTP "GET" "/" responded 200 in 2.6205 ms
+04/18/2021 14:19:24 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:19:24 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:19:26 Received HTTP response headers after 2101.7483ms - 200
+04/18/2021 14:19:26 End processing HTTP request after 2104.0962ms - 200
+04/18/2021 14:19:27 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=1" responded 200 in 2170.4099 ms
+04/18/2021 14:19:28 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:19:28 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:19:28 Received HTTP response headers after 49.6922ms - 200
+04/18/2021 14:19:28 End processing HTTP request after 51.9233ms - 200
+04/18/2021 14:19:28 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 56.0182 ms
+04/18/2021 14:19:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:19:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:19:32 Received HTTP response headers after 66.6964ms - 200
+04/18/2021 14:19:32 End processing HTTP request after 68.8857ms - 200
+04/18/2021 14:19:32 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 107.0308 ms
+04/18/2021 14:19:40 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:19:40 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:19:40 Received HTTP response headers after 207.5255ms - 200
+04/18/2021 14:19:40 End processing HTTP request after 209.6987ms - 200
+04/18/2021 14:19:44 HTTP "POST" "/HardwareApiManaging/Producers/Edit/66" responded 302 in 8710.8013 ms
+04/18/2021 14:19:44 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:19:44 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:19:44 Received HTTP response headers after 9.2708ms - 200
+04/18/2021 14:19:44 End processing HTTP request after 11.4643ms - 200
+04/18/2021 14:19:44 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 14.5691 ms
+04/18/2021 14:19:49 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:19:49 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:19:49 Received HTTP response headers after 8.5553ms - 200
+04/18/2021 14:19:49 End processing HTTP request after 11.8043ms - 200
+04/18/2021 14:19:49 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 14.5319 ms
+04/18/2021 14:20:25 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:25 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:25 Received HTTP response headers after 20.4119ms - 200
+04/18/2021 14:20:25 End processing HTTP request after 22.9346ms - 200
+04/18/2021 14:20:25 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 30.7448 ms
+04/18/2021 14:20:45 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:45 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:45 Received HTTP response headers after 16.9004ms - 200
+04/18/2021 14:20:45 End processing HTTP request after 19.8192ms - 200
+04/18/2021 14:20:45 HTTP "POST" "/HardwareApiManaging/Producers/Edit/66" responded 302 in 28.0412 ms
+04/18/2021 14:20:45 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:20:45 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:20:45 Received HTTP response headers after 14.3242ms - 200
+04/18/2021 14:20:45 End processing HTTP request after 17.2378ms - 200
+04/18/2021 14:20:45 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 20.0396 ms
+04/18/2021 14:20:46 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:20:46 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:20:46 Received HTTP response headers after 11.7875ms - 200
+04/18/2021 14:20:46 End processing HTTP request after 14.3322ms - 200
+04/18/2021 14:20:46 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 16.9603 ms
+04/18/2021 14:20:49 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:49 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:49 Received HTTP response headers after 7.122ms - 200
+04/18/2021 14:20:49 End processing HTTP request after 9.2433ms - 200
+04/18/2021 14:20:49 HTTP "GET" "/HardwareApiManaging/Producers/Edit/66" responded 200 in 15.0946 ms
+04/18/2021 14:20:58 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:58 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/Producers/66
+04/18/2021 14:20:58 Received HTTP response headers after 17.5684ms - 200
+04/18/2021 14:20:58 End processing HTTP request after 22.7768ms - 200
+04/18/2021 14:20:58 HTTP "POST" "/HardwareApiManaging/Producers/Edit/66" responded 302 in 25.2912 ms
+04/18/2021 14:20:58 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:20:58 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/18/2021 14:20:58 Received HTTP response headers after 8.5163ms - 200
+04/18/2021 14:20:58 End processing HTTP request after 10.8349ms - 200
+04/18/2021 14:20:58 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 16.3277 ms
+04/18/2021 14:21:00 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:21:00 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=7&Size=10
+04/18/2021 14:21:00 Received HTTP response headers after 7.4725ms - 200
+04/18/2021 14:21:00 End processing HTTP request after 11.0211ms - 200
+04/18/2021 14:21:00 HTTP "GET" "/HardwareApiManaging/Producers/Table?pageNumber=7" responded 200 in 20.3701 ms
+04/18/2021 15:42:52 Web server started..
+04/18/2021 15:42:52 Web server HostBuilder created
+04/18/2021 15:42:53 Host built
+04/18/2021 15:42:53 Now listening on: "https://localhost:9000"
+04/18/2021 15:42:53 Application started. Press Ctrl+C to shut down.
+04/18/2021 15:42:53 Hosting environment: "Development"
+04/18/2021 15:42:53 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 15:42:59 HTTP "GET" "/" responded 200 in 193.4403 ms
+04/18/2021 15:43:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 236.4341 ms
+04/18/2021 15:43:05 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:43:05 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:43:08 Received HTTP response headers after 2171.7959ms - 200
+04/18/2021 15:43:08 End processing HTTP request after 2183.8561ms - 200
+04/18/2021 15:43:08 HTTP "POST" "/Authentication/SignIn" responded 302 in 2292.3434 ms
+04/18/2021 15:43:08 HTTP "GET" "/" responded 200 in 2.9006 ms
+04/18/2021 15:44:14 Web server started..
+04/18/2021 15:44:14 Web server HostBuilder created
+04/18/2021 15:44:15 Host built
+04/18/2021 15:44:15 Now listening on: "https://localhost:9000"
+04/18/2021 15:44:15 Application started. Press Ctrl+C to shut down.
+04/18/2021 15:44:15 Hosting environment: "Development"
+04/18/2021 15:44:15 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 15:44:18 HTTP "GET" "/" responded 200 in 211.5691 ms
+04/18/2021 15:44:20 HTTP "GET" "/Authentication/SignIn" responded 200 in 260.7447 ms
+04/18/2021 15:44:21 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:44:21 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:44:24 Received HTTP response headers after 2495.3307ms - 200
+04/18/2021 15:44:24 End processing HTTP request after 2508.3754ms - 200
+04/18/2021 15:44:24 HTTP "POST" "/Authentication/SignIn" responded 302 in 2634.9027 ms
+04/18/2021 15:44:24 HTTP "GET" "/" responded 200 in 4.8790 ms
+04/18/2021 15:44:29 HTTP "GET" "/Authentication/LogOut" responded 302 in 7.7693 ms
+04/18/2021 15:44:29 HTTP "GET" "/" responded 200 in 0.6016 ms
+04/18/2021 15:44:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.2857 ms
+04/18/2021 15:44:35 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:44:35 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:44:35 Received HTTP response headers after 54.0172ms - 200
+04/18/2021 15:44:35 End processing HTTP request after 56.3888ms - 200
+04/18/2021 15:44:35 HTTP "POST" "/Authentication/SignIn" responded 302 in 59.4313 ms
+04/18/2021 15:44:35 HTTP "GET" "/" responded 200 in 1.5351 ms
+04/18/2021 15:44:39 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:44:39 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:44:42 Received HTTP response headers after 2155.1278ms - 200
+04/18/2021 15:44:42 End processing HTTP request after 2157.2476ms - 200
+04/18/2021 15:44:42 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2220.1414 ms
+04/18/2021 15:45:17 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:45:17 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:45:17 Received HTTP response headers after 57.5063ms - 200
+04/18/2021 15:45:17 End processing HTTP request after 59.9545ms - 200
+04/18/2021 15:45:20 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 3126.7101 ms
+04/18/2021 15:46:34 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:46:34 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:46:34 Received HTTP response headers after 172.5009ms - 200
+04/18/2021 15:46:34 End processing HTTP request after 174.6813ms - 200
+04/18/2021 15:46:34 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 188.9119 ms
+04/18/2021 15:47:00 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:47:00 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:47:00 Received HTTP response headers after 25.9663ms - 200
+04/18/2021 15:47:00 End processing HTTP request after 28.4738ms - 200
+04/18/2021 15:47:01 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 243.0720 ms
+04/18/2021 15:47:58 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:47:58 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:47:58 Received HTTP response headers after 17.5787ms - 200
+04/18/2021 15:47:58 End processing HTTP request after 20.7267ms - 200
+04/18/2021 15:47:58 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 292.8189 ms
+04/18/2021 15:48:23 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:48:23 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:48:23 Received HTTP response headers after 20.7877ms - 200
+04/18/2021 15:48:23 End processing HTTP request after 23.4287ms - 200
+04/18/2021 15:48:23 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 26.4230 ms
+04/18/2021 15:48:26 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/1
+04/18/2021 15:48:26 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/1
+04/18/2021 15:48:26 Received HTTP response headers after 77.3156ms - 200
+04/18/2021 15:48:26 End processing HTTP request after 79.7055ms - 200
+04/18/2021 15:48:26 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/1" responded 200 in 148.8484 ms
+04/18/2021 15:48:50 Start processing HTTP request "DELETE" https://localhost:4000/HardwareApi/PowerSupplies/1
+04/18/2021 15:48:50 Sending HTTP request "DELETE" https://localhost:4000/HardwareApi/PowerSupplies/1
+04/18/2021 15:48:50 Received HTTP response headers after 151.48ms - 200
+04/18/2021 15:48:50 End processing HTTP request after 153.7174ms - 200
+04/18/2021 15:48:50 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Remove/1" responded 302 in 161.5180 ms
+04/18/2021 15:48:50 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:48:50 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:48:50 Received HTTP response headers after 12.2168ms - 200
+04/18/2021 15:48:50 End processing HTTP request after 14.3687ms - 200
+04/18/2021 15:48:50 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 17.3308 ms
+04/18/2021 15:52:34 Web server started..
+04/18/2021 15:52:34 Web server HostBuilder created
+04/18/2021 15:52:35 Host built
+04/18/2021 15:52:35 Now listening on: "https://localhost:9000"
+04/18/2021 15:52:35 Application started. Press Ctrl+C to shut down.
+04/18/2021 15:52:35 Hosting environment: "Development"
+04/18/2021 15:52:35 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 15:52:38 HTTP "GET" "/" responded 200 in 252.3979 ms
+04/18/2021 15:52:42 HTTP "GET" "/Authentication/SignIn" responded 200 in 256.0723 ms
+04/18/2021 15:52:45 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:52:45 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:52:47 Received HTTP response headers after 2231.6247ms - 200
+04/18/2021 15:52:47 End processing HTTP request after 2247.1531ms - 200
+04/18/2021 15:52:47 HTTP "POST" "/Authentication/SignIn" responded 302 in 2362.3052 ms
+04/18/2021 15:52:47 HTTP "GET" "/" responded 200 in 3.5992 ms
+04/18/2021 15:52:49 HTTP "GET" "/Authentication/LogOut" responded 302 in 7.0307 ms
+04/18/2021 15:52:49 HTTP "GET" "/" responded 200 in 0.6029 ms
+04/18/2021 15:52:50 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.3680 ms
+04/18/2021 15:52:54 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:52:54 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 15:52:54 Received HTTP response headers after 54.3702ms - 200
+04/18/2021 15:52:54 End processing HTTP request after 56.7925ms - 200
+04/18/2021 15:52:54 HTTP "POST" "/Authentication/SignIn" responded 302 in 60.4753 ms
+04/18/2021 15:52:54 HTTP "GET" "/" responded 200 in 1.4695 ms
+04/18/2021 15:52:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/mishamine26@gmail.com
+04/18/2021 15:52:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/mishamine26@gmail.com
+04/18/2021 15:52:57 Received HTTP response headers after 146.3329ms - 200
+04/18/2021 15:52:57 End processing HTTP request after 148.7268ms - 200
+04/18/2021 15:52:57 HTTP "GET" "/Account" responded 200 in 268.7207 ms
+04/18/2021 15:53:03 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:53:03 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:53:05 Received HTTP response headers after 2087.7067ms - 200
+04/18/2021 15:53:05 End processing HTTP request after 2089.9878ms - 200
+04/18/2021 15:53:05 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2143.3810 ms
+04/18/2021 15:53:49 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:53:49 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:53:49 Received HTTP response headers after 162.6356ms - 200
+04/18/2021 15:53:49 End processing HTTP request after 164.7933ms - 200
+04/18/2021 15:53:49 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 179.7895 ms
+04/18/2021 15:54:30 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:54:30 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:54:30 Received HTTP response headers after 38.0253ms - 200
+04/18/2021 15:54:30 End processing HTTP request after 40.5263ms - 200
+04/18/2021 15:54:34 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 3773.5044 ms
+04/18/2021 15:56:11 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:56:11 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:56:11 Received HTTP response headers after 46.9341ms - 200
+04/18/2021 15:56:11 End processing HTTP request after 51.6807ms - 200
+04/18/2021 15:56:11 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 288.6504 ms
+04/18/2021 15:56:55 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:56:55 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:56:55 Received HTTP response headers after 22.7114ms - 200
+04/18/2021 15:56:55 End processing HTTP request after 25.2402ms - 200
+04/18/2021 15:56:55 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 187.4326 ms
+04/18/2021 15:59:35 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:59:35 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 15:59:35 Received HTTP response headers after 26.0809ms - 200
+04/18/2021 15:59:35 End processing HTTP request after 28.1138ms - 200
+04/18/2021 15:59:35 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 188.1470 ms
+04/18/2021 16:00:56 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:00:56 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:00:56 Received HTTP response headers after 19.1808ms - 200
+04/18/2021 16:00:56 End processing HTTP request after 21.6286ms - 200
+04/18/2021 16:00:56 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 176.7148 ms
+04/18/2021 16:01:44 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:01:44 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:01:44 Received HTTP response headers after 32.7203ms - 200
+04/18/2021 16:01:44 End processing HTTP request after 36.5278ms - 200
+04/18/2021 16:01:44 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 165.2475 ms
+04/18/2021 16:01:54 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:01:54 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:01:54 Received HTTP response headers after 8.5837ms - 200
+04/18/2021 16:01:54 End processing HTTP request after 11.3705ms - 200
+04/18/2021 16:01:54 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 168.0059 ms
+04/18/2021 16:02:27 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:02:27 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:02:27 Received HTTP response headers after 19.1445ms - 200
+04/18/2021 16:02:27 End processing HTTP request after 21.7179ms - 200
+04/18/2021 16:02:27 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 27.5663 ms
+04/18/2021 16:06:47 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:06:47 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:06:47 Received HTTP response headers after 47.9502ms - 200
+04/18/2021 16:06:47 End processing HTTP request after 49.9563ms - 200
+04/18/2021 16:06:48 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 171.1725 ms
+04/18/2021 16:12:23 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:12:23 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:12:24 Received HTTP response headers after 47.5223ms - 200
+04/18/2021 16:12:24 End processing HTTP request after 49.5036ms - 200
+04/18/2021 16:12:24 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 168.2278 ms
+04/18/2021 16:13:49 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:13:49 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:13:49 Received HTTP response headers after 21.871ms - 200
+04/18/2021 16:13:49 End processing HTTP request after 24.2279ms - 200
+04/18/2021 16:13:49 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 140.0952 ms
+04/18/2021 16:14:40 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:14:40 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:14:40 Received HTTP response headers after 44.6158ms - 200
+04/18/2021 16:14:40 End processing HTTP request after 47.5702ms - 200
+04/18/2021 16:14:40 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 167.2322 ms
+04/18/2021 16:14:56 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:14:56 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:14:56 Received HTTP response headers after 8.478ms - 200
+04/18/2021 16:14:56 End processing HTTP request after 11.332ms - 200
+04/18/2021 16:14:56 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 137.1889 ms
+04/18/2021 16:16:40 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:16:40 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:16:40 Received HTTP response headers after 34.4853ms - 200
+04/18/2021 16:16:40 End processing HTTP request after 36.8823ms - 200
+04/18/2021 16:16:40 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 219.1036 ms
+04/18/2021 16:17:56 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:17:56 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:17:56 Received HTTP response headers after 19.1092ms - 200
+04/18/2021 16:17:56 End processing HTTP request after 21.1455ms - 200
+04/18/2021 16:17:56 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 135.5728 ms
+04/18/2021 16:18:40 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:18:40 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:18:40 Received HTTP response headers after 22.6565ms - 200
+04/18/2021 16:18:40 End processing HTTP request after 25.2543ms - 200
+04/18/2021 16:18:40 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 148.7326 ms
+04/18/2021 16:23:36 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:23:36 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:23:36 Received HTTP response headers after 45.604ms - 200
+04/18/2021 16:23:36 End processing HTTP request after 47.7274ms - 200
+04/18/2021 16:23:36 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 170.7560 ms
+04/18/2021 16:24:11 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:24:11 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:24:11 Received HTTP response headers after 13.7319ms - 200
+04/18/2021 16:24:11 End processing HTTP request after 15.661ms - 200
+04/18/2021 16:24:11 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 18.7888 ms
+04/18/2021 16:39:35 Web server started..
+04/18/2021 16:39:35 Web server HostBuilder created
+04/18/2021 16:39:36 Host built
+04/18/2021 16:39:37 Now listening on: "https://localhost:9000"
+04/18/2021 16:39:37 Application started. Press Ctrl+C to shut down.
+04/18/2021 16:39:37 Hosting environment: "Development"
+04/18/2021 16:39:37 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 16:39:38 HTTP "GET" "/" responded 200 in 212.7075 ms
+04/18/2021 16:39:44 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:39:44 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:39:46 Received HTTP response headers after 2121.4592ms - 200
+04/18/2021 16:39:46 End processing HTTP request after 2133.1321ms - 200
+04/18/2021 16:39:46 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2421.4179 ms
+04/18/2021 16:39:48 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:39:48 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:39:49 Received HTTP response headers after 92.2127ms - 200
+04/18/2021 16:39:49 End processing HTTP request after 94.3554ms - 200
+04/18/2021 16:39:49 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 173.3583 ms
+04/18/2021 16:40:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:40:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:40:54 Received HTTP response headers after 59.1969ms - 200
+04/18/2021 16:40:54 End processing HTTP request after 61.2305ms - 200
+04/18/2021 16:40:57 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unexpected 'asp-for' expression result type 'System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]' for <input>. 'asp-for' must be of type 'System.Boolean' or 'System.String' that can be parsed as a 'System.Boolean' if 'type' is 'checkbox'.
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.GenerateCheckBox(ModelExplorer modelExplorer, TagHelperOutput output, IDictionary`2 htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__26_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 133
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 16:40:57 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 3433.2396 ms
+04/18/2021 16:40:57 HTTP "GET" "/Error/500" responded 302 in 2.1523 ms
+04/18/2021 16:40:57 HTTP "GET" "/Error/ServerError" responded 200 in 9.9266 ms
+04/18/2021 16:41:02 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:41:02 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:41:02 Received HTTP response headers after 11.7735ms - 200
+04/18/2021 16:41:02 End processing HTTP request after 13.8947ms - 200
+04/18/2021 16:41:02 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unexpected 'asp-for' expression result type 'System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]' for <input>. 'asp-for' must be of type 'System.Boolean' or 'System.String' that can be parsed as a 'System.Boolean' if 'type' is 'checkbox'.
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.GenerateCheckBox(ModelExplorer modelExplorer, TagHelperOutput output, IDictionary`2 htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__26_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 133
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 16:41:02 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 177.5297 ms
+04/18/2021 16:41:02 HTTP "GET" "/Error/500" responded 302 in 0.3130 ms
+04/18/2021 16:41:02 HTTP "GET" "/Error/ServerError" responded 200 in 0.8168 ms
+04/18/2021 16:41:19 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:41:19 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:41:19 Received HTTP response headers after 8.6351ms - 200
+04/18/2021 16:41:19 End processing HTTP request after 11.8164ms - 200
+04/18/2021 16:41:19 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 15.2180 ms
+04/18/2021 16:41:21 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:41:21 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:41:21 Received HTTP response headers after 9.2733ms - 200
+04/18/2021 16:41:21 End processing HTTP request after 11.1948ms - 200
+04/18/2021 16:41:21 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unexpected 'asp-for' expression result type 'System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]' for <input>. 'asp-for' must be of type 'System.Boolean' or 'System.String' that can be parsed as a 'System.Boolean' if 'type' is 'checkbox'.
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.GenerateCheckBox(ModelExplorer modelExplorer, TagHelperOutput output, IDictionary`2 htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__26_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 133
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 16:41:21 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 435.6808 ms
+04/18/2021 16:41:21 HTTP "GET" "/Error/500" responded 302 in 0.2072 ms
+04/18/2021 16:41:21 HTTP "GET" "/Error/ServerError" responded 200 in 1.2245 ms
+04/18/2021 16:41:46 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:41:46 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:41:46 Received HTTP response headers after 32.9163ms - 200
+04/18/2021 16:41:46 End processing HTTP request after 35.331ms - 200
+04/18/2021 16:41:55 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unexpected 'asp-for' expression result type 'System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]' for <input>. 'asp-for' must be of type 'System.Boolean' or 'System.String' that can be parsed as a 'System.Boolean' if 'type' is 'checkbox'.
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.GenerateCheckBox(ModelExplorer modelExplorer, TagHelperOutput output, IDictionary`2 htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__26_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 133
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 16:41:55 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 9065.4657 ms
+04/18/2021 16:41:55 HTTP "GET" "/Error/500" responded 302 in 14.6190 ms
+04/18/2021 16:41:55 HTTP "GET" "/Error/ServerError" responded 200 in 7.9409 ms
+04/18/2021 16:50:18 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:50:18 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:50:18 Received HTTP response headers after 36.6031ms - 200
+04/18/2021 16:50:18 End processing HTTP request after 41.3673ms - 200
+04/18/2021 16:50:19 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Templates can be used only with field access, property access, single-dimension array index, or single-parameter custom indexer expressions.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ExpressionMetadataProvider.FromLambdaExpression[TModel,TResult](Expression`1 expression, ViewDataDictionary`1 viewData, IModelMetadataProvider metadataProvider)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpressionProvider.CreateModelExpression[TModel,TValue](ViewDataDictionary`1 viewData, Expression`1 expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper`1.GetModelExpression[TResult](Expression`1 expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper`1.CheckBoxFor(Expression`1 expression, Object htmlAttributes)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__25_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 114
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 16:50:19 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 470.5198 ms
+04/18/2021 16:50:19 HTTP "GET" "/Error/500" responded 302 in 0.1991 ms
+04/18/2021 16:50:19 HTTP "GET" "/Error/ServerError" responded 200 in 1.5433 ms
+04/18/2021 16:51:56 HTTP "GET" "/Error/ServerError" responded 200 in 0.6735 ms
+04/18/2021 16:51:59 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:51:59 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:51:59 Received HTTP response headers after 17.5099ms - 200
+04/18/2021 16:51:59 End processing HTTP request after 19.3925ms - 200
+04/18/2021 16:51:59 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Templates can be used only with field access, property access, single-dimension array index, or single-parameter custom indexer expressions.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ExpressionMetadataProvider.FromLambdaExpression[TModel,TResult](Expression`1 expression, ViewDataDictionary`1 viewData, IModelMetadataProvider metadataProvider)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpressionProvider.CreateModelExpression[TModel,TValue](ViewDataDictionary`1 viewData, Expression`1 expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper`1.GetModelExpression[TResult](Expression`1 expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper`1.CheckBoxFor(Expression`1 expression, Object htmlAttributes)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__25_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 114
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 16:51:59 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 351.7578 ms
+04/18/2021 16:51:59 HTTP "GET" "/Error/500" responded 302 in 0.1937 ms
+04/18/2021 16:51:59 HTTP "GET" "/Error/ServerError" responded 200 in 0.5718 ms
+04/18/2021 16:58:38 Web server started..
+04/18/2021 16:58:38 Web server HostBuilder created
+04/18/2021 16:58:39 Host built
+04/18/2021 16:58:39 Now listening on: "https://localhost:9000"
+04/18/2021 16:58:39 Application started. Press Ctrl+C to shut down.
+04/18/2021 16:58:39 Hosting environment: "Development"
+04/18/2021 16:58:39 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 16:58:42 HTTP "GET" "/" responded 200 in 193.4512 ms
+04/18/2021 16:58:43 HTTP "GET" "/Authentication/SignIn" responded 200 in 247.9988 ms
+04/18/2021 16:58:48 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 16:58:48 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 16:58:50 Received HTTP response headers after 2111.8226ms - 200
+04/18/2021 16:58:50 End processing HTTP request after 2123.9136ms - 200
+04/18/2021 16:58:50 HTTP "POST" "/Authentication/SignIn" responded 302 in 2229.6624 ms
+04/18/2021 16:58:50 HTTP "GET" "/" responded 200 in 2.8045 ms
+04/18/2021 16:58:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:58:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 16:58:55 Received HTTP response headers after 2024.2842ms - 200
+04/18/2021 16:58:55 End processing HTTP request after 2026.4715ms - 200
+04/18/2021 16:58:55 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2099.9798 ms
+04/18/2021 16:58:57 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:58:57 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 16:58:57 Received HTTP response headers after 92.9162ms - 200
+04/18/2021 16:58:57 End processing HTTP request after 95.7856ms - 200
+04/18/2021 16:58:57 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Templates can be used only with field access, property access, single-dimension array index, or single-parameter custom indexer expressions.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ExpressionMetadataProvider.FromLambdaExpression[TModel,TResult](Expression`1 expression, ViewDataDictionary`1 viewData, IModelMetadataProvider metadataProvider)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpressionProvider.CreateModelExpression[TModel,TValue](ViewDataDictionary`1 viewData, Expression`1 expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper`1.GetModelExpression[TResult](Expression`1 expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper`1.CheckBoxFor(Expression`1 expression, Object htmlAttributes)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__25_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 115
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 16:58:57 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 400.5578 ms
+04/18/2021 16:58:57 HTTP "GET" "/Error/500" responded 302 in 1.7160 ms
+04/18/2021 16:58:57 HTTP "GET" "/Error/ServerError" responded 200 in 9.3961 ms
+04/18/2021 17:00:27 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:00:40 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 17:00:42 HTTP "GET" "/" responded 200 in 1.3629 ms
+04/18/2021 17:00:45 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 17:00:58 Web server started..
+04/18/2021 17:00:58 Web server HostBuilder created
+04/18/2021 17:00:59 Host built
+04/18/2021 17:00:59 Now listening on: "https://localhost:9000"
+04/18/2021 17:00:59 Application started. Press Ctrl+C to shut down.
+04/18/2021 17:00:59 Hosting environment: "Development"
+04/18/2021 17:00:59 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 17:01:02 HTTP "GET" "/" responded 200 in 189.1218 ms
+04/18/2021 17:01:03 HTTP "GET" "/Authentication/SignIn" responded 200 in 250.9919 ms
+04/18/2021 17:01:07 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 17:01:07 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 17:01:09 Received HTTP response headers after 2103.1136ms - 200
+04/18/2021 17:01:09 End processing HTTP request after 2115.076ms - 200
+04/18/2021 17:01:09 HTTP "POST" "/Authentication/SignIn" responded 302 in 2220.7913 ms
+04/18/2021 17:01:09 HTTP "GET" "/" responded 200 in 2.6679 ms
+04/18/2021 17:01:12 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 17:01:12 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 17:01:14 Received HTTP response headers after 2050.9264ms - 200
+04/18/2021 17:01:14 End processing HTTP request after 2053.3801ms - 200
+04/18/2021 17:01:14 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2120.4765 ms
+04/18/2021 17:01:15 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:01:15 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:01:16 Received HTTP response headers after 91.605ms - 200
+04/18/2021 17:01:16 End processing HTTP request after 94.0761ms - 200
+04/18/2021 17:01:16 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 139.4607 ms
+04/18/2021 17:02:04 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:02:04 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:02:04 Received HTTP response headers after 54.5549ms - 200
+04/18/2021 17:02:04 End processing HTTP request after 57.0029ms - 200
+04/18/2021 17:02:07 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 3215.3101 ms
+04/18/2021 17:02:55 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:02:55 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:02:55 Received HTTP response headers after 25.0939ms - 200
+04/18/2021 17:02:55 End processing HTTP request after 27.2234ms - 200
+04/18/2021 17:02:55 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 291.3849 ms
+04/18/2021 17:04:25 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:04:25 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:04:25 Received HTTP response headers after 47.9898ms - 200
+04/18/2021 17:04:25 End processing HTTP request after 50.353ms - 200
+04/18/2021 17:04:25 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 250.4163 ms
+04/18/2021 17:05:14 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:05:14 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:05:14 Received HTTP response headers after 12.2196ms - 200
+04/18/2021 17:05:14 End processing HTTP request after 14.0905ms - 200
+04/18/2021 17:05:14 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 186.7960 ms
+04/18/2021 17:07:36 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:07:36 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:07:36 Received HTTP response headers after 15.5597ms - 200
+04/18/2021 17:07:36 End processing HTTP request after 18.1533ms - 200
+04/18/2021 17:07:36 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 184.1077 ms
+04/18/2021 17:07:57 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:07:57 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:07:57 Received HTTP response headers after 41.2901ms - 200
+04/18/2021 17:07:57 End processing HTTP request after 43.573ms - 200
+04/18/2021 17:07:58 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 198.9977 ms
+04/18/2021 17:09:19 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:09:19 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:09:19 Received HTTP response headers after 18.0036ms - 200
+04/18/2021 17:09:19 End processing HTTP request after 20.9081ms - 200
+04/18/2021 17:09:19 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 216.1361 ms
+04/18/2021 17:09:43 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:09:43 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:09:43 Received HTTP response headers after 30.9449ms - 200
+04/18/2021 17:09:43 End processing HTTP request after 33.5039ms - 200
+04/18/2021 17:09:43 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 185.0771 ms
+04/18/2021 17:10:20 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:10:20 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:10:20 Received HTTP response headers after 16.5568ms - 200
+04/18/2021 17:10:20 End processing HTTP request after 19.0264ms - 200
+04/18/2021 17:10:21 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 164.8939 ms
+04/18/2021 17:10:36 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:10:36 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:10:36 Received HTTP response headers after 15.0695ms - 200
+04/18/2021 17:10:36 End processing HTTP request after 17.1596ms - 200
+04/18/2021 17:10:36 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 160.6953 ms
+04/18/2021 17:11:37 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:11:37 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:11:37 Received HTTP response headers after 13.5351ms - 200
+04/18/2021 17:11:37 End processing HTTP request after 15.5938ms - 200
+04/18/2021 17:11:37 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 164.5534 ms
+04/18/2021 17:12:43 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:12:43 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:12:43 Received HTTP response headers after 52.4365ms - 200
+04/18/2021 17:12:43 End processing HTTP request after 54.7051ms - 200
+04/18/2021 17:12:43 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 59.7252 ms
+04/18/2021 17:13:04 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:13:04 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:13:04 Received HTTP response headers after 17.3668ms - 200
+04/18/2021 17:13:04 End processing HTTP request after 19.9845ms - 200
+04/18/2021 17:13:04 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 224.9885 ms
+04/18/2021 17:15:54 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:15:54 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:15:54 Received HTTP response headers after 31.4187ms - 200
+04/18/2021 17:15:54 End processing HTTP request after 33.4449ms - 200
+04/18/2021 17:15:54 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 187.4258 ms
+04/18/2021 17:16:30 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:16:30 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:16:30 Received HTTP response headers after 20.9878ms - 200
+04/18/2021 17:16:30 End processing HTTP request after 35.6629ms - 200
+04/18/2021 17:16:30 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 207.6023 ms
+04/18/2021 17:16:57 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:16:57 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:16:57 Received HTTP response headers after 24.4576ms - 200
+04/18/2021 17:16:57 End processing HTTP request after 26.3422ms - 200
+04/18/2021 17:16:57 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 181.4195 ms
+04/18/2021 17:17:27 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:17:27 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:17:27 Received HTTP response headers after 16.8876ms - 200
+04/18/2021 17:17:27 End processing HTTP request after 18.9312ms - 200
+04/18/2021 17:17:27 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 21.9704 ms
+04/18/2021 17:19:13 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:19:13 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:19:13 Received HTTP response headers after 32.0944ms - 200
+04/18/2021 17:19:13 End processing HTTP request after 34.1833ms - 200
+04/18/2021 17:19:13 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 196.7929 ms
+04/18/2021 17:23:49 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:23:49 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:23:49 Received HTTP response headers after 39.0552ms - 200
+04/18/2021 17:23:49 End processing HTTP request after 41.2548ms - 200
+04/18/2021 17:23:50 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 203.8866 ms
+04/18/2021 17:24:04 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:24:04 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:24:04 Received HTTP response headers after 10.6144ms - 200
+04/18/2021 17:24:04 End processing HTTP request after 12.5247ms - 200
+04/18/2021 17:24:04 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 16.5502 ms
+04/18/2021 17:25:25 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:25:25 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:25:25 Received HTTP response headers after 14.9598ms - 200
+04/18/2021 17:25:25 End processing HTTP request after 18.0358ms - 200
+04/18/2021 17:25:26 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 179.6436 ms
+04/18/2021 17:32:51 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:32:51 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:32:51 Received HTTP response headers after 38.9797ms - 200
+04/18/2021 17:32:51 End processing HTTP request after 41.1296ms - 200
+04/18/2021 17:32:51 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 208.2355 ms
+04/18/2021 17:33:13 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:33:13 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:33:13 Received HTTP response headers after 40.6187ms - 200
+04/18/2021 17:33:13 End processing HTTP request after 42.7109ms - 200
+04/18/2021 17:33:14 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 201.1977 ms
+04/18/2021 17:33:48 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:33:48 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 17:33:48 Received HTTP response headers after 18.544ms - 200
+04/18/2021 17:33:48 End processing HTTP request after 20.5667ms - 200
+04/18/2021 17:33:48 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 182.8749 ms
+04/18/2021 18:17:07 Web server started..
+04/18/2021 18:17:07 Web server HostBuilder created
+04/18/2021 18:17:08 Host built
+04/18/2021 18:17:09 Now listening on: "https://localhost:9000"
+04/18/2021 18:17:09 Application started. Press Ctrl+C to shut down.
+04/18/2021 18:17:09 Hosting environment: "Development"
+04/18/2021 18:17:09 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 18:17:12 HTTP "GET" "/" responded 200 in 242.1487 ms
+04/18/2021 18:17:13 HTTP "GET" "/Authentication/SignIn" responded 200 in 268.3269 ms
+04/18/2021 18:17:18 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 18:17:18 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 18:17:20 Received HTTP response headers after 2226.9466ms - 200
+04/18/2021 18:17:20 End processing HTTP request after 2238.9346ms - 200
+04/18/2021 18:17:20 HTTP "POST" "/Authentication/SignIn" responded 302 in 2348.4828 ms
+04/18/2021 18:17:20 HTTP "GET" "/" responded 200 in 3.8404 ms
+04/18/2021 18:17:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 18:17:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 18:17:34 Received HTTP response headers after 2150.3452ms - 200
+04/18/2021 18:17:34 End processing HTTP request after 2152.7598ms - 200
+04/18/2021 18:17:34 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2224.7746 ms
+04/18/2021 18:17:38 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:17:38 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:17:38 Received HTTP response headers after 91.2151ms - 200
+04/18/2021 18:17:38 End processing HTTP request after 93.6024ms - 200
+04/18/2021 18:18:03 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unexpected 'asp-for' expression result type 'System.Int32' for <input>. 'asp-for' must be of type 'System.Boolean' or 'System.String' that can be parsed as a 'System.Boolean' if 'type' is 'checkbox'.
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.GenerateCheckBox(ModelExplorer modelExplorer, TagHelperOutput output, IDictionary`2 htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.<ExecuteAsync>b__28_1() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 205
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_PowerSupplies_PowerSupplyEdit.ExecuteAsync() in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Views\PowerSupplies\PowerSupplyEdit.cshtml:line 5
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/18/2021 18:18:03 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 24472.5616 ms
+04/18/2021 18:18:03 HTTP "GET" "/Error/500" responded 302 in 1.9787 ms
+04/18/2021 18:18:03 HTTP "GET" "/Error/ServerError" responded 200 in 13.0488 ms
+04/18/2021 18:19:14 HTTP "GET" "/Error/ServerError" responded 200 in 0.7434 ms
+04/18/2021 18:19:17 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:19:17 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:19:17 Received HTTP response headers after 36.9524ms - 200
+04/18/2021 18:19:17 End processing HTTP request after 39.2387ms - 200
+04/18/2021 18:19:20 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 3271.1434 ms
+04/18/2021 18:22:45 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:22:45 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:22:45 Received HTTP response headers after 50.9859ms - 200
+04/18/2021 18:22:45 End processing HTTP request after 53.3176ms - 200
+04/18/2021 18:22:46 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 346.0424 ms
+04/18/2021 18:23:24 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:23:24 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:23:24 Received HTTP response headers after 23.2604ms - 200
+04/18/2021 18:23:24 End processing HTTP request after 25.5394ms - 200
+04/18/2021 18:23:25 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 257.2977 ms
+04/18/2021 18:23:57 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:23:57 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:23:57 Received HTTP response headers after 20.4075ms - 200
+04/18/2021 18:23:57 End processing HTTP request after 22.3382ms - 200
+04/18/2021 18:23:57 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 247.1312 ms
+04/18/2021 18:24:15 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:24:15 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:24:15 Received HTTP response headers after 19.141ms - 200
+04/18/2021 18:24:15 End processing HTTP request after 21.5436ms - 200
+04/18/2021 18:24:15 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 238.5815 ms
+04/18/2021 18:25:33 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:25:33 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:25:33 Received HTTP response headers after 33.9078ms - 200
+04/18/2021 18:25:33 End processing HTTP request after 36.1182ms - 200
+04/18/2021 18:25:33 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 233.9228 ms
+04/18/2021 18:25:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:25:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:25:53 Received HTTP response headers after 19.5426ms - 200
+04/18/2021 18:25:53 End processing HTTP request after 21.7426ms - 200
+04/18/2021 18:25:54 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 230.0882 ms
+04/18/2021 18:26:21 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:26:21 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:26:21 Received HTTP response headers after 15.1453ms - 200
+04/18/2021 18:26:21 End processing HTTP request after 17.4624ms - 200
+04/18/2021 18:26:21 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 198.4159 ms
+04/18/2021 18:26:35 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:26:35 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:26:35 Received HTTP response headers after 7.9901ms - 200
+04/18/2021 18:26:35 End processing HTTP request after 10.9157ms - 200
+04/18/2021 18:26:35 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 206.5719 ms
+04/18/2021 18:27:09 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:27:09 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:27:09 Received HTTP response headers after 42.2072ms - 200
+04/18/2021 18:27:09 End processing HTTP request after 44.3349ms - 200
+04/18/2021 18:27:09 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 225.9614 ms
+04/18/2021 18:28:33 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:28:33 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:28:33 Received HTTP response headers after 27.148ms - 200
+04/18/2021 18:28:33 End processing HTTP request after 29.5445ms - 200
+04/18/2021 18:28:33 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 226.2182 ms
+04/18/2021 18:28:44 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:28:44 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:28:44 Received HTTP response headers after 7.772ms - 200
+04/18/2021 18:28:44 End processing HTTP request after 11.245ms - 200
+04/18/2021 18:28:44 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 192.4716 ms
+04/18/2021 18:29:19 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:19 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:19 Received HTTP response headers after 25.1833ms - 200
+04/18/2021 18:29:19 End processing HTTP request after 27.5685ms - 200
+04/18/2021 18:29:19 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 214.8305 ms
+04/18/2021 18:29:34 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:34 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:34 Received HTTP response headers after 9.0372ms - 200
+04/18/2021 18:29:34 End processing HTTP request after 11.2113ms - 200
+04/18/2021 18:29:34 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 206.5794 ms
+04/18/2021 18:29:35 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:35 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:35 Received HTTP response headers after 11.3879ms - 200
+04/18/2021 18:29:35 End processing HTTP request after 13.6831ms - 200
+04/18/2021 18:29:35 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 17.9058 ms
+04/18/2021 18:29:55 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:55 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:29:55 Received HTTP response headers after 7.9189ms - 200
+04/18/2021 18:29:55 End processing HTTP request after 10.7454ms - 200
+04/18/2021 18:29:55 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 198.8854 ms
+04/18/2021 18:31:14 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:31:14 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:31:14 Received HTTP response headers after 30.4377ms - 200
+04/18/2021 18:31:14 End processing HTTP request after 32.8067ms - 200
+04/18/2021 18:31:14 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 259.6212 ms
+04/18/2021 18:31:33 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:31:33 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:31:33 Received HTTP response headers after 7.9732ms - 200
+04/18/2021 18:31:33 End processing HTTP request after 10.5104ms - 200
+04/18/2021 18:31:33 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 178.9477 ms
+04/18/2021 18:31:47 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:31:47 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:31:47 Received HTTP response headers after 8.0266ms - 200
+04/18/2021 18:31:47 End processing HTTP request after 10.1768ms - 200
+04/18/2021 18:31:48 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 185.6311 ms
+04/18/2021 18:33:13 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:33:13 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:33:13 Received HTTP response headers after 19.4512ms - 200
+04/18/2021 18:33:13 End processing HTTP request after 21.7424ms - 200
+04/18/2021 18:33:13 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 210.7805 ms
+04/18/2021 18:33:28 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:33:28 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:33:28 Received HTTP response headers after 14.5443ms - 200
+04/18/2021 18:33:28 End processing HTTP request after 16.3998ms - 200
+04/18/2021 18:33:28 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 184.6429 ms
+04/18/2021 18:34:15 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:34:15 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:34:15 Received HTTP response headers after 19.4974ms - 200
+04/18/2021 18:34:15 End processing HTTP request after 21.8015ms - 200
+04/18/2021 18:34:15 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 199.5842 ms
+04/18/2021 18:34:23 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:34:23 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:34:23 Received HTTP response headers after 7.622ms - 200
+04/18/2021 18:34:23 End processing HTTP request after 9.9665ms - 200
+04/18/2021 18:34:23 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 194.6969 ms
+04/18/2021 18:35:13 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:35:13 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:35:13 Received HTTP response headers after 15.5412ms - 200
+04/18/2021 18:35:13 End processing HTTP request after 18.0223ms - 200
+04/18/2021 18:35:13 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 196.5206 ms
+04/18/2021 18:36:35 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:36:35 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:36:35 Received HTTP response headers after 18.0973ms - 200
+04/18/2021 18:36:35 End processing HTTP request after 20.3589ms - 200
+04/18/2021 18:36:35 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 204.1060 ms
+04/18/2021 18:36:43 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:36:43 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:36:43 Received HTTP response headers after 7.9433ms - 200
+04/18/2021 18:36:43 End processing HTTP request after 9.9774ms - 200
+04/18/2021 18:36:43 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 193.3919 ms
+04/18/2021 18:37:00 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:37:00 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:37:00 Received HTTP response headers after 13.0096ms - 200
+04/18/2021 18:37:00 End processing HTTP request after 16.6833ms - 200
+04/18/2021 18:37:00 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 199.3987 ms
+04/18/2021 18:37:06 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:37:06 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:37:06 Received HTTP response headers after 8.7846ms - 200
+04/18/2021 18:37:06 End processing HTTP request after 11.6415ms - 200
+04/18/2021 18:37:06 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 188.2068 ms
+04/18/2021 18:37:33 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:37:33 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 18:37:33 Received HTTP response headers after 17.8261ms - 200
+04/18/2021 18:37:33 End processing HTTP request after 20.236ms - 200
+04/18/2021 18:37:33 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 208.0920 ms
+04/18/2021 19:39:20 Web server started..
+04/18/2021 19:39:21 Web server HostBuilder created
+04/18/2021 19:39:21 Host built
+04/18/2021 19:39:22 Now listening on: "https://localhost:9000"
+04/18/2021 19:39:22 Application started. Press Ctrl+C to shut down.
+04/18/2021 19:39:22 Hosting environment: "Development"
+04/18/2021 19:39:22 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 19:39:28 HTTP "GET" "/" responded 200 in 190.7546 ms
+04/18/2021 19:39:31 HTTP "GET" "/Authentication/SignIn" responded 200 in 252.2305 ms
+04/18/2021 19:39:35 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:39:35 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:39:37 Received HTTP response headers after 2141.8384ms - 200
+04/18/2021 19:39:37 End processing HTTP request after 2154.2494ms - 200
+04/18/2021 19:39:37 HTTP "POST" "/Authentication/SignIn" responded 302 in 2263.9946 ms
+04/18/2021 19:39:37 HTTP "GET" "/" responded 200 in 2.8255 ms
+04/18/2021 19:39:43 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:39:43 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:39:45 Received HTTP response headers after 2061.8603ms - 200
+04/18/2021 19:39:45 End processing HTTP request after 2064.1507ms - 200
+04/18/2021 19:39:45 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2135.5496 ms
+04/18/2021 19:39:47 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:39:47 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:39:47 Received HTTP response headers after 89.0938ms - 200
+04/18/2021 19:39:47 End processing HTTP request after 91.3088ms - 200
+04/18/2021 19:39:47 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 149.3418 ms
+04/18/2021 19:40:10 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:40:10 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:40:10 Received HTTP response headers after 23.6101ms - 200
+04/18/2021 19:40:10 End processing HTTP request after 25.9816ms - 200
+04/18/2021 19:40:13 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 3242.5454 ms
+04/18/2021 19:42:17 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:42:17 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:42:17 Received HTTP response headers after 16.9597ms - 200
+04/18/2021 19:42:17 End processing HTTP request after 20.0742ms - 200
+04/18/2021 19:42:17 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 273.3371 ms
+04/18/2021 19:42:41 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:42:41 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:42:41 Received HTTP response headers after 19.7258ms - 200
+04/18/2021 19:42:41 End processing HTTP request after 22.1897ms - 200
+04/18/2021 19:42:41 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 211.7107 ms
+04/18/2021 19:43:06 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:43:06 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:43:06 Received HTTP response headers after 19.3745ms - 200
+04/18/2021 19:43:06 End processing HTTP request after 21.5669ms - 200
+04/18/2021 19:43:07 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 205.9946 ms
+04/18/2021 19:44:57 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:44:57 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:44:57 Received HTTP response headers after 30.9159ms - 200
+04/18/2021 19:44:57 End processing HTTP request after 33.0487ms - 200
+04/18/2021 19:44:57 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 226.2198 ms
+04/18/2021 19:45:27 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:45:27 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:45:27 Received HTTP response headers after 18.9473ms - 200
+04/18/2021 19:45:27 End processing HTTP request after 21.6974ms - 200
+04/18/2021 19:45:27 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 176.7884 ms
+04/18/2021 19:45:51 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:45:51 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:45:51 Received HTTP response headers after 16.9263ms - 200
+04/18/2021 19:45:51 End processing HTTP request after 19.089ms - 200
+04/18/2021 19:45:51 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 189.6611 ms
+04/18/2021 19:45:54 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:45:54 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:45:54 Received HTTP response headers after 11.9468ms - 200
+04/18/2021 19:45:54 End processing HTTP request after 13.8231ms - 200
+04/18/2021 19:45:54 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 16.9200 ms
+04/18/2021 19:46:41 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:46:41 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:46:41 Received HTTP response headers after 19.7756ms - 200
+04/18/2021 19:46:41 End processing HTTP request after 22.0424ms - 200
+04/18/2021 19:46:41 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 187.3790 ms
+04/18/2021 19:47:07 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:07 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:07 Received HTTP response headers after 27.1409ms - 200
+04/18/2021 19:47:07 End processing HTTP request after 29.4976ms - 200
+04/18/2021 19:47:07 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 189.9831 ms
+04/18/2021 19:47:24 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:24 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:24 Received HTTP response headers after 12.0915ms - 200
+04/18/2021 19:47:24 End processing HTTP request after 13.8871ms - 200
+04/18/2021 19:47:24 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 167.2529 ms
+04/18/2021 19:47:26 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:26 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:26 Received HTTP response headers after 8.3957ms - 200
+04/18/2021 19:47:26 End processing HTTP request after 10.4517ms - 200
+04/18/2021 19:47:26 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 14.5769 ms
+04/18/2021 19:47:45 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:45 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:47:45 Received HTTP response headers after 9.4133ms - 200
+04/18/2021 19:47:45 End processing HTTP request after 11.4886ms - 200
+04/18/2021 19:47:46 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 203.6744 ms
+04/18/2021 19:48:15 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:48:15 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:48:15 Received HTTP response headers after 17.2216ms - 200
+04/18/2021 19:48:15 End processing HTTP request after 19.2601ms - 200
+04/18/2021 19:48:15 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 201.4132 ms
+04/18/2021 19:53:43 Web server started..
+04/18/2021 19:53:43 Web server HostBuilder created
+04/18/2021 19:53:44 Host built
+04/18/2021 19:53:44 Now listening on: "https://localhost:9000"
+04/18/2021 19:53:44 Application started. Press Ctrl+C to shut down.
+04/18/2021 19:53:44 Hosting environment: "Development"
+04/18/2021 19:53:44 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 19:53:47 HTTP "GET" "/" responded 200 in 173.8657 ms
+04/18/2021 19:53:50 HTTP "GET" "/Authentication/SignIn" responded 200 in 251.7347 ms
+04/18/2021 19:53:55 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:53:55 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:53:57 Received HTTP response headers after 2134.1629ms - 200
+04/18/2021 19:53:57 End processing HTTP request after 2146.1878ms - 200
+04/18/2021 19:53:57 HTTP "POST" "/Authentication/SignIn" responded 302 in 2252.0319 ms
+04/18/2021 19:53:57 HTTP "GET" "/" responded 200 in 3.1058 ms
+04/18/2021 19:54:02 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:54:02 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:54:04 Received HTTP response headers after 2034.427ms - 200
+04/18/2021 19:54:04 End processing HTTP request after 2036.5116ms - 200
+04/18/2021 19:54:04 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2104.2217 ms
+04/18/2021 19:54:06 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:54:06 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:54:06 Received HTTP response headers after 91.8176ms - 200
+04/18/2021 19:54:06 End processing HTTP request after 94.2388ms - 200
+04/18/2021 19:54:06 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 149.6732 ms
+04/18/2021 19:54:42 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:54:42 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:54:42 Received HTTP response headers after 217.3134ms - 200
+04/18/2021 19:54:42 End processing HTTP request after 219.4757ms - 200
+04/18/2021 19:54:47 HTTP "POST" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 23030.4337 ms
+04/18/2021 19:54:47 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:54:47 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:54:47 Received HTTP response headers after 14.3431ms - 200
+04/18/2021 19:54:47 End processing HTTP request after 16.7805ms - 200
+04/18/2021 19:54:47 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 20.9115 ms
+04/18/2021 19:59:14 Web server started..
+04/18/2021 19:59:14 Web server HostBuilder created
+04/18/2021 19:59:15 Host built
+04/18/2021 19:59:16 Now listening on: "https://localhost:9000"
+04/18/2021 19:59:16 Application started. Press Ctrl+C to shut down.
+04/18/2021 19:59:16 Hosting environment: "Development"
+04/18/2021 19:59:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 19:59:19 HTTP "GET" "/" responded 200 in 181.0622 ms
+04/18/2021 19:59:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 243.1080 ms
+04/18/2021 19:59:25 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:59:25 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:59:27 Received HTTP response headers after 2120.5055ms - 200
+04/18/2021 19:59:27 End processing HTTP request after 2132.7057ms - 200
+04/18/2021 19:59:27 HTTP "POST" "/Authentication/SignIn" responded 302 in 2234.2531 ms
+04/18/2021 19:59:27 HTTP "GET" "/" responded 200 in 3.4805 ms
+04/18/2021 19:59:33 HTTP "GET" "/Authentication/LogOut" responded 302 in 6.2104 ms
+04/18/2021 19:59:33 HTTP "GET" "/" responded 200 in 0.8775 ms
+04/18/2021 19:59:34 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.8345 ms
+04/18/2021 19:59:37 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:59:37 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 19:59:37 Received HTTP response headers after 47.269ms - 200
+04/18/2021 19:59:37 End processing HTTP request after 49.5689ms - 200
+04/18/2021 19:59:37 HTTP "POST" "/Authentication/SignIn" responded 302 in 52.4115 ms
+04/18/2021 19:59:37 HTTP "GET" "/" responded 200 in 1.5672 ms
+04/18/2021 19:59:47 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:59:47 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 19:59:49 Received HTTP response headers after 2061.4555ms - 200
+04/18/2021 19:59:49 End processing HTTP request after 2063.7574ms - 200
+04/18/2021 19:59:49 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2133.7646 ms
+04/18/2021 19:59:54 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:59:54 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 19:59:54 Received HTTP response headers after 92.6208ms - 200
+04/18/2021 19:59:54 End processing HTTP request after 94.7522ms - 200
+04/18/2021 19:59:55 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 151.1321 ms
+04/18/2021 20:01:08 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:01:08 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:01:08 Received HTTP response headers after 34.0704ms - 200
+04/18/2021 20:01:08 End processing HTTP request after 36.3807ms - 200
+04/18/2021 20:01:08 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 42.5196 ms
+04/18/2021 20:01:24 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:01:24 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:01:24 Received HTTP response headers after 11.4214ms - 200
+04/18/2021 20:01:24 End processing HTTP request after 13.7001ms - 200
+04/18/2021 20:01:27 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 3127.9632 ms
+04/18/2021 20:03:47 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:03:47 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:03:47 Received HTTP response headers after 51.0708ms - 200
+04/18/2021 20:03:47 End processing HTTP request after 53.3698ms - 200
+04/18/2021 20:03:47 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 58.1656 ms
+04/18/2021 20:04:30 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:04:30 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:04:30 Received HTTP response headers after 17.0812ms - 200
+04/18/2021 20:04:30 End processing HTTP request after 19.2ms - 200
+04/18/2021 20:04:31 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 274.6950 ms
+04/18/2021 20:04:43 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:04:43 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:04:43 Received HTTP response headers after 8.3842ms - 200
+04/18/2021 20:04:43 End processing HTTP request after 11.4003ms - 200
+04/18/2021 20:04:43 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 200.8366 ms
+04/18/2021 20:04:52 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:04:52 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:04:52 Received HTTP response headers after 15.2378ms - 200
+04/18/2021 20:04:52 End processing HTTP request after 17.0817ms - 200
+04/18/2021 20:04:52 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 201.1874 ms
+04/18/2021 20:05:10 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:05:10 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:05:10 Received HTTP response headers after 14.9826ms - 200
+04/18/2021 20:05:10 End processing HTTP request after 17.3138ms - 200
+04/18/2021 20:05:10 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 188.7272 ms
+04/18/2021 20:05:44 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:05:44 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:05:44 Received HTTP response headers after 19.5758ms - 200
+04/18/2021 20:05:44 End processing HTTP request after 21.4126ms - 200
+04/18/2021 20:05:44 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 234.5804 ms
+04/18/2021 20:12:32 Web server started..
+04/18/2021 20:12:32 Web server HostBuilder created
+04/18/2021 20:12:33 Host built
+04/18/2021 20:12:33 Now listening on: "https://localhost:9000"
+04/18/2021 20:12:33 Application started. Press Ctrl+C to shut down.
+04/18/2021 20:12:33 Hosting environment: "Development"
+04/18/2021 20:12:33 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/18/2021 20:12:38 HTTP "GET" "/" responded 200 in 177.5571 ms
+04/18/2021 20:12:39 HTTP "GET" "/Authentication/SignIn" responded 200 in 247.5668 ms
+04/18/2021 20:12:43 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 20:12:43 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/18/2021 20:12:45 Received HTTP response headers after 2104.7005ms - 200
+04/18/2021 20:12:45 End processing HTTP request after 2117.5971ms - 200
+04/18/2021 20:12:45 HTTP "POST" "/Authentication/SignIn" responded 302 in 2221.2162 ms
+04/18/2021 20:12:45 HTTP "GET" "/" responded 200 in 2.9201 ms
+04/18/2021 20:12:48 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:12:48 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:12:50 Received HTTP response headers after 2047.5111ms - 200
+04/18/2021 20:12:50 End processing HTTP request after 2049.768ms - 200
+04/18/2021 20:12:50 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table?pageNumber=1" responded 200 in 2119.2684 ms
+04/18/2021 20:12:52 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:12:52 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:12:52 Received HTTP response headers after 88.4218ms - 200
+04/18/2021 20:12:52 End processing HTTP request after 91.0066ms - 200
+04/18/2021 20:12:52 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 145.9729 ms
+04/18/2021 20:14:31 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:14:31 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:14:31 Received HTTP response headers after 32.8327ms - 200
+04/18/2021 20:14:31 End processing HTTP request after 34.9174ms - 200
+04/18/2021 20:14:34 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 3170.7010 ms
+04/18/2021 20:14:41 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:14:41 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:14:41 Received HTTP response headers after 14.1238ms - 200
+04/18/2021 20:14:41 End processing HTTP request after 16.8574ms - 200
+04/18/2021 20:14:42 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 276.8176 ms
+04/18/2021 20:14:49 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:14:49 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:14:49 Received HTTP response headers after 18.9604ms - 200
+04/18/2021 20:14:49 End processing HTTP request after 21.2802ms - 200
+04/18/2021 20:14:49 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 206.4855 ms
+04/18/2021 20:15:07 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:15:07 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:15:07 Received HTTP response headers after 10.0537ms - 200
+04/18/2021 20:15:07 End processing HTTP request after 12.132ms - 200
+04/18/2021 20:15:07 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 195.1980 ms
+04/18/2021 20:16:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:16:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:16:53 Received HTTP response headers after 25.5747ms - 200
+04/18/2021 20:16:53 End processing HTTP request after 27.7968ms - 200
+04/18/2021 20:16:54 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 250.0383 ms
+04/18/2021 20:17:06 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:17:06 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:17:06 Received HTTP response headers after 8.8455ms - 200
+04/18/2021 20:17:06 End processing HTTP request after 11.5742ms - 200
+04/18/2021 20:17:06 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 168.2078 ms
+04/18/2021 20:17:21 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:17:21 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:17:21 Received HTTP response headers after 19.6722ms - 200
+04/18/2021 20:17:21 End processing HTTP request after 22.0218ms - 200
+04/18/2021 20:17:21 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 196.4612 ms
+04/18/2021 20:17:45 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:17:45 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:17:45 Received HTTP response headers after 19.5353ms - 200
+04/18/2021 20:17:45 End processing HTTP request after 21.8577ms - 200
+04/18/2021 20:17:45 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 187.4697 ms
+04/18/2021 20:18:11 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:18:11 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:18:11 Received HTTP response headers after 22.487ms - 200
+04/18/2021 20:18:11 End processing HTTP request after 24.578ms - 200
+04/18/2021 20:18:11 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 212.3702 ms
+04/18/2021 20:19:09 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:09 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:09 Received HTTP response headers after 30.0122ms - 200
+04/18/2021 20:19:09 End processing HTTP request after 32.5042ms - 200
+04/18/2021 20:19:09 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 184.6460 ms
+04/18/2021 20:19:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:32 Received HTTP response headers after 18.2735ms - 200
+04/18/2021 20:19:32 End processing HTTP request after 21.2523ms - 200
+04/18/2021 20:19:32 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 183.4944 ms
+04/18/2021 20:19:42 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:42 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:42 Received HTTP response headers after 9.1725ms - 200
+04/18/2021 20:19:42 End processing HTTP request after 11.3973ms - 200
+04/18/2021 20:19:42 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 176.1738 ms
+04/18/2021 20:19:58 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:58 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:19:58 Received HTTP response headers after 9.0421ms - 200
+04/18/2021 20:19:58 End processing HTTP request after 11.1884ms - 200
+04/18/2021 20:19:58 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 169.9495 ms
+04/18/2021 20:20:11 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:20:11 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:20:11 Received HTTP response headers after 8.1137ms - 200
+04/18/2021 20:20:11 End processing HTTP request after 10.1633ms - 200
+04/18/2021 20:20:12 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 172.5023 ms
+04/18/2021 20:20:36 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:20:36 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:20:36 Received HTTP response headers after 14.335ms - 200
+04/18/2021 20:20:36 End processing HTTP request after 16.2837ms - 200
+04/18/2021 20:20:37 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 178.8202 ms
+04/18/2021 20:20:45 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:20:45 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:20:45 Received HTTP response headers after 7.9246ms - 200
+04/18/2021 20:20:45 End processing HTTP request after 11.0929ms - 200
+04/18/2021 20:20:45 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 164.1924 ms
+04/18/2021 20:21:01 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:21:01 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:21:01 Received HTTP response headers after 11.2504ms - 200
+04/18/2021 20:21:01 End processing HTTP request after 13.3111ms - 200
+04/18/2021 20:21:01 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 168.5594 ms
+04/18/2021 20:21:22 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:21:22 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:21:22 Received HTTP response headers after 27.2692ms - 200
+04/18/2021 20:21:22 End processing HTTP request after 29.6973ms - 200
+04/18/2021 20:21:22 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 33.0816 ms
+04/18/2021 20:21:25 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:21:25 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:21:25 Received HTTP response headers after 8.6875ms - 200
+04/18/2021 20:21:25 End processing HTTP request after 11.1647ms - 200
+04/18/2021 20:21:25 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 200 in 15.5579 ms
+04/18/2021 20:22:09 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:22:09 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/PowerSupplies/2
+04/18/2021 20:22:10 Received HTTP response headers after 185.1983ms - 200
+04/18/2021 20:22:10 End processing HTTP request after 187.5263ms - 200
+04/18/2021 20:22:10 HTTP "POST" "/HardwareApiManaging/PowerSupplies/Edit/2" responded 302 in 211.5248 ms
+04/18/2021 20:22:10 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:22:10 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:22:10 Received HTTP response headers after 11.3719ms - 200
+04/18/2021 20:22:10 End processing HTTP request after 13.1936ms - 200
+04/18/2021 20:22:10 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 16.5505 ms
+04/18/2021 20:23:32 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:23:32 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:23:32 Received HTTP response headers after 49.4604ms - 200
+04/18/2021 20:23:32 End processing HTTP request after 52.557ms - 200
+04/18/2021 20:23:33 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 277.6292 ms
+04/18/2021 20:23:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:23:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:23:53 Received HTTP response headers after 10.6605ms - 200
+04/18/2021 20:23:53 End processing HTTP request after 12.7047ms - 200
+04/18/2021 20:23:53 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 141.5939 ms
+04/18/2021 20:24:14 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:24:14 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:24:14 Received HTTP response headers after 21.9172ms - 200
+04/18/2021 20:24:14 End processing HTTP request after 24.229ms - 200
+04/18/2021 20:24:14 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 137.6088 ms
+04/18/2021 20:24:34 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:24:34 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:24:34 Received HTTP response headers after 7.9056ms - 200
+04/18/2021 20:24:34 End processing HTTP request after 9.7399ms - 200
+04/18/2021 20:24:35 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 135.2733 ms
+04/18/2021 20:25:14 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:14 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:14 Received HTTP response headers after 21.9342ms - 200
+04/18/2021 20:25:14 End processing HTTP request after 24.6035ms - 200
+04/18/2021 20:25:14 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 155.6861 ms
+04/18/2021 20:25:37 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:37 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:37 Received HTTP response headers after 19.5852ms - 200
+04/18/2021 20:25:37 End processing HTTP request after 22.0475ms - 200
+04/18/2021 20:25:37 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 145.7003 ms
+04/18/2021 20:25:52 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:52 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:52 Received HTTP response headers after 7.7332ms - 200
+04/18/2021 20:25:52 End processing HTTP request after 11.016ms - 200
+04/18/2021 20:25:52 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 136.5322 ms
+04/18/2021 20:25:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:53 Received HTTP response headers after 8.0458ms - 200
+04/18/2021 20:25:53 End processing HTTP request after 9.9996ms - 200
+04/18/2021 20:25:53 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 13.5297 ms
+04/18/2021 20:25:59 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:59 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:25:59 Received HTTP response headers after 7.5513ms - 200
+04/18/2021 20:25:59 End processing HTTP request after 10.1069ms - 200
+04/18/2021 20:25:59 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 130.3974 ms
+04/18/2021 20:26:12 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:26:12 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:26:12 Received HTTP response headers after 6.9124ms - 200
+04/18/2021 20:26:12 End processing HTTP request after 8.8958ms - 200
+04/18/2021 20:26:13 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 129.1680 ms
+04/18/2021 20:26:23 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:26:23 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/18/2021 20:26:23 Received HTTP response headers after 9.3999ms - 200
+04/18/2021 20:26:23 End processing HTTP request after 11.8199ms - 200
+04/18/2021 20:26:23 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 136.5771 ms
+04/18/2021 20:26:50 HTTP "GET" "/HardwareApiManaging/PowerSupplies" responded 200 in 85.7326 ms

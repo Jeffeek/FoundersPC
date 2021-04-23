@@ -27,7 +27,7 @@ namespace HardwareApi.Tests.CRUDOperations
         private IUnitOfWorkHardwareAPI _unitOfWork;
 
         [OneTimeSetUp]
-        public async Task Setup()
+        public async Task SetupAsync()
         {
             var options = new DbContextOptionsBuilder<FoundersPCHardwareContext>()
                           .UseInMemoryDatabase("InMem")
@@ -36,17 +36,17 @@ namespace HardwareApi.Tests.CRUDOperations
             _context = new FoundersPCHardwareContext(options);
 
             _unitOfWork = new UnitOfWorkHardwareHardwareAPI(_context,
-                                                            new CPUsRepository(_context),
+                                                            new ProcessorsRepository(_context),
                                                             new ProducersRepository(_context),
                                                             new ProcessorCoresRepository(_context),
-                                                            new GPUsRepository(_context),
+                                                            new VideoCardsRepository(_context),
                                                             new VideoCardCoresRepository(_context),
                                                             new CasesRepository(_context),
-                                                            new HDDsRepository(_context),
+                                                            new HardDrivesRepository(_context),
                                                             new MotherboardsRepository(_context),
                                                             new PowerSuppliersRepository(_context),
-                                                            new SSDsRepository(_context),
-                                                            new RAMsRepository(_context),
+                                                            new SolidStateDrivesRepository(_context),
+                                                            new RandomAccessMemoryRepository(_context),
                                                             new NullLogger<UnitOfWorkHardwareHardwareAPI>());
 
             HC.Count = 1000;
@@ -64,7 +64,7 @@ namespace HardwareApi.Tests.CRUDOperations
                 await _unitOfWork.CasesRepository.AddAsync(@case);
 
             foreach (var hdd in hdds)
-                await _unitOfWork.HDDsRepository.AddAsync(hdd);
+                await _unitOfWork.HardDrivesRepository.AddAsync(hdd);
 
             await _unitOfWork.SaveChangesAsync();
         }

@@ -8,6 +8,6 @@ using FoundersPC.RepositoryShared.Repository;
 namespace FoundersPC.API.Application.Interfaces.Repositories
 
 {
-    public interface ICasesRepositoryAsync : IRepositoryAsync<Case>,
-                                             IPaginateableRepository<Case> { }
+    public interface ICasesRepositoryAsync : IRepositoryAsync<CaseEntity>,
+                                             IPaginateableRepository<CaseEntity> { }
 }

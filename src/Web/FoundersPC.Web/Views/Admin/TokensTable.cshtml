@@ -1,154 +1,138 @@
-﻿@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.ApiAccessUserTokenReadDto>
+﻿@using PagedList.Core.Mvc
+@model FoundersPC.Web.Domain.Common.IndexViewModel<FoundersPC.Identity.Dto.AccessTokenReadDto>
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
-    @section Styles {
-        <link href="~/css/table.css"
-              rel="stylesheet" />
-    }
-}
+@section Styles {
+    <link
+        href="~/css/table.css"
+        rel="stylesheet"/>
+}}
 
-<div class='mt-5 table-wrapper'>
-    <div class='table-responsive-xxl table-responsive-xl'>
-        <table class='mt-5 table table-bordered table-hover text-center text-light'>
+<div
+    class='mt-5 table-wrapper'>
+    <div
+        class='table-responsive-xl table-responsive-xxl'>
+        <table
+            class='mt-5 table table-bordered table-hover text-center text-light'>
             <thead>
-                <tr class='table-title'>
-                    <th>Id</th>
-                    <th>Hashed Token</th>
-                    <th>User Id</th>
-                    <th>Start Evaluation Date</th>
-                    <th>Expiration Date</th>
-                    <th>Is Blocked</th>
-                    <th>Actions</th>
-                </tr>
+            <tr
+                class='table-title'>
+                <th>Id</th>
+                <th>Hashed Token</th>
+                <th>User Id</th>
+                <th>Start Evaluation Date</th>
+                <th>Expiration Date</th>
+                <th>Is Blocked</th>
+                <th>Actions</th>
+            </tr>
             </thead>
             <tbody>
-                @{
-                    foreach (var token in Model.Models)
-                    {
-                        <tr class=@if (!token.IsActive) { @Html.Raw("text-danger") }>
-                            <th>@token.Id</th>
-                            <th>
-                                @{
-                                    if (token.IsActive)
-                                    {
-                                        @Html.Raw(new string('*', 64))
-                                    }
-                                    else
-                                    {
-                                        @Html.Raw(token.HashedToken)
-                                    }
+            @{
+                foreach (var token in Model.PagedList) {
+                    <tr
+                        class=@if (!token.IsActive) { @Html.Raw("text-danger") }>
+                        <th>@token.Id</th>
+                        <th>
+                            @{
+                                if (token.IsActive) {
+                                    @Html.Raw(new string('*', 64))
+                                } else {
+                                    @Html.Raw(token.HashedToken)
                                 }
-                            </th>
-                            <th>@token.UserId</th>
-                            <th>@token.StartEvaluationDate.ToLongDateString()</th>
-                            <th>@token.ExpirationDate.ToLongDateString()</th>
-                            <th>
-                                <div class="align-items-center d-flex form-check justify-content-center">
-                                    <input aria-checked='@token.IsBlocked'
-                                           class="form-check-input"
-                                           disabled
-                                           type="checkbox">
-                                </div>
-                            </th>
-                            <td>
-                                <div class="d-flex justify-content-around">
-                                    <a
-                                        class="btn btn-outline-warning d-flex simple-popup @if (!token.IsActive) { @Html.Raw("disabled") }"
-                                        href=
-                                        @{ if (token.IsActive) { @Url.Action("BlockToken", "Admin", new { tokenId = token.Id }) } else { @Url.RouteUrl("#") } }>
-                                        @{
-                                            if (token.IsActive) {
-                                                <span
-                                                    class="popuptext">
-                                                    BLOCK
-                                                </span>
-                                            }
+                            }
+                        </th>
+                        <th>@token.UserId</th>
+                        <th>@token.StartEvaluationDate.ToLongDateString()</th>
+                        <th>@token.ExpirationDate.ToLongDateString()</th>
+                        <th>
+                            <div
+                                class="align-items-center d-flex form-check justify-content-center">
+                                <input
+                                    aria-checked='@token.IsBlocked'
+                                    class="form-check-input"
+                                    disabled
+                                    type="checkbox">
+                            </div>
+                        </th>
+                        <td>
+                            <div
+                                class="d-flex justify-content-around">
+                                <a
+                                    class="btn btn-outline-warning d-flex simple-popup @if (!token.IsActive) { @Html.Raw("disabled") }"
+                                    href=
+                                    @{ if (token.IsActive) { @Url.Action("BlockToken", "Admin", new { tokenId = token.Id }) } else { @Url.RouteUrl("#") } }>
+                                    @{
+                                        if (token.IsActive) {
+                                            <span
+                                                class="popuptext">
+                                                BLOCK
+                                            </span>
                                         }
-                                        <svg
-                                            class="icon"
-                                            fill="#FFFFFF"
-                                            viewBox="0 0 30 30"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            @if (!token.IsBlocked) {
-                                                <path
-                                                    d="M15 4A11 11 0 1 0 15 26 11 11 0 1 0 15 4zM7.222 7.222L22.778 22.778"
-                                                    fill="none"
-                                                    stroke="#FFFFFF"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"/>
-                                            } else {
-                                                <path
-                                                    d="M12 1L12 2M17 3L16 4M7 3L8 4"
-                                                    fill="none"
-                                                    stroke="#FFFFFF"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"/>
-                                                <path
-                                                    d="M25.688,16.911c-0.63-0.874-1.856-0.947-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l0.536-0.536c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218l4.718-4.718c0.598-0.598,0.742-1.56,0.248-2.245c-0.63-0.874-1.855-0.946-2.584-0.218L11.004,14.397c0,0-1.755-3.303-2.635-4.184C6.834,8.679,4.484,8.547,3.701,9.33L3.286,9.745c-0.366,0.366-0.366,0.958,0,1.324l2.113,2.113l1.152,4.843c0.31,1.301,0.974,2.491,1.92,3.437l4.243,4.243c1.706,1.706,4.471,1.706,6.177,0l1.214-1.214l0,0l5.335-5.335C26.037,18.559,26.182,17.596,25.688,16.911z"
-                                                    fill="#FFFFFF"/>
-                                            }
-                                        </svg>
-                                    </a>
-                                    <a asp-action='TokenLogs'
-                                       asp-controller='Admin'
-                                       asp-route-tokenId='@token.Id'
-                                       class="btn btn-outline-info d-flex simple-popup ms-3">
-                                        <span class='popuptext'>
-                                            Tokens Usages
-                                        </span>
-                                        <svg class='icon'
-                                             viewBox="0 0 40 40"
-                                             xmlns="http://www.w3.org/2000/svg"
-                                             xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <path d="M10.803,34.096C11.255,33.495,11.5,32.766,11.5,32c0-1.93-1.57-3.5-3.5-3.5 c-0.766,0-1.495,0.245-2.096,0.697L1.707,25L25,1.707l4.197,4.197C28.745,6.505,28.5,7.234,28.5,8c0,1.93,1.57,3.5,3.5,3.5 c0.766,0,1.495-0.245,2.096-0.697L38.293,15L15,38.293L10.803,34.096z"
-                                                  fill="#f5ce85" />
-                                            <path d="M25,2.414l3.553,3.553C28.192,6.576,28,7.273,28,8c0,2.206,1.794,4,4,4 c0.727,0,1.424-0.192,2.033-0.553L37.586,15L15,37.586l-3.553-3.553C11.808,33.424,12,32.727,12,32c0-2.206-1.794-4-4-4 c-0.727,0-1.424,0.192-2.033,0.553L2.414,25L25,2.414 M25,1L1,25l4.879,4.879C6.422,29.336,7.172,29,8,29c1.657,0,3,1.343,3,3 c0,0.828-0.336,1.578-0.879,2.121L15,39l24-24l-4.879-4.879C33.578,10.664,32.828,11,32,11c-1.657,0-3-1.343-3-3 c0-0.828,0.336-1.578,0.879-2.121L25,1L25,1z"
-                                                  fill="#967a44" />
-                                            <g>
-                                                <path d="M19.258 22.5L15.414 22.5 17.705 19.45 16.48 15.806 20.123 17.03 23.185 14.749 23.173 18.583 26.303 20.812 22.636 21.962 21.485 25.629z"
-                                                      fill="#f78f8f" />
-                                                <path d="M22.682,15.747l-0.008,2.576l-0.002,0.518l0.422,0.3l2.1,1.494l-2.458,0.771l-0.498,0.156 l-0.156,0.498l-0.771,2.458l-1.494-2.1L19.516,22H19h-2.585l1.532-2.039l0.316-0.421l-0.168-0.499l-0.82-2.441l2.441,0.82 l0.496,0.167l0.42-0.313L22.682,15.747 M23.687,13.75l-3.654,2.723l-4.348-1.461l1.461,4.348L14.413,23H19l2.661,3.739l1.374-4.378 l4.378-1.374l-3.739-2.661L23.687,13.75L23.687,13.75z"
-                                                      fill="#c74343" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    }
+                                    }
+                                    <svg
+                                        class="icon"
+                                        fill="#FFFFFF"
+                                        viewBox="0 0 30 30"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path
+                                            d="M15 4A11 11 0 1 0 15 26 11 11 0 1 0 15 4zM7.222 7.222L22.778 22.778"
+                                            fill="none"
+                                            stroke="#FFFFFF"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"/>
+
+                                    </svg>
+                                </a>
+                                <a
+                                    asp-action='TokenLogs'
+                                    asp-controller='Admin'
+                                    asp-route-tokenId='@token.Id'
+                                    class="btn btn-outline-info d-flex ms-3 simple-popup">
+                                    <span
+                                        class='popuptext'>
+                                        Tokens Usages
+                                    </span>
+                                    <svg
+                                        class='icon'
+                                        viewBox="0 0 40 40"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path
+                                            d="M10.803,34.096C11.255,33.495,11.5,32.766,11.5,32c0-1.93-1.57-3.5-3.5-3.5 c-0.766,0-1.495,0.245-2.096,0.697L1.707,25L25,1.707l4.197,4.197C28.745,6.505,28.5,7.234,28.5,8c0,1.93,1.57,3.5,3.5,3.5 c0.766,0,1.495-0.245,2.096-0.697L38.293,15L15,38.293L10.803,34.096z"
+                                            fill="#f5ce85"/>
+                                        <path
+                                            d="M25,2.414l3.553,3.553C28.192,6.576,28,7.273,28,8c0,2.206,1.794,4,4,4 c0.727,0,1.424-0.192,2.033-0.553L37.586,15L15,37.586l-3.553-3.553C11.808,33.424,12,32.727,12,32c0-2.206-1.794-4-4-4 c-0.727,0-1.424,0.192-2.033,0.553L2.414,25L25,2.414 M25,1L1,25l4.879,4.879C6.422,29.336,7.172,29,8,29c1.657,0,3,1.343,3,3 c0,0.828-0.336,1.578-0.879,2.121L15,39l24-24l-4.879-4.879C33.578,10.664,32.828,11,32,11c-1.657,0-3-1.343-3-3 c0-0.828,0.336-1.578,0.879-2.121L25,1L25,1z"
+                                            fill="#967a44"/>
+                                        <g>
+                                            <path
+                                                d="M19.258 22.5L15.414 22.5 17.705 19.45 16.48 15.806 20.123 17.03 23.185 14.749 23.173 18.583 26.303 20.812 22.636 21.962 21.485 25.629z"
+                                                fill="#f78f8f"/>
+                                            <path
+                                                d="M22.682,15.747l-0.008,2.576l-0.002,0.518l0.422,0.3l2.1,1.494l-2.458,0.771l-0.498,0.156 l-0.156,0.498l-0.771,2.458l-1.494-2.1L19.516,22H19h-2.585l1.532-2.039l0.316-0.421l-0.168-0.499l-0.82-2.441l2.441,0.82 l0.496,0.167l0.42-0.313L22.682,15.747 M23.687,13.75l-3.654,2.723l-4.348-1.461l1.461,4.348L14.413,23H19l2.661,3.739l1.374-4.378 l4.378-1.374l-3.739-2.661L23.687,13.75L23.687,13.75z"
+                                                fill="#c74343"/>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
                 }
+            }
             </tbody>
         </table>
         @{
-            if (Model.IsPaginationNeeded)
-            {
-                <nav>
-                    <ul class="justify-content-center pagination">
-                        <li class="page-item @(Html.Raw(Model.Page.HasPreviousPage ? String.Empty : "disabled"))">
-                            <a aria-disabled='@(!Model.Page.HasPreviousPage)'
-                               asp-action='TokensTable'
-                               asp-controller='Admin'
-                               asp-route-pageNumber='@(Model.Page.CurrentPageNumber - 1)'
-                               class="bg-light page-link">
-                                Previous
-                            </a>
-                        </li>
-                        <li class="page-item @(Html.Raw(Model.Page.HasNextPage ? String.Empty : "disabled"))">
-                            <a aria-disabled='@(!Model.Page.HasNextPage)'
-                               asp-action='TokensTable'
-                               asp-controller='Admin'
-                               asp-route-pageNumber='@(Model.Page.CurrentPageNumber + 1)'
-                               class="bg-light page-link">
-                                Next
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            if (Model.IsPaginationNeeded) {
+                <pager
+                    asp-action="TokensTable"
+                    asp-controller="Admin"
+                    class="d-flex justify-content-center"
+                    list="@Model.PagedList"
+                    options="@PagedListRenderOptions.Bootstrap4Full"
+                    param-page-number='pageNumber'/>
             }
         }
     </div>

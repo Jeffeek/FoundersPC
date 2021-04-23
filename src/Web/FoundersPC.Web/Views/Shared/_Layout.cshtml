@@ -1,4 +1,5 @@
-﻿@using FoundersPC.ApplicationShared.ApplicationConstants
+﻿@using FoundersPC.ApplicationShared
+@using FoundersPC.ApplicationShared.ApplicationConstants
 <!DOCTYPE html>
 <html>
 <head>
@@ -193,203 +194,229 @@
 <div
     class='collapse navbar-collapse'
     id='navbarNavDropdown'>
-    <ul
-        class='mb-2 mb-lg-0 me-auto navbar-nav'>
-        <li
-            class='nav-item
+<ul
+    class='mb-2 mb-lg-0 me-auto navbar-nav'>
+<li
+    class='nav-item
                      mx-xxl-2 mx-xl-2 mx-lg-2 mx-md-0 mx-sm-0 mx-0
                      my-xxl-0 my-xl-0 my-lg-0 my-md-3 my-sm-3 my-3'>
-            <a
-                aria-current='page'
-                asp-action='Pricing'
-                asp-controller='Home'
-                class='btn btn-outline-success nav-link text-light'>
-                Pricing
-            </a>
-        </li>
-        <li
-            class='nav-item
+    <a
+        aria-current='page'
+        asp-action='Pricing'
+        asp-controller='Home'
+        class='btn btn-outline-success nav-link text-light'>
+        Pricing
+    </a>
+</li>
+<li
+    class='nav-item
                      mx-xxl-2 mx-xl-2 mx-lg-2 mx-md-0 mx-sm-0 mx-0
                      my-xxl-0 my-xl-0 my-lg-0 my-md-3 my-sm-3 my-3'>
-            <a
-                aria-current='page'
-                class='btn btn-outline-info nav-link text-light'
-                href='#'>
-                About
-            </a>
-        </li>
-        <li
-            class='nav-item
+    <a
+        aria-current='page'
+        class='btn btn-outline-info nav-link text-light'
+        asp-controller='Home'
+        asp-action='About'>
+        About
+    </a>
+</li>
+<li
+    class='nav-item
                      mx-xxl-2 mx-xl-2 mx-lg-2 mx-md-0 mx-sm-0 mx-0
                      my-xxl-0 my-xl-0 my-lg-0 my-md-3 my-sm-3 my-3'>
-            <a
-                aria-current='page'
-                asp-action='Privacy'
-                asp-controller='Home'
-                class='btn btn-outline-warning nav-link text-light'>
-                Privacy
-            </a>
-        </li>
-        @{
-            if (User.Identity?.IsAuthenticated ?? false) {
-                <li
-                    class="nav-item
+    <a
+        aria-current='page'
+        asp-action='Privacy'
+        asp-controller='Home'
+        class='btn btn-outline-warning nav-link text-light'>
+        Privacy
+    </a>
+</li>
+@{
+    if (User.Identity?.IsAuthenticated ?? false) {
+        <li
+            class="nav-item
                              dropdown
                              mx-xxl-2 mx-xl-2 mx-lg-2 mx-md-0 mx-sm-0 mx-0
                              my-xxl-0 my-xl-0 my-lg-0 my-md-3 my-sm-3 my-0">
-                    <a
-                        aria-expanded="false"
-                        class="dropdown-toggle nav-link"
-                        data-bs-toggle="dropdown"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button">
-                        Account
-                    </a>
-                    <div
-                        class="dropdown-menu dropdown-menu-dark text-center text-light">
+            <a
+                aria-expanded="false"
+                class="dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+                href="#"
+                id="navbarDropdown"
+                role="button">
+                Account
+            </a>
+            <div
+                class="dropdown-menu dropdown-menu-dark text-center text-light">
+                <a
+                    asp-action='Profile'
+                    asp-controller='Account'
+                    class="dropdown-item">
+                    Settings
+                </a>
+                @{
+                    if (User.IsInRole(ApplicationRoles.Administrator)) {
                         <a
-                            asp-action='Profile'
-                            asp-controller='Account'
-                            class="dropdown-item">
-                            Settings
+                            class="dropdown dropdown-item submenu">
+                            Admin Tools
                         </a>
-                        @{
-                            if (User.IsInRole(ApplicationRoles.Administrator)) {
-                                <a
-                                    class="dropdown dropdown-item submenu">
-                                    Admin Tools
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-dark">
-                                    <a asp-action='UsersTable'
-                                       asp-controller='Admin'
-                                       asp-route-pageNumber='1'
-                                       class="dropdown-item">
-                                        Users Table
-                                    </a>
-                                    <a asp-action='EntrancesTable'
-                                       asp-controller='Admin'
-                                       asp-route-pageNumber='1'
-                                       class="dropdown-item">
-                                        Entrances Table
-                                    </a>
-                                    <a asp-action='TokensLogsTable'
-                                       asp-controller='Admin'
-                                       asp-route-pageNumber='1'
-                                       class="dropdown-item">
-                                        Tokens Usages Table
-                                    </a>
-                                    <a asp-action='TokensTable'
-                                       asp-controller='Admin'
-                                       asp-route-pageNumber='1'
-                                       class="dropdown-item">
-                                        Tokens Table
-                                    </a>
-                                </div>
-                            } else if (User.IsInRole(ApplicationRoles.Manager)) {
-                                <a
-                                    class="dropdown-item submenu">
-                                    Manager Tools
-                                </a>
-                                <div
-                                    class="dropdown-menu dropdown-menu-dark">
-                                    <a
-                                        class="dropdown-item">
-                                        Cases Table
-                                    </a>
-                                    <a
-                                        class="dropdown-item">
-                                        Power Supplies Table
-                                    </a>
-                                    <a
-                                        class="dropdown-item">
-                                        Motherboards Table
-                                    </a>
-                                    <a
-                                        asp-action='Table'
-                                        asp-controller='Producers'
-                                        asp-route-pageNumber='1'
-                                        class="dropdown-item">
-                                        Producers Table
-                                    </a>
-                                    <a
-                                        class='dropdown-item submenu'>
-                                        Memory
-                                    </a>
-                                    <div
-                                        class="dropdown-menu dropdown-menu-dark">
-                                        <a
-                                            class="dropdown-item">
-                                            Hard Drives Table
-                                        </a>
-                                        <a
-                                            class="dropdown-item">
-                                            SSDs Table
-                                        </a>
-                                        <a
-                                            class="dropdown-item">
-                                            RAMs Table
-                                        </a>
-                                    </div>
-                                    <a
-                                        class='dropdown-item submenu'>
-                                        CPU
-                                    </a>
-                                    <div
-                                        class="dropdown-menu dropdown-menu-dark">
-                                        <a
-                                            class="dropdown-item">
-                                            CPUs Table
-                                        </a>
-                                        <a
-                                            class="dropdown-item">
-                                            CPU Cores Table
-                                        </a>
-                                    </div>
-                                    <a
-                                        class='dropdown-item submenu'>
-                                        GPU
-                                    </a>
-                                    <div
-                                        class="dropdown-menu dropdown-menu-dark">
-                                        <a
-                                            class="dropdown-item">
-                                            GRU Cores Table
-                                        </a>
-                                        <a
-                                            class="dropdown-item">
-                                            GPUs Table
-                                        </a>
-                                    </div>
-                                </div>
-                            }
-                        }
-                        <hr
-                            class='hr-runner'/>
+                        <div
+                            class="dropdown-menu dropdown-menu-dark">
+                            <a
+                                asp-action='UsersTable'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='1'
+                                class="dropdown-item">
+                                Users Table
+                            </a>
+                            <a
+                                asp-action='EntrancesTable'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='1'
+                                class="dropdown-item">
+                                Entrances Table
+                            </a>
+                            <a
+                                asp-action='TokensLogsTable'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='1'
+                                class="dropdown-item">
+                                Tokens Usages Table
+                            </a>
+                            <a
+                                asp-action='TokensTable'
+                                asp-controller='Admin'
+                                asp-route-pageNumber='1'
+                                class="dropdown-item">
+                                Tokens Table
+                            </a>
+                        </div>
+                    }
+                    if (User.IsInRole(ApplicationRoles.Manager, ApplicationRoles.Administrator)) {
                         <a
-                            asp-action="LogOut"
-                            asp-controller="Authentication"
-                            class="dropdown-item text-center text-danger">
-                            Logout
+                            class="dropdown-item submenu">
+                            Manager Tools
                         </a>
-                    </div>
-                </li>
-            } else {
-                <li
-                    class="nav-item
+                        <div
+                            class="dropdown-menu dropdown-menu-dark">
+                            <a
+                                asp-action='CasesTable'
+                                asp-controller='Cases'
+                                class="dropdown-item">
+                                Cases Table
+                            </a>
+                            <a
+                                asp-action='PowerSuppliesTable'
+                                asp-controller='PowerSupplies'
+                                class="dropdown-item">
+                                Power Supplies Table
+                            </a>
+                            <a
+                                asp-action='MotherboardsTable'
+                                asp-controller='Motherboards'
+                                class="dropdown-item">
+                                Motherboards Table
+                            </a>
+                            <a
+                                asp-action='ProducersTable'
+                                asp-controller='Producers'
+                                class="dropdown-item">
+                                Producers Table
+                            </a>
+                            <a
+                                class='dropdown-item submenu'>
+                                Memory
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-dark">
+                                <a
+                                    asp-action='HardDriveDisksTable'
+                                    asp-controller='HardDriveDisks'
+                                    class="dropdown-item">
+                                    Hard Drives Table
+                                </a>
+                                <a
+                                    asp-action='SolidStateDrivesTable'
+                                    asp-controller='SolidStateDrives'
+                                    class="dropdown-item">
+                                    SSDs Table
+                                </a>
+                                <a
+                                    asp-action='RandomAccessMemoryTable'
+                                    asp-controller='RandomAccessMemory'
+                                    class="dropdown-item">
+                                    RAMs Table
+                                </a>
+                            </div>
+                            <a
+                                class='dropdown-item submenu'>
+                                CPU
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-dark">
+                                <a
+                                    asp-action='ProcessorsTable'
+                                    asp-controller='Processors'
+                                    class="dropdown-item">
+                                    CPUs Table
+                                </a>
+                                <a
+                                    asp-action='ProcessorCoresTable'
+                                    asp-controller='ProcessorCores'
+                                    class="dropdown-item">
+                                    CPU Cores Table
+                                </a>
+                            </div>
+                            <a
+                                class='dropdown-item submenu'>
+                                GPU
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-dark">
+                                <a
+                                    asp-action='VideoCardCoresTable'
+                                    asp-controller='VideoCardCores'
+                                    class="dropdown-item">
+                                    GPU Cores Table
+                                </a>
+                                <a
+                                    asp-action='VideoCardsTable'
+                                    asp-controller='VideoCards'
+                                    class="dropdown-item">
+                                    GPUs Table
+                                </a>
+                            </div>
+                        </div>
+                    }
+                }
+                <hr
+                    class='hr-runner'/>
+                <a
+                    asp-action="LogOut"
+                    asp-controller="Authentication"
+                    class="dropdown-item text-center text-danger">
+                    Logout
+                </a>
+            </div>
+        </li>
+    } else {
+        <li
+            class="nav-item
                                      mx-xxl-2 mx-xl-2 mx-lg-2 mx-md-0 mx-sm-0 mx-0
                                      my-xxl-0 my-xl-0 my-lg-0 my-md-3 my-sm-3 my-3">
-                    <a
-                        aria-current="page"
-                        asp-action="SignIn"
-                        asp-controller="Authentication"
-                        class="btn btn-outline-success nav-link text-light">
-                        SignIn
-                    </a>
-                </li>
-            }
-        }
-    </ul>
+            <a
+                aria-current="page"
+                asp-action="SignIn"
+                asp-controller="Authentication"
+                class="btn btn-outline-success nav-link text-light">
+                SignIn
+            </a>
+        </li>
+    }
+}
+</ul>
 </div>
 </div>
 </nav>
@@ -408,7 +435,6 @@
 <script
     src='~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'></script>
 <script
-    asp-append-version='true'
     src='~/js/site.js'></script>
 @await RenderSectionAsync("Scripts", false)
 </body>

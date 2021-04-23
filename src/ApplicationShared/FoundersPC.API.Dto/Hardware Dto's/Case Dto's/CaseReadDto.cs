@@ -8,6 +8,8 @@ namespace FoundersPC.API.Dto
 {
     public class CaseReadDto : IProducerableDto
     {
+        public int Id { get; set; }
+
         public string Type { get; set; }
 
         public string MaxMotherboardSize { get; set; }
@@ -29,8 +31,6 @@ namespace FoundersPC.API.Dto
         public double? Weight { get; set; }
 
         public int? Width { get; set; }
-
-        public int Id { get; set; }
 
         public int ProducerId { get; set; }
 

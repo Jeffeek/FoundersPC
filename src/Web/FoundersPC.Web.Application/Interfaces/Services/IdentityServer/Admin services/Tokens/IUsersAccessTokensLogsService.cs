@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Dto;
+using FoundersPC.RequestResponseShared.Pagination.Response;
 
 #endregion
 
@@ -12,9 +13,9 @@ namespace FoundersPC.Web.Application.Interfaces.Services.IdentityServer.Admin_se
     {
         Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsAsync(string adminToken);
 
-        Task<IEnumerable<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(int pageNumber,
-                                                                                      int pageSize,
-                                                                                      string adminToken);
+        Task<IPaginationResponse<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(int pageNumber,
+                                                                                              int pageSize,
+                                                                                              string adminToken);
 
         Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserIdAsync(int userId, string adminToken);
 
