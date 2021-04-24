@@ -7,6 +7,9 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.Processor
 {
-    public interface IProcessorCoresRepositoryAsync : IRepositoryAsync<ProcessorCore>,
-                                                      IPaginateableRepository<ProcessorCore> { }
+    /// <summary>
+    ///     Interface for <see cref="ProcessorCoreEntity"/> database access
+    /// </summary>
+    public interface IProcessorCoresRepositoryAsync : IRepositoryAsync<ProcessorCoreEntity>,
+                                                      IPaginateableRepository<ProcessorCoreEntity> { }
 }

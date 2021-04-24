@@ -10,7 +10,7 @@ using FoundersPC.IdentityEntities.Identity;
 
 namespace FoundersPC.API.Domain.Entities.Processor
 {
-    public class ProcessorCore : IdentityItem, IEquatable<ProcessorCore>
+    public class ProcessorCoreEntity : IdentityItem, IEquatable<ProcessorCoreEntity>
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("MarketLaunch")]
@@ -54,7 +54,7 @@ namespace FoundersPC.API.Domain.Entities.Processor
         #region Equality members
 
         /// <inheritdoc/>
-        public bool Equals(ProcessorCore other)
+        public bool Equals(ProcessorCoreEntity other)
         {
             if (ReferenceEquals(null, other))
                 return false;
@@ -82,7 +82,7 @@ namespace FoundersPC.API.Domain.Entities.Processor
             if (obj.GetType() != GetType())
                 return false;
 
-            return Equals((ProcessorCore)obj);
+            return Equals((ProcessorCoreEntity)obj);
         }
 
         /// <inheritdoc/>

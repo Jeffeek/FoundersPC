@@ -7,6 +7,9 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.PowerSupply
 {
+    /// <summary>
+    ///     Validator for <see cref="PowerSupplyInsertDto"/>
+    /// </summary>
     public class PowerSupplyInsertDtoValidation : AbstractValidator<PowerSupplyInsertDto>
     {
         public PowerSupplyInsertDtoValidation()

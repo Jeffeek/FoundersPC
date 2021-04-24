@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace HardwareApi.Tests.MockAbstractions.Repositories
+namespace HardwareApi.Tests.MockDb.Repositories
 {
     public class MockProducersRepository : GenericRepositoryAsync<ProducerEntity>, IProducersRepositoryAsync
     {

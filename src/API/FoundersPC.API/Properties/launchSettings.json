@@ -10,6 +10,12 @@
       "dotnetRunMessages" : "true",
       "use64Bit" : true,
       "applicationUrl" : "https://localhost:4000"
+    },
+    "Docker" : {
+      "commandName" : "Docker",
+      "launchUrl" : "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts" : true,
+      "useSSL" : true
     }
   }
 }

@@ -119,9 +119,9 @@ namespace FoundersPC.API.Application.Mappings
 
             #region ProcessorCore Mapping
 
-            CreateMap<ProcessorCore, ProcessorCoreReadDto>();
-            CreateMap<ProcessorCore, ProcessorCoreInsertDto>();
-            CreateMap<ProcessorCore, ProcessorCoreUpdateDto>();
+            CreateMap<ProcessorCoreEntity, ProcessorCoreReadDto>();
+            CreateMap<ProcessorCoreEntity, ProcessorCoreInsertDto>();
+            CreateMap<ProcessorCoreEntity, ProcessorCoreUpdateDto>();
 
             #endregion
 

@@ -8,6 +8,9 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Producer
 {
+    /// <summary>
+    ///     Validator for <see cref="ProducerInsertDto"/>
+    /// </summary>
     public class ProducerInsertDtoValidator : AbstractValidator<ProducerInsertDto>
     {
         public ProducerInsertDtoValidator()

@@ -7,9 +7,12 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.GPU
 {
-    public class GPUUpdateDtoValidator : AbstractValidator<VideoCardUpdateDto>
+    /// <summary>
+    ///     Validator for <see cref="VideoCardInsertDto"/>
+    /// </summary>
+    public class VideoCardInsertDtoValidator : AbstractValidator<VideoCardInsertDto>
     {
-        public GPUUpdateDtoValidator()
+        public VideoCardInsertDtoValidator()
         {
             RuleFor(x => x.ProducerId)
                 .GreaterThan(0);

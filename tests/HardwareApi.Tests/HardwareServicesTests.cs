@@ -10,8 +10,8 @@ using FoundersPC.API.Infrastructure.Repositories.Hardware.Processor;
 using FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
-using HardwareApi.Tests.MockAbstractions.DataCreation;
-using Microsoft.EntityFrameworkCore;
+using HardwareApi.Tests.MockDb;
+using HardwareApi.Tests.MockDb.DataCreation;
 using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
 
@@ -19,21 +19,15 @@ using NUnit.Framework;
 
 // todo: check repositories next
 // todo: check services
-namespace HardwareApi.Tests.CRUDOperations
+namespace HardwareApi.Tests
 {
-    public class ProducersTests
+    [TestFixture]
+    public class HardwareServicesTests
     {
-        private FoundersPCHardwareContext _context;
-        private IUnitOfWorkHardwareAPI _unitOfWork;
-
         [OneTimeSetUp]
         public async Task SetupAsync()
         {
-            var options = new DbContextOptionsBuilder<FoundersPCHardwareContext>()
-                          .UseInMemoryDatabase("InMem")
-                          .Options;
-
-            _context = new FoundersPCHardwareContext(options);
+            _context = DB.GetInMemoryContext();
 
             _unitOfWork = new UnitOfWorkHardwareHardwareAPI(_context,
                                                             new ProcessorsRepository(_context),
@@ -49,13 +43,12 @@ namespace HardwareApi.Tests.CRUDOperations
                                                             new RandomAccessMemoryRepository(_context),
                                                             new NullLogger<UnitOfWorkHardwareHardwareAPI>());
 
-            HC.Count = 1000;
-
             var producers = HC.CreateProducers()
+                              .Take(1000)
                               .ToArray();
 
-            var cases = HC.CreateCases(producers);
-            var hdds = HC.CreateHDDs(producers);
+            var cases = HC.CreateCases()
+                          .Take(1000);
 
             foreach (var producer in producers)
                 await _unitOfWork.ProducersRepository.AddAsync(producer);
@@ -63,14 +56,14 @@ namespace HardwareApi.Tests.CRUDOperations
             foreach (var @case in cases)
                 await _unitOfWork.CasesRepository.AddAsync(@case);
 
-            foreach (var hdd in hdds)
-                await _unitOfWork.HardDrivesRepository.AddAsync(hdd);
-
             await _unitOfWork.SaveChangesAsync();
         }
 
+        private FoundersPCHardwareContext _context;
+        private IUnitOfWorkHardwareAPI _unitOfWork;
+
         [Test]
-        public async Task PaginationTests([Values(1, 10, 15)] int pageNum)
+        public async Task PaginationTestAsync([Values(1, 10, 15)] int pageNum)
         {
             var prods = (await _unitOfWork.ProducersRepository.GetPaginateableAsync(pageNum)).ToArray();
 

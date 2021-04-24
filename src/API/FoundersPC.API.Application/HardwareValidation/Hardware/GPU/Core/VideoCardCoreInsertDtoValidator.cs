@@ -7,6 +7,9 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.GPU.Core
 {
+    /// <summary>
+    ///     Validator for <see cref="VideoCardCoreInsertDto"/>
+    /// </summary>
     public class VideoCardCoreInsertDtoValidator : AbstractValidator<VideoCardCoreInsertDto>
     {
         public VideoCardCoreInsertDtoValidator()

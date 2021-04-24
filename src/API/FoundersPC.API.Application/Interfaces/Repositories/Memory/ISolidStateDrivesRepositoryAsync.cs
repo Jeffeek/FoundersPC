@@ -7,6 +7,9 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories.Memory
 {
+    /// <summary>
+    ///     Interface for <see cref="SolidStateDriveEntity"/> database access
+    /// </summary>
     public interface ISolidStateDrivesRepositoryAsync : IRepositoryAsync<SolidStateDriveEntity>,
                                                         IPaginateableRepository<SolidStateDriveEntity> { }
 }

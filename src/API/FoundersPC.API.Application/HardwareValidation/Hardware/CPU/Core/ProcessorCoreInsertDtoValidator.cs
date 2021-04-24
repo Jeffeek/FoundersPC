@@ -7,6 +7,9 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.CPU.Core
 {
+    /// <summary>
+    ///     Validator for <see cref="ProcessorCoreInsertDto"/>
+    /// </summary>
     public class ProcessorCoreInsertDtoValidator : AbstractValidator<ProcessorCoreInsertDto>
     {
         public ProcessorCoreInsertDtoValidator()
@@ -17,10 +20,10 @@ namespace FoundersPC.API.Application.HardwareValidation.Hardware.CPU.Core
                 .MaximumLength(100)
                 .MinimumLength(3);
 
-            RuleFor(x => x.L2Cache)
+            RuleFor(x => x.L2CachePerCore)
                 .GreaterThanOrEqualTo(0);
 
-            RuleFor(x => x.L3Cache)
+            RuleFor(x => x.L3CachePerCore)
                 .GreaterThanOrEqualTo(0);
 
             RuleFor(x => x.MicroArchitecture)

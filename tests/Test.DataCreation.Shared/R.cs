@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace HardwareApi.Tests.MockAbstractions.DataCreation
+namespace Test.DataCreation.Shared
 {
     public static class R
     {

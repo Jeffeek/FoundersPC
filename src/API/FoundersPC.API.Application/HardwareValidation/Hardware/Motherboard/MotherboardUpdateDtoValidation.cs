@@ -7,6 +7,9 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.Motherboard
 {
+    /// <summary>
+    ///     Validator for <see cref="MotherboardUpdateDto"/>
+    /// </summary>
     public class MotherboardUpdateDtoValidation : AbstractValidator<MotherboardUpdateDto>
     {
         public MotherboardUpdateDtoValidation()

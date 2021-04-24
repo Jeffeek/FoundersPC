@@ -9,8 +9,15 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
+    /// <summary>
+    ///     Interface for decoration of database logic with entities
+    /// </summary>
     public interface IPowerSuppliesService : IPaginateableService<PowerSupplyReadDto>
     {
+        /// <summary>
+        ///     Return an enumeration of all <see cref="PowerSupplyReadDto"/> entities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync();
 
         Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId);

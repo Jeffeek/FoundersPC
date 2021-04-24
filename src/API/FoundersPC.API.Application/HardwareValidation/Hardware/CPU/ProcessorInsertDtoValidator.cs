@@ -7,9 +7,12 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.CPU
 {
-    public class CPUUpdateDtoValidator : AbstractValidator<ProcessorUpdateDto>
+    /// <summary>
+    ///     Validator for <see cref="ProcessorInsertDto"/>
+    /// </summary>
+    public class ProcessorInsertDtoValidator : AbstractValidator<ProcessorInsertDto>
     {
-        public CPUUpdateDtoValidator()
+        public ProcessorInsertDtoValidator()
         {
             RuleFor(x => x.Title)
                 .NotNull()

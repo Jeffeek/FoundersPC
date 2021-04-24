@@ -2,12 +2,16 @@
     Layout = "_Layout";
 }
 
-<div class="p-5 text-light box-shadow-fill">
-    <div class="text-light">
-        <p class="mt-1">
+<div
+    class="box-shadow-fill p-5 text-light">
+    <div
+        class='text-light'>
+        <p
+            class='mt-1'>
             FoundersPC data is available through a REST API; typically on a licensed or partnership basis.
-            <a href="mailto:jeff@gmail.com"
-               class="btn btn-info text-dark">
+            <a
+                class='btn btn-info text-dark'
+                href='mailto:jeff@gmail.com'>
                 Contact us
             </a>
             for more information - include a brief description of what you're building.
@@ -15,21 +19,25 @@
         <h2>Access &amp; Authentication</h2>
         <p>
             URL:
-            <span class="p-1 text-decoration-underline text-info">
+            <span
+                class='p-1 text-decoration-underline text-info'>
                 https://founderspc.com/api/
             </span>
             <br>Include your key in a request header:
-            <span class="bg-primary">
+            <span
+                class='bg-primary'>
                 HARDWARE-API-TOKEN:[your-api-access-token]
             </span>
         </p>
         <h2>Rate Limit</h2>
         <p>
             Endpoints are rate limited. The specific limit varies
-            <span class='bg-secondary'>
+            <span
+                class='bg-secondary'>
                 (1 request in 1 minute)
             </span>. If you are seeing
-            <span class="bg-danger">
+            <span
+                class='bg-danger'>
                 429 Too Many Requests
             </span>
             , contact us to discuss your needs.
@@ -37,31 +45,111 @@
         <h2>Data Format</h2>
         <p>
             Our API conforms to the
-            <a href="http://jsonapi.org/" class="btn btn-info text-dark">
+            <a
+                class='btn btn-info text-dark'
+                href='http://jsonapi.org/'>
                 JSON API
             </a>
             specification.
             This spec defines conventions to nicely model different data types, their relationships, and
             metadata. There's likely a
-            <a href="http://jsonapi.org/implementations/" class="btn btn-info text-dark">
+            <a
+                class='btn btn-info text-dark'
+                href='http://jsonapi.org/implementations/'>
                 JSON API client
             </a>
             in your
             language.
         </p>
         <h2>
-            Available Endpoints:<br />
-            <span class='text-info'>/Cases/id?</span><br />
-            <span class='text-info'>/HardDriveDisks/id? <span class='text-light'>or</span> /HDD/id?</span><br />
-            <span class='text-info'>/Motherboards/id?</span><br />
-            <span class='text-info'>/PowerSupplies/id? <span class='text-light'>or</span> /PSU/id?</span><br />
-            <span class='text-info'>/ProcessorCores/id? <span class='text-light'>or</span> /CPUCores/id?</span><br />
-            <span class='text-info'>/Processors/id? <span class='text-light'>or</span> /CPUs/id?</span><br />
-            <span class='text-info'>/Producers/id?</span><br />
-            <span class='text-info'>/RandomAccessMemory/id? <span class='text-light'>or</span> /RAM/id?</span><br />
-            <span class='text-info'>/SolidStateDrives/id? <span class='text-light'>or</span> /SSD/id?</span><br />
-            <span class='text-info'>/VideoCardCores/id? <span class='text-light'>or</span> /GPUCores/id?</span><br />
-            <span class='text-info'>/VideoCards/id? <span class='text-light'>or</span> /GPUs/id?</span>
+            Available Endpoints:
+            <br/>
+            <span
+                class='text-info'>
+                /Cases/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /HardDriveDisks/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /HDD/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /Motherboards/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /PowerSupplies/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /PSU/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /ProcessorCores/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /CPUCores/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /Processors/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /CPUs/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /Producers/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /RandomAccessMemory/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /RAM/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /SolidStateDrives/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /SSD/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /VideoCardCores/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /GPUCores/id?
+            </span>
+            <br/>
+            <span
+                class='text-info'>
+                /VideoCards/id?
+                <span
+                    class='text-light'>
+                    or
+                </span> /GPUs/id?
+            </span>
         </h2>
         <p>
             <em>

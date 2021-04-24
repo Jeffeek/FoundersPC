@@ -20,5 +20,7 @@ namespace FoundersPC.Identity.Infrastructure.Contexts
         public DbSet<AccessTokenEntity> UsersTokens { get; set; }
 
         public DbSet<AccessTokenLog> TokenAccessLogs { get; set; }
+
+        public DbSet<UserEntranceLog> UsersEntrancesLogs { get; set; }
     }
 }

@@ -7,6 +7,9 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories
 {
+    /// <summary>
+    ///     Interface for <see cref="MotherboardEntity"/> database access
+    /// </summary>
     public interface
         IMotherboardsRepositoryAsync : IRepositoryAsync<MotherboardEntity>,
                                        IPaginateableRepository<MotherboardEntity> { }

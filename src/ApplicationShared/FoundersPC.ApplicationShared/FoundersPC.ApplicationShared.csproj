@@ -30,4 +30,8 @@
     <ProjectReference Include="..\FoundersPC.RepositoryCollectionsExtensions\FoundersPC.IdentityEntities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validation\" />
+  </ItemGroup>
+
 </Project>

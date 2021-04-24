@@ -7,6 +7,9 @@ using FoundersPC.RequestResponseShared.Pagination.Requests;
 
 namespace FoundersPC.API.Application.Validation.Filtering
 {
+    /// <summary>
+    ///     Validator for pagination request
+    /// </summary>
     public class PaginationRequestValidator : AbstractValidator<PaginationRequest>
     {
         public PaginationRequestValidator()

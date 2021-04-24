@@ -9,8 +9,15 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
+    /// <summary>
+    ///     Interface for decoration of database logic with entities
+    /// </summary>
     public interface ICasesService : IPaginateableService<CaseReadDto>
     {
+        /// <summary>
+        ///     Return an enumeration of all <see cref="CaseReadDto"/> entities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<CaseReadDto>> GetAllCasesAsync();
 
         Task<CaseReadDto> GetCaseByIdAsync(int caseId);

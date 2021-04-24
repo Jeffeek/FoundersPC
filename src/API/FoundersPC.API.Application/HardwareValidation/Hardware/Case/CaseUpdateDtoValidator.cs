@@ -7,6 +7,9 @@ using FoundersPC.API.Dto;
 
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.Case
 {
+    /// <summary>
+    ///     Validator for <see cref="CaseUpdateDto"/>
+    /// </summary>
     public class CaseUpdateDtoValidator : AbstractValidator<CaseUpdateDto>
     {
         public CaseUpdateDtoValidator()

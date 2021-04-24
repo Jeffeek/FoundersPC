@@ -2,7 +2,6 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
-using FoundersPC.ApplicationShared.Validation;
 
 #endregion
 

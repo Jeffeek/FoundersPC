@@ -9,8 +9,15 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware
 {
+    /// <summary>
+    ///     Interface for decoration of database logic with entities
+    /// </summary>
     public interface IMotherboardsService : IPaginateableService<MotherboardReadDto>
     {
+        /// <summary>
+        ///     Return an enumeration of all <see cref="MotherboardReadDto"/> entities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<MotherboardReadDto>> GetAllMotherboardsAsync();
 
         Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId);
