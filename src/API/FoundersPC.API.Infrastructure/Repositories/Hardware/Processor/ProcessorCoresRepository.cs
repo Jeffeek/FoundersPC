@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Processor
 {
+    /// <inheritdoc cref="IProcessorsRepositoryAsync"/>
     public class ProcessorCoresRepository : GenericRepositoryAsync<ProcessorCoreEntity>,
                                             IProcessorCoresRepositoryAsync
     {

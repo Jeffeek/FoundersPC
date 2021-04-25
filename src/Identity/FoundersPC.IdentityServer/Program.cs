@@ -12,8 +12,10 @@ using Serilog;
 
 namespace FoundersPC.IdentityServer
 {
-    public class Program
+    public static class Program
     {
+        #region Docs
+
         /// <exception cref="T:System.IO.IOException">The directory specified by <paramref name="path"/> is read-only.</exception>
         /// <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission.</exception>
         /// <exception cref="T:System.IO.DirectoryNotFoundException">The specified path was not found.</exception>
@@ -33,6 +35,9 @@ namespace FoundersPC.IdentityServer
         /// </exception>
         /// <exception cref="T:System.NotSupportedException"><paramref name="path"/> is in an invalid format.</exception>
         /// <exception cref="T:System.InvalidOperationException">When the logger is already created</exception>
+
+        #endregion
+
         public static async Task Main(string[] args)
         {
             var loggerConfiguration = new ConfigurationBuilder()
@@ -48,7 +53,10 @@ namespace FoundersPC.IdentityServer
             try
             {
                 Log.Information("Identity server started..");
-                var hostBuilder = CreateHostBuilder(args);
+
+                var hostBuilder = await CreateHostBuilderAsync(args)
+                                      .ConfigureAwait(false);
+
                 Log.Information("Identity server HostBuilder created");
                 var host = hostBuilder.Build();
                 Log.Information("Host built");
@@ -64,7 +72,7 @@ namespace FoundersPC.IdentityServer
             }
         }
 
-        private static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilderAsync(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .UseSerilog(Log.Logger)
                 .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());

@@ -65,7 +65,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.Tests", "tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.Tests.MockDb", "tests\IdentityServer.Tests.MockDb\IdentityServer.Tests.MockDb.csproj", "{8E1F6995-3E5B-490B-AE25-429FC6EA55CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.PerformanceTests", "tests\IdentityServer.PerformanceTests\IdentityServer.PerformanceTests.csproj", "{B22316E8-6E81-41B7-B742-248FB297EB68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.PerformanceTests", "tests\IdentityServer.PerformanceTests\IdentityServer.PerformanceTests.csproj", "{B22316E8-6E81-41B7-B742-248FB297EB68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

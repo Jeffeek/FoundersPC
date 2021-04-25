@@ -450,10 +450,14 @@ h6
     width: 200%;
 }
 
+.pricing-table-features
+{
+    padding-left: 0;
+}
+
 .pricing-table-features li,
 .pricing-table-features-title,
-.pricing-table-header
-{
+.pricing-table-header {
     border-bottom: 1px solid #8a94a7;
     border-bottom: 1px solid rgba(138, 148, 167, 0.24);
 }

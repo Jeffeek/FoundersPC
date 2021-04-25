@@ -13,13 +13,13 @@ using FoundersPC.API.Domain.Entities;
 
 namespace HardwareApi.Tests.MockDb.DataCreation
 {
-    public static class HC
+    public static class HardwareApiDataCreation
     {
         private static readonly Faker<ProducerEntity> ProducerFaker;
 
         private static readonly Faker<CaseEntity> CasesFaker;
 
-        static HC()
+        static HardwareApiDataCreation()
         {
             ProducerFaker = new Faker<ProducerEntity>()
                             .RuleFor(x => x.FoundationDate, faker => faker.Date.Between(new DateTime(1900, 1, 1), DateTime.Now))

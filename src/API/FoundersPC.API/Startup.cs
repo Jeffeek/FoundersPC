@@ -94,6 +94,8 @@ namespace FoundersPC.API
         {
             services.AddLogging(config => config.AddSerilog(Log.Logger));
 
+            services.AddHttpClient();
+
             services.AddControllers();
 
             //
@@ -159,14 +161,16 @@ namespace FoundersPC.API
                 app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json",
                                                                     "FoundersPC.API v1"));
             }
+            else
+            {
+                app.UseMiddleware<AccessTokenValidatorMiddleware>();
+            }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseSerilogRequestLogging();
-
-            app.UseMiddleware<AccessTokenValidatorMiddleware>();
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -183,6 +187,7 @@ namespace FoundersPC.API
                                                        {
                                                            var ex = error.Error;
                                                            await context.Response.WriteAsync(JsonSerializer.Serialize(ex));
+                                                           await context.Response.CompleteAsync();
                                                        }
                                                    });
                                     });

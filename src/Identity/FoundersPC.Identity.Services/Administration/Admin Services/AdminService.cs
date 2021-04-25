@@ -17,6 +17,10 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.Identity.Services.Administration.Admin_Services
 {
     // TODO: spread into another services
+    // in thesis implementation
+    /// <summary>
+    /// <inheritdoc cref="IAdminService"/>
+    /// </summary>
     public class AdminService : IAdminService
     {
         private readonly IAccessUsersTokensService _accessUsersTokensService;
@@ -55,27 +59,55 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         private async Task<bool> MakeUserInactiveAsync(UserEntity user, bool sendNotification)
         {
+            _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : trying to make user inactive");
+
             if (user is null)
+            {
+                _logger.LogWarning($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : input user was null");
+
                 return false;
+            }
 
             if (!user.IsActive)
+            {
+                _logger.LogWarning($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : input user was already inactive");
+
                 return false;
+            }
 
             if (user.Role.RoleTitle == ApplicationRoles.Administrator)
+            {
+                _logger.LogWarning($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : input user was with administrator role");
+
                 return false;
+            }
 
             if (sendNotification)
-                await _emailService.SendBlockNotificationAsync(user.Email,
-                                                               "You've been blocked, you can't be unblocked.");
+            {
+                var sendResult = await _emailService.SendBlockNotificationAsync(user.Email,
+                                                                                "You've been blocked, you can't be unblocked.");
+
+                if (!sendResult)
+                    _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : unsuccessfully send message to {user.Email}");
+            }
 
             user.IsActive = false;
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult)
-                return await _unitOfWork.SaveChangesAsync() > 0;
+            if (!updateResult)
+            {
+                _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : unsuccessfully changed user with email: {user.Email} to inactive");
 
-            return false;
+                return false;
+            }
+
+            var saveChangesResult = await _unitOfWork.SaveChangesAsync() > 0;
+
+            if (saveChangesResult)
+                _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : successfully changed user with email: {user.Email} to inactive");
+
+            return saveChangesResult;
         }
 
         #endregion

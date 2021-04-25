@@ -16,32 +16,11 @@ namespace FoundersPC.API.Application.Middleware
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        #region Docs
-
-        /// <exception cref="T:System.Exception">A delegate callback throws an exception.</exception>
-        /// <exception cref="T:System.Net.Http.HttpRequestException">
-        ///     The request failed due to an underlying issue such as network
-        ///     connectivity, DNS failure, server certificate validation or timeout.
-        /// </exception>
-        /// <exception cref="T:System.Threading.Tasks.TaskCanceledException">
-        ///     .NET CoreEntity and .NET 5.0 and later only: The request
-        ///     failed due to timeout.
-        /// </exception>
-        /// <exception cref="T:System.InvalidOperationException">
-        ///     The <paramref name="requestUri"/> must be an absolute URI or
-        ///     <see cref="P:System.Net.Http.HttpClient.BaseAddress"/> must be set.
-        /// </exception>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
-
-        #endregion
-
-        public AccessTokenValidatorMiddleware(IHttpClientFactory clientFactory)
-        {
-            _clientFactory = clientFactory;
-        }
+        public AccessTokenValidatorMiddleware(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
 
         #region Docs
 
+        /// <inheritdoc />
         /// <exception cref="T:System.Exception">A delegate callback throws an exception.</exception>
         /// <exception cref="T:System.Net.Http.HttpRequestException">
         ///     The request failed due to an underlying issue such as network
@@ -52,10 +31,10 @@ namespace FoundersPC.API.Application.Middleware
         ///     failed due to timeout.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
-        ///     The <paramref name="requestUri"/> must be an absolute URI or
-        ///     <see cref="P:System.Net.Http.HttpClient.BaseAddress"/> must be set.
+        ///     The <paramref name="requestUri" /> must be an absolute URI or
+        ///     <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> must be set.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key" /> is <see langword="null" />.</exception>
 
         #endregion
 
@@ -81,7 +60,7 @@ namespace FoundersPC.API.Application.Middleware
                     return;
                 }
 
-                var client = new HttpClient();
+                var client = _clientFactory.CreateClient();
 
                 var response = await client.GetAsync($"{MicroservicesUrls.IdentityServer}Tokens/Check/{result[0]}");
 

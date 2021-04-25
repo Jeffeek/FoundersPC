@@ -32,14 +32,15 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken" /> is <see langword="null" /></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     <see cref="T:System.FormatException" />, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -154,14 +155,15 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken" /> is <see langword="null" /></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     <see cref="T:System.FormatException" />, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -219,14 +221,15 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="start"/> is <see langword="null"/></exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="start" /> is <see langword="null" /></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     <see cref="T:System.FormatException" />, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -288,14 +291,15 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
+        /// <inheritdoc />
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken" /> is <see langword="null" /></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException"/>, instead.
+        ///     <see cref="T:System.FormatException" />, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-

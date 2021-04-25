@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Bogus;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.Identity.Domain.Entities.Logs;
+using FoundersPC.Identity.Domain.Entities.Tokens;
 using FoundersPC.Identity.Domain.Entities.Users;
 using FoundersPC.Identity.Services.Encryption_Services;
 
@@ -12,15 +13,21 @@ using FoundersPC.Identity.Services.Encryption_Services;
 
 namespace IdentityServer.Tests.MockDb.DataCreation
 {
-    public static class HC
+    public static class IdentityServerDataCreation
     {
         public static readonly Faker<UserEntity> UsersFaker;
 
         public static readonly Faker<UserEntranceLog> UsersEntrancesFaker;
 
-        static HC()
+        public static readonly Faker<AccessTokenLog> AccessTokenLogsFaker;
+
+        public static readonly Faker<AccessTokenEntity> AccessTokensFaker;
+
+        static IdentityServerDataCreation()
         {
             var passwordEncryptorService = new PasswordEncryptorService();
+
+            var tokenEncryptionService = new TokenEncryptorService();
 
             UsersFaker = new Faker<UserEntity>()
                          .RuleFor(x => x.Email, faker => faker.Person.Email)
@@ -36,6 +43,18 @@ namespace IdentityServer.Tests.MockDb.DataCreation
             UsersEntrancesFaker = new Faker<UserEntranceLog>()
                                   .RuleFor(x => x.User, UsersFaker.Generate())
                                   .RuleFor(x => x.Entrance, (faker, entrance) => faker.Date.Between(entrance.User.RegistrationDate, DateTime.Now));
+
+            AccessTokensFaker = new Faker<AccessTokenEntity>()
+                                .RuleFor(x => x.User, UsersFaker.Generate())
+                                .RuleFor(x => x.StartEvaluationDate, faker => faker.Date.Between(new DateTime(2010, 1, 1), DateTime.Now))
+                                .RuleFor(x => x.ExpirationDate, (faker, token) => faker.Date.Future(faker.Random.Int(1, 100), token.StartEvaluationDate))
+                                .RuleFor(x => x.HashedToken, tokenEncryptionService.CreateToken());
+
+            AccessTokenLogsFaker = new Faker<AccessTokenLog>()
+                                   .RuleFor(x => x.AccessTokenEntity, AccessTokensFaker.Generate())
+                                   .RuleFor(x => x.RequestDateTime,
+                                            (faker, log) => faker.Date.Between(log.AccessTokenEntity.StartEvaluationDate,
+                                                                               log.AccessTokenEntity.ExpirationDate));
         }
 
         public static IEnumerable<RoleEntity> GenerateRoles() =>

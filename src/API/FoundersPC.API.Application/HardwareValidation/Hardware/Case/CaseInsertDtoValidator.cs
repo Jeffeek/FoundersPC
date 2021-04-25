@@ -8,10 +8,12 @@ using FoundersPC.API.Dto;
 namespace FoundersPC.API.Application.HardwareValidation.Hardware.Case
 {
     /// <summary>
-    ///     Validator for <see cref="CaseInsertDto"/>
+    ///     Validator for <see cref="T:FoundersPC.API.Dto.CaseInsertDto" />
     /// </summary>
+    /// <inheritdoc />
     public class CaseInsertDtoValidator : AbstractValidator<CaseInsertDto>
     {
+        /// <inheritdoc />
         public CaseInsertDtoValidator()
         {
             RuleFor(x => x.Type)

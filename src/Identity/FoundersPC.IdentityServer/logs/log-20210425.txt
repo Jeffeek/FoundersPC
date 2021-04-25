@@ -1,0 +1,139 @@
+04/25/2021 17:20:24 Identity server started..
+04/25/2021 17:20:24 Identity server HostBuilder created
+04/25/2021 17:20:25 Host built
+04/25/2021 17:21:02 Identity server started..
+04/25/2021 17:21:02 Identity server HostBuilder created
+04/25/2021 17:21:03 Host built
+04/25/2021 17:21:32 Identity server started..
+04/25/2021 17:21:32 Identity server HostBuilder created
+04/25/2021 17:21:33 Host built
+04/25/2021 17:22:34 Identity server started..
+04/25/2021 17:22:34 Identity server HostBuilder created
+04/25/2021 17:22:35 Host built
+04/25/2021 17:22:36 Now listening on: "https://localhost:3000"
+04/25/2021 17:22:36 Application started. Press Ctrl+C to shut down.
+04/25/2021 17:22:36 Hosting environment: "Development"
+04/25/2021 17:22:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/25/2021 17:22:55 SignInIdentityController: user with email or login = hghfgh and wrote password not exist.
+04/25/2021 17:22:55 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1877.9500 ms
+04/25/2021 17:23:20 ForgotPasswordController: Forgot Password request with email = dfgdfgdfgdfg@mail.ru
+04/25/2021 17:23:20 An unhandled exception has occurred while executing the request.
+System.Data.NoNullAllowedException: user with email = dfgdfgdfgdfg@mail.ru is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 191
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 37
+   at lambda_method24(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/25/2021 17:23:21 An exception was thrown attempting to execute the error handler.
+System.NotSupportedException: Serialization and deserialization of 'System.Type' instances are not supported and should be avoided since they can lead to security issues. Path: $.TargetSite.DeclaringType.
+ ---> System.NotSupportedException: Serialization and deserialization of 'System.Type' instances are not supported and should be avoided since they can lead to security issues.
+   at System.Text.Json.Serialization.Converters.TypeConverter.Write(Utf8JsonWriter writer, Type value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack& state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](Utf8JsonWriter writer, TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at FoundersPC.IdentityServer.Startup.<>c.<<Configure>b__5_3>d.MoveNext() in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Startup.cs:line 198
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+04/25/2021 17:23:21 HTTP "POST" "/FoundersPCIdentity/Authentication/ForgotPassword" responded 500 in 456.2647 ms
+System.Data.NoNullAllowedException: user with email = dfgdfgdfgdfg@mail.ru is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 191
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 37
+   at lambda_method24(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/25/2021 17:23:21 An unhandled exception has occurred while executing the request.
+System.Data.NoNullAllowedException: user with email = dfgdfgdfgdfg@mail.ru is not found
+   at FoundersPC.Identity.Services.User_Services.Settings.UserSettingsService.GenerateAndChangePasswordToAsync(String userEmail) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.Identity.Services\User Services\Settings\UserSettingsService.cs:line 191
+   at FoundersPC.IdentityServer.Controllers.Authentication.ForgotPasswordController.ForgotPassword(UserForgotPasswordRequest request) in E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer\Controllers\Authentication\ForgotPasswordController.cs:line 37
+   at lambda_method24(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/25/2021 17:23:34 SignInIdentityController: user with email or login = JeffManager entered the service
+04/25/2021 17:23:35 Successful save changes in UnitOfWorkUsersIdentity
+04/25/2021 17:23:35 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 599.7980 ms
+04/25/2021 17:26:42 SignInIdentityController: user with email or login = ilyushin_misha@mail.ru entered the service
+04/25/2021 17:26:42 Successful save changes in UnitOfWorkUsersIdentity
+04/25/2021 17:26:42 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 30.0839 ms
+04/25/2021 17:26:46 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 234.9723 ms
+04/25/2021 17:26:55 HTTP "GET" "/FoundersPCIdentity/Logs/UsersEntrances/ByUserId/1" responded 200 in 31.2644 ms
+04/25/2021 17:27:28 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 24.4991 ms
+04/25/2021 17:27:36 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 16.8592 ms
+04/25/2021 17:27:42 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.7939 ms
+04/25/2021 17:27:52 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.4854 ms
+04/25/2021 17:28:08 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.3934 ms
+04/25/2021 17:28:20 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.6893 ms
+04/25/2021 17:28:45 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 16.1958 ms
+04/25/2021 17:28:47 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 8.8220 ms
+04/25/2021 17:28:49 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 7.0867 ms
+04/25/2021 17:29:04 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.4416 ms
+04/25/2021 17:29:13 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.4036 ms
+04/25/2021 17:29:35 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1010 ms
+04/25/2021 17:29:40 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1263 ms
+04/25/2021 17:29:49 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.0868 ms
+04/25/2021 17:31:24 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 7.3617 ms
+04/25/2021 17:31:25 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.6447 ms
+04/25/2021 17:31:35 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 3.9680 ms
+04/25/2021 17:31:39 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.0917 ms
+04/25/2021 17:31:55 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1635 ms
+04/25/2021 17:32:16 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 12.5312 ms
+04/25/2021 17:32:41 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 9.1238 ms
+04/25/2021 17:32:47 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 4.1580 ms
+04/25/2021 17:33:15 HTTP "GET" "/FoundersPCIdentity/Logs/UsersEntrances/ByUserId/1" responded 200 in 39.1685 ms
+04/25/2021 17:33:16 HTTP "GET" "/FoundersPCIdentity/Logs/TokenUsages/ByUserId/1" responded 200 in 22.7491 ms
+04/25/2021 17:33:28 HTTP "GET" "/FoundersPCIdentity/Logs/TokenUsages?Page=1&Size=10" responded 200 in 24.1125 ms

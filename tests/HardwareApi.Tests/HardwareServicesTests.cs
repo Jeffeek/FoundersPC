@@ -43,11 +43,11 @@ namespace HardwareApi.Tests
                                                             new RandomAccessMemoryRepository(_context),
                                                             new NullLogger<UnitOfWorkHardwareHardwareAPI>());
 
-            var producers = HC.CreateProducers()
+            var producers = HardwareApiDataCreation.CreateProducers()
                               .Take(1000)
                               .ToArray();
 
-            var cases = HC.CreateCases()
+            var cases = HardwareApiDataCreation.CreateCases()
                           .Take(1000);
 
             foreach (var producer in producers)
