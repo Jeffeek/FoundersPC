@@ -19,7 +19,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 {
-    /// <inheritdoc />
+    /// <inheritdoc/>
     public class UserStatusService : IUserStatusService
     {
         private readonly IHttpClientFactory _clientFactory;
@@ -34,14 +34,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException" />, instead.
+        ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -65,7 +65,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     The MS-DOS path specified in uriString must start with c:\\.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
 
         #endregion
 
@@ -122,14 +122,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException" />, instead.
+        ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -153,7 +153,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     The MS-DOS path specified in uriString must start with c:\\.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
 
         #endregion
 
@@ -210,14 +210,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException" />, instead.
+        ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -241,7 +241,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     The MS-DOS path specified in uriString must start with c:\\.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
 
         #endregion
 
@@ -298,14 +298,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException" />, instead.
+        ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -329,7 +329,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     The MS-DOS path specified in uriString must start with c:\\.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
 
         #endregion
 
@@ -386,14 +386,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException" />, instead.
+        ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -417,7 +417,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     The MS-DOS path specified in uriString must start with c:\\.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
         /// <exception cref="T:System.Net.Http.HttpRequestException">
         ///     The request failed due to an underlying issue such as network
         ///     connectivity, DNS failure, server certificate validation or timeout.
@@ -428,7 +428,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
         ///     The request message was already sent by the
-        ///     <see cref="T:System.Net.Http.HttpClient" /> instance.
+        ///     <see cref="T:System.Net.Http.HttpClient"/> instance.
         /// </exception>
 
         #endregion
@@ -481,14 +481,14 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
-        ///     <see cref="T:System.FormatException" />, instead.
+        ///     <see cref="T:System.FormatException"/>, instead.
         ///     uriString is empty.
         ///     -or-
         ///     The scheme specified in uriString is not correctly formed. See
-        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)" />.
+        ///     <see cref="M:System.Uri.CheckSchemeName(System.String)"/>.
         ///     -or-
         ///     uriString contains too many slashes.
         ///     -or-
@@ -512,7 +512,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         ///     -or-
         ///     The MS-DOS path specified in uriString must start with c:\\.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException">uriString is <see langword="null"/>.</exception>
         /// <exception cref="T:System.Net.Http.HttpRequestException">
         ///     The request failed due to an underlying issue such as network
         ///     connectivity, DNS failure, server certificate validation or timeout.
@@ -523,7 +523,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
         ///     The request message was already sent by the
-        ///     <see cref="T:System.Net.Http.HttpClient" /> instance.
+        ///     <see cref="T:System.Net.Http.HttpClient"/> instance.
         /// </exception>
 
         #endregion

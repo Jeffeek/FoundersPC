@@ -11,5 +11,9 @@ namespace FoundersPC.Identity.Application.Interfaces.Services.Token_Services
         Task<bool> BlockAsync(string token);
 
         Task<bool> BlockAsync(int id);
+
+        Task<bool> UnBlockAsync(string token);
+
+        Task<bool> UnBlockAsync(int id);
     }
 }

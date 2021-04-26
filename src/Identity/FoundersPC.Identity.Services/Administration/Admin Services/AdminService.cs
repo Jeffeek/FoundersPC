@@ -19,7 +19,7 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
     // TODO: spread into another services
     // in thesis implementation
     /// <summary>
-    /// <inheritdoc cref="IAdminService"/>
+    ///     <inheritdoc cref="IAdminService"/>
     /// </summary>
     public class AdminService : IAdminService
     {
@@ -151,8 +151,10 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var blockingResults = new List<bool>();
 
-            foreach (var token in userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now))
-                blockingResults.Add(await _accessUsersTokensService.BlockAsync(token.Id));
+            var futureDateTokens = userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now);
+
+            foreach (var token in futureDateTokens)
+                blockingResults.Add(await BlockAccessTokenAsync(token.Id));
 
             return blockingResults.All(x => x);
         }
@@ -167,7 +169,10 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var changeStatusResult = await ChangeUserBlockStatusAsync(user, false, sendNotification);
 
-            return changeStatusResult;
+            if (changeStatusResult)
+                return await UnBlockAllUserTokensAsync(user.Id);
+
+            return false;
         }
 
         public async Task<bool> UnBlockUserAsync(string userEmail, bool sendNotification = true)
@@ -176,7 +181,24 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var changeStatusResult = await ChangeUserBlockStatusAsync(user, false, sendNotification);
 
-            return changeStatusResult;
+            if (changeStatusResult)
+                return await UnBlockAllUserTokensAsync(user.Id);
+
+            return false;
+        }
+
+        private async Task<bool> UnBlockAllUserTokensAsync(int userId)
+        {
+            var userTokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userId);
+
+            var unblocking = new List<bool>();
+
+            var futureDateTokens = userTokens.Where(token => token.IsBlocked && token.ExpirationDate >= DateTime.Now);
+
+            foreach (var token in futureDateTokens)
+                unblocking.Add(await UnBlockAccessTokenAsync(token.Id));
+
+            return unblocking.All(x => x);
         }
 
         #endregion
@@ -225,6 +247,12 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         public Task<bool> BlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.BlockAsync(tokenId);
 
         public Task<bool> BlockAccessTokenAsync(string token) => _accessUsersTokensService.BlockAsync(token);
+
+        /// <inheritdoc/>
+        public Task<bool> UnBlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.UnBlockAsync(tokenId);
+
+        /// <inheritdoc/>
+        public Task<bool> UnBlockAccessTokenAsync(string token) => _accessUsersTokensService.UnBlockAsync(token);
 
         #endregion
     }

@@ -20,7 +20,7 @@ namespace FoundersPC.API.Application.Middleware
 
         #region Docs
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         /// <exception cref="T:System.Exception">A delegate callback throws an exception.</exception>
         /// <exception cref="T:System.Net.Http.HttpRequestException">
         ///     The request failed due to an underlying issue such as network
@@ -31,10 +31,10 @@ namespace FoundersPC.API.Application.Middleware
         ///     failed due to timeout.
         /// </exception>
         /// <exception cref="T:System.InvalidOperationException">
-        ///     The <paramref name="requestUri" /> must be an absolute URI or
-        ///     <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> must be set.
+        ///     The <paramref name="requestUri"/> must be an absolute URI or
+        ///     <see cref="P:System.Net.Http.HttpClient.BaseAddress"/> must be set.
         /// </exception>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="key" /> is <see langword="null" />.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
 
         #endregion
 

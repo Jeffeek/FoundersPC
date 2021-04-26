@@ -17,7 +17,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendToAsync(string email, string subject = null, string content = null, bool html = false)
         {
-            Trace.WriteLine($"SendToAsync to {email}");
+            Console.WriteLine($"SendToAsync to {email}");
 
             return Task.FromResult(true);
         }
@@ -25,7 +25,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendToManyAsync(IEnumerable<string> emails, string subject = null, string content = null, bool html = false)
         {
-            Trace.WriteLine($"SendToManyAsync to {String.Join(',', emails)}");
+            Console.WriteLine($"SendToManyAsync to {String.Join(',', emails)}");
 
             return Task.FromResult(true);
         }
@@ -33,7 +33,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendEntranceNotificationAsync(string email)
         {
-            Trace.WriteLine($"SendEntranceNotificationAsync to {email}");
+            Console.WriteLine($"SendEntranceNotificationAsync to {email}");
 
             return Task.FromResult(true);
         }
@@ -41,7 +41,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
         {
-            Trace.WriteLine($"SendRegistrationNotificationAsync to {email}");
+            Console.WriteLine($"SendRegistrationNotificationAsync to {email}");
 
             return Task.FromResult(true);
         }
@@ -49,7 +49,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendAPIAccessTokenAsync(string email, string token)
         {
-            Trace.WriteLine($"SendAPIAccessTokenAsync to {email}");
+            Console.WriteLine($"SendAPIAccessTokenAsync to {email}");
 
             return Task.FromResult(true);
         }
@@ -57,7 +57,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendNewPasswordAsync(string email, string password)
         {
-            Trace.WriteLine($"SendNewPasswordAsync to {email}");
+            Console.WriteLine($"SendNewPasswordAsync to {email}");
 
             return Task.FromResult(true);
         }
@@ -65,7 +65,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendBlockNotificationAsync(string email, string reason = null)
         {
-            Trace.WriteLine($"SendBlockNotificationAsync to {email}");
+            Console.WriteLine($"SendBlockNotificationAsync to {email}");
 
             return Task.FromResult(true);
         }
@@ -73,7 +73,7 @@ namespace IdentityServer.Tests.MockDb.MockServices
         /// <inheritdoc/>
         public Task<bool> SendUnBlockNotificationAsync(string email, string reason = null)
         {
-            Trace.WriteLine($"SendUnBlockNotificationAsync to {email}");
+            Console.WriteLine($"SendUnBlockNotificationAsync to {email}");
 
             return Task.FromResult(true);
         }

@@ -4,6 +4,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.Identity.Application.Mappings;
 using FoundersPC.Identity.Application.Validation.Requests.Authentication;
+using FoundersPC.ServicesShared.Validation;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion
@@ -23,10 +24,8 @@ namespace FoundersPC.Identity.Application
                     .AddFluentValidation(cfg =>
                                          {
                                              cfg.AutomaticValidationEnabled = true;
-
-                                             cfg.RegisterValidatorsFromAssemblyContaining<
-                                                 UserForgotPasswordRequestValidator>();
-
+                                             cfg.RegisterValidatorsFromAssemblyContaining<UserForgotPasswordRequestValidator>();
+                                             cfg.RegisterValidatorsFromAssembly(typeof(PaginationRequestValidator).Assembly);
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
         }

@@ -1,0 +1,47 @@
+04/26/2021 21:49:52 HARDWARE API started..
+04/26/2021 21:49:52 HARDWARE API HostBuilder created
+04/26/2021 21:51:05 HARDWARE API started..
+04/26/2021 21:51:06 HARDWARE API HostBuilder created
+04/26/2021 21:52:44 HARDWARE API started..
+04/26/2021 21:52:44 HARDWARE API HostBuilder created
+04/26/2021 21:52:45 Host built
+04/26/2021 21:52:46 Now listening on: "https://localhost:4000"
+04/26/2021 21:52:46 Application started. Press Ctrl+C to shut down.
+04/26/2021 21:52:46 Hosting environment: "Development"
+04/26/2021 21:52:46 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/26/2021 21:52:50 Application is shutting down...
+04/26/2021 21:55:29 HARDWARE API started..
+04/26/2021 21:55:29 HARDWARE API HostBuilder created
+04/26/2021 21:55:30 Host built
+04/26/2021 21:55:31 Now listening on: "https://localhost:4000"
+04/26/2021 21:55:31 Application started. Press Ctrl+C to shut down.
+04/26/2021 21:55:31 Hosting environment: "Development"
+04/26/2021 21:55:31 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/26/2021 21:56:21 HARDWARE API started..
+04/26/2021 21:56:21 HARDWARE API HostBuilder created
+04/26/2021 21:56:22 Host built
+04/26/2021 21:56:23 Now listening on: "https://localhost:4000"
+04/26/2021 21:56:23 Application started. Press Ctrl+C to shut down.
+04/26/2021 21:56:23 Hosting environment: "Development"
+04/26/2021 21:56:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/26/2021 21:59:04 HARDWARE API started..
+04/26/2021 21:59:04 HARDWARE API HostBuilder created
+04/26/2021 21:59:05 Host built
+04/26/2021 21:59:06 Now listening on: "https://localhost:4000"
+04/26/2021 21:59:06 Application started. Press Ctrl+C to shut down.
+04/26/2021 21:59:06 Hosting environment: "Development"
+04/26/2021 21:59:06 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/26/2021 22:05:50 HARDWARE API started..
+04/26/2021 22:05:50 HARDWARE API HostBuilder created
+04/26/2021 22:05:51 Host built
+04/26/2021 22:05:52 Now listening on: "https://localhost:4000"
+04/26/2021 22:05:52 Application started. Press Ctrl+C to shut down.
+04/26/2021 22:05:52 Hosting environment: "Development"
+04/26/2021 22:05:52 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/26/2021 22:12:52 HARDWARE API started..
+04/26/2021 22:12:52 HARDWARE API HostBuilder created
+04/26/2021 22:12:53 Host built
+04/26/2021 22:12:53 Now listening on: "https://localhost:4000"
+04/26/2021 22:12:53 Application started. Press Ctrl+C to shut down.
+04/26/2021 22:12:53 Hosting environment: "Development"
+04/26/2021 22:12:53 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"

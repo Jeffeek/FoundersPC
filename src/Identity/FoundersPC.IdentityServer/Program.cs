@@ -54,8 +54,7 @@ namespace FoundersPC.IdentityServer
             {
                 Log.Information("Identity server started..");
 
-                var hostBuilder = await CreateHostBuilderAsync(args)
-                                      .ConfigureAwait(false);
+                var hostBuilder = CreateHostBuilderAsync(args);
 
                 Log.Information("Identity server HostBuilder created");
                 var host = hostBuilder.Build();
@@ -74,7 +73,7 @@ namespace FoundersPC.IdentityServer
 
         private static IHostBuilder CreateHostBuilderAsync(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .UseSerilog(Log.Logger)
+                .UseSerilog()
                 .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
     }
 }

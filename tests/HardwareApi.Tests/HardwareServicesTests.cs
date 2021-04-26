@@ -10,8 +10,7 @@ using FoundersPC.API.Infrastructure.Repositories.Hardware.Processor;
 using FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
-using HardwareApi.Tests.MockDb;
-using HardwareApi.Tests.MockDb.DataCreation;
+using HardwareApi.Tests.DataCreation;
 using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
 
@@ -27,7 +26,7 @@ namespace HardwareApi.Tests
         [OneTimeSetUp]
         public async Task SetupAsync()
         {
-            _context = DB.GetInMemoryContext();
+            _context = HardwareDB.GetInMemoryContext();
 
             _unitOfWork = new UnitOfWorkHardwareHardwareAPI(_context,
                                                             new ProcessorsRepository(_context),
@@ -44,11 +43,11 @@ namespace HardwareApi.Tests
                                                             new NullLogger<UnitOfWorkHardwareHardwareAPI>());
 
             var producers = HardwareApiDataCreation.CreateProducers()
-                              .Take(1000)
-                              .ToArray();
+                                                   .Take(1000)
+                                                   .ToArray();
 
             var cases = HardwareApiDataCreation.CreateCases()
-                          .Take(1000);
+                                               .Take(1000);
 
             foreach (var producer in producers)
                 await _unitOfWork.ProducersRepository.AddAsync(producer);

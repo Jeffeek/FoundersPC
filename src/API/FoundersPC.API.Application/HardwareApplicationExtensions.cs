@@ -2,9 +2,10 @@
 
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using FoundersPC.API.Application.HardwareValidation.Hardware.Case;
 using FoundersPC.API.Application.Mappings;
+using FoundersPC.API.Application.Validation.HardwareValidation.Hardware.Case;
 using FoundersPC.API.Dto.Mapping;
+using FoundersPC.ServicesShared.Validation;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion
@@ -34,6 +35,7 @@ namespace FoundersPC.API.Application
                                          {
                                              cfg.AutomaticValidationEnabled = true;
                                              cfg.RegisterValidatorsFromAssemblyContaining<CaseInsertDtoValidator>();
+                                             cfg.RegisterValidatorsFromAssembly(typeof(PaginationRequestValidator).Assembly);
                                              cfg.ValidatorOptions.CascadeMode = CascadeMode.Stop;
                                          });
         }

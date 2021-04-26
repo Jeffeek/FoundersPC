@@ -1,5 +1,6 @@
 ﻿#region Using namespaces
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,9 +16,8 @@ using FoundersPC.Identity.Infrastructure.UnitOfWork;
 using FoundersPC.Identity.Services.Administration.Admin_Services;
 using FoundersPC.Identity.Services.Encryption_Services;
 using FoundersPC.Identity.Services.Token_Services;
-using IdentityServer.Tests.MockDb;
-using IdentityServer.Tests.MockDb.DataCreation;
-using IdentityServer.Tests.MockDb.MockServices;
+using IdentityServer.Tests.DataCreation;
+using IdentityServer.Tests.MockServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
@@ -35,62 +35,48 @@ namespace IdentityServer.Tests
         [OneTimeSetUp]
         public async Task SetUpAsync()
         {
-            _context = DB.GetInMemoryContext();
+            _context = IdentityDB.GetInMemoryContext();
 
             var mapper = new MapperConfiguration(x => x.AddProfile(typeof(MappingStartup)));
 
-            _unitOfWork = new UnitOfWorkUsersIdentity(new UsersRepository(_context),
-                                                      new RolesRepository(_context),
-                                                      new AccessTokensLogsRepository(_context),
-                                                      new UsersEntrancesLogsRepository(_context),
-                                                      new AccessTokensRepository(_context),
-                                                      _context,
-                                                      new NullLogger<UnitOfWorkUsersIdentity>());
+            var unitOfWork = new UnitOfWorkUsersIdentity(new UsersRepository(_context),
+                                                         new RolesRepository(_context),
+                                                         new AccessTokensLogsRepository(_context),
+                                                         new UsersEntrancesLogsRepository(_context),
+                                                         new AccessTokensRepository(_context),
+                                                         _context,
+                                                         new NullLogger<UnitOfWorkUsersIdentity>());
 
             _adminService = new AdminService(new MockEmailService(),
-                                             _unitOfWork,
-                                             new AccessUsersTokensService(_unitOfWork,
-                                                                          new AccessTokenReservationService(_unitOfWork,
+                                             unitOfWork,
+                                             new AccessUsersTokensService(unitOfWork,
+                                                                          new AccessTokenReservationService(unitOfWork,
                                                                               new TokenEncryptorService(),
                                                                               new MockEmailService(),
                                                                               new NullLogger<AccessTokenReservationService>()),
                                                                           new AccessTokensBlockingService(new NullLogger<AccessTokensBlockingService>(),
-                                                                                                              _unitOfWork),
+                                                                                                              unitOfWork),
                                                                           new AccessTokensRequestsService(new NullLogger<AccessTokensRequestsService>(),
-                                                                                                              _unitOfWork),
-                                                                          new AccessTokensStatusService(_unitOfWork,
+                                                                                                              unitOfWork),
+                                                                          new AccessTokensStatusService(unitOfWork,
                                                                                                         new NullLogger<AccessTokensStatusService>()),
                                                                           new Mapper(mapper),
                                                                           new NullLogger<AccessUsersTokensService>()),
                                              new NullLogger<AdminService>());
 
-            var roles = IdentityServerDataCreation.GenerateRoles();
+            var roles = IdentityServerDataCreation.GenerateRolesWithData();
 
             await _context.Roles.AddRangeAsync(roles);
 
-            var users = IdentityServerDataCreation.UsersFaker.Generate(200);
-
-            await _context.Users.AddRangeAsync(users);
-
-            var entrances = IdentityServerDataCreation.UsersEntrancesFaker.Generate(3000);
-
-            await _context.UsersEntrancesLogs.AddRangeAsync(entrances);
-
-            var accessTokensLogs = IdentityServerDataCreation.AccessTokenLogsFaker.Generate(500);
-
-            await _context.TokenAccessLogs.AddRangeAsync(accessTokensLogs);
-
             await _context.SaveChangesAsync();
         }
-
-        private IUnitOfWorkUsersIdentity _unitOfWork;
 
         private FoundersPCUsersContext _context;
 
         private IAdminService _adminService;
 
         [Test]
-        public async Task BlockUserTest()
+        public async Task BlockUserTestAsync()
         {
             var firstUnblockedUser = await _context.Users.FirstOrDefaultAsync(x => !x.IsBlocked
                                                                                    && x.Role.RoleTitle != ApplicationRoles.Administrator);
@@ -105,7 +91,7 @@ namespace IdentityServer.Tests
         }
 
         [Test]
-        public async Task TryToBlockAdministrator()
+        public async Task TryToBlockAdministratorAsync()
         {
             var firstAdmin = await _context.Users.FirstOrDefaultAsync(x => x.Role.RoleTitle == ApplicationRoles.Administrator);
 
@@ -119,7 +105,7 @@ namespace IdentityServer.Tests
         }
 
         [Test]
-        public async Task BlockTokenTest()
+        public async Task BlockTokenTestAsync()
         {
             var tokens = await _context.UsersTokens
                                        .Where(x => !x.IsBlocked)
@@ -134,6 +120,43 @@ namespace IdentityServer.Tests
             var actual = randomToken.IsBlocked;
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public async Task AreTokensBlockedAfterUserBlockingTestAsync()
+        {
+            var randomUser = await _context.Users.FirstAsync(x => x.Tokens.Any(t => !t.IsBlocked) && x.Role.RoleTitle != ApplicationRoles.Administrator);
+
+            await _adminService.BlockUserAsync(randomUser.Id);
+
+            var userTokens = _context.UsersTokens.Where(x => x.UserId == randomUser.Id);
+
+            var actual = userTokens.Where(x => x.ExpirationDate >= DateTime.Now)
+                                   .All(t => t.IsBlocked);
+
+            var expected = true;
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        [Test]
+        public async Task AreTokensUnBlockedAfterUserUnBlockingTestAsync()
+        {
+            var randomUser = await _context.Users.FirstAsync(x =>
+                                                                 x.IsBlocked
+                                                                 && x.Tokens.Any(t => t.ExpirationDate > DateTime.Now)
+                                                                 && x.Role.RoleTitle != ApplicationRoles.Administrator);
+
+            await _adminService.UnBlockUserAsync(randomUser.Id);
+
+            var userTokens = _context.UsersTokens.Where(x => x.UserId == randomUser.Id);
+
+            var actual = userTokens.Where(x => x.ExpirationDate >= DateTime.Now)
+                                   .All(t => !t.IsBlocked);
+
+            var expected = true;
+
+            Assert.AreEqual(actual, expected);
         }
     }
 }

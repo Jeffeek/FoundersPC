@@ -134,6 +134,12 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         public Task<bool> BlockAsync(int id) => _blockingService.BlockAsync(id);
 
+        /// <inheritdoc/>
+        public Task<bool> UnBlockAsync(string token) => _blockingService.UnBlockAsync(token);
+
+        /// <inheritdoc/>
+        public Task<bool> UnBlockAsync(int id) => _blockingService.UnBlockAsync(id);
+
         #endregion
 
         #region Implementation of IAccessTokensReservationService
