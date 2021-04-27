@@ -1,0 +1,295 @@
+04/27/2021 11:04:31 Web server started..
+04/27/2021 11:04:31 Web server HostBuilder created
+04/27/2021 11:04:31 Host built
+04/27/2021 11:04:32 Now listening on: "https://localhost:9000"
+04/27/2021 11:04:32 Application started. Press Ctrl+C to shut down.
+04/27/2021 11:04:32 Hosting environment: "Development"
+04/27/2021 11:04:32 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/27/2021 11:04:32 HTTP "GET" "/" responded 200 in 212.6179 ms
+04/27/2021 11:04:37 HTTP "GET" "/Authentication/SignIn" responded 200 in 309.1557 ms
+04/27/2021 11:04:39 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 11:04:39 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 11:04:39 Received HTTP response headers after 341.7527ms - 200
+04/27/2021 11:04:39 End processing HTTP request after 352.156ms - 200
+04/27/2021 11:04:39 HTTP "POST" "/Authentication/SignIn" responded 302 in 436.0187 ms
+04/27/2021 11:04:39 HTTP "GET" "/" responded 200 in 9.8204 ms
+04/27/2021 11:05:16 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.3475 ms
+04/27/2021 11:05:16 HTTP "GET" "/" responded 200 in 0.8967 ms
+04/27/2021 11:05:17 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.0562 ms
+04/27/2021 11:05:31 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 11:05:31 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 11:05:31 Received HTTP response headers after 15.5322ms - 200
+04/27/2021 11:05:31 End processing HTTP request after 17.89ms - 200
+04/27/2021 11:05:31 HTTP "POST" "/Authentication/SignIn" responded 302 in 21.7419 ms
+04/27/2021 11:05:31 HTTP "GET" "/Error/401" responded 200 in 9.7167 ms
+04/27/2021 11:05:35 HTTP "GET" "/" responded 200 in 0.6264 ms
+04/27/2021 11:05:37 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.2503 ms
+04/27/2021 11:06:00 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 11:06:00 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 11:06:00 Received HTTP response headers after 15.8416ms - 200
+04/27/2021 11:06:00 End processing HTTP request after 17.8729ms - 200
+04/27/2021 11:06:00 HTTP "POST" "/Authentication/SignIn" responded 302 in 19.8065 ms
+04/27/2021 11:06:00 HTTP "GET" "/" responded 200 in 2.5002 ms
+04/27/2021 11:06:24 Application is shutting down...
+04/27/2021 13:47:17 Web server started..
+04/27/2021 13:47:17 Web server HostBuilder created
+04/27/2021 13:47:17 Host built
+04/27/2021 13:47:17 Now listening on: "https://localhost:9000"
+04/27/2021 13:47:17 Application started. Press Ctrl+C to shut down.
+04/27/2021 13:47:17 Hosting environment: "Development"
+04/27/2021 13:47:17 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/27/2021 13:47:18 HTTP "GET" "/" responded 200 in 158.4063 ms
+04/27/2021 13:48:37 HTTP "GET" "/" responded 200 in 2891.5091 ms
+04/27/2021 13:50:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 278.1580 ms
+04/27/2021 13:50:53 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 15.5798 ms
+04/27/2021 13:51:13 HTTP "GET" "/Authentication/SignIn" responded 200 in 3.5238 ms
+04/27/2021 13:51:14 HTTP "GET" "/Authentication/SignUp" responded 200 in 20.1587 ms
+04/27/2021 13:51:34 HTTP "GET" "/Home/Pricing" responded 200 in 11.6992 ms
+04/27/2021 13:51:53 HTTP "GET" "/Home/About" responded 200 in 4.3613 ms
+04/27/2021 13:52:08 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.2538 ms
+04/27/2021 13:52:11 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 13:52:11 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 13:52:13 Received HTTP response headers after 1791.2645ms - 200
+04/27/2021 13:52:13 End processing HTTP request after 1801.5883ms - 200
+04/27/2021 13:52:13 HTTP "POST" "/Authentication/SignIn" responded 302 in 1878.2510 ms
+04/27/2021 13:52:13 HTTP "GET" "/" responded 200 in 4.6771 ms
+04/27/2021 13:52:22 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/mishamine26@gmail.com
+04/27/2021 13:52:22 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/mishamine26@gmail.com
+04/27/2021 13:52:22 Received HTTP response headers after 122.7574ms - 200
+04/27/2021 13:52:22 End processing HTTP request after 125.0953ms - 200
+04/27/2021 13:52:22 HTTP "GET" "/Account" responded 200 in 226.3588 ms
+04/27/2021 13:54:41 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Cases?Page=1&Size=10
+04/27/2021 13:54:41 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Cases?Page=1&Size=10
+04/27/2021 13:54:43 Received HTTP response headers after 1789.6832ms - 200
+04/27/2021 13:54:43 End processing HTTP request after 1791.8221ms - 200
+04/27/2021 13:54:43 HTTP "GET" "/HardwareApiManaging/Cases/Table" responded 200 in 2034.9137 ms
+04/27/2021 13:54:51 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/27/2021 13:54:51 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/27/2021 13:54:51 Received HTTP response headers after 58.1197ms - 200
+04/27/2021 13:54:51 End processing HTTP request after 60.7808ms - 200
+04/27/2021 13:54:51 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 81.4610 ms
+04/27/2021 13:55:25 HTTP "GET" "/HardwareApiManaging/Producers" responded 200 in 34.6317 ms
+04/27/2021 13:55:42 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.1368 ms
+04/27/2021 13:55:42 HTTP "GET" "/" responded 200 in 0.5024 ms
+04/27/2021 13:55:44 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.1522 ms
+04/27/2021 13:55:48 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 13:55:48 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 13:55:48 Received HTTP response headers after 28.2723ms - 200
+04/27/2021 13:55:48 End processing HTTP request after 30.569ms - 200
+04/27/2021 13:55:48 HTTP "POST" "/Authentication/SignIn" responded 302 in 34.2690 ms
+04/27/2021 13:55:48 HTTP "GET" "/" responded 200 in 2.2141 ms
+04/27/2021 13:56:18 HTTP "GET" "/" responded 200 in 233.4623 ms
+04/27/2021 13:56:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/TokenUsages?Page=1&Size=10
+04/27/2021 13:56:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/TokenUsages?Page=1&Size=10
+04/27/2021 13:56:59 Received HTTP response headers after 129.5217ms - 200
+04/27/2021 13:56:59 End processing HTTP request after 132.095ms - 200
+04/27/2021 13:56:59 HTTP "GET" "/Admin/TokensLogsTable?pageNumber=1" responded 200 in 148.0689 ms
+04/27/2021 13:57:02 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/27/2021 13:57:02 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/27/2021 13:57:02 Received HTTP response headers after 33.8716ms - 200
+04/27/2021 13:57:02 End processing HTTP request after 36.3898ms - 200
+04/27/2021 13:57:02 HTTP "GET" "/Admin/EntrancesTable?pageNumber=1" responded 200 in 57.0129 ms
+04/27/2021 13:57:30 HTTP "GET" "/Home/Privacy" responded 200 in 6.0794 ms
+04/27/2021 13:57:34 HTTP "GET" "/" responded 200 in 0.7494 ms
+04/27/2021 13:58:08 Application is shutting down...
+04/27/2021 15:28:23 Web server started..
+04/27/2021 15:28:23 Web server HostBuilder created
+04/27/2021 15:28:23 Host built
+04/27/2021 15:28:23 Now listening on: "https://localhost:9000"
+04/27/2021 15:28:23 Application started. Press Ctrl+C to shut down.
+04/27/2021 15:28:23 Hosting environment: "Development"
+04/27/2021 15:28:23 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/27/2021 15:28:24 HTTP "GET" "/" responded 200 in 170.1573 ms
+04/27/2021 15:28:33 HTTP "GET" "/Authentication/LogOut" responded 302 in 238.5893 ms
+04/27/2021 15:28:33 HTTP "GET" "/" responded 200 in 3.6458 ms
+04/27/2021 15:28:34 HTTP "GET" "/Authentication/SignIn" responded 200 in 60.8761 ms
+04/27/2021 15:28:36 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 25.0769 ms
+04/27/2021 15:28:45 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:28:45 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:28:46 Received HTTP response headers after 1530.0451ms - 200
+04/27/2021 15:28:46 End processing HTTP request after 1541.3244ms - 200
+04/27/2021 15:28:46 HTTP "POST" "/Authentication/ForgotPassword" responded 200 in 1611.2673 ms
+04/27/2021 15:30:17 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.7787 ms
+04/27/2021 15:30:26 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:30:26 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:30:56 HTTP "POST" "/Authentication/ForgotPassword" responded 500 in 30286.9598 ms
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+ ---> System.Net.Sockets.SocketException (10054): Удаленный хост принудительно разорвал существующее подключение.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.ForgotPasswordAsync(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 380
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 43
+   at lambda_method50(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/27/2021 15:30:57 An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Удаленный хост принудительно разорвал существующее подключение..
+ ---> System.Net.Sockets.SocketException (10054): Удаленный хост принудительно разорвал существующее подключение.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at FoundersPC.Web.Services.Web_Services.Identity.Authentication.AuthenticationService.ForgotPasswordAsync(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Services\Web Services\Identity\Authentication\AuthenticationService.cs:line 380
+   at FoundersPC.Web.Controllers.AuthenticationController.ForgotPassword(ForgotPasswordViewModel model) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web\Controllers\AuthenticationController.cs:line 43
+   at lambda_method50(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.Web.Application.Middleware.CookieCheckMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web.Application\Middleware\CookieCheckMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/27/2021 15:31:07 Application is shutting down...
+04/27/2021 15:36:26 Web server started..
+04/27/2021 15:36:26 Web server HostBuilder created
+04/27/2021 15:36:27 Host built
+04/27/2021 15:36:27 Now listening on: "https://localhost:9000"
+04/27/2021 15:36:27 Application started. Press Ctrl+C to shut down.
+04/27/2021 15:36:27 Hosting environment: "Development"
+04/27/2021 15:36:27 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/27/2021 15:36:28 HTTP "GET" "/" responded 200 in 194.7050 ms
+04/27/2021 15:36:30 HTTP "GET" "/Authentication/SignIn" responded 200 in 453.3563 ms
+04/27/2021 15:36:32 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 17.5475 ms
+04/27/2021 15:36:52 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:36:52 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:36:54 Received HTTP response headers after 1970.4239ms - 500
+04/27/2021 15:36:54 End processing HTTP request after 1982.5257ms - 500
+04/27/2021 15:37:03 Request from AuthenticationService, Forgot Password: to Identity server returned a server error InternalServerError with email = heuts@mail.ru
+04/27/2021 15:37:14 HTTP "POST" "/Authentication/ForgotPassword" responded 302 in 32251.5276 ms
+04/27/2021 15:37:17 HTTP "GET" "/Error/404" responded 200 in 60.1161 ms
+04/27/2021 15:37:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.0542 ms
+04/27/2021 15:37:24 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 2.0977 ms
+04/27/2021 15:37:41 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:37:41 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/ForgotPassword
+04/27/2021 15:37:44 Received HTTP response headers after 2494.1846ms - 200
+04/27/2021 15:37:44 End processing HTTP request after 2496.6005ms - 200
+04/27/2021 15:37:58 HTTP "POST" "/Authentication/ForgotPassword" responded 200 in 25257.9290 ms
+04/27/2021 15:38:40 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.5928 ms
+04/27/2021 15:38:41 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 1.0506 ms
+04/27/2021 15:38:45 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.7084 ms
+04/27/2021 15:38:53 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:38:53 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:38:54 Received HTTP response headers after 471.5109ms - 200
+04/27/2021 15:38:54 End processing HTTP request after 473.7295ms - 200
+04/27/2021 15:38:54 HTTP "POST" "/Authentication/SignIn" responded 302 in 504.2960 ms
+04/27/2021 15:38:54 HTTP "GET" "/" responded 200 in 3.5492 ms
+04/27/2021 15:41:56 Web server started..
+04/27/2021 15:41:56 Web server HostBuilder created
+04/27/2021 15:41:56 Host built
+04/27/2021 15:41:56 Now listening on: "https://localhost:9000"
+04/27/2021 15:41:56 Application started. Press Ctrl+C to shut down.
+04/27/2021 15:41:56 Hosting environment: "Development"
+04/27/2021 15:41:56 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/27/2021 15:41:57 HTTP "GET" "/" responded 200 in 170.9863 ms
+04/27/2021 15:41:59 HTTP "GET" "/Authentication/LogOut" responded 302 in 225.2333 ms
+04/27/2021 15:41:59 HTTP "GET" "/" responded 200 in 2.6206 ms
+04/27/2021 15:42:00 HTTP "GET" "/Authentication/SignIn" responded 200 in 61.6313 ms
+04/27/2021 15:42:07 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:42:07 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:42:09 Received HTTP response headers after 1846.7248ms - 200
+04/27/2021 15:42:09 End processing HTTP request after 1857.1383ms - 200
+04/27/2021 15:42:09 HTTP "POST" "/Authentication/SignIn" responded 302 in 1932.2400 ms
+04/27/2021 15:42:09 HTTP "GET" "/" responded 200 in 4.6070 ms
+04/27/2021 15:42:11 HTTP "GET" "/Authentication/LogOut" responded 302 in 0.6018 ms
+04/27/2021 15:42:11 HTTP "GET" "/" responded 200 in 0.5711 ms
+04/27/2021 15:42:13 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.6906 ms
+04/27/2021 15:42:15 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:42:15 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:42:15 Received HTTP response headers after 34.122ms - 200
+04/27/2021 15:42:15 End processing HTTP request after 36.3531ms - 200
+04/27/2021 15:42:15 HTTP "POST" "/Authentication/SignIn" responded 302 in 39.1101 ms
+04/27/2021 15:42:15 HTTP "GET" "/Error/401" responded 200 in 7.7507 ms
+04/27/2021 15:42:16 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.4678 ms
+04/27/2021 15:42:20 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:42:20 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:42:20 Received HTTP response headers after 23.1537ms - 200
+04/27/2021 15:42:20 End processing HTTP request after 25.3425ms - 200
+04/27/2021 15:42:20 HTTP "POST" "/Authentication/SignIn" responded 302 in 27.7553 ms
+04/27/2021 15:42:20 HTTP "GET" "/" responded 200 in 0.6597 ms
+04/27/2021 15:42:21 HTTP "GET" "/Authentication/LogOut" responded 302 in 0.5454 ms
+04/27/2021 15:42:21 HTTP "GET" "/" responded 200 in 0.4879 ms
+04/27/2021 15:42:22 HTTP "GET" "/Home/Privacy" responded 200 in 7.7401 ms
+04/27/2021 15:42:23 HTTP "GET" "/Home/About" responded 200 in 6.5726 ms
+04/27/2021 15:42:31 HTTP "GET" "/Home/Pricing" responded 200 in 8.5199 ms
+04/27/2021 15:42:34 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.3158 ms
+04/27/2021 15:42:38 HTTP "GET" "/" responded 200 in 0.9600 ms
+04/27/2021 15:42:39 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.0247 ms
+04/27/2021 15:42:41 HTTP "GET" "/" responded 200 in 1.0175 ms
+04/27/2021 15:42:46 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.3086 ms
+04/27/2021 15:42:47 HTTP "GET" "/" responded 200 in 0.5344 ms
+04/27/2021 15:43:54 HTTP "GET" "/" responded 200 in 2650.5845 ms
+04/27/2021 15:44:05 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.0230 ms
+04/27/2021 15:44:07 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:44:07 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/27/2021 15:44:07 Received HTTP response headers after 17.8858ms - 200
+04/27/2021 15:44:07 End processing HTTP request after 19.9657ms - 200
+04/27/2021 15:44:07 HTTP "POST" "/Authentication/SignIn" responded 302 in 22.5133 ms
+04/27/2021 15:44:07 HTTP "GET" "/" responded 200 in 0.6616 ms
+04/27/2021 15:46:04 HTTP "GET" "/" responded 200 in 170.3413 ms
+04/27/2021 15:46:09 HTTP "GET" "/Authentication/LogOut" responded 302 in 0.5959 ms
+04/27/2021 15:46:09 HTTP "GET" "/" responded 200 in 0.7681 ms
+04/27/2021 15:46:37 HTTP "GET" "/Authentication/SignIn" responded 200 in 1.6642 ms
+04/27/2021 15:46:44 Application is shutting down...
+04/27/2021 21:50:42 Web server started..
+04/27/2021 21:50:42 Web server HostBuilder created
+04/27/2021 21:50:42 Host built
+04/27/2021 21:50:43 Now listening on: "https://localhost:9000"
+04/27/2021 21:50:43 Application started. Press Ctrl+C to shut down.
+04/27/2021 21:50:43 Hosting environment: "Development"
+04/27/2021 21:50:43 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/27/2021 21:50:44 HTTP "GET" "/" responded 200 in 321.9070 ms
+04/27/2021 21:50:49 HTTP "GET" "/Home/About" responded 200 in 12.9630 ms
+04/27/2021 21:51:45 HTTP "GET" "/Home/About" responded 200 in 3190.8649 ms
+04/27/2021 21:52:45 HTTP "GET" "/Home/About" responded 200 in 0.8978 ms
+04/27/2021 21:53:24 HTTP "GET" "/" responded 200 in 1.5431 ms
+04/27/2021 21:53:32 HTTP "GET" "/Authentication/SignIn" responded 200 in 300.4390 ms

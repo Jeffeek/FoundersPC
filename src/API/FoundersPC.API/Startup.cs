@@ -163,8 +163,8 @@ namespace FoundersPC.API
             }
             else
             {
-                app.UseMiddleware<AccessTokenValidatorMiddleware>();
             }
+                app.UseMiddleware<AccessTokenValidatorMiddleware>();
 
             app.UseHttpsRedirection();
 

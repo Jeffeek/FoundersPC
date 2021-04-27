@@ -1,29 +1,30 @@
-﻿#region Using namespaces
-
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Environments;
+using BenchmarkDotNet.Jobs;
 using FoundersPC.Identity.Services.Encryption_Services;
-
-#endregion
 
 namespace IdentityServer.PerformanceTests
 {
     [MemoryDiagnoser]
-    public class EncryptionPerformanceTests
+    [SimpleJob(RuntimeMoniker.NetCoreApp50,
+               1,
+               1,
+               1,
+               1)]
+    public class PasswordEncryptionPerformanceTest
     {
         private PasswordEncryptorService _passwordEncryptorService;
-        private TokenEncryptorService _tokenEncryptorService;
 
         [ParamsSource(nameof(GetLengths))]
         public int PasswordLength;
 
         [GlobalSetup]
-        public void Setup()
-        {
-            _passwordEncryptorService = new PasswordEncryptorService();
-            _tokenEncryptorService = new TokenEncryptorService();
-        }
+        public void Setup() => _passwordEncryptorService = new PasswordEncryptorService();
 
         [Benchmark]
         public string PasswordEncryption_TimeBenchmark()
@@ -35,14 +36,6 @@ namespace IdentityServer.PerformanceTests
             return encrypted;
         }
 
-        [Benchmark]
-        public string TokenEncryption_TimeBenchmark()
-        {
-            var encryptedToken = _tokenEncryptorService.CreateToken();
-
-            return encryptedToken;
-        }
-
-        public IEnumerable<int> GetLengths() => Enumerable.Range(6, 24);
+        public IEnumerable<int> GetLengths() => Enumerable.Range(6, 30);
     }
 }

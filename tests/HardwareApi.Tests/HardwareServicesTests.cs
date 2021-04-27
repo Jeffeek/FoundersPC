@@ -52,9 +52,6 @@ namespace HardwareApi.Tests
             foreach (var producer in producers)
                 await _unitOfWork.ProducersRepository.AddAsync(producer);
 
-            foreach (var @case in cases)
-                await _unitOfWork.CasesRepository.AddAsync(@case);
-
             await _unitOfWork.SaveChangesAsync();
         }
 

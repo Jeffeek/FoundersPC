@@ -42,17 +42,19 @@ namespace FoundersPC.Identity.Services.Token_Services
             if (tokenEntity is null)
                 return false;
 
+            var now = DateTime.Now;
+
+            if (tokenEntity.ExpirationDate <= now || tokenEntity.IsBlocked)
+                return false;
+
             var lastUsageLog = await _unitOfWork.AccessTokensLogsRepository.GetLastTokenUsageAsync(tokenEntity.Id);
 
             if (lastUsageLog is null)
                 return true;
 
-            var now = DateTime.Now;
-
-            return !tokenEntity.IsBlocked
-                   && tokenEntity.ExpirationDate > now
-                   && now.Ticks - lastUsageLog.RequestDateTime.Ticks
-                   >= TimeSpan.TicksPerMinute; // the request to API can be made 1 time per 1 minute
+            return
+                now.Ticks - lastUsageLog.RequestDateTime.Ticks
+                >= TimeSpan.TicksPerMinute; // the request to API can be made 1 time per 1 minute
         }
     }
 }

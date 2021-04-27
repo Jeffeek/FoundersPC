@@ -116,10 +116,11 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
             return await ChangePasswordToAsync(user, oldPassword, newPassword);
         }
 
+        // todo: make 1 method. too lot dry-out
+
         #region Generate and change
 
         /// <exception cref="T:System.ArgumentOutOfRangeException">userId &lt; 1.</exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">User with id = <paramref name="userId"/> not found.</exception>
         /// <exception cref="T:System.Reflection.TargetInvocationException">
         ///     The algorithm was used with Federal Information
         ///     Processing Standards (FIPS) mode enabled, but is not FIPS compatible.
@@ -145,7 +146,11 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
             var user = await _unitOfWork.UsersRepository.GetByIdAsync(userId);
 
             if (user is null)
-                throw new NoNullAllowedException($"user with id = {userId} is not found");
+            {
+                _logger.LogWarning($"user with id = {userId} is not found");
+
+                return false;
+            }
 
             var newPassword = _passwordEncryptorService.GeneratePassword(10);
 
@@ -155,14 +160,15 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult)
-                return await _unitOfWork.SaveChangesAsync() > 0;
+            if (!updateResult)
+                return false;
 
-            return false;
+            await _emailService.SendNewPasswordAsync(user.Email, newPassword);
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
         }
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="userEmail"/> is <see langword="null"/></exception>
-        /// <exception cref="T:System.Data.NoNullAllowedException">User with email = <paramref name="userEmail"/> not found.</exception>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Condition.</exception>
         /// <exception cref="T:System.ArgumentException">oldValue is the empty string ("").</exception>
         /// <exception cref="T:System.Reflection.TargetInvocationException">
@@ -188,7 +194,11 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
             var user = await _unitOfWork.UsersRepository.GetUserByEmailAsync(userEmail);
 
             if (user is null)
-                throw new NoNullAllowedException($"user with email = {userEmail} is not found");
+            {
+                _logger.LogWarning($"user with email = {userEmail} is not found");
+
+                return false;
+            }
 
             var newPassword = _passwordEncryptorService.GeneratePassword(10);
 
@@ -198,10 +208,12 @@ namespace FoundersPC.Identity.Services.User_Services.Settings
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult)
-                return await _unitOfWork.SaveChangesAsync() > 0;
+            if (!updateResult)
+                return false;
 
-            return false;
+            await _emailService.SendNewPasswordAsync(user.Email, newPassword);
+
+            return await _unitOfWork.SaveChangesAsync() > 0;
         }
 
         #endregion

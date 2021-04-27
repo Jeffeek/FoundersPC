@@ -56,7 +56,7 @@ namespace FoundersPC.IdentityServer.Controllers.Authentication
                        Email = request.Email,
                        Error = "Unsuccessful password changing",
                        IsConfirmationMailSent = false,
-                       IsUserExists = true
+                       IsUserExists = false
                    };
         }
     }

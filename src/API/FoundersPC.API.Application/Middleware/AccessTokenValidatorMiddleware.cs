@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
+using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
@@ -62,7 +63,7 @@ namespace FoundersPC.API.Application.Middleware
 
                 var client = _clientFactory.CreateClient();
 
-                var response = await client.GetAsync($"{MicroservicesUrls.IdentityServer}Tokens/Check/{result[0]}");
+                var response = await client.GetAsync($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Tokens.TokensEndpoint}/{IdentityServerRoutes.BuildRouteForToken(IdentityServerRoutes.Tokens.CheckToken, result[0])}");
 
                 if (!response.IsSuccessStatusCode)
                 {
