@@ -32,6 +32,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
@@ -154,6 +155,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
@@ -219,6 +221,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.ArgumentNullException"><paramref name="start"/> is <see langword="null"/></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
@@ -288,6 +291,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.ArgumentNullException"><paramref name="adminToken"/> is <see langword="null"/></exception>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,

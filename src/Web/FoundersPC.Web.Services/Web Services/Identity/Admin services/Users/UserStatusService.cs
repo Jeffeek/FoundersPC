@@ -19,6 +19,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 {
+    /// <inheritdoc/>
     public class UserStatusService : IUserStatusService
     {
         private readonly IHttpClientFactory _clientFactory;
@@ -33,6 +34,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
@@ -120,6 +122,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
@@ -207,6 +210,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
@@ -294,6 +298,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
@@ -381,6 +386,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.
@@ -475,6 +481,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.UriFormatException">
         ///     Note: In the .NET for Windows Store apps or the Portable Class Library, catch the base class exception,
         ///     <see cref="T:System.FormatException"/>, instead.

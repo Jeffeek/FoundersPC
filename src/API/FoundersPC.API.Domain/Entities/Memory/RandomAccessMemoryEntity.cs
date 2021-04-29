@@ -34,8 +34,8 @@ namespace FoundersPC.API.Domain.Entities.Memory
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("Timings")]
-        [MinLength(5)]
-        [MaxLength(8)]
+        [MinLength(2)]
+        [MaxLength(11)]
         [Required]
         public string Timings { get; set; }
 
@@ -59,6 +59,11 @@ namespace FoundersPC.API.Domain.Entities.Memory
         [Required]
         public int PCIndex { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("Volume")]
+        [Required]
+        public int Volume { get; set; }
+
         #region Equality members
 
         /// <inheritdoc/>
@@ -77,7 +82,8 @@ namespace FoundersPC.API.Domain.Entities.Memory
                    && Voltage.Equals(other.Voltage)
                    && XMP == other.XMP
                    && ECC == other.ECC
-                   && PCIndex == other.PCIndex;
+                   && PCIndex == other.PCIndex
+                   && Volume == other.Volume;
         }
 
         /// <inheritdoc/>
@@ -89,16 +95,13 @@ namespace FoundersPC.API.Domain.Entities.Memory
             if (ReferenceEquals(this, obj))
                 return true;
 
-            if (obj.GetType() != GetType())
-                return false;
-
-            return Equals((RandomAccessMemoryEntity)obj);
+            return obj.GetType() == GetType() && Equals((RandomAccessMemoryEntity)obj);
         }
 
         /// <inheritdoc/>
         public override int GetHashCode() =>
             HashCode.Combine(MemoryType,
-                             Frequency,
+                             Frequency * Volume,
                              CASLatency,
                              Timings,
                              Voltage,

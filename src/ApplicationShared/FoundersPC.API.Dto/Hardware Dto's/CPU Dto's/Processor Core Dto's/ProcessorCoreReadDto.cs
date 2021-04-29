@@ -16,9 +16,9 @@ namespace FoundersPC.API.Dto
 
         public string MicroArchitecture { get; set; }
 
-        public int L2Cache { get; set; }
+        public int L2CachePerCore { get; set; }
 
-        public int L3Cache { get; set; }
+        public int L3CachePerCore { get; set; }
 
         public string Socket { get; set; }
     }

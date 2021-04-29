@@ -450,6 +450,11 @@ h6
     width: 200%;
 }
 
+.pricing-table-features
+{
+    padding-left: 0;
+}
+
 .pricing-table-features li,
 .pricing-table-features-title,
 .pricing-table-header

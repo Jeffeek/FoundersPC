@@ -16,7 +16,7 @@ namespace FoundersPC.API.Infrastructure.Contexts
 
         public DbSet<ProcessorEntity> Processors { get; set; }
 
-        public DbSet<ProcessorCore> ProcessorCores { get; set; }
+        public DbSet<ProcessorCoreEntity> ProcessorCores { get; set; }
 
         public DbSet<VideoCardCoreEntity> VideoCardCores { get; set; }
 

@@ -44,8 +44,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
                      Socket = "LGA1151",
                      IsMarketLaunchEmpty = true,
                      MarketLaunch = DateTime.Now,
-                     L2Cache = 2048,
-                     L3Cache = 6144,
+                     L2CachePerCore = 2048,
+                     L3CachePerCore = 6144,
                      MicroArchitecture = "Lake"
                  });
 

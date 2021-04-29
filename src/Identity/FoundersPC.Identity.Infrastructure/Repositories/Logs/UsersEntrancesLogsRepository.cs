@@ -20,6 +20,7 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Logs
 
         #region Docs
 
+        /// <inheritdoc/>
         /// <exception cref="T:System.ArgumentNullException">
         ///     <paramref name="source"/> or <paramref name="navigationPropertyPath"/>
         ///     is <see langword="null"/>.

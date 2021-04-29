@@ -131,7 +131,7 @@ namespace FoundersPC.IdentityServer
                                  options.AddPolicy(ApplicationCorsPolicies.WebClientPolicy,
                                                    config =>
                                                        config.AllowCredentials()
-                                                             .WithOrigins("https://localhost:9000")
+                                                             .WithOrigins(MicroservicesUrls.WebServer)
                                                              .AllowAnyMethod()
                                                              .Build());
 
@@ -196,6 +196,7 @@ namespace FoundersPC.IdentityServer
                                                            var ex = error.Error;
                                                            context.Response.StatusCode = 500;
                                                            await context.Response.WriteAsync(JsonSerializer.Serialize(ex));
+                                                           await context.Response.CompleteAsync();
                                                        }
                                                    });
                                     });

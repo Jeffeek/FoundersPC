@@ -13,6 +13,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.RepositoryShared.Repository
 {
+    /// <inheritdoc/>
+    /// <summary>
+    ///     A generic implementation of any repository in system
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class GenericRepositoryAsync<T> : IRepositoryAsync<T> where T : class, IEquatable<T>, IIdentityItem
     {
         protected readonly DbContext Context;

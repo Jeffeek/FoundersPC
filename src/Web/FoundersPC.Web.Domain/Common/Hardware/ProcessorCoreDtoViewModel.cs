@@ -23,15 +23,15 @@ namespace FoundersPC.Web.Domain.Common.Hardware
         [StringLength(30, MinimumLength = 3)]
         public string MicroArchitecture { get; set; }
 
-        [Display(Prompt = nameof(L2Cache))]
+        [Display(Prompt = nameof(L2CachePerCore))]
         [Range(0, 512_000)]
         [Required]
-        public int L2Cache { get; set; }
+        public int L2CachePerCore { get; set; }
 
-        [Display(Prompt = nameof(L3Cache))]
+        [Display(Prompt = nameof(L3CachePerCore))]
         [Range(0, 512_000)]
         [Required]
-        public int L3Cache { get; set; }
+        public int L3CachePerCore { get; set; }
 
         [Display(Prompt = nameof(Socket))]
         [Required]

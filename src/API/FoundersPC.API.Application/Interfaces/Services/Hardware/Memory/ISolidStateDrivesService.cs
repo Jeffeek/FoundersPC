@@ -9,8 +9,15 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware.Memory
 {
+    /// <summary>
+    ///     Interface for decoration of database logic with entities
+    /// </summary>
     public interface ISolidStateDrivesService : IPaginateableService<SolidStateDriveReadDto>
     {
+        /// <summary>
+        ///     Return an enumeration of all <see cref="SolidStateDriveReadDto"/> entities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<SolidStateDriveReadDto>> GetAllSolidStateDrivesAsync();
 
         Task<SolidStateDriveReadDto> GetSolidStateDriveByIdAsync(int ssdId);

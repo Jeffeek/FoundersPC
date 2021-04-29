@@ -9,8 +9,15 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware.CPU
 {
+    /// <summary>
+    ///     Interface for decoration of database logic with entities
+    /// </summary>
     public interface IProcessorCoresService : IPaginateableService<ProcessorCoreReadDto>
     {
+        /// <summary>
+        ///     Return an enumeration of all <see cref="ProcessorCoreReadDto"/> entities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync();
 
         Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId);

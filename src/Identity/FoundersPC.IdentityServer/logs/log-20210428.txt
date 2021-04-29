@@ -1,0 +1,27 @@
+04/28/2021 14:40:44 Identity server started..
+04/28/2021 14:40:44 Identity server HostBuilder created
+04/28/2021 14:40:45 Host built
+04/28/2021 14:40:45 Now listening on: "https://localhost:3000"
+04/28/2021 14:40:45 Application started. Press Ctrl+C to shut down.
+04/28/2021 14:40:45 Hosting environment: "Development"
+04/28/2021 14:40:45 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/28/2021 14:47:12 SignInIdentityController: user with email or login = Jeffeek entered the service
+04/28/2021 14:47:12 Successful save changes in UnitOfWorkUsersIdentity
+04/28/2021 14:47:12 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1777.5930 ms
+04/28/2021 14:47:20 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 193.3130 ms
+04/28/2021 14:50:15 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 11.5771 ms
+04/28/2021 14:53:22 HTTP "GET" "/FoundersPCIdentity/Tokens?Page=1&Size=10" responded 200 in 32.5149 ms
+04/28/2021 14:54:28 HTTP "GET" "/FoundersPCIdentity/Users?Page=1&Size=10" responded 200 in 6.9403 ms
+04/28/2021 14:56:01 Application is shutting down...
+04/28/2021 14:56:36 Identity server started..
+04/28/2021 14:56:36 Identity server HostBuilder created
+04/28/2021 14:56:36 Host built
+04/28/2021 14:56:36 Now listening on: "https://localhost:3000"
+04/28/2021 14:56:36 Application started. Press Ctrl+C to shut down.
+04/28/2021 14:56:36 Hosting environment: "Development"
+04/28/2021 14:56:36 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/28/2021 14:56:46 SignInIdentityController: user with email or login = JeffManager entered the service
+04/28/2021 14:56:46 Successful save changes in UnitOfWorkUsersIdentity
+04/28/2021 14:56:46 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 1653.9637 ms
+04/28/2021 15:04:16 HTTP "GET" "/FoundersPCIdentity/Users/mishamine26@gmail.com" responded 200 in 125.6555 ms
+04/28/2021 15:06:51 Application is shutting down...

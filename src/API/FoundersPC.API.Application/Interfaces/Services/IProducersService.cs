@@ -9,8 +9,15 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.API.Application.Interfaces.Services
 {
+    /// <summary>
+    ///     Interface for decoration of database logic with entities
+    /// </summary>
     public interface IProducersService : IPaginateableService<ProducerReadDto>
     {
+        /// <summary>
+        ///     Return an enumeration of all <see cref="ProducerReadDto"/> entities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync();
 
         Task<ProducerReadDto> GetProducerByIdAsync(int producerId);

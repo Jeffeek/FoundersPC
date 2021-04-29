@@ -9,8 +9,15 @@ using FoundersPC.ServicesShared;
 
 namespace FoundersPC.API.Application.Interfaces.Services.Hardware.GPU
 {
+    /// <summary>
+    ///     Interface for decoration of database logic with entities
+    /// </summary>
     public interface IVideoCardsService : IPaginateableService<VideoCardReadDto>
     {
+        /// <summary>
+        ///     Return an enumeration of all <see cref="VideoCardReadDto"/> entities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<VideoCardReadDto>> GetAllVideoCardsAsync();
 
         Task<VideoCardReadDto> GetVideoCardByIdAsync(int gpuId);

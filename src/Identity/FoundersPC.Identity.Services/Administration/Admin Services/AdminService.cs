@@ -17,6 +17,10 @@ using Microsoft.Extensions.Logging;
 namespace FoundersPC.Identity.Services.Administration.Admin_Services
 {
     // TODO: spread into another services
+    // in thesis implementation
+    /// <summary>
+    ///     <inheritdoc cref="IAdminService"/>
+    /// </summary>
     public class AdminService : IAdminService
     {
         private readonly IAccessUsersTokensService _accessUsersTokensService;
@@ -55,27 +59,55 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         private async Task<bool> MakeUserInactiveAsync(UserEntity user, bool sendNotification)
         {
+            _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : trying to make user inactive");
+
             if (user is null)
+            {
+                _logger.LogWarning($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : input user was null");
+
                 return false;
+            }
 
             if (!user.IsActive)
+            {
+                _logger.LogWarning($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : input user was already inactive");
+
                 return false;
+            }
 
             if (user.Role.RoleTitle == ApplicationRoles.Administrator)
+            {
+                _logger.LogWarning($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : input user was with administrator role");
+
                 return false;
+            }
 
             if (sendNotification)
-                await _emailService.SendBlockNotificationAsync(user.Email,
-                                                               "You've been blocked, you can't be unblocked.");
+            {
+                var sendResult = await _emailService.SendBlockNotificationAsync(user.Email,
+                                                                                "You've been blocked, you can't be unblocked.");
+
+                if (!sendResult)
+                    _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : unsuccessfully send message to {user.Email}");
+            }
 
             user.IsActive = false;
 
             var updateResult = await _unitOfWork.UsersRepository.UpdateAsync(user);
 
-            if (updateResult)
-                return await _unitOfWork.SaveChangesAsync() > 0;
+            if (!updateResult)
+            {
+                _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : unsuccessfully changed user with email: {user.Email} to inactive");
 
-            return false;
+                return false;
+            }
+
+            var saveChangesResult = await _unitOfWork.SaveChangesAsync() > 0;
+
+            if (saveChangesResult)
+                _logger.LogInformation($"{nameof(AdminService)} : {nameof(MakeUserInactiveAsync)} : successfully changed user with email: {user.Email} to inactive");
+
+            return saveChangesResult;
         }
 
         #endregion
@@ -119,8 +151,10 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var blockingResults = new List<bool>();
 
-            foreach (var token in userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now))
-                blockingResults.Add(await _accessUsersTokensService.BlockAsync(token.Id));
+            var futureDateTokens = userTokens.Where(token => !token.IsBlocked && token.ExpirationDate >= DateTime.Now);
+
+            foreach (var token in futureDateTokens)
+                blockingResults.Add(await BlockAccessTokenAsync(token.Id));
 
             return blockingResults.All(x => x);
         }
@@ -135,7 +169,10 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var changeStatusResult = await ChangeUserBlockStatusAsync(user, false, sendNotification);
 
-            return changeStatusResult;
+            if (changeStatusResult)
+                return await UnBlockAllUserTokensAsync(user.Id);
+
+            return false;
         }
 
         public async Task<bool> UnBlockUserAsync(string userEmail, bool sendNotification = true)
@@ -144,7 +181,24 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
             var changeStatusResult = await ChangeUserBlockStatusAsync(user, false, sendNotification);
 
-            return changeStatusResult;
+            if (changeStatusResult)
+                return await UnBlockAllUserTokensAsync(user.Id);
+
+            return false;
+        }
+
+        private async Task<bool> UnBlockAllUserTokensAsync(int userId)
+        {
+            var userTokens = await _unitOfWork.AccessTokensRepository.GetAllUserTokensAsync(userId);
+
+            var unblocking = new List<bool>();
+
+            var futureDateTokens = userTokens.Where(token => token.IsBlocked && token.ExpirationDate >= DateTime.Now);
+
+            foreach (var token in futureDateTokens)
+                unblocking.Add(await UnBlockAccessTokenAsync(token.Id));
+
+            return unblocking.All(x => x);
         }
 
         #endregion
@@ -193,6 +247,12 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
         public Task<bool> BlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.BlockAsync(tokenId);
 
         public Task<bool> BlockAccessTokenAsync(string token) => _accessUsersTokensService.BlockAsync(token);
+
+        /// <inheritdoc/>
+        public Task<bool> UnBlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.UnBlockAsync(tokenId);
+
+        /// <inheritdoc/>
+        public Task<bool> UnBlockAccessTokenAsync(string token) => _accessUsersTokensService.UnBlockAsync(token);
 
         #endregion
     }

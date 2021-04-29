@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
+    /// <inheritdoc/>
     public class HardDrivesRepository : GenericRepositoryAsync<HardDriveDiskEntity>, IHardDrivesRepositoryAsync
     {
         /// <inheritdoc/>
@@ -18,7 +19,17 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 
         #region Implementation of IPaginateableRepository<HardDriveDiskEntity>
 
+        #region Docs
+
         /// <inheritdoc/>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">pageNumber or pageSize was below or equal to 0.</exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="source"/> or <paramref name="navigationPropertyPath"/>
+        ///     is <see langword="null"/>.
+        /// </exception>
+
+        #endregion
+
         public async Task<IEnumerable<HardDriveDiskEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
                   .Include(x => x.ProducerEntity)

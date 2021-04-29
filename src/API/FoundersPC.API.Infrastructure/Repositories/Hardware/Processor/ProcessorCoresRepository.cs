@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Processor
 {
-    public class ProcessorCoresRepository : GenericRepositoryAsync<ProcessorCore>,
+    /// <inheritdoc cref="IProcessorsRepositoryAsync"/>
+    public class ProcessorCoresRepository : GenericRepositoryAsync<ProcessorCoreEntity>,
                                             IProcessorCoresRepositoryAsync
     {
         /// <inheritdoc/>
@@ -20,9 +21,9 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Processor
         #region Implementation of IProcessorCoresRepositoryAsync
 
         /// <inheritdoc/>
-        public override async Task<IEnumerable<ProcessorCore>> GetAllAsync()
+        public override async Task<IEnumerable<ProcessorCoreEntity>> GetAllAsync()
         {
-            return await Context.Set<ProcessorCore>()
+            return await Context.Set<ProcessorCoreEntity>()
                                 .Include(processorCore =>
                                              processorCore.Processors)
                                 .ToListAsync();
@@ -33,7 +34,7 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Processor
         #region Implementation of IPaginateableRepository<ProcessorCore>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<ProcessorCore>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<ProcessorCoreEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
                   .Include(x => x.Processors)
                   .ToListAsync();

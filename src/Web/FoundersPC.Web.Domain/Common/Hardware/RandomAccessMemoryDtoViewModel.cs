@@ -49,6 +49,10 @@ namespace FoundersPC.Web.Domain.Common.Hardware
         [Required]
         public string Title { get; set; }
 
+        [Range(1, 512)]
+        [Required]
+        public int Volume { get; set; }
+
         [Display(Prompt = nameof(ProducerId))]
         [Range(1, Int32.MaxValue)]
         [Required]

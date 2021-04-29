@@ -18,7 +18,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.3")
+                .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.AccessTokenLog",
@@ -28,8 +28,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
-                                                    SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<int>("ApiAccessUsersTokenId")
                                      .HasColumnType("int");
@@ -53,8 +52,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
-                                                    SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<DateTime>("Entrance")
                                      .HasColumnType("datetime2");
@@ -68,7 +66,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
 
                                     b.HasIndex("UserId");
 
-                                    b.ToTable("UserEntranceLog");
+                                    b.ToTable("UsersEntrancesLogs");
                                 });
 
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.AccessTokenEntity",
@@ -78,8 +76,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
-                                                    SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<DateTime>("ExpirationDate")
                                      .HasColumnType("datetime2");
@@ -114,8 +111,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
-                                                    SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("RoleTitle")
                                      .IsRequired()
@@ -133,8 +129,7 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                      .ValueGeneratedOnAdd()
                                      .HasColumnType("int")
                                      .HasColumnName("Id")
-                                     .HasAnnotation("SqlServer:ValueGenerationStrategy",
-                                                    SqlServerValueGenerationStrategy.IdentityColumn);
+                                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                                     b.Property<string>("Email")
                                      .IsRequired()
@@ -192,9 +187,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Logs.AccessTokenLog",
                                 b =>
                                 {
-                                    b.HasOne("FoundersPC.Identity.Domain.Entities.Tokens.AccessTokenEntity",
-                                             "AccessTokenEntity")
-                                     .WithMany()
+                                    b.HasOne("FoundersPC.Identity.Domain.Entities.Tokens.AccessTokenEntity", "AccessTokenEntity")
+                                     .WithMany("UsagesLogs")
                                      .HasForeignKey("ApiAccessUsersTokenId")
                                      .OnDelete(DeleteBehavior.Cascade)
                                      .IsRequired();
@@ -238,8 +232,9 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                     b.Navigation("Role");
                                 });
 
-            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.RoleEntity",
-                                b => { b.Navigation("Users"); });
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Tokens.AccessTokenEntity", b => { b.Navigation("UsagesLogs"); });
+
+            modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.RoleEntity", b => { b.Navigation("Users"); });
 
             modelBuilder.Entity("FoundersPC.Identity.Domain.Entities.Users.UserEntity",
                                 b =>

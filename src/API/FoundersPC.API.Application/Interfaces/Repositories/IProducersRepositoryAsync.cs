@@ -9,6 +9,9 @@ using FoundersPC.RepositoryShared.Repository;
 
 namespace FoundersPC.API.Application.Interfaces.Repositories
 {
+    /// <summary>
+    ///     Interface for <see cref="ProducerEntity"/> database access
+    /// </summary>
     public interface IProducersRepositoryAsync : IRepositoryAsync<ProducerEntity>,
                                                  IPaginateableRepository<ProducerEntity>
     {

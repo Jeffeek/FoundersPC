@@ -14,7 +14,7 @@ namespace FoundersPC.API.Domain.Entities.Processor
     public class ProcessorEntity : HardwareEntityBase, IEquatable<ProcessorEntity>
     {
         [ForeignKey(nameof(ProcessorCoreId))]
-        public ProcessorCore Core { get; set; }
+        public ProcessorCoreEntity Core { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("TDP")]

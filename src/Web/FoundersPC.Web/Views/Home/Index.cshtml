@@ -32,8 +32,8 @@
                     class='hero-paragraph'>
                     Our API provides round-the-clock access to new and old models of computer
                     hardware. We cooperate with companies such as
-                    <company>FakOn</company> and
-                    <company>ZhepaProductDelivery</company>
+                    <company>TradeForward</company> and
+                    <company>HardStock inc.</company>
                 </p>
                 <div
                     class='hero-cta'>
@@ -44,7 +44,7 @@
                     </a>
                     <a
                         class='button'
-                        href='https://natribu.org/en/'>
+                        href='http://ok.com/'>
                         I don't want
                     </a>
                 </div>
@@ -264,8 +264,8 @@
             </h3>
             <div>
                 <a
-                    asp-action='SignIn'
-                    asp-controller='Authentication'
+                    asp-action='@((User.Identity?.IsAuthenticated ?? false) ? "Index" : "SignIn")'
+                    asp-controller='@((User.Identity?.IsAuthenticated ?? false) ? "Home" : "Authentication")'
                     class='button button-primary button-wide-mobile'>
                     Get in touch
                 </a>

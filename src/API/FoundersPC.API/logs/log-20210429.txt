@@ -1,0 +1,8 @@
+04/29/2021 20:40:15 HARDWARE API started..
+04/29/2021 20:40:15 HARDWARE API HostBuilder created
+04/29/2021 20:40:15 Host built
+04/29/2021 20:40:16 Now listening on: "https://localhost:4000"
+04/29/2021 20:40:16 Application started. Press Ctrl+C to shut down.
+04/29/2021 20:40:16 Hosting environment: "Development"
+04/29/2021 20:40:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 20:43:17 Application is shutting down...

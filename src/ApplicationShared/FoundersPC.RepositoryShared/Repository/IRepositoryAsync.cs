@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace FoundersPC.RepositoryShared.Repository
 {
+    /// <summary>
+    ///     Interface for all repositories in system
+    /// </summary>
+    /// <typeparam name="T">class</typeparam>
     public interface IRepositoryAsync<T> where T : class
     {
         Task<T> AddAsync(T entity);
