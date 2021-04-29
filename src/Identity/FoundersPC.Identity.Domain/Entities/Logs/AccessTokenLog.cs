@@ -46,6 +46,7 @@ namespace FoundersPC.Identity.Domain.Entities.Logs
             return obj.GetType() == GetType() && Equals((AccessTokenLog)obj);
         }
 
-        public override int GetHashCode() => HashCode.Combine(ApiAccessUsersTokenId, RequestDateTime);
+        public override int GetHashCode() =>
+            HashCode.Combine(ApiAccessUsersTokenId, RequestDateTime);
     }
 }

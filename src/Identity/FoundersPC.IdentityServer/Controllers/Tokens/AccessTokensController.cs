@@ -118,7 +118,8 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
 
         [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(ApplicationRestAddons.All)]
-        public async ValueTask<IEnumerable<AccessTokenReadDto>> GetAll() => await _accessUsersTokensService.GetAllTokensAsync();
+        public async ValueTask<IEnumerable<AccessTokenReadDto>> GetAll() =>
+            await _accessUsersTokensService.GetAllTokensAsync();
 
         [EnableCors(ApplicationCorsPolicies.TokenCheckPolicy)]
         [AllowAnonymous]

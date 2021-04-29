@@ -33,7 +33,7 @@ namespace FoundersPC.Identity.Services.User_Services
 
         public async Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync() =>
             _mapper.Map<IEnumerable<UserEntity>, IEnumerable<UserEntityReadDto>>(await _unitOfWorkIdentity.UsersRepository
-                                                                                     .GetAllAsync());
+                                                                                                          .GetAllAsync());
 
         #region Docs
 

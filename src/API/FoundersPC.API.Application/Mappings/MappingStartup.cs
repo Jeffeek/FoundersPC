@@ -95,41 +95,66 @@ namespace FoundersPC.API.Application.Mappings
 
             #region ProcessorEntity Mapping
 
-            CreateMap<ProcessorEntity, ProcessorReadDto>();
-            CreateMap<ProcessorEntity, ProcessorInsertDto>();
-            CreateMap<ProcessorEntity, ProcessorUpdateDto>();
+            CreateMap<ProcessorEntity, ProcessorReadDto>()
+                .ReverseMap();
+
+            CreateMap<ProcessorEntity, ProcessorInsertDto>()
+                .ReverseMap();
+
+            CreateMap<ProcessorEntity, ProcessorUpdateDto>()
+                .ReverseMap();
 
             #endregion
 
             #region RandomAccessMemoryEntity Mapping
 
-            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryReadDto>();
-            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryInsertDto>();
-            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryUpdateDto>();
+            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryReadDto>()
+                .ReverseMap();
+
+            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryInsertDto>()
+                .ReverseMap();
+
+            CreateMap<RandomAccessMemoryEntity, RandomAccessMemoryUpdateDto>()
+                .ReverseMap();
 
             #endregion
 
             #region SolidStateDriveEntity Mapping
 
-            CreateMap<SolidStateDriveEntity, SolidStateDriveReadDto>();
-            CreateMap<SolidStateDriveEntity, SolidStateDriveInsertDto>();
-            CreateMap<SolidStateDriveEntity, SolidStateDriveUpdateDto>();
+            CreateMap<SolidStateDriveEntity, SolidStateDriveReadDto>()
+                .ReverseMap();
+
+            CreateMap<SolidStateDriveEntity, SolidStateDriveInsertDto>()
+                .ReverseMap();
+
+            CreateMap<SolidStateDriveEntity, SolidStateDriveUpdateDto>()
+                .ReverseMap();
 
             #endregion
 
             #region ProcessorCore Mapping
 
-            CreateMap<ProcessorCoreEntity, ProcessorCoreReadDto>();
-            CreateMap<ProcessorCoreEntity, ProcessorCoreInsertDto>();
-            CreateMap<ProcessorCoreEntity, ProcessorCoreUpdateDto>();
+            CreateMap<ProcessorCoreEntity, ProcessorCoreReadDto>()
+                .ReverseMap();
+
+            CreateMap<ProcessorCoreEntity, ProcessorCoreInsertDto>()
+                .ReverseMap();
+
+            CreateMap<ProcessorCoreEntity, ProcessorCoreUpdateDto>()
+                .ReverseMap();
 
             #endregion
 
             #region VideoCardCoreEntity Mapping
 
-            CreateMap<VideoCardCoreEntity, VideoCardCoreReadDto>();
-            CreateMap<VideoCardCoreEntity, VideoCardCoreInsertDto>();
-            CreateMap<VideoCardCoreEntity, VideoCardCoreUpdateDto>();
+            CreateMap<VideoCardCoreEntity, VideoCardCoreReadDto>()
+                .ReverseMap();
+
+            CreateMap<VideoCardCoreEntity, VideoCardCoreInsertDto>()
+                .ReverseMap();
+
+            CreateMap<VideoCardCoreEntity, VideoCardCoreUpdateDto>()
+                .ReverseMap();
 
             #endregion
         }

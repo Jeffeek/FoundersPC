@@ -1,17 +1,25 @@
 ﻿@{
     Layout = "_Layout";
 @section Styles {
-        <link rel='stylesheet' href='~/css/neon-btn-styles.css'>
-        <link rel="stylesheet" href="~/css/about.css">
-    }
-}
+    <link
+        href='~/css/neon-btn-styles.css'
+        rel='stylesheet'>
+    <link
+        href="~/css/about.css"
+        rel="stylesheet">
+}}
 
-<div class="p-5 text-light box-shadow-fill">
-<div class="text-light">
-<p class="mt-8">
+<div
+    class="box-shadow-fill p-5 text-light">
+<div
+    class='text-light'>
+<p
+    class='mt-8'>
     FoundersPC data is available through a REST API; typically on a licensed or partnership
     basis.
-    <a href="mailto:jeff@gmail.com" class="btn btn-neon p-1 m-0 text-decoration-underline">
+    <a
+        class="btn btn-neon m-0 p-1 text-decoration-underline"
+        href='mailto:jeff@gmail.com'>
         Contact us
     </a>
     for more information - include a brief description of what you're building.
@@ -19,21 +27,26 @@
 <h2>Access &amp; Authentication</h2>
 <p>
     URL:
-    <a class="p-1 text-decoration-underline text-info" href="https://founderspc.com/api/">
+    <a
+        class='p-1 text-decoration-underline text-info'
+        href='https://founderspc.com/api/'>
         https://founderspc.com/api/
     </a>
     <br>Include your key in a request header:
-    <span class="text-decoration-underline text-info">
+    <span
+        class='text-decoration-underline text-info'>
         HARDWARE-API-TOKEN : [your-api-access-token]
     </span>
 </p>
 <h2>Rate Limit</h2>
 <p>
     Endpoints are rate limited. The specific limit varies
-    <span class='bg-secondary'>
+    <span
+        class='bg-secondary'>
         (1 request in 1 minute)
     </span>. If you are seeing
-    <span class="bg-danger">
+    <span
+        class='bg-danger'>
         429 Too Many Requests
     </span>
     , contact us to discuss your needs.
@@ -41,29 +54,42 @@
 <h2>Data Format</h2>
 <p>
     Our API conforms to the
-    <a href="http://jsonapi.org/" class="btn btn-neon p-1 m-0 text-decoration-underline">
+    <a
+        class="btn btn-neon m-0 p-1 text-decoration-underline"
+        href='http://jsonapi.org/'>
         JSON API
     </a>
     specification.
     This spec defines conventions to nicely model different data types, their relationships, and
     metadata. There's likely a
-    <a href="http://jsonapi.org/implementations/"
-        class="btn btn-neon p-1 m-0 text-decoration-underline">
+    <a
+        class="btn btn-neon m-0 p-1 text-decoration-underline"
+        href='http://jsonapi.org/implementations/'>
         JSON API client
     </a>
     in your
     language.
 </p>
 <div>
-<span class='display-5'>Available Endpoints:</span><br />
+<span
+    class='display-5'>
+    Available Endpoints:
+</span>
+<br/>
 
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6' title="Anchor description">
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info"
+            title='Anchor description'>
             /Cases/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -92,17 +118,23 @@
     </div>
 </div>
 
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /HardDriveDisks/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /HDD/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -127,13 +159,18 @@
     </div>
 </div>
 
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /Motherboards/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -164,17 +201,23 @@
 </div>
 
 
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /VideoCards/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /GPUs/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "core": {
@@ -218,17 +261,23 @@
 </div>
 
 
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /VideoCardCores/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /GPUCores/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -258,18 +307,23 @@
 </div>
 
 
-
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /SolidStateDrives/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /SSD/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -295,14 +349,18 @@
 </div>
 
 
-
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /Producers/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -316,17 +374,23 @@
     </div>
 </div>
 
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /RandomAccessMemory/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /RAM/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -354,18 +418,23 @@
 </div>
 
 
-
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /Processors/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /CPUs/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "core": {
@@ -407,18 +476,23 @@
 </div>
 
 
-
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /ProcessorCores/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /CPUCores/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -434,18 +508,23 @@
 </div>
 
 
-
-<div class="popup-container">
-    <a href="#" class="popup-trigger">
-        <span class='text-info display-6'>
+<div
+    class='popup-container'>
+    <a
+        class='popup-trigger'
+        href='#'>
+        <span
+            class="display-6 text-info">
             /PowerSupplies/id?
-            <span class='text-light'>
+            <span
+                class='text-light'>
                 or
             </span>
             /PSU/id?
         </span>
     </a>
-    <div class="pop-up-content">
+    <div
+        class='pop-up-content'>
         <span>
             {
             "id": Int32,
@@ -474,7 +553,8 @@
 </div>
 
 </div>
-<p class='mt-5'>
+<p
+    class='mt-5'>
     <em>
         Full documentation will be provided to API partners
     </em>
@@ -482,24 +562,25 @@
 </div>
 </div>
 
+
 @section Scripts {
     <script>
-        $(document).ready(function () {
-            var moveLeft = 20;
-            var moveDown = 10;
+        $(document).
+            ready(function ()
+            {
+                var moveLeft = 20;
+                var moveDown = 10;
 
-            $('.popup-container').each(function (index, container) {
-                $(this).children('a.popup-trigger').hover(function (e) {
-                        $(container).children('.pop-up-content').show();
-                    },
-                    function () {
-                        $(container).children('.pop-up-content').hide();
+                $('.popup-container').
+                    each(function (index, container)
+                    {
+                        $(this).
+                            children('a.popup-trigger').
+                            hover(function (e) { $(container).children('.pop-up-content').show(); },
+                                function () { $(container).children('.pop-up-content').hide(); });
+
+                        $(this).children('a.popup-trigger').mousemove(function (e) { $(container).children('.pop-up-content').css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft); });
                     });
-
-                $(this).children('a.popup-trigger').mousemove(function (e) {
-                    $(container).children('.pop-up-content').css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
-                });
             });
-        });
     </script>
 }

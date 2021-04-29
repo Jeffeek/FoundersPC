@@ -16,12 +16,12 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             migrationBuilder.CreateIndex("ix_users_email",
                                          "Users",
                                          "Email",
-                                         unique : true);
+                                         unique :true);
 
             migrationBuilder.CreateIndex("ix_users_id",
                                          "Users",
                                          "Id",
-                                         unique : true);
+                                         unique :true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

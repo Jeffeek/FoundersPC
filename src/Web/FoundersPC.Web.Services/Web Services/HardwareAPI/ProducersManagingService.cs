@@ -23,19 +23,24 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         #region Implementation of IProducersManagingService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync(string managerToken) => GetAllAsync(managerToken);
+        public Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync(string managerToken) =>
+            GetAllAsync(managerToken);
 
         /// <inheritdoc/>
-        public Task<ProducerReadDto> GetProducerByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
+        public Task<ProducerReadDto> GetProducerByIdAsync(int id, string managerToken) =>
+            GetByIdAsync(id, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken) => UpdateAsync(id, producer, managerToken);
+        public Task<bool> UpdateProducerAsync(int id, ProducerUpdateDto producer, string managerToken) =>
+            UpdateAsync(id, producer, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> DeleteProducerAsync(int producerId, string managerToken) => DeleteAsync(producerId, managerToken);
+        public Task<bool> DeleteProducerAsync(int producerId, string managerToken) =>
+            DeleteAsync(producerId, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken) => CreateAsync(producer, managerToken);
+        public Task<bool> CreateProducerAsync(ProducerInsertDto producer, string managerToken) =>
+            CreateAsync(producer, managerToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<ProducerReadDto>> GetPaginateableProducersAsync(int pageNumber, int pageSize, string managerToken) =>

@@ -8,7 +8,10 @@
     <link
         href="~/css/table.css"
         rel="stylesheet"/>
-}}
+}
+
+
+}
 
 <div
     class='mt-5 table-wrapper'>
@@ -17,7 +20,7 @@
     <a
         asp-action='RegisterManager'
         asp-controller='Admin'
-        class="align-self-center btn btn-outline-success d-flex">
+        class='align-self-center btn btn-outline-success d-flex'>
         <svg
             class='icon'
             fill='#FFFFFF'
@@ -242,8 +245,7 @@
             class="d-flex justify-content-center"
             list="@Model.PagedList"
             options="@PagedListRenderOptions.Bootstrap4Full"
-            param-page-number='pageNumber'/>
-    }
+            param-page-number='pageNumber'/>    }
 }
 </div>
 </div>

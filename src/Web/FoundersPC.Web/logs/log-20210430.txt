@@ -1,0 +1,116 @@
+04/30/2021 00:02:05 Start processing HTTP request "POST" https://localhost:4000/HardwareApi/VideoCardCores
+04/30/2021 00:02:05 Sending HTTP request "POST" https://localhost:4000/HardwareApi/VideoCardCores
+04/30/2021 00:02:40 Web server started..
+04/30/2021 00:02:40 Web server HostBuilder created
+04/30/2021 00:02:42 Host built
+04/30/2021 00:02:42 Now listening on: "https://localhost:9000"
+04/30/2021 00:02:42 Application started. Press Ctrl+C to shut down.
+04/30/2021 00:02:42 Hosting environment: "Development"
+04/30/2021 00:02:42 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/30/2021 00:02:44 HTTP "GET" "/" responded 200 in 432.4011 ms
+04/30/2021 00:02:46 HTTP "GET" "/Authentication/SignIn" responded 200 in 476.0336 ms
+04/30/2021 00:02:55 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 00:02:55 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 00:02:59 Received HTTP response headers after 4148.8388ms - 200
+04/30/2021 00:02:59 End processing HTTP request after 4164.2199ms - 200
+04/30/2021 00:02:59 HTTP "POST" "/Authentication/SignIn" responded 302 in 4303.8465 ms
+04/30/2021 00:02:59 HTTP "GET" "/" responded 200 in 6.5326 ms
+04/30/2021 00:03:05 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:03:05 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:03:07 Received HTTP response headers after 2511.0901ms - 200
+04/30/2021 00:03:07 End processing HTTP request after 2515.8894ms - 200
+04/30/2021 00:03:07 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table" responded 200 in 2619.0361 ms
+04/30/2021 00:03:12 HTTP "GET" "/HardwareApiManaging/VideoCardCores" responded 200 in 3455.5385 ms
+04/30/2021 00:03:40 Start processing HTTP request "POST" https://localhost:4000/HardwareApi/VideoCardCores
+04/30/2021 00:03:40 Sending HTTP request "POST" https://localhost:4000/HardwareApi/VideoCardCores
+04/30/2021 00:09:05 Web server started..
+04/30/2021 00:09:05 Web server HostBuilder created
+04/30/2021 00:09:06 Host built
+04/30/2021 00:09:07 Now listening on: "https://localhost:9000"
+04/30/2021 00:09:07 Application started. Press Ctrl+C to shut down.
+04/30/2021 00:09:07 Hosting environment: "Development"
+04/30/2021 00:09:07 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/30/2021 00:09:09 HTTP "GET" "/" responded 200 in 425.0064 ms
+04/30/2021 00:09:15 HTTP "GET" "/Authentication/SignIn" responded 200 in 383.3501 ms
+04/30/2021 00:09:26 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 00:09:26 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 00:09:29 Received HTTP response headers after 3757.9137ms - 200
+04/30/2021 00:09:29 End processing HTTP request after 3777.3636ms - 200
+04/30/2021 00:09:29 HTTP "POST" "/Authentication/SignIn" responded 302 in 3928.4642 ms
+04/30/2021 00:09:29 HTTP "GET" "/" responded 200 in 6.1160 ms
+04/30/2021 00:09:36 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:09:36 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:09:38 Received HTTP response headers after 2555.7771ms - 200
+04/30/2021 00:09:38 End processing HTTP request after 2560.0227ms - 200
+04/30/2021 00:09:38 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table" responded 200 in 2653.9070 ms
+04/30/2021 00:09:47 HTTP "GET" "/HardwareApiManaging/VideoCardCores" responded 200 in 3372.6502 ms
+04/30/2021 00:10:05 Start processing HTTP request "POST" https://localhost:4000/HardwareApi/VideoCardCores
+04/30/2021 00:10:05 Sending HTTP request "POST" https://localhost:4000/HardwareApi/VideoCardCores
+04/30/2021 00:10:36 Received HTTP response headers after 31338.9936ms - 200
+04/30/2021 00:10:36 End processing HTTP request after 31343.1091ms - 200
+04/30/2021 00:10:36 HTTP "POST" "/HardwareApiManaging/VideoCardCores" responded 302 in 31362.6296 ms
+04/30/2021 00:10:36 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:10:36 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:10:36 Received HTTP response headers after 158.4381ms - 200
+04/30/2021 00:10:36 End processing HTTP request after 160.7182ms - 200
+04/30/2021 00:10:36 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table" responded 200 in 164.2742 ms
+04/30/2021 00:10:39 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:10:39 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:10:39 Received HTTP response headers after 63.5567ms - 200
+04/30/2021 00:10:39 End processing HTTP request after 68.548ms - 200
+04/30/2021 00:10:39 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table?pageNumber=3" responded 200 in 76.4699 ms
+04/30/2021 00:10:47 Start processing HTTP request "DELETE" https://localhost:4000/HardwareApi/VideoCardCores/28
+04/30/2021 00:10:47 Sending HTTP request "DELETE" https://localhost:4000/HardwareApi/VideoCardCores/28
+04/30/2021 00:12:23 Received HTTP response headers after 95276.6358ms - 200
+04/30/2021 00:12:23 End processing HTTP request after 95282.1181ms - 200
+04/30/2021 00:12:23 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Remove/28" responded 302 in 95293.2081 ms
+04/30/2021 00:12:23 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:12:23 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:12:23 Received HTTP response headers after 228.1843ms - 200
+04/30/2021 00:12:23 End processing HTTP request after 231.4274ms - 200
+04/30/2021 00:12:23 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table" responded 200 in 235.9306 ms
+04/30/2021 00:12:26 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:12:26 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:12:29 Received HTTP response headers after 2867.2317ms - 200
+04/30/2021 00:12:29 End processing HTTP request after 2870.3022ms - 200
+04/30/2021 00:12:29 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table?pageNumber=3" responded 200 in 2874.4305 ms
+04/30/2021 00:12:34 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:34 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:34 Received HTTP response headers after 61.6384ms - 200
+04/30/2021 00:12:34 End processing HTTP request after 66.3162ms - 200
+04/30/2021 00:12:34 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Edit/27" responded 200 in 134.5137 ms
+04/30/2021 00:12:41 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:41 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:41 Received HTTP response headers after 82.4358ms - 200
+04/30/2021 00:12:41 End processing HTTP request after 87.5905ms - 200
+04/30/2021 00:12:41 HTTP "POST" "/HardwareApiManaging/VideoCardCores/Edit/27" responded 302 in 106.4821 ms
+04/30/2021 00:12:41 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:12:41 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:12:41 Received HTTP response headers after 44.8717ms - 200
+04/30/2021 00:12:41 End processing HTTP request after 46.8682ms - 200
+04/30/2021 00:12:41 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table" responded 200 in 49.6856 ms
+04/30/2021 00:12:45 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:12:45 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:12:45 Received HTTP response headers after 50.5024ms - 200
+04/30/2021 00:12:45 End processing HTTP request after 54.3805ms - 200
+04/30/2021 00:12:45 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table?pageNumber=3" responded 200 in 58.2472 ms
+04/30/2021 00:12:48 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:48 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:48 Received HTTP response headers after 45.0419ms - 200
+04/30/2021 00:12:48 End processing HTTP request after 48.4275ms - 200
+04/30/2021 00:12:48 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Edit/27" responded 200 in 56.8137 ms
+04/30/2021 00:12:53 Start processing HTTP request "PUT" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:53 Sending HTTP request "PUT" https://localhost:4000/HardwareApi/VideoCardCores/27
+04/30/2021 00:12:53 Received HTTP response headers after 52.0821ms - 200
+04/30/2021 00:12:53 End processing HTTP request after 56.2565ms - 200
+04/30/2021 00:12:53 HTTP "POST" "/HardwareApiManaging/VideoCardCores/Edit/27" responded 302 in 60.9540 ms
+04/30/2021 00:12:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:12:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 00:12:53 Received HTTP response headers after 34.7336ms - 200
+04/30/2021 00:12:53 End processing HTTP request after 37.8ms - 200
+04/30/2021 00:12:53 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table" responded 200 in 44.9504 ms
+04/30/2021 00:12:59 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:12:59 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=3&Size=10
+04/30/2021 00:12:59 Received HTTP response headers after 39.9198ms - 200
+04/30/2021 00:12:59 End processing HTTP request after 43.0734ms - 200
+04/30/2021 00:12:59 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table?pageNumber=3" responded 200 in 48.1256 ms

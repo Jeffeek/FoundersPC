@@ -25,7 +25,8 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IAuthenticationWebService _authenticationWebService;
 
-        public AuthenticationController(IAuthenticationWebService authenticationWebService) => _authenticationWebService = authenticationWebService;
+        public AuthenticationController(IAuthenticationWebService authenticationWebService) =>
+            _authenticationWebService = authenticationWebService;
 
         #region ForgotPassword
 
@@ -51,8 +52,8 @@ namespace FoundersPC.Web.Controllers
 
             if (!forgotPasswordResponse.IsConfirmationMailSent)
                 return Problem(forgotPasswordResponse.Error,
-                               statusCode : 500,
-                               title : "Email send error");
+                               statusCode :500,
+                               title :"Email send error");
 
             return View("SignIn");
         }

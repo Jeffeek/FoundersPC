@@ -1,15 +1,15 @@
 .popup-container .pop-up-content
 {
+    background: #323232;
+    background: rgba(50, 50, 50, 0.85);
+    border: 3px solid #1a1a1a;
+    box-shadow: green 5px 5px 0px 0px;
     display: none;
-    position: absolute;
-    width: fit-content;
+    font-size: 90%;
     max-width: 50%;
     padding: 10px;
-    background: #323232;
-    background: rgba(50, 50, 50, 0.85) ;
-    border: 3px solid #1a1a1a;
-    font-size: 90%;
-    box-shadow: green 5px 5px 0px 0px;
+    position: absolute;
+    width: fit-content;
 }
 
 .popup-trigger

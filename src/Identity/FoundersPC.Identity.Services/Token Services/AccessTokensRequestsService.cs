@@ -44,7 +44,8 @@ namespace FoundersPC.Identity.Services.Token_Services
 
             var now = DateTime.Now;
 
-            if (tokenEntity.ExpirationDate <= now || tokenEntity.IsBlocked)
+            if (tokenEntity.ExpirationDate <= now
+                || tokenEntity.IsBlocked)
                 return false;
 
             var lastUsageLog = await _unitOfWork.AccessTokensLogsRepository.GetLastTokenUsageAsync(tokenEntity.Id);

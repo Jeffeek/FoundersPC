@@ -48,11 +48,11 @@ namespace FoundersPC.API.Infrastructure
                                                                                                      .GetConnectionString("FoundersPC_Hardware"),
                                                                                                  b =>
                                                                                                      b.MigrationsAssembly(typeof
-                                                                                                         (
-                                                                                                             FoundersPCHardwareContext
-                                                                                                         )
-                                                                                                         .Assembly
-                                                                                                         .FullName)));
+                                                                                                                              (
+                                                                                                                              FoundersPCHardwareContext
+                                                                                                                              )
+                                                                                                                          .Assembly
+                                                                                                                          .FullName)));
         }
     }
 }

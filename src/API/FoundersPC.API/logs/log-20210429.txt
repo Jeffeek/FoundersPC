@@ -6,3 +6,536 @@
 04/29/2021 20:40:16 Hosting environment: "Development"
 04/29/2021 20:40:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
 04/29/2021 20:43:17 Application is shutting down...
+04/29/2021 21:42:45 HARDWARE API started..
+04/29/2021 21:42:45 HARDWARE API HostBuilder created
+04/29/2021 21:42:46 Host built
+04/29/2021 21:42:46 Now listening on: "https://localhost:4000"
+04/29/2021 21:42:46 Application started. Press Ctrl+C to shut down.
+04/29/2021 21:42:46 Hosting environment: "Development"
+04/29/2021 21:42:46 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 21:45:25 Application is shutting down...
+04/29/2021 21:53:28 HARDWARE API started..
+04/29/2021 21:53:28 HARDWARE API HostBuilder created
+04/29/2021 21:53:33 Host built
+04/29/2021 21:53:33 Now listening on: "https://localhost:4000"
+04/29/2021 21:53:33 Application started. Press Ctrl+C to shut down.
+04/29/2021 21:53:33 Hosting environment: "Development"
+04/29/2021 21:53:33 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 21:53:38 Application is shutting down...
+04/29/2021 22:01:12 HARDWARE API started..
+04/29/2021 22:01:13 HARDWARE API HostBuilder created
+04/29/2021 22:01:16 Host built
+04/29/2021 22:01:18 Now listening on: "https://localhost:4000"
+04/29/2021 22:01:18 Application started. Press Ctrl+C to shut down.
+04/29/2021 22:01:18 Hosting environment: "Development"
+04/29/2021 22:01:18 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 22:43:30 HARDWARE API started..
+04/29/2021 22:43:31 HARDWARE API HostBuilder created
+04/29/2021 22:43:31 Host built
+04/29/2021 22:43:32 Now listening on: "https://localhost:4000"
+04/29/2021 22:43:32 Application started. Press Ctrl+C to shut down.
+04/29/2021 22:43:32 Hosting environment: "Development"
+04/29/2021 22:43:32 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 22:43:44 Application is shutting down...
+04/29/2021 23:15:21 HARDWARE API started..
+04/29/2021 23:15:22 HARDWARE API HostBuilder created
+04/29/2021 23:15:23 Host built
+04/29/2021 23:15:24 Now listening on: "https://localhost:4000"
+04/29/2021 23:15:24 Application started. Press Ctrl+C to shut down.
+04/29/2021 23:15:24 Hosting environment: "Development"
+04/29/2021 23:15:24 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 23:18:51 Application is shutting down...
+04/29/2021 23:22:53 HARDWARE API started..
+04/29/2021 23:22:53 HARDWARE API HostBuilder created
+04/29/2021 23:22:56 Host built
+04/29/2021 23:22:57 Now listening on: "https://localhost:4000"
+04/29/2021 23:22:57 Application started. Press Ctrl+C to shut down.
+04/29/2021 23:22:57 Hosting environment: "Development"
+04/29/2021 23:22:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 23:24:36 HARDWARE API started..
+04/29/2021 23:24:36 HARDWARE API HostBuilder created
+04/29/2021 23:24:38 Host built
+04/29/2021 23:24:39 Now listening on: "https://localhost:4000"
+04/29/2021 23:24:39 Application started. Press Ctrl+C to shut down.
+04/29/2021 23:24:39 Hosting environment: "Development"
+04/29/2021 23:24:39 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 23:33:27 HARDWARE API started..
+04/29/2021 23:33:28 HARDWARE API HostBuilder created
+04/29/2021 23:33:29 Host built
+04/29/2021 23:33:30 Now listening on: "https://localhost:4000"
+04/29/2021 23:33:30 Application started. Press Ctrl+C to shut down.
+04/29/2021 23:33:30 Hosting environment: "Development"
+04/29/2021 23:33:30 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 23:45:02 CasesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:45:04 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 2317.2933 ms
+04/29/2021 23:45:21 CasesController: request for reading page: 2, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:45:21 HTTP "GET" "/HardwareApi/Cases?Page=2&Size=10" responded 200 in 68.3232 ms
+04/29/2021 23:45:44 HardDriveDisksController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:45:44 HTTP "GET" "/HardwareApi/HardDriveDisks?Page=1&Size=10" responded 200 in 92.0325 ms
+04/29/2021 23:45:59 VideoCardsController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:45:59 HTTP "GET" "/HardwareApi/VideoCards?Page=1&Size=10" responded 200 in 119.5408 ms
+04/29/2021 23:46:22 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:46:22 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 109.0815 ms
+04/29/2021 23:46:29 VideoCardsController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:46:29 HTTP "GET" "/HardwareApi/VideoCards?Page=1&Size=10" responded 200 in 44.2798 ms
+04/29/2021 23:47:40 VideoCardCoresController: request for inserting by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:47:40 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/29/2021 23:47:40 An exception was thrown attempting to execute the error handler.
+System.InvalidOperationException: The requested operation is invalid for DynamicMethod.
+   at System.Reflection.Emit.DynamicMethod.RTDynamicMethod.get_MethodHandle()
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](Utf8JsonWriter writer, TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at FoundersPC.API.Startup.<>c.<<Configure>b__5_3>d.MoveNext() in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 187
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+04/29/2021 23:47:40 HTTP "POST" "/HardwareApi/VideoCardCores" responded 500 in 452.2872 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/29/2021 23:47:40 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 53
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/29/2021 23:48:10 VideoCardCoresController: request for inserting by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:48:10 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/29/2021 23:48:11 An exception was thrown attempting to execute the error handler.
+System.InvalidOperationException: The requested operation is invalid for DynamicMethod.
+   at System.Reflection.Emit.DynamicMethod.RTDynamicMethod.get_MethodHandle()
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](Utf8JsonWriter writer, TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at FoundersPC.API.Startup.<>c.<<Configure>b__5_3>d.MoveNext() in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 187
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+04/29/2021 23:48:11 HTTP "POST" "/HardwareApi/VideoCardCores" responded 500 in 271.9050 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/29/2021 23:48:11 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 53
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/29/2021 23:48:50 VideoCardCoresController: request for inserting by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:48:50 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/29/2021 23:48:51 An exception was thrown attempting to execute the error handler.
+System.InvalidOperationException: The requested operation is invalid for DynamicMethod.
+   at System.Reflection.Emit.DynamicMethod.RTDynamicMethod.get_MethodHandle()
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](Utf8JsonWriter writer, TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at FoundersPC.API.Startup.<>c.<<Configure>b__5_3>d.MoveNext() in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 187
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+04/29/2021 23:48:51 HTTP "POST" "/HardwareApi/VideoCardCores" responded 500 in 282.2375 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/29/2021 23:48:51 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 53
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/29/2021 23:50:54 VideoCardCoresController: request for inserting by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:50:55 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/29/2021 23:50:55 An exception was thrown attempting to execute the error handler.
+System.InvalidOperationException: The requested operation is invalid for DynamicMethod.
+   at System.Reflection.Emit.DynamicMethod.RTDynamicMethod.get_MethodHandle()
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](Utf8JsonWriter writer, TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue& value, Type inputType, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at FoundersPC.API.Startup.<>c.<<Configure>b__5_3>d.MoveNext() in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Startup.cs:line 187
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+04/29/2021 23:50:55 HTTP "POST" "/HardwareApi/VideoCardCores" responded 500 in 313.4402 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+04/29/2021 23:50:55 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method441(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method428(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at FoundersPC.API.Application.Middleware.AccessTokenValidatorMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Application\Middleware\AccessTokenValidatorMiddleware.cs:line 53
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+04/29/2021 23:51:42 CasesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:51:42 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 158.3788 ms
+04/29/2021 23:53:31 Save changes
+04/29/2021 23:53:31 Successful save changes in UnitOfWorkHardwareHardwareAPI
+04/29/2021 23:53:31 CasesController: request for inserting by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:53:31 HTTP "POST" "/HardwareApi/Cases" responded 200 in 272.2924 ms
+04/29/2021 23:53:40 CasesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:53:40 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 46.2414 ms
+04/29/2021 23:58:51 HARDWARE API started..
+04/29/2021 23:58:51 HARDWARE API HostBuilder created
+04/29/2021 23:58:53 Host built
+04/29/2021 23:58:54 Now listening on: "https://localhost:4000"
+04/29/2021 23:58:54 Application started. Press Ctrl+C to shut down.
+04/29/2021 23:58:54 Hosting environment: "Development"
+04/29/2021 23:58:54 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/29/2021 23:59:23 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/29/2021 23:59:25 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 2127.3421 ms

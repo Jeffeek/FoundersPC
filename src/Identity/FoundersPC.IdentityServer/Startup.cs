@@ -1,12 +1,14 @@
 #region Using namespaces
 
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
+using FoundersPC.Identity.Infrastructure.Contexts;
 using FoundersPC.Identity.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -183,23 +185,20 @@ namespace FoundersPC.IdentityServer
             app.UseCors("WebPolicy");
             app.UseCors("TokenCheckPolicy");
 
-            app.UseExceptionHandler(config =>
-                                    {
-                                        config.Run(async context =>
-                                                   {
-                                                       context.Response.StatusCode = 500;
-                                                       context.Response.ContentType = "application/json";
-                                                       var error = context.Features.Get<IExceptionHandlerFeature>();
+            app.UseExceptionHandler(config => config.Run(async context =>
+                                                         {
+                                                             context.Response.StatusCode = 500;
+                                                             context.Response.ContentType = "application/json";
+                                                             var error = context.Features.Get<IExceptionHandlerFeature>();
 
-                                                       if (error != null)
-                                                       {
-                                                           var ex = error.Error;
-                                                           context.Response.StatusCode = 500;
-                                                           await context.Response.WriteAsync(JsonSerializer.Serialize(ex));
-                                                           await context.Response.CompleteAsync();
-                                                       }
-                                                   });
-                                    });
+                                                             if (error != null)
+                                                             {
+                                                                 var ex = error.Error;
+                                                                 context.Response.StatusCode = 500;
+                                                                 await context.Response.WriteAsync(JsonSerializer.Serialize(ex));
+                                                                 await context.Response.CompleteAsync();
+                                                             }
+                                                         }));
 
             app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
         }

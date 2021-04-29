@@ -24,20 +24,24 @@ namespace FoundersPC.IdentityServer.Controllers.Tokens
     {
         private readonly IAccessTokensLogsService _accessTokensLogsService;
 
-        public AccessTokensLogsController(IAccessTokensLogsService accessTokensLogsService) => _accessTokensLogsService = accessTokensLogsService;
+        public AccessTokensLogsController(IAccessTokensLogsService accessTokensLogsService) =>
+            _accessTokensLogsService = accessTokensLogsService;
 
         [HttpGet(ApplicationRestAddons.All)]
-        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAll() => await _accessTokensLogsService.GetAllTokensLogsAsync();
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetAll() =>
+            await _accessTokensLogsService.GetAllTokensLogsAsync();
 
         [HttpGet]
         public async ValueTask<ActionResult<IPaginationResponse<AccessTokenLogReadDto>>> GetPaginateableLogs([FromQuery] PaginationRequest request) =>
             Json(await _accessTokensLogsService.GetPaginateableAsync(request.PageNumber, request.PageSize));
 
         [HttpGet(ApplicationRestAddons.GetById)]
-        public async ValueTask<ActionResult<AccessTokenLogReadDto>> Get([FromRoute] int id) => await _accessTokensLogsService.GetTokenLogByIdAsync(id);
+        public async ValueTask<ActionResult<AccessTokenLogReadDto>> Get([FromRoute] int id) =>
+            await _accessTokensLogsService.GetTokenLogByIdAsync(id);
 
         [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenId)]
-        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsByTokenId([FromRoute] int id) => await _accessTokensLogsService.GetTokenLogsAsync(id);
+        public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsByTokenId([FromRoute] int id) =>
+            await _accessTokensLogsService.GetTokenLogsAsync(id);
 
         [HttpGet(IdentityServerRoutes.Logs.TokenUsages.ByTokenString)]
         public async ValueTask<IEnumerable<AccessTokenLogReadDto>> GetLogsForTokenByStringToken([FromRoute] int token) =>

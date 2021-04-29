@@ -47,7 +47,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
             var tokenEntity = await Context.Set<AccessTokenEntity>()
                                            .FirstOrDefaultAsync(x => x.HashedToken == token);
 
-            if (tokenEntity is null) return null;
+            if (tokenEntity is null)
+                return null;
 
             await Context.Entry(tokenEntity)
                          .Collection(x => x.UsagesLogs)
@@ -69,7 +70,8 @@ namespace FoundersPC.Identity.Infrastructure.Repositories.Tokens
             var tokenEntity = await Context.Set<AccessTokenEntity>()
                                            .FindAsync(id);
 
-            if (tokenEntity is null) return null;
+            if (tokenEntity is null)
+                return null;
 
             await Context.Entry(tokenEntity)
                          .Collection(x => x.UsagesLogs)

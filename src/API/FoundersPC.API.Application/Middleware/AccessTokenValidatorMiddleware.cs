@@ -17,7 +17,8 @@ namespace FoundersPC.API.Application.Middleware
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        public AccessTokenValidatorMiddleware(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
+        public AccessTokenValidatorMiddleware(IHttpClientFactory clientFactory) =>
+            _clientFactory = clientFactory;
 
         #region Docs
 
@@ -43,7 +44,8 @@ namespace FoundersPC.API.Application.Middleware
         {
             var authenticateResult = await context.AuthenticateAsync(JwtBearerDefaults.AuthenticationScheme);
 
-            if (authenticateResult.Succeeded && authenticateResult.Principal is not null)
+            if (authenticateResult.Succeeded
+                && authenticateResult.Principal is not null)
             {
                 var isRequestByEmployee = authenticateResult.Principal.IsInRole(ApplicationRoles.Administrator, ApplicationRoles.Manager);
 
@@ -54,7 +56,8 @@ namespace FoundersPC.API.Application.Middleware
             {
                 var isRequestWithToken = context.Request.Headers.TryGetValue("HARDWARE-ACCESS-TOKEN", out var result);
 
-                if (!isRequestWithToken || result.Count == 0)
+                if (!isRequestWithToken
+                    || result.Count == 0)
                 {
                     await context.ForbidAsync(JwtBearerDefaults.AuthenticationScheme);
 
@@ -63,7 +66,9 @@ namespace FoundersPC.API.Application.Middleware
 
                 var client = _clientFactory.CreateClient();
 
-                var response = await client.GetAsync($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Tokens.TokensEndpoint}/{IdentityServerRoutes.BuildRouteForToken(IdentityServerRoutes.Tokens.CheckToken, result[0])}");
+                var response =
+                    await
+                        client.GetAsync($"{MicroservicesUrls.IdentityServer}{IdentityServerRoutes.Tokens.TokensEndpoint}/{IdentityServerRoutes.BuildRouteForToken(IdentityServerRoutes.Tokens.CheckToken, result[0])}");
 
                 if (!response.IsSuccessStatusCode)
                 {

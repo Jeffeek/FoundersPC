@@ -51,7 +51,8 @@ namespace FoundersPC.Identity.Domain.Entities.Users
 
         public ICollection<UserEntranceLog> Entrances { get; set; }
 
-        public bool Equals(UserEntity other) => Email == other?.Email;
+        public bool Equals(UserEntity other) =>
+            Email == other?.Email;
 
         [MaxLength(128)]
         [MinLength(3)]

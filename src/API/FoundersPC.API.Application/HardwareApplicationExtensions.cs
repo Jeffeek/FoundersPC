@@ -20,8 +20,7 @@ namespace FoundersPC.API.Application
         /// <param name="services"></param>
         public static void AddHardwareApplicationExtensions(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(MappingStartup));
-            services.AddAutoMapper(typeof(HardwareApiDtoMapping));
+            services.AddAutoMapper(typeof(MappingStartup), typeof(HardwareApiDtoMapping));
         }
 
         /// <summary>

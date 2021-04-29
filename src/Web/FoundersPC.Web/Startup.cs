@@ -83,24 +83,21 @@ namespace FoundersPC.Web
             }
             else
             {
-                app.UseExceptionHandler(config =>
-                                        {
-                                            config.Run(async context =>
-                                                       {
-                                                           var statusCode = 400;
-                                                           var error = context.Features.Get<IExceptionHandlerFeature>();
-
-                                                           if (error != null)
-                                                               statusCode = 500;
-
-                                                           context.Response.StatusCode = statusCode;
-                                                           context.Response.Redirect($"/Error/{statusCode}");
-                                                           await context.Response.CompleteAsync();
-                                                       });
-                                        });
-
                 app.UseHsts();
             }
+
+            app.UseExceptionHandler(config => config.Run(async context =>
+                                                         {
+                                                             var statusCode = 400;
+                                                             var error = context.Features.Get<IExceptionHandlerFeature>();
+
+                                                             if (error != null)
+                                                                 statusCode = 500;
+
+                                                             context.Response.StatusCode = statusCode;
+                                                             context.Response.Redirect($"/Error/{statusCode}");
+                                                             await context.Response.CompleteAsync();
+                                                         }));
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

@@ -86,7 +86,7 @@ namespace FoundersPC.API.Services.Hardware_Services
             var items = _mapper.Map<IEnumerable<ProducerEntity>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                      .ProducersRepository
                                                                                                      .GetPaginateableAsync(pageNumber,
-                                                                                                         pageSize));
+                                                                                                                           pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.ProducersRepository.CountAsync();
 

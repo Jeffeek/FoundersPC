@@ -19,8 +19,8 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
     {
         public RandomAccessMemoryManagingService(IHttpClientFactory clientFactory,
                                                  ILogger<RandomAccessMemoryManagingService> logger) : base(clientFactory,
-            logger,
-            HardwareApiRoutes.RandomAccessMemoryEndpoint) { }
+                                                                                                           logger,
+                                                                                                           HardwareApiRoutes.RandomAccessMemoryEndpoint) { }
 
         /// <inheritdoc/>
         public RandomAccessMemoryManagingService(IHttpClientFactory clientFactory, ILogger logger, string apiRoute) : base(clientFactory, logger, apiRoute) { }
@@ -28,17 +28,20 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         #region Implementation of IRandomAccessMemoryManagingService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<RandomAccessMemoryReadDto>> GetAllRandomAccessMemoryAsync(string managerToken) => GetAllAsync(managerToken);
+        public Task<IEnumerable<RandomAccessMemoryReadDto>> GetAllRandomAccessMemoryAsync(string managerToken) =>
+            GetAllAsync(managerToken);
 
         /// <inheritdoc/>
-        public Task<RandomAccessMemoryReadDto> GetRandomAccessMemoryByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
+        public Task<RandomAccessMemoryReadDto> GetRandomAccessMemoryByIdAsync(int id, string managerToken) =>
+            GetByIdAsync(id, managerToken);
 
         /// <inheritdoc/>
         public Task<bool> UpdateRandomAccessMemoryAsync(int id, RandomAccessMemoryUpdateDto randomAccessMemory, string managerToken) =>
             UpdateAsync(id, randomAccessMemory, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> DeleteRandomAccessMemoryAsync(int randomAccessMemoryId, string managerToken) => DeleteAsync(randomAccessMemoryId, managerToken);
+        public Task<bool> DeleteRandomAccessMemoryAsync(int randomAccessMemoryId, string managerToken) =>
+            DeleteAsync(randomAccessMemoryId, managerToken);
 
         /// <inheritdoc/>
         public Task<bool> CreateRandomAccessMemoryAsync(RandomAccessMemoryInsertDto randomAccessMemory, string managerToken) =>

@@ -31,8 +31,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         public async Task<IPaginationResponse<HardDriveDiskReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
             var items = _mapper.Map<IEnumerable<HardDriveDiskEntity>, IEnumerable<HardDriveDiskReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                                             .HardDrivesRepository
-                                                                                                             .GetPaginateableAsync(pageNumber, pageSize));
+                                                                                                               .HardDrivesRepository
+                                                                                                               .GetPaginateableAsync(pageNumber, pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.HardDrivesRepository.CountAsync();
 

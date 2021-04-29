@@ -1,8 +1,6 @@
 ﻿#region Using namespaces
 
-using BenchmarkDotNet.Characteristics;
 using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
 #endregion

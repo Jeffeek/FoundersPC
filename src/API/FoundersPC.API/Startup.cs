@@ -161,10 +161,8 @@ namespace FoundersPC.API
                 app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json",
                                                                     "FoundersPC.API v1"));
             }
-            else
-            {
-            }
-                app.UseMiddleware<AccessTokenValidatorMiddleware>();
+
+            app.UseMiddleware<AccessTokenValidatorMiddleware>();
 
             app.UseHttpsRedirection();
 

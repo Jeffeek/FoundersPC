@@ -18,7 +18,8 @@ namespace FoundersPC.ApplicationShared.ApplicationConstants.Routes
 
         public const string Create = "";
 
-        public static string BuildPageQuery(int pageNumber, int pageSize) => $"?Page={pageNumber}&Size={pageSize}";
+        public static string BuildPageQuery(int pageNumber, int pageSize) =>
+            $"?Page={pageNumber}&Size={pageSize}";
 
         #region Docs
 
@@ -34,6 +35,7 @@ namespace FoundersPC.ApplicationShared.ApplicationConstants.Routes
 
         #endregion
 
-        public static string BuildRouteById(string route, int id) => Regex.Replace(route, "{id:int:min\\(1\\)}", id.ToString());
+        public static string BuildRouteById(string route, int id) =>
+            Regex.Replace(route, "{id:int:min\\(1\\)}", id.ToString());
     }
 }

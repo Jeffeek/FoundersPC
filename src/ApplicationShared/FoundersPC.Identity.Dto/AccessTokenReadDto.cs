@@ -20,6 +20,7 @@ namespace FoundersPC.Identity.Dto
 
         public bool IsBlocked { get; set; }
 
-        public bool IsActive => !IsBlocked && ExpirationDate > DateTime.Now;
+        public bool IsActive =>
+            !IsBlocked && ExpirationDate > DateTime.Now;
     }
 }

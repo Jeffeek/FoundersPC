@@ -78,7 +78,8 @@ namespace FoundersPC.API.Domain.Entities.Memory
         }
 
         /// <inheritdoc/>
-        public override int GetHashCode() => HashCode.Combine(HeadSpeed, BufferSize, Noise);
+        public override int GetHashCode() =>
+            HashCode.Combine(HeadSpeed, BufferSize, Noise);
 
         #endregion
     }

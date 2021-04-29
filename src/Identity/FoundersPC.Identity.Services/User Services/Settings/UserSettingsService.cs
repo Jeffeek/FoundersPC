@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using System;
-using System.Data;
 using System.Threading.Tasks;
 using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
 using FoundersPC.Identity.Application.Interfaces.Services.User_Services;

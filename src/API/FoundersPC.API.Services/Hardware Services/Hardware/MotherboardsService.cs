@@ -32,8 +32,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         public async Task<IPaginationResponse<MotherboardReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
             var items = _mapper.Map<IEnumerable<MotherboardEntity>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                                         .MotherboardsRepository
-                                                                                                         .GetPaginateableAsync(pageNumber, pageSize));
+                                                                                                           .MotherboardsRepository
+                                                                                                           .GetPaginateableAsync(pageNumber, pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.MotherboardsRepository.CountAsync();
 

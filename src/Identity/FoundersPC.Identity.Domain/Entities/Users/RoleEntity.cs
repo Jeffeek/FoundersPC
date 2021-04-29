@@ -14,7 +14,8 @@ namespace FoundersPC.Identity.Domain.Entities.Users
     {
         public ICollection<UserEntity> Users { get; set; }
 
-        public bool Equals(RoleEntity other) => RoleTitle == other?.RoleTitle;
+        public bool Equals(RoleEntity other) =>
+            RoleTitle == other?.RoleTitle;
 
         [DataType(DataType.Text)]
         [Required]

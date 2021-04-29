@@ -21,7 +21,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        public UsersAccessTokensService(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
+        public UsersAccessTokensService(IHttpClientFactory clientFactory) =>
+            _clientFactory = clientFactory;
 
         #region Docs
 
@@ -61,7 +62,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public Task<IEnumerable<AccessTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -110,7 +112,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public async Task<IPaginationResponse<AccessTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -122,7 +125,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                 await
                     client
                         .GetFromJsonAsync<PaginationResponse<AccessTokenReadDto>
-                        >($"{IdentityServerRoutes.Tokens.TokensEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                            >($"{IdentityServerRoutes.Tokens.TokensEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
         }
 
         #region Docs
@@ -180,7 +183,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public async Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -251,7 +255,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public async Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 

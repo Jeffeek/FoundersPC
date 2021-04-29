@@ -15,9 +15,9 @@ namespace HardwareApi.Tests.DataCreation
 {
     public static class HardwareApiDataCreation
     {
-        private static readonly Faker<ProducerEntity> ProducerFaker;
+        private readonly static Faker<ProducerEntity> ProducerFaker;
 
-        private static readonly Faker<CaseEntity> CasesFaker;
+        private readonly static Faker<CaseEntity> CasesFaker;
 
         static HardwareApiDataCreation()
         {
@@ -57,8 +57,10 @@ namespace HardwareApi.Tests.DataCreation
                          .RuleFor(x => x.ProducerEntity, ProducerFaker.Generate());
         }
 
-        public static IEnumerable<ProducerEntity> CreateProducers() => ProducerFaker.GenerateForever();
+        public static IEnumerable<ProducerEntity> CreateProducers() =>
+            ProducerFaker.GenerateForever();
 
-        public static IEnumerable<CaseEntity> CreateCases() => CasesFaker.GenerateForever();
+        public static IEnumerable<CaseEntity> CreateCases() =>
+            CasesFaker.GenerateForever();
     }
 }

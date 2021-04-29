@@ -62,7 +62,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region Users information
 
         /// <inheritdoc/>
-        public Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) => _usersInformationService.GetAllUsersAsync(adminToken);
+        public Task<IEnumerable<UserEntityReadDto>> GetAllUsersAsync(string adminToken) =>
+            _usersInformationService.GetAllUsersAsync(adminToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<UserEntityReadDto>>
@@ -70,47 +71,56 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _usersInformationService.GetPaginateableUsersAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) => _usersInformationService.GetUserByIdAsync(id, adminToken);
+        public Task<UserEntityReadDto> GetUserByIdAsync(int id, string adminToken) =>
+            _usersInformationService.GetUserByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public Task<UserEntityReadDto> GetUserByEmailAsync(string email, string jwtToken) => _usersInformationService.GetUserByEmailAsync(email, jwtToken);
+        public Task<UserEntityReadDto> GetUserByEmailAsync(string email, string jwtToken) =>
+            _usersInformationService.GetUserByEmailAsync(email, jwtToken);
 
         #endregion
 
         #region Block user
 
         /// <inheritdoc/>
-        public Task<bool> BlockUserByIdAsync(int id, string adminToken) => _userStatusService.BlockUserByIdAsync(id, adminToken);
+        public Task<bool> BlockUserByIdAsync(int id, string adminToken) =>
+            _userStatusService.BlockUserByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> BlockUserByEmailAsync(string email, string adminToken) => _userStatusService.BlockUserByEmailAsync(email, adminToken);
+        public Task<bool> BlockUserByEmailAsync(string email, string adminToken) =>
+            _userStatusService.BlockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Unblock user
 
         /// <inheritdoc/>
-        public Task<bool> UnblockUserByIdAsync(int id, string adminToken) => _userStatusService.UnblockUserByIdAsync(id, adminToken);
+        public Task<bool> UnblockUserByIdAsync(int id, string adminToken) =>
+            _userStatusService.UnblockUserByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> UnblockUserByEmailAsync(string email, string adminToken) => _userStatusService.UnblockUserByEmailAsync(email, adminToken);
+        public Task<bool> UnblockUserByEmailAsync(string email, string adminToken) =>
+            _userStatusService.UnblockUserByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Make user inactive
 
         /// <inheritdoc/>
-        public Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) => _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
+        public Task<bool> MakeUserInactiveByIdAsync(int id, string adminToken) =>
+            _userStatusService.MakeUserInactiveByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) => _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
+        public Task<bool> MakeUserInactiveByEmailAsync(string email, string adminToken) =>
+            _userStatusService.MakeUserInactiveByEmailAsync(email, adminToken);
 
         #endregion
 
         #region Users entrances
 
         /// <inheritdoc/>
-        public Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) => _usersEntrancesService.GetAllEntrancesAsync(adminToken);
+        public Task<IEnumerable<UserEntranceLogReadDto>> GetAllEntrancesAsync(string adminToken) =>
+            _usersEntrancesService.GetAllEntrancesAsync(adminToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<UserEntranceLogReadDto>>
@@ -118,7 +128,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
             _usersEntrancesService.GetPaginateableEntrancesAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) => _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
+        public Task<UserEntranceLogReadDto> GetEntranceByIdAsync(int id, string adminToken) =>
+            _usersEntrancesService.GetEntranceByIdAsync(id, adminToken);
 
         /// <inheritdoc/>
         public Task<IEnumerable<UserEntranceLogReadDto>>
@@ -274,17 +285,20 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services
         #region UsersAccessTokensService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<AccessTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) => _tokensService.GetAllUsersAccessTokensAsync(adminToken);
+        public Task<IEnumerable<AccessTokenReadDto>> GetAllUsersAccessTokensAsync(string adminToken) =>
+            _tokensService.GetAllUsersAccessTokensAsync(adminToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<AccessTokenReadDto>> GetPaginateableTokensAsync(int pageNumber, int pageSize, string adminToken) =>
             _tokensService.GetPaginateableTokensAsync(pageNumber, pageSize, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) => _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
+        public Task<bool> BlockTokenByIdAsync(int tokenId, string adminToken) =>
+            _tokensService.BlockTokenByIdAsync(tokenId, adminToken);
 
         /// <inheritdoc/>
-        public Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) => _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
+        public Task<bool> BlockTokenByStringTokenAsync(string token, string adminToken) =>
+            _tokensService.BlockTokenByStringTokenAsync(token, adminToken);
 
         #endregion
     }

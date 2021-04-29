@@ -27,17 +27,20 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         #region Implementation of ISolidStateDrivesManagingService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<SolidStateDriveReadDto>> GetAllSolidStateDrivesAsync(string managerToken) => GetAllAsync(managerToken);
+        public Task<IEnumerable<SolidStateDriveReadDto>> GetAllSolidStateDrivesAsync(string managerToken) =>
+            GetAllAsync(managerToken);
 
         /// <inheritdoc/>
-        public Task<SolidStateDriveReadDto> GetSolidStateDriveByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
+        public Task<SolidStateDriveReadDto> GetSolidStateDriveByIdAsync(int id, string managerToken) =>
+            GetByIdAsync(id, managerToken);
 
         /// <inheritdoc/>
         public Task<bool> UpdateSolidStateDriveAsync(int id, SolidStateDriveUpdateDto solidStateDrive, string managerToken) =>
             UpdateAsync(id, solidStateDrive, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> DeleteSolidStateDriveAsync(int solidStateDriveId, string managerToken) => DeleteAsync(solidStateDriveId, managerToken);
+        public Task<bool> DeleteSolidStateDriveAsync(int solidStateDriveId, string managerToken) =>
+            DeleteAsync(solidStateDriveId, managerToken);
 
         /// <inheritdoc/>
         public Task<bool> CreateSolidStateDriveAsync(SolidStateDriveInsertDto solidStateDrive, string managerToken) =>

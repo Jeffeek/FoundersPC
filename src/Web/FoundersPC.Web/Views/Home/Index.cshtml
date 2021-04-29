@@ -9,7 +9,10 @@
     <link
         href="~/css/home.css"
         rel="stylesheet">
-}}
+}
+
+
+}
 
 <div
     class='has-animations is-boxed'>
@@ -264,8 +267,8 @@
             </h3>
             <div>
                 <a
-                    asp-action='@((User.Identity?.IsAuthenticated ?? false) ? "Index" : "SignIn")'
-                    asp-controller='@((User.Identity?.IsAuthenticated ?? false) ? "Home" : "Authentication")'
+                    asp-action='@(User.Identity?.IsAuthenticated ?? false ? "Index" : "SignIn")'
+                    asp-controller='@(User.Identity?.IsAuthenticated ?? false ? "Home" : "Authentication")'
                     class='button button-primary button-wide-mobile'>
                     Get in touch
                 </a>

@@ -1,0 +1,22 @@
+04/30/2021 00:02:38 Identity server started..
+04/30/2021 00:02:38 Identity server HostBuilder created
+04/30/2021 00:02:39 Host built
+04/30/2021 00:02:39 Now listening on: "https://localhost:3000"
+04/30/2021 00:02:39 Application started. Press Ctrl+C to shut down.
+04/30/2021 00:02:39 Hosting environment: "Development"
+04/30/2021 00:02:39 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/30/2021 00:02:57 SignInIdentityController: user with email or login = JeffManager entered the service
+04/30/2021 00:02:59 Successful sending an email to: mishamine26@gmail.com
+04/30/2021 00:02:59 Successful save changes in UnitOfWorkUsersIdentity
+04/30/2021 00:02:59 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 3944.1299 ms
+04/30/2021 00:09:05 Identity server started..
+04/30/2021 00:09:05 Identity server HostBuilder created
+04/30/2021 00:09:06 Host built
+04/30/2021 00:09:07 Now listening on: "https://localhost:3000"
+04/30/2021 00:09:07 Application started. Press Ctrl+C to shut down.
+04/30/2021 00:09:07 Hosting environment: "Development"
+04/30/2021 00:09:07 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Identity\FoundersPC.IdentityServer"
+04/30/2021 00:09:28 SignInIdentityController: user with email or login = JeffManager entered the service
+04/30/2021 00:09:29 Successful sending an email to: mishamine26@gmail.com
+04/30/2021 00:09:29 Successful save changes in UnitOfWorkUsersIdentity
+04/30/2021 00:09:29 HTTP "POST" "/FoundersPCIdentity/Authentication/SignIn" responded 200 in 3533.6477 ms

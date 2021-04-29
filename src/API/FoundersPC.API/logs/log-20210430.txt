@@ -1,0 +1,80 @@
+04/30/2021 00:02:38 HARDWARE API started..
+04/30/2021 00:02:38 HARDWARE API HostBuilder created
+04/30/2021 00:02:40 Host built
+04/30/2021 00:02:41 Now listening on: "https://localhost:4000"
+04/30/2021 00:02:41 Application started. Press Ctrl+C to shut down.
+04/30/2021 00:02:41 Hosting environment: "Development"
+04/30/2021 00:02:41 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/30/2021 00:03:06 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:03:07 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 2103.5517 ms
+04/30/2021 00:03:58 VideoCardCoresController: request for inserting by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:04:04 An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+VideoCardCoreInsertDto -> VideoCardCoreEntity
+FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.VideoCard.VideoCardCoreEntity
+   at lambda_method197(Closure , VideoCardCoreInsertDto , VideoCardCoreEntity , ResolutionContext )
+   at FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard.VideoCardCoresService.CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API.Services\Hardware Services\Hardware\VideoCard\VideoCardCoresService.cs:line 61
+   at FoundersPC.API.Controllers.V1.VideoCardCoresController.Create(VideoCardCoreInsertDto videoCardCore) in C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API\Controllers\V1\VideoCardCoresController.cs:line 124
+   at lambda_method184(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+04/30/2021 00:09:05 HARDWARE API started..
+04/30/2021 00:09:05 HARDWARE API HostBuilder created
+04/30/2021 00:09:07 Host built
+04/30/2021 00:09:08 Now listening on: "https://localhost:4000"
+04/30/2021 00:09:08 Application started. Press Ctrl+C to shut down.
+04/30/2021 00:09:08 Hosting environment: "Development"
+04/30/2021 00:09:08 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/30/2021 00:09:37 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:09:38 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 2126.6582 ms
+04/30/2021 00:10:05 VideoCardCoresController: request for inserting by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:10:28 Save changes
+04/30/2021 00:10:31 Successful save changes in UnitOfWorkHardwareHardwareAPI
+04/30/2021 00:10:36 HTTP "POST" "/HardwareApi/VideoCardCores" responded 200 in 31288.1564 ms
+04/30/2021 00:10:36 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:10:36 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 64.5660 ms
+04/30/2021 00:10:39 VideoCardCoresController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:10:39 HTTP "GET" "/HardwareApi/VideoCardCores?Page=3&Size=10" responded 200 in 50.8077 ms
+04/30/2021 00:12:01 VideoCardCoresController: request for deleting model with id = 28 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:15 Save changes
+04/30/2021 00:12:16 Successful save changes in UnitOfWorkHardwareHardwareAPI
+04/30/2021 00:12:20 HTTP "DELETE" "/HardwareApi/VideoCardCores/28" responded 200 in 79944.1884 ms
+04/30/2021 00:12:23 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:23 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 103.5871 ms
+04/30/2021 00:12:29 VideoCardCoresController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:29 HTTP "GET" "/HardwareApi/VideoCardCores?Page=3&Size=10" responded 200 in 32.1453 ms
+04/30/2021 00:12:34 VideoCardCoresController: request for reading with id = 27 (one) by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:34 HTTP "GET" "/HardwareApi/VideoCardCores/27" responded 200 in 54.4678 ms
+04/30/2021 00:12:41 VideoCardCoresController: request for updating model with id = 27 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:41 Save changes
+04/30/2021 00:12:41 Successful save changes in UnitOfWorkHardwareHardwareAPI
+04/30/2021 00:12:41 HTTP "PUT" "/HardwareApi/VideoCardCores/27" responded 200 in 77.8650 ms
+04/30/2021 00:12:41 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:41 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 39.2137 ms
+04/30/2021 00:12:45 VideoCardCoresController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:45 HTTP "GET" "/HardwareApi/VideoCardCores?Page=3&Size=10" responded 200 in 43.8972 ms
+04/30/2021 00:12:48 VideoCardCoresController: request for reading with id = 27 (one) by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:48 HTTP "GET" "/HardwareApi/VideoCardCores/27" responded 200 in 40.5128 ms
+04/30/2021 00:12:53 VideoCardCoresController: request for updating model with id = 27 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:53 Save changes
+04/30/2021 00:12:53 Successful save changes in UnitOfWorkHardwareHardwareAPI
+04/30/2021 00:12:53 HTTP "PUT" "/HardwareApi/VideoCardCores/27" responded 200 in 41.5684 ms
+04/30/2021 00:12:53 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:53 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 31.4520 ms
+04/30/2021 00:12:59 VideoCardCoresController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 00:12:59 HTTP "GET" "/HardwareApi/VideoCardCores?Page=3&Size=10" responded 200 in 34.9137 ms

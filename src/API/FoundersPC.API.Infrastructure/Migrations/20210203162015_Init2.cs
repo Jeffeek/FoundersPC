@@ -17,16 +17,16 @@ namespace FoundersPC.API.Infrastructure.Migrations
             migrationBuilder.AddColumn<string>("Title",
                                                "VideoCards",
                                                "nvarchar(100)",
-                                               maxLength : 100,
-                                               nullable : false,
-                                               defaultValue : "");
+                                               maxLength :100,
+                                               nullable :false,
+                                               defaultValue :"");
 
             migrationBuilder.AddColumn<string>("Series",
                                                "Processors",
                                                "nvarchar(15)",
-                                               maxLength : 15,
-                                               nullable : false,
-                                               defaultValue : "");
+                                               maxLength :15,
+                                               nullable :false,
+                                               defaultValue :"");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -1,12 +1,12 @@
-﻿using System;
+﻿#region Using namespaces
+
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using FoundersPC.Identity.Services.Encryption_Services;
+
+#endregion
 
 namespace IdentityServer.PerformanceTests
 {
@@ -18,13 +18,14 @@ namespace IdentityServer.PerformanceTests
                1)]
     public class PasswordEncryptionPerformanceTest
     {
-        private PasswordEncryptorService _passwordEncryptorService;
-
         [ParamsSource(nameof(GetLengths))]
         public int PasswordLength;
 
+        private PasswordEncryptorService _passwordEncryptorService;
+
         [GlobalSetup]
-        public void Setup() => _passwordEncryptorService = new PasswordEncryptorService();
+        public void Setup() =>
+            _passwordEncryptorService = new PasswordEncryptorService();
 
         [Benchmark]
         public string PasswordEncryption_TimeBenchmark()
@@ -36,6 +37,7 @@ namespace IdentityServer.PerformanceTests
             return encrypted;
         }
 
-        public IEnumerable<int> GetLengths() => Enumerable.Range(6, 30);
+        public IEnumerable<int> GetLengths() =>
+            Enumerable.Range(6, 30);
     }
 }

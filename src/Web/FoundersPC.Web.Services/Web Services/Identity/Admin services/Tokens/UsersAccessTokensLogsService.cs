@@ -21,7 +21,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        public UsersAccessTokensLogsService(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
+        public UsersAccessTokensLogsService(IHttpClientFactory clientFactory) =>
+            _clientFactory = clientFactory;
 
         #region Docs
 
@@ -61,7 +62,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsAsync(string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -112,7 +114,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public async Task<IPaginationResponse<AccessTokenLogReadDto>> GetPaginateableAccessTokensLogsAsync(int pageNumber, int pageSize, string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -122,7 +125,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
             return await client
                        .GetFromJsonAsync<PaginationResponse<AccessTokenLogReadDto>
-                       >($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                           >($"{IdentityServerRoutes.Logs.TokenUsages.TokenUsagesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
         }
 
         #region Docs
@@ -169,7 +172,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserIdAsync(int userId,
                                                                                          string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -225,7 +229,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
         public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByUserEmailAsync(string userEmail,
                                                                                             string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -281,7 +286,8 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenIdAsync(int tokenId, string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
 
             var client = _clientFactory.CreateClient();
 
@@ -337,8 +343,11 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
 
         public Task<IEnumerable<AccessTokenLogReadDto>> GetAccessTokensLogsByTokenAsync(string token, string adminToken)
         {
-            if (adminToken is null) throw new ArgumentNullException(nameof(adminToken));
-            if (token is null) throw new ArgumentNullException(nameof(token));
+            if (adminToken is null)
+                throw new ArgumentNullException(nameof(adminToken));
+
+            if (token is null)
+                throw new ArgumentNullException(nameof(token));
 
             var client = _clientFactory.CreateClient();
 

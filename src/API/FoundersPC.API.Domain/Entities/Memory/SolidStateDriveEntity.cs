@@ -82,7 +82,8 @@ namespace FoundersPC.API.Domain.Entities.Memory
         }
 
         /// <inheritdoc/>
-        public override int GetHashCode() => HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
+        public override int GetHashCode() =>
+            HashCode.Combine(MicroScheme, SequentialRead, SequentialRecording);
 
         #endregion
     }

@@ -31,7 +31,8 @@ namespace FoundersPC.ApplicationShared.ApplicationConstants.Routes
 
         #endregion
 
-        public static string BuildRouteByEmail(string route, string email) => Regex.Replace(route, "{email}", email);
+        public static string BuildRouteByEmail(string route, string email) =>
+            Regex.Replace(route, "{email}", email);
 
         #region Docs
 
@@ -47,9 +48,11 @@ namespace FoundersPC.ApplicationShared.ApplicationConstants.Routes
 
         #endregion
 
-        public static string BuildRouteForToken(string route, string token) => Regex.Replace(route, "{token:length\\(64\\)}", token);
+        public static string BuildRouteForToken(string route, string token) =>
+            Regex.Replace(route, "{token:length\\(64\\)}", token);
 
-        public static string BuildRouteForBetween(DateTime start, DateTime finish) => $"?Start={start:s}&Finish={finish:s}";
+        public static string BuildRouteForBetween(DateTime start, DateTime finish) =>
+            $"?Start={start:s}&Finish={finish:s}";
 
         public static class Authentication
         {
