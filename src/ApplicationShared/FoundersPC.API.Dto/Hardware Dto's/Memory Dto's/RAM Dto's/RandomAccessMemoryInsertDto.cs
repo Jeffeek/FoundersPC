@@ -26,6 +26,8 @@ namespace FoundersPC.API.Dto
 
         public string Title { get; set; }
 
+        public int Volume { get; set; }
+
         public int ProducerId { get; set; }
     }
 }

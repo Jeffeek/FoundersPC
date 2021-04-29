@@ -1,0 +1,94 @@
+04/29/2021 20:40:15 Web server started..
+04/29/2021 20:40:15 Web server HostBuilder created
+04/29/2021 20:40:16 Host built
+04/29/2021 20:40:16 Now listening on: "https://localhost:9000"
+04/29/2021 20:40:16 Application started. Press Ctrl+C to shut down.
+04/29/2021 20:40:16 Hosting environment: "Development"
+04/29/2021 20:40:16 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/29/2021 20:40:17 HTTP "GET" "/" responded 200 in 203.6265 ms
+04/29/2021 20:40:20 HTTP "GET" "/Home/Privacy" responded 200 in 12.0998 ms
+04/29/2021 20:40:21 HTTP "GET" "/" responded 200 in 1.1147 ms
+04/29/2021 20:40:22 HTTP "GET" "/Home/About" responded 200 in 7.7418 ms
+04/29/2021 20:40:23 HTTP "GET" "/" responded 200 in 0.7444 ms
+04/29/2021 20:40:24 HTTP "GET" "/Authentication/SignIn" responded 200 in 281.7897 ms
+04/29/2021 20:40:27 HTTP "GET" "/Authentication/ForgotPassword" responded 200 in 13.8124 ms
+04/29/2021 20:40:32 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.4447 ms
+04/29/2021 20:40:34 HTTP "GET" "/Authentication/SignUp" responded 200 in 18.8227 ms
+04/29/2021 20:41:22 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignUp
+04/29/2021 20:41:22 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignUp
+04/29/2021 20:41:26 Received HTTP response headers after 3599.1365ms - 200
+04/29/2021 20:41:26 End processing HTTP request after 3609.8767ms - 200
+04/29/2021 20:41:26 HTTP "POST" "/Authentication/SignUp" responded 302 in 3696.3533 ms
+04/29/2021 20:41:26 HTTP "GET" "/" responded 200 in 1.2944 ms
+04/29/2021 20:41:29 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:41:29 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:41:29 Received HTTP response headers after 300.9758ms - 200
+04/29/2021 20:41:29 End processing HTTP request after 303.1941ms - 200
+04/29/2021 20:41:29 HTTP "GET" "/Account" responded 200 in 400.4305 ms
+04/29/2021 20:41:52 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Password
+04/29/2021 20:41:52 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Password
+04/29/2021 20:41:53 Received HTTP response headers after 1175.8421ms - 200
+04/29/2021 20:41:53 End processing HTTP request after 1178.491ms - 200
+04/29/2021 20:41:54 HTTP "POST" "/Account/ChangePassword" responded 302 in 1192.6428 ms
+04/29/2021 20:41:54 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:41:54 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:41:54 Received HTTP response headers after 9.1768ms - 200
+04/29/2021 20:41:54 End processing HTTP request after 11.143ms - 200
+04/29/2021 20:41:54 HTTP "GET" "/Account" responded 200 in 18.6406 ms
+04/29/2021 20:42:09 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Login
+04/29/2021 20:42:09 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Login
+04/29/2021 20:42:09 Received HTTP response headers after 22.6034ms - 200
+04/29/2021 20:42:09 End processing HTTP request after 25.1514ms - 200
+04/29/2021 20:42:09 HTTP "POST" "/Account/ChangeLogin" responded 302 in 34.4001 ms
+04/29/2021 20:42:09 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:09 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:09 Received HTTP response headers after 9.4513ms - 200
+04/29/2021 20:42:09 End processing HTTP request after 11.1987ms - 200
+04/29/2021 20:42:09 HTTP "GET" "/Account" responded 200 in 16.9942 ms
+04/29/2021 20:42:18 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Notifications
+04/29/2021 20:42:18 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Notifications
+04/29/2021 20:42:18 Received HTTP response headers after 16.712ms - 200
+04/29/2021 20:42:18 End processing HTTP request after 18.8955ms - 200
+04/29/2021 20:42:18 HTTP "POST" "/Account/ChangeNotifications" responded 302 in 26.1604 ms
+04/29/2021 20:42:18 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:18 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:18 Received HTTP response headers after 5.7472ms - 200
+04/29/2021 20:42:18 End processing HTTP request after 7.7404ms - 200
+04/29/2021 20:42:18 HTTP "GET" "/Account" responded 200 in 10.6790 ms
+04/29/2021 20:42:22 HTTP "GET" "/Authentication/LogOut" responded 302 in 5.1924 ms
+04/29/2021 20:42:22 HTTP "GET" "/" responded 200 in 1.0070 ms
+04/29/2021 20:42:23 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.3308 ms
+04/29/2021 20:42:29 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/29/2021 20:42:29 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/29/2021 20:42:30 Received HTTP response headers after 1050.7505ms - 200
+04/29/2021 20:42:30 End processing HTTP request after 1053.5186ms - 200
+04/29/2021 20:42:30 HTTP "POST" "/Authentication/SignIn" responded 302 in 1064.7469 ms
+04/29/2021 20:42:30 HTTP "GET" "/" responded 200 in 0.5716 ms
+04/29/2021 20:42:33 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:33 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:33 Received HTTP response headers after 6.953ms - 200
+04/29/2021 20:42:33 End processing HTTP request after 9.108ms - 200
+04/29/2021 20:42:33 HTTP "GET" "/Account" responded 200 in 27.7989 ms
+04/29/2021 20:42:40 Start processing HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Password
+04/29/2021 20:42:40 Sending HTTP request "PUT" https://localhost:3000/FoundersPCIdentity/Users/Settings/Password
+04/29/2021 20:42:41 Received HTTP response headers after 947.1368ms - 200
+04/29/2021 20:42:41 End processing HTTP request after 949.3697ms - 200
+04/29/2021 20:42:41 HTTP "POST" "/Account/ChangePassword" responded 302 in 951.5116 ms
+04/29/2021 20:42:41 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:41 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:41 Received HTTP response headers after 4.5074ms - 200
+04/29/2021 20:42:41 End processing HTTP request after 7.1357ms - 200
+04/29/2021 20:42:41 HTTP "GET" "/Account" responded 200 in 10.0078 ms
+04/29/2021 20:42:46 HTTP "GET" "/Home/Pricing" responded 200 in 8.8896 ms
+04/29/2021 20:42:49 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/29/2021 20:42:49 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Tokens/Reserve
+04/29/2021 20:42:50 Received HTTP response headers after 1034.5685ms - 200
+04/29/2021 20:42:50 End processing HTTP request after 1036.9043ms - 200
+04/29/2021 20:42:50 HTTP "GET" "/Pricing/Buy/Unstoppable" responded 302 in 1049.7479 ms
+04/29/2021 20:42:50 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:50 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/flduhuhh@10mail.org
+04/29/2021 20:42:50 Received HTTP response headers after 5.1455ms - 200
+04/29/2021 20:42:50 End processing HTTP request after 7.0228ms - 200
+04/29/2021 20:42:50 HTTP "GET" "/Account" responded 200 in 10.8306 ms
+04/29/2021 20:43:08 HTTP "GET" "/" responded 200 in 0.6719 ms
+04/29/2021 20:43:16 Application is shutting down...

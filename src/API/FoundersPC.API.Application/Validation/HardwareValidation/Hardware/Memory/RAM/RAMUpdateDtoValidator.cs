@@ -48,6 +48,11 @@ namespace FoundersPC.API.Application.Validation.HardwareValidation.Hardware.Memo
                 .MinimumLength(5)
                 .MaximumLength(11)
                 .Matches("^\\d{1,2}(-\\d{1,2}-\\d{1,2}(-\\d{1,2})?)?$");
+
+            RuleFor(x => x.Volume)
+                .GreaterThanOrEqualTo(1)
+                .LessThanOrEqualTo(512)
+                .Must(x => x % 2 == 0);
         }
     }
 }

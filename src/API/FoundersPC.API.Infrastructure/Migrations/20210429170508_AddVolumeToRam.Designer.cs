@@ -4,14 +4,16 @@ using FoundersPC.API.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoundersPC.API.Infrastructure.Migrations
 {
     [DbContext(typeof(FoundersPCHardwareContext))]
-    partial class FoundersPCDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210429170508_AddVolumeToRam")]
+    partial class AddVolumeToRam
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
