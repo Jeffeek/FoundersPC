@@ -114,3 +114,185 @@
 04/30/2021 00:12:59 Received HTTP response headers after 39.9198ms - 200
 04/30/2021 00:12:59 End processing HTTP request after 43.0734ms - 200
 04/30/2021 00:12:59 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table?pageNumber=3" responded 200 in 48.1256 ms
+04/30/2021 08:33:56 Web server started..
+04/30/2021 08:33:56 Web server HostBuilder created
+04/30/2021 08:33:56 Host built
+04/30/2021 08:33:57 Now listening on: "https://localhost:9000"
+04/30/2021 08:33:57 Application started. Press Ctrl+C to shut down.
+04/30/2021 08:33:57 Hosting environment: "Development"
+04/30/2021 08:33:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/30/2021 08:33:58 HTTP "GET" "/" responded 200 in 214.0662 ms
+04/30/2021 08:34:07 HTTP "GET" "/Authentication/SignIn" responded 200 in 335.1359 ms
+04/30/2021 08:34:47 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:34:47 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:34:49 Received HTTP response headers after 2083.6723ms - 200
+04/30/2021 08:34:49 End processing HTTP request after 2101.3321ms - 200
+04/30/2021 08:34:49 HTTP "POST" "/Authentication/SignIn" responded 302 in 2221.1220 ms
+04/30/2021 08:34:49 HTTP "GET" "/" responded 200 in 3.5267 ms
+04/30/2021 08:34:56 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/30/2021 08:34:56 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/30/2021 08:34:56 Received HTTP response headers after 217.0311ms - 200
+04/30/2021 08:34:56 End processing HTTP request after 222.8459ms - 200
+04/30/2021 08:34:56 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 349.1037 ms
+04/30/2021 08:34:59 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:34:59 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:34:59 Received HTTP response headers after 46.0373ms - 200
+04/30/2021 08:34:59 End processing HTTP request after 49.6105ms - 200
+04/30/2021 08:34:59 HTTP "GET" "/Admin/TokensTable?pageNumber=1" responded 200 in 73.8660 ms
+04/30/2021 08:36:32 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:36:32 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:36:32 Received HTTP response headers after 18.1781ms - 200
+04/30/2021 08:36:32 End processing HTTP request after 22.092ms - 200
+04/30/2021 08:36:32 HTTP "GET" "/Admin/TokensTable?pageNumber=1" responded 200 in 30.6628 ms
+04/30/2021 08:36:44 Application is shutting down...
+04/30/2021 08:38:51 Web server started..
+04/30/2021 08:38:51 Web server HostBuilder created
+04/30/2021 08:38:51 Host built
+04/30/2021 08:38:52 Now listening on: "https://localhost:9000"
+04/30/2021 08:38:52 Application started. Press Ctrl+C to shut down.
+04/30/2021 08:38:52 Hosting environment: "Development"
+04/30/2021 08:38:52 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/30/2021 08:38:53 HTTP "GET" "/" responded 200 in 256.5615 ms
+04/30/2021 08:39:12 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/30/2021 08:39:12 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/30/2021 08:39:14 Received HTTP response headers after 1755.5241ms - 200
+04/30/2021 08:39:14 End processing HTTP request after 1767.9421ms - 200
+04/30/2021 08:39:14 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 2146.8463 ms
+04/30/2021 08:39:20 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/30/2021 08:39:20 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/UsersEntrances?Page=1&Size=10
+04/30/2021 08:39:20 Received HTTP response headers after 81.8165ms - 200
+04/30/2021 08:39:20 End processing HTTP request after 87.1245ms - 200
+04/30/2021 08:39:20 HTTP "GET" "/Admin/EntrancesTable?pageNumber=1" responded 200 in 139.1149 ms
+04/30/2021 08:39:26 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/TokenUsages?Page=1&Size=10
+04/30/2021 08:39:26 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Logs/TokenUsages?Page=1&Size=10
+04/30/2021 08:39:26 Received HTTP response headers after 81.0399ms - 200
+04/30/2021 08:39:26 End processing HTTP request after 85.1497ms - 200
+04/30/2021 08:39:26 HTTP "GET" "/Admin/TokensLogsTable?pageNumber=1" responded 200 in 108.3505 ms
+04/30/2021 08:39:31 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:39:31 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:39:31 Received HTTP response headers after 34.8101ms - 200
+04/30/2021 08:39:31 End processing HTTP request after 39.6452ms - 200
+04/30/2021 08:39:31 HTTP "GET" "/Admin/TokensTable?pageNumber=1" responded 200 in 77.1943 ms
+04/30/2021 08:40:04 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=2&Size=10
+04/30/2021 08:40:04 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=2&Size=10
+04/30/2021 08:40:04 Received HTTP response headers after 15.1537ms - 200
+04/30/2021 08:40:04 End processing HTTP request after 19.9959ms - 200
+04/30/2021 08:40:04 HTTP "GET" "/Admin/TokensTable?pageNumber=2" responded 200 in 25.2492 ms
+04/30/2021 08:40:07 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:40:07 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Tokens?Page=1&Size=10
+04/30/2021 08:40:07 Received HTTP response headers after 14.5707ms - 200
+04/30/2021 08:40:07 End processing HTTP request after 20.0305ms - 200
+04/30/2021 08:40:07 HTTP "GET" "/Admin/TokensTable?pageNumber=1" responded 200 in 23.7305 ms
+04/30/2021 08:40:17 HTTP "GET" "/Authentication/LogOut" responded 302 in 11.9644 ms
+04/30/2021 08:40:17 HTTP "GET" "/" responded 200 in 1.1036 ms
+04/30/2021 08:40:19 HTTP "GET" "/Authentication/SignIn" responded 200 in 52.9392 ms
+04/30/2021 08:40:32 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:40:32 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:40:34 Received HTTP response headers after 2680.7781ms - 200
+04/30/2021 08:40:34 End processing HTTP request after 2685.1149ms - 200
+04/30/2021 08:40:34 HTTP "POST" "/Authentication/SignIn" responded 302 in 2731.3242 ms
+04/30/2021 08:40:34 HTTP "GET" "/" responded 200 in 4.8099 ms
+04/30/2021 08:40:51 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Cases?Page=1&Size=10
+04/30/2021 08:40:51 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Cases?Page=1&Size=10
+04/30/2021 08:40:53 Received HTTP response headers after 2376.6064ms - 200
+04/30/2021 08:40:53 End processing HTTP request after 2380.3644ms - 200
+04/30/2021 08:40:56 HTTP "GET" "/HardwareApiManaging/Cases/Table" responded 200 in 5677.9727 ms
+04/30/2021 08:41:06 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/30/2021 08:41:06 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/30/2021 08:41:06 Received HTTP response headers after 72.8837ms - 200
+04/30/2021 08:41:06 End processing HTTP request after 77.4504ms - 200
+04/30/2021 08:41:06 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 102.9626 ms
+04/30/2021 08:42:23 HTTP "GET" "/Authentication/LogOut" responded 302 in 1.7595 ms
+04/30/2021 08:42:23 HTTP "GET" "/" responded 200 in 1.2173 ms
+04/30/2021 08:42:25 HTTP "GET" "/Authentication/SignIn" responded 200 in 2.7834 ms
+04/30/2021 08:42:31 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:42:31 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:42:31 Received HTTP response headers after 32.4005ms - 200
+04/30/2021 08:42:31 End processing HTTP request after 36.9543ms - 200
+04/30/2021 08:42:31 HTTP "POST" "/Authentication/SignIn" responded 302 in 42.1856 ms
+04/30/2021 08:42:31 HTTP "GET" "/" responded 200 in 0.6971 ms
+04/30/2021 08:42:33 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/30/2021 08:42:33 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users?Page=1&Size=10
+04/30/2021 08:42:33 Received HTTP response headers after 30.7938ms - 200
+04/30/2021 08:42:33 End processing HTTP request after 35.8114ms - 200
+04/30/2021 08:42:33 HTTP "GET" "/Admin/UsersTable?pageNumber=1" responded 200 in 50.5018 ms
+04/30/2021 08:43:33 Application is shutting down...
+04/30/2021 08:58:23 Web server started..
+04/30/2021 08:58:23 Web server HostBuilder created
+04/30/2021 08:58:23 Host built
+04/30/2021 08:58:23 Now listening on: "https://localhost:9000"
+04/30/2021 08:58:23 Application started. Press Ctrl+C to shut down.
+04/30/2021 08:58:23 Hosting environment: "Development"
+04/30/2021 08:58:23 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\Web\FoundersPC.Web"
+04/30/2021 08:58:24 HTTP "GET" "/" responded 200 in 279.5485 ms
+04/30/2021 08:58:26 HTTP "GET" "/Authentication/SignIn" responded 200 in 394.4119 ms
+04/30/2021 08:58:35 Start processing HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:58:35 Sending HTTP request "POST" https://localhost:3000/FoundersPCIdentity/Authentication/SignIn
+04/30/2021 08:58:39 Received HTTP response headers after 4079.1858ms - 200
+04/30/2021 08:58:39 End processing HTTP request after 4095.2973ms - 200
+04/30/2021 08:58:39 HTTP "POST" "/Authentication/SignIn" responded 302 in 4194.0435 ms
+04/30/2021 08:58:39 HTTP "GET" "/" responded 200 in 6.6468 ms
+04/30/2021 08:58:42 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Cases?Page=1&Size=10
+04/30/2021 08:58:42 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Cases?Page=1&Size=10
+04/30/2021 08:58:44 Received HTTP response headers after 2041.9734ms - 200
+04/30/2021 08:58:44 End processing HTTP request after 2045.9528ms - 200
+04/30/2021 08:58:47 HTTP "GET" "/HardwareApiManaging/Cases/Table" responded 200 in 4808.3986 ms
+04/30/2021 08:58:50 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/30/2021 08:58:50 Sending HTTP request "GET" https://localhost:4000/HardwareApi/PowerSupplies?Page=1&Size=10
+04/30/2021 08:58:50 Received HTTP response headers after 93.0137ms - 200
+04/30/2021 08:58:50 End processing HTTP request after 97.9046ms - 200
+04/30/2021 08:58:50 HTTP "GET" "/HardwareApiManaging/PowerSupplies/Table" responded 200 in 124.6901 ms
+04/30/2021 08:58:53 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Motherboards?Page=1&Size=10
+04/30/2021 08:58:53 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Motherboards?Page=1&Size=10
+04/30/2021 08:58:53 Received HTTP response headers after 145.9842ms - 200
+04/30/2021 08:58:53 End processing HTTP request after 150.494ms - 200
+04/30/2021 08:58:53 HTTP "GET" "/HardwareApiManaging/Motherboards/Table" responded 200 in 170.1310 ms
+04/30/2021 08:58:56 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/30/2021 08:58:56 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Producers?Page=1&Size=10
+04/30/2021 08:58:56 Received HTTP response headers after 64.6761ms - 200
+04/30/2021 08:58:56 End processing HTTP request after 70.1238ms - 200
+04/30/2021 08:58:56 HTTP "GET" "/HardwareApiManaging/Producers/Table" responded 200 in 88.7511 ms
+04/30/2021 08:59:03 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/HardDriveDisks?Page=1&Size=10
+04/30/2021 08:59:03 Sending HTTP request "GET" https://localhost:4000/HardwareApi/HardDriveDisks?Page=1&Size=10
+04/30/2021 08:59:03 Received HTTP response headers after 57.5277ms - 200
+04/30/2021 08:59:03 End processing HTTP request after 61.4414ms - 200
+04/30/2021 08:59:03 HTTP "GET" "/HardwareApiManaging/HardDriveDisks/Table" responded 200 in 76.8145 ms
+04/30/2021 08:59:06 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/HardDriveDisks?Page=1&Size=10
+04/30/2021 08:59:06 Sending HTTP request "GET" https://localhost:4000/HardwareApi/HardDriveDisks?Page=1&Size=10
+04/30/2021 08:59:06 Received HTTP response headers after 8.0553ms - 200
+04/30/2021 08:59:06 End processing HTTP request after 13.4228ms - 200
+04/30/2021 08:59:06 HTTP "GET" "/HardwareApiManaging/HardDriveDisks/Table" responded 200 in 17.7165 ms
+04/30/2021 08:59:10 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/HardDriveDisks?Page=1&Size=10
+04/30/2021 08:59:10 Sending HTTP request "GET" https://localhost:4000/HardwareApi/HardDriveDisks?Page=1&Size=10
+04/30/2021 08:59:10 Received HTTP response headers after 22.5089ms - 200
+04/30/2021 08:59:10 End processing HTTP request after 27.4497ms - 200
+04/30/2021 08:59:10 HTTP "GET" "/HardwareApiManaging/HardDriveDisks/Table" responded 200 in 34.6717 ms
+04/30/2021 08:59:16 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/Processors?Page=1&Size=10
+04/30/2021 08:59:16 Sending HTTP request "GET" https://localhost:4000/HardwareApi/Processors?Page=1&Size=10
+04/30/2021 08:59:16 Received HTTP response headers after 99.704ms - 200
+04/30/2021 08:59:16 End processing HTTP request after 102.78ms - 200
+04/30/2021 08:59:16 HTTP "GET" "/HardwareApiManaging/Processors/Table" responded 200 in 123.4353 ms
+04/30/2021 08:59:21 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/ProcessorCores?Page=1&Size=10
+04/30/2021 08:59:21 Sending HTTP request "GET" https://localhost:4000/HardwareApi/ProcessorCores?Page=1&Size=10
+04/30/2021 08:59:22 Received HTTP response headers after 97.8862ms - 200
+04/30/2021 08:59:22 End processing HTTP request after 102.1636ms - 200
+04/30/2021 08:59:22 HTTP "GET" "/HardwareApiManaging/ProcessorCores/Table" responded 200 in 392.5771 ms
+04/30/2021 08:59:26 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 08:59:26 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCardCores?Page=1&Size=10
+04/30/2021 08:59:26 Received HTTP response headers after 92.564ms - 200
+04/30/2021 08:59:26 End processing HTTP request after 98.0852ms - 200
+04/30/2021 08:59:26 HTTP "GET" "/HardwareApiManaging/VideoCardCores/Table" responded 200 in 125.7063 ms
+04/30/2021 08:59:30 Start processing HTTP request "GET" https://localhost:4000/HardwareApi/VideoCards?Page=1&Size=10
+04/30/2021 08:59:30 Sending HTTP request "GET" https://localhost:4000/HardwareApi/VideoCards?Page=1&Size=10
+04/30/2021 08:59:30 Received HTTP response headers after 37.8621ms - 200
+04/30/2021 08:59:30 End processing HTTP request after 41.9482ms - 200
+04/30/2021 08:59:30 HTTP "GET" "/HardwareApiManaging/VideoCards/Table" responded 200 in 58.2084 ms
+04/30/2021 08:59:37 Start processing HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/mishamine26@gmail.com
+04/30/2021 08:59:37 Sending HTTP request "GET" https://localhost:3000/FoundersPCIdentity/Users/mishamine26@gmail.com
+04/30/2021 08:59:37 Received HTTP response headers after 136.0057ms - 200
+04/30/2021 08:59:37 End processing HTTP request after 142.4166ms - 200
+04/30/2021 08:59:37 HTTP "GET" "/Account" responded 200 in 271.8701 ms
+04/30/2021 08:59:41 HTTP "GET" "/" responded 200 in 0.7611 ms
+04/30/2021 09:00:01 HTTP "GET" "/Home/Pricing" responded 200 in 11.9705 ms
+04/30/2021 09:00:13 HTTP "GET" "/" responded 200 in 0.8121 ms
+04/30/2021 09:00:19 Application is shutting down...

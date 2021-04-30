@@ -78,3 +78,53 @@ FoundersPC.API.Dto.VideoCardCoreInsertDto -> FoundersPC.API.Domain.Entities.Vide
 04/30/2021 00:12:53 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 31.4520 ms
 04/30/2021 00:12:59 VideoCardCoresController: request for reading page: 3, size: 10 by mishamine26@gmail.com, IPv4 : ::1
 04/30/2021 00:12:59 HTTP "GET" "/HardwareApi/VideoCardCores?Page=3&Size=10" responded 200 in 34.9137 ms
+04/30/2021 08:33:56 HARDWARE API started..
+04/30/2021 08:33:56 HARDWARE API HostBuilder created
+04/30/2021 08:33:56 Host built
+04/30/2021 08:33:57 Now listening on: "https://localhost:4000"
+04/30/2021 08:33:57 Application started. Press Ctrl+C to shut down.
+04/30/2021 08:33:57 Hosting environment: "Development"
+04/30/2021 08:33:57 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/30/2021 08:36:52 Application is shutting down...
+04/30/2021 08:38:51 HARDWARE API started..
+04/30/2021 08:38:51 HARDWARE API HostBuilder created
+04/30/2021 08:38:51 Host built
+04/30/2021 08:38:51 Now listening on: "https://localhost:4000"
+04/30/2021 08:38:51 Application started. Press Ctrl+C to shut down.
+04/30/2021 08:38:51 Hosting environment: "Development"
+04/30/2021 08:38:51 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/30/2021 08:40:51 CasesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:40:53 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 2044.6654 ms
+04/30/2021 08:41:06 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:41:06 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 62.5637 ms
+04/30/2021 08:43:36 Application is shutting down...
+04/30/2021 08:58:23 HARDWARE API started..
+04/30/2021 08:58:23 HARDWARE API HostBuilder created
+04/30/2021 08:58:23 Host built
+04/30/2021 08:58:23 Now listening on: "https://localhost:4000"
+04/30/2021 08:58:23 Application started. Press Ctrl+C to shut down.
+04/30/2021 08:58:23 Hosting environment: "Development"
+04/30/2021 08:58:23 Content root path: "C:\Users\misha\Documents\GitHub\FoundersPC\src\API\FoundersPC.API"
+04/30/2021 08:58:43 CasesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:58:44 HTTP "GET" "/HardwareApi/Cases?Page=1&Size=10" responded 200 in 1758.6991 ms
+04/30/2021 08:58:50 PowerSuppliesController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:58:50 HTTP "GET" "/HardwareApi/PowerSupplies?Page=1&Size=10" responded 200 in 84.1752 ms
+04/30/2021 08:58:53 MotherboardsController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:58:53 HTTP "GET" "/HardwareApi/Motherboards?Page=1&Size=10" responded 200 in 142.0268 ms
+04/30/2021 08:58:56 ProducersController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:58:56 HTTP "GET" "/HardwareApi/Producers?Page=1&Size=10" responded 200 in 58.0512 ms
+04/30/2021 08:59:03 HardDriveDisksController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:59:03 HTTP "GET" "/HardwareApi/HardDriveDisks?Page=1&Size=10" responded 200 in 54.1269 ms
+04/30/2021 08:59:06 HardDriveDisksController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:59:06 HTTP "GET" "/HardwareApi/HardDriveDisks?Page=1&Size=10" responded 200 in 5.2011 ms
+04/30/2021 08:59:10 HardDriveDisksController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:59:10 HTTP "GET" "/HardwareApi/HardDriveDisks?Page=1&Size=10" responded 200 in 19.1370 ms
+04/30/2021 08:59:16 ProcessorsController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:59:16 HTTP "GET" "/HardwareApi/Processors?Page=1&Size=10" responded 200 in 94.2825 ms
+04/30/2021 08:59:22 ProcessorCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:59:22 HTTP "GET" "/HardwareApi/ProcessorCores?Page=1&Size=10" responded 200 in 88.4199 ms
+04/30/2021 08:59:26 VideoCardCoresController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:59:26 HTTP "GET" "/HardwareApi/VideoCardCores?Page=1&Size=10" responded 200 in 89.8870 ms
+04/30/2021 08:59:30 VideoCardsController: request for reading page: 1, size: 10 by mishamine26@gmail.com, IPv4 : ::1
+04/30/2021 08:59:30 HTTP "GET" "/HardwareApi/VideoCards?Page=1&Size=10" responded 200 in 35.2682 ms
+04/30/2021 09:00:38 Application is shutting down...

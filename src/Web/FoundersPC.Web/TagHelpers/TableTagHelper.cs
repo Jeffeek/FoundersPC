@@ -39,6 +39,23 @@ namespace FoundersPC.Web.TagHelpers
         [HtmlAttributeName("entities")]
         public IEnumerable List { get; set; }
 
+        private string GetEntityName() =>
+            ControllerName switch
+            {
+                "PowerSupplies"      => "power supply",
+                "HardDriveDisks"     => "hard drive disk",
+                "RandomAccessMemory" => "random access memory",
+                "Motherboards"       => "motherboard",
+                "Cases"              => "case",
+                "ProcessorCores"     => "processor core",
+                "Processors"         => "processor",
+                "Producers"          => "producer",
+                "SolidStateDrives"   => "solid state drive",
+                "VideoCardCores"     => "video card core",
+                "VideoCards"         => "video card",
+                _                    => String.Empty
+            };
+
         #region Overrides of TagHelper
 
         /// <inheritdoc/>
@@ -100,8 +117,8 @@ namespace FoundersPC.Web.TagHelpers
             path.Attributes.Add("stroke-width", "2");
 
             var span = new TagBuilder("span");
-            span.AddCssClass("mx-2 text-light");
-            span.InnerHtml.SetContent("Add new");
+            span.AddCssClass("mx-2 text-light mt-2px");
+            span.InnerHtml.SetContent($"Add new {GetEntityName()}");
 
             svg.InnerHtml.AppendHtml(path);
             svg.InnerHtml.AppendHtml(span);
