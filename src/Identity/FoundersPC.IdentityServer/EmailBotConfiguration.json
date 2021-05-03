@@ -1,0 +1,11 @@
+{
+  "Host" : "smtp.gmail.com", // your host
+  "Port" : 587, // port of your host
+  "MailAddress" : "your_daemon@gmail.com", // email address of your DAEMON
+  // password settings (AES encryption with initialization vector and key)
+  "Password" : {
+    "Encrypted" : "encrypted_password",
+    "Key" : "key_for_decryption",
+    "IV" : "initialization_vector"
+  }
+}

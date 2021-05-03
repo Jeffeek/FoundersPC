@@ -1,0 +1,8 @@
+{
+  "JwtSettings" : {
+    "Issuer" : "your_issuer",
+    "Audience" : "your_audience",
+    "Key" : "jwt_init_key",
+    "HoursToExpire" : 0 // "how much HOURS will be JWT token available"
+  }
+}

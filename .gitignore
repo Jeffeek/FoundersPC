@@ -340,5 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 # Project settings
-src/Identity/FoundersPC.IdentityServer/EmailBotConfiguration.json
-src/ApplicationShared/FoundersPC.ApplicationShared/Jwt/JwtSettings.json
+src/Identity/FoundersPC.IdentityServer/mybot_cfg.json
+src/ApplicationShared/FoundersPC.ApplicationShared/Jwt/my_jwt_settings.json
