@@ -25,3 +25,9 @@ jobs:
       
     - name: Build Solution
       run: msbuild FoundersPC.sln
+      
+    - name: Execute Unit Tests
+      run: dotnet test
+      
+    - name: Execute Performance Tests
+      run: dotnet run --project tests/IdentityServer.PerformanceTests
