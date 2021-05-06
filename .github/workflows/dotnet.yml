@@ -25,3 +25,6 @@ jobs:
       
     - name: Build Solution
       run: msbuild FoundersPC.sln
+      
+    - name: Execute Unit Tests
+      run: dotnet test
