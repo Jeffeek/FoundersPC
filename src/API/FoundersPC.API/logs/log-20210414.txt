@@ -1,9 +1,0 @@
-04/14/2021 19:14:37 HARDWARE API started..
-04/14/2021 19:14:37 HARDWARE API HostBuilder created
-04/14/2021 19:14:38 Host built
-04/14/2021 19:14:38 Now listening on: "https://localhost:4000"
-04/14/2021 19:14:38 Application started. Press Ctrl+C to shut down.
-04/14/2021 19:14:38 Hosting environment: "Development"
-04/14/2021 19:14:38 Content root path: "E:\projectsVS\GitHub\FoundersPC\src\API\FoundersPC.API"
-04/14/2021 19:14:42 HTTP "GET" "/swagger/swagger-ui-standalone-preset.js.map" responded 403 in 57.8301 ms
-04/14/2021 19:14:42 HTTP "GET" "/swagger/swagger-ui-bundle.js.map" responded 403 in 57.8319 ms
