@@ -28,3 +28,6 @@ jobs:
       
     - name: Execute Unit Tests
       run: dotnet test
+      
+    - name: Execute Performance Tests
+      run: dotnet run --project tests/IdentityServer.PerformanceTests
