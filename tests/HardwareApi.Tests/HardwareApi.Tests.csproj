@@ -14,8 +14,4 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\API\FoundersPC.API.Infrastructure\FoundersPC.API.Infrastructure.csproj" />
-  </ItemGroup>
-
 </Project>

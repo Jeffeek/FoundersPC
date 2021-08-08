@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories
 {
-    public class ProducersRepository : GenericRepositoryAsync<ProducerEntity>, IProducersRepositoryAsync
+    public class ProducersRepository : GenericRepositoryAsync<Producer>, IProducersRepositoryAsync
     {
         /// <inheritdoc/>
         public ProducersRepository(DbContext repositoryContext) : base(repositoryContext) { }
@@ -24,7 +25,7 @@ namespace FoundersPC.API.Infrastructure.Repositories
         ///     source or keySelector is
         ///     <see langword="null"/>.
         /// </exception>
-        public async Task<IEnumerable<ProducerEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<Producer>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
                 .ToListAsync();
 
@@ -37,35 +38,35 @@ namespace FoundersPC.API.Infrastructure.Repositories
         ///     <paramref name="source"/> or <paramref name="navigationPropertyPath"/>
         ///     is <see langword="null"/>.
         /// </exception>
-        public async Task<IEnumerable<ProducerEntity>> GetAllWithHardwareAsync()
+        public async Task<IEnumerable<Producer>> GetAllWithHardwareAsync()
         {
-            return await Context.Set<ProducerEntity>()
+            return await Context.Set<Producer>()
                                 .Include(producer => producer.Motherboards)
-                                .ThenInclude(motherboard => motherboard.ProducerEntity)
+                                .ThenInclude(motherboard => motherboard.Producer)
                                 .Include(producer => producer.PowerSupplies)
-                                .ThenInclude(powerSupply => powerSupply.ProducerEntity)
+                                .ThenInclude(powerSupply => powerSupply.Producer)
                                 .Include(producer => producer.Cases)
-                                .ThenInclude(@case => @case.ProducerEntity)
+                                .ThenInclude(@case => @case.Producer)
                                 .Include(producer => producer.HardDrives)
-                                .ThenInclude(hdd => hdd.ProducerEntity)
+                                .ThenInclude(hdd => hdd.Producer)
                                 .Include(producer => producer.SolidStateDrive)
-                                .ThenInclude(ssd => ssd.ProducerEntity)
+                                .ThenInclude(ssd => ssd.Producer)
                                 .Include(producer => producer.Processors)
-                                .ThenInclude(cpu => cpu.ProducerEntity)
+                                .ThenInclude(cpu => cpu.Producer)
                                 .Include(producer => producer.Processors)
                                 .ThenInclude(cpu => cpu.Core)
                                 .Include(producer => producer.VideoCards)
-                                .ThenInclude(videoCardCore => videoCardCore.ProducerEntity)
+                                .ThenInclude(videoCardCore => videoCardCore.Producer)
                                 .Include(producer => producer.VideoCards)
-                                .ThenInclude(gpu => gpu.CoreEntity)
+                                .ThenInclude(gpu => gpu.Core)
                                 .Include(producer => producer.RandomAccessMemory)
-                                .ThenInclude(ram => ram.ProducerEntity)
+                                .ThenInclude(ram => ram.Producer)
                                 .ToListAsync();
         }
 
         /// <exception cref="T:System.ArgumentNullException"><paramref name="source"/> is <see langword="null"/>.</exception>
-        public override async Task<IEnumerable<ProducerEntity>> GetAllAsync() =>
-            await Context.Set<ProducerEntity>()
+        public override async Task<IEnumerable<Producer>> GetAllAsync() =>
+            await Context.Set<Producer>()
                          .ToListAsync();
 
         #endregion

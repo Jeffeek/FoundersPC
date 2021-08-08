@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
-using FoundersPC.API.Domain.Entities.VideoCard;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -31,10 +30,10 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
         public async Task<IPaginationResponse<VideoCardReadDto>> GetPaginateableAsync(int pageNumber = 1,
                                                                                       int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<VideoCardEntity>, IEnumerable<VideoCardReadDto>>(await
-                                                                                                     _unitOfWorkHardwareAPI
-                                                                                                         .VideoCardsRepository
-                                                                                                         .GetPaginateableAsync(pageNumber, pageSize));
+            var items = _mapper.Map<IEnumerable<Domain.Entities.Hardware.VideoCard.VideoCard>, IEnumerable<VideoCardReadDto>>(await
+                                                                                                         _unitOfWorkHardwareAPI
+                                                                                                             .VideoCardsRepository
+                                                                                                             .GetPaginateableAsync(pageNumber, pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.VideoCardsRepository.CountAsync();
 
@@ -47,21 +46,21 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
 
         /// <inheritdoc/>
         public async Task<IEnumerable<VideoCardReadDto>> GetAllVideoCardsAsync() =>
-            _mapper.Map<IEnumerable<VideoCardEntity>, IEnumerable<VideoCardReadDto>>(await
-                                                                                         _unitOfWorkHardwareAPI
-                                                                                             .VideoCardsRepository
-                                                                                             .GetAllAsync());
+            _mapper.Map<IEnumerable<Domain.Entities.Hardware.VideoCard.VideoCard>, IEnumerable<VideoCardReadDto>>(await
+                                                                                                      _unitOfWorkHardwareAPI
+                                                                                                          .VideoCardsRepository
+                                                                                                          .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<VideoCardReadDto> GetVideoCardByIdAsync(int gpuId) =>
-            _mapper.Map<VideoCardEntity, VideoCardReadDto>(await _unitOfWorkHardwareAPI
-                                                                 .VideoCardsRepository
-                                                                 .GetByIdAsync(gpuId));
+            _mapper.Map<Domain.Entities.Hardware.VideoCard.VideoCard, VideoCardReadDto>(await _unitOfWorkHardwareAPI
+                                                                                              .VideoCardsRepository
+                                                                                              .GetByIdAsync(gpuId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateVideoCardAsync(VideoCardInsertDto videoCard)
         {
-            var mappedGPU = _mapper.Map<VideoCardInsertDto, VideoCardEntity>(videoCard);
+            var mappedGPU = _mapper.Map<VideoCardInsertDto, Domain.Entities.Hardware.VideoCard.VideoCard>(videoCard);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.VideoCardsRepository.AnyAsync(x => x.Equals(mappedGPU));

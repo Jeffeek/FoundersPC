@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.CPU;
-using FoundersPC.API.Domain.Entities.Processor;
+using FoundersPC.API.Domain.Entities.Hardware.Processor;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -31,7 +31,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
         public async Task<IPaginationResponse<ProcessorCoreReadDto>> GetPaginateableAsync(int pageNumber = 1,
                                                                                           int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<ProcessorCoreEntity>,
+            var items = _mapper.Map<IEnumerable<ProcessorCore>,
                 IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
                                                          .ProcessorCoresRepository
                                                          .GetPaginateableAsync(pageNumber, pageSize));
@@ -47,20 +47,20 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
 
         /// <inheritdoc/>
         public async Task<IEnumerable<ProcessorCoreReadDto>> GetAllProcessorCoresAsync() =>
-            _mapper.Map<IEnumerable<ProcessorCoreEntity>, IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<ProcessorCore>, IEnumerable<ProcessorCoreReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                    .ProcessorCoresRepository
                                                                                                    .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProcessorCoreReadDto> GetProcessorCoreByIdAsync(int cpuCoreId) =>
-            _mapper.Map<ProcessorCoreEntity, ProcessorCoreReadDto>(await _unitOfWorkHardwareAPI
+            _mapper.Map<ProcessorCore, ProcessorCoreReadDto>(await _unitOfWorkHardwareAPI
                                                                          .ProcessorCoresRepository
                                                                          .GetByIdAsync(cpuCoreId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateProcessorCoreAsync(ProcessorCoreInsertDto cpuCore)
         {
-            var mappedCpuCore = _mapper.Map<ProcessorCoreInsertDto, ProcessorCoreEntity>(cpuCore);
+            var mappedCpuCore = _mapper.Map<ProcessorCoreInsertDto, ProcessorCore>(cpuCore);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.ProcessorCoresRepository.AnyAsync(x => x.Equals(mappedCpuCore));

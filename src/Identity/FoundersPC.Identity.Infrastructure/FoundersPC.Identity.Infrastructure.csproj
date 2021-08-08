@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoundersPC.Identity.Application\FoundersPC.Identity.Application.csproj" />
-    <ProjectReference Include="..\FoundersPC.Identity.Domain\FoundersPC.Identity.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.RepositoryShared.Repository;
 
 #endregion
@@ -10,11 +11,11 @@ using FoundersPC.RepositoryShared.Repository;
 namespace FoundersPC.API.Application.Interfaces.Repositories
 {
     /// <summary>
-    ///     Interface for <see cref="ProducerEntity"/> database access
+    ///     Interface for <see cref="Producer"/> database access
     /// </summary>
-    public interface IProducersRepositoryAsync : IRepositoryAsync<ProducerEntity>,
-                                                 IPaginateableRepository<ProducerEntity>
+    public interface IProducersRepositoryAsync : IRepositoryAsync<Producer>,
+                                                 IPaginateableRepository<Producer>
     {
-        Task<IEnumerable<ProducerEntity>> GetAllWithHardwareAsync();
+        Task<IEnumerable<Producer>> GetAllWithHardwareAsync();
     }
 }

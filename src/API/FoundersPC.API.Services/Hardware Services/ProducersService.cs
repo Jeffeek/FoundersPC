@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -27,19 +28,19 @@ namespace FoundersPC.API.Services.Hardware_Services
 
         /// <inheritdoc/>
         public async Task<IEnumerable<ProducerReadDto>> GetAllProducersAsync() =>
-            _mapper.Map<IEnumerable<ProducerEntity>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
                                                                                          .ProducersRepository
                                                                                          .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProducerReadDto> GetProducerByIdAsync(int producerId) =>
-            _mapper.Map<ProducerEntity, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository
+            _mapper.Map<Producer, ProducerReadDto>(await _unitOfWorkHardwareAPI.ProducersRepository
                                                                                      .GetByIdAsync(producerId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateProducerAsync(ProducerInsertDto producer)
         {
-            var mappedProducer = _mapper.Map<ProducerInsertDto, ProducerEntity>(producer);
+            var mappedProducer = _mapper.Map<ProducerInsertDto, Producer>(producer);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.ProducersRepository.AnyAsync(x => x.Equals(mappedProducer));
@@ -83,7 +84,7 @@ namespace FoundersPC.API.Services.Hardware_Services
         public async Task<IPaginationResponse<ProducerReadDto>> GetPaginateableAsync(int pageNumber = 1,
                                                                                      int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<ProducerEntity>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
+            var items = _mapper.Map<IEnumerable<Producer>, IEnumerable<ProducerReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                      .ProducersRepository
                                                                                                      .GetPaginateableAsync(pageNumber,
                                                                                                          pageSize));

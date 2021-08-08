@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware
 {
-    public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupplyEntity>,
+    public class PowerSuppliersRepository : GenericRepositoryAsync<PowerSupply>,
                                             IPowerSuppliersRepositoryAsync
     {
         /// <inheritdoc/>
@@ -20,35 +21,35 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware
         #region Implementation of IPaginateableRepository<PowerSupplyEntity>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<PowerSupplyEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<PowerSupply>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
-                  .Include(x => x.ProducerEntity)
+                  .Include(x => x.Producer)
                   .ToListAsync();
 
         #endregion
 
         #region Implementation of IPowerSuppliersRepositoryAsync
 
-        public override async Task<PowerSupplyEntity> GetByIdAsync(int id)
+        public override async Task<PowerSupply> GetByIdAsync(int id)
         {
-            var powerSupply = await Context.Set<PowerSupplyEntity>()
+            var powerSupply = await Context.Set<PowerSupply>()
                                            .FindAsync(id);
 
             if (powerSupply is null)
                 return null;
 
             await Context.Entry(powerSupply)
-                         .Reference(x => x.ProducerEntity)
+                         .Reference(x => x.Producer)
                          .LoadAsync();
 
             return powerSupply;
         }
 
         /// <inheritdoc/>
-        public override async Task<IEnumerable<PowerSupplyEntity>> GetAllAsync()
+        public override async Task<IEnumerable<PowerSupply>> GetAllAsync()
         {
-            return await Context.Set<PowerSupplyEntity>()
-                                .Include(powerSupply => powerSupply.ProducerEntity)
+            return await Context.Set<PowerSupply>()
+                                .Include(powerSupply => powerSupply.Producer)
                                 .ToListAsync();
         }
 

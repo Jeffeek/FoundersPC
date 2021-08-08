@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.VideoCard;
-using FoundersPC.API.Domain.Entities.VideoCard;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard
 {
-    public class VideoCardsRepository : GenericRepositoryAsync<VideoCardEntity>,
+    public class VideoCardsRepository : GenericRepositoryAsync<Domain.Entities.Hardware.VideoCard.VideoCard>,
                                         IVideoCardsRepositoryAsync
     {
         /// <inheritdoc/>
@@ -20,43 +19,43 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard
         #region Implementation of IPaginateableRepository<VideoCardEntity>
 
         /// <inheritdoc/>
-        public async Task<IEnumerable<VideoCardEntity>>
+        public async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.VideoCard>>
             GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
-                  .Include(x => x.ProducerEntity)
-                  .Include(x => x.CoreEntity)
+                  .Include(x => x.Producer)
+                  .Include(x => x.Core)
                   .ToListAsync();
 
         #endregion
 
         #region Implementation of IVideoCardsRepositoryAsync
 
-        public override async Task<VideoCardEntity> GetByIdAsync(int id)
+        public override async Task<Domain.Entities.Hardware.VideoCard.VideoCard> GetByIdAsync(int id)
         {
-            var gpu = await Context.Set<VideoCardEntity>()
+            var gpu = await Context.Set<Domain.Entities.Hardware.VideoCard.VideoCard>()
                                    .FindAsync(id);
 
             if (gpu is null)
                 return null;
 
             await Context.Entry(gpu)
-                         .Reference(x => x.ProducerEntity)
+                         .Reference(x => x.Producer)
                          .LoadAsync();
 
             await Context.Entry(gpu)
-                         .Reference(x => x.CoreEntity)
+                         .Reference(x => x.Core)
                          .LoadAsync();
 
             return gpu;
         }
 
         /// <inheritdoc/>
-        public override async Task<IEnumerable<VideoCardEntity>> GetAllAsync()
+        public override async Task<IEnumerable<Domain.Entities.Hardware.VideoCard.VideoCard>> GetAllAsync()
         {
             return await Context
-                         .Set<VideoCardEntity>()
-                         .Include(gpu => gpu.ProducerEntity)
-                         .Include(gpu => gpu.CoreEntity)
+                         .Set<Domain.Entities.Hardware.VideoCard.VideoCard>()
+                         .Include(gpu => gpu.Producer)
+                         .Include(gpu => gpu.Core)
                          .ToListAsync();
         }
 

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -30,7 +31,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc/>
         public async Task<IPaginationResponse<CaseReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<CaseEntity>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
+            var items = _mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
                                                                                              .CasesRepository
                                                                                              .GetPaginateableAsync(pageNumber, pageSize));
 
@@ -45,18 +46,18 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
         /// <inheritdoc/>
         public async Task<IEnumerable<CaseReadDto>> GetAllCasesAsync() =>
-            _mapper.Map<IEnumerable<CaseEntity>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<Case>, IEnumerable<CaseReadDto>>(await _unitOfWorkHardwareAPI
                                                                                  .CasesRepository
                                                                                  .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<CaseReadDto> GetCaseByIdAsync(int caseId) =>
-            _mapper.Map<CaseEntity, CaseReadDto>(await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(caseId));
+            _mapper.Map<Case, CaseReadDto>(await _unitOfWorkHardwareAPI.CasesRepository.GetByIdAsync(caseId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateCaseAsync(CaseInsertDto @case)
         {
-            var mappedCase = _mapper.Map<CaseInsertDto, CaseEntity>(@case);
+            var mappedCase = _mapper.Map<CaseInsertDto, Case>(@case);
 
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.CasesRepository.AnyAsync(x => x.Equals(mappedCase));
 

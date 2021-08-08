@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Memory;
+using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         /// <inheritdoc/>
         public async Task<IPaginationResponse<SolidStateDriveReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<SolidStateDriveEntity>, IEnumerable<SolidStateDriveReadDto>>(await _unitOfWorkHardwareAPI
+            var items = _mapper.Map<IEnumerable<SolidStateDrive>, IEnumerable<SolidStateDriveReadDto>>(await _unitOfWorkHardwareAPI
                 .SolidStateDrivesRepository
                 .GetPaginateableAsync(pageNumber, pageSize));
 
@@ -45,18 +45,18 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
 
         /// <inheritdoc/>
         public async Task<IEnumerable<SolidStateDriveReadDto>> GetAllSolidStateDrivesAsync() =>
-            _mapper.Map<IEnumerable<SolidStateDriveEntity>, IEnumerable<SolidStateDriveReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<SolidStateDrive>, IEnumerable<SolidStateDriveReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                        .SolidStateDrivesRepository
                                                                                                        .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<SolidStateDriveReadDto> GetSolidStateDriveByIdAsync(int ssdId) =>
-            _mapper.Map<SolidStateDriveEntity, SolidStateDriveReadDto>(await _unitOfWorkHardwareAPI.SolidStateDrivesRepository.GetByIdAsync(ssdId));
+            _mapper.Map<SolidStateDrive, SolidStateDriveReadDto>(await _unitOfWorkHardwareAPI.SolidStateDrivesRepository.GetByIdAsync(ssdId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateSolidStateDriveAsync(SolidStateDriveInsertDto solidStateDrive)
         {
-            var mappedSSD = _mapper.Map<SolidStateDriveInsertDto, SolidStateDriveEntity>(solidStateDrive);
+            var mappedSSD = _mapper.Map<SolidStateDriveInsertDto, SolidStateDrive>(solidStateDrive);
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.SolidStateDrivesRepository.AnyAsync(x => x.Equals(mappedSSD));
 
             if (entityAlreadyExists)

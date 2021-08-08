@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -31,7 +32,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc/>
         public async Task<IPaginationResponse<PowerSupplyReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<PowerSupplyEntity>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
+            var items = _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                          .PowerSuppliersRepository
                                                                                                          .GetPaginateableAsync(pageNumber, pageSize));
 
@@ -46,20 +47,20 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
         /// <inheritdoc/>
         public async Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync() =>
-            _mapper.Map<IEnumerable<PowerSupplyEntity>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<PowerSupply>, IEnumerable<PowerSupplyReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                .PowerSuppliersRepository
                                                                                                .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int powerSupplyId) =>
-            _mapper.Map<PowerSupplyEntity, PowerSupplyReadDto>(await _unitOfWorkHardwareAPI
+            _mapper.Map<PowerSupply, PowerSupplyReadDto>(await _unitOfWorkHardwareAPI
                                                                      .PowerSuppliersRepository
                                                                      .GetByIdAsync(powerSupplyId));
 
         /// <inheritdoc/>
         public async Task<bool> CreatePowerSupplyAsync(PowerSupplyInsertDto powerSupply)
         {
-            var mappedPowerSupply = _mapper.Map<PowerSupplyInsertDto, PowerSupplyEntity>(powerSupply);
+            var mappedPowerSupply = _mapper.Map<PowerSupplyInsertDto, PowerSupply>(powerSupply);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.PowerSuppliersRepository.AnyAsync(x => x.Equals(mappedPowerSupply));

@@ -8,6 +8,7 @@ using AutoMapper.Internal;
 using Bogus;
 using Bogus.Extensions;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 
 #endregion
 
@@ -15,13 +16,13 @@ namespace HardwareApi.Tests.DataCreation
 {
     public static class HardwareApiDataCreation
     {
-        private static readonly Faker<ProducerEntity> ProducerFaker;
+        private static readonly Faker<Producer> ProducerFaker;
 
-        private static readonly Faker<CaseEntity> CasesFaker;
+        private static readonly Faker<Case> CasesFaker;
 
         static HardwareApiDataCreation()
         {
-            ProducerFaker = new Faker<ProducerEntity>()
+            ProducerFaker = new Faker<Producer>()
                             .RuleFor(x => x.FoundationDate, faker => faker.Date.Between(new DateTime(1900, 1, 1), DateTime.Now))
                             .RuleFor(x => x.Website, faker => faker.Internet.Url())
                             .RuleFor(x => x.ShortName,
@@ -30,7 +31,7 @@ namespace HardwareApi.Tests.DataCreation
                             .RuleFor(x => x.FullName, faker => faker.Name.FullName())
                             .RuleFor(x => x.Country, faker => faker.Address.Country());
 
-            CasesFaker = new Faker<CaseEntity>()
+            CasesFaker = new Faker<Case>()
                          .RuleFor(x => x.Type, faker => faker.Random.Word())
                          .RuleFor(x => x.Width,
                                   faker => faker.Random.Int(50, 400)
@@ -54,11 +55,11 @@ namespace HardwareApi.Tests.DataCreation
                          .RuleFor(x => x.TransparentWindow, faker => faker.Random.Bool(0.65f))
                          .RuleFor(x => x.ProducerId, faker => faker.Random.Int(0, 10))
                          .RuleFor(x => x.Title, faker => faker.Commerce.ProductName())
-                         .RuleFor(x => x.ProducerEntity, ProducerFaker.Generate());
+                         .RuleFor(x => x.Producer, ProducerFaker.Generate());
         }
 
-        public static IEnumerable<ProducerEntity> CreateProducers() => ProducerFaker.GenerateForever();
+        public static IEnumerable<Producer> CreateProducers() => ProducerFaker.GenerateForever();
 
-        public static IEnumerable<CaseEntity> CreateCases() => CasesFaker.GenerateForever();
+        public static IEnumerable<Case> CreateCases() => CasesFaker.GenerateForever();
     }
 }

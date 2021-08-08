@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.Memory;
-using FoundersPC.API.Domain.Entities.Memory;
+using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -30,7 +30,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         /// <inheritdoc/>
         public async Task<IPaginationResponse<HardDriveDiskReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<HardDriveDiskEntity>, IEnumerable<HardDriveDiskReadDto>>(await _unitOfWorkHardwareAPI
+            var items = _mapper.Map<IEnumerable<HardDriveDisk>, IEnumerable<HardDriveDiskReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                              .HardDrivesRepository
                                                                                                              .GetPaginateableAsync(pageNumber, pageSize));
 
@@ -45,18 +45,18 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
 
         /// <inheritdoc/>
         public async Task<IEnumerable<HardDriveDiskReadDto>> GetAllHardDiskDrivesAsync() =>
-            _mapper.Map<IEnumerable<HardDriveDiskEntity>, IEnumerable<HardDriveDiskReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<HardDriveDisk>, IEnumerable<HardDriveDiskReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                    .HardDrivesRepository
                                                                                                    .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<HardDriveDiskReadDto> GetHardDiskDriveByIdAsync(int hddId) =>
-            _mapper.Map<HardDriveDiskEntity, HardDriveDiskReadDto>(await _unitOfWorkHardwareAPI.HardDrivesRepository.GetByIdAsync(hddId));
+            _mapper.Map<HardDriveDisk, HardDriveDiskReadDto>(await _unitOfWorkHardwareAPI.HardDrivesRepository.GetByIdAsync(hddId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateHardDriveDiskAsync(HardDriveDiskInsertDto hardDriveDisk)
         {
-            var mappedHDD = _mapper.Map<HardDriveDiskInsertDto, HardDriveDiskEntity>(hardDriveDisk);
+            var mappedHDD = _mapper.Map<HardDriveDiskInsertDto, HardDriveDisk>(hardDriveDisk);
 
             var entityAlreadyExists = await _unitOfWorkHardwareAPI.HardDrivesRepository.AnyAsync(x => x.Equals(mappedHDD));
 

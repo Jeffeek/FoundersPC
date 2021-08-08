@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\FoundersPC.SharedKernel\FoundersPC.SharedKernel.csproj" />
     <ProjectReference Include="..\FoundersPC.API.Application\FoundersPC.API.Application.csproj" />
     <ProjectReference Include="..\FoundersPC.API.Domain\FoundersPC.API.Domain.csproj" />
   </ItemGroup>

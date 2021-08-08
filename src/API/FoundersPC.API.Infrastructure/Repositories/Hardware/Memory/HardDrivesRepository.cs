@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FoundersPC.API.Application.Interfaces.Repositories.Memory;
-using FoundersPC.API.Domain.Entities.Memory;
+using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.RepositoryShared.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 {
     /// <inheritdoc/>
-    public class HardDrivesRepository : GenericRepositoryAsync<HardDriveDiskEntity>, IHardDrivesRepositoryAsync
+    public class HardDrivesRepository : GenericRepositoryAsync<HardDriveDisk>, IHardDrivesRepositoryAsync
     {
         /// <inheritdoc/>
         public HardDrivesRepository(DbContext repositoryContext) : base(repositoryContext) { }
@@ -30,35 +30,35 @@ namespace FoundersPC.API.Infrastructure.Repositories.Hardware.Memory
 
         #endregion
 
-        public async Task<IEnumerable<HardDriveDiskEntity>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
+        public async Task<IEnumerable<HardDriveDisk>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10) =>
             await GetPaginateableInternal(pageNumber, pageSize)
-                  .Include(x => x.ProducerEntity)
+                  .Include(x => x.Producer)
                   .ToListAsync();
 
         #endregion
 
         #region Implementation of IHardDrivesRepositoryAsync
 
-        public override async Task<HardDriveDiskEntity> GetByIdAsync(int id)
+        public override async Task<HardDriveDisk> GetByIdAsync(int id)
         {
-            var hdd = await Context.Set<HardDriveDiskEntity>()
+            var hdd = await Context.Set<HardDriveDisk>()
                                    .FindAsync(id);
 
             if (hdd is null)
                 return null;
 
             await Context.Entry(hdd)
-                         .Reference(x => x.ProducerEntity)
+                         .Reference(x => x.Producer)
                          .LoadAsync();
 
             return hdd;
         }
 
         /// <inheritdoc/>
-        public override async Task<IEnumerable<HardDriveDiskEntity>> GetAllAsync()
+        public override async Task<IEnumerable<HardDriveDisk>> GetAllAsync()
         {
-            return await Context.Set<HardDriveDiskEntity>()
-                                .Include(hdd => hdd.ProducerEntity)
+            return await Context.Set<HardDriveDisk>()
+                                .Include(hdd => hdd.Producer)
                                 .ToListAsync();
         }
 

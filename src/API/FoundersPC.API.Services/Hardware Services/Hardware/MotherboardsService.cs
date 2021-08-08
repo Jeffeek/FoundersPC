@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware;
 using FoundersPC.API.Domain.Entities;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -31,7 +32,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
         /// <inheritdoc/>
         public async Task<IPaginationResponse<MotherboardReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<MotherboardEntity>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
+            var items = _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                          .MotherboardsRepository
                                                                                                          .GetPaginateableAsync(pageNumber, pageSize));
 
@@ -46,20 +47,20 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware
 
         /// <inheritdoc/>
         public async Task<IEnumerable<MotherboardReadDto>> GetAllMotherboardsAsync() =>
-            _mapper.Map<IEnumerable<MotherboardEntity>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<Motherboard>, IEnumerable<MotherboardReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                .MotherboardsRepository
                                                                                                .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<MotherboardReadDto> GetMotherboardByIdAsync(int motherboardId) =>
-            _mapper.Map<MotherboardEntity, MotherboardReadDto>(await _unitOfWorkHardwareAPI
+            _mapper.Map<Motherboard, MotherboardReadDto>(await _unitOfWorkHardwareAPI
                                                                      .MotherboardsRepository
                                                                      .GetByIdAsync(motherboardId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateMotherboardAsync(MotherboardInsertDto motherboard)
         {
-            var mappedMotherboard = _mapper.Map<MotherboardInsertDto, MotherboardEntity>(motherboard);
+            var mappedMotherboard = _mapper.Map<MotherboardInsertDto, Motherboard>(motherboard);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.MotherboardsRepository.AnyAsync(x => x.Equals(mappedMotherboard));

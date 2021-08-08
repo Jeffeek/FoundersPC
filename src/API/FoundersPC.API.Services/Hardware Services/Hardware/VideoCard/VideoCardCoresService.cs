@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.API.Application.Interfaces.Services.Hardware.GPU;
-using FoundersPC.API.Domain.Entities.VideoCard;
+using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
 using FoundersPC.API.Dto;
 using FoundersPC.API.Infrastructure.UnitOfWork;
 using FoundersPC.ApplicationShared.ApplicationConstants;
@@ -31,7 +31,7 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
         public async Task<IPaginationResponse<VideoCardCoreReadDto>>
             GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<VideoCardCoreEntity>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
+            var items = _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                              .VideoCardCoresRepository
                                                                                                              .GetPaginateableAsync(pageNumber, pageSize));
 
@@ -46,19 +46,19 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
 
         /// <inheritdoc/>
         public async Task<IEnumerable<VideoCardCoreReadDto>> GetAllVideoCardCoresAsync() =>
-            _mapper.Map<IEnumerable<VideoCardCoreEntity>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
+            _mapper.Map<IEnumerable<VideoCardCore>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
                                                                                                    .VideoCardCoresRepository
                                                                                                    .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<VideoCardCoreReadDto> GetVideoCardCoreByIdAsync(int videoCardCoreId) =>
-            _mapper.Map<VideoCardCoreEntity, VideoCardCoreReadDto>(await _unitOfWorkHardwareAPI.VideoCardCoresRepository
+            _mapper.Map<VideoCardCore, VideoCardCoreReadDto>(await _unitOfWorkHardwareAPI.VideoCardCoresRepository
                                                                                                .GetByIdAsync(videoCardCoreId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateVideoCardCoreAsync(VideoCardCoreInsertDto videoCardCore)
         {
-            var mappedVideoCardCore = _mapper.Map<VideoCardCoreInsertDto, VideoCardCoreEntity>(videoCardCore);
+            var mappedVideoCardCore = _mapper.Map<VideoCardCoreInsertDto, VideoCardCore>(videoCardCore);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.VideoCardCoresRepository.AnyAsync(x => x.Equals(mappedVideoCardCore));

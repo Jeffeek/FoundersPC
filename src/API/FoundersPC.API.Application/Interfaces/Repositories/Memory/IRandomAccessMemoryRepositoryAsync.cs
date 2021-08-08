@@ -1,6 +1,6 @@
 ﻿#region Using namespaces
 
-using FoundersPC.API.Domain.Entities.Memory;
+using FoundersPC.API.Domain.Entities.Hardware.Memory;
 using FoundersPC.RepositoryShared.Repository;
 
 #endregion
@@ -8,8 +8,8 @@ using FoundersPC.RepositoryShared.Repository;
 namespace FoundersPC.API.Application.Interfaces.Repositories.Memory
 {
     /// <summary>
-    ///     Interface for <see cref="RandomAccessMemoryEntity"/> database access
+    ///     Interface for <see cref="RandomAccessMemory"/> database access
     /// </summary>
-    public interface IRandomAccessMemoryRepositoryAsync : IRepositoryAsync<RandomAccessMemoryEntity>,
-                                                          IPaginateableRepository<RandomAccessMemoryEntity> { }
+    public interface IRandomAccessMemoryRepositoryAsync : IRepositoryAsync<RandomAccessMemory>,
+                                                          IPaginateableRepository<RandomAccessMemory> { }
 }
