@@ -51,13 +51,13 @@ namespace IdentityServer.Tests
                                              unitOfWork,
                                              new AccessUsersTokensService(unitOfWork,
                                                                           new AccessTokenReservationService(unitOfWork,
-                                                                                                            new TokenEncryptorService(),
-                                                                                                            new MockEmailService(),
-                                                                                                            new NullLogger<AccessTokenReservationService>()),
+                                                                              new TokenEncryptorService(),
+                                                                              new MockEmailService(),
+                                                                              new NullLogger<AccessTokenReservationService>()),
                                                                           new AccessTokensBlockingService(new NullLogger<AccessTokensBlockingService>(),
-                                                                                                          unitOfWork),
+                                                                                                              unitOfWork),
                                                                           new AccessTokensRequestsService(new NullLogger<AccessTokensRequestsService>(),
-                                                                                                          unitOfWork),
+                                                                                                              unitOfWork),
                                                                           new AccessTokensStatusService(unitOfWork,
                                                                                                         new NullLogger<AccessTokensStatusService>()),
                                                                           new Mapper(mapper),
@@ -107,7 +107,7 @@ namespace IdentityServer.Tests
         [Test]
         public async Task BlockTokenTestAsync()
         {
-            var tokens = await _context.UsersTokens
+            var tokens = await _context.Tokens
                                        .Where(x => !x.IsBlocked)
                                        .ToListAsync();
 
@@ -129,7 +129,7 @@ namespace IdentityServer.Tests
 
             await _adminService.BlockUserAsync(randomUser.Id);
 
-            var userTokens = _context.UsersTokens.Where(x => x.UserId == randomUser.Id);
+            var userTokens = _context.Tokens.Where(x => x.UserId == randomUser.Id);
 
             var actual = userTokens.Where(x => x.ExpirationDate >= DateTime.Now)
                                    .All(t => t.IsBlocked);
@@ -149,7 +149,7 @@ namespace IdentityServer.Tests
 
             await _adminService.UnBlockUserAsync(randomUser.Id);
 
-            var userTokens = _context.UsersTokens.Where(x => x.UserId == randomUser.Id);
+            var userTokens = _context.Tokens.Where(x => x.UserId == randomUser.Id);
 
             var actual = userTokens.Where(x => x.ExpirationDate >= DateTime.Now)
                                    .All(t => !t.IsBlocked);

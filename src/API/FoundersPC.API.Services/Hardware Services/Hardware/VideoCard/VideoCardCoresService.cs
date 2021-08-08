@@ -32,8 +32,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.VideoCard
             GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
             var items = _mapper.Map<IEnumerable<VideoCardCoreEntity>, IEnumerable<VideoCardCoreReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                                               .VideoCardCoresRepository
-                                                                                                               .GetPaginateableAsync(pageNumber, pageSize));
+                                                                                                             .VideoCardCoresRepository
+                                                                                                             .GetPaginateableAsync(pageNumber, pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.VideoCardCoresRepository.CountAsync();
 

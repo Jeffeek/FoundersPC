@@ -13,23 +13,23 @@ namespace FoundersPC.API.Infrastructure.Migrations
             migrationBuilder.AlterColumn<string>("DirectX_Version",
                                                  "VideoCardCores",
                                                  "nvarchar(max)",
-                                                 nullable :true,
-                                                 oldClrType :typeof(int),
-                                                 oldType :"int");
+                                                 nullable : true,
+                                                 oldClrType : typeof(int),
+                                                 oldType : "int");
 
             migrationBuilder.AlterColumn<bool>("CPU8PIN",
                                                "PowerSupplies",
                                                "bit",
-                                               nullable :true,
-                                               oldClrType :typeof(bool),
-                                               oldType :"bit");
+                                               nullable : true,
+                                               oldClrType : typeof(bool),
+                                               oldType : "bit");
 
             migrationBuilder.AlterColumn<bool>("CPU4PIN",
                                                "PowerSupplies",
                                                "bit",
-                                               nullable :true,
-                                               oldClrType :typeof(bool),
-                                               oldType :"bit");
+                                               nullable : true,
+                                               oldClrType : typeof(bool),
+                                               oldType : "bit");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -37,29 +37,29 @@ namespace FoundersPC.API.Infrastructure.Migrations
             migrationBuilder.AlterColumn<int>("DirectX_Version",
                                               "VideoCardCores",
                                               "int",
-                                              nullable :false,
-                                              defaultValue :0,
-                                              oldClrType :typeof(string),
-                                              oldType :"nvarchar(max)",
-                                              oldNullable :true);
+                                              nullable : false,
+                                              defaultValue : 0,
+                                              oldClrType : typeof(string),
+                                              oldType : "nvarchar(max)",
+                                              oldNullable : true);
 
             migrationBuilder.AlterColumn<bool>("CPU8PIN",
                                                "PowerSupplies",
                                                "bit",
-                                               nullable :false,
-                                               defaultValue :false,
-                                               oldClrType :typeof(bool),
-                                               oldType :"bit",
-                                               oldNullable :true);
+                                               nullable : false,
+                                               defaultValue : false,
+                                               oldClrType : typeof(bool),
+                                               oldType : "bit",
+                                               oldNullable : true);
 
             migrationBuilder.AlterColumn<bool>("CPU4PIN",
                                                "PowerSupplies",
                                                "bit",
-                                               nullable :false,
-                                               defaultValue :false,
-                                               oldClrType :typeof(bool),
-                                               oldType :"bit",
-                                               oldNullable :true);
+                                               nullable : false,
+                                               defaultValue : false,
+                                               oldClrType : typeof(bool),
+                                               oldType : "bit",
+                                               oldNullable : true);
         }
     }
 }

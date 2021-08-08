@@ -23,24 +23,19 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         #region Implementation of IProcessorsManagingService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<ProcessorReadDto>> GetAllProcessorsAsync(string managerToken) =>
-            GetAllAsync(managerToken);
+        public Task<IEnumerable<ProcessorReadDto>> GetAllProcessorsAsync(string managerToken) => GetAllAsync(managerToken);
 
         /// <inheritdoc/>
-        public Task<ProcessorReadDto> GetProcessorByIdAsync(int id, string managerToken) =>
-            GetByIdAsync(id, managerToken);
+        public Task<ProcessorReadDto> GetProcessorByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> UpdateProcessorAsync(int id, ProcessorUpdateDto processor, string managerToken) =>
-            UpdateAsync(id, processor, managerToken);
+        public Task<bool> UpdateProcessorAsync(int id, ProcessorUpdateDto processor, string managerToken) => UpdateAsync(id, processor, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> DeleteProcessorAsync(int processorId, string managerToken) =>
-            DeleteAsync(processorId, managerToken);
+        public Task<bool> DeleteProcessorAsync(int processorId, string managerToken) => DeleteAsync(processorId, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> CreateProcessorAsync(ProcessorInsertDto processor, string managerToken) =>
-            CreateAsync(processor, managerToken);
+        public Task<bool> CreateProcessorAsync(ProcessorInsertDto processor, string managerToken) => CreateAsync(processor, managerToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<ProcessorReadDto>> GetPaginateableProcessorsAsync(int pageNumber,

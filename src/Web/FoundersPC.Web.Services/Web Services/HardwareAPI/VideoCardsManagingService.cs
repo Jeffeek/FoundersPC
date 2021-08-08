@@ -62,8 +62,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<IEnumerable<VideoCardReadDto>> GetAllVideoCardsAsync(string managerToken) =>
-            GetAllAsync(managerToken);
+        public Task<IEnumerable<VideoCardReadDto>> GetAllVideoCardsAsync(string managerToken) => GetAllAsync(managerToken);
 
         #region Docs
 
@@ -103,8 +102,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<VideoCardReadDto> GetVideoCardByIdAsync(int id, string managerToken) =>
-            GetByIdAsync(id, managerToken);
+        public Task<VideoCardReadDto> GetVideoCardByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
 
         #region Docs
 
@@ -149,8 +147,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<bool> UpdateVideoCardAsync(int id, VideoCardUpdateDto videoCard, string managerToken) =>
-            UpdateAsync(id, videoCard, managerToken);
+        public Task<bool> UpdateVideoCardAsync(int id, VideoCardUpdateDto videoCard, string managerToken) => UpdateAsync(id, videoCard, managerToken);
 
         #region Docs
 
@@ -205,8 +202,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<bool> DeleteVideoCardAsync(int videoCardId, string managerToken) =>
-            DeleteAsync(videoCardId, managerToken);
+        public Task<bool> DeleteVideoCardAsync(int videoCardId, string managerToken) => DeleteAsync(videoCardId, managerToken);
 
         #region Docs
 
@@ -245,8 +241,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<bool> CreateVideoCardAsync(VideoCardInsertDto videoCard, string managerToken) =>
-            CreateAsync(videoCard, managerToken);
+        public Task<bool> CreateVideoCardAsync(VideoCardInsertDto videoCard, string managerToken) => CreateAsync(videoCard, managerToken);
 
         #region Docs
 

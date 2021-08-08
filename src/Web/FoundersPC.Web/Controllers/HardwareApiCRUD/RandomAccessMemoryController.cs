@@ -69,8 +69,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         public async Task<ActionResult> RandomAccessMemoryTable([FromQuery] int pageNumber = 1)
         {
             var randomAccessMemory = await _randomAccessMemoryManagingService.GetPaginateableRandomAccessMemoryAsync(pageNumber,
-                                                                                                                     FoundersPCConstants.PageSize,
-                                                                                                                     HttpContext.GetJwtTokenFromCookie());
+                                         FoundersPCConstants.PageSize,
+                                         HttpContext.GetJwtTokenFromCookie());
 
             var indexModel = new IndexViewModel<RandomAccessMemoryReadDto>
                              {
@@ -93,7 +93,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var viewModel =
                 _mapper.Map<RandomAccessMemoryUpdateDto, RandomAccessMemoryDtoViewModel>(_mapper
                                                                                              .Map<RandomAccessMemoryReadDto, RandomAccessMemoryUpdateDto
-                                                                                                 >(randomAccessMemory));
+                                                                                             >(randomAccessMemory));
 
             return View("RandomAccessMemoryEdit", viewModel);
         }

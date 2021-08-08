@@ -95,7 +95,6 @@ namespace FoundersPC.ApplicationShared.Jwt
 
         #endregion
 
-        internal SymmetricSecurityKey GetSymmetricSecurityKey() =>
-            new(Encoding.ASCII.GetBytes(Key));
+        internal SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
     }
 }

@@ -61,8 +61,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<IEnumerable<HardDriveDiskReadDto>> GetAllHardDriveDisksAsync(string managerToken) =>
-            GetAllAsync(managerToken);
+        public Task<IEnumerable<HardDriveDiskReadDto>> GetAllHardDriveDisksAsync(string managerToken) => GetAllAsync(managerToken);
 
         #region Docs
 
@@ -102,8 +101,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<HardDriveDiskReadDto> GetHardDriveDiskByIdAsync(int id, string managerToken) =>
-            GetByIdAsync(id, managerToken);
+        public Task<HardDriveDiskReadDto> GetHardDriveDiskByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
 
         #region Docs
 
@@ -204,8 +202,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<bool> DeleteHardDriveDiskAsync(int hardDriveDiskId, string managerToken) =>
-            DeleteAsync(hardDriveDiskId, managerToken);
+        public Task<bool> DeleteHardDriveDiskAsync(int hardDriveDiskId, string managerToken) => DeleteAsync(hardDriveDiskId, managerToken);
 
         #region Docs
 
@@ -244,8 +241,7 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 
         #endregion
 
-        public Task<bool> CreateHardDriveDiskAsync(HardDriveDiskInsertDto hardDriveDisk, string managerToken) =>
-            CreateAsync(hardDriveDisk, managerToken);
+        public Task<bool> CreateHardDriveDiskAsync(HardDriveDiskInsertDto hardDriveDisk, string managerToken) => CreateAsync(hardDriveDisk, managerToken);
 
         #region Docs
 

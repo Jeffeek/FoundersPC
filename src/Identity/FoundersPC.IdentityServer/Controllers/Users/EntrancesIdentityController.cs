@@ -25,8 +25,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
     {
         private readonly IUsersEntrancesService _usersEntrancesService;
 
-        public EntrancesIdentityController(IUsersEntrancesService usersEntrancesService) =>
-            _usersEntrancesService = usersEntrancesService;
+        public EntrancesIdentityController(IUsersEntrancesService usersEntrancesService) => _usersEntrancesService = usersEntrancesService;
 
         [HttpGet(ApplicationRestAddons.All)]
         public async ValueTask<IEnumerable<UserEntranceLogReadDto>> Get() =>
@@ -34,8 +33,7 @@ namespace FoundersPC.IdentityServer.Controllers.Users
                 .GetAllAsync();
 
         [HttpGet(ApplicationRestAddons.GetById)]
-        public async ValueTask<UserEntranceLogReadDto> Get([FromRoute] int id) =>
-            await _usersEntrancesService.GetByIdAsync(id);
+        public async ValueTask<UserEntranceLogReadDto> Get([FromRoute] int id) => await _usersEntrancesService.GetByIdAsync(id);
 
         [HttpGet(IdentityServerRoutes.Logs.UsersEntrances.ByUserId)]
         public async ValueTask<IEnumerable<UserEntranceLogReadDto>> GetUserEntrances([FromRoute] int id) =>

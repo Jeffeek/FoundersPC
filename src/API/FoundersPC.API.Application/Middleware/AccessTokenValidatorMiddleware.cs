@@ -17,8 +17,7 @@ namespace FoundersPC.API.Application.Middleware
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        public AccessTokenValidatorMiddleware(IHttpClientFactory clientFactory) =>
-            _clientFactory = clientFactory;
+        public AccessTokenValidatorMiddleware(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
 
         #region Docs
 

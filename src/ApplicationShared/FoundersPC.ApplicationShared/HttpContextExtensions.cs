@@ -20,8 +20,7 @@ namespace FoundersPC.ApplicationShared
         ///     The address family is
         ///     <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6"/> and the address is bad.
         /// </exception>
-        public static string GetIpAddress(this HttpContext httpContext) =>
-            httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
+        public static string GetIpAddress(this HttpContext httpContext) => httpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
 
         /// <exception cref="T:System.ArgumentNullException">
         ///     <paramref name="source"/> or <paramref name="predicate"/> is
@@ -30,7 +29,6 @@ namespace FoundersPC.ApplicationShared
 
         #endregion
 
-        public static bool IsInRole(this ClaimsPrincipal claims, params string[] roles) =>
-            roles.Any(claims.IsInRole);
+        public static bool IsInRole(this ClaimsPrincipal claims, params string[] roles) => roles.Any(claims.IsInRole);
     }
 }

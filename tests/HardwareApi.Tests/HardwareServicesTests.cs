@@ -52,7 +52,8 @@ namespace HardwareApi.Tests
             foreach (var producer in producers)
                 await _unitOfWork.ProducersRepository.AddAsync(producer);
 
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync()
+                             .ConfigureAwait(false);
         }
 
         private FoundersPCHardwareContext _context;

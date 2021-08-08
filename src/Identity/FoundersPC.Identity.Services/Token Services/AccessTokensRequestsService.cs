@@ -27,14 +27,16 @@ namespace FoundersPC.Identity.Services.Token_Services
         {
             var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByTokenAsync(token);
 
-            return await CanMakeRequestAsync(tokenEntity);
+            return await CanMakeRequestAsync(tokenEntity)
+                       .ConfigureAwait(false);
         }
 
         public async Task<bool> CanMakeRequestAsync(int tokenId)
         {
             var tokenEntity = await _unitOfWork.AccessTokensRepository.GetByIdAsync(tokenId);
 
-            return await CanMakeRequestAsync(tokenEntity);
+            return await CanMakeRequestAsync(tokenEntity)
+                       .ConfigureAwait(false);
         }
 
         private async Task<bool> CanMakeRequestAsync(AccessTokenEntity tokenEntity)

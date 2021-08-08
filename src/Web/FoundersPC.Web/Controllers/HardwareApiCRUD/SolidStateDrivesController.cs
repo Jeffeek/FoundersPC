@@ -68,8 +68,8 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
         public async Task<ActionResult> SolidStateDrivesTable([FromQuery] int pageNumber = 1)
         {
             var solidStateDrives = await _solidStateDrivesManagingService.GetPaginateableSolidStateDrivesAsync(pageNumber,
-                                                                                                               FoundersPCConstants.PageSize,
-                                                                                                               HttpContext.GetJwtTokenFromCookie());
+                                       FoundersPCConstants.PageSize,
+                                       HttpContext.GetJwtTokenFromCookie());
 
             var indexModel = new IndexViewModel<SolidStateDriveReadDto>
                              {
@@ -92,7 +92,7 @@ namespace FoundersPC.Web.Controllers.HardwareApiCRUD
             var viewModel =
                 _mapper.Map<SolidStateDriveUpdateDto, SolidStateDriveDtoViewModel>(_mapper
                                                                                        .Map<SolidStateDriveReadDto, SolidStateDriveUpdateDto
-                                                                                           >(solidStateDrive));
+                                                                                       >(solidStateDrive));
 
             return View("SolidStateDriveEdit", viewModel);
         }

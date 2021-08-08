@@ -88,8 +88,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
         public async Task<IPaginationResponse<ProcessorReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
             var items = _mapper.Map<IEnumerable<ProcessorEntity>, IEnumerable<ProcessorReadDto>>(await _unitOfWorkHardwareAPI.ProcessorsRepository
-                                                                                                                             .GetPaginateableAsync(pageNumber,
-                                                                                                                                                   pageSize));
+                                                                                                     .GetPaginateableAsync(pageNumber,
+                                                                                                         pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.ProcessorsRepository.CountAsync();
 

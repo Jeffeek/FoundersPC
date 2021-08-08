@@ -25,8 +25,7 @@ namespace FoundersPC.Web.Controllers
     {
         private readonly IAdminService _adminService;
 
-        public AdminController(IAdminService adminService) =>
-            _adminService = adminService;
+        public AdminController(IAdminService adminService) => _adminService = adminService;
 
         #region Users Table
 
@@ -98,8 +97,7 @@ namespace FoundersPC.Web.Controllers
         }
 
         [Route("RegisterManager")]
-        public ActionResult RegisterManager() =>
-            View("RegisterManagerPage");
+        public ActionResult RegisterManager() => View("RegisterManagerPage");
 
         #endregion
 

@@ -15,8 +15,8 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
 {
     public class PowerSuppliesManagingService : BoilerplaitManagingService
                                                 <PowerSupplyInsertDto,
-                                                PowerSupplyReadDto,
-                                                PowerSupplyUpdateDto>,
+                                                    PowerSupplyReadDto,
+                                                    PowerSupplyUpdateDto>,
                                                 IPowerSuppliesManagingService
     {
         public PowerSuppliesManagingService(IHttpClientFactory clientFactory,
@@ -27,24 +27,19 @@ namespace FoundersPC.Web.Services.Web_Services.HardwareAPI
         #region Implementation of IPowerSuppliesManagingService
 
         /// <inheritdoc/>
-        public Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync(string managerToken) =>
-            GetAllAsync(managerToken);
+        public Task<IEnumerable<PowerSupplyReadDto>> GetAllPowerSuppliesAsync(string managerToken) => GetAllAsync(managerToken);
 
         /// <inheritdoc/>
-        public Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int id, string managerToken) =>
-            GetByIdAsync(id, managerToken);
+        public Task<PowerSupplyReadDto> GetPowerSupplyByIdAsync(int id, string managerToken) => GetByIdAsync(id, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> UpdatePowerSupplyAsync(int id, PowerSupplyUpdateDto powerSupply, string managerToken) =>
-            UpdateAsync(id, powerSupply, managerToken);
+        public Task<bool> UpdatePowerSupplyAsync(int id, PowerSupplyUpdateDto powerSupply, string managerToken) => UpdateAsync(id, powerSupply, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> DeletePowerSupplyAsync(int powerSupplyId, string managerToken) =>
-            DeleteAsync(powerSupplyId, managerToken);
+        public Task<bool> DeletePowerSupplyAsync(int powerSupplyId, string managerToken) => DeleteAsync(powerSupplyId, managerToken);
 
         /// <inheritdoc/>
-        public Task<bool> CreatePowerSupplyAsync(PowerSupplyInsertDto powerSupply, string managerToken) =>
-            CreateAsync(powerSupply, managerToken);
+        public Task<bool> CreatePowerSupplyAsync(PowerSupplyInsertDto powerSupply, string managerToken) => CreateAsync(powerSupply, managerToken);
 
         /// <inheritdoc/>
         public Task<IPaginationResponse<PowerSupplyReadDto>> GetPaginateablePowerSuppliesAsync(int pageNumber, int pageSize, string managerToken) =>

@@ -31,9 +31,9 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         public async Task<IPaginationResponse<RandomAccessMemoryReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
             var items = _mapper.Map<IEnumerable<RandomAccessMemoryEntity>, IEnumerable<RandomAccessMemoryReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                                                         .RandomAccessMemoryRepository
-                                                                                                                         .GetPaginateableAsync(pageNumber,
-                                                                                                                                               pageSize));
+                .RandomAccessMemoryRepository
+                .GetPaginateableAsync(pageNumber,
+                                      pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.RandomAccessMemoryRepository.CountAsync();
 
@@ -47,8 +47,8 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Memory
         /// <inheritdoc/>
         public async Task<IEnumerable<RandomAccessMemoryReadDto>> GetAllRandomAccessMemoryAsync() =>
             _mapper.Map<IEnumerable<RandomAccessMemoryEntity>, IEnumerable<RandomAccessMemoryReadDto>>(await _unitOfWorkHardwareAPI
-                                                                                                             .RandomAccessMemoryRepository
-                                                                                                             .GetAllAsync());
+                                                                                                           .RandomAccessMemoryRepository
+                                                                                                           .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<RandomAccessMemoryReadDto> GetRandomAccessMemoryByIdAsync(int ramId) =>

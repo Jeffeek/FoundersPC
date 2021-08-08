@@ -33,7 +33,7 @@ namespace FoundersPC.Web
         /// </exception>
         /// <exception cref="T:System.NotSupportedException"><paramref name="path"/> is in an invalid format.</exception>
         /// <exception cref="T:System.InvalidOperationException">When the logger is already created</exception>
-        public async static Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var loggerConfiguration = new ConfigurationBuilder()
                                       .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\LoggerConfiguration.json")

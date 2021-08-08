@@ -104,21 +104,17 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         #region IsTokenBlocked
 
-        public Task<bool> IsTokenBlockedAsync(string token) =>
-            _statusService.IsTokenBlockedAsync(token);
+        public Task<bool> IsTokenBlockedAsync(string token) => _statusService.IsTokenBlockedAsync(token);
 
-        public Task<bool> IsTokenBlockedAsync(int id) =>
-            _statusService.IsTokenBlockedAsync(id);
+        public Task<bool> IsTokenBlockedAsync(int id) => _statusService.IsTokenBlockedAsync(id);
 
         #endregion
 
         #region IsTokenActive
 
-        public Task<bool> IsTokenActiveAsync(string token) =>
-            _statusService.IsTokenActiveAsync(token);
+        public Task<bool> IsTokenActiveAsync(string token) => _statusService.IsTokenActiveAsync(token);
 
-        public Task<bool> IsTokenActiveAsync(int id) =>
-            _statusService.IsTokenActiveAsync(id);
+        public Task<bool> IsTokenActiveAsync(int id) => _statusService.IsTokenActiveAsync(id);
 
         #endregion
 
@@ -126,41 +122,33 @@ namespace FoundersPC.Identity.Services.Token_Services
 
         #region Implementation of IAccessTokensRequestsService
 
-        public Task<bool> CanMakeRequestAsync(string token) =>
-            _requestsService.CanMakeRequestAsync(token);
+        public Task<bool> CanMakeRequestAsync(string token) => _requestsService.CanMakeRequestAsync(token);
 
-        public Task<bool> CanMakeRequestAsync(int tokenId) =>
-            _requestsService.CanMakeRequestAsync(tokenId);
+        public Task<bool> CanMakeRequestAsync(int tokenId) => _requestsService.CanMakeRequestAsync(tokenId);
 
         #endregion
 
         #region Implementation of IAccessTokensBlockingService
 
-        public Task<bool> BlockAsync(string token) =>
-            _blockingService.BlockAsync(token);
+        public Task<bool> BlockAsync(string token) => _blockingService.BlockAsync(token);
 
-        public Task<bool> BlockAsync(int id) =>
-            _blockingService.BlockAsync(id);
+        public Task<bool> BlockAsync(int id) => _blockingService.BlockAsync(id);
 
         /// <inheritdoc/>
-        public Task<bool> UnBlockAsync(string token) =>
-            _blockingService.UnBlockAsync(token);
+        public Task<bool> UnBlockAsync(string token) => _blockingService.UnBlockAsync(token);
 
         /// <inheritdoc/>
-        public Task<bool> UnBlockAsync(int id) =>
-            _blockingService.UnBlockAsync(id);
+        public Task<bool> UnBlockAsync(int id) => _blockingService.UnBlockAsync(id);
 
         #endregion
 
         #region Implementation of IAccessTokensReservationService
 
         /// <inheritdoc/>
-        public Task<AccessTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type) =>
-            _reservationService.ReserveNewTokenAsync(userEmail, type);
+        public Task<AccessTokenReadDto> ReserveNewTokenAsync(string userEmail, TokenType type) => _reservationService.ReserveNewTokenAsync(userEmail, type);
 
         /// <inheritdoc/>
-        public Task<AccessTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type) =>
-            _reservationService.ReserveNewTokenAsync(userId, type);
+        public Task<AccessTokenReadDto> ReserveNewTokenAsync(int userId, TokenType type) => _reservationService.ReserveNewTokenAsync(userId, type);
 
         #endregion
     }

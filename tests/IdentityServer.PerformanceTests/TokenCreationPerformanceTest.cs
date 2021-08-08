@@ -15,8 +15,7 @@ namespace IdentityServer.PerformanceTests
         private TokenEncryptorService _tokenEncryptorService;
 
         [GlobalSetup]
-        public void Setup() =>
-            _tokenEncryptorService = new TokenEncryptorService();
+        public void Setup() => _tokenEncryptorService = new TokenEncryptorService();
 
         [Benchmark]
         public string TokenEncryption_TimeBenchmark()

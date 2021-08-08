@@ -244,19 +244,15 @@ namespace FoundersPC.Identity.Services.Administration.Admin_Services
 
         #region Block API tokenEntity
 
-        public Task<bool> BlockAccessTokenAsync(int tokenId) =>
-            _accessUsersTokensService.BlockAsync(tokenId);
+        public Task<bool> BlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.BlockAsync(tokenId);
 
-        public Task<bool> BlockAccessTokenAsync(string token) =>
-            _accessUsersTokensService.BlockAsync(token);
+        public Task<bool> BlockAccessTokenAsync(string token) => _accessUsersTokensService.BlockAsync(token);
 
         /// <inheritdoc/>
-        public Task<bool> UnBlockAccessTokenAsync(int tokenId) =>
-            _accessUsersTokensService.UnBlockAsync(tokenId);
+        public Task<bool> UnBlockAccessTokenAsync(int tokenId) => _accessUsersTokensService.UnBlockAsync(tokenId);
 
         /// <inheritdoc/>
-        public Task<bool> UnBlockAccessTokenAsync(string token) =>
-            _accessUsersTokensService.UnBlockAsync(token);
+        public Task<bool> UnBlockAccessTokenAsync(string token) => _accessUsersTokensService.UnBlockAsync(token);
 
         #endregion
     }

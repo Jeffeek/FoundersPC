@@ -21,8 +21,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public UsersInformationService(IHttpClientFactory httpClientFactory) =>
-            _httpClientFactory = httpClientFactory;
+        public UsersInformationService(IHttpClientFactory httpClientFactory) => _httpClientFactory = httpClientFactory;
 
         #region Docs
 
@@ -254,7 +253,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             var result =
                 await client
                     .GetFromJsonAsync<PaginationResponse<UserEntityReadDto>
-                        >($"{IdentityServerRoutes.Users.UsersEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                    >($"{IdentityServerRoutes.Users.UsersEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
 
             return result;
         }

@@ -13,8 +13,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             migrationBuilder.AddColumn<bool>("SendMessageOnApiRequest",
                                              "Users",
                                              "bit",
-                                             nullable :false,
-                                             defaultValue :false);
+                                             nullable : false,
+                                             defaultValue : false);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -17,18 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="10.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.10.2" />
-    <PackageReference Include="Serilog" Version="2.10.0" />
-    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
-    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FoundersPC.RepositoryCollectionsExtensions\FoundersPC.IdentityEntities.csproj" />
+    <ProjectReference Include="..\FoundersPC.IdentityEntities\FoundersPC.IdentityEntities.csproj" />
   </ItemGroup>
 
 </Project>

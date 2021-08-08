@@ -17,15 +17,15 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                             "UserEntranceLog");
 
             migrationBuilder.RenameTable("UserEntranceLog",
-                                         newName :"UsersEntrancesLogs");
+                                         newName : "UsersEntrancesLogs");
 
             migrationBuilder.RenameIndex("IX_UserEntranceLog_UserId",
-                                         table :"UsersEntrancesLogs",
-                                         newName :"IX_UsersEntrancesLogs_UserId");
+                                         table : "UsersEntrancesLogs",
+                                         newName : "IX_UsersEntrancesLogs_UserId");
 
             migrationBuilder.RenameIndex("IX_UserEntranceLog_Id",
-                                         table :"UsersEntrancesLogs",
-                                         newName :"IX_UsersEntrancesLogs_Id");
+                                         table : "UsersEntrancesLogs",
+                                         newName : "IX_UsersEntrancesLogs_Id");
 
             migrationBuilder.AddPrimaryKey("PK_UsersEntrancesLogs",
                                            "UsersEntrancesLogs",
@@ -35,8 +35,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                            "UsersEntrancesLogs",
                                            "UserId",
                                            "Users",
-                                           principalColumn :"Id",
-                                           onDelete :ReferentialAction.Cascade);
+                                           principalColumn : "Id",
+                                           onDelete : ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -48,15 +48,15 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                             "UsersEntrancesLogs");
 
             migrationBuilder.RenameTable("UsersEntrancesLogs",
-                                         newName :"UserEntranceLog");
+                                         newName : "UserEntranceLog");
 
             migrationBuilder.RenameIndex("IX_UsersEntrancesLogs_UserId",
-                                         table :"UserEntranceLog",
-                                         newName :"IX_UserEntranceLog_UserId");
+                                         table : "UserEntranceLog",
+                                         newName : "IX_UserEntranceLog_UserId");
 
             migrationBuilder.RenameIndex("IX_UsersEntrancesLogs_Id",
-                                         table :"UserEntranceLog",
-                                         newName :"IX_UserEntranceLog_Id");
+                                         table : "UserEntranceLog",
+                                         newName : "IX_UserEntranceLog_Id");
 
             migrationBuilder.AddPrimaryKey("PK_UserEntranceLog",
                                            "UserEntranceLog",
@@ -66,8 +66,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                            "UserEntranceLog",
                                            "UserId",
                                            "Users",
-                                           principalColumn :"Id",
-                                           onDelete :ReferentialAction.Cascade);
+                                           principalColumn : "Id",
+                                           onDelete : ReferentialAction.Cascade);
         }
     }
 }

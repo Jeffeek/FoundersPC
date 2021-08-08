@@ -86,7 +86,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 await
                     client
                         .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
-                            >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{ApplicationRestAddons.All}");
+                        >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{ApplicationRestAddons.All}");
 
             return responseMessage;
         }
@@ -148,7 +148,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
             var responseMessage =
                 await client
                     .GetFromJsonAsync<PaginationResponse<UserEntranceLogReadDto>
-                        >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                    >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
 
             return responseMessage;
         }
@@ -284,7 +284,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Users
                 await
                     client
                         .GetFromJsonAsync<IEnumerable<UserEntranceLogReadDto>
-                            >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.Between}{IdentityServerRoutes.BuildRouteForBetween(start, finish)}");
+                        >($"{IdentityServerRoutes.Logs.UsersEntrances.UsersEntrancesEndpoint}/{IdentityServerRoutes.Logs.UsersEntrances.Between}{IdentityServerRoutes.BuildRouteForBetween(start, finish)}");
 
             return responseMessage;
         }

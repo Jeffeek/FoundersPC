@@ -24,10 +24,10 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             migrationBuilder.AddColumn<string>("HashedToken",
                                                "UsersTokens",
                                                "nvarchar(88)",
-                                               maxLength :88,
-                                               nullable :false,
-                                               defaultValue :"",
-                                               fixedLength :true);
+                                               maxLength : 88,
+                                               nullable : false,
+                                               defaultValue : "",
+                                               fixedLength : true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -38,20 +38,20 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
             migrationBuilder.AddColumn<int>("ApiAccessTokenId",
                                             "UsersTokens",
                                             "int",
-                                            nullable :false,
-                                            defaultValue :0);
+                                            nullable : false,
+                                            defaultValue : 0);
 
             migrationBuilder.CreateTable("ApiTokens",
                                          table => new
                                                   {
-                                                      Id = table.Column<int>("int", nullable :false)
+                                                      Id = table.Column<int>("int", nullable : false)
                                                                 .Annotation("SqlServer:Identity", "1, 1"),
                                                       HashedToken =
                                                           table.Column<string>("nvarchar(88)",
-                                                                               maxLength :88,
-                                                                               nullable :false)
+                                                                               maxLength : 88,
+                                                                               nullable : false)
                                                   },
-                                         constraints :table => table.PrimaryKey("PK_ApiTokens", x => x.Id));
+                                         constraints : table => table.PrimaryKey("PK_ApiTokens", x => x.Id));
 
             migrationBuilder.CreateIndex("IX_UsersTokens_ApiAccessTokenId",
                                          "UsersTokens",
@@ -65,8 +65,8 @@ namespace FoundersPC.Identity.Infrastructure.Migrations
                                            "UsersTokens",
                                            "ApiAccessTokenId",
                                            "ApiTokens",
-                                           principalColumn :"Id",
-                                           onDelete :ReferentialAction.Cascade);
+                                           principalColumn : "Id",
+                                           onDelete : ReferentialAction.Cascade);
         }
     }
 }

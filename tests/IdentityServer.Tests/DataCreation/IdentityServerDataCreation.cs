@@ -15,13 +15,13 @@ namespace IdentityServer.Tests.DataCreation
 {
     public static class IdentityServerDataCreation
     {
-        public readonly static Faker<UserEntity> UsersFaker;
+        public static readonly Faker<UserEntity> UsersFaker;
 
-        public readonly static Faker<UserEntranceLog> UsersEntrancesFaker;
+        public static readonly Faker<UserEntranceLog> UsersEntrancesFaker;
 
-        public readonly static Faker<AccessTokenLog> AccessTokenLogsFaker;
+        public static readonly Faker<AccessTokenLog> AccessTokenLogsFaker;
 
-        public readonly static Faker<AccessTokenEntity> AccessTokensFaker;
+        public static readonly Faker<AccessTokenEntity> AccessTokensFaker;
 
         static IdentityServerDataCreation()
         {
@@ -68,9 +68,9 @@ namespace IdentityServer.Tests.DataCreation
                                                    .RuleFor(x => x.IsBlocked, faker2 => faker2.Random.Bool(0.03f))
                                                    .RuleFor(x => x.UsagesLogs,
                                                             (faker2, token) => AccessTokenLogsFaker.RuleFor(x => x.RequestDateTime,
-                                                                                                            faker3 =>
-                                                                                                                faker3.Date.Between(token.StartEvaluationDate,
-                                                                                                                                    DateTime.Now))
+                                                                                                       faker3 =>
+                                                                                                           faker3.Date.Between(token.StartEvaluationDate,
+                                                                                                               DateTime.Now))
                                                                                                    .Generate(faker2.Random.Int(0, 100)))
                                                    .Generate(faker.Random.Int(0, 50)));
         }

@@ -1,14 +1,12 @@
 #region Using namespaces
 
 using System.IO;
-using System.Linq;
 using System.Text.Json;
 using FoundersPC.ApplicationShared;
 using FoundersPC.ApplicationShared.ApplicationConstants;
 using FoundersPC.ApplicationShared.Middleware;
 using FoundersPC.Identity.Application;
 using FoundersPC.Identity.Infrastructure;
-using FoundersPC.Identity.Infrastructure.Contexts;
 using FoundersPC.Identity.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -63,6 +61,7 @@ namespace FoundersPC.IdentityServer
                              true)
                 .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\Jwt\\JwtSettings.json",
                              false)
+                .AddJsonFile("appsettings.json", false, true)
                 .AddConfiguration(configuration, false);
 
             Configuration = builder.Build();

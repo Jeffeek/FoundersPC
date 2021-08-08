@@ -10,19 +10,14 @@ namespace FoundersPC.Web.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
-        public IActionResult Index() =>
-            View();
+        public IActionResult Index() => View();
 
-        public IActionResult Pricing() =>
-            View("Pricing");
+        public IActionResult Pricing() => View("Pricing");
 
-        public IActionResult Privacy() =>
-            View("Privacy");
+        public IActionResult Privacy() => View("Privacy");
 
-        public IActionResult About() =>
-            View("About");
+        public IActionResult About() => View("About");
 
-        public ActionResult SpaceInvaders() =>
-            View("Space-Invaders/SpaceInvaders");
+        public ActionResult SpaceInvaders() => View("Space-Invaders/SpaceInvaders");
     }
 }

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
-    <ProjectReference Include="..\FoundersPC.RepositoryCollectionsExtensions\FoundersPC.IdentityEntities.csproj" />
+    <ProjectReference Include="..\FoundersPC.IdentityEntities\FoundersPC.IdentityEntities.csproj" />
   </ItemGroup>
 
 </Project>

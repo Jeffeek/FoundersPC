@@ -26,10 +26,9 @@ namespace FoundersPC.IdentityServer.Controllers.Users
     {
         private readonly IUsersInformationService _usersInformationService;
 
-        public UsersController(IUsersInformationService usersInformationService) =>
-            _usersInformationService = usersInformationService;
+        public UsersController(IUsersInformationService usersInformationService) => _usersInformationService = usersInformationService;
 
-        [Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
+        //[Authorize(Policy = ApplicationAuthorizationPolicies.AdministratorPolicy)]
         [HttpGet(IdentityServerRoutes.Users.ByUserId)]
         public async ValueTask<ActionResult<UserEntityReadDto>> GetById([FromRoute] int id)
         {

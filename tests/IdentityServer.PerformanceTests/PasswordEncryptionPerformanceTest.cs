@@ -18,14 +18,13 @@ namespace IdentityServer.PerformanceTests
                1)]
     public class PasswordEncryptionPerformanceTest
     {
+        private PasswordEncryptorService _passwordEncryptorService;
+
         [ParamsSource(nameof(GetLengths))]
         public int PasswordLength;
 
-        private PasswordEncryptorService _passwordEncryptorService;
-
         [GlobalSetup]
-        public void Setup() =>
-            _passwordEncryptorService = new PasswordEncryptorService();
+        public void Setup() => _passwordEncryptorService = new PasswordEncryptorService();
 
         [Benchmark]
         public string PasswordEncryption_TimeBenchmark()
@@ -37,7 +36,6 @@ namespace IdentityServer.PerformanceTests
             return encrypted;
         }
 
-        public IEnumerable<int> GetLengths() =>
-            Enumerable.Range(6, 30);
+        public IEnumerable<int> GetLengths() => Enumerable.Range(6, 30);
     }
 }

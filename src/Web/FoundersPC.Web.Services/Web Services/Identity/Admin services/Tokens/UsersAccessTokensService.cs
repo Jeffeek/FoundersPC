@@ -21,8 +21,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        public UsersAccessTokensService(IHttpClientFactory clientFactory) =>
-            _clientFactory = clientFactory;
+        public UsersAccessTokensService(IHttpClientFactory clientFactory) => _clientFactory = clientFactory;
 
         #region Docs
 
@@ -125,7 +124,7 @@ namespace FoundersPC.Web.Services.Web_Services.Identity.Admin_services.Tokens
                 await
                     client
                         .GetFromJsonAsync<PaginationResponse<AccessTokenReadDto>
-                            >($"{IdentityServerRoutes.Tokens.TokensEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
+                        >($"{IdentityServerRoutes.Tokens.TokensEndpoint}{ApplicationRestAddons.BuildPageQuery(pageNumber, pageSize)}");
         }
 
         #region Docs
