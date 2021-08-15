@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using FoundersPC.API.Domain.Common;
 using FoundersPC.API.Domain.Entities.Hardware;
@@ -30,10 +26,6 @@ namespace FoundersPC.Persistence
         }
 
         public DbSet<Processor> Processors { get; set; }
-
-        public DbSet<ProcessorCore> ProcessorCores { get; set; }
-
-        public DbSet<VideoCardCore> VideoCardCores { get; set; }
 
         public DbSet<VideoCard> VideoCards { get; set; }
 

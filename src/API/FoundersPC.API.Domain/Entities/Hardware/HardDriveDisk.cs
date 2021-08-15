@@ -2,7 +2,6 @@
 
 using System;
 using FoundersPC.API.Domain.Entities.Metadatas;
-using FoundersPC.API.Domain.Enums;
 
 #endregion
 

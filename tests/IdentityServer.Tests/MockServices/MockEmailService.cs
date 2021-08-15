@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FoundersPC.Identity.Application.Interfaces.Services.Mail_service;
+using FoundersPC.SharedKernel.Interfaces;
 
 #endregion
 

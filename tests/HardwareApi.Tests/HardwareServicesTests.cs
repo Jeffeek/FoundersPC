@@ -2,14 +2,6 @@
 
 using System.Linq;
 using System.Threading.Tasks;
-using FoundersPC.API.Infrastructure.Contexts;
-using FoundersPC.API.Infrastructure.Repositories;
-using FoundersPC.API.Infrastructure.Repositories.Hardware;
-using FoundersPC.API.Infrastructure.Repositories.Hardware.Memory;
-using FoundersPC.API.Infrastructure.Repositories.Hardware.Processor;
-using FoundersPC.API.Infrastructure.Repositories.Hardware.VideoCard;
-using FoundersPC.API.Infrastructure.UnitOfWork;
-using FoundersPC.ApplicationShared.ApplicationConstants;
 using HardwareApi.Tests.DataCreation;
 using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;

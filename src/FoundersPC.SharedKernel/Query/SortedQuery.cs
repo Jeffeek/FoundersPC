@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using FoundersPC.SharedKernel.Extensions;
 
 namespace FoundersPC.SharedKernel.Query
 {

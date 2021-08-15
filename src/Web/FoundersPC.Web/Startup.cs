@@ -1,11 +1,8 @@
 #region Using namespaces
 
 using System.IO;
-using FoundersPC.ApplicationShared;
-using FoundersPC.Web.Application;
-using FoundersPC.Web.Application.Middleware;
-using FoundersPC.Web.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using FoundersPC.Persistence;
+using FoundersPC.SharedKernel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -56,18 +53,13 @@ namespace FoundersPC.Web
         {
             services.AddLogging(config => config.AddSerilog(Log.Logger));
 
-            services.AddMicroservices();
+            services.AddOptions();
 
-            services.AddWebApplicationMappings();
-            services.AddValidators();
+            services.AddPersistence(Configuration);
+            services.AddBearerAuthentication(Configuration);
+            services.AddEmailDaemon(Configuration);
 
             services.AddHttpClient();
-
-            services.AddScoped<CookieCheckMiddleware>();
-
-            services.AddCookieSecureAuthentication();
-
-            services.AddAuthorizationPolicies(CookieAuthenticationDefaults.AuthenticationScheme);
 
             services.AddControllersWithViews();
 
@@ -101,8 +93,6 @@ namespace FoundersPC.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-            app.UseMiddleware<CookieCheckMiddleware>();
 
             app.UseSerilogRequestLogging();
 

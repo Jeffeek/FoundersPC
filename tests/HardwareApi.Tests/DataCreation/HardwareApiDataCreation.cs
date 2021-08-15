@@ -7,7 +7,6 @@ using System.Linq;
 using AutoMapper.Internal;
 using Bogus;
 using Bogus.Extensions;
-using FoundersPC.API.Domain.Entities;
 using FoundersPC.API.Domain.Entities.Hardware;
 
 #endregion
@@ -29,10 +28,9 @@ namespace HardwareApi.Tests.DataCreation
                                      faker => faker.Lorem.Text()
                                                    .OrNull(faker))
                             .RuleFor(x => x.FullName, faker => faker.Name.FullName())
-                            .RuleFor(x => x.Country, faker => faker.Address.Country());
+                            .RuleFor(x => x.Country.Name, faker => faker.Address.Country());
 
             CasesFaker = new Faker<Case>()
-                         .RuleFor(x => x.Type, faker => faker.Random.Word())
                          .RuleFor(x => x.Width,
                                   faker => faker.Random.Int(50, 400)
                                                 .OrNull(faker))
@@ -50,7 +48,6 @@ namespace HardwareApi.Tests.DataCreation
                                                                          .Where(x => x.IsPublic())
                                                                          .Select(x => x.Name)))
                          .RuleFor(x => x.Material, faker => faker.Commerce.ProductMaterial())
-                         .RuleFor(x => x.MaxMotherboardSize, faker => faker.PickRandomParam("20+24", "20+4+4", "24"))
                          .RuleFor(x => x.WindowMaterial, faker => faker.Commerce.ProductMaterial())
                          .RuleFor(x => x.TransparentWindow, faker => faker.Random.Bool(0.65f))
                          .RuleFor(x => x.ProducerId, faker => faker.Random.Int(0, 10))

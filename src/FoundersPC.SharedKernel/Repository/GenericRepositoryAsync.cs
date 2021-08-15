@@ -2,10 +2,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using FoundersPC.API.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
@@ -139,19 +137,5 @@ namespace FoundersPC.SharedKernel.Repository
         public virtual Task<int> CountAsync() =>
             Context.Set<T>()
                    .CountAsync();
-
-        #region Docs
-
-        /// <exception cref="T:System.ArgumentOutOfRangeException">pageNumber or pageSize was below or equal to 0.</exception>
-        /// <exception cref="T:System.ArgumentNullException">
-        ///     <paramref name="source"/> or <paramref name="keySelector"/> is
-        ///     <see langword="null"/>.
-        /// </exception>
-
-        #endregion
-
-        protected IQueryable<T> GetPaginateableInternal(int pageNumber = 1, int pageSize = 10) =>
-            Context.Set<T>()
-                   .Paginate(pageNumber, pageSize);
     }
 }

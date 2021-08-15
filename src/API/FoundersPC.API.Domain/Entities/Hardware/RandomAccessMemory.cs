@@ -29,8 +29,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc/>
-        public bool Equals(RandomAccessMemory other)
+        /// <inheritdoc />
+        public bool Equals(RandomAccessMemory? other)
         {
             if (ReferenceEquals(null, other))
                 return false;
@@ -38,19 +38,18 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             if (ReferenceEquals(this, other))
                 return true;
 
-            return MemoryType == other.MemoryType
+            return RAMTypeId == other.RAMTypeId
                    && Frequency == other.Frequency
-                   && CASLatency == other.CASLatency
                    && Timings == other.Timings
-                   && Voltage.Equals(other.Voltage)
+                   && Nullable.Equals(Voltage, other.Voltage)
                    && XMP == other.XMP
                    && ECC == other.ECC
                    && PCIndex == other.PCIndex
                    && Volume == other.Volume;
         }
 
-        /// <inheritdoc/>
-        public override bool Equals(object obj)
+        /// <inheritdoc />
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
                 return false;
@@ -58,19 +57,22 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             if (ReferenceEquals(this, obj))
                 return true;
 
-            return obj.GetType() == GetType() && Equals((RandomAccessMemory)obj);
+            if (obj.GetType() != this.GetType())
+                return false;
+
+            return Equals((RandomAccessMemory)obj);
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public override int GetHashCode() =>
-            HashCode.Combine(MemoryType,
-                             Frequency * Volume,
-                             CASLatency,
+            HashCode.Combine(RAMTypeId,
+                             Frequency,
                              Timings,
                              Voltage,
                              XMP,
                              ECC,
-                             PCIndex);
+                             PCIndex,
+                             Volume);
 
         #endregion
     }

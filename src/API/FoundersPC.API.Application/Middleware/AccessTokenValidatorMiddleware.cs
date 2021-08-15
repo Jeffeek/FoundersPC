@@ -2,9 +2,8 @@
 
 using System.Net.Http;
 using System.Threading.Tasks;
-using FoundersPC.ApplicationShared;
-using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.ApplicationShared.ApplicationConstants.Routes;
+using FoundersPC.SharedKernel.ApplicationConstants;
+using FoundersPC.SharedKernel.ApplicationConstants.Routes;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
@@ -46,7 +45,7 @@ namespace FoundersPC.API.Application.Middleware
             if (authenticateResult.Succeeded
                 && authenticateResult.Principal is not null)
             {
-                var isRequestByEmployee = authenticateResult.Principal.IsInRole(ApplicationRoles.Administrator, ApplicationRoles.Manager);
+                var isRequestByEmployee = authenticateResult.Principal.IsInRole(ApplicationRoles.Administrator) || authenticateResult.Principal.IsInRole(ApplicationRoles.Manager);
 
                 if (isRequestByEmployee)
                     await next(context);

@@ -36,8 +36,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc/>
-        public bool Equals(Processor other)
+        /// <inheritdoc />
+        public bool Equals(Processor? other)
         {
             if (ReferenceEquals(null, other))
                 return false;
@@ -47,8 +47,6 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
             return TDP == other.TDP
                    && Series == other.Series
-                   && ProcessorCoreId == other.ProcessorCoreId
-                   && Title == other.Title
                    && MaxRamSpeed == other.MaxRamSpeed
                    && CoresCount == other.CoresCount
                    && ThreadsCount == other.ThreadsCount
@@ -58,11 +56,11 @@ namespace FoundersPC.API.Domain.Entities.Hardware
                    && L1Cache == other.L1Cache
                    && L2Cache == other.L2Cache
                    && L3Cache == other.L3Cache
-                   && IntegratedGraphics == other.IntegratedGraphics;
+                   && IntegratedGraphicsId == other.IntegratedGraphicsId;
         }
 
-        /// <inheritdoc/>
-        public override bool Equals(object obj)
+        /// <inheritdoc />
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
                 return false;
@@ -70,20 +68,18 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             if (ReferenceEquals(this, obj))
                 return true;
 
-            if (obj.GetType() != GetType())
+            if (obj.GetType() != this.GetType())
                 return false;
 
             return Equals((Processor)obj);
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             var hashCode = new HashCode();
             hashCode.Add(TDP);
             hashCode.Add(Series);
-            hashCode.Add(ProcessorCoreId);
-            hashCode.Add(Title);
             hashCode.Add(MaxRamSpeed);
             hashCode.Add(CoresCount);
             hashCode.Add(ThreadsCount);
@@ -93,7 +89,7 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             hashCode.Add(L1Cache);
             hashCode.Add(L2Cache);
             hashCode.Add(L3Cache);
-            hashCode.Add(IntegratedGraphics);
+            hashCode.Add(IntegratedGraphicsId);
 
             return hashCode.ToHashCode();
         }

@@ -2,8 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using FoundersPC.API.Domain.Common;
 using Microsoft.AspNetCore.Identity;
 
 #endregion

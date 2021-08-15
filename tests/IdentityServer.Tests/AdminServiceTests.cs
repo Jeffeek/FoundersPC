@@ -2,23 +2,13 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.Identity.Application.Interfaces.Services.User_Services;
-using FoundersPC.Identity.Application.Mappings;
-using FoundersPC.Identity.Infrastructure.Contexts;
-using FoundersPC.Identity.Infrastructure.Repositories.Logs;
-using FoundersPC.Identity.Infrastructure.Repositories.Tokens;
-using FoundersPC.Identity.Infrastructure.Repositories.Users;
-using FoundersPC.Identity.Infrastructure.UnitOfWork;
-using FoundersPC.Identity.Services.Administration.Admin_Services;
-using FoundersPC.Identity.Services.Encryption_Services;
-using FoundersPC.Identity.Services.Token_Services;
+using FoundersPC.API.Application.Services;
+using FoundersPC.Persistence;
+using FoundersPC.SharedKernel.ApplicationConstants;
 using IdentityServer.Tests.DataCreation;
 using IdentityServer.Tests.MockServices;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
@@ -39,31 +29,6 @@ namespace IdentityServer.Tests
 
             var mapper = new MapperConfiguration(x => x.AddProfile(typeof(MappingStartup)));
 
-            var unitOfWork = new UnitOfWorkUsersIdentity(new UsersRepository(_context),
-                                                         new RolesRepository(_context),
-                                                         new AccessTokensLogsRepository(_context),
-                                                         new UsersEntrancesLogsRepository(_context),
-                                                         new AccessTokensRepository(_context),
-                                                         _context,
-                                                         new NullLogger<UnitOfWorkUsersIdentity>());
-
-            _adminService = new AdminService(new MockEmailService(),
-                                             unitOfWork,
-                                             new AccessUsersTokensService(unitOfWork,
-                                                                          new AccessTokenReservationService(unitOfWork,
-                                                                              new TokenEncryptorService(),
-                                                                              new MockEmailService(),
-                                                                              new NullLogger<AccessTokenReservationService>()),
-                                                                          new AccessTokensBlockingService(new NullLogger<AccessTokensBlockingService>(),
-                                                                                                              unitOfWork),
-                                                                          new AccessTokensRequestsService(new NullLogger<AccessTokensRequestsService>(),
-                                                                                                              unitOfWork),
-                                                                          new AccessTokensStatusService(unitOfWork,
-                                                                                                        new NullLogger<AccessTokensStatusService>()),
-                                                                          new Mapper(mapper),
-                                                                          new NullLogger<AccessUsersTokensService>()),
-                                             new NullLogger<AdminService>());
-
             var roles = IdentityServerDataCreation.GenerateRolesWithData();
 
             await _context.Roles.AddRangeAsync(roles);
@@ -71,9 +36,7 @@ namespace IdentityServer.Tests
             await _context.SaveChangesAsync();
         }
 
-        private FoundersPCUsersContext _context;
-
-        private IAdminService _adminService;
+        private ApplicationDbContext _context;
 
         [Test]
         public async Task BlockUserTestAsync()

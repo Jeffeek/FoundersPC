@@ -3,11 +3,11 @@
 using System;
 using System.Collections.Generic;
 using Bogus;
-using FoundersPC.ApplicationShared.ApplicationConstants;
-using FoundersPC.Identity.Domain.Entities.Logs;
-using FoundersPC.Identity.Domain.Entities.Tokens;
-using FoundersPC.Identity.Domain.Entities.Users;
-using FoundersPC.Identity.Services.Encryption_Services;
+using FoundersPC.API.Application.Services;
+using FoundersPC.API.Domain.Entities.Identity.Logging;
+using FoundersPC.API.Domain.Entities.Identity.Tokens;
+using FoundersPC.API.Domain.Entities.Identity.Users;
+using FoundersPC.SharedKernel.ApplicationConstants;
 
 #endregion
 
@@ -15,13 +15,13 @@ namespace IdentityServer.Tests.DataCreation
 {
     public static class IdentityServerDataCreation
     {
-        public static readonly Faker<UserEntity> UsersFaker;
+        public static readonly Faker<ApplicationUser> UsersFaker;
 
         public static readonly Faker<UserEntranceLog> UsersEntrancesFaker;
 
         public static readonly Faker<AccessTokenLog> AccessTokenLogsFaker;
 
-        public static readonly Faker<AccessTokenEntity> AccessTokensFaker;
+        public static readonly Faker<AccessToken> AccessTokensFaker;
 
         static IdentityServerDataCreation()
         {
@@ -33,13 +33,13 @@ namespace IdentityServer.Tests.DataCreation
 
             AccessTokenLogsFaker = new Faker<AccessTokenLog>();
 
-            AccessTokensFaker = new Faker<AccessTokenEntity>()
-                .RuleFor(x => x.HashedToken, tokenEncryptionService.CreateToken());
+            AccessTokensFaker = new Faker<AccessToken>()
+                .RuleFor(x => x.Token, tokenEncryptionService.CreateToken());
 
-            UsersFaker = new Faker<UserEntity>()
+            UsersFaker = new Faker<ApplicationUser>()
                          .RuleFor(x => x.Email,
                                   faker => faker.Person.Email)
-                         .RuleFor(x => x.HashedPassword,
+                         .RuleFor(x => x.PasswordHash,
                                   faker => passwordEncryptorService.EncryptPassword(faker.Random.AlphaNumeric(faker.Random.Int(6, 30))))
                          .RuleFor(x => x.IsActive,
                                   faker => faker.Random.Bool(0.97f))
@@ -66,7 +66,7 @@ namespace IdentityServer.Tests.DataCreation
                                                    .RuleFor(x => x.ExpirationDate,
                                                             (faker2, token) => faker2.Date.Soon(faker2.Random.Int(300, 5000), token.StartEvaluationDate))
                                                    .RuleFor(x => x.IsBlocked, faker2 => faker2.Random.Bool(0.03f))
-                                                   .RuleFor(x => x.UsagesLogs,
+                                                   .RuleFor(x => x.UsageLogs,
                                                             (faker2, token) => AccessTokenLogsFaker.RuleFor(x => x.RequestDateTime,
                                                                                                        faker3 =>
                                                                                                            faker3.Date.Between(token.StartEvaluationDate,
@@ -75,22 +75,22 @@ namespace IdentityServer.Tests.DataCreation
                                                    .Generate(faker.Random.Int(0, 50)));
         }
 
-        public static IEnumerable<RoleEntity> GenerateRolesWithData() =>
+        public static IEnumerable<ApplicationRole> GenerateRolesWithData() =>
             new[]
             {
-                new()
+                new ApplicationRole
                 {
-                    RoleTitle = ApplicationRoles.Administrator,
+                    Name = ApplicationRoles.Administrator,
                     Users = UsersFaker.Generate(1)
                 },
-                new RoleEntity
+                new ApplicationRole
                 {
-                    RoleTitle = ApplicationRoles.Manager,
+                    Name = ApplicationRoles.Manager,
                     Users = UsersFaker.Generate(3)
                 },
-                new RoleEntity
+                new ApplicationRole
                 {
-                    RoleTitle = ApplicationRoles.DefaultUser,
+                    Name = ApplicationRoles.DefaultUser,
                     Users = UsersFaker.Generate(20)
                 }
             };

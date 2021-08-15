@@ -3,6 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using FoundersPC.SharedKernel.Filter;
+using FoundersPC.SharedKernel.Interfaces;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.SharedKernel.Query;
 using Microsoft.EntityFrameworkCore;
@@ -60,6 +61,20 @@ namespace FoundersPC.SharedKernel.Extensions
                                                                                                              orderProperty.PropertyType),
                                                                                                          Expression.Property(selectorParam, orderProperty),
                                                                                                          selectorParam)));
+        }
+
+        public static IQueryable<T> Paginate<T>(this IQueryable<T> source, int pageNumber, int pageSize)
+            where T : IIdentityItem<int>
+        {
+            if (pageSize <= 0)
+                throw new ArgumentOutOfRangeException(nameof(pageNumber));
+
+            if (pageNumber <= 0)
+                throw new ArgumentOutOfRangeException(nameof(pageSize));
+
+            return source.OrderBy(x => x.Id)
+                         .Skip(pageSize * (pageNumber - 1))
+                         .Take(pageSize);
         }
     }
 }

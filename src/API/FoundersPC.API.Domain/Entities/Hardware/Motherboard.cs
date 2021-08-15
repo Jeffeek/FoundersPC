@@ -3,7 +3,6 @@
 using System;
 using FoundersPC.API.Domain.Entities.Hardware.Additional;
 using FoundersPC.API.Domain.Entities.Metadatas;
-using FoundersPC.API.Domain.Enums;
 
 #endregion
 
@@ -45,8 +44,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         #region Equality members
 
-        /// <inheritdoc/>
-        public bool Equals(Motherboard other)
+        /// <inheritdoc />
+        public bool Equals(Motherboard? other)
         {
             if (ReferenceEquals(null, other))
                 return false;
@@ -54,12 +53,13 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             if (ReferenceEquals(this, other))
                 return true;
 
-            return Socket == other.Socket
-                   && MotherboardFactorId.Equals(other.MotherboardFactorId)
-                   && RAMType == other.RAMType
+            return SocketId == other.SocketId
+                   && MotherboardFactorId == other.MotherboardFactorId
+                   && RAMTypeId == other.RAMTypeId
                    && RAMSlotsCount == other.RAMSlotsCount
-                   && RAMMode == other.RAMMode
-                   && SLIOrCrossfire == other.SLIOrCrossfire
+                   && RAMModeId == other.RAMModeId
+                   && CrossfireSupport == other.CrossfireSupport
+                   && SliSupport == other.SliSupport
                    && AudioSupport == other.AudioSupport
                    && WiFiSupport == other.WiFiSupport
                    && PS2Support == other.PS2Support
@@ -67,8 +67,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware
                    && PCIExpressVersion == other.PCIExpressVersion;
         }
 
-        /// <inheritdoc/>
-        public override bool Equals(object obj)
+        /// <inheritdoc />
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
                 return false;
@@ -76,22 +76,23 @@ namespace FoundersPC.API.Domain.Entities.Hardware
             if (ReferenceEquals(this, obj))
                 return true;
 
-            if (obj.GetType() != GetType())
+            if (obj.GetType() != this.GetType())
                 return false;
 
             return Equals((Motherboard)obj);
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             var hashCode = new HashCode();
-            hashCode.Add(Socket);
+            hashCode.Add(SocketId);
             hashCode.Add(MotherboardFactorId);
-            hashCode.Add(RAMType);
+            hashCode.Add(RAMTypeId);
             hashCode.Add(RAMSlotsCount);
-            hashCode.Add(RAMMode);
-            hashCode.Add(SLIOrCrossfire);
+            hashCode.Add(RAMModeId);
+            hashCode.Add(CrossfireSupport);
+            hashCode.Add(SliSupport);
             hashCode.Add(AudioSupport);
             hashCode.Add(WiFiSupport);
             hashCode.Add(PS2Support);
