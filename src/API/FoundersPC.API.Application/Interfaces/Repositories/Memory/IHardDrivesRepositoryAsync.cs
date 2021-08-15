@@ -1,6 +1,6 @@
 ﻿#region Using namespaces
 
-using FoundersPC.API.Domain.Entities.Hardware.Memory;
+using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.RepositoryShared.Repository;
 
 #endregion

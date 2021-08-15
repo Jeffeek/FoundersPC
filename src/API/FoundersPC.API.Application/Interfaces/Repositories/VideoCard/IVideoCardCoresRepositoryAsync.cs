@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using FoundersPC.API.Domain.Entities.Hardware.VideoCard;
 using FoundersPC.RepositoryShared.Repository;
 
 #endregion

@@ -6,6 +6,8 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
@@ -19,10 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj" />
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
     <ProjectReference Include="..\FoundersPC.API.Application\FoundersPC.API.Application.csproj" />
-    <ProjectReference Include="..\FoundersPC.API.Services\FoundersPC.API.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <!--<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>-->

@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using FoundersPC.API.Domain.Common;
-using FoundersPC.API.Domain.Entities.Hardware.Memory;
+using FoundersPC.API.Domain.Entities.Metadatas;
 
 #endregion
 
@@ -19,9 +19,9 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         public ICollection<Case>? Cases { get; set; } = default!;
 
-        public ICollection<Processor.Processor>? Processors { get; set; } = default!;
+        public ICollection<Processor>? Processors { get; set; } = default!;
 
-        public ICollection<VideoCard.VideoCard>? VideoCards { get; set; } = default!;
+        public ICollection<VideoCard>? VideoCards { get; set; } = default!;
 
         public ICollection<Motherboard>? Motherboards { get; set; } = default!;
 
@@ -29,13 +29,15 @@ namespace FoundersPC.API.Domain.Entities.Hardware
 
         public string? ShortName { get; set; } = default!;
 
-        public string? FullName { get; set; } = default!;
+        public string FullName { get; set; } = default!;
 
-        public string? Country { get; set; } = default!;
+        public int? CountryId { get; set; } = default!;
 
         public string? Website { get; set; } = default!;
 
         public DateTime? FoundationDate { get; set; } = default!;
+
+        public Country? Country { get; set; } = default!;
 
         #region Equality members
 

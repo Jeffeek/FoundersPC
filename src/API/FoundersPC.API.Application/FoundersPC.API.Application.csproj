@@ -9,6 +9,7 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.1.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.5" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
@@ -18,9 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj" />
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.ServicesShared\FoundersPC.ServicesShared.csproj" />
     <ProjectReference Include="..\FoundersPC.API.Domain\FoundersPC.API.Domain.csproj" />
   </ItemGroup>
 

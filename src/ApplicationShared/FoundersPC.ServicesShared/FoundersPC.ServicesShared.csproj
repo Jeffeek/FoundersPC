@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
-    <ProjectReference Include="..\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
   </ItemGroup>
 
 </Project>

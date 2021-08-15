@@ -26,21 +26,21 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
 
         /// <inheritdoc/>
         public async Task<IEnumerable<ProcessorReadDto>> GetAllProcessorsAsync() =>
-            _mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor.Processor>, IEnumerable<ProcessorReadDto>>(await
-                                                                                                      _unitOfWorkHardwareAPI
-                                                                                                          .ProcessorsRepository
-                                                                                                          .GetAllAsync());
+            _mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor>, IEnumerable<ProcessorReadDto>>(await
+                                                                                                            _unitOfWorkHardwareAPI
+                                                                                                                .ProcessorsRepository
+                                                                                                                .GetAllAsync());
 
         /// <inheritdoc/>
         public async Task<ProcessorReadDto> GetProcessorByIdAsync(int cpuId) =>
-            _mapper.Map<Domain.Entities.Hardware.Processor.Processor, ProcessorReadDto>(await _unitOfWorkHardwareAPI
-                                                                                              .ProcessorsRepository
-                                                                                              .GetByIdAsync(cpuId));
+            _mapper.Map<Domain.Entities.Hardware.Processor, ProcessorReadDto>(await _unitOfWorkHardwareAPI
+                                                                                    .ProcessorsRepository
+                                                                                    .GetByIdAsync(cpuId));
 
         /// <inheritdoc/>
         public async Task<bool> CreateProcessorAsync(ProcessorInsertDto processor)
         {
-            var mappedCpu = _mapper.Map<ProcessorInsertDto, Domain.Entities.Hardware.Processor.Processor>(processor);
+            var mappedCpu = _mapper.Map<ProcessorInsertDto, Domain.Entities.Hardware.Processor>(processor);
 
             var entityAlreadyExists =
                 await _unitOfWorkHardwareAPI.ProcessorsRepository.AnyAsync(x => x.Equals(mappedCpu));
@@ -86,9 +86,9 @@ namespace FoundersPC.API.Services.Hardware_Services.Hardware.Processor
         /// <inheritdoc/>
         public async Task<IPaginationResponse<ProcessorReadDto>> GetPaginateableAsync(int pageNumber = 1, int pageSize = FoundersPCConstants.PageSize)
         {
-            var items = _mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor.Processor>, IEnumerable<ProcessorReadDto>>(await _unitOfWorkHardwareAPI.ProcessorsRepository
-                                                                                                         .GetPaginateableAsync(pageNumber,
-                                                                                                             pageSize));
+            var items = _mapper.Map<IEnumerable<Domain.Entities.Hardware.Processor>, IEnumerable<ProcessorReadDto>>(await _unitOfWorkHardwareAPI.ProcessorsRepository
+                                                                                                        .GetPaginateableAsync(pageNumber,
+                                                                                                            pageSize));
 
             var totalItemsCount = await _unitOfWorkHardwareAPI.ProcessorsRepository.CountAsync();
 

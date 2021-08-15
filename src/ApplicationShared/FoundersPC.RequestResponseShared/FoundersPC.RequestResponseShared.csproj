@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoundersPC.ApplicationShared\FoundersPC.ApplicationShared.csproj" />
-    <ProjectReference Include="..\FoundersPC.Identity.Dto\FoundersPC.Identity.Dto.csproj" />
   </ItemGroup>
 
 </Project>

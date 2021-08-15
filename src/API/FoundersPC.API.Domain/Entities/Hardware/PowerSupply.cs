@@ -1,18 +1,19 @@
 ﻿#region Using namespaces
 
 using System;
+using FoundersPC.API.Domain.Entities.Metadatas;
 
 #endregion
 
 namespace FoundersPC.API.Domain.Entities.Hardware
 {
-    public class PowerSupply : HardwareEntityBase, IEquatable<PowerSupply>
+    public class PowerSupply : HardwareBase, IEquatable<PowerSupply>
     {
         public int? Power { get; set; } = default!;
 
         public int? Efficiency { get; set; } = default!;
 
-        public string MotherboardPowering { get; set; } = default!;
+        public int MotherboardPoweringId { get; set; } = default!;
 
         public bool? IsModular { get; set; } = default!;
 
@@ -25,6 +26,8 @@ namespace FoundersPC.API.Domain.Entities.Hardware
         public bool? Certificate80PLUS { get; set; } = default!;
 
         public bool? PFC { get; set; } = default!;
+
+        public MotherboardPowering? MotherboardPowering { get; set; } = default!;
 
         #region Equality members
 

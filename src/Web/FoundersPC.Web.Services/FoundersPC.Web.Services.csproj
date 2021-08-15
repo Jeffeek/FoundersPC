@@ -12,9 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ApplicationShared\FoundersPC.API.Dto\FoundersPC.API.Dto.csproj" />
-    <ProjectReference Include="..\..\ApplicationShared\FoundersPC.RequestResponseShared\FoundersPC.RequestResponseShared.csproj" />
-    <ProjectReference Include="..\FoundersPC.Web.Application\FoundersPC.Web.Application.csproj" />
-    <ProjectReference Include="..\FoundersPC.Web.Domain\FoundersPC.Web.Domain.csproj" />
   </ItemGroup>
 
 </Project>

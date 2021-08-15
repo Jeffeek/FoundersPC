@@ -10,8 +10,4 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FoundersPC.Identity.Application\FoundersPC.Identity.Application.csproj" />
-  </ItemGroup>
-
 </Project>
