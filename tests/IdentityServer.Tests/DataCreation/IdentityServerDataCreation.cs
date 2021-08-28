@@ -4,10 +4,12 @@ using System;
 using System.Collections.Generic;
 using Bogus;
 using FoundersPC.API.Application.Services;
+using FoundersPC.API.Application.Settings;
 using FoundersPC.API.Domain.Entities.Identity.Logging;
 using FoundersPC.API.Domain.Entities.Identity.Tokens;
 using FoundersPC.API.Domain.Entities.Identity.Users;
 using FoundersPC.SharedKernel.ApplicationConstants;
+using Microsoft.Extensions.Options;
 
 #endregion
 
@@ -25,7 +27,11 @@ namespace IdentityServer.Tests.DataCreation
 
         static IdentityServerDataCreation()
         {
-            var passwordEncryptorService = new PasswordEncryptorService();
+            var passwordEncryptorService = new PasswordEncryptorService(Options.Create(new PasswordSettings()
+                                                                                       {
+                                                                                           Salt = "1A133311-1178-203C-M1T6-1234QWERTY99",
+                                                                                           WorkFactor = 12
+                                                                                       }));
 
             var tokenEncryptionService = new TokenEncryptorService();
 

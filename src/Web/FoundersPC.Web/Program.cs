@@ -36,7 +36,7 @@ namespace FoundersPC.Web
         public static async Task Main(string[] args)
         {
             var loggerConfiguration = new ConfigurationBuilder()
-                                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\LoggerConfiguration.json")
+                                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\FoundersPC.SharedKernel\\LoggerConfiguration.json")
                                       .Build();
 
             var logger = new LoggerConfiguration()

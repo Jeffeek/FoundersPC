@@ -14,8 +14,6 @@ namespace FoundersPC.SharedKernel.Jwt
     {
         private static JwtConfiguration _configuration;
 
-        private JwtConfiguration() { }
-
         #region Docs
 
         /// <exception cref="T:System.NotSupportedException"
@@ -70,18 +68,6 @@ namespace FoundersPC.SharedKernel.Jwt
         /// <exception cref="T:System.NotSupportedException">Configuration exception.</exception>
 
         #endregion
-
-        public static void Initialize(IConfiguration configuration)
-        {
-            Configuration = new JwtConfiguration
-                            {
-                                Issuer = configuration["JwtSettings:Issuer"] ?? throw new KeyNotFoundException("JwtSettings:Issuer"),
-                                Audience = configuration["JwtSettings:Audience"] ?? throw new KeyNotFoundException("JwtSettings:Audience"),
-                                Key = configuration["JwtSettings:Key"] ?? throw new KeyNotFoundException("JwtSettings:Key"),
-                                HoursToExpire = Int32.Parse(configuration["JwtSettings:HoursToExpire"]
-                                                            ?? throw new KeyNotFoundException("JwtSettings:HoursToExpire"))
-                            };
-        }
 
         #region Docs
 

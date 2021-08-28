@@ -1,5 +1,6 @@
 ﻿using FoundersPC.API.Domain.Entities.Hardware;
 using FoundersPC.API.Domain.Enums;
+using FoundersPC.Persistence.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -38,6 +39,8 @@ namespace FoundersPC.Persistence.Configurations
                    .HasValue<HardDriveDisk>(HardwareType.HardDriveDisk)
                    .HasValue<SolidStateDrive>(HardwareType.SolidStateDrive)
                    .IsComplete();
+
+            builder.AddAuditableColumns();
         }
     }
 }

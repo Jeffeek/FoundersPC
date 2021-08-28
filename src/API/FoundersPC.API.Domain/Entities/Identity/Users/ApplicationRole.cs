@@ -12,6 +12,6 @@ namespace FoundersPC.API.Domain.Entities.Identity.Users
     {
         public ICollection<ApplicationUser> Users { get; set; } = default!;
 
-        public bool Equals(ApplicationRole other) => Name == other?.Name;
+        public bool Equals(ApplicationRole? other) => Name == other?.Name;
     }
 }

@@ -1,6 +1,8 @@
 #region Using namespaces
 
 using System.IO;
+using FluentMigrator.Runner;
+using FoundersPC.API.Application.Settings;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Serilog;
 
 #endregion
@@ -38,13 +41,7 @@ namespace FoundersPC.Web
         /// <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is <see langword="null"/>.</exception>
         public Startup(IConfiguration configuration)
         {
-            var cfgBuilder = new ConfigurationBuilder();
-
-            cfgBuilder.AddConfiguration(configuration)
-                      .AddJsonFile($"{Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.FullName}\\ApplicationShared\\FoundersPC.ApplicationShared\\Jwt\\JwtSettings.json",
-                                   false);
-
-            Configuration = cfgBuilder.Build();
+            Configuration = configuration;
         }
 
         private IConfiguration Configuration { get; }
@@ -55,9 +52,14 @@ namespace FoundersPC.Web
 
             services.AddOptions();
 
+            services.AddOptions<PasswordSettings>()
+                    .Bind(Configuration);
+
             services.AddPersistence(Configuration);
             services.AddBearerAuthentication(Configuration);
-            services.AddEmailDaemon(Configuration);
+            //services.AddEmailDaemon(Configuration);
+
+            services.AddSwaggerGen();
 
             services.AddHttpClient();
 
@@ -66,19 +68,22 @@ namespace FoundersPC.Web
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IMigrationRunner migrationRunner)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
+
+                app.UseSwaggerUI()
+                   .UseSwagger();
             }
             else
             {
                 app.UseHsts();
             }
 
-            app.UseExceptionHandler(config => config.Run(async context =>
+            app.UseExceptionHandler(config => config.Run(context =>
                                                          {
                                                              var statusCode = 400;
                                                              var error = context.Features.Get<IExceptionHandlerFeature>();
@@ -88,7 +93,8 @@ namespace FoundersPC.Web
 
                                                              context.Response.StatusCode = statusCode;
                                                              context.Response.Redirect($"/Error/{statusCode}");
-                                                             await context.Response.CompleteAsync();
+
+                                                             return context.Response.CompleteAsync();
                                                          }));
 
             app.UseHttpsRedirection();
@@ -108,6 +114,8 @@ namespace FoundersPC.Web
                                  endpoints.MapDefaultControllerRoute();
                                  endpoints.MapControllers();
                              });
+
+            migrationRunner.MigrateUp();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 using FoundersPC.SharedKernel.ApplicationConstants;
 using FoundersPC.SharedKernel.Jwt;
@@ -56,9 +57,7 @@ namespace FoundersPC.SharedKernel
 
         public static IServiceCollection AddBearerAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            var jwtConfiguration = configuration.GetSection("JwtSettings");
-
-            services.Configure<JwtConfiguration>(jwtConfiguration);
+            services.Configure<JwtConfiguration>(configuration.GetSection("JwtConfiguration"));
 
             services.AddAuthentication(options =>
                                        {
@@ -68,21 +67,20 @@ namespace FoundersPC.SharedKernel
                                        })
                     .AddJwtBearer(options =>
                                   {
-                                      var authOptions = jwtConfiguration.Get<JwtConfiguration>();
                                       options.RequireHttpsMetadata = false;
                                       options.SaveToken = true;
 
                                       options.TokenValidationParameters = new TokenValidationParameters
                                                                           {
                                                                               ValidateIssuer = true,
-                                                                              ValidIssuer = authOptions.Issuer,
+                                                                              ValidIssuer = configuration["JwtConfiguration:Issuer"],
 
                                                                               ValidateAudience = true,
-                                                                              ValidAudience = authOptions.Audience,
+                                                                              ValidAudience = configuration["JwtConfiguration:Audience"],
 
                                                                               ValidateLifetime = true,
 
-                                                                              IssuerSigningKey = authOptions.GetSymmetricSecurityKey(),
+                                                                              IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["JwtConfiguration:Key"])),
                                                                               ValidateIssuerSigningKey = true,
 
                                                                               ClockSkew = TimeSpan.Zero

@@ -19,6 +19,8 @@ namespace FoundersPC.Persistence.Migrations
                                        .For.EmbeddedResources())
                 .AddLogging(lb => lb.AddFluentMigratorConsole());
 
+            RepoDb.SqlServerBootstrap.Initialize();
+
             return services;
         }
     }

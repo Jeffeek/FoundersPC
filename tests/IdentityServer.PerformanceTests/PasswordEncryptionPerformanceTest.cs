@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
+using FoundersPC.API.Application.Services;
+using FoundersPC.API.Application.Settings;
+using Microsoft.Extensions.Options;
 
 #endregion
 
@@ -23,7 +26,11 @@ namespace IdentityServer.PerformanceTests
         public int PasswordLength;
 
         [GlobalSetup]
-        public void Setup() => _passwordEncryptorService = new PasswordEncryptorService();
+        public void Setup() => _passwordEncryptorService = new PasswordEncryptorService(Options.Create(new PasswordSettings()
+                                                                                                       {
+                                                                                                           Salt = "1A133311-1178-203C-M1T6-1234QWERTY99",
+                                                                                                           WorkFactor = 12
+                                                                                                       }));
 
         [Benchmark]
         public string PasswordEncryption_TimeBenchmark()

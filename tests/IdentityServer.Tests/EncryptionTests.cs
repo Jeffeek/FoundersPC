@@ -3,6 +3,8 @@
 using System;
 using System.Diagnostics;
 using FoundersPC.API.Application.Services;
+using FoundersPC.API.Application.Settings;
+using Microsoft.Extensions.Options;
 using NUnit.Framework;
 
 #endregion
@@ -22,7 +24,10 @@ namespace IdentityServer.Tests
         [OneTimeSetUp]
         public void Setup()
         {
-            _passwordEncryptorService = new PasswordEncryptorService();
+            _passwordEncryptorService = new PasswordEncryptorService(Options.Create(new PasswordSettings()
+                                                                                    {
+
+                                                                                    }));
             _tokenEncryptorService = new TokenEncryptorService();
         }
 

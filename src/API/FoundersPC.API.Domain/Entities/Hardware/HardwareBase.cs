@@ -6,7 +6,7 @@ using FoundersPC.API.Domain.Common;
 
 namespace FoundersPC.API.Domain.Entities.Hardware
 {
-    public abstract class HardwareBase : IdentityItem
+    public abstract class HardwareBase : FullAuditable
     {
         public int ProducerId { get; set; }
 

@@ -3,6 +3,10 @@
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using BCrypt.Net;
+using FoundersPC.API.Application.Settings;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 
 #endregion
 
@@ -10,6 +14,11 @@ namespace FoundersPC.API.Application.Services
 {
     public class PasswordEncryptorService
     {
+        private readonly PasswordSettings _passwordSettings;
+
+        public PasswordEncryptorService(IOptions<PasswordSettings> passwordSettings) =>
+            _passwordSettings = passwordSettings.Value;
+
         /// <exception cref="T:System.ArgumentNullException"><paramref name="rawPassword"/> is <see langword="null"/></exception>
         /// <exception cref="T:System.ObjectDisposedException">The object has already been disposed.</exception>
         /// <exception cref="T:System.Text.EncoderFallbackException">
@@ -27,23 +36,13 @@ namespace FoundersPC.API.Application.Services
         ///     The algorithm was used with Federal Information
         ///     Processing Standards (FIPS) mode enabled, but is not FIPS compatible.
         /// </exception>
-        public string EncryptPassword(string rawPassword)
-        {
-            if (rawPassword is null)
-                throw new ArgumentNullException(nameof(rawPassword));
+        public string EncryptPassword(string rawPassword) =>
+            BCrypt.Net.BCrypt.HashString(rawPassword + _passwordSettings.Salt,
+                                         _passwordSettings.WorkFactor,
+                                         SaltRevision.Revision2X);
 
-            var passwordBytes = Encoding.ASCII.GetBytes(rawPassword);
-
-            using var hash = SHA512.Create();
-            var hashedInputBytes = hash.ComputeHash(passwordBytes);
-
-            var hashedInputStringBuilder = new StringBuilder(128);
-
-            foreach (var hashByte in hashedInputBytes)
-                hashedInputStringBuilder.Append(hashByte.ToString("X2"));
-
-            return hashedInputStringBuilder.ToString();
-        }
+        public bool VerifyPassword(string rawPassword, string hash) =>
+            BCrypt.Net.BCrypt.Verify(rawPassword + _passwordSettings.Salt, hash);
 
         /// <exception cref="T:System.ArgumentOutOfRangeException">Condition.</exception>
         /// <exception cref="T:System.ArgumentNullException"><paramref name="oldValue"/> is <see langword="null"/>.</exception>

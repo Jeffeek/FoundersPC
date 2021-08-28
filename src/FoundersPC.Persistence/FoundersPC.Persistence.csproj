@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\API\FoundersPC.API.Domain\FoundersPC.API.Domain.csproj" />
     <ProjectReference Include="..\FoundersPC.Persistence.Migrations\FoundersPC.Persistence.Migrations.csproj" />
     <ProjectReference Include="..\FoundersPC.SharedKernel\FoundersPC.SharedKernel.csproj" />

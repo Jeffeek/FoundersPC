@@ -32,6 +32,6 @@ namespace FoundersPC.API.Domain.Entities.Identity.Users
 
         public ICollection<UserEntranceLog> Entrances { get; set; } = default!;
 
-        public bool Equals(ApplicationUser other) => Email == other?.Email;
+        public bool Equals(ApplicationUser? other) => Email == other?.Email;
     }
 }

@@ -8,6 +8,7 @@ using AutoMapper.Internal;
 using Bogus;
 using Bogus.Extensions;
 using FoundersPC.API.Domain.Entities.Hardware;
+using FoundersPC.API.Domain.Enums;
 
 #endregion
 
@@ -31,6 +32,7 @@ namespace HardwareApi.Tests.DataCreation
                             .RuleFor(x => x.Country.Name, faker => faker.Address.Country());
 
             CasesFaker = new Faker<Case>()
+                         .RuleFor(x => x.Type, HardwareType.Case)
                          .RuleFor(x => x.Width,
                                   faker => faker.Random.Int(50, 400)
                                                 .OrNull(faker))
