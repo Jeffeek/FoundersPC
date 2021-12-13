@@ -1,6 +1,3 @@
-﻿namespace FoundersPC.SharedKernel.Interfaces
-{
-    public interface IEmailService
-    {
-    }
-}
+﻿namespace FoundersPC.SharedKernel.Interfaces;
+
+public interface IEmailService { }

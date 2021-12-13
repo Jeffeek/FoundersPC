@@ -1,10 +1,13 @@
+#region Using namespaces
+
 using System;
 using System.Linq;
 
-namespace FoundersPC.SharedKernel.Query
+#endregion
+
+namespace FoundersPC.SharedKernel.Query;
+
+public interface ISortedQuery<TSource> : IQuery<TSource>
 {
-    public interface ISortedQuery<TSource> : IQuery<TSource>
-    {
-        Func<IQueryable<TSource>, IOrderedQueryable<TSource>> GetSortingExpression();
-    }
+    Func<IQueryable<TSource>, IOrderedQueryable<TSource>> GetSortingExpression();
 }

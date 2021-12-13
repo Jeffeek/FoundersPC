@@ -1,86 +1,61 @@
 ﻿#region Using namespaces
 
-using System;
-using System.Collections.Generic;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 #endregion
 
-namespace FoundersPC.SharedKernel.Jwt
+namespace FoundersPC.SharedKernel.Jwt;
+
+public class JwtConfiguration
 {
-    public class JwtConfiguration
-    {
-        private static JwtConfiguration _configuration;
+    #region Docs
 
-        #region Docs
+    /// <exception cref="T:System.NotSupportedException"
+    ///            accessor="get">
+    ///     Inner JWT configuration was null.
+    /// </exception>
 
-        /// <exception cref="T:System.NotSupportedException"
-        ///            accessor="get">
-        ///     Inner JWT configuration was null.
-        /// </exception>
+    #endregion
 
-        #endregion
+    public string Key { get; set; }
 
-        internal static JwtConfiguration Configuration
-        {
-            get
-            {
-                if (_configuration is null)
-                    throw new NotSupportedException();
+    public string Issuer { get; set; }
 
-                return _configuration;
-            }
+    public string Audience { get; set; }
 
-            private set
-            {
-                if (_configuration is not null)
-                    return;
+    public int MinutesToExpire { get; set; }
 
-                _configuration = value;
-            }
-        }
+    #region Docs
 
-        public string Key { get; private init; }
+    /// <exception cref="T:System.ArgumentNullException"><paramref name="Key"/> is <see langword="null"/>.</exception>
+    /// <exception cref="T:System.Text.EncoderFallbackException">
+    ///     A fallback occurred (for more information, see Character Encoding in .NET)
+    ///     -and-
+    ///     <see cref="P:System.Text.Encoding.EncoderFallback"/> is set to <see cref="T:System.Text.EncoderExceptionFallback"/>
+    ///     .
+    /// </exception>
 
-        public string Issuer { get; private init; }
+    #endregion
 
-        public string Audience { get; private init; }
+    public SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
 
-        public int HoursToExpire { get; private init; }
+    #region Docs
 
-        #region Docs
+    /// <exception cref="T:System.OverflowException">
+    ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> represents a
+    ///     number less than <see cref="F:System.Int32.MinValue"/> or greater than <see cref="F:System.Int32.MaxValue"/>.
+    /// </exception>
+    /// <exception cref="T:System.ArgumentNullException">
+    ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> is
+    ///     <see langword="null"/>.
+    /// </exception>
+    /// <exception cref="T:System.FormatException">
+    ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> is not in the
+    ///     correct format.
+    /// </exception>
+    /// <exception cref="T:System.Collections.Generic.KeyNotFoundException">JwtSettings:Issuer</exception>
+    /// <exception cref="T:System.NotSupportedException">Configuration exception.</exception>
 
-        /// <exception cref="T:System.OverflowException">
-        ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> represents a
-        ///     number less than <see cref="F:System.Int32.MinValue"/> or greater than <see cref="F:System.Int32.MaxValue"/>.
-        /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">
-        ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> is
-        ///     <see langword="null"/>.
-        /// </exception>
-        /// <exception cref="T:System.FormatException">
-        ///     <paramref name="configuration[JwtSettings:HoursToExpire]"/> is not in the
-        ///     correct format.
-        /// </exception>
-        /// <exception cref="T:System.Collections.Generic.KeyNotFoundException">JwtSettings:Issuer</exception>
-        /// <exception cref="T:System.NotSupportedException">Configuration exception.</exception>
-
-        #endregion
-
-        #region Docs
-
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="Key"/> is <see langword="null"/>.</exception>
-        /// <exception cref="T:System.Text.EncoderFallbackException">
-        ///     A fallback occurred (for more information, see Character Encoding in .NET)
-        ///     -and-
-        ///     <see cref="P:System.Text.Encoding.EncoderFallback"/> is set to <see cref="T:System.Text.EncoderExceptionFallback"/>
-        ///     .
-        /// </exception>
-
-        #endregion
-
-        internal SymmetricSecurityKey GetSymmetricSecurityKey() => new(Encoding.ASCII.GetBytes(Key));
-    }
+    #endregion
 }

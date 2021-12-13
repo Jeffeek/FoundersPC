@@ -1,13 +1,12 @@
-﻿namespace FoundersPC.SharedKernel.Pagination
+﻿namespace FoundersPC.SharedKernel.Pagination;
+
+public interface IPagingInfo
 {
-    public interface IPagingInfo
-    {
-        int PageNumber { get; set; }
+    int PageNumber { get; set; }
 
-        int PageSize { get; set; }
+    int PageSize { get; set; }
 
-        int TotalItemCount { get; set; }
+    int TotalItemCount { get; set; }
 
-        int PageCount { get; }
-    }
+    int PageCount { get; }
 }

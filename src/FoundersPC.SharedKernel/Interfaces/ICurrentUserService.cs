@@ -1,7 +1,6 @@
-﻿namespace FoundersPC.SharedKernel.Interfaces
+﻿namespace FoundersPC.SharedKernel.Interfaces;
+
+public interface ICurrentUserService
 {
-    public interface ICurrentUserService
-    {
-        int UserId { get; }
-    }
+    int UserId { get; }
 }

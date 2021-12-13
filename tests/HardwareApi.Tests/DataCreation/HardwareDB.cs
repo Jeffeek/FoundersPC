@@ -1,33 +1,32 @@
 ﻿#region Using namespaces
 
-using FoundersPC.API.Application.Services;
+using FoundersPC.Application.Services;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 #endregion
 
-namespace HardwareApi.Tests.DataCreation
+namespace HardwareApi.Tests.DataCreation;
+
+public static class HardwareDb
 {
-    public static class HardwareDB
+    public static ApplicationDbContext GetInMemoryContext()
     {
-        public static ApplicationDbContext GetInMemoryContext()
-        {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                          .UseInMemoryDatabase("InMem")
-                          .Options;
+        var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                      .UseInMemoryDatabase("InMem")
+                      .Options;
 
-            return new ApplicationDbContext(options, new CurrentUserServiceMock(), new CurrentDateTimeService());
-        }
+        return new(options, new CurrentUserServiceMock(), new UtcDateTimeService());
     }
+}
 
-    public class CurrentUserServiceMock : ICurrentUserService
-    {
-        #region Implementation of ICurrentUserService
+public class CurrentUserServiceMock : ICurrentUserService
+{
+    #region Implementation of ICurrentUserService
 
-        /// <inheritdoc />
-        public int UserId => 0;
+    /// <inheritdoc/>
+    public int UserId => 0;
 
-        #endregion
-    }
+    #endregion
 }

@@ -1,9 +1,12 @@
-﻿using System;
+﻿#region Using namespaces
 
-namespace FoundersPC.SharedKernel.Interfaces
+using System;
+
+#endregion
+
+namespace FoundersPC.SharedKernel.Interfaces;
+
+public interface IDateTimeService
 {
-    public interface IDateTimeService
-    {
-        DateTime Now { get; }
-    }
+    DateTime Now { get; }
 }

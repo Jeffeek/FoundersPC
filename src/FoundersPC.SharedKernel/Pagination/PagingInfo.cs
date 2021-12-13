@@ -1,36 +1,39 @@
-﻿using System;
+﻿#region Using namespaces
 
-namespace FoundersPC.SharedKernel.Pagination
+using System;
+
+#endregion
+
+namespace FoundersPC.SharedKernel.Pagination;
+
+public class PagingInfo : IPagingInfo
 {
-    public class PagingInfo : IPagingInfo
+    public PagingInfo() { }
+
+    public PagingInfo(int pageNumber, int pageSize, int totalItemCount)
     {
-        public PagingInfo() { }
+        PageNumber = pageNumber;
+        PageSize = pageSize;
+        TotalItemCount = totalItemCount;
+    }
 
-        public PagingInfo(int pageNumber, int pageSize, int totalItemCount)
+    public int PageNumber { get; set; }
+
+    public int PageSize { get; set; }
+
+    public int TotalItemCount { get; set; }
+
+    public int PageCount
+    {
+        get
         {
-            PageNumber = pageNumber;
-            PageSize = pageSize;
-            TotalItemCount = totalItemCount;
-        }
+            if (TotalItemCount <= 0)
+                return 0;
 
-        public int PageNumber { get; set; }
+            if (PageSize <= 0)
+                PageSize = TotalItemCount;
 
-        public int PageSize { get; set; }
-
-        public int TotalItemCount { get; set; }
-
-        public int PageCount
-        {
-            get
-            {
-                if (TotalItemCount <= 0)
-                    return 0;
-
-                if (PageSize <= 0)
-                    PageSize = TotalItemCount;
-
-                return (int)Math.Ceiling(TotalItemCount / (double)PageSize);
-            }
+            return (int)Math.Ceiling(TotalItemCount / (double)PageSize);
         }
     }
 }

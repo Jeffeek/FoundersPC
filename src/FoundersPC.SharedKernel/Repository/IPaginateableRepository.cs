@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 #endregion
 
-namespace FoundersPC.SharedKernel.Repository
+namespace FoundersPC.SharedKernel.Repository;
+
+public interface IPaginateableRepository<T> where T : class
 {
-    public interface IPaginateableRepository<T> where T : class
-    {
-        Task<IEnumerable<T>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10);
-    }
+    Task<IEnumerable<T>> GetPaginateableAsync(int pageNumber = 1, int pageSize = 10);
 }

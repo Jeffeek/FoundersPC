@@ -1,7 +1,6 @@
-﻿namespace FoundersPC.SharedKernel.Interfaces
+﻿namespace FoundersPC.SharedKernel.Interfaces;
+
+public interface IIdentityItem<T>
 {
-    public interface IIdentityItem<T>
-    {
-        T Id { get; set; }
-    }
+    T Id { get; set; }
 }

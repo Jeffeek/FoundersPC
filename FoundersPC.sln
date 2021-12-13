@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{17711875-2F1D-4E1D-BF00-9C86DC8EC867}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.API.Application", "src\API\FoundersPC.API.Application\FoundersPC.API.Application.csproj", "{75179DEA-884F-4B01-B270-3F1F8FDB787A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Application", "src\FoundersPC.Application\FoundersPC.Application.csproj", "{75179DEA-884F-4B01-B270-3F1F8FDB787A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.API.Domain", "src\API\FoundersPC.API.Domain\FoundersPC.API.Domain.csproj", "{42797116-2EAE-471F-A9F9-76F0FCDAD8E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Domain", "src\FoundersPC.Domain\FoundersPC.Domain.csproj", "{42797116-2EAE-471F-A9F9-76F0FCDAD8E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Web", "src\Web\FoundersPC.Web\FoundersPC.Web.csproj", "{C412260C-27FA-463D-B9A6-6582DE8559DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Web", "src\FoundersPC.Web\FoundersPC.Web.csproj", "{C412260C-27FA-463D-B9A6-6582DE8559DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CA29905C-B48C-41B1-BD04-296665150C2B}"
 EndProject

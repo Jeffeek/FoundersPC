@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿#region Using namespaces
 
-namespace FoundersPC.SharedKernel.Pagination
+using System.Collections.Generic;
+
+#endregion
+
+namespace FoundersPC.SharedKernel.Pagination;
+
+public interface IPagedList<T>
 {
-    public interface IPagedList<T>
-    {
-        PagingInfo PagingInfo { get; }
+    PagingInfo PagingInfo { get; }
 
-        List<T> Result { get; }
-    }
+    List<T> Result { get; }
 }

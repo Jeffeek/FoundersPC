@@ -1,9 +1,8 @@
-﻿namespace FoundersPC.SharedKernel.Filter
-{
-    public interface ISortedFilter
-    {
-        string SortColumn { get; set; }
+﻿namespace FoundersPC.SharedKernel.Filter;
 
-        bool IsAscending { get; set; }
-    }
+public interface ISortedFilter
+{
+    string SortColumn { get; set; }
+
+    bool IsAscending { get; set; }
 }

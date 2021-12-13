@@ -1,7 +1,6 @@
-﻿namespace FoundersPC.SharedKernel.ApplicationConstants
+﻿namespace FoundersPC.SharedKernel.ApplicationConstants;
+
+public static class FoundersPCConstants
 {
-    public static class FoundersPCConstants
-    {
-        public const int PageSize = 10;
-    }
+    public const int PageSize = 10;
 }

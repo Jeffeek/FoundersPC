@@ -2,70 +2,66 @@
 
 using System;
 using System.Diagnostics;
-using FoundersPC.API.Application.Services;
-using FoundersPC.API.Application.Settings;
+using FoundersPC.Application.Services;
+using FoundersPC.Application.Settings;
 using Microsoft.Extensions.Options;
 using NUnit.Framework;
 
 #endregion
 
-namespace IdentityServer.Tests
+namespace IdentityServer.Tests;
+
+public class EncryptionTests
 {
-    public class EncryptionTests
+    private const int EncryptedPasswordLength = 128;
+    private const int MinPasswordLength = 6;
+    private const int MaxPasswordLength = 30;
+
+    private const int EncryptedTokenLength = 64;
+    private PasswordEncryptorService _passwordEncryptorService;
+    private TokenEncryptorService _tokenEncryptorService;
+
+    [OneTimeSetUp]
+    public void Setup()
     {
-        private const int EncryptedPasswordLength = 128;
-        private const int MinPasswordLength = 6;
-        private const int MaxPasswordLength = 30;
+        _passwordEncryptorService = new(Options.Create(new PasswordSettings()));
+        _tokenEncryptorService = new();
+    }
 
-        private const int EncryptedTokenLength = 64;
-        private PasswordEncryptorService _passwordEncryptorService;
-        private TokenEncryptorService _tokenEncryptorService;
-
-        [OneTimeSetUp]
-        public void Setup()
+    [Test]
+    public void PasswordEncryption_LengthTest()
+    {
+        for (var i = 6; i <= 30; i++)
         {
-            _passwordEncryptorService = new PasswordEncryptorService(Options.Create(new PasswordSettings()
-                                                                                    {
+            var randomPassword = _passwordEncryptorService.GeneratePassword(i);
+            Trace.WriteLine($"Initial password: {randomPassword}");
 
-                                                                                    }));
-            _tokenEncryptorService = new TokenEncryptorService();
+            var encryptedPassword = _passwordEncryptorService.EncryptPassword(randomPassword);
+
+            Trace.WriteLine($"Encrypted password: {encryptedPassword}");
+
+            Assert.AreEqual(encryptedPassword.Length, EncryptedPasswordLength);
         }
+    }
 
-        [Test]
-        public void PasswordEncryption_LengthTest()
+    [Test]
+    public void PasswordEncryption_LengthExceptionTest()
+    {
+        for (var i = -10; i < MinPasswordLength; i++)
+            Assert.Throws<ArgumentOutOfRangeException>(() => _passwordEncryptorService.GeneratePassword(i));
+
+        for (var i = MaxPasswordLength + 1; i < 100; i++)
+            Assert.Throws<ArgumentOutOfRangeException>(() => _passwordEncryptorService.GeneratePassword(i));
+    }
+
+    [Test]
+    public void TokenEncryption_LengthTest()
+    {
+        for (var i = 0; i < 100; i++)
         {
-            for (var i = 6; i <= 30; i++)
-            {
-                var randomPassword = _passwordEncryptorService.GeneratePassword(i);
-                Trace.WriteLine($"Initial password: {randomPassword}");
+            var token = _tokenEncryptorService.CreateToken();
 
-                var encryptedPassword = _passwordEncryptorService.EncryptPassword(randomPassword);
-
-                Trace.WriteLine($"Encrypted password: {encryptedPassword}");
-
-                Assert.AreEqual(encryptedPassword.Length, EncryptedPasswordLength);
-            }
-        }
-
-        [Test]
-        public void PasswordEncryption_LengthExceptionTest()
-        {
-            for (var i = -10; i < MinPasswordLength; i++)
-                Assert.Throws<ArgumentOutOfRangeException>(() => _passwordEncryptorService.GeneratePassword(i));
-
-            for (var i = MaxPasswordLength + 1; i < 100; i++)
-                Assert.Throws<ArgumentOutOfRangeException>(() => _passwordEncryptorService.GeneratePassword(i));
-        }
-
-        [Test]
-        public void TokenEncryption_LengthTest()
-        {
-            for (var i = 0; i < 100; i++)
-            {
-                var token = _tokenEncryptorService.CreateToken();
-
-                Assert.AreEqual(token.Length, EncryptedTokenLength);
-            }
+            Assert.AreEqual(token.Length, EncryptedTokenLength);
         }
     }
 }

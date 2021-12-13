@@ -1,9 +1,12 @@
-﻿using System;
+﻿#region Using namespaces
 
-namespace FoundersPC.SharedKernel.Exceptions
+using System;
+
+#endregion
+
+namespace FoundersPC.SharedKernel.Exceptions;
+
+public class JobExecutionException : Exception
 {
-    public class JobExecutionException : Exception
-    {
-        public JobExecutionException(string message) : base(message) { }
-    }
+    public JobExecutionException(string message) : base(message) { }
 }

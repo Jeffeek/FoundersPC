@@ -1,47 +1,54 @@
-﻿using FluentEmail.MailKitSmtp;
+﻿#region Using namespaces
+
 using FoundersPC.Persistence.Migrations;
 using FoundersPC.Persistence.Settings;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RepoDb;
 
-namespace FoundersPC.Persistence
+#endregion
+
+namespace FoundersPC.Persistence;
+
+public static class ServiceExtensions
 {
-    public static class ServiceExtensions
+    public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
-        public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                                                                                               o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery))
-                                                                                 .EnableSensitiveDataLogging(true));
+        services.AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("FoundersPCConnection"),
+                                                                                           o => o.UseQuerySplittingBehavior(QuerySplittingBehavior
+                                                                                               .SingleQuery))
+                                                                             .EnableSensitiveDataLogging());
 
-            services.AddScoped<ApplicationDbContext>(p =>
-                                                         p.GetRequiredService<IDbContextFactory<ApplicationDbContext>>()
-                                                          .CreateDbContext());
+        services.AddScoped(p =>
+                               p.GetRequiredService<IDbContextFactory<ApplicationDbContext>>()
+                                .CreateDbContext());
 
-            services.AddMigrations(configuration);
+        services.AddMigrations(configuration);
 
-            return services;
-        }
+        return services;
+    }
 
-        public static IServiceCollection AddEmailDaemon(this IServiceCollection services, IConfiguration configuration)
-        {
-            var botSettings = configuration.GetSection("EmailDaemonConfiguration");
+    public static IServiceCollection AddEmailDaemon(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddOptions<EmailBotConfiguration>()
+                .Configure<IConfiguration>((bot, config) => config.Bind(bot));
 
-            var cfg = new EmailBotConfiguration(botSettings);
+        var botSettings = configuration.GetSection("EmailBotConfiguration")
+                                       .Get<EmailBotConfiguration>();
 
-            return services
-                   .AddFluentEmail("fromemail@test.test")
-                   .AddMailKitSender(new SmtpClientOptions()
-                                     {
-                                         Password = cfg.Password,
-                                         Port = cfg.Port,
-                                         Server = cfg.Host,
-                                         UseSsl = true,
-                                         RequiresAuthentication = true,
-                                         User = cfg.MailAddress
-                                     })
-                   .Services;
-        }
+        return services
+               .AddFluentEmail(botSettings.MailAddress)
+               .AddMailKitSender(new()
+                                 {
+                                     Password = botSettings.DecryptPassword(),
+                                     Port = botSettings.Port,
+                                     Server = botSettings.Host,
+                                     UseSsl = botSettings.Ssl,
+                                     RequiresAuthentication = true,
+                                     User = botSettings.MailAddress
+                                 })
+               .Services;
     }
 }
