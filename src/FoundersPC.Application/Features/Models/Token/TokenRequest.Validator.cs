@@ -12,8 +12,7 @@ public class TokenRequestValidation : AbstractValidator<TokenRequest>
     public TokenRequestValidation()
     {
         RuleFor(x => x.GrantType)
-            .Must(x => x == GrantTypes.Password
-                       || x == GrantTypes.RefreshToken)
+            .Must(x => x is GrantTypes.Password or GrantTypes.RefreshToken)
             .WithMessage("Unsupported grant type");
     }
 }

@@ -18,11 +18,6 @@ public class VideoCardMetadataConfiguration : IEntityTypeConfiguration<VideoCard
                .HasColumnName("AdditionalPower")
                .IsRequired(false);
 
-        builder.Property(x => x.TDP)
-               .HasColumnType("int")
-               .HasColumnName("TDP")
-               .IsRequired(false);
-
         builder.Property(x => x.Frequency)
                .HasColumnType("int")
                .HasColumnName("Frequency")
@@ -35,12 +30,12 @@ public class VideoCardMetadataConfiguration : IEntityTypeConfiguration<VideoCard
 
         builder.Property(x => x.MemoryVolume)
                .HasColumnType("int")
-               .HasColumnName("MemoryVolume")
+               .HasColumnName("Volume")
                .IsRequired(false);
 
-        builder.Property(x => x.VideoMemoryId)
+        builder.Property(x => x.VideoMemoryTypeId)
                .HasColumnType("int")
-               .HasColumnName("VideoMemoryId")
+               .HasColumnName("VideoMemoryTypeId")
                .IsRequired(false);
 
         builder.Property(x => x.MemoryFrequency)
@@ -53,9 +48,9 @@ public class VideoCardMetadataConfiguration : IEntityTypeConfiguration<VideoCard
                .HasColumnName("MemoryBusWidth")
                .IsRequired(false);
 
-        builder.HasOne(x => x.VideoMemory)
+        builder.HasOne(x => x.VideoMemoryType)
                .WithMany()
-               .HasForeignKey(x => x.VideoMemoryId)
+               .HasForeignKey(x => x.VideoMemoryTypeId)
                .IsRequired(false);
 
         builder.Property(x => x.VGA)

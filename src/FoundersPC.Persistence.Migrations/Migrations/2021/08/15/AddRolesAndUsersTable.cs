@@ -1,7 +1,10 @@
 ﻿#region Using namespaces
 
 using System;
+using System.Data;
+using FluentMigrator.SqlServer;
 using FoundersPC.Persistence.Migrations.Common;
+using FoundersPC.Persistence.Migrations.Extensions;
 using FoundersPC.SharedKernel.ApplicationConstants;
 
 #endregion
@@ -14,10 +17,11 @@ public class AddRolesAndUsersTable : MigrationBase
     public override void Up()
     {
         Create.Table("Roles")
-              .WithColumn("Id").AsInt32().PrimaryKey("PK_Roles_Id").NotNullable()
+              .WithIdentity("Roles")
               .WithColumn("Name").AsString().NotNullable();
 
         Insert.IntoTable("Roles")
+              .WithIdentityInsert()
               .Row(new
                    {
                        Id = 1,
@@ -40,10 +44,10 @@ public class AddRolesAndUsersTable : MigrationBase
                    });
 
         Create.Table("Users")
-              .WithColumn("Id").AsInt32().PrimaryKey("PK_Users_Id").NotNullable()
+              .WithIdentity("Users")
               .WithColumn("Login").AsString(128).NotNullable()
               .WithColumn("RegistrationDate").AsDateTime().NotNullable()
-              .WithColumn("RoleId").AsInt32().NotNullable().ForeignKey("FK_Users_RoleId", "Roles", "Id")
+              .WithColumn("RoleId").AsInt32().NotNullable().ForeignKey("FK_Users_Roles_RoleId", "Roles", "Id").OnDeleteOrUpdate(Rule.Cascade)
               .WithColumn("IsActive").AsBoolean().NotNullable().WithDefaultValue(true)
               .WithColumn("IsBlocked").AsBoolean().NotNullable().WithDefaultValue(false)
               .WithColumn("SendMessageOnEntrance").AsBoolean().NotNullable().WithDefaultValue(false)
@@ -53,6 +57,7 @@ public class AddRolesAndUsersTable : MigrationBase
               .WithColumn("PasswordHash").AsString(60).NotNullable();
 
         Insert.IntoTable("Users")
+              .WithIdentityInsert()
               .Row(new
                    {
                        Id = 1,

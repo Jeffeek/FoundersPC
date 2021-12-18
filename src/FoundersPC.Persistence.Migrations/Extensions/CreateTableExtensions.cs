@@ -9,21 +9,21 @@ namespace FoundersPC.Persistence.Migrations.Extensions;
 
 internal static class CreateTableExtensions
 {
-    public static ICreateTableWithColumnSyntax AddAuditableColumns(this ICreateTableWithColumnSyntax builder) =>
+    public static ICreateTableWithColumnSyntax AddAuditableColumns(this ICreateTableWithColumnSyntax builder, string tableName) =>
         builder.WithColumn("Created")
                .AsDateTime()
                .WithDefault(SystemMethods.CurrentDateTime)
                .WithColumn("CreatedById")
                .AsInt32()
-               .ForeignKey("FK_Users_CreatedById", "Users", "Id")
+               .ForeignKey($"FK_{tableName}_Users_CreatedById", "Users", "Id")
                .WithColumn("LastModified")
                .AsDateTime()
                .WithDefault(SystemMethods.CurrentDateTime)
                .WithColumn("LastModifiedById")
                .AsInt32()
-               .ForeignKey("FK_Users_LastModifiedById", "Users", "Id");
+               .ForeignKey($"FK_{tableName}_Users_LastModifiedById", "Users", "Id");
 
-    public static ICreateTableWithColumnSyntax AddSoftDeleteColumns(this ICreateTableWithColumnSyntax builder) =>
+    public static ICreateTableWithColumnSyntax AddSoftDeleteColumns(this ICreateTableWithColumnSyntax builder, string tableName) =>
         builder
             .WithColumn("IsDeleted")
             .AsBoolean()
@@ -34,17 +34,17 @@ internal static class CreateTableExtensions
             .Nullable()
             .WithColumn("DeletedById")
             .AsInt32()
-            .ForeignKey("FK_Users_DeletedById", "Users", "Id")
+            .ForeignKey($"FK_{tableName}_Users_DeletedById", "Users", "Id")
             .Nullable();
 
-    public static ICreateTableWithColumnSyntax WithIdentity(this ICreateTableWithColumnSyntax builder) =>
+    public static ICreateTableWithColumnSyntax WithIdentity(this ICreateTableWithColumnSyntax builder, string tableName) =>
         builder.WithColumn("Id")
                .AsInt32()
-               .PrimaryKey("PK_Id")
+               .PrimaryKey($"PK_{tableName}_Id")
                .Identity()
-               .Unique("IX_Id");
+               .Unique($"IX_{tableName}_Id");
 
-    public static ICreateTableWithColumnSyntax WithFullAuditableColumns(this ICreateTableWithColumnSyntax builder) =>
-        builder.AddAuditableColumns()
-               .AddSoftDeleteColumns();
+    public static ICreateTableWithColumnSyntax WithFullAuditableColumns(this ICreateTableWithColumnSyntax builder, string tableName) =>
+        builder.AddAuditableColumns(tableName)
+               .AddSoftDeleteColumns(tableName);
 }

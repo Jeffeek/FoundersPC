@@ -1,3 +1,3 @@
 ﻿namespace FoundersPC.Domain.Entities.Metadata;
 
-public class VideoMemory : MetadataEntity { }
+public class TechProcess : MetadataEntity { }

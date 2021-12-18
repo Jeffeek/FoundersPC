@@ -18,7 +18,7 @@ public class MotherboardMetadata : HardwareMetadata
     public string? PCIExpressVersion { get; set; } = default!;
     public Socket? Socket { get; set; } = default!;
     public MotherboardFactor? MotherboardFactor { get; set; } = default!;
-    public RAMType? RAMType { get; set; } = default!;
+    public RamType? RAMType { get; set; } = default!;
     public RamMode? RAMModeType { get; set; } = default!;
     public Motherboard Motherboard { get; set; } = default!;
 }

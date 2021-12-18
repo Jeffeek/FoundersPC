@@ -19,7 +19,7 @@ internal class RandomAccessMemoryMetadataConfiguration : IEntityTypeConfiguratio
                .IsRequired(false);
 
         builder.Property(x => x.Timings)
-               .HasColumnType("int")
+               .HasColumnType("nvarchar")
                .HasColumnName("Timings")
                .IsRequired(false);
 

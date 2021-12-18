@@ -2,4 +2,4 @@
 
 namespace FoundersPC.Domain.Entities.Metadata;
 
-public class RAMType : MetadataEntity { }
+public class RamType : MetadataEntity { }

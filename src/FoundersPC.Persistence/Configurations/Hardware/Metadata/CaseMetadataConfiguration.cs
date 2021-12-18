@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FoundersPC.Domain.Entities.Hardware.Metadata;
+﻿using FoundersPC.Domain.Entities.Hardware.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,9 +8,9 @@ public class CaseMetadataConfiguration : IEntityTypeConfiguration<CaseMetadata>
 {
     public void Configure(EntityTypeBuilder<CaseMetadata> builder)
     {
-        builder.Property(x => x.WindowMaterial)
-               .HasColumnName("WindowMaterial")
-               .HasColumnType("nvarchar")
+        builder.Property(x => x.WindowMaterialId)
+               .HasColumnName("WindowMaterialId")
+               .HasColumnType("int")
                .IsRequired(false);
 
         builder.Property(x => x.CaseTypeId)
@@ -23,9 +18,9 @@ public class CaseMetadataConfiguration : IEntityTypeConfiguration<CaseMetadata>
                .HasColumnType("int")
                .IsRequired(false);
 
-        builder.Property(x => x.Color)
-               .HasColumnType("nvarchar")
-               .HasColumnType("Color")
+        builder.Property(x => x.ColorId)
+               .HasColumnType("int")
+               .HasColumnName("ColorId")
                .IsRequired(false);
 
         builder.Property(x => x.MaxMotherboardSize)
@@ -33,9 +28,9 @@ public class CaseMetadataConfiguration : IEntityTypeConfiguration<CaseMetadata>
                .HasColumnName("MaxMotherboardSize")
                .IsRequired(false);
 
-        builder.Property(x => x.Material)
-               .HasColumnType("nvarchar")
-               .HasColumnName("Material")
+        builder.Property(x => x.MaterialId)
+               .HasColumnType("int")
+               .HasColumnName("MaterialId")
                .IsRequired(false);
 
         builder.Property(x => x.TransparentWindow)

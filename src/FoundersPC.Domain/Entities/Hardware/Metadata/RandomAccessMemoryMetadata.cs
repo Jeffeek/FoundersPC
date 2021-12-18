@@ -12,6 +12,6 @@ public class RandomAccessMemoryMetadata : HardwareMetadata
     public bool? ECC { get; set; } = default!;
     public int? PCIndex { get; set; } = default!;
     public int? Volume { get; set; } = default!;
-    public RAMType? RAMType { get; set; }
+    public RamType? RAMType { get; set; }
     public RandomAccessMemory RandomAccessMemory { get; set; } = default!;
 }

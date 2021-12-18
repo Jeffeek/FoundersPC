@@ -38,9 +38,9 @@ public class ProcessorMetadataConfiguration : IEntityTypeConfiguration<Processor
                .HasColumnName("TurboBoostFrequency")
                .IsRequired(false);
 
-        builder.Property(x => x.TechProcess)
+        builder.Property(x => x.TechProcessId)
                .HasColumnType("int")
-               .HasColumnName("TechProcess")
+               .HasColumnName("TechProcessId")
                .IsRequired(false);
 
         builder.Property(x => x.L1Cache)
@@ -66,6 +66,11 @@ public class ProcessorMetadataConfiguration : IEntityTypeConfiguration<Processor
         builder.Property(x => x.IntegratedGraphicsId)
                .HasColumnType("int")
                .HasColumnName("IntegratedGraphicsId")
+               .IsRequired(false);
+
+        builder.HasOne(x => x.TechProcess)
+               .WithMany()
+               .HasForeignKey(x => x.TechProcessId)
                .IsRequired(false);
 
         builder.HasOne(x => x.IntegratedGraphics)

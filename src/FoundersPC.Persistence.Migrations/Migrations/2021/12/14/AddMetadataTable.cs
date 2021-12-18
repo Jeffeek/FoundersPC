@@ -10,8 +10,8 @@ public class AddMetadataTable : Migration
     public override void Up()
     {
         Create.Table("Metadata")
-              .WithFullAuditableColumns()
-              .WithIdentity()
+              .WithFullAuditableColumns("Metadata")
+              .WithIdentity("Metadata")
               .WithColumn("Name").AsString(512).NotNullable()
               .WithColumn("Type").AsInt32().NotNullable();
     }

@@ -6,7 +6,7 @@ public class PowerSupplyMetadata : HardwareMetadata
 {
     public int? Power { get; set; } = default!;
     public int? Efficiency { get; set; } = default!;
-    public int MotherboardPoweringId { get; set; } = default!;
+    public int? MotherboardPoweringId { get; set; } = default!;
     public bool? IsModular { get; set; } = default!;
     public bool? CPU4PIN { get; set; } = default!;
     public bool? CPU8PIN { get; set; } = default!;
