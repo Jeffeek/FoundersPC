@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace FoundersPC.SharedKernel.Endpoints;
 
-public class BaseAnonymousEndpoint<TRequest, TResponse, TEndpoint> : BaseAsyncEndpoint.WithRequest<TRequest>.WithResponse<TResponse>
+public class BaseRequestResponseAnonymousEndpoint<TRequest, TResponse, TEndpoint> : BaseAsyncEndpoint.WithRequest<TRequest>.WithResponse<TResponse>
     where TRequest : IRequest<TResponse>
 {
     private ILogger _logger = null!;

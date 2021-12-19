@@ -10,7 +10,7 @@ using FoundersPC.Domain.Entities.Metadata;
 
 namespace FoundersPC.Domain.Entities.Hardware;
 
-public class Producer : FullAuditable
+public class Producer : FullAuditable, IIdentityItem
 {
     public ICollection<HardDriveDiskMetadata>? HardDrivesMetadata { get; set; } = default!;
     public ICollection<SolidStateDriveMetadata>? SolidStateDriveMetadata { get; set; } = default!;
@@ -27,4 +27,5 @@ public class Producer : FullAuditable
     public string? Website { get; set; } = default!;
     public DateTime? FoundationDate { get; set; } = default!;
     public Country? Country { get; set; } = default!;
+    public int Id { get; set; }
 }

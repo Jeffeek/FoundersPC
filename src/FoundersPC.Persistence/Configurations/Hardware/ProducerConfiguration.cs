@@ -12,6 +12,9 @@ public class ProducerConfiguration : IEntityTypeConfiguration<Producer>
 {
     public void Configure(EntityTypeBuilder<Producer> builder)
     {
+        builder.ToTable("Producers");
+        builder.HasKey(x => x.Id);
+
         builder.Property(x => x.ShortName)
                .HasColumnType("nvarchar")
                .HasColumnName("ShortName")

@@ -3,6 +3,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using FoundersPC.Domain.Entities.Hardware;
+using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence;
 using HardwareApi.Tests.DataCreation;
 using NUnit.Framework;
@@ -16,42 +17,44 @@ namespace HardwareApi.Tests;
 [TestFixture]
 public class HardwareServicesTests
 {
+    private async Task InitializeUsers()
+    {
+        var systemRole = HardwareApiDataCreation.CreateSystemRole();
+        var systemUser = HardwareApiDataCreation.CreateSystemUser(systemRole);
+
+        await _context.Set<ApplicationRole>()
+                      .AddAsync(systemRole);
+
+        await _context.Set<ApplicationUser>()
+                      .AddAsync(systemUser);
+    }
+
+    private async Task TaskInitializeHardware()
+    {
+        var hardwareTypes = HardwareApiDataCreation.CreateHardwareTypes();
+
+        await _context.Set<HardwareType>()
+                      .AddRangeAsync(hardwareTypes);
+
+        var cases = HardwareApiDataCreation.CreateCases()
+                                           .Take(10);
+
+        await _context.Set<Case>()
+                      .AddRangeAsync(cases);
+    }
+
     [OneTimeSetUp]
     public async Task SetupAsync()
     {
         _context = HardwareDb.GetInMemoryContext();
+        await InitializeUsers();
+        await TaskInitializeHardware();
 
-        await _context.BeginTransactionAsync();
-
-        var producers = HardwareApiDataCreation.CreateProducers()
-                                               .Take(20)
-                                               .ToArray();
-
-        var cases = HardwareApiDataCreation.CreateCases()
-                                           .Take(50);
-
-        await _context.Set<Producer>()
-                      .AddRangeAsync(producers);
-
-        await _context.Set<Case>()
-                      .AddRangeAsync(cases);
-
-        await _context.CommitTransactionAsync();
+        await _context.SaveChangesAsync();
     }
 
     private ApplicationDbContext _context;
 
-    //[Test]
-    //public async Task PaginationTestAsync([Values(1, 10, 15)] int pageNum)
-    //{
-    //    var prods = (await _unitOfWork.ProducersRepository.GetPaginateableAsync(pageNum)).ToArray();
-
-    //    Assert.AreEqual(prods.Last()
-    //                         .Id,
-    //                    pageNum * FoundersPCConstants.PageSize);
-
-    //    Assert.AreEqual(prods.First()
-    //                         .Id,
-    //                    pageNum * FoundersPCConstants.PageSize - (FoundersPCConstants.PageSize - 1));
-    //}
+    [Test]
+    public void A() { }
 }

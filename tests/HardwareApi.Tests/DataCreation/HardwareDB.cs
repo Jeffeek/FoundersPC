@@ -26,7 +26,7 @@ public class CurrentUserServiceMock : ICurrentUserService
     #region Implementation of ICurrentUserService
 
     /// <inheritdoc/>
-    public int UserId => 0;
+    public int UserId => 1;
 
     #endregion
 }
