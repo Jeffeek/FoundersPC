@@ -61,7 +61,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Endpoints\Hardware\" />
   </ItemGroup>
 
   <ItemGroup>
