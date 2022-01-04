@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using FoundersPC.SharedKernel.Query;
 
@@ -12,4 +13,13 @@ public abstract class GetHardwareQuery<THardware> : Query<THardware>
 
     public override Expression<Func<THardware, bool>> GetExpression() =>
         item => item.Id == Id && item.HardwareTypeId == HardwareTypeId;
+
+    public override List<Expression<Func<THardware, object>>> GetIncludes()
+    {
+        var result = base.GetIncludes();
+
+        result.Add(x => x.BaseMetadata);
+
+        return result;
+    }
 }

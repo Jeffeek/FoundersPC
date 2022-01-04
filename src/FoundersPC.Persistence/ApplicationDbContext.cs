@@ -42,22 +42,22 @@ public class ApplicationDbContext : DbContext
     public DbSet<ApplicationRole> Roles { get; set; }
     public DbSet<AccessToken> AccessTokens { get; set; }
 
-    public async Task BeginTransactionAsync()
+    public async Task BeginTransactionAsync(CancellationToken cancellationToken = default)
     {
         if (_currentTransaction != null)
             return;
 
-        _currentTransaction = await Database.BeginTransactionAsync();
+        _currentTransaction = await Database.BeginTransactionAsync(cancellationToken);
     }
 
-    public async Task CommitTransactionAsync()
+    public async Task CommitTransactionAsync(CancellationToken cancellationToken = default)
     {
         try
         {
-            await SaveChangesAsync()
+            await SaveChangesAsync(cancellationToken)
                 .ConfigureAwait(false);
 
-            await _currentTransaction?.CommitAsync()!;
+            await _currentTransaction?.CommitAsync(cancellationToken)!;
         }
         catch
         {
