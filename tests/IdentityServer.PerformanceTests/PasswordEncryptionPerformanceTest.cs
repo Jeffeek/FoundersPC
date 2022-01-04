@@ -36,7 +36,7 @@ public class PasswordEncryptionPerformanceTest
     [Benchmark]
     public string PasswordEncryption_TimeBenchmark()
     {
-        var password = _passwordEncryptorService.GeneratePassword(PasswordLength);
+        var password = PasswordEncryptorService.GeneratePassword(PasswordLength);
 
         var encrypted = _passwordEncryptorService.EncryptPassword(password);
 

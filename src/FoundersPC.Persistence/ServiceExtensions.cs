@@ -2,11 +2,9 @@
 
 using FoundersPC.Persistence.Migrations;
 using FoundersPC.Persistence.Settings;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RepoDb;
 
 #endregion
 

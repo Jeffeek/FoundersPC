@@ -20,9 +20,6 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddPipelineBehaviors(this IServiceCollection services, IConfiguration configuration)
     {
-        services.Configure<PipelineSettings>(configuration.GetSection("PipelineSettings"));
-
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehavior<,>));
 

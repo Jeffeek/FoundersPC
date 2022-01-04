@@ -1,8 +1,6 @@
 ﻿#region Using namespaces
 
-using System;
 using FoundersPC.Domain.Entities.Hardware.Metadata;
-using FoundersPC.Domain.Entities.Metadata;
 
 #endregion
 

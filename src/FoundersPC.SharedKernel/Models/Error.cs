@@ -1,7 +1,5 @@
 ﻿#region Using namespaces
 
-using Newtonsoft.Json;
-
 #endregion
 
 namespace FoundersPC.SharedKernel.Models;

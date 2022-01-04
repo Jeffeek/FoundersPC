@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using FoundersPC.Domain.Entities.Hardware;
-using FoundersPC.Domain.Entities.Hardware.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

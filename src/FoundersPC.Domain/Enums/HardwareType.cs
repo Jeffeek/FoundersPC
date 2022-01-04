@@ -8,6 +8,6 @@ public enum HardwareType : byte
     RAM = 4,
     Motherboard = 5,
     PowerSupply = 6,
-    HardDriveDisk = 7,
-    SolidStateDrive = 8
+    HDD = 7,
+    SSD = 8
 }

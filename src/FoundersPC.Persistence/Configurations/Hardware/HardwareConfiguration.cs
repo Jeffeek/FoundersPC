@@ -29,8 +29,8 @@ public class HardwareConfiguration : IEntityTypeConfiguration<Domain.Entities.Ha
                .HasValue<RandomAccessMemory>((int)HardwareType.RAM)
                .HasValue<Motherboard>((int)HardwareType.Motherboard)
                .HasValue<PowerSupply>((int)HardwareType.PowerSupply)
-               .HasValue<HardDriveDisk>((int)HardwareType.HardDriveDisk)
-               .HasValue<SolidStateDrive>((int)HardwareType.SolidStateDrive)
+               .HasValue<HardDriveDisk>((int)HardwareType.HDD)
+               .HasValue<SolidStateDrive>((int)HardwareType.SSD)
                .IsComplete();
 
         builder.AddAuditableColumns();

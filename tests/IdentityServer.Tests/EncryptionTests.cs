@@ -33,7 +33,7 @@ public class EncryptionTests
     {
         for (var i = 6; i <= 30; i++)
         {
-            var randomPassword = _passwordEncryptorService.GeneratePassword(i);
+            var randomPassword = PasswordEncryptorService.GeneratePassword(i);
             Trace.WriteLine($"Initial password: {randomPassword}");
 
             var encryptedPassword = _passwordEncryptorService.EncryptPassword(randomPassword);
@@ -48,10 +48,10 @@ public class EncryptionTests
     public void PasswordEncryption_LengthExceptionTest()
     {
         for (var i = -10; i < MinPasswordLength; i++)
-            Assert.Throws<ArgumentOutOfRangeException>(() => _passwordEncryptorService.GeneratePassword(i));
+            Assert.Throws<ArgumentOutOfRangeException>(() => PasswordEncryptorService.GeneratePassword(i));
 
         for (var i = MaxPasswordLength + 1; i < 100; i++)
-            Assert.Throws<ArgumentOutOfRangeException>(() => _passwordEncryptorService.GeneratePassword(i));
+            Assert.Throws<ArgumentOutOfRangeException>(() => PasswordEncryptorService.GeneratePassword(i));
     }
 
     [Test]

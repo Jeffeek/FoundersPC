@@ -5,7 +5,7 @@ using FoundersPC.SharedKernel;
 
 #endregion
 
-namespace FoundersPC.Application.Features.Models.Token;
+namespace FoundersPC.Application.Features.Token.Models;
 
 public class TokenRequestValidation : AbstractValidator<TokenRequest>
 {

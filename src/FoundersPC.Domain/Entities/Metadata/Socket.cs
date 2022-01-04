@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using FoundersPC.Domain.Entities.Hardware;
-using FoundersPC.Domain.Entities.Hardware.Metadata;
 
 namespace FoundersPC.Domain.Entities.Metadata;
 

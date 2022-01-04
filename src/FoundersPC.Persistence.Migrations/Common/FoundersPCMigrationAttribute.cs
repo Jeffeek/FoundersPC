@@ -1,6 +1,5 @@
 ﻿#region Using namespaces
 
-using System;
 using FluentMigrator;
 
 #endregion

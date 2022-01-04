@@ -51,8 +51,8 @@ public class HardwareMetadataConfiguration : IEntityTypeConfiguration<HardwareMe
                .HasValue<RandomAccessMemoryMetadata>((int)HardwareType.RAM)
                .HasValue<MotherboardMetadata>((int)HardwareType.Motherboard)
                .HasValue<PowerSupplyMetadata>((int)HardwareType.PowerSupply)
-               .HasValue<HardDriveDiskMetadata>((int)HardwareType.HardDriveDisk)
-               .HasValue<SolidStateDriveMetadata>((int)HardwareType.SolidStateDrive)
+               .HasValue<HardDriveDiskMetadata>((int)HardwareType.HDD)
+               .HasValue<SolidStateDriveMetadata>((int)HardwareType.SSD)
                .IsComplete();
 
         builder.AddAuditableColumns();

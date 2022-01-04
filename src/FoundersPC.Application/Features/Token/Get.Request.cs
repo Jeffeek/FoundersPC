@@ -5,7 +5,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
-using FoundersPC.Application.Features.Models.Token;
+using FoundersPC.Application.Features.Token.Models;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.SharedKernel;
 using FoundersPC.SharedKernel.Exceptions;

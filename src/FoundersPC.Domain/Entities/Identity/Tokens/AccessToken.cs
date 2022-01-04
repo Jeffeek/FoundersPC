@@ -48,5 +48,4 @@ public class AccessToken : IIdentityItem, IEquatable<AccessToken>
                          StartEvaluationDate,
                          ExpirationDate,
                          IsBlocked);
-
 }
