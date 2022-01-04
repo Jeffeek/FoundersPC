@@ -6,6 +6,7 @@ using System.Linq;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using FluentMigrator.Runner;
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.Application;
 using FoundersPC.Persistence;
@@ -122,8 +123,12 @@ public sealed class Startup
                                        #endif
                                    })
                 .AddControllersAsServices()
-                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblies(ReflectionExtensions.GetAllAssemblies()
-                                                                                                   .ToArray()));
+                .AddFluentValidation(fv =>
+                                     {
+                                         fv.ValidatorOptions.CascadeMode = CascadeMode.Stop;
+                                         fv.RegisterValidatorsFromAssemblies(ReflectionExtensions.GetAllAssemblies()
+                                                                                                 .ToArray());
+                                     });
 
         services.AddRazorPages();
         services.AddControllersWithViews();
