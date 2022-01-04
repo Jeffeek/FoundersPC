@@ -22,13 +22,19 @@ public class HardwareConfiguration : IEntityTypeConfiguration<Domain.Entities.Ha
                .HasForeignKey(x => x.HardwareTypeId)
                .IsRequired();
 
+        builder.HasOne(x => x.BaseMetadata)
+               .WithOne(x => x.Hardware)
+               .HasForeignKey<Domain.Entities.Hardware.Hardware>(x => x.Id)
+               .IsRequired()
+               .OnDelete(DeleteBehavior.NoAction);
+
         builder.HasDiscriminator<int>("HardwareTypeId")
                .HasValue<Case>((int)HardwareType.Case)
                .HasValue<Processor>((int)HardwareType.CPU)
                .HasValue<VideoCard>((int)HardwareType.GPU)
                .HasValue<RandomAccessMemory>((int)HardwareType.RAM)
-               .HasValue<Motherboard>((int)HardwareType.Motherboard)
-               .HasValue<PowerSupply>((int)HardwareType.PowerSupply)
+               .HasValue<Motherboard>((int)HardwareType.MB)
+               .HasValue<PowerSupply>((int)HardwareType.FPU)
                .HasValue<HardDriveDisk>((int)HardwareType.HDD)
                .HasValue<SolidStateDrive>((int)HardwareType.SSD)
                .IsComplete();

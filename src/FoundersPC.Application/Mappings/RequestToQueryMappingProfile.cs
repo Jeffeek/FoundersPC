@@ -14,10 +14,10 @@ public class RequestToQueryMappingProfile : Profile
             .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.HDD));
 
         CreateMap<Features.Hardware.Motherboard.GetRequest, Features.Hardware.Motherboard.GetQuery>()
-            .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.Motherboard));
+            .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.MB));
 
         CreateMap<Features.Hardware.PowerSupply.GetRequest, Features.Hardware.PowerSupply.GetQuery>()
-            .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.PowerSupply));
+            .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.FPU));
 
         CreateMap<Features.Hardware.Processor.GetRequest, Features.Hardware.Processor.GetQuery>()
             .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.CPU));

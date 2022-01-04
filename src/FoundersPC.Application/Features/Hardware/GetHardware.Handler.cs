@@ -25,8 +25,8 @@ public class GetHardwareHandler : IRequestHandler<GetHardwareRequest, HardwareIn
         {
             (int)HardwareType.Case        => await _mediator.Send(_mapper.Map<Case.GetRequest>(request), cancellationToken),
             (int)HardwareType.HDD         => await _mediator.Send(_mapper.Map<HardDriveDisk.GetRequest>(request), cancellationToken),
-            (int)HardwareType.Motherboard => await _mediator.Send(_mapper.Map<Motherboard.GetRequest>(request), cancellationToken),
-            (int)HardwareType.PowerSupply => await _mediator.Send(_mapper.Map<PowerSupply.GetRequest>(request), cancellationToken),
+            (int)HardwareType.MB          => await _mediator.Send(_mapper.Map<Motherboard.GetRequest>(request), cancellationToken),
+            (int)HardwareType.FPU         => await _mediator.Send(_mapper.Map<PowerSupply.GetRequest>(request), cancellationToken),
             (int)HardwareType.CPU         => await _mediator.Send(_mapper.Map<Processor.GetRequest>(request), cancellationToken),
             (int)HardwareType.RAM         => await _mediator.Send(_mapper.Map<RandomAccessMemory.GetRequest>(request), cancellationToken),
             (int)HardwareType.SSD         => await _mediator.Send(_mapper.Map<SolidStateDrive.GetRequest>(request), cancellationToken),

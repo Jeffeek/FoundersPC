@@ -37,7 +37,8 @@ public class HardwareMetadataConfiguration : IEntityTypeConfiguration<HardwareMe
         builder.HasOne(x => x.Hardware)
                .WithOne(x => x.BaseMetadata)
                .HasForeignKey<HardwareMetadata>(x => x.Id)
-               .IsRequired();
+               .IsRequired()
+               .OnDelete(DeleteBehavior.NoAction);
 
         builder.HasOne(x => x.HardwareType)
                .WithMany()
@@ -49,8 +50,8 @@ public class HardwareMetadataConfiguration : IEntityTypeConfiguration<HardwareMe
                .HasValue<ProcessorMetadata>((int)HardwareType.CPU)
                .HasValue<VideoCardMetadata>((int)HardwareType.GPU)
                .HasValue<RandomAccessMemoryMetadata>((int)HardwareType.RAM)
-               .HasValue<MotherboardMetadata>((int)HardwareType.Motherboard)
-               .HasValue<PowerSupplyMetadata>((int)HardwareType.PowerSupply)
+               .HasValue<MotherboardMetadata>((int)HardwareType.MB)
+               .HasValue<PowerSupplyMetadata>((int)HardwareType.FPU)
                .HasValue<HardDriveDiskMetadata>((int)HardwareType.HDD)
                .HasValue<SolidStateDriveMetadata>((int)HardwareType.SSD)
                .IsComplete();

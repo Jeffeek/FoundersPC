@@ -6,8 +6,8 @@ public enum HardwareType : byte
     CPU = 2,
     GPU = 3,
     RAM = 4,
-    Motherboard = 5,
-    PowerSupply = 6,
+    MB = 5,
+    FPU = 6,
     HDD = 7,
     SSD = 8
 }
