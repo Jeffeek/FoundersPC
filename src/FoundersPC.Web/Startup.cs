@@ -21,6 +21,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -134,6 +136,8 @@ public sealed class Startup
         services.AddControllersWithViews();
         services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
+        services.AddSpaStaticFiles(cfg => cfg.RootPath = "ClientApp/dist");
+
         services.AddOpenApiDocument(configure =>
                                     {
                                         configure.Title = "Founders PC API";
@@ -168,7 +172,16 @@ public sealed class Startup
         else
         {
             app.UseHsts();
+            app.UseSpaStaticFiles();
         }
+
+        app.UseSpa(cfg =>
+                   {
+                       cfg.Options.SourcePath = "ClientApp";
+
+                       if (env.IsDevelopment())
+                           cfg.UseAngularCliServer("start");
+                   });
 
         app.UseExceptionHandler(config => config.Run(context =>
                                                      {
