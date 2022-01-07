@@ -7,6 +7,15 @@ public class RequestToQueryMappingProfile : Profile
 {
     public RequestToQueryMappingProfile()
     {
+        CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+
         CreateMap<Features.Hardware.Case.GetRequest, Features.Hardware.Case.GetQuery>()
             .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.Case));
 

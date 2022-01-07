@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from "@angular/core";
 import { DataService } from "./hardware/services/case-service";
 import { Case } from "./hardware/models/case";
  
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     // получаем данные через сервис
     public loadProducts() {
         this.dataService.getCases()
-            .subscribe((data: Case[]) => this.products = data);
+            .subscribe((data: Case[]) => this.products = data ?? new Array<Case>());
     }
 
     // сохранение данных

@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 
 namespace FoundersPC.SharedKernel.Endpoints;
 
+[Route("api")]
 public class BaseRequestResponseAnonymousEndpoint<TRequest, TResponse, TEndpoint> : BaseAsyncEndpoint.WithRequest<TRequest>.WithResponse<TResponse>
     where TRequest : IRequest<TResponse>
 {

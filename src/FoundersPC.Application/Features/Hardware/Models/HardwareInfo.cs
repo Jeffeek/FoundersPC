@@ -8,7 +8,7 @@ public abstract class HardwareInfo
     public int HardwareTypeId { get; set; }
     public int ProducerId { get; set; }
     public string Title { get; set; } = default!;
-    public ProducerInfo Producer { get; set; } = default!;
+    public ProducerInfo? Producer { get; set; }
     public DateTime Created { get; set; }
     public string CreatedBy { get; set; } = default!;
     public DateTime LastModified { get; set; }

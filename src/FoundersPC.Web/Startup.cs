@@ -136,8 +136,6 @@ public sealed class Startup
         services.AddControllersWithViews();
         services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
-        services.AddSpaStaticFiles(cfg => cfg.RootPath = "ClientApp/dist");
-
         services.AddOpenApiDocument(configure =>
                                     {
                                         configure.Title = "Founders PC API";
@@ -154,6 +152,8 @@ public sealed class Startup
 
                                         configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
                                     });
+
+        services.AddSpaStaticFiles(cfg => cfg.RootPath = "ClientApp/dist");
     }
 
     private static IEnumerable<Type> GetAutoMapperProfilesFromAllAssemblies() =>
@@ -174,14 +174,6 @@ public sealed class Startup
             app.UseHsts();
             app.UseSpaStaticFiles();
         }
-
-        app.UseSpa(cfg =>
-                   {
-                       cfg.Options.SourcePath = "ClientApp";
-
-                       if (env.IsDevelopment())
-                           cfg.UseAngularCliServer("start");
-                   });
 
         app.UseExceptionHandler(config => config.Run(context =>
                                                      {
@@ -213,6 +205,15 @@ public sealed class Startup
 
         app.UseSwaggerUI();
         app.UseOpenApi();
+
+        app.UseSpa(cfg =>
+                   {
+                       cfg.Options.SourcePath = "ClientApp";
+
+                       if (env.IsDevelopment())
+                           cfg.UseAngularCliServer("start");
+                   });
+
         migrationRunner.MigrateUp();
     }
 }

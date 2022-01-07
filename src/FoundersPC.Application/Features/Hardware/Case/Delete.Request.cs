@@ -4,5 +4,5 @@ namespace FoundersPC.Application.Features.Hardware.Case;
 
 public class DeleteRequest : Base.DeleteRequest
 {
-    public DeleteRequest() => HardwareTypeId = (int) HardwareType.Case;
+    public DeleteRequest() => HardwareTypeId = (int)HardwareType.Case;
 }

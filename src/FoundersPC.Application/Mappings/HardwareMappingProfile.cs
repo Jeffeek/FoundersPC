@@ -40,8 +40,14 @@ public class HardwareMappingProfile : Profile
             .ForMember(dest => dest.CreatedBy, opt => opt.MapFrom(src => src.CreatedBy.Login))
             .ForMember(dest => dest.LastModifiedBy, opt => opt.MapFrom(src => src.LastModifiedBy.Login));
 
+        CreateMap<Producer, ProducerViewInfo>();
+
         CreateMap<Case, CaseInfo>()
             .IncludeMembers(x => x.Metadata);
+
+        CreateMap<Case, CaseViewInfo>()
+            .ForMember(dest => dest.CreatedBy, opt => opt.MapFrom(src => src.CreatedBy.Login))
+            .ForMember(dest => dest.LastModifiedBy, opt => opt.MapFrom(src => src.LastModifiedBy.Login));
 
         CreateMap<CaseMetadata, CaseInfo>();
 

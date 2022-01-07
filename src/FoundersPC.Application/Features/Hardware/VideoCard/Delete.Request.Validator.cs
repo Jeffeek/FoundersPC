@@ -1,5 +1,10 @@
-﻿using FoundersPC.Application.Features.Hardware.Validators;
+﻿using FoundersPC.Application.Features.Hardware.Base;
+using FoundersPC.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Hardware.VideoCard;
 
-public class DeleteRequestValidator : DeleteRequestBaseValidator<DeleteRequest> { }
+public class DeleteRequestValidator : DeleteHardwareRequestValidator<DeleteRequest>
+{
+    public DeleteRequestValidator(IDbContextFactory<ApplicationDbContext> dbContextFactory) : base(dbContextFactory) { }
+}

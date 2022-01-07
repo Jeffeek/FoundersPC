@@ -4,6 +4,8 @@ using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using FoundersPC.SharedKernel.Filter;
 using FoundersPC.SharedKernel.Interfaces;
 using FoundersPC.SharedKernel.Pagination;
@@ -33,6 +35,29 @@ public static class QueryableExtensions
     public static IPagedList<T> ApplyPaging<T, TPagedFilter>(this IQueryable<T> items, TPagedFilter filter)
         where TPagedFilter : IPagedFilter =>
         new PagedList<T>(items, filter.PageNumber, filter.PageSize);
+
+    public static async Task<IPagedList<T>> ApplyPagingAsync<T>(this IQueryable<T> items, int pageNumber, int pageSize, CancellationToken cancellationToken = default)
+    {
+        var totalItemsCount = await items.CountAsync(cancellationToken);
+
+        if (pageSize <= 0)
+            pageSize = totalItemsCount;
+
+        if (pageNumber < 0)
+            pageNumber = 0;
+
+        var itemsResult = await items.Skip(pageNumber * pageSize)
+                                     .Take(pageSize)
+                                     .ToListAsync(cancellationToken);
+
+        return new PagedList<T>(itemsResult, new(pageNumber, pageSize, totalItemsCount));
+    }
+
+    public static Task<IPagedList<T>> ApplyPagingAsync<T, TPagedFilter>(this IQueryable<T> items,
+                                                                        TPagedFilter filter,
+                                                                        CancellationToken cancellationToken = default)
+        where TPagedFilter : IPagedFilter =>
+        ApplyPagingAsync(items, filter.PageNumber, filter.PageSize, cancellationToken);
 
     public static IQueryable<T> ApplyQuery<T>(this IQueryable<T> items, IQuery<T> query) where T : class
     {
