@@ -3,4 +3,5 @@
 public interface ICurrentUserService
 {
     int UserId { get; }
+    void Initialize(int id) { }
 }

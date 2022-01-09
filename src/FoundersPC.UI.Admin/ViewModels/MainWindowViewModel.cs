@@ -1,25 +1,42 @@
 ﻿using FoundersPC.UI.Admin.Locators;
-using MvvmCross.ViewModels;
+using Prism.Mvvm;
 
 namespace FoundersPC.UI.Admin.ViewModels;
 
-public class MainWindowViewModel : MvxViewModel
+public class MainWindowViewModel : BindableBase
 {
-    public TitleBarLocator TitleBarLocator { get; }
+    public MainWindowTitleBarLocator MainWindowTitleBarLocator { get; }
 
-    public MainWindowViewModel(TitleBarLocator titleBarLocator)
+    public MainWindowViewModel(MainWindowTitleBarLocator mainWindowTitleBarLocator)
     {
-        TitleBarLocator = titleBarLocator;
-        titleBarLocator.IsLoadingChanged += value =>
-                                            {
-                                                IsLoading = value;
-                                            };
+        MainWindowTitleBarLocator = mainWindowTitleBarLocator;
+        RefreshLocator.Messaging += OnMessage;
+        RefreshLocator.SuccessLogIn += ClearSubscribe;
     }
 
-    private bool _isLoading;
-    public bool IsLoading
+    private void OnMessage(bool state, string? message)
     {
-        get => _isLoading;
-        set => SetProperty(ref _isLoading, value);
+        IsMessaging = state;
+        Message = message;
+    }
+
+    private void ClearSubscribe()
+    {
+        RefreshLocator.Messaging -= OnMessage;
+        RefreshLocator.SuccessLogIn -= ClearSubscribe;
+    }
+
+    private bool _isMessaging;
+    public bool IsMessaging
+    {
+        get => _isMessaging;
+        set => SetProperty(ref _isMessaging, value);
+    }
+
+    private string? _message;
+    public string? Message
+    {
+        get => _message;
+        set => SetProperty(ref _message, value);
     }
 }

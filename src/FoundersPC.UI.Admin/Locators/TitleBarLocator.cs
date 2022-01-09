@@ -6,7 +6,6 @@ namespace FoundersPC.UI.Admin.Locators;
 public class TitleBarLocator : BindableBase
 {
     private bool _isLoading = true;
-
     public bool IsLoading
     {
         get => _isLoading;
@@ -18,7 +17,6 @@ public class TitleBarLocator : BindableBase
     }
 
     private int _currentFrameId;
-
     public int CurrentFrameId
     {
         get => _currentFrameId;
@@ -54,4 +52,39 @@ internal static class TitleBarConstants
     public const int VideoCardDetailsPageId = 15;
     public const int ProducersPageId = 16;
     public const int ProducerDetailsPageId = 17;
+}
+
+public class MainWindowTitleBarLocator : BindableBase
+{
+    private bool _isLoading = true;
+    public bool IsLoading
+    {
+        get => _isLoading;
+        set
+        {
+            SetProperty(ref _isLoading, value);
+            IsLoadingChanged?.Invoke(_isLoading);
+        }
+    }
+
+    private int _currentFrameId;
+    public int CurrentFrameId
+    {
+        get => _currentFrameId;
+        set
+        {
+            SetProperty(ref _currentFrameId, value);
+            TabChanged?.Invoke(_currentFrameId);
+        }
+    }
+
+    public event Action<int>? TabChanged;
+
+    public event Action<bool>? IsLoadingChanged;
+}
+
+internal static class MainWindowTitleBarConstants
+{
+    public const int SignInPageId = 0;
+    public const int AfterSignInPageId = 1;
 }

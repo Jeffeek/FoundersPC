@@ -8,6 +8,10 @@ using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using FluentMigrator.Runner;
 using FoundersPC.Application;
+using FoundersPC.Application.Services;
+using FoundersPC.Application.Services.Identity;
+using FoundersPC.Application.Settings;
+using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Interfaces;
@@ -15,6 +19,7 @@ using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Services;
 using FoundersPC.UI.Admin.Views;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Prism.Ioc;
@@ -39,19 +44,39 @@ public partial class App
         PrismContainerExtension.Current.RegisterServices(services =>
                                                          {
                                                              services.AddLogging(x => x.AddSerilog(Log.Logger));
+                                                             services.AddOptions();
                                                              AddConfiguration(services);
+
 
                                                              var configuration = services.BuildServiceProvider()
                                                                                          .GetService<IConfiguration>()!;
 
+                                                             services.Configure<PasswordSettings>(configuration.GetSection("PasswordSettings"));
                                                              var titlebarLocator = new TitleBarLocator();
+                                                             var mainWindowTitleBarLocator = new MainWindowTitleBarLocator();
                                                              var selectedObjectLocator = new SelectedObjectLocator();
                                                              services.AddSingleton(titlebarLocator);
+                                                             services.AddSingleton(mainWindowTitleBarLocator);
                                                              services.AddSingleton(selectedObjectLocator);
                                                              services.AddApplicationServices(configuration);
+                                                             services.AddScoped<PasswordEncryptorService>();
+                                                             services.AddScoped<IPasswordHasher<ApplicationUser>, CustomPasswordHasher>();
+                                                             services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+                                                             {
+                                                                 options.Password.RequireDigit = true;
+                                                                 options.Password.RequireLowercase = true;
+                                                                 options.Password.RequireNonAlphanumeric = true;
+                                                                 options.Password.RequireUppercase = true;
+                                                                 options.Password.RequiredLength = 12;
+
+                                                                 options.Lockout.MaxFailedAccessAttempts = 5;
+                                                             });
+                                                             services.AddTransient<IUserStore<ApplicationUser>, UserStore>();
+                                                             services.AddTransient<IRoleStore<ApplicationRole>, RoleStore>();
                                                              services.AddPipelineBehaviors(configuration);
                                                              services.AddApplicationOptions(configuration);
-                                                             services.AddSingleton<ICurrentUserService, CurrentUserService>();
+                                                             var currentUserService = new CurrentUserService();
+                                                             services.AddSingleton<ICurrentUserService, CurrentUserService>(_ => currentUserService);
                                                              services.AddTransient<FilterOptions>();
 
                                                              AddMediator(services);
