@@ -3,7 +3,4 @@ using MediatR;
 
 namespace FoundersPC.Application.Features.Hardware.VideoCard;
 
-public class GetRequest : IRequest<VideoCardInfo>
-{
-    public int Id { get; set; }
-}
+public class GetRequest : Base.GetHardwareRequest, IRequest<VideoCardInfo> { }

@@ -1,20 +1,21 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.EntityFrameworkCore;
-using AutoMapper.QueryableExtensions;
 using FoundersPC.Application.Features.Hardware.Models;
+using FoundersPC.Domain.Entities.Hardware.Metadata;
 using FoundersPC.Persistence;
+using FoundersPC.SharedKernel.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Hardware.Base;
 
-public abstract class CreateHardwareHandler<TRequest, TResponse, THardware> : IRequestHandler<TRequest, TResponse>
+public abstract class CreateHardwareHandler<TRequest, TResponse, THardware, THardwareMetadata> : IRequestHandler<TRequest, TResponse>
     where TRequest : HardwareInfo, IRequest<TResponse>
     where TResponse : HardwareInfo
     where THardware : Domain.Entities.Hardware.Hardware
+    where THardwareMetadata : HardwareMetadata
 {
     private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
     private readonly IMapper _mapper;
@@ -31,16 +32,26 @@ public abstract class CreateHardwareHandler<TRequest, TResponse, THardware> : IR
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
         await db.BeginTransactionAsync(cancellationToken);
 
-        var entity = await db.Set<THardware>()
-                             .Persist(_mapper)
-                             .InsertOrUpdateAsync(request, cancellationToken);
+        var hardware = _mapper.Map<THardware>(request);
+
+        await db.Set<THardware>()
+                .AddAsync(hardware, cancellationToken);
+
+        await db.SaveChangesAsync(cancellationToken);
+
+        var metadata = _mapper.Map<THardwareMetadata>(request);
+
+        hardware.BaseMetadata = metadata;
+        metadata.Id = hardware.Id;
+        metadata.Hardware = hardware;
+
+        await db.Set<THardwareMetadata>()
+                .AddAsync(metadata, cancellationToken);
 
         await db.CommitTransactionAsync(cancellationToken);
 
-        return await db.Set<THardware>()
-                       .AsNoTracking()
-                       .Where(x => x.Id == entity.Id && x.HardwareTypeId == entity.HardwareTypeId)
-                       .ProjectTo<TResponse>(_mapper.ConfigurationProvider)
-                       .FirstAsync(cancellationToken);
+        return await db.ProjectFirstAsNoTrackingAsync<THardware, TResponse>(_mapper.ConfigurationProvider,
+                                                                            x => x.Id == hardware.Id && x.HardwareTypeId == request.HardwareTypeId,
+                                                                            cancellationToken);
     }
 }

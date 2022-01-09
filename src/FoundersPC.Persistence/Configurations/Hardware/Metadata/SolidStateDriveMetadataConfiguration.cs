@@ -30,12 +30,12 @@ public class SolidStateDriveMetadataConfiguration : IEntityTypeConfiguration<Sol
                .IsRequired(false);
 
         builder.Property(x => x.SequentialRead)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("SequentialRead")
                .IsRequired(false);
 
         builder.Property(x => x.SequentialRecording)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("SequentialRecording")
                .IsRequired(false);
 

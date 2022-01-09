@@ -3,7 +3,4 @@ using MediatR;
 
 namespace FoundersPC.Application.Features.Hardware.RandomAccessMemory;
 
-public class GetRequest : IRequest<RandomAccessMemoryInfo>
-{
-    public int Id { get; set; }
-}
+public class GetRequest : Base.GetHardwareRequest, IRequest<RandomAccessMemoryInfo> { }

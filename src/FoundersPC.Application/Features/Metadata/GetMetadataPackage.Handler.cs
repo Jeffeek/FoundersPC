@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using FoundersPC.Application.Features.Metadata.Models;
+using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Domain.Entities.Metadata;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Models.Metadata;
@@ -43,6 +44,7 @@ internal class GetMetadataPackageHandler : IRequestHandler<GetMetadataPackageReq
                    TechProcess = await db.Set<TechProcess>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
                    VideoMemory = await db.Set<VideoMemory>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
                    WindowMaterial = await db.Set<WindowMaterial>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
+                   Producer = await db.Set<Producer>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
                };
     }
 }

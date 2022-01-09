@@ -21,11 +21,11 @@ public abstract class GetAllHardwareQuery<THardware> : SortedQuery<THardware>
         return result;
     }
 
-    public override Func<IQueryable<THardware>, IOrderedQueryable<THardware>> GetSortingExpression() =>
-        SortColumn switch
-        {
-            var producer when String.Equals(producer, "Producer", StringComparison.OrdinalIgnoreCase) =>
-                item => item.ApplyOrder(x => x.BaseMetadata.Producer.FullName, IsAscending),
-            _ => item => item.ApplyOrder(SortColumn, IsAscending)
-        };
+    //public override Func<IQueryable<THardware>, IOrderedQueryable<THardware>> GetSortingExpression() =>
+    //    SortColumn switch
+    //    {
+    //        var producer when String.Equals(producer, "Producer", StringComparison.OrdinalIgnoreCase) =>
+    //            item => item.ApplyOrder(x => x.BaseMetadata.Producer.FullName, IsAscending),
+    //        _ => item => item.ApplyOrder(SortColumn, IsAscending)
+    //    };
 }

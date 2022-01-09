@@ -19,7 +19,7 @@ public class GetAllHardwareRequestValidator<TRequest> : AbstractValidator<TReque
                                                         "Producer"
                                                     };
 
-    public GetAllHardwareRequestValidator()
+    protected GetAllHardwareRequestValidator()
     {
         RuleFor(x => x.PageNumber)
             .GreaterThanOrEqualTo(0);

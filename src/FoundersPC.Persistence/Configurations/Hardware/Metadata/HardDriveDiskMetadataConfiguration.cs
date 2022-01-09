@@ -34,7 +34,7 @@ public class HardDriveDiskMetadataConfiguration : IEntityTypeConfiguration<HardD
                .IsRequired(false);
 
         builder.Property(x => x.Noise)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("Noise")
                .IsRequired(false);
 

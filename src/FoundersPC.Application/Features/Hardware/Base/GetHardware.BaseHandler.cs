@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FoundersPC.Application.Features.Hardware.Base;
 
 public abstract class GetHardwareHandler<TRequest, TResponse, TQuery, THardware> : IRequestHandler<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>
+    where TRequest : GetHardwareRequest, IRequest<TResponse>
     where TResponse : HardwareInfo
     where THardware : Domain.Entities.Hardware.Hardware
     where TQuery : GetHardwareQuery<THardware>, IQuery<THardware>
@@ -33,11 +33,9 @@ public abstract class GetHardwareHandler<TRequest, TResponse, TQuery, THardware>
     {
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
 
-        return await db.Set<THardware>()
-                       .AsNoTracking()
-                       .ApplyQuery(_mapper.Map<TQuery>(request))
-                       .ProjectTo<TResponse>(_mapper.ConfigurationProvider)
-                       .FirstOrDefaultAsync(cancellationToken)
+        return await db.ProjectFirstOrDefaultAsNoTrackingAsync<THardware, TResponse>(_mapper.ConfigurationProvider,
+                                                                                     x => x.Id == request.Id && x.HardwareTypeId == request.HardwareTypeId,
+                                                                                     cancellationToken)
                ?? throw new NotFoundException($"Not found Hardware {JsonSerializer.Serialize(request, new JsonSerializerOptions { WriteIndented = true })}");
     }
 }

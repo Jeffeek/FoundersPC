@@ -2,6 +2,7 @@
 
 using FluentMigrator;
 using FluentMigrator.Builders.Create.Table;
+using FluentMigrator.SqlServer;
 
 #endregion
 
@@ -36,13 +37,6 @@ internal static class CreateTableExtensions
             .AsInt32()
             .ForeignKey($"FK_{tableName}_Users_DeletedById", "Users", "Id")
             .Nullable();
-
-    public static ICreateTableWithColumnSyntax WithIdentity(this ICreateTableWithColumnSyntax builder, string tableName) =>
-        builder.WithColumn("Id")
-               .AsInt32()
-               .PrimaryKey($"PK_{tableName}_Id")
-               .Identity()
-               .Unique($"IX_{tableName}_Id");
 
     public static ICreateTableWithColumnSyntax WithFullAuditableColumns(this ICreateTableWithColumnSyntax builder, string tableName) =>
         builder.AddAuditableColumns(tableName)

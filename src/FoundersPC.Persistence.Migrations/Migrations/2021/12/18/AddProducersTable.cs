@@ -1,4 +1,5 @@
 ﻿using FluentMigrator;
+using FluentMigrator.SqlServer;
 using FoundersPC.Persistence.Migrations.Common;
 using FoundersPC.Persistence.Migrations.Extensions;
 
@@ -10,7 +11,7 @@ public class AddProducersTable : Migration
     public override void Up()
     {
         Create.Table("Producers")
-              .WithIdentity("Producers")
+              .WithColumn("Id").AsInt32().NotNullable().Identity().PrimaryKey("PK_Producers")
               .WithFullAuditableColumns("Producers")
               .WithColumn("ShortName").AsString().Nullable()
               .WithColumn("FullName").AsString().NotNullable()

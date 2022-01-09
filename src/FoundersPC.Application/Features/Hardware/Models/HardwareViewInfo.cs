@@ -13,4 +13,5 @@ public class HardwareViewInfo
     public string CreatedBy { get; set; } = default!;
     public DateTime LastModified { get; set; }
     public string LastModifiedBy { get; set; } = default!;
+    public bool IsDeleted { get; set; }
 }

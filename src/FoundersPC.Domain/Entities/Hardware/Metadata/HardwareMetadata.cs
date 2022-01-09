@@ -2,7 +2,7 @@
 
 namespace FoundersPC.Domain.Entities.Hardware.Metadata;
 
-public abstract class HardwareMetadata : FullAuditable
+public abstract class HardwareMetadata : Auditable, IIdentityItem
 {
     public int Id { get; set; }
     public int ProducerId { get; set; }

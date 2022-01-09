@@ -24,7 +24,7 @@ internal class RandomAccessMemoryMetadataConfiguration : IEntityTypeConfiguratio
                .IsRequired(false);
 
         builder.Property(x => x.Voltage)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("Voltage")
                .IsRequired(false);
 

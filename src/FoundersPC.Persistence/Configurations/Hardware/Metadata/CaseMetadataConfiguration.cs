@@ -1,4 +1,5 @@
-﻿using FoundersPC.Domain.Entities.Hardware.Metadata;
+﻿using FoundersPC.Domain.Entities.Hardware;
+using FoundersPC.Domain.Entities.Hardware.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -24,7 +25,7 @@ public class CaseMetadataConfiguration : IEntityTypeConfiguration<CaseMetadata>
                .IsRequired(false);
 
         builder.Property(x => x.MaxMotherboardSize)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("MaxMotherboardSize")
                .IsRequired(false);
 
@@ -39,22 +40,22 @@ public class CaseMetadataConfiguration : IEntityTypeConfiguration<CaseMetadata>
                .IsRequired(false);
 
         builder.Property(x => x.Weight)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("Weight")
                .IsRequired(false);
 
         builder.Property(x => x.Height)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("Height")
                .IsRequired(false);
 
         builder.Property(x => x.Width)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("Width")
                .IsRequired(false);
 
         builder.Property(x => x.Depth)
-               .HasColumnType("numeric")
+               .HasColumnType("float")
                .HasColumnName("Depth")
                .IsRequired(false);
 
@@ -65,7 +66,7 @@ public class CaseMetadataConfiguration : IEntityTypeConfiguration<CaseMetadata>
 
         builder.HasOne(x => x.Case)
                .WithOne(x => x.Metadata)
-               .HasForeignKey<CaseMetadata>(x => x.Id)
+               .HasForeignKey<Case>(x => x.Id)
                .IsRequired();
     }
 }

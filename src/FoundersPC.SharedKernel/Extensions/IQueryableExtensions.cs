@@ -63,6 +63,9 @@ public static class QueryableExtensions
     {
         var result = items.Where(query.GetExpression());
 
+        if (query is ISortedQuery<T> sortedQuery)
+            result = sortedQuery.GetSortingExpression()(result);
+
         result = query.GetIncludes()
                       .Aggregate(result, (current, include) => current.Include(include));
 

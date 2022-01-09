@@ -145,6 +145,24 @@ public class ApplicationDbContext : DbContext
                     break;
             }
 
+        foreach (var entry in ChangeTracker.Entries<Auditable>())
+            switch (entry.State)
+            {
+                case EntityState.Added:
+                    entry.Entity.CreatedById = _currentUserService.UserId;
+                    entry.Entity.Created = _dateTimeService.Now;
+                    entry.Entity.LastModifiedById = _currentUserService.UserId;
+                    entry.Entity.LastModified = _dateTimeService.Now;
+
+                    break;
+
+                case EntityState.Modified:
+                    entry.Entity.LastModifiedById = _currentUserService.UserId;
+                    entry.Entity.LastModified = _dateTimeService.Now;
+
+                    break;
+            }
+
         return base.SaveChangesAsync(cancellationToken);
     }
 

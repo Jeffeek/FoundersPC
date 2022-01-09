@@ -3,7 +3,4 @@ using MediatR;
 
 namespace FoundersPC.Application.Features.Hardware.SolidStateDrive;
 
-public class GetRequest : IRequest<SolidStateDriveInfo>
-{
-    public int Id { get; set; }
-}
+public class GetRequest : Base.GetHardwareRequest, IRequest<SolidStateDriveInfo> { }

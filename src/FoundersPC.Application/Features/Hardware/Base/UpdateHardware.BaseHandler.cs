@@ -45,10 +45,8 @@ public abstract class UpdateHardwareHandler<TRequest, TResponse, TQuery, THardwa
 
         await db.CommitTransactionAsync(cancellationToken);
 
-        return await db.Set<THardware>()
-                       .AsNoTracking()
-                       .ApplyQuery(_mapper.Map<TQuery>(request))
-                       .ProjectTo<TResponse>(_mapper.ConfigurationProvider)
-                       .FirstAsync(cancellationToken);
+        return await db.ProjectFirstAsNoTrackingAsync<THardware, TResponse>(_mapper.ConfigurationProvider,
+                                                                            x => x.Id == request.Id && x.HardwareTypeId == request.HardwareTypeId,
+                                                                            cancellationToken);
     }
 }

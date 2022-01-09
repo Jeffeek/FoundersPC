@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using FluentMigrator;
+using FluentMigrator.SqlServer;
 using FoundersPC.Persistence.Migrations.Common;
 using FoundersPC.Persistence.Migrations.Extensions;
 
@@ -12,8 +13,8 @@ public class AddHardwareMetadataTable : Migration
     {
         //Base
         Create.Table("HardwareMetadata")
-              .WithIdentity("HardwareMetadata")
-              .WithFullAuditableColumns("HardwareMetadata")
+              .WithColumn("Id").AsInt32().ForeignKey("FK_HardwareMetadata_Hardware", "Hardware", "Id")
+              .AddAuditableColumns("HardwareMetadata")
               .WithColumn("ProducerId").AsInt32().NotNullable().ForeignKey("FK_HardwareMetadata_Producers_ProducerId", "Producers", "Id").OnDeleteOrUpdate(Rule.Cascade)
               .WithColumn("Title").AsString().NotNullable()
               .WithColumn("HardwareTypeId").AsInt32().NotNullable().ForeignKey("FK_HardwareMetadata_HardwareType_HardwareTypeId", "HardwareType", "Id").OnUpdate(Rule.None)
@@ -91,11 +92,7 @@ public class AddHardwareMetadataTable : Migration
               .WithColumn("HDMI").AsInt32().Nullable()
               .WithColumn("DisplayPort").AsInt32().Nullable();
 
-        Create.ForeignKey("FK_HardwareMetadata_Hardware_Id")
-              .FromTable("HardwareMetadata")
-              .ForeignColumn("Id")
-              .ToTable("Hardware")
-              .PrimaryColumn("Id");
+        Create.PrimaryKey("PK_HardwareMetadata").OnTable("HardwareMetadata").Column("Id").Clustered();
     }
 
     public override void Down()

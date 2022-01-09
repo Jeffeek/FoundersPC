@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.EquivalencyExpression;
+using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Domain.Entities.Metadata;
 using FoundersPC.SharedKernel.Models.Metadata;
 
@@ -17,5 +18,8 @@ public class MappingProfile : Profile
             .EqualityComparison((src, dest) => src.Id == dest.Id)
             .IncludeAllDerived()
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Value));
+
+        CreateMap<Producer, MetadataInfo>()
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.ShortName ?? src.FullName));
     }
 }

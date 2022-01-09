@@ -10,7 +10,7 @@ namespace FoundersPC.Persistence.Extensions;
 
 public static class ConfigurationExtensions
 {
-    public static void AddAuditableColumns<TEntity>(this EntityTypeBuilder<TEntity> builder)
+    public static void AddFullAuditableColumns<TEntity>(this EntityTypeBuilder<TEntity> builder)
         where TEntity : FullAuditable
     {
         builder.Property(p => p.Created)
@@ -62,5 +62,49 @@ public static class ConfigurationExtensions
                .WithMany()
                .HasForeignKey(x => x.DeletedById)
                .IsRequired(false);
+    }
+
+    public static void AddAuditableColumns<TEntity>(this EntityTypeBuilder<TEntity> builder)
+        where TEntity : Auditable
+    {
+        builder.Property(p => p.Created)
+               .HasColumnName("Created")
+               .HasColumnType("datetime")
+               .IsRequired();
+
+        builder.Property(p => p.CreatedById)
+               .HasColumnName("CreatedById")
+               .HasColumnType("int")
+               .IsRequired();
+
+        builder.HasOne(x => x.CreatedBy)
+               .WithMany()
+               .HasForeignKey(x => x.CreatedById)
+               .IsRequired();
+
+        builder.Property(p => p.LastModified)
+               .HasColumnName("LastModified")
+               .HasColumnType("datetime")
+               .IsRequired();
+
+        builder.Property(p => p.LastModifiedById)
+               .HasColumnName("LastModifiedById")
+               .HasColumnType("int")
+               .IsRequired();
+
+        builder.HasOne(x => x.LastModifiedBy)
+               .WithMany()
+               .HasForeignKey(x => x.LastModifiedById)
+               .IsRequired();
+    }
+
+    public static void AddIdentity<TEntity>(this EntityTypeBuilder<TEntity> builder)
+        where TEntity : class, IIdentityItem
+    {
+        builder.Property(x => x.Id)
+               .HasColumnName("Id")
+               .HasColumnType("int")
+               .IsRequired()
+               .ValueGeneratedOnAdd();
     }
 }

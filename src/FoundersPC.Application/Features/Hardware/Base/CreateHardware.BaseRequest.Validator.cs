@@ -40,9 +40,9 @@ public abstract class CreateHardwareRequestValidator<TRequest> : AbstractValidat
                       .Any(z => (int)z == x.HardwareTypeId),
              () =>
              {
-                 RuleFor(x => x.Title)
-                     .MustAsync((request, _, ct) => HardwareWithSameTitleNotExistsAsync(request.HardwareTypeId, request.Title, ct))
-                     .WithMessage(x => $"Hardware with Type {x.HardwareTypeId} and Title {x.Title} already exists");
+                 //RuleFor(x => x.Title)
+                 //    .MustAsync((request, _, ct) => HardwareWithSameTitleNotExistsAsync(request.HardwareTypeId, request.Title, ct))
+                 //    .WithMessage(x => $"Hardware with Type {x.HardwareTypeId} and Title {x.Title} already exists");
              });
     }
 
@@ -54,11 +54,11 @@ public abstract class CreateHardwareRequestValidator<TRequest> : AbstractValidat
                        .AnyAsync(x => x.Id == producerId, cancellationToken);
     }
 
-    private async Task<bool> HardwareWithSameTitleNotExistsAsync(int hardwareTypeId, string title, CancellationToken cancellationToken)
-    {
-        await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
+    //private async Task<bool> HardwareWithSameTitleNotExistsAsync(int hardwareTypeId, string title, CancellationToken cancellationToken)
+    //{
+    //    await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
 
-        return !await db.Set<Domain.Entities.Hardware.Hardware>()
-                        .AnyAsync(x => x.HardwareTypeId == hardwareTypeId && x.BaseMetadata.Title == title, cancellationToken);
-    }
+    //    return !await db.Set<Domain.Entities.Hardware.Hardware>()
+    //                    .AnyAsync(x => x.HardwareTypeId == hardwareTypeId && x.BaseMetadata.Title == title, cancellationToken);
+    //}
 }

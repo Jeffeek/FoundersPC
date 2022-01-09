@@ -3,7 +3,4 @@ using MediatR;
 
 namespace FoundersPC.Application.Features.Hardware.Motherboard;
 
-public class GetRequest : IRequest<MotherboardInfo>
-{
-    public int Id { get; set; }
-}
+public class GetRequest : Base.GetHardwareRequest, IRequest<MotherboardInfo> { }

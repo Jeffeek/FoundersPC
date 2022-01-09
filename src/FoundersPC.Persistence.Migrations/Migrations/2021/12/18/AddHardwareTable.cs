@@ -12,7 +12,7 @@ public class AddHardwareTable : Migration
     public override void Up()
     {
         Create.Table("HardwareType")
-              .WithIdentity("HardwareType")
+              .WithColumn("Id").AsInt32().NotNullable().Identity().PrimaryKey("PK_HardwareType")
               .WithColumn("Name").AsString().NotNullable();
 
         Insert.IntoTable("HardwareType")
@@ -27,7 +27,7 @@ public class AddHardwareTable : Migration
               .Row(new { Id = 8, Name = "Video Card" });
 
         Create.Table("Hardware")
-              .WithIdentity("Hardware")
+              .WithColumn("Id").AsInt32().Identity().PrimaryKey("PK_Hardware")
               .WithFullAuditableColumns("Hardware")
               .WithColumn("HardwareTypeId").AsInt32().NotNullable().ForeignKey("FK_Hardware_HardwareType_HardwareTypeId", "HardwareType", "Id").OnDeleteOrUpdate(Rule.Cascade);
     }

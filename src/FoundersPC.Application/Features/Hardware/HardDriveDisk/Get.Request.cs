@@ -3,7 +3,4 @@ using MediatR;
 
 namespace FoundersPC.Application.Features.Hardware.HardDriveDisk;
 
-public class GetRequest : IRequest<HardDriveDiskInfo>
-{
-    public int Id { get; set; }
-}
+public class GetRequest : Base.GetHardwareRequest, IRequest<HardDriveDiskInfo> { }

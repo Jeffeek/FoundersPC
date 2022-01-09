@@ -10,12 +10,12 @@ public class PowerSupplyMetadataConfiguration : IEntityTypeConfiguration<PowerSu
     {
         builder.Property(x => x.Power)
                .HasColumnType("int")
-               .HasColumnName("PowerSupplyPower")
+               .HasColumnName("Power")
                .IsRequired(false);
 
         builder.Property(x => x.Efficiency)
                .HasColumnType("int")
-               .HasColumnName("PowerSupplyEfficiency")
+               .HasColumnName("Efficiency")
                .IsRequired(false);
 
         builder.Property(x => x.MotherboardPoweringId)

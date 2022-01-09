@@ -3,7 +3,4 @@ using MediatR;
 
 namespace FoundersPC.Application.Features.Hardware.PowerSupply;
 
-public class GetRequest : IRequest<PowerSupplyInfo>
-{
-    public int Id { get; set; }
-}
+public class GetRequest : Base.GetHardwareRequest, IRequest<PowerSupplyInfo> { }

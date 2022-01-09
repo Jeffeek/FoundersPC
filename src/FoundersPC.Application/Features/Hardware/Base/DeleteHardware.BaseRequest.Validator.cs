@@ -14,7 +14,7 @@ public class DeleteHardwareRequestValidator<TRequest> : AbstractValidator<TReque
 {
     private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
 
-    public DeleteHardwareRequestValidator(IDbContextFactory<ApplicationDbContext> dbContextFactory)
+    protected DeleteHardwareRequestValidator(IDbContextFactory<ApplicationDbContext> dbContextFactory)
     {
         _dbContextFactory = dbContextFactory;
 

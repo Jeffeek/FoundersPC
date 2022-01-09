@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using FoundersPC.Domain.Entities.Hardware;
+using FoundersPC.Domain.Entities.Hardware.Metadata;
 using FoundersPC.Persistence.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -17,16 +18,18 @@ public class HardwareConfiguration : IEntityTypeConfiguration<Domain.Entities.Ha
         builder.ToTable("Hardware");
         builder.HasKey(x => x.Id);
 
+        builder.AddIdentity();
+
         builder.HasOne(x => x.HardwareType)
                .WithMany()
                .HasForeignKey(x => x.HardwareTypeId)
                .IsRequired();
 
         builder.HasOne(x => x.BaseMetadata)
-               .WithOne(x => x.Hardware)
-               .HasForeignKey<Domain.Entities.Hardware.Hardware>(x => x.Id)
-               .IsRequired()
-               .OnDelete(DeleteBehavior.NoAction);
+               .WithOne()
+               .HasForeignKey<HardwareMetadata>(x => x.Id)
+               .HasPrincipalKey<Domain.Entities.Hardware.Hardware>(x => x.Id)
+               .IsRequired();
 
         builder.HasDiscriminator<int>("HardwareTypeId")
                .HasValue<Case>((int)HardwareType.Case)
@@ -39,6 +42,6 @@ public class HardwareConfiguration : IEntityTypeConfiguration<Domain.Entities.Ha
                .HasValue<SolidStateDrive>((int)HardwareType.SSD)
                .IsComplete();
 
-        builder.AddAuditableColumns();
+        builder.AddFullAuditableColumns();
     }
 }

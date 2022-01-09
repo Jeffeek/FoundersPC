@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace FoundersPC.SharedKernel.Pagination;
 
-public interface IPagedList<T>
+public interface IPagedList<T> : IEnumerable<T>
 {
     PagingInfo PagingInfo { get; }
 

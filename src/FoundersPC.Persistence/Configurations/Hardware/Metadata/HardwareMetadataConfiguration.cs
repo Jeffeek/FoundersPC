@@ -34,15 +34,15 @@ public class HardwareMetadataConfiguration : IEntityTypeConfiguration<HardwareMe
                .HasForeignKey(x => x.ProducerId)
                .IsRequired();
 
-        builder.HasOne(x => x.Hardware)
-               .WithOne(x => x.BaseMetadata)
-               .HasForeignKey<HardwareMetadata>(x => x.Id)
-               .IsRequired()
-               .OnDelete(DeleteBehavior.NoAction);
-
         builder.HasOne(x => x.HardwareType)
                .WithMany()
                .HasForeignKey(x => x.HardwareTypeId)
+               .IsRequired();
+
+        builder.HasOne(x => x.Hardware)
+               .WithOne(x => x.BaseMetadata)
+               .HasForeignKey<Domain.Entities.Hardware.Hardware>(x => x.Id)
+               .HasPrincipalKey<HardwareMetadata>(x => x.Id)
                .IsRequired();
 
         builder.HasDiscriminator<int>("HardwareTypeId")

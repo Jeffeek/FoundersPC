@@ -348,6 +348,7 @@ src/Identity/FoundersPC.IdentityServer/EmailBotConfiguration.json
 src/ApplicationShared/FoundersPC.ApplicationShared/Jwt/JwtSettings.json
 src/ApplicationShared/FoundersPC.ApplicationShared/Jwt/my_jwt_settings.json
 /src/FoundersPC.Web/appsettings.json
+/src/FoundersPC.UI.Admin/appsettings.json
 
 # Client app files
 src/FoundersPC.Web/ClientApp/.angular/*

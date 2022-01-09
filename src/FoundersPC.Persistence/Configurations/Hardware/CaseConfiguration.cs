@@ -1,6 +1,7 @@
 ﻿#region Using namespaces
 
 using FoundersPC.Domain.Entities.Hardware;
+using FoundersPC.Domain.Entities.Hardware.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -14,7 +15,7 @@ public class CaseConfiguration : IEntityTypeConfiguration<Case>
     {
         builder.HasOne(x => x.Metadata)
                .WithOne(x => x.Case)
-               .HasForeignKey<Case>(x => x.Id)
+               .HasForeignKey<CaseMetadata>(x => x.Id)
                .IsRequired();
     }
 }

@@ -21,8 +21,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -152,8 +150,6 @@ public sealed class Startup
 
                                         configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
                                     });
-
-        services.AddSpaStaticFiles(cfg => cfg.RootPath = "ClientApp/dist");
     }
 
     private static IEnumerable<Type> GetAutoMapperProfilesFromAllAssemblies() =>
@@ -172,7 +168,6 @@ public sealed class Startup
         else
         {
             app.UseHsts();
-            app.UseSpaStaticFiles();
         }
 
         app.UseExceptionHandler(config => config.Run(context =>
@@ -205,14 +200,6 @@ public sealed class Startup
 
         app.UseSwaggerUI();
         app.UseOpenApi();
-
-        app.UseSpa(cfg =>
-                   {
-                       cfg.Options.SourcePath = "ClientApp";
-
-                       if (env.IsDevelopment())
-                           cfg.UseAngularCliServer("start");
-                   });
 
         migrationRunner.MigrateUp();
     }

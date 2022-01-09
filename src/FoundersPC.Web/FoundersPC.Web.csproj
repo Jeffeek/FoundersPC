@@ -7,55 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="$ClientApp\**" />
-    <None Remove="$ClientApp\**" />
-    <None Include="$ClientApp\**" Exclude="$ClientApp\node_modules\**" />
-  </ItemGroup>
-
-  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-    <Exec WorkingDirectory="$ClientApp" Command="npm install" />
-    <Exec WorkingDirectory="$ClientApp" Command="npm run build -- --prod" />
- 
-    <ItemGroup>
-      <DistFiles Include="$ClientApp\dist\**; $ClientApp\dist-server\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      </ResolvedFileToPublish>
-    </ItemGroup>
-  </Target>
-
-  <ItemGroup>
     <None Remove="C:\Users\Mikhail\.nuget\packages\expressiveannotationscore\0.1.0\contentFiles\any\netcoreapp2.0\expressive.annotations.validate.js" />
     <None Remove="C:\Users\Mikhail\.nuget\packages\expressiveannotationscore\0.1.0\contentFiles\any\netcoreapp2.0\expressive.annotations.validate.min.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Remove="ClientApp\src\app\hardware\producer.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="ClientApp\src\app\hardware\models\producer.ts">
-      <SubType>Code</SubType>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="AutoMapper.Collection.EntityFrameworkCore" Version="7.1.3" />
-    <PackageReference Include="AutoMapper.EF6" Version="2.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="FluentValidation" Version="10.3.6" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
-    <PackageReference Include="MediatR" Version="9.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.22" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />

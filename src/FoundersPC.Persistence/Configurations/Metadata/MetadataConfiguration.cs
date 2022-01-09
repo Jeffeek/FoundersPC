@@ -12,7 +12,7 @@ public class MetadataConfiguration : IEntityTypeConfiguration<MetadataEntity>
     {
         builder.ToTable("Metadata");
         builder.HasKey(x => x.Id);
-        builder.AddAuditableColumns();
+        builder.AddFullAuditableColumns();
 
         builder.Property(x => x.Name)
                .HasColumnName("Name")

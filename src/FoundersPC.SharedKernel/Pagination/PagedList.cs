@@ -1,5 +1,6 @@
 #region Using namespaces
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,4 +40,8 @@ public class PagedList<T> : IPagedList<T>
     public PagingInfo PagingInfo { get; }
 
     public List<T> Result { get; }
+
+    public IEnumerator<T> GetEnumerator() => Result.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }

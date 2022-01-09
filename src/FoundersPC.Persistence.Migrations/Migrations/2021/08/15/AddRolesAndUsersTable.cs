@@ -17,7 +17,7 @@ public class AddRolesAndUsersTable : MigrationBase
     public override void Up()
     {
         Create.Table("Roles")
-              .WithIdentity("Roles")
+              .WithColumn("Id").AsInt32().NotNullable().Identity().PrimaryKey("PK_Roles")
               .WithColumn("Name").AsString().NotNullable();
 
         Insert.IntoTable("Roles")
@@ -44,7 +44,7 @@ public class AddRolesAndUsersTable : MigrationBase
                    });
 
         Create.Table("Users")
-              .WithIdentity("Users")
+              .WithColumn("Id").AsInt32().NotNullable().Identity().PrimaryKey("PK_Users")
               .WithColumn("Login").AsString(128).NotNullable()
               .WithColumn("RegistrationDate").AsDateTime().NotNullable()
               .WithColumn("RoleId").AsInt32().NotNullable().ForeignKey("FK_Users_Roles_RoleId", "Roles", "Id").OnDeleteOrUpdate(Rule.Cascade)
