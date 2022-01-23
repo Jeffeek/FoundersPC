@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ using FoundersPC.UI.Admin.Services;
 using FoundersPC.UI.Admin.Views;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Prism.Ioc;
@@ -47,7 +50,6 @@ public partial class App
                                                              services.AddOptions();
                                                              AddConfiguration(services);
 
-
                                                              var configuration = services.BuildServiceProvider()
                                                                                          .GetService<IConfiguration>()!;
 
@@ -63,26 +65,23 @@ public partial class App
                                                              services.AddScoped<IPasswordHasher<ApplicationUser>, CustomPasswordHasher>();
                                                              services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
                                                              {
-                                                                 options.Password.RequireDigit = true;
-                                                                 options.Password.RequireLowercase = true;
-                                                                 options.Password.RequireNonAlphanumeric = true;
-                                                                 options.Password.RequireUppercase = true;
-                                                                 options.Password.RequiredLength = 12;
-
-                                                                 options.Lockout.MaxFailedAccessAttempts = 5;
+                                                                 options.Password.RequireDigit = false;
+                                                                 options.Password.RequireLowercase = false;
+                                                                 options.Password.RequireNonAlphanumeric = false;
+                                                                 options.Password.RequireUppercase = false;
+                                                                 options.Password.RequiredLength = 6;
                                                              });
                                                              services.AddTransient<IUserStore<ApplicationUser>, UserStore>();
                                                              services.AddTransient<IRoleStore<ApplicationRole>, RoleStore>();
                                                              services.AddPipelineBehaviors(configuration);
                                                              services.AddApplicationOptions(configuration);
-                                                             var currentUserService = new CurrentUserService();
-                                                             services.AddSingleton<ICurrentUserService, CurrentUserService>(_ => currentUserService);
+                                                             services.AddPersistence(configuration);
                                                              services.AddTransient<FilterOptions>();
-
                                                              AddMediator(services);
                                                              AddAutoMapper(services);
-                                                             services.AddPersistence(configuration);
 
+                                                             var currentUserService = new CurrentUserService();
+                                                             services.AddSingleton<ICurrentUserService, CurrentUserService>(_ => currentUserService);
                                                              var container = services.BuildServiceProvider();
                                                              var migrationRunner = container.GetRequiredService<IMigrationRunner>();
                                                              migrationRunner.MigrateUp();
@@ -170,15 +169,24 @@ public partial class App
                                    autoMapper.AddCollectionMappers();
                                    autoMapper.UseEntityFrameworkCoreModel<ApplicationDbContext>(serviceProvider);
                                },
-                               (from assembly in ReflectionExtensions.GetAllAssemblies()
-                                from aType in assembly.GetTypes()
-                                where aType.IsClass && !aType.IsAbstract && aType.IsSubclassOf(typeof(Profile))
-                                select aType).ToArray());
+                               GetTypes());
 
-    protected override void OnLoadCompleted(NavigationEventArgs e)
+    private static IEnumerable<Type> GetTypes()
     {
-        var titlebarLocator = Container.Resolve<TitleBarLocator>();
-        titlebarLocator.CurrentFrameId = TitleBarConstants.CasesPageId;
-        base.OnLoadCompleted(e);
+        var res = ReflectionExtensions.GetAllAssemblies()
+                                      .SelectMany(assembly => assembly.GetTypes(),
+                                                  (assembly, aType) => new
+                                                                       {
+                                                                           assembly,
+                                                                           aType
+                                                                       })
+                                      .Where(t => t.aType.IsClass
+                                                  && !t.aType.IsAbstract
+                                                  && t.aType.IsSubclassOf(typeof(Profile)))
+                                      .Select(t => t.aType)
+                                      .DistinctBy(x => x.FullName ?? x.Name)
+                                      .ToList();
+
+        return res;
     }
 }

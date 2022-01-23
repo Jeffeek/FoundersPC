@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.PowerSupply;
 
-public class CreateEndpoint : BaseRequestResponseAnonymousEndpoint<CreateRequest, PowerSupplyInfo, GetEndpoint>
+public class CreateEndpoint : BaseRequestResponseManagementEndpoint<CreateRequest, PowerSupplyInfo, GetEndpoint>
 {
     [HttpPost("Hardware/PowerSupply")]
     [OpenApiOperation(operationId : "Hardware.PowerSupply.Post",

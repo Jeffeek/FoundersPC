@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.RandomAccessMemory;
 
-public class GetEndpoint : BaseRequestResponseAnonymousEndpoint<GetRequest, RandomAccessMemoryInfo, GetEndpoint>
+public class GetEndpoint : BaseRequestResponseManagementEndpoint<GetRequest, RandomAccessMemoryInfo, GetEndpoint>
 {
     [HttpGet("Hardware/RandomAccessMemory/{Id:int:required}")]
     [OpenApiOperation(operationId : "Hardware.RandomAccessMemory.Get",

@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.HardDriveDisk;
 
-public class DeleteEndpoint : BaseRequestResponseAnonymousEndpoint<DeleteRequest, Unit, GetEndpoint>
+public class DeleteEndpoint : BaseRequestResponseManagementEndpoint<DeleteRequest, Unit, GetEndpoint>
 {
     [HttpDelete("Hardware/HardDriveDisk")]
     [OpenApiOperation(operationId : "Hardware.HardDriveDisk.Delete",

@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.VideoCard;
 
-public class UpdateEndpoint : BaseRequestResponseAnonymousEndpoint<UpdateRequest, VideoCardInfo, GetEndpoint>
+public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateRequest, VideoCardInfo, GetEndpoint>
 {
     [HttpPut("Hardware/VideoCard")]
     [OpenApiOperation(operationId : "Hardware.VideoCard.Put",

@@ -1,0 +1,29 @@
+.table-wrapper
+{
+    border-radius: 3px;
+    box-shadow: 20px 20px 200px #044d50 !important;
+    padding: 1%;
+}
+
+.table-title
+{
+    background: transparent;
+    color: rgb(197, 197, 197);
+    vertical-align: middle;
+}
+
+.table-title .btn
+{
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+table.table-hover tr:hover
+{
+    color: #b0e0e6;
+}
+
+.container
+{
+    max-width: 100%;
+}

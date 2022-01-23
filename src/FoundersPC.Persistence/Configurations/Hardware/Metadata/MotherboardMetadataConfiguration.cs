@@ -25,7 +25,7 @@ public class MotherboardMetadataConfiguration : IEntityTypeConfiguration<Motherb
 
         builder.Property(x => x.RAMSlotsCount)
                .HasColumnType("int")
-               .HasColumnName("RAMTypeId")
+               .HasColumnName("RAMSlotsCount")
                .IsRequired(false);
 
         builder.Property(x => x.RAMModeId)
@@ -70,7 +70,7 @@ public class MotherboardMetadataConfiguration : IEntityTypeConfiguration<Motherb
                .IsRequired(false);
 
         builder.HasOne(x => x.Socket)
-               .WithMany()
+               .WithMany(x => x.Motherboards)
                .HasForeignKey(x => x.SocketId)
                .IsRequired(false);
 
@@ -84,7 +84,7 @@ public class MotherboardMetadataConfiguration : IEntityTypeConfiguration<Motherb
                .HasForeignKey(x => x.RAMTypeId)
                .IsRequired(false);
 
-        builder.HasOne(x => x.RAMModeType)
+        builder.HasOne(x => x.RAMMode)
                .WithMany()
                .HasForeignKey(x => x.RAMModeId)
                .IsRequired(false);

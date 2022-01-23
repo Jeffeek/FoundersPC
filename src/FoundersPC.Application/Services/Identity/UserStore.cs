@@ -59,20 +59,11 @@ public class UserStore :
         return Task.FromResult(user.Email);
     }
 
-    public Task<bool> GetEmailConfirmedAsync(ApplicationUser user, CancellationToken cancellationToken) => Task.FromResult(true);
+    public Task<bool> GetEmailConfirmedAsync(ApplicationUser user, CancellationToken cancellationToken) =>
+        Task.FromResult(true);
 
-    public Task SetEmailConfirmedAsync(ApplicationUser user, bool confirmed, CancellationToken cancellationToken)
-    {
-        if (user == null)
-            throw new ArgumentNullException(nameof(user));
-
-        if (user.EmailConfirmed == confirmed)
-            return Task.CompletedTask;
-
-        user.EmailConfirmed = confirmed;
-
-        return UpdateAsync(user, cancellationToken);
-    }
+    public Task SetEmailConfirmedAsync(ApplicationUser user, bool confirmed, CancellationToken cancellationToken) =>
+        Task.CompletedTask;
 
     public Task<ApplicationUser> FindByEmailAsync(string email, CancellationToken cancellationToken)
     {
@@ -105,38 +96,32 @@ public class UserStore :
         return Task.CompletedTask;
     }
 
-    public Task<int> GetAccessFailedCountAsync(ApplicationUser user, CancellationToken cancellationToken) => throw new NotImplementedException();
+    public Task<int> GetAccessFailedCountAsync(ApplicationUser user, CancellationToken cancellationToken) =>
+        throw new NotImplementedException();
 
-    public Task<bool> GetLockoutEnabledAsync(ApplicationUser user, CancellationToken cancellationToken) => Task.FromResult(!user.IsActive);
+    public Task<bool> GetLockoutEnabledAsync(ApplicationUser user, CancellationToken cancellationToken) =>
+        Task.FromResult(false);
 
     public Task<DateTimeOffset?> GetLockoutEndDateAsync(ApplicationUser user, CancellationToken cancellationToken) =>
         Task.FromResult(new DateTimeOffset?(DateTimeOffset.MaxValue));
 
-    public Task<int> IncrementAccessFailedCountAsync(ApplicationUser user, CancellationToken cancellationToken) => throw new NotImplementedException();
+    public Task<int> IncrementAccessFailedCountAsync(ApplicationUser user, CancellationToken cancellationToken) =>
+        Task.FromResult(0);
 
-    public Task ResetAccessFailedCountAsync(ApplicationUser user, CancellationToken cancellationToken) => throw new NotImplementedException();
+    public Task ResetAccessFailedCountAsync(ApplicationUser user, CancellationToken cancellationToken) =>
+        Task.CompletedTask;
 
-    public Task SetLockoutEnabledAsync(ApplicationUser user, bool enabled, CancellationToken cancellationToken)
-    {
-        if (user == null)
-            throw new ArgumentNullException(nameof(user));
+    public Task SetLockoutEnabledAsync(ApplicationUser user, bool enabled, CancellationToken cancellationToken) =>
+        Task.CompletedTask;
 
-        return Task.FromResult(0);
-    }
+    public Task SetLockoutEndDateAsync(ApplicationUser user, DateTimeOffset? lockoutEnd, CancellationToken cancellationToken) =>
+        Task.CompletedTask;
 
-    public Task SetLockoutEndDateAsync(ApplicationUser user, DateTimeOffset? lockoutEnd, CancellationToken cancellationToken)
-    {
-        if (user == null)
-            throw new ArgumentNullException(nameof(user));
+    public Task<string> GetPasswordHashAsync(ApplicationUser user, CancellationToken cancellationToken) =>
+        Task.FromResult(user.PasswordHash);
 
-        user.IsActive = false;
-
-        return UpdateAsync(user, cancellationToken);
-    }
-
-    public Task<string> GetPasswordHashAsync(ApplicationUser user, CancellationToken cancellationToken) => Task.FromResult(user.PasswordHash);
-
-    public Task<bool> HasPasswordAsync(ApplicationUser user, CancellationToken cancellationToken) => Task.FromResult(user.PasswordHash != null);
+    public Task<bool> HasPasswordAsync(ApplicationUser user, CancellationToken cancellationToken) =>
+        Task.FromResult(user.PasswordHash != null);
 
     public Task SetPasswordHashAsync(ApplicationUser user, string passwordHash, CancellationToken cancellationToken)
     {
@@ -222,9 +207,9 @@ public class UserStore :
         if (user == null)
             throw new ArgumentNullException(nameof(user));
 
-        await _dbContext.BeginTransactionAsync();
+        await _dbContext.BeginTransactionAsync(cancellationToken);
         await _dbContext.Users.AddAsync(user, cancellationToken);
-        await _dbContext.CommitTransactionAsync();
+        await _dbContext.CommitTransactionAsync(cancellationToken);
 
         return IdentityResult.Success;
     }
@@ -234,23 +219,20 @@ public class UserStore :
         if (user == null)
             throw new ArgumentNullException(nameof(user));
 
-        await _dbContext.BeginTransactionAsync();
+        await _dbContext.BeginTransactionAsync(cancellationToken);
         _dbContext.Users.Update(user);
-        await _dbContext.CommitTransactionAsync();
+        await _dbContext.CommitTransactionAsync(cancellationToken);
 
         return IdentityResult.Success;
     }
 
-    public async Task<IdentityResult> DeleteAsync(ApplicationUser user, CancellationToken cancellationToken)
+    public Task<IdentityResult> DeleteAsync(ApplicationUser user, CancellationToken cancellationToken)
     {
-        if (user == null)
-            throw new ArgumentNullException(nameof(user));
+        if (user == null) throw new ArgumentNullException(nameof(user));
 
-        await _dbContext.BeginTransactionAsync();
-        _dbContext.Users.Remove(user);
-        await _dbContext.CommitTransactionAsync();
+        user.IsBlocked = true;
 
-        return IdentityResult.Success;
+        return UpdateAsync(user, cancellationToken);
     }
 
     public Task<ApplicationUser> FindByIdAsync(string userId, CancellationToken cancellationToken)
@@ -266,7 +248,8 @@ public class UserStore :
                          .FirstOrDefaultAsync(x => x.Login == userId, cancellationToken);
     }
 
-    public Task<ApplicationUser> FindByNameAsync(string userName, CancellationToken cancellationToken) => FindByIdAsync(userName, cancellationToken);
+    public Task<ApplicationUser> FindByNameAsync(string userName, CancellationToken cancellationToken) =>
+        FindByIdAsync(userName, cancellationToken);
 
     public void Dispose()
     {
@@ -291,14 +274,22 @@ public class UserStore :
         return Task.FromResult(user.Login);
     }
 
-    public Task SetUserNameAsync(ApplicationUser user, string userName, CancellationToken cancellationToken) => throw new NotImplementedException();
+    public Task SetUserNameAsync(ApplicationUser user, string userName, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        if (user == null) throw new ArgumentNullException(nameof(user));
+
+        user.Login = userName;
+
+        return UpdateAsync(user, cancellationToken);
+    }
 
     public Task<string> GetNormalizedUserNameAsync(ApplicationUser user, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
 
-        if (user == null)
-            throw new ArgumentNullException(nameof(user));
+        if (user == null) throw new ArgumentNullException(nameof(user));
 
         return Task.FromResult(user.Login);
     }

@@ -4,12 +4,12 @@ namespace FoundersPC.Application.Features.Hardware.RandomAccessMemory.Models;
 
 public class RandomAccessMemoryInfo : HardwareInfo
 {
-    public int? RAMTypeId { get; set; } = default!;
-    public int? Frequency { get; set; } = default!;
-    public string? Timings { get; set; } = default!;
-    public double? Voltage { get; set; } = default!;
-    public bool? XMP { get; set; } = default!;
-    public bool? ECC { get; set; } = default!;
-    public int? PCIndex { get; set; } = default!;
-    public int? Volume { get; set; } = default!;
+    public int? RAMTypeId { get; set; }
+    public int? Frequency { get; set; }
+    public string? Timings { get; set; }
+    public double? Voltage { get; set; }
+    public bool? XMP { get; set; }
+    public bool? ECC { get; set; }
+    public int? PCIndex { get; set; }
+    public int? Volume { get; set; }
 }

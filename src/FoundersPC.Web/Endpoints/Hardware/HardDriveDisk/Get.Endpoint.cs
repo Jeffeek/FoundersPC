@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.HardDriveDisk;
 
-public class GetEndpoint : BaseRequestResponseAnonymousEndpoint<GetRequest, HardDriveDiskInfo, GetEndpoint>
+public class GetEndpoint : BaseRequestResponseManagementEndpoint<GetRequest, HardDriveDiskInfo, GetEndpoint>
 {
     [HttpGet("Hardware/HardDriveDisk/{Id:int:required}")]
     [OpenApiOperation(operationId : "Hardware.HardDriveDisk.Get",

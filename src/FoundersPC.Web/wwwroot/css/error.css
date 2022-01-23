@@ -1,0 +1,169 @@
+﻿body
+{
+    background: #21242a;
+}
+
+.error-wrapper svg path
+{
+    fill: white;
+    transition: 1s ease-in-out;
+}
+
+.error-wrapper svg:hover path
+{
+    fill: red;
+}
+
+.error-wrapper + .error-text
+{
+    color: white;
+    display: block;
+    font-weight: bold;
+    margin-top: 10%;
+    max-width: 100%;
+    text-wrap: normal;
+}
+
+.error-wrapper + .error-text .error-statuscode
+{
+    margin-top: initial;
+}
+
+.shuttle
+{
+    animation: CogAnimation 30s linear infinite;
+    height: 5rem;
+    margin: 10rem;
+    transition: ease-in-out;
+    width: 5rem;
+}
+
+.astronaut
+{
+    animation: CogAnimation2 25s linear infinite;
+    height: 15rem;
+    transition: ease-in-out;
+    width: 15rem;
+}
+
+.world
+{
+    height: 10rem;
+    transition: ease-in-out;
+    width: 10rem;
+}
+
+@keyframes CogAnimation
+{
+    0%
+    {
+        transform: rotate(-360deg);
+    }
+
+    100%
+    {
+        transform: rotate(0);
+    }
+}
+
+@keyframes CogAnimation2
+{
+    0%
+    {
+        transform: rotate(360deg);
+    }
+
+    100%
+    {
+        transform: rotate(0);
+    }
+}
+
+.glitch
+{
+    color: #fff;
+    font-size: 8.125em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+}
+
+.glitch:before,
+.glitch:after
+{
+    content: attr(data-glitch);
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+}
+
+.glitch:after
+{
+    color: #f0f;
+    z-index: -2;
+}
+
+.glitch:before
+{
+    color: #0ff;
+    z-index: -1;
+}
+
+.glitch:hover:before
+{
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 5;
+}
+
+.glitch:hover:after
+{
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 5;
+}
+
+@media only screen and (max-width: 400px)
+{
+    .glitch
+    {
+        font-size: 3em;
+    }
+}
+
+@keyframes glitch
+{
+    0%
+    {
+        transform: translate(0);
+    }
+
+    20%
+    {
+        transform: translate(-5px, 5px);
+    }
+
+    40%
+    {
+        transform: translate(-5px, -5px);
+    }
+
+    60%
+    {
+        transform: translate(5px, 5px);
+    }
+
+    80%
+    {
+        transform: translate(5px, -5px);
+    }
+
+    to
+    {
+        transform: translate(0);
+    }
+}

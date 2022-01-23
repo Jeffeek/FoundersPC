@@ -68,6 +68,11 @@ public class ProcessorMetadataConfiguration : IEntityTypeConfiguration<Processor
                .HasColumnName("IntegratedGraphicsId")
                .IsRequired(false);
 
+        builder.Property(x => x.SocketId)
+               .HasColumnType("int")
+               .HasColumnName("SocketId")
+               .IsRequired(false);
+
         builder.HasOne(x => x.TechProcess)
                .WithMany()
                .HasForeignKey(x => x.TechProcessId)
@@ -82,5 +87,10 @@ public class ProcessorMetadataConfiguration : IEntityTypeConfiguration<Processor
                .WithOne(x => x.Metadata)
                .HasForeignKey<ProcessorMetadata>(x => x.Id)
                .IsRequired();
+
+        builder.HasOne(x => x.Socket)
+               .WithMany(x => x.Processors)
+               .HasForeignKey(x => x.SocketId)
+               .IsRequired(false);
     }
 }

@@ -7,14 +7,26 @@ public class RequestToQueryMappingProfile : Profile
 {
     public RequestToQueryMappingProfile()
     {
+        // Hardware
         CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
-        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
-        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
-        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
-        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
-        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
-        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
-        //CreateMap<Features.Hardware.Case.GetAllRequest, Features.Hardware.Case.GetAllQuery>();
+        CreateMap<Features.Hardware.HardDriveDisk.GetAllRequest, Features.Hardware.HardDriveDisk.GetAllQuery>();
+        CreateMap<Features.Hardware.Motherboard.GetAllRequest, Features.Hardware.Motherboard.GetAllQuery>();
+        CreateMap<Features.Hardware.PowerSupply.GetAllRequest, Features.Hardware.PowerSupply.GetAllQuery>();
+        CreateMap<Features.Hardware.Processor.GetAllRequest, Features.Hardware.Processor.GetAllQuery>();
+        CreateMap<Features.Hardware.RandomAccessMemory.GetAllRequest, Features.Hardware.RandomAccessMemory.GetAllQuery>();
+        CreateMap<Features.Hardware.SolidStateDrive.GetAllRequest, Features.Hardware.SolidStateDrive.GetAllQuery>();
+        CreateMap<Features.Hardware.VideoCard.GetAllRequest, Features.Hardware.VideoCard.GetAllQuery>();
+        CreateMap<Features.Producer.GetAllRequest, Features.Producer.GetAllQuery>();
+        // Client
+        CreateMap<Features.Client.Hardware.Case.GetAllRequest, Features.Client.Hardware.Case.GetAllQuery>();
+        CreateMap<Features.Client.Hardware.HardDriveDisk.GetAllRequest, Features.Client.Hardware.HardDriveDisk.GetAllQuery>();
+        CreateMap<Features.Client.Hardware.Motherboard.GetAllRequest, Features.Client.Hardware.Motherboard.GetAllQuery>();
+        CreateMap<Features.Client.Hardware.PowerSupply.GetAllRequest, Features.Client.Hardware.PowerSupply.GetAllQuery>();
+        CreateMap<Features.Client.Hardware.Processor.GetAllRequest, Features.Client.Hardware.Processor.GetAllQuery>();
+        CreateMap<Features.Client.Hardware.RandomAccessMemory.GetAllRequest, Features.Client.Hardware.RandomAccessMemory.GetAllQuery>();
+        CreateMap<Features.Client.Hardware.SolidStateDrive.GetAllRequest, Features.Client.Hardware.SolidStateDrive.GetAllQuery>();
+        CreateMap<Features.Client.Hardware.VideoCard.GetAllRequest, Features.Client.Hardware.VideoCard.GetAllQuery>();
+        CreateMap<Features.Client.Producer.GetAllRequest, Features.Client.Producer.GetAllQuery>();
 
         CreateMap<Features.Hardware.Case.GetRequest, Features.Hardware.Case.GetQuery>()
             .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.Case));
@@ -87,5 +99,8 @@ public class RequestToQueryMappingProfile : Profile
 
         CreateMap<Features.Hardware.VideoCard.DeleteRequest, Features.Hardware.VideoCard.GetQuery>()
             .ForMember(dest => dest.HardwareTypeId, opt => opt.MapFrom(_ => (int)HardwareType.GPU));
+
+        //User Info
+        CreateMap<Features.UserInformation.GetAllRequest, Features.UserInformation.GetAllQuery>();
     }
 }

@@ -5,4 +5,7 @@ using MediatR;
 
 namespace FoundersPC.Application.Features.Hardware.VideoCard;
 
-public class GetAllRequest : GetAllHardwareRequest, IRequest<IPagedList<VideoCardViewInfo>> { }
+public class GetAllRequest : GetAllHardwareRequest, IRequest<IPagedList<VideoCardViewInfo>>
+{
+    public bool? IsIntegrated { get; set; }
+}

@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application.Features.Hardware.Base;
 using FoundersPC.Application.Features.Hardware.Models;
 using FoundersPC.Domain.Enums;
-using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.UI.Admin.Locators;
 using MediatR;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
+using DeleteRequest = FoundersPC.Application.Features.Hardware.Base.DeleteRequest;
+using RestoreRequest = FoundersPC.Application.Features.Hardware.Base.RestoreRequest;
 
 namespace FoundersPC.UI.Admin.ViewModels;
 
@@ -276,6 +276,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
         }
 
         RaisePaginationCanExecute();
+        ApplySearchCommand.RaiseCanExecuteChanged();
     }
 
     protected abstract void SetSelectedHardware(THardwareInfo hardware);

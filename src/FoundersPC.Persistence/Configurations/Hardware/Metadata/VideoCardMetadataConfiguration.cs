@@ -48,6 +48,11 @@ public class VideoCardMetadataConfiguration : IEntityTypeConfiguration<VideoCard
                .HasColumnName("MemoryBusWidth")
                .IsRequired(false);
 
+        builder.Property(x => x.IsIntegrated)
+               .HasColumnType("bit")
+               .HasColumnName("IsIntegrated")
+               .IsRequired(false);
+
         builder.HasOne(x => x.VideoMemoryType)
                .WithMany()
                .HasForeignKey(x => x.VideoMemoryTypeId)

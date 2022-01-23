@@ -28,7 +28,7 @@ public class TokenEncryptorService
     ///     <paramref name="format"/> includes an unsupported specifier. Supported
     ///     format specifiers are listed in the Remarks section.
     /// </exception>
-    public string CreateToken()
+    public static string CreateToken()
     {
         var rawToken = CreateRawToken();
         var tokenBytes = Encoding.Unicode.GetBytes(rawToken);
@@ -44,7 +44,7 @@ public class TokenEncryptorService
         return hashedInputStringBuilder.ToString();
     }
 
-    private string CreateRawToken()
+    private static string CreateRawToken()
     {
         var guid = Guid.NewGuid();
 

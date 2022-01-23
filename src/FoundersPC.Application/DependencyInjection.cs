@@ -31,6 +31,7 @@ public static class DependencyInjection
         services.AddTransient<IDateTimeService, UtcDateTimeService>();
         services.AddTransient<IEmailService, EmailService>();
         services.AddScoped<PasswordEncryptorService>();
+        services.AddScoped<TokenEncryptorService>();
 
         return services;
     }
@@ -38,7 +39,7 @@ public static class DependencyInjection
     public static IServiceCollection AddApplicationOptions(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddOptions<PasswordSettings>()
-                .Configure<IConfiguration>((settings, cfg) => cfg.Bind(settings));
+                .BindConfiguration("PasswordSettings");
 
         return services;
     }
@@ -48,9 +49,9 @@ public static class DependencyInjection
         services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
                                                                {
                                                                    options.Password.RequireDigit = true;
-                                                                   options.Password.RequireLowercase = true;
-                                                                   options.Password.RequireNonAlphanumeric = true;
-                                                                   options.Password.RequireUppercase = true;
+                                                                   options.Password.RequireLowercase = false;
+                                                                   options.Password.RequireNonAlphanumeric = false;
+                                                                   options.Password.RequireUppercase = false;
                                                                    options.Password.RequiredLength = 6;
                                                                })
                 .AddEntityFrameworkStores<ApplicationDbContext>();

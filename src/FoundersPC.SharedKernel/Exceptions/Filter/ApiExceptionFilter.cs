@@ -29,6 +29,9 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
                                  },
                                  {
                                      typeof(StatusCodeException), HandleExceptionBase
+                                 },
+                                 {
+                                     typeof(AccessTokenException), HandleAccessTokenException
                                  }
                              };
 
@@ -53,7 +56,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
         HandleUnknownException(context);
     }
 
-    private void HandleUnknownException(ExceptionContext context)
+    private static void HandleUnknownException(ExceptionContext context)
     {
         var details = new ProblemDetails
                       {
@@ -65,9 +68,11 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
                               {
                                   "exception", context.Exception.Message
                               },
+#if DEBUG
                               {
                                   "stacktrace", context.Exception.StackTrace
                               }
+#endif
                           }
                       };
 
@@ -79,7 +84,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
         context.ExceptionHandled = true;
     }
 
-    private void HandleExceptionBase(ExceptionContext context)
+    private static void HandleExceptionBase(ExceptionContext context)
     {
         var exception = context.Exception as StatusCodeException;
 
@@ -114,7 +119,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
         }
     }
 
-    private void HandleValidationException(ExceptionContext context)
+    private static void HandleValidationException(ExceptionContext context)
     {
         var exception = context.Exception as ValidationException;
 
@@ -128,7 +133,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
         context.ExceptionHandled = true;
     }
 
-    private void HandleNotFoundException(ExceptionContext context)
+    private static void HandleNotFoundException(ExceptionContext context)
     {
         var exception = context.Exception as NotFoundException;
 
@@ -144,7 +149,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
         context.ExceptionHandled = true;
     }
 
-    private void HandleBadRequestException(ExceptionContext context)
+    private static void HandleBadRequestException(ExceptionContext context)
     {
         var exception = context.Exception as BadRequestException;
 
@@ -157,11 +162,21 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
             var details = new ProblemDetails
                           {
                               Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                              Detail = exception.Message
+                              Detail = exception?.Message
                           };
 
             context.Result = new BadRequestObjectResult(details);
         }
+
+        context.ExceptionHandled = true;
+    }
+
+    private static void HandleAccessTokenException(ExceptionContext context)
+    {
+        var exception = context.Exception as AccessTokenException;
+
+        if (exception != null)
+            context.Result ??= new BadRequestObjectResult(exception.Message);
 
         context.ExceptionHandled = true;
     }

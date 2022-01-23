@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.SolidStateDrive;
 
-public class UpdateEndpoint : BaseRequestResponseAnonymousEndpoint<UpdateRequest, SolidStateDriveInfo, GetEndpoint>
+public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateRequest, SolidStateDriveInfo, GetEndpoint>
 {
     [HttpPut("Hardware/SolidStateDrive")]
     [OpenApiOperation(operationId : "Hardware.SolidStateDrive.Put",

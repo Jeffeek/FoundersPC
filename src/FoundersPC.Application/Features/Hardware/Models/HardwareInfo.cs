@@ -1,4 +1,5 @@
 ﻿using System;
+using FoundersPC.Application.Features.Producer.Models;
 
 namespace FoundersPC.Application.Features.Hardware.Models;
 

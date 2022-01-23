@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.Motherboard;
 
-public class GetEndpoint : BaseRequestResponseAnonymousEndpoint<GetRequest, MotherboardInfo, GetEndpoint>
+public class GetEndpoint : BaseRequestResponseManagementEndpoint<GetRequest, MotherboardInfo, GetEndpoint>
 {
     [HttpGet("Hardware/Motherboard/{Id:int:required}")]
     [OpenApiOperation(operationId : "Hardware.Motherboard.Get",

@@ -15,16 +15,19 @@ public class UserLoginPageViewModel : BindableBase
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IPasswordHasher<ApplicationUser> _passwordHasher;
     private readonly MainWindowTitleBarLocator _mainWindowTitleBarLocator;
+    private readonly TitleBarLocator _titleBarLocator;
     private readonly ICurrentUserService _currentUserService;
 
     public UserLoginPageViewModel(UserManager<ApplicationUser> userManager,
                                   IPasswordHasher<ApplicationUser> passwordHasher,
                                   MainWindowTitleBarLocator mainWindowTitleBarLocator,
+                                  TitleBarLocator titleBarLocator,
                                   ICurrentUserService currentUserService)
     {
         _userManager = userManager;
         _passwordHasher = passwordHasher;
         _mainWindowTitleBarLocator = mainWindowTitleBarLocator;
+        _titleBarLocator = titleBarLocator;
         _currentUserService = currentUserService;
     }
 
@@ -95,11 +98,12 @@ public class UserLoginPageViewModel : BindableBase
         }
 
         RefreshLocator.FireMessaging(true, "Setting current user..");
-        await Task.Delay(1000);
+        //await Task.Delay(1000);
         _currentUserService.Initialize(user.Id);
         RefreshLocator.FireMessaging(true, "Almost done! Just redirecting you at Admin app..");
-        await Task.Delay(5000);
+        //await Task.Delay(5000);
         _mainWindowTitleBarLocator.CurrentFrameId = MainWindowTitleBarConstants.AfterSignInPageId;
+        _titleBarLocator.CurrentFrameId = TitleBarConstants.CasesPageId;
         RefreshLocator.FireMessaging(false);
         RefreshLocator.FireSuccessLogIn();
     }

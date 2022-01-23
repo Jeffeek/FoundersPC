@@ -22,34 +22,32 @@ public static class ServiceExtensions
 {
     public static void AddAuthorizationPolicies(this IServiceCollection services, string scheme)
     {
+        services.AddCors();
+
         services.AddAuthorization(configuration =>
                                   {
                                       configuration.AddPolicy(ApplicationAuthorizationPolicies.AdministratorPolicy,
                                                               builder => builder.AddAuthenticationSchemes(scheme)
                                                                                 .RequireAuthenticatedUser()
-                                                                                .RequireRole(ApplicationRoles
-                                                                                                 .Administrator)
+                                                                                .RequireRole(ApplicationRoles.Administrator)
                                                                                 .Build());
 
                                       configuration.AddPolicy(ApplicationAuthorizationPolicies.ManagerPolicy,
                                                               builder => builder.AddAuthenticationSchemes(scheme)
                                                                                 .RequireAuthenticatedUser()
-                                                                                .RequireRole(ApplicationRoles
-                                                                                                 .Manager)
+                                                                                .RequireRole(ApplicationRoles.Manager)
                                                                                 .Build());
 
                                       configuration.AddPolicy(ApplicationAuthorizationPolicies.DefaultUserPolicy,
                                                               builder => builder.AddAuthenticationSchemes(scheme)
                                                                                 .RequireAuthenticatedUser()
-                                                                                .RequireRole(ApplicationRoles
-                                                                                                 .DefaultUser)
+                                                                                .RequireRole(ApplicationRoles.DefaultUser)
                                                                                 .Build());
 
                                       configuration.AddPolicy(ApplicationAuthorizationPolicies.EmployeePolicy,
                                                               builder => builder.AddAuthenticationSchemes(scheme)
                                                                                 .RequireAuthenticatedUser()
-                                                                                .RequireRole(ApplicationRoles.Administrator,
-                                                                                             ApplicationRoles.Manager)
+                                                                                .RequireRole(ApplicationRoles.Administrator, ApplicationRoles.Manager)
                                                                                 .Build());
 
                                       configuration.AddPolicy(ApplicationAuthorizationPolicies.AuthenticatedPolicy,
@@ -100,18 +98,12 @@ public static class ServiceExtensions
 
                                   options.Events = new()
                                                    {
-                                                       OnAuthenticationFailed = context =>
+                                                       OnAuthenticationFailed = async context =>
                                                                                 {
                                                                                     context.NoResult();
                                                                                     context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
                                                                                     context.Response.ContentType = "application/json";
-
-                                                                                    context.Response
-                                                                                           .WriteAsync(JsonConvert.SerializeObject(new Error("error",
-                                                                                                           "Token expired. Please, authorize.")))
-                                                                                           .Wait();
-
-                                                                                    return Task.CompletedTask;
+                                                                                    await context.Response.WriteAsync(JsonConvert.SerializeObject(new Error("error", "Token expired. Please, authorize.")));
                                                                                 }
                                                    };
                               });

@@ -1,0 +1,390 @@
+﻿.sidenav
+{
+    background-color: #21242a;
+    height: 100%;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.main
+{
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 992px)
+{
+    .login-form,
+    .register-form,
+    .forgotpassword-form
+    {
+        margin-top: 60%;
+    }
+}
+
+@media screen and (max-width: 992px)
+{
+    .login-form,
+    .register-form,
+    .forgotpassword-form
+    {
+        margin-top: 40%;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .main
+    {
+        margin-left: 40%;
+    }
+
+    .sidenav
+    {
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 40%;
+        z-index: 0;
+    }
+
+    .login-form,
+    .register-form,
+    .forgotpassword-form
+    {
+        margin-top: 50%;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .login-form,
+    .register-form,
+    .forgotpassword-form
+    {
+        margin-top: 5%;
+    }
+}
+
+
+.login-main-text
+{
+    color: #fff;
+    margin-top: 20%;
+    padding: 60px;
+}
+
+.login-main-text h2
+{
+    font-weight: 300;
+}
+
+a:hover .icon-reset path
+{
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-name: rotation;
+    animation-timing-function: cubic-bezier(100, 0, 0, 100);
+    transform-origin: center;
+    transition: ease-in-out;
+}
+
+a:hover .icon-eye path
+{
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-name: shaking;
+    animation-timing-function: cubic-bezier(100, 0, 0, 100);
+    transform-origin: center;
+    transition: ease-in-out;
+}
+
+.btn.btn-neon
+{
+    border: 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 8px 0 0 8px;
+    padding: 5px 10px 5px 10px;
+}
+
+@media screen and (min-width: 400px)
+{
+    .btn.btn-neon
+    {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px)
+{
+    .btn.btn-neon
+    {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 576px)
+{
+    .modal-dialog
+    {
+        max-width: 400px;
+    }
+
+    .modal-dialog .modal-content
+    {
+        padding: 1rem;
+    }
+}
+
+.modal-header .close
+{
+    margin-top: -1.5rem;
+}
+
+.form-title
+{
+    margin: -2rem 0rem 2rem;
+}
+
+.btn-round
+{
+    border-radius: 3rem;
+}
+
+.delimiter
+{
+    padding: 1rem;
+}
+
+.social-buttons .btn
+{
+    margin: 0 0.5rem 1rem;
+}
+
+.signup-section
+{
+    padding: 0.3rem 0rem;
+}
+
+.intro
+{
+    background: #fff;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.intro h1
+{
+    font-size: 18pt;
+    padding-bottom: 15px;
+}
+
+.intro p
+{
+    font-size: 14px;
+}
+
+.action
+{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+a.btn
+{
+    border: 2px solid #666;
+    color: #666;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+a.btn:hover
+{
+    -webkit-transition: .3s;
+    background: #666;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn:before
+{
+    font-family: FontAwesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.github:before
+{
+    content: "\f09b"
+}
+
+.down:before
+{
+    content: "\f019"
+}
+
+.back:before
+{
+    content: "\f112"
+}
+
+.credit
+{
+    background: #fff;
+    color: #333;
+    font-size: 9pt;
+    margin-top: 40px;
+    padding: 12px;
+    text-align: center;
+}
+
+.credit span:before
+{
+    color: #e41b17;
+    content: "\f004";
+    font-family: FontAwesome;
+}
+
+.credit a
+{
+    color: #333;
+    text-decoration: none;
+}
+
+.credit a:hover
+{
+    color: #1DBF73;
+}
+
+.credit a:hover:after
+{
+    content: "\f08e";
+    font-family: FontAwesome;
+    font-size: 9pt;
+    margin: 3px;
+    position: absolute;
+}
+
+main
+{
+    background: #fff;
+    padding: 20px;
+}
+
+article li
+{
+    color: #444;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-left: 33px;
+    padding: 5px;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article p
+{
+    color: #333;
+    padding: 14px;
+}
+
+article p
+{
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+@media only screen and (min-width: 720px)
+{
+    main
+    {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 720px;
+        padding: 24px;
+    }
+}
+
+.set-overlayer,
+.set-glass,
+.set-sticky
+{
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+}
+
+.set-overlayer:after,
+.set-glass:after,
+.to-active:after,
+.set-sticky:after
+{
+    float: right;
+    font-family: FontAwesome;
+    font-size: 18pt;
+    position: relative;
+}
+
+.set-overlayer:after,
+.set-glass:after,
+.set-sticky:after
+{
+    content: "\f204";
+    transition: .6s;
+}
+
+.to-active:after
+{
+    color: #008080;
+    content: "\f205";
+    transition: .6s;
+}
+
+.set-overlayer,
+.set-glass,
+.set-sticky,
+.source,
+.theme-tray
+{
+    background: #f2f2f2;
+    border: 2px solid #f1f1f1;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+/* Syntax Highlighter*/
+
+pre.prettyprint
+{
+    background: #f2f2f2;
+    border: 0 !important;
+    margin: 10px;
+    overflow: auto;
+    padding: 15px !important;
+}
+
+.source
+{
+    max-height: 400px;
+    overflow: auto;
+    white-space: pre;
+}
+
+code
+{
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 2px;
+}

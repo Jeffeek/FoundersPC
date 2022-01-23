@@ -54,7 +54,7 @@ public abstract class UpdateHardwareRequestValidator<TRequest> : AbstractValidat
     {
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
 
-        return await db.Set<Producer>()
+        return await db.Set<Domain.Entities.Hardware.Producer>()
                        .AnyAsync(x => x.Id == producerId, cancellationToken);
     }
 

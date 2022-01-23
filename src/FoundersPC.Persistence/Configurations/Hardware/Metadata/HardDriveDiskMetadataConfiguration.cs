@@ -43,7 +43,7 @@ public class HardDriveDiskMetadataConfiguration : IEntityTypeConfiguration<HardD
                .HasForeignKey(x => x.DiskFactorId)
                .IsRequired(false);
 
-        builder.HasOne(x => x.Interface)
+        builder.HasOne(x => x.DiskConnectionInterface)
                .WithMany()
                .HasForeignKey(x => x.DiskConnectionInterfaceId)
                .IsRequired(false);

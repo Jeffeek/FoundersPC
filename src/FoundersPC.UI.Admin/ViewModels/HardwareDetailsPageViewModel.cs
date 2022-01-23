@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application.Features.Hardware.Models;
+using FoundersPC.Application.Features.Producer;
+using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
 using MediatR;
@@ -32,6 +36,7 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
                                            SelectedObjectLocator selectedObjectLocator,
                                            MetadataPackageLocator metadataPackageLocator,
                                            TitleBarLocator titleBarLocator,
+                                           int thisPageId,
                                            int goBackId)
     {
         Mediator = mediator;
@@ -42,10 +47,20 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
         MetadataPackageLocator = metadataPackageLocator;
         SubscribeToHardwareLocator();
 
+        _titleBarLocator.TabChanged += async pageId =>
+                                       {
+                                           if (pageId != thisPageId)
+                                               return;
+
+                                           await OnPageOpenedHandler();
+                                       };
+
         RefreshLocator.SaveRefresh += () => SaveCommand.RaiseCanExecuteChanged();
     }
 
     protected abstract void SubscribeToHardwareLocator();
+
+    protected virtual Task OnPageOpenedHandler() => Task.CompletedTask;
 
     protected void OnSelectedHardwareChanged(THardwareInfo? obj)
     {

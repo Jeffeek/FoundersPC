@@ -4,8 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:calcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:FoundersPC.UI.Admin.Views"
-    xmlns:locators="clr-namespace:FoundersPC.UI.Admin.Locators"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mde="https://spiegelp.github.io/MaterialDesignExtensions/winfx/xaml"
@@ -37,21 +35,131 @@
             IsEnabled="{calcBinding:Binding !IsLoading}"
             SelectedIndex="{Binding TitleBarLocator.CurrentFrameId, IsAsync=True}"
             Style="{StaticResource MaterialDesignNavigatilRailTabControl}">
+            <!--  CASES  -->
             <TabItem
                 Width="40"
                 Height="40"
                 Padding="0"
                 Header="{materialDesign:PackIcon Kind=DesktopTower,
                                                  Size=20}"
-                Style="{StaticResource MaterialDesignNavigationRailTabItem}">
-            <Frame Background="#232931" Source="CasesPage.xaml" />
-            </TabItem>
-            <TabItem
-                Width="0"
-                Height="0"
                 Style="{StaticResource MaterialDesignNavigationRailTabItem}"
-                Visibility="Hidden">
+                ToolTip="Cases">
+                <Frame Background="#232931" Source="CasesPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
                 <Frame Background="#232931" Source="CaseDetailsPage.xaml" />
+            </TabItem>
+            <!--  HDDs  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=Harddisk,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Hard Drive Disks">
+                <Frame Background="#232931" Source="HardDriveDisksPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="HardDriveDiskDetailsPage.xaml" />
+            </TabItem>
+            <!--  MOTHERBOARDS  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=DeveloperBoard,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Motherboards">
+                <Frame Background="#232931" Source="MotherboardsPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="MotherboardDetailsPage.xaml" />
+            </TabItem>
+            <!--  POWER SUPPLIES  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=PowerSocket,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Power Supplies">
+                <Frame Background="#232931" Source="PowerSuppliesPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="PowerSupplyDetailsPage.xaml" />
+            </TabItem>
+            <!--  PROCESSORS  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=Chip64Bit,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Processors">
+                <Frame Background="#232931" Source="ProcessorsPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="ProcessorDetailsPage.xaml" />
+            </TabItem>
+            <!--  RAMs  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=ViewDashboard,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Random Access Memory">
+                <Frame Background="#232931" Source="RandomAccessMemoriesPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="RandomAccessMemoryDetailsPage.xaml" />
+            </TabItem>
+            <!--  SSDs  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=UsbFlashDrive,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Solid State Drives">
+                <Frame Background="#232931" Source="SolidStateDrivesPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="SolidStateDriveDetailsPage.xaml" />
+            </TabItem>
+            <!--  VIDEO CARDS  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=ExpansionCard,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Video Cards">
+                <Frame Background="#232931" Source="VideoCardsPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="VideoCardDetailsPage.xaml" />
+            </TabItem>
+            <!--  PRODUCERS  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=Factory,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Producers">
+                <Frame Background="#232931" Source="ProducersPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="ProducerDetailsPage.xaml" />
             </TabItem>
         </TabControl>
     </Grid>

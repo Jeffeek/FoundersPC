@@ -19,7 +19,9 @@ public class CaseDetailsPageViewModel : HardwareDetailsPageViewModel<CaseInfo, C
                selectedObjectLocator,
                metadataPackageLocator,
                titleBarLocator,
+               TitleBarConstants.CaseDetailsPageId,
                TitleBarConstants.CasesPageId) { }
 
-    protected override void SubscribeToHardwareLocator() => SelectedObjectLocator.SelectedCaseChanged += OnSelectedHardwareChanged;
+    protected override void SubscribeToHardwareLocator() =>
+        SelectedObjectLocator.SelectedCaseChanged += OnSelectedHardwareChanged;
 }

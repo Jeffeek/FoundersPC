@@ -16,6 +16,8 @@ public class ProcessorMetadata : HardwareMetadata
     public int? L2Cache { get; set; } = default!;
     public int? L3Cache { get; set; } = default!;
     public int? IntegratedGraphicsId { get; set; } = default!;
+    public int? SocketId { get; set; } = default!;
+    public Socket? Socket { get; set; }
     public TechProcess? TechProcess { get; set; }
     public VideoCard? IntegratedGraphics { get; set; }
     public Processor Processor { get; set; } = default!;

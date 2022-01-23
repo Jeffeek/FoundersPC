@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.Processor;
 
-public class GetEndpoint : BaseRequestResponseAnonymousEndpoint<GetRequest, ProcessorInfo, GetEndpoint>
+public class GetEndpoint : BaseRequestResponseManagementEndpoint<GetRequest, ProcessorInfo, GetEndpoint>
 {
     [HttpGet("Hardware/Processor/{Id:int:required}")]
     [OpenApiOperation(operationId : "Hardware.Processor.Get",

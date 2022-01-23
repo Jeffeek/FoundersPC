@@ -10,12 +10,9 @@ public class MetadataPackageLocator
 {
     public MetadataPackage MetadataPackage { get; private set; }
 
-    public int Id { get; set; }
-
     public MetadataPackageLocator(IMediator mediator)
     {
         Initialize(mediator);
-        Id = Thread.CurrentThread.ManagedThreadId;
     }
 
     private void Initialize(IMediator mediator)

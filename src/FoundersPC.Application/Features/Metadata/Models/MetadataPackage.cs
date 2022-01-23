@@ -20,7 +20,8 @@ public class MetadataPackage : IEnumerable<List<MetadataInfo>>
     public List<MetadataInfo> TechProcess { get; set; } = default!;
     public List<MetadataInfo> VideoMemory { get; set; } = default!;
     public List<MetadataInfo> WindowMaterial { get; set; } = default!;
-    public List<MetadataInfo> Producer { get; set; } = default!;
+    public List<MetadataInfo> Producers { get; set; } = default!;
+    public List<MetadataInfo> IntegratedVideoCards { get; set; } = default!;
 
     public IEnumerator<List<MetadataInfo>> GetEnumerator()
     {

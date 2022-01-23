@@ -39,12 +39,12 @@ public class SolidStateDriveMetadataConfiguration : IEntityTypeConfiguration<Sol
                .HasColumnName("SequentialRecording")
                .IsRequired(false);
 
-        builder.HasOne(x => x.Factor)
+        builder.HasOne(x => x.DiskFactor)
                .WithMany()
                .HasForeignKey(x => x.DiskFactorId)
                .IsRequired(false);
 
-        builder.HasOne(x => x.Interface)
+        builder.HasOne(x => x.DiskConnectionInterface)
                .WithMany()
                .HasForeignKey(x => x.DiskConnectionInterfaceId)
                .IsRequired(false);

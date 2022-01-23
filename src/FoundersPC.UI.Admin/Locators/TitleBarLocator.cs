@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Threading;
 using Prism.Mvvm;
 
 namespace FoundersPC.UI.Admin.Locators;
@@ -37,18 +39,18 @@ internal static class TitleBarConstants
     public const int CasesPageId = 0;
     public const int CaseDetailsPageId = 1;
     public const int HardDriveDisksPageId = 2;
-    public const int MotherboardsPageId = 3;
-    public const int PowerSuppliesPageId = 4;
-    public const int ProcessorsPageId = 5;
-    public const int RandomAccessMemoriesPageId = 6;
-    public const int SolidStateDrivesPageId = 7;
-    public const int VideoCardsPageId = 8;
-    public const int HardDriveDiskDetailsPageId = 9;
-    public const int MotherboardDetailsPageId = 10;
-    public const int PowerSupplyDetailsPageId = 11;
-    public const int ProcessorDetailsPageId = 12;
-    public const int RandomAccessMemoryDetailsPageId = 13;
-    public const int SolidStateDriveDetailsPageId = 14;
+    public const int HardDriveDiskDetailsPageId = 3;
+    public const int MotherboardsPageId = 4;
+    public const int MotherboardDetailsPageId = 5;
+    public const int PowerSuppliesPageId = 6;
+    public const int PowerSupplyDetailsPageId = 7;
+    public const int ProcessorsPageId = 8;
+    public const int ProcessorDetailsPageId = 9;
+    public const int RandomAccessMemoriesPageId = 10;
+    public const int RandomAccessMemoryDetailsPageId = 11;
+    public const int SolidStateDrivesPageId = 12;
+    public const int SolidStateDriveDetailsPageId = 13;
+    public const int VideoCardsPageId = 14;
     public const int VideoCardDetailsPageId = 15;
     public const int ProducersPageId = 16;
     public const int ProducerDetailsPageId = 17;

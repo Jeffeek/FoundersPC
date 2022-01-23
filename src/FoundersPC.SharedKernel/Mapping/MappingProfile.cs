@@ -21,5 +21,8 @@ public class MappingProfile : Profile
 
         CreateMap<Producer, MetadataInfo>()
             .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.ShortName ?? src.FullName));
+
+        CreateMap<VideoCard, MetadataInfo>()
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Metadata.Title));
     }
 }

@@ -10,7 +10,7 @@ public class SolidStateDriveMetadata : HardwareMetadata
     public string? MicroScheme { get; set; } = default!;
     public double? SequentialRead { get; set; } = default!;
     public double? SequentialRecording { get; set; } = default!;
-    public DiskFactor? Factor { get; set; } = default!;
-    public DiskConnectionInterface? Interface { get; set; } = default!;
+    public DiskFactor? DiskFactor { get; set; } = default!;
+    public DiskConnectionInterface? DiskConnectionInterface { get; set; } = default!;
     public SolidStateDrive SolidStateDrive { get; set; } = default!;
 }

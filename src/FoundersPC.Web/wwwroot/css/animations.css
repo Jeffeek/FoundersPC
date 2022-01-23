@@ -1,0 +1,52 @@
+﻿@keyframes rotation
+{
+    0%
+    {
+        fill: rgb(255, 255, 255);
+        transform: rotate(0);
+    }
+
+    100%
+    {
+        fill: rgb(126, 83, 5);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shaking
+{
+    0%
+    {
+        fill: rgb(255, 255, 255);
+    }
+
+    10%,
+    90%
+    {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80%
+    {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70%
+    {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60%
+    {
+        transform: translate3d(4px, 0, 0);
+    }
+
+    100%
+    {
+        fill: #1a2e3f;
+    }
+}

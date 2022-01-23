@@ -8,7 +8,7 @@ public class MotherboardMetadata : HardwareMetadata
     public int? MotherboardFactorId { get; set; } = default!;
     public int? RAMTypeId { get; set; } = default!;
     public int? RAMSlotsCount { get; set; } = default!;
-    public int? RAMModeId { get; set; } = default!;
+    public int? RAMModeId { get; set; }
     public bool? CrossfireSupport { get; set; } = default!;
     public bool? SliSupport { get; set; }
     public string? AudioSupport { get; set; } = default!;
@@ -19,6 +19,6 @@ public class MotherboardMetadata : HardwareMetadata
     public Socket? Socket { get; set; } = default!;
     public MotherboardFactor? MotherboardFactor { get; set; } = default!;
     public RamType? RAMType { get; set; } = default!;
-    public RamMode? RAMModeType { get; set; } = default!;
+    public RamMode? RAMMode { get; set; } = default!;
     public Motherboard Motherboard { get; set; } = default!;
 }

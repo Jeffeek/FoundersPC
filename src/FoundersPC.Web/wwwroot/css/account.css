@@ -1,0 +1,95 @@
+.shadow
+{
+    box-shadow: 20px 20px 200px #044d50 !important;
+}
+
+.form-group
+{
+    margin-bottom: 1.5rem;
+}
+
+.nav-pills a.nav-link
+{
+    background-color: rgb(5, 107, 197);
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.nav-pills a.nav-link.active
+{
+    background-color: #077c72;
+}
+
+.nav-pills a.nav-link img
+{
+    height: 20px;
+    width: 20px;
+}
+
+.my-custom-scrollbar
+{
+    height: 15rem;
+    margin-bottom: 1.5rem;
+    overflow: auto;
+    position: relative;
+}
+
+.table-wrapper-scroll-y
+{
+    display: block;
+}
+
+@media (max-width: 576px)
+{
+    .mt-xs-1
+    {
+        margin-top: 0.1rem !important;
+    }
+
+    .mt-xs-2
+    {
+        margin-top: 0.2rem !important;
+    }
+
+    .mt-xs-3
+    {
+        margin-top: 0.3rem !important;
+    }
+
+    .mt-xs-4
+    {
+        margin-top: 0.4rem !important;
+    }
+
+    .mt-xs-5
+    {
+        margin-top: 0.5rem !important;
+    }
+
+    .mt-xs-6
+    {
+        margin-top: 0.6rem !important;
+    }
+
+    .mt-xs-7
+    {
+        margin-top: 0.7rem !important;
+    }
+
+    .mt-xs-3
+    {
+        margin-top: 0.8rem !important;
+    }
+
+    .mt-xs-3
+    {
+        margin-top: 0.9rem !important;
+    }
+
+    .mt-xs-10
+    {
+        margin-top: 1rem !important;
+    }
+}

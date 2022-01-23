@@ -11,6 +11,6 @@ public class HardDriveDiskMetadata : HardwareMetadata
     public int? BufferSize { get; set; } = default!;
     public double? Noise { get; set; } = default!;
     public DiskFactor? Factor { get; set; } = default!;
-    public DiskConnectionInterface? Interface { get; set; } = default!;
+    public DiskConnectionInterface? DiskConnectionInterface { get; set; } = default!;
     public HardDriveDisk HardDriveDisk { get; set; } = default!;
 }

@@ -4,7 +4,7 @@ namespace FoundersPC.UI.Admin.Locators;
 
 public class Pagination : BindableBase
 {
-    private int _currentPage = 0;
+    private int _currentPage;
 
     public int CurrentPage
     {
@@ -19,7 +19,7 @@ public class Pagination : BindableBase
         }
     }
 
-    private int _currentPageSize = 0;
+    private int _currentPageSize;
 
     public int CurrentPageSize
     {
@@ -34,7 +34,7 @@ public class Pagination : BindableBase
         }
     }
 
-    private bool _isMoveBackAvailable = false;
+    private bool _isMoveBackAvailable;
 
     public bool IsMoveBackAvailable
     {

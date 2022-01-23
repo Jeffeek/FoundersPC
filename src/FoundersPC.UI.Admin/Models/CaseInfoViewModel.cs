@@ -3,7 +3,6 @@
 public class CaseInfoViewModel : HardwareInfoViewModel
 {
     private int? _windowMaterialId;
-
     public int? WindowMaterialId
     {
         get => _windowMaterialId ?? -1;

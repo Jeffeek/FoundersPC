@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.RandomAccessMemory;
 
-public class UpdateEndpoint : BaseRequestResponseAnonymousEndpoint<UpdateRequest, RandomAccessMemoryInfo, GetEndpoint>
+public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateRequest, RandomAccessMemoryInfo, GetEndpoint>
 {
     [HttpPut("Hardware/RandomAccessMemory")]
     [OpenApiOperation(operationId : "Hardware.RandomAccessMemory.Put",

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -44,7 +45,8 @@ internal class GetMetadataPackageHandler : IRequestHandler<GetMetadataPackageReq
                    TechProcess = await db.Set<TechProcess>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
                    VideoMemory = await db.Set<VideoMemory>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
                    WindowMaterial = await db.Set<WindowMaterial>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
-                   Producer = await db.Set<Producer>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
+                   Producers = await db.Set<Domain.Entities.Hardware.Producer>().ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
+                   IntegratedVideoCards = await db.Set<VideoCard>().Where(x => x.Metadata.IsIntegrated == true).ProjectTo<MetadataInfo>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken),
                };
     }
 }

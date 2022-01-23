@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+@section Styles {
+    <link
+        href="~/css/neon-btn-styles.css"
+        rel="stylesheet">
+    <link
+        href="~/css/home.css"
+        rel="stylesheet">
+}}
+
+<div
+    class='has-animations is-boxed'>
+<div
+    class='body-wrap'>
+<main>
+<section
+    class='hero'>
+    <div
+        class='container'>
+        <div
+            class='hero-inner'>
+            <div
+                class='hero-copy'>
+                <h1
+                    class='mt-0'>
+                    Founders PC
+                </h1>
+                <p
+                    class='hero-paragraph'>
+                    Our API provides round-the-clock access to new and old models of computer
+                    hardware. We cooperate with companies such as
+                    <company>TradeForward</company> and
+                    <company>HardStock inc.</company>
+                </p>
+                <div
+                    class='hero-cta'>
+                    <a
+                        class='button button-primary'
+                        href='@(User.Identity?.IsAuthenticated ?? false ? Url.Action("Pricing", "Home") : Url.Action("SignIn", "Authentication"))'>
+                        Buy access now
+                    </a>
+                </div>
+            </div>
+            <div
+                class='anime-element hero-figure'>
+                <svg
+                    height='396'
+                    viewBox='0 0 528 396'
+                    width='528'>
+                    <rect
+                        height='396'
+                        style='fill: transparent;'
+                        width='528'/>
+                </svg>
+                <div
+                    class='hero-figure-box hero-figure-box-01'
+                    data-rotation='45deg'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-02'
+                    data-rotation='-45deg'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-03'
+                    data-rotation='0deg'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-04'
+                    data-rotation='-135deg'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-05'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-06'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-07'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-08'
+                    data-rotation='-22deg'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-09'
+                    data-rotation='-52deg'>
+                </div>
+                <div
+                    class='hero-figure-box hero-figure-box-10'
+                    data-rotation='-50deg'>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+</div>
+</div>
+
+
+@section Scripts {
+    <script
+        src='~/lib/scrollreveal/scrollreveal.min.js'></script>
+    <script
+        src='~/lib/anime/anime.min.js'></script>
+    <script
+        src='~/js/home.js'></script>
+    <script
+        src='~/js/auth.js'></script>
+}

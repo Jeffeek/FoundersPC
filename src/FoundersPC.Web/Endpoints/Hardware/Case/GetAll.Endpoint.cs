@@ -9,13 +9,13 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.Case;
 
-public class GetAllEndpoint : BaseRequestResponseAnonymousEndpoint<GetAllRequest, IPagedList<CaseViewInfo>, GetEndpoint>
+public class GetAllEndpoint : BaseRequestResponseManagementEndpoint<GetAllRequest, IPagedList<CaseViewInfo>, GetEndpoint>
 {
     [HttpPost("Hardware/Case/GetAll")]
     [OpenApiOperation(operationId : "Case.GetAll",
                       summary : "Get all cases",
                       description : "Get all cases")]
     [OpenApiTags("Hardware", "Case")]
-    public override async Task<ActionResult<IPagedList<CaseViewInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
+    public override async Task<ActionResult<IPagedList<CaseViewInfo>>> HandleAsync([FromBody] GetAllRequest request, CancellationToken cancellationToken = default) =>
         await base.HandleAsync(request, cancellationToken);
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Linq.Expressions;
 using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Query;
@@ -10,6 +9,7 @@ public abstract class GetAllHardwareQuery<THardware> : SortedQuery<THardware>
     where THardware : Domain.Entities.Hardware.Hardware
 {
     public bool? IsDeleted { get; set; }
+    public string? SearchText { get; set; }
 
     public override Expression<Func<THardware, bool>> GetExpression()
     {

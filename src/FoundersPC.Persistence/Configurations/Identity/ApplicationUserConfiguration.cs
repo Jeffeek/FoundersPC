@@ -31,23 +31,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
                .HasColumnType("int")
                .IsRequired();
 
-        builder.Property(x => x.IsActive)
-               .HasColumnName("IsActive")
-               .HasColumnType("bit")
-               .IsRequired();
-
         builder.Property(x => x.IsBlocked)
                .HasColumnName("IsBlocked")
-               .HasColumnType("bit")
-               .IsRequired();
-
-        builder.Property(x => x.SendMessageOnEntrance)
-               .HasColumnName("SendMessageOnEntrance")
-               .HasColumnType("bit")
-               .IsRequired();
-
-        builder.Property(x => x.SendMessageOnApiRequest)
-               .HasColumnName("SendMessageOnApiRequest")
                .HasColumnType("bit")
                .IsRequired();
 

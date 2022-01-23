@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.Case;
 
-public class UpdateEndpoint : BaseRequestResponseAnonymousEndpoint<UpdateRequest, CaseInfo, GetEndpoint>
+public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateRequest, CaseInfo, GetEndpoint>
 {
     [HttpPut("Hardware/Case")]
     [OpenApiOperation(operationId : "Hardware.Case.Put",

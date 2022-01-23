@@ -8,7 +8,7 @@ using NSwag.Annotations;
 
 namespace FoundersPC.Web.Endpoints.Hardware.PowerSupply;
 
-public class GetEndpoint : BaseRequestResponseAnonymousEndpoint<GetRequest, PowerSupplyInfo, GetEndpoint>
+public class GetEndpoint : BaseRequestResponseManagementEndpoint<GetRequest, PowerSupplyInfo, GetEndpoint>
 {
     [HttpGet("Hardware/PowerSupply/{Id:int:required}")]
     [OpenApiOperation(operationId : "Hardware.PowerSupply.Get",

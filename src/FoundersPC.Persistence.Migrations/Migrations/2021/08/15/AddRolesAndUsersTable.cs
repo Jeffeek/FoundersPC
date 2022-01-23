@@ -48,12 +48,8 @@ public class AddRolesAndUsersTable : MigrationBase
               .WithColumn("Login").AsString(128).NotNullable()
               .WithColumn("RegistrationDate").AsDateTime().NotNullable()
               .WithColumn("RoleId").AsInt32().NotNullable().ForeignKey("FK_Users_Roles_RoleId", "Roles", "Id").OnDeleteOrUpdate(Rule.Cascade)
-              .WithColumn("IsActive").AsBoolean().NotNullable().WithDefaultValue(true)
               .WithColumn("IsBlocked").AsBoolean().NotNullable().WithDefaultValue(false)
-              .WithColumn("SendMessageOnEntrance").AsBoolean().NotNullable().WithDefaultValue(false)
-              .WithColumn("SendMessageOnApiRequest").AsBoolean().NotNullable().WithDefaultValue(false)
               .WithColumn("Email").AsString(256).NotNullable()
-              .WithColumn("EmailConfirmed").AsBoolean().WithDefaultValue(false).NotNullable()
               .WithColumn("PasswordHash").AsString(60).NotNullable();
 
         Insert.IntoTable("Users")

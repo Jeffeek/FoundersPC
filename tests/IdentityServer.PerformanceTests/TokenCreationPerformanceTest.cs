@@ -20,7 +20,7 @@ public class TokenCreationPerformanceTest
     [Benchmark]
     public string TokenEncryption_TimeBenchmark()
     {
-        var encryptedToken = _tokenEncryptorService.CreateToken();
+        var encryptedToken = TokenEncryptorService.CreateToken();
 
         return encryptedToken;
     }
