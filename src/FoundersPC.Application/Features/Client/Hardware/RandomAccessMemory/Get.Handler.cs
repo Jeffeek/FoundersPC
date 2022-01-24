@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Client.Hardware.RandomAccessMemory;
 
-public class GetHandler : GetHardwareHandler<GetRequest, ClientRandomAccessMemoryInfo, Domain.Entities.Hardware.RandomAccessMemory>
+public class GetHandler : GetHardwareHandler<GetRequest, ClientRandomAccessMemoryInfo, Domain.Entities.Hardware.RandomAccessMemory, GetQuery>
 {
     public GetHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                       IMapper mapper) : base(dbContextFactory, mapper) { }

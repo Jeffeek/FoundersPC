@@ -1,5 +1,5 @@
-﻿using FluentValidation;
+﻿using FoundersPC.Application.Features.Client.Validators;
 
 namespace FoundersPC.Application.Features.Client.Producer;
 
-public class GetAllRequestValidator : AbstractValidator<GetAllRequest> { }
+public class GetAllRequestValidator : GetAllRequestValidator<GetAllRequest> { }

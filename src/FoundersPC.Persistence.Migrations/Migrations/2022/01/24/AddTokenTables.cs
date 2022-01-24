@@ -21,7 +21,7 @@ public class AddTokenTables : Migration
         Create.Table("AccessTokensHistory")
               .WithColumn("Id").AsInt32().NotNullable().PrimaryKey("PK_AccessTokensHistory_Id").Identity(1, 1)
               .WithColumn("AccessTokenId").AsInt32().NotNullable().ForeignKey("FK_AccessTokensHistory_AccessTokens", "AccessTokens", "Id")
-              .WithColumn("RequestUserId").AsInt32().NotNullable().ForeignKey("FK_AccessTokensHistory_Users", "Users", "Id")
+              .WithColumn("RequestUserId").AsInt32().Nullable().ForeignKey("FK_AccessTokensHistory_Users", "Users", "Id")
               .WithColumn("RequestDate").AsDateTime().NotNullable();
 
         Create.Index("IX_AccessTokensHistory_AccessTokenId")

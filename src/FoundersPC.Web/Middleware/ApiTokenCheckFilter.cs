@@ -6,8 +6,10 @@ using FoundersPC.Domain.Enums;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Exceptions;
 using FoundersPC.SharedKernel.Interfaces;
+using FoundersPC.SharedKernel.Options;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace FoundersPC.Web.Middleware;
 
@@ -15,12 +17,15 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
 {
     private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
     private readonly ICurrentUserService _currentUserService;
+    private readonly AccessTokenPlans _accessTokenPlans;
 
     public ApiTokenCheckFilter(IDbContextFactory<ApplicationDbContext> dbContextFactory,
-                               ICurrentUserService currentUserService)
+                               ICurrentUserService currentUserService,
+                               IOptions<AccessTokenPlans> accessTokenPlans)
     {
         _dbContextFactory = dbContextFactory;
         _currentUserService = currentUserService;
+        _accessTokenPlans = accessTokenPlans.Value;
     }
 
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
@@ -55,7 +60,7 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
         await next();
     }
 
-    private static async Task<bool> CheckTokenTooManyRequestsAsync(ApplicationDbContext dbContext, AccessToken accessToken)
+    private async Task<bool> CheckTokenTooManyRequestsAsync(ApplicationDbContext dbContext, AccessToken accessToken)
     {
         var lastTokenRequest = await dbContext.Set<AccessTokenHistory>()
                                               .AsNoTracking()
@@ -68,10 +73,10 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
 
         return accessToken.Type switch
                {
-                   TokenPackageType.Personal  => (DateTime.Now - lastTokenRequest.RequestDate).Minutes >= 1,
-                   TokenPackageType.ProPlan   => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= 30,
-                   TokenPackageType.Unlimited => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= 10,
-                   _ => throw new ArgumentOutOfRangeException(nameof(accessToken.Type))
+                   TokenPackageType.Personal  => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Personal.RequestLimitInSeconds,
+                   TokenPackageType.ProPlan   => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.ProPlan.RequestLimitInSeconds,
+                   TokenPackageType.Unlimited => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Unlimited.RequestLimitInSeconds,
+                   _                          => throw new ArgumentOutOfRangeException(nameof(accessToken.Type))
                };
     }
 
@@ -89,7 +94,7 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
                       {
                           AccessTokenId = accessToken.Id,
                           RequestDate = DateTime.Now,
-                          RequestUserId = _currentUserService.UserId
+                          RequestUserId = _currentUserService.UserId == 0 ? null : _currentUserService.UserId
                       };
 
         await dbContext.Set<AccessTokenHistory>()

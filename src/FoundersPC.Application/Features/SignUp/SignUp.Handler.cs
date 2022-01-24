@@ -1,11 +1,9 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Token.Models;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel;
-using FoundersPC.SharedKernel.Exceptions;
 using FoundersPC.SharedKernel.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Identity;

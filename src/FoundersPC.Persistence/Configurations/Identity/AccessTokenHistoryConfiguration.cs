@@ -24,12 +24,12 @@ public class AccessTokenHistoryConfiguration : IEntityTypeConfiguration<AccessTo
         builder.Property(x => x.RequestUserId)
                .HasColumnName("RequestUserId")
                .HasColumnType("int")
-               .IsRequired();
+               .IsRequired(false);
 
         builder.HasOne(x => x.RequestUser)
                .WithMany(x => x.TokensHistories)
                .HasForeignKey(x => x.RequestUserId)
-               .IsRequired();
+               .IsRequired(false);
 
         builder.HasOne(x => x.AccessToken)
                .WithMany(x => x.History)

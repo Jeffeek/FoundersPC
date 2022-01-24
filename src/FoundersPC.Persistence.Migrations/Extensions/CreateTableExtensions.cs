@@ -2,7 +2,6 @@
 
 using FluentMigrator;
 using FluentMigrator.Builders.Create.Table;
-using FluentMigrator.SqlServer;
 
 #endregion
 

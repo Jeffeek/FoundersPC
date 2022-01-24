@@ -1,7 +1,6 @@
 ﻿using System;
 using FoundersPC.Application.Features.Hardware.Case.Models;
 using FoundersPC.Application.Features.Hardware.HardDriveDisk.Models;
-using FoundersPC.Application.Features.Hardware.Models;
 using FoundersPC.Application.Features.Hardware.Motherboard.Models;
 using FoundersPC.Application.Features.Hardware.PowerSupply.Models;
 using FoundersPC.Application.Features.Hardware.Processor.Models;

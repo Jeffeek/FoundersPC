@@ -4,7 +4,6 @@ using System;
 using System.Data;
 using FluentMigrator.SqlServer;
 using FoundersPC.Persistence.Migrations.Common;
-using FoundersPC.Persistence.Migrations.Extensions;
 using FoundersPC.SharedKernel.ApplicationConstants;
 
 #endregion

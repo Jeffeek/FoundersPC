@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using FoundersPC.Application.Features.Hardware.Base;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Query;

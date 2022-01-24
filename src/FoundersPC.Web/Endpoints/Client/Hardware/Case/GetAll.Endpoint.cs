@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Client.Hardware.Case;
 using FoundersPC.Application.Features.Client.Hardware.Case.Models;
-using FoundersPC.SharedKernel.Endpoints;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;

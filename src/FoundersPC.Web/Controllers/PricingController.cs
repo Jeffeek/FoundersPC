@@ -1,14 +1,5 @@
 ﻿#region Using namespaces
 
-using System;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using FoundersPC.SharedKernel.ApplicationConstants;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-
 #endregion
 
 namespace FoundersPC.Web.Controllers

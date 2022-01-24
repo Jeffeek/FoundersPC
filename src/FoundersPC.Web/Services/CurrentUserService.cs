@@ -36,6 +36,9 @@ public class CurrentUserService : ICurrentUserService
             if (_userId.HasValue && _userId != 0)
                 return _userId.Value;
 
+            if (Login == null)
+                return 0;
+
             using var db = _dbContextFactory.CreateDbContext();
 
             var user = db.Set<ApplicationUser>()

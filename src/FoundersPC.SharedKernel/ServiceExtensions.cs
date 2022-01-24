@@ -3,7 +3,6 @@
 using System;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using FoundersPC.SharedKernel.ApplicationConstants;
 using FoundersPC.SharedKernel.Jwt;
 using FoundersPC.SharedKernel.Models;
@@ -22,7 +21,13 @@ public static class ServiceExtensions
 {
     public static void AddAuthorizationPolicies(this IServiceCollection services, string scheme)
     {
-        services.AddCors();
+        services.AddCors(options =>
+                         {
+                             options.AddPolicy(CorsPolicies.AllowAllPolicy,
+                                               builder => builder.AllowAnyMethod()
+                                                                 .AllowAnyHeader()
+                                                                 .AllowAnyOrigin());
+                         });
 
         services.AddAuthorization(configuration =>
                                   {

@@ -18,7 +18,7 @@ public class PowerSuppliesPageViewModel : HardwareListBasePageViewModel<PowerSup
                titleBarLocator,
                pagination,
                selectedObjectLocator,
-               Domain.Enums.HardwareType.FPU,
+               Domain.Enums.HardwareType.PowerSupply,
                TitleBarConstants.PowerSuppliesPageId,
                TitleBarConstants.PowerSupplyDetailsPageId) { }
 

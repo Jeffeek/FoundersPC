@@ -37,7 +37,7 @@ public class HardwareConfiguration : IEntityTypeConfiguration<Domain.Entities.Ha
                .HasValue<VideoCard>((int)HardwareType.GPU)
                .HasValue<RandomAccessMemory>((int)HardwareType.RAM)
                .HasValue<Motherboard>((int)HardwareType.MB)
-               .HasValue<PowerSupply>((int)HardwareType.FPU)
+               .HasValue<PowerSupply>((int)HardwareType.PowerSupply)
                .HasValue<HardDriveDisk>((int)HardwareType.HDD)
                .HasValue<SolidStateDrive>((int)HardwareType.SSD)
                .IsComplete();

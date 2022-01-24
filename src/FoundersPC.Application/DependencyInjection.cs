@@ -7,6 +7,7 @@ using FoundersPC.Application.Settings;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Interfaces;
+using FoundersPC.SharedKernel.Options;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -31,7 +32,7 @@ public static class DependencyInjection
         services.AddTransient<IDateTimeService, UtcDateTimeService>();
         services.AddTransient<IEmailService, EmailService>();
         services.AddScoped<PasswordEncryptorService>();
-        services.AddScoped<TokenEncryptorService>();
+        services.AddScoped<AccessTokenFactory>();
 
         return services;
     }
@@ -40,6 +41,9 @@ public static class DependencyInjection
     {
         services.AddOptions<PasswordSettings>()
                 .BindConfiguration("PasswordSettings");
+
+        services.AddOptions<AccessTokenPlans>()
+                .BindConfiguration("AccessTokenPlans");
 
         return services;
     }

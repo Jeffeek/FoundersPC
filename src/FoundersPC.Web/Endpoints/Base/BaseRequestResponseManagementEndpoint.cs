@@ -1,11 +1,12 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using FoundersPC.SharedKernel.ApplicationConstants;
+using FoundersPC.SharedKernel.Endpoints;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FoundersPC.SharedKernel.Endpoints;
+namespace FoundersPC.Web.Endpoints.Base;
 
 [ApiExplorerSettings(IgnoreApi = true)]
 [Authorize(Policy = ApplicationAuthorizationPolicies.EmployeePolicy)]

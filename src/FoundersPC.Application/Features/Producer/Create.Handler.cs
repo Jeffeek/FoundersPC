@@ -1,9 +1,7 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.EntityFrameworkCore;
-using AutoMapper.QueryableExtensions;
 using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Extensions;

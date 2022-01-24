@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoundersPC.Web.Endpoints.Account;
 
-public class SignUpEndpoint : BaseRequestResponseEndpoint<SignUpRequest, TokenResponse, SignUpEndpoint>
+public class SignUpEndpoint : BaseRequestResponseAnonymousEndpoint<SignUpRequest, TokenResponse, SignUpEndpoint>
 {
+    [Consumes("application/x-www-form-urlencoded")]
     [HttpPost("SignUp")]
     public override async Task<ActionResult<TokenResponse>> HandleAsync([FromForm] SignUpRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);

@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Hardware.PowerSupply;
 using FoundersPC.Application.Features.Hardware.PowerSupply.Models;
-using FoundersPC.SharedKernel.Endpoints;
 using FoundersPC.SharedKernel.Pagination;
+using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 

@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Client.Hardware.RandomAccessMemory;
 using FoundersPC.Application.Features.Client.Hardware.RandomAccessMemory.Models;
-using FoundersPC.SharedKernel.Endpoints;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;

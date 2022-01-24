@@ -11,6 +11,7 @@ using FluentValidation.AspNetCore;
 using FoundersPC.Application;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel;
+using FoundersPC.SharedKernel.ApplicationConstants;
 using FoundersPC.SharedKernel.Exceptions.Filter;
 using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Interfaces;
@@ -142,7 +143,7 @@ public sealed class Startup
             app.UseHsts();
         }
 
-        app.UseCors("AllowAllPolicy");
+        app.UseCors(CorsPolicies.AllowAllPolicy);
 
         app.UseExceptionHandler(config => config.Run(async context =>
                                                      {

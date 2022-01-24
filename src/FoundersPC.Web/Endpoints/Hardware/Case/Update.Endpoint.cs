@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Hardware.Case;
 using FoundersPC.Application.Features.Hardware.Case.Models;
-using FoundersPC.SharedKernel.Endpoints;
+using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 

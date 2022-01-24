@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Hardware.SolidStateDrive;
 using FoundersPC.Application.Features.Hardware.SolidStateDrive.Models;
-using FoundersPC.SharedKernel.Endpoints;
 using FoundersPC.SharedKernel.Pagination;
+using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 

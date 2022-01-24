@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Hardware.HardDriveDisk;
-using FoundersPC.SharedKernel.Endpoints;
+using FoundersPC.Web.Endpoints.Base;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;

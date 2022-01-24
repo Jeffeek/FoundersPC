@@ -15,6 +15,5 @@ public class TokenResponse
     public string Email { get; set; } = default!;
     public string RefreshToken { get; set; } = default!;
     public string Role { get; set; } = default!;
-    public string TokenType { get; set; } = default!;
     public string Login { get; set; } = default!;
 }

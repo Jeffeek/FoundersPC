@@ -12,15 +12,15 @@ namespace IdentityServer.PerformanceTests;
 [DryJob(RuntimeMoniker.Net60)]
 public class TokenCreationPerformanceTest
 {
-    private TokenEncryptorService _tokenEncryptorService;
+    private AccessTokenFactory _accessTokenFactory;
 
     [GlobalSetup]
-    public void Setup() => _tokenEncryptorService = new();
+    public void Setup() => _accessTokenFactory = new();
 
     [Benchmark]
     public string TokenEncryption_TimeBenchmark()
     {
-        var encryptedToken = TokenEncryptorService.CreateToken();
+        var encryptedToken = AccessTokenFactory.CreateToken();
 
         return encryptedToken;
     }

@@ -4,7 +4,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using FoundersPC.Application.Features.Hardware.Models;
-using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Persistence;
 using Microsoft.EntityFrameworkCore;
 using HardwareType = FoundersPC.Domain.Enums.HardwareType;

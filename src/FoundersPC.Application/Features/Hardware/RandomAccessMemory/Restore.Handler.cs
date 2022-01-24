@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Hardware.RandomAccessMemory;
 
-public class RestoreHandler : Base.RestoreHardwareHandler<RestoreRequest, Domain.Entities.Hardware.RandomAccessMemory, RandomAccessMemoryInfo>
+public class RestoreHandler : Base.RestoreHardwareHandler<RestoreRequest, Domain.Entities.Hardware.RandomAccessMemory, RandomAccessMemoryInfo, GetQuery>
 {
     public RestoreHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                           IMapper mapper)

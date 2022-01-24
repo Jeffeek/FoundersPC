@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application.Features.Hardware.Models;
-using FoundersPC.Application.Features.Producer;
-using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
 using MediatR;

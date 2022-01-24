@@ -14,3 +14,8 @@ public static class ApplicationAuthorizationPolicies
 
     public const string AllowAllPolicy = "AllowAll";
 }
+
+public static class CorsPolicies
+{
+    public const string AllowAllPolicy = "AllowAllPolicy";
+}

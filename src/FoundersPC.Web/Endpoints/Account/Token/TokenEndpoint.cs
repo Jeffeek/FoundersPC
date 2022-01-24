@@ -4,7 +4,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Token.Models;
 using FoundersPC.SharedKernel.Endpoints;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 #endregion

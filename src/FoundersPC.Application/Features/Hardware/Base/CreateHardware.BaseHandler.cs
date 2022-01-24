@@ -1,7 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using AutoMapper.EntityFrameworkCore;
 using FoundersPC.Application.Features.Hardware.Models;
 using FoundersPC.Domain.Entities.Hardware.Metadata;
 using FoundersPC.Persistence;

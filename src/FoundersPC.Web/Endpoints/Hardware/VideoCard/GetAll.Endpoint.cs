@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Hardware.VideoCard;
 using FoundersPC.Application.Features.Hardware.VideoCard.Models;
-using FoundersPC.SharedKernel.Endpoints;
 using FoundersPC.SharedKernel.Pagination;
+using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 

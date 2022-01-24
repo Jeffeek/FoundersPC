@@ -22,6 +22,7 @@ public class BuyRequestValidator : AbstractValidator<BuyRequest>
             .IsInEnum();
 
         RuleFor(x => currentUserService.UserId)
+            .GreaterThan(0)
             .MustAsync(UserExistAsync)
             .WithMessage($"Not found user with id {currentUserService.UserId}");
     }

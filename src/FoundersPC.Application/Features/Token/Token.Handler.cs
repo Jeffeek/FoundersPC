@@ -2,6 +2,7 @@
 
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ using FoundersPC.SharedKernel.Exceptions;
 using FoundersPC.SharedKernel.Interfaces;
 using FoundersPC.SharedKernel.Jwt;
 using MediatR;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -118,13 +118,14 @@ public class TokenHandler : IRequestHandler<TokenRequest, TokenResponse>
 
     private TokenResponse GenerateToken(ClaimsPrincipal principal, ApplicationUser user)
     {
+        var claims = principal.Claims.Append(new("uid", user.Id.ToString())).ToList();
         var now = _dateTime.Now;
         var expires = now.Add(TimeSpan.FromMinutes(_authOptions.MinutesToExpire));
 
         var jwt = new JwtSecurityToken(_authOptions.Issuer,
                                        _authOptions.Audience,
                                        notBefore : now,
-                                       claims : principal.Claims,
+                                       claims : claims,
                                        expires : expires,
                                        signingCredentials : new(_authOptions.GetSymmetricSecurityKey(),
                                                                 SecurityAlgorithms.HmacSha256));
@@ -136,7 +137,7 @@ public class TokenHandler : IRequestHandler<TokenRequest, TokenResponse>
         var refreshJwt = new JwtSecurityToken(_authOptions.Issuer,
                                               "Refresh",
                                               notBefore : now,
-                                              claims : principal.Claims,
+                                              claims : claims,
                                               expires : expiresRefresh,
                                               signingCredentials : new(_authOptions.GetSymmetricSecurityKey(),
                                                                        SecurityAlgorithms.HmacSha256));
@@ -152,7 +153,6 @@ public class TokenHandler : IRequestHandler<TokenRequest, TokenResponse>
                    RefreshToken = jwtRefreshToken,
                    TokenLifetimeInSec = _authOptions.MinutesToExpire * 60,
                    Role = user.ApplicationRole.Name,
-                   TokenType = JwtBearerDefaults.AuthenticationScheme,
                    Login = user.Login
                };
     }

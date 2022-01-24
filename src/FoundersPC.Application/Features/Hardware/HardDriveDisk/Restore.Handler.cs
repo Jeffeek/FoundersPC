@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Hardware.HardDriveDisk;
 
-public class RestoreHandler : Base.RestoreHardwareHandler<RestoreRequest, Domain.Entities.Hardware.HardDriveDisk, HardDriveDiskInfo>
+public class RestoreHandler : Base.RestoreHardwareHandler<RestoreRequest, Domain.Entities.Hardware.HardDriveDisk, HardDriveDiskInfo, GetQuery>
 {
     public RestoreHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                           IMapper mapper)

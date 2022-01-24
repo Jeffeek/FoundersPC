@@ -8,7 +8,7 @@ using System.Text;
 
 namespace FoundersPC.Application.Services;
 
-public class TokenEncryptorService
+public class AccessTokenFactory
 {
     /// <exception cref="T:System.ArgumentNullException"><paramref name="s"/> is <see langword="null"/>.</exception>
     /// <exception cref="T:System.Text.EncoderFallbackException">

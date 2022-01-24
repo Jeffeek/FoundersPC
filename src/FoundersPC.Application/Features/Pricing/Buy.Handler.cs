@@ -11,8 +11,10 @@ using FoundersPC.Domain.Entities.Identity.Tokens;
 using FoundersPC.Domain.Enums;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Interfaces;
+using FoundersPC.SharedKernel.Options;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace FoundersPC.Application.Features.Pricing;
 
@@ -20,18 +22,18 @@ public class BuyHandler : IRequestHandler<BuyRequest, AccessTokenInfo>
 {
     private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
     private readonly IMapper _mapper;
-    private readonly TokenEncryptorService _tokenEncryptorService;
     private readonly ICurrentUserService _currentUserService;
+    private readonly AccessTokenPlans _accessTokenPlans;
 
     public BuyHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                       IMapper mapper,
-                      TokenEncryptorService tokenEncryptorService,
-                      ICurrentUserService currentUserService)
+                      ICurrentUserService currentUserService,
+                      IOptions<AccessTokenPlans> accessTokenPlans)
     {
         _dbContextFactory = dbContextFactory;
         _mapper = mapper;
-        _tokenEncryptorService = tokenEncryptorService;
         _currentUserService = currentUserService;
+        _accessTokenPlans = accessTokenPlans.Value;
     }
 
     public async Task<AccessTokenInfo> Handle(BuyRequest request, CancellationToken cancellationToken)
@@ -47,7 +49,7 @@ public class BuyHandler : IRequestHandler<BuyRequest, AccessTokenInfo>
                            UserId = currentUserId,
                            StartEvaluationDate = start,
                            ExpirationDate = finish,
-                           Token = TokenEncryptorService.CreateToken()
+                           Token = AccessTokenFactory.CreateToken()
                        };
 
         await db.Set<AccessToken>()
@@ -62,12 +64,12 @@ public class BuyHandler : IRequestHandler<BuyRequest, AccessTokenInfo>
                        .FirstAsync(cancellationToken);
     }
 
-    private static (DateTime Start, DateTime Finish) GetTokenDates(TokenPackageType type) =>
+    private (DateTime Start, DateTime Finish) GetTokenDates(TokenPackageType type) =>
         type switch
         {
-            TokenPackageType.Personal  => (DateTime.Now, DateTime.Now.AddDays(7)),
-            TokenPackageType.ProPlan   => (DateTime.Now, DateTime.Now.AddMonths(1)),
-            TokenPackageType.Unlimited => (DateTime.Now, new(9999, 1, 1, 1, 1, 1)),
+            TokenPackageType.Personal  => (DateTime.Now, DateTime.Now.AddSeconds(_accessTokenPlans.Personal.AddSeconds)),
+            TokenPackageType.ProPlan   => (DateTime.Now, DateTime.Now.AddSeconds(_accessTokenPlans.ProPlan.AddSeconds)),
+            TokenPackageType.Unlimited => (DateTime.Now, DateTime.Now.AddSeconds(_accessTokenPlans.Unlimited.AddSeconds)),
             _                          => throw new ArgumentOutOfRangeException(nameof(type))
         };
 }

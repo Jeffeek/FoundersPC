@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Client.Hardware.Processor;
 
-public class GetHandler : GetHardwareHandler<GetRequest, ClientProcessorInfo, Domain.Entities.Hardware.Processor>
+public class GetHandler : GetHardwareHandler<GetRequest, ClientProcessorInfo, Domain.Entities.Hardware.Processor, GetQuery>
 {
     public GetHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                       IMapper mapper) : base(dbContextFactory, mapper) { }

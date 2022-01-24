@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Client.Hardware.HardDriveDisk;
 using FoundersPC.Application.Features.Client.Hardware.HardDriveDisk.Models;
-using FoundersPC.SharedKernel.Endpoints;
 using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;

@@ -51,7 +51,7 @@ public class HardwareMetadataConfiguration : IEntityTypeConfiguration<HardwareMe
                .HasValue<VideoCardMetadata>((int)HardwareType.GPU)
                .HasValue<RandomAccessMemoryMetadata>((int)HardwareType.RAM)
                .HasValue<MotherboardMetadata>((int)HardwareType.MB)
-               .HasValue<PowerSupplyMetadata>((int)HardwareType.FPU)
+               .HasValue<PowerSupplyMetadata>((int)HardwareType.PowerSupply)
                .HasValue<HardDriveDiskMetadata>((int)HardwareType.HDD)
                .HasValue<SolidStateDriveMetadata>((int)HardwareType.SSD)
                .IsComplete();

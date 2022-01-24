@@ -1,7 +1,6 @@
 ﻿#region Using namespaces
 
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 #endregion
 

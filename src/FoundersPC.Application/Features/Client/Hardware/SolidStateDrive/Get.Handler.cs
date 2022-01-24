@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Client.Hardware.SolidStateDrive;
 
-public class GetHandler : GetHardwareHandler<GetRequest, ClientSolidStateDriveInfo, Domain.Entities.Hardware.SolidStateDrive>
+public class GetHandler : GetHardwareHandler<GetRequest, ClientSolidStateDriveInfo, Domain.Entities.Hardware.SolidStateDrive, GetQuery>
 {
     public GetHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                       IMapper mapper) : base(dbContextFactory, mapper) { }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using System.Windows.Threading;
 using Prism.Mvvm;
 
 namespace FoundersPC.UI.Admin.Locators;

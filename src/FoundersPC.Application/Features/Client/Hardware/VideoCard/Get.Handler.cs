@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Client.Hardware.VideoCard;
 
-public class GetHandler : GetHardwareHandler<GetRequest, ClientVideoCardInfo, Domain.Entities.Hardware.VideoCard>
+public class GetHandler : GetHardwareHandler<GetRequest, ClientVideoCardInfo, Domain.Entities.Hardware.VideoCard, GetQuery>
 {
     public GetHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                       IMapper mapper) : base(dbContextFactory, mapper) { }

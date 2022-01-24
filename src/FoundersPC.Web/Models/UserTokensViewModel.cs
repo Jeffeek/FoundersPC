@@ -1,7 +1,5 @@
 ﻿#region Using namespaces
 
-using System.Collections.Generic;
-
 #endregion
 
 namespace FoundersPC.Web.Models

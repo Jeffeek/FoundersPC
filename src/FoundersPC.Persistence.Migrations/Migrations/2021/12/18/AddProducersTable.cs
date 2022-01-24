@@ -1,5 +1,4 @@
 ﻿using FluentMigrator;
-using FluentMigrator.SqlServer;
 using FoundersPC.Persistence.Migrations.Common;
 using FoundersPC.Persistence.Migrations.Extensions;
 
