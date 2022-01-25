@@ -166,7 +166,8 @@ public partial class App
                                    autoMapper.AddCollectionMappers();
                                    autoMapper.UseEntityFrameworkCoreModel<ApplicationDbContext>(serviceProvider);
                                },
-                               GetTypes());
+                               GetTypes(),
+                               ServiceLifetime.Singleton);
 
     private static IEnumerable<Type> GetTypes()
     {

@@ -161,6 +161,20 @@
             <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
                 <Frame Background="#232931" Source="ProducerDetailsPage.xaml" />
             </TabItem>
+            <!--  USERS  -->
+            <TabItem
+                Width="40"
+                Height="40"
+                Padding="0"
+                Header="{materialDesign:PackIcon Kind=People,
+                                                 Size=20}"
+                Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                ToolTip="Users">
+                <Frame Background="#232931" Source="UsersPage.xaml" />
+            </TabItem>
+            <TabItem Style="{StaticResource MaterialDesignNavigationRailTabItem}" Visibility="Collapsed">
+                <Frame Background="#232931" Source="UserDetailsPage.xaml" />
+            </TabItem>
         </TabControl>
     </Grid>
 </Page>

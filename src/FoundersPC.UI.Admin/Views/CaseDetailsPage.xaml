@@ -108,13 +108,11 @@
             </TextBox>
             <ComboBox
                 materialDesignThemes:HintAssist.HelperText="Material"
-                materialDesignThemes:HintAssist.IsFloating="True"
                 ItemsSource="{Binding MetadataPackageLocator.MetadataPackage.Material}"
                 SelectedValue="{Binding EditableHardware.MaterialId}"
                 Style="{StaticResource MetadataComboBox}" />
             <CheckBox
                 Content="Transparent Window"
-                FontSize="10"
                 IsChecked="{Binding EditableHardware.TransparentWindow}"
                 IsThreeState="True"
                 Style="{StaticResource MetadataCheckBox}" />

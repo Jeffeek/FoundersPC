@@ -1,4 +1,5 @@
 ﻿using System;
+using FoundersPC.UI.Admin.Locators;
 using Prism.Mvvm;
 
 namespace FoundersPC.UI.Admin.Models;
@@ -23,7 +24,11 @@ public class ProducerInfoViewModel : BindableBase
     public string FullName
     {
         get => _fullName;
-        set => SetProperty(ref _fullName, value);
+        set
+        {
+            SetProperty(ref _fullName, value);
+            RefreshLocator.FireSaveRefresh();
+        }
     }
 
     private string? _website;

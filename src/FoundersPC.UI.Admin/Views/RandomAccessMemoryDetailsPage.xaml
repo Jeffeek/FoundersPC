@@ -96,67 +96,9 @@
                 SelectedValue="{Binding EditableHardware.MotherboardFactorId}"
                 Style="{StaticResource MetadataComboBox}" />
             <TextBox
-                materialDesignThemes:HintAssist.HelperText="RAM Slots Count"
+                materialDesignThemes:HintAssist.HelperText="PC Index"
                 Style="{StaticResource MetadataTextBox}"
-                Text="{Binding EditableHardware.RAMSlotsCount}">
-                <i:Interaction.Behaviors>
-                    <behavior:TextBoxInputRegExBehaviour
-                        EmptyValue="{x:Null}"
-                        MaxLength="2"
-                        RegularExpression="^([0-9]+)?$" />
-                </i:Interaction.Behaviors>
-            </TextBox>
-            <ComboBox
-                materialDesignThemes:HintAssist.HelperText="RAM Type"
-                materialDesignThemes:HintAssist.IsFloating="True"
-                ItemsSource="{Binding MetadataPackageLocator.MetadataPackage.RamType}"
-                SelectedValue="{Binding EditableHardware.RAMTypeId}"
-                Style="{StaticResource MetadataComboBox}" />
-            <CheckBox
-                MinWidth="110"
-                Content="Crossfire Support"
-                FontSize="10"
-                Foreground="DarkGray"
-                IsChecked="{Binding EditableHardware.CrossfireSupport}"
-                IsThreeState="True"
-                Style="{StaticResource MaterialDesignDarkCheckBox}" />
-            <CheckBox
-                MinWidth="100"
-                Content="SLI Support"
-                FontSize="10"
-                Foreground="DarkGray"
-                IsChecked="{Binding EditableHardware.SliSupport}"
-                IsThreeState="True"
-                Style="{StaticResource MaterialDesignDarkCheckBox}" />
-            <CheckBox
-                MinWidth="100"
-                Content="Wi-Fi Support"
-                FontSize="10"
-                Foreground="DarkGray"
-                IsChecked="{Binding EditableHardware.WiFiSupport}"
-                IsThreeState="True"
-                Style="{StaticResource MaterialDesignDarkCheckBox}" />
-            <CheckBox
-                MinWidth="100"
-                Content="PS2 Support"
-                FontSize="10"
-                Foreground="DarkGray"
-                IsChecked="{Binding EditableHardware.PS2Support}"
-                IsThreeState="True"
-                Style="{StaticResource MaterialDesignDarkCheckBox}" />
-            <ComboBox
-                materialDesignThemes:HintAssist.HelperText="RAM Mode"
-                ItemsSource="{Binding MetadataPackageLocator.MetadataPackage.RamMode}"
-                SelectedValue="{Binding EditableHardware.RAMModeId}"
-                Style="{StaticResource MetadataComboBox}" />
-            <TextBox
-                materialDesignThemes:HintAssist.HelperText="Audio Support"
-                Style="{StaticResource MetadataTextBox}"
-                Text="{Binding EditableHardware.AudioSupport}" />
-            <TextBox
-                materialDesignThemes:HintAssist.HelperText="M2 Slots Count"
-                Style="{StaticResource MetadataTextBox}"
-                Text="{Binding EditableHardware.M2SlotsCount}">
+                Text="{Binding EditableHardware.PCIndex}">
                 <i:Interaction.Behaviors>
                     <behavior:TextBoxInputRegExBehaviour
                         EmptyValue="{x:Null}"
@@ -164,10 +106,58 @@
                         RegularExpression="^([0-9]+)?$" />
                 </i:Interaction.Behaviors>
             </TextBox>
+            <ComboBox
+                materialDesignThemes:HintAssist.HelperText="RAM Type"
+                ItemsSource="{Binding MetadataPackageLocator.MetadataPackage.RamType}"
+                SelectedValue="{Binding EditableHardware.RAMTypeId}"
+                Style="{StaticResource MetadataComboBox}" />
+            <CheckBox
+                Content="XMP"
+                IsChecked="{Binding EditableHardware.XMP}"
+                IsThreeState="True"
+                Style="{StaticResource MetadataCheckBox}" />
+            <CheckBox
+                Content="ECC"
+                IsChecked="{Binding EditableHardware.SliSupport}"
+                IsThreeState="True"
+                Style="{StaticResource MetadataCheckBox}" />
             <TextBox
-                materialDesignThemes:HintAssist.HelperText="PCI Express Version"
+                materialDesignThemes:HintAssist.HelperText="Voltage"
                 Style="{StaticResource MetadataTextBox}"
-                Text="{Binding EditableHardware.PCIExpressVersion}" />
+                Text="{Binding EditableHardware.Voltage}">
+                <i:Interaction.Behaviors>
+                    <behavior:TextBoxInputRegExBehaviour
+                        EmptyValue="{x:Null}"
+                        MaxLength="4"
+                        RegularExpression="^([0-9]+\.?[0-9]*|\.[0-9]+)$" />
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <TextBox
+                materialDesignThemes:HintAssist.HelperText="Frequency"
+                Style="{StaticResource MetadataTextBox}"
+                Text="{Binding EditableHardware.Frequency}">
+                <i:Interaction.Behaviors>
+                    <behavior:TextBoxInputRegExBehaviour
+                        EmptyValue="{x:Null}"
+                        MaxLength="4"
+                        RegularExpression="^([0-9]+)?$" />
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <TextBox
+                materialDesignThemes:HintAssist.HelperText="Volume"
+                Style="{StaticResource MetadataTextBox}"
+                Text="{Binding EditableHardware.Volume}">
+                <i:Interaction.Behaviors>
+                    <behavior:TextBoxInputRegExBehaviour
+                        EmptyValue="{x:Null}"
+                        MaxLength="6"
+                        RegularExpression="^([0-9]+)?$" />
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <TextBox
+                materialDesignThemes:HintAssist.HelperText="Timings"
+                Style="{StaticResource MetadataTextBox}"
+                Text="{Binding EditableHardware.Timings}" />
         </WrapPanel>
     </Grid>
 </Page>

@@ -52,6 +52,8 @@ internal static class TitleBarConstants
     public const int VideoCardDetailsPageId = 15;
     public const int ProducersPageId = 16;
     public const int ProducerDetailsPageId = 17;
+    public const int UsersPageId = 18;
+    public const int UserDetailsPageId = 19;
 }
 
 public class MainWindowTitleBarLocator : BindableBase

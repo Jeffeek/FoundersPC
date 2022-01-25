@@ -78,12 +78,10 @@
                 Style="{StaticResource MetadataTextBox}">
                 <Binding
                     Mode="TwoWay"
+                    NotifyOnSourceUpdated="True"
+                    NotifyOnTargetUpdated="True"
                     Path="EditableProducer.FullName"
-                    UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validation:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
-                    </Binding.ValidationRules>
-                </Binding>
+                    UpdateSourceTrigger="PropertyChanged" />
             </TextBox>
             <TextBox
                 materialDesignThemes:HintAssist.HelperText="Short Name"
@@ -94,10 +92,9 @@
                 Style="{StaticResource MetadataTextBox}"
                 Text="{Binding EditableProducer.Website}" />
             <DatePicker
-                Width="100"
                 materialDesignThemes:HintAssist.HelperText="Foundation Date"
-                Foreground="DarkGray"
-                SelectedDate="{Binding SelectedProducer.FoundationDate}" />
+                SelectedDate="{Binding EditableProducer.FoundationDate}"
+                Style="{StaticResource MetadataDatePicker}" />
         </WrapPanel>
     </Grid>
 </Page>

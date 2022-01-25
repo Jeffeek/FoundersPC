@@ -77,7 +77,16 @@ public class HardwareMappingProfile : Profile
         CreateMap<Producer, ProducerInfo>()
             .ForMember(dest => dest.CreatedBy, opt => opt.MapFrom(src => src.CreatedBy.Login))
             .ForMember(dest => dest.LastModifiedBy, opt => opt.MapFrom(src => src.LastModifiedBy.Login));
+        CreateMap<ProducerInfo, Producer>()
+            .IncludeAllDerived()
+            .ForMember(dest => dest.LastModified, opt => opt.Ignore())
+            .ForMember(dest => dest.Created, opt => opt.Ignore())
+            .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
+            .ForMember(dest => dest.Created, opt => opt.Ignore())
+            .ForMember(dest => dest.LastModified, opt => opt.Ignore());
         CreateMap<Producer, ProducerViewInfo>();
+        CreateMap<Features.Producer.CreateRequest, Producer>();
+        CreateMap<Features.Producer.UpdateRequest, Producer>();
 
         #endregion
 

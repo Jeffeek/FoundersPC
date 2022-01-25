@@ -147,7 +147,7 @@
                 Style="{StaticResource MetadataTextBox}"
                 Text="{Binding EditableHardware.AudioSupport}" />
             <TextBox
-                materialDesignThemes:HintAssist.HelperText="M2 Slots Count"
+                materialDesignThemes:HintAssist.HelperText="M.2 Slots Count"
                 Style="{StaticResource MetadataTextBox}"
                 Text="{Binding EditableHardware.M2SlotsCount}">
                 <i:Interaction.Behaviors>

@@ -20,6 +20,7 @@ public class ProducersPageViewModel : BindableBase
 
     public ProducersPageViewModel(IMediator mediator,
                                   IMapper mapper,
+                                  FilterOptions filterOptions,
                                   SelectedObjectLocator selectedObjectLocator,
                                   TitleBarLocator titleBarLocator)
     {
@@ -28,6 +29,31 @@ public class ProducersPageViewModel : BindableBase
         Mapper = mapper;
         SelectedObjectLocator = selectedObjectLocator;
         DetailsPageId = TitleBarConstants.ProducerDetailsPageId;
+        FilterOptions = filterOptions;
+
+        OrderByList = new()
+                      {
+                          "Id",
+                          "FullName",
+                          "Created",
+                          "Last Modified"
+                      };
+
+        PageSizeList = new()
+                       {
+                           10,
+                           20,
+                           50,
+                           100
+                       };
+
+        TitleBarLocator.TabChanged += async tabId =>
+                                      {
+                                          if (tabId != TitleBarConstants.ProducersPageId)
+                                              return;
+
+                                          await SearchProducersAsync();
+                                      };
     }
 
     private void ChangeLoadingState(bool state)
@@ -53,9 +79,9 @@ public class ProducersPageViewModel : BindableBase
 
     #region MoveToHardwareDetailsPageCommand
 
-    private MvxAsyncCommand<ProducerViewInfo>? _moveToDetailsPageCommand;
-    public MvxAsyncCommand<ProducerViewInfo> MoveToHardwareDetailsPageCommand =>
-        _moveToDetailsPageCommand ??= new(x => MoveToProducerDetailsPageAsync(x.Id));
+    private MvxAsyncCommand<ProducerViewInfo>? _moveToProducerDetailsPageCommand;
+    public MvxAsyncCommand<ProducerViewInfo> MoveToProducerDetailsPageCommand =>
+        _moveToProducerDetailsPageCommand ??= new(x => MoveToProducerDetailsPageAsync(x.Id));
 
     private async Task MoveToProducerDetailsPageAsync(int id)
     {
@@ -70,12 +96,12 @@ public class ProducersPageViewModel : BindableBase
 
     #region DeleteProducerCommand
 
-    private MvxAsyncCommand<ProducerViewInfo>? _deleteHardwareCommand;
+    private MvxAsyncCommand<ProducerViewInfo>? _deleteProducerCommand;
 
-    public MvxAsyncCommand<ProducerViewInfo> DeleteHardwareCommand =>
-        _deleteHardwareCommand ??= new(x => DeleteHardwareAsync(x.Id));
+    public MvxAsyncCommand<ProducerViewInfo> DeleteProducerCommand =>
+        _deleteProducerCommand ??= new(x => DeleteProducerAsync(x.Id));
 
-    private async Task DeleteHardwareAsync(int id)
+    private async Task DeleteProducerAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
         await Mediator.Send(new Application.Features.Producer.DeleteRequest { Id = id });
@@ -87,9 +113,9 @@ public class ProducersPageViewModel : BindableBase
 
     #region RestoreProducerCommand
 
-    private MvxAsyncCommand<ProducerViewInfo>? _restoreHardwareCommand;
-    public MvxAsyncCommand<ProducerViewInfo> RestoreHardwareCommand =>
-        _restoreHardwareCommand ??= new(x => RestoreProducerAsync(x.Id));
+    private MvxAsyncCommand<ProducerViewInfo>? _restoreProducerCommand;
+    public MvxAsyncCommand<ProducerViewInfo> RestoreProducerCommand =>
+        _restoreProducerCommand ??= new(x => RestoreProducerAsync(x.Id));
 
     private async Task RestoreProducerAsync(int id)
     {
