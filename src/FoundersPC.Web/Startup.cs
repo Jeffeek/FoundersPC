@@ -58,6 +58,7 @@ public sealed class Startup
         services.AddStores();
         services.AddHttpContextAccessor();
         services.AddTransient<ICurrentUserService, CurrentUserService>();
+        services.AddSingleton<AppSettings>();
 
         services.AddAutoMapper((serviceProvider, autoMapper) =>
                                {

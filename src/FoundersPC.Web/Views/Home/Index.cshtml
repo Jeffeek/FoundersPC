@@ -1,4 +1,6 @@
-﻿@{
+﻿@using FoundersPC.Web.Services
+@inject AppSettings _appSettings
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
@@ -10,6 +12,14 @@
         href="~/css/home.css"
         rel="stylesheet">
 }}
+
+@{ var baseUrl = _appSettings.GetAbsoluteUri(""); }
+
+<script>
+    window.configuration = {
+        baseUrl: '@baseUrl'
+    };
+</script>
 
 <div
     class='has-animations is-boxed'>
