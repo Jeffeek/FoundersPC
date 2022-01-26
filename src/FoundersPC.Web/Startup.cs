@@ -108,6 +108,11 @@ public sealed class Startup
         services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         services.AddScoped<ApiTokenCheckFilter>();
 
+        services.AddSpaStaticFiles(configuration =>
+                                   {
+                                       configuration.RootPath = "wwwroot";
+                                   });
+
         services.AddOpenApiDocument(configure =>
                                     {
                                         configure.Title = "Founders PC API";
@@ -145,6 +150,16 @@ public sealed class Startup
         }
 
         app.UseCors(CorsPolicies.AllowAllPolicy);
+        app.UseRouting();
+
+        app.Use(async (context, next) =>
+                {
+                    if (context.Request.Path == "/Token" || context.Request.Path == "/SignUp")
+                    {
+                        context.Request.ContentType = "application/x-www-form-urlencoded";
+                    }
+                    await next.Invoke();
+                });
 
         app.UseExceptionHandler(config => config.Run(async context =>
                                                      {
@@ -161,8 +176,8 @@ public sealed class Startup
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+        app.UseSpaStaticFiles();
         app.UseSerilogRequestLogging();
-        app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
 
