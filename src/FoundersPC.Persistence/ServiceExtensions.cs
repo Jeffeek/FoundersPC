@@ -1,11 +1,13 @@
 ﻿#region Using namespaces
 
+using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence.Migrations;
 using FoundersPC.Persistence.Settings;
 using FoundersPC.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Org.BouncyCastle.Asn1.Ocsp;
 
 #endregion
 
@@ -29,6 +31,20 @@ public static class ServiceExtensions
         services.AddMigrations(configuration);
 
         return services;
+    }
+
+    public static void AddStaticData(this IServiceCollection services)
+    {
+        var container = services.BuildServiceProvider();
+        var dbContext = container.GetRequiredService<IDbContextFactory<ApplicationDbContext>>().CreateDbContext();
+
+        dbContext.Set<ApplicationRole>()
+                 .Add(new()
+                      {
+                          Name = "DefaultUser"
+                      });
+
+        dbContext.SaveChanges();
     }
 
     public static IServiceCollection AddEmailDaemon(this IServiceCollection services, IConfiguration configuration)

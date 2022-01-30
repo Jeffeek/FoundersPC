@@ -44,6 +44,9 @@ public class ApplicationDbContext : DbContext
 
     public async Task BeginTransactionAsync(CancellationToken cancellationToken = default)
     {
+        if (Database.IsInMemory())
+            return;
+
         if (_currentTransaction != null)
             return;
 
@@ -57,7 +60,8 @@ public class ApplicationDbContext : DbContext
             await SaveChangesAsync(cancellationToken)
                 .ConfigureAwait(false);
 
-            await _currentTransaction?.CommitAsync(cancellationToken)!;
+            if (!Database.IsInMemory())
+                await _currentTransaction?.CommitAsync(cancellationToken)!;
         }
         catch
         {
