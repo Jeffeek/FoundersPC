@@ -49,7 +49,7 @@ public sealed class Startup
         services.AddOptions();
         services.AddBearerAuthentication(Configuration);
         services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
-        services.AddEmailDaemon(Configuration);
+        //services.AddEmailDaemon(Configuration);
 
         services.AddApplicationOptions(Configuration);
         services.AddPipelineBehaviors(Configuration);
@@ -191,6 +191,6 @@ public sealed class Startup
         app.UseSwaggerUI();
         app.UseOpenApi();
 
-        migrationRunner.MigrateUp();
+        //migrationRunner.MigrateUp();
     }
 }

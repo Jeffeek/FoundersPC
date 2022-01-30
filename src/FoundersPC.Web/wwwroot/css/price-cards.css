@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+
+:root {
+    --card-bg-color: #F5F5F5;
+    --card-bg-color-dark: #363636;
+    --card-font-color: #4D4D4D;
+    --card-btn-bg-color: #6557FF;
+    --card-btn-bg-color-hover: #3C31B9;
+}
+
+.price-cards {
+    width: 100%;
+    max-width: 1500px;
+    min-height: 520px;
+    margin: 120px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+}
+
+.price-card {
+    min-width: 330px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: var(--card-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw;
+    cursor: pointer;
+    will-change: transofrm;
+    transition: all 0.3s ease,
+                color 0.3s ease,
+                transform 0.2s ease-in-out;
+}
+
+.price-card:hover {
+    height: 410px;
+}
+
+.price-card hr {
+    width: 100%;
+}
+
+.price-card__header {
+    font-size: 30px;
+    padding: 20px 43px;
+    font-family: "ABeeZee";
+    font-style: italic;
+    color: var(--card-font-color);
+}
+
+.price-card__price {
+    font-size: 18px;
+    color: var(--card-font-color);
+    font-family: "ABeeZee";
+    font-style: italic;
+}
+
+.price-card__price::before {
+    content: "€";
+    opacity: 0.5;
+}
+
+.price-period {
+    font-size: 12px;
+    font-family: "ABeeZee";
+    color: var(--card-font-color);
+    opacity: 0.5;
+}
+
+.price-card__offer li {
+    font-size: 14px;
+    font-family: "ABeeZee";
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 22px;
+    margin-left: -20px;
+}
+
+.price-card__offer li::before {
+    content: url("../img/check-dark.svg");
+    margin-right: 10px;
+}
+
+.price-card__btn {
+    background-color: var(--card-btn-bg-color);
+    color: white;
+    font-size: 14px;
+    min-width: 55%;
+    border: none;
+    outline: none;
+    font-family: "ABeeZee";
+    font-style: italic;
+    justify-self: flex-end;
+    margin: auto;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.price-card__btn:hover {
+    transform: scale(1.05);
+    background-color: var(--card-btn-bg-color-hover);
+}
+
+.price-card__btn::after {
+    content: url("../img/arrow.svg");
+}
+
+/* active card */
+
+.price-card.active {
+    height: 430px;
+    background-color: var(--card-bg-color-dark);
+    color: white;
+}
+
+.price-card.active .price-card__header {
+    color: white;
+    padding-bottom: 0;
+}
+
+.price-card.active .price-card__price {
+    color: white;
+    margin-bottom: 0;
+}
+
+.price-card.active .price-period {
+    color: white;
+}
+
+.price-card.active .price-card__offer li::before {
+    content: url("../img/check-light.svg");
+    margin-right: 10px;
+}
+
+/* active card end */
+
+/* media */
+
+@media(max-width: 1200px) {
+    .price-card {
+        min-width: 300px;
+        height: 360px;
+    }
+
+    .price-card.active {
+        height: 387px;
+    }
+
+    .price-card:hover {
+        height: 370px;
+    }
+
+    .price-card.active:hover {
+        height: 387px;
+    }
+}
+
+@media(max-width: 1070px) {
+    .price-card {
+        min-width: max-content;
+        width: min(100%, 300px);
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+}
+
+@media(max-width: 820px) {
+    .price-cards {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .price-card {
+        margin: 2vh 0 2vh 0;
+        min-width: max-content;
+        width: min(90%, 320px);
+    }
+
+    .price-card:hover, .price-card.active:hover {
+        height: 360px;
+    }
+
+    .price-card.active {
+        height: 360px;
+        background-color: var(--card-bg-color);
+        color: var(--card-font-color);
+    }
+    
+    .price-card.active .price-card__header {
+        color: var(--card-font-color);
+        padding-bottom: 0;
+    }
+    
+    .price-card.active .price-card__price {
+        color: var(--card-font-color);
+        margin-bottom: 0;
+    }
+    
+    .price-card.active .price-period {
+        color: var(--card-font-color);
+    }
+    
+    .price-card.active .price-card__offer li::before {
+        content: url("../img/check-dark.svg");
+        margin-right: 10px;
+    }
+}

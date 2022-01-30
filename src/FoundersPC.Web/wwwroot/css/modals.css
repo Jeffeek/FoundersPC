@@ -1,0 +1,338 @@
+:root {
+    --modal-border-color: #8EFCBA;
+    --modal-accent-color: #816AFE;
+    --form-label-color: #696F79;
+    --form-input-color: #505358;
+    --form-input-border-color: #8692A6;
+    --poor-password-color: #D20000;
+    --medium-password-color: #FFCA2D;
+    --good-password-color: #00CC08;
+}
+
+/* login-modal */
+
+.login-modal {
+    position: fixed;
+    z-index: 9999;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(98%, 400px);
+    height: 600px;
+    background-color: white;
+    border: 8px solid var(--modal-border-color);
+    border-radius: 16px;
+    box-shadow: 8px 8px 20px 6px rgba(103, 89, 246, 0.75);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+.login-modal header {
+    font-size: 28px;
+    color: var(--modal-accent-color);
+    margin-top: 1em;
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: bold;
+}
+
+.login-form {
+    width: 90%;
+}
+
+.login-form label {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 8px auto 3px auto;
+    color: var(--form-label-color);
+}
+
+.login-form input {
+    width: 100%;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--form-input-border-color);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    color: var(--form-input-color);
+    transition: border 0.2s ease;
+}
+
+.login-form input#password-input {
+    padding-right: 45px
+}
+
+.login-form input::placeholder {
+    opacity: 0.5;
+}
+
+.login-form input:hover {
+    border-color: var(--modal-accent-color);
+}
+
+.login-form input:focus {
+    outline: 2px solid var(--modal-accent-color);
+}
+
+#togglePassword {
+    font-size: 24px;
+    margin-left: -40px;
+    cursor: pointer;
+}
+
+.login-form .login-form__forgot-password-btn {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--modal-accent-color);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+.login-form .login-form__forgot-password-btn:hover {
+    text-decoration: underline;
+}
+
+.login-form .login-form__btn {
+    display: block;
+    margin: 20px auto;
+
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: bold;
+
+    font-size: 20px;
+    color: var(--modal-accent-color);
+    background-color: white;
+    width: 80%;
+    outline: none;
+    border: 2px solid var(--modal-accent-color);
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.login-form .login-form__btn:hover {
+    background-color: var(--modal-accent-color);
+    color: white;
+}
+
+.login-modal__footer {
+    text-align: center;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.login-modal__footer a {
+    color: var(--modal-accent-color);
+    text-align: center;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 18px;
+}
+
+.login-modal__footer a:hover {
+    font-weight: 600;
+}
+
+.login-form label, .login-form a {
+    display: block;
+}
+
+.login-form a, .create-new-account-btn {
+    cursor: pointer;
+}
+
+/* end login-modal */
+
+
+/* signup modal */
+
+.signup-modal {
+    position: fixed;
+    z-index: 9999;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(98%, 400px);
+    height: 600px;
+    background-color: white;
+    border: 8px solid var(--modal-border-color);
+    border-radius: 16px;
+    box-shadow: 8px 8px 20px 6px rgba(103, 89, 246, 0.75);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    /* justify-content: space-between; */
+}
+
+.signup-modal header {
+    font-size: 28px;
+    color: var(--modal-accent-color);
+    margin-top: 1em;
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.signup-form {
+    width: 90%;
+}
+
+.signup-form label {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 8px auto 3px auto;
+    color: var(--form-label-color);
+}
+
+.signup-form input {
+    width: 100%;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--form-input-border-color);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    color: var(--form-input-color);
+    transition: border 0.2s ease;
+}
+
+.signup-form input#password-1 {
+    padding-right: 45px
+}
+
+.password-wrapper {
+    position: relative;
+    margin-bottom: -10px;
+}
+
+.password-level {
+    transition: width 0.5s ease-in-out;
+    position: absolute;
+    bottom: 18px;
+    width: 15%;
+    height: 5px;
+    background-color: var(--poor-password-color);
+    border-radius: 4px;
+    display: block;
+    opacity: 0;
+}
+
+.password-msg {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    margin-left: 10px;
+    display: block;
+    margin-top: 5px;
+    color: var(--poor-password-color);
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.password-level.medium-password {
+    background-color: var(--medium-password-color);
+    width: 80%;
+}
+
+.password-msg.medium-password {
+    color: var(--medium-password-color);
+}
+
+.password-level.good-password {
+    background-color: var(--good-password-color);
+    width: 100%;
+}
+
+.password-msg.good-password {
+    color: var(--good-password-color);
+}
+
+.signup-form input::placeholder {
+    opacity: 0.5;
+}
+
+.signup-form input:hover {
+    border-color: var(--modal-accent-color);
+}
+
+.signup-form input:focus {
+    outline: 2px solid var(--modal-accent-color);
+}
+
+#toggleSignUpPassword {
+    font-size: 24px;
+    margin-left: -40px;
+    cursor: pointer;
+}
+
+.signup-form .signup-form__btn {
+    display: block;
+    margin: 20px auto 10px auto;
+
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: bold;
+
+    font-size: 20px;
+    color: var(--modal-accent-color);
+    background-color: white;
+    width: 80%;
+    outline: none;
+    border: 2px solid var(--modal-accent-color);
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.signup-form .signup-form__btn:disabled {
+    opacity: 0.5;
+}
+
+.signup-form .signup-form__btn:hover:not(.signup-form .signup-form__btn:disabled) {
+    background-color: var(--modal-accent-color);
+    color: white;
+}
+
+.signup-form label {
+    display: block;
+}
+
+/* end signup modal */
+
+.generate-password-btn {
+    width: 25px;
+    cursor: pointer;
+}
