@@ -1,0 +1,46 @@
+:root {
+    --notification-bg-color: #840808;
+    --notification-text-color: #fff;
+}
+
+#notification-list {
+    z-index: 99999;
+    width: 300px;
+    height: max-content;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+.notification {
+    background-color: var(--notification-bg-color);
+    color: var(--notification-text-color);
+
+    width: 100%;
+    height: max-content;
+    border-radius: 10px;
+    padding: 16px;
+
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease, transform 0.3s ease-in;
+    transform: translateX(-310px);
+}
+
+.notification__header {
+    font-family: "Roboto";
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.notification__message {
+    font-size: 14px;
+    font-family: "Roboto";
+    font-weight: 300;
+    margin-bottom: 0;
+    white-space: pre-line;
+}
+
+.notification:hover {
+    box-shadow: 0px 0px 10px red;
+}

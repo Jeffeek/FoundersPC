@@ -336,3 +336,38 @@
     width: 25px;
     cursor: pointer;
 }
+
+/* profile-modal */
+
+.profile-modal {
+    position: fixed;
+    z-index: 9999;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(98%, 600px);
+    height: 600px;
+    background-color: white;
+    border: 8px solid var(--modal-border-color);
+    border-radius: 16px;
+    box-shadow: 8px 8px 20px 6px rgba(103, 89, 246, 0.75);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+.profile-modal header {
+    font-size: 28px;
+    color: var(--modal-accent-color);
+    margin-top: 1em;
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* profile-modal end */

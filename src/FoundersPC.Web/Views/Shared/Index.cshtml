@@ -30,6 +30,7 @@
     <link href="css/home.css" rel="stylesheet" />
     <link href="css/price-cards.css" rel="stylesheet" >
     <link href="css/modals.css" rel="stylesheet"/>
+    <link href="css/notification.css" rel="stylesheet"/>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
@@ -452,9 +453,34 @@ c19.16-40.81,38.33-81.61,57.49-122.42C252.37,164.58,265.65,183.92,278.92,203.26z
         <button class="signup-form__btn" disabled>Sign Up</button>
       </form>
     </div>
+    <div class="profile-modal">
+      <header class="profile-modal__header">
+        <p class="profile-modal__username">EXAMPLE</p>
+        <p class="profile-modal__email">EXAMPLE@MAIL.RU</p>
+      </header>
+      <div class="profile-modal__keys">
+          <div class="profile-modal__key key-item">
+              <div class="key-item__img""></div>
+              <div class="key-item__content">
+                  <p class="key-item__key">JKJ88SJLKJF8234JJFDJNJSDFNNDFJDFNJDSFLNDS</p>
+                  <p class="key-item__evaluation">Evaluation Date: 01-01-2001</p>
+                  <p class="key-item__expired">Expired Date: 12-12-2012</p>
+              </div>
+          </div>
+      </div>
+    </div>
     <footer class="page-footer">
 
     </footer>
+    <div id="notification-list">
+    </div>
+    <template id="notification-template">
+        <div class="notification">
+            <header class="notification__header"></header>
+            <p class="notification__message"></p>
+        </div>
+    </template>
+    <script src="./js/notification.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src='./js/price-cards.js'></script>
     <script src="/lib/bootstrap/js/bootstrap.bundle.js"></script>

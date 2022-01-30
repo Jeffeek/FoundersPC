@@ -35,24 +35,34 @@ async function signUp(evt) {
         authorize(userData);
     }
     catch (e) {
+        let errorText = "";
+        for (key in e.errors) {
+            errorText += key + ": " + e.errors[key][0] + '\n';
+        }
+        errorText.replace("undefined", "");
+        showNotification(e.title, errorText);
         console.error(e);
     }
 }
 
 async function signIn(evt) {
     evt.preventDefault();
+
     const userFormData = {
-        "Login": document.querySelector("#email-or-login-input"),
-        "Password": document.querySelector("#password-input"),
-        "GrantType": "Password"
+        "Login": document.querySelector("#email-or-login-input").value,
+        "Password": document.querySelector("#password-input").value,
+        "GrantType": "Password",
     };
+
+    if (!userFormData.Login || !userFormData.Password)
+        return ;
 
     try {
         const userData = await fetchData("api/token", userFormData);
         authorize(userData);
     }
     catch (e) {
-        console.error(e);
+        showNotification(e.message, e.description);
     }
 }
 

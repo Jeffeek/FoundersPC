@@ -11,7 +11,8 @@ createNewAccountBtn.addEventListener("click", e => {
 
 authButton.addEventListener("click", e => {
     e.preventDefault();
-    openAuthModal();
+    if (authButton.textContent === "SignIn")
+        openAuthModal();
 })
 
 modalBackdrop.addEventListener("click", e => {
