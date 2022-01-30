@@ -86,9 +86,9 @@ public class UsersPageViewModel : BindableBase
 
     #region BlockUserCommand
 
-    private MvxAsyncCommand<ProducerViewInfo>? _blockUserCommand;
+    private MvxAsyncCommand<UserViewInfo>? _blockUserCommand;
 
-    public MvxAsyncCommand<ProducerViewInfo> BlockUserCommand =>
+    public MvxAsyncCommand<UserViewInfo> BlockUserCommand =>
         _blockUserCommand ??= new(x => BlockUserAsync(x.Id));
 
     private async Task BlockUserAsync(int id)
@@ -103,8 +103,8 @@ public class UsersPageViewModel : BindableBase
 
     #region UnblockUserCommand
 
-    private MvxAsyncCommand<ProducerViewInfo>? _unblockUserCommand;
-    public MvxAsyncCommand<ProducerViewInfo> UnblockUserCommand =>
+    private MvxAsyncCommand<UserViewInfo>? _unblockUserCommand;
+    public MvxAsyncCommand<UserViewInfo> UnblockUserCommand =>
         _unblockUserCommand ??= new(x => UnblockUserAsync(x.Id));
 
     private async Task UnblockUserAsync(int id)
@@ -225,9 +225,16 @@ public class UsersPageViewModel : BindableBase
 
         try
         {
-            var hardware = await _mediator.Send(_mapper.Map<Application.Features.UserInformation.GetAllRequest>(FilterOptions));
-            _mapper.Map(hardware.PagingInfo, FilterOptions.Pagination);
-            UsersList = _mapper.Map<ObservableCollection<UserViewInfo>>(hardware.Result);
+            var request = _mapper.Map<Application.Features.UserInformation.GetAllRequest>(FilterOptions);
+            request.RoleIds = new()
+                              {
+                                  (int)RoleTypes.Manager,
+                                  (int)RoleTypes.DefaultUser
+                              };
+
+            var users = await _mediator.Send(request);
+            _mapper.Map(users.PagingInfo, FilterOptions.Pagination);
+            UsersList = _mapper.Map<ObservableCollection<UserViewInfo>>(users.Result);
         }
         finally
         {

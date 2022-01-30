@@ -117,7 +117,7 @@ public class EmailService : IEmailService
     public Task<bool> SendBlockNotificationAsync(string email, string? reason = null)
     {
         var content =
-            $"You've been banned in out service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
+            $"You've been banned in our service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
 
         return SendToAsync(email, "Your account was blocked", content);
     }

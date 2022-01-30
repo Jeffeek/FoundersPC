@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using FoundersPC.Domain.Entities.Identity.Users;
@@ -11,6 +12,7 @@ public class GetAllQuery : SortedQuery<ApplicationUser>
 {
     public bool? ShowBlocked { get; set; }
     public string? SearchText { get; set; }
+    public List<int>? RoleIds { get; set; }
 
     public override Expression<Func<ApplicationUser, bool>> GetExpression()
     {
@@ -28,6 +30,9 @@ public class GetAllQuery : SortedQuery<ApplicationUser>
 
         if (ShowBlocked.HasValue)
             result = result.And(x => x.IsBlocked == ShowBlocked);
+
+        if (!RoleIds.IsEmpty())
+            result = result.And(x => RoleIds!.Contains(x.RoleId));
 
         return result;
     }

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Threading.Tasks;
+using AutoMapper;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
@@ -101,6 +102,45 @@ public class UserDetailsPageViewModel : BindableBase
     {
         EditableUser = null;
         _titleBarLocator.CurrentFrameId = TitleBarConstants.UsersPageId;
+    }
+
+    #endregion
+
+    #region BlockAccessTokenCommand
+
+    private MvxAsyncCommand<AccessTokenViewModel>? _blockAccessTokenCommand;
+
+    public MvxAsyncCommand<AccessTokenViewModel> BlockAccessTokenCommand =>
+        _blockAccessTokenCommand ??= new(x =>
+                                         {
+                                             x.IsBlocked = true;
+                                             return BlockAccessTokenAsync(x.Id);
+                                         });
+
+    private async Task BlockAccessTokenAsync(int id)
+    {
+        _titleBarLocator.IsLoading = true;
+        await _mediator.Send(new Application.Features.AccessToken.BlockRequest { Id = id });
+        _titleBarLocator.IsLoading = false;
+    }
+
+    #endregion
+
+    #region UnblockAccessTokenCommand
+
+    private MvxAsyncCommand<AccessTokenViewModel>? _unblockAccessTokenCommand;
+    public MvxAsyncCommand<AccessTokenViewModel> UnblockAccessTokenCommand =>
+        _unblockAccessTokenCommand ??= new(x =>
+                                           {
+                                               x.IsBlocked = false;
+                                               return UnblockAccessTokenAsync(x.Id);
+                                           });
+
+    private async Task UnblockAccessTokenAsync(int id)
+    {
+        _titleBarLocator.IsLoading = true;
+        await _mediator.Send(new Application.Features.AccessToken.UnblockRequest { Id = id });
+        _titleBarLocator.IsLoading = false;
     }
 
     #endregion

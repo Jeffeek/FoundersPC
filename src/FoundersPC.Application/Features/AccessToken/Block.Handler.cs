@@ -26,6 +26,7 @@ public class BlockHandler : IRequestHandler<BlockRequest, Unit>
         await db.BeginTransactionAsync(cancellationToken);
 
         var user = await db.Set<Domain.Entities.Identity.Tokens.AccessToken>()
+                           .Include(x => x.ApplicationUser)
                            .FirstOrDefaultAsync(x => x.Id == request.Id,
                                                 cancellationToken)
                    ?? throw new NotFoundException("AccessToken", request.Id);
@@ -33,6 +34,12 @@ public class BlockHandler : IRequestHandler<BlockRequest, Unit>
         user.IsBlocked = true;
 
         await db.CommitTransactionAsync(cancellationToken);
+
+        try
+        {
+            await _emailService.SendAccessTokenBlockNotificationAsync(user.ApplicationUser.Email, user.Token);
+        }
+        catch (Exception e) { }
 
         return Unit.Value;
     }

@@ -9,6 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     MinWidth="800"
+    xmlns:tbl="clr-namespace:FoundersPC.UI.Admin.Locators"
     MinHeight="400"
     prism:ViewModelLocator.AutoWireViewModel="True"
     FontSize="12"
@@ -168,7 +169,6 @@
                                 UniformCornerRadius="5">
                                 <StackPanel Margin="10">
                                     <materialDesign:PopupBox
-                                        mah:VisibilityHelper.IsCollapsed="{calcBinding:Binding 'Role == \'System\' || Role == \'Administrator\' '}"
                                         HorizontalAlignment="Right"
                                         StaysOpen="True">
                                         <materialDesign:PopupBox.ToggleContent>

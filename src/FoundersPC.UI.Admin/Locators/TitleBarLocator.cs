@@ -90,3 +90,11 @@ internal static class MainWindowTitleBarConstants
     public const int SignInPageId = 0;
     public const int AfterSignInPageId = 1;
 }
+
+internal enum RoleTypes
+{
+    System = 1,
+    Administrator = 2,
+    Manager = 3,
+    DefaultUser = 4,
+}
