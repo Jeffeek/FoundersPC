@@ -61,7 +61,7 @@
 }
 
 .price-card__price::before {
-    content: "€";
+    content: "\20AC";
     opacity: 0.5;
 }
 
