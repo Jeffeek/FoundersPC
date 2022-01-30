@@ -15,14 +15,16 @@ public static class ServiceExtensions
 {
     public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("FoundersPCConnection"),
-                                                                                           o => o.UseQuerySplittingBehavior(QuerySplittingBehavior
-                                                                                               .SingleQuery))
-                                                                             .EnableSensitiveDataLogging());
+        //services.AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("FoundersPCConnection"),
+        //                                                                                   o => o.UseQuerySplittingBehavior(QuerySplittingBehavior
+        //                                                                                       .SingleQuery))
+        //                                                                     .EnableSensitiveDataLogging());
 
-        services.AddScoped(p =>
-                               p.GetRequiredService<IDbContextFactory<ApplicationDbContext>>()
-                                .CreateDbContext());
+        //services.AddScoped(p =>
+        //                       p.GetRequiredService<IDbContextFactory<ApplicationDbContext>>()
+        //                        .CreateDbContext());
+
+        services.AddDbContextFactory<ApplicationDbContext>(options => options.UseInMemoryDatabase("sojdfnjlsdf"));
 
         services.AddMigrations(configuration);
 
