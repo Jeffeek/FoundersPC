@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\ChangePassword\" />
     <Folder Include="Middleware\" />
   </ItemGroup>
 

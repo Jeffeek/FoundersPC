@@ -85,7 +85,7 @@ public class EmailService : IEmailService
     }
 
     /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
-    public Task<bool> SendRegistrationNotificationAsync(string email, string subject = null)
+    public Task<bool> SendRegistrationNotificationAsync(string email, string? subject = null)
     {
         var content =
             $"Thanks for registration in our service!{(subject == null ? String.Empty : $"{Environment.NewLine}{subject}")}";
@@ -110,20 +110,26 @@ public class EmailService : IEmailService
         return SendToAsync(email, "Password Change", content);
     }
 
+    public Task<bool> SendAccessTokenBlockNotificationAsync(string email, string token, string? reason = null) =>
+        SendToAsync(email, "Access Token Unblocking", $"Your Access Token {token} was unblocked. Reason = {reason}");
+
     /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
-    public Task<bool> SendBlockNotificationAsync(string email, string reason = null)
+    public Task<bool> SendBlockNotificationAsync(string email, string? reason = null)
     {
         var content =
-            $"You've banned in out service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
+            $"You've been banned in out service.{(reason == null ? String.Empty : $"{Environment.NewLine}Reason: {reason}")}";
 
         return SendToAsync(email, "Your account was blocked", content);
     }
 
     /// <exception cref="T:System.ArgumentNullException">email is <see langword="null"/></exception>
-    public Task<bool> SendUnBlockNotificationAsync(string email, string reason = null)
+    public Task<bool> SendUnblockNotificationAsync(string email, string? reason = null)
     {
-        const string content = "You've UnBanned in our service.";
+        const string content = "You've been UnBanned in our service.";
 
         return SendToAsync(email, "Your account was UNBLOCKED", content);
     }
+
+    public Task<bool> SendAccessTokenUnblockNotificationAsync(string email, string token, string? reason = null) =>
+        SendToAsync(email, "Access Token blocking", $"Your Access Token {token} was blocked. Reason = {reason}");
 }

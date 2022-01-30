@@ -14,7 +14,6 @@ public class ProducerDetailsPageViewModel : BindableBase
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
-    private readonly SelectedObjectLocator _selectedObjectLocator;
     private readonly TitleBarLocator _titleBarLocator;
 
     public MetadataPackageLocator MetadataPackageLocator { get; }
@@ -27,10 +26,9 @@ public class ProducerDetailsPageViewModel : BindableBase
     {
         _mediator = mediator;
         _mapper = mapper;
-        _selectedObjectLocator = selectedObjectLocator;
         _titleBarLocator = titleBarLocator;
         MetadataPackageLocator = metadataPackageLocator;
-        _selectedObjectLocator.SelectedProducerChanged += OnSelectedProducerChanged;
+        selectedObjectLocator.SelectedProducerChanged += OnSelectedProducerChanged;
         RefreshLocator.SaveRefresh += () => SaveCommand.RaiseCanExecuteChanged();
     }
 

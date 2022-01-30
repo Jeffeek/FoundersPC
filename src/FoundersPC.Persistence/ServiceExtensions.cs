@@ -2,6 +2,7 @@
 
 using FoundersPC.Persistence.Migrations;
 using FoundersPC.Persistence.Settings;
+using FoundersPC.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

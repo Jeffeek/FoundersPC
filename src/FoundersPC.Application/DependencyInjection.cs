@@ -30,7 +30,6 @@ public static class DependencyInjection
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddTransient<IDateTimeService, UtcDateTimeService>();
-        //services.AddTransient<IEmailService, EmailService>();
         services.AddScoped<PasswordEncryptorService>();
         services.AddScoped<AccessTokenFactory>();
 
