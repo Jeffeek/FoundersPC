@@ -9,6 +9,7 @@ using FoundersPC.Application.Features.Hardware.RandomAccessMemory.Models;
 using FoundersPC.Application.Features.Hardware.SolidStateDrive.Models;
 using FoundersPC.Application.Features.Hardware.VideoCard.Models;
 using FoundersPC.Application.Features.Producer.Models;
+using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.UI.Admin.Locators;
@@ -63,6 +64,7 @@ public class MappingProfile : Profile
         CreateMap<SolidStateDriveInfo, SolidStateDriveInfoViewModel>();
         CreateMap<VideoCardInfo, VideoCardInfoViewModel>();
         CreateMap<ProducerInfo, ProducerInfoViewModel>();
+        CreateMap<UserInfo, UserInfoViewModel>();
 
         #endregion
 

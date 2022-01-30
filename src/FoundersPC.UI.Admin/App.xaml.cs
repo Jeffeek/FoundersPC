@@ -58,6 +58,7 @@ public partial class App
                                                              services.AddSingleton(mainWindowTitleBarLocator);
                                                              services.AddSingleton(selectedObjectLocator);
                                                              services.AddApplicationServices(configuration);
+                                                             services.AddScoped<IEmailService, NullEmailService>();
                                                              services.AddEmailDaemon(configuration);
                                                              services.AddScoped<PasswordEncryptorService>();
                                                              services.AddScoped<IPasswordHasher<ApplicationUser>, CustomPasswordHasher>();

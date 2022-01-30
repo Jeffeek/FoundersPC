@@ -17,22 +17,24 @@ public class UsersPageViewModel : BindableBase
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
     private readonly TitleBarLocator _titleBarLocator;
-    protected readonly SelectedObjectLocator _selectedObjectLocator;
+    private readonly SelectedObjectLocator _selectedObjectLocator;
 
     public UsersPageViewModel(IMediator mediator,
                               IMapper mapper,
-                              TitleBarLocator titleBarLocator)
+                              TitleBarLocator titleBarLocator,
+                              SelectedObjectLocator selectedObjectLocator)
     {
         _mediator = mediator;
         _mapper = mapper;
         _titleBarLocator = titleBarLocator;
+        _selectedObjectLocator = selectedObjectLocator;
 
         OrderByList = new()
                       {
                           "Id",
-                          "FullName",
-                          "Created",
-                          "Last Modified"
+                          "Email",
+                          "Login",
+                          "Role"
                       };
 
         PageSizeList = new()
@@ -63,7 +65,7 @@ public class UsersPageViewModel : BindableBase
             System.Windows.Application.Current.Dispatcher.Invoke(() => _titleBarLocator.IsLoading = state);
     }
 
-    private ObservableCollection<UserViewModel> _users;
+    private ObservableCollection<UserViewModel> _users = new();
     public ObservableCollection<UserViewModel> Users
     {
         get => _users;
@@ -71,10 +73,10 @@ public class UsersPageViewModel : BindableBase
     }
 
     private MvxCommand? _createUserCommand;
-    public MvxCommand CreateProducerCommand =>
-        _createUserCommand ??= new(CreateNewProducerAndMoveToDetails);
+    public MvxCommand CreateUserCommand =>
+        _createUserCommand ??= new(CreateNewUserAndMoveToDetails);
 
-    private void CreateNewProducerAndMoveToDetails()
+    private void CreateNewUserAndMoveToDetails()
     {
         _selectedObjectLocator.SelectedProducer = new();
         _titleBarLocator.CurrentFrameId = TitleBarConstants.UserDetailsPageId;
@@ -82,15 +84,15 @@ public class UsersPageViewModel : BindableBase
 
     #region MoveToUserDetailsPageCommand
 
-    private MvxAsyncCommand<ProducerViewInfo>? _moveToProducerDetailsPageCommand;
+    private MvxAsyncCommand<ProducerViewInfo>? _moveToUserDetailsPageCommand;
     public MvxAsyncCommand<ProducerViewInfo> MoveToUserDetailsPageCommand =>
-        _moveToProducerDetailsPageCommand ??= new(x => MoveToUserDetailsPageAsync(x.Id));
+        _moveToUserDetailsPageCommand ??= new(x => MoveToUserDetailsPageAsync(x.Id));
 
     private async Task MoveToUserDetailsPageAsync(int id)
     {
         _titleBarLocator.IsLoading = true;
-        var hardwareInfo = await _mediator.Send(new Application.Features.Producer.GetRequest { Id = id });
-        _selectedObjectLocator.SelectedProducer = hardwareInfo;
+        var userInfo = await _mediator.Send(new Application.Features.UserInformation.GetRequest { Id = id });
+        _selectedObjectLocator.SelectedUser = userInfo;
         _titleBarLocator.CurrentFrameId = TitleBarConstants.UserDetailsPageId;
         _titleBarLocator.IsLoading = false;
     }

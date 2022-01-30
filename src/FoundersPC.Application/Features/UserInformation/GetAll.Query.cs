@@ -31,4 +31,14 @@ public class GetAllQuery : SortedQuery<ApplicationUser>
 
         return result;
     }
+
+    public override Func<IQueryable<ApplicationUser>, IOrderedQueryable<ApplicationUser>> GetSortingExpression() =>
+        SortColumn switch
+        {
+            var id when String.Equals(id, "Id", StringComparison.OrdinalIgnoreCase) => item => item.ApplyOrder(x => x.Id, IsAscending),
+            var login when String.Equals(login, "Login", StringComparison.OrdinalIgnoreCase) => item => item.ApplyOrder(x => x.Login, IsAscending),
+            var email when String.Equals(email, "Email", StringComparison.OrdinalIgnoreCase) => item => item.ApplyOrder(x => x.Email, IsAscending),
+            var role when String.Equals(role, "Role", StringComparison.OrdinalIgnoreCase) => item => item.ApplyOrder(x => x.ApplicationRole.Name, IsAscending),
+            _ => item => item.ApplyOrder(x => x.Id, IsAscending),
+        };
 }

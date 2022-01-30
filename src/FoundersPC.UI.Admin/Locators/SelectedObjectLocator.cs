@@ -8,6 +8,7 @@ using FoundersPC.Application.Features.Hardware.RandomAccessMemory.Models;
 using FoundersPC.Application.Features.Hardware.SolidStateDrive.Models;
 using FoundersPC.Application.Features.Hardware.VideoCard.Models;
 using FoundersPC.Application.Features.Producer.Models;
+using FoundersPC.Application.Features.UserInformation.Models;
 
 namespace FoundersPC.UI.Admin.Locators;
 
@@ -147,4 +148,19 @@ public class SelectedObjectLocator
         }
     }
     public event Action<ProducerInfo?>? SelectedProducerChanged;
+
+    private UserInfo? _selectedUser;
+    public UserInfo? SelectedUser
+    {
+        get => _selectedUser;
+        set
+        {
+            if (value == _selectedUser)
+                return;
+
+            _selectedUser = value;
+            SelectedUserChanged?.Invoke(value);
+        }
+    }
+    public event Action<UserInfo?>? SelectedUserChanged;
 }
