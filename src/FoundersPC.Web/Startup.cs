@@ -9,6 +9,7 @@ using FluentMigrator.Runner;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using FoundersPC.Application;
+using FoundersPC.Application.Services;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel;
 using FoundersPC.SharedKernel.ApplicationConstants;
@@ -49,7 +50,9 @@ public sealed class Startup
         services.AddOptions();
         services.AddBearerAuthentication(Configuration);
         services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
-        services.AddEmailDaemon(Configuration);
+        //services.AddEmailDaemon(Configuration);
+        services.AddTransient<IEmailService, NullEmailService>();
+        //services.AddTransient<IEmailService, EmailService>();
 
         services.AddApplicationOptions(Configuration);
         services.AddPipelineBehaviors(Configuration);

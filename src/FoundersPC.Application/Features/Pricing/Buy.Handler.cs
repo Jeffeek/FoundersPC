@@ -8,12 +8,14 @@ using FoundersPC.Application.Features.Pricing.Models;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.Application.Services;
 using FoundersPC.Domain.Entities.Identity.Tokens;
+using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Domain.Enums;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Interfaces;
 using FoundersPC.SharedKernel.Options;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace FoundersPC.Application.Features.Pricing;
@@ -23,16 +25,22 @@ public class BuyHandler : IRequestHandler<BuyRequest, AccessTokenInfo>
     private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
     private readonly IMapper _mapper;
     private readonly ICurrentUserService _currentUserService;
+    private readonly IEmailService _emailService;
+    private readonly ILogger<BuyHandler> _logger;
     private readonly AccessTokenPlans _accessTokenPlans;
 
     public BuyHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                       IMapper mapper,
                       ICurrentUserService currentUserService,
-                      IOptions<AccessTokenPlans> accessTokenPlans)
+                      IOptions<AccessTokenPlans> accessTokenPlans,
+                      IEmailService emailService,
+                      ILogger<BuyHandler> logger)
     {
         _dbContextFactory = dbContextFactory;
         _mapper = mapper;
         _currentUserService = currentUserService;
+        _emailService = emailService;
+        _logger = logger;
         _accessTokenPlans = accessTokenPlans.Value;
     }
 
@@ -43,7 +51,7 @@ public class BuyHandler : IRequestHandler<BuyRequest, AccessTokenInfo>
         await db.BeginTransactionAsync(cancellationToken);
 
         var (start, finish) = GetTokenDates(request.PackageType);
-        var newToken = new AccessToken
+        var newToken = new Domain.Entities.Identity.Tokens.AccessToken
                        {
                            Type = request.PackageType,
                            UserId = currentUserId,
@@ -52,12 +60,26 @@ public class BuyHandler : IRequestHandler<BuyRequest, AccessTokenInfo>
                            Token = AccessTokenFactory.CreateToken()
                        };
 
-        await db.Set<AccessToken>()
+        await db.Set<Domain.Entities.Identity.Tokens.AccessToken>()
                 .AddAsync(newToken, cancellationToken);
 
         await db.CommitTransactionAsync(cancellationToken);
 
-        return await db.Set<AccessToken>()
+        var currentUserEmail = await db.Set<ApplicationUser>()
+                                       .Where(x => x.Id == currentUserId)
+                                       .Select(x => x.Email)
+                                       .FirstAsync(cancellationToken);
+
+        try
+        {
+            await _emailService.SendAPIAccessTokenAsync(currentUserEmail, newToken.Token);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error when sending email");
+        }
+
+        return await db.Set<Domain.Entities.Identity.Tokens.AccessToken>()
                        .AsNoTracking()
                        .Where(x => x.Id == newToken.Id)
                        .ProjectTo<AccessTokenInfo>(_mapper.ConfigurationProvider)

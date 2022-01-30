@@ -14,6 +14,7 @@ using FoundersPC.SharedKernel.Interfaces;
 using FoundersPC.SharedKernel.Jwt;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -25,17 +26,23 @@ public class TokenHandler : IRequestHandler<TokenRequest, TokenResponse>
 {
     private readonly JwtConfiguration _authOptions;
     private readonly IDateTimeService _dateTime;
+    private readonly ILogger<TokenHandler> _logger;
+    private readonly IEmailService _emailService;
     private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly UserManager<ApplicationUser> _userManager;
 
     public TokenHandler(UserManager<ApplicationUser> userManager,
                         SignInManager<ApplicationUser> signInManager,
                         IDateTimeService dateTime,
-                        IOptions<JwtConfiguration> jwtConfiguration)
+                        IOptions<JwtConfiguration> jwtConfiguration,
+                        ILogger<TokenHandler> logger,
+                        IEmailService emailService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _dateTime = dateTime;
+        _logger = logger;
+        _emailService = emailService;
         _authOptions = jwtConfiguration.Value;
     }
 
@@ -64,7 +71,18 @@ public class TokenHandler : IRequestHandler<TokenRequest, TokenResponse>
         // Create the principal
         var principal = await _signInManager.CreateUserPrincipalAsync(user);
 
-        return GenerateToken(principal, user);
+        var token = GenerateToken(principal, user);
+
+        try
+        {
+            await _emailService.SendEntranceNotificationAsync(user.Email);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error occured when tried to send message");
+        }
+
+        return token;
     }
 
     private async Task<TokenResponse> RefreshTokenAsync(TokenRequest request)

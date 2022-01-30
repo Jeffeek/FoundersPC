@@ -61,7 +61,7 @@ public class ApplicationDbContext : DbContext
         }
         catch
         {
-            RollbackTransaction();
+            await RollbackTransactionAsync(cancellationToken);
 
             throw;
         }
@@ -86,6 +86,23 @@ public class ApplicationDbContext : DbContext
             if (_currentTransaction != null)
             {
                 _currentTransaction.Dispose();
+                _currentTransaction = null;
+            }
+        }
+    }
+
+    public async Task RollbackTransactionAsync(CancellationToken cancellationToken)
+    {
+        try
+        {
+            if (_currentTransaction != null)
+                await _currentTransaction.RollbackAsync(cancellationToken);
+        }
+        finally
+        {
+            if (_currentTransaction != null)
+            {
+                await _currentTransaction.DisposeAsync();
                 _currentTransaction = null;
             }
         }

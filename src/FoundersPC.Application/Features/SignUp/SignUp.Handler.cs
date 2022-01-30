@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using FoundersPC.Application.Features.Token.Models;
 using FoundersPC.Domain.Entities.Identity.Users;
@@ -8,6 +9,7 @@ using FoundersPC.SharedKernel.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace FoundersPC.Application.Features.SignUp;
 
@@ -16,16 +18,22 @@ public class SignUpHandler : IRequestHandler<SignUpRequest, TokenResponse>
     private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
     private readonly IPasswordHasher<ApplicationUser> _passwordHasher;
     private readonly IDateTimeService _dateTimeService;
+    private readonly IEmailService _emailService;
+    private readonly ILogger<SignUpHandler> _logger;
     private readonly IMediator _mediator;
 
     public SignUpHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                          IPasswordHasher<ApplicationUser> passwordHasher,
                          IDateTimeService dateTimeService,
+                         IEmailService emailService,
+                         ILogger<SignUpHandler> logger,
                          IMediator mediator)
     {
         _dbContextFactory = dbContextFactory;
         _passwordHasher = passwordHasher;
         _dateTimeService = dateTimeService;
+        _emailService = emailService;
+        _logger = logger;
         _mediator = mediator;
     }
 
@@ -54,6 +62,15 @@ public class SignUpHandler : IRequestHandler<SignUpRequest, TokenResponse>
                 .AddAsync(user, cancellationToken);
 
         await db.CommitTransactionAsync(cancellationToken);
+
+        try
+        {
+            await _emailService.SendRegistrationNotificationAsync(user.Email, "FoundersPC Registration");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error when sending email");
+        }
 
         return await _mediator.Send(new TokenRequest
                                     {
