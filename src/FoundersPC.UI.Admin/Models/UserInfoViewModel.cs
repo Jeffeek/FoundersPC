@@ -6,22 +6,27 @@ namespace FoundersPC.UI.Admin.Models;
 public class UserInfoViewModel : BindableBase
 {
     private int _id;
-    private string _login = default!;
-    private bool _isBlocked;
-    private string _role = default!;
-
     public int Id
     {
         get => _id;
         set => SetProperty(ref _id, value);
     }
 
+    private string _login = default!;
     public string Login
     {
         get => _login;
         set => SetProperty(ref _login, value);
     }
 
+    private string _email = default!;
+    public string Email
+    {
+        get => _email;
+        set => SetProperty(ref _email, value);
+    }
+
+    private bool _isBlocked;
     public bool IsBlocked
     {
         get => _isBlocked;
@@ -30,6 +35,7 @@ public class UserInfoViewModel : BindableBase
 
     public int RoleId { get; set; }
 
+    private string _role = default!;
     public string Role
     {
         get => _role;

@@ -40,6 +40,7 @@ public class MappingProfile : Profile
         CreateMap<FilterOptions, Application.Features.Hardware.SolidStateDrive.GetAllRequest>();
         CreateMap<FilterOptions, Application.Features.Hardware.VideoCard.GetAllRequest>();
         CreateMap<FilterOptions, Application.Features.Producer.GetAllRequest>();
+        CreateMap<FilterOptions, Application.Features.UserInformation.GetAllRequest>();
 
         #endregion
 
@@ -65,6 +66,7 @@ public class MappingProfile : Profile
         CreateMap<VideoCardInfo, VideoCardInfoViewModel>();
         CreateMap<ProducerInfo, ProducerInfoViewModel>();
         CreateMap<UserInfo, UserInfoViewModel>();
+        CreateMap<AccessTokenInfo, AccessTokenViewModel>();
 
         #endregion
 

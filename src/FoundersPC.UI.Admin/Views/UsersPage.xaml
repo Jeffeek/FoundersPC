@@ -87,7 +87,7 @@
                     <CheckBox
                         Margin="10,0,0,0"
                         VerticalAlignment="Bottom"
-                        Content="Show deleted"
+                        Content="Show blocked"
                         Foreground="White"
                         IsChecked="{Binding FilterOptions.ShowDeleted}"
                         IsThreeState="True" />
@@ -167,7 +167,10 @@
                                 Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                                 UniformCornerRadius="5">
                                 <StackPanel Margin="10">
-                                    <materialDesign:PopupBox HorizontalAlignment="Right" StaysOpen="True">
+                                    <materialDesign:PopupBox
+                                        mah:VisibilityHelper.IsCollapsed="{calcBinding:Binding 'Role == \'System\' || Role == \'Administrator\' '}"
+                                        HorizontalAlignment="Right"
+                                        StaysOpen="True">
                                         <materialDesign:PopupBox.ToggleContent>
                                             <materialDesign:PackIcon
                                                 Width="20"

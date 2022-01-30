@@ -16,18 +16,20 @@ public class UsersPageViewModel : BindableBase
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
-    private readonly TitleBarLocator _titleBarLocator;
+    public TitleBarLocator TitleBarLocator { get; }
     private readonly SelectedObjectLocator _selectedObjectLocator;
 
     public UsersPageViewModel(IMediator mediator,
                               IMapper mapper,
                               TitleBarLocator titleBarLocator,
-                              SelectedObjectLocator selectedObjectLocator)
+                              SelectedObjectLocator selectedObjectLocator,
+                              FilterOptions filterOptions)
     {
         _mediator = mediator;
         _mapper = mapper;
-        _titleBarLocator = titleBarLocator;
+        TitleBarLocator = titleBarLocator;
         _selectedObjectLocator = selectedObjectLocator;
+        FilterOptions = filterOptions;
 
         OrderByList = new()
                       {
@@ -56,45 +58,28 @@ public class UsersPageViewModel : BindableBase
 
     private void ChangeLoadingState(bool state)
     {
-        if (state == _titleBarLocator.IsLoading)
+        if (state == TitleBarLocator.IsLoading)
             return;
 
         if (System.Windows.Application.Current.Dispatcher.CheckAccess())
-            _titleBarLocator.IsLoading = state;
+            TitleBarLocator.IsLoading = state;
         else
-            System.Windows.Application.Current.Dispatcher.Invoke(() => _titleBarLocator.IsLoading = state);
-    }
-
-    private ObservableCollection<UserViewModel> _users = new();
-    public ObservableCollection<UserViewModel> Users
-    {
-        get => _users;
-        set => SetProperty(ref _users, value);
-    }
-
-    private MvxCommand? _createUserCommand;
-    public MvxCommand CreateUserCommand =>
-        _createUserCommand ??= new(CreateNewUserAndMoveToDetails);
-
-    private void CreateNewUserAndMoveToDetails()
-    {
-        _selectedObjectLocator.SelectedProducer = new();
-        _titleBarLocator.CurrentFrameId = TitleBarConstants.UserDetailsPageId;
+            System.Windows.Application.Current.Dispatcher.Invoke(() => TitleBarLocator.IsLoading = state);
     }
 
     #region MoveToUserDetailsPageCommand
 
-    private MvxAsyncCommand<ProducerViewInfo>? _moveToUserDetailsPageCommand;
-    public MvxAsyncCommand<ProducerViewInfo> MoveToUserDetailsPageCommand =>
+    private MvxAsyncCommand<UserViewInfo>? _moveToUserDetailsPageCommand;
+    public MvxAsyncCommand<UserViewInfo> MoveToUserDetailsPageCommand =>
         _moveToUserDetailsPageCommand ??= new(x => MoveToUserDetailsPageAsync(x.Id));
 
     private async Task MoveToUserDetailsPageAsync(int id)
     {
-        _titleBarLocator.IsLoading = true;
+        TitleBarLocator.IsLoading = true;
         var userInfo = await _mediator.Send(new Application.Features.UserInformation.GetRequest { Id = id });
         _selectedObjectLocator.SelectedUser = userInfo;
-        _titleBarLocator.CurrentFrameId = TitleBarConstants.UserDetailsPageId;
-        _titleBarLocator.IsLoading = false;
+        TitleBarLocator.CurrentFrameId = TitleBarConstants.UserDetailsPageId;
+        TitleBarLocator.IsLoading = false;
     }
 
     #endregion
@@ -108,10 +93,10 @@ public class UsersPageViewModel : BindableBase
 
     private async Task BlockUserAsync(int id)
     {
-        _titleBarLocator.IsLoading = true;
+        TitleBarLocator.IsLoading = true;
         await _mediator.Send(new Application.Features.UserInformation.BlockRequest { Id = id });
         await SearchUsersAsync();
-        _titleBarLocator.IsLoading = false;
+        TitleBarLocator.IsLoading = false;
     }
 
     #endregion
@@ -124,10 +109,10 @@ public class UsersPageViewModel : BindableBase
 
     private async Task UnblockUserAsync(int id)
     {
-        _titleBarLocator.IsLoading = true;
+        TitleBarLocator.IsLoading = true;
         await _mediator.Send(new Application.Features.UserInformation.UnblockRequest { Id = id });
         await SearchUsersAsync();
-        _titleBarLocator.IsLoading = false;
+        TitleBarLocator.IsLoading = false;
     }
 
     #endregion
@@ -137,7 +122,7 @@ public class UsersPageViewModel : BindableBase
     private MvxAsyncCommand? _applySearchCommand;
     public MvxAsyncCommand ApplySearchCommand =>
         _applySearchCommand ??= new(SearchUsersAsync,
-                                    () => !_titleBarLocator.IsLoading,
+                                    () => !TitleBarLocator.IsLoading,
                                     true);
 
     #endregion
@@ -156,7 +141,6 @@ public class UsersPageViewModel : BindableBase
     #region MovePaginationToBack
 
     private MvxAsyncCommand? _movePaginationToBack;
-
     public MvxAsyncCommand MovePaginationToBack =>
         _movePaginationToBack ??= new(() =>
                                       {
@@ -164,7 +148,7 @@ public class UsersPageViewModel : BindableBase
 
                                           return SearchUsersAsync();
                                       },
-                                      () => !_titleBarLocator.IsLoading && FilterOptions.Pagination.IsMoveBackAvailable,
+                                      () => !TitleBarLocator.IsLoading && FilterOptions.Pagination.IsMoveBackAvailable,
                                       true);
 
     #endregion
@@ -180,14 +164,13 @@ public class UsersPageViewModel : BindableBase
 
                                               return SearchUsersAsync();
                                           },
-                                          () => !_titleBarLocator.IsLoading && FilterOptions.Pagination.IsMoveStraightAvailable);
+                                          () => !TitleBarLocator.IsLoading && FilterOptions.Pagination.IsMoveStraightAvailable);
 
     #endregion
 
     #region FilterOptions
 
     private readonly FilterOptions _filterOptions = default!;
-
     public FilterOptions FilterOptions
     {
         get => _filterOptions;
@@ -204,9 +187,8 @@ public class UsersPageViewModel : BindableBase
 
     #region SelectedUser
 
-    private UserViewModel? _selectedUser;
-
-    public UserViewModel? SelectedUser
+    private UserViewInfo? _selectedUser;
+    public UserViewInfo? SelectedUser
     {
         get => _selectedUser;
         set => SetProperty(ref _selectedUser, value);
@@ -217,7 +199,6 @@ public class UsersPageViewModel : BindableBase
     #region OrderByList
 
     private ObservableCollection<string> _orderByList = default!;
-
     public ObservableCollection<string> OrderByList
     {
         get => _orderByList;
@@ -229,7 +210,6 @@ public class UsersPageViewModel : BindableBase
     #region PageSizeList
 
     private ObservableCollection<int> _pageSizeList = default!;
-
     public ObservableCollection<int> PageSizeList
     {
         get => _pageSizeList;
@@ -247,7 +227,7 @@ public class UsersPageViewModel : BindableBase
         {
             var hardware = await _mediator.Send(_mapper.Map<Application.Features.UserInformation.GetAllRequest>(FilterOptions));
             _mapper.Map(hardware.PagingInfo, FilterOptions.Pagination);
-            Users = new(_mapper.Map<IEnumerable<UserViewModel>>(hardware.Result));
+            UsersList = _mapper.Map<ObservableCollection<UserViewInfo>>(hardware.Result);
         }
         finally
         {
