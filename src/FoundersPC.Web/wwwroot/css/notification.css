@@ -1,6 +1,7 @@
 :root {
     --notification-bg-color: #840808;
     --notification-text-color: #fff;
+    --notification-success-bg-color: #039B00;
 }
 
 #notification-list {
@@ -43,4 +44,8 @@
 
 .notification:hover {
     box-shadow: 0px 0px 10px red;
+}
+
+.notification.success {
+    background-color: var(--notification-success-bg-color);
 }
