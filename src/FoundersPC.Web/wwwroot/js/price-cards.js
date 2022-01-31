@@ -95,11 +95,12 @@ async function buyCard(btn) {
                 showNotification(e.message, e.description);
                 localStorage.removeItem("userData");
                 window.location.href = "/";
-                throw new Error()
+                throw new Error();
             }
         }
     }
     catch (e) {
-        showNotification(e.message, e.description);
+        if (e)
+            showNotification(e.message, e.description);
     }
 }

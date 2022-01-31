@@ -40,7 +40,6 @@ async function signUp(evt) {
             errorText += key + ": " + e.errors[key][0] + '\n';
         }
         showNotification(e.title, errorText);
-        console.error(e);
     }
 }
 
