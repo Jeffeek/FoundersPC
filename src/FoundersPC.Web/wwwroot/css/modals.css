@@ -349,16 +349,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: min(98%, 700px);
+    width: min(98%, 1000px);
     height: 600px;
     background-color: white;
     border: 8px solid var(--modal-border-color);
     border-radius: 16px;
     box-shadow: 8px 8px 20px 6px rgba(103, 89, 246, 0.75);
-
-    /* flex-direction: column;
-    align-items: center;
-    justify-content: space-between; */
     display: none;
 }
 
@@ -391,7 +387,8 @@
 
 .key-item {
     display: flex;
-    width: max(92%, 630px);
+    /* width: max(92%, 630px); */
+    width: max-content;
     margin: 10px 1vw;
     border-radius: 20px;
 }
@@ -400,20 +397,20 @@
     background-color: var(--profile-modal-secondary-color);
 }
 
-.key-item:nth-child(even) .key-item__img {
-    background: url("../img/dollar-green.svg") no-repeat center;
-}
-
 .key-item__img {
     min-width: 100px;
     height: 100px;
     display: block;
-    background: url("../img/dollar-red.svg") no-repeat center;
+    background: url("../img/dollar-green.svg") no-repeat center;
     border: 3px solid var(--profile-modal-secondary-color);
     border-radius: 50%;
     align-self: center;
     margin: 10px 15px;
     background-color: white!important;
+}
+
+.key-item.expired .key-item__img {
+    background: url("../img/dollar-red.svg") no-repeat center;
 }
 
 .key-item__content {

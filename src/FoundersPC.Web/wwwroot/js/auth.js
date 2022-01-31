@@ -65,6 +65,21 @@ async function signIn(evt) {
     }
 }
 
+async function getProfileTokens(evt) {
+    evt.preventDefault();
+
+    if (!isAuthorize()) 
+        return ;
+
+    try {
+        const profileTokens = await fetchData("api/UserInformation/Get", {});
+        console.log(profileTokens);
+    }
+    catch(e) {
+        showNotification(e.message, e.description);
+    }
+}
+
 function signOut(evt) {
     evt.preventDefault();
     localStorage.removeItem("userData");

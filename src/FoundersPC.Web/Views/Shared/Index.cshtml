@@ -387,7 +387,7 @@ c19.16-40.81,38.33-81.61,57.49-122.42C252.37,164.58,265.65,183.92,278.92,203.26z
             <li>1 month access</li>
             <li>1 request in 30 seconds</li>
           </ul>
-          <button class="price-card__btn" data-plan="Pro Plan">Choose this plan</button>
+          <button class="price-card__btn" data-plan="ProPlan">Choose this plan</button>
         </div>
         <div class="price-card">
           <span class="price-card__header">
@@ -455,34 +455,11 @@ c19.16-40.81,38.33-81.61,57.49-122.42C252.37,164.58,265.65,183.92,278.92,203.26z
     </div>
     <div class="profile-modal">
       <header class="profile-modal__header">
-        <p class="profile-modal__username">EXAMPLE</p>
-        <p class="profile-modal__email">EXAMPLE@MfsdfsdfAIL.RU</p>
+        <p class="profile-modal__username"></p>
+        <p class="profile-modal__email"></p>
       </header>
       <div class="profile-modal__keys">
-          <div class="profile-modal__key key-item">
-              <div class="key-item__img""></div>
-              <div class="key-item__content">
-                  <p class="key-item__key">JKJ88SJLKJF8234JJFDJNJSDFNNDFJDFNJDSFLNDS</p>
-                  <p class="key-item__evaluation">Evaluation Date: 01-01-2001</p>
-                  <p class="key-item__expired">Expired Date: 12-12-2012</p>
-              </div>
-          </div>
-          <div class="profile-modal__key key-item">
-              <div class="key-item__img""></div>
-              <div class="key-item__content">
-                  <p class="key-item__key">JKJ88SJLKJF8234JJFDJNJSDFNNDFJDFNJDSFLNDS</p>
-                  <p class="key-item__evaluation">Evaluation Date: 01-01-2001</p>
-                  <p class="key-item__expired">Expired Date: 12-12-2012</p>
-              </div>
-          </div>
-          <div class="profile-modal__key key-item">
-              <div class="key-item__img""></div>
-              <div class="key-item__content">
-                  <p class="key-item__key">JKJ88SJLKJF8234JJFDJNJSDFNNDFJDFNJDSFLNDS</p>
-                  <p class="key-item__evaluation">Evaluation Date: 01-01-2001</p>
-                  <p class="key-item__expired">Expired Date: 12-12-2012</p>
-              </div>
-          </div>
+          
       </div>
     </div>
     <footer class="page-footer">
@@ -490,6 +467,16 @@ c19.16-40.81,38.33-81.61,57.49-122.42C252.37,164.58,265.65,183.92,278.92,203.26z
     </footer>
     <div id="notification-list">
     </div>
+    <template id="profile-key-template">
+        <div class="profile-modal__key key-item">
+            <div class="key-item__img""></div>
+            <div class="key-item__content">
+                <p class="key-item__key"></p>
+                <p class="key-item__evaluation">Evaluation Date: </p>
+                <p class="key-item__expired">Expired Date: </p>
+            </div>
+        </div>
+    </template>
     <template id="notification-template">
         <div class="notification">
             <header class="notification__header"></header>
@@ -501,8 +488,8 @@ c19.16-40.81,38.33-81.61,57.49-122.42C252.37,164.58,265.65,183.92,278.92,203.26z
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.bundle.js"></script>
     <div class="show" id='modal-backdrop'></div>
-    <script src="js/modal.js"></script>
     <script src='./js/price-cards.js'></script>
+    <script src="js/modal.js"></script>
     <script src="/lib/jquery/dist/jquery.js"></script>
     <!-- <script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="/lib/jquery-validation/dist/additional-methods.js"></script>

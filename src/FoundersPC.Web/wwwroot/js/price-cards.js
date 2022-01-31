@@ -57,20 +57,30 @@ function translateCards(pixels) {
     })
 }
 
-function buyCard(btn) {
+async function buyCard(btn) {
     const plan = btn.getAttribute("data-plan");
     const planData = {
         "packageType": plan
     };
 
-    fetch(window.configuration.baseUrl + "api/buy", {
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + getToken()
-        },
-        method: "POST",
-        body: JSON.stringify(planData)
-    }).then(resp => console.log(resp))
-    .catch(err => console.log(err));
+    try {
+        const response = await fetch(window.configuration.baseUrl + "api/Buy", {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + getToken()
+            },
+            method: "POST",
+            body: JSON.stringify(planData)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log(result)
+            showNotification("Success", "Plan " + plan + "successfully purchased", true);
+        }
+    }
+    catch (e) {
+        showNotification("Error", e.message);
+    }
 }
