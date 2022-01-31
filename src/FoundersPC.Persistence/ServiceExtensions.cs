@@ -1,5 +1,6 @@
 ﻿#region Using namespaces
 
+using System;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence.Migrations;
 using FoundersPC.Persistence.Settings;
@@ -38,11 +39,27 @@ public static class ServiceExtensions
         var container = services.BuildServiceProvider();
         var dbContext = container.GetRequiredService<IDbContextFactory<ApplicationDbContext>>().CreateDbContext();
 
+        var role = new ApplicationRole
+                   {
+                       Name = "DefaultUser"
+                   };
+
+        var user = new ApplicationUser
+                   {
+                       ApplicationRole = role,
+                       Login = "TestLogin",
+                       Email = "TestLogin@mail.com",
+                       EmailConfirmed = true,
+                       IsBlocked = false,
+                       PasswordHash = "$2b$10$UhKiRvVvwo8Pq/DxO2/ULenzI6pjBGPToAakCpynFqGVKiA6Uf5BC", //123456
+                       RegistrationDate = DateTime.Now
+                   };
+
         dbContext.Set<ApplicationRole>()
-                 .Add(new()
-                      {
-                          Name = "DefaultUser"
-                      });
+                 .Add(role);
+
+        dbContext.Set<ApplicationUser>()
+                 .Add(user);
 
         dbContext.SaveChanges();
     }

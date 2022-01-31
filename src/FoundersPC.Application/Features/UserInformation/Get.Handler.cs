@@ -6,6 +6,7 @@ using AutoMapper.QueryableExtensions;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence;
+using FoundersPC.SharedKernel.Exceptions;
 using FoundersPC.SharedKernel.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +35,8 @@ public class GetHandler : IRequestHandler<GetRequest, UserInfo>
         var userInfo = await db.Set<ApplicationUser>()
                                .Where(x => request.Id != null ? x.Id == request.Id : x.Login == request.Login)
                                .ProjectTo<UserInfo>(_mapper.ConfigurationProvider)
-                               .FirstAsync(cancellationToken);
+                               .FirstOrDefaultAsync(cancellationToken)
+                       ?? throw new NotFoundException("User", request.Id?.ToString() ?? request.Login);
 
         if (_currentUserService.UserId == userInfo.Id)
             return userInfo;
