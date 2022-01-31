@@ -16,11 +16,11 @@
             anime.timeline({ targets : ".hero-figure-box-05" }).
                 add(
                     {
-                        duration : 100,
+                        duration : 500,
                         easing : "easeInOutExpo",
                         scaleX : [0.05, 0.05],
                         scaleY : [0, 1],
-                        perspective : "500px",
+                        perspective : "700px",
                         delay : anime.random(300, 1200)
                     }).
                 add(
@@ -32,9 +32,9 @@
                     }).
                 add({
                     duration : 800,
-                    rotateY : "50deg",
-                    rotateX : "8deg",
-                    rotateZ : "-50deg"
+                    rotateY : "20deg",
+                    rotateX : "0deg",
+                    rotateZ : "-10deg"
                 }),
             anime.timeline(
                     {
@@ -70,7 +70,7 @@
                         30,
                         function (rotateObject) { return rotateObject.getAttribute("data-rotation"); }
                     ],
-                    scale : [0.7, 1],
+                    scale : [0.9, 1],
                     opacity : [0, 1],
                     easing : "easeInOutExpo"
                 });
