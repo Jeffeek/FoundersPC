@@ -77,10 +77,29 @@ async function buyCard(btn) {
         if (response.ok) {
             const result = await response.json();
             console.log(result)
-            showNotification("Success", "Plan " + plan + "successfully purchased", true);
+            showNotification("Success", "Plan " + plan + " successfully purchased", true);
+        }
+        else if (response.status === 401) {
+            const userData = getUserData();
+            const RefreshRequestData = {
+                "GrantType": "RefreshToken",
+                "RefreshToken": userData.refreshToken
+            };
+
+            try {
+                const refreshResponse = await fetchData("api/Token", RefreshRequestData);
+                pasteTokenInLocalStorage(refreshResponse);
+                buyCard(btn);
+            }
+            catch (e) {
+                showNotification(e.message, e.description);
+                localStorage.removeItem("userData");
+                window.location.href = "/";
+                throw new Error()
+            }
         }
     }
     catch (e) {
-        showNotification("Error", e.message);
+        showNotification(e.message, e.description);
     }
 }

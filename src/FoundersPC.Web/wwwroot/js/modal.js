@@ -41,16 +41,34 @@ async function fetchProfileKeys() {
         body: JSON.stringify({})
     });
 
-
     if (response.ok) {
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         document.querySelector(".profile-modal__username").textContent = result.login;
         document.querySelector(".profile-modal__email").textContent = result.email;
 
         result.tokens.forEach(token => {
             appendNewKeyItem(token);
         });
+    }
+    else if (response.status === 401) {
+        const userData = getUserData();
+        const RefreshRequestData = {
+            "GrantType": "RefreshToken",
+            "RefreshToken": userData.refreshToken
+        };
+
+        try {
+            const refreshResponse = await fetchData("api/Token", RefreshRequestData);
+            pasteTokenInLocalStorage(refreshResponse);
+            fetchProfileKeys();
+        }
+        catch (e) {
+            showNotification(e.message, e.description);
+            localStorage.removeItem("userData");
+            window.location.href = "/";
+            throw new Error()
+        }
     }
     else {
         throw new Error(response.status)

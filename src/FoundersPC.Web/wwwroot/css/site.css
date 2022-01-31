@@ -17,6 +17,28 @@ html
     }
 }
 
+body::-webkit-scrollbar
+{
+    width: 3px;
+    height: 5px;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background-color: cyan;
+    border-radius: 10px;
+}
+
+@media (max-width: 991px) {
+    .nav.navbar-brand.navbar-right {
+        width: 100%!important;
+    }
+    
+    .nav.navbar-brand.navbar-right li {
+        width: 100%!important;
+    }
+}
+
 /*borders*/
 
 .border-top

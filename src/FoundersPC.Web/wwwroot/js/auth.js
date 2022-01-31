@@ -132,9 +132,14 @@ async function fetchData(url, data) {
     }
 }
 
-function getToken() {
+function getUserData() {
     const jsonData = localStorage.getItem("userData");
-    const userData = JSON.parse(jsonData);
+
+    return JSON.parse(jsonData);
+}
+
+function getToken() {
+    const userData = getUserData();
 
     return userData.accessToken;
 }
