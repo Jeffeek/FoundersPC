@@ -67,11 +67,10 @@ function buyCard(btn) {
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Authorization": getToken()
+            "Authorization": "Bearer " + getToken()
         },
         method: "POST",
         body: JSON.stringify(planData)
-    }).then(resp => resp.json())
-    .then(data => console.log(data))
+    }).then(resp => console.log(resp))
     .catch(err => console.log(err));
 }
