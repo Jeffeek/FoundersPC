@@ -49,9 +49,9 @@ public sealed class Startup
         services.AddOptions();
         services.AddBearerAuthentication(Configuration);
         services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
-        //services.AddEmailDaemon(Configuration);
-        services.AddTransient<IEmailService, NullEmailService>();
-        //services.AddTransient<IEmailService, EmailService>();
+        services.AddEmailDaemon(Configuration);
+        //services.AddTransient<IEmailService, NullEmailService>();
+        services.AddTransient<IEmailService, EmailService>();
 
         services.AddApplicationOptions(Configuration);
         services.AddPipelineBehaviors(Configuration);
@@ -60,7 +60,7 @@ public sealed class Startup
         services.AddStores();
         services.AddHttpContextAccessor();
         services.AddTransient<ICurrentUserService, CurrentUserService>();
-        services.AddStaticData();
+        //services.AddStaticData();
         services.AddSingleton<AppSettings>();
 
         services.AddAutoMapper((serviceProvider, autoMapper) =>
