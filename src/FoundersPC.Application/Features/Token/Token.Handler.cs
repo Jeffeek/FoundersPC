@@ -150,7 +150,8 @@ public class TokenHandler : IRequestHandler<TokenRequest, TokenResponse>
 
         var jwtAccessToken = new JwtSecurityTokenHandler().WriteToken(jwt);
 
-        var expiresRefresh = now.Add(TimeSpan.FromMinutes(_authOptions.MinutesToExpire));
+        var expiresRefresh = now.Add(TimeSpan.FromMinutes(_authOptions.MinutesToExpire)
+                                             .Add(TimeSpan.FromMinutes(_authOptions.MinutesToExpire)));
 
         var refreshJwt = new JwtSecurityToken(_authOptions.Issuer,
                                               "Refresh",
