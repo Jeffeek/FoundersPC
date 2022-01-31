@@ -8,7 +8,7 @@ function createNotification() {
     return notification;
 }
 
-function showNotification(header, message) {
+function showNotification(header, message, success = false) {
 
     if (!header && !message)
         return ;
@@ -16,6 +16,9 @@ function showNotification(header, message) {
 
     notification.querySelector(".notification__header").textContent = header;
     notification.querySelector(".notification__message").textContent = message;
+
+    if (success)
+        notification.classList.add("success");
 
     notificationList.appendChild(notification);
     slideNotification(notification);

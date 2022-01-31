@@ -7,6 +7,8 @@
     --poor-password-color: #D20000;
     --medium-password-color: #FFCA2D;
     --good-password-color: #00CC08;
+    --profile-modal-border-header-color: #D5D5D5;
+    --profile-modal-secondary-color: #DEE8EB;
 }
 
 /* login-modal */
@@ -347,27 +349,93 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: min(98%, 600px);
+    width: min(98%, 700px);
     height: 600px;
     background-color: white;
     border: 8px solid var(--modal-border-color);
     border-radius: 16px;
     box-shadow: 8px 8px 20px 6px rgba(103, 89, 246, 0.75);
 
-    display: flex;
-    flex-direction: column;
+    /* flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
     display: none;
 }
 
-.profile-modal header {
+.profile-modal__header {
+    overflow-x: auto;
+    width: 100%;
+    padding: 10px 2vw;
     font-size: 28px;
     color: var(--modal-accent-color);
-    margin-top: 1em;
+    border-bottom: 2px solid var(--profile-modal-border-header-color);
+}
+
+.profile-modal__header p {
     font-family: "Noto Sans";
     font-style: normal;
     font-weight: bold;
+    margin: 0;
+    overflow: hidden;
+    width: max(92%, 630px);
+}
+
+.profile-modal__keys {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    overflow: auto;
+    margin-top: 10px;
+    /* box-sizing: border-box; */
+}
+
+.key-item {
+    display: flex;
+    width: max(92%, 630px);
+    margin: 10px 1vw;
+    border-radius: 20px;
+}
+
+.key-item:nth-child(even) {
+    background-color: var(--profile-modal-secondary-color);
+}
+
+.key-item:nth-child(even) .key-item__img {
+    background: url("../img/dollar-green.svg") no-repeat center;
+}
+
+.key-item__img {
+    min-width: 100px;
+    height: 100px;
+    display: block;
+    background: url("../img/dollar-red.svg") no-repeat center;
+    border: 3px solid var(--profile-modal-secondary-color);
+    border-radius: 50%;
+    align-self: center;
+    margin: 10px 15px;
+    background-color: white!important;
+}
+
+.key-item__content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding-right: 12px;
+}
+
+.key-item__content p {
+    margin: 0;
+    color: black;
+    font-size: 14px;
+    font-family: "Roboto";
+    /* font-weight: 400; */
+}
+
+.key-item__content .key-item__key {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 /* profile-modal end */

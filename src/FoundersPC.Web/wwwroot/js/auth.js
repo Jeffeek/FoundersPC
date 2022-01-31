@@ -39,7 +39,6 @@ async function signUp(evt) {
         for (key in e.errors) {
             errorText += key + ": " + e.errors[key][0] + '\n';
         }
-        errorText.replace("undefined", "");
         showNotification(e.title, errorText);
         console.error(e);
     }
@@ -116,4 +115,11 @@ async function fetchData(url, data) {
     else {
         throw await response.json();
     }
+}
+
+function getToken() {
+    const jsonData = localStorage.getItem("userData");
+    const userData = JSON.parse(jsonData);
+
+    return userData.accessToken;
 }
