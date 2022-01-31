@@ -1,0 +1,105 @@
+const priceCardsNodes = document.querySelectorAll(".price-card")
+const buyBtnsNodes = document.querySelectorAll(".price-card__btn");
+const buyBtns = Array.apply(null, buyBtnsNodes);
+const priceCards = Array.apply(null, priceCardsNodes)
+let activePriceCard = priceCards.find(card => card.classList.contains("active"))
+
+if (buyBtns) {
+    buyBtns.forEach(buyBtn => {
+        buyBtn.addEventListener("click", evt => {
+            evt.preventDefault();
+            if (isAuthorize()) {
+                buyCard(buyBtn);
+            }
+            else {
+                openAuthModal();
+            }
+        });
+    })
+}
+
+
+priceCards.forEach(card => {
+    if (window.innerWidth > 820) {
+        card.addEventListener("click", (evt) => {
+            activePriceCard.classList.remove("active")
+            evt.currentTarget.classList.add("active") 
+            slide(evt.currentTarget)
+            activePriceCard = evt.currentTarget;
+        })
+    }
+})
+
+function slide(selectedCard) {
+    const selectedCardIndex = priceCards.findIndex(card => card == selectedCard);
+    const activeCardIndex = priceCards.findIndex(card => card == activePriceCard);
+
+    let needToTranslate
+
+    if (selectedCardIndex < activeCardIndex) {
+        needToTranslate = activePriceCard.getBoundingClientRect().left - selectedCard.getBoundingClientRect().left
+        translateCards(needToTranslate)
+    }
+    else if (selectedCardIndex > activeCardIndex) {
+        needToTranslate = selectedCard.getBoundingClientRect().left - activePriceCard.getBoundingClientRect().left
+        translateCards(-needToTranslate)
+    }
+
+}
+
+function translateCards(pixels) {
+    let style = window.getComputedStyle(activePriceCard)
+    let matrix = new WebKitCSSMatrix(style.transform)
+    let currentTranslateX = matrix.m41
+
+    priceCards.forEach(card => {
+        card.style.transform = `translateX(${currentTranslateX + pixels}px)`;
+    })
+}
+
+async function buyCard(btn) {
+    const plan = btn.getAttribute("data-plan");
+    const planData = {
+        "packageType": plan
+    };
+
+    try {
+        const response = await fetch(window.configuration.baseUrl + "api/Buy", {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + getToken()
+            },
+            method: "POST",
+            body: JSON.stringify(planData)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log(result)
+            showNotification("Success", "Plan " + plan + " successfully purchased", true);
+        }
+        else if (response.status === 401) {
+            const userData = getUserData();
+            const RefreshRequestData = {
+                "GrantType": "RefreshToken",
+                "RefreshToken": userData.refreshToken
+            };
+
+            try {
+                const refreshResponse = await fetchData("api/Token", RefreshRequestData);
+                pasteTokenInLocalStorage(refreshResponse);
+                buyCard(btn);
+            }
+            catch (e) {
+                showNotification(e.message, e.description);
+                localStorage.removeItem("userData");
+                window.location.href = "/";
+                throw new Error()
+            }
+        }
+    }
+    catch (e) {
+        showNotification(e.message, e.description);
+    }
+}

@@ -21,7 +21,6 @@ using FoundersPC.Web.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -61,6 +60,7 @@ public sealed class Startup
         services.AddStores();
         services.AddHttpContextAccessor();
         services.AddTransient<ICurrentUserService, CurrentUserService>();
+        services.AddStaticData();
         services.AddSingleton<AppSettings>();
 
         services.AddAutoMapper((serviceProvider, autoMapper) =>
@@ -74,7 +74,7 @@ public sealed class Startup
         services.AddMediatR(ReflectionExtensions.GetAllAssemblies()
                                                 .ToArray());
 
-        services.AddHttpClient();
+        services.AddControllersWithViews();
 
         services.AddControllers(options =>
                                     options.Filters.Add(new ApiExceptionFilter()))
@@ -107,10 +107,8 @@ public sealed class Startup
                                      });
 
         services.AddRazorPages();
-        services.AddControllersWithViews();
         services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         services.AddScoped<ApiTokenCheckFilter>();
-
         services.AddSpaStaticFiles(configuration =>
                                    {
                                        configuration.RootPath = "wwwroot";
@@ -152,9 +150,6 @@ public sealed class Startup
             app.UseHsts();
         }
 
-        app.UseCors(CorsPolicies.AllowAllPolicy);
-        app.UseRouting();
-
         app.Use(async (context, next) =>
                 {
                     if (context.Request.Path == "/Token" || context.Request.Path == "/SignUp")
@@ -164,25 +159,14 @@ public sealed class Startup
                     await next.Invoke();
                 });
 
-        app.UseExceptionHandler(config => config.Run(async context =>
-                                                     {
-                                                         var statusCode = 400;
-                                                         var error = context.Features.Get<IExceptionHandlerFeature>();
-
-                                                         if (error != null)
-                                                             statusCode = 500;
-
-                                                         context.Response.StatusCode = statusCode;
-                                                         context.Response.Redirect($"/Error/{statusCode}");
-                                                         await context.Response.CompleteAsync();
-                                                     }));
-
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-        app.UseSpaStaticFiles();
-        app.UseSerilogRequestLogging();
+        app.UseCors(CorsPolicies.AllowAllPolicy);
+        app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
+        app.UseStaticFiles();
+        app.UseSpaStaticFiles();
+
+        app.UseSerilogRequestLogging();
 
         app.UseEndpoints(endpoints =>
                          {
@@ -191,9 +175,9 @@ public sealed class Startup
                              endpoints.MapControllers();
                          });
 
-        app.UseSwaggerUI();
         app.UseOpenApi();
+        app.UseSwaggerUI();
 
-        migrationRunner.MigrateUp();
+        //migrationRunner.MigrateUp();
     }
 }

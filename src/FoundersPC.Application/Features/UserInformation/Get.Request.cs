@@ -6,5 +6,5 @@ namespace FoundersPC.Application.Features.UserInformation;
 public class GetRequest : IRequest<UserInfo>
 {
     public int? Id { get; set; }
-    public string Login { get; set; } = default!;
+    public string? Login { get; set; } = default!;
 }

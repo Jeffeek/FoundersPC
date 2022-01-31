@@ -3,9 +3,11 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using FoundersPC.SharedKernel.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Newtonsoft.Json;
 
 #endregion
 
@@ -58,23 +60,13 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
 
     private static void HandleUnknownException(ExceptionContext context)
     {
-        var details = new ProblemDetails
-                      {
-                          Status = StatusCodes.Status500InternalServerError,
-                          Title = "An error occurred while processing your request.",
-                          Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1",
-                          Extensions =
-                          {
-                              {
-                                  "exception", context.Exception.Message
-                              },
-#if DEBUG
-                              {
-                                  "stacktrace", context.Exception.StackTrace
-                              }
-#endif
-                          }
-                      };
+        var details = new Error($"{StatusCodes.Status500InternalServerError}. Unknown server error",
+                                $"Exception: {context.Exception.Message}"
+                                +
+                                #if DEBUG
+                                $"Stacktrace: {context.Exception.StackTrace}"
+                                #endif
+                               );
 
         context.Result = new ObjectResult(details)
                          {
@@ -88,17 +80,12 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
     {
         var exception = context.Exception as StatusCodeException;
 
-        ProblemDetails details;
+        Error details;
 
         switch (exception?.StatusCode)
         {
             case HttpStatusCode.NotFound:
-                details = new()
-                          {
-                              Type = "https://tools.ietf.org/html/rfc7231#section-6.5.4",
-                              Title = "The specified resource was not found.",
-                              Detail = exception.Message
-                          };
+                details = new("The specified resource was not found.", exception.Message);
 
                 context.Result = new NotFoundObjectResult(details);
                 context.ExceptionHandled = true;
@@ -106,11 +93,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
                 break;
 
             case HttpStatusCode.BadRequest:
-                details = new()
-                          {
-                              Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                              Detail = exception.Message
-                          };
+                details = new("Bad request", exception.Message);
 
                 context.Result = new BadRequestObjectResult(details);
                 context.ExceptionHandled = true;
@@ -123,10 +106,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
     {
         var exception = context.Exception as ValidationException;
 
-        var details = new ValidationProblemDetails(exception.Errors)
-                      {
-                          Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1"
-                      };
+        var details = new Error("Validation error.", JsonConvert.SerializeObject(exception?.Errors));
 
         context.Result = new BadRequestObjectResult(details);
 
@@ -137,12 +117,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
     {
         var exception = context.Exception as NotFoundException;
 
-        var details = new ProblemDetails
-                      {
-                          Type = "https://tools.ietf.org/html/rfc7231#section-6.5.4",
-                          Title = "The specified resource was not found.",
-                          Detail = exception.Message
-                      };
+        var details = new Error("Not found", exception?.Message ?? "");
 
         context.Result = new NotFoundObjectResult(details);
 
@@ -151,19 +126,13 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
 
     private static void HandleBadRequestException(ExceptionContext context)
     {
-        var exception = context.Exception as BadRequestException;
-
-        if (exception != null && exception.IsError())
+        if (context.Exception is BadRequestException exception && exception.IsError())
         {
             context.Result = new BadRequestObjectResult(exception.GetError());
         }
         else
         {
-            var details = new ProblemDetails
-                          {
-                              Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                              Detail = exception?.Message
-                          };
+            var details = new Error("Bad request", "400");
 
             context.Result = new BadRequestObjectResult(details);
         }
@@ -173,10 +142,8 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
 
     private static void HandleAccessTokenException(ExceptionContext context)
     {
-        var exception = context.Exception as AccessTokenException;
-
-        if (exception != null)
-            context.Result ??= new BadRequestObjectResult(exception.Message);
+        if (context.Exception is AccessTokenException exception)
+            context.Result ??= new BadRequestObjectResult(new Error("Access token exception", exception.Message));
 
         context.ExceptionHandled = true;
     }
