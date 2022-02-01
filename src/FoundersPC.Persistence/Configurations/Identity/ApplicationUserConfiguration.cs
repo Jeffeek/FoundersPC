@@ -51,11 +51,6 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
                .HasColumnType("nvarchar")
                .IsRequired();
 
-        builder.Property(x => x.EmailConfirmed)
-               .HasColumnName("EmailConfirmed")
-               .HasColumnType("bit")
-               .IsRequired();
-
         builder.Property(x => x.PasswordHash)
                .HasColumnName("PasswordHash")
                .HasColumnType("nvarchar")
@@ -73,5 +68,6 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
         builder.Ignore(x => x.NormalizedEmail);
         builder.Ignore(x => x.LockoutEnd);
         builder.Ignore(x => x.LockoutEnabled);
+        builder.Ignore(x => x.EmailConfirmed);
     }
 }

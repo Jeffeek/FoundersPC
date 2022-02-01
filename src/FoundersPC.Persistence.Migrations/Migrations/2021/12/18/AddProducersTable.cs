@@ -11,12 +11,12 @@ public class AddProducersTable : Migration
     {
         Create.Table("Producers")
               .WithColumn("Id").AsInt32().NotNullable().Identity().PrimaryKey("PK_Producers")
-              .WithFullAuditableColumns("Producers")
               .WithColumn("ShortName").AsString().Nullable()
               .WithColumn("FullName").AsString().NotNullable()
               .WithColumn("CountryId").AsInt32().Nullable().ForeignKey("FK_Producers_Metadata_CountryId", "Metadata", "Id")
               .WithColumn("Website").AsString().Nullable()
-              .WithColumn("FoundationDate").AsDateTime().Nullable();
+              .WithColumn("FoundationDate").AsDateTime().Nullable()
+              .WithFullAuditableColumns("Producers");
     }
 
     public override void Down()

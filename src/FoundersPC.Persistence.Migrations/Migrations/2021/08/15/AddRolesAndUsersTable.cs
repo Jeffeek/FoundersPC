@@ -58,56 +58,40 @@ public class AddRolesAndUsersTable : MigrationBase
                        Id = 1,
                        RoleId = 1,
                        Email = "system.system@founderspc.com",
-                       EmailConfirmed = true,
-                       IsActive = true,
                        IsBlocked = false,
                        Login = "System",
                        RegistrationDate = DateTime.UtcNow,
-                       SendMessageOnApiRequest = true,
-                       SendMessageOnEntrance = true,
-                       PasswordHash = "$2b$10$wAzjgokpk61UNscVxcA1GuuMQ7ypYIUPwznP6WyNSxTqKfKTurANW"
+                       PasswordHash = "$2b$10$Sa9JgA3l5xK/PiRcifaX..Ag78IwNoKqN1pv5w9P9XbCCI2gcApL6" //123456
                    })
               .Row(new
                    {
                        Id = 2,
                        RoleId = 2,
                        Email = "system.admin@founderspc.com",
-                       EmailConfirmed = true,
-                       IsActive = true,
                        IsBlocked = false,
                        Login = "System",
                        RegistrationDate = DateTime.UtcNow,
-                       SendMessageOnApiRequest = true,
-                       SendMessageOnEntrance = true,
-                       PasswordHash = "$2b$10$9XdL15RJ.uzT3voIZ.UUVOzEOgrelFeH0rIyL9CYFcMffFwpoWVv6"
+                       PasswordHash = "$2b$10$D5Rp9tDOiTe4gsAiL5TyoO/4bBUJ/jZBj5kql3leDS.SooWY.S6d." //123456
                    })
               .Row(new
                    {
                        Id = 3,
                        RoleId = 3,
                        Email = "system.manager@founderspc.com",
-                       EmailConfirmed = true,
-                       IsActive = true,
                        IsBlocked = false,
                        Login = "System",
                        RegistrationDate = DateTime.UtcNow,
-                       SendMessageOnApiRequest = true,
-                       SendMessageOnEntrance = true,
-                       PasswordHash = "$2b$10$Se5VVLreFYE9lrWDPDFvNONapIBc8yiV90vqfD787RvJKISObYudq"
+                       PasswordHash = "$2b$10$pGjlIrjkULToE765j00ZLuDe2uMATUruRCRZBg.Q/hkV3lNnjjNuO" //123456
                    })
               .Row(new
                    {
                        Id = 4,
                        RoleId = 4,
                        Email = "system.user@founderspc.com",
-                       EmailConfirmed = true,
-                       IsActive = true,
                        IsBlocked = false,
                        Login = "System",
                        RegistrationDate = DateTime.UtcNow,
-                       SendMessageOnApiRequest = true,
-                       SendMessageOnEntrance = true,
-                       PasswordHash = "$2b$10$erUjwlGkqPirREocjAPbge2wDkYoHkgs.Vgf0eS6x5nk8U1aA6CAq"
+                       PasswordHash = "$2b$10$82A0FoDt7Ky75Cs5HGVGQem0oSZZrCjHYnsEh.reO.6c6koDAXuSC" //123456
                    });
     }
 

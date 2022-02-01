@@ -40,5 +40,17 @@ public class AddTokenTables : Migration
               .Include("RequestDate");
     }
 
-    public override void Down() { }
+    public override void Down()
+    {
+        Delete.Index("IX_AccessTokensHistory_RequestUserId_RequestDate")
+              .OnTable("AccessTokensHistory")
+              .OnColumns("RequestUserId", "RequestDate");
+
+        Delete.Index("IX_AccessTokensHistory_AccessTokenId")
+              .OnTable("AccessTokensHistory")
+              .OnColumn("AccessTokenId");
+
+        Delete.Table("AccessTokensHistory");
+        Delete.Table("AccessTokens");
+    }
 }

@@ -7,6 +7,6 @@ namespace FoundersPC.Application.Features.Producer;
 
 public class GetAllRequest : SortedPagedFilter, IRequest<IPagedList<ProducerViewInfo>>
 {
-    public string? FreeText { get; set; }
+    public string? SearchText { get; set; }
     public bool? ShowDeleted { get; set; }
 }

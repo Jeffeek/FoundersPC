@@ -1,6 +1,5 @@
 ﻿using FoundersPC.Domain.Entities.Hardware.Metadata;
 using FoundersPC.Domain.Enums;
-using FoundersPC.Persistence.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -55,7 +54,5 @@ public class HardwareMetadataConfiguration : IEntityTypeConfiguration<HardwareMe
                .HasValue<HardDriveDiskMetadata>((int)HardwareType.HDD)
                .HasValue<SolidStateDriveMetadata>((int)HardwareType.SSD)
                .IsComplete();
-
-        builder.AddAuditableColumns();
     }
 }

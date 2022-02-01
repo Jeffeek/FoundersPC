@@ -124,6 +124,7 @@ public class RequestToQueryMappingProfile : Profile
         CreateMap<Features.Client.Producer.GetRequest, Features.Client.Producer.GetQuery>();
         CreateMap<Features.Producer.UpdateRequest, Features.Producer.GetQuery>();
         CreateMap<Features.Producer.DeleteRequest, Features.Producer.GetQuery>();
+        CreateMap<Features.Producer.RestoreRequest, Features.Producer.GetQuery>();
 
         //User Info
         CreateMap<Features.UserInformation.GetAllRequest, Features.UserInformation.GetAllQuery>();

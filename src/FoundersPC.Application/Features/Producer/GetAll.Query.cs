@@ -5,7 +5,7 @@ using FoundersPC.SharedKernel.Query;
 
 namespace FoundersPC.Application.Features.Producer;
 
-public class GetAllQuery : Query<Domain.Entities.Hardware.Producer>
+public class GetAllQuery : SortedQuery<Domain.Entities.Hardware.Producer>
 {
     public string? SearchText { get; set; }
     public bool? ShowDeleted { get; set; }

@@ -15,6 +15,13 @@ public class AddMetadataTable : Migration
               .WithColumn("Name").AsString(512).NotNullable()
               .WithColumn("Type").AsInt32().NotNullable()
               .WithFullAuditableColumns("Metadata");
+
+        Create.Index("IX_Metadata_Type_Name")
+              .OnTable("Metadata")
+              .OnColumn("Type").Ascending()
+              .OnColumn("Name").Ascending()
+              .WithOptions()
+              .Unique();
     }
 
     public override void Down()

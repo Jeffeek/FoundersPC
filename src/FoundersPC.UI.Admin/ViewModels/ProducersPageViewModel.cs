@@ -198,18 +198,6 @@ public class ProducersPageViewModel : BindableBase
 
     #endregion
 
-    #region SelectedProducer
-
-    private ProducerInfoViewModel? _selectedProducer;
-
-    public ProducerInfoViewModel? SelectedProducer
-    {
-        get => _selectedProducer;
-        set => SetProperty(ref _selectedProducer, value);
-    }
-
-    #endregion
-
     #region OrderByList
 
     private ObservableCollection<string> _orderByList = default!;
@@ -237,7 +225,6 @@ public class ProducersPageViewModel : BindableBase
     private async Task SearchProducersAsync()
     {
         ChangeLoadingState(true);
-        SelectedProducer = null;
 
         try
         {

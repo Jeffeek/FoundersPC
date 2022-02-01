@@ -140,7 +140,6 @@
                     d:ItemsSource="{d:SampleData ItemCount=5}"
                     ItemsSource="{Binding ProducersList, IsAsync=True}"
                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                    SelectedItem="{Binding SelectedProducer}"
                     SelectionMode="Single"
                     Style="{StaticResource MaterialDesignListView}">
                     <ListView.ItemsPanel>

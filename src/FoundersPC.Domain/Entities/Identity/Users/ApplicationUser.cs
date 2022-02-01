@@ -13,7 +13,7 @@ namespace FoundersPC.Domain.Entities.Identity.Users;
 public class ApplicationUser : IdentityUser<int>, IIdentityItem
 {
     public string Login { get; set; } = default!;
-    public DateTime RegistrationDate { get; set; } = default!;
+    public DateTime RegistrationDate { get; set; }
     public int RoleId { get; set; }
     public bool IsBlocked { get; set; }
     public ApplicationRole ApplicationRole { get; set; } = default!;

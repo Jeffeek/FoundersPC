@@ -50,12 +50,6 @@ public class HardwareMappingProfile : Profile
         CreateMap<HardwareInfo, HardwareMetadata>()
             .IncludeAllDerived()
             .ForMember(dest => dest.HardwareTypeId, opt => opt.Ignore())
-            .ForMember(dest => dest.Created, opt => opt.Ignore())
-            .ForMember(dest => dest.LastModified, opt => opt.Ignore())
-            .ForMember(dest => dest.LastModifiedBy, opt => opt.Ignore())
-            .ForMember(dest => dest.CreatedBy, opt => opt.Ignore())
-            .ForMember(dest => dest.LastModifiedById, opt => opt.Ignore())
-            .ForMember(dest => dest.CreatedById, opt => opt.Ignore())
             .ForMember(dest => dest.Hardware, opt => opt.Ignore())
             .ForMember(dest => dest.HardwareType, opt => opt.Ignore());
 

@@ -26,7 +26,7 @@ public class HardwareConfiguration : IEntityTypeConfiguration<Domain.Entities.Ha
                .IsRequired();
 
         builder.HasOne(x => x.BaseMetadata)
-               .WithOne()
+               .WithOne(x => x.Hardware)
                .HasForeignKey<HardwareMetadata>(x => x.Id)
                .HasPrincipalKey<Domain.Entities.Hardware.Hardware>(x => x.Id)
                .IsRequired();

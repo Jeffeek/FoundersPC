@@ -11,6 +11,7 @@ using FoundersPC.Application.Features.Hardware.VideoCard.Models;
 using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.SharedKernel.Extensions;
+using FoundersPC.SharedKernel.Filter;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
@@ -23,12 +24,15 @@ public class MappingProfile : Profile
     {
         #region FilterOptions
 
+        CreateMap<FilterOptions, SortedPagedFilter>()
+            .IncludeAllDerived()
+            .ForMember(dest => dest.PageSize, opt => opt.MapFrom(src => src.Pagination.CurrentPageSize))
+            .ForMember(dest => dest.PageNumber, opt => opt.MapFrom(src => src.Pagination.CurrentPage))
+            .ForMember(dest => dest.SortColumn, opt => opt.MapFrom(src => src.OrderSettings.SortColumn.RemoveSpaces()));
+
         CreateMap<FilterOptions, GetAllHardwareRequest>()
             .IncludeAllDerived()
-            .ForMember(dest => dest.PageNumber, opt => opt.MapFrom(src => src.Pagination.CurrentPage))
-            .ForMember(dest => dest.PageSize, opt => opt.MapFrom(src => src.Pagination.CurrentPageSize))
-            .ForMember(dest => dest.SortColumn, opt => opt.MapFrom(src => src.OrderSettings.SortColumn.RemoveSpaces()))
-            .ForMember(dest => dest.SearchText, opt => opt.MapFrom(src => src.SearchText));
+            .ForMember(dest => dest.IsAscending, opt => opt.MapFrom(src => src.OrderSettings.IsAscending));
 
         CreateMap<FilterOptions, Application.Features.Hardware.Case.GetAllRequest>();
         CreateMap<FilterOptions, Application.Features.Hardware.HardDriveDisk.GetAllRequest>();
@@ -38,9 +42,11 @@ public class MappingProfile : Profile
         CreateMap<FilterOptions, Application.Features.Hardware.RandomAccessMemory.GetAllRequest>();
         CreateMap<FilterOptions, Application.Features.Hardware.SolidStateDrive.GetAllRequest>();
         CreateMap<FilterOptions, Application.Features.Hardware.VideoCard.GetAllRequest>();
-        CreateMap<FilterOptions, Application.Features.Producer.GetAllRequest>();
+        CreateMap<FilterOptions, Application.Features.Producer.GetAllRequest>()
+            .ForMember(dest => dest.IsAscending, opt => opt.MapFrom(src => src.OrderSettings.IsAscending));
         CreateMap<FilterOptions, Application.Features.UserInformation.GetAllRequest>()
-            .ForMember(dest => dest.ShowBlocked, opt => opt.MapFrom(src => src.ShowDeleted));
+            .ForMember(dest => dest.ShowBlocked, opt => opt.MapFrom(src => src.ShowDeleted))
+            .ForMember(dest => dest.IsAscending, opt => opt.MapFrom(src => src.OrderSettings.IsAscending));
 
         #endregion
 

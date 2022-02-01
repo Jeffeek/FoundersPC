@@ -108,6 +108,13 @@ public class UserLoginPageViewModel : BindableBase
         RefreshLocator.FireSuccessLogIn();
     }
 
-    private async Task<ApplicationUser?> GetUserAsync() =>
-        await _userManager.FindByEmailAsync(LoginOrEmail) ?? await _userManager.FindByNameAsync(LoginOrEmail);
+    private async Task<ApplicationUser?> GetUserAsync()
+    {
+        var byemail = await _userManager.FindByEmailAsync(LoginOrEmail);
+
+        if (byemail != null)
+            return byemail;
+
+        return await _userManager.FindByNameAsync(LoginOrEmail);
+    }
 }

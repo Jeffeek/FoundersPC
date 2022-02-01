@@ -16,16 +16,6 @@ public abstract class GetAllHardwareQuery<THardware> : SortedQuery<THardware>
     {
         var result = base.GetExpression();
 
-        if (!String.IsNullOrEmpty(SearchText))
-            SearchText.Split()
-                      .ForEach(term =>
-                               {
-                                   result = result.And(x => x.BaseMetadata.Title.Contains(term)
-                                                            || x.BaseMetadata.Producer.FullName.Contains(term)
-                                                            || x.BaseMetadata.Producer.ShortName != null && x.BaseMetadata.Producer.ShortName.Contains(term)
-                                                            || x.BaseMetadata.HardwareType.Name.Contains(term));
-                               });
-
         if (ShowDeleted is false)
             result = result.And(x => !x.IsDeleted);
 

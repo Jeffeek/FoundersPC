@@ -14,7 +14,6 @@ public class AddHardwareMetadataTable : Migration
         //Base
         Create.Table("HardwareMetadata")
               .WithColumn("Id").AsInt32().ForeignKey("FK_HardwareMetadata_Hardware", "Hardware", "Id")
-              .AddAuditableColumns("HardwareMetadata")
               .WithColumn("ProducerId").AsInt32().NotNullable().ForeignKey("FK_HardwareMetadata_Producers_ProducerId", "Producers", "Id").OnDeleteOrUpdate(Rule.Cascade)
               .WithColumn("Title").AsString().NotNullable()
               .WithColumn("HardwareTypeId").AsInt32().NotNullable().ForeignKey("FK_HardwareMetadata_HardwareType_HardwareTypeId", "HardwareType", "Id").OnUpdate(Rule.None)

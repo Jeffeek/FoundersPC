@@ -28,8 +28,8 @@ public class AddHardwareTable : Migration
 
         Create.Table("Hardware")
               .WithColumn("Id").AsInt32().Identity().PrimaryKey("PK_Hardware")
-              .WithFullAuditableColumns("Hardware")
-              .WithColumn("HardwareTypeId").AsInt32().NotNullable().ForeignKey("FK_Hardware_HardwareType_HardwareTypeId", "HardwareType", "Id").OnDeleteOrUpdate(Rule.Cascade);
+              .WithColumn("HardwareTypeId").AsInt32().NotNullable().ForeignKey("FK_Hardware_HardwareType_HardwareTypeId", "HardwareType", "Id").OnDeleteOrUpdate(Rule.Cascade)
+              .WithFullAuditableColumns("Hardware");
     }
 
     public override void Down()
