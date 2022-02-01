@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using AutoMapper;
-using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.UI.Admin.Locators;
-using FoundersPC.UI.Admin.Models;
 using MediatR;
 using MvvmCross.Commands;
 using Prism.Mvvm;
@@ -30,6 +27,7 @@ public class UsersPageViewModel : BindableBase
         TitleBarLocator = titleBarLocator;
         _selectedObjectLocator = selectedObjectLocator;
         FilterOptions = filterOptions;
+        TitleBarLocator.IsLoadingChanged += _ => ApplySearchCommand.RaiseCanExecuteChanged();
 
         OrderByList = new()
                       {

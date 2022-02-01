@@ -30,6 +30,7 @@ public class ProducersPageViewModel : BindableBase
         SelectedObjectLocator = selectedObjectLocator;
         DetailsPageId = TitleBarConstants.ProducerDetailsPageId;
         FilterOptions = filterOptions;
+        TitleBarLocator.IsLoadingChanged += _ => ApplySearchCommand.RaiseCanExecuteChanged();
 
         OrderByList = new()
                       {

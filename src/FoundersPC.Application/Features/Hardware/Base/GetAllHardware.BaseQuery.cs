@@ -9,7 +9,7 @@ namespace FoundersPC.Application.Features.Hardware.Base;
 public abstract class GetAllHardwareQuery<THardware> : SortedQuery<THardware>
     where THardware : Domain.Entities.Hardware.Hardware
 {
-    public bool? IsDeleted { get; set; }
+    public bool? ShowDeleted { get; set; }
     public string? SearchText { get; set; }
 
     public override Expression<Func<THardware, bool>> GetExpression()
@@ -26,8 +26,8 @@ public abstract class GetAllHardwareQuery<THardware> : SortedQuery<THardware>
                                                             || x.BaseMetadata.HardwareType.Name.Contains(term));
                                });
 
-        if (IsDeleted.HasValue)
-            result = result.And(x => x.IsDeleted == IsDeleted);
+        if (ShowDeleted is false)
+            result = result.And(x => !x.IsDeleted);
 
         return result;
     }

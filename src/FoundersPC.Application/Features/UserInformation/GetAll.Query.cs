@@ -28,8 +28,8 @@ public class GetAllQuery : SortedQuery<ApplicationUser>
                                                             || x.Tokens.Any(z => z.Token.Contains(term)));
                                });
 
-        if (ShowBlocked.HasValue)
-            result = result.And(x => x.IsBlocked == ShowBlocked);
+        if (ShowBlocked is false)
+            result = result.And(x => !x.IsBlocked);
 
         if (!RoleIds.IsEmpty())
             result = result.And(x => RoleIds!.Contains(x.RoleId));

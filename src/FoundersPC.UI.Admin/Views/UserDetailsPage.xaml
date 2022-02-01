@@ -50,7 +50,7 @@
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.1*" />
                 <RowDefinition />
             </Grid.RowDefinitions>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
@@ -83,115 +83,116 @@
                 </StackPanel>
             </StackPanel>
             <ScrollViewer
-                    Grid.Row="1"
-                    Margin="0,10,0,0"
-                    materialDesignThemes:ScrollBarAssist.ButtonsVisibility="Visible"
-                    materialDesignThemes:ScrollBarAssist.ThumbCornerRadius="10"
-                    materialDesignThemes:ScrollBarAssist.ThumbHeight="20"
-                    materialDesignThemes:ScrollBarAssist.ThumbWidth="20"
-                    materialDesignThemes:ScrollViewerAssist.CornerRectangleVisibility="Visible"
-                    materialDesignThemes:ScrollViewerAssist.IgnorePadding="True"
-                    materialDesignThemes:ScrollViewerAssist.IsAutoHideEnabled="True"
-                    materialDesignThemes:ScrollViewerAssist.ShowSeparators="True"
-                    HorizontalScrollBarVisibility="Disabled"
-                    VerticalScrollBarVisibility="Auto">
-                    <ListView
-                        d:ItemsSource="{d:SampleData ItemCount=5}"
-                        ItemsSource="{Binding EditableUser.Tokens, IsAsync=True}"
-                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                        SelectedItem="{Binding SelectedToken}"
-                        SelectionMode="Single"
-                        Style="{StaticResource MaterialDesignListView}">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel />
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        <ListView.ItemContainerStyle>
-                            <Style BasedOn="{StaticResource MaterialDesignListBoxItem}" TargetType="{x:Type ListBoxItem}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="DarkGray" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ListView.ItemContainerStyle>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <materialDesignThemes:Card
-                                    MinWidth="100"
-                                    materialDesignThemes:ShadowAssist.ShadowDepth="Depth0"
-                                    Background="CornflowerBlue"
-                                    Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
-                                    UniformCornerRadius="5">
-                                    <StackPanel Margin="10">
-                                        <materialDesignThemes:PopupBox
-                                            HorizontalAlignment="Right"
-                                            StaysOpen="True">
-                                            <materialDesignThemes:PopupBox.ToggleContent>
-                                                <materialDesignThemes:PackIcon
-                                                    Width="20"
-                                                    Height="20"
-                                                    Foreground="White"
-                                                    Kind="MoreHoriz" />
-                                            </materialDesignThemes:PopupBox.ToggleContent>
-                                            <StackPanel Orientation="Vertical">
-                                                <Button
-                                                    Padding="10"
-                                                    VerticalContentAlignment="Center"
-                                                    mah:VisibilityHelper.IsVisible="{calcBinding:Binding !IsBlocked}"
-                                                    Command="{Binding DataContext.BlockAccessTokenCommand, RelativeSource={RelativeSource AncestorType=ListView}, IsAsync=True}"
-                                                    CommandParameter="{Binding .}">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <materialDesignThemes:PackIcon Foreground="Red" Kind="Block" />
-                                                        <Label
-                                                            Margin="5,0,0,0"
-                                                            Padding="0"
-                                                            Content="Block"
-                                                            Foreground="Red" />
-                                                    </StackPanel>
-                                                </Button>
-                                                <Button
-                                                    Padding="10"
-                                                    VerticalContentAlignment="Center"
-                                                    mah:VisibilityHelper.IsVisible="{Binding IsBlocked}"
-                                                    Command="{Binding DataContext.UnblockAccessTokenCommand, RelativeSource={RelativeSource AncestorType=ListView}, IsAsync=True}"
-                                                    CommandParameter="{Binding .}">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <materialDesignThemes:PackIcon Foreground="Green" Kind="Restore" />
-                                                        <Label
-                                                            Margin="5,0,0,0"
-                                                            Padding="0"
-                                                            Content="Unblock"
-                                                            Foreground="Green" />
-                                                    </StackPanel>
-                                                </Button>
-                                            </StackPanel>
-                                        </materialDesignThemes:PopupBox>
-                                        <Label Content="Token" />
-                                        <Label Content="{Binding Token}" />
-                                        <Label Content="From" />
-                                        <Label Content="{Binding ActiveFrom}" ContentStringFormat="dd.MM.yyyy hh:mm" />
-                                        <Label Content="To" />
-                                        <Label Content="{Binding ActiveTo}" ContentStringFormat="dd.MM.yyyy hh:mm" />
-                                    </StackPanel>
-                                </materialDesignThemes:Card>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                        <ListView.Resources>
-                            <Style TargetType="{x:Type ListViewItem}">
-                                <Setter Property="Margin" Value="0,1,0,0" />
-                                <Setter Property="Height" Value="21" />
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="Foreground" Value="Blue" />
-                                        <Setter Property="Cursor" Value="Hand" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ListView.Resources>
-                    </ListView>
-                </ScrollViewer>
+                Grid.Row="1"
+                Margin="0,10,0,0"
+                materialDesignThemes:ScrollBarAssist.ButtonsVisibility="Visible"
+                materialDesignThemes:ScrollBarAssist.ThumbCornerRadius="10"
+                materialDesignThemes:ScrollBarAssist.ThumbHeight="20"
+                materialDesignThemes:ScrollBarAssist.ThumbWidth="20"
+                materialDesignThemes:ScrollViewerAssist.CornerRectangleVisibility="Visible"
+                materialDesignThemes:ScrollViewerAssist.IgnorePadding="True"
+                materialDesignThemes:ScrollViewerAssist.IsAutoHideEnabled="True"
+                materialDesignThemes:ScrollViewerAssist.ShowSeparators="True"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto">
+                <ListView
+                    d:ItemsSource="{d:SampleData ItemCount=5}"
+                    ItemsSource="{Binding EditableUser.Tokens}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    SelectionMode="Single"
+                    Style="{StaticResource MaterialDesignListView}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource MaterialDesignListBoxItem}" TargetType="{x:Type ListBoxItem}">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="DarkGray" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <materialDesignThemes:Card
+                                MinWidth="100"
+                                materialDesignThemes:ShadowAssist.ShadowDepth="Depth0"
+                                Background="CornflowerBlue"
+                                Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                UniformCornerRadius="5">
+                                <StackPanel Margin="10">
+                                    <materialDesignThemes:PopupBox HorizontalAlignment="Right" StaysOpen="True">
+                                        <materialDesignThemes:PopupBox.ToggleContent>
+                                            <materialDesignThemes:PackIcon
+                                                Width="20"
+                                                Height="20"
+                                                Foreground="White"
+                                                Kind="MoreHoriz" />
+                                        </materialDesignThemes:PopupBox.ToggleContent>
+                                        <StackPanel Orientation="Vertical">
+                                            <Button
+                                                Padding="10"
+                                                VerticalContentAlignment="Center"
+                                                mah:VisibilityHelper.IsCollapsed="{Binding IsBlocked}"
+                                                Command="{Binding DataContext.BlockAccessTokenCommand, RelativeSource={RelativeSource AncestorType=ListView}}"
+                                                CommandParameter="{Binding .}"
+                                                IsEnabled="{calcBinding:Binding !DataContext.IsUpdating,
+                                                                                RelativeSource={RelativeSource AncestorType=ListView}}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <materialDesignThemes:PackIcon Foreground="Red" Kind="Block" />
+                                                    <Label
+                                                        Margin="5,0,0,0"
+                                                        Padding="0"
+                                                        Content="Block"
+                                                        Foreground="Red" />
+                                                </StackPanel>
+                                            </Button>
+                                            <Button
+                                                Padding="10"
+                                                VerticalContentAlignment="Center"
+                                                mah:VisibilityHelper.IsVisible="{Binding IsBlocked}"
+                                                Command="{Binding DataContext.UnblockAccessTokenCommand, RelativeSource={RelativeSource AncestorType=ListView}}"
+                                                CommandParameter="{Binding .}"
+                                                IsEnabled="{calcBinding:Binding !DataContext.IsUpdating,
+                                                                                RelativeSource={RelativeSource AncestorType=ListView}}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <materialDesignThemes:PackIcon Foreground="Green" Kind="Restore" />
+                                                    <Label
+                                                        Margin="5,0,0,0"
+                                                        Padding="0"
+                                                        Content="Unblock"
+                                                        Foreground="Green" />
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </materialDesignThemes:PopupBox>
+                                    <Label Content="Token" />
+                                    <Label Content="{Binding Token}" />
+                                    <Label Content="From" />
+                                    <Label Content="{Binding ActiveFrom}" ContentStringFormat="dd.MM.yyyy hh:mm" />
+                                    <Label Content="To" />
+                                    <Label Content="{Binding ActiveTo}" ContentStringFormat="dd.MM.yyyy hh:mm" />
+                                </StackPanel>
+                            </materialDesignThemes:Card>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Resources>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Margin" Value="0,1,0,0" />
+                            <Setter Property="Height" Value="21" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Foreground" Value="Blue" />
+                                    <Setter Property="Cursor" Value="Hand" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.Resources>
+                </ListView>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

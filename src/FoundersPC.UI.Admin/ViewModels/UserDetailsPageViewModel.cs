@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.UI.Admin.Locators;
@@ -24,6 +25,10 @@ public class UserDetailsPageViewModel : BindableBase
         _mediator = mediator;
         _mapper = mapper;
         selectedObjectLocator.SelectedUserChanged += OnSelectedUserChanged;
+        _titleBarLocator.IsLoadingChanged += _ =>
+                                             {
+                                                 GoBackCommand.RaiseCanExecuteChanged();
+                                             };
     }
 
     private void OnSelectedUserChanged(UserInfo? obj)
@@ -44,6 +49,8 @@ public class UserDetailsPageViewModel : BindableBase
         {
             SetProperty(ref _isUpdating, value);
             GoBackCommand.RaiseCanExecuteChanged();
+            BlockAccessTokenCommand.RaiseCanExecuteChanged();
+            UnblockAccessTokenCommand.RaiseCanExecuteChanged();
         }
     }
 
@@ -56,21 +63,6 @@ public class UserDetailsPageViewModel : BindableBase
             IsUpdating = state;
         else
             System.Windows.Application.Current.Dispatcher.Invoke(() => IsUpdating = state);
-    }
-
-    #endregion
-
-    #region SelectedToken
-
-    private AccessTokenViewModel? _selectedToken;
-    public AccessTokenViewModel? SelectedToken
-    {
-        get => _selectedToken;
-        set
-        {
-            SetProperty(ref _selectedToken, value);
-            GoBackCommand.RaiseCanExecuteChanged();
-        }
     }
 
     #endregion
@@ -93,15 +85,22 @@ public class UserDetailsPageViewModel : BindableBase
     #region GoBackCommand
 
     private MvxCommand? _goBackCommand;
-
     public MvxCommand GoBackCommand =>
         _goBackCommand ??= new(GoBack,
-                               () => !IsUpdating);
+                               CanGoBack);
 
     private void GoBack()
     {
         EditableUser = null;
         _titleBarLocator.CurrentFrameId = TitleBarConstants.UsersPageId;
+    }
+
+    private bool CanGoBack()
+    {
+        if (IsUpdating)
+            return false;
+
+        return !_titleBarLocator.IsLoading;
     }
 
     #endregion
@@ -111,17 +110,25 @@ public class UserDetailsPageViewModel : BindableBase
     private MvxAsyncCommand<AccessTokenViewModel>? _blockAccessTokenCommand;
 
     public MvxAsyncCommand<AccessTokenViewModel> BlockAccessTokenCommand =>
-        _blockAccessTokenCommand ??= new(x =>
-                                         {
-                                             x.IsBlocked = true;
-                                             return BlockAccessTokenAsync(x.Id);
-                                         });
+        _blockAccessTokenCommand ??= new(BlockAccessTokenAsync, _ => true, true);
 
-    private async Task BlockAccessTokenAsync(int id)
+    private async Task BlockAccessTokenAsync(AccessTokenViewModel accessToken)
     {
+        accessToken.IsBlocked = true;
+        ChangeLoadingState(true);
         _titleBarLocator.IsLoading = true;
-        await _mediator.Send(new Application.Features.AccessToken.BlockRequest { Id = id });
+
+        try
+        {
+            await _mediator.Send(new Application.Features.AccessToken.BlockRequest { Id = accessToken.Id });
+        }
+        catch (Exception e)
+        {
+            RefreshLocator.FireMessaging(false, e.Message);
+        }
+
         _titleBarLocator.IsLoading = false;
+        ChangeLoadingState(false);
     }
 
     #endregion
@@ -130,17 +137,25 @@ public class UserDetailsPageViewModel : BindableBase
 
     private MvxAsyncCommand<AccessTokenViewModel>? _unblockAccessTokenCommand;
     public MvxAsyncCommand<AccessTokenViewModel> UnblockAccessTokenCommand =>
-        _unblockAccessTokenCommand ??= new(x =>
-                                           {
-                                               x.IsBlocked = false;
-                                               return UnblockAccessTokenAsync(x.Id);
-                                           });
+        _unblockAccessTokenCommand ??= new(UnblockAccessTokenAsync, _ => true, true);
 
-    private async Task UnblockAccessTokenAsync(int id)
+    private async Task UnblockAccessTokenAsync(AccessTokenViewModel accessToken)
     {
+        accessToken.IsBlocked = false;
+        ChangeLoadingState(true);
         _titleBarLocator.IsLoading = true;
-        await _mediator.Send(new Application.Features.AccessToken.UnblockRequest { Id = id });
+
+        try
+        {
+            await _mediator.Send(new Application.Features.AccessToken.UnblockRequest { Id = accessToken.Id });
+        }
+        catch (Exception e)
+        {
+            RefreshLocator.FireMessaging(false, e.Message);
+        }
+
         _titleBarLocator.IsLoading = false;
+        ChangeLoadingState(false);
     }
 
     #endregion

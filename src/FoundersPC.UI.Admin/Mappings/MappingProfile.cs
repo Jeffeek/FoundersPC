@@ -25,7 +25,6 @@ public class MappingProfile : Profile
 
         CreateMap<FilterOptions, GetAllHardwareRequest>()
             .IncludeAllDerived()
-            .ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(src => src.ShowDeleted))
             .ForMember(dest => dest.PageNumber, opt => opt.MapFrom(src => src.Pagination.CurrentPage))
             .ForMember(dest => dest.PageSize, opt => opt.MapFrom(src => src.Pagination.CurrentPageSize))
             .ForMember(dest => dest.SortColumn, opt => opt.MapFrom(src => src.OrderSettings.SortColumn.RemoveSpaces()))
@@ -40,7 +39,8 @@ public class MappingProfile : Profile
         CreateMap<FilterOptions, Application.Features.Hardware.SolidStateDrive.GetAllRequest>();
         CreateMap<FilterOptions, Application.Features.Hardware.VideoCard.GetAllRequest>();
         CreateMap<FilterOptions, Application.Features.Producer.GetAllRequest>();
-        CreateMap<FilterOptions, Application.Features.UserInformation.GetAllRequest>();
+        CreateMap<FilterOptions, Application.Features.UserInformation.GetAllRequest>()
+            .ForMember(dest => dest.ShowBlocked, opt => opt.MapFrom(src => src.ShowDeleted));
 
         #endregion
 

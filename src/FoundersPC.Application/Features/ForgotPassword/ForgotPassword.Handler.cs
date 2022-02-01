@@ -34,7 +34,7 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordRequest, Forg
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
         await db.BeginTransactionAsync(cancellationToken);
 
-        var result = false;
+        bool result;
 
         var user = await db.Set<ApplicationUser>()
                            .FirstOrDefaultAsync(x => x.Email == request.Email, cancellationToken);
@@ -73,7 +73,7 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordRequest, Forg
                    };
         }
 
-        await db.Database.RollbackTransactionAsync(cancellationToken);
+        await db.RollbackTransactionAsync(cancellationToken);
 
         return new()
                {

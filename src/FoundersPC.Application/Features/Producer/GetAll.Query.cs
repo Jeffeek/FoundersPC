@@ -23,8 +23,8 @@ public class GetAllQuery : Query<Domain.Entities.Hardware.Producer>
                                                             || x.Website != null && x.Website.Contains(term));
                                });
 
-        if (ShowDeleted.HasValue)
-            result = result.And(x => x.IsDeleted == ShowDeleted);
+        if (ShowDeleted is false)
+            result = result.And(x => !x.IsDeleted);
 
         return result;
     }

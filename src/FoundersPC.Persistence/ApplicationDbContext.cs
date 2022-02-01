@@ -29,18 +29,8 @@ public class ApplicationDbContext : DbContext
         _dateTimeService = dateTimeService;
     }
 
-    public DbSet<Processor> Processors { get; set; }
-    public DbSet<VideoCard> VideoCards { get; set; }
-    public DbSet<HardDriveDisk> HardDrives { get; set; }
-    public DbSet<SolidStateDrive> SolidStateDrives { get; set; }
-    public DbSet<Motherboard> Motherboards { get; set; }
-    public DbSet<PowerSupply> PowerSupplies { get; set; }
-    public DbSet<Producer> Producers { get; set; }
-    public DbSet<RandomAccessMemory> RandomAccessMemory { get; set; }
-    public DbSet<Case> Cases { get; set; }
     public DbSet<ApplicationUser> Users { get; set; }
     public DbSet<ApplicationRole> Roles { get; set; }
-    public DbSet<AccessToken> AccessTokens { get; set; }
 
     public async Task BeginTransactionAsync(CancellationToken cancellationToken = default)
     {

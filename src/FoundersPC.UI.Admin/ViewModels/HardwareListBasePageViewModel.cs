@@ -50,6 +50,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
         HardwareType = hardwareType;
         DetailsPageId = detailsPageId;
         FilterOptions = filterOptions;
+        TitleBarLocator.IsLoadingChanged += _ => ApplySearchCommand.RaiseCanExecuteChanged();
 
         OrderByList = new()
                       {

@@ -7,7 +7,6 @@ using AutoMapper.QueryableExtensions;
 using FoundersPC.Application.Features.Pricing.Models;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.Application.Services;
-using FoundersPC.Domain.Entities.Identity.Tokens;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Domain.Enums;
 using FoundersPC.Persistence;
