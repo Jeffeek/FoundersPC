@@ -73,9 +73,9 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
 
         return accessToken.Type switch
                {
-                   TokenPackageType.Personal  => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Personal.RequestLimitInSeconds,
-                   TokenPackageType.ProPlan   => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.ProPlan.RequestLimitInSeconds,
-                   TokenPackageType.Unlimited => (DateTime.Now - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Unlimited.RequestLimitInSeconds,
+                   TokenPackageType.Personal  => (DateTime.UtcNow - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Personal.RequestLimitInSeconds,
+                   TokenPackageType.ProPlan   => (DateTime.UtcNow - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.ProPlan.RequestLimitInSeconds,
+                   TokenPackageType.Unlimited => (DateTime.UtcNow - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Unlimited.RequestLimitInSeconds,
                    _                          => throw new ArgumentOutOfRangeException(nameof(accessToken.Type))
                };
     }
@@ -84,7 +84,7 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
         Task.FromResult(!accessToken.IsBlocked);
 
     private static Task<bool> CheckTokenExpiringAsync(AccessToken accessToken) =>
-        Task.FromResult(accessToken.ExpirationDate > DateTime.Now);
+        Task.FromResult(accessToken.ExpirationDate > DateTime.UtcNow);
 
     private async Task AddAccessTokenHistoryAsync(ApplicationDbContext dbContext, AccessToken accessToken)
     {
@@ -93,7 +93,7 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
         var history = new AccessTokenHistory
                       {
                           AccessTokenId = accessToken.Id,
-                          RequestDate = DateTime.Now,
+                          RequestDate = DateTime.UtcNow,
                           RequestUserId = _currentUserService.UserId == 0 ? null : _currentUserService.UserId
                       };
 

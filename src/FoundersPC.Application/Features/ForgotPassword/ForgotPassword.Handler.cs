@@ -32,7 +32,6 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordRequest, Forg
     public async Task<ForgotPasswordResponse> Handle(ForgotPasswordRequest request, CancellationToken cancellationToken)
     {
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
-        await db.BeginTransactionAsync(cancellationToken);
 
         bool result;
 
@@ -43,12 +42,14 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordRequest, Forg
             return new()
                    {
                        Email = request.Email,
-                       Message = "Not found user with provided email"
+                       Message = "Not found user with provided email",
+                       IsSuccess = false
                    };
 
         var newPassword = PasswordEncryptorService.GeneratePassword(10);
         var hashedPassword = _passwordEncryptorService.EncryptPassword(newPassword);
 
+        await db.BeginTransactionAsync(cancellationToken);
         user.PasswordHash = hashedPassword;
 
         try
@@ -69,7 +70,8 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordRequest, Forg
             return new()
                    {
                        Email = request.Email,
-                       Message = "New password was sent to your email :)"
+                       Message = "New password was sent to your email :)",
+                       IsSuccess = true
                    };
         }
 
@@ -78,7 +80,8 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordRequest, Forg
         return new()
                {
                    Email = request.Email,
-                   Message = "Out bot can't send you a new password. Please wait a minute and try again :)"
+                   Message = "Out bot can't send you a new password. Please wait a minute and try again :)",
+                   IsSuccess = false
                };
     }
 }

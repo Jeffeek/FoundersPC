@@ -2,6 +2,7 @@ const signInBtn = document.querySelector("#sign-in-btn");
 const signInFormBtn = document.querySelector(".login-form__btn");
 const signUpBtn = document.querySelector(".signup-form__btn");
 const signOutBtn = document.querySelector("#sign-out-btn");
+const forgotPasswordBtn = document.querySelector(".login-form__forgot-password-btn");
 const baseUrl = window.configuration.baseUrl;
 
 if (isAuthorize()) {
@@ -20,6 +21,8 @@ signInFormBtn.addEventListener("click", async evt => await signIn(evt));
 signOutBtn.addEventListener("click", signOut);
 
 signUpBtn.addEventListener("click", async evt => await signUp(evt));
+
+forgotPasswordBtn.addEventListener("click", async evt => await forgotPassword(evt));
 
 async function signUp(evt) {
     evt.preventDefault();
@@ -60,6 +63,52 @@ async function signIn(evt) {
         authorize(userData);
     }
     catch (e) {
+        showNotification(e.message, e.description);
+    }
+}
+
+async function forgotPassword(evt) {
+    evt.preventDefault();
+
+    if (isAuthorize())
+        return;
+
+    const email = document.querySelector("#email-or-login-input").value;
+
+    if (!email || email.length === 0 || `(?:[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*|"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])`.match(email)) {
+        showNotification("Forgot password error", "Entered email is incorrect, write your email email", false);
+        return;
+    }
+
+    try
+    {
+        let response = await fetch(baseUrl + "api/ForgotPassword", {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            method: "POST",
+            body: JSON.stringify({
+                email: email
+            })
+        });
+
+        if (response.ok) {
+            response = await response.json();
+        }
+        else {
+            showNotification("Forgot password notification", "Server error", false);
+            return;
+        }
+
+        if (!response.isSuccess)
+            showNotification("Forgot password notification", response.message, false);
+        else {
+            showNotification("Forgot password notification", response.message, true);
+            showNotification("Forgot password notification", "Check your email box for new password");
+        }
+    }
+    catch(e) {
         showNotification(e.message, e.description);
     }
 }

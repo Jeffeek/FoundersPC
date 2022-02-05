@@ -14,7 +14,7 @@ public class GetEndpoint : BaseRequestResponseAccessTokenEndpoint<GetRequest, Pr
     [OpenApiOperation(operationId : "Hardware.Processor.Get",
                       summary : "Get Hardware.Processor",
                       description : "Get Hardware.Processor")]
-    [OpenApiTags("Hardware", "Processor")]
+    [OpenApiTags("Hardware", "Processor", "Client")]
     public override async Task<ActionResult<ProcessorInfo>> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

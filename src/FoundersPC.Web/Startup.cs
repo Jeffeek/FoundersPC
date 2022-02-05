@@ -50,8 +50,8 @@ public sealed class Startup
         services.AddBearerAuthentication(Configuration);
         services.AddAuthorizationPolicies(JwtBearerDefaults.AuthenticationScheme);
         services.AddEmailDaemon(Configuration);
-        //services.AddTransient<IEmailService, NullEmailService>();
-        services.AddTransient<IEmailService, EmailService>();
+        services.AddTransient<IEmailService, NullEmailService>();
+        //services.AddTransient<IEmailService, EmailService>();
 
         services.AddApplicationOptions(Configuration);
         services.AddPipelineBehaviors(Configuration);

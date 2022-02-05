@@ -4,4 +4,5 @@ public class ForgotPasswordResponse
 {
     public string Email { get; set; } = default!;
     public string? Message { get; set; }
+    public bool IsSuccess { get; set; }
 }

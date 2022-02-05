@@ -14,7 +14,7 @@ public class GetEndpoint : BaseRequestResponseAccessTokenEndpoint<GetRequest, Ra
     [OpenApiOperation(operationId : "Hardware.RandomAccessMemory.Get",
                       summary : "Get Hardware.RandomAccessMemory",
                       description : "Get Hardware.RandomAccessMemory")]
-    [OpenApiTags("Hardware", "RandomAccessMemory")]
+    [OpenApiTags("Hardware", "RandomAccessMemory", "Client")]
     public override async Task<ActionResult<RandomAccessMemoryInfo>> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }
