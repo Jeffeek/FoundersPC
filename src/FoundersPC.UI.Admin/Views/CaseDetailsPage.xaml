@@ -75,16 +75,8 @@
             <TextBox
                 mah:ValidationHelper.CloseOnMouseLeftButtonDown="True"
                 materialDesignThemes:HintAssist.HelperText="Title"
-                Style="{StaticResource MetadataTextBox}">
-                <Binding
-                    Mode="TwoWay"
-                    Path="EditableHardware.Title"
-                    UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validation:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox>
+                Style="{StaticResource MetadataTextBox}"
+                Text="{Binding EditableHardware.Title}" />
             <ComboBox
                 materialDesignThemes:HintAssist.HelperText="Window Material"
                 ItemsSource="{Binding MetadataPackageLocator.MetadataPackage.WindowMaterial}"
@@ -102,8 +94,8 @@
                 <i:Interaction.Behaviors>
                     <behavior:TextBoxInputRegExBehaviour
                         EmptyValue="{x:Null}"
-                        MaxLength="5"
-                        RegularExpression="^[0-9]{1,2}([,.][0-9]{1,2})?$" />
+                        MaxLength="7"
+                        RegularExpression="^[0-9]{1,5}([,.])?([0-9]{1,2})?$" />
                 </i:Interaction.Behaviors>
             </TextBox>
             <ComboBox
@@ -128,8 +120,8 @@
                 <i:Interaction.Behaviors>
                     <behavior:TextBoxInputRegExBehaviour
                         EmptyValue="{x:Null}"
-                        MaxLength="5"
-                        RegularExpression="^[0-9]{1,2}([,.][0-9]{1,2})?$" />
+                        MaxLength="7"
+                        RegularExpression="^[0-9]{1,4}([,.])?([0-9]{1,2})?$" />
                 </i:Interaction.Behaviors>
             </TextBox>
             <TextBox
@@ -139,8 +131,8 @@
                 <i:Interaction.Behaviors>
                     <behavior:TextBoxInputRegExBehaviour
                         EmptyValue="{x:Null}"
-                        MaxLength="5"
-                        RegularExpression="^[0-9]{1,2}([,.][0-9]{1,2})?$" />
+                        MaxLength="7"
+                        RegularExpression="^[0-9]{1,4}([,.])?([0-9]{1,2})?$" />
                 </i:Interaction.Behaviors>
             </TextBox>
             <TextBox
@@ -150,8 +142,8 @@
                 <i:Interaction.Behaviors>
                     <behavior:TextBoxInputRegExBehaviour
                         EmptyValue="{x:Null}"
-                        MaxLength="5"
-                        RegularExpression="^[0-9]{1,2}([,.][0-9]{1,2})?$" />
+                        MaxLength="7"
+                        RegularExpression="^[0-9]{1,4}([,.])?([0-9]{1,2})?$" />
                 </i:Interaction.Behaviors>
             </TextBox>
             <TextBox
@@ -161,8 +153,8 @@
                 <i:Interaction.Behaviors>
                     <behavior:TextBoxInputRegExBehaviour
                         EmptyValue="{x:Null}"
-                        MaxLength="5"
-                        RegularExpression="^[0-9]{1,2}([,.][0-9]{1,2})?$" />
+                        MaxLength="7"
+                        RegularExpression="^[0-9]{1,4}([,.])?([0-9]{1,2})?$" />
                 </i:Interaction.Behaviors>
             </TextBox>
         </WrapPanel>

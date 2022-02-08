@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using FoundersPC.Application.Features.Producer.Models;
+using FoundersPC.SharedKernel.Models.Metadata;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
 using MediatR;
@@ -94,7 +95,14 @@ public class ProducerDetailsPageViewModel : BindableBase
 
                                  try
                                  {
-                                     await InsertOrUpdateProducerAsync();
+                                     var producer = await InsertOrUpdateProducerAsync();
+
+                                     if (EditableProducer?.Id == 0)
+                                         MetadataPackageLocator.MetadataPackage.Producers.Add(new()
+                                                                                              {
+                                                                                                  Id = producer.Id,
+                                                                                                  Value = producer.FullName
+                                                                                              });
                                      GoBack();
                                  }
                                  finally
@@ -111,11 +119,11 @@ public class ProducerDetailsPageViewModel : BindableBase
         && !String.IsNullOrEmpty(EditableProducer.FullName)
         && !String.IsNullOrWhiteSpace(EditableProducer.FullName);
 
-    private Task InsertOrUpdateProducerAsync()
+    private Task<ProducerInfo> InsertOrUpdateProducerAsync()
     {
         var request = GetInsertOrUpdateRequest();
 
-        return request == null ? Task.CompletedTask : _mediator.Send(request);
+        return request == null ? Task.FromResult((ProducerInfo?)null)! : _mediator.Send(request);
     }
 
     private IRequest<ProducerInfo>? GetInsertOrUpdateRequest()

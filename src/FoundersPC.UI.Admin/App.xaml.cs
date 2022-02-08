@@ -92,7 +92,7 @@ public partial class App
 
     private static MetadataPackageLocator RegisterMetadataLocator(IServiceProvider serviceProvider)
     {
-        var metadataPackageLocator = new MetadataPackageLocator(serviceProvider.GetRequiredService<IMediator>());
+        var metadataPackageLocator = new MetadataPackageLocator(serviceProvider.GetRequiredService<IMediator>(), serviceProvider.GetRequiredService<IMapper>());
 
         return metadataPackageLocator;
     }

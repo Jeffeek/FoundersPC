@@ -75,16 +75,8 @@
             <TextBox
                 mah:ValidationHelper.CloseOnMouseLeftButtonDown="True"
                 materialDesignThemes:HintAssist.HelperText="Title"
-                Style="{StaticResource MetadataTextBox}">
-                <Binding
-                    Mode="TwoWay"
-                    Path="EditableHardware.Title"
-                    UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validation:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox>
+                Style="{StaticResource MetadataTextBox}"
+                Text="{Binding EditableHardware.Title}" />
             <ComboBox
                 materialDesignThemes:HintAssist.HelperText="Socket"
                 ItemsSource="{Binding MetadataPackageLocator.MetadataPackage.Socket}"

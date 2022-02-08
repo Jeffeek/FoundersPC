@@ -24,4 +24,16 @@ public class VideoCardDetailsPageViewModel : HardwareDetailsPageViewModel<VideoC
 
     protected override void SubscribeToHardwareLocator() =>
         SelectedObjectLocator.SelectedVideoCardChanged += OnSelectedHardwareChanged;
+
+    protected override void OnInsertOrUpdate(int id)
+    {
+        if (EditableHardware is not {Id: 0, IsIntegrated: true})
+            return;
+
+        MetadataPackageLocator.MetadataPackage.IntegratedVideoCards.Add(new()
+                                                                        {
+                                                                            Id = id,
+                                                                            Value = EditableHardware.Title
+                                                                        });
+    }
 }

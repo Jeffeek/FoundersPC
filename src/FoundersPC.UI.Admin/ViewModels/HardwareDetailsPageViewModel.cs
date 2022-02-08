@@ -120,7 +120,9 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
 
                                  try
                                  {
-                                     await InsertOrUpdateHardwareAsync();
+                                     var hardware = await InsertOrUpdateHardwareAsync();
+                                     if (hardware != null)
+                                         OnInsertOrUpdate(hardware.Id);
                                      GoBack();
                                  }
                                  finally
@@ -131,18 +133,20 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
                              CanInsertOrUpdateHardware,
                              true);
 
-    protected virtual bool CanInsertOrUpdateHardware() =>
+    protected bool CanInsertOrUpdateHardware() =>
         EditableHardware != null
         && !IsUpdating
         && !String.IsNullOrEmpty(EditableHardware.Title)
         && !String.IsNullOrWhiteSpace(EditableHardware.Title)
         && EditableHardware.ProducerId > 0;
 
-    private Task InsertOrUpdateHardwareAsync()
+    protected virtual void OnInsertOrUpdate(int id) { }
+
+    private Task<THardwareInfo> InsertOrUpdateHardwareAsync()
     {
         var request = GetInsertOrUpdateRequest();
 
-        return request == null ? Task.CompletedTask : Mediator.Send(request);
+        return request == null ? Task.FromResult((THardwareInfo?)null)! : Mediator.Send(request);
     }
 
     private IRequest<THardwareInfo>? GetInsertOrUpdateRequest()

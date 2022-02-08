@@ -8,10 +8,12 @@ using FoundersPC.Application.Features.Hardware.Processor.Models;
 using FoundersPC.Application.Features.Hardware.RandomAccessMemory.Models;
 using FoundersPC.Application.Features.Hardware.SolidStateDrive.Models;
 using FoundersPC.Application.Features.Hardware.VideoCard.Models;
+using FoundersPC.Application.Features.Metadata.Models;
 using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Filter;
+using FoundersPC.SharedKernel.Models.Metadata;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
@@ -156,5 +158,8 @@ public class MappingProfile : Profile
         CreateMap<ProducerInfoViewModel, Application.Features.Producer.UpdateRequest>();
 
         #endregion
+
+        CreateMap<MetadataInfo, MetadataInfo>();
+        CreateMap<MetadataPackage, MetadataPackageViewModel>();
     }
 }
