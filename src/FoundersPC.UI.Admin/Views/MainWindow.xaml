@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mde="https://spiegelp.github.io/MaterialDesignExtensions/winfx/xaml"
     xmlns:prism="http://prismlibrary.com/"
-    Title="NOTEBOOK"
+    Title="FoundersPC Admin"
     MinWidth="900"
     MinHeight="700"
     prism:ViewModelLocator.AutoWireViewModel="True"
