@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Amusoft.UI.WPF.Notifications;
@@ -120,7 +121,11 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
         var hardwareInfo = await _notificationHost.SendRequestWithNotification(Mediator, new TGetRequest { Id = id, HardwareTypeId = (int)HardwareType });
 
         if (hardwareInfo == null)
+        {
+            _notificationHost.ShowWarningNotification("Something bad happened with your request..");
+
             return;
+        }
 
         SetSelectedHardware(hardwareInfo);
         TitleBarLocator.CurrentFrameId = DetailsPageId;
@@ -140,6 +145,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
     {
         TitleBarLocator.IsLoading = true;
         await _notificationHost.SendRequestWithNotification(Mediator, new TDeleteRequest { HardwareTypeId = (int)HardwareType, Id = id });
+        _notificationHost.ShowWarningNotification($"Hardware with Id {id} is deleted");
         await SearchHardwareAsync();
         TitleBarLocator.IsLoading = false;
     }
@@ -157,6 +163,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
     {
         TitleBarLocator.IsLoading = true;
         await _notificationHost.SendRequestWithNotification(Mediator, new TRestoreRequest { HardwareTypeId = (int)HardwareType, Id = id });
+        _notificationHost.ShowDoneNotification($"Hardware with Id {id} is restored");
         await SearchHardwareAsync();
         TitleBarLocator.IsLoading = false;
     }
@@ -279,12 +286,8 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
         try
         {
             var hardware = await _notificationHost.SendRequestWithNotification(Mediator, Mapper.Map<TGetAllRequest>(FilterOptions));
-
-            if (hardware == null)
-                throw new();
-
-            Mapper.Map(hardware.PagingInfo, FilterOptions.Pagination);
-            HardwareList = new(hardware.Result);
+            Mapper.Map(hardware?.PagingInfo, FilterOptions.Pagination);
+            HardwareList = new(hardware?.Result ?? new List<THardwareView>());
         }
         finally
         {

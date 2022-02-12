@@ -224,10 +224,10 @@
                                         </StackPanel>
                                     </materialDesign:PopupBox>
                                     <Label Content="{Binding FullName}" />
-                                    <Label Content="Created" />
-                                    <Label Content="{Binding Created, StringFormat='dd.MM.yyyy HH:mm:ss'}" />
-                                    <Label Content="Last Modified" />
-                                    <Label Content="{Binding LastModified, StringFormat='dd.MM.yyyy HH:mm:ss'}" />
+                                    <Label Margin="0,10,0,0" Content="Created" />
+                                    <Label Content="{Binding Created}" ContentStringFormat="dd.MM.yyyy hh:mm" />
+                                    <Label Margin="0,10,0,0" Content="Last Modified" />
+                                    <Label Content="{Binding LastModified}" ContentStringFormat="dd.MM.yyyy hh:mm" />
                                 </StackPanel>
                             </materialDesign:Card>
                         </DataTemplate>

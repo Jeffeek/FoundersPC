@@ -123,14 +123,8 @@ public class UserDetailsPageViewModel : BindableBase
         ChangeLoadingState(true);
         _titleBarLocator.IsLoading = true;
 
-        try
-        {
-            await _mediator.Send(new Application.Features.AccessToken.BlockRequest { Id = accessToken.Id });
-        }
-        catch (Exception e)
-        {
-            _notificationHost.ShowExceptionNotification(e);
-        }
+        await _notificationHost.SendRequestWithNotification(_mediator, new Application.Features.AccessToken.BlockRequest { Id = accessToken.Id });
+        _notificationHost.ShowWarningNotification($"Token with Id {accessToken.Id} is blocked");
 
         _titleBarLocator.IsLoading = false;
         ChangeLoadingState(false);
@@ -150,14 +144,8 @@ public class UserDetailsPageViewModel : BindableBase
         ChangeLoadingState(true);
         _titleBarLocator.IsLoading = true;
 
-        try
-        {
-            await _mediator.Send(new Application.Features.AccessToken.UnblockRequest { Id = accessToken.Id });
-        }
-        catch (Exception e)
-        {
-            _notificationHost.ShowExceptionNotification(e);
-        }
+        await _notificationHost.SendRequestWithNotification(_mediator, new Application.Features.AccessToken.UnblockRequest { Id = accessToken.Id });
+        _notificationHost.ShowDoneNotification($"Token with Id {accessToken.Id} is unblocked");
 
         _titleBarLocator.IsLoading = false;
         ChangeLoadingState(false);

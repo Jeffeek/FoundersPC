@@ -97,7 +97,8 @@ public class UsersPageViewModel : BindableBase
     private async Task BlockUserAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
-        await _mediator.Send(new Application.Features.UserInformation.BlockRequest { Id = id });
+        await _notificationHost.SendRequestWithNotification(_mediator, new Application.Features.UserInformation.BlockRequest { Id = id });
+        _notificationHost.ShowWarningNotification($"User with Id {id} is blocked");
         await SearchUsersAsync();
         TitleBarLocator.IsLoading = false;
     }
@@ -113,7 +114,8 @@ public class UsersPageViewModel : BindableBase
     private async Task UnblockUserAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
-        await _mediator.Send(new Application.Features.UserInformation.UnblockRequest { Id = id });
+        await _notificationHost.SendRequestWithNotification(_mediator, new Application.Features.UserInformation.UnblockRequest { Id = id });
+        _notificationHost.ShowDoneNotification($"User with Id {id} is unblocked");
         await SearchUsersAsync();
         TitleBarLocator.IsLoading = false;
     }

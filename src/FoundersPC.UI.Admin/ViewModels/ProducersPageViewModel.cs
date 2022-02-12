@@ -1,9 +1,12 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
+using FoundersPC.UI.Admin.Services;
 using MediatR;
 using MvvmCross.Commands;
 using Prism.Mvvm;
@@ -15,6 +18,7 @@ public class ProducersPageViewModel : BindableBase
     protected readonly IMediator Mediator;
     protected readonly IMapper Mapper;
     protected readonly SelectedObjectLocator SelectedObjectLocator;
+    private readonly NotificationHost _notificationHost;
     protected readonly int DetailsPageId;
     public TitleBarLocator TitleBarLocator { get; }
 
@@ -22,12 +26,14 @@ public class ProducersPageViewModel : BindableBase
                                   IMapper mapper,
                                   FilterOptions filterOptions,
                                   SelectedObjectLocator selectedObjectLocator,
-                                  TitleBarLocator titleBarLocator)
+                                  TitleBarLocator titleBarLocator,
+                                  NotificationHost notificationHost)
     {
         TitleBarLocator = titleBarLocator;
         Mediator = mediator;
         Mapper = mapper;
         SelectedObjectLocator = selectedObjectLocator;
+        _notificationHost = notificationHost;
         DetailsPageId = TitleBarConstants.ProducerDetailsPageId;
         FilterOptions = filterOptions;
         TitleBarLocator.IsLoadingChanged += _ => ApplySearchCommand.RaiseCanExecuteChanged();
@@ -105,7 +111,8 @@ public class ProducersPageViewModel : BindableBase
     private async Task DeleteProducerAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
-        await Mediator.Send(new Application.Features.Producer.DeleteRequest { Id = id });
+        await _notificationHost.SendRequestWithNotification(Mediator, new Application.Features.Producer.DeleteRequest { Id = id });
+        _notificationHost.ShowWarningNotification($"Producer with Id {id} is deleted");
         await SearchProducersAsync();
         TitleBarLocator.IsLoading = false;
     }
@@ -121,7 +128,8 @@ public class ProducersPageViewModel : BindableBase
     private async Task RestoreProducerAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
-        await Mediator.Send(new Application.Features.Producer.RestoreRequest { Id = id });
+        await _notificationHost.SendRequestWithNotification(Mediator, new Application.Features.Producer.RestoreRequest { Id = id });
+        _notificationHost.ShowDoneNotification($"Producer with Id {id} is restored");
         await SearchProducersAsync();
         TitleBarLocator.IsLoading = false;
     }
@@ -228,9 +236,9 @@ public class ProducersPageViewModel : BindableBase
 
         try
         {
-            var hardware = await Mediator.Send(Mapper.Map<Application.Features.Producer.GetAllRequest>(FilterOptions));
-            Mapper.Map(hardware.PagingInfo, FilterOptions.Pagination);
-            ProducersList = new(hardware.Result);
+            var producers = await _notificationHost.SendRequestWithNotification(Mediator, Mapper.Map<Application.Features.Producer.GetAllRequest>(FilterOptions));
+            Mapper.Map(producers?.PagingInfo, FilterOptions.Pagination);
+            ProducersList = new(producers?.Result ?? new List<ProducerViewInfo>());
         }
         finally
         {

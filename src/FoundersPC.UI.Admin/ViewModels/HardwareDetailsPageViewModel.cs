@@ -126,8 +126,14 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
                                  try
                                  {
                                      var hardware = await InsertOrUpdateHardwareAsync();
+
                                      if (hardware != null)
+                                     {
                                          OnInsertOrUpdate(hardware.Id);
+                                         _notificationHost.ShowDoneNotification($"Hardware {hardware.Title} {(EditableHardware?.Id == 0 ? "created" : "updated")} successfully");
+                                     }
+
+                                     _notificationHost.ShowWarningNotification("Something bad happened when tried to update/create hardware");
                                      GoBack();
                                  }
                                  finally

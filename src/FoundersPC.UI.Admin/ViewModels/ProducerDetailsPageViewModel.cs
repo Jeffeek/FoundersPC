@@ -116,6 +116,8 @@ public class ProducerDetailsPageViewModel : BindableBase
                                                                                                   Id = producer.Id,
                                                                                                   Value = producer.FullName
                                                                                               });
+
+                                     _notificationHost.ShowDoneNotification($"Producer {producer.FullName} {(EditableProducer?.Id == 0 ? "created" : "updated")} successfully");
                                      GoBack();
                                  }
                                  finally
