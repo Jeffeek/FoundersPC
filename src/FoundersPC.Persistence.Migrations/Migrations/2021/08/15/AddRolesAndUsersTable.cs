@@ -59,7 +59,7 @@ public class AddRolesAndUsersTable : MigrationBase
                        RoleId = 1,
                        Email = "system.system@founderspc.com",
                        IsBlocked = false,
-                       Login = "System",
+                       Login = "system",
                        RegistrationDate = DateTime.UtcNow,
                        PasswordHash = "$2b$10$Sa9JgA3l5xK/PiRcifaX..Ag78IwNoKqN1pv5w9P9XbCCI2gcApL6" //123456
                    })
@@ -69,7 +69,7 @@ public class AddRolesAndUsersTable : MigrationBase
                        RoleId = 2,
                        Email = "system.admin@founderspc.com",
                        IsBlocked = false,
-                       Login = "System",
+                       Login = "admin",
                        RegistrationDate = DateTime.UtcNow,
                        PasswordHash = "$2b$10$D5Rp9tDOiTe4gsAiL5TyoO/4bBUJ/jZBj5kql3leDS.SooWY.S6d." //123456
                    })
@@ -79,7 +79,7 @@ public class AddRolesAndUsersTable : MigrationBase
                        RoleId = 3,
                        Email = "system.manager@founderspc.com",
                        IsBlocked = false,
-                       Login = "System",
+                       Login = "manager",
                        RegistrationDate = DateTime.UtcNow,
                        PasswordHash = "$2b$10$pGjlIrjkULToE765j00ZLuDe2uMATUruRCRZBg.Q/hkV3lNnjjNuO" //123456
                    })
@@ -89,7 +89,7 @@ public class AddRolesAndUsersTable : MigrationBase
                        RoleId = 4,
                        Email = "system.user@founderspc.com",
                        IsBlocked = false,
-                       Login = "System",
+                       Login = "user",
                        RegistrationDate = DateTime.UtcNow,
                        PasswordHash = "$2b$10$82A0FoDt7Ky75Cs5HGVGQem0oSZZrCjHYnsEh.reO.6c6koDAXuSC" //123456
                    });

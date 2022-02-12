@@ -1,4 +1,5 @@
 ﻿using FoundersPC.Application.Features.Client.Hardware.Models;
+using FoundersPC.Application.Features.Client.Hardware.VideoCard.Models;
 
 namespace FoundersPC.Application.Features.Client.Hardware.Processor.Models;
 
@@ -15,6 +16,6 @@ public class ClientProcessorInfo : ClientHardwareInfo
     public int? L1Cache { get; set; }
     public int? L2Cache { get; set; }
     public int? L3Cache { get; set; }
-    public string? IntegratedGraphics { get; set; }
+    public ClientVideoCardInfo? IntegratedGraphics { get; set; }
     public string? Socket { get; set; }
 }

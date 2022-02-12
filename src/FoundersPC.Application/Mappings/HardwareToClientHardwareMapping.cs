@@ -20,6 +20,8 @@ public class HardwareToClientHardwareMapping : Profile
         CreateMap<Hardware, ClientHardwareInfo>()
             .IncludeAllDerived();
 
+        CreateMap<HardwareType, ClientHardwareTypeInfo>();
+
         CreateMap<Producer, ClientProducerInfo>()
             .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.Country!.Name));
 
@@ -45,7 +47,7 @@ public class HardwareToClientHardwareMapping : Profile
 
         CreateMap<Processor, ClientProcessorInfo>()
             .ForMember(dest => dest.Socket, opt => opt.MapFrom(src => src.Metadata.Socket!.Name))
-            .ForMember(dest => dest.IntegratedGraphics, opt => opt.MapFrom(src => src.Metadata.IntegratedGraphics!.Metadata.Title))
+            .ForMember(dest => dest.IntegratedGraphics, opt => opt.MapFrom(src => src.Metadata.IntegratedGraphics))
             .ForMember(dest => dest.TechProcess, opt => opt.MapFrom(src => src.Metadata.TechProcess!.Name));
 
         CreateMap<RandomAccessMemory, ClientRandomAccessMemoryInfo>()

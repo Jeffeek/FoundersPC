@@ -18,13 +18,13 @@ public class AddHardwareTable : Migration
         Insert.IntoTable("HardwareType")
               .WithIdentityInsert()
               .Row(new { Id = 1, Name = "Case" })
-              .Row(new { Id = 2, Name = "Hard Drive Disk" })
-              .Row(new { Id = 3, Name = "Motherboard" })
-              .Row(new { Id = 4, Name = "Power Supply" })
-              .Row(new { Id = 5, Name = "Processor" })
-              .Row(new { Id = 6, Name = "Random Access Memory" })
-              .Row(new { Id = 7, Name = "Solid State Drive" })
-              .Row(new { Id = 8, Name = "Video Card" });
+              .Row(new { Id = 2, Name = "Processor" })
+              .Row(new { Id = 3, Name = "Video Card" })
+              .Row(new { Id = 4, Name = "Random Access Memory" })
+              .Row(new { Id = 5, Name = "Motherboard" })
+              .Row(new { Id = 6, Name = "Power Supply" })
+              .Row(new { Id = 7, Name = "Hard Drive Disk" })
+              .Row(new { Id = 8, Name = "Solid State Drive" });
 
         Create.Table("Hardware")
               .WithColumn("Id").AsInt32().Identity().PrimaryKey("PK_Hardware")
