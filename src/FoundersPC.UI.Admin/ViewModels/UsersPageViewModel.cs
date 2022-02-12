@@ -1,8 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.UI.Admin.Locators;
+using FoundersPC.UI.Admin.Services;
 using MediatR;
 using MvvmCross.Commands;
 using Prism.Mvvm;
@@ -15,17 +17,20 @@ public class UsersPageViewModel : BindableBase
     private readonly IMapper _mapper;
     public TitleBarLocator TitleBarLocator { get; }
     private readonly SelectedObjectLocator _selectedObjectLocator;
+    private readonly NotificationHost _notificationHost;
 
     public UsersPageViewModel(IMediator mediator,
                               IMapper mapper,
                               TitleBarLocator titleBarLocator,
                               SelectedObjectLocator selectedObjectLocator,
-                              FilterOptions filterOptions)
+                              FilterOptions filterOptions,
+                              NotificationHost notificationHost)
     {
         _mediator = mediator;
         _mapper = mapper;
         TitleBarLocator = titleBarLocator;
         _selectedObjectLocator = selectedObjectLocator;
+        _notificationHost = notificationHost;
         FilterOptions = filterOptions;
         TitleBarLocator.IsLoadingChanged += _ => ApplySearchCommand.RaiseCanExecuteChanged();
 
@@ -230,9 +235,9 @@ public class UsersPageViewModel : BindableBase
                                   (int)RoleTypes.DefaultUser
                               };
 
-            var users = await _mediator.Send(request);
-            _mapper.Map(users.PagingInfo, FilterOptions.Pagination);
-            UsersList = _mapper.Map<ObservableCollection<UserViewInfo>>(users.Result);
+            var users = await _notificationHost.SendRequestWithNotification(_mediator, request);
+            _mapper.Map(users?.PagingInfo, FilterOptions.Pagination);
+            UsersList = _mapper.Map<ObservableCollection<UserViewInfo>>(users?.Result);
         }
         finally
         {

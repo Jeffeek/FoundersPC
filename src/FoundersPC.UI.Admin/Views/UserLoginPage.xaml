@@ -32,18 +32,6 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Vertical">
-                <Label
-                    mah:VisibilityHelper.IsHidden="{calcBinding:Binding 'Error == null'}"
-                    Background="Red"
-                    Content="{Binding Error.Message}"
-                    Foreground="White" />
-                <Label
-                    mah:VisibilityHelper.IsHidden="{calcBinding:Binding 'Error == null'}"
-                    Background="Red"
-                    Content="{Binding Error.Description}"
-                    Foreground="White" />
-            </StackPanel>
             <TextBlock
                 Grid.Row="1"
                 Margin="20"

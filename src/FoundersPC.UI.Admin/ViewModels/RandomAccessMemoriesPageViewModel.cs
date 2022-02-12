@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Amusoft.UI.WPF.Notifications;
+using AutoMapper;
 using FoundersPC.Application.Features.Hardware.RandomAccessMemory;
 using FoundersPC.Application.Features.Hardware.RandomAccessMemory.Models;
 using FoundersPC.UI.Admin.Locators;
@@ -12,13 +13,15 @@ public class RandomAccessMemoriesPageViewModel : HardwareListBasePageViewModel<R
                                              IMapper mapper,
                                              TitleBarLocator titleBarLocator,
                                              SelectedObjectLocator selectedObjectLocator,
-                                             FilterOptions pagination)
+                                             FilterOptions pagination,
+                                             NotificationHost notificationHost)
         : base(mediator,
                mapper,
                titleBarLocator,
                pagination,
                selectedObjectLocator,
                Domain.Enums.HardwareType.RAM,
+               notificationHost,
                TitleBarConstants.RandomAccessMemoriesPageId,
                TitleBarConstants.RandomAccessMemoryDetailsPageId) { }
 

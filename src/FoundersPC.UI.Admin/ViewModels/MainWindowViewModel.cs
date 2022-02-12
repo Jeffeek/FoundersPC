@@ -10,19 +10,11 @@ public class MainWindowViewModel : BindableBase
     public MainWindowViewModel(MainWindowTitleBarLocator mainWindowTitleBarLocator)
     {
         MainWindowTitleBarLocator = mainWindowTitleBarLocator;
-        RefreshLocator.Messaging += OnMessage;
         RefreshLocator.SuccessLogIn += ClearSubscribe;
-    }
-
-    private void OnMessage(bool state, string? message)
-    {
-        IsMessaging = state;
-        Message = message;
     }
 
     private void ClearSubscribe()
     {
-        RefreshLocator.Messaging -= OnMessage;
         RefreshLocator.SuccessLogIn -= ClearSubscribe;
     }
 

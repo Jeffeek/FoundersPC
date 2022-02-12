@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Amusoft.UI.WPF.Adorners;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.SharedKernel.Models.Metadata;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
+using FoundersPC.UI.Admin.Services;
 using MediatR;
 using MvvmCross.Commands;
 using Prism.Mvvm;
@@ -16,6 +19,7 @@ public class ProducerDetailsPageViewModel : BindableBase
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
     private readonly TitleBarLocator _titleBarLocator;
+    private readonly NotificationHost _notificationHost;
 
     public MetadataPackageLocator MetadataPackageLocator { get; }
 
@@ -23,11 +27,13 @@ public class ProducerDetailsPageViewModel : BindableBase
                                         IMapper mapper,
                                         SelectedObjectLocator selectedObjectLocator,
                                         MetadataPackageLocator metadataPackageLocator,
-                                        TitleBarLocator titleBarLocator)
+                                        TitleBarLocator titleBarLocator,
+                                        NotificationHost notificationHost)
     {
         _mediator = mediator;
         _mapper = mapper;
         _titleBarLocator = titleBarLocator;
+        _notificationHost = notificationHost;
         MetadataPackageLocator = metadataPackageLocator;
         selectedObjectLocator.SelectedProducerChanged += OnSelectedProducerChanged;
         RefreshLocator.SaveRefresh += () => SaveCommand.RaiseCanExecuteChanged();
@@ -97,6 +103,13 @@ public class ProducerDetailsPageViewModel : BindableBase
                                  {
                                      var producer = await InsertOrUpdateProducerAsync();
 
+                                     if (producer == null)
+                                     {
+                                         _notificationHost.DisplayAsync(new SimpleNotification("Not found", SimpleNotificationType.Error), Position.BottomLeft);
+                                         GoBack();
+                                         return;
+                                     }
+
                                      if (EditableProducer?.Id == 0)
                                          MetadataPackageLocator.MetadataPackage.Producers.Add(new()
                                                                                               {
@@ -119,11 +132,11 @@ public class ProducerDetailsPageViewModel : BindableBase
         && !String.IsNullOrEmpty(EditableProducer.FullName)
         && !String.IsNullOrWhiteSpace(EditableProducer.FullName);
 
-    private Task<ProducerInfo> InsertOrUpdateProducerAsync()
+    private Task<ProducerInfo?> InsertOrUpdateProducerAsync()
     {
         var request = GetInsertOrUpdateRequest();
 
-        return request == null ? Task.FromResult((ProducerInfo?)null)! : _mediator.Send(request);
+        return request == null ? Task.FromResult((ProducerInfo?)null)! : _notificationHost.SendRequestWithNotification(_mediator, request);
     }
 
     private IRequest<ProducerInfo>? GetInsertOrUpdateRequest()

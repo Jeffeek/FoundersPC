@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.Hardware.Models;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
+using FoundersPC.UI.Admin.Services;
 using MediatR;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
@@ -23,6 +25,7 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
     protected readonly IMapper Mapper;
     protected readonly SelectedObjectLocator SelectedObjectLocator;
     private readonly TitleBarLocator _titleBarLocator;
+    private readonly NotificationHost _notificationHost;
     private readonly int _goBackId;
 
     public MetadataPackageLocator MetadataPackageLocator { get; }
@@ -32,6 +35,7 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
                                            SelectedObjectLocator selectedObjectLocator,
                                            MetadataPackageLocator metadataPackageLocator,
                                            TitleBarLocator titleBarLocator,
+                                           NotificationHost notificationHost,
                                            int thisPageId,
                                            int goBackId)
     {
@@ -39,6 +43,7 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
         Mapper = mapper;
         SelectedObjectLocator = selectedObjectLocator;
         _titleBarLocator = titleBarLocator;
+        _notificationHost = notificationHost;
         _goBackId = goBackId;
         MetadataPackageLocator = metadataPackageLocator;
         SubscribeToHardwareLocator();
@@ -142,11 +147,11 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
 
     protected virtual void OnInsertOrUpdate(int id) { }
 
-    private Task<THardwareInfo> InsertOrUpdateHardwareAsync()
+    private Task<THardwareInfo?> InsertOrUpdateHardwareAsync()
     {
         var request = GetInsertOrUpdateRequest();
 
-        return request == null ? Task.FromResult((THardwareInfo?)null)! : Mediator.Send(request);
+        return request == null ? default! : _notificationHost.SendRequestWithNotification(Mediator, request);
     }
 
     private IRequest<THardwareInfo>? GetInsertOrUpdateRequest()

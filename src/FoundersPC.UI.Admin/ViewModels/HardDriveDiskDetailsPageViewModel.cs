@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Amusoft.UI.WPF.Notifications;
+using AutoMapper;
 using FoundersPC.Application.Features.Hardware.HardDriveDisk;
 using FoundersPC.Application.Features.Hardware.HardDriveDisk.Models;
 using FoundersPC.UI.Admin.Locators;
@@ -13,12 +14,14 @@ public class HardDriveDiskDetailsPageViewModel : HardwareDetailsPageViewModel<Ha
                                              IMapper mapper,
                                              SelectedObjectLocator selectedObjectLocator,
                                              MetadataPackageLocator metadataPackageLocator,
-                                             TitleBarLocator titleBarLocator)
+                                             TitleBarLocator titleBarLocator,
+                                             NotificationHost notificationHost)
         : base(mediator,
                mapper,
                selectedObjectLocator,
                metadataPackageLocator,
                titleBarLocator,
+               notificationHost,
                TitleBarConstants.HardDriveDiskDetailsPageId,
                TitleBarConstants.HardDriveDisksPageId) { }
 

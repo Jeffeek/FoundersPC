@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.UserInformation.Models;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
+using FoundersPC.UI.Admin.Services;
 using MediatR;
 using MvvmCross.Commands;
 using Prism.Mvvm;
@@ -15,15 +17,18 @@ public class UserDetailsPageViewModel : BindableBase
     private readonly TitleBarLocator _titleBarLocator;
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
+    private readonly NotificationHost _notificationHost;
 
     public UserDetailsPageViewModel(TitleBarLocator titleBarLocator,
                                     IMediator mediator,
                                     IMapper mapper,
-                                    SelectedObjectLocator selectedObjectLocator)
+                                    SelectedObjectLocator selectedObjectLocator,
+                                    NotificationHost notificationHost)
     {
         _titleBarLocator = titleBarLocator;
         _mediator = mediator;
         _mapper = mapper;
+        _notificationHost = notificationHost;
         selectedObjectLocator.SelectedUserChanged += OnSelectedUserChanged;
         _titleBarLocator.IsLoadingChanged += _ =>
                                              {
@@ -124,7 +129,7 @@ public class UserDetailsPageViewModel : BindableBase
         }
         catch (Exception e)
         {
-            RefreshLocator.FireMessaging(false, e.Message);
+            _notificationHost.ShowExceptionNotification(e);
         }
 
         _titleBarLocator.IsLoading = false;
@@ -151,7 +156,7 @@ public class UserDetailsPageViewModel : BindableBase
         }
         catch (Exception e)
         {
-            RefreshLocator.FireMessaging(false, e.Message);
+            _notificationHost.ShowExceptionNotification(e);
         }
 
         _titleBarLocator.IsLoading = false;

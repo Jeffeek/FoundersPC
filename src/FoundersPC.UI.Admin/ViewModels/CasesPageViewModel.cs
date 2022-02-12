@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Amusoft.UI.WPF.Notifications;
+using AutoMapper;
 using FoundersPC.Application.Features.Hardware.Case;
 using FoundersPC.Application.Features.Hardware.Case.Models;
 using FoundersPC.UI.Admin.Locators;
@@ -12,13 +13,15 @@ public class CasesPageViewModel : HardwareListBasePageViewModel<CaseViewInfo, Ca
                               IMapper mapper,
                               TitleBarLocator titleBarLocator,
                               SelectedObjectLocator selectedObjectLocator,
-                              FilterOptions pagination)
+                              FilterOptions pagination,
+                              NotificationHost notificationHost)
         : base(mediator,
                mapper,
                titleBarLocator,
                pagination,
                selectedObjectLocator,
                Domain.Enums.HardwareType.Case,
+               notificationHost,
                TitleBarConstants.CasesPageId,
                TitleBarConstants.CaseDetailsPageId) { }
 

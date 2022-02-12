@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Amusoft.UI.WPF.Notifications;
+using AutoMapper;
 using FoundersPC.Application.Features.Hardware.Motherboard;
 using FoundersPC.Application.Features.Hardware.Motherboard.Models;
 using FoundersPC.UI.Admin.Locators;
@@ -12,13 +13,15 @@ public class MotherboardsPageViewModel : HardwareListBasePageViewModel<Motherboa
                                      IMapper mapper,
                                      TitleBarLocator titleBarLocator,
                                      SelectedObjectLocator selectedObjectLocator,
-                                     FilterOptions pagination)
+                                     FilterOptions pagination,
+                                     NotificationHost notificationHost)
         : base(mediator,
                mapper,
                titleBarLocator,
                pagination,
                selectedObjectLocator,
                Domain.Enums.HardwareType.MB,
+               notificationHost,
                TitleBarConstants.MotherboardsPageId,
                TitleBarConstants.MotherboardDetailsPageId) { }
 

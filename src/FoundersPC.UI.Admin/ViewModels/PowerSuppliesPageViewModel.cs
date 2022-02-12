@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Amusoft.UI.WPF.Notifications;
+using AutoMapper;
 using FoundersPC.Application.Features.Hardware.PowerSupply;
 using FoundersPC.Application.Features.Hardware.PowerSupply.Models;
 using FoundersPC.UI.Admin.Locators;
@@ -12,13 +13,15 @@ public class PowerSuppliesPageViewModel : HardwareListBasePageViewModel<PowerSup
                                       IMapper mapper,
                                       TitleBarLocator titleBarLocator,
                                       SelectedObjectLocator selectedObjectLocator,
-                                      FilterOptions pagination)
+                                      FilterOptions pagination,
+                                      NotificationHost notificationHost)
         : base(mediator,
                mapper,
                titleBarLocator,
                pagination,
                selectedObjectLocator,
                Domain.Enums.HardwareType.PowerSupply,
+               notificationHost,
                TitleBarConstants.PowerSuppliesPageId,
                TitleBarConstants.PowerSupplyDetailsPageId) { }
 

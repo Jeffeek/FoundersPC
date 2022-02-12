@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Amusoft.UI.WPF.Notifications;
+using AutoMapper;
 using FoundersPC.Application.Features.Hardware.SolidStateDrive;
 using FoundersPC.Application.Features.Hardware.SolidStateDrive.Models;
 using FoundersPC.UI.Admin.Locators;
@@ -13,12 +14,14 @@ public class SolidStateDriveDetailsPageViewModel : HardwareDetailsPageViewModel<
                                                IMapper mapper,
                                                SelectedObjectLocator selectedObjectLocator,
                                                MetadataPackageLocator metadataPackageLocator,
-                                               TitleBarLocator titleBarLocator)
+                                               TitleBarLocator titleBarLocator,
+                                               NotificationHost notificationHost)
         : base(mediator,
                mapper,
                selectedObjectLocator,
                metadataPackageLocator,
                titleBarLocator,
+               notificationHost,
                TitleBarConstants.SolidStateDriveDetailsPageId,
                TitleBarConstants.SolidStateDrivesPageId) { }
 

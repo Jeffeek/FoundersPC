@@ -1,11 +1,14 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.Hardware.Base;
 using FoundersPC.Application.Features.Hardware.Models;
 using FoundersPC.Domain.Enums;
 using FoundersPC.SharedKernel.Pagination;
 using FoundersPC.UI.Admin.Locators;
+using FoundersPC.UI.Admin.Services;
 using MediatR;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
@@ -31,6 +34,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
     protected readonly IMapper Mapper;
     protected readonly SelectedObjectLocator SelectedObjectLocator;
     protected readonly HardwareType HardwareType;
+    private readonly NotificationHost _notificationHost;
     protected readonly int DetailsPageId;
     public TitleBarLocator TitleBarLocator { get; }
 
@@ -40,6 +44,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
                                             FilterOptions filterOptions,
                                             SelectedObjectLocator selectedObjectLocator,
                                             HardwareType hardwareType,
+                                            NotificationHost notificationHost,
                                             int pageId,
                                             int detailsPageId)
     {
@@ -48,6 +53,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
         TitleBarLocator = titleBarLocator;
         SelectedObjectLocator = selectedObjectLocator;
         HardwareType = hardwareType;
+        _notificationHost = notificationHost;
         DetailsPageId = detailsPageId;
         FilterOptions = filterOptions;
         TitleBarLocator.IsLoadingChanged += _ => ApplySearchCommand.RaiseCanExecuteChanged();
@@ -110,7 +116,12 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
     private async Task MoveToHardwareDetailsPageAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
-        var hardwareInfo = await Mediator.Send(new TGetRequest { Id = id, HardwareTypeId = (int)HardwareType });
+
+        var hardwareInfo = await _notificationHost.SendRequestWithNotification(Mediator, new TGetRequest { Id = id, HardwareTypeId = (int)HardwareType });
+
+        if (hardwareInfo == null)
+            return;
+
         SetSelectedHardware(hardwareInfo);
         TitleBarLocator.CurrentFrameId = DetailsPageId;
         TitleBarLocator.IsLoading = false;
@@ -128,7 +139,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
     private async Task DeleteHardwareAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
-        await Mediator.Send(new TDeleteRequest { HardwareTypeId = (int)HardwareType, Id = id });
+        await _notificationHost.SendRequestWithNotification(Mediator, new TDeleteRequest { HardwareTypeId = (int)HardwareType, Id = id });
         await SearchHardwareAsync();
         TitleBarLocator.IsLoading = false;
     }
@@ -145,7 +156,7 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
     private async Task RestoreHardwareAsync(int id)
     {
         TitleBarLocator.IsLoading = true;
-        await Mediator.Send(new TRestoreRequest { HardwareTypeId = (int)HardwareType, Id = id });
+        await _notificationHost.SendRequestWithNotification(Mediator, new TRestoreRequest { HardwareTypeId = (int)HardwareType, Id = id });
         await SearchHardwareAsync();
         TitleBarLocator.IsLoading = false;
     }
@@ -267,7 +278,11 @@ public abstract class HardwareListBasePageViewModel<THardwareView,
 
         try
         {
-            var hardware = await Mediator.Send(Mapper.Map<TGetAllRequest>(FilterOptions));
+            var hardware = await _notificationHost.SendRequestWithNotification(Mediator, Mapper.Map<TGetAllRequest>(FilterOptions));
+
+            if (hardware == null)
+                throw new();
+
             Mapper.Map(hardware.PagingInfo, FilterOptions.Pagination);
             HardwareList = new(hardware.Result);
         }

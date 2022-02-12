@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using FluentMigrator.Runner;
@@ -17,6 +18,7 @@ using FoundersPC.SharedKernel.Extensions;
 using FoundersPC.SharedKernel.Interfaces;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Services;
+using FoundersPC.UI.Admin.ViewModels;
 using FoundersPC.UI.Admin.Views;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -80,6 +82,10 @@ public partial class App
                                                              AddMediator(services);
                                                              AddAutoMapper(services);
 
+                                                             MainWindow = new MainWindow();
+                                                             MainWindow!.DataContext = new MainWindowViewModel(mainWindowTitleBarLocator);
+                                                             RegisterNotifications(services);
+
                                                              var currentUserService = new CurrentUserService();
                                                              services.AddSingleton<ICurrentUserService, CurrentUserService>(_ => currentUserService);
                                                              var container = services.BuildServiceProvider();
@@ -99,11 +105,16 @@ public partial class App
 
     protected override Window CreateShell()
     {
-        var window = Container.Resolve<MainWindow>();
-        window.Focus();
-        window.Activate();
+        MainWindow!.Focus();
+        MainWindow.Activate();
 
-        return window;
+        return MainWindow;
+    }
+
+    private void RegisterNotifications(IServiceCollection services)
+    {
+        var hostManager = NotificationHostManager.GetHostByVisual(MainWindow);
+        services.AddSingleton(hostManager);
     }
 
     protected override void OnExit(ExitEventArgs e)
@@ -121,6 +132,12 @@ public partial class App
                                         {
                                             LogUnhandledException(e.Exception, "Application.Current.DispatcherUnhandledException");
                                             e.Handled = true;
+
+                                            if (!Container.IsRegistered<NotificationHost>())
+                                                return;
+
+                                            var notificationHost = Container.Resolve<NotificationHost>();
+                                            notificationHost.ShowExceptionNotification(e.Exception);
                                         };
 
         TaskScheduler.UnobservedTaskException += (_, e) =>

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Amusoft.UI.WPF.Notifications;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.SharedKernel.Interfaces;
-using FoundersPC.SharedKernel.Models;
 using FoundersPC.UI.Admin.Locators;
+using FoundersPC.UI.Admin.Services;
 using Microsoft.AspNetCore.Identity;
 using MvvmCross.Commands;
 using Prism.Mvvm;
@@ -17,18 +18,21 @@ public class UserLoginPageViewModel : BindableBase
     private readonly MainWindowTitleBarLocator _mainWindowTitleBarLocator;
     private readonly TitleBarLocator _titleBarLocator;
     private readonly ICurrentUserService _currentUserService;
+    private readonly NotificationHost _notificationHost;
 
     public UserLoginPageViewModel(UserManager<ApplicationUser> userManager,
                                   IPasswordHasher<ApplicationUser> passwordHasher,
                                   MainWindowTitleBarLocator mainWindowTitleBarLocator,
                                   TitleBarLocator titleBarLocator,
-                                  ICurrentUserService currentUserService)
+                                  ICurrentUserService currentUserService,
+                                  NotificationHost notificationHost)
     {
         _userManager = userManager;
         _passwordHasher = passwordHasher;
         _mainWindowTitleBarLocator = mainWindowTitleBarLocator;
         _titleBarLocator = titleBarLocator;
         _currentUserService = currentUserService;
+        _notificationHost = notificationHost;
     }
 
     private string? _password = "123456";
@@ -61,26 +65,17 @@ public class UserLoginPageViewModel : BindableBase
                                      && LoginOrEmail.Length >= 5
                                      && Password.Length >= 6);
 
-    private Error? _error;
-    public Error? Error
-    {
-        get => _error;
-        set => SetProperty(ref _error, value);
-    }
-
     private async Task SignInAsync()
     {
-        Error = null;
-        RefreshLocator.FireMessaging(true, "Collecting data..");
+        _notificationHost.ShowInformationNotification("Collecting data..");
 
         var user = await GetUserAsync();
 
         if (user == null)
         {
-            Error = new("Not found user", $"Not found user with Login or Email {LoginOrEmail}");
             LoginOrEmail = null;
             Password = null;
-            RefreshLocator.FireMessaging(false);
+            _notificationHost.ShowInformationNotification($"Not found user with login or email {LoginOrEmail}");
 
             return;
         }
@@ -90,21 +85,17 @@ public class UserLoginPageViewModel : BindableBase
                                                  Password)
             != PasswordVerificationResult.Success)
         {
-            Error = new("Password is incorrect", "Provided password is not correct. Try again");
             Password = null;
-            RefreshLocator.FireMessaging(false);
+            _notificationHost.ShowInformationNotification("Not right password!");
 
             return;
         }
 
-        RefreshLocator.FireMessaging(true, "Setting current user..");
-        //await Task.Delay(1000);
+        _notificationHost.ShowInformationNotification("Setting current user..");
         _currentUserService.Initialize(user.Id);
-        RefreshLocator.FireMessaging(true, "Almost done! Just redirecting you at Admin app..");
-        //await Task.Delay(5000);
+        _notificationHost.ShowInformationNotification("Almost done! Just redirecting you at Admin app..");
         _mainWindowTitleBarLocator.CurrentFrameId = MainWindowTitleBarConstants.AfterSignInPageId;
         _titleBarLocator.CurrentFrameId = TitleBarConstants.CasesPageId;
-        RefreshLocator.FireMessaging(false);
         RefreshLocator.FireSuccessLogIn();
     }
 

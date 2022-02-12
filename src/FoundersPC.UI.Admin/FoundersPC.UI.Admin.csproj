@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Amusoft.UI.WPF" Version="1.0.2" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="CalcBinding" Version="2.5.2" />
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
