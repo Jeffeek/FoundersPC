@@ -6,6 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\ChangePassword\**" />
+    <Compile Remove="Middleware\**" />
+    <EmbeddedResource Remove="Features\ChangePassword\**" />
+    <EmbeddedResource Remove="Middleware\**" />
+    <None Remove="Features\ChangePassword\**" />
+    <None Remove="Middleware\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.6" />
@@ -25,11 +34,6 @@
     <ProjectReference Include="..\FoundersPC.Persistence\FoundersPC.Persistence.csproj" />
     <ProjectReference Include="..\FoundersPC.Domain\FoundersPC.Domain.csproj" />
     <ProjectReference Include="..\FoundersPC.SharedKernel\FoundersPC.SharedKernel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\ChangePassword\" />
-    <Folder Include="Middleware\" />
   </ItemGroup>
 
 </Project>

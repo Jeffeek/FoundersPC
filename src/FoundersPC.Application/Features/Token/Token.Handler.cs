@@ -56,7 +56,7 @@ public class TokenHandler : IRequestHandler<TokenRequest, TokenResponse>
 
     private async Task<TokenResponse> LoginByPasswordAsync(TokenRequest request)
     {
-        var user = await _userManager.FindByIdAsync(request.Login);
+        var user = await _userManager.FindByIdAsync(request.Login) ?? await _userManager.FindByEmailAsync(request.Login);
 
         if (user == null)
             throw new BadRequestException("invalid_grant", "Invalid username or password");

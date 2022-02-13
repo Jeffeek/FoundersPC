@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controls\**" />
+    <EmbeddedResource Remove="Controls\**" />
+    <None Remove="Controls\**" />
+    <Page Remove="Controls\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="appsettings.json" />
   </ItemGroup>
 
@@ -52,10 +59,6 @@
     <ProjectReference Include="..\FoundersPC.Application\FoundersPC.Application.csproj" />
     <ProjectReference Include="..\FoundersPC.Persistence\FoundersPC.Persistence.csproj" />
     <ProjectReference Include="..\FoundersPC.SharedKernel\FoundersPC.SharedKernel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controls\" />
   </ItemGroup>
 
 </Project>
