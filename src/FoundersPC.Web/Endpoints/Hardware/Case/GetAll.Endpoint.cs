@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseManagementEndpoint<GetAllReques
                       summary : "Get all cases",
                       description : "Get all cases")]
     [OpenApiTags("Hardware", "Case")]
-    public override async Task<ActionResult<IPagedList<CaseViewInfo>>> HandleAsync([FromBody] GetAllRequest request, CancellationToken cancellationToken = default) =>
+    public override async Task<IPagedList<CaseViewInfo>> HandleAsync([FromBody] GetAllRequest request, CancellationToken cancellationToken = default) =>
         await base.HandleAsync(request, cancellationToken);
 }

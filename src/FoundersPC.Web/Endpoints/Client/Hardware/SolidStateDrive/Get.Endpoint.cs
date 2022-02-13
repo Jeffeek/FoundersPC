@@ -15,6 +15,6 @@ public class GetEndpoint : BaseRequestResponseAccessTokenEndpoint<GetRequest, Cl
                       summary : "Get Hardware.SolidStateDrive",
                       description : "Get Hardware.SolidStateDrive")]
     [OpenApiTags("Hardware", "SolidStateDrive", "Client")]
-    public override async Task<ActionResult<ClientSolidStateDriveInfo>> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<ClientSolidStateDriveInfo> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

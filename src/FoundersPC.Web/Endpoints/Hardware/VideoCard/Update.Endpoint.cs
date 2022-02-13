@@ -15,6 +15,6 @@ public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateReques
                       summary : "Update Hardware.VideoCard",
                       description : "Update Hardware.VideoCard")]
     [OpenApiTags("Hardware", "VideoCard")]
-    public override async Task<ActionResult<VideoCardInfo>> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<VideoCardInfo> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

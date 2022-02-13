@@ -15,6 +15,6 @@ public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateReques
                       summary : "Update Hardware.PowerSupply",
                       description : "Update Hardware.PowerSupply")]
     [OpenApiTags("Hardware", "PowerSupply")]
-    public override async Task<ActionResult<PowerSupplyInfo>> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<PowerSupplyInfo> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

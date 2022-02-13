@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="AppData\favicon.ico" />
     <None Remove="appsettings.json" />
   </ItemGroup>
 
@@ -36,12 +37,11 @@
     <PackageReference Include="MaterialDesignExtensions" Version="3.3.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.2.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
     <PackageReference Include="MvvmCross" Version="8.0.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="PasswordBoxMVVM" Version="1.0.5" />
     <PackageReference Include="Prism.Container.Extensions" Version="8.0.62" />
     <PackageReference Include="Prism.Core" Version="8.1.97" />
@@ -57,8 +57,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoundersPC.Application\FoundersPC.Application.csproj" />
-    <ProjectReference Include="..\FoundersPC.Persistence\FoundersPC.Persistence.csproj" />
-    <ProjectReference Include="..\FoundersPC.SharedKernel\FoundersPC.SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AppData\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

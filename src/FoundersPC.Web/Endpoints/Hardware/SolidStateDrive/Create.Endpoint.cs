@@ -15,6 +15,6 @@ public class CreateEndpoint : BaseRequestResponseManagementEndpoint<CreateReques
                       summary : "Create Hardware.SolidStateDrive",
                       description : "Create Hardware.SolidStateDrive")]
     [OpenApiTags("Hardware", "SolidStateDrive")]
-    public override async Task<ActionResult<SolidStateDriveInfo>> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<SolidStateDriveInfo> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

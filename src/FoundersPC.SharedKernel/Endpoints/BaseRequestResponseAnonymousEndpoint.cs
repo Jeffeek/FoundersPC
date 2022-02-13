@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 namespace FoundersPC.SharedKernel.Endpoints;
 
 [Route("api")]
-public class BaseRequestResponseAnonymousEndpoint<TRequest, TResponse, TEndpoint> : BaseAsyncEndpoint.WithRequest<TRequest>.WithResponse<TResponse>
+public class BaseRequestResponseAnonymousEndpoint<TRequest, TResponse, TEndpoint> : EndpointBaseAsync.WithRequest<TRequest>.WithResult<TResponse>
     where TRequest : IRequest<TResponse>
 {
     private ILogger? _logger = null!;
@@ -23,7 +23,7 @@ public class BaseRequestResponseAnonymousEndpoint<TRequest, TResponse, TEndpoint
     protected IMediator Mediator => (_mediator ??= HttpContext.RequestServices.GetService<IMediator>()!)!;
     protected ILogger Logger => (_logger ??= HttpContext.RequestServices.GetService<ILogger<TEndpoint>>()!)!;
 
-    public override async Task<ActionResult<TResponse>> HandleAsync(TRequest command, CancellationToken cancellationToken = default)
+    public override async Task<TResponse> HandleAsync(TRequest command, CancellationToken cancellationToken = default)
     {
         Logger.LogInformation($"{typeof(TRequest).Name}: {await Task.Factory.StartNew(() => JsonConvert.SerializeObject(command), cancellationToken)}");
 

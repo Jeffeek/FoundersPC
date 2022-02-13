@@ -15,6 +15,6 @@ public class GetEndpoint : BaseRequestResponseAccessTokenEndpoint<GetRequest, Po
                       summary : "Get Hardware.PowerSupply",
                       description : "Get Hardware.PowerSupply")]
     [OpenApiTags("Hardware", "PowerSupply", "Client")]
-    public override async Task<ActionResult<PowerSupplyInfo>> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<PowerSupplyInfo> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

@@ -6,15 +6,14 @@
 
   <ItemGroup>
     <PackageReference Include="FluentEmail.MailKit" Version="3.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FoundersPC.Domain\FoundersPC.Domain.csproj" />
     <ProjectReference Include="..\FoundersPC.Persistence.Migrations\FoundersPC.Persistence.Migrations.csproj" />
-    <ProjectReference Include="..\FoundersPC.SharedKernel\FoundersPC.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

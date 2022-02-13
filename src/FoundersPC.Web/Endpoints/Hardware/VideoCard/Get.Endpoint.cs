@@ -15,6 +15,6 @@ public class GetEndpoint : BaseRequestResponseManagementEndpoint<GetRequest, Vid
                       summary : "Get Hardware.VideoCard",
                       description : "Get Hardware.VideoCard")]
     [OpenApiTags("Hardware", "VideoCard")]
-    public override async Task<ActionResult<VideoCardInfo>> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<VideoCardInfo> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

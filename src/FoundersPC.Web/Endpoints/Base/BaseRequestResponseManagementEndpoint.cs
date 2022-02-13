@@ -13,6 +13,6 @@ namespace FoundersPC.Web.Endpoints.Base;
 public abstract class BaseRequestResponseManagementEndpoint<TRequest, TResponse, TEndpoint> : BaseRequestResponseEndpoint<TRequest, TResponse, TEndpoint>
     where TRequest : class, IRequest<TResponse>
 {
-    public override async Task<ActionResult<TResponse>> HandleAsync(TRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<TResponse> HandleAsync(TRequest request, CancellationToken cancellationToken = new()) =>
         await Mediator.Send(request, cancellationToken);
 }

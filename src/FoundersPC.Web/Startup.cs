@@ -76,12 +76,10 @@ public sealed class Startup
 
         services.AddControllersWithViews();
 
-        services.AddControllers(options =>
-                                    options.Filters.Add(new ApiExceptionFilter()))
+        services.AddControllers(options => options.Filters.Add(new ApiExceptionFilter()))
                 .AddNewtonsoftJson(options =>
                                    {
                                        options.SerializerSettings.Converters.Add(new StringEnumConverter());
-
                                        options.SerializerSettings.ContractResolver = new DefaultContractResolver
                                                                                      {
                                                                                          NamingStrategy = new CamelCaseNamingStrategy
@@ -94,9 +92,9 @@ public sealed class Startup
                                        options.SerializerSettings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
                                        options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
                                        options.SerializerSettings.TypeNameHandling = TypeNameHandling.None;
-#if DEBUG
+                                       #if DEBUG
                                        options.SerializerSettings.Formatting = Formatting.Indented;
-#endif
+                                       #endif
                                    })
                 .AddControllersAsServices()
                 .AddFluentValidation(fv =>
@@ -156,6 +154,11 @@ public sealed class Startup
                     {
                         context.Request.ContentType = "application/x-www-form-urlencoded";
                     }
+                    #if DEBUG
+                    // test token for swagger
+                    if ((context.Request.Path.Value?.Contains("Client") ?? false) && context.Request.Headers["api-key"].Count == 0)
+                        context.Request.Headers.TryAdd("api-key", "56FBD8908210817A065B31DCB82CE5B24C1A05A9C754E1675353356CD9591400");
+                    #endif
                     await next.Invoke();
                 });
 
@@ -165,9 +168,7 @@ public sealed class Startup
         app.UseAuthorization();
         app.UseStaticFiles();
         app.UseSpaStaticFiles();
-
         app.UseSerilogRequestLogging();
-
         app.UseEndpoints(endpoints =>
                          {
                              endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
@@ -175,9 +176,9 @@ public sealed class Startup
                              endpoints.MapControllers();
                          });
 
-        app.UseOpenApi();
         app.UseSwaggerUI();
+        app.UseOpenApi();
 
-        //migrationRunner.MigrateUp();
+        migrationRunner.MigrateUp();
     }
 }

@@ -15,6 +15,6 @@ public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateReques
                       summary : "Update Hardware.RandomAccessMemory",
                       description : "Update Hardware.RandomAccessMemory")]
     [OpenApiTags("Hardware", "RandomAccessMemory")]
-    public override async Task<ActionResult<RandomAccessMemoryInfo>> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<RandomAccessMemoryInfo> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

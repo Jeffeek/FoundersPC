@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllReque
                       summary : "Get all Processors",
                       description : "Get all Processors")]
     [OpenApiTags("Hardware", "Processor", "Client")]
-    public override async Task<ActionResult<IPagedList<ClientProcessorInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
+    public override async Task<IPagedList<ClientProcessorInfo>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
         await base.HandleAsync(request, cancellationToken);
 }

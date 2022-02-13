@@ -10,6 +10,6 @@ namespace FoundersPC.Web.Endpoints.Account;
 public class BuyEndpoint : BaseRequestResponseEndpoint<BuyRequest, AccessTokenInfo, BuyEndpoint>
 {
     [HttpPost("Buy")]
-    public override async Task<ActionResult<AccessTokenInfo>> HandleAsync(BuyRequest request, CancellationToken cancellationToken = new()) =>
+    public override async Task<AccessTokenInfo> HandleAsync(BuyRequest request, CancellationToken cancellationToken = new()) =>
         await Mediator.Send(request, cancellationToken);
 }

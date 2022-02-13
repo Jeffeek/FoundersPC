@@ -13,7 +13,7 @@ namespace FoundersPC.SharedKernel.Endpoints;
 
 [Authorize]
 [Route("api")]
-public abstract class BaseEndpoint<TEndpoint> : BaseAsyncEndpoint.WithoutRequest.WithoutResponse
+public abstract class BaseEndpoint<TEndpoint> : EndpointBaseAsync.WithoutRequest.WithoutResult
 {
     private ILogger _logger = null!;
     private IMediator _mediator = null!;

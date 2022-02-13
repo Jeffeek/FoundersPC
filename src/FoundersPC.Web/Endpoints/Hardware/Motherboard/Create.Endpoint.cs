@@ -15,6 +15,6 @@ public class CreateEndpoint : BaseRequestResponseManagementEndpoint<CreateReques
                       summary : "Create Hardware.Motherboard",
                       description : "Create Hardware.Motherboard")]
     [OpenApiTags("Hardware", "Motherboard")]
-    public override async Task<ActionResult<MotherboardInfo>> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<MotherboardInfo> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

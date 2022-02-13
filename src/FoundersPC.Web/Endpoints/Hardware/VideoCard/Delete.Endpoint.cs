@@ -15,6 +15,6 @@ public class DeleteEndpoint : BaseRequestResponseManagementEndpoint<DeleteReques
                       summary : "Delete Hardware.VideoCard",
                       description : "Delete Hardware.VideoCard")]
     [OpenApiTags("Hardware", "VideoCard")]
-    public override async Task<ActionResult<Unit>> HandleAsync([FromBody] DeleteRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<Unit> HandleAsync([FromBody] DeleteRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

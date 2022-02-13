@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllReque
                       summary : "Get all SolidStateDrives",
                       description : "Get all SolidStateDrives")]
     [OpenApiTags("Hardware", "SolidStateDrive", "Client")]
-    public override async Task<ActionResult<IPagedList<ClientSolidStateDriveInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
+    public override async Task<IPagedList<ClientSolidStateDriveInfo>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken = default) =>
         await base.HandleAsync(request, cancellationToken);
 }

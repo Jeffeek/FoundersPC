@@ -15,6 +15,6 @@ public class CreateEndpoint : BaseRequestResponseManagementEndpoint<CreateReques
                       summary : "Create Hardware.HardDriveDisk",
                       description : "Create Hardware.HardDriveDisk")]
     [OpenApiTags("Hardware", "HardDriveDisk")]
-    public override async Task<ActionResult<HardDriveDiskInfo>> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<HardDriveDiskInfo> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

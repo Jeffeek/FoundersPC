@@ -9,6 +9,6 @@ namespace FoundersPC.Web.Endpoints.Account;
 public class ForgotPasswordEndpoint : BaseRequestResponseAnonymousEndpoint<ForgotPasswordRequest, ForgotPasswordResponse, ForgotPasswordEndpoint>
 {
     [HttpPost("ForgotPassword")]
-    public override async Task<ActionResult<ForgotPasswordResponse>> HandleAsync([FromBody] ForgotPasswordRequest request, CancellationToken cancellationToken = new()) =>
+    public override async Task<ForgotPasswordResponse> HandleAsync([FromBody] ForgotPasswordRequest request, CancellationToken cancellationToken = new()) =>
         await Mediator.Send(request, cancellationToken);
 }

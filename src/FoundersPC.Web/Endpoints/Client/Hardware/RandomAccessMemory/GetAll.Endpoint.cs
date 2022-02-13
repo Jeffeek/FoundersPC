@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllReque
                       summary : "Get all RandomAccessMemory",
                       description : "Get all RandomAccessMemory")]
     [OpenApiTags("Hardware", "RandomAccessMemory", "Client")]
-    public override async Task<ActionResult<IPagedList<ClientRandomAccessMemoryInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
+    public override async Task<IPagedList<ClientRandomAccessMemoryInfo>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
         await base.HandleAsync(request, cancellationToken);
 }

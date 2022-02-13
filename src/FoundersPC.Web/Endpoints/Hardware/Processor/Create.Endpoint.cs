@@ -15,6 +15,6 @@ public class CreateEndpoint : BaseRequestResponseManagementEndpoint<CreateReques
                       summary : "Create Hardware.Processor",
                       description : "Create Hardware.Processor")]
     [OpenApiTags("Hardware", "Processor")]
-    public override async Task<ActionResult<ProcessorInfo>> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<ProcessorInfo> HandleAsync([FromBody] CreateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

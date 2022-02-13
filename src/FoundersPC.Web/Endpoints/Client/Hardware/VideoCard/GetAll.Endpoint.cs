@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllReque
                       summary : "Get all VideoCards",
                       description : "Get all VideoCards")]
     [OpenApiTags("Hardware", "VideoCard", "Client")]
-    public override async Task<ActionResult<IPagedList<ClientVideoCardInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
+    public override async Task<IPagedList<ClientVideoCardInfo>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken = default) =>
         await base.HandleAsync(request, cancellationToken);
 }

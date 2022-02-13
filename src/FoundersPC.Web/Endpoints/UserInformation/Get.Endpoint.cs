@@ -22,7 +22,7 @@ public class GetEndpoint : BaseRequestResponseEndpoint<GetRequest, UserInfo, Get
                       summary : "Get UserInformation",
                       description : "Get UserInformation")]
     [OpenApiTags("UserInformation")]
-    public override async Task<ActionResult<UserInfo>> HandleAsync([FromBody] GetRequest request, CancellationToken cancellationToken)
+    public override async Task<UserInfo> HandleAsync([FromBody] GetRequest request, CancellationToken cancellationToken = default)
     {
         if (request.Id == null && request.Login == null)
             request.Id = _currentUserService.UserId == 0 ? throw new BadRequestException("Bad request for user info. User not authenticated and credentials are empty") : _currentUserService.UserId;

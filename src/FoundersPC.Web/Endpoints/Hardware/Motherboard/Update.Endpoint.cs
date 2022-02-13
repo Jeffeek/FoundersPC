@@ -15,6 +15,6 @@ public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateReques
                       summary : "Update Hardware.Motherboard",
                       description : "Update Hardware.Motherboard")]
     [OpenApiTags("Hardware", "Motherboard")]
-    public override async Task<ActionResult<MotherboardInfo>> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<MotherboardInfo> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

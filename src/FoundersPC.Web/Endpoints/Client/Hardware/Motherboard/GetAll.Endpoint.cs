@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllReque
                       summary : "Get all Motherboards",
                       description : "Get all Motherboards")]
     [OpenApiTags("Hardware", "Motherboard", "Client")]
-    public override async Task<ActionResult<IPagedList<ClientMotherboardInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
+    public override async Task<IPagedList<ClientMotherboardInfo>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
         await base.HandleAsync(request, cancellationToken);
 }

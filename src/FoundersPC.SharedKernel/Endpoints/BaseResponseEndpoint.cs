@@ -13,12 +13,11 @@ namespace FoundersPC.SharedKernel.Endpoints;
 
 [Authorize]
 [Route("api")]
-public abstract class BaseResponseEndpoint<TResponse, TEndpoint> : BaseAsyncEndpoint.WithoutRequest.WithResponse<TResponse>
+public abstract class BaseResponseEndpoint<TResponse, TEndpoint> : EndpointBaseAsync.WithoutRequest.WithResult<TResponse>
 {
     private ILogger _logger = null!;
     private IMediator _mediator = null!;
 
     protected IMediator Mediator => (_mediator ??= HttpContext.RequestServices.GetService<IMediator>()!)!;
-
     protected ILogger Logger => (_logger ??= HttpContext.RequestServices.GetService<ILogger<TEndpoint>>()!)!;
 }

@@ -15,6 +15,6 @@ public class GetMetadataPackageEndpoint : BaseResponseAnonymousEndpoint<Metadata
                       summary : "Get Metadata package",
                       description : "Get Metadata package")]
     [OpenApiTags("Metadata")]
-    public override async Task<ActionResult<MetadataPackage>> HandleAsync(CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<MetadataPackage> HandleAsync(CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(new GetMetadataPackageRequest(), cancellationToken);
 }

@@ -7,7 +7,7 @@ using FoundersPC.Web.Endpoints.Base;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 
-namespace FoundersPC.Web.Endpoints.Client.Hardware.Producer;
+namespace FoundersPC.Web.Endpoints.Client.Producer;
 
 public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllRequest, IPagedList<ClientProducerInfo>, GetAllEndpoint>
 {
@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllReque
                       summary : "Get all Producers",
                       description : "Get all Producers")]
     [OpenApiTags("Producer", "Client")]
-    public override async Task<ActionResult<IPagedList<ClientProducerInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken = default) =>
+    public override async Task<IPagedList<ClientProducerInfo>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken = default) =>
         await base.HandleAsync(request, cancellationToken);
 }

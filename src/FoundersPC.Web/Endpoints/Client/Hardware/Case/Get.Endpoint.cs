@@ -15,6 +15,6 @@ public class GetEndpoint : BaseRequestResponseAccessTokenEndpoint<GetRequest, Cl
                       summary : "Get ClientHardware.Case",
                       description : "Get Client.Hardware.Case")]
     [OpenApiTags("Hardware", "Case", "Client")]
-    public override async Task<ActionResult<ClientCaseInfo>> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken) =>
+    public override async Task<ClientCaseInfo> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken) =>
         await Mediator.Send(request, cancellationToken);
 }

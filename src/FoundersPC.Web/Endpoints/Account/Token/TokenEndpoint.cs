@@ -14,6 +14,6 @@ public class TokenEndpoint : BaseRequestResponseAnonymousEndpoint<TokenRequest, 
 {
     [HttpPost("Token")]
     [Consumes("application/x-www-form-urlencoded")]
-    public override async Task<ActionResult<TokenResponse>> HandleAsync([FromForm] TokenRequest request, CancellationToken cancellationToken = new()) =>
+    public override async Task<TokenResponse> HandleAsync([FromForm] TokenRequest request, CancellationToken cancellationToken = new()) =>
         await Mediator.Send(request, cancellationToken);
 }

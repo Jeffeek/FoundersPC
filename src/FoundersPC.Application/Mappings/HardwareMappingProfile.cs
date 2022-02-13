@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.EquivalencyExpression;
 using FoundersPC.Application.Features.Hardware;
 using FoundersPC.Application.Features.Hardware.Case.Models;
 using FoundersPC.Application.Features.Hardware.HardDriveDisk.Models;
@@ -12,6 +13,8 @@ using FoundersPC.Application.Features.Hardware.VideoCard.Models;
 using FoundersPC.Application.Features.Producer.Models;
 using FoundersPC.Domain.Entities.Hardware;
 using FoundersPC.Domain.Entities.Hardware.Metadata;
+using FoundersPC.Domain.Entities.Metadata;
+using FoundersPC.SharedKernel.Models.Metadata;
 
 namespace FoundersPC.Application.Mappings;
 
@@ -19,6 +22,21 @@ public class HardwareMappingProfile : Profile
 {
     public HardwareMappingProfile()
     {
+        CreateMap<MetadataEntity, MetadataInfo>()
+            .IncludeAllDerived()
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Name));
+
+        CreateMap<MetadataInfo, MetadataEntity>()
+            .EqualityComparison((src, dest) => src.Id == dest.Id)
+            .IncludeAllDerived()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Value));
+
+        CreateMap<Producer, MetadataInfo>()
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.ShortName ?? src.FullName));
+
+        CreateMap<VideoCard, MetadataInfo>()
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Metadata.Title));
+
         #region GetHardwareRequest -> GetRequest
 
         CreateMap<GetHardwareRequest, Features.Hardware.Case.GetRequest>();

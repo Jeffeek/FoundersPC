@@ -15,6 +15,6 @@ public class UpdateEndpoint : BaseRequestResponseManagementEndpoint<UpdateReques
                       summary : "Update Hardware.HardDriveDisk",
                       description : "Update Hardware.HardDriveDisk")]
     [OpenApiTags("Hardware", "HardDriveDisk")]
-    public override async Task<ActionResult<HardDriveDiskInfo>> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<HardDriveDiskInfo> HandleAsync([FromBody] UpdateRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

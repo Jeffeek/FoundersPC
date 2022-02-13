@@ -15,6 +15,6 @@ public class GetEndpoint : BaseRequestResponseManagementEndpoint<GetRequest, Har
                       summary : "Get Hardware.HardDriveDisk",
                       description : "Get Hardware.HardDriveDisk")]
     [OpenApiTags("Hardware", "HardDriveDisk")]
-    public override async Task<ActionResult<HardDriveDiskInfo>> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
+    public override async Task<HardDriveDiskInfo> HandleAsync([FromRoute] GetRequest request, CancellationToken cancellationToken = new CancellationToken()) =>
         await Mediator.Send(request, cancellationToken);
 }

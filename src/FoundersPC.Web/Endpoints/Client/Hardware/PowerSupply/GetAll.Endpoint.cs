@@ -16,6 +16,6 @@ public class GetAllEndpoint : BaseRequestResponseAccessTokenEndpoint<GetAllReque
                       summary : "Get all Client.PowerSupplies",
                       description : "Get all Client.PowerSupplies")]
     [OpenApiTags("Hardware", "PowerSupply", "Client")]
-    public override async Task<ActionResult<IPagedList<ClientPowerSupplyInfo>>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
+    public override async Task<IPagedList<ClientPowerSupplyInfo>> HandleAsync(GetAllRequest request, CancellationToken cancellationToken) =>
         await base.HandleAsync(request, cancellationToken);
 }
