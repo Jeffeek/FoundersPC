@@ -8,27 +8,26 @@ namespace FoundersPC.UI.Admin.Services;
 
 internal static class NotificationHelper
 {
-    private const Position NotificationPosition = Position.BottomLeft;
-    private const bool AutoClose = true;
-    private static readonly TimeSpan AutoCloseTimeSpan = TimeSpan.FromSeconds(1.5);
+    private const Position DefaultNotificationPosition = Position.BottomLeft;
+    private static readonly TimeSpan DefaultAutoCloseTimeSpan = TimeSpan.FromSeconds(3);
 
     public static void ShowExceptionNotification(this NotificationHost notificationHost, Exception exception) =>
-        notificationHost.DisplayAsync(BuildNotification($"Exception occured: {exception?.Message}", SimpleNotificationType.Error), NotificationPosition);
+        notificationHost.DisplayAsync(BuildNotification($"Exception occured: {exception?.Message}", SimpleNotificationType.Error, false), DefaultNotificationPosition);
 
-    public static void ShowInformationNotification(this NotificationHost notificationHost, string text) =>
-        notificationHost.DisplayAsync(BuildNotification(text, SimpleNotificationType.Info), NotificationPosition);
+    public static void ShowInformationNotification(this NotificationHost notificationHost, string text, bool autoClose = true) =>
+        notificationHost.DisplayAsync(BuildNotification(text, SimpleNotificationType.Info, autoClose), DefaultNotificationPosition);
 
-    public static void ShowDoneNotification(this NotificationHost notificationHost, string text) =>
-        notificationHost.DisplayAsync(BuildNotification(text, SimpleNotificationType.Done), NotificationPosition);
+    public static void ShowDoneNotification(this NotificationHost notificationHost, string text, bool autoClose = true) =>
+        notificationHost.DisplayAsync(BuildNotification(text, SimpleNotificationType.Done, autoClose), DefaultNotificationPosition);
 
-    public static void ShowWarningNotification(this NotificationHost notificationHost, string text) =>
-        notificationHost.DisplayAsync(BuildNotification(text, SimpleNotificationType.Warning), NotificationPosition);
+    public static void ShowWarningNotification(this NotificationHost notificationHost, string text, bool autoClose = true) =>
+        notificationHost.DisplayAsync(BuildNotification(text, SimpleNotificationType.Warning, autoClose), DefaultNotificationPosition);
 
-    private static SimpleNotification BuildNotification(string text, SimpleNotificationType type) =>
+    private static SimpleNotification BuildNotification(string text, SimpleNotificationType type, bool autoClose) =>
         new(text, type)
         {
-            AutoClose = AutoClose,
-            AutoCloseDelay = AutoClose ? AutoCloseTimeSpan : TimeSpan.MaxValue
+            AutoClose = autoClose,
+            AutoCloseDelay = autoClose ? DefaultAutoCloseTimeSpan : TimeSpan.MaxValue
         };
 
     public static async Task<TResult?> SendRequestWithNotification<TResult>(this NotificationHost notificationHost,

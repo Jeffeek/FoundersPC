@@ -1,4 +1,5 @@
-﻿using Amusoft.UI.WPF.Notifications;
+﻿using System.Linq;
+using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.Hardware.VideoCard;
 using FoundersPC.Application.Features.Hardware.VideoCard.Models;
@@ -30,13 +31,21 @@ public class VideoCardDetailsPageViewModel : HardwareDetailsPageViewModel<VideoC
 
     protected override void OnInsertOrUpdate(int id)
     {
-        if (EditableHardware is not {Id: 0, IsIntegrated: true})
+        if (EditableHardware == null)
             return;
 
-        MetadataPackageLocator.MetadataPackage.IntegratedVideoCards.Add(new()
-                                                                        {
-                                                                            Id = id,
-                                                                            Value = EditableHardware.Title
-                                                                        });
+        var existVideoCard = MetadataPackageLocator.MetadataPackage.IntegratedVideoCards.FirstOrDefault(x => x.Id == id);
+
+        if (EditableHardware.IsIntegrated == true && existVideoCard == null)
+            MetadataPackageLocator.MetadataPackage.IntegratedVideoCards.Add(new()
+                                                                            {
+                                                                                Id = id,
+                                                                                Value = EditableHardware.Title
+                                                                            });
+
+        if (EditableHardware.Id != 0
+            && EditableHardware.IsIntegrated is null or false
+            && existVideoCard != null)
+            MetadataPackageLocator.MetadataPackage.IntegratedVideoCards.Remove(existVideoCard);
     }
 }

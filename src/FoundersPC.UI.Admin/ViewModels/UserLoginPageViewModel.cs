@@ -96,7 +96,6 @@ public class UserLoginPageViewModel : BindableBase
         _notificationHost.ShowInformationNotification("Almost done! Just redirecting you at Admin app..");
         _mainWindowTitleBarLocator.CurrentFrameId = MainWindowTitleBarConstants.AfterSignInPageId;
         _titleBarLocator.CurrentFrameId = TitleBarConstants.CasesPageId;
-        RefreshLocator.FireSuccessLogIn();
     }
 
     private async Task<ApplicationUser?> GetUserAsync()

@@ -19,7 +19,7 @@ public class PowerSupplyInfoViewModel : HardwareInfoViewModel
     private int? _motherboardPoweringId;
     public int? MotherboardPoweringId
     {
-        get => _motherboardPoweringId;
+        get => _motherboardPoweringId ?? -1;
         set => SetProperty(ref _motherboardPoweringId, value);
     }
 

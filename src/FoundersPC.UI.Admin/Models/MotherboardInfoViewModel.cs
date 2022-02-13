@@ -6,21 +6,21 @@ public class MotherboardInfoViewModel : HardwareInfoViewModel
 
     public int? SocketId
     {
-        get => _socketId;
+        get => _socketId ?? -1;
         set => SetProperty(ref _socketId, value);
     }
 
     private int? _motherboardFactorId;
     public int? MotherboardFactorId
     {
-        get => _motherboardFactorId;
+        get => _motherboardFactorId ?? -1;
         set => SetProperty(ref _motherboardFactorId, value);
     }
 
     private int? _ramTypeId;
     public int? RAMTypeId
     {
-        get => _ramTypeId;
+        get => _ramTypeId ?? -1;
         set => SetProperty(ref _ramTypeId, value);
     }
 
@@ -34,7 +34,7 @@ public class MotherboardInfoViewModel : HardwareInfoViewModel
     private int? _ramModeId;
     public int? RAMModeId
     {
-        get => _ramModeId;
+        get => _ramModeId ?? -1;
         set => SetProperty(ref _ramModeId, value);
     }
 

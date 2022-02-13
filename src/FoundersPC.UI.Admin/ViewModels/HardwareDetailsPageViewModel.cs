@@ -132,9 +132,11 @@ public abstract class HardwareDetailsPageViewModel<THardwareInfo,
                                          OnInsertOrUpdate(hardware.Id);
                                          _notificationHost.ShowDoneNotification($"Hardware {hardware.Title} {(EditableHardware?.Id == 0 ? "created" : "updated")} successfully");
                                      }
-
-                                     _notificationHost.ShowWarningNotification("Something bad happened when tried to update/create hardware");
-                                     GoBack();
+                                     else
+                                     {
+                                         _notificationHost.ShowWarningNotification("Something bad happened when tried to update/create hardware");
+                                         GoBack();
+                                     }
                                  }
                                  finally
                                  {

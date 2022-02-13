@@ -80,7 +80,7 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordRequest, Forg
         return new()
                {
                    Email = request.Email,
-                   Message = "Out bot can't send you a new password. Please wait a minute and try again :)",
+                   Message = "Our bot can't send you a new password. Please wait a minute and try again :)",
                    IsSuccess = false
                };
     }

@@ -44,6 +44,7 @@ public class MetadataPackageViewModel : IEnumerable<ObservableCollection<Metadat
         yield return TechProcess;
         yield return VideoMemory;
         yield return WindowMaterial;
+        yield return IntegratedVideoCards;
     }
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

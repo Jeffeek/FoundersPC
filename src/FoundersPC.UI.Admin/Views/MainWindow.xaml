@@ -48,7 +48,7 @@
             Grid.RowSpan="3"
             Grid.Column="0"
             Grid.ColumnSpan="3"
-            IsEnabled="{calcBinding:Binding !IsMessaging}"
+            IsEnabled="{Binding MainWindowTitleBarLocator.IsLoading}"
             SelectedIndex="{Binding MainWindowTitleBarLocator.CurrentFrameId}"
             Style="{StaticResource MaterialDesignNavigatilRailTabControl}">
             <TabItem
@@ -68,26 +68,5 @@
                 <Frame Background="#232931" Source="AfterSignInPage.xaml" />
             </TabItem>
         </TabControl>
-        <StackPanel
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Margin="0,30,0,0"
-            mahapps:VisibilityHelper.IsVisible="{Binding IsMessaging, IsAsync=True}"
-            Orientation="Vertical"
-            ZIndex="99999999">
-            <mahapps:ProgressRing
-                Width="50"
-                Height="50"
-                mahapps:VisibilityHelper.IsVisible="{Binding IsMessaging, IsAsync=True}"
-                EllipseDiameterScale="0.7"
-                Foreground="White"
-                IsActive="True" />
-            <Label
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="{Binding Message, IsAsync=True}"
-                FontSize="40" />
-        </StackPanel>
     </Grid>
 </mahapps:MetroWindow>

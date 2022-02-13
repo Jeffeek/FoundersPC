@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.Producer.Models;
+using FoundersPC.SharedKernel.Models.Metadata;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
 using FoundersPC.UI.Admin.Services;
@@ -19,6 +21,7 @@ public class ProducersPageViewModel : BindableBase
     protected readonly IMapper Mapper;
     protected readonly SelectedObjectLocator SelectedObjectLocator;
     private readonly NotificationHost _notificationHost;
+    private readonly MetadataPackageLocator _metadataPackageLocator;
     protected readonly int DetailsPageId;
     public TitleBarLocator TitleBarLocator { get; }
 
@@ -27,13 +30,15 @@ public class ProducersPageViewModel : BindableBase
                                   FilterOptions filterOptions,
                                   SelectedObjectLocator selectedObjectLocator,
                                   TitleBarLocator titleBarLocator,
-                                  NotificationHost notificationHost)
+                                  NotificationHost notificationHost,
+                                  MetadataPackageLocator metadataPackageLocator)
     {
         TitleBarLocator = titleBarLocator;
         Mediator = mediator;
         Mapper = mapper;
         SelectedObjectLocator = selectedObjectLocator;
         _notificationHost = notificationHost;
+        _metadataPackageLocator = metadataPackageLocator;
         DetailsPageId = TitleBarConstants.ProducerDetailsPageId;
         FilterOptions = filterOptions;
         TitleBarLocator.IsLoadingChanged += _ => ApplySearchCommand.RaiseCanExecuteChanged();
@@ -74,6 +79,8 @@ public class ProducersPageViewModel : BindableBase
             System.Windows.Application.Current.Dispatcher.Invoke(() => TitleBarLocator.IsLoading = state);
     }
 
+    #region CreateProducerCommand
+
     private MvxCommand? _createProducerCommand;
     public MvxCommand CreateProducerCommand =>
         _createProducerCommand ??= new(CreateNewProducerAndMoveToDetails);
@@ -83,6 +90,8 @@ public class ProducersPageViewModel : BindableBase
         SelectedObjectLocator.SelectedProducer = new();
         TitleBarLocator.CurrentFrameId = DetailsPageId;
     }
+
+    #endregion
 
     #region MoveToHardwareDetailsPageCommand
 
@@ -115,6 +124,10 @@ public class ProducersPageViewModel : BindableBase
         _notificationHost.ShowWarningNotification($"Producer with Id {id} is deleted");
         await SearchProducersAsync();
         TitleBarLocator.IsLoading = false;
+
+        var producerFromPackage = _metadataPackageLocator.MetadataPackage.Producers.FirstOrDefault(x => x.Id == id);
+        if (producerFromPackage != null)
+            _metadataPackageLocator.MetadataPackage.Producers.Remove(producerFromPackage);
     }
 
     #endregion
@@ -132,6 +145,13 @@ public class ProducersPageViewModel : BindableBase
         _notificationHost.ShowDoneNotification($"Producer with Id {id} is restored");
         await SearchProducersAsync();
         TitleBarLocator.IsLoading = false;
+
+        if (SelectedProducer != null)
+            _metadataPackageLocator.MetadataPackage.Producers.Add(new()
+                                                                  {
+                                                                      Id = id,
+                                                                      Value = SelectedProducer.FullName
+                                                                  });
     }
 
     #endregion
@@ -153,6 +173,13 @@ public class ProducersPageViewModel : BindableBase
     {
         get => _producersList;
         set => SetProperty(ref _producersList, value);
+    }
+
+    private ProducerViewInfo? _selectedProducer;
+    public ProducerViewInfo? SelectedProducer
+    {
+        get => _selectedProducer;
+        set => SetProperty(ref _selectedProducer, value);
     }
 
     #endregion

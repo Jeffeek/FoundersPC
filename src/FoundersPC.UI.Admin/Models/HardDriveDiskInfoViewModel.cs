@@ -5,14 +5,14 @@ public class HardDriveDiskInfoViewModel : HardwareInfoViewModel
     private int? _diskFactorId;
     public int? DiskFactorId
     {
-        get => _diskFactorId;
+        get => _diskFactorId ?? -1;
         set => SetProperty(ref _diskFactorId, value);
     }
 
     private int? _diskConnectionInterfaceId;
     public int? DiskConnectionInterfaceId
     {
-        get => _diskConnectionInterfaceId;
+        get => _diskConnectionInterfaceId ?? -1;
         set => SetProperty(ref _diskConnectionInterfaceId, value);
     }
 

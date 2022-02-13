@@ -54,7 +54,7 @@ public class ProcessorInfoViewModel : HardwareInfoViewModel
     private int? _techProcessId;
     public int? TechProcessId
     {
-        get => _techProcessId;
+        get => _techProcessId ?? -1;
         set => SetProperty(ref _techProcessId, value);
     }
 
@@ -82,14 +82,14 @@ public class ProcessorInfoViewModel : HardwareInfoViewModel
     private int? _integratedGraphicsId;
     public int? IntegratedGraphicsId
     {
-        get => _integratedGraphicsId;
+        get => _integratedGraphicsId ?? -1;
         set => SetProperty(ref _integratedGraphicsId, value);
     }
 
     private int? _socketId;
     public int? SocketId
     {
-        get => _socketId;
+        get => _socketId ?? -1;
         set => SetProperty(ref _socketId, value);
     }
 }

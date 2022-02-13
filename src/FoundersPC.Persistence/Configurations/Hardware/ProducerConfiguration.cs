@@ -45,45 +45,5 @@ public class ProducerConfiguration : IEntityTypeConfiguration<Producer>
                .WithMany()
                .HasForeignKey(x => x.CountryId)
                .IsRequired(false);
-
-        builder.HasMany(x => x.SolidStateDriveMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
-
-        builder.HasMany(x => x.HardDrivesMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
-
-        builder.HasMany(x => x.RandomAccessMemoryMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
-
-        builder.HasMany(x => x.CasesMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
-
-        builder.HasMany(x => x.ProcessorsMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
-
-        builder.HasMany(x => x.VideoCardsMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
-
-        builder.HasMany(x => x.PowerSuppliesMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
-
-        builder.HasMany(x => x.MotherboardsMetadata)
-               .WithOne(x => x.Producer)
-               .HasForeignKey(x => x.ProducerId)
-               .IsRequired(false);
     }
 }
