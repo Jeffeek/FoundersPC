@@ -60,13 +60,14 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
 
     private static void HandleUnknownException(ExceptionContext context)
     {
+        var stacktrace = String.Empty;
+
+        #if DEBUG
+        stacktrace = context.Exception.StackTrace;
+        #endif
+
         var details = new Error($"{StatusCodes.Status500InternalServerError}. Unknown server error",
-                                $"Exception: {context.Exception.Message}"
-                                +
-                                #if DEBUG
-                                $"Stacktrace: {context.Exception.StackTrace}"
-                                #endif
-                               );
+                                $"Exception: {context.Exception.Message}. Stacktrace: {stacktrace}");
 
         context.Result = new ObjectResult(details)
                          {
