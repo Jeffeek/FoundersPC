@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -62,7 +63,12 @@ public partial class App
                                                              services.AddApplicationServices(configuration);
                                                              //services.AddScoped<IEmailService, NullEmailService>();
                                                              services.AddEmailDaemon(configuration);
-                                                             services.AddScoped<IEmailService, EmailService>();
+
+                                                             if (configuration.GetValue<bool>("EmailBotConfiguration:UseNullBot"))
+                                                                 services.AddScoped<IEmailService, NullEmailService>();
+                                                             else
+                                                                 services.AddScoped<IEmailService, EmailService>();
+
                                                              services.AddScoped<PasswordEncryptorService>();
                                                              services.AddScoped<IPasswordHasher<ApplicationUser>, CustomPasswordHasher>();
                                                              services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
