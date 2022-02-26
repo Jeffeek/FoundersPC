@@ -1,5 +1,4 @@
-﻿using FoundersPC.Domain.Entities.Hardware;
-using FoundersPC.Domain.Entities.Hardware.Metadata;
+﻿using FoundersPC.Domain.Entities.Hardware.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -63,10 +62,5 @@ public class CaseMetadataConfiguration : IEntityTypeConfiguration<CaseMetadata>
                .WithMany()
                .HasForeignKey(x => x.CaseTypeId)
                .IsRequired(false);
-
-        builder.HasOne(x => x.Case)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<Case>(x => x.Id)
-               .IsRequired();
     }
 }

@@ -48,10 +48,5 @@ public class SolidStateDriveMetadataConfiguration : IEntityTypeConfiguration<Sol
                .WithMany()
                .HasForeignKey(x => x.DiskConnectionInterfaceId)
                .IsRequired(false);
-
-        builder.HasOne(x => x.SolidStateDrive)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<SolidStateDriveMetadata>(x => x.Id)
-               .IsRequired();
     }
 }

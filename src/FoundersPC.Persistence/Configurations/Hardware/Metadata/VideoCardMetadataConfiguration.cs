@@ -77,10 +77,5 @@ public class VideoCardMetadataConfiguration : IEntityTypeConfiguration<VideoCard
                .HasColumnType("int")
                .HasColumnName("DisplayPort")
                .IsRequired(false);
-
-        builder.HasOne(x => x.VideoCard)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<VideoCardMetadata>(x => x.Id)
-               .IsRequired();
     }
 }

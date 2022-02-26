@@ -83,11 +83,6 @@ public class ProcessorMetadataConfiguration : IEntityTypeConfiguration<Processor
                .HasForeignKey(x => x.IntegratedGraphicsId)
                .IsRequired(false);
 
-        builder.HasOne(x => x.Processor)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<ProcessorMetadata>(x => x.Id)
-               .IsRequired();
-
         builder.HasOne(x => x.Socket)
                .WithMany(x => x.Processors)
                .HasForeignKey(x => x.SocketId)

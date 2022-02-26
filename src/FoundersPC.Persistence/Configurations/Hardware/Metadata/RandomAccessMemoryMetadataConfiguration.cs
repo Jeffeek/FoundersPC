@@ -52,10 +52,5 @@ internal class RandomAccessMemoryMetadataConfiguration : IEntityTypeConfiguratio
                .WithMany()
                .HasForeignKey(x => x.RAMTypeId)
                .IsRequired(false);
-
-        builder.HasOne(x => x.RandomAccessMemory)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<RandomAccessMemoryMetadata>(x => x.Id)
-               .IsRequired();
     }
 }

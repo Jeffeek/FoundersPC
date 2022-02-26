@@ -88,10 +88,5 @@ public class MotherboardMetadataConfiguration : IEntityTypeConfiguration<Motherb
                .WithMany()
                .HasForeignKey(x => x.RAMModeId)
                .IsRequired(false);
-
-        builder.HasOne(x => x.Motherboard)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<MotherboardMetadata>(x => x.Id)
-               .IsRequired();
     }
 }

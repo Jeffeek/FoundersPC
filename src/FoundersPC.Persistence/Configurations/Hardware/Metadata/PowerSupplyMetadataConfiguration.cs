@@ -57,10 +57,5 @@ public class PowerSupplyMetadataConfiguration : IEntityTypeConfiguration<PowerSu
                .WithMany()
                .HasForeignKey(x => x.MotherboardPoweringId)
                .IsRequired(false);
-
-        builder.HasOne(x => x.PowerSupply)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<PowerSupplyMetadata>(x => x.Id)
-               .IsRequired();
     }
 }

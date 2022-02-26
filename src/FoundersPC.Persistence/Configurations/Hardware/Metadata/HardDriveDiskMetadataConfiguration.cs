@@ -47,10 +47,5 @@ public class HardDriveDiskMetadataConfiguration : IEntityTypeConfiguration<HardD
                .WithMany()
                .HasForeignKey(x => x.DiskConnectionInterfaceId)
                .IsRequired(false);
-
-        builder.HasOne(x => x.HardDriveDisk)
-               .WithOne(x => x.Metadata)
-               .HasForeignKey<HardDriveDiskMetadata>(x => x.Id)
-               .IsRequired();
     }
 }
