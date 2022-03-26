@@ -159,8 +159,8 @@ public sealed class Startup
                     }
                     #if DEBUG
                     // test token for swagger
-                    if ((context.Request.Path.Value?.Contains("Client") ?? false) && context.Request.Headers["api-key"].Count == 0)
-                        context.Request.Headers.TryAdd("api-key", "56FBD8908210817A065B31DCB82CE5B24C1A05A9C754E1675353356CD9591400");
+                    //if ((context.Request.Path.Value?.Contains("Client") ?? false) && context.Request.Headers["api-key"].Count == 0)
+                        //context.Request.Headers.TryAdd("api-key", "56FBD8908210817A065B31DCB82CE5B24C1A05A9C754E1675353356CD9591400");
                     #endif
                     await next.Invoke();
                 });
