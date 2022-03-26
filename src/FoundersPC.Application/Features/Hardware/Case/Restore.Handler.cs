@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Hardware.Case;
 
-public class RestoreHandler : Base.RestoreHardwareHandler<RestoreRequest, Domain.Entities.Hardware.Case, CaseInfo, GetQuery>
+public class RestoreHandler : Base.RestoreHardwareHandler<RestoreRequest, Domain.Entities.Hardware.Case, CaseInfo>
 {
     public RestoreHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                           IMapper mapper)

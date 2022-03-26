@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Hardware.RandomAccessMemory;
 
-public class DeleteHandler : DeleteHardwareHandler<DeleteRequest, GetQuery, Domain.Entities.Hardware.RandomAccessMemory>
+public class DeleteHandler : DeleteHardwareHandler<DeleteRequest, Domain.Entities.Hardware.RandomAccessMemory>
 {
     public DeleteHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                          IMapper mapper) : base(dbContextFactory,

@@ -4,11 +4,9 @@ using System;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence.Migrations;
 using FoundersPC.Persistence.Settings;
-using FoundersPC.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Org.BouncyCastle.Asn1.Ocsp;
 
 #endregion
 

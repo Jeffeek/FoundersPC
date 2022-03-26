@@ -1,6 +1,5 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence;
 using FoundersPC.SharedKernel.Exceptions;
 using MediatR;

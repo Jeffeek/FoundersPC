@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using FoundersPC.Domain.Enums;
+using FoundersPC.Domain.Entities.Hardware;
+using HardwareType = FoundersPC.Domain.Enums.HardwareType;
 
 namespace FoundersPC.Application.Mappings;
 
@@ -17,6 +18,22 @@ public class RequestToQueryMappingProfile : Profile
         CreateMap<Features.Hardware.SolidStateDrive.GetAllRequest, Features.Hardware.SolidStateDrive.GetAllQuery>();
         CreateMap<Features.Hardware.VideoCard.GetAllRequest, Features.Hardware.VideoCard.GetAllQuery>();
         CreateMap<Features.Producer.GetAllRequest, Features.Producer.GetAllQuery>();
+        CreateMap<Features.Hardware.Case.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<Case>>();
+        CreateMap<Features.Hardware.HardDriveDisk.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<HardDriveDisk>>();
+        CreateMap<Features.Hardware.Motherboard.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<Motherboard>>();
+        CreateMap<Features.Hardware.PowerSupply.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<PowerSupply>>();
+        CreateMap<Features.Hardware.Processor.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<Processor>>();
+        CreateMap<Features.Hardware.RandomAccessMemory.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<RandomAccessMemory>>();
+        CreateMap<Features.Hardware.SolidStateDrive.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<SolidStateDrive>>();
+        CreateMap<Features.Hardware.VideoCard.DeleteRequest, Features.Hardware.Base.GetHardwareQuery<VideoCard>>();
+        CreateMap<Features.Hardware.Case.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<Case>>();
+        CreateMap<Features.Hardware.HardDriveDisk.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<HardDriveDisk>>();
+        CreateMap<Features.Hardware.Motherboard.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<Motherboard>>();
+        CreateMap<Features.Hardware.PowerSupply.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<PowerSupply>>();
+        CreateMap<Features.Hardware.Processor.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<Processor>>();
+        CreateMap<Features.Hardware.RandomAccessMemory.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<RandomAccessMemory>>();
+        CreateMap<Features.Hardware.SolidStateDrive.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<SolidStateDrive>>();
+        CreateMap<Features.Hardware.VideoCard.RestoreRequest, Features.Hardware.Base.GetHardwareQuery<VideoCard>>();
 
         // Client
         CreateMap<Features.Client.Hardware.Case.GetAllRequest, Features.Client.Hardware.Case.GetAllQuery>();

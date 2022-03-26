@@ -3,8 +3,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using FoundersPC.Domain.Common;
-using FoundersPC.Domain.Entities.Hardware;
-using FoundersPC.Domain.Entities.Identity.Tokens;
 using FoundersPC.Domain.Entities.Identity.Users;
 using FoundersPC.Persistence.Configurations.Hardware;
 using FoundersPC.SharedKernel.Interfaces;

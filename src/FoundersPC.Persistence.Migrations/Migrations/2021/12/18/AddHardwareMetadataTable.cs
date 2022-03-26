@@ -2,7 +2,6 @@
 using FluentMigrator;
 using FluentMigrator.SqlServer;
 using FoundersPC.Persistence.Migrations.Common;
-using FoundersPC.Persistence.Migrations.Extensions;
 
 namespace FoundersPC.Persistence.Migrations.Migrations._2021._12._18;
 

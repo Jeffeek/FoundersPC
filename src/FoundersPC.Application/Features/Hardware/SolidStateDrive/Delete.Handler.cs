@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoundersPC.Application.Features.Hardware.SolidStateDrive;
 
-public class DeleteHandler : DeleteHardwareHandler<DeleteRequest, GetQuery, Domain.Entities.Hardware.SolidStateDrive>
+public class DeleteHandler : DeleteHardwareHandler<DeleteRequest, Domain.Entities.Hardware.SolidStateDrive>
 {
     public DeleteHandler(IDbContextFactory<ApplicationDbContext> dbContextFactory,
                          IMapper mapper) : base(dbContextFactory,

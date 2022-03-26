@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.UserInformation.Models;

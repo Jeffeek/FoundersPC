@@ -4,7 +4,7 @@ using FoundersPC.SharedKernel.Query;
 
 namespace FoundersPC.Application.Features.Hardware.Base;
 
-public abstract class GetHardwareQuery<THardware> : Query<THardware>
+public class GetHardwareQuery<THardware> : Query<THardware>
     where THardware : Domain.Entities.Hardware.Hardware
 {
     public int Id { get; set; }

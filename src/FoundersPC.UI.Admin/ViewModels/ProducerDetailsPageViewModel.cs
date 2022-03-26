@@ -4,7 +4,6 @@ using Amusoft.UI.WPF.Adorners;
 using Amusoft.UI.WPF.Notifications;
 using AutoMapper;
 using FoundersPC.Application.Features.Producer.Models;
-using FoundersPC.SharedKernel.Models.Metadata;
 using FoundersPC.UI.Admin.Locators;
 using FoundersPC.UI.Admin.Models;
 using FoundersPC.UI.Admin.Services;
