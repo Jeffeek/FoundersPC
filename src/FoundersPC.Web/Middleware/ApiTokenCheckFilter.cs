@@ -73,9 +73,9 @@ public class ApiTokenCheckFilter : IAsyncActionFilter
 
         return accessToken.Type switch
                {
-                   TokenPackageType.Personal  => (DateTime.UtcNow - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Personal.RequestLimitInSeconds,
-                   TokenPackageType.ProPlan   => (DateTime.UtcNow - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.ProPlan.RequestLimitInSeconds,
-                   TokenPackageType.Unlimited => (DateTime.UtcNow - lastTokenRequest.RequestDate).Seconds >= _accessTokenPlans.Unlimited.RequestLimitInSeconds,
+                   TokenPackageType.Personal  => (DateTime.UtcNow - lastTokenRequest.RequestDate).TotalSeconds >= _accessTokenPlans.Personal.RequestLimitInSeconds,
+                   TokenPackageType.ProPlan   => (DateTime.UtcNow - lastTokenRequest.RequestDate).TotalSeconds >= _accessTokenPlans.ProPlan.RequestLimitInSeconds,
+                   TokenPackageType.Unlimited => (DateTime.UtcNow - lastTokenRequest.RequestDate).TotalSeconds >= _accessTokenPlans.Unlimited.RequestLimitInSeconds,
                    _                          => throw new ArgumentOutOfRangeException(nameof(accessToken.Type))
                };
     }
