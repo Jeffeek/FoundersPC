@@ -94,7 +94,7 @@
                 <i:Interaction.Behaviors>
                     <behavior:TextBoxInputRegExBehaviour
                         EmptyValue="{x:Null}"
-                        MaxLength="2"
+                        MaxLength="5"
                         RegularExpression="^([0-9]+)?$" />
                 </i:Interaction.Behaviors>
             </TextBox>
