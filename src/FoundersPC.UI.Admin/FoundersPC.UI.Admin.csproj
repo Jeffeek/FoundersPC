@@ -29,30 +29,54 @@
 
   <ItemGroup>
     <PackageReference Include="Amusoft.UI.WPF" Version="1.0.2" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-    <PackageReference Include="CalcBinding" Version="2.5.2" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="CalcBinding" Version="2.5.2">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
-    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
-    <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
-    <PackageReference Include="MaterialDesignExtensions" Version="3.3.0" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
-    <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.2.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.6">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignExtensions" Version="3.3.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.2.2">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
     <PackageReference Include="MvvmCross" Version="8.0.2" />
-    <PackageReference Include="PasswordBoxMVVM" Version="1.0.5" />
-    <PackageReference Include="Prism.Container.Extensions" Version="8.0.62" />
-    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageReference Include="PasswordBoxMVVM" Version="1.0.5">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Prism.Container.Extensions" Version="8.0.62">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Prism.Core" Version="8.1.97">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
     <PackageReference Include="Prism.Microsoft.DependencyInjection.Extensions" Version="8.0.62" />
-    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
     <PackageReference Include="Prism.Unity.Extensions" Version="8.0.62" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
-    <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

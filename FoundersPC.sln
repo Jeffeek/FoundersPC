@@ -21,9 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Persistence", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.Persistence.Migrations", "src\FoundersPC.Persistence.Migrations\FoundersPC.Persistence.Migrations.csproj", "{D81A3563-671D-4CFB-B14F-259E7A0FA546}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.BackgroundJobsService", "src\FoundersPC.BackgroundJobsService\FoundersPC.BackgroundJobsService.csproj", "{7A2EEC3D-035D-4681-8829-18EB28BEE2B7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoundersPC.UI.Admin", "src\FoundersPC.UI.Admin\FoundersPC.UI.Admin.csproj", "{E364DF69-2E5B-41A1-8FDF-5EB82EADC14A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoundersPC.UI.Admin", "src\FoundersPC.UI.Admin\FoundersPC.UI.Admin.csproj", "{E364DF69-2E5B-41A1-8FDF-5EB82EADC14A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +57,6 @@ Global
 		{D81A3563-671D-4CFB-B14F-259E7A0FA546}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81A3563-671D-4CFB-B14F-259E7A0FA546}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81A3563-671D-4CFB-B14F-259E7A0FA546}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A2EEC3D-035D-4681-8829-18EB28BEE2B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A2EEC3D-035D-4681-8829-18EB28BEE2B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A2EEC3D-035D-4681-8829-18EB28BEE2B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A2EEC3D-035D-4681-8829-18EB28BEE2B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E364DF69-2E5B-41A1-8FDF-5EB82EADC14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E364DF69-2E5B-41A1-8FDF-5EB82EADC14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E364DF69-2E5B-41A1-8FDF-5EB82EADC14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,7 +73,6 @@ Global
 		{8CAE4F01-6E11-4536-ADF1-E9447EE02DF6} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
 		{4802F656-689C-4657-A9D1-5E818976331F} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
 		{D81A3563-671D-4CFB-B14F-259E7A0FA546} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
-		{7A2EEC3D-035D-4681-8829-18EB28BEE2B7} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
 		{E364DF69-2E5B-41A1-8FDF-5EB82EADC14A} = {17711875-2F1D-4E1D-BF00-9C86DC8EC867}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
